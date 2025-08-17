@@ -1,45 +1,71 @@
 import { Link } from 'react-router-dom';
-import heroImage from '@/assets/hero-abstract.jpg';
+import { ChevronDown } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <section className="hero-section">
-      <div 
-        className="absolute inset-0 z-0"
-        style={{
-          backgroundImage: `url(${heroImage})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          opacity: 0.1
-        }}
-      />
+    <section className="hero-section-enhanced">
+      {/* Enhanced Background with CSS */}
+      <div className="hero-background" />
       
+      {/* Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-background/95 via-background/90 to-background/95 z-[1]" />
+      
+      {/* Content Container */}
       <div className="relative z-10 container-max text-center px-6">
-        <div className="max-w-5xl mx-auto fade-in">
-          <h1 className="text-hero mb-8 bg-gradient-to-br from-primary to-primary-light bg-clip-text text-transparent">
+        <div className="max-w-5xl mx-auto">
+          {/* Enhanced Headline with Staggered Animation */}
+          <h1 className="text-hero mb-6 bg-gradient-to-br from-primary via-primary-light to-accent bg-clip-text text-transparent hero-headline animate-fade-in leading-tight">
             We Build Growth Infrastructures That Turn Chaos Into Clients.
           </h1>
           
-          <p className="text-subheading mb-12 max-w-3xl mx-auto">
-            Strategic partnership that transforms chaos into predictable growth. We build, implement, and scale the systems that drive sustainable revenue.
+          {/* Enhanced Subtext */}
+          <p className="text-subheading mb-8 max-w-3xl mx-auto text-foreground/90 hero-subtext animate-fade-in leading-relaxed">
+            Strategic partnership that transforms chaos into predictable growth. We build, implement, and scale the systems that drive sustainable revenue for high-growth companies.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <Link to="/book" className="btn-primary-pulse">
+          {/* Trust Indicator */}
+          <div className="mb-12 hero-trust animate-fade-in">
+            <p className="text-sm text-muted-foreground mb-2">Trusted by 50+ growth-focused businesses</p>
+            <div className="flex justify-center items-center gap-2 opacity-60">
+              <div className="w-2 h-2 rounded-full bg-success"></div>
+              <span className="text-xs text-muted-foreground">Strategic partnerships since 2019</span>
+            </div>
+          </div>
+          
+          {/* Enhanced CTAs */}
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center hero-ctas animate-fade-in">
+            <Link 
+              to="/book" 
+              className="btn-primary-pulse group relative overflow-hidden"
+              aria-label="Book a free strategy session"
+            >
               Book a Strategy Session
+              <span className="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></span>
             </Link>
-            <Link to="/solutions" className="btn-secondary">
+            <Link 
+              to="/solutions" 
+              className="btn-secondary group"
+              aria-label="View our strategic solutions"
+            >
               Our Solutions
+              <ChevronDown className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
             </Link>
           </div>
         </div>
       </div>
 
-      {/* Floating Elements */}
-      <div className="absolute top-20 left-10 w-20 h-20 bg-accent/10 rounded-full animate-float" />
-      <div className="absolute bottom-40 right-20 w-16 h-16 bg-emerald/10 rounded-full animate-float" style={{ animationDelay: '-2s' }} />
-      <div className="absolute top-1/2 right-10 w-12 h-12 bg-primary/10 rounded-full animate-float" style={{ animationDelay: '-4s' }} />
+      {/* Enhanced Floating Elements with Purpose */}
+      <div className="hero-floating-elements">
+        <div className="floating-element floating-element-1 bg-gradient-to-br from-accent/20 to-primary/20" />
+        <div className="floating-element floating-element-2 bg-gradient-to-br from-emerald/20 to-secondary/20" />
+        <div className="floating-element floating-element-3 bg-gradient-to-br from-primary/20 to-accent/20" />
+        <div className="floating-element floating-element-4 bg-gradient-to-br from-secondary/20 to-emerald/20" />
+      </div>
+
+      {/* Scroll Indicator */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 scroll-indicator animate-bounce">
+        <ChevronDown className="w-6 h-6 text-muted-foreground/60" />
+      </div>
     </section>
   );
 };
