@@ -3,30 +3,30 @@ import { Star } from 'lucide-react';
 const SocialProof = () => {
   const testimonials = [
     {
-      quote: "Digni Digital transformed our lead generation system. We're now fully booked for 3 months.",
+      quote: "Digni Digital didn't just consult — they transformed our entire business model. Revenue increased 300% in 8 months.",
       author: "Dr. Sarah Mitchell",
-      role: "Medical Practice Owner",
+      role: "CEO, Premier Medical Group",
       rating: 5
     },
     {
-      quote: "Voice-to-Proposal cut our proposal time from days to minutes. Game changer.",
+      quote: "True strategic partners. They built systems that scale and provided ongoing optimization. Best investment we've made.",
       author: "Marcus Johnson",
-      role: "Consulting Firm CEO",
+      role: "Managing Director, Growth Ventures",
       rating: 5
     },
     {
-      quote: "Finally, a team that builds systems, not just delivers projects. Outstanding results.",
+      quote: "Exceptional depth of expertise combined with hands-on implementation. They deliver what others only promise.",
       author: "Prof. Amara Okafor",
-      role: "Harvard Fellow",
+      role: "Harvard Business School Fellow",
       rating: 5
     }
   ];
 
   const partners = [
-    "Harvard University",
-    "NGO Alliance Africa",
-    "TechBridge SME",
-    "Growth Partners LLC"
+    "Harvard Business School",
+    "McKinsey Alumni Network",
+    "African Development Bank",
+    "TechStars Portfolio"
   ];
 
   return (

@@ -5,17 +5,17 @@ const ThreeStepValue = () => {
     {
       icon: Search,
       title: 'Diagnose',
-      description: 'We uncover hidden bottlenecks.'
+      description: 'Strategic audit reveals hidden opportunities and bottlenecks limiting growth.'
     },
     {
       icon: Wrench,
       title: 'Transform',
-      description: 'We design modern systems.'
+      description: 'Custom systems implementation with hands-on change management.'
     },
     {
       icon: TrendingUp,
       title: 'Scale',
-      description: 'You grow on autopilot.'
+      description: 'Ongoing optimization and strategic partnership for sustainable growth.'
     }
   ];
 

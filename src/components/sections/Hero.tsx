@@ -22,15 +22,15 @@ const Hero = () => {
           </h1>
           
           <p className="text-subheading mb-12 max-w-3xl mx-auto">
-            Outdated systems, scattered tools, missed opportunities — gone. Digni Digital LLC transforms how you generate, engage, and convert clients.
+            Strategic partnership that transforms chaos into predictable growth. We build, implement, and scale the systems that drive sustainable revenue.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <Link to="/book" className="btn-primary-pulse">
-              Book a Consultation
+              Book a Strategy Session
             </Link>
-            <Link to="/products" className="btn-secondary">
-              Explore Our Products
+            <Link to="/solutions" className="btn-secondary">
+              Our Solutions
             </Link>
           </div>
         </div>

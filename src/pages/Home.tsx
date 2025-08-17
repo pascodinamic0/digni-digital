@@ -1,9 +1,11 @@
 import { useEffect } from 'react';
 import Hero from '@/components/sections/Hero';
 import ThreeStepValue from '@/components/sections/ThreeStepValue';
-import ProductSpotlight from '@/components/sections/ProductSpotlight';
+import StrategicServices from '@/components/sections/StrategicServices';
+import PartnershipApproach from '@/components/sections/PartnershipApproach';
 import SocialProof from '@/components/sections/SocialProof';
 import MiniCaseStories from '@/components/sections/MiniCaseStories';
+import InnovationLab from '@/components/sections/InnovationLab';
 import FullWidthCTA from '@/components/sections/FullWidthCTA';
 
 const Home = () => {
@@ -34,15 +36,17 @@ const Home = () => {
     <>
       {/* SEO Meta Tags */}
       <div style={{ display: 'none' }}>
-        <h1>Digni Digital LLC - Growth Infrastructure That Turns Chaos Into Clients</h1>
-        <meta name="description" content="Transform how you generate, engage, and convert clients with Digni Digital LLC's premium growth infrastructure and innovative SaaS solutions." />
+        <h1>Digni Digital LLC - Strategic Business Transformation & Growth Infrastructure</h1>
+        <meta name="description" content="Strategic partnership that transforms businesses through comprehensive growth systems, digital transformation, and ongoing optimization. High-end consulting meets hands-on implementation." />
       </div>
 
       <Hero />
       <ThreeStepValue />
-      <ProductSpotlight />
+      <StrategicServices />
+      <PartnershipApproach />
       <SocialProof />
       <MiniCaseStories />
+      <InnovationLab />
       <FullWidthCTA />
     </>
   );
