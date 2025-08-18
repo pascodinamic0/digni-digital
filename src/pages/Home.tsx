@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import SEO from '@/components/SEO';
+import { useAnalytics } from '@/hooks/useAnalytics';
 import Hero from '@/components/sections/Hero';
 import ThreeStepValue from '@/components/sections/ThreeStepValue';
 import StrategicServices from '@/components/sections/StrategicServices';
@@ -10,7 +11,11 @@ import InnovationLab from '@/components/sections/InnovationLab';
 import FullWidthCTA from '@/components/sections/FullWidthCTA';
 
 const Home = () => {
+  const { trackPageView } = useAnalytics();
   useEffect(() => {
+    // Track page view
+    trackPageView('home', 'Digni Digital LLC - Strategic Business Transformation');
+    
     // Set up intersection observer for scroll animations
     const observerCallback = (entries: IntersectionObserverEntry[]) => {
       entries.forEach(entry => {
@@ -31,7 +36,7 @@ const Home = () => {
     });
 
     return () => observer.disconnect();
-  }, []);
+  }, [trackPageView]);
 
   return (
     <>
