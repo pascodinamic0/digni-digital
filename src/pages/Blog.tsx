@@ -1,79 +1,69 @@
 import { Link } from 'react-router-dom';
-import { Calendar, Clock, ArrowRight, User } from 'lucide-react';
+import { Calendar, Clock, ArrowRight } from 'lucide-react';
+import { Badge } from '@/components/ui/badge';
 
 const Blog = () => {
-  const categories = ['All', 'Digital Transformation', 'Automation', 'SaaS', 'Case Studies'];
-  
+  const featuredPost = {
+    title: 'The Future of Business in Africa: Digital-First or Die',
+    excerpt: "Why African businesses can't afford to wait for digital transformation, and how to build systems that scale across emerging markets.",
+    category: 'Digital Transformation',
+    readTime: '8 min read',
+    date: '2024-01-15',
+    slug: 'future-of-business-in-africa'
+  };
+
   const blogPosts = [
     {
-      title: 'The Future of Business Automation in Africa: Why Voice-to-Proposal is Just the Beginning',
-      excerpt: 'Exploring how AI-powered tools are transforming business processes across emerging markets, and what this means for competitive advantage.',
-      category: 'SaaS',
-      author: 'Digni Digital Team',
-      publishDate: '2024-01-15',
-      readTime: '8 min read',
-      featured: true,
-      slug: 'voice-to-proposal-africa-automation-future'
-    },
-    {
-      title: 'From Chaos to Clients: The 90-Day Transformation Framework',
-      excerpt: 'A deep dive into our proven methodology for helping businesses build growth infrastructure that scales.',
-      category: 'Digital Transformation',
-      author: 'Digni Digital Team',
-      publishDate: '2024-01-10',
-      readTime: '12 min read',
-      featured: false,
-      slug: 'chaos-to-clients-90-day-framework'
-    },
-    {
-      title: 'Case Study: How a Medical Practice Doubled Revenue with Smart Automation',
-      excerpt: 'Real numbers, real results: See exactly how Dr. Mitchell\'s clinic transformed their patient acquisition system.',
-      category: 'Case Studies',
-      author: 'Digni Digital Team',
-      publishDate: '2024-01-05',
-      readTime: '6 min read',
-      featured: false,
-      slug: 'medical-practice-doubled-revenue-automation'
-    },
-    {
-      title: 'The Hidden Cost of Manual Processes: Why Small Inefficiencies Kill Growth',
-      excerpt: 'Breaking down the true cost of manual workflows and how to identify the processes that need automation first.',
+      title: 'Why Your CRM is Failing (And How to Fix It)',
+      excerpt: "Most businesses treat CRM as a contact database. Here's how to turn it into your growth engine.",
       category: 'Automation',
-      author: 'Digni Digital Team',
-      publishDate: '2023-12-28',
-      readTime: '10 min read',
-      featured: false,
-      slug: 'hidden-cost-manual-processes-growth'
+      readTime: '6 min read',
+      date: '2024-01-10',
+      slug: 'why-crm-failing-how-to-fix'
     },
     {
-      title: 'Building SaaS in Emerging Markets: Lessons from Voice-to-Proposal Development',
-      excerpt: 'The unique challenges and opportunities of developing software solutions for emerging market needs.',
+      title: 'ProposalAgent Case Study: 80% Faster Proposals',
+      excerpt: 'Real estate agency cuts proposal time from 3 days to 30 minutes using voice-to-proposal automation.',
+      category: 'Case Studies',
+      readTime: '5 min read',
+      date: '2024-01-08',
+      slug: 'proposalagent-case-study-faster-proposals'
+    },
+    {
+      title: 'Building SaaS for Emerging Markets: Lessons Learned',
+      excerpt: 'What we discovered building affordable, powerful tools for businesses across Africa and beyond.',
       category: 'SaaS',
-      author: 'Digni Digital Team',
-      publishDate: '2023-12-20',
-      readTime: '14 min read',
-      featured: false,
+      readTime: '7 min read',
+      date: '2024-01-05',
       slug: 'building-saas-emerging-markets-lessons'
     },
     {
-      title: 'Digital Transformation vs. Digital Optimization: Why Most Businesses Get It Wrong',
-      excerpt: 'Understanding the difference between true transformation and surface-level improvements.',
+      title: 'The $10K Lead Generation System That Works',
+      excerpt: 'Step-by-step breakdown of the lead generation infrastructure that consistently generates qualified prospects.',
       category: 'Digital Transformation',
-      author: 'Digni Digital Team',
-      publishDate: '2023-12-15',
+      readTime: '12 min read',
+      date: '2024-01-03',
+      slug: 'lead-generation-system-that-works'
+    },
+    {
+      title: 'Why African Startups Fail (And How to Avoid It)',
+      excerpt: 'Common pitfalls that kill African startups, and the systems thinking approach that prevents them.',
+      category: 'Digital Transformation',
       readTime: '9 min read',
-      featured: false,
-      slug: 'digital-transformation-vs-optimization'
+      date: '2023-12-28',
+      slug: 'why-african-startups-fail-how-to-avoid'
+    },
+    {
+      title: 'Automation for Non-Technical Founders',
+      excerpt: "You don't need to code to automate your business. Here's how to build systems that work while you sleep.",
+      category: 'Automation',
+      readTime: '8 min read',
+      date: '2023-12-25',
+      slug: 'automation-for-non-technical-founders'
     }
   ];
 
-  const formatDate = (dateString: string) => {
-    return new Date(dateString).toLocaleDateString('en-US', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric'
-    });
-  };
+  const categories = ['All', 'Digital Transformation', 'Automation', 'SaaS', 'Case Studies'];
 
   return (
     <div className="pt-12">
@@ -81,163 +71,155 @@ const Blog = () => {
       <section className="section-padding bg-gradient-subtle">
         <div className="container-max text-center">
           <h1 className="text-heading-1 mb-8">
-            The Future of Business in Africa & Beyond
+            The Future of Business in Africa & Beyond.
           </h1>
           <p className="text-subheading max-w-4xl mx-auto mb-12">
-            Insights, strategies, and real stories from the frontlines of digital transformation. 
-            Learn how businesses are building the infrastructure that scales.
+            Insights on digital transformation, automation, and building systems that scale in emerging markets. 
+            Real strategies from real implementations.
           </p>
+        </div>
+      </section>
+
+      {/* Featured Post */}
+      <section className="section-padding">
+        <div className="container-max">
+          <div className="mb-16">
+            <h2 className="text-heading-2 mb-8">Featured Article</h2>
+            <div className="card-premium bg-gradient-subtle border-accent/20 p-8 lg:p-12">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                <div>
+                  <Badge className="mb-4 bg-accent text-accent-foreground">
+                    {featuredPost.category}
+                  </Badge>
+                  <h3 className="text-heading-2 mb-4">
+                    {featuredPost.title}
+                  </h3>
+                  <p className="text-body-large text-muted-foreground mb-6">
+                    {featuredPost.excerpt}
+                  </p>
+                  <div className="flex items-center gap-6 text-sm text-muted-foreground mb-6">
+                    <div className="flex items-center gap-2">
+                      <Calendar className="w-4 h-4" />
+                      <span>Jan 15, 2024</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Clock className="w-4 h-4" />
+                      <span>{featuredPost.readTime}</span>
+                    </div>
+                  </div>
+                  <Link 
+                    to={`/blog/${featuredPost.slug}`}
+                    className="btn-primary"
+                  >
+                    Read Article <ArrowRight className="w-4 h-4" />
+                  </Link>
+                </div>
+                <div className="bg-white rounded-2xl shadow-premium-lg p-8 text-center">
+                  <div className="w-20 h-20 bg-gradient-hero rounded-full flex items-center justify-center mx-auto mb-6">
+                    <span className="text-primary-foreground font-heading font-bold text-2xl">D</span>
+                  </div>
+                  <h4 className="font-semibold text-lg mb-2">Featured Insight</h4>
+                  <p className="text-muted-foreground text-sm">
+                    Digital transformation isn't optional anymore—it's survival
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
 
           {/* Category Filter */}
-          <div className="flex flex-wrap justify-center gap-4">
+          <div className="flex flex-wrap gap-4 mb-12">
             {categories.map((category) => (
               <button
                 key={category}
-                className="px-6 py-2 bg-white hover:bg-muted text-muted-foreground hover:text-foreground 
-                          border border-border rounded-full font-medium transition-all"
+                className={`px-4 py-2 rounded-full border transition-all ${
+                  category === 'All' 
+                    ? 'bg-accent text-accent-foreground border-accent' 
+                    : 'border-border hover:border-accent hover:text-accent'
+                }`}
               >
                 {category}
               </button>
             ))}
           </div>
-        </div>
-      </section>
 
-      {/* Featured Post */}
-      {blogPosts.filter(post => post.featured).map(post => (
-        <section key={post.slug} className="section-padding">
-          <div className="container-max">
-            <div className="card-premium bg-gradient-to-br from-white to-muted/30 relative overflow-hidden">
-              <div className="absolute top-4 left-4">
-                <div className="badge-new">Featured</div>
-              </div>
-              
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div>
-                  <div className="flex items-center gap-4 mb-6">
-                    <div className="px-3 py-1 bg-accent/10 text-accent rounded-full text-sm font-medium">
-                      {post.category}
-                    </div>
-                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                      <Calendar className="w-4 h-4" />
-                      {formatDate(post.publishDate)}
-                    </div>
-                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                      <Clock className="w-4 h-4" />
-                      {post.readTime}
-                    </div>
-                  </div>
-
-                  <h2 className="text-heading-3 mb-6">{post.title}</h2>
-                  <p className="text-body-large mb-8">{post.excerpt}</p>
-
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 bg-gradient-hero rounded-full flex items-center justify-center">
-                        <User className="w-5 h-5 text-primary-foreground" />
-                      </div>
-                      <div>
-                        <div className="font-medium">{post.author}</div>
-                      </div>
-                    </div>
-                    
-                    <Link 
-                      to={`/blog/${post.slug}`}
-                      className="btn-primary"
-                    >
-                      Read Article <ArrowRight className="w-4 h-4" />
-                    </Link>
-                  </div>
-                </div>
-
-                <div className="bg-white rounded-xl shadow-premium-md p-8">
-                  <div className="text-center">
-                    <div className="w-16 h-16 bg-gradient-accent rounded-xl mx-auto mb-4 flex items-center justify-center">
-                      <ArrowRight className="w-8 h-8 text-accent-foreground" />
-                    </div>
-                    <h4 className="font-semibold mb-2">Latest Insight</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Discover how AI is reshaping business processes across emerging markets
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      ))}
-
-      {/* All Posts Grid */}
-      <section className="section-padding bg-muted">
-        <div className="container-max">
-          <div className="mb-12">
-            <h2 className="text-heading-2 mb-4">Latest Articles</h2>
-            <p className="text-body-large text-muted-foreground">
-              Stay updated with the latest insights, case studies, and strategic thinking.
-            </p>
-          </div>
-
+          {/* Blog Posts Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {blogPosts.filter(post => !post.featured).map((post) => (
-              <div key={post.slug} className="card-hover-lift bg-white group">
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="px-3 py-1 bg-muted rounded-full text-sm font-medium text-muted-foreground">
+            {blogPosts.map((post, index) => (
+              <article 
+                key={post.slug}
+                className="card-hover-lift"
+                style={{ animationDelay: `${index * 100}ms` }}
+              >
+                <div className="mb-4">
+                  <Badge variant="outline" className="mb-3 bg-muted">
                     {post.category}
-                  </div>
-                </div>
-
-                <h3 className="text-xl font-semibold mb-4 group-hover:text-accent transition-colors">
-                  {post.title}
-                </h3>
-                <p className="text-muted-foreground mb-6">{post.excerpt}</p>
-
-                <div className="flex items-center justify-between pt-4 border-t border-border">
-                  <div className="flex items-center gap-4 text-sm text-muted-foreground">
-                    <div className="flex items-center gap-1">
+                  </Badge>
+                  <h3 className="text-xl font-semibold mb-3 hover:text-accent transition-colors">
+                    <Link to={`/blog/${post.slug}`}>
+                      {post.title}
+                    </Link>
+                  </h3>
+                  <p className="text-muted-foreground mb-4 line-clamp-3">
+                    {post.excerpt}
+                  </p>
+                  <div className="flex items-center gap-4 text-sm text-muted-foreground mb-4">
+                    <div className="flex items-center gap-2">
                       <Calendar className="w-4 h-4" />
-                      {formatDate(post.publishDate)}
+                      <span>{new Date(post.date).toLocaleDateString('en-US', { 
+                        month: 'short', 
+                        day: 'numeric', 
+                        year: 'numeric' 
+                      })}</span>
                     </div>
-                    <div className="flex items-center gap-1">
+                    <div className="flex items-center gap-2">
                       <Clock className="w-4 h-4" />
-                      {post.readTime}
+                      <span>{post.readTime}</span>
                     </div>
                   </div>
-
                   <Link 
                     to={`/blog/${post.slug}`}
-                    className="text-accent hover:text-accent-dark font-semibold text-sm flex items-center gap-1 group-hover:gap-2 transition-all"
+                    className="inline-flex items-center gap-2 text-accent font-semibold hover:gap-3 transition-all"
                   >
-                    Read <ArrowRight className="w-4 h-4" />
+                    Read More <ArrowRight className="w-4 h-4" />
                   </Link>
                 </div>
-              </div>
+              </article>
             ))}
+          </div>
+
+          {/* Load More */}
+          <div className="text-center mt-12">
+            <button className="btn-secondary">
+              Load More Articles
+            </button>
           </div>
         </div>
       </section>
 
       {/* Newsletter Signup */}
-      <section className="section-padding">
+      <section className="section-padding bg-primary text-primary-foreground">
         <div className="container-max">
-          <div className="card-premium bg-primary text-primary-foreground text-center max-w-2xl mx-auto">
-            <h3 className="text-heading-3 mb-6">Stay Ahead of the Curve</h3>
-            <p className="text-xl mb-8 opacity-90">
-              Get our latest insights delivered directly to your inbox. No spam, just valuable content.
+          <div className="max-w-2xl mx-auto text-center">
+            <h2 className="text-heading-2 mb-8">
+              Stay Ahead of the Curve
+            </h2>
+            <p className="text-subheading mb-12 opacity-90">
+              Get weekly insights on digital transformation, automation strategies, and growth systems 
+              delivered directly to your inbox.
             </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+            <form className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 px-4 py-3 rounded-xl text-foreground bg-white border-0 focus:outline-none focus:ring-2 focus:ring-accent"
+                className="flex-1 px-4 py-3 rounded-xl border-0 text-foreground"
               />
-              <button className="btn-accent">
+              <button className="btn-accent whitespace-nowrap">
                 Subscribe
               </button>
-            </div>
-
-            <p className="text-sm opacity-75 mt-4">
-              Join 1,000+ business leaders already subscribed
+            </form>
+            <p className="text-sm opacity-80 mt-4">
+              No spam. Unsubscribe anytime. Join 2,000+ business leaders.
             </p>
           </div>
         </div>

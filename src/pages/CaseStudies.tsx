@@ -33,7 +33,7 @@ const CaseStudies = () => {
       industry: 'Real Estate',
       challenge: 'Proposals taking 3 days to create, causing deals to stall and competitors to win',
       approach: [
-        'Implemented Voice-to-Proposal for instant property proposals',
+        'Implemented ProposalAgent for instant property proposals',
         'Created automated lead qualification system',
         'Built custom property showcase funnels',
         'Integrated MLS data with CRM workflows'
@@ -45,7 +45,7 @@ const CaseStudies = () => {
         agentProductivity: '+300%'
       },
       timeline: '60 days',
-      testimonial: 'Voice-to-Proposal alone changed our business. We can create professional proposals while still on the phone with clients.',
+      testimonial: 'ProposalAgent alone changed our business. We can create professional proposals while still on the phone with clients.',
       featured: false
     },
     {
@@ -222,10 +222,10 @@ const CaseStudies = () => {
                             <p className="font-medium">
                               Created proposals 5× faster using 
                               <Link 
-                                to="/products/voice-to-proposal" 
+                                to="/products/proposalagent" 
                                 className="text-accent hover:text-accent-dark ml-1 underline"
                               >
-                                Voice-to-Proposal
+                                ProposalAgent
                               </Link>
                             </p>
                           </div>

@@ -97,19 +97,19 @@ const VoiceToProposal = () => {
         <div className="container-max">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h1 className="text-heading-1 mb-6">Voice-to-Proposal</h1>
+              <h1 className="text-heading-1 mb-6">ProposalAgent</h1>
               <p className="text-subheading mb-8">
                 Turn voice notes into client-ready proposals — structured, branded, and ready to send.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-6 mb-8">
                 <a 
-                  href="https://voice-to-proposal.io"
+                  href="https://proposalagent.io"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-primary"
                 >
-                  Try Free on Voice-to-Proposal.io <ExternalLink className="w-4 h-4" />
+                  Try Free on ProposalAgent.io <ExternalLink className="w-4 h-4" />
                 </a>
                 <Link to="/book" className="btn-secondary">
                   Talk to Sales
@@ -278,7 +278,7 @@ const VoiceToProposal = () => {
                   </div>
 
                   <a 
-                    href="https://voice-to-proposal.io"
+                    href="https://proposalagent.io"
                     target="_blank"
                     rel="noopener noreferrer"
                     className={tier.popular ? 'btn-primary w-full justify-center' : 'btn-secondary w-full justify-center'}
@@ -350,7 +350,7 @@ const VoiceToProposal = () => {
             Join hundreds of professionals who've already cut their proposal time from days to minutes.
           </p>
           <a 
-            href="https://voice-to-proposal.io"
+            href="https://proposalagent.io"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-accent shadow-glow hover:scale-105 transition-all duration-300"
