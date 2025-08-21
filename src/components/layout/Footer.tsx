@@ -16,7 +16,7 @@ const Footer = () => {
               </div>
             </div>
             <p className="text-primary-foreground/80 mb-6 max-w-md">
-              Transforming how businesses generate, engage, and convert clients through premium digital infrastructure and innovative SaaS solutions.
+              At Digni Digital LLC, we don't just build systems — we build reputations, customer trust, and long-term growth engines.
             </p>
             <div className="text-sm text-primary-foreground/60">
               © 2024 Digni Digital LLC. All rights reserved.
@@ -60,10 +60,10 @@ const Footer = () => {
             <ul className="space-y-3">
               <li>
                 <Link 
-                  to="/products/voice-to-proposal" 
+                  to="/products/proposalagent" 
                   className="text-primary-foreground/80 hover:text-primary-foreground transition-colors flex items-center gap-2"
                 >
-                  Voice-to-Proposal
+                  ProposalAgent
                   <span className="badge-new !bg-accent !text-accent-foreground text-xs">NEW</span>
                 </Link>
               </li>

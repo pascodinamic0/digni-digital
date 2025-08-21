@@ -10,18 +10,10 @@ const Header = () => {
 
   return (
     <header className="fixed top-0 w-full bg-white/95 backdrop-blur-lg border-b border-border z-50">
-      {/* Announcement Bar */}
-      <div className="bg-gradient-accent text-accent-foreground py-2 px-4 text-center text-sm font-medium">
-        <span>✨ New: Voice-to-Proposal — turn voice notes into client-ready proposals.</span>
-        <a 
-          href="https://voice-to-proposal.io" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          className="ml-4 underline hover:no-underline font-semibold"
-        >
-          Try it now
-        </a>
-      </div>
+        {/* Announcement Bar */}
+        <div className="bg-gradient-accent text-accent-foreground py-2 px-4 text-center text-sm font-medium">
+          <span>✨ Trusted by Businesses Across Africa & Beyond</span>
+        </div>
 
       <nav className="container-max section-padding !py-4">
         <div className="flex items-center justify-between">
@@ -52,13 +44,13 @@ const Header = () => {
               {isProductsOpen && (
                 <div className="absolute top-full left-0 mt-2 w-64 bg-white shadow-premium-lg rounded-xl border border-border p-4 animate-fade-in">
                   <Link 
-                    to="/products/voice-to-proposal"
+                    to="/products/proposalagent"
                     className="flex items-center gap-3 p-3 rounded-lg hover:bg-muted transition-colors"
                   >
                     <div className="badge-new">NEW</div>
                     <div>
-                      <div className="font-semibold">Voice-to-Proposal</div>
-                      <div className="text-sm text-muted-foreground">Turn voice into proposals</div>
+                      <div className="font-semibold">ProposalAgent</div>
+                      <div className="text-sm text-muted-foreground">Speak. We structure. You send.</div>
                     </div>
                   </Link>
                   <Link 
@@ -71,9 +63,10 @@ const Header = () => {
               )}
             </div>
 
+            <Link to="/industries" className="nav-link">Industries</Link>
             <Link to="/case-studies" className="nav-link">Case Studies</Link>
-            <Link to="/blog" className="nav-link">Blog</Link>
             <Link to="/about" className="nav-link">About</Link>
+            <Link to="/contact" className="nav-link">Contact</Link>
             
             <Link to="/book" className="btn-primary">
               Book Consultation
@@ -95,13 +88,14 @@ const Header = () => {
             <div className="flex flex-col space-y-4 pt-4">
               <Link to="/solutions" className="nav-link">Solutions</Link>
               <Link to="/products" className="nav-link">Products</Link>
-              <Link to="/products/voice-to-proposal" className="nav-link ml-4 flex items-center gap-2">
+              <Link to="/products/proposalagent" className="nav-link ml-4 flex items-center gap-2">
                 <div className="badge-new">NEW</div>
-                Voice-to-Proposal
+                ProposalAgent
               </Link>
+              <Link to="/industries" className="nav-link">Industries</Link>
               <Link to="/case-studies" className="nav-link">Case Studies</Link>
-              <Link to="/blog" className="nav-link">Blog</Link>
               <Link to="/about" className="nav-link">About</Link>
+              <Link to="/contact" className="nav-link">Contact</Link>
               <Link to="/book" className="btn-primary justify-center mt-4">
                 Book Consultation
               </Link>

@@ -20,7 +20,7 @@ const Hero = () => {
           
           {/* Enhanced Subtext */}
           <p className="text-subheading mb-8 max-w-3xl mx-auto text-foreground/90 hero-subtext animate-fade-in leading-relaxed">
-            Strategic partnership that transforms chaos into predictable growth. We build, implement, and scale the systems that drive sustainable revenue for high-growth companies.
+            Outdated systems, scattered tools, missed opportunities — gone. Digni Digital transforms how you generate, engage, and convert clients.
           </p>
           
           {/* Trust Indicator */}
@@ -37,17 +37,21 @@ const Hero = () => {
             <Link 
               to="/book" 
               className="btn-primary-pulse group relative overflow-hidden"
-              aria-label="Book a free strategy session"
+              data-cta="primary" 
+              data-entity="hero"
+              aria-label="Book a consultation"
             >
-              Book a Strategy Session
+              Book a Consultation
               <span className="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></span>
             </Link>
             <Link 
-              to="/solutions" 
+              to="/products" 
               className="btn-secondary group"
-              aria-label="View our strategic solutions"
+              data-cta="secondary" 
+              data-entity="hero"
+              aria-label="Explore our products"
             >
-              Our Solutions
+              Explore Our Products
               <ChevronDown className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
             </Link>
           </div>

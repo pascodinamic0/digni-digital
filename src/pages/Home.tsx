@@ -2,18 +2,16 @@ import { useEffect } from 'react';
 import SEO from '@/components/SEO';
 import { useAnalytics } from '@/hooks/useAnalytics';
 import Hero from '@/components/sections/Hero';
-import ThreeStepValue from '@/components/sections/ThreeStepValue';
-import StrategicServices from '@/components/sections/StrategicServices';
-import PartnershipApproach from '@/components/sections/PartnershipApproach';
-import SocialProof from '@/components/sections/SocialProof';
-import MiniCaseStories from '@/components/sections/MiniCaseStories';
-import InnovationLab from '@/components/sections/InnovationLab';
+import ProblemsSection from '@/components/sections/ProblemsSection';
+import SolutionsSection from '@/components/sections/SolutionsSection';
+import ProductsPreview from '@/components/sections/ProductsPreview';
+import CaseStudies from '@/components/sections/CaseStudies';
 import FullWidthCTA from '@/components/sections/FullWidthCTA';
 
 const Home = () => {
   const { trackPageView } = useAnalytics();
+  
   useEffect(() => {
-    // Track page view
     trackPageView('home', 'Digni Digital LLC - Strategic Business Transformation');
     
     // Set up intersection observer for scroll animations
@@ -30,7 +28,6 @@ const Home = () => {
       rootMargin: '0px 0px -50px 0px'
     });
 
-    // Observe all scroll-reveal elements
     document.querySelectorAll('.scroll-reveal, .fade-in').forEach(el => {
       observer.observe(el);
     });
@@ -41,6 +38,8 @@ const Home = () => {
   return (
     <>
       <SEO 
+        title="We Build Growth Infrastructures That Turn Chaos Into Clients"
+        description="Strategic partnership that transforms chaos into predictable growth. We build, implement, and scale the systems that drive sustainable revenue for high-growth companies."
         structuredData={{
           "@context": "https://schema.org",
           "@type": "Organization",
@@ -55,12 +54,10 @@ const Home = () => {
       />
 
       <Hero />
-      <ThreeStepValue />
-      <StrategicServices />
-      <PartnershipApproach />
-      <SocialProof />
-      <MiniCaseStories />
-      <InnovationLab />
+      <ProblemsSection />
+      <SolutionsSection />
+      <ProductsPreview />
+      <CaseStudies />
       <FullWidthCTA />
     </>
   );
