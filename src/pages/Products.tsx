@@ -3,6 +3,7 @@ import SEO from '@/components/SEO';
 import { useAnalytics } from '@/hooks/useAnalytics';
 import { Link } from 'react-router-dom';
 import { Mic, ExternalLink } from 'lucide-react';
+import ExitIntentModal from '@/components/ExitIntentModal';
 
 const Products = () => {
   const { trackPageView } = useAnalytics();
@@ -16,7 +17,29 @@ const Products = () => {
       <SEO 
         title="Products - Affordable, Scalable Tools That Remove Bottlenecks"
         description="Powerful SaaS tools for every stage of growth. From ProposalAgent to CRM Lite, we build solutions that solve real business problems."
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          "name": "Digni Digital Products",
+          "description": "Business automation and productivity tools",
+          "itemListElement": [
+            {
+              "@type": "SoftwareApplication",
+              "name": "ProposalAgent",
+              "applicationCategory": "BusinessApplication",
+              "operatingSystem": "Web",
+              "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD"
+              },
+              "url": "https://proposalagent.io"
+            }
+          ]
+        }}
       />
+      
+      <ExitIntentModal enabled={true} />
 
       <section className="hero-section-enhanced !min-h-[70vh]">
         <div className="hero-background" />

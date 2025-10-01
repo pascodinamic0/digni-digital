@@ -16,6 +16,46 @@ const Solutions = () => {
       <SEO 
         title="Solutions - We Don't Sell Services. We Build Growth Engines."
         description="Transform your business with our comprehensive growth solutions: lead generation, operational efficiency, customer experience, and global expansion systems."
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "serviceType": "Business Transformation & Growth Infrastructure",
+          "provider": {
+            "@type": "Organization",
+            "name": "Digni Digital LLC"
+          },
+          "areaServed": "Worldwide",
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Digital Transformation Services",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Lead Generation & Growth",
+                  "description": "End-to-end lead generation infrastructure"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Operational Efficiency",
+                  "description": "CRM implementation, workflow automation, and process optimization"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Customer Experience Transformation",
+                  "description": "Journey mapping, messaging automation, and retention systems"
+                }
+              }
+            ]
+          }
+        }}
       />
 
       <section className="hero-section-enhanced !min-h-[70vh]">

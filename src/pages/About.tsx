@@ -1,7 +1,16 @@
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Users, Globe, Award, ArrowRight } from 'lucide-react';
+import SEO from '@/components/SEO';
+import { useAnalytics } from '@/hooks/useAnalytics';
+import MetricsSection from '@/components/sections/MetricsSection';
 
 const About = () => {
+  const { trackPageView } = useAnalytics();
+
+  useEffect(() => {
+    trackPageView('about', 'About - Digni Digital LLC');
+  }, [trackPageView]);
   const differentiators = [
     {
       icon: Users,
@@ -39,6 +48,11 @@ const About = () => {
   ];
 
   return (
+    <>
+      <SEO 
+        title="About - More Than Digital Services, We're Your Transformation Partner"
+        description="7+ years helping businesses across Africa and beyond scale through strategic digital transformation. Harvard-trained, globally connected, locally rooted."
+      />
     <div className="pt-12">
       {/* Hero Section */}
       <section className="section-padding bg-gradient-subtle">
@@ -166,6 +180,7 @@ const About = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 

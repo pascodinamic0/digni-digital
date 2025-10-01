@@ -7,6 +7,7 @@ import SolutionsSection from '@/components/sections/SolutionsSection';
 import ProductsPreview from '@/components/sections/ProductsPreview';
 import CaseStudies from '@/components/sections/CaseStudies';
 import FullWidthCTA from '@/components/sections/FullWidthCTA';
+import MetricsSection from '@/components/sections/MetricsSection';
 
 const Home = () => {
   const { trackPageView } = useAnalytics();
@@ -49,7 +50,11 @@ const Home = () => {
           "foundingDate": "2017",
           "specialty": ["Digital Transformation", "Business Development", "Growth Infrastructure", "Strategic Consulting"],
           "areaServed": "Worldwide",
-          "knowsAbout": ["Digital Transformation", "Growth Infrastructure", "Business Automation", "Strategic Consulting", "Client Acquisition"]
+          "knowsAbout": ["Digital Transformation", "Growth Infrastructure", "Business Automation", "Strategic Consulting", "Client Acquisition"],
+          "sameAs": [
+            "https://www.linkedin.com/company/digni-digital",
+            "https://twitter.com/dignidigital"
+          ]
         }}
       />
 
@@ -57,6 +62,7 @@ const Home = () => {
       <ProblemsSection />
       <SolutionsSection />
       <ProductsPreview />
+      <MetricsSection />
       <CaseStudies />
       <FullWidthCTA />
     </>

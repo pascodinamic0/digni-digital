@@ -1,7 +1,47 @@
-import { Mail, MapPin, Phone } from 'lucide-react';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { Mail, MapPin, Phone, ExternalLink } from 'lucide-react';
+import { useToast } from '@/hooks/use-toast';
+import SEO from '@/components/SEO';
+import { useAnalytics } from '@/hooks/useAnalytics';
+import { useEffect } from 'react';
 
 const Contact = () => {
+  const { toast } = useToast();
+  const { trackPageView } = useAnalytics();
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    subject: 'General Inquiry',
+    message: ''
+  });
+
+  useEffect(() => {
+    trackPageView('contact', 'Contact - Digni Digital LLC');
+  }, [trackPageView]);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    toast({
+      title: "Message Sent!",
+      description: "We'll get back to you within 24 hours.",
+    });
+    setFormData({
+      firstName: '',
+      lastName: '',
+      email: '',
+      subject: 'General Inquiry',
+      message: ''
+    });
+  };
+
   return (
+    <>
+      <SEO 
+        title="Contact Us - Let's Start Your Transformation"
+        description="Ready to transform your business? Get in touch with Digni Digital LLC for strategic consultation, product support, or partnership opportunities."
+      />
     <div className="pt-12">
       <section className="section-padding bg-gradient-subtle">
         <div className="container-max text-center">
@@ -19,20 +59,28 @@ const Contact = () => {
             {/* Contact Form */}
             <div className="card-premium">
               <h2 className="text-heading-3 mb-6">Send Us a Message</h2>
-              <form className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-sm font-medium mb-2">First Name</label>
+                    <label className="block text-sm font-medium mb-2" htmlFor="firstName">First Name *</label>
                     <input
+                      id="firstName"
                       type="text"
+                      required
+                      value={formData.firstName}
+                      onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
                       className="w-full px-4 py-3 border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-accent"
                       placeholder="John"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium mb-2">Last Name</label>
+                    <label className="block text-sm font-medium mb-2" htmlFor="lastName">Last Name *</label>
                     <input
+                      id="lastName"
                       type="text"
+                      required
+                      value={formData.lastName}
+                      onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
                       className="w-full px-4 py-3 border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-accent"
                       placeholder="Doe"
                     />
@@ -40,35 +88,47 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium mb-2">Email</label>
+                  <label className="block text-sm font-medium mb-2" htmlFor="email">Email *</label>
                   <input
+                    id="email"
                     type="email"
+                    required
+                    value={formData.email}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     className="w-full px-4 py-3 border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-accent"
                     placeholder="john@company.com"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium mb-2">Subject</label>
-                  <select className="w-full px-4 py-3 border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-accent">
+                  <label className="block text-sm font-medium mb-2" htmlFor="subject">Subject *</label>
+                  <select 
+                    id="subject"
+                    value={formData.subject}
+                    onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
+                    className="w-full px-4 py-3 border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-accent"
+                  >
                     <option>General Inquiry</option>
                     <option>Consultation Request</option>
                     <option>Product Support</option>
                     <option>Partnership Opportunity</option>
-                    <option>Immo-Connect Updates</option>
                   </select>
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium mb-2">Message</label>
+                  <label className="block text-sm font-medium mb-2" htmlFor="message">Message *</label>
                   <textarea
+                    id="message"
                     rows={6}
-                    className="w-full px-4 py-3 border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-accent"
+                    required
+                    value={formData.message}
+                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                    className="w-full px-4 py-3 border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-accent resize-none"
                     placeholder="Tell us about your project and how we can help..."
                   />
                 </div>
 
-                <button className="btn-primary w-full justify-center">
+                <button type="submit" className="btn-primary w-full justify-center" data-cta="contact-form" data-entity="contact">
                   Send Message
                 </button>
               </form>
@@ -125,18 +185,37 @@ const Contact = () => {
                   Skip the form and schedule a free strategy session right now. 
                   We'll discuss your goals and how we can help.
                 </p>
-                <a 
-                  href="/book"
+                <Link 
+                  to="/book"
                   className="btn-primary w-full justify-center"
+                  data-cta="book-consultation" data-entity="contact"
                 >
                   Book Free Consultation
-                </a>
+                </Link>
+              </div>
+
+              <div className="card-premium bg-accent/5 border-accent/30 mt-6">
+                <h4 className="font-semibold mb-4 flex items-center gap-2">
+                  <ExternalLink className="w-5 h-5 text-accent" />
+                  Prefer to Try a Product First?
+                </h4>
+                <p className="text-muted-foreground mb-6">
+                  Not ready for a consultation? Explore our products and see the kind of solutions we build.
+                </p>
+                <Link 
+                  to="/products"
+                  className="btn-secondary w-full justify-center"
+                  data-cta="explore-products" data-entity="contact"
+                >
+                  Explore Our Products
+                </Link>
               </div>
             </div>
           </div>
         </div>
       </section>
     </div>
+    </>
   );
 };
 
