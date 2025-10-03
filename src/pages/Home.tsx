@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import SEO from '@/components/SEO';
+import StructuredData from '@/components/StructuredData';
 import { useAnalytics } from '@/hooks/useAnalytics';
 import Hero from '@/components/sections/Hero';
 import ProblemsSection from '@/components/sections/ProblemsSection';
@@ -38,6 +39,7 @@ const Home = () => {
 
   return (
     <>
+      <StructuredData type="Organization" />
       <SEO 
         title="We Build Growth Infrastructures That Turn Chaos Into Clients"
         description="Strategic partnership that transforms chaos into predictable growth. We build, implement, and scale the systems that drive sustainable revenue for high-growth companies."

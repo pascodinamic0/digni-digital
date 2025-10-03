@@ -1,6 +1,9 @@
 import { Link } from 'react-router-dom';
+import { useAnalytics } from '@/hooks/useAnalytics';
 
 const FullWidthCTA = () => {
+  const { trackCTAClick } = useAnalytics();
+  
   return (
     <section className="section-padding bg-primary text-primary-foreground relative overflow-hidden">
       {/* Background Pattern */}
@@ -18,6 +21,7 @@ const FullWidthCTA = () => {
         </p>
         <Link 
           to="/book" 
+          onClick={() => trackCTAClick('book_consultation', 'full_width_cta')}
           className="btn-accent shadow-glow hover:scale-105 transition-all duration-300"
           data-cta="primary" 
           data-entity="full-width-cta"

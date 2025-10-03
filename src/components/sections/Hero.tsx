@@ -1,7 +1,10 @@
 import { Link } from 'react-router-dom';
 import { ChevronDown } from 'lucide-react';
+import { useAnalytics } from '@/hooks/useAnalytics';
 
 const Hero = () => {
+  const { trackCTAClick } = useAnalytics();
+  
   return (
     <section className="hero-section-enhanced">
       {/* Enhanced Background with CSS */}
@@ -36,6 +39,7 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center hero-ctas animate-fade-in">
             <Link 
               to="/book" 
+              onClick={() => trackCTAClick('book_consultation', 'hero')}
               className="btn-primary-pulse group relative overflow-hidden"
               data-cta="primary" 
               data-entity="hero"
@@ -46,6 +50,7 @@ const Hero = () => {
             </Link>
             <Link 
               to="/products" 
+              onClick={() => trackCTAClick('explore_products', 'hero')}
               className="btn-secondary group"
               data-cta="secondary" 
               data-entity="hero"

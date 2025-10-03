@@ -4,7 +4,8 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from 'react-helmet-async';
-import Layout from "./components/layout/Layout";
+import Layout from './components/layout/Layout';
+import ExitIntentModal from './components/ExitIntentModal';
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./components/ThemeProvider";
 import { Suspense, lazy } from "react";
@@ -41,6 +42,7 @@ const App = () => (
                 v7_relativeSplatPath: true
               }}
             >
+          <ExitIntentModal enabled={true} />
           <Layout>
             <Suspense fallback={
               <div className="min-h-screen flex items-center justify-center">

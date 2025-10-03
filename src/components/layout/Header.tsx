@@ -1,12 +1,18 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X, ChevronDown, Moon, Sun } from 'lucide-react';
+import { useTheme } from '@/components/ThemeProvider';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isProductsOpen, setIsProductsOpen] = useState(false);
+  const { theme, setTheme } = useTheme();
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  
+  const toggleTheme = () => {
+    setTheme(theme === 'dark' ? 'light' : 'dark');
+  };
 
   return (
     <header className="fixed top-0 w-full bg-white/95 backdrop-blur-lg border-b border-border z-50">
@@ -68,6 +74,18 @@ const Header = () => {
             <Link to="/about" className="nav-link">About</Link>
             <Link to="/contact" className="nav-link">Contact</Link>
             
+            <button
+              onClick={toggleTheme}
+              className="p-2 rounded-lg hover:bg-muted transition-colors"
+              aria-label="Toggle theme"
+            >
+              {theme === 'dark' ? (
+                <Sun className="w-5 h-5 text-foreground" />
+              ) : (
+                <Moon className="w-5 h-5 text-foreground" />
+              )}
+            </button>
+            
             <Link to="/book" className="btn-primary">
               Book Consultation
             </Link>
@@ -96,6 +114,22 @@ const Header = () => {
               <Link to="/case-studies" className="nav-link">Case Studies</Link>
               <Link to="/about" className="nav-link">About</Link>
               <Link to="/contact" className="nav-link">Contact</Link>
+              <button
+                onClick={toggleTheme}
+                className="nav-link flex items-center gap-2"
+              >
+                {theme === 'dark' ? (
+                  <>
+                    <Sun className="w-5 h-5" />
+                    Light Mode
+                  </>
+                ) : (
+                  <>
+                    <Moon className="w-5 h-5" />
+                    Dark Mode
+                  </>
+                )}
+              </button>
               <Link to="/book" className="btn-primary justify-center mt-4">
                 Book Consultation
               </Link>

@@ -1,199 +1,308 @@
-import { Link } from 'react-router-dom';
-import { CheckCircle, Clock, Shield } from 'lucide-react';
+import { useState } from 'react';
+import { Calendar, Clock, Video, Phone, MessageSquare, CheckCircle2, ArrowRight } from 'lucide-react';
+import Layout from '@/components/layout/Layout';
+import SEO from '@/components/SEO';
+import { useAnalytics } from '@/hooks/useAnalytics';
 
 const Book = () => {
-  const benefits = [
+  const { trackFormSubmission, trackClick } = useAnalytics();
+  const [selectedService, setSelectedService] = useState<string>('consultation');
+  const [selectedTime, setSelectedTime] = useState<string>('');
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    company: '',
+    message: ''
+  });
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const services = [
     {
-      icon: CheckCircle,
-      title: 'Free Strategic Audit',
-      description: 'We\'ll identify the top 3 bottlenecks holding back your growth'
+      id: 'consultation',
+      name: 'Free Strategy Consultation',
+      duration: '30 minutes',
+      icon: MessageSquare,
+      description: 'Discuss your business challenges and explore potential solutions',
+      color: 'from-primary to-accent'
     },
     {
-      icon: Clock,
-      title: '90-Day Roadmap',
-      description: 'Walk away with a clear, actionable plan for the next 90 days'
+      id: 'demo',
+      name: 'Product Demo',
+      duration: '45 minutes',
+      icon: Video,
+      description: 'See ProposalAgent and our tools in action with a personalized walkthrough',
+      color: 'from-accent to-emerald'
     },
     {
-      icon: Shield,
-      title: 'No Pressure, No Pitch',
-      description: 'This is about understanding your business, not selling you something'
+      id: 'technical',
+      name: 'Technical Deep Dive',
+      duration: '60 minutes',
+      icon: Phone,
+      description: 'In-depth technical discussion with our engineering team',
+      color: 'from-emerald to-primary'
     }
   ];
 
-  return (
-    <div className="pt-12">
-      {/* Hero Section */}
-      <section className="section-padding bg-gradient-subtle">
-        <div className="container-max">
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-heading-1 mb-8">
-              Your Business, Transformed in 90 Days.
+  const timeSlots = [
+    '9:00 AM', '10:00 AM', '11:00 AM', '1:00 PM', '2:00 PM', '3:00 PM', '4:00 PM'
+  ];
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    trackFormSubmission('booking_form', true);
+    setIsSubmitted(true);
+    
+    // In production, this would integrate with a calendar API
+    console.log('Booking submitted:', { ...formData, selectedService, selectedTime });
+  };
+
+  if (isSubmitted) {
+    return (
+      <Layout>
+        <SEO 
+          title="Booking Confirmed - Thank You"
+          description="Your consultation has been scheduled. We look forward to speaking with you."
+        />
+        <div className="min-h-screen flex items-center justify-center bg-gradient-subtle px-6">
+          <div className="max-w-2xl mx-auto text-center animate-scale-in">
+            <div className="w-20 h-20 bg-gradient-accent rounded-full flex items-center justify-center mx-auto mb-6">
+              <CheckCircle2 className="w-10 h-10 text-accent-foreground" />
+            </div>
+            <h1 className="text-heading-1 mb-6">
+              You're All Set! 🎉
             </h1>
-            <p className="text-subheading mb-12">
-              Start with a free consultation. Walk away with clarity and a roadmap — no fluff, no pressure, just actionable insights that drive real growth.
+            <p className="text-body-large mb-8">
+              We've received your booking request and will send a confirmation email shortly with:
+            </p>
+            <div className="bg-card rounded-xl p-8 mb-8 text-left">
+              <ul className="space-y-4">
+                <li className="flex items-start gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-accent flex-shrink-0 mt-1" />
+                  <span>Calendar invite with video meeting link</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-accent flex-shrink-0 mt-1" />
+                  <span>Meeting agenda and preparation materials</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-accent flex-shrink-0 mt-1" />
+                  <span>Direct contact information for your consultant</span>
+                </li>
+              </ul>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a href="/" className="btn-primary">
+                Return Home
+              </a>
+              <a href="/products" className="btn-secondary">
+                Explore Products
+              </a>
+            </div>
+          </div>
+        </div>
+      </Layout>
+    );
+  }
+
+  return (
+    <Layout>
+      <SEO 
+        title="Book a Consultation - Schedule Your Free Strategy Session"
+        description="Schedule a free consultation with Digni Digital. Discuss your business challenges, see product demos, or dive deep into technical solutions."
+      />
+      
+      <div className="bg-gradient-subtle py-20">
+        <div className="container-max px-6">
+          {/* Header */}
+          <div className="max-w-3xl mx-auto text-center mb-16">
+            <h1 className="text-heading-1 mb-6 animate-fade-in">
+              Book Your Free Consultation
+            </h1>
+            <p className="text-body-large animate-fade-in" style={{ animationDelay: '100ms' }}>
+              Choose a time that works for you. No commitment required, just a conversation about 
+              how we can help transform your business.
             </p>
           </div>
-        </div>
-      </section>
 
-      {/* Benefits */}
-      <section className="section-padding">
-        <div className="container-max">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
-            {benefits.map((benefit, index) => (
-              <div 
-                key={benefit.title}
-                className="card-premium text-center"
-                style={{ animationDelay: `${index * 200}ms` }}
-              >
-                <div className="w-16 h-16 bg-gradient-hero rounded-xl flex items-center justify-center mx-auto mb-6">
-                  <benefit.icon className="w-8 h-8 text-primary-foreground" />
-                </div>
-                <h3 className="text-heading-3 mb-4">{benefit.title}</h3>
-                <p className="text-body-large">{benefit.description}</p>
-              </div>
-            ))}
+          {/* Service Selection */}
+          <div className="max-w-5xl mx-auto mb-12">
+            <h2 className="text-heading-3 mb-8 text-center">What would you like to discuss?</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {services.map((service, index) => (
+                <button
+                  key={service.id}
+                  onClick={() => {
+                    setSelectedService(service.id);
+                    trackClick(`service_${service.id}`, 'booking_form');
+                  }}
+                  className={`card-hover-lift text-left transition-all duration-300 ${
+                    selectedService === service.id 
+                      ? 'ring-2 ring-accent shadow-glow' 
+                      : 'hover:ring-1 hover:ring-border'
+                  }`}
+                  style={{ animationDelay: `${index * 100}ms` }}
+                >
+                  <div className={`w-12 h-12 bg-gradient-to-br ${service.color} rounded-lg flex items-center justify-center mb-4`}>
+                    <service.icon className="w-6 h-6 text-white" />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2">{service.name}</h3>
+                  <div className="flex items-center gap-2 text-sm text-muted-foreground mb-3">
+                    <Clock className="w-4 h-4" />
+                    <span>{service.duration}</span>
+                  </div>
+                  <p className="text-sm text-muted-foreground">{service.description}</p>
+                </button>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
 
-      {/* Booking Form Section */}
-      <section className="section-padding bg-muted">
-        <div className="container-max">
+          {/* Booking Form */}
           <div className="max-w-4xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-              {/* Left Side - Form Info */}
-              <div>
-                <h2 className="text-heading-2 mb-8">
-                  Book Your Free Strategy Session
-                </h2>
-                
-                <div className="space-y-6 mb-8">
-                  <div className="flex gap-4">
-                    <div className="w-6 h-6 bg-accent rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                      <span className="text-xs font-bold text-accent-foreground">1</span>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold mb-2">Discovery Call (30 minutes)</h4>
-                      <p className="text-muted-foreground">We'll understand your business, challenges, and growth goals.</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex gap-4">
-                    <div className="w-6 h-6 bg-accent rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                      <span className="text-xs font-bold text-accent-foreground">2</span>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold mb-2">Strategic Analysis</h4>
-                      <p className="text-muted-foreground">We'll identify key bottlenecks and opportunity areas.</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex gap-4">
-                    <div className="w-6 h-6 bg-accent rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                      <span className="text-xs font-bold text-accent-foreground">3</span>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold mb-2">Custom Roadmap</h4>
-                      <p className="text-muted-foreground">You'll receive a tailored 90-day action plan.</p>
-                    </div>
+            <div className="bg-card rounded-2xl shadow-premium-lg p-8 md:p-12">
+              <form onSubmit={handleSubmit} className="space-y-8">
+                {/* Time Selection */}
+                <div>
+                  <label className="block text-sm font-medium mb-4">
+                    <Calendar className="w-5 h-5 inline mr-2" />
+                    Select Your Preferred Time
+                  </label>
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                    {timeSlots.map((time) => (
+                      <button
+                        key={time}
+                        type="button"
+                        onClick={() => setSelectedTime(time)}
+                        className={`py-3 px-4 rounded-lg border transition-all ${
+                          selectedTime === time
+                            ? 'border-accent bg-accent/10 text-accent font-medium'
+                            : 'border-border hover:border-accent/50'
+                        }`}
+                      >
+                        {time}
+                      </button>
+                    ))}
                   </div>
                 </div>
 
-                <div className="bg-white p-6 rounded-xl border border-accent/20">
-                  <h4 className="font-semibold mb-4 text-primary">What to Expect</h4>
-                  <ul className="space-y-2 text-sm text-muted-foreground">
-                    <li>• Deep-dive into your current systems and processes</li>
-                    <li>• Identification of your biggest growth blockers</li>
-                    <li>• Custom recommendations based on your industry</li>
-                    <li>• Clear next steps with timelines and priorities</li>
-                    <li>• Optional discussion of how we can help implement</li>
-                  </ul>
-                </div>
-              </div>
-
-              {/* Right Side - Embedded Booking Form */}
-              <div className="card-premium bg-white">
-                <div className="text-center mb-8">
-                  <h3 className="text-heading-3 mb-4">Schedule Your Session</h3>
-                  <p className="text-muted-foreground">Choose a time that works best for you</p>
-                </div>
-
-                {/* Placeholder for GoHighLevel booking form */}
-                <div className="bg-gradient-subtle rounded-xl p-12 text-center border border-border">
-                  <div className="w-16 h-16 bg-gradient-hero rounded-full flex items-center justify-center mx-auto mb-6">
-                    <Clock className="w-8 h-8 text-primary-foreground" />
+                {/* Contact Information */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label htmlFor="name" className="block text-sm font-medium mb-2">
+                      Full Name *
+                    </label>
+                    <input
+                      id="name"
+                      type="text"
+                      required
+                      value={formData.name}
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
+                      placeholder="John Smith"
+                    />
                   </div>
-                  <h4 className="text-xl font-semibold mb-4">Booking Form Integration</h4>
-                  <p className="text-muted-foreground mb-6">
-                    This section will contain the embedded GoHighLevel booking form for seamless appointment scheduling.
-                  </p>
-                  <div className="bg-white rounded-lg p-4 border border-border">
-                    <p className="text-sm text-muted-foreground italic">
-                      [GoHighLevel Booking Widget will be embedded here]
-                    </p>
+                  <div>
+                    <label htmlFor="email" className="block text-sm font-medium mb-2">
+                      Email Address *
+                    </label>
+                    <input
+                      id="email"
+                      type="email"
+                      required
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
+                      placeholder="john@company.com"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="phone" className="block text-sm font-medium mb-2">
+                      Phone Number
+                    </label>
+                    <input
+                      id="phone"
+                      type="tel"
+                      value={formData.phone}
+                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                      className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
+                      placeholder="+1 (555) 000-0000"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="company" className="block text-sm font-medium mb-2">
+                      Company Name
+                    </label>
+                    <input
+                      id="company"
+                      type="text"
+                      value={formData.company}
+                      onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                      className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
+                      placeholder="Your Company"
+                    />
                   </div>
                 </div>
-              </div>
+
+                <div>
+                  <label htmlFor="message" className="block text-sm font-medium mb-2">
+                    What would you like to discuss? (Optional)
+                  </label>
+                  <textarea
+                    id="message"
+                    rows={4}
+                    value={formData.message}
+                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                    className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
+                    placeholder="Tell us about your business challenges, goals, or specific questions..."
+                  />
+                </div>
+
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <button
+                    type="submit"
+                    disabled={!selectedTime}
+                    className="btn-accent flex-1 justify-center shadow-glow disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    Confirm Booking
+                    <ArrowRight className="w-5 h-5" />
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => window.history.back()}
+                    className="btn-ghost flex-1 justify-center"
+                  >
+                    Go Back
+                  </button>
+                </div>
+
+                <p className="text-xs text-muted-foreground text-center">
+                  By booking, you agree to our{' '}
+                  <a href="/terms" className="text-accent hover:underline">Terms of Service</a>
+                  {' '}and{' '}
+                  <a href="/privacy" className="text-accent hover:underline">Privacy Policy</a>
+                </p>
+              </form>
+            </div>
+          </div>
+
+          {/* Trust Signals */}
+          <div className="max-w-4xl mx-auto mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+            <div>
+              <div className="text-4xl font-bold text-accent mb-2">100%</div>
+              <p className="text-sm text-muted-foreground">Free Consultation</p>
+            </div>
+            <div>
+              <div className="text-4xl font-bold text-accent mb-2">24h</div>
+              <p className="text-sm text-muted-foreground">Response Time</p>
+            </div>
+            <div>
+              <div className="text-4xl font-bold text-accent mb-2">No</div>
+              <p className="text-sm text-muted-foreground">Obligations or Commitments</p>
             </div>
           </div>
         </div>
-      </section>
-
-      {/* Trust Indicators */}
-      <section className="section-padding">
-        <div className="container-max text-center">
-          <div className="max-w-2xl mx-auto">
-            <h3 className="text-heading-3 mb-8">Trusted by Leaders Across Industries</h3>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-              <div className="bg-white p-6 rounded-xl shadow-premium border border-border">
-                <div className="text-3xl font-bold text-primary mb-2">7+</div>
-                <div className="text-sm text-muted-foreground">Years Experience</div>
-              </div>
-              <div className="bg-white p-6 rounded-xl shadow-premium border border-border">
-                <div className="text-3xl font-bold text-accent mb-2">100+</div>
-                <div className="text-sm text-muted-foreground">Businesses Transformed</div>
-              </div>
-              <div className="bg-white p-6 rounded-xl shadow-premium border border-border">
-                <div className="text-3xl font-bold text-emerald mb-2">95%</div>
-                <div className="text-sm text-muted-foreground">Client Satisfaction</div>
-              </div>
-            </div>
-
-            <div className="bg-muted p-6 rounded-xl">
-              <h4 className="font-semibold mb-4 flex items-center justify-center gap-2">
-                <Shield className="w-5 h-5 text-emerald" />
-                Your Privacy is Protected
-              </h4>
-              <p className="text-sm text-muted-foreground">
-                All consultation discussions are confidential. We respect your business privacy 
-                and will never share your information without explicit permission.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Alternative CTA */}
-      <section className="section-padding bg-primary text-primary-foreground">
-        <div className="container-max text-center">
-          <h2 className="text-heading-2 mb-8">
-            Prefer to Try a Product First?
-          </h2>
-          <p className="text-subheading mb-12 max-w-3xl mx-auto opacity-90">
-            Not ready for a full consultation? Start by exploring our products and see 
-            the kind of solutions we build to eliminate business friction.
-          </p>
-          <Link 
-            to="/products" 
-            className="btn-accent shadow-glow hover:scale-105 transition-all duration-300"
-          >
-            Explore Our Products
-          </Link>
-        </div>
-      </section>
-    </div>
+      </div>
+    </Layout>
   );
 };
 
