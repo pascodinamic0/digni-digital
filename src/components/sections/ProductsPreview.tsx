@@ -57,7 +57,7 @@ const ProductsPreview = () => {
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <a 
-                  href="https://proposalagent.io" 
+                  href="https://www.voicetoproposal.ai" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="btn-primary flex items-center gap-2"
@@ -67,14 +67,16 @@ const ProductsPreview = () => {
                   Try ProposalAgent
                   <ExternalLink className="w-4 h-4" />
                 </a>
-                <Link 
-                  to="/products/proposalagent" 
+                <a 
+                  href="https://www.voicetoproposal.ai" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
                   className="btn-secondary"
                   data-cta="secondary" 
                   data-entity="products-preview"
                 >
                   Learn More
-                </Link>
+                </a>
               </div>
             </div>
           </div>

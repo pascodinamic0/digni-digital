@@ -33,7 +33,7 @@ const Products = () => {
                 "price": "0",
                 "priceCurrency": "USD"
               },
-              "url": "https://proposalagent.io"
+              "url": "https://www.voicetoproposal.ai"
             }
           ]
         }}
@@ -53,7 +53,7 @@ const Products = () => {
             Even if you can't hire us directly, you can still grow with our tools.
           </p>
           <a 
-            href="https://proposalagent.io" 
+            href="https://www.voicetoproposal.ai" 
             target="_blank" 
             rel="noopener noreferrer"
             className="btn-primary flex items-center gap-2 mx-auto w-fit"
@@ -79,14 +79,21 @@ const Products = () => {
             </div>
             <div className="flex gap-4">
               <a 
-                href="https://proposalagent.io" 
+                href="https://www.voicetoproposal.ai" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="btn-primary flex items-center gap-2"
               >
                 Try ProposalAgent <ExternalLink className="w-4 h-4" />
               </a>
-              <Link to="/products/proposalagent" className="btn-secondary">Learn More</Link>
+              <a 
+                href="https://www.voicetoproposal.ai" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="btn-secondary"
+              >
+                Learn More
+              </a>
             </div>
           </div>
 
