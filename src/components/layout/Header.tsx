@@ -37,7 +37,7 @@ const Header = () => {
   }, []);
 
   return (
-    <header className="fixed top-0 w-full bg-white/95 backdrop-blur-lg border-b border-border z-50">
+    <header className="fixed top-0 w-full bg-background/90 backdrop-blur-lg border-b border-border z-50">
         {/* Announcement Bar */}
         <div className="bg-gradient-accent text-accent-foreground py-2 px-4 text-center text-sm font-medium">
           <span>✨ Trusted by Businesses Across Africa & Beyond</span>
