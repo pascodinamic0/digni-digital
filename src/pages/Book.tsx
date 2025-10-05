@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { Calendar, Clock, Video, Phone, MessageSquare, CheckCircle2, ArrowRight } from 'lucide-react';
-import Layout from '@/components/layout/Layout';
 import SEO from '@/components/SEO';
 import { useAnalytics } from '@/hooks/useAnalytics';
 
@@ -59,7 +58,7 @@ const Book = () => {
 
   if (isSubmitted) {
     return (
-      <Layout>
+      <>
         <SEO 
           title="Booking Confirmed - Thank You"
           description="Your consultation has been scheduled. We look forward to speaking with you."
@@ -101,13 +100,13 @@ const Book = () => {
             </div>
           </div>
         </div>
-      </Layout>
+      </>
     );
   }
 
   return (
-    <Layout>
-      <SEO 
+    <>
+      <SEO
         title="Book a Consultation - Schedule Your Free Strategy Session"
         description="Schedule a free consultation with Digni Digital. Discuss your business challenges, see product demos, or dive deep into technical solutions."
       />
@@ -302,7 +301,7 @@ const Book = () => {
           </div>
         </div>
       </div>
-    </Layout>
+    </>
   );
 };
 

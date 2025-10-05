@@ -35,7 +35,7 @@ const ExitIntentModal = ({ enabled = true }: ExitIntentModalProps) => {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm animate-fade-in">
-      <div className="relative bg-white rounded-2xl shadow-premium-lg max-w-lg mx-4 p-8 animate-scale-in">
+      <div className="relative bg-card rounded-2xl shadow-premium-lg max-w-lg mx-4 p-8 animate-scale-in">
         {/* Close Button */}
         <button
           onClick={() => setIsVisible(false)}
