@@ -172,9 +172,10 @@ const Contact = () => {
                     <MapPin className="w-6 h-6 text-emerald-foreground" />
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-2">Global Reach</h4>
-                    <p className="text-muted-foreground">Africa-based, globally connected</p>
-                    <p className="text-sm text-muted-foreground">Serving clients across emerging markets</p>
+                    <h4 className="font-semibold mb-2">Our Office</h4>
+                    <p className="text-muted-foreground">30 N Gould St Ste R</p>
+                    <p className="text-muted-foreground">Sheridan, WY 82801</p>
+                    <p className="text-sm text-muted-foreground mt-1">Serving clients globally</p>
                   </div>
                 </div>
               </div>

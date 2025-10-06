@@ -18,6 +18,10 @@ const Footer = () => {
             <p className="text-primary-foreground/80 mb-6 max-w-md">
               At Digni Digital LLC, we don't just build systems — we build reputations, customer trust, and long-term growth engines.
             </p>
+            <div className="text-sm text-primary-foreground/70 mb-4">
+              <p className="mb-1">30 N Gould St Ste R</p>
+              <p>Sheridan, WY 82801</p>
+            </div>
             <div className="text-sm text-primary-foreground/60">
               © 2024 Digni Digital LLC. All rights reserved.
             </div>

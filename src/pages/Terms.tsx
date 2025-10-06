@@ -171,8 +171,13 @@ const Terms = () => {
                 <h3 className="text-heading-3 mb-4">Governing Law</h3>
                 <div className="space-y-4 text-sm text-muted-foreground">
                   <p>
-                    These terms are governed by the laws of the jurisdiction where 
+                    These terms are governed by the laws of Wyoming, United States, where 
                     Digni Digital LLC is registered.
+                  </p>
+                  <p className="font-semibold text-foreground">
+                    Digni Digital LLC<br />
+                    30 N Gould St Ste R<br />
+                    Sheridan, WY 82801
                   </p>
                   <p>
                     Disputes will be resolved through binding arbitration before 
@@ -216,6 +221,11 @@ const Terms = () => {
               We believe in transparent relationships. If you have questions about these terms 
               or need clarification on any aspect, please reach out.
             </p>
+            <div className="text-sm text-muted-foreground mb-6">
+              <p className="font-semibold mb-2">Digni Digital LLC</p>
+              <p>30 N Gould St Ste R</p>
+              <p>Sheridan, WY 82801</p>
+            </div>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <Link to="/contact" className="btn-primary">
                 Contact Us

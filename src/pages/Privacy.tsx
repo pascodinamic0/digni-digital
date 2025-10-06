@@ -173,6 +173,11 @@ const Privacy = () => {
               We're committed to transparency. If you have questions about our privacy practices 
               or want to exercise your data rights, we're here to help.
             </p>
+            <div className="text-sm text-muted-foreground mb-6">
+              <p className="font-semibold mb-2">Digni Digital LLC</p>
+              <p>30 N Gould St Ste R</p>
+              <p>Sheridan, WY 82801</p>
+            </div>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <Link to="/contact" className="btn-primary">
                 Contact Us
