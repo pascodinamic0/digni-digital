@@ -99,7 +99,7 @@ const VoiceToProposal = () => {
             <div>
               <h1 className="text-heading-1 mb-6">ProposalAgent</h1>
               <p className="text-subheading mb-8">
-                Turn voice notes into client-ready proposals — structured, branded, and ready to send.
+                Turn voice notes into client-ready proposals. Structured, branded, and ready to send.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-6 mb-8">

@@ -3,7 +3,7 @@ import { Star } from 'lucide-react';
 const SocialProof = () => {
   const testimonials = [
     {
-      quote: "Digni Digital didn't just consult — they transformed our entire business model. Revenue increased 300% in 8 months.",
+      quote: "Digni Digital didn't just consult. They transformed our entire business model. Revenue increased 300% in 8 months.",
       author: "Dr. Sarah Mitchell",
       role: "CEO, Premier Medical Group",
       rating: 5

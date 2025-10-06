@@ -14,7 +14,7 @@ const FullWidthCTA = () => {
 
       <div className="container-max text-center relative z-10">
         <h2 className="text-heading-1 mb-8">
-          Your next 90 days could be your breakthrough — let's map it out.
+          Your next 90 days could be your breakthrough. Let's map it out.
         </h2>
         <p className="text-subheading mb-12 max-w-3xl mx-auto opacity-90">
           Stop chasing quick fixes. Start building the growth infrastructure that transforms chaos into predictable client acquisition.

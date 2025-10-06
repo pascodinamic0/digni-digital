@@ -34,7 +34,7 @@ const StrategicServices = () => {
       <div className="container-max">
         <div className="text-center mb-16">
           <h2 className="text-heading-2 mb-6">
-            We Don't Just Consult — We Transform Your Business
+            We Don't Just Consult. We Transform Your Business
           </h2>
           <p className="text-subheading max-w-3xl mx-auto">
             Strategic partnership that goes beyond advice. We build, implement, and scale the systems that drive sustainable growth.

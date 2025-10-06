@@ -16,7 +16,7 @@ const PartnershipApproach = () => {
     {
       icon: TrendingUp,
       title: 'Long-Term Partnership',
-      description: 'Not just projects — sustainable growth partnerships that evolve with your business.'
+      description: 'Not just projects. Sustainable growth partnerships that evolve with your business.'
     }
   ];
 

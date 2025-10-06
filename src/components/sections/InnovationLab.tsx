@@ -11,7 +11,7 @@ const InnovationLab = () => {
             We Build The Tools We Use
           </h2>
           <p className="text-subheading max-w-2xl mx-auto">
-            Our proprietary solutions are born from real client needs — tested, refined, and proven in the field.
+            Our proprietary solutions are born from real client needs. Tested, refined, and proven in the field.
           </p>
         </div>
 

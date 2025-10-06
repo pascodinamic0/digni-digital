@@ -34,7 +34,7 @@ const SolutionsSection = () => {
             Our Solutions
           </h2>
           <p className="text-subheading max-w-3xl mx-auto scroll-reveal">
-            We don't just fix problems — we build growth engines that transform your entire business
+            We don't just fix problems. We build growth engines that transform your entire business
           </p>
         </div>
 

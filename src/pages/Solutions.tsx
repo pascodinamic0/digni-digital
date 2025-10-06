@@ -81,7 +81,7 @@ const Solutions = () => {
               Comprehensive Growth Infrastructure
             </h2>
             <p className="text-subheading max-w-3xl mx-auto scroll-reveal">
-              We don't just fix problems — we build complete systems that transform your business operations
+              We don't just fix problems. We build complete systems that transform your business operations
             </p>
           </div>
 

@@ -8,10 +8,10 @@ const ProductSpotlight = () => {
         <div className="text-center mb-16">
           <div className="badge-new mb-4">Our Products</div>
           <h2 className="text-heading-2 mb-6">
-            We Don't Just Consult — We Build SaaS That Solves Real Problems.
+            We Don't Just Consult. We Build SaaS That Solves Real Problems.
           </h2>
           <p className="text-subheading max-w-3xl mx-auto">
-            Meet the tools we use — and ship — to eliminate friction and accelerate growth.
+            Meet the tools we use and ship to eliminate friction and accelerate growth.
           </p>
         </div>
 
@@ -34,7 +34,7 @@ const ProductSpotlight = () => {
               </div>
               
               <p className="text-body-large mb-8">
-                Speak. We structure. You send. Proposals in minutes — not days.
+                Speak. We structure. You send. Proposals in minutes, not days.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4">

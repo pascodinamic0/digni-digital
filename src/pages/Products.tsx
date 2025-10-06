@@ -73,7 +73,7 @@ const Products = () => {
               </div>
               <div>
                 <h3 className="text-2xl font-bold text-foreground">ProposalAgent</h3>
-                <p className="text-accent font-semibold">Speak. We structure. You send. Proposals in minutes — not days.</p>
+                <p className="text-accent font-semibold">Speak. We structure. You send. Proposals in minutes, not days.</p>
               </div>
               <span className="badge-new">NEW</span>
             </div>

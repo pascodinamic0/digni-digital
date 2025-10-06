@@ -120,7 +120,7 @@ const Blog = () => {
                   </div>
                   <h4 className="font-semibold text-lg mb-2">Featured Insight</h4>
                   <p className="text-muted-foreground text-sm">
-                    Digital transformation isn't optional anymore—it's survival
+                    Digital transformation isn't optional anymore. It's survival
                   </p>
                 </div>
               </div>

@@ -23,7 +23,7 @@ const Hero = () => {
           
           {/* Enhanced Subtext */}
           <p className="text-subheading mb-8 max-w-3xl mx-auto text-foreground/90 hero-subtext animate-fade-in leading-relaxed">
-            Outdated systems, scattered tools, missed opportunities — gone. Digni Digital transforms how you generate, engage, and convert clients.
+            Outdated systems, scattered tools, missed opportunities? Gone. Digni Digital transforms how you generate, engage, and convert clients.
           </p>
           
           {/* Trust Indicator */}

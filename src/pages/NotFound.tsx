@@ -58,7 +58,7 @@ const NotFound = () => {
               </h2>
               <p className="text-body-large mb-8">
                 The page you're looking for might have been moved, deleted, or never existed. 
-                But don't worry — we have plenty of other valuable resources for you.
+                But don't worry. We have plenty of other valuable resources for you.
               </p>
               
               {/* Search Suggestion */}

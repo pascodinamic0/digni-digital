@@ -22,7 +22,7 @@ const OnePercentDaily = () => {
   const { trackPageView, trackCTAClick } = useAnalytics();
 
   useEffect(() => {
-    trackPageView('onepercent-daily', 'OnePercent Daily — Daily Plans, Red Flags, and Auto Reports');
+    trackPageView('onepercent-daily', 'OnePercent Daily: Daily Plans, Red Flags, and Auto Reports');
   }, [trackPageView]);
 
   const howItWorksSteps = [
@@ -56,7 +56,7 @@ const OnePercentDaily = () => {
     {
       icon: Calendar,
       title: 'Team cutoff planning',
-      description: 'Configurable by department—set your own daily deadline'
+      description: 'Configurable by department. Set your own daily deadline'
     },
     {
       icon: CheckCircle,
@@ -86,7 +86,7 @@ const OnePercentDaily = () => {
     {
       icon: FileText,
       title: 'Weekly & monthly reports',
-      description: 'Auto-generated PDF/CSV—zero manual work'
+      description: 'Auto-generated PDF/CSV. Zero manual work'
     },
     {
       icon: Globe,
@@ -181,7 +181,7 @@ const OnePercentDaily = () => {
     },
     {
       question: 'Will this feel like surveillance?',
-      answer: 'No. No screen tracking or keylogging. Only what staff enter. Proof can be required per task type—your choice.'
+      answer: 'No. No screen tracking or keylogging. Only what staff enter. Proof can be required per task type, your choice.'
     },
     {
       question: 'Can we set our own time limits?',
@@ -200,7 +200,7 @@ const OnePercentDaily = () => {
   return (
     <>
       <SEO 
-        title="OnePercent Daily — Daily Plans, Red Flags, and Auto Reports"
+        title="OnePercent Daily: Daily Plans, Red Flags, and Auto Reports"
         description="Plan by 10:00, finish by 17:00. Red flags for delays, manager summaries, and automatic monthly reports."
         keywords="daily task app for teams, red list tasks, SLA task tracking, WhatsApp task check-ins, daily cutoff planning"
         structuredData={{
@@ -388,7 +388,7 @@ const OnePercentDaily = () => {
                 <h2 className="text-heading-2 mb-6">Red List & SLAs</h2>
                 <h3 className="text-heading-3 mb-4 text-destructive">Make carryovers visible.</h3>
                 <p className="text-body-large mb-6">
-                  Set fair time limits per department and task type. When an item exceeds the limit, the system flags it and escalates to the right manager—using your business hours and holidays.
+                  Set fair time limits per department and task type. When an item exceeds the limit, the system flags it and escalates to the right manager using your business hours and holidays.
                 </p>
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
@@ -409,7 +409,7 @@ const OnePercentDaily = () => {
                     <CheckCircle className="w-6 h-6 text-success mt-1" />
                     <div>
                       <p className="font-semibold">Fair and flexible</p>
-                      <p className="text-sm text-muted-foreground">Configure per department and task type—your rules, your way</p>
+                      <p className="text-sm text-muted-foreground">Configure per department and task type. Your rules, your way</p>
                     </div>
                   </div>
                 </div>
@@ -589,7 +589,7 @@ const OnePercentDaily = () => {
               <div className="card-premium">
                 <Download className="w-12 h-12 text-primary mx-auto mb-4" />
                 <h3 className="font-semibold mb-2">Full Data Export</h3>
-                <p className="text-sm text-muted-foreground">CSV, PDF, JSON—your data, your way</p>
+                <p className="text-sm text-muted-foreground">CSV, PDF, JSON. Your data, your way</p>
               </div>
               <div className="card-premium">
                 <Shield className="w-12 h-12 text-primary mx-auto mb-4" />
@@ -599,7 +599,7 @@ const OnePercentDaily = () => {
               <div className="card-premium">
                 <CheckCircle className="w-12 h-12 text-primary mx-auto mb-4" />
                 <h3 className="font-semibold mb-2">Privacy First</h3>
-                <p className="text-sm text-muted-foreground">No tracking, no surveillance—just work</p>
+                <p className="text-sm text-muted-foreground">No tracking, no surveillance. Just work</p>
               </div>
             </div>
           </div>
@@ -611,7 +611,7 @@ const OnePercentDaily = () => {
             <div className="text-center mb-12">
               <h2 className="text-heading-2 mb-6">Start a 4-week pilot</h2>
               <p className="text-xl mb-8 max-w-3xl mx-auto opacity-90">
-                See if daily discipline makes your team 1% better. No long-term commitment—just real results.
+                See if daily discipline makes your team 1% better. No long-term commitment. Just real results.
               </p>
             </div>
             

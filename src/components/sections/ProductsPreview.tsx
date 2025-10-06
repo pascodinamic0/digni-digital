@@ -10,7 +10,7 @@ const ProductsPreview = () => {
             Our Products
           </div>
           <h2 className="text-heading-1 mb-6 scroll-reveal">
-            We don't just consult — we build SaaS that solves real problems.
+            We don't just consult. We build SaaS that solves real problems.
           </h2>
           <p className="text-subheading max-w-3xl mx-auto scroll-reveal">
             Powerful, affordable tools for every stage of growth.
@@ -31,13 +31,13 @@ const ProductsPreview = () => {
                     <span className="badge-new">NEW</span>
                   </div>
                   <p className="text-accent font-semibold">
-                    Speak. We structure. You send. Proposals in minutes — not days.
+                    Speak. We structure. You send. Proposals in minutes, not days.
                   </p>
                 </div>
               </div>
 
               <p className="text-muted-foreground mb-6 leading-relaxed">
-                Turn voice notes into client-ready proposals. Record your brief, we auto-structure it with problem definition, objectives, scope, timeline, and pricing — all branded and ready to send.
+                Turn voice notes into client-ready proposals. Record your brief, we auto-structure it with problem definition, objectives, scope, timeline, and pricing. All branded and ready to send.
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">

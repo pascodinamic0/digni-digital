@@ -58,7 +58,7 @@ const About = () => {
       <section className="section-padding bg-gradient-subtle">
         <div className="container-max text-center">
           <h1 className="text-heading-1 mb-8">
-            More Than Digital Services — We're Your Transformation Partner.
+            More Than Digital Services. We're Your Transformation Partner.
           </h1>
           <p className="text-subheading max-w-4xl mx-auto mb-12">
             Founded on the belief that every business deserves growth infrastructure that works. 
