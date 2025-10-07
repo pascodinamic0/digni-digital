@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Mic, FileText, Zap, ExternalLink, CheckCircle, Star } from 'lucide-react';
+import ExitIntentModal from '@/components/ExitIntentModal';
 
 const VoiceToProposal = () => {
   const steps = [
@@ -92,6 +93,8 @@ const VoiceToProposal = () => {
 
   return (
     <div className="pt-12">
+      <ExitIntentModal enabled={true} />
+      
       {/* Hero Section */}
       <section className="section-padding bg-gradient-subtle relative overflow-hidden">
         <div className="container-max">

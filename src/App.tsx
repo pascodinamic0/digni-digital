@@ -42,7 +42,6 @@ const App = () => (
                 v7_relativeSplatPath: true
               }}
             >
-          <ExitIntentModal enabled={true} />
           <Layout>
             <Suspense fallback={
               <div className="min-h-screen flex items-center justify-center">
