@@ -1,8 +1,6 @@
 import { Link } from 'react-router-dom';
-
 const Footer = () => {
-  return (
-    <footer className="bg-primary text-primary-foreground">
+  return <footer className="bg-primary text-primary-foreground">
       <div className="container-max section-padding">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           {/* Company */}
@@ -19,8 +17,8 @@ const Footer = () => {
               At Digni Digital LLC, we don't just build systems. We build reputations, customer trust, and long-term growth engines.
             </p>
             <div className="text-sm text-primary-foreground/70 mb-4">
-              <p className="mb-1">30 N Gould St Ste R</p>
-              <p>Sheridan, WY 82801</p>
+              
+              
             </div>
             <div className="text-sm text-primary-foreground/60">
               © 2024 Digni Digital LLC. All rights reserved.
@@ -32,26 +30,17 @@ const Footer = () => {
             <h3 className="font-heading font-semibold mb-4">Solutions</h3>
             <ul className="space-y-3">
               <li>
-                <Link 
-                  to="/solutions" 
-                  className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
-                >
+                <Link to="/solutions" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
                   Lead Generation Engine
                 </Link>
               </li>
               <li>
-                <Link 
-                  to="/solutions" 
-                  className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
-                >
+                <Link to="/solutions" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
                   Client Engagement System
                 </Link>
               </li>
               <li>
-                <Link 
-                  to="/solutions" 
-                  className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
-                >
+                <Link to="/solutions" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
                   Scaling Infrastructure
                 </Link>
               </li>
@@ -63,68 +52,67 @@ const Footer = () => {
             <h3 className="font-heading font-semibold mb-4">Products</h3>
             <ul className="space-y-3">
               <li>
-                <Link 
-                  to="/products/proposalagent" 
-                  className="text-primary-foreground/80 hover:text-primary-foreground transition-colors flex items-center gap-2"
-                >
+                <Link to="/products/proposalagent" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors flex items-center gap-2">
                   ProposalAgent
                   <span className="badge-new !bg-accent !text-accent-foreground text-xs">NEW</span>
                 </Link>
               </li>
               <li>
-                <Link 
-                  to="/products" 
-                  className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
-                >
+                <Link to="/products" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
                   View All Products
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Company */}
+          {/* Resources & Contact */}
           <div>
-            <h3 className="font-heading font-semibold mb-4">Company</h3>
-            <ul className="space-y-3">
+            <h3 className="font-heading font-semibold mb-4">Resources</h3>
+            <ul className="space-y-3 mb-6">
               <li>
-                <Link 
-                  to="/about" 
-                  className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
-                >
+                <Link to="/case-studies" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+                  Case Studies
+                </Link>
+              </li>
+              <li>
+                <Link to="/blog" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+                  Blog
+                </Link>
+              </li>
+              <li>
+                <Link to="/about" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
                   About
                 </Link>
               </li>
+            </ul>
+
+            <h4 className="font-heading font-semibold mb-4">Legal</h4>
+            <ul className="space-y-3 mb-6">
               <li>
-                <Link 
-                  to="/contact" 
-                  className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
-                >
-                  Contact
+                <Link to="/privacy" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+                  Privacy Policy
                 </Link>
               </li>
               <li>
-                <Link 
-                  to="/privacy" 
-                  className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
-                >
-                  Privacy
-                </Link>
-              </li>
-              <li>
-                <Link 
-                  to="/terms" 
-                  className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
-                >
-                  Terms
+                <Link to="/terms" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+                  Terms of Service
                 </Link>
               </li>
             </ul>
+
+            <h4 className="font-heading font-semibold mb-4">Contact</h4>
+            <Link to="/contact" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+              Get in Touch
+            </Link>
           </div>
         </div>
 
+        <div className="mt-12 pt-8 border-t border-primary-foreground/20 text-center">
+          <Link to="/book" className="btn-accent">
+            Start Your Transformation
+          </Link>
+        </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
