@@ -106,12 +106,6 @@ const Footer = () => {
             </Link>
           </div>
         </div>
-
-        <div className="mt-12 pt-8 border-t border-primary-foreground/20 text-center">
-          <Link to="/book" className="btn-accent">
-            Start Your Transformation
-          </Link>
-        </div>
       </div>
     </footer>;
 };
