@@ -82,26 +82,10 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Resources & Contact */}
+          {/* Company */}
           <div>
-            <h3 className="font-heading font-semibold mb-4">Resources</h3>
-            <ul className="space-y-3 mb-6">
-              <li>
-                <Link 
-                  to="/case-studies" 
-                  className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
-                >
-                  Case Studies
-                </Link>
-              </li>
-              <li>
-                <Link 
-                  to="/blog" 
-                  className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
-                >
-                  Blog
-                </Link>
-              </li>
+            <h3 className="font-heading font-semibold mb-4">Company</h3>
+            <ul className="space-y-3">
               <li>
                 <Link 
                   to="/about" 
@@ -110,16 +94,20 @@ const Footer = () => {
                   About
                 </Link>
               </li>
-            </ul>
-
-            <h4 className="font-heading font-semibold mb-4">Legal</h4>
-            <ul className="space-y-3 mb-6">
+              <li>
+                <Link 
+                  to="/contact" 
+                  className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                >
+                  Contact
+                </Link>
+              </li>
               <li>
                 <Link 
                   to="/privacy" 
                   className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
                 >
-                  Privacy Policy
+                  Privacy
                 </Link>
               </li>
               <li>
@@ -127,29 +115,13 @@ const Footer = () => {
                   to="/terms" 
                   className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
                 >
-                  Terms of Service
+                  Terms
                 </Link>
               </li>
             </ul>
-
-            <h4 className="font-heading font-semibold mb-4">Contact</h4>
-            <Link 
-              to="/contact" 
-              className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
-            >
-              Get in Touch
-            </Link>
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-primary-foreground/20 text-center">
-          <Link 
-            to="/book" 
-            className="btn-accent"
-          >
-            Start Your Transformation
-          </Link>
-        </div>
       </div>
     </footer>
   );
