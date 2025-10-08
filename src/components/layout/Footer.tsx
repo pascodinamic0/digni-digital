@@ -1,4 +1,6 @@
 import { Link } from 'react-router-dom';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+
 const Footer = () => {
   return <footer className="bg-primary text-primary-foreground">
       <div className="container-max section-padding">
@@ -65,45 +67,62 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Resources & Contact */}
+          {/* Resources & Contact - Collapsible */}
           <div>
-            <h3 className="font-heading font-semibold mb-4">Resources</h3>
-            <ul className="space-y-3 mb-6">
-              <li>
-                <Link to="/case-studies" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
-                  Case Studies
-                </Link>
-              </li>
-              <li>
-                <Link to="/blog" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
-                  Blog
-                </Link>
-              </li>
-              <li>
-                <Link to="/about" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
-                  About
-                </Link>
-              </li>
-            </ul>
+            <Accordion type="single" collapsible className="w-full">
+              <AccordionItem value="resources" className="border-primary-foreground/20">
+                <AccordionTrigger className="font-heading font-semibold text-primary-foreground hover:text-primary-foreground/80 hover:no-underline py-3">
+                  Resources & More
+                </AccordionTrigger>
+                <AccordionContent>
+                  <div className="space-y-6 pt-2">
+                    <div>
+                      <h4 className="font-heading font-semibold mb-3 text-sm">Resources</h4>
+                      <ul className="space-y-2">
+                        <li>
+                          <Link to="/case-studies" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors text-sm">
+                            Case Studies
+                          </Link>
+                        </li>
+                        <li>
+                          <Link to="/blog" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors text-sm">
+                            Blog
+                          </Link>
+                        </li>
+                        <li>
+                          <Link to="/about" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors text-sm">
+                            About
+                          </Link>
+                        </li>
+                      </ul>
+                    </div>
 
-            <h4 className="font-heading font-semibold mb-4">Legal</h4>
-            <ul className="space-y-3 mb-6">
-              <li>
-                <Link to="/privacy" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
-                  Privacy Policy
-                </Link>
-              </li>
-              <li>
-                <Link to="/terms" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
-                  Terms of Service
-                </Link>
-              </li>
-            </ul>
+                    <div>
+                      <h4 className="font-heading font-semibold mb-3 text-sm">Legal</h4>
+                      <ul className="space-y-2">
+                        <li>
+                          <Link to="/privacy" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors text-sm">
+                            Privacy Policy
+                          </Link>
+                        </li>
+                        <li>
+                          <Link to="/terms" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors text-sm">
+                            Terms of Service
+                          </Link>
+                        </li>
+                      </ul>
+                    </div>
 
-            <h4 className="font-heading font-semibold mb-4">Contact</h4>
-            <Link to="/contact" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
-              Get in Touch
-            </Link>
+                    <div>
+                      <h4 className="font-heading font-semibold mb-3 text-sm">Contact</h4>
+                      <Link to="/contact" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors text-sm">
+                        Get in Touch
+                      </Link>
+                    </div>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
           </div>
         </div>
       </div>
