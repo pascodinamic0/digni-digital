@@ -21,6 +21,13 @@ const Industries = lazy(() => import("./pages/Industries"));
 const CaseStudies = lazy(() => import("./pages/CaseStudies"));
 const Book = lazy(() => import("./pages/Book"));
 const Blog = lazy(() => import("./pages/Blog"));
+const FutureOfBusinessInAfrica = lazy(() => import("./pages/blog/future-of-business-in-africa"));
+const WhyCRMFailing = lazy(() => import("./pages/blog/why-crm-failing-how-to-fix"));
+const ProposalAgentCaseStudy = lazy(() => import("./pages/blog/proposalagent-case-study-faster-proposals"));
+const BuildingSaaSForEmergingMarkets = lazy(() => import("./pages/blog/building-saas-emerging-markets-lessons"));
+const LeadGenerationSystem = lazy(() => import("./pages/blog/lead-generation-system-that-works"));
+const WhyAfricanStartupsFail = lazy(() => import("./pages/blog/why-african-startups-fail-how-to-avoid"));
+const AutomationForNonTechnicalFounders = lazy(() => import("./pages/blog/automation-for-non-technical-founders"));
 const Privacy = lazy(() => import("./pages/Privacy"));
 const Terms = lazy(() => import("./pages/Terms"));
 const Contact = lazy(() => import("./pages/Contact"));
@@ -59,6 +66,13 @@ const App = () => (
                 <Route path="/case-studies" element={<CaseStudies />} />
                 <Route path="/book" element={<Book />} />
                 <Route path="/blog" element={<Blog />} />
+                <Route path="/blog/future-of-business-in-africa" element={<FutureOfBusinessInAfrica />} />
+                <Route path="/blog/why-crm-failing-how-to-fix" element={<WhyCRMFailing />} />
+                <Route path="/blog/proposalagent-case-study-faster-proposals" element={<ProposalAgentCaseStudy />} />
+                <Route path="/blog/building-saas-emerging-markets-lessons" element={<BuildingSaaSForEmergingMarkets />} />
+                <Route path="/blog/lead-generation-system-that-works" element={<LeadGenerationSystem />} />
+                <Route path="/blog/why-african-startups-fail-how-to-avoid" element={<WhyAfricanStartupsFail />} />
+                <Route path="/blog/automation-for-non-technical-founders" element={<AutomationForNonTechnicalFounders />} />
                 <Route path="/privacy" element={<Privacy />} />
                 <Route path="/terms" element={<Terms />} />
                 <Route path="/contact" element={<Contact />} />
