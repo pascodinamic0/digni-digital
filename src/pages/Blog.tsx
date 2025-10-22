@@ -1,8 +1,10 @@
 import { Link } from 'react-router-dom';
 import { Calendar, Clock, ArrowRight } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
+import { useState } from 'react';
 
 const Blog = () => {
+  const [selectedCategory, setSelectedCategory] = useState('All');
   const featuredPost = {
     title: 'The Future of Business in Africa: Digital-First or Die',
     excerpt: "Why African businesses can't afford to wait for digital transformation, and how to build systems that scale across emerging markets.",
@@ -64,6 +66,11 @@ const Blog = () => {
   ];
 
   const categories = ['All', 'Digital Transformation', 'Automation', 'SaaS', 'Case Studies'];
+
+  // Filter blog posts based on selected category
+  const filteredPosts = selectedCategory === 'All' 
+    ? blogPosts 
+    : blogPosts.filter(post => post.category === selectedCategory);
 
   return (
     <div className="pt-12">
@@ -132,8 +139,9 @@ const Blog = () => {
             {categories.map((category) => (
               <button
                 key={category}
-                className={`px-4 py-2 rounded-full border transition-all ${
-                  category === 'All' 
+                onClick={() => setSelectedCategory(category)}
+                className={`px-4 py-2 rounded-full border transition-all cursor-pointer ${
+                  category === selectedCategory
                     ? 'bg-accent text-accent-foreground border-accent' 
                     : 'border-border hover:border-accent hover:text-accent'
                 }`}
@@ -144,49 +152,64 @@ const Blog = () => {
           </div>
 
           {/* Blog Posts Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {blogPosts.map((post, index) => (
-              <article 
-                key={post.slug}
-                className="card-hover-lift"
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
-                <div className="mb-4">
-                  <Badge variant="outline" className="mb-3 bg-muted">
-                    {post.category}
-                  </Badge>
-                  <h3 className="text-xl font-semibold mb-3 hover:text-accent transition-colors">
-                    <Link to={`/blog/${post.slug}`}>
-                      {post.title}
+          {filteredPosts.length > 0 ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {filteredPosts.map((post, index) => (
+                <article 
+                  key={post.slug}
+                  className="card-hover-lift"
+                  style={{ animationDelay: `${index * 100}ms` }}
+                >
+                  <div className="mb-4">
+                    <Badge variant="outline" className="mb-3 bg-muted">
+                      {post.category}
+                    </Badge>
+                    <h3 className="text-xl font-semibold mb-3 hover:text-accent transition-colors">
+                      <Link to={`/blog/${post.slug}`}>
+                        {post.title}
+                      </Link>
+                    </h3>
+                    <p className="text-muted-foreground mb-4 line-clamp-3">
+                      {post.excerpt}
+                    </p>
+                    <div className="flex items-center gap-4 text-sm text-muted-foreground mb-4">
+                      <div className="flex items-center gap-2">
+                        <Calendar className="w-4 h-4" />
+                        <span>{new Date(post.date).toLocaleDateString('en-US', { 
+                          month: 'short', 
+                          day: 'numeric', 
+                          year: 'numeric' 
+                        })}</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Clock className="w-4 h-4" />
+                        <span>{post.readTime}</span>
+                      </div>
+                    </div>
+                    <Link 
+                      to={`/blog/${post.slug}`}
+                      className="inline-flex items-center gap-2 text-accent font-semibold hover:gap-3 transition-all"
+                    >
+                      Read More <ArrowRight className="w-4 h-4" />
                     </Link>
-                  </h3>
-                  <p className="text-muted-foreground mb-4 line-clamp-3">
-                    {post.excerpt}
-                  </p>
-                  <div className="flex items-center gap-4 text-sm text-muted-foreground mb-4">
-                    <div className="flex items-center gap-2">
-                      <Calendar className="w-4 h-4" />
-                      <span>{new Date(post.date).toLocaleDateString('en-US', { 
-                        month: 'short', 
-                        day: 'numeric', 
-                        year: 'numeric' 
-                      })}</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Clock className="w-4 h-4" />
-                      <span>{post.readTime}</span>
-                    </div>
                   </div>
-                  <Link 
-                    to={`/blog/${post.slug}`}
-                    className="inline-flex items-center gap-2 text-accent font-semibold hover:gap-3 transition-all"
-                  >
-                    Read More <ArrowRight className="w-4 h-4" />
-                  </Link>
-                </div>
-              </article>
-            ))}
-          </div>
+                </article>
+              ))}
+            </div>
+          ) : (
+            <div className="text-center py-12">
+              <div className="text-muted-foreground mb-4">
+                <h3 className="text-xl font-semibold mb-2">No articles found</h3>
+                <p>No articles found in the "{selectedCategory}" category.</p>
+              </div>
+              <button 
+                onClick={() => setSelectedCategory('All')}
+                className="btn-secondary"
+              >
+                View All Articles
+              </button>
+            </div>
+          )}
 
           {/* Load More */}
           <div className="text-center mt-12">
