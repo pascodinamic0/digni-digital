@@ -14,8 +14,8 @@ const StructuredData = ({ type = 'Organization', data }: OrganizationSchemaProps
           '@type': 'Organization',
           name: 'Digni Digital LLC',
           description: 'Premium digital transformation and business automation solutions',
-          url: 'https://dignidigital.com',
-          logo: 'https://dignidigital.com/og-image.jpg',
+          url: 'https://digni-digital.com',
+          logo: 'https://digni-digital.com/og-image.jpg',
           contactPoint: {
             '@type': 'ContactPoint',
             email: 'hello@dignidigital.com',
@@ -64,7 +64,7 @@ const StructuredData = ({ type = 'Organization', data }: OrganizationSchemaProps
             name: 'Digni Digital LLC',
             logo: {
               '@type': 'ImageObject',
-              url: 'https://dignidigital.com/og-image.jpg'
+              url: 'https://digni-digital.com/og-image.jpg'
             }
           },
           datePublished: data?.date || new Date().toISOString()

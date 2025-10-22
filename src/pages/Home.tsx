@@ -47,7 +47,7 @@ const Home = () => {
           "@context": "https://schema.org",
           "@type": "Organization",
           "name": "Digni Digital LLC",
-          "url": "https://dignidigital.com",
+          "url": "https://digni-digital.com",
           "description": "Strategic partnership that transforms businesses through comprehensive growth systems, digital transformation, and ongoing optimization.",
           "foundingDate": "2017",
           "specialty": ["Digital Transformation", "Business Development", "Growth Infrastructure", "Strategic Consulting"],

@@ -20,7 +20,7 @@ const SEO = ({
   structuredData
 }: SEOProps) => {
   const fullTitle = title.includes('Digni Digital') ? title : `${title} | Digni Digital LLC`;
-  const currentUrl = canonical || (typeof window !== 'undefined' ? window.location.href : 'https://dignidigital.com');
+  const currentUrl = canonical || (typeof window !== 'undefined' ? window.location.href : 'https://digni-digital.com');
 
   return (
     <Helmet>
@@ -38,7 +38,7 @@ const SEO = ({
       <meta property="og:description" content={description} />
       <meta property="og:type" content="website" />
       <meta property="og:url" content={currentUrl} />
-      <meta property="og:image" content={`https://dignidigital.com${ogImage}`} />
+      <meta property="og:image" content={`https://digni-digital.com${ogImage}`} />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
       <meta property="og:site_name" content="Digni Digital LLC" />
@@ -47,7 +47,7 @@ const SEO = ({
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={`https://dignidigital.com${ogImage}`} />
+      <meta name="twitter:image" content={`https://digni-digital.com${ogImage}`} />
       
       {/* Additional Performance & Security */}
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
