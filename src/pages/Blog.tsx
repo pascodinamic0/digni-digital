@@ -5,6 +5,7 @@ import { useState } from 'react';
 
 const Blog = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
+  const [postsPerPage, setPostsPerPage] = useState(6); // Show 6 posts initially
   const featuredPost = {
     title: 'The Future of Business in Africa: Digital-First or Die',
     excerpt: "Why African businesses can't afford to wait for digital transformation, and how to build systems that scale across emerging markets.",
@@ -62,6 +63,62 @@ const Blog = () => {
       readTime: '8 min read',
       date: '2023-12-25',
       slug: 'automation-for-non-technical-founders'
+    },
+    {
+      title: 'The Complete Guide to Digital Marketing in Africa',
+      excerpt: 'How to build effective digital marketing campaigns that work across diverse African markets and cultures.',
+      category: 'Digital Transformation',
+      readTime: '10 min read',
+      date: '2023-12-20',
+      slug: 'digital-marketing-guide-africa'
+    },
+    {
+      title: 'Building Customer Support Systems That Scale',
+      excerpt: 'Create customer support infrastructure that grows with your business without breaking the bank.',
+      category: 'Automation',
+      readTime: '7 min read',
+      date: '2023-12-18',
+      slug: 'customer-support-systems-scale'
+    },
+    {
+      title: 'From Idea to IPO: The African Startup Journey',
+      excerpt: 'A comprehensive roadmap for African startups from initial concept to successful exit.',
+      category: 'Digital Transformation',
+      readTime: '15 min read',
+      date: '2023-12-15',
+      slug: 'idea-to-ipo-african-startup-journey'
+    },
+    {
+      title: 'ProposalAgent Success Story: Tech Startup Edition',
+      excerpt: 'How a Lagos tech startup increased proposal conversion rates by 300% using ProposalAgent.',
+      category: 'Case Studies',
+      readTime: '6 min read',
+      date: '2023-12-12',
+      slug: 'proposalagent-tech-startup-success'
+    },
+    {
+      title: 'The Future of Work in Africa: Remote Teams Done Right',
+      excerpt: 'Building and managing remote teams across Africa with the right tools and processes.',
+      category: 'SaaS',
+      readTime: '9 min read',
+      date: '2023-12-10',
+      slug: 'future-work-africa-remote-teams'
+    },
+    {
+      title: 'Data-Driven Decision Making for African Businesses',
+      excerpt: 'How to collect, analyze, and act on data to drive business growth in emerging markets.',
+      category: 'Digital Transformation',
+      readTime: '11 min read',
+      date: '2023-12-08',
+      slug: 'data-driven-decision-making-african-businesses'
+    },
+    {
+      title: 'Building APIs That Work Across Africa',
+      excerpt: 'Technical considerations for building APIs that perform well across diverse African infrastructure.',
+      category: 'SaaS',
+      readTime: '8 min read',
+      date: '2023-12-05',
+      slug: 'building-apis-work-across-africa'
     }
   ];
 
@@ -71,6 +128,21 @@ const Blog = () => {
   const filteredPosts = selectedCategory === 'All' 
     ? blogPosts 
     : blogPosts.filter(post => post.category === selectedCategory);
+
+  // Get posts to display based on pagination
+  const displayedPosts = filteredPosts.slice(0, postsPerPage);
+  const hasMorePosts = filteredPosts.length > postsPerPage;
+
+  // Load more posts function
+  const loadMorePosts = () => {
+    setPostsPerPage(prev => prev + 6);
+  };
+
+  // Reset pagination when category changes
+  const handleCategoryChange = (category: string) => {
+    setSelectedCategory(category);
+    setPostsPerPage(6); // Reset to initial number
+  };
 
   return (
     <div className="pt-12">
@@ -139,7 +211,7 @@ const Blog = () => {
             {categories.map((category) => (
               <button
                 key={category}
-                onClick={() => setSelectedCategory(category)}
+                onClick={() => handleCategoryChange(category)}
                 className={`px-4 py-2 rounded-full border transition-all cursor-pointer ${
                   category === selectedCategory
                     ? 'bg-accent text-accent-foreground border-accent' 
@@ -152,9 +224,9 @@ const Blog = () => {
           </div>
 
           {/* Blog Posts Grid */}
-          {filteredPosts.length > 0 ? (
+          {displayedPosts.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {filteredPosts.map((post, index) => (
+              {displayedPosts.map((post, index) => (
                 <article 
                   key={post.slug}
                   className="card-hover-lift"
@@ -203,7 +275,7 @@ const Blog = () => {
                 <p>No articles found in the "{selectedCategory}" category.</p>
               </div>
               <button 
-                onClick={() => setSelectedCategory('All')}
+                onClick={() => handleCategoryChange('All')}
                 className="btn-secondary"
               >
                 View All Articles
@@ -212,11 +284,16 @@ const Blog = () => {
           )}
 
           {/* Load More */}
-          <div className="text-center mt-12">
-            <button className="btn-secondary">
-              Load More Articles
-            </button>
-          </div>
+          {hasMorePosts && (
+            <div className="text-center mt-12">
+              <button 
+                onClick={loadMorePosts}
+                className="btn-secondary"
+              >
+                Load More Articles ({filteredPosts.length - postsPerPage} remaining)
+              </button>
+            </div>
+          )}
         </div>
       </section>
 
