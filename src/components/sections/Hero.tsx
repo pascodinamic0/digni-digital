@@ -6,7 +6,7 @@ const Hero = () => {
   const { trackCTAClick } = useAnalytics();
   
   return (
-    <section className="hero-section-enhanced">
+    <section className="hero-section-enhanced pt-16 md:pt-24">
       {/* Enhanced Background with CSS */}
       <div className="hero-background" />
       

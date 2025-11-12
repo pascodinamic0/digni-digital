@@ -402,7 +402,7 @@ const WhyAfricanStartupsFail = () => {
                   <h4 className="font-semibold mb-3 text-red-600">🚨 Red Flags</h4>
                   <ul className="text-muted-foreground space-y-1">
                     <li>• Monthly burn rate exceeding 20% of runway</li>
-                    <li>• Customer acquisition cost > 3x customer lifetime value</li>
+                    <li>• Customer acquisition cost &gt; 3x customer lifetime value</li>
                     <li>• Team conflicts affecting productivity</li>
                     <li>• Regulatory issues or compliance problems</li>
                     <li>• Difficulty raising follow-on funding</li>
@@ -411,8 +411,8 @@ const WhyAfricanStartupsFail = () => {
                 <div className="card-premium">
                   <h4 className="font-semibold mb-3 text-green-600">✅ Success Indicators</h4>
                   <ul className="text-muted-foreground space-y-1">
-                    <li>• Monthly recurring revenue growth > 20%</li>
-                    <li>• Customer retention rate > 80%</li>
+                    <li>• Monthly recurring revenue growth &gt; 20%</li>
+                    <li>• Customer retention rate &gt; 80%</li>
                     <li>• Positive unit economics</li>
                     <li>• Strong team culture and low turnover</li>
                     <li>• Clear path to profitability</li>
