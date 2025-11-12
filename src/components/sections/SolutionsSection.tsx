@@ -44,31 +44,37 @@ const SolutionsSection = () => {
             return (
               <div 
                 key={index}
-                className="card-hover-lift group scroll-reveal"
+                className="relative group overflow-hidden bg-card rounded-2xl border border-border p-8 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1 scroll-reveal"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors duration-300">
-                  <Icon className="w-8 h-8 text-primary" />
-                </div>
+                {/* Hover Overlay Effect */}
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-accent/5 to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 
-                <h3 className="text-xl font-semibold mb-4 text-foreground">
-                  {solution.title}
-                </h3>
-                
-                <div className="space-y-4 text-sm">
-                  <div>
-                    <span className="font-medium text-destructive">Problem:</span>
-                    <p className="text-muted-foreground mt-1">{solution.problem}</p>
+                {/* Content */}
+                <div className="relative z-10">
+                  <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300">
+                    <Icon className="w-8 h-8 text-primary" />
                   </div>
                   
-                  <div>
-                    <span className="font-medium text-primary">Solution:</span>
-                    <p className="text-muted-foreground mt-1">{solution.solution}</p>
-                  </div>
+                  <h3 className="text-xl font-semibold mb-4 text-foreground group-hover:text-primary transition-colors duration-300">
+                    {solution.title}
+                  </h3>
                   
-                  <div>
-                    <span className="font-medium text-success">Impact:</span>
-                    <p className="text-muted-foreground mt-1">{solution.impact}</p>
+                  <div className="space-y-4 text-sm">
+                    <div>
+                      <span className="font-medium text-destructive">Problem:</span>
+                      <p className="text-muted-foreground mt-1 group-hover:text-foreground transition-colors duration-300">{solution.problem}</p>
+                    </div>
+                    
+                    <div>
+                      <span className="font-medium text-primary">Solution:</span>
+                      <p className="text-muted-foreground mt-1 group-hover:text-foreground transition-colors duration-300">{solution.solution}</p>
+                    </div>
+                    
+                    <div>
+                      <span className="font-medium text-success">Impact:</span>
+                      <p className="text-muted-foreground mt-1 group-hover:text-foreground transition-colors duration-300">{solution.impact}</p>
+                    </div>
                   </div>
                 </div>
               </div>

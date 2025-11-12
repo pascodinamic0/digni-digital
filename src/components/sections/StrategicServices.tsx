@@ -45,24 +45,28 @@ const StrategicServices = () => {
           {services.map((service, index) => (
             <div 
               key={service.title}
-              className="group relative"
+              className="relative group overflow-hidden bg-card rounded-2xl border border-border p-8 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <div className="card-hover-lift h-full">
+              {/* Hover Overlay Effect */}
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-accent/5 to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              
+              {/* Content */}
+              <div className="relative z-10 h-full">
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="w-16 h-16 bg-gradient-hero rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <div className="w-16 h-16 bg-gradient-hero rounded-xl flex items-center justify-center group-hover:scale-110 group-hover:shadow-xl group-hover:shadow-primary/20 transition-all duration-500">
                     <service.icon className="w-8 h-8 text-primary-foreground" />
                   </div>
                 </div>
                 
-                <h3 className="text-heading-3 mb-4">{service.title}</h3>
-                <p className="text-body-large mb-6">{service.description}</p>
+                <h3 className="text-heading-3 mb-4 group-hover:text-primary transition-colors duration-300">{service.title}</h3>
+                <p className="text-body-large mb-6 text-muted-foreground group-hover:text-foreground transition-colors duration-300">{service.description}</p>
                 
                 <div className="space-y-2">
                   {service.features.map((feature, idx) => (
                     <div key={idx} className="flex items-center gap-3">
                       <div className="w-1.5 h-1.5 bg-accent rounded-full" />
-                      <span className="text-sm text-muted-foreground">{feature}</span>
+                      <span className="text-sm text-muted-foreground group-hover:text-foreground transition-colors duration-300">{feature}</span>
                     </div>
                   ))}
                 </div>
