@@ -27,74 +27,75 @@ const InnovationLab = () => {
               </div>
               
               <div className="p-8">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-                <div>
-                  <div className="flex items-center gap-4 mb-6">
-                    <div className="w-14 h-14 bg-gradient-accent rounded-xl flex items-center justify-center">
-                      <Mic className="w-7 h-7 text-accent-foreground" />
-                    </div>
-                    <div>
-                      <h3 className="text-heading-3 mb-1">Voice-to-Proposal</h3>
-                      <div className="text-sm text-muted-foreground">AI-Powered Proposal Generation</div>
-                    </div>
-                  </div>
-                  
-                  <p className="text-body-large mb-6">
-                    Speak your brief, get a structured, branded proposal in minutes. 
-                    The same tool our team uses to accelerate client delivery.
-                  </p>
-                  
-                  <div className="flex flex-col sm:flex-row gap-4">
-                    <Link 
-                      to="/products/voice-to-proposal" 
-                      className="btn-secondary flex-1 justify-center"
-                    >
-                      Learn More
-                    </Link>
-                    <a 
-                      href="https://voice-to-proposal.io" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="btn-primary flex-1 justify-center"
-                    >
-                      Try It Free <ExternalLink className="w-4 h-4" />
-                    </a>
-                  </div>
-                </div>
-
-                <div className="text-center lg:text-right">
-                  <div className="inline-flex flex-col gap-4">
-                    <div className="bg-white rounded-xl p-6 shadow-premium-md">
-                      <div className="flex items-center gap-3 mb-2">
-                        <Zap className="w-5 h-5 text-accent" />
-                        <span className="text-2xl font-bold text-primary">5x</span>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                  <div>
+                    <div className="flex items-center gap-4 mb-6">
+                      <div className="w-14 h-14 bg-gradient-accent rounded-xl flex items-center justify-center group-hover:scale-110 group-hover:shadow-xl group-hover:shadow-accent/20 transition-all duration-500">
+                        <Mic className="w-7 h-7 text-accent-foreground" />
                       </div>
-                      <div className="text-lg font-semibold mb-1">Faster Proposals</div>
-                      <div className="text-sm text-muted-foreground">Days to minutes</div>
+                      <div>
+                        <h3 className="text-heading-3 mb-1">Voice-to-Proposal</h3>
+                        <div className="text-sm text-muted-foreground">AI-Powered Proposal Generation</div>
+                      </div>
                     </div>
                     
-                    <div className="text-sm text-muted-foreground">
-                      Used by 500+ professionals across 12 industries
+                    <p className="text-body-large mb-6">
+                      Speak your brief, get a structured, branded proposal in minutes. 
+                      The same tool our team uses to accelerate client delivery.
+                    </p>
+                    
+                    <div className="flex flex-col sm:flex-row gap-4">
+                      <Link 
+                        to="/products/voice-to-proposal" 
+                        className="btn-secondary flex-1 justify-center"
+                      >
+                        Learn More
+                      </Link>
+                      <a 
+                        href="https://voice-to-proposal.io" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="btn-primary flex-1 justify-center"
+                      >
+                        Try It Free <ExternalLink className="w-4 h-4" />
+                      </a>
+                    </div>
+                  </div>
+
+                  <div className="text-center lg:text-right">
+                    <div className="inline-flex flex-col gap-4">
+                      <div className="bg-white rounded-xl p-6 shadow-premium-md">
+                        <div className="flex items-center gap-3 mb-2">
+                          <Zap className="w-5 h-5 text-accent" />
+                          <span className="text-2xl font-bold text-primary">5x</span>
+                        </div>
+                        <div className="text-lg font-semibold mb-1">Faster Proposals</div>
+                        <div className="text-sm text-muted-foreground">Days to minutes</div>
+                      </div>
+                      
+                      <div className="text-sm text-muted-foreground">
+                        Used by 500+ professionals across 12 industries
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
 
-            {/* Animated Waveform */}
-            <div className="absolute bottom-4 right-4 w-20 h-20 opacity-10">
-              <div className="flex items-end justify-center h-full space-x-1">
-                {[...Array(6)].map((_, i) => (
-                  <div
-                    key={i}
-                    className="bg-accent rounded-t"
-                    style={{
-                      width: '3px',
-                      height: `${15 + (i % 3) * 15}px`,
-                      animation: `pulse 1.5s infinite ${i * 0.1}s`
-                    }}
-                  />
-                ))}
+              {/* Animated Waveform */}
+              <div className="absolute bottom-4 right-4 w-20 h-20 opacity-10">
+                <div className="flex items-end justify-center h-full space-x-1">
+                  {[...Array(6)].map((_, i) => (
+                    <div
+                      key={i}
+                      className="bg-accent rounded-t"
+                      style={{
+                        width: '3px',
+                        height: `${15 + (i % 3) * 15}px`,
+                        animation: `pulse 1.5s infinite ${i * 0.1}s`
+                      }}
+                    />
+                  ))}
+                </div>
               </div>
             </div>
           </div>
