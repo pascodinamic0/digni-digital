@@ -150,14 +150,14 @@ const Solutions = () => {
       {/* Three Step Process */}
       <section className="section-padding bg-muted">
         <div className="container-max">
-          <div className="text-center mb-12">
+          <div className="text-center mb-16">
             <h2 className="text-heading-2 mb-4">Our Proven Process</h2>
             <p className="text-body-large max-w-2xl mx-auto text-muted-foreground">
               From diagnosis to transformation and ongoing optimization
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
                 icon: Search,
@@ -179,14 +179,20 @@ const Solutions = () => {
               return (
                 <div 
                   key={step.title}
-                  className="text-center group"
+                  className="relative group overflow-hidden bg-card rounded-2xl border border-border p-8 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1"
                   style={{ animationDelay: `${index * 200}ms` }}
                 >
-                  <div className="w-20 h-20 bg-gradient-hero rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <Icon className="w-10 h-10 text-primary-foreground" />
+                  {/* Hover Overlay Effect */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-accent/5 to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  
+                  {/* Content */}
+                  <div className="relative z-10 text-center">
+                    <div className="w-20 h-20 bg-gradient-hero rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 group-hover:shadow-xl group-hover:shadow-primary/20 transition-all duration-500">
+                      <Icon className="w-10 h-10 text-primary-foreground" />
+                    </div>
+                    <h3 className="text-heading-3 mb-4 group-hover:text-primary transition-colors duration-300">{step.title}</h3>
+                    <p className="text-body-large text-muted-foreground group-hover:text-foreground transition-colors duration-300">{step.description}</p>
                   </div>
-                  <h3 className="text-heading-3 mb-4">{step.title}</h3>
-                  <p className="text-body-large">{step.description}</p>
                 </div>
               );
             })}
