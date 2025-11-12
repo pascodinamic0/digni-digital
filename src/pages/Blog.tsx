@@ -246,7 +246,7 @@ const Blog = () => {
                         {post.title}
                       </Link>
                     </h3>
-                    <p className="text-muted-foreground mb-4 line-clamp-3">
+                    <p className="text-muted-foreground mb-4 line-clamp-3 group-hover:text-foreground transition-colors duration-300">
                       {post.excerpt}
                     </p>
                     <div className="flex items-center gap-4 text-sm text-muted-foreground mb-4">
@@ -269,6 +269,7 @@ const Blog = () => {
                     >
                       Read More <ArrowRight className="w-4 h-4" />
                     </Link>
+                  </div>
                   </div>
                 </article>
               ))}
