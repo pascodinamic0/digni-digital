@@ -86,19 +86,25 @@ const NotFound = () => {
                 <Link
                   key={item.title}
                   to={item.link}
-                  className="card-hover-lift text-left group"
+                  className="relative group overflow-hidden bg-card rounded-2xl border border-border p-6 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1 text-left"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
-                  <div className="w-12 h-12 bg-gradient-hero rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <item.icon className="w-6 h-6 text-primary-foreground" />
+                  {/* Hover Overlay Effect */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-accent/5 to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  
+                  {/* Content */}
+                  <div className="relative z-10">
+                    <div className="w-12 h-12 bg-gradient-hero rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 group-hover:shadow-xl group-hover:shadow-primary/20 transition-all duration-500">
+                      <item.icon className="w-6 h-6 text-primary-foreground" />
+                    </div>
+                    <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors duration-300">{item.title}</h3>
+                    <p className="text-sm text-muted-foreground mb-4 group-hover:text-foreground transition-colors duration-300">
+                      {item.description}
+                    </p>
+                    <span className="text-accent font-medium text-sm group-hover:underline">
+                      {item.cta} →
+                    </span>
                   </div>
-                  <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
-                  <p className="text-sm text-muted-foreground mb-4">
-                    {item.description}
-                  </p>
-                  <span className="text-accent font-medium text-sm group-hover:underline">
-                    {item.cta} →
-                  </span>
                 </Link>
               ))}
             </div>
