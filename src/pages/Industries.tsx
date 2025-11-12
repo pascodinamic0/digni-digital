@@ -234,6 +234,7 @@ const Industries = () => {
                       Learn More <ArrowRight className="w-3 h-3" />
                     </Link>
                   </div>
+                  </div>
                 </div>
               );
             })}

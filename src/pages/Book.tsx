@@ -135,22 +135,28 @@ const Book = () => {
                     setSelectedService(service.id);
                     trackClick(`service_${service.id}`, 'booking_form');
                   }}
-                  className={`card-hover-lift text-left transition-all duration-300 ${
+                  className={`relative group overflow-hidden bg-card rounded-2xl border border-border p-6 shadow-sm hover:shadow-xl transition-all duration-500 text-left ${
                     selectedService === service.id 
                       ? 'ring-2 ring-accent shadow-glow' 
-                      : 'hover:ring-1 hover:ring-border'
+                      : 'hover:ring-1 hover:ring-border hover:-translate-y-1'
                   }`}
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
-                  <div className={`w-12 h-12 bg-gradient-to-br ${service.color} rounded-lg flex items-center justify-center mb-4`}>
-                    <service.icon className="w-6 h-6 text-white" />
+                  {/* Hover Overlay Effect */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-accent/5 to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  
+                  {/* Content */}
+                  <div className="relative z-10">
+                    <div className={`w-12 h-12 bg-gradient-to-br ${service.color} rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                      <service.icon className="w-6 h-6 text-white" />
+                    </div>
+                    <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors duration-300">{service.name}</h3>
+                    <div className="flex items-center gap-2 text-sm text-muted-foreground mb-3">
+                      <Clock className="w-4 h-4" />
+                      <span>{service.duration}</span>
+                    </div>
+                    <p className="text-sm text-muted-foreground group-hover:text-foreground transition-colors duration-300">{service.description}</p>
                   </div>
-                  <h3 className="text-xl font-semibold mb-2">{service.name}</h3>
-                  <div className="flex items-center gap-2 text-sm text-muted-foreground mb-3">
-                    <Clock className="w-4 h-4" />
-                    <span>{service.duration}</span>
-                  </div>
-                  <p className="text-sm text-muted-foreground">{service.description}</p>
                 </button>
               ))}
             </div>
