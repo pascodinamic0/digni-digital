@@ -66,52 +66,58 @@ const CaseStudies = () => {
           {caseStudies.map((study, index) => (
             <div 
               key={study.id}
-              className={`card-hover-lift bg-gradient-to-br ${study.bgColor} border-l-4 border-primary cursor-pointer scroll-reveal`}
+              className={`relative group overflow-hidden bg-gradient-to-br ${study.bgColor} border-l-4 border-primary rounded-2xl p-6 cursor-pointer scroll-reveal shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1`}
               style={{ animationDelay: `${index * 0.1}s` }}
               onClick={() => setSelectedCase(selectedCase === study.id ? null : study.id)}
             >
-              <div className="flex items-center justify-between mb-4">
-                <div>
-                  <h3 className="font-bold text-foreground">{study.company}</h3>
-                  <p className="text-sm text-muted-foreground">{study.industry}</p>
+              {/* Hover Overlay Effect */}
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-accent/5 to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              
+              {/* Content */}
+              <div className="relative z-10">
+                <div className="flex items-center justify-between mb-4">
+                  <div>
+                    <h3 className="font-bold text-foreground group-hover:text-primary transition-colors duration-300">{study.company}</h3>
+                    <p className="text-sm text-muted-foreground">{study.industry}</p>
+                  </div>
+                  <div className="flex items-center gap-1 text-xs text-muted-foreground">
+                    <Clock className="w-3 h-3" />
+                    {study.timeline}
+                  </div>
                 </div>
-                <div className="flex items-center gap-1 text-xs text-muted-foreground">
-                  <Clock className="w-3 h-3" />
-                  {study.timeline}
-                </div>
-              </div>
 
-              <p className="text-sm text-muted-foreground mb-6 line-clamp-3">
-                {study.challenge}
-              </p>
+                <p className="text-sm text-muted-foreground mb-6 line-clamp-3 group-hover:text-foreground transition-colors duration-300">
+                  {study.challenge}
+                </p>
 
-              <div className="grid grid-cols-3 gap-3 mb-4">
-                <div className="text-center">
-                  <div className="text-lg font-bold text-primary">{study.results.metric1.value}</div>
-                  <div className="text-xs text-muted-foreground">{study.results.metric1.label}</div>
+                <div className="grid grid-cols-3 gap-3 mb-4">
+                  <div className="text-center">
+                    <div className="text-lg font-bold text-primary">{study.results.metric1.value}</div>
+                    <div className="text-xs text-muted-foreground">{study.results.metric1.label}</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-lg font-bold text-primary">{study.results.metric2.value}</div>
+                    <div className="text-xs text-muted-foreground">{study.results.metric2.label}</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-lg font-bold text-primary">{study.results.metric3.value}</div>
+                    <div className="text-xs text-muted-foreground">{study.results.metric3.label}</div>
+                  </div>
                 </div>
-                <div className="text-center">
-                  <div className="text-lg font-bold text-primary">{study.results.metric2.value}</div>
-                  <div className="text-xs text-muted-foreground">{study.results.metric2.label}</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-lg font-bold text-primary">{study.results.metric3.value}</div>
-                  <div className="text-xs text-muted-foreground">{study.results.metric3.label}</div>
-                </div>
-              </div>
 
-              {selectedCase === study.id && (
-                <div className="mt-4 pt-4 border-t border-border/50 animate-fade-in">
-                  <h4 className="font-semibold text-sm mb-2">Our Approach:</h4>
-                  <p className="text-sm text-muted-foreground">
-                    {study.approach}
-                  </p>
-                </div>
-              )}
+                {selectedCase === study.id && (
+                  <div className="mt-4 pt-4 border-t border-border/50 animate-fade-in">
+                    <h4 className="font-semibold text-sm mb-2">Our Approach:</h4>
+                    <p className="text-sm text-muted-foreground">
+                      {study.approach}
+                    </p>
+                  </div>
+                )}
 
-              <div className="flex items-center justify-between mt-4">
-                <span className="text-xs text-accent font-medium">Click to expand</span>
-                <ArrowRight className="w-4 h-4 text-muted-foreground" />
+                <div className="flex items-center justify-between mt-4">
+                  <span className="text-xs text-accent font-medium">Click to expand</span>
+                  <ArrowRight className="w-4 h-4 text-muted-foreground" />
+                </div>
               </div>
             </div>
           ))}

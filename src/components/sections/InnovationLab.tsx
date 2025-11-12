@@ -16,12 +16,17 @@ const InnovationLab = () => {
         </div>
 
         <div className="max-w-4xl mx-auto">
-          <div className="card-hover-lift bg-gradient-to-br from-white to-muted/50 relative overflow-hidden">
-            <div className="absolute top-4 left-4">
-              <div className="badge-new">Featured</div>
-            </div>
+          <div className="relative group overflow-hidden bg-gradient-to-br from-white to-muted/50 rounded-3xl border border-border shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1">
+            {/* Hover Overlay Effect */}
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-accent/5 to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             
-            <div className="p-8">
+            {/* Content */}
+            <div className="relative z-10">
+              <div className="absolute top-4 left-4">
+                <div className="badge-new">Featured</div>
+              </div>
+              
+              <div className="p-8">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                 <div>
                   <div className="flex items-center gap-4 mb-6">

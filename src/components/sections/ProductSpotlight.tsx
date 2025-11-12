@@ -17,58 +17,64 @@ const ProductSpotlight = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Voice-to-Proposal - Primary Spotlight */}
-          <div className="lg:col-span-1 card-hover-lift bg-gradient-to-br from-white to-muted/50 relative overflow-hidden">
-            <div className="absolute top-4 left-4">
-              <div className="badge-new">NEW</div>
-            </div>
+          <div className="lg:col-span-1 relative group overflow-hidden bg-gradient-to-br from-white to-muted/50 rounded-3xl border border-border shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1">
+            {/* Hover Overlay Effect */}
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-accent/5 to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             
-            <div className="p-8">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="w-16 h-16 bg-gradient-accent rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <Mic className="w-8 h-8 text-accent-foreground" />
-                </div>
-                <div>
-                  <h3 className="text-heading-3 mb-2">Voice-to-Proposal</h3>
-                  <div className="text-sm text-muted-foreground">Transform voice to proposals</div>
-                </div>
+            {/* Content */}
+            <div className="relative z-10">
+              <div className="absolute top-4 left-4">
+                <div className="badge-new">NEW</div>
               </div>
               
-              <p className="text-body-large mb-8">
-                Speak. We structure. You send. Proposals in minutes, not days.
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link 
-                  to="/products/voice-to-proposal" 
-                  className="btn-secondary flex-1 justify-center"
-                >
-                  Learn More
-                </Link>
-                <a 
-                  href="https://voice-to-proposal.io" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="btn-primary flex-1 justify-center"
-                >
-                  Open App <ExternalLink className="w-4 h-4" />
-                </a>
+              <div className="p-8">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-16 h-16 bg-gradient-accent rounded-xl flex items-center justify-center group-hover:scale-110 group-hover:shadow-xl group-hover:shadow-accent/20 transition-all duration-500">
+                    <Mic className="w-8 h-8 text-accent-foreground" />
+                  </div>
+                  <div>
+                    <h3 className="text-heading-3 mb-2">Voice-to-Proposal</h3>
+                    <div className="text-sm text-muted-foreground">Transform voice to proposals</div>
+                  </div>
+                </div>
+                
+                <p className="text-body-large mb-8">
+                  Speak. We structure. You send. Proposals in minutes, not days.
+                </p>
+                
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Link 
+                    to="/products/voice-to-proposal" 
+                    className="btn-secondary flex-1 justify-center"
+                  >
+                    Learn More
+                  </Link>
+                  <a 
+                    href="https://voice-to-proposal.io" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="btn-primary flex-1 justify-center"
+                  >
+                    Open App <ExternalLink className="w-4 h-4" />
+                  </a>
+                </div>
               </div>
-            </div>
 
-            {/* Animated Waveform */}
-            <div className="absolute bottom-0 right-0 w-32 h-32 opacity-10">
-              <div className="flex items-end justify-center h-full space-x-1">
-                {[...Array(8)].map((_, i) => (
-                  <div
-                    key={i}
-                    className="bg-accent rounded-t"
-                    style={{
-                      width: '4px',
-                      height: `${20 + (i % 3) * 20}px`,
-                      animation: `pulse 1.5s infinite ${i * 0.1}s`
-                    }}
-                  />
-                ))}
+              {/* Animated Waveform */}
+              <div className="absolute bottom-0 right-0 w-32 h-32 opacity-10">
+                <div className="flex items-end justify-center h-full space-x-1">
+                  {[...Array(8)].map((_, i) => (
+                    <div
+                      key={i}
+                      className="bg-accent rounded-t"
+                      style={{
+                        width: '4px',
+                        height: `${20 + (i % 3) * 20}px`,
+                        animation: `pulse 1.5s infinite ${i * 0.1}s`
+                      }}
+                    />
+                  ))}
+                </div>
               </div>
             </div>
           </div>
