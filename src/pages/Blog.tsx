@@ -229,15 +229,20 @@ const Blog = () => {
               {displayedPosts.map((post, index) => (
                 <article 
                   key={post.slug}
-                  className="card-hover-lift"
+                  className="relative group overflow-hidden bg-card rounded-2xl border border-border shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
-                  <div className="mb-4">
-                    <Badge variant="outline" className="mb-3 bg-muted">
-                      {post.category}
-                    </Badge>
-                    <h3 className="text-xl font-semibold mb-3 hover:text-accent transition-colors">
-                      <Link to={`/blog/${post.slug}`}>
+                  {/* Hover Overlay Effect */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-accent/5 to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  
+                  {/* Content */}
+                  <div className="relative z-10 p-6">
+                    <div className="mb-4">
+                      <Badge variant="outline" className="mb-3 bg-muted">
+                        {post.category}
+                      </Badge>
+                      <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors duration-300">
+                        <Link to={`/blog/${post.slug}`}>
                         {post.title}
                       </Link>
                     </h3>
