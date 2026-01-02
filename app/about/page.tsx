@@ -1,0 +1,338 @@
+'use client'
+
+import { useState, useEffect, useRef } from 'react'
+import { motion, useInView } from 'framer-motion'
+import Navigation from '../components/Navigation'
+import Footer from '../components/Footer'
+import AnimatedSection from '../components/AnimatedSection'
+import FloatingShapes from '../components/FloatingShapes'
+
+// Animated Counter Component
+function Counter({ end, suffix = '' }: { end: number; suffix?: string }) {
+  const [count, setCount] = useState(0)
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true })
+
+  useEffect(() => {
+    if (isInView) {
+      let start = 0
+      const duration = 2000
+      const increment = end / (duration / 16)
+
+      const timer = setInterval(() => {
+        start += increment
+        if (start >= end) {
+          setCount(end)
+          clearInterval(timer)
+        } else {
+          setCount(Math.floor(start))
+        }
+      }, 16)
+
+      return () => clearInterval(timer)
+    }
+  }, [isInView, end])
+
+  return (
+    <span ref={ref}>
+      {count}{suffix}
+    </span>
+  )
+}
+
+const stats = [
+  { value: 7, suffix: '+', label: 'Years Experience' },
+  { value: 100, suffix: '+', label: 'Businesses Transformed' },
+  { value: 95, suffix: '%', label: 'Client Satisfaction' },
+  { value: 12, suffix: '+', label: 'Countries Served' },
+]
+
+const team = [
+  {
+    name: 'Pascal Digny',
+    role: 'Founder & CEO',
+    bio: 'Full-stack developer and business strategist with 7+ years of experience building growth infrastructures for businesses across Africa and beyond.',
+    expertise: ['Full-Stack Development', 'Business Strategy', 'Growth Hacking', 'Team Leadership'],
+    image: '/team/pascal.jpg' // Placeholder
+  },
+  {
+    name: 'Technical Team',
+    role: 'Development Specialists',
+    bio: 'Our network of expert developers, designers, and digital marketers who bring diverse skills and perspectives to every project.',
+    expertise: ['Frontend Development', 'Backend Development', 'UI/UX Design', 'Digital Marketing'],
+    image: '/team/team.jpg' // Placeholder
+  }
+]
+
+const values = [
+  {
+    title: 'Growth-Focused',
+    description: 'Every solution we build is designed to drive measurable business growth and ROI.',
+    icon: '📈'
+  },
+  {
+    title: 'Quality First',
+    description: 'We never compromise on quality. Every project meets our high standards before delivery.',
+    icon: '⭐'
+  },
+  {
+    title: 'Client Partnership',
+    description: 'We work as an extension of your team, not just another vendor.',
+    icon: '🤝'
+  },
+  {
+    title: 'Innovation',
+    description: 'We stay ahead of technology trends to give our clients competitive advantages.',
+    icon: '🚀'
+  }
+]
+
+const timeline = [
+  {
+    year: '2019',
+    title: 'Founded Digni Digital',
+    description: 'Started with a mission to help African businesses leverage technology for growth.'
+  },
+  {
+    year: '2020',
+    title: 'First 10 Clients',
+    description: 'Successfully delivered websites and digital solutions for local businesses.'
+  },
+  {
+    year: '2021',
+    title: 'Expanded Services',
+    description: 'Added mobile app development and digital marketing to our service portfolio.'
+  },
+  {
+    year: '2022',
+    title: 'International Growth',
+    description: 'Began serving clients across multiple countries and continents.'
+  },
+  {
+    year: '2023',
+    title: 'SaaS Products',
+    description: 'Launched our first SaaS product and began building our product suite.'
+  },
+  {
+    year: '2024',
+    title: 'Growth Infrastructure',
+    description: 'Evolved into a full growth infrastructure agency with proven methodologies.'
+  }
+]
+
+export default function AboutPage() {
+  return (
+    <main>
+      <Navigation />
+      
+      {/* Hero Section */}
+      <section className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-gradient-mesh">
+        <FloatingShapes />
+        
+        <div className="max-w-7xl mx-auto px-6 py-20 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-center mb-16"
+          >
+            <span className="inline-block px-4 py-2 bg-accent/10 border border-accent/30 rounded-full text-accent text-sm font-medium mb-6">
+              About Us
+            </span>
+            <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-8">
+              Building the Future<br />
+              <span className="gradient-text">One Business at a Time</span>
+            </h1>
+            <p className="text-xl text-muted max-w-3xl mx-auto leading-relaxed">
+              We're not just another digital agency. We're growth infrastructure specialists who turn chaos into clients and ideas into profitable businesses.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <AnimatedSection className="py-24 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-mesh opacity-50" />
+
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">
+              Numbers that demonstrate our<br />
+              <span className="gradient-text">commitment to client success</span>
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+            {stats.map((stat, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="text-center"
+              >
+                <div className="font-display text-5xl md:text-6xl font-bold text-accent mb-2">
+                  <Counter end={stat.value} suffix={stat.suffix} />
+                </div>
+                <p className="text-muted">{stat.label}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </AnimatedSection>
+
+      {/* Our Story */}
+      <AnimatedSection className="py-24 bg-surface">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <h2 className="font-display text-4xl md:text-5xl font-bold mb-8">
+                Our Story
+              </h2>
+              <div className="space-y-6 text-muted leading-relaxed">
+                <p>
+                  Digni Digital was born from a simple observation: too many businesses were struggling with disconnected tools, manual processes, and missed opportunities. We saw talented entrepreneurs held back by technology barriers rather than empowered by them.
+                </p>
+                <p>
+                  Founded in 2019, we started with a mission to democratize access to high-quality digital solutions. What began as a small web development service has evolved into a comprehensive growth infrastructure agency.
+                </p>
+                <p>
+                  Today, we don't just build websites or apps – we architect complete growth systems that turn chaos into clients. Our approach combines strategic thinking, technical excellence, and deep understanding of business growth.
+                </p>
+                <p>
+                  We're proud to serve businesses across Africa and beyond, helping them scale without the typical growing pains that come with expansion.
+                </p>
+              </div>
+            </div>
+            
+            <div className="space-y-6">
+              {timeline.map((item, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, x: 50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  className="flex gap-4"
+                >
+                  <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center flex-shrink-0">
+                    <span className="font-display font-bold text-accent">{item.year}</span>
+                  </div>
+                  <div>
+                    <h4 className="font-display font-bold mb-2">{item.title}</h4>
+                    <p className="text-muted text-sm">{item.description}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </AnimatedSection>
+
+      {/* Our Values */}
+      <AnimatedSection className="py-24">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">
+              Our Values
+            </h2>
+            <p className="text-muted text-lg">The principles that guide everything we do</p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {values.map((value, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="card p-8 text-center"
+              >
+                <div className="text-4xl mb-4">{value.icon}</div>
+                <h3 className="font-display text-xl font-bold mb-4">{value.title}</h3>
+                <p className="text-muted text-sm leading-relaxed">{value.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </AnimatedSection>
+
+      {/* Team Section */}
+      <AnimatedSection className="py-24 bg-surface">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">
+              Meet Our Team
+            </h2>
+            <p className="text-muted text-lg">The people behind the growth</p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-12">
+            {team.map((member, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.2 }}
+                className="card p-8"
+              >
+                <div className="flex flex-col md:flex-row gap-6">
+                  <div className="w-24 h-24 bg-accent/10 rounded-full flex items-center justify-center flex-shrink-0">
+                    <span className="font-display text-2xl font-bold text-accent">
+                      {member.name.split(' ').map(n => n[0]).join('')}
+                    </span>
+                  </div>
+                  
+                  <div className="flex-1">
+                    <h3 className="font-display text-xl font-bold mb-2">{member.name}</h3>
+                    <p className="text-accent font-medium mb-4">{member.role}</p>
+                    <p className="text-muted text-sm mb-6 leading-relaxed">{member.bio}</p>
+                    
+                    <div>
+                      <h4 className="font-semibold mb-2">Expertise</h4>
+                      <div className="flex flex-wrap gap-2">
+                        {member.expertise.map((skill, j) => (
+                          <span
+                            key={j}
+                            className="px-3 py-1 bg-surface-light rounded-full text-xs text-muted-dark"
+                          >
+                            {skill}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </AnimatedSection>
+
+      {/* CTA Section */}
+      <AnimatedSection className="py-24">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">
+            Ready to Work Together?
+          </h2>
+          <p className="text-muted text-lg mb-8">
+            Let's discuss how we can help transform your business with the right growth infrastructure.
+          </p>
+          <a
+            href="https://calendly.com/pascal-digny/consultation-meeting"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary text-lg px-8 py-4"
+          >
+            Book Your Free Consultation
+          </a>
+        </div>
+      </AnimatedSection>
+
+      <Footer />
+    </main>
+  )
+}
