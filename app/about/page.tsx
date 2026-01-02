@@ -41,10 +41,10 @@ function Counter({ end, suffix = '' }: { end: number; suffix?: string }) {
 }
 
 const stats = [
-  { value: 7, suffix: '+', label: 'Years Experience' },
-  { value: 100, suffix: '+', label: 'Businesses Transformed' },
-  { value: 95, suffix: '%', label: 'Client Satisfaction' },
-  { value: 12, suffix: '+', label: 'Countries Served' },
+  { value: 8, suffix: '+', label: 'Years Experience' },
+  { value: 150, suffix: '+', label: 'Businesses Transformed' },
+  { value: 98, suffix: '%', label: 'Client Satisfaction' },
+  { value: 15, suffix: '+', label: 'Countries Served' },
 ]
 
 const team = [
@@ -117,6 +117,16 @@ const timeline = [
     year: '2024',
     title: 'Growth Infrastructure',
     description: 'Evolved into a full growth infrastructure agency with proven methodologies.'
+  },
+  {
+    year: '2025',
+    title: 'AI Integration',
+    description: 'Integrated AI-powered solutions into our service offerings and launched ProposalAgent.'
+  },
+  {
+    year: '2026',
+    title: 'Market Leadership',
+    description: 'Established as a leading growth infrastructure agency with 150+ successful transformations.'
   }
 ]
 
@@ -195,13 +205,13 @@ export default function AboutPage() {
                   Digni Digital was born from a simple observation: too many businesses were struggling with disconnected tools, manual processes, and missed opportunities. We saw talented entrepreneurs held back by technology barriers rather than empowered by them.
                 </p>
                 <p>
-                  Founded in 2019, we started with a mission to democratize access to high-quality digital solutions. What began as a small web development service has evolved into a comprehensive growth infrastructure agency.
+                  Founded in 2019, we started with a mission to democratize access to high-quality digital solutions. What began as a small web development service has evolved into a comprehensive growth infrastructure agency over the past 8 years.
                 </p>
                 <p>
-                  Today, we don't just build websites or apps – we architect complete growth systems that turn chaos into clients. Our approach combines strategic thinking, technical excellence, and deep understanding of business growth.
+                  Today, we don't just build websites or apps – we architect complete growth systems that turn chaos into clients. Our approach combines strategic thinking, technical excellence, AI-powered solutions, and deep understanding of business growth.
                 </p>
                 <p>
-                  We're proud to serve businesses across Africa and beyond, helping them scale without the typical growing pains that come with expansion.
+                  As we enter 2026, we're proud to have served over 150 businesses across 15+ countries, helping them scale without the typical growing pains that come with expansion. Our latest innovations include AI-integrated solutions and advanced automation platforms.
                 </p>
               </div>
             </div>

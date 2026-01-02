@@ -72,7 +72,7 @@ function Hero() {
           className="flex flex-wrap gap-8"
         >
           {[
-            { value: '50+', label: 'Businesses Transformed' },
+            { value: '150+', label: 'Businesses Transformed' },
             { value: 'Since 2019', label: '' },
             { value: 'Africa & Beyond', label: '' },
           ].map((stat, i) => (
@@ -461,10 +461,10 @@ function Counter({ end, suffix = '' }: { end: number; suffix?: string }) {
 // Stats Section
 function Stats() {
   const stats = [
-    { value: 7, suffix: '+', label: 'Years Experience' },
-    { value: 100, suffix: '+', label: 'Businesses Transformed' },
-    { value: 95, suffix: '%', label: 'Client Satisfaction' },
-    { value: 12, suffix: '+', label: 'Countries Served' },
+    { value: 8, suffix: '+', label: 'Years Experience' },
+    { value: 150, suffix: '+', label: 'Businesses Transformed' },
+    { value: 98, suffix: '%', label: 'Client Satisfaction' },
+    { value: 15, suffix: '+', label: 'Countries Served' },
   ]
 
   return (
