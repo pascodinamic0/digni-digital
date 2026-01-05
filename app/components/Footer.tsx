@@ -3,24 +3,22 @@ import Link from 'next/link'
 export default function Footer() {
   const links = {
     services: [
-      { name: 'Web Development', href: '/services#web-development' },
-      { name: 'Mobile Apps', href: '/services#mobile-apps' },
-      { name: 'Custom SaaS', href: '/services#custom-saas' },
-      { name: 'SEO', href: '/services#seo' },
-      { name: 'Social Media', href: '/services#social-media' },
-      { name: 'Courses', href: '/services#courses' },
+      { name: 'AI Receptionist Systems', href: '/ai-receptionist' },
+      { name: 'Future-Ready Graduate', href: '/future-ready-graduate' },
+      { name: 'Custom SaaS Development', href: '/custom-saas' },
+      { name: 'Our Mission', href: '/#our-mission' },
     ],
-    products: [
-      { name: 'ProposalAgent', href: '/products#proposal-agent' },
-      { name: 'CRM Lite', href: '/products#crm-lite' },
-      { name: 'Invoice AI', href: '/products#invoice-ai' },
-      { name: 'Social Assistant', href: '/products#social-assistant' },
+    resources: [
+      { name: 'Case Studies', href: '/case-studies' },
+      { name: 'Success Stories', href: '/case-studies' },
+      { name: 'What We Fight For', href: '/#what-were-fighting-for' },
+      { name: 'Our Story', href: '/about' },
     ],
     company: [
-      { name: 'About', href: '/about' },
-      { name: 'Case Studies', href: '/case-studies' },
-      { name: 'Contact', href: '/contact' },
+      { name: 'About Us', href: '/about' },
       { name: 'Careers', href: '/careers' },
+      { name: 'Contact', href: '/contact' },
+      { name: 'Support', href: '/contact' },
     ],
   }
 
@@ -37,8 +35,8 @@ export default function Footer() {
               <span className="font-display font-semibold text-xl">Digni Digital LLC</span>
             </Link>
             <p className="text-muted mb-6 max-w-sm">
-              We Build Growth Infrastructures That Turn Chaos Into Clients.
-              Strategic systems, intelligent automation, and purpose-built products.
+              Technology should serve humanity. We build digital solutions that create 
+              real impact for businesses, schools, and communities.
             </p>
             <a
               href="https://calendly.com/pascal-digny/consultation-meeting"
@@ -46,7 +44,7 @@ export default function Footer() {
               rel="noopener noreferrer"
               className="btn-primary"
             >
-              Book Consultation
+              Get Started
             </a>
           </div>
 
@@ -64,9 +62,9 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="font-display font-semibold mb-4">Products</h4>
+            <h4 className="font-display font-semibold mb-4">Resources</h4>
             <ul className="space-y-3">
-              {links.products.map((link) => (
+              {links.resources.map((link) => (
                 <li key={link.name}>
                   <Link href={link.href} className="text-muted hover:text-white transition-colors text-sm">
                     {link.name}
@@ -95,7 +93,7 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} Digni Digital. All rights reserved.
           </p>
           <p className="text-muted text-sm">
-            Trusted by Businesses Across Africa & Beyond
+            Trusted by Businesses & Schools Worldwide
           </p>
         </div>
       </div>

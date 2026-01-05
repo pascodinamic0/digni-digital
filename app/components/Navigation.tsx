@@ -7,6 +7,7 @@ import Link from 'next/link'
 export default function Navigation() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
+  const [solutionsOpen, setSolutionsOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50)
@@ -15,11 +16,28 @@ export default function Navigation() {
   }, [])
 
   const navLinks = [
-    { name: 'Services', href: '/services' },
-    { name: 'Solutions', href: '/solutions' },
-    { name: 'Products', href: '/products' },
+    { name: 'Our Mission', href: '/#our-mission' },
+    { name: 'About Us', href: '/about' },
     { name: 'Case Studies', href: '/case-studies' },
-    { name: 'About', href: '/about' },
+    { name: 'Careers', href: '/careers' },
+  ]
+
+  const solutionLinks = [
+    { 
+      name: 'AI Receptionist', 
+      href: '/ai-receptionist',
+      description: 'Never miss a lead with 24/7 AI-powered reception'
+    },
+    { 
+      name: 'Future-Ready Graduate', 
+      href: '/future-ready-graduate',
+      description: 'Transform students into job-ready professionals'
+    },
+    { 
+      name: 'Custom SaaS', 
+      href: '/custom-saas',
+      description: 'Tailored software solutions for unique challenges'
+    },
   ]
 
   return (
@@ -51,6 +69,46 @@ export default function Navigation() {
                 {link.name}
               </Link>
             ))}
+            
+            {/* Solutions Dropdown */}
+            <div 
+              className="relative"
+              onMouseEnter={() => setSolutionsOpen(true)}
+              onMouseLeave={() => setSolutionsOpen(false)}
+            >
+              <button className="text-muted hover:text-white transition-colors duration-200 text-sm font-medium flex items-center gap-1">
+                Solutions
+                <svg className={`w-4 h-4 transition-transform duration-200 ${solutionsOpen ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              
+              {solutionsOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 10 }}
+                  className="absolute top-full left-0 mt-2 w-80 bg-surface border border-white/10 rounded-xl shadow-2xl backdrop-blur-xl z-50"
+                >
+                  <div className="p-2">
+                    {solutionLinks.map((solution) => (
+                      <Link
+                        key={solution.name}
+                        href={solution.href}
+                        className="block p-4 rounded-lg hover:bg-white/5 transition-colors group"
+                      >
+                        <div className="font-medium text-white group-hover:text-accent transition-colors">
+                          {solution.name}
+                        </div>
+                        <div className="text-sm text-muted mt-1">
+                          {solution.description}
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                </motion.div>
+              )}
+            </div>
           </div>
 
           <div className="hidden lg:block">
@@ -60,7 +118,7 @@ export default function Navigation() {
               rel="noopener noreferrer"
               className="btn-primary text-sm"
             >
-              Book Consultation
+              Get Started
             </a>
           </div>
 
@@ -92,13 +150,29 @@ export default function Navigation() {
                 {link.name}
               </Link>
             ))}
+            
+            {/* Mobile Solutions Section */}
+            <div className="py-3">
+              <div className="text-muted font-medium mb-2">Solutions</div>
+              {solutionLinks.map((solution) => (
+                <Link
+                  key={solution.name}
+                  href={solution.href}
+                  className="block py-2 pl-4 text-sm text-muted hover:text-white transition-colors"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  {solution.name}
+                </Link>
+              ))}
+            </div>
+            
             <a
               href="https://calendly.com/pascal-digny/consultation-meeting"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary mt-4 w-full text-center block"
             >
-              Book Consultation
+              Get Started
             </a>
           </motion.div>
         )}
