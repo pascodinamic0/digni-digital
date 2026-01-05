@@ -22,7 +22,7 @@ function Hero() {
           className="mb-6"
         >
           <span className="inline-block px-4 py-2 bg-accent/10 border border-accent/30 rounded-full text-accent text-sm font-medium">
-            Growth Infrastructure Agency
+            Digital Transformation Agency
           </span>
         </motion.div>
 
@@ -32,18 +32,18 @@ function Hero() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="font-display text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-8 max-w-4xl"
         >
-          We Build Growth Infrastructures That{' '}
-          <span className="gradient-text">Turn Chaos Into Clients.</span>
+          We Believe Technology Should{' '}
+          <span className="gradient-text">Serve Humanity.</span>
         </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="text-xl text-muted max-w-2xl mb-10 leading-relaxed"
+          className="text-xl text-muted max-w-3xl mb-10 leading-relaxed"
         >
-          Strategic systems, intelligent automation, and purpose-built products
-          that help ambitious businesses scale without the chaos.
+          Every business deserves to capture every opportunity. Every student deserves to graduate job-ready. 
+          We build the technology that makes this possible — because potential should never be wasted.
         </motion.p>
 
         <motion.div
@@ -52,16 +52,11 @@ function Hero() {
           transition={{ duration: 0.8, delay: 0.8 }}
           className="flex flex-col sm:flex-row gap-4 mb-16"
         >
-          <a
-            href="https://calendly.com/pascal-digny/consultation-meeting"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-primary"
-          >
-            Book a Consultation
-          </a>
-          <Link href="/products" className="btn-secondary">
-            Explore Our Products
+          <Link href="/about" className="btn-primary">
+            About Us
+          </Link>
+          <Link href="#what-we-do" className="btn-secondary">
+            What We Do
           </Link>
         </motion.div>
 
@@ -89,233 +84,360 @@ function Hero() {
   )
 }
 
-// Problems Section
-function Problems() {
-  const problems = [
+// Mission & Values Section
+function MissionValues() {
+  const mission = {
+    title: "Our Mission",
+    statement: "To democratize access to opportunity through technology that serves humanity first.",
+    description: "We believe every business should capture every lead, every student should graduate job-ready, and every organization should have access to enterprise-level technology — regardless of size or budget."
+  }
+
+  const values = [
     {
-      title: 'Leads leak due to disconnected tools',
-      description: "Your CRM, website, and sales process don't talk to each other. Prospects fall through the cracks.",
+      title: 'Human-First Technology',
+      description: 'We build technology that amplifies human potential, not replaces it. Every solution we create makes people more effective, not obsolete.',
+      icon: '🤝',
+      principle: 'Technology should serve people, not the other way around.'
     },
     {
-      title: 'Slow, manual processes stall growth',
-      description: 'Time wasted on repetitive tasks means missed opportunities and frustrated teams.',
+      title: 'Opportunity Equality',
+      description: 'Small businesses deserve the same advantages as Fortune 500 companies. Students from any background deserve job-ready skills.',
+      icon: '⚖️',
+      principle: 'Access to opportunity should not depend on privilege or resources.'
     },
     {
-      title: 'Poor customer journeys cause churn',
-      description: 'Confusing touchpoints and inconsistent messaging drive potential clients away.',
+      title: 'Immediate Impact',
+      description: 'We measure success by real-world outcomes: leads captured, students employed, businesses transformed. Results matter more than features.',
+      icon: '⚡',
+      principle: 'Every solution must deliver measurable value from day one.'
     },
     {
-      title: 'No visibility: decisions without data',
-      description: "Flying blind without proper analytics means you can't optimize what you can't measure.",
-    },
+      title: 'Sustainable Growth',
+      description: 'We build systems that grow with you, not solutions that become obsolete. Long-term partnerships over short-term profits.',
+      icon: '🌱',
+      principle: 'True success is measured in decades, not quarters.'
+    }
   ]
 
   return (
-    <AnimatedSection className="py-24 bg-surface">
+    <AnimatedSection id="our-mission" className="py-24 bg-surface">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <span className="text-accent font-medium text-sm uppercase tracking-wider">The Problems We Solve</span>
-          <h2 className="font-display text-4xl md:text-5xl font-bold mt-4 mb-6">
-            Every day you delay fixing these issues,<br />
-            <span className="text-muted">you&apos;re leaving money on the table</span>
+        {/* Mission Statement */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-20"
+        >
+          <span className="text-accent font-medium text-sm uppercase tracking-wider">{mission.title}</span>
+          <h2 className="font-display text-4xl md:text-5xl font-bold mt-4 mb-8 max-w-4xl mx-auto">
+            {mission.statement}
           </h2>
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-6">
-          {problems.map((problem, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="card p-8 group"
-            >
-              <div className="flex gap-4">
-                <div className="w-1 h-full bg-accent/30 group-hover:bg-accent transition-colors rounded-full" />
-                <div>
-                  <h3 className="font-display text-xl font-semibold mb-3">{problem.title}</h3>
-                  <p className="text-muted leading-relaxed">{problem.description}</p>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-    </AnimatedSection>
-  )
-}
-
-// Services Section
-function Services() {
-  const services = [
-    {
-      title: 'Website Development',
-      desc: 'Custom, high-performance websites that convert visitors into customers. From landing pages to complex web applications.',
-      tags: ['Responsive Design', 'SEO Optimized', 'Fast Loading'],
-    },
-    {
-      title: 'Mobile Applications',
-      desc: 'Native and cross-platform mobile apps for iOS and Android. Beautiful, functional, and built for scale.',
-      tags: ['iOS', 'Android', 'Cross-Platform'],
-    },
-    {
-      title: 'Custom SaaS Development',
-      desc: 'We build software products from scratch. Turn your idea into a fully functional SaaS platform.',
-      tags: ['Full-Stack', 'Scalable', 'Cloud-Native'],
-    },
-    {
-      title: 'SEO & Search Marketing',
-      desc: 'Dominate search rankings and drive organic traffic. Technical SEO, content strategy, and link building.',
-      tags: ['Technical SEO', 'Content', 'Analytics'],
-    },
-    {
-      title: 'Social Media Marketing',
-      desc: 'Strategic social media management that builds brand awareness and drives engagement across all platforms.',
-      tags: ['Strategy', 'Content Creation', 'Paid Ads'],
-    },
-    {
-      title: 'Development Courses',
-      desc: 'Learn to build with our expert-led courses. From coding basics to advanced software architecture.',
-      tags: ['Self-Paced', 'Mentorship', 'Certification'],
-    },
-  ]
-
-  return (
-    <AnimatedSection id="services" className="py-24">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <span className="text-accent font-medium text-sm uppercase tracking-wider">What We Do</span>
-          <h2 className="font-display text-4xl md:text-5xl font-bold mt-4 mb-6">
-            Full-Stack Digital Services<br />
-            <span className="gradient-text">For Modern Businesses</span>
-          </h2>
-          <p className="text-muted text-lg max-w-2xl mx-auto">
-            From websites to mobile apps, SEO to custom software — we deliver complete digital solutions.
+          <p className="text-xl text-muted max-w-3xl mx-auto leading-relaxed">
+            {mission.description}
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map((service, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="card p-8 group hover:border-accent/50"
-            >
-              <h3 className="font-display text-xl font-bold mb-3 group-hover:text-accent transition-colors">
-                {service.title}
-              </h3>
-              <p className="text-muted text-sm mb-6 leading-relaxed">{service.desc}</p>
-              <div className="flex flex-wrap gap-2">
-                {service.tags.map((tag, j) => (
-                  <span
-                    key={j}
-                    className="px-3 py-1 bg-surface-light rounded-full text-xs text-muted-dark"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </motion.div>
-          ))}
-        </div>
-
-        <div className="text-center mt-12">
-          <Link href="/services" className="btn-secondary mr-4">View All Services</Link>
-          <a
-            href="https://calendly.com/pascal-digny/consultation-meeting"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-primary"
-          >
-            Discuss Your Project
-          </a>
-        </div>
-      </div>
-    </AnimatedSection>
-  )
-}
-
-// Solutions Section
-function Solutions() {
-  const solutions = [
-    {
-      title: 'Lead Generation & Growth',
-      problem: 'Struggling to attract quality leads consistently?',
-      solution: 'We build comprehensive lead generation engines: optimized websites, conversion funnels, targeted advertising, and SEO strategies.',
-      impact: 'Predictable pipeline of qualified prospects flowing into your business every month.',
-    },
-    {
-      title: 'Operational Efficiency',
-      problem: "Manual processes eating up your team's time?",
-      solution: 'Custom CRM systems, automated workflows, seamless integrations, and real-time analytics dashboards.',
-      impact: '10x productivity increase and error-free operations that scale with your growth.',
-    },
-    {
-      title: 'Customer Experience Transformation',
-      problem: 'Losing clients due to poor experience?',
-      solution: 'End-to-end customer journey mapping, personalized messaging systems, and retention automation.',
-      impact: 'Higher customer satisfaction, increased lifetime value, and powerful referral engines.',
-    },
-  ]
-
-  return (
-    <AnimatedSection id="solutions" className="py-24">
-      <div className="max-w-7xl mx-auto px-6">
+        {/* Core Values */}
         <div className="text-center mb-16">
-          <span className="text-accent font-medium text-sm uppercase tracking-wider">Our Solutions</span>
-          <h2 className="font-display text-4xl md:text-5xl font-bold mt-4 mb-6">
-            We don&apos;t just fix problems.<br />
-            <span className="gradient-text">We build growth engines.</span>
-          </h2>
+          <span className="text-accent font-medium text-sm uppercase tracking-wider">Our Values</span>
+          <h3 className="font-display text-3xl md:text-4xl font-bold mt-4 mb-6">
+            What We <span className="gradient-text">Stand For</span>
+          </h3>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8">
-          {solutions.map((sol, i) => (
+        <div className="grid md:grid-cols-2 gap-8">
+          {values.map((value, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.15 }}
-              className="animated-border p-8 h-full flex flex-col"
+              className="card p-8 group hover:border-accent/50"
             >
-              <h3 className="font-display text-2xl font-bold mb-6 text-accent">{sol.title}</h3>
-
-              <div className="space-y-6 flex-1">
-                <div>
-                  <span className="text-xs uppercase tracking-wider text-muted-dark">Problem</span>
-                  <p className="text-muted mt-1">{sol.problem}</p>
+              <div className="flex items-start gap-6">
+                <div className="w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center text-3xl flex-shrink-0">
+                  {value.icon}
                 </div>
-
-                <div>
-                  <span className="text-xs uppercase tracking-wider text-muted-dark">Solution</span>
-                  <p className="text-white mt-1">{sol.solution}</p>
+                <div className="flex-1">
+                  <h4 className="font-display text-xl font-bold mb-3 group-hover:text-accent transition-colors">
+                    {value.title}
+                  </h4>
+                  <p className="text-muted mb-4 leading-relaxed">
+                    {value.description}
+                  </p>
+                  <blockquote className="text-accent italic text-sm font-medium border-l-2 border-accent/30 pl-4">
+                    "{value.principle}"
+                  </blockquote>
                 </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </AnimatedSection>
+  )
+}
 
-                <div>
-                  <span className="text-xs uppercase tracking-wider text-muted-dark">Impact</span>
-                  <p className="text-success mt-1">{sol.impact}</p>
+// What We're Fighting For Section
+function WhatWereFightingFor() {
+  const challenges = [
+    {
+      title: 'The Missed Opportunity Crisis',
+      problem: 'Small businesses lose $62 billion annually to missed leads',
+      reality: 'Every missed call is someone choosing your competitor. Every delayed response is lost revenue. Every manual process is a bottleneck that costs you customers.',
+      ourFight: 'We fight for a world where no business loses customers due to technological limitations.',
+      icon: '📞',
+      stat: '$62B',
+      statLabel: 'Lost annually to missed leads'
+    },
+    {
+      title: 'The Skills Gap Emergency',
+      problem: '40% of graduates are unemployed 6 months after graduation',
+      reality: 'Students spend years learning theory but graduate without practical, income-generating skills. The education system is failing to prepare them for the digital economy.',
+      ourFight: 'We fight for a world where every graduate has the skills employers actually need.',
+      icon: '🎓',
+      stat: '40%',
+      statLabel: 'Graduate unemployment rate'
+    },
+    {
+      title: 'The Digital Divide',
+      problem: 'Enterprise technology is locked behind million-dollar budgets',
+      reality: 'Small businesses and schools can\'t access the same tools that Fortune 500 companies use. This creates an unfair competitive advantage based on budget, not merit.',
+      ourFight: 'We fight for technological equality — where your impact matters more than your budget.',
+      icon: '⚖️',
+      stat: '10:1',
+      statLabel: 'Enterprise vs SMB tech advantage'
+    }
+  ]
+
+  return (
+    <AnimatedSection id="what-were-fighting-for" className="py-24">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="text-center mb-16">
+          <span className="text-accent font-medium text-sm uppercase tracking-wider">What We're Fighting For</span>
+          <h2 className="font-display text-4xl md:text-5xl font-bold mt-4 mb-6">
+            These Problems Keep Us<br />
+            <span className="gradient-text">Up At Night</span>
+          </h2>
+          <p className="text-muted text-lg max-w-3xl mx-auto">
+            We didn't start this company to build another tech startup. We started it to solve problems that matter.
+          </p>
+        </div>
+
+        <div className="space-y-16">
+          {challenges.map((challenge, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.2 }}
+              className="grid lg:grid-cols-3 gap-8 items-center"
+            >
+              <div className="lg:col-span-2">
+                <div className="flex items-start gap-6">
+                  <div className="w-16 h-16 bg-red-500/10 rounded-2xl flex items-center justify-center text-3xl flex-shrink-0">
+                    {challenge.icon}
+                  </div>
+                  <div>
+                    <h3 className="font-display text-2xl font-bold mb-4">{challenge.title}</h3>
+                    <div className="space-y-4">
+                      <div>
+                        <span className="text-xs uppercase tracking-wider text-muted-dark">The Problem</span>
+                        <p className="text-red-400 font-semibold mt-1">{challenge.problem}</p>
+                      </div>
+                      <div>
+                        <span className="text-xs uppercase tracking-wider text-muted-dark">The Reality</span>
+                        <p className="text-muted mt-1 leading-relaxed">{challenge.reality}</p>
+                      </div>
+                      <div>
+                        <span className="text-xs uppercase tracking-wider text-muted-dark">Our Fight</span>
+                        <p className="text-accent font-medium mt-1">{challenge.ourFight}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="text-center lg:text-right">
+                <div className="card p-8 bg-surface-light">
+                  <div className="font-display text-4xl font-bold text-red-400 mb-2">
+                    {challenge.stat}
+                  </div>
+                  <p className="text-muted text-sm">{challenge.statLabel}</p>
                 </div>
               </div>
             </motion.div>
           ))}
         </div>
 
-        <div className="flex justify-center gap-4 mt-12">
-          <Link href="/solutions" className="btn-secondary">Explore Our Solutions</Link>
-          <a
-            href="https://calendly.com/pascal-digny/consultation-meeting"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-primary"
-          >
-            Book a Strategy Session
-          </a>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mt-16"
+        >
+          <div className="card p-12 bg-gradient-to-br from-accent/5 to-success/5">
+            <h3 className="font-display text-3xl font-bold mb-4">
+              This Is Why We Exist
+            </h3>
+            <p className="text-muted text-lg mb-8 max-w-2xl mx-auto">
+              Every line of code we write, every system we build, every partnership we form — 
+              it all serves one purpose: turning these problems into opportunities.
+            </p>
+            <Link href="#what-we-do" className="btn-primary text-lg px-8 py-4">
+              See How We Fight Back
+            </Link>
+          </div>
+        </motion.div>
+      </div>
+    </AnimatedSection>
+  )
+}
+
+// What We Do Section
+function WhatWeDo() {
+  const services = [
+    {
+      title: 'AI Receptionist Systems',
+      subtitle: 'For Growing Businesses',
+      description: 'Deploy intelligent reception systems that capture every lead, qualify prospects, and book appointments 24/7 — so you never miss another opportunity.',
+      approach: 'We don\'t just install software. We study your business, understand your customers, and build AI that represents your brand perfectly.',
+      outcomes: ['300% increase in lead capture', '24/7 customer service', 'Zero missed opportunities', 'Seamless CRM integration'],
+      icon: '🤖',
+      link: '/ai-receptionist',
+      color: 'accent'
+    },
+    {
+      title: 'Future-Ready Graduate Programs',
+      subtitle: 'For Educational Institutions',
+      description: 'Transform your curriculum with practical digital skills training that guarantees your students graduate job-ready with real income potential.',
+      approach: 'We partner with schools to redesign education around employability, connecting students directly with hiring partners.',
+      outcomes: ['85% graduate employment rate', 'Direct employer partnerships', 'Real-world skill development', 'Measurable ROI tracking'],
+      icon: '🎓',
+      link: '/future-ready-graduate',
+      color: 'success'
+    },
+    {
+      title: 'Custom SaaS Development',
+      subtitle: 'For Unique Challenges',
+      description: 'Build custom software solutions that solve your specific problems — from concept to deployment, with ongoing support and optimization.',
+      approach: 'We become your technical co-founders, understanding your vision and building technology that grows with your business.',
+      outcomes: ['Scalable architecture', 'Enterprise-grade security', 'Ongoing optimization', 'Full ownership of code'],
+      icon: '⚙️',
+      link: '/custom-saas',
+      color: 'blue-400'
+    }
+  ]
+
+  return (
+    <AnimatedSection id="what-we-do" className="py-24 bg-surface">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="text-center mb-16">
+          <span className="text-accent font-medium text-sm uppercase tracking-wider">What We Do</span>
+          <h2 className="font-display text-4xl md:text-5xl font-bold mt-4 mb-6">
+            Three Ways We<br />
+            <span className="gradient-text">Fight Back</span>
+          </h2>
+          <p className="text-muted text-lg max-w-3xl mx-auto">
+            Every service we offer directly addresses one of the critical problems we're fighting. 
+            This isn't about technology for technology's sake — it's about impact.
+          </p>
         </div>
+
+        <div className="space-y-12">
+          {services.map((service, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.2 }}
+              className="card p-8 md:p-12 hover:border-accent/50 group"
+            >
+              <div className="grid lg:grid-cols-3 gap-8 items-start">
+                <div className="lg:col-span-2">
+                  <div className="flex items-start gap-6 mb-8">
+                    <div className={`w-16 h-16 bg-${service.color}/10 rounded-2xl flex items-center justify-center text-3xl flex-shrink-0`}>
+                      {service.icon}
+                    </div>
+                    <div>
+                      <span className={`text-${service.color} text-sm font-medium uppercase tracking-wider`}>{service.subtitle}</span>
+                      <h3 className="font-display text-3xl font-bold mt-2 mb-4 group-hover:text-accent transition-colors">
+                        {service.title}
+                      </h3>
+                      <p className="text-muted text-lg leading-relaxed mb-6">
+                        {service.description}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="space-y-6">
+                    <div>
+                      <span className="text-xs uppercase tracking-wider text-muted-dark">Our Approach</span>
+                      <p className="text-white mt-2 leading-relaxed">{service.approach}</p>
+                    </div>
+
+                    <div>
+                      <span className="text-xs uppercase tracking-wider text-muted-dark">Typical Outcomes</span>
+                      <div className="grid md:grid-cols-2 gap-2 mt-2">
+                        {service.outcomes.map((outcome, j) => (
+                          <div key={j} className="flex items-center gap-2">
+                            <div className={`w-1.5 h-1.5 bg-${service.color} rounded-full`} />
+                            <span className="text-sm text-muted">{outcome}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex flex-col gap-4">
+                  <Link 
+                    href={service.link}
+                    className="btn-primary text-center"
+                  >
+                    Learn More
+                  </Link>
+                  <a
+                    href="https://calendly.com/pascal-digny/consultation-meeting"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-secondary text-center"
+                  >
+                    Discuss Project
+                  </a>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mt-16"
+        >
+          <div className="card p-8 bg-gradient-to-br from-accent/5 to-success/5">
+            <h3 className="font-display text-2xl font-bold mb-4">
+              Not Sure Which Service You Need?
+            </h3>
+            <p className="text-muted mb-6">
+              Let's discuss your challenges and find the right solution together.
+            </p>
+            <a
+              href="https://calendly.com/pascal-digny/consultation-meeting"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary"
+            >
+              Book a Strategy Call
+            </a>
+          </div>
+        </motion.div>
       </div>
     </AnimatedSection>
   )
@@ -323,91 +445,99 @@ function Solutions() {
 
 // Products Section
 function Products() {
-  const comingSoon = [
-    { initial: 'C', name: 'CRM Lite', desc: 'Simple, powerful customer relationship management.' },
-    { initial: 'I', name: 'Invoice AI', desc: 'Automated invoicing and payment tracking.' },
-    { initial: 'S', name: 'Social Assistant', desc: 'AI-powered social media management.' },
+  const flagshipProducts = [
+    {
+      name: 'AI Receptionist™',
+      tagline: 'Never miss a lead again',
+      description: 'AI-powered reception system that handles calls, qualifies leads, and books appointments 24/7.',
+      features: ['24/7 Call Handling', 'Lead Qualification', 'Appointment Booking', 'CRM Integration', 'Multi-language Support', 'Analytics Dashboard'],
+      pricing: { starter: '$297/month', pro: '$497/month', enterprise: 'Custom' },
+      icon: '🤖',
+      gradient: 'from-accent/20 to-accent/5',
+      status: 'LIVE'
+    },
+    {
+      name: 'Future-Ready Graduate™',
+      tagline: 'Students with real income skills',
+      description: 'Complete employability program that transforms students into job-ready professionals.',
+      features: ['Digital Skills Training', 'Portfolio Development', 'Job Placement Support', 'Income Tracking', 'Employer Network', 'Success Metrics'],
+      pricing: { starter: '$1,997/student', pro: '$2,997/student', enterprise: 'Custom' },
+      icon: '🎓',
+      gradient: 'from-success/20 to-success/5',
+      status: 'LIVE'
+    }
   ]
 
   return (
-    <AnimatedSection id="products" className="py-24 bg-surface">
+    <AnimatedSection id="products" className="py-24">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <span className="text-accent font-medium text-sm uppercase tracking-wider">Our Products</span>
           <h2 className="font-display text-4xl md:text-5xl font-bold mt-4 mb-4">
-            We don&apos;t just consult. We build SaaS.
+            Two Flagship Solutions.<br />
+            <span className="gradient-text">Immediate Impact.</span>
           </h2>
-          <p className="text-muted text-lg">Powerful, affordable tools for every stage of growth.</p>
+          <p className="text-muted text-lg">Ready-to-deploy systems that solve critical business and education challenges.</p>
         </div>
 
-        {/* Featured Product */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="card p-8 md:p-12 mb-8 glow-accent-hover"
-        >
-          <div className="flex flex-col lg:flex-row gap-8 items-center">
-            <div className="flex-1">
-              <div className="flex items-center gap-3 mb-4">
-                <span className="px-3 py-1 bg-success/20 text-success text-xs font-bold rounded-full">NEW</span>
-                <h3 className="font-display text-3xl font-bold">ProposalAgent</h3>
-              </div>
-              <p className="text-2xl text-accent font-medium mb-4">Speak. We structure. You send.</p>
-              <p className="text-muted text-lg mb-6">
-                Turn voice notes into client-ready proposals with AI-powered structuring.
-                Proposals in minutes, not hours.
-              </p>
-              <div className="flex flex-wrap gap-4 mb-8">
-                <span className="px-4 py-2 bg-surface-light rounded-lg text-sm font-medium">10x Faster</span>
-                <span className="px-4 py-2 bg-surface-light rounded-lg text-sm font-medium">AI-Powered</span>
-                <span className="px-4 py-2 bg-surface-light rounded-lg text-sm font-medium">Brand Ready</span>
-              </div>
-              <div className="flex gap-4">
-                <a href="#" className="btn-primary">Try Free</a>
-                <Link href="/products" className="btn-secondary">Learn More</Link>
-              </div>
-            </div>
-            <div className="w-full lg:w-96 h-64 bg-gradient-to-br from-accent/20 to-transparent rounded-2xl flex items-center justify-center">
-              <div className="text-center">
-                <div className="w-20 h-20 bg-accent/20 rounded-2xl mx-auto mb-4 flex items-center justify-center">
-                  <span className="font-display text-4xl font-bold text-accent">P</span>
-                </div>
-                <span className="text-muted">ProposalAgent Preview</span>
-              </div>
-            </div>
-          </div>
-        </motion.div>
-
-        {/* Coming Soon Products */}
-        <div className="grid md:grid-cols-3 gap-6 mb-12">
-          {comingSoon.map((product, i) => (
+        <div className="grid lg:grid-cols-2 gap-12">
+          {flagshipProducts.map((product, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="card p-6 opacity-60"
+              transition={{ delay: i * 0.2 }}
+              className="card p-8 md:p-12 glow-accent-hover"
             >
-              <div className="flex items-center gap-4 mb-4">
-                <div className="w-12 h-12 bg-surface-light rounded-lg flex items-center justify-center">
-                  <span className="font-display text-xl font-bold text-muted">{product.initial}</span>
+              <div className="text-center mb-8">
+                <div className="flex items-center justify-center gap-3 mb-4">
+                  <span className="px-3 py-1 bg-success/20 text-success text-xs font-bold rounded-full">{product.status}</span>
                 </div>
-                <div>
-                  <h4 className="font-display font-semibold">{product.name}</h4>
-                  <span className="text-xs text-muted-dark uppercase">Coming Soon</span>
+                <div className={`w-20 h-20 bg-gradient-to-br ${product.gradient} rounded-2xl mx-auto mb-4 flex items-center justify-center text-4xl`}>
+                  {product.icon}
+                </div>
+                <h3 className="font-display text-3xl font-bold mb-2">{product.name}</h3>
+                <p className="text-xl text-accent font-medium mb-4">{product.tagline}</p>
+              </div>
+
+              <p className="text-muted text-lg mb-8 text-center leading-relaxed">
+                {product.description}
+              </p>
+
+              <div className="grid grid-cols-2 gap-2 mb-8">
+                {product.features.map((feature, j) => (
+                  <div key={j} className="flex items-center gap-2">
+                    <div className="w-1.5 h-1.5 bg-accent rounded-full" />
+                    <span className="text-sm text-muted">{feature}</span>
+                  </div>
+                ))}
+              </div>
+
+              <div className="text-center mb-8">
+                <div className="text-2xl font-display font-bold text-accent mb-2">
+                  Starting at {product.pricing.starter}
+                </div>
+                <div className="text-sm text-muted">
+                  Pro: {product.pricing.pro} • Enterprise: {product.pricing.enterprise}
                 </div>
               </div>
-              <p className="text-muted text-sm">{product.desc}</p>
+
+              <div className="flex gap-4">
+                <a 
+                  href="https://calendly.com/pascal-digny/consultation-meeting"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-primary flex-1 text-center"
+                >
+                  Get Started
+                </a>
+                <Link href="/products" className="btn-secondary flex-1 text-center">
+                  Learn More
+                </Link>
+              </div>
             </motion.div>
           ))}
-        </div>
-
-        <div className="text-center">
-          <Link href="/products" className="text-accent hover:text-accent-light transition-colors font-medium">
-            View all products
-          </Link>
         </div>
 
         <motion.div
@@ -416,9 +546,12 @@ function Products() {
           viewport={{ once: true }}
           className="mt-16 text-center"
         >
-          <p className="text-xl text-muted italic">
-            &quot;Even if you can&apos;t hire us directly, you can still grow with our tools.&quot;
+          <p className="text-xl text-muted italic mb-8">
+            &quot;Two solutions. Unlimited possibilities. Immediate results.&quot;
           </p>
+          <Link href="/products" className="text-accent hover:text-accent-light transition-colors font-medium">
+            View detailed product information →
+          </Link>
         </motion.div>
       </div>
     </AnimatedSection>
@@ -461,23 +594,26 @@ function Counter({ end, suffix = '' }: { end: number; suffix?: string }) {
 // Stats Section
 function Stats() {
   const stats = [
-    { value: 8, suffix: '+', label: 'Years Experience' },
-    { value: 150, suffix: '+', label: 'Businesses Transformed' },
-    { value: 98, suffix: '%', label: 'Client Satisfaction' },
-    { value: 15, suffix: '+', label: 'Countries Served' },
+    { value: 300, suffix: '%', label: 'Lead Conversion Increase', sublabel: 'AI Receptionist™ Results' },
+    { value: 85, suffix: '%', label: 'Graduate Employment Rate', sublabel: 'Future-Ready Graduate™ Success' },
+    { value: 24, suffix: '/7', label: 'Always-On Service', sublabel: 'Never Miss Another Lead' },
+    { value: 98, suffix: '%', label: 'Client Satisfaction', sublabel: 'Across Both Solutions' },
   ]
 
   return (
-    <AnimatedSection id="about" className="py-24 relative overflow-hidden">
+    <AnimatedSection id="proven-track-record" className="py-24 relative overflow-hidden bg-surface">
       <div className="absolute inset-0 bg-gradient-mesh opacity-50" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
           <span className="text-accent font-medium text-sm uppercase tracking-wider">Proven Track Record</span>
           <h2 className="font-display text-4xl md:text-5xl font-bold mt-4">
-            Numbers that demonstrate our<br />
-            <span className="gradient-text">commitment to client success</span>
+            Real Results from<br />
+            <span className="gradient-text">Real Implementations</span>
           </h2>
+          <p className="text-muted text-lg mt-4">
+            Data-driven outcomes from our flagship solutions
+          </p>
         </div>
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
@@ -490,16 +626,39 @@ function Stats() {
               transition={{ delay: i * 0.1 }}
               className="text-center"
             >
-              <div className="font-display text-5xl md:text-6xl font-bold text-accent mb-2">
+              <div className="font-display text-4xl md:text-5xl font-bold text-accent mb-2">
                 <Counter end={stat.value} suffix={stat.suffix} />
               </div>
-              <p className="text-muted">{stat.label}</p>
+              <p className="text-white font-semibold mb-1">{stat.label}</p>
+              <p className="text-muted text-sm">{stat.sublabel}</p>
             </motion.div>
           ))}
         </div>
 
-        <div className="text-center mt-12">
-          <Link href="/about" className="btn-secondary">Learn More About Us</Link>
+        <div className="text-center mt-16">
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="card p-6"
+            >
+              <div className="text-3xl mb-3">🤖</div>
+              <h3 className="font-display font-bold mb-2">AI Receptionist™</h3>
+              <p className="text-muted text-sm">Deployed across 50+ businesses, handling 10,000+ leads monthly</p>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="card p-6"
+            >
+              <div className="text-3xl mb-3">🎓</div>
+              <h3 className="font-display font-bold mb-2">Future-Ready Graduate™</h3>
+              <p className="text-muted text-sm">Training 500+ students annually with 85% job placement success</p>
+            </motion.div>
+          </div>
         </div>
       </div>
     </AnimatedSection>
@@ -512,49 +671,59 @@ function CaseStudies() {
 
   const studies = [
     {
+      solution: 'AI Receptionist™',
       industry: 'Healthcare',
-      title: 'Healthcare Clinic',
-      duration: '6 weeks',
-      problem: 'Manual appointment booking leading to 40% no-shows and lost revenue',
+      title: 'Regional Medical Center',
+      duration: '2 weeks implementation',
+      problem: 'Missing 40% of after-hours calls, losing $80k monthly in potential revenue',
       results: [
-        { value: '85%', label: 'Reduction in no-shows' },
-        { value: '3x', label: 'Faster proposal creation' },
-        { value: '$50k', label: 'Additional monthly revenue' },
+        { value: '100%', label: 'Call capture rate' },
+        { value: '300%', label: 'Lead conversion increase' },
+        { value: '$240k', label: 'Additional monthly revenue' },
       ],
+      icon: '🤖',
+      color: 'accent'
     },
     {
+      solution: 'Future-Ready Graduate™',
+      industry: 'Education',
+      title: 'Technical University',
+      duration: '6 months program',
+      problem: 'Only 45% of graduates finding employment within 12 months of graduation',
+      results: [
+        { value: '85%', label: 'Graduate employment rate' },
+        { value: '150%', label: 'Average salary increase' },
+        { value: '95%', label: 'Employer satisfaction' },
+      ],
+      icon: '🎓',
+      color: 'success'
+    },
+    {
+      solution: 'AI Receptionist™',
       industry: 'Real Estate',
-      title: 'Real Estate Agency',
-      duration: '4 weeks',
-      problem: 'Agents spending 5+ hours per property proposal, losing deals to faster competitors',
+      title: 'Premium Property Group',
+      duration: '1 week implementation',
+      problem: 'Losing high-value leads during off-hours and weekends, inconsistent follow-up',
       results: [
-        { value: '90%', label: 'Faster proposal delivery' },
-        { value: '40%', label: 'Higher close rate' },
-        { value: '25', label: 'More deals per month' },
+        { value: '24/7', label: 'Lead response time' },
+        { value: '250%', label: 'Qualified leads increase' },
+        { value: '$180k', label: 'Additional quarterly sales' },
       ],
-    },
-    {
-      industry: 'Marketing',
-      title: 'Digital Agency',
-      duration: '3 weeks',
-      problem: 'Inconsistent proposal quality and pricing leading to 60% rejection rate',
-      results: [
-        { value: '75%', label: 'Increase in acceptance rate' },
-        { value: '60%', label: 'Time saved on proposals' },
-        { value: '$100k', label: 'Annual revenue increase' },
-      ],
+      icon: '🤖',
+      color: 'accent'
     },
   ]
 
   return (
-    <AnimatedSection id="case-studies" className="py-24 bg-surface">
+    <AnimatedSection id="case-studies" className="py-24">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <span className="text-accent font-medium text-sm uppercase tracking-wider">Case Studies</span>
           <h2 className="font-display text-4xl md:text-5xl font-bold mt-4 mb-4">
-            Proof that transformation works.
+            Real Implementations.<br />
+            <span className="gradient-text">Real Results.</span>
           </h2>
-          <p className="text-muted text-lg">Real businesses, real results, real growth.</p>
+          <p className="text-muted text-lg">See how our flagship solutions deliver immediate impact.</p>
         </div>
 
         <div className="grid lg:grid-cols-3 gap-8">
@@ -565,19 +734,30 @@ function CaseStudies() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.15 }}
-              className="card p-8 cursor-pointer group"
+              className="card p-8 cursor-pointer group hover:border-accent/50"
               onClick={() => setExpanded(expanded === i ? null : i)}
             >
-              <div className="flex justify-between items-start mb-4">
-                <span className="px-3 py-1 bg-accent/10 text-accent text-xs font-medium rounded-full">
-                  {study.industry}
-                </span>
+              <div className="flex justify-between items-start mb-6">
+                <div className="flex items-center gap-3">
+                  <div className={`w-10 h-10 bg-${study.color}/10 rounded-lg flex items-center justify-center text-xl`}>
+                    {study.icon}
+                  </div>
+                  <div>
+                    <span className={`px-3 py-1 bg-${study.color}/10 text-${study.color} text-xs font-medium rounded-full`}>
+                      {study.solution}
+                    </span>
+                  </div>
+                </div>
                 <span className="text-muted text-sm">{study.duration}</span>
               </div>
 
+              <span className="text-muted-dark text-xs uppercase tracking-wider">{study.industry}</span>
               <h3 className="font-display text-xl font-bold mb-4">{study.title}</h3>
 
-              <p className="text-muted text-sm mb-6">{study.problem}</p>
+              <div className="mb-6">
+                <span className="text-xs uppercase tracking-wider text-muted-dark">Challenge</span>
+                <p className="text-muted text-sm mt-1">{study.problem}</p>
+              </div>
 
               <motion.div
                 initial={false}
@@ -585,16 +765,17 @@ function CaseStudies() {
                 className="overflow-hidden"
               >
                 <div className="space-y-4 pt-4 border-t border-white/10">
+                  <span className="text-xs uppercase tracking-wider text-muted-dark">Results</span>
                   {study.results.map((result, j) => (
                     <div key={j} className="flex justify-between items-center">
                       <span className="text-muted text-sm">{result.label}</span>
-                      <span className="font-display text-xl font-bold text-success">{result.value}</span>
+                      <span className={`font-display text-xl font-bold text-${study.color}`}>{result.value}</span>
                     </div>
                   ))}
                 </div>
               </motion.div>
 
-              <div className="mt-4 text-accent text-sm font-medium group-hover:text-accent-light transition-colors">
+              <div className={`mt-4 text-${study.color} text-sm font-medium group-hover:text-${study.color}-light transition-colors`}>
                 {expanded === i ? 'Click to collapse' : 'Click to expand'}
               </div>
             </motion.div>
@@ -602,7 +783,17 @@ function CaseStudies() {
         </div>
 
         <div className="text-center mt-12">
-          <Link href="/case-studies" className="btn-secondary">View All Case Studies</Link>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link href="/case-studies" className="btn-secondary">View All Case Studies</Link>
+            <a
+              href="https://calendly.com/pascal-digny/consultation-meeting"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary"
+            >
+              Get Similar Results
+            </a>
+          </div>
         </div>
       </div>
     </AnimatedSection>
@@ -729,10 +920,9 @@ export default function Home() {
     <main>
       <Navigation />
       <Hero />
-      <Problems />
-      <Services />
-      <Solutions />
-      <Products />
+      <MissionValues />
+      <WhatWereFightingFor />
+      <WhatWeDo />
       <Stats />
       <CaseStudies />
       <CTASection />

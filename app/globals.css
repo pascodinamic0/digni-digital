@@ -165,10 +165,14 @@ body {
   font-weight: 600;
   padding: 14px 28px;
   border-radius: 8px;
+  border: none;
   transition: all 0.3s ease;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .btn-primary:hover {
@@ -185,12 +189,53 @@ body {
   border-radius: 8px;
   border: 1px solid rgba(255, 255, 255, 0.2);
   transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .btn-secondary:hover {
   border-color: var(--accent);
   color: var(--accent);
   background: rgba(212, 168, 83, 0.1);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--muted);
+  font-weight: 500;
+  padding: 14px 28px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-outline:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateY(-2px);
+}
+
+.btn-outline:disabled,
+.btn-outline.cursor-not-allowed {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.btn-outline:disabled:hover,
+.btn-outline.cursor-not-allowed:hover {
+  transform: none;
+  border-color: rgba(255, 255, 255, 0.1);
+  color: var(--muted);
+  background: transparent;
 }
 
 /* Floating shapes */
@@ -215,6 +260,80 @@ body {
 
 .counter::after {
   content: counter(num);
+}
+
+/* Enhanced micro-interactions */
+.hover-lift {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+}
+
+.hover-glow {
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.hover-glow:hover {
+  box-shadow: 0 20px 40px rgba(212, 168, 83, 0.2);
+  transform: translateY(-2px);
+}
+
+.magnetic-hover {
+  transition: transform 0.2s ease-out;
+}
+
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scroll-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.parallax-slow {
+  transform: translateY(var(--parallax-offset, 0px));
+  transition: transform 0.1s ease-out;
+}
+
+/* Enhanced button interactions */
+.btn-primary, .btn-secondary, .btn-outline {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-primary::before, .btn-secondary::before, .btn-outline::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
+}
+
+.btn-primary:hover::before, .btn-secondary:hover::before, .btn-outline:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+/* Smooth scroll behavior */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 /* Tailwind color utilities */

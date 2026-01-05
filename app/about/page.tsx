@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
+import Link from 'next/link'
 import Navigation from '../components/Navigation'
 import Footer from '../components/Footer'
 import AnimatedSection from '../components/AnimatedSection'
@@ -154,7 +155,7 @@ export default function AboutPage() {
               <span className="gradient-text">One Business at a Time</span>
             </h1>
             <p className="text-xl text-muted max-w-3xl mx-auto leading-relaxed">
-              We're not just another digital agency. We're growth infrastructure specialists who turn chaos into clients and ideas into profitable businesses.
+              We're not just another digital agency. We're growth infrastructure specialists who turn chaos into clients and ideas into profitable businesses. Founded in 2019, we've transformed over 150 businesses across 15+ countries with our human-first approach to technology.
             </p>
           </motion.div>
         </div>
@@ -240,8 +241,87 @@ export default function AboutPage() {
         </div>
       </AnimatedSection>
 
-      {/* Our Values */}
+      {/* Our Approach */}
       <AnimatedSection className="py-24">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">
+              Our Approach
+            </h2>
+            <p className="text-muted text-lg">How we deliver transformational results</p>
+          </div>
+          
+          <div className="grid lg:grid-cols-3 gap-12">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="card p-8"
+            >
+              <div className="w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center text-3xl mb-6">
+                🔍
+              </div>
+              <h3 className="font-display text-2xl font-bold mb-4">Deep Discovery</h3>
+              <p className="text-muted leading-relaxed mb-4">
+                We don't start with solutions. We start by understanding your business, your customers, and your unique challenges. Every project begins with comprehensive discovery.
+              </p>
+              <ul className="text-sm text-muted space-y-2">
+                <li>• Business process analysis</li>
+                <li>• Customer journey mapping</li>
+                <li>• Technology audit</li>
+                <li>• Growth bottleneck identification</li>
+              </ul>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="card p-8"
+            >
+              <div className="w-16 h-16 bg-success/10 rounded-2xl flex items-center justify-center text-3xl mb-6">
+                🛠️
+              </div>
+              <h3 className="font-display text-2xl font-bold mb-4">Strategic Implementation</h3>
+              <p className="text-muted leading-relaxed mb-4">
+                We build solutions that integrate seamlessly with your existing operations while positioning you for future growth. No disruption, just enhancement.
+              </p>
+              <ul className="text-sm text-muted space-y-2">
+                <li>• Phased rollout approach</li>
+                <li>• Team training & support</li>
+                <li>• Integration with existing systems</li>
+                <li>• Minimal business disruption</li>
+              </ul>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="card p-8"
+            >
+              <div className="w-16 h-16 bg-blue-500/10 rounded-2xl flex items-center justify-center text-3xl mb-6">
+                📈
+              </div>
+              <h3 className="font-display text-2xl font-bold mb-4">Continuous Optimization</h3>
+              <p className="text-muted leading-relaxed mb-4">
+                Launch is just the beginning. We monitor, analyze, and continuously optimize your systems to ensure maximum ROI and sustained growth.
+              </p>
+              <ul className="text-sm text-muted space-y-2">
+                <li>• Performance monitoring</li>
+                <li>• Data-driven improvements</li>
+                <li>• Regular strategy reviews</li>
+                <li>• Ongoing technical support</li>
+              </ul>
+            </motion.div>
+          </div>
+        </div>
+      </AnimatedSection>
+
+      {/* Our Values */}
+      <AnimatedSection className="py-24 bg-surface">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">
@@ -269,8 +349,164 @@ export default function AboutPage() {
         </div>
       </AnimatedSection>
 
-      {/* Team Section */}
+      {/* What Makes Us Different */}
+      <AnimatedSection className="py-24">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">
+              What Makes Us Different
+            </h2>
+            <p className="text-muted text-lg">Why businesses choose Digni Digital</p>
+          </div>
+          
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="space-y-8">
+              <div className="flex gap-6">
+                <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <span className="text-accent font-bold">01</span>
+                </div>
+                <div>
+                  <h3 className="font-display text-xl font-bold mb-3">Human-First Technology</h3>
+                  <p className="text-muted leading-relaxed">
+                    We don't replace humans with technology – we amplify human potential. Our AI solutions work alongside your team, not instead of them.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex gap-6">
+                <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <span className="text-accent font-bold">02</span>
+                </div>
+                <div>
+                  <h3 className="font-display text-xl font-bold mb-3">Proven Track Record</h3>
+                  <p className="text-muted leading-relaxed">
+                    8+ years in business, 150+ successful transformations, 98% client satisfaction rate. Our results speak for themselves.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex gap-6">
+                <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <span className="text-accent font-bold">03</span>
+                </div>
+                <div>
+                  <h3 className="font-display text-xl font-bold mb-3">End-to-End Partnership</h3>
+                  <p className="text-muted leading-relaxed">
+                    From strategy to implementation to ongoing optimization – we're with you every step of the way. No handoffs, no gaps.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex gap-6">
+                <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <span className="text-accent font-bold">04</span>
+                </div>
+                <div>
+                  <h3 className="font-display text-xl font-bold mb-3">ROI-Focused Solutions</h3>
+                  <p className="text-muted leading-relaxed">
+                    Every solution we build is designed to deliver measurable business value. We track results, not just features.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="card p-8 bg-gradient-to-br from-accent/5 to-success/5">
+              <h3 className="font-display text-2xl font-bold mb-6">Our Promise</h3>
+              <blockquote className="text-lg italic text-muted leading-relaxed mb-6">
+                "We don't just deliver projects – we deliver transformation. Every business we work with should be measurably better after our partnership than before."
+              </blockquote>
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center">
+                  <span className="font-display font-bold text-accent">PD</span>
+                </div>
+                <div>
+                  <div className="font-semibold">Pascal Digny</div>
+                  <div className="text-sm text-muted">Founder & CEO</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </AnimatedSection>
+
+      {/* Our Services Overview */}
       <AnimatedSection className="py-24 bg-surface">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">
+              Our Services
+            </h2>
+            <p className="text-muted text-lg">Three core solutions that drive real business impact</p>
+          </div>
+          
+          <div className="grid lg:grid-cols-3 gap-8">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="card p-8 text-center group hover:border-accent/50"
+            >
+              <div className="w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center text-3xl mx-auto mb-6">
+                🤖
+              </div>
+              <h3 className="font-display text-xl font-bold mb-4 group-hover:text-accent transition-colors">
+                AI Receptionist
+              </h3>
+              <p className="text-muted text-sm leading-relaxed mb-6">
+                Never miss another lead with our 24/7 AI-powered reception system that handles calls, qualifies prospects, and books appointments automatically.
+              </p>
+              <Link href="/ai-receptionist" className="text-accent hover:text-accent-light font-medium text-sm">
+                Learn More →
+              </Link>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="card p-8 text-center group hover:border-success/50"
+            >
+              <div className="w-16 h-16 bg-success/10 rounded-2xl flex items-center justify-center text-3xl mx-auto mb-6">
+                🎓
+              </div>
+              <h3 className="font-display text-xl font-bold mb-4 group-hover:text-success transition-colors">
+                Future-Ready Graduate
+              </h3>
+              <p className="text-muted text-sm leading-relaxed mb-6">
+                Transform your educational institution with our comprehensive program that guarantees students graduate with job-ready digital skills.
+              </p>
+              <Link href="/future-ready-graduate" className="text-success hover:text-success-light font-medium text-sm">
+                Learn More →
+              </Link>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="card p-8 text-center group hover:border-blue-400/50"
+            >
+              <div className="w-16 h-16 bg-blue-400/10 rounded-2xl flex items-center justify-center text-3xl mx-auto mb-6">
+                ⚙️
+              </div>
+              <h3 className="font-display text-xl font-bold mb-4 group-hover:text-blue-400 transition-colors">
+                Custom SaaS
+              </h3>
+              <p className="text-muted text-sm leading-relaxed mb-6">
+                Build custom software solutions tailored to your unique business challenges, from concept to deployment with ongoing optimization.
+              </p>
+              <Link href="/custom-saas" className="text-blue-400 hover:text-blue-300 font-medium text-sm">
+                Learn More →
+              </Link>
+            </motion.div>
+          </div>
+        </div>
+      </AnimatedSection>
+
+      {/* Team Section */}
+      <AnimatedSection className="py-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">
