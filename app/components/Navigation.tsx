@@ -22,7 +22,7 @@ export default function Navigation() {
   ]
 
   const rightNavLinks = [
-    { name: 'Blog', href: '/blog' },
+    { name: 'Articles', href: '/blog' },
   ]
 
   const solutionLinks = [
