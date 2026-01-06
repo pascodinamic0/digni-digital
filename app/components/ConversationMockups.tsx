@@ -33,12 +33,13 @@ const ConversationMockups = () => {
       ]
     },
     {
-      id: 'sms',
-      title: 'SMS',
-      platform: 'Text Message',
+      id: 'whatsapp',
+      title: 'WhatsApp',
+      platform: 'WhatsApp Message',
       icon: (
         <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M21 15C21 15.5304 20.7893 16.0391 20.4142 16.4142C20.0391 16.7893 19.5304 17 19 17H7L3 21V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H19C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V15Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M17.472 14.382C17.007 14.175 15.314 13.5 14.985 13.388C14.656 13.275 14.414 13.219 14.172 13.682C13.93 14.145 13.207 15.238 12.95 15.525C12.694 15.812 12.437 15.868 11.972 15.662C11.507 15.455 9.814 14.955 7.82 13.1C6.2 11.6 5.1 9.825 4.843 9.362C4.586 8.9 4.815 8.7 5.05 8.475C5.27 8.263 5.52 7.95 5.727 7.688C5.933 7.425 6.017 7.225 6.18 6.9C6.343 6.575 6.287 6.275 6.18 6.025C6.074 5.775 5.4 3.975 5.1 3.225C4.8 2.475 4.5 2.625 4.286 2.613C4.072 2.6 3.814 2.6 3.557 2.6C3.3 2.6 2.985 2.7 2.7 3C2.415 3.3 1.8 3.975 1.8 5.325C1.8 6.675 2.7 7.975 2.843 8.175C2.986 8.375 4.5 10.875 6.9 12.075C9.3 13.275 11.4 13.575 11.7 13.725C12 13.875 12.3 13.825 12.557 13.575C12.814 13.325 13.3 12.75 13.5 12.45C13.7 12.15 13.9 12.2 14.172 12.275C14.443 12.35 15.6 12.825 15.9 13.025C16.2 13.225 16.4 13.325 16.5 13.425C16.6 13.525 16.6 13.775 16.4 14.075C16.2 14.375 15.737 14.588 17.472 14.382Z" fill="currentColor"/>
+          <path d="M12 2C6.477 2 2 6.477 2 12C2 13.815 2.5 15.515 3.395 16.97L2 22L7.335 20.61C8.78 21.495 10.345 22 12 22C17.523 22 22 17.523 22 12C22 6.477 17.523 2 12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
       ),
       messages: [
@@ -65,6 +66,57 @@ const ConversationMockups = () => {
         { sender: 'visitor', text: 'Customer support and lead follow-up mainly', time: '4:16 PM' },
         { sender: 'ai', text: 'Perfect fit! Our AI systems can handle both seamlessly. We\'ve helped similar businesses reduce response time by 90%. Want to see a demo? 📅', time: '4:17 PM' }
       ]
+    },
+    {
+      id: 'voice-ai',
+      title: 'Voice AI',
+      platform: 'Live Web Call & Bridge',
+      icon: (
+        <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 1C13.1 1 14 1.9 14 3V11C14 12.1 13.1 13 12 13C10.9 13 10 12.1 10 11V3C10 1.9 10.9 1 12 1Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M19 10V11C19 15.4183 15.4183 19 11 19H10C5.58172 19 2 15.4183 2 11V10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M22 10V11C22 16.5228 17.5228 21 12 21C6.47715 21 2 16.5228 2 11V10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M19 2V6M17 4H21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      ),
+      messages: [
+        { sender: 'visitor', text: '📞 Web call initiated from website', time: '10:42 AM' },
+        { sender: 'ai', text: 'Hello! I\'m your AI receptionist. I can answer questions and also connect you directly with our team on a live call if needed. How can I help you today?', time: '10:42 AM' },
+        { sender: 'visitor', text: 'I have some technical questions about your services', time: '10:43 AM' },
+        { sender: 'ai', text: 'I can help with that! Would you like me to bridge this call with our technical team? You\'ll be on a live 3-way call with me and the team, and we can all talk together. Ready to connect?', time: '10:43 AM' }
+      ]
+    },
+    {
+      id: 'facebook',
+      title: 'Facebook',
+      platform: 'AI Auto-Responder',
+      icon: (
+        <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M18 2H15C13.6739 2 12.4021 2.52678 11.4645 3.46447C10.5268 4.40215 10 5.67392 10 7V10H7V14H10V22H14V14H17L18 10H14V7C14 6.73478 14.1054 6.48043 14.2929 6.29289C14.4804 6.10536 14.7348 6 15 6H18V2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      ),
+      messages: [
+        { sender: 'visitor', text: 'Hi! I saw your post about AI automation. Can you help with lead management?', time: '3:20 PM' },
+        { sender: 'ai', text: 'Hello! Absolutely, I can help! Our AI automatically captures and stores all Facebook inquiries directly to your CRM. I can set up a lead management system that organizes all your leads in one place. Would you like to schedule a free consultation?', time: '3:20 PM' },
+        { sender: 'visitor', text: 'Yes! Can you also integrate with our existing customer database?', time: '3:22 PM' },
+        { sender: 'ai', text: 'Perfect! We integrate with all major CRM systems and can reactivate contacts from your existing database. I\'ve saved your contact info and scheduled your consultation for tomorrow at 2 PM. I\'ll send confirmation details via Facebook Messenger!', time: '3:22 PM' }
+      ]
+    },
+    {
+      id: 'reviews',
+      title: 'Reviews',
+      platform: 'Reputation Management',
+      icon: (
+        <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2L15.09 8.26L22 9L17 13.14L18.18 20.02L12 16.77L5.82 20.02L7 13.14L2 9L8.91 8.26L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      ),
+      messages: [
+        { sender: 'visitor', text: 'New review: "Amazing service! Response time was incredible" - ⭐⭐⭐⭐⭐', time: '9:15 AM' },
+        { sender: 'ai', text: 'Thank you for the wonderful review! Your feedback has been automatically logged in our reputation management system. We\'re monitoring all reviews across platforms to maintain our excellent service standards.', time: '9:15 AM' },
+        { sender: 'visitor', text: 'Review response sent automatically', time: '9:15 AM' },
+        { sender: 'ai', text: 'Perfect! Your reputation score has been updated. Current rating: 4.9/5.0 across all platforms. All reviews are tracked, categorized, and responded to automatically.', time: '9:16 AM' }
+      ]
     }
   ]
 
@@ -72,18 +124,19 @@ const ConversationMockups = () => {
     const interval = setInterval(() => {
       setActiveDemo((prev) => (prev + 1) % conversations.length)
       setMessageIndex(0)
-    }, 8000)
+    }, 15000) // Increased from 8s to 15s for better exploration time
 
     return () => clearInterval(interval)
   }, [conversations.length])
 
   useEffect(() => {
+    setMessageIndex(0) // Reset when switching demos
     const messageInterval = setInterval(() => {
       setMessageIndex((prev) => {
         const maxMessages = conversations[activeDemo].messages.length
         return prev < maxMessages - 1 ? prev + 1 : prev
       })
-    }, 1500)
+    }, 2500) // Increased from 1.5s to 2.5s for better readability
 
     return () => clearInterval(messageInterval)
   }, [activeDemo, conversations])
@@ -184,41 +237,127 @@ const ConversationMockups = () => {
                 </div>
               </div>
 
-              {/* Chat Messages */}
-              <div className="space-y-1 min-h-[300px]">
-                {conversation.messages.slice(0, messageIndex + 1).map((message, msgIndex) => (
-                  <ChatBubble
-                    key={msgIndex}
-                    message={message}
-                    isAI={message.sender === 'ai'}
-                    delay={activeDemo === index ? msgIndex * 0.3 : 0}
-                  />
-                ))}
-                
-                {/* Typing Indicator */}
-                {activeDemo === index && messageIndex < conversation.messages.length - 1 && (
+              {/* Phone Interface for Voice AI */}
+              {conversation.id === 'voice-ai' ? (
+                <div className="min-h-[300px] flex flex-col items-center justify-center py-8">
+                  {/* Phone Icon with Ringing Animation */}
                   <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    className="flex justify-start mb-4"
+                    animate={{
+                      scale: [1, 1.1, 1],
+                      rotate: [0, 5, -5, 0],
+                    }}
+                    transition={{
+                      duration: 1.5,
+                      repeat: Infinity,
+                      ease: 'easeInOut',
+                    }}
+                    className="relative mb-6"
                   >
-                    <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 bg-accent rounded-full flex items-center justify-center">
-                        <svg className="w-4 h-4 text-background" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M12 2L13.09 8.26L22 9L13.09 9.74L12 16L10.91 9.74L2 9L10.91 8.26L12 2Z" fill="currentColor"/>
-                        </svg>
-                      </div>
-                      <div className="bg-accent/10 border border-accent/20 px-4 py-3 rounded-2xl rounded-bl-sm">
-                        <div className="flex space-x-1">
-                          <div className="w-2 h-2 bg-accent rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
-                          <div className="w-2 h-2 bg-accent rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
-                          <div className="w-2 h-2 bg-accent rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
-                        </div>
-                      </div>
+                    {/* Ringing Circles */}
+                    <motion.div
+                      animate={{
+                        scale: [1, 1.5, 1],
+                        opacity: [0.5, 0, 0.5],
+                      }}
+                      transition={{
+                        duration: 2,
+                        repeat: Infinity,
+                        ease: 'easeOut',
+                      }}
+                      className="absolute inset-0 border-2 border-accent rounded-full"
+                    />
+                    <motion.div
+                      animate={{
+                        scale: [1, 1.8, 1],
+                        opacity: [0.3, 0, 0.3],
+                      }}
+                      transition={{
+                        duration: 2,
+                        repeat: Infinity,
+                        ease: 'easeOut',
+                        delay: 0.3,
+                      }}
+                      className="absolute inset-0 border-2 border-accent rounded-full"
+                    />
+                    {/* Phone Icon */}
+                    <div className="relative w-20 h-20 bg-gradient-to-br from-accent/20 to-accent/10 rounded-2xl flex items-center justify-center border-2 border-accent/40">
+                      <svg className="w-10 h-10 text-accent" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22 16.92V19.92C22.0011 20.1985 21.9441 20.4742 21.8325 20.7292C21.7209 20.9841 21.5573 21.2126 21.3522 21.3997C21.1472 21.5867 20.9053 21.7282 20.6426 21.8148C20.3799 21.9014 20.1025 21.9312 19.828 21.902C16.7425 21.5857 13.7869 20.5341 11.19 18.82C8.77382 17.2148 6.72533 15.0977 5.19 12.62C3.49793 10.0383 2.42529 7.10528 2.05 4.05C2.02087 3.77571 2.05056 3.49844 2.13706 3.23595C2.22357 2.97345 2.36494 2.73178 2.5518 2.52701C2.73866 2.32224 2.96697 2.15899 3.22172 2.04772C3.47647 1.93646 3.75202 1.87988 4.03 1.88H7.05C7.45964 1.87989 7.85723 2.02141 8.17581 2.28048C8.49439 2.53955 8.71455 2.90058 8.8 3.3C8.96532 4.11588 9.21139 4.91305 9.53 5.68C9.69528 6.09343 9.76034 6.54187 9.71948 6.98552C9.67863 7.42917 9.53317 7.85465 9.3 8.23C9.06018 8.60558 8.74557 8.92895 8.38 9.18L7.38 10.18C9.16552 12.5076 11.4924 14.8345 13.82 16.62L14.82 15.62C15.071 15.2544 15.3944 14.9398 15.77 14.7C16.1453 14.4668 16.5708 14.3214 17.0145 14.2805C17.4581 14.2397 17.9066 14.3047 18.32 14.47C19.087 14.7886 19.8841 15.0347 20.7 15.2C21.0994 15.2855 21.4604 15.5056 21.7195 15.8242C21.9786 16.1428 22.1201 16.5404 22.12 16.95L22 16.92Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
                     </div>
                   </motion.div>
-                )}
-              </div>
+
+                  {/* Caller Info */}
+                  <div className="text-center mb-6">
+                    <p className="text-sm text-muted mb-1">Incoming Call</p>
+                    <h4 className="text-lg font-bold text-white mb-1">AI Web Calls</h4>
+                    <p className="text-xs text-muted">Receptionist</p>
+                  </div>
+
+                  {/* Call Buttons */}
+                  <div className="flex gap-4 mt-4">
+                    {/* Decline Button */}
+                    <motion.button
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="w-14 h-14 rounded-full bg-red-500/20 border-2 border-red-500/40 flex items-center justify-center hover:bg-red-500/30 transition-colors"
+                    >
+                      <svg className="w-6 h-6 text-red-400" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </motion.button>
+
+                    {/* Answer Button */}
+                    <motion.button
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="w-14 h-14 rounded-full bg-success/20 border-2 border-success/40 flex items-center justify-center hover:bg-success/30 transition-colors"
+                    >
+                      <svg className="w-6 h-6 text-success" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22 16.92V19.92C22.0011 20.1985 21.9441 20.4742 21.8325 20.7292C21.7209 20.9841 21.5573 21.2126 21.3522 21.3997C21.1472 21.5867 20.9053 21.7282 20.6426 21.8148C20.3799 21.9014 20.1025 21.9312 19.828 21.902C16.7425 21.5857 13.7869 20.5341 11.19 18.82C8.77382 17.2148 6.72533 15.0977 5.19 12.62C3.49793 10.0383 2.42529 7.10528 2.05 4.05C2.02087 3.77571 2.05056 3.49844 2.13706 3.23595C2.22357 2.97345 2.36494 2.73178 2.5518 2.52701C2.73866 2.32224 2.96697 2.15899 3.22172 2.04772C3.47647 1.93646 3.75202 1.87988 4.03 1.88H7.05C7.45964 1.87989 7.85723 2.02141 8.17581 2.28048C8.49439 2.53955 8.71455 2.90058 8.8 3.3C8.96532 4.11588 9.21139 4.91305 9.53 5.68C9.69528 6.09343 9.76034 6.54187 9.71948 6.98552C9.67863 7.42917 9.53317 7.85465 9.3 8.23C9.06018 8.60558 8.74557 8.92895 8.38 9.18L7.38 10.18C9.16552 12.5076 11.4924 14.8345 13.82 16.62L14.82 15.62C15.071 15.2544 15.3944 14.9398 15.77 14.7C16.1453 14.4668 16.5708 14.3214 17.0145 14.2805C17.4581 14.2397 17.9066 14.3047 18.32 14.47C19.087 14.7886 19.8841 15.0347 20.7 15.2C21.0994 15.2855 21.4604 15.5056 21.7195 15.8242C21.9786 16.1428 22.1201 16.5404 22.12 16.95L22 16.92Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </motion.button>
+                  </div>
+                </div>
+              ) : (
+                <>
+                  {/* Chat Messages */}
+                  <div className="space-y-1 min-h-[300px]">
+                    {conversation.messages.slice(0, messageIndex + 1).map((message, msgIndex) => (
+                      <ChatBubble
+                        key={msgIndex}
+                        message={message}
+                        isAI={message.sender === 'ai'}
+                        delay={activeDemo === index ? msgIndex * 0.3 : 0}
+                      />
+                    ))}
+                    
+                    {/* Typing Indicator */}
+                    {activeDemo === index && messageIndex < conversation.messages.length - 1 && (
+                      <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        className="flex justify-start mb-4"
+                      >
+                        <div className="flex items-center gap-3">
+                          <div className="w-8 h-8 bg-accent rounded-full flex items-center justify-center">
+                            <svg className="w-4 h-4 text-background" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M12 2L13.09 8.26L22 9L13.09 9.74L12 16L10.91 9.74L2 9L10.91 8.26L12 2Z" fill="currentColor"/>
+                            </svg>
+                          </div>
+                          <div className="bg-accent/10 border border-accent/20 px-4 py-3 rounded-2xl rounded-bl-sm">
+                            <div className="flex space-x-1">
+                              <div className="w-2 h-2 bg-accent rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
+                              <div className="w-2 h-2 bg-accent rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
+                              <div className="w-2 h-2 bg-accent rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
+                            </div>
+                          </div>
+                        </div>
+                      </motion.div>
+                    )}
+                  </div>
+                </>
+              )}
 
               {/* Platform Indicator */}
               <div className="mt-6 pt-4 border-t border-white/10">
@@ -242,9 +381,10 @@ const ConversationMockups = () => {
                   setMessageIndex(0)
                 }}
                 className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  activeDemo === index ? 'bg-accent scale-125' : 'bg-muted-dark hover:bg-muted'
+                  activeDemo === index ? 'bg-accent scale-125 w-8' : 'bg-muted-dark hover:bg-muted'
                 }`}
                 aria-label={`View ${conversations[index].title} demo`}
+                type="button"
               />
             ))}
           </div>
@@ -271,7 +411,7 @@ const ConversationMockups = () => {
             <p className="text-muted text-sm">Lead Qualification Rate</p>
           </div>
           <div className="text-center p-6 bg-surface-light rounded-xl border border-accent/10">
-            <div className="text-2xl font-display font-bold text-accent mb-2">6+</div>
+            <div className="text-2xl font-display font-bold text-accent mb-2">6</div>
             <p className="text-muted text-sm">Supported Channels</p>
           </div>
         </motion.div>

@@ -42,8 +42,8 @@ function Hero() {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="text-xl text-muted max-w-3xl mb-10 leading-relaxed"
         >
-          Every business deserves to capture every opportunity. Every student deserves to graduate job-ready. 
-          We build the technology that makes this possible — because potential should never be wasted.
+          We build technology that amplifies human potential, creates opportunity where barriers exist, 
+          and ensures that progress serves everyone — not just those who can afford it.
         </motion.p>
 
         <motion.div
@@ -53,7 +53,7 @@ function Hero() {
           className="flex flex-col sm:flex-row gap-4 mb-16"
         >
           <Link href="/about" className="btn-primary">
-            About Us
+            Our Story
           </Link>
           <Link href="#what-we-do" className="btn-secondary">
             What We Do
@@ -226,47 +226,70 @@ function WhatWereFightingFor() {
           </p>
         </div>
 
-        <div className="space-y-16">
+        <div className="grid md:grid-cols-3 gap-8">
           {challenges.map((challenge, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.2 }}
-              className="grid lg:grid-cols-3 gap-8 items-center"
+              transition={{ delay: i * 0.15 }}
+              className="card p-8 hover:border-red-500/50 group relative overflow-hidden"
             >
-              <div className="lg:col-span-2">
-                <div className="flex items-start gap-6">
-                  <div className="w-16 h-16 bg-red-500/10 rounded-2xl flex items-center justify-center text-3xl flex-shrink-0">
+              {/* Gradient background accent */}
+              <div className="absolute top-0 right-0 w-32 h-32 bg-red-500/5 rounded-full blur-3xl" />
+              
+              <div className="relative">
+                {/* Stat - Prominent and Bold */}
+                <div className="mb-6">
+                  <div className="flex items-baseline gap-2 mb-2">
+                    <span className="font-display text-5xl md:text-6xl font-bold text-red-400 leading-none">
+                      {challenge.stat}
+                    </span>
+                  </div>
+                  <p className="text-red-400/80 text-sm font-medium uppercase tracking-wider">
+                    {challenge.statLabel}
+                  </p>
+                </div>
+
+                {/* Icon and Title */}
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-12 h-12 bg-red-500/10 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 group-hover:scale-110 transition-transform">
                     {challenge.icon}
                   </div>
-                  <div>
-                    <h3 className="font-display text-2xl font-bold mb-4">{challenge.title}</h3>
-                    <div className="space-y-4">
-                      <div>
-                        <span className="text-xs uppercase tracking-wider text-muted-dark">The Problem</span>
-                        <p className="text-red-400 font-semibold mt-1">{challenge.problem}</p>
-                      </div>
-                      <div>
-                        <span className="text-xs uppercase tracking-wider text-muted-dark">The Reality</span>
-                        <p className="text-muted mt-1 leading-relaxed">{challenge.reality}</p>
-                      </div>
-                      <div>
-                        <span className="text-xs uppercase tracking-wider text-muted-dark">Our Fight</span>
-                        <p className="text-accent font-medium mt-1">{challenge.ourFight}</p>
-                      </div>
-                    </div>
-                  </div>
+                  <h3 className="font-display text-xl font-bold text-white">
+                    {challenge.title}
+                  </h3>
                 </div>
-              </div>
-              
-              <div className="text-center lg:text-right">
-                <div className="card p-8 bg-surface-light">
-                  <div className="font-display text-4xl font-bold text-red-400 mb-2">
-                    {challenge.stat}
-                  </div>
-                  <p className="text-muted text-sm">{challenge.statLabel}</p>
+
+                {/* Problem */}
+                <div className="mb-4 pb-4 border-b border-white/10">
+                  <span className="text-xs uppercase tracking-wider text-muted-dark block mb-2">
+                    The Problem
+                  </span>
+                  <p className="text-red-400 font-semibold text-sm leading-relaxed">
+                    {challenge.problem}
+                  </p>
+                </div>
+
+                {/* Reality */}
+                <div className="mb-4">
+                  <span className="text-xs uppercase tracking-wider text-muted-dark block mb-2">
+                    The Reality
+                  </span>
+                  <p className="text-muted text-sm leading-relaxed">
+                    {challenge.reality}
+                  </p>
+                </div>
+
+                {/* Our Fight */}
+                <div className="pt-4 border-t border-white/10">
+                  <span className="text-xs uppercase tracking-wider text-accent block mb-2">
+                    Our Fight
+                  </span>
+                  <p className="text-accent font-medium text-sm leading-relaxed">
+                    {challenge.ourFight}
+                  </p>
                 </div>
               </div>
             </motion.div>
@@ -284,11 +307,11 @@ function WhatWereFightingFor() {
               This Is Why We Exist
             </h3>
             <p className="text-muted text-lg mb-8 max-w-2xl mx-auto">
-              Every line of code we write, every system we build, every partnership we form — 
-              it all serves one purpose: turning these problems into opportunities.
+              We don&apos;t just build technology. We solve problems that cost businesses revenue and prevent students from getting jobs. 
+              Every solution delivers measurable results — captured leads, employed graduates, transformed businesses.
             </p>
             <Link href="#what-we-do" className="btn-primary text-lg px-8 py-4">
-              See How We Fight Back
+              View Our Solutions
             </Link>
           </div>
         </motion.div>
@@ -308,7 +331,9 @@ function WhatWeDo() {
       outcomes: ['300% increase in lead capture', '24/7 customer service', 'Zero missed opportunities', 'Seamless CRM integration'],
       icon: '🤖',
       link: '/ai-receptionist',
-      color: 'accent'
+      color: 'accent',
+      primaryCta: 'See How It Works',
+      secondaryCta: 'Book a Demo'
     },
     {
       title: 'Future-Ready Graduate Programs',
@@ -318,7 +343,9 @@ function WhatWeDo() {
       outcomes: ['85% graduate employment rate', 'Direct employer partnerships', 'Real-world skill development', 'Measurable ROI tracking'],
       icon: '🎓',
       link: '/future-ready-graduate',
-      color: 'success'
+      color: 'success',
+      primaryCta: 'View Program Details',
+      secondaryCta: 'Schedule Consultation'
     },
     {
       title: 'Custom SaaS Development',
@@ -328,7 +355,9 @@ function WhatWeDo() {
       outcomes: ['Scalable architecture', 'Enterprise-grade security', 'Ongoing optimization', 'Full ownership of code'],
       icon: '⚙️',
       link: '/custom-saas',
-      color: 'blue-400'
+      color: 'blue-400',
+      primaryCta: 'Explore Process',
+      secondaryCta: 'Discuss Your Project'
     }
   ]
 
@@ -347,95 +376,211 @@ function WhatWeDo() {
           </p>
         </div>
 
-        <div className="space-y-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.2 }}
-              className="card p-8 md:p-12 hover:border-accent/50 group"
+              transition={{ delay: i * 0.15 }}
+              className="card p-8 hover:border-accent/50 group flex flex-col"
             >
-              <div className="grid lg:grid-cols-3 gap-8 items-start">
-                <div className="lg:col-span-2">
-                  <div className="flex items-start gap-6 mb-8">
-                    <div className={`w-16 h-16 bg-${service.color}/10 rounded-2xl flex items-center justify-center text-3xl flex-shrink-0`}>
-                      {service.icon}
-                    </div>
-                    <div>
-                      <span className={`text-${service.color} text-sm font-medium uppercase tracking-wider`}>{service.subtitle}</span>
-                      <h3 className="font-display text-3xl font-bold mt-2 mb-4 group-hover:text-accent transition-colors">
-                        {service.title}
-                      </h3>
-                      <p className="text-muted text-lg leading-relaxed mb-6">
-                        {service.description}
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="space-y-6">
-                    <div>
-                      <span className="text-xs uppercase tracking-wider text-muted-dark">Our Approach</span>
-                      <p className="text-white mt-2 leading-relaxed">{service.approach}</p>
-                    </div>
-
-                    <div>
-                      <span className="text-xs uppercase tracking-wider text-muted-dark">Typical Outcomes</span>
-                      <div className="grid md:grid-cols-2 gap-2 mt-2">
-                        {service.outcomes.map((outcome, j) => (
-                          <div key={j} className="flex items-center gap-2">
-                            <div className={`w-1.5 h-1.5 bg-${service.color} rounded-full`} />
-                            <span className="text-sm text-muted">{outcome}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
+              {/* Header */}
+              <div className="mb-6">
+                <div className={`w-14 h-14 bg-${service.color}/10 rounded-xl flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform`}>
+                  {service.icon}
                 </div>
+                <span className={`text-${service.color} text-xs font-semibold uppercase tracking-wider`}>
+                  {service.subtitle}
+                </span>
+                <h3 className="font-display text-2xl font-bold mt-2 mb-4 group-hover:text-accent transition-colors">
+                  {service.title}
+                </h3>
+              </div>
 
-                <div className="flex flex-col gap-4">
-                  <Link 
-                    href={service.link}
-                    className="btn-primary text-center"
-                  >
-                    Learn More
-                  </Link>
-                  <a
-                    href="https://calendly.com/pascal-digny/consultation-meeting"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-secondary text-center"
-                  >
-                    Discuss Project
-                  </a>
-                </div>
+              {/* Description */}
+              <p className="text-muted mb-6 leading-relaxed flex-grow">
+                {service.description}
+              </p>
+
+              {/* Key Outcomes */}
+              <div className="mb-6 space-y-2">
+                {service.outcomes.slice(0, 3).map((outcome, j) => (
+                  <div key={j} className="flex items-center gap-2">
+                    <div className={`w-1.5 h-1.5 bg-${service.color} rounded-full flex-shrink-0`} />
+                    <span className="text-sm text-muted">{outcome}</span>
+                  </div>
+                ))}
+              </div>
+
+              {/* CTA Buttons */}
+              <div className="flex flex-col gap-3 mt-auto">
+                <Link 
+                  href={service.link}
+                  className="btn-primary text-center text-sm py-2.5"
+                >
+                  {service.primaryCta}
+                </Link>
+                <a
+                  href="https://calendly.com/pascal-digny/consultation-meeting"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-secondary text-center text-sm py-2.5"
+                >
+                  {service.secondaryCta}
+                </a>
               </div>
             </motion.div>
           ))}
         </div>
 
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 30, scale: 0.95 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
           viewport={{ once: true }}
-          className="text-center mt-16"
+          transition={{ duration: 0.6 }}
+          className="text-center mt-20"
         >
-          <div className="card p-8 bg-gradient-to-br from-accent/5 to-success/5">
-            <h3 className="font-display text-2xl font-bold mb-4">
-              Not Sure Which Service You Need?
-            </h3>
-            <p className="text-muted mb-6">
-              Let's discuss your challenges and find the right solution together.
-            </p>
-            <a
-              href="https://calendly.com/pascal-digny/consultation-meeting"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary"
-            >
-              Book a Strategy Call
-            </a>
+          <div className="relative overflow-hidden">
+            {/* Enhanced gradient background with glow effect */}
+            <div className="absolute inset-0 bg-gradient-to-br from-accent/20 via-accent/10 to-success/20 rounded-3xl blur-2xl opacity-50" />
+            <div className="absolute inset-0 bg-gradient-to-br from-accent/15 to-success/15 rounded-3xl" />
+            
+            {/* Decorative border */}
+            <div className="absolute inset-0 rounded-3xl border-2 border-accent/30" />
+            
+            <div className="relative card p-12 md:p-16 bg-gradient-to-br from-accent/10 via-surface to-success/10 border-2 border-accent/20">
+              {/* Decorative corner accents */}
+              <div className="absolute top-0 left-0 w-24 h-24 border-l-2 border-t-2 border-accent/40 rounded-tl-3xl" />
+              <div className="absolute bottom-0 right-0 w-24 h-24 border-r-2 border-b-2 border-success/40 rounded-br-3xl" />
+              
+              <div className="relative z-10">
+                {/* Dynamic animated lightbulb */}
+                <motion.div
+                  initial={{ scale: 0, rotate: -180 }}
+                  whileInView={{ scale: 1, rotate: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.2, type: 'spring', stiffness: 200 }}
+                  className="inline-block mb-6 relative"
+                >
+                  {/* Pulsing glow behind bulb */}
+                  <motion.div
+                    animate={{
+                      scale: [1, 1.3, 1],
+                      opacity: [0.4, 0.7, 0.4],
+                    }}
+                    transition={{
+                      duration: 2,
+                      repeat: Infinity,
+                      ease: 'easeInOut',
+                    }}
+                    className="absolute inset-0 bg-accent/30 rounded-2xl blur-xl"
+                  />
+                  
+                  {/* Rotating glow ring */}
+                  <motion.div
+                    animate={{
+                      rotate: [0, 360],
+                    }}
+                    transition={{
+                      duration: 8,
+                      repeat: Infinity,
+                      ease: 'linear',
+                    }}
+                    className="absolute inset-0 border-2 border-accent/40 rounded-2xl"
+                    style={{
+                      clipPath: 'polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)',
+                    }}
+                  />
+                  
+                  {/* Main bulb container with flicker */}
+                  <motion.div
+                    animate={{
+                      scale: [1, 1.05, 1],
+                      rotate: [0, 5, -5, 0],
+                    }}
+                    transition={{
+                      duration: 3,
+                      repeat: Infinity,
+                      ease: 'easeInOut',
+                    }}
+                    className="relative w-20 h-20 md:w-24 md:h-24 bg-gradient-to-br from-accent/30 to-accent/10 rounded-2xl flex items-center justify-center backdrop-blur-sm border border-accent/40"
+                  >
+                    {/* Lightbulb emoji with brightness animation */}
+                    <motion.div
+                      animate={{
+                        filter: ['brightness(1)', 'brightness(1.5)', 'brightness(1)'],
+                        scale: [1, 1.1, 1],
+                      }}
+                      transition={{
+                        duration: 1.5,
+                        repeat: Infinity,
+                        ease: 'easeInOut',
+                      }}
+                      className="text-4xl md:text-5xl"
+                    >
+                      💡
+                    </motion.div>
+                    
+                    {/* Sparkle particles */}
+                    {[...Array(6)].map((_, i) => (
+                      <motion.div
+                        key={i}
+                        className="absolute w-1 h-1 bg-accent rounded-full"
+                        animate={{
+                          x: [
+                            Math.cos((i * 60) * Math.PI / 180) * 0,
+                            Math.cos((i * 60) * Math.PI / 180) * 30,
+                            Math.cos((i * 60) * Math.PI / 180) * 0,
+                          ],
+                          y: [
+                            Math.sin((i * 60) * Math.PI / 180) * 0,
+                            Math.sin((i * 60) * Math.PI / 180) * 30,
+                            Math.sin((i * 60) * Math.PI / 180) * 0,
+                          ],
+                          opacity: [0, 1, 0],
+                          scale: [0, 1.5, 0],
+                        }}
+                        transition={{
+                          duration: 2,
+                          repeat: Infinity,
+                          delay: i * 0.2,
+                          ease: 'easeInOut',
+                        }}
+                        style={{
+                          left: '50%',
+                          top: '50%',
+                        }}
+                      />
+                    ))}
+                  </motion.div>
+                </motion.div>
+                
+                <h3 className="font-display text-3xl md:text-4xl font-bold mb-4 text-white">
+                  Not Sure Which Service You Need?
+                </h3>
+                <p className="text-lg md:text-xl text-muted mb-8 max-w-2xl mx-auto leading-relaxed">
+                  Let&apos;s discuss your challenges and find the right solution together.
+                </p>
+                <a
+                  href="https://calendly.com/pascal-digny/consultation-meeting"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex items-center gap-3 bg-accent hover:bg-accent-light text-background font-semibold px-8 py-4 rounded-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_50px_rgba(212,168,83,0.4)] text-lg"
+                >
+                  <span>Book a Strategy Call</span>
+                  <svg
+                    className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </a>
+              </div>
+            </div>
           </div>
         </motion.div>
       </div>
@@ -737,18 +882,15 @@ function CaseStudies() {
               className="card p-8 cursor-pointer group hover:border-accent/50"
               onClick={() => setExpanded(expanded === i ? null : i)}
             >
-              <div className="flex justify-between items-start mb-6">
-                <div className="flex items-center gap-3">
-                  <div className={`w-10 h-10 bg-${study.color}/10 rounded-lg flex items-center justify-center text-xl`}>
-                    {study.icon}
-                  </div>
-                  <div>
-                    <span className={`px-3 py-1 bg-${study.color}/10 text-${study.color} text-xs font-medium rounded-full`}>
-                      {study.solution}
-                    </span>
-                  </div>
+              <div className="flex items-center gap-3 mb-6">
+                <div className={`w-10 h-10 bg-${study.color}/10 rounded-lg flex items-center justify-center text-xl`}>
+                  {study.icon}
                 </div>
-                <span className="text-muted text-sm">{study.duration}</span>
+                <div>
+                  <span className={`px-3 py-1 bg-${study.color}/10 text-${study.color} text-xs font-medium rounded-full whitespace-nowrap`}>
+                    {study.solution}
+                  </span>
+                </div>
               </div>
 
               <span className="text-muted-dark text-xs uppercase tracking-wider">{study.industry}</span>
@@ -835,7 +977,7 @@ function CTASection() {
                 transition={{ delay: 0.2 }}
                 className="inline-block px-5 py-2 bg-accent/10 border border-accent/30 rounded-full text-accent text-sm font-medium tracking-wide mb-8"
               >
-                Start Your Transformation
+                Let&apos;s Create Impact Together
               </motion.span>
 
               <motion.h2
@@ -845,8 +987,8 @@ function CTASection() {
                 transition={{ delay: 0.3 }}
                 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
               >
-                Ready to Scale<br />
-                <span className="gradient-text">Without the Chaos?</span>
+                Technology Should Serve<br />
+                <span className="gradient-text">Everyone.</span>
               </motion.h2>
 
               <motion.p
@@ -856,8 +998,8 @@ function CTASection() {
                 transition={{ delay: 0.4 }}
                 className="text-muted text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed"
               >
-                Book a free consultation call. We&apos;ll analyze your current systems,
-                identify growth blockers, and map out a custom strategy for your business.
+                Join us in building technology that amplifies human potential and creates opportunity 
+                for businesses and students who need it most.
               </motion.p>
 
               <motion.div

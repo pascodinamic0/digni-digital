@@ -46,14 +46,17 @@ const BusinessTimeline = () => {
     },
     {
       id: 'qualification',
-      title: 'Lead Qualification',
-      description: 'AI asks targeted questions to understand needs and budget',
+      title: 'Contact Saved',
+      description: 'AI captures and stores all contact information automatically to your CRM',
       icon: (
         <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z" stroke="currentColor" strokeWidth="2"/>
+          <path d="M12 14C8.13401 14 5 17.134 5 21H19C19 17.134 15.866 14 12 14Z" stroke="currentColor" strokeWidth="2"/>
+          <path d="M19 7L21 9L19 11" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M17 9H21" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
         </svg>
       ),
-      metrics: ['Smart Questions', 'Budget Discovery', 'Need Assessment', 'Priority Scoring'],
+      metrics: ['Auto Contact Capture', 'CRM Integration', 'Database Storage', 'Info Validation'],
       color: 'success'
     },
     {
@@ -75,7 +78,7 @@ const BusinessTimeline = () => {
     {
       id: 'followup',
       title: 'Smart Follow-Up',
-      description: 'Automated nurture sequence keeps leads warm until meeting',
+      description: 'Automated nurture sequence with database reactivation keeps leads warm until meeting',
       icon: (
         <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentColor" strokeWidth="2"/>
@@ -83,7 +86,7 @@ const BusinessTimeline = () => {
           <path d="M16 10L20 14M20 10L16 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
         </svg>
       ),
-      metrics: ['Email Sequences', 'SMS Reminders', 'Value Content', 'Engagement Tracking'],
+      metrics: ['Database Reactivation', 'Email Sequences', 'SMS Reminders', 'Engagement Tracking'],
       color: 'orange'
     }
   ]

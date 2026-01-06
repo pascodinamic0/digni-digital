@@ -12,7 +12,7 @@ export default function Footer() {
       { name: 'Case Studies', href: '/case-studies' },
       { name: 'Success Stories', href: '/case-studies' },
       { name: 'What We Fight For', href: '/#what-were-fighting-for' },
-      { name: 'Our Story', href: '/about' },
+      { name: 'About Us', href: '/about' },
     ],
     company: [
       { name: 'About Us', href: '/about' },

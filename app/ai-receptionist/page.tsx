@@ -41,6 +41,21 @@ export default function AIReceptionistPage() {
       title: 'Analytics Dashboard',
       description: 'Track call volume, conversion rates, and ROI with detailed reporting and insights.',
       icon: '📊'
+    },
+    {
+      title: 'Database Reactivation Campaigns',
+      description: 'Automatically re-engage dormant contacts from your database with personalized campaigns that bring cold leads back to life.',
+      icon: '🔄'
+    },
+    {
+      title: 'Reputation Management',
+      description: 'Monitor reviews across all platforms, automatically respond to feedback, and maintain your 5-star reputation effortlessly.',
+      icon: '⭐'
+    },
+    {
+      title: 'Smart Lead Scoring',
+      description: 'AI automatically scores and prioritizes leads based on behavior, engagement, and fit so you focus on the hottest prospects first.',
+      icon: '🎯'
     }
   ]
 
