@@ -47,6 +47,6 @@ Open [http://localhost:3000](http://localhost:3000) to view the site.
 
 ## Deployment
 
-Deploy easily on Vercel:
+Deploy easily on Vercel (updated):
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new)
