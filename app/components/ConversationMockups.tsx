@@ -3,6 +3,12 @@
 import { motion } from 'framer-motion'
 import { useState, useEffect } from 'react'
 
+interface Message {
+  sender: 'visitor' | 'ai'
+  text: string
+  time: string
+}
+
 const ConversationMockups = () => {
   const [activeDemo, setActiveDemo] = useState(0)
   const [messageIndex, setMessageIndex] = useState(0)
@@ -82,7 +88,7 @@ const ConversationMockups = () => {
     return () => clearInterval(messageInterval)
   }, [activeDemo, conversations])
 
-  const ChatBubble = ({ message, isAI, delay = 0 }) => (
+  const ChatBubble = ({ message, isAI, delay = 0 }: { message: Message; isAI: boolean; delay?: number }) => (
     <motion.div
       initial={{ opacity: 0, y: 20, scale: 0.8 }}
       animate={{ opacity: 1, y: 0, scale: 1 }}
