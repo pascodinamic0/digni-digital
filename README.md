@@ -1,4 +1,4 @@
-# Digni Digital
+# Digni Digital LLC
 
 Growth Infrastructure Agency - We Build Growth Infrastructures That Turn Chaos Into Clients.
 
