@@ -5,10 +5,19 @@ import { useEffect, useState } from 'react'
 
 type ColorType = 'blue' | 'accent' | 'success' | 'purple' | 'orange'
 
+interface Step {
+  id: string
+  title: string
+  description: string
+  icon: JSX.Element
+  metrics: string[]
+  color: ColorType
+}
+
 const BusinessTimeline = () => {
   const [activeStep, setActiveStep] = useState(0)
 
-  const steps = [
+  const steps: Step[] = [
     {
       id: 'lead',
       title: 'Lead Arrives',
