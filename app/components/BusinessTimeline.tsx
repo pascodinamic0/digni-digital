@@ -3,6 +3,8 @@
 import { motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
 
+type ColorType = 'blue' | 'accent' | 'success' | 'purple' | 'orange'
+
 const BusinessTimeline = () => {
   const [activeStep, setActiveStep] = useState(0)
 
@@ -85,7 +87,7 @@ const BusinessTimeline = () => {
     return () => clearInterval(interval)
   }, [steps.length])
 
-  const getColorClasses = (color: string, isActive = false) => {
+  const getColorClasses = (color: ColorType, isActive = false) => {
     const colors = {
       blue: {
         bg: isActive ? 'bg-blue-500' : 'bg-blue-500/20',
