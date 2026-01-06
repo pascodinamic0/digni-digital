@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import { useState } from 'react'
 
 const ChannelsDiagram = () => {
-  const [activeChannel, setActiveChannel] = useState(null)
+  const [activeChannel, setActiveChannel] = useState<string | null>(null)
 
   const channels = [
     {
