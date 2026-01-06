@@ -3,6 +3,8 @@
 import { motion } from 'framer-motion'
 import { useState } from 'react'
 
+type ConversationStatus = 'qualified' | 'appointment-booked' | 'in-progress' | 'follow-up' | 'new-lead'
+
 const UnifiedInbox = () => {
   const [selectedConversation, setSelectedConversation] = useState(0)
 
@@ -66,7 +68,7 @@ const UnifiedInbox = () => {
 
   const selectedConv = conversations[selectedConversation]
 
-  const getStatusColor = (status) => {
+  const getStatusColor = (status: ConversationStatus) => {
     switch (status) {
       case 'qualified': return 'text-success bg-success/10'
       case 'appointment-booked': return 'text-accent bg-accent/10'
@@ -77,7 +79,7 @@ const UnifiedInbox = () => {
     }
   }
 
-  const getStatusText = (status) => {
+  const getStatusText = (status: ConversationStatus) => {
     switch (status) {
       case 'qualified': return 'Qualified'
       case 'appointment-booked': return 'Booked'
