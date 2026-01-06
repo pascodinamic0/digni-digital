@@ -9,11 +9,19 @@ interface Message {
   time: string
 }
 
+interface Conversation {
+  id: string
+  title: string
+  platform: string
+  icon: React.ReactNode
+  messages: Message[]
+}
+
 const ConversationMockups = () => {
   const [activeDemo, setActiveDemo] = useState(0)
   const [messageIndex, setMessageIndex] = useState(0)
 
-  const conversations = [
+  const conversations: Conversation[] = [
     {
       id: 'website',
       title: 'Website Chat',
@@ -26,10 +34,10 @@ const ConversationMockups = () => {
         </svg>
       ),
       messages: [
-        { sender: 'visitor', text: 'Hi, I need help with pricing for your services', time: '2:34 PM' },
-        { sender: 'ai', text: 'Hello! I\'d be happy to help you with pricing information. What type of service are you most interested in?', time: '2:34 PM' },
-        { sender: 'visitor', text: 'Custom software development for my restaurant', time: '2:35 PM' },
-        { sender: 'ai', text: 'Perfect! For restaurant software solutions, our packages start at $2,997. Would you like me to schedule a consultation to discuss your specific needs?', time: '2:35 PM' }
+        { sender: 'visitor' as const, text: 'Hi, I need help with pricing for your services', time: '2:34 PM' },
+        { sender: 'ai' as const, text: 'Hello! I\'d be happy to help you with pricing information. What type of service are you most interested in?', time: '2:34 PM' },
+        { sender: 'visitor' as const, text: 'Custom software development for my restaurant', time: '2:35 PM' },
+        { sender: 'ai' as const, text: 'Perfect! For restaurant software solutions, our packages start at $2,997. Would you like me to schedule a consultation to discuss your specific needs?', time: '2:35 PM' }
       ]
     },
     {
@@ -43,10 +51,10 @@ const ConversationMockups = () => {
         </svg>
       ),
       messages: [
-        { sender: 'visitor', text: 'Hey, saw your ad. Do you do mobile apps?', time: '11:22 AM' },
-        { sender: 'ai', text: 'Yes! We specialize in mobile app development. What kind of app are you looking to build?', time: '11:22 AM' },
-        { sender: 'visitor', text: 'Fitness tracking app with social features', time: '11:24 AM' },
-        { sender: 'ai', text: 'That sounds exciting! Fitness apps with social features typically range from $15k-$35k. I can book you a free strategy call to discuss your vision. Are you available this week?', time: '11:25 AM' }
+        { sender: 'visitor' as const, text: 'Hey, saw your ad. Do you do mobile apps?', time: '11:22 AM' },
+        { sender: 'ai' as const, text: 'Yes! We specialize in mobile app development. What kind of app are you looking to build?', time: '11:22 AM' },
+        { sender: 'visitor' as const, text: 'Fitness tracking app with social features', time: '11:24 AM' },
+        { sender: 'ai' as const, text: 'That sounds exciting! Fitness apps with social features typically range from $15k-$35k. I can book you a free strategy call to discuss your vision. Are you available this week?', time: '11:25 AM' }
       ]
     },
     {
@@ -61,10 +69,10 @@ const ConversationMockups = () => {
         </svg>
       ),
       messages: [
-        { sender: 'visitor', text: '👋 Love your recent post about AI! Can you help with automation?', time: '4:15 PM' },
-        { sender: 'ai', text: 'Thank you! 🙏 Absolutely, we help businesses automate their workflows. What processes are you looking to streamline?', time: '4:15 PM' },
-        { sender: 'visitor', text: 'Customer support and lead follow-up mainly', time: '4:16 PM' },
-        { sender: 'ai', text: 'Perfect fit! Our AI systems can handle both seamlessly. We\'ve helped similar businesses reduce response time by 90%. Want to see a demo? 📅', time: '4:17 PM' }
+        { sender: 'visitor' as const, text: '👋 Love your recent post about AI! Can you help with automation?', time: '4:15 PM' },
+        { sender: 'ai' as const, text: 'Thank you! 🙏 Absolutely, we help businesses automate their workflows. What processes are you looking to streamline?', time: '4:15 PM' },
+        { sender: 'visitor' as const, text: 'Customer support and lead follow-up mainly', time: '4:16 PM' },
+        { sender: 'ai' as const, text: 'Perfect fit! Our AI systems can handle both seamlessly. We\'ve helped similar businesses reduce response time by 90%. Want to see a demo? 📅', time: '4:17 PM' }
       ]
     },
     {
@@ -80,10 +88,10 @@ const ConversationMockups = () => {
         </svg>
       ),
       messages: [
-        { sender: 'visitor', text: '📞 Web call initiated from website', time: '10:42 AM' },
-        { sender: 'ai', text: 'Hello! I\'m your AI receptionist. I can answer questions and also connect you directly with our team on a live call if needed. How can I help you today?', time: '10:42 AM' },
-        { sender: 'visitor', text: 'I have some technical questions about your services', time: '10:43 AM' },
-        { sender: 'ai', text: 'I can help with that! Would you like me to bridge this call with our technical team? You\'ll be on a live 3-way call with me and the team, and we can all talk together. Ready to connect?', time: '10:43 AM' }
+        { sender: 'visitor' as const, text: '📞 Web call initiated from website', time: '10:42 AM' },
+        { sender: 'ai' as const, text: 'Hello! I\'m your AI receptionist. I can answer questions and also connect you directly with our team on a live call if needed. How can I help you today?', time: '10:42 AM' },
+        { sender: 'visitor' as const, text: 'I have some technical questions about your services', time: '10:43 AM' },
+        { sender: 'ai' as const, text: 'I can help with that! Would you like me to bridge this call with our technical team? You\'ll be on a live 3-way call with me and the team, and we can all talk together. Ready to connect?', time: '10:43 AM' }
       ]
     },
     {
@@ -96,10 +104,10 @@ const ConversationMockups = () => {
         </svg>
       ),
       messages: [
-        { sender: 'visitor', text: 'Hi! I saw your post about AI automation. Can you help with lead management?', time: '3:20 PM' },
-        { sender: 'ai', text: 'Hello! Absolutely, I can help! Our AI automatically captures and stores all Facebook inquiries directly to your CRM. I can set up a lead management system that organizes all your leads in one place. Would you like to schedule a free consultation?', time: '3:20 PM' },
-        { sender: 'visitor', text: 'Yes! Can you also integrate with our existing customer database?', time: '3:22 PM' },
-        { sender: 'ai', text: 'Perfect! We integrate with all major CRM systems and can reactivate contacts from your existing database. I\'ve saved your contact info and scheduled your consultation for tomorrow at 2 PM. I\'ll send confirmation details via Facebook Messenger!', time: '3:22 PM' }
+        { sender: 'visitor' as const, text: 'Hi! I saw your post about AI automation. Can you help with lead management?', time: '3:20 PM' },
+        { sender: 'ai' as const, text: 'Hello! Absolutely, I can help! Our AI automatically captures and stores all Facebook inquiries directly to your CRM. I can set up a lead management system that organizes all your leads in one place. Would you like to schedule a free consultation?', time: '3:20 PM' },
+        { sender: 'visitor' as const, text: 'Yes! Can you also integrate with our existing customer database?', time: '3:22 PM' },
+        { sender: 'ai' as const, text: 'Perfect! We integrate with all major CRM systems and can reactivate contacts from your existing database. I\'ve saved your contact info and scheduled your consultation for tomorrow at 2 PM. I\'ll send confirmation details via Facebook Messenger!', time: '3:22 PM' }
       ]
     },
     {
@@ -112,10 +120,10 @@ const ConversationMockups = () => {
         </svg>
       ),
       messages: [
-        { sender: 'visitor', text: 'New review: "Amazing service! Response time was incredible" - ⭐⭐⭐⭐⭐', time: '9:15 AM' },
-        { sender: 'ai', text: 'Thank you for the wonderful review! Your feedback has been automatically logged in our reputation management system. We\'re monitoring all reviews across platforms to maintain our excellent service standards.', time: '9:15 AM' },
-        { sender: 'visitor', text: 'Review response sent automatically', time: '9:15 AM' },
-        { sender: 'ai', text: 'Perfect! Your reputation score has been updated. Current rating: 4.9/5.0 across all platforms. All reviews are tracked, categorized, and responded to automatically.', time: '9:16 AM' }
+        { sender: 'visitor' as const, text: 'New review: "Amazing service! Response time was incredible" - ⭐⭐⭐⭐⭐', time: '9:15 AM' },
+        { sender: 'ai' as const, text: 'Thank you for the wonderful review! Your feedback has been automatically logged in our reputation management system. We\'re monitoring all reviews across platforms to maintain our excellent service standards.', time: '9:15 AM' },
+        { sender: 'visitor' as const, text: 'Review response sent automatically', time: '9:15 AM' },
+        { sender: 'ai' as const, text: 'Perfect! Your reputation score has been updated. Current rating: 4.9/5.0 across all platforms. All reviews are tracked, categorized, and responded to automatically.', time: '9:16 AM' }
       ]
     }
   ]
