@@ -5,10 +5,22 @@ import { useState } from 'react'
 
 type ConversationStatus = 'qualified' | 'appointment-booked' | 'in-progress' | 'follow-up' | 'new-lead'
 
+interface Conversation {
+  id: number
+  contact: string
+  channel: string
+  channelIcon: string
+  lastMessage: string
+  time: string
+  unread: number
+  status: ConversationStatus
+  avatar: string
+}
+
 const UnifiedInbox = () => {
   const [selectedConversation, setSelectedConversation] = useState(0)
 
-  const conversations = [
+  const conversations: Conversation[] = [
     {
       id: 1,
       contact: 'Sarah Johnson',
