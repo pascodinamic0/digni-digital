@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react'
 
 export default function FloatingShapes() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
+  const [particles, setParticles] = useState<Array<{ x: number; y: number; duration: number; delay: number }>>([])
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -15,6 +16,20 @@ export default function FloatingShapes() {
     }
     window.addEventListener('mousemove', handleMouseMove)
     return () => window.removeEventListener('mousemove', handleMouseMove)
+  }, [])
+
+  useEffect(() => {
+    // Initialize particles only on client side
+    if (typeof window !== 'undefined') {
+      setParticles(
+        Array.from({ length: 6 }, () => ({
+          x: Math.random() * window.innerWidth,
+          y: Math.random() * window.innerHeight,
+          duration: 3 + Math.random() * 2,
+          delay: Math.random() * 2,
+        }))
+      )
+    }
   }, [])
 
   const shapes = [
@@ -189,13 +204,13 @@ export default function FloatingShapes() {
       </svg>
 
       {/* Floating particles */}
-      {[...Array(6)].map((_, i) => (
+      {particles.map((particle, i) => (
         <motion.div
           key={i}
           className="absolute w-2 h-2 bg-accent/30 rounded-full"
           initial={{
-            x: typeof window !== 'undefined' ? Math.random() * window.innerWidth : 0,
-            y: typeof window !== 'undefined' ? Math.random() * window.innerHeight : 0,
+            x: particle.x,
+            y: particle.y,
             opacity: 0,
           }}
           animate={{
@@ -203,9 +218,9 @@ export default function FloatingShapes() {
             opacity: [0, 1, 0],
           }}
           transition={{
-            duration: 3 + Math.random() * 2,
+            duration: particle.duration,
             repeat: Infinity,
-            delay: Math.random() * 2,
+            delay: particle.delay,
             ease: 'easeOut',
           }}
           style={{
