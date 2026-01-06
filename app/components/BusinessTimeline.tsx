@@ -85,7 +85,7 @@ const BusinessTimeline = () => {
     return () => clearInterval(interval)
   }, [steps.length])
 
-  const getColorClasses = (color, isActive = false) => {
+  const getColorClasses = (color: string, isActive = false) => {
     const colors = {
       blue: {
         bg: isActive ? 'bg-blue-500' : 'bg-blue-500/20',
