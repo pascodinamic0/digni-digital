@@ -199,7 +199,7 @@ export default function FloatingShapes() {
             opacity: 0,
           }}
           animate={{
-            y: [null, -100, null],
+            y: [undefined, -100, undefined],
             opacity: [0, 1, 0],
           }}
           transition={{
