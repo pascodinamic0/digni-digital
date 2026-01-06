@@ -19,7 +19,10 @@ export default function Navigation() {
     { name: 'Our Mission', href: '/#our-mission' },
     { name: 'About Us', href: '/about' },
     { name: 'Case Studies', href: '/case-studies' },
-    { name: 'Careers', href: '/careers' },
+  ]
+
+  const rightNavLinks = [
+    { name: 'Blog', href: '/blog' },
   ]
 
   const solutionLinks = [
@@ -109,6 +112,17 @@ export default function Navigation() {
                 </motion.div>
               )}
             </div>
+
+            {/* Right Navigation Links (Blog) */}
+            {rightNavLinks.map((link) => (
+              <Link
+                key={link.name}
+                href={link.href}
+                className="text-muted hover:text-white transition-colors duration-200 text-sm font-medium"
+              >
+                {link.name}
+              </Link>
+            ))}
           </div>
 
           <div className="hidden lg:block">
@@ -165,6 +179,18 @@ export default function Navigation() {
                 </Link>
               ))}
             </div>
+
+            {/* Right Navigation Links in Mobile */}
+            {rightNavLinks.map((link) => (
+              <Link
+                key={link.name}
+                href={link.href}
+                className="block py-3 text-muted hover:text-white transition-colors"
+                onClick={() => setMobileOpen(false)}
+              >
+                {link.name}
+              </Link>
+            ))}
             
             <a
               href="https://calendly.com/pascal-digny/consultation-meeting"
