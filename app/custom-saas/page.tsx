@@ -205,7 +205,7 @@ export default function CustomSaaSPage() {
             </h2>
             <p className="text-muted text-lg max-w-3xl mx-auto">
               We don't just build for clients – we innovate for ourselves. 
-              Here are some of the SaaS applications we've developed to solve real-world challenges.
+              Here are some of the SaaS applications we've developed to solve real world challenges.
             </p>
           </div>
 

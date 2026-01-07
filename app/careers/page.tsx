@@ -93,7 +93,7 @@ const openPositions = [
       'Work on diverse, challenging projects',
       'Direct collaboration with international clients',
       'Portfolio building opportunities',
-      'Potential for long-term partnership',
+      'Potential for long term partnership',
       'Creative freedom and autonomy'
     ]
   }

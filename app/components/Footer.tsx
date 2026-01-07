@@ -4,7 +4,7 @@ export default function Footer() {
   const links = {
     services: [
       { name: 'AI Receptionist Systems', href: '/ai-receptionist' },
-      { name: 'Future-Ready Graduate', href: '/future-ready-graduate' },
+      { name: 'Future Ready Graduate', href: '/future-ready-graduate' },
       { name: 'Custom SaaS Development', href: '/custom-saas' },
       { name: 'Our Mission', href: '/#our-mission' },
     ],

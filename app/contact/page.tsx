@@ -54,7 +54,7 @@ const faqs = [
   },
   {
     question: 'Do you provide ongoing support?',
-    answer: 'Yes, we offer various support packages including maintenance, updates, hosting, and optimization services. We believe in long-term partnerships with our clients.'
+    answer: 'Yes, we offer various support packages including maintenance, updates, hosting, and optimization services. We believe in long term partnerships with our clients.'
   },
   {
     question: 'What industries do you specialize in?',

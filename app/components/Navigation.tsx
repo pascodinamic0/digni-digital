@@ -32,9 +32,9 @@ export default function Navigation() {
       description: 'Never miss a lead with 24/7 AI-powered reception'
     },
     { 
-      name: 'Future-Ready Graduate', 
+      name: 'Future Ready Graduate', 
       href: '/future-ready-graduate',
-      description: 'Transform students into job-ready professionals'
+      description: 'Transform students into job ready professionals'
     },
     { 
       name: 'Custom SaaS', 
