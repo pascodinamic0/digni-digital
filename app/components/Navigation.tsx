@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 
@@ -8,12 +8,29 @@ export default function Navigation() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
   const [solutionsOpen, setSolutionsOpen] = useState(false)
+  const dropdownRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50)
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setSolutionsOpen(false)
+      }
+    }
+
+    if (solutionsOpen) {
+      document.addEventListener('mousedown', handleClickOutside)
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [solutionsOpen])
 
   const navLinks = [
     { name: 'Our Mission', href: '/#our-mission' },
@@ -74,12 +91,11 @@ export default function Navigation() {
             ))}
             
             {/* Solutions Dropdown */}
-            <div 
-              className="relative"
-              onMouseEnter={() => setSolutionsOpen(true)}
-              onMouseLeave={() => setSolutionsOpen(false)}
-            >
-              <button className="text-muted hover:text-white transition-colors duration-200 text-sm font-medium flex items-center gap-1">
+            <div className="relative" ref={dropdownRef}>
+              <button 
+                onClick={() => setSolutionsOpen(!solutionsOpen)}
+                className="text-muted hover:text-white transition-colors duration-200 text-sm font-medium flex items-center gap-1"
+              >
                 Solutions
                 <svg className={`w-4 h-4 transition-transform duration-200 ${solutionsOpen ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -98,6 +114,7 @@ export default function Navigation() {
                       <Link
                         key={solution.name}
                         href={solution.href}
+                        onClick={() => setSolutionsOpen(false)}
                         className="block p-4 rounded-lg hover:bg-white/5 transition-colors group"
                       >
                         <div className="font-medium text-white group-hover:text-accent transition-colors">

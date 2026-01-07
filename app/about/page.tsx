@@ -6,7 +6,6 @@ import Link from 'next/link'
 import Navigation from '../components/Navigation'
 import Footer from '../components/Footer'
 import AnimatedSection from '../components/AnimatedSection'
-import FloatingShapes from '../components/FloatingShapes'
 
 // Animated Counter Component
 function Counter({ end, suffix = '' }: { end: number; suffix?: string }) {
@@ -43,9 +42,9 @@ function Counter({ end, suffix = '' }: { end: number; suffix?: string }) {
 
 const stats = [
   { value: 8, suffix: '+', label: 'Years Experience' },
-  { value: 150, suffix: '+', label: 'Businesses Transformed' },
+  { value: 500, suffix: '+', label: 'Students Trained' },
+  { value: 10, suffix: 'k+', label: 'Leads Captured' },
   { value: 98, suffix: '%', label: 'Client Satisfaction' },
-  { value: 15, suffix: '+', label: 'Countries Served' },
 ]
 
 const team = [
@@ -138,8 +137,6 @@ export default function AboutPage() {
       
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-gradient-mesh">
-        <FloatingShapes />
-        
         <div className="max-w-7xl mx-auto px-6 py-20 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -151,11 +148,10 @@ export default function AboutPage() {
               About Us
             </span>
             <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-8">
-              Building the Future<br />
-              <span className="gradient-text">One Business at a Time</span>
+              <span className="gradient-text">About Us</span>
             </h1>
             <p className="text-xl text-muted max-w-3xl mx-auto leading-relaxed">
-              We're not just another digital agency. We're growth infrastructure specialists who turn chaos into clients and ideas into profitable businesses. Founded in 2019, we've transformed over 150 businesses across 15+ countries with our human-first approach to technology.
+              We democratize access to opportunity through technology that serves humanity first. Founded in 2019, we help small businesses capture every lead and ensure students graduate with job ready skills.
             </p>
           </motion.div>
         </div>
@@ -212,7 +208,7 @@ export default function AboutPage() {
                   Today, we don't just build websites or apps – we architect complete growth systems that turn chaos into clients. Our approach combines strategic thinking, technical excellence, AI-powered solutions, and deep understanding of business growth.
                 </p>
                 <p>
-                  As we enter 2026, we're proud to have served over 150 businesses across 15+ countries, helping them scale without the typical growing pains that come with expansion. Our latest innovations include AI-integrated solutions and advanced automation platforms.
+                  Our latest innovations include AI-integrated solutions and advanced automation platforms.
                 </p>
               </div>
             </div>
