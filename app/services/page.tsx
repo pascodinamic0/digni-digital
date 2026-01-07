@@ -4,7 +4,6 @@ import { motion } from 'framer-motion'
 import Navigation from '../components/Navigation'
 import Footer from '../components/Footer'
 import AnimatedSection from '../components/AnimatedSection'
-import FloatingShapes from '../components/FloatingShapes'
 
 const services = [
   {
@@ -112,8 +111,6 @@ export default function ServicesPage() {
       
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-gradient-mesh">
-        <FloatingShapes />
-        
         <div className="max-w-7xl mx-auto px-6 py-20 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}

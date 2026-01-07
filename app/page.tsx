@@ -98,7 +98,7 @@ function MissionValues() {
     },
     {
       title: 'Opportunity Equality',
-      description: 'Small businesses deserve the same advantages as Fortune 500 companies. Students from any background deserve job ready skills.',
+      description: 'Every small African business deserves the same advantages as Fortune 500 companies. And students from any background deserve job ready skills.',
       icon: '⚖️',
       principle: 'Access to opportunity should not depend on privilege or resources.'
     },
@@ -292,26 +292,6 @@ function WhatWereFightingFor() {
             </motion.div>
           ))}
         </div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mt-16"
-        >
-          <div className="card p-12 bg-gradient-to-br from-accent/5 to-success/5">
-            <h3 className="font-display text-3xl font-bold mb-4">
-              This Is Why We Exist
-            </h3>
-            <p className="text-muted text-lg mb-8 max-w-2xl mx-auto">
-              We don&apos;t just build technology. We solve problems that cost businesses revenue and prevent students from getting jobs. 
-              Every solution delivers measurable results — captured leads, employed graduates, transformed businesses.
-            </p>
-            <Link href="#what-we-do" className="btn-primary text-lg px-8 py-4">
-              View Our Solutions
-            </Link>
-          </div>
-        </motion.div>
       </div>
     </AnimatedSection>
   )
