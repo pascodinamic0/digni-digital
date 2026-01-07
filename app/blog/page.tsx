@@ -176,7 +176,7 @@ const blogArticles = [
         <li><strong>Aptitude Assessment</strong>: AI evaluates coding potential beyond traditional qualifications</li>
         <li><strong>Personalized Learning</strong>: Adaptive learning paths based on individual progress and market demands</li>
         <li><strong>Skill Matching</strong>: Intelligent pairing of developers with projects based on technical and cultural fit</li>
-        <li><strong>Performance Prediction</strong>: AI predicts long-term success in specific roles and technologies</li>
+        <li><strong>Performance Prediction</strong>: AI predicts long term success in specific roles and technologies</li>
       </ul>
 
       <p><strong>Results:</strong> Andela has trained over <strong>100,000 developers</strong> and placed them with companies like Microsoft, Goldman Sachs, and ViacomCBS, with AI-matched placements showing 40% higher retention rates.</p>
@@ -188,7 +188,7 @@ const blogArticles = [
 
       <ul>
         <li><strong>Infrastructure Limitations → Edge AI Solutions</strong>: Optimizing for low-bandwidth, intermittent connectivity</li>
-        <li><strong>Diverse Languages → Advanced NLP</strong>: Multi-language AI models that work in emerging markets</li>
+        <li><strong>Diverse Languages → Advanced NLP</strong>: Multi language AI models that work in emerging markets</li>
         <li><strong>Limited Credit History → Alternative Scoring</strong>: AI models using non-traditional data sources</li>
         <li><strong>Regulatory Complexity → Compliance AI</strong>: Automated regulatory adaptation across markets</li>
       </ul>

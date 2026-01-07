@@ -71,7 +71,7 @@ export default function AIReceptionistPage() {
         'Advanced lead qualification',
         'Appointment booking & scheduling',
         'CRM integrations',
-        'Multi-language support',
+        'Multi language support',
         'Custom AI training',
         'Priority support',
         'Analytics dashboard',
@@ -84,7 +84,7 @@ export default function AIReceptionistPage() {
   const caseStudy = {
     company: 'Regional Medical Center',
     industry: 'Healthcare',
-    challenge: 'Missing 40% of after-hours calls, losing $80k monthly in potential revenue from missed appointments and consultations.',
+    challenge: 'Missing 40% of after hours calls, losing $80k monthly in potential revenue from missed appointments and consultations.',
     solution: 'Deployed AI Receptionist with medical-specific training, HIPAA compliance, and integration with their existing patient management system.',
     results: [
       { metric: '100%', description: 'Call capture rate (up from 60%)' },

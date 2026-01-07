@@ -366,7 +366,7 @@ export default function AboutPage() {
                   <span className="text-accent font-bold">01</span>
                 </div>
                 <div>
-                  <h3 className="font-display text-xl font-bold mb-3">Human-First Technology</h3>
+                  <h3 className="font-display text-xl font-bold mb-3">Human First Technology</h3>
                   <p className="text-muted leading-relaxed">
                     We don't replace humans with technology – we amplify human potential. Our AI solutions work alongside your team, not instead of them.
                   </p>
@@ -471,10 +471,10 @@ export default function AboutPage() {
                 🎓
               </div>
               <h3 className="font-display text-xl font-bold mb-4 group-hover:text-success transition-colors">
-                Future-Ready Graduate
+                Future Ready Graduate
               </h3>
               <p className="text-muted text-sm leading-relaxed mb-6">
-                Transform your educational institution with our comprehensive program that guarantees students graduate with job-ready digital skills.
+                Transform your educational institution with our comprehensive program that guarantees students graduate with job ready digital skills.
               </p>
               <Link href="/future-ready-graduate" className="text-success hover:text-success-light font-medium text-sm">
                 Learn More →

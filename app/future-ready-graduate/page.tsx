@@ -67,7 +67,7 @@ export default function FutureReadyGraduatePage() {
     school: 'Riverside Technical High School',
     location: 'Lagos, Nigeria',
     challenge: 'Only 45% of graduates finding employment within 12 months. Students lacked practical digital skills that employers needed.',
-    implementation: 'Integrated full-year Future-Ready Graduate program into final year curriculum, following the September-July academic calendar with modules perfectly timed around ministry breaks.',
+    implementation: 'Integrated full-year Future Ready Graduate program into final year curriculum, following the September-July academic calendar with modules perfectly timed around ministry breaks.',
     results: [
       { metric: '85%', description: 'Graduate employment rate' },
       { metric: '₦240k', description: 'Average starting salary (up from ₦120k)' },
@@ -75,7 +75,7 @@ export default function FutureReadyGraduatePage() {
       { metric: '8 months', description: 'Program ROI payback period' }
     ],
     timeline: 'September 2024 - July 2025 (Full Academic Year)',
-    testimonial: '"The program timing was perfect. Students learned during school hours, and the breaks gave them time to practice. By graduation, they were genuinely job-ready." - Principal Mary Adebayo'
+    testimonial: '"The program timing was perfect. Students learned during school hours, and the breaks gave them time to practice. By graduation, they were genuinely job ready." - Principal Mary Adebayo'
   }
 
   const pricing = [
@@ -83,7 +83,7 @@ export default function FutureReadyGraduatePage() {
       name: 'School Partnership Program',
       price: '$500',
       period: '/month',
-      description: 'Complete Future-Ready Graduate program for your school',
+      description: 'Complete Future Ready Graduate program for your school',
       features: [
         'Full academic year curriculum (42 weeks)',
         'On-site facilitator and support',
@@ -116,11 +116,11 @@ export default function FutureReadyGraduatePage() {
             className="text-center mb-16"
           >
             <span className="inline-block px-4 py-2 bg-success/10 border border-success/30 rounded-full text-success text-sm font-medium mb-6">
-              Future-Ready Graduate Program
+              Future Ready Graduate Program
             </span>
             <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-8">
               Turn Your Graduates Into<br />
-              <span className="gradient-text">Industry-Ready Professionals</span>
+              <span className="gradient-text">Industry Ready Professionals</span>
             </h1>
             <p className="text-xl text-muted max-w-3xl mx-auto leading-relaxed mb-10">
               We provide everything needed to transform your final-year students into skilled professionals: 
@@ -329,7 +329,7 @@ export default function FutureReadyGraduatePage() {
             </div>
                 <div className="card p-6 border-red-400/20 bg-red-400/5">
               <div className="text-3xl font-display font-bold text-red-400 mb-2">75%</div>
-              <p className="text-muted text-sm">of employers say graduates lack job-ready skills</p>
+              <p className="text-muted text-sm">of employers say graduates lack job ready skills</p>
             </div>
                 <div className="card p-6 border-red-400/20 bg-red-400/5">
               <div className="text-3xl font-display font-bold text-red-400 mb-2">$1.7T</div>
@@ -896,7 +896,7 @@ export default function FutureReadyGraduatePage() {
             Ready to Transform Student Outcomes?
           </h2>
           <p className="text-muted text-lg mb-8">
-            Let's discuss how Future-Ready Graduate can work for your institution. 
+            Let's discuss how Future Ready Graduate can work for your institution. 
             See curriculum details and success metrics in a personalized consultation.
           </p>
           <a

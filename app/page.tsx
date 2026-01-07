@@ -86,31 +86,31 @@ function MissionValues() {
   const mission = {
     title: "Our Mission",
     statement: "To democratize access to opportunity through technology that serves humanity first.",
-    description: "We believe every business should capture every lead, every student should graduate job-ready, and every organization should have access to enterprise-level technology — regardless of size or budget."
+    description: "We believe every business should capture every lead, every student should graduate job ready, and every organization should have access to enterprise level technology — regardless of size or budget."
   }
 
   const values = [
     {
-      title: 'Human-First Technology',
+      title: 'Human First Technology',
       description: 'We build technology that amplifies human potential, not replaces it. Every solution we create makes people more effective, not obsolete.',
       icon: '🤝',
       principle: 'Technology should serve people, not the other way around.'
     },
     {
       title: 'Opportunity Equality',
-      description: 'Small businesses deserve the same advantages as Fortune 500 companies. Students from any background deserve job-ready skills.',
+      description: 'Small businesses deserve the same advantages as Fortune 500 companies. Students from any background deserve job ready skills.',
       icon: '⚖️',
       principle: 'Access to opportunity should not depend on privilege or resources.'
     },
     {
       title: 'Immediate Impact',
-      description: 'We measure success by real-world outcomes: leads captured, students employed, businesses transformed. Results matter more than features.',
+      description: 'We measure success by real world outcomes: leads captured, students employed, businesses transformed. Results matter more than features.',
       icon: '⚡',
       principle: 'Every solution must deliver measurable value from day one.'
     },
     {
       title: 'Sustainable Growth',
-      description: 'We build systems that grow with you, not solutions that become obsolete. Long-term partnerships over short-term profits.',
+      description: 'We build systems that grow with you, not solutions that become obsolete. Long term partnerships over short term profits.',
       icon: '🌱',
       principle: 'True success is measured in decades, not quarters.'
     }
@@ -192,7 +192,7 @@ function WhatWereFightingFor() {
     {
       title: 'The Skills Gap Emergency',
       problem: '40% of graduates are unemployed 6 months after graduation',
-      reality: 'Students spend years learning theory but graduate without practical, income-generating skills. The education system is failing to prepare them for the digital economy.',
+      reality: 'Students spend years learning theory but graduate without practical, income generating skills. The education system is failing to prepare them for the digital economy.',
       ourFight: 'We fight for a world where every graduate has the skills employers actually need.',
       icon: '🎓',
       stat: '40%',
@@ -200,7 +200,7 @@ function WhatWereFightingFor() {
     },
     {
       title: 'The Digital Divide',
-      problem: 'Enterprise technology is locked behind million-dollar budgets',
+      problem: 'Enterprise technology is locked behind million dollar budgets',
       reality: 'Small businesses and schools can\'t access the same tools that Fortune 500 companies use. This creates an unfair competitive advantage based on budget, not merit.',
       ourFight: 'We fight for technological equality — where your impact matters more than your budget.',
       icon: '⚖️',
@@ -333,11 +333,11 @@ function WhatWeDo() {
       secondaryCta: 'Book a Demo'
     },
     {
-      title: 'Future-Ready Graduate Programs',
+      title: 'Future Ready Graduate Programs',
       subtitle: 'For Educational Institutions',
-      description: 'Transform your curriculum with practical digital skills training that guarantees your students graduate job-ready with real income potential.',
+      description: 'Transform your curriculum with practical digital skills training that guarantees your students graduate job ready with real income potential.',
       approach: 'We partner with schools to redesign education around employability, connecting students directly with hiring partners.',
-      outcomes: ['85% graduate employment rate', 'Direct employer partnerships', 'Real-world skill development', 'Measurable ROI tracking'],
+      outcomes: ['85% graduate employment rate', 'Direct employer partnerships', 'Real world skill development', 'Measurable ROI tracking'],
       icon: '🎓',
       link: '/future-ready-graduate',
       color: 'success',
@@ -348,8 +348,8 @@ function WhatWeDo() {
       title: 'Custom SaaS Development',
       subtitle: 'For Unique Challenges',
       description: 'Build custom software solutions that solve your specific problems — from concept to deployment, with ongoing support and optimization.',
-      approach: 'We become your technical co-founders, understanding your vision and building technology that grows with your business.',
-      outcomes: ['Scalable architecture', 'Enterprise-grade security', 'Ongoing optimization', 'Full ownership of code'],
+      approach: 'We become your technical co founders, understanding your vision and building technology that grows with your business.',
+      outcomes: ['Scalable architecture', 'Enterprise grade security', 'Ongoing optimization', 'Full ownership of code'],
       icon: '⚙️',
       link: '/custom-saas',
       color: 'blue-400',
@@ -592,16 +592,16 @@ function Products() {
       name: 'AI Receptionist™',
       tagline: 'Never miss a lead again',
       description: 'AI-powered reception system that handles calls, qualifies leads, and books appointments 24/7.',
-      features: ['24/7 Call Handling', 'Lead Qualification', 'Appointment Booking', 'CRM Integration', 'Multi-language Support', 'Analytics Dashboard'],
+      features: ['24/7 Call Handling', 'Lead Qualification', 'Appointment Booking', 'CRM Integration', 'Multi language Support', 'Analytics Dashboard'],
       pricing: { starter: '$297/month', pro: '$497/month', enterprise: 'Custom' },
       icon: '🤖',
       gradient: 'from-accent/20 to-accent/5',
       status: 'LIVE'
     },
     {
-      name: 'Future-Ready Graduate™',
+      name: 'Future Ready Graduate™',
       tagline: 'Students with real income skills',
-      description: 'Complete employability program that transforms students into job-ready professionals.',
+      description: 'Complete employability program that transforms students into job ready professionals.',
       features: ['Digital Skills Training', 'Portfolio Development', 'Job Placement Support', 'Income Tracking', 'Employer Network', 'Success Metrics'],
       pricing: { starter: '$1,997/student', pro: '$2,997/student', enterprise: 'Custom' },
       icon: '🎓',
@@ -619,7 +619,7 @@ function Products() {
             Two Flagship Solutions.<br />
             <span className="gradient-text">Immediate Impact.</span>
           </h2>
-          <p className="text-muted text-lg">Ready-to-deploy systems that solve critical business and education challenges.</p>
+          <p className="text-muted text-lg">Ready to deploy systems that solve critical business and education challenges.</p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12">
@@ -737,7 +737,7 @@ function Counter({ end, suffix = '' }: { end: number; suffix?: string }) {
 function Stats() {
   const stats = [
     { value: 300, suffix: '%', label: 'Lead Conversion Increase', sublabel: 'AI Receptionist™ Results' },
-    { value: 85, suffix: '%', label: 'Graduate Employment Rate', sublabel: 'Future-Ready Graduate™ Success' },
+    { value: 85, suffix: '%', label: 'Graduate Employment Rate', sublabel: 'Future Ready Graduate™ Success' },
     { value: 24, suffix: '/7', label: 'Always-On Service', sublabel: 'Never Miss Another Lead' },
     { value: 98, suffix: '%', label: 'Client Satisfaction', sublabel: 'Across Both Solutions' },
   ]
@@ -797,7 +797,7 @@ function Stats() {
               className="card p-6"
             >
               <div className="text-3xl mb-3">🎓</div>
-              <h3 className="font-display font-bold mb-2">Future-Ready Graduate™</h3>
+              <h3 className="font-display font-bold mb-2">Future Ready Graduate™</h3>
               <p className="text-muted text-sm">Training 500+ students annually with 85% job placement success</p>
             </motion.div>
           </div>
@@ -817,7 +817,7 @@ function CaseStudies() {
       industry: 'Healthcare',
       title: 'Regional Medical Center',
       duration: '2 weeks implementation',
-      problem: 'Missing 40% of after-hours calls, losing $80k monthly in potential revenue',
+      problem: 'Missing 40% of after hours calls, losing $80k monthly in potential revenue',
       results: [
         { value: '100%', label: 'Call capture rate' },
         { value: '300%', label: 'Lead conversion increase' },
@@ -827,7 +827,7 @@ function CaseStudies() {
       color: 'accent'
     },
     {
-      solution: 'Future-Ready Graduate™',
+      solution: 'Future Ready Graduate™',
       industry: 'Education',
       title: 'Technical University',
       duration: '6 months program',
