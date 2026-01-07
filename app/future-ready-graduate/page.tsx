@@ -1,13 +1,17 @@
 'use client'
 
+import { useState } from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import Navigation from '../components/Navigation'
 import Footer from '../components/Footer'
 import AnimatedSection from '../components/AnimatedSection'
 import FloatingShapes from '../components/FloatingShapes'
+import VideoModal from '../components/VideoModal'
 
 export default function FutureReadyGraduatePage() {
+  const [isVideoOpen, setIsVideoOpen] = useState(false)
+
   const trimesterPlan = [
     {
       trimester: 'First Trimester',
@@ -123,15 +127,19 @@ export default function FutureReadyGraduatePage() {
               internet connectivity, expert facilitators, and a proven curriculum that delivers real employment outcomes. 
               Your school provides students and facilities—we handle the rest.
             </p>
+            <div className="text-center mb-8">
+              <p className="text-muted text-sm mb-4 max-w-2xl mx-auto">
+                The core challenge: Many entrepreneurs focus on building products instead of solving real problems. 
+                Watch Strive Masiyiwa explain why the entrepreneurship mindset must start with understanding the problem.
+              </p>
+            </div>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="https://calendly.com/pascal-digny/consultation-meeting"
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                onClick={() => setIsVideoOpen(true)}
                 className="btn-primary text-lg px-8 py-4"
               >
-                Schedule Consultation
-              </a>
+                Watch the Challenge Explained
+              </button>
               <a
                 href="/Digni%20Digital%20-%20Future-Ready%20Graduate%20Program.pdf"
                 target="_blank"
@@ -901,6 +909,14 @@ export default function FutureReadyGraduatePage() {
           </a>
         </div>
       </AnimatedSection>
+
+      <VideoModal
+        isOpen={isVideoOpen}
+        onClose={() => setIsVideoOpen(false)}
+        videoSrc={`/Strive Masiyiwa emphasized that entrepreneurship is a mindset focused on solving real problems, .mp4`}
+        title="The Core Challenge: Entrepreneurship as Problem-Solving"
+        description="Strive Masiyiwa explains the fundamental challenge: entrepreneurship isn't about building products—it's a mindset focused on solving real problems. In the simplest terms, the challenge is that many entrepreneurs start with solutions instead of understanding the problem first. True entrepreneurship begins by identifying real challenges people face, then creating meaningful solutions. This is the philosophy that drives everything we do at Digni Digital—we solve problems that matter."
+      />
 
       <Footer />
     </main>
