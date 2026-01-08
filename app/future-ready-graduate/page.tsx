@@ -10,7 +10,7 @@ import VideoModal from '../components/VideoModal'
 import VideoThumbnail from '../components/VideoThumbnail'
 
 export default function FutureReadyGraduatePage() {
-  const [selectedVideo, setSelectedVideo] = useState<{ src: string; title: string; speaker: string } | null>(null)
+  const [selectedVideo, setSelectedVideo] = useState<{ src: string; title: string; speaker: string; description: string } | null>(null)
 
   const trimesterPlan = [
     {
