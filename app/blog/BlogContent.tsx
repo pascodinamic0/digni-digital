@@ -55,7 +55,7 @@ export default function BlogContent({ articles }: BlogContentProps) {
       <Navigation />
       
       {/* Simple Hero Section */}
-      <section className="pt-24 pb-16 bg-surface">
+      <section className="pt-24 pb-12 bg-surface">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center">
             <h1 className="font-display text-4xl md:text-5xl font-bold mb-6">
@@ -66,16 +66,17 @@ export default function BlogContent({ articles }: BlogContentProps) {
             </p>
             
             {/* Simple Search */}
-            <div className="max-w-md mx-auto">
+            <div className="max-w-md mx-auto mb-8">
               <div className="relative">
                 <input
                   type="text"
                   placeholder="Search articles..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
+                  aria-label="Search articles"
                   className="w-full px-4 py-3 pl-12 bg-background border border-white/20 rounded-lg text-white placeholder-muted focus:outline-none focus:border-accent"
                 />
-                <svg className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-muted" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-muted" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                 </svg>
               </div>
@@ -84,15 +85,48 @@ export default function BlogContent({ articles }: BlogContentProps) {
         </div>
       </section>
 
+      {/* Enhanced Category Filter - Moved to Top */}
+      <section className="py-6 bg-background border-b border-white/10 sticky top-0 z-10 backdrop-blur-sm bg-background/95">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex items-center justify-between flex-wrap gap-4">
+            <h3 className="font-display text-sm font-semibold text-muted uppercase tracking-wider">Filter by Category</h3>
+            <div className="flex flex-wrap gap-2">
+              {categories.map(category => (
+                <button
+                  key={category}
+                  onClick={() => {
+                    setSelectedCategory(category)
+                    setCurrentPage(1)
+                  }}
+                  aria-pressed={selectedCategory === category}
+                  aria-label={`Filter articles by ${category}`}
+                  role="button"
+                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
+                    selectedCategory === category
+                      ? 'bg-accent text-background shadow-lg shadow-accent/20 scale-105'
+                      : 'bg-surface text-muted hover:text-white hover:bg-surface-light border border-white/10'
+                  }`}
+                >
+                  {category}
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Featured Articles - 4 in a row */}
       {featuredArticles.length > 0 && (
-        <section className="py-16">
+        <section className="py-16 bg-surface">
           <div className="max-w-7xl mx-auto px-6">
-            <h2 className="font-display text-3xl font-bold mb-8">Featured Articles</h2>
+            <div className="flex items-center justify-between mb-8">
+              <h2 className="font-display text-3xl font-bold">Featured Articles</h2>
+              <span className="text-muted text-sm">{featuredArticles.length} featured</span>
+            </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {featuredArticles.map((article) => (
                 <Link key={article.id} href={`/blog/${article.slug}`}>
-                  <article className="bg-surface border border-white/10 rounded-lg p-6 hover:border-accent/50 transition-colors cursor-pointer h-full">
+                  <article className="bg-background border border-white/10 rounded-lg p-6 hover:border-accent/50 hover:shadow-lg hover:shadow-accent/10 transition-all cursor-pointer h-full group">
                     <div className="flex items-center gap-2 mb-4">
                       <span className="px-3 py-1 bg-accent/10 text-accent text-xs font-medium rounded-full">
                         {article.category}
@@ -100,7 +134,7 @@ export default function BlogContent({ articles }: BlogContentProps) {
                       <span className="text-muted text-sm">{article.readTime}</span>
                     </div>
                     
-                    <h3 className="font-display text-lg font-bold mb-3 hover:text-accent transition-colors line-clamp-2">
+                    <h3 className="font-display text-lg font-bold mb-3 group-hover:text-accent transition-colors line-clamp-2">
                       {article.title}
                     </h3>
                     
@@ -119,30 +153,6 @@ export default function BlogContent({ articles }: BlogContentProps) {
           </div>
         </section>
       )}
-
-      {/* Simple Category Filter */}
-      <section className="py-8 bg-surface/50">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-wrap gap-3 justify-center">
-            {categories.map(category => (
-              <button
-                key={category}
-                onClick={() => {
-                  setSelectedCategory(category)
-                  setCurrentPage(1)
-                }}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-                  selectedCategory === category
-                    ? 'bg-accent text-background'
-                    : 'bg-surface text-muted hover:text-white hover:bg-surface-light'
-                }`}
-              >
-                {category}
-              </button>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* All Articles Grid */}
       <section className="py-16">
@@ -194,6 +204,7 @@ export default function BlogContent({ articles }: BlogContentProps) {
                     <button
                       onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
                       disabled={currentPage === 1}
+                      aria-label="Go to previous page"
                       className="px-4 py-2 bg-surface text-white rounded-lg disabled:opacity-50 disabled:cursor-not-allowed hover:bg-surface-light transition-colors"
                     >
                       Previous
@@ -203,6 +214,8 @@ export default function BlogContent({ articles }: BlogContentProps) {
                       <button
                         key={page}
                         onClick={() => setCurrentPage(page)}
+                        aria-label={`Go to page ${page}`}
+                        aria-current={currentPage === page ? 'page' : undefined}
                         className={`px-4 py-2 rounded-lg transition-colors ${
                           currentPage === page
                             ? 'bg-accent text-background'
@@ -216,6 +229,7 @@ export default function BlogContent({ articles }: BlogContentProps) {
                     <button
                       onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
                       disabled={currentPage === totalPages}
+                      aria-label="Go to next page"
                       className="px-4 py-2 bg-surface text-white rounded-lg disabled:opacity-50 disabled:cursor-not-allowed hover:bg-surface-light transition-colors"
                     >
                       Next
@@ -256,9 +270,13 @@ export default function BlogContent({ articles }: BlogContentProps) {
             <input
               type="email"
               placeholder="Enter your email"
+              aria-label="Email address for newsletter subscription"
               className="flex-1 px-4 py-3 bg-background border border-white/20 rounded-lg text-white placeholder-muted focus:outline-none focus:border-accent"
             />
-            <button className="btn-primary whitespace-nowrap">
+            <button 
+              className="btn-primary whitespace-nowrap"
+              aria-label="Subscribe to newsletter"
+            >
               Subscribe
             </button>
           </div>

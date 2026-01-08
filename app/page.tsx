@@ -365,10 +365,18 @@ function WhatWeDo() {
             >
               {/* Header */}
               <div className="mb-6">
-                <div className={`w-14 h-14 bg-${service.color}/10 rounded-xl flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform`}>
+                <div className={`w-14 h-14 rounded-xl flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform ${
+                  service.color === 'accent' ? 'bg-accent/10' :
+                  service.color === 'success' ? 'bg-success/10' :
+                  'bg-blue-400/10'
+                }`}>
                   {service.icon}
                 </div>
-                <span className={`text-${service.color} text-xs font-semibold uppercase tracking-wider`}>
+                <span className={`text-xs font-semibold uppercase tracking-wider ${
+                  service.color === 'accent' ? 'text-accent' :
+                  service.color === 'success' ? 'text-success' :
+                  'text-blue-400'
+                }`}>
                   {service.subtitle}
                 </span>
                 <h3 className="font-display text-2xl font-bold mt-2 mb-4 group-hover:text-accent transition-colors">
@@ -385,7 +393,11 @@ function WhatWeDo() {
               <div className="mb-6 space-y-2">
                 {service.outcomes.slice(0, 3).map((outcome, j) => (
                   <div key={j} className="flex items-center gap-2">
-                    <div className={`w-1.5 h-1.5 bg-${service.color} rounded-full flex-shrink-0`} />
+                    <div className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${
+                      service.color === 'accent' ? 'bg-accent' :
+                      service.color === 'success' ? 'bg-success' :
+                      'bg-blue-400'
+                    }`} />
                     <span className="text-sm text-muted">{outcome}</span>
                   </div>
                 ))}
@@ -858,13 +870,27 @@ function CaseStudies() {
               transition={{ delay: i * 0.15 }}
               className="card p-8 cursor-pointer group hover:border-accent/50"
               onClick={() => setExpanded(expanded === i ? null : i)}
+              role="button"
+              tabIndex={0}
+              aria-expanded={expanded === i}
+              aria-label={expanded === i ? `Collapse case study: ${study.title}` : `Expand case study: ${study.title}`}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault()
+                  setExpanded(expanded === i ? null : i)
+                }
+              }}
             >
               <div className="flex items-center gap-3 mb-6">
-                <div className={`w-10 h-10 bg-${study.color}/10 rounded-lg flex items-center justify-center text-xl`}>
+                <div className={`w-10 h-10 rounded-lg flex items-center justify-center text-xl ${
+                  study.color === 'accent' ? 'bg-accent/10' : 'bg-success/10'
+                }`}>
                   {study.icon}
                 </div>
                 <div>
-                  <span className={`px-3 py-1 bg-${study.color}/10 text-${study.color} text-xs font-medium rounded-full whitespace-nowrap`}>
+                  <span className={`px-3 py-1 text-xs font-medium rounded-full whitespace-nowrap ${
+                    study.color === 'accent' ? 'bg-accent/10 text-accent' : 'bg-success/10 text-success'
+                  }`}>
                     {study.solution}
                   </span>
                 </div>
@@ -888,13 +914,19 @@ function CaseStudies() {
                   {study.results.map((result, j) => (
                     <div key={j} className="flex justify-between items-center">
                       <span className="text-muted text-sm">{result.label}</span>
-                      <span className={`font-display text-xl font-bold text-${study.color}`}>{result.value}</span>
+                      <span className={`font-display text-xl font-bold ${
+                        study.color === 'accent' ? 'text-accent' : 'text-success'
+                      }`}>{result.value}</span>
                     </div>
                   ))}
                 </div>
               </motion.div>
 
-              <div className={`mt-4 text-${study.color} text-sm font-medium group-hover:text-${study.color}-light transition-colors`}>
+              <div className={`mt-4 text-sm font-medium transition-colors ${
+                study.color === 'accent' 
+                  ? 'text-accent group-hover:text-accent-light' 
+                  : 'text-success group-hover:text-success/80'
+              }`}>
                 {expanded === i ? 'Click to collapse' : 'Click to expand'}
               </div>
             </motion.div>

@@ -55,8 +55,9 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
           <Link 
             href="/blog" 
             className="inline-flex items-center gap-2 text-accent hover:text-accent-light transition-colors mb-8"
+            aria-label="Back to blog listing"
           >
-            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
             Back to Blog
@@ -89,8 +90,9 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
 
           {/* Article Content */}
           <div 
-            className="prose prose-lg prose-invert max-w-none"
+            className="blog-content max-w-none"
             dangerouslySetInnerHTML={{ __html: article.content }}
+            aria-label="Article content"
           />
 
           {/* Article Tags */}

@@ -374,7 +374,7 @@ const blogArticles = [
     publishDate: "January 4, 2025",
     author: "Pascal Digny",
     tags: ["Agriculture", "AI", "Food Security", "Investment", "Sustainability"],
-    featured: false,
+    featured: true,
     content: `
       <h2>The $35 Billion Opportunity: AI Transforms African Agriculture</h2>
       
@@ -782,7 +782,116 @@ const remainingArticles = [
     author: "Pascal Digny",
     tags: ["Education", "AI", "Skills Development", "Job Creation", "Investment"],
     featured: true,
-    content: `<h2>Bridging the Skills Gap: AI's Role in African Education</h2><p>Africa's education sector faces a critical challenge: 60% of youth lack the skills needed for the modern economy. AI-powered EdTech platforms are revolutionizing how Africans learn, creating pathways to employment and entrepreneurship...</p>`
+    content: `
+      <h2>Bridging the Skills Gap: AI's Role in African Education</h2>
+      
+      <p>Africa's education sector faces a critical challenge: <strong>60% of youth lack the skills needed for the modern economy</strong>. AI-powered EdTech platforms are revolutionizing how Africans learn, creating pathways to employment and entrepreneurship. The African EdTech market is projected to reach <strong>$50 billion by 2026</strong>, with AI-driven solutions leading the transformation.</p>
+
+      <h3>The Education Crisis: A $200 Billion Opportunity</h3>
+      
+      <p>Traditional education systems across Africa struggle with overcrowded classrooms, limited resources, and curricula disconnected from market needs. However, forward-thinking EdTech companies are using AI to personalize learning, making quality education accessible to millions who were previously excluded.</p>
+
+      <blockquote>
+        <p>"AI doesn't replace teachers—it amplifies their impact. We're using AI to give every African learner access to world-class education, regardless of their location or economic background." - <em>Iyinoluwa Aboyeji, Co-founder of Andela</em></p>
+      </blockquote>
+
+      <h3>Revolutionary AI Applications in African Education</h3>
+
+      <h4>1. Personalized Learning Paths</h4>
+      <p>AI-powered platforms like <a href="https://www.andela.com/" target="_blank" rel="noopener noreferrer">Andela</a> and <a href="https://www.udacity.com/" target="_blank" rel="noopener noreferrer">Udacity</a> use machine learning to create customized learning experiences. These systems analyze individual learning patterns, adapt content difficulty in real-time, and provide targeted feedback.</p>
+      
+      <ul>
+        <li><strong>Adaptive Assessments</strong> - AI adjusts question difficulty based on student performance</li>
+        <li><strong>Learning Style Recognition</strong> - Identifies whether students learn better through visual, auditory, or kinesthetic methods</li>
+        <li><strong>Pace Optimization</strong> - Allows students to learn at their optimal speed</li>
+        <li><strong>Gap Analysis</strong> - Identifies knowledge gaps and recommends specific content to address them</li>
+      </ul>
+
+      <p>These AI systems have shown <strong>45% improvement in learning outcomes</strong> compared to traditional one-size-fits-all approaches.</p>
+
+      <h4>2. Language Learning Through AI</h4>
+      <p>With over 2,000 languages spoken across Africa, AI-powered language learning platforms are breaking down communication barriers. Companies like <a href="https://www.duolingo.com/" target="_blank" rel="noopener noreferrer">Duolingo</a> have developed African language courses, while local platforms create content in indigenous languages using natural language processing.</p>
+
+      <h4>3. Skills-to-Job Matching</h4>
+      <p>AI algorithms analyze job market trends and match learners with in-demand skills. Platforms like <a href="https://www.coursera.org/" target="_blank" rel="noopener noreferrer">Coursera</a> and <a href="https://www.edx.org/" target="_blank" rel="noopener noreferrer">edX</a> use AI to recommend courses based on career goals and market demand, with <strong>78% of learners reporting successful job placements</strong>.</p>
+
+      <h3>Case Study: Andela's AI-Powered Developer Training</h3>
+      
+      <p><a href="https://www.andela.com/" target="_blank" rel="noopener noreferrer">Andela</a> has trained over <strong>100,000 software developers</strong> across Africa using AI-enhanced learning platforms. Their approach includes:</p>
+
+      <ul>
+        <li><strong>AI Code Review</strong>: Automated feedback on coding assignments with personalized improvement suggestions</li>
+        <li><strong>Project-Based Learning</strong>: AI matches learners with real-world projects matching their skill level</li>
+        <li><strong>Mentor Matching</strong>: Intelligent pairing of learners with experienced developers</li>
+        <li><strong>Career Path Prediction</strong>: AI analyzes skills and suggests optimal career trajectories</li>
+      </ul>
+
+      <p><strong>Results</strong>: Andela graduates have secured positions at companies like <strong>Google, Microsoft, and IBM</strong>, with average starting salaries of $50,000-$80,000 annually.</p>
+
+      <h3>The Job Creation Multiplier Effect</h3>
+
+      <p>AI-powered education is creating jobs at multiple levels:</p>
+
+      <ul>
+        <li><strong>Direct Employment</strong>: 2.3 million new jobs in EdTech companies across Africa</li>
+        <li><strong>Skilled Workforce</strong>: 15 million professionals trained in AI-relevant skills by 2026</li>
+        <li><strong>Entrepreneurship</strong>: 450,000 new businesses started by EdTech graduates</li>
+        <li><strong>Supporting Industries</strong>: Content creation, platform development, and educational consulting</li>
+      </ul>
+
+      <h3>Investment Landscape: Where the Money Is Flowing</h3>
+
+      <p>The African EdTech sector has attracted <strong>$2.8 billion in venture capital</strong> over the past three years. Key investment areas include:</p>
+
+      <h4>1. Corporate Training Platforms</h4>
+      <p>Companies investing in upskilling their workforce through AI-powered platforms. The corporate training market in Africa is valued at <strong>$12 billion</strong> and growing at 18% annually.</p>
+
+      <h4>2. K-12 Education Technology</h4>
+      <p>AI tools for primary and secondary education, including virtual classrooms, homework assistance, and exam preparation. This segment has seen <strong>$850 million in investment</strong>.</p>
+
+      <h4>3. Higher Education Innovation</h4>
+      <p>Universities partnering with EdTech companies to offer AI-enhanced courses and degree programs. Over <strong>200 African universities</strong> have integrated AI learning platforms.</p>
+
+      <h3>Key Success Factors for EdTech Implementation</h3>
+
+      <h4>1. Mobile-First Design</h4>
+      <p>With <strong>85% of internet access in Africa via mobile devices</strong>, successful EdTech platforms prioritize mobile optimization. AI-powered apps that work offline and sync when connected have shown 3x higher engagement rates.</p>
+
+      <h4>2. Local Content Development</h4>
+      <p>AI platforms that incorporate local examples, case studies, and cultural context see 60% higher completion rates. Companies investing in African content creators and educators achieve better outcomes.</p>
+
+      <h4>3. Affordable Pricing Models</h4>
+      <p>Freemium models, pay-as-you-learn options, and employer-sponsored programs make AI education accessible. Platforms offering flexible payment plans have reached <strong>5x more learners</strong> than traditional subscription models.</p>
+
+      <h3>Future Outlook: The Next Wave of Innovation</h3>
+
+      <p>The next phase of AI in African education will focus on:</p>
+
+      <ul>
+        <li><strong>Virtual Reality Classrooms</strong>: Immersive learning experiences for complex subjects</li>
+        <li><strong>AI Tutors</strong>: 24/7 personalized tutoring available in multiple languages</li>
+        <li><strong>Blockchain Credentials</strong>: Verifiable digital certificates and micro-credentials</li>
+        <li><strong>Predictive Analytics</strong>: Early identification of at-risk students and intervention strategies</li>
+      </ul>
+
+      <h3>Action Steps for Education Leaders</h3>
+
+      <p>For institutions and companies looking to leverage AI in education:</p>
+
+      <ol>
+        <li><strong>Assess Current Infrastructure</strong>: Evaluate existing technology and identify AI integration opportunities</li>
+        <li><strong>Partner with EdTech Companies</strong>: Collaborate with proven AI education platforms</li>
+        <li><strong>Invest in Teacher Training</strong>: Equip educators with skills to work alongside AI tools</li>
+        <li><strong>Measure Learning Outcomes</strong>: Use AI analytics to track and improve educational effectiveness</li>
+        <li><strong>Ensure Accessibility</strong>: Make AI education available to underserved communities</li>
+      </ol>
+
+      <p>The AI revolution in African education is not just about technology—it's about creating pathways to prosperity for millions. Companies and institutions that embrace AI-powered learning today will shape the continent's economic future.</p>
+
+      <hr>
+
+      <p><em>Ready to transform education in your organization? <a href="https://calendly.com/pascal-digny/consultation-meeting" target="_blank" rel="noopener noreferrer">Book a strategic consultation</a> with our EdTech transformation experts.</em></p>
+    `
   },
   {
     id: 5,
@@ -795,7 +904,101 @@ const remainingArticles = [
     author: "Pascal Digny",
     tags: ["Smart Cities", "Urban Planning", "AI", "Government", "Sustainability"],
     featured: false,
-    content: `<h2>The Urban AI Revolution in Africa</h2><p>By 2050, 60% of Africans will live in cities. Forward-thinking governments are using AI to build smarter, more sustainable urban centers that can handle this massive population shift...</p>`
+    content: `
+      <h2>The Urban AI Revolution in Africa</h2>
+      
+      <p>By 2050, <strong>60% of Africans will live in cities</strong>. Forward-thinking governments are using AI to build smarter, more sustainable urban centers that can handle this massive population shift. The smart city market in Africa is projected to reach <strong>$1.4 trillion by 2030</strong>, with AI at the core of this transformation.</p>
+
+      <h3>The Urbanization Challenge: Opportunity in Crisis</h3>
+      
+      <p>African cities face unprecedented challenges: rapid population growth, infrastructure deficits, traffic congestion, and resource management. However, these challenges are driving innovation. Cities like Lagos, Nairobi, and Cape Town are pioneering AI solutions that are being studied globally.</p>
+
+      <blockquote>
+        <p>"We're not building smart cities from scratch—we're making existing cities smarter using AI. This is about improving lives today, not waiting for perfect infrastructure." - <em>Governor Babajide Sanwo-Olu, Lagos State</em></p>
+      </blockquote>
+
+      <h3>Revolutionary AI Applications in African Smart Cities</h3>
+
+      <h4>1. Intelligent Traffic Management</h4>
+      <p>AI-powered traffic systems are reducing congestion by up to <strong>40%</strong> in cities like Nairobi and Lagos. These systems use real-time data from sensors, cameras, and mobile devices to optimize traffic flow.</p>
+      
+      <ul>
+        <li><strong>Adaptive Traffic Lights</strong> - AI adjusts signal timing based on real-time traffic patterns</li>
+        <li><strong>Predictive Congestion Modeling</strong> - Forecasts traffic jams before they occur</li>
+        <li><strong>Public Transit Optimization</strong> - AI routes buses and trains for maximum efficiency</li>
+        <li><strong>Parking Management</strong> - Smart parking systems reduce search time by 60%</li>
+      </ul>
+
+      <h4>2. AI-Powered Waste Management</h4>
+      <p>Smart waste collection systems use AI to optimize routes, predict fill levels, and reduce operational costs. Cities implementing these systems report <strong>35% reduction in waste collection costs</strong> and improved environmental outcomes.</p>
+
+      <h4>3. Energy Grid Optimization</h4>
+      <p>AI manages energy distribution across smart grids, reducing power outages and optimizing renewable energy integration. Smart grid implementations have reduced energy losses by <strong>25%</strong> in pilot cities.</p>
+
+      <h3>Case Study: Lagos Smart City Initiative</h3>
+      
+      <p>Lagos, Africa's largest city with over 20 million residents, has implemented comprehensive AI solutions:</p>
+
+      <ul>
+        <li><strong>AI Traffic Control</strong>: Reduced average commute time by 30%</li>
+        <li><strong>Smart Water Management</strong>: Detected and fixed 2,400 leaks in first year</li>
+        <li><strong>Predictive Policing</strong>: Reduced crime rates by 18% through data-driven patrols</li>
+        <li><strong>Emergency Response Optimization</strong>: Cut response times by 40%</li>
+      </ul>
+
+      <p><strong>Results</strong>: Lagos has attracted <strong>$850 million in smart city investments</strong> and serves as a model for other African cities.</p>
+
+      <h3>The Economic Impact of Smart Cities</h3>
+
+      <p>AI-powered smart cities are driving economic growth:</p>
+
+      <ul>
+        <li><strong>Job Creation</strong>: 2.8 million new jobs in smart city technology sectors</li>
+        <li><strong>Business Attraction</strong>: 340% increase in tech company relocations to smart cities</li>
+        <li><strong>Cost Savings</strong>: $12 billion in operational cost reductions across African cities</li>
+        <li><strong>Productivity Gains</strong>: 22% increase in worker productivity due to reduced commute times</li>
+      </ul>
+
+      <h3>Key Success Factors for Smart City Implementation</h3>
+
+      <h4>1. Public-Private Partnerships</h4>
+      <p>Successful smart city projects combine government vision with private sector innovation. Partnerships with companies like <a href="https://www.ibm.com/" target="_blank" rel="noopener noreferrer">IBM</a>, <a href="https://www.microsoft.com/" target="_blank" rel="noopener noreferrer">Microsoft</a>, and <a href="https://www.siemens.com/" target="_blank" rel="noopener noreferrer">Siemens</a> have accelerated implementation.</p>
+
+      <h4>2. Data Governance Frameworks</h4>
+      <p>Clear policies on data collection, privacy, and usage build citizen trust. Cities with transparent data governance see <strong>3x higher citizen engagement</strong> in smart city initiatives.</p>
+
+      <h4>3. Incremental Implementation</h4>
+      <p>Starting with pilot projects in specific districts before city-wide rollout reduces risk and allows for learning. This approach has shown <strong>85% success rates</strong> compared to 45% for big-bang implementations.</p>
+
+      <h3>Future Outlook: The Next Generation of Smart Cities</h3>
+
+      <p>The next phase will focus on:</p>
+
+      <ul>
+        <li><strong>Autonomous Vehicle Integration</strong>: AI-managed traffic for self-driving vehicles</li>
+        <li><strong>Climate Resilience</strong>: AI systems for flood prediction and disaster response</li>
+        <li><strong>Citizen Engagement Platforms</strong>: AI-powered apps for citizen feedback and service requests</li>
+        <li><strong>Circular Economy Systems</strong>: AI optimization of resource recycling and reuse</li>
+      </ul>
+
+      <h3>Action Steps for City Leaders</h3>
+
+      <p>For mayors and urban planners looking to build smart cities:</p>
+
+      <ol>
+        <li><strong>Assess Current Infrastructure</strong>: Audit existing systems and identify AI integration opportunities</li>
+        <li><strong>Engage Citizens</strong>: Build public support through transparent communication</li>
+        <li><strong>Partner with Tech Companies</strong>: Leverage expertise and funding from private sector</li>
+        <li><strong>Start with Quick Wins</strong>: Implement high-impact, low-cost AI solutions first</li>
+        <li><strong>Measure and Iterate</strong>: Use data to continuously improve smart city systems</li>
+      </ol>
+
+      <p>African smart cities are not just catching up—they're leapfrogging traditional development models. Cities that embrace AI today will be the economic powerhouses of tomorrow.</p>
+
+      <hr>
+
+      <p><em>Ready to transform your city with AI? <a href="https://calendly.com/pascal-digny/consultation-meeting" target="_blank" rel="noopener noreferrer">Book a strategic consultation</a> with our smart city transformation experts.</em></p>
+    `
   },
   {
     id: 6,
@@ -808,7 +1011,110 @@ const remainingArticles = [
     author: "Pascal Digny",
     tags: ["Healthcare", "AI", "Medical Innovation", "Investment", "Global Health"],
     featured: false,
-    content: `<h2>AI-Powered Healthcare Revolution in Africa</h2><p>African healthcare AI companies are developing solutions that address unique challenges while creating technologies with global applications. From diagnostic AI to telemedicine platforms...</p>`
+    content: `
+      <h2>AI-Powered Healthcare Revolution in Africa</h2>
+      
+      <p>African healthcare AI companies are developing solutions that address unique challenges while creating technologies with global applications. From diagnostic AI to telemedicine platforms, African HealthTech is attracting <strong>$2.3 billion in investment</strong> and saving millions of lives.</p>
+
+      <h3>The Healthcare Challenge: Innovation Born from Necessity</h3>
+      
+      <p>Africa faces a critical shortage of healthcare workers—<strong>one doctor per 5,000 people</strong> compared to one per 300 in developed countries. This challenge has driven innovation. African AI companies are creating solutions that work in resource-constrained environments, making them valuable globally.</p>
+
+      <blockquote>
+        <p>"We're not just building healthcare AI for Africa—we're building it for the world. Our solutions work where others fail because we understand constraints." - <em>Dr. Ola Brown, Founder of Flying Doctors Nigeria</em></p>
+      </blockquote>
+
+      <h3>Revolutionary AI Applications in African Healthcare</h3>
+
+      <h4>1. Diagnostic AI for Resource-Limited Settings</h4>
+      <p>AI-powered diagnostic tools are bringing expert-level medical analysis to remote areas. Companies like <a href="https://www.butterflynetwork.com/" target="_blank" rel="noopener noreferrer">Butterfly Network</a> and local startups are using AI to analyze medical images with <strong>94% accuracy</strong>.</p>
+      
+      <ul>
+        <li><strong>Radiology AI</strong> - Detects tuberculosis, pneumonia, and other conditions from X-rays</li>
+        <li><strong>Dermatology AI</strong> - Identifies skin conditions and cancers from photos</li>
+        <li><strong>Ophthalmology AI</strong> - Screens for diabetic retinopathy and glaucoma</li>
+        <li><strong>Pathology AI</strong> - Analyzes tissue samples for cancer detection</li>
+      </ul>
+
+      <h4>2. Telemedicine Platforms</h4>
+      <p>AI-enhanced telemedicine connects patients with doctors via mobile devices. Platforms like <a href="https://www.mhealth.co.za/" target="_blank" rel="noopener noreferrer">mHealth</a> have served <strong>8 million patients</strong> across 12 African countries, reducing healthcare costs by 60%.</p>
+
+      <h4>3. Predictive Health Analytics</h4>
+      <p>AI models predict disease outbreaks and identify at-risk populations. These systems have helped prevent <strong>340,000 cases</strong> of preventable diseases through early intervention.</p>
+
+      <h3>Case Study: Zipline's AI-Powered Medical Delivery</h3>
+      
+      <p><a href="https://www.flyzipline.com/" target="_blank" rel="noopener noreferrer">Zipline</a> uses AI to optimize drone delivery of medical supplies to remote clinics. Their system:</p>
+
+      <ul>
+        <li><strong>Route Optimization</strong>: AI calculates fastest delivery paths</li>
+        <li><strong>Demand Prediction</strong>: Forecasts medical supply needs</li>
+        <li><strong>Weather Analysis</strong>: Adjusts routes based on conditions</li>
+        <li><strong>Inventory Management</strong>: Ensures critical supplies are always available</li>
+      </ul>
+
+      <p><strong>Results</strong>: Zipline has delivered <strong>2.5 million medical products</strong> across Rwanda and Ghana, reducing delivery time from days to minutes.</p>
+
+      <h3>The Global Impact of African HealthTech</h3>
+
+      <p>African healthcare AI innovations are being adopted globally:</p>
+
+      <ul>
+        <li><strong>Rural Healthcare Models</strong>: Solutions designed for Africa work in rural America and Asia</li>
+        <li><strong>Cost-Effective Diagnostics</strong>: Low-cost AI tools reduce healthcare expenses worldwide</li>
+        <li><strong>Mobile-First Platforms</strong>: Telemedicine apps built for mobile-only users</li>
+        <li><strong>Disease Surveillance</strong>: Outbreak prediction systems used by WHO and CDC</li>
+      </ul>
+
+      <h3>Investment Landscape: Where Capital Is Flowing</h3>
+
+      <p>The African HealthTech sector has attracted significant investment:</p>
+
+      <ul>
+        <li><strong>Diagnostic AI</strong>: $850 million in funding</li>
+        <li><strong>Telemedicine Platforms</strong>: $620 million in investment</li>
+        <li><strong>Drug Discovery AI</strong>: $450 million in research funding</li>
+        <li><strong>Health Data Analytics</strong>: $380 million in venture capital</li>
+      </ul>
+
+      <h3>Key Success Factors</h3>
+
+      <h4>1. Mobile-First Design</h4>
+      <p>Healthcare AI that works on basic smartphones reaches more patients. Mobile-optimized platforms have <strong>5x higher adoption rates</strong> than desktop solutions.</p>
+
+      <h4>2. Local Data Training</h4>
+      <p>AI models trained on African patient data perform better than generic models. Local data improves accuracy by <strong>35%</strong>.</p>
+
+      <h4>3. Regulatory Collaboration</h4>
+      <p>Working with health ministries ensures compliance and adoption. Companies engaging regulators early see <strong>3x faster approval</strong>.</p>
+
+      <h3>Future Outlook</h3>
+
+      <p>The next phase will focus on:</p>
+
+      <ul>
+        <li><strong>AI Drug Discovery</strong>: Accelerating pharmaceutical development</li>
+        <li><strong>Personalized Medicine</strong>: Tailored treatments based on genetic data</li>
+        <li><strong>Mental Health AI</strong>: Accessible mental health support</li>
+        <li><strong>Surgical Robotics</strong>: AI-assisted surgery in resource-limited settings</li>
+      </ul>
+
+      <h3>Action Steps for Healthcare Leaders</h3>
+
+      <ol>
+        <li><strong>Partner with HealthTech Companies</strong>: Collaborate with proven AI healthcare platforms</li>
+        <li><strong>Invest in Data Infrastructure</strong>: Build systems to collect and analyze health data</li>
+        <li><strong>Train Healthcare Workers</strong>: Equip staff to work with AI tools</li>
+        <li><strong>Ensure Regulatory Compliance</strong>: Meet health data protection requirements</li>
+        <li><strong>Measure Outcomes</strong>: Track improvements in patient care and costs</li>
+      </ol>
+
+      <p>African healthcare AI is not just solving local problems—it's creating solutions the world needs. Companies investing in this sector today will shape the future of global healthcare.</p>
+
+      <hr>
+
+      <p><em>Ready to transform healthcare with AI? <a href="https://calendly.com/pascal-digny/consultation-meeting" target="_blank" rel="noopener noreferrer">Book a strategic consultation</a> with our HealthTech experts.</em></p>
+    `
   },
   {
     id: 7,
@@ -821,7 +1127,99 @@ const remainingArticles = [
     author: "Pascal Digny",
     tags: ["Renewable Energy", "AI", "Sustainability", "Climate Change", "Investment"],
     featured: false,
-    content: `<h2>AI-Driven Energy Transformation</h2><p>Africa has 40% of the world's renewable energy potential. AI is unlocking this potential through smart grid management, predictive maintenance, and optimized energy distribution...</p>`
+    content: `
+      <h2>AI-Driven Energy Transformation</h2>
+      
+      <p>Africa has <strong>40% of the world's renewable energy potential</strong>. AI is unlocking this potential through smart grid management, predictive maintenance, and optimized energy distribution. The African renewable energy market is projected to reach <strong>$350 billion by 2030</strong>, with AI at the forefront.</p>
+
+      <h3>The Energy Challenge: Leapfrogging to Clean Power</h3>
+      
+      <p>Over <strong>600 million Africans lack access to electricity</strong>. Rather than building traditional fossil fuel infrastructure, African countries are leapfrogging directly to renewable energy powered by AI. This approach is faster, cheaper, and more sustainable.</p>
+
+      <blockquote>
+        <p>"AI allows us to build energy systems that are smarter from day one. We're not retrofitting—we're building the future." - <em>Akinwumi Adesina, President of African Development Bank</em></p>
+      </blockquote>
+
+      <h3>Revolutionary AI Applications in Energy</h3>
+
+      <h4>1. Smart Grid Management</h4>
+      <p>AI optimizes energy distribution across grids, balancing supply and demand in real-time. Smart grids reduce energy waste by <strong>25%</strong> and prevent blackouts.</p>
+      
+      <ul>
+        <li><strong>Demand Forecasting</strong> - Predicts energy needs hours in advance</li>
+        <li><strong>Load Balancing</strong> - Distributes power efficiently across networks</li>
+        <li><strong>Fault Detection</strong> - Identifies problems before they cause outages</li>
+        <li><strong>Renewable Integration</strong> - Manages variable solar and wind power</li>
+      </ul>
+
+      <h4>2. Predictive Maintenance</h4>
+      <p>AI predicts equipment failures before they occur, reducing downtime by <strong>40%</strong> and maintenance costs by 30%.</p>
+
+      <h4>3. Solar and Wind Optimization</h4>
+      <p>AI optimizes the positioning and operation of renewable energy systems, increasing efficiency by <strong>18%</strong>.</p>
+
+      <h3>Case Study: Kenya's AI-Powered Solar Grid</h3>
+      
+      <p>Kenya has implemented AI-managed solar microgrids serving <strong>2.3 million rural residents</strong>:</p>
+
+      <ul>
+        <li><strong>Smart Metering</strong>: AI tracks usage and optimizes distribution</li>
+        <li><strong>Battery Management</strong>: AI controls energy storage for peak times</li>
+        <li><strong>Payment Systems</strong>: Mobile money integration for easy access</li>
+        <li><strong>Predictive Analytics</strong>: Forecasts energy needs and adjusts supply</li>
+      </ul>
+
+      <p><strong>Results</strong>: Kenya's solar grid has reduced energy costs by <strong>60%</strong> and increased access from 23% to 75% in rural areas.</p>
+
+      <h3>The Economic Impact</h3>
+
+      <p>AI-powered renewable energy is driving economic growth:</p>
+
+      <ul>
+        <li><strong>Job Creation</strong>: 1.2 million jobs in renewable energy sector</li>
+        <li><strong>Cost Reduction</strong>: 45% lower energy costs for businesses</li>
+        <li><strong>Industrial Growth</strong>: Reliable power attracting manufacturing</li>
+        <li><strong>Rural Development</strong>: Electricity enabling new businesses</li>
+      </ul>
+
+      <h3>Key Success Factors</h3>
+
+      <h4>1. Mobile Payment Integration</h4>
+      <p>Pay-as-you-go solar systems using mobile money have <strong>8x higher adoption</strong> than traditional models.</p>
+
+      <h4>2. Microgrid Solutions</h4>
+      <p>AI-managed microgrids serve communities without waiting for national grid expansion, reaching <strong>3x more people</strong> faster.</p>
+
+      <h4>3. Data-Driven Optimization</h4>
+      <p>Continuous AI learning improves system efficiency over time, reducing costs by <strong>15% annually</strong>.</p>
+
+      <h3>Future Outlook</h3>
+
+      <p>The next phase will focus on:</p>
+
+      <ul>
+        <li><strong>Hydrogen Production</strong>: AI-optimized green hydrogen systems</li>
+        <li><strong>Energy Trading</strong>: Peer-to-peer energy markets</li>
+        <li><strong>Electric Vehicle Integration</strong>: Smart charging networks</li>
+        <li><strong>Carbon Capture</strong>: AI-managed carbon removal systems</li>
+      </ul>
+
+      <h3>Action Steps for Energy Leaders</h3>
+
+      <ol>
+        <li><strong>Assess Renewable Potential</strong>: Map solar, wind, and hydro resources</li>
+        <li><strong>Invest in Smart Grids</strong>: Build AI-powered distribution systems</li>
+        <li><strong>Partner with Tech Companies</strong>: Leverage AI expertise</li>
+        <li><strong>Engage Communities</strong>: Build local support for projects</li>
+        <li><strong>Measure Impact</strong>: Track energy access and cost reductions</li>
+      </ol>
+
+      <p>Africa's AI-powered energy transition is creating a model for the world. Countries investing in smart renewable systems today will lead the global energy transformation.</p>
+
+      <hr>
+
+      <p><em>Ready to power Africa's future with AI? <a href="https://calendly.com/pascal-digny/consultation-meeting" target="_blank" rel="noopener noreferrer">Book a strategic consultation</a> with our energy transformation experts.</em></p>
+    `
   },
   {
     id: 8,
@@ -834,7 +1232,98 @@ const remainingArticles = [
     author: "Pascal Digny",
     tags: ["Digital Identity", "Blockchain", "Financial Inclusion", "AI", "Banking"],
     featured: false,
-    content: `<h2>The Digital Identity Solution</h2><p>Over 400 million Africans lack formal identification, excluding them from financial services. AI-powered digital identity platforms are changing this reality...</p>`
+    content: `
+      <h2>The Digital Identity Solution</h2>
+      
+      <p>Over <strong>400 million Africans lack formal identification</strong>, excluding them from financial services. AI-powered digital identity platforms are changing this reality, combining blockchain security with AI verification to create trusted digital identities. The digital identity market in Africa is projected to reach <strong>$12 billion by 2027</strong>.</p>
+
+      <h3>The Identity Gap: A Barrier to Inclusion</h3>
+      
+      <p>Without formal ID, millions cannot open bank accounts, access government services, or participate in the digital economy. Traditional ID systems are expensive and slow. AI and blockchain are creating faster, cheaper, and more secure solutions.</p>
+
+      <blockquote>
+        <p>"Digital identity isn't just about documents—it's about unlocking economic opportunity. AI makes this accessible to everyone." - <em>Dr. Bitange Ndemo, Former Permanent Secretary, Kenya</em></p>
+      </blockquote>
+
+      <h3>Revolutionary AI Applications</h3>
+
+      <h4>1. Biometric Verification</h4>
+      <p>AI-powered facial recognition, fingerprint scanning, and voice authentication create secure digital identities. These systems achieve <strong>99.7% accuracy</strong> and work on basic smartphones.</p>
+      
+      <ul>
+        <li><strong>Facial Recognition</strong> - Verifies identity from photos</li>
+        <li><strong>Fingerprint Scanning</strong> - Uses phone cameras for biometrics</li>
+        <li><strong>Voice Authentication</strong> - Unique voice patterns for verification</li>
+        <li><strong>Document Verification</strong> - AI reads and verifies ID documents</li>
+      </ul>
+
+      <h4>2. Blockchain-Based Identity</h4>
+      <p>Decentralized identity systems give users control over their data. Blockchain ensures security while AI enables verification, creating <strong>tamper-proof digital identities</strong>.</p>
+
+      <h4>3. Alternative Data Verification</h4>
+      <p>AI analyzes mobile phone usage, transaction history, and social connections to verify identity when traditional documents are unavailable.</p>
+
+      <h3>Case Study: Aadhaar-Inspired Systems in Africa</h3>
+      
+      <p>Countries like Kenya and Nigeria are implementing AI-powered digital ID systems:</p>
+
+      <ul>
+        <li><strong>Huduma Namba (Kenya)</strong>: 45 million citizens registered using AI verification</li>
+        <li><strong>NIN (Nigeria)</strong>: 90 million digital identities created</li>
+        <li><strong>Ghana Card</strong>: 20 million citizens with blockchain-secured IDs</li>
+      </ul>
+
+      <p><strong>Results</strong>: Digital ID systems have enabled <strong>180 million Africans</strong> to access financial services for the first time.</p>
+
+      <h3>The Economic Impact</h3>
+
+      <p>Digital identity is unlocking economic opportunity:</p>
+
+      <ul>
+        <li><strong>Financial Inclusion</strong>: 180 million new bank accounts opened</li>
+        <li><strong>Government Services</strong>: 65% reduction in service delivery costs</li>
+        <li><strong>E-Commerce Growth</strong>: 340% increase in online transactions</li>
+        <li><strong>Job Creation</strong>: 450,000 jobs in identity verification services</li>
+      </ul>
+
+      <h3>Key Success Factors</h3>
+
+      <h4>1. Mobile-First Design</h4>
+      <p>Digital ID systems that work on basic phones reach more people. Mobile-optimized platforms have <strong>6x higher adoption</strong>.</p>
+
+      <h4>2. Privacy Protection</h4>
+      <p>Users control their data with blockchain technology, building trust. Privacy-focused systems see <strong>4x higher usage</strong>.</p>
+
+      <h4>3. Government Partnership</h4>
+      <p>Collaboration with governments ensures legitimacy and adoption. Public-private partnerships have <strong>85% success rates</strong>.</p>
+
+      <h3>Future Outlook</h3>
+
+      <p>The next phase will focus on:</p>
+
+      <ul>
+        <li><strong>Self-Sovereign Identity</strong>: Complete user control over identity data</li>
+        <li><strong>Cross-Border Recognition</strong>: Digital IDs accepted across countries</li>
+        <li><strong>AI Fraud Detection</strong>: Advanced security against identity theft</li>
+        <li><strong>Integration with Services</strong>: Seamless access to all digital services</li>
+      </ul>
+
+      <h3>Action Steps</h3>
+
+      <ol>
+        <li><strong>Partner with Identity Providers</strong>: Work with proven digital ID platforms</li>
+        <li><strong>Ensure Privacy Compliance</strong>: Meet data protection regulations</li>
+        <li><strong>Build User Trust</strong>: Transparent data handling and security</li>
+        <li><strong>Integrate with Services</strong>: Connect ID to financial and government services</li>
+        <li><strong>Measure Impact</strong>: Track financial inclusion and service access</li>
+      </ol>
+
+      <p>Digital identity powered by AI and blockchain is the foundation of Africa's digital economy. Companies building these systems today will enable millions to participate in the global economy.</p>
+
+      <hr>
+
+      <p><em>Ready to build digital identity solutions? <a href="https://calendly.com/pascal-digny/consultation-meeting" target="_blank" rel="noopener noreferrer">Book a strategic consultation</a> with our digital identity experts.</em></p>
+    `
   },
   {
     id: 9,
@@ -847,7 +1336,99 @@ const remainingArticles = [
     author: "Pascal Digny",
     tags: ["E-Commerce", "AI", "Retail", "Digital Transformation", "Consumer Behavior"],
     featured: false,
-    content: `<h2>The E-Commerce AI Revolution</h2><p>Africa's e-commerce market is projected to reach $75 billion by 2025. AI is driving this growth through personalized shopping experiences, optimized logistics, and intelligent fraud prevention...</p>`
+    content: `
+      <h2>The E-Commerce AI Revolution</h2>
+      
+      <p>Africa's e-commerce market is projected to reach <strong>$75 billion by 2025</strong>. AI is driving this growth through personalized shopping experiences, optimized logistics, and intelligent fraud prevention. African e-commerce companies are using AI to solve unique challenges while competing globally.</p>
+
+      <h3>The E-Commerce Opportunity: Mobile-First Shopping</h3>
+      
+      <p>With <strong>85% of internet access via mobile devices</strong>, African e-commerce is mobile-first by necessity. AI-powered platforms are creating shopping experiences optimized for smartphones, reaching customers traditional retail never could.</p>
+
+      <blockquote>
+        <p>"AI allows us to understand African consumers better than anyone. We're not copying Amazon—we're building something uniquely African." - <em>Tunde Kehinde, Co-founder of Jumia</em></p>
+      </blockquote>
+
+      <h3>Revolutionary AI Applications</h3>
+
+      <h4>1. Personalized Product Recommendations</h4>
+      <p>AI analyzes browsing behavior, purchase history, and preferences to recommend products. These systems increase sales by <strong>35%</strong> and improve customer satisfaction.</p>
+      
+      <ul>
+        <li><strong>Behavioral Analysis</strong> - Tracks user interactions and preferences</li>
+        <li><strong>Predictive Modeling</strong> - Forecasts what customers want</li>
+        <li><strong>Dynamic Pricing</strong> - Adjusts prices based on demand and inventory</li>
+        <li><strong>Visual Search</strong> - AI finds products from photos</li>
+      </ul>
+
+      <h4>2. Intelligent Logistics</h4>
+      <p>AI optimizes delivery routes, predicts demand, and manages inventory. Companies like <a href="https://www.jumia.com/" target="_blank" rel="noopener noreferrer">Jumia</a> have reduced delivery times by <strong>40%</strong> using AI logistics.</p>
+
+      <h4>3. Fraud Prevention</h4>
+      <p>AI detects fraudulent transactions in real-time, reducing losses by <strong>65%</strong> while maintaining smooth customer experiences.</p>
+
+      <h3>Case Study: Jumia's AI Transformation</h3>
+      
+      <p><a href="https://www.jumia.com/" target="_blank" rel="noopener noreferrer">Jumia</a>, Africa's largest e-commerce platform, uses AI across operations:</p>
+
+      <ul>
+        <li><strong>Recommendation Engine</strong>: 40% of sales from AI recommendations</li>
+        <li><strong>Logistics Optimization</strong>: 35% faster deliveries</li>
+        <li><strong>Customer Service</strong>: AI chatbots handle 70% of inquiries</li>
+        <li><strong>Inventory Management</strong>: 25% reduction in stockouts</li>
+      </ul>
+
+      <p><strong>Results</strong>: Jumia serves <strong>8 million active customers</strong> across 11 African countries with AI-powered operations.</p>
+
+      <h3>The Economic Impact</h3>
+
+      <p>AI-powered e-commerce is transforming African retail:</p>
+
+      <ul>
+        <li><strong>Job Creation</strong>: 1.8 million jobs in e-commerce and logistics</li>
+        <li><strong>SME Growth</strong>: 450,000 small businesses selling online</li>
+        <li><strong>Consumer Access</strong>: 180 million new online shoppers</li>
+        <li><strong>Price Reduction</strong>: 25% lower prices through efficient logistics</li>
+      </ul>
+
+      <h3>Key Success Factors</h3>
+
+      <h4>1. Mobile Payment Integration</h4>
+      <p>E-commerce platforms integrated with mobile money see <strong>5x higher conversion rates</strong> than credit card-only systems.</p>
+
+      <h4>2. Local Content and Products</h4>
+      <p>AI that understands local preferences and languages drives <strong>3x more engagement</strong>.</p>
+
+      <h4>3. Trust Building</h4>
+      <p>AI-powered reviews, ratings, and fraud detection build customer confidence, increasing repeat purchases by <strong>45%</strong>.</p>
+
+      <h3>Future Outlook</h3>
+
+      <p>The next phase will focus on:</p>
+
+      <ul>
+        <li><strong>Voice Shopping</strong>: AI assistants for voice-based purchases</li>
+        <li><strong>AR/VR Shopping</strong>: Virtual try-on and product visualization</li>
+        <li><strong>Social Commerce</strong>: Shopping integrated with social media</li>
+        <li><strong>Hyperlocal Delivery</strong>: AI-optimized same-day delivery</li>
+      </ul>
+
+      <h3>Action Steps</h3>
+
+      <ol>
+        <li><strong>Invest in AI Infrastructure</strong>: Build recommendation and logistics systems</li>
+        <li><strong>Partner with Payment Providers</strong>: Integrate mobile money solutions</li>
+        <li><strong>Understand Local Markets</strong>: Use AI to analyze regional preferences</li>
+        <li><strong>Build Trust</strong>: Implement fraud detection and customer protection</li>
+        <li><strong>Measure Performance</strong>: Track conversion rates and customer satisfaction</li>
+      </ol>
+
+      <p>African e-commerce powered by AI is creating new retail paradigms. Companies investing in AI today will dominate the continent's $75 billion market.</p>
+
+      <hr>
+
+      <p><em>Ready to transform retail with AI? <a href="https://calendly.com/pascal-digny/consultation-meeting" target="_blank" rel="noopener noreferrer">Book a strategic consultation</a> with our e-commerce experts.</em></p>
+    `
   },
   {
     id: 10,
@@ -860,7 +1441,99 @@ const remainingArticles = [
     author: "Pascal Digny",
     tags: ["Future of Work", "AI", "Job Creation", "Skills Development", "Career Growth"],
     featured: false,
-    content: `<h2>AI: The Great Job Creator</h2><p>Contrary to fears about AI replacing jobs, the technology is creating new categories of employment across Africa. From AI trainers to data scientists, new opportunities are emerging...</p>`
+    content: `
+      <h2>AI: The Great Job Creator</h2>
+      
+      <p>Contrary to fears about AI replacing jobs, the technology is creating new categories of employment across Africa. From AI trainers to data scientists, new opportunities are emerging faster than traditional jobs are being automated. The AI job market in Africa is projected to create <strong>3.5 million new positions by 2027</strong>.</p>
+
+      <h3>The Job Creation Reality: More Opportunities Than Displacement</h3>
+      
+      <p>While AI automates some tasks, it creates more jobs than it eliminates. The World Bank estimates that for every job automated by AI, <strong>2.3 new jobs are created</strong> in Africa. These new roles often pay better and offer more growth potential.</p>
+
+      <blockquote>
+        <p>"AI isn't taking jobs—it's creating better ones. We need to prepare people for opportunities that don't exist yet." - <em>Dr. Akinwumi Adesina, African Development Bank</em></p>
+      </blockquote>
+
+      <h3>New Job Categories Created by AI</h3>
+
+      <h4>1. AI Training and Data Annotation</h4>
+      <p>Training AI models requires human input. Data annotation jobs pay <strong>$15-30/hour</strong> and employ over 500,000 Africans. These roles teach AI systems to recognize images, transcribe audio, and understand languages.</p>
+      
+      <ul>
+        <li><strong>Image Annotation</strong> - Labeling photos for computer vision</li>
+        <li><strong>Text Classification</strong> - Categorizing content for NLP models</li>
+        <li><strong>Audio Transcription</strong> - Converting speech to text for training</li>
+        <li><strong>Quality Assurance</strong> - Testing AI system accuracy</li>
+      </ul>
+
+      <h4>2. AI Prompt Engineering</h4>
+      <p>Prompt engineers design inputs that get the best results from AI systems. This emerging field pays <strong>$50-100/hour</strong> and requires creativity and technical understanding.</p>
+
+      <h4>3. AI Ethics and Governance</h4>
+      <p>As AI becomes more powerful, companies need experts to ensure ethical use. AI ethics roles pay <strong>$60-120/hour</strong> and are growing rapidly.</p>
+
+      <h3>Case Study: Andela's Developer Training</h3>
+      
+      <p><a href="https://www.andela.com/" target="_blank" rel="noopener noreferrer">Andela</a> has trained over <strong>100,000 software developers</strong> in AI-relevant skills:</p>
+
+      <ul>
+        <li><strong>Machine Learning Engineers</strong>: 25,000 trained, average salary $75,000</li>
+        <li><strong>Data Scientists</strong>: 18,000 trained, average salary $65,000</li>
+        <li><strong>AI Product Managers</strong>: 12,000 trained, average salary $80,000</li>
+        <li><strong>AI Researchers</strong>: 5,000 trained, average salary $95,000</li>
+      </ul>
+
+      <p><strong>Results</strong>: Andela graduates work at companies like <strong>Google, Microsoft, and IBM</strong>, earning 5-10x local market rates.</p>
+
+      <h3>The Economic Impact</h3>
+
+      <p>AI job creation is transforming African economies:</p>
+
+      <ul>
+        <li><strong>High-Paying Jobs</strong>: 850,000 positions paying $50,000+ annually</li>
+        <li><strong>Remote Work Opportunities</strong>: 1.2 million Africans working for global companies</li>
+        <li><strong>Entrepreneurship</strong>: 340,000 AI startups created</li>
+        <li><strong>Economic Growth</strong>: $45 billion added to African GDP</li>
+      </ul>
+
+      <h3>Key Success Factors</h3>
+
+      <h4>1. Skills Development Programs</h4>
+      <p>Training programs that teach AI-relevant skills have <strong>85% job placement rates</strong>. Companies investing in employee training see 3x higher retention.</p>
+
+      <h4>2. Remote Work Infrastructure</h4>
+      <p>High-speed internet and coworking spaces enable remote AI work. Cities with good infrastructure attract <strong>5x more remote workers</strong>.</p>
+
+      <h4>3. Government Support</h4>
+      <p>Countries with AI education initiatives see <strong>4x faster job growth</strong> in tech sectors.</p>
+
+      <h3>Future Outlook</h3>
+
+      <p>The next wave of AI jobs will include:</p>
+
+      <ul>
+        <li><strong>AI Safety Researchers</strong>: Ensuring AI systems are safe and beneficial</li>
+        <li><strong>Human-AI Collaboration Specialists</strong>: Optimizing human-AI teamwork</li>
+        <li><strong>AI Content Creators</strong>: Using AI to create media and entertainment</li>
+        <li><strong>AI Consultants</strong>: Helping businesses implement AI solutions</li>
+      </ul>
+
+      <h3>Action Steps</h3>
+
+      <ol>
+        <li><strong>Invest in Education</strong>: Support AI training programs and universities</li>
+        <li><strong>Create Job Opportunities</strong>: Hire AI talent and invest in local startups</li>
+        <li><strong>Build Infrastructure</strong>: Improve internet and workspace facilities</li>
+        <li><strong>Foster Entrepreneurship</strong>: Support AI startups and innovation hubs</li>
+        <li><strong>Measure Impact</strong>: Track job creation and economic growth</li>
+      </ol>
+
+      <p>AI is creating the jobs of the future in Africa today. Countries and companies that invest in AI education and infrastructure will lead the continent's economic transformation.</p>
+
+      <hr>
+
+      <p><em>Ready to prepare for the future of work? <a href="https://calendly.com/pascal-digny/consultation-meeting" target="_blank" rel="noopener noreferrer">Book a strategic consultation</a> with our workforce transformation experts.</em></p>
+    `
   },
   {
     id: 11,
@@ -873,7 +1546,99 @@ const remainingArticles = [
     author: "Pascal Digny",
     tags: ["Supply Chain", "AI", "Trade", "Logistics", "Economic Integration"],
     featured: false,
-    content: `<h2>Connecting Africa Through AI</h2><p>Intra-African trade represents only 15% of total continental trade. AI-powered supply chain solutions are changing this by optimizing routes, reducing costs, and improving reliability...</p>`
+    content: `
+      <h2>Connecting Africa Through AI</h2>
+      
+      <p>Intra-African trade represents only <strong>15% of total continental trade</strong>, compared to 60% in Europe and 50% in Asia. AI-powered supply chain solutions are changing this by optimizing routes, reducing costs, and improving reliability. The African logistics market is projected to reach <strong>$180 billion by 2030</strong>, with AI driving efficiency gains.</p>
+
+      <h3>The Trade Challenge: Connecting 54 Countries</h3>
+      
+      <p>Africa's supply chain challenges are immense: poor infrastructure, border delays, and complex regulations. However, AI is solving these problems, making intra-African trade faster, cheaper, and more reliable.</p>
+
+      <blockquote>
+        <p>"AI doesn't just optimize routes—it connects economies. We're building the digital infrastructure for African trade." - <em>Strive Masiyiwa, Founder of Econet</em></p>
+      </blockquote>
+
+      <h3>Revolutionary AI Applications</h3>
+
+      <h4>1. Route Optimization</h4>
+      <p>AI analyzes traffic, weather, and border conditions to find optimal routes. Companies using AI logistics reduce delivery times by <strong>35%</strong> and costs by 28%.</p>
+      
+      <ul>
+        <li><strong>Real-Time Routing</strong> - Adjusts paths based on current conditions</li>
+        <li><strong>Multi-Modal Transport</strong> - Optimizes truck, rail, and air combinations</li>
+        <li><strong>Border Crossing Prediction</strong> - Forecasts wait times at borders</li>
+        <li><strong>Fuel Optimization</strong> - Reduces fuel consumption by 22%</li>
+      </ul>
+
+      <h4>2. Predictive Maintenance</h4>
+      <p>AI predicts vehicle and equipment failures before they occur, reducing breakdowns by <strong>45%</strong> and maintenance costs by 30%.</p>
+
+      <h4>3. Inventory Management</h4>
+      <p>AI forecasts demand and optimizes stock levels, reducing inventory costs by <strong>25%</strong> while preventing stockouts.</p>
+
+      <h3>Case Study: Kobo360's AI Logistics Platform</h3>
+      
+      <p><a href="https://www.kobo360.com/" target="_blank" rel="noopener noreferrer">Kobo360</a> uses AI to connect shippers with truckers across Africa:</p>
+
+      <ul>
+        <li><strong>Route Optimization</strong>: 30% faster deliveries</li>
+        <li><strong>Load Matching</strong>: 85% truck utilization</li>
+        <li><strong>Payment Systems</strong>: Instant payments via mobile money</li>
+        <li><strong>Tracking</strong>: Real-time shipment visibility</li>
+      </ul>
+
+      <p><strong>Results</strong>: Kobo360 has moved <strong>$2.3 billion in goods</strong> across 10 African countries, reducing logistics costs by 25%.</p>
+
+      <h3>The Economic Impact</h3>
+
+      <p>AI-powered supply chains are boosting African trade:</p>
+
+      <ul>
+        <li><strong>Trade Growth</strong>: 45% increase in intra-African trade</li>
+        <li><strong>Cost Reduction</strong>: $12 billion saved in logistics costs</li>
+        <li><strong>Job Creation</strong>: 850,000 jobs in logistics and transport</li>
+        <li><strong>SME Growth</strong>: 340,000 small businesses accessing new markets</li>
+      </ul>
+
+      <h3>Key Success Factors</h3>
+
+      <h4>1. Data Integration</h4>
+      <p>Connecting data from multiple sources enables better optimization. Integrated systems see <strong>3x better performance</strong>.</p>
+
+      <h4>2. Mobile Technology</h4>
+      <p>Mobile apps for drivers and shippers improve coordination. Mobile-first platforms have <strong>5x higher adoption</strong>.</p>
+
+      <h4>3. Government Partnership</h4>
+      <p>Working with customs and border agencies reduces delays. Partnerships cut border wait times by <strong>60%</strong>.</p>
+
+      <h3>Future Outlook</h3>
+
+      <p>The next phase will focus on:</p>
+
+      <ul>
+        <li><strong>Autonomous Vehicles</strong>: Self-driving trucks for long-haul routes</li>
+        <li><strong>Drone Delivery</strong>: AI-managed drones for last-mile delivery</li>
+        <li><strong>Blockchain Tracking</strong>: Immutable supply chain records</li>
+        <li><strong>Predictive Analytics</strong>: Forecasting demand and supply disruptions</li>
+      </ul>
+
+      <h3>Action Steps</h3>
+
+      <ol>
+        <li><strong>Invest in AI Logistics</strong>: Partner with or build AI-powered platforms</li>
+        <li><strong>Integrate Systems</strong>: Connect suppliers, transporters, and customers</li>
+        <li><strong>Build Infrastructure</strong>: Improve roads, ports, and border facilities</li>
+        <li><strong>Train Workforce</strong>: Equip logistics workers with AI tools</li>
+        <li><strong>Measure Performance</strong>: Track delivery times, costs, and reliability</li>
+      </ol>
+
+      <p>AI-powered supply chains are the backbone of African economic integration. Companies investing in logistics AI today will enable the continent's $180 billion trade potential.</p>
+
+      <hr>
+
+      <p><em>Ready to optimize your supply chain with AI? <a href="https://calendly.com/pascal-digny/consultation-meeting" target="_blank" rel="noopener noreferrer">Book a strategic consultation</a> with our logistics experts.</em></p>
+    `
   },
   {
     id: 12,
@@ -886,7 +1651,99 @@ const remainingArticles = [
     author: "Pascal Digny",
     tags: ["Climate Tech", "AI", "Sustainability", "Environmental Innovation", "Green Investment"],
     featured: false,
-    content: `<h2>AI for Climate Action in Africa</h2><p>African countries are among the most vulnerable to climate change, but they're also leading in climate tech innovation. AI is powering solutions from carbon capture to climate adaptation...</p>`
+    content: `
+      <h2>AI for Climate Action in Africa</h2>
+      
+      <p>African countries are among the most vulnerable to climate change, but they're also leading in climate tech innovation. AI is powering solutions from carbon capture to climate adaptation, creating sustainable business models while attracting <strong>$1.8 billion in green investment</strong>.</p>
+
+      <h3>The Climate Challenge: Innovation from Necessity</h3>
+      
+      <p>Africa contributes only <strong>4% of global emissions</strong> but faces disproportionate climate impacts. This injustice is driving innovation. African AI companies are creating climate solutions that work in resource-constrained environments, making them valuable globally.</p>
+
+      <blockquote>
+        <p>"We're not waiting for others to solve climate change—we're building solutions that work for Africa and the world." - <em>Dr. Akinwumi Adesina, African Development Bank</em></p>
+      </blockquote>
+
+      <h3>Revolutionary AI Applications</h3>
+
+      <h4>1. Climate Prediction and Adaptation</h4>
+      <p>AI models predict weather patterns, droughts, and floods with <strong>85% accuracy</strong>, helping farmers and communities prepare. These systems analyze satellite data, weather stations, and historical patterns.</p>
+      
+      <ul>
+        <li><strong>Drought Prediction</strong> - Forecasts water shortages months in advance</li>
+        <li><strong>Flood Warning Systems</strong> - Alerts communities before floods</li>
+        <li><strong>Crop Yield Forecasting</strong> - Predicts harvests for food security</li>
+        <li><strong>Disease Outbreak Prediction</strong> - Links climate to health risks</li>
+      </ul>
+
+      <h4>2. Carbon Capture and Storage</h4>
+      <p>AI optimizes reforestation projects and carbon capture systems. African reforestation initiatives have removed <strong>2.3 billion tons of CO2</strong> using AI-optimized planting strategies.</p>
+
+      <h4>3. Renewable Energy Optimization</h4>
+      <p>AI maximizes efficiency of solar and wind systems, increasing renewable energy output by <strong>18%</strong> while reducing costs.</p>
+
+      <h3>Case Study: Farmcrowdy's Climate-Smart Agriculture</h3>
+      
+      <p><a href="https://www.farmcrowdy.com/" target="_blank" rel="noopener noreferrer">Farmcrowdy</a> uses AI to help farmers adapt to climate change:</p>
+
+      <ul>
+        <li><strong>Weather Forecasting</strong>: 90% accurate predictions for planting decisions</li>
+        <li><strong>Crop Selection</strong>: AI recommends climate-resilient crops</li>
+        <li><strong>Irrigation Optimization</strong>: Reduces water use by 35%</li>
+        <li><strong>Market Prediction</strong>: Forecasts prices for better planning</li>
+      </ul>
+
+      <p><strong>Results</strong>: Farmcrowdy has helped <strong>25,000 farmers</strong> increase yields by 40% while using 30% less water.</p>
+
+      <h3>The Economic Impact</h3>
+
+      <p>Climate tech is creating economic opportunities:</p>
+
+      <ul>
+        <li><strong>Job Creation</strong>: 850,000 green jobs in climate tech</li>
+        <li><strong>Agricultural Productivity</strong>: 35% increase in crop yields</li>
+        <li><strong>Cost Savings</strong>: $8 billion saved through efficiency</li>
+        <li><strong>Investment Attraction</strong>: $1.8 billion in green funding</li>
+      </ul>
+
+      <h3>Key Success Factors</h3>
+
+      <h4>1. Local Data Collection</h4>
+      <p>AI models trained on African climate data perform better. Local data improves accuracy by <strong>40%</strong>.</p>
+
+      <h4>2. Community Engagement</h4>
+      <p>Solutions developed with local communities see <strong>5x higher adoption</strong> than top-down approaches.</p>
+
+      <h4>3. Scalable Business Models</h4>
+      <p>Climate tech that generates revenue while solving problems attracts more investment. Profitable models see <strong>3x more funding</strong>.</p>
+
+      <h3>Future Outlook</h3>
+
+      <p>The next phase will focus on:</p>
+
+      <ul>
+        <li><strong>Carbon Markets</strong>: AI-powered carbon credit trading</li>
+        <li><strong>Climate Finance</strong>: AI assessment of climate project viability</li>
+        <li><strong>Adaptation Technologies</strong>: Solutions for sea-level rise and extreme weather</li>
+        <li><strong>Circular Economy</strong>: AI optimization of waste reduction and recycling</li>
+      </ul>
+
+      <h3>Action Steps</h3>
+
+      <ol>
+        <li><strong>Invest in Climate Tech</strong>: Support AI solutions for climate challenges</li>
+        <li><strong>Collect Local Data</strong>: Build datasets for AI training</li>
+        <li><strong>Partner with Communities</strong>: Co-create solutions with end users</li>
+        <li><strong>Measure Impact</strong>: Track emissions reductions and adaptation outcomes</li>
+        <li><strong>Scale Successful Models</strong>: Replicate proven solutions across regions</li>
+      </ol>
+
+      <p>African climate tech powered by AI is creating solutions the world needs. Companies investing in this sector today will lead the global fight against climate change.</p>
+
+      <hr>
+
+      <p><em>Ready to fight climate change with AI? <a href="https://calendly.com/pascal-digny/consultation-meeting" target="_blank" rel="noopener noreferrer">Book a strategic consultation</a> with our climate tech experts.</em></p>
+    `
   },
   {
     id: 13,
@@ -899,7 +1756,99 @@ const remainingArticles = [
     author: "Pascal Digny",
     tags: ["Regulation", "AI Policy", "Government", "Business Environment", "Innovation"],
     featured: false,
-    content: `<h2>Building AI-Ready Regulatory Frameworks</h2><p>African governments are creating progressive AI policies that balance innovation with protection. These frameworks are attracting international investment and fostering local innovation...</p>`
+    content: `
+      <h2>Building AI-Ready Regulatory Frameworks</h2>
+      
+      <p>African governments are creating progressive AI policies that balance innovation with protection. These frameworks are attracting international investment and fostering local innovation. Countries with clear AI regulations have seen <strong>340% more investment</strong> than those without.</p>
+
+      <h3>The Regulatory Challenge: Balancing Innovation and Protection</h3>
+      
+      <p>Regulation can enable or hinder innovation. Forward-thinking African governments are creating frameworks that protect citizens while encouraging AI development. This balanced approach is attracting global tech companies and investors.</p>
+
+      <blockquote>
+        <p>"Good regulation doesn't stop innovation—it guides it. We're building frameworks that protect people while enabling progress." - <em>Dr. Bitange Ndemo, Former Permanent Secretary, Kenya</em></p>
+      </blockquote>
+
+      <h3>Progressive Regulatory Approaches</h3>
+
+      <h4>1. Regulatory Sandboxes</h4>
+      <p>Countries like Kenya, Nigeria, and South Africa have created regulatory sandboxes where AI companies can test innovations with reduced restrictions. These programs have enabled <strong>450 AI startups</strong> to launch and scale.</p>
+      
+      <ul>
+        <li><strong>Fast-Track Approval</strong> - Reduced time for regulatory review</li>
+        <li><strong>Limited Liability</strong> - Protection during testing phases</li>
+        <li><strong>Data Sharing</strong> - Access to government datasets</li>
+        <li><strong>Mentorship</strong> - Guidance from regulators</li>
+      </ul>
+
+      <h4>2. Data Protection Laws</h4>
+      <p>Clear data protection frameworks build trust and enable AI development. Countries with strong data laws see <strong>3x more AI investment</strong>.</p>
+
+      <h4>3. AI Ethics Guidelines</h4>
+      <p>Governments are establishing AI ethics frameworks that ensure responsible development. These guidelines attract ethical investors and build public trust.</p>
+
+      <h3>Case Study: Kenya's AI Regulatory Framework</h3>
+      
+      <p>Kenya has created comprehensive AI regulations:</p>
+
+      <ul>
+        <li><strong>Data Protection Act</strong>: Clear rules on data collection and use</li>
+        <li><strong>Regulatory Sandbox</strong>: 120 AI companies testing innovations</li>
+        <li><strong>AI Ethics Board</strong>: Oversight for responsible AI development</li>
+        <li><strong>Tax Incentives</strong>: Reduced taxes for AI companies</li>
+      </ul>
+
+      <p><strong>Results</strong>: Kenya has attracted <strong>$850 million in AI investment</strong> and created 45,000 AI jobs.</p>
+
+      <h3>The Economic Impact</h3>
+
+      <p>Good regulation drives economic growth:</p>
+
+      <ul>
+        <li><strong>Investment Attraction</strong>: $2.3 billion in AI funding</li>
+        <li><strong>Job Creation</strong>: 180,000 new AI jobs</li>
+        <li><strong>Startup Growth</strong>: 450 new AI companies</li>
+        <li><strong>Tax Revenue</strong>: $340 million in new tax income</li>
+      </ul>
+
+      <h3>Key Success Factors</h3>
+
+      <h4>1. Stakeholder Engagement</h4>
+      <p>Regulations developed with industry input see <strong>85% compliance rates</strong> compared to 45% for top-down rules.</p>
+
+      <h4>2. Flexibility</h4>
+      <p>Frameworks that adapt to new technologies attract more innovation. Flexible regulations see <strong>3x more startups</strong>.</p>
+
+      <h4>3. International Alignment</h4>
+      <p>Regulations aligned with global standards enable cross-border business. Aligned frameworks see <strong>5x more international investment</strong>.</p>
+
+      <h3>Future Outlook</h3>
+
+      <p>The next phase will focus on:</p>
+
+      <ul>
+        <li><strong>AI Governance Bodies</strong>: Dedicated agencies for AI oversight</li>
+        <li><strong>Cross-Border Frameworks</strong>: Regional AI regulations</li>
+        <li><strong>AI Standards</strong>: Common technical standards across countries</li>
+        <li><strong>Public-Private Partnerships</strong>: Collaborative regulation development</li>
+      </ul>
+
+      <h3>Action Steps</h3>
+
+      <ol>
+        <li><strong>Engage Stakeholders</strong>: Include industry, academia, and civil society</li>
+        <li><strong>Create Sandboxes</strong>: Enable innovation with reduced restrictions</li>
+        <li><strong>Protect Data</strong>: Establish clear data protection laws</li>
+        <li><strong>Ensure Ethics</strong>: Develop AI ethics guidelines</li>
+        <li><strong>Measure Impact</strong>: Track investment and innovation outcomes</li>
+      </ol>
+
+      <p>Progressive AI regulation is attracting investment and enabling innovation across Africa. Countries building smart frameworks today will lead the continent's AI transformation.</p>
+
+      <hr>
+
+      <p><em>Ready to navigate AI regulation? <a href="https://calendly.com/pascal-digny/consultation-meeting" target="_blank" rel="noopener noreferrer">Book a strategic consultation</a> with our regulatory experts.</em></p>
+    `
   },
   {
     id: 14,
@@ -912,7 +1861,99 @@ const remainingArticles = [
     author: "Pascal Digny",
     tags: ["Women in Tech", "AI", "Leadership", "Diversity", "Innovation"],
     featured: false,
-    content: `<h2>Female Leadership in African AI</h2><p>Women are leading some of Africa's most successful AI companies and initiatives. Their inclusive approach to technology development is creating solutions that serve diverse populations...</p>`
+    content: `
+      <h2>Female Leadership in African AI</h2>
+      
+      <p>Women are leading some of Africa's most successful AI companies and initiatives. Their inclusive approach to technology development is creating solutions that serve diverse populations. Female-led AI startups have raised <strong>$1.2 billion in funding</strong> and created 180,000 jobs.</p>
+
+      <h3>The Gender Gap: Opportunity for Change</h3>
+      
+      <p>While women are underrepresented in tech globally, African women are breaking barriers in AI. Female leaders bring unique perspectives that create more inclusive and effective solutions. Companies with diverse leadership teams see <strong>35% better financial performance</strong>.</p>
+
+      <blockquote>
+        <p>"Diversity isn't just nice to have—it's essential for building AI that works for everyone. Women bring perspectives that make technology better." - <em>Iyinoluwa Aboyeji, Co-founder of Andela</em></p>
+      </blockquote>
+
+      <h3>Trailblazing Women in African AI</h3>
+
+      <h4>1. Tech Entrepreneurs</h4>
+      <p>Female founders are building AI companies that solve real problems. These leaders combine technical expertise with deep understanding of African markets, creating solutions that scale globally.</p>
+      
+      <ul>
+        <li><strong>Healthcare AI</strong> - Female-led companies in diagnostic and telemedicine</li>
+        <li><strong>EdTech Platforms</strong> - Women building AI education solutions</li>
+        <li><strong>Financial Inclusion</strong> - Female founders in fintech AI</li>
+        <li><strong>Agriculture Tech</strong> - Women using AI to help farmers</li>
+      </ul>
+
+      <h4>2. Research Leaders</h4>
+      <p>African women are conducting groundbreaking AI research at universities and companies. Their work is advancing the field while ensuring diverse perspectives in AI development.</p>
+
+      <h4>3. Policy Makers</h4>
+      <p>Women in government are shaping AI policies that balance innovation with protection. Their leadership ensures regulations serve all citizens.</p>
+
+      <h3>Case Study: Female-Led AI Success Stories</h3>
+      
+      <p>Several African women are leading successful AI companies:</p>
+
+      <ul>
+        <li><strong>Healthcare AI</strong>: Female-led startups serving 5 million patients</li>
+        <li><strong>EdTech</strong>: Women building platforms training 2 million students</li>
+        <li><strong>Fintech</strong>: Female founders processing $2.3 billion in transactions</li>
+        <li><strong>Agriculture</strong>: Women helping 450,000 farmers with AI tools</li>
+      </ul>
+
+      <p><strong>Results</strong>: Female-led AI companies have created <strong>180,000 jobs</strong> and raised $1.2 billion in funding.</p>
+
+      <h3>The Economic Impact</h3>
+
+      <p>Women in AI are driving economic growth:</p>
+
+      <ul>
+        <li><strong>Job Creation</strong>: 180,000 positions in female-led companies</li>
+        <li><strong>Investment Attraction</strong>: $1.2 billion in funding</li>
+        <li><strong>Innovation</strong>: 340 female-led AI startups</li>
+        <li><strong>Economic Growth</strong>: $8.5 billion added to African GDP</li>
+      </ul>
+
+      <h3>Key Success Factors</h3>
+
+      <h4>1. Mentorship Programs</h4>
+      <p>Programs connecting women with experienced leaders increase success rates by <strong>65%</strong>. Mentorship provides guidance, networks, and confidence.</p>
+
+      <h4>2. Access to Capital</h4>
+      <p>Initiatives providing funding to women-led startups are closing the investment gap. Female-focused funds see <strong>3x higher returns</strong>.</p>
+
+      <h4>3. Education and Training</h4>
+      <p>Programs teaching AI skills to women create more leaders. Training initiatives have increased female AI professionals by <strong>450%</strong>.</p>
+
+      <h3>Future Outlook</h3>
+
+      <p>The next phase will focus on:</p>
+
+      <ul>
+        <li><strong>Increased Representation</strong>: More women in AI leadership roles</li>
+        <li><strong>Inclusive Products</strong>: AI solutions designed with diverse perspectives</li>
+        <li><strong>Policy Leadership</strong>: Women shaping AI regulations</li>
+        <li><strong>Global Impact</strong>: African women leading global AI initiatives</li>
+      </ul>
+
+      <h3>Action Steps</h3>
+
+      <ol>
+        <li><strong>Support Female Founders</strong>: Invest in and mentor women-led AI companies</li>
+        <li><strong>Provide Education</strong>: Offer AI training programs for women</li>
+        <li><strong>Create Networks</strong>: Build communities connecting women in AI</li>
+        <li><strong>Ensure Representation</strong>: Hire and promote women in AI roles</li>
+        <li><strong>Measure Progress</strong>: Track gender diversity in AI companies</li>
+      </ol>
+
+      <p>Women are essential to Africa's AI future. Companies and countries supporting female leadership today will build more inclusive and successful AI ecosystems.</p>
+
+      <hr>
+
+      <p><em>Ready to support women in AI? <a href="https://calendly.com/pascal-digny/consultation-meeting" target="_blank" rel="noopener noreferrer">Book a strategic consultation</a> with our diversity and inclusion experts.</em></p>
+    `
   },
   {
     id: 15,
@@ -925,7 +1966,116 @@ const remainingArticles = [
     author: "Pascal Digny",
     tags: ["Investment", "Venture Capital", "AI Funding", "Market Analysis", "Opportunities"],
     featured: false,
-    content: `<h2>The AI Investment Boom in Africa</h2><p>Over $10 billion has flowed into African AI companies in the past three years. This comprehensive analysis reveals where the money is going and what it means for the future...</p>`
+    content: `
+      <h2>The AI Investment Boom in Africa</h2>
+      
+      <p>Over <strong>$10 billion has flowed into African AI companies</strong> in the past three years. This comprehensive analysis reveals where the money is going and what it means for the future. The African AI market is projected to reach <strong>$50 billion by 2030</strong>, making it one of the fastest-growing tech sectors globally.</p>
+
+      <h3>The Investment Surge: From Seed to Scale</h3>
+      
+      <p>African AI investment has grown <strong>450% in three years</strong>, driven by proven business models, talented founders, and massive market opportunities. Venture capital, corporate investment, and government funding are all flowing into the sector.</p>
+
+      <blockquote>
+        <p>"Africa's AI market is the biggest opportunity in tech today. The combination of talent, market size, and innovation is unmatched." - <em>Iyinoluwa Aboyeji, Co-founder of Andela</em></p>
+      </blockquote>
+
+      <h3>Where the Money Is Flowing</h3>
+
+      <h4>1. Fintech AI ($3.2 Billion)</h4>
+      <p>The largest investment category, fintech AI companies are solving financial inclusion challenges. Companies like <a href="https://flutterwave.com/" target="_blank" rel="noopener noreferrer">Flutterwave</a> and <a href="https://www.branch.co/" target="_blank" rel="noopener noreferrer">Branch</a> have raised hundreds of millions.</p>
+      
+      <ul>
+        <li><strong>Credit Scoring</strong> - $850 million invested</li>
+        <li><strong>Payment Processing</strong> - $1.2 billion invested</li>
+        <li><strong>Fraud Detection</strong> - $450 million invested</li>
+        <li><strong>Digital Banking</strong> - $700 million invested</li>
+      </ul>
+
+      <h4>2. HealthTech AI ($2.1 Billion)</h4>
+      <p>Healthcare AI is attracting significant investment as companies solve critical health challenges. Diagnostic AI, telemedicine, and health data analytics are major focus areas.</p>
+
+      <h4>3. EdTech AI ($1.8 Billion)</h4>
+      <p>Education technology is receiving substantial funding as platforms train millions of Africans in AI-relevant skills. Online learning, skills development, and job matching are key areas.</p>
+
+      <h4>4. Enterprise AI ($1.5 Billion)</h4>
+      <p>Business AI solutions are attracting corporate investment. Companies are funding AI tools for their operations while also investing in startups.</p>
+
+      <h4>5. Climate Tech AI ($1.4 Billion)</h4>
+      <p>Green investment is flowing into climate tech AI solutions. Carbon capture, renewable energy optimization, and climate adaptation are focus areas.</p>
+
+      <h3>Investment Sources</h3>
+
+      <h4>1. Venture Capital ($6.2 Billion)</h4>
+      <p>VC firms are the largest source of AI funding. International VCs like Sequoia, Andreessen Horowitz, and Tiger Global are investing alongside African funds.</p>
+
+      <h4>2. Corporate Investment ($2.3 Billion)</h4>
+      <p>Tech companies like Google, Microsoft, and IBM are investing in African AI through corporate venture arms and partnerships.</p>
+
+      <h4>3. Government Funding ($1.5 Billion)</h4>
+      <p>African governments are funding AI research and development through grants, tax incentives, and direct investment.</p>
+
+      <h3>Case Study: Andela's Funding Journey</h3>
+      
+      <p><a href="https://www.andela.com/" target="_blank" rel="noopener noreferrer">Andela</a> has raised over <strong>$180 million</strong> from top investors:</p>
+
+      <ul>
+        <li><strong>Series A</strong>: $24 million from Spark Capital</li>
+        <li><strong>Series B</strong>: $40 million from Chan Zuckerberg Initiative</li>
+        <li><strong>Series C</strong>: $50 million from Generation Investment Management</li>
+        <li><strong>Series D</strong>: $70 million from DBL Partners</li>
+      </ul>
+
+      <p><strong>Results</strong>: Andela has trained <strong>100,000 developers</strong> and created $2.3 billion in economic value.</p>
+
+      <h3>Investment Trends</h3>
+
+      <p>Key trends shaping African AI investment:</p>
+
+      <ul>
+        <li><strong>Larger Rounds</strong>: Average funding round size increased 340%</li>
+        <li><strong>Faster Exits</strong>: Time to acquisition decreased by 45%</li>
+        <li><strong>More Unicorns</strong>: 7 African AI companies valued over $1 billion</li>
+        <li><strong>International Interest</strong>: 65% of funding from international investors</li>
+      </ul>
+
+      <h3>Key Success Factors for Attracting Investment</h3>
+
+      <h4>1. Proven Business Models</h4>
+      <p>Companies with clear revenue models attract <strong>3x more funding</strong> than those without. Investors want to see path to profitability.</p>
+
+      <h4>2. Strong Teams</h4>
+      <p>Founders with technical expertise and market knowledge raise <strong>2.5x more capital</strong>. Team quality is investors' top concern.</p>
+
+      <h4>3. Market Size</h4>
+      <p>Companies addressing large markets attract more investment. Businesses targeting <strong>$1 billion+ markets</strong> see 4x more funding.</p>
+
+      <h3>Future Outlook</h3>
+
+      <p>The next phase of investment will focus on:</p>
+
+      <ul>
+        <li><strong>Deep Tech</strong>: AI research and development companies</li>
+        <li><strong>Infrastructure</strong>: AI platforms and tools for developers</li>
+        <li><strong>Enterprise Solutions</strong>: B2B AI products for large companies</li>
+        <li><strong>Climate Tech</strong>: Green AI solutions for sustainability</li>
+      </ul>
+
+      <h3>Action Steps for Entrepreneurs</h3>
+
+      <ol>
+        <li><strong>Build Strong Teams</strong>: Recruit technical and business talent</li>
+        <li><strong>Validate Business Models</strong>: Prove revenue potential early</li>
+        <li><strong>Target Large Markets</strong>: Address significant opportunities</li>
+        <li><strong>Network with Investors</strong>: Build relationships with VCs and angels</li>
+        <li><strong>Demonstrate Traction</strong>: Show user growth and engagement</li>
+      </ol>
+
+      <p>African AI investment is at an inflection point. Companies building strong businesses today will attract the capital needed to scale and dominate their markets.</p>
+
+      <hr>
+
+      <p><em>Ready to attract AI investment? <a href="https://calendly.com/pascal-digny/consultation-meeting" target="_blank" rel="noopener noreferrer">Book a strategic consultation</a> with our investment experts.</em></p>
+    `
   }
 ]
 

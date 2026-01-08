@@ -135,8 +135,16 @@ export default function ProductsPage() {
                 </div>
                 
                 <div className="flex gap-4">
-                  <a href="#pricing" className="btn-primary">Try Free</a>
-                  <a href="#" className="btn-secondary">Watch Demo</a>
+                  <a href="#pricing" className="btn-primary" aria-label="View pricing plans">Try Free</a>
+                  <a 
+                    href="https://calendly.com/pascal-digny/consultation-meeting" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-secondary"
+                    aria-label="Schedule a demo"
+                  >
+                    Watch Demo
+                  </a>
                 </div>
               </div>
               
@@ -195,9 +203,15 @@ export default function ProductsPage() {
                     ))}
                   </ul>
                   
-                  <button className={`w-full ${plan === 'pro' ? 'btn-primary' : 'btn-secondary'}`}>
+                  <a
+                    href="https://calendly.com/pascal-digny/consultation-meeting"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`w-full text-center ${plan === 'pro' ? 'btn-primary' : 'btn-secondary'}`}
+                    aria-label={`Get started with ${plan} plan`}
+                  >
                     Get Started
-                  </button>
+                  </a>
                 </motion.div>
               ))}
             </div>
@@ -250,7 +264,11 @@ export default function ProductsPage() {
                   </ul>
                 </div>
                 
-                <button className="btn-secondary w-full" disabled>
+                <button 
+                  className="btn-secondary w-full" 
+                  disabled
+                  aria-label={`Notify me when ${product.name} is available`}
+                >
                   Notify Me
                 </button>
               </motion.div>

@@ -78,8 +78,8 @@ export default function ContactPage() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     // Handle form submission here
-    console.log('Form submitted:', formData)
-    // You can integrate with your preferred form handling service
+    // TODO: Integrate with your preferred form handling service (e.g., Formspree, SendGrid, etc.)
+    // For now, form data is captured in formData state
   }
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -175,6 +175,8 @@ export default function ContactPage() {
             viewport={{ once: true }}
             onSubmit={handleSubmit}
             className="card p-8 md:p-12"
+            aria-label="Contact form"
+            noValidate
           >
             <div className="grid md:grid-cols-2 gap-6 mb-6">
               <div>
@@ -190,6 +192,7 @@ export default function ContactPage() {
                   onChange={handleInputChange}
                   className="w-full px-4 py-3 bg-surface-light border border-white/10 rounded-lg focus:border-accent/50 focus:outline-none transition-colors"
                   placeholder="Your full name"
+                  aria-required="true"
                 />
               </div>
               
@@ -206,6 +209,7 @@ export default function ContactPage() {
                   onChange={handleInputChange}
                   className="w-full px-4 py-3 bg-surface-light border border-white/10 rounded-lg focus:border-accent/50 focus:outline-none transition-colors"
                   placeholder="your@email.com"
+                  aria-required="true"
                 />
               </div>
             </div>
@@ -261,6 +265,7 @@ export default function ContactPage() {
                 onChange={handleInputChange}
                 className="w-full px-4 py-3 bg-surface-light border border-white/10 rounded-lg focus:border-accent/50 focus:outline-none transition-colors resize-none"
                 placeholder="Tell us about your project, goals, timeline, and any specific requirements..."
+                aria-required="true"
               />
             </div>
             
@@ -298,6 +303,16 @@ export default function ContactPage() {
                 transition={{ delay: i * 0.1 }}
                 className="card p-6 cursor-pointer"
                 onClick={() => setExpandedFaq(expandedFaq === i ? null : i)}
+                role="button"
+                tabIndex={0}
+                aria-expanded={expandedFaq === i}
+                aria-label={expandedFaq === i ? `Collapse FAQ: ${faq.question}` : `Expand FAQ: ${faq.question}`}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault()
+                    setExpandedFaq(expandedFaq === i ? null : i)
+                  }
+                }}
               >
                 <div className="flex justify-between items-center">
                   <h3 className="font-display font-semibold text-lg pr-4">{faq.question}</h3>
