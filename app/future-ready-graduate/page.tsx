@@ -1,15 +1,16 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import Navigation from '../components/Navigation'
 import Footer from '../components/Footer'
 import AnimatedSection from '../components/AnimatedSection'
 import VideoModal from '../components/VideoModal'
+import VideoThumbnail from '../components/VideoThumbnail'
 
 export default function FutureReadyGraduatePage() {
-  const [isVideoOpen, setIsVideoOpen] = useState(false)
+  const [selectedVideo, setSelectedVideo] = useState<{ src: string; title: string; speaker: string } | null>(null)
 
   const trimesterPlan = [
     {
@@ -99,6 +100,51 @@ export default function FutureReadyGraduatePage() {
     }
   ]
 
+  const featuredVideos = [
+    {
+      src: '/Strive Masiyiwa emphasized that entrepreneurship is a mindset focused on solving real problems, .mp4',
+      title: 'Entrepreneurship as Problem-Solving',
+      speaker: 'Strive Masiyiwa',
+      description: 'The fundamental challenge: entrepreneurship isn\'t about building products—it\'s a mindset focused on solving real problems.',
+      thumbnail: null
+    },
+    {
+      src: '/Einstein on What Intelligence Really Means... .mp4',
+      title: 'What Intelligence Really Means',
+      speaker: 'Albert Einstein',
+      description: 'A timeless perspective on intelligence and the importance of thinking differently in an evolving world.',
+      thumbnail: null
+    },
+    {
+      src: '/The world evolved. Education didn\u2019t.Look around- cars transformed, cities transformed, communica.mp4',
+      title: 'Education Must Evolve',
+      speaker: 'Global Thought Leader',
+      description: 'The world has transformed in every way—except education. It\'s time for education to catch up with the digital revolution.',
+      thumbnail: null
+    },
+    {
+      src: '/Kim Kiyosaki says the school system trains students to follow instructions instead of think crea.mp4',
+      title: 'School System vs Creative Thinking',
+      speaker: 'Kim Kiyosaki',
+      description: 'The school system trains students to follow instructions instead of thinking creatively—a critical insight for modern education.',
+      thumbnail: null
+    },
+    {
+      src: '/The era of the solo billionaire may be closer than we think. OpenAI CEO Sam Altman believes one .mp4',
+      title: 'The Era of Solo Billionaires',
+      speaker: 'Sam Altman',
+      description: 'OpenAI CEO Sam Altman believes the era of solo billionaires may be closer than we think, powered by AI and individual capability.',
+      thumbnail: null
+    },
+    {
+      src: '/get.mp4',
+      title: 'Digital Opportunity',
+      speaker: 'Thought Leader',
+      description: 'Insights on seizing digital opportunities and building success in the modern economy.',
+      thumbnail: null
+    }
+  ]
+
   return (
     <main>
       <Navigation />
@@ -120,23 +166,17 @@ export default function FutureReadyGraduatePage() {
               <span className="gradient-text">Industry Ready Professionals</span>
             </h1>
             <p className="text-xl text-muted max-w-3xl mx-auto leading-relaxed mb-10">
-              We provide everything needed to transform your final-year students into skilled professionals: 
-              internet connectivity, expert facilitators, and a proven curriculum that delivers real employment outcomes. 
-              Your school provides students and facilities—we handle the rest.
+              Transform your final-year students into job-ready professionals. We provide internet, facilitators, and curriculum. You provide students and facilities.
             </p>
-            <div className="text-center mb-8">
-              <p className="text-muted text-sm mb-4 max-w-2xl mx-auto">
-                The core challenge: Many entrepreneurs focus on building products instead of solving real problems. 
-                Watch Strive Masiyiwa explain why the entrepreneurship mindset must start with understanding the problem.
-              </p>
-            </div>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button
-                onClick={() => setIsVideoOpen(true)}
+              <a
+                href="https://calendly.com/pascal-digny/consultation-meeting"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn-primary text-lg px-8 py-4"
               >
-                Watch the Challenge Explained
-              </button>
+                Schedule Consultation
+              </a>
               <a
                 href="/Digni%20Digital%20-%20Future-Ready%20Graduate%20Program.pdf"
                 target="_blank"
@@ -291,48 +331,59 @@ export default function FutureReadyGraduatePage() {
       </AnimatedSection>
 
       {/* Problem vs Opportunity */}
-      <AnimatedSection className="py-24 bg-surface">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-          <h2 className="font-display text-4xl md:text-5xl font-bold mb-8">
-              Traditional Education Is <span className="text-red-400">Failing</span><br />
+      <AnimatedSection className="py-24 bg-surface relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-red-500/5 to-success/5" />
+        
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          {/* Header */}
+          <div className="text-center mb-20">
+            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+              Traditional Education Is <span className="text-red-400">Failing</span>
+              <br />
               While Digital Economy Is <span className="text-success">Exploding</span>
-          </h2>
-            <p className="text-muted text-lg max-w-3xl mx-auto">
-              The old system is broken, but the digital revolution has created unprecedented opportunities. 
-              Your students can either be left behind or positioned at the forefront of this transformation.
+            </h2>
+            <p className="text-muted text-lg max-w-2xl mx-auto leading-relaxed">
+              The digital revolution offers unprecedented opportunities. Position your students at the forefront of this transformation.
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12 mb-16">
+          {/* Comparison Grid */}
+          <div className="grid lg:grid-cols-2 gap-8 mb-20">
             {/* Traditional System Problems */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="space-y-6"
+              className="relative"
             >
-              <div className="text-center mb-8">
-                <h3 className="font-display text-2xl font-bold text-red-400 mb-4">
-                  📉 Traditional Education Crisis
-                </h3>
-                <p className="text-muted">The harsh reality of conventional graduation outcomes</p>
-              </div>
+              <div className="card p-8 border-red-400/30 bg-gradient-to-br from-red-500/10 to-red-500/5 h-full">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-12 h-12 bg-red-400/20 rounded-xl flex items-center justify-center text-2xl">
+                    📉
+                  </div>
+                  <div>
+                    <h3 className="font-display text-2xl font-bold text-red-400">
+                      Traditional Education Crisis
+                    </h3>
+                    <p className="text-muted text-sm">The harsh reality of conventional graduation outcomes</p>
+                  </div>
+                </div>
 
-              <div className="grid gap-6">
-                <div className="card p-6 border-red-400/20 bg-red-400/5">
-              <div className="text-3xl font-display font-bold text-red-400 mb-2">40%</div>
-              <p className="text-muted text-sm">of graduates unemployed 6 months after graduation</p>
-            </div>
-                <div className="card p-6 border-red-400/20 bg-red-400/5">
-              <div className="text-3xl font-display font-bold text-red-400 mb-2">75%</div>
-              <p className="text-muted text-sm">of employers say graduates lack job ready skills</p>
-            </div>
-                <div className="card p-6 border-red-400/20 bg-red-400/5">
-              <div className="text-3xl font-display font-bold text-red-400 mb-2">$1.7T</div>
-              <p className="text-muted text-sm">in student debt with poor employment outcomes</p>
-            </div>
-          </div>
+                <div className="space-y-4">
+                  <div className="p-5 bg-red-400/10 border border-red-400/20 rounded-xl">
+                    <div className="text-4xl font-display font-bold text-red-400 mb-2">40%</div>
+                    <p className="text-muted text-sm leading-relaxed">of graduates unemployed 6 months after graduation</p>
+                  </div>
+                  <div className="p-5 bg-red-400/10 border border-red-400/20 rounded-xl">
+                    <div className="text-4xl font-display font-bold text-red-400 mb-2">75%</div>
+                    <p className="text-muted text-sm leading-relaxed">of employers say graduates lack job ready skills</p>
+                  </div>
+                  <div className="p-5 bg-red-400/10 border border-red-400/20 rounded-xl">
+                    <div className="text-4xl font-display font-bold text-red-400 mb-2">$1.7T</div>
+                    <p className="text-muted text-sm leading-relaxed">in student debt with poor employment outcomes</p>
+                  </div>
+                </div>
+              </div>
             </motion.div>
 
             {/* Digital Economy Opportunities */}
@@ -340,90 +391,148 @@ export default function FutureReadyGraduatePage() {
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="space-y-6"
+              transition={{ delay: 0.1 }}
+              className="relative"
             >
-              <div className="text-center mb-8">
-                <h3 className="font-display text-2xl font-bold text-success mb-4">
-                  📈 Digital Economy Boom
-                </h3>
-                <p className="text-muted">The explosive growth of remote digital opportunities</p>
-              </div>
+              <div className="card p-8 border-success/30 bg-gradient-to-br from-success/10 to-success/5 h-full">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-12 h-12 bg-success/20 rounded-xl flex items-center justify-center text-2xl">
+                    📈
+                  </div>
+                  <div>
+                    <h3 className="font-display text-2xl font-bold text-success">
+                      Digital Economy Boom
+                    </h3>
+                    <p className="text-muted text-sm">The explosive growth of remote digital opportunities</p>
+                  </div>
+                </div>
 
-              <div className="grid gap-6">
-                <div className="card p-6 border-success/20 bg-success/5">
-                  <div className="text-3xl font-display font-bold text-success mb-2">$4.8T</div>
-                  <p className="text-muted text-sm">global digital economy size by 2025 (growing 15% annually)</p>
-                </div>
-                <div className="card p-6 border-success/20 bg-success/5">
-                  <div className="text-3xl font-display font-bold text-success mb-2">73M</div>
-                  <p className="text-muted text-sm">new freelancers worldwide in 2024 (fastest growing workforce)</p>
-                </div>
-                <div className="card p-6 border-success/20 bg-success/5">
-                  <div className="text-3xl font-display font-bold text-success mb-2">300%</div>
-                  <p className="text-muted text-sm">increase in remote work opportunities since 2020</p>
+                <div className="space-y-4">
+                  <div className="p-5 bg-success/10 border border-success/20 rounded-xl">
+                    <div className="text-4xl font-display font-bold text-success mb-2">$4.8T</div>
+                    <p className="text-muted text-sm leading-relaxed">global digital economy size by 2025 (growing 15% annually)</p>
+                  </div>
+                  <div className="p-5 bg-success/10 border border-success/20 rounded-xl">
+                    <div className="text-4xl font-display font-bold text-success mb-2">73M</div>
+                    <p className="text-muted text-sm leading-relaxed">new freelancers worldwide in 2024 (fastest growing workforce)</p>
+                  </div>
+                  <div className="p-5 bg-success/10 border border-success/20 rounded-xl">
+                    <div className="text-4xl font-display font-bold text-success mb-2">300%</div>
+                    <p className="text-muted text-sm leading-relaxed">increase in remote work opportunities since 2020</p>
+                  </div>
                 </div>
               </div>
             </motion.div>
           </div>
 
-          {/* Why Digital Economy is the Future */}
+          {/* Why Digital Skills Are the Future */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.4 }}
-            className="card p-8 bg-gradient-to-br from-success/5 to-success/10 border-success/20"
+            transition={{ delay: 0.2 }}
+            className="card p-10 bg-gradient-to-br from-success/10 via-success/5 to-transparent border-success/30"
           >
-            <div className="text-center mb-8">
-              <h3 className="font-display text-3xl font-bold mb-4">
+            <div className="text-center mb-10">
+              <h3 className="font-display text-3xl md:text-4xl font-bold mb-4">
                 <span className="gradient-text">Why Digital Skills Are the Future</span>
               </h3>
-              <p className="text-muted text-lg max-w-3xl mx-auto">
+              <p className="text-muted text-lg max-w-2xl mx-auto leading-relaxed">
                 The digital economy offers unprecedented advantages that traditional careers simply cannot match.
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <div className="text-center">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+              <div className="text-center p-6 bg-surface-light/50 rounded-xl border border-white/5 hover:border-success/30 transition-colors">
                 <div className="w-16 h-16 bg-success/10 rounded-2xl mx-auto mb-4 flex items-center justify-center text-3xl">
                   🌍
                 </div>
                 <h4 className="font-semibold text-white mb-2">Global Access</h4>
-                <p className="text-muted text-sm">Work with clients from anywhere in the world, not limited by local job market</p>
+                <p className="text-muted text-sm leading-relaxed">Work with clients from anywhere in the world, not limited by local job market</p>
               </div>
 
-              <div className="text-center">
+              <div className="text-center p-6 bg-surface-light/50 rounded-xl border border-white/5 hover:border-success/30 transition-colors">
                 <div className="w-16 h-16 bg-success/10 rounded-2xl mx-auto mb-4 flex items-center justify-center text-3xl">
                   💰
                 </div>
                 <h4 className="font-semibold text-white mb-2">Higher Earning</h4>
-                <p className="text-muted text-sm">Digital skills command premium rates - often 2-5x local salaries</p>
+                <p className="text-muted text-sm leading-relaxed">Digital skills command premium rates - often 2-5x local salaries</p>
               </div>
 
-              <div className="text-center">
+              <div className="text-center p-6 bg-surface-light/50 rounded-xl border border-white/5 hover:border-success/30 transition-colors">
                 <div className="w-16 h-16 bg-success/10 rounded-2xl mx-auto mb-4 flex items-center justify-center text-3xl">
                   🏠
                 </div>
                 <h4 className="font-semibold text-white mb-2">Location Freedom</h4>
-                <p className="text-muted text-sm">Work from home, coffee shops, or anywhere with internet connection</p>
+                <p className="text-muted text-sm leading-relaxed">Work from home, coffee shops, or anywhere with internet connection</p>
               </div>
 
-              <div className="text-center">
+              <div className="text-center p-6 bg-surface-light/50 rounded-xl border border-white/5 hover:border-success/30 transition-colors">
                 <div className="w-16 h-16 bg-success/10 rounded-2xl mx-auto mb-4 flex items-center justify-center text-3xl">
                   🚀
                 </div>
                 <h4 className="font-semibold text-white mb-2">Instant Start</h4>
-                <p className="text-muted text-sm">Begin earning immediately - no waiting for job applications or interviews</p>
+                <p className="text-muted text-sm leading-relaxed">Begin earning immediately - no waiting for job applications or interviews</p>
               </div>
             </div>
 
-            <div className="mt-8 text-center">
+            <div className="text-center pt-6 border-t border-white/10">
               <p className="text-success font-semibold text-lg">
                 Your students can capitalize on this massive opportunity from anywhere in the world
               </p>
             </div>
           </motion.div>
+        </div>
+      </AnimatedSection>
+
+      {/* Featured Videos from Global Leaders */}
+      <AnimatedSection className="py-24 bg-surface">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">
+              Global Leaders<br />
+              <span className="gradient-text">Supporting Our Mission</span>
+            </h2>
+            <p className="text-muted text-lg max-w-3xl mx-auto">
+              Listen to world-renowned figures discuss the same principles and values that drive our Future Ready Graduate program.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {featuredVideos.map((video, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="card p-0 overflow-hidden hover:border-success/50 group cursor-pointer"
+                onClick={() => setSelectedVideo(video)}
+              >
+                <VideoThumbnail 
+                  src={video.src} 
+                  onPlay={() => {}}
+                />
+                <div className="p-6">
+                  <div className="text-xs uppercase tracking-wider text-muted-dark mb-2">
+                    {video.speaker}
+                  </div>
+                  <h3 className="font-display text-lg font-bold mb-2 group-hover:text-success transition-colors">
+                    {video.title}
+                  </h3>
+                  <p className="text-muted text-sm leading-relaxed">
+                    {video.description}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {featuredVideos.length === 0 && (
+            <div className="text-center py-12">
+              <p className="text-muted">More videos from global leaders coming soon...</p>
+            </div>
+          )}
         </div>
       </AnimatedSection>
 
@@ -436,59 +545,59 @@ export default function FutureReadyGraduatePage() {
               <span className="gradient-text">That Actually Pay</span>
             </h2>
             <p className="text-muted text-lg max-w-3xl mx-auto">
-              The digital economy is exploding with opportunities. With AI tools like ChatGPT and Claude, 
-              anyone can now compete professionally in these lucrative fields—if they know the right skills.
+              The digital economy is exploding with opportunities. With 2026 AI tools like Lovable.dev, Cursor, and advanced AI platforms, 
+              beginners can now compete with expert-level professionals in these lucrative fields—if they master the right AI-powered skills.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
             {[
               {
-                skill: 'AI-Powered Content Creation',
-                icon: '🤖',
-                earning: '$25-75/hour',
-                description: 'Use AI to create blogs, social media content, and marketing copy that businesses desperately need.',
-                tools: ['ChatGPT', 'Claude', 'Jasper', 'Copy.ai'],
+                skill: 'AI-Powered Web Development',
+                icon: '🌐',
+                earning: '$40-100/hour',
+                description: 'Build professional websites and web apps using AI tools that let beginners compete with expert developers.',
+                tools: ['Lovable.dev', 'Cursor', 'Vercel', 'Render', 'v0.dev', 'GitHub Copilot'],
                 demand: 'Extremely High'
               },
               {
-                skill: 'Digital Marketing & Analytics',
+                skill: 'AI Content Creation & Copywriting',
+                icon: '✍️',
+                earning: '$30-80/hour',
+                description: 'Create high-quality blogs, social media content, and marketing copy using advanced AI writing tools.',
+                tools: ['ChatGPT-4', 'Claude 3.5', 'Midjourney', 'Runway', 'Copy.ai', 'Jasper'],
+                demand: 'Extremely High'
+              },
+              {
+                skill: 'AI-Powered Digital Marketing',
                 icon: '📊',
-                earning: '$20-60/hour',
-                description: 'Help businesses grow online through social media, SEO, and data-driven marketing strategies.',
-                tools: ['Google Analytics', 'Facebook Ads', 'Canva', 'Hootsuite'],
+                earning: '$25-70/hour',
+                description: 'Leverage AI for social media management, SEO, analytics, and data-driven marketing campaigns.',
+                tools: ['Canva AI', 'Google Analytics AI', 'Meta AI Ads', 'ChatGPT Marketing'],
                 demand: 'Very High'
               },
               {
-                skill: 'Web Development & Design',
-                icon: '🌐',
-                earning: '$30-80/hour',
-                description: 'Build websites and web applications using modern tools and AI-assisted coding.',
-                tools: ['HTML/CSS', 'JavaScript', 'WordPress', 'GitHub Copilot'],
-                demand: 'High'
+                skill: 'AI Video Production & Editing',
+                icon: '🎬',
+                earning: '$35-90/hour',
+                description: 'Create professional videos using AI tools for editing, animation, voiceovers, and content generation.',
+                tools: ['Runway ML', 'Pika Labs', 'Synthesia', 'CapCut AI', 'DaVinci Resolve AI'],
+                demand: 'Very High'
               },
               {
-                skill: 'E-commerce & Online Business',
+                skill: 'AI E-commerce & Store Building',
                 icon: '🛒',
-                earning: '$15-50/hour',
-                description: 'Set up and manage online stores, dropshipping, and digital product sales.',
-                tools: ['Shopify', 'WooCommerce', 'Amazon FBA', 'Etsy'],
+                earning: '$30-75/hour',
+                description: 'Build and manage online stores using AI-powered platforms that automate product creation and marketing.',
+                tools: ['Shopify AI', 'WooCommerce AI', 'Amazon AI Tools'],
                 demand: 'Growing Fast'
               },
               {
-                skill: 'Video Editing & Production',
-                icon: '🎬',
-                earning: '$20-65/hour',
-                description: 'Create engaging video content for businesses, YouTubers, and social media.',
-                tools: ['DaVinci Resolve', 'Canva Video', 'CapCut', 'Loom'],
-                demand: 'Very High'
-              },
-              {
-                skill: 'Virtual Assistance & Automation',
+                skill: 'AI Automation & Virtual Assistance',
                 icon: '⚡',
-                earning: '$12-40/hour',
-                description: 'Provide remote support and automate business processes using AI and no-code tools.',
-                tools: ['Zapier', 'Notion', 'Calendly', 'Slack'],
+                earning: '$20-60/hour',
+                description: 'Automate business processes and provide AI-enhanced virtual assistance using cutting-edge tools.',
+                tools: ['Zapier AI', 'Make.com', 'n8n', 'Notion AI'],
                 demand: 'Exploding'
               }
             ].map((item, i) => (
@@ -542,24 +651,23 @@ export default function FutureReadyGraduatePage() {
           >
             <div className="text-center">
               <h3 className="font-display text-2xl font-bold mb-4">
-                <span className="gradient-text">The AI Advantage</span>
+                <span className="gradient-text">The 2026 AI Advantage</span>
               </h3>
               <p className="text-muted text-lg mb-6 max-w-3xl mx-auto">
-                With AI tools, your students can now compete with experienced professionals from day one. 
-                We teach them not just the skills, but how to leverage AI to work faster, smarter, and more creatively.
+                With cutting-edge 2026 AI tools like Lovable.dev and Cursor, your students can compete with expert-level professionals from day one and start earning immediately.
               </p>
               <div className="grid md:grid-cols-3 gap-6 text-sm">
                 <div>
-                  <span className="font-semibold text-white block mb-2">🚀 10x Productivity</span>
-                  <span className="text-muted">AI helps students work faster than traditional methods</span>
+                  <span className="font-semibold text-white block mb-2">🚀 Expert-Level Output</span>
+                  <span className="text-muted">AI tools like Cursor and Lovable.dev enable beginners to build professional-grade projects</span>
                 </div>
                 <div>
-                  <span className="font-semibold text-white block mb-2">💡 Creative Edge</span>
-                  <span className="text-muted">Generate ideas and solutions that stand out</span>
+                  <span className="font-semibold text-white block mb-2">💡 Future-Proof Skills</span>
+                  <span className="text-muted">Master the AI tools that define 2026 and beyond, not outdated methods</span>
                 </div>
                 <div>
-                  <span className="font-semibold text-white block mb-2">💰 Immediate Earning</span>
-                  <span className="text-muted">Start freelancing and earning while still learning</span>
+                  <span className="font-semibold text-white block mb-2">💰 Immediate Income</span>
+                  <span className="text-muted">Start earning with real projects while learning, not after graduation</span>
                 </div>
               </div>
             </div>
@@ -908,11 +1016,11 @@ export default function FutureReadyGraduatePage() {
       </AnimatedSection>
 
       <VideoModal
-        isOpen={isVideoOpen}
-        onClose={() => setIsVideoOpen(false)}
-        videoSrc={`/Strive Masiyiwa emphasized that entrepreneurship is a mindset focused on solving real problems, .mp4`}
-        title="The Core Challenge: Entrepreneurship as Problem-Solving"
-        description="Strive Masiyiwa explains the fundamental challenge: entrepreneurship isn't about building products—it's a mindset focused on solving real problems. In the simplest terms, the challenge is that many entrepreneurs start with solutions instead of understanding the problem first. True entrepreneurship begins by identifying real challenges people face, then creating meaningful solutions. This is the philosophy that drives everything we do at Digni Digital—we solve problems that matter."
+        isOpen={selectedVideo !== null}
+        onClose={() => setSelectedVideo(null)}
+        videoSrc={selectedVideo?.src || ''}
+        title={selectedVideo?.title}
+        description={selectedVideo ? `${selectedVideo.speaker}: ${selectedVideo.description}` : undefined}
       />
 
       <Footer />

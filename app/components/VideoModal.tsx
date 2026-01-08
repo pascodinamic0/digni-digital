@@ -85,8 +85,19 @@ export default function VideoModal({ isOpen, onClose, videoSrc, title, descripti
                   src={videoSrc}
                   controls
                   autoPlay
+                  playsInline
                   className="w-full h-full"
                   onEnded={onClose}
+                  onError={(e) => {
+                    console.error('Video playback error:', videoSrc, e)
+                    const target = e.target as HTMLVideoElement
+                    if (target.error) {
+                      console.error('Video error code:', target.error.code, 'Message:', target.error.message)
+                    }
+                  }}
+                  onLoadedData={() => {
+                    console.log('Video loaded successfully:', videoSrc)
+                  }}
                 >
                   Your browser does not support the video tag.
                 </video>
