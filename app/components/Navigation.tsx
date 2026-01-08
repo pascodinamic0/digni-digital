@@ -94,10 +94,13 @@ export default function Navigation() {
             <div className="relative" ref={dropdownRef}>
               <button 
                 onClick={() => setSolutionsOpen(!solutionsOpen)}
+                aria-expanded={solutionsOpen}
+                aria-haspopup="true"
+                aria-label="Solutions menu"
                 className="text-muted hover:text-white transition-colors duration-200 text-sm font-medium flex items-center gap-1"
               >
                 Solutions
-                <svg className={`w-4 h-4 transition-transform duration-200 ${solutionsOpen ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className={`w-4 h-4 transition-transform duration-200 ${solutionsOpen ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
@@ -107,6 +110,8 @@ export default function Navigation() {
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 10 }}
+                  role="menu"
+                  aria-label="Solutions submenu"
                   className="absolute top-full left-0 mt-2 w-80 bg-surface border border-white/10 rounded-xl shadow-2xl backdrop-blur-xl z-50"
                 >
                   <div className="p-2">
@@ -156,6 +161,9 @@ export default function Navigation() {
           <button
             className="lg:hidden p-2"
             onClick={() => setMobileOpen(!mobileOpen)}
+            aria-expanded={mobileOpen}
+            aria-label="Toggle mobile menu"
+            aria-controls="mobile-menu"
           >
             <div className="w-6 h-5 flex flex-col justify-between">
               <span className={`h-0.5 bg-white transition-all ${mobileOpen ? 'rotate-45 translate-y-2' : ''}`} />
@@ -169,6 +177,8 @@ export default function Navigation() {
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
+            id="mobile-menu"
+            role="menu"
             className="lg:hidden mt-4 pb-4"
           >
             {navLinks.map((link) => (

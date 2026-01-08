@@ -178,6 +178,8 @@ export default function CaseStudiesPage() {
               <button
                 key={industry}
                 onClick={() => setSelectedIndustry(industry)}
+                aria-pressed={selectedIndustry === industry}
+                aria-label={`Filter case studies by ${industry}`}
                 className={`px-6 py-2 rounded-full text-sm font-medium transition-all ${
                   selectedIndustry === industry
                     ? 'bg-accent text-background'
@@ -276,6 +278,8 @@ export default function CaseStudiesPage() {
                     
                     <button
                       onClick={() => setExpandedStudy(expandedStudy === study.id ? null : study.id)}
+                      aria-expanded={expandedStudy === study.id}
+                      aria-label={expandedStudy === study.id ? 'Collapse case study details' : 'Expand case study details'}
                       className="text-accent hover:text-accent-light transition-colors font-medium"
                     >
                       {expandedStudy === study.id ? 'Show Less' : 'Read Full Case Study'}
