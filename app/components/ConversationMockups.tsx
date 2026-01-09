@@ -89,7 +89,7 @@ const ConversationMockups = () => {
       ),
       messages: [
         { sender: 'visitor' as const, text: '📞 Web call initiated from website', time: '10:42 AM' },
-        { sender: 'ai' as const, text: 'Hello! I\'m your AI receptionist. I can answer questions and also connect you directly with our team on a live call if needed. How can I help you today?', time: '10:42 AM' },
+        { sender: 'ai' as const, text: 'Hello! I\'m your AI employee. I can answer questions and also connect you directly with our team on a live call if needed. How can I help you today?', time: '10:42 AM' },
         { sender: 'visitor' as const, text: 'I have some technical questions about your services', time: '10:43 AM' },
         { sender: 'ai' as const, text: 'I can help with that! Would you like me to bridge this call with our technical team? You\'ll be on a live 3-way call with me and the team, and we can all talk together. Ready to connect?', time: '10:43 AM' }
       ]
@@ -299,7 +299,7 @@ const ConversationMockups = () => {
                   <div className="text-center mb-6">
                     <p className="text-sm text-muted mb-1">Incoming Call</p>
                     <h4 className="text-lg font-bold text-white mb-1">AI Web Calls</h4>
-                    <p className="text-xs text-muted">Receptionist</p>
+                    <p className="text-xs text-muted">AI Employee</p>
                   </div>
 
                   {/* Call Buttons */}

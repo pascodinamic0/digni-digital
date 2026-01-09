@@ -11,6 +11,15 @@ import VideoThumbnail from '../components/VideoThumbnail'
 
 export default function FutureReadyGraduatePage() {
   const [selectedVideo, setSelectedVideo] = useState<{ src: string; title: string; speaker: string; description: string } | null>(null)
+  const [showEarlyAccessModal, setShowEarlyAccessModal] = useState(false)
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    message: ''
+  })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitSuccess, setSubmitSuccess] = useState(false)
 
   const trimesterPlan = [
     {
@@ -83,7 +92,8 @@ export default function FutureReadyGraduatePage() {
       name: 'School Partnership Program',
       price: '$500',
       period: '/month',
-      description: 'Complete Future Ready Graduate program for your school',
+      description: 'Complete Future Ready Graduate program for schools and institutions',
+      audience: 'schools',
       features: [
         'Full academic year curriculum (42 weeks)',
         'On-site facilitator and support',
@@ -96,7 +106,29 @@ export default function FutureReadyGraduatePage() {
         'Job readiness training',
         'Partnership success guarantee'
       ],
-      popular: true
+      popular: true,
+      comingSoon: false
+    },
+    {
+      name: 'Online Course',
+      price: '$25',
+      period: ' one-time',
+      description: 'Complete digital skills program for everyone - learn from anywhere, start earning online',
+      features: [
+        'Full digital skills curriculum (start from scratch)',
+        'Learn from home, school, university, or vocational center',
+        'AI-powered tools and techniques for making money online',
+        'Self-paced learning - study on your own schedule',
+        'Community support and peer learning forums',
+        'Digital certificates upon completion',
+        'Lifetime access to all course materials',
+        'Portfolio building and job placement resources',
+        'Learn how to use AI to compete with experts',
+        'Start earning while you learn'
+      ],
+      popular: false,
+      comingSoon: true,
+      audience: 'everyone'
     }
   ]
 
@@ -332,7 +364,7 @@ export default function FutureReadyGraduatePage() {
 
       {/* Problem vs Opportunity */}
       <AnimatedSection className="py-24 bg-surface relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-red-500/5 to-success/5" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-destructive/5 to-success/5" />
         
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           {/* Header */}
@@ -356,7 +388,7 @@ export default function FutureReadyGraduatePage() {
               viewport={{ once: true }}
               className="relative"
             >
-              <div className="card p-8 border-destructive/30 bg-gradient-to-br from-red-500/10 to-red-500/5 h-full">
+              <div className="card p-8 border-destructive/30 bg-gradient-to-br from-destructive/10 to-destructive/5 h-full">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-12 h-12 bg-destructive/20 rounded-xl flex items-center justify-center text-2xl">
                     📉
@@ -823,7 +855,7 @@ export default function FutureReadyGraduatePage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.4 }}
-            className="mt-12 card p-8 bg-gradient-to-br from-success/5 to-blue-500/5 border-success/20"
+            className="mt-12 card p-8 bg-gradient-to-br from-success/5 to-info/5 border-success/20"
           >
             <div className="text-center">
               <h3 className="font-display text-2xl font-bold mb-6">
@@ -935,60 +967,125 @@ export default function FutureReadyGraduatePage() {
       <AnimatedSection className="py-24 bg-surface">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">
-              Simple School<br />
-              <span className="gradient-text">Partnership Pricing</span>
+            <h2 className="font-display text-4xl md:text-5xl font-bold mb-4">
+              Two Paths to<br />
+              <span className="gradient-text">Digital Success</span>
             </h2>
-            <p className="text-muted text-lg">
-              One transparent monthly fee covers everything your school needs for student success.
+            <p className="text-muted text-lg max-w-2xl mx-auto">
+              Choose the path that fits your needs. <span className="text-white font-medium">No one gets left behind.</span>
             </p>
           </div>
 
-          <div className="flex justify-center">
-            <div className="max-w-lg w-full">
-            {pricing.map((plan, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                  transition={{ delay: 0.2 }}
-                  className="card p-8 border-success/50 glow-accent"
-              >
-                  <div className="text-center mb-4">
-                    <span className="px-4 py-2 bg-success/20 text-success text-sm font-bold rounded-full">
-                      COMPLETE PROGRAM
-                    </span>
-                  </div>
-
-                <div className="text-center mb-8">
-                  <h3 className="font-display text-2xl font-bold mb-2">{plan.name}</h3>
-                    <div className="font-display text-5xl font-bold text-success mb-2">
-                    {plan.price}
-                      <span className="text-xl text-muted font-normal">{plan.period}</span>
-                  </div>
-                  <p className="text-muted text-sm">{plan.description}</p>
+          {/* Two Paths Visual Layout */}
+          <div className="relative">
+            {/* Visual Divider with Arrow */}
+            <div className="hidden lg:block absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
+              <div className="flex flex-col items-center">
+                <div className="w-px h-16 bg-gradient-to-b from-transparent via-accent/50 to-transparent" />
+                <div className="w-12 h-12 rounded-full bg-surface border-2 border-accent/50 flex items-center justify-center">
+                  <svg className="w-6 h-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
                 </div>
+                <div className="w-px h-16 bg-gradient-to-t from-transparent via-accent/50 to-transparent" />
+              </div>
+            </div>
 
-                  <ul className="space-y-4 mb-8">
-                  {plan.features.map((feature, j) => (
-                      <li key={j} className="flex items-center gap-3 text-white">
-                        <div className="w-2 h-2 bg-success rounded-full flex-shrink-0" />
-                        <span className="text-sm">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
+            {/* Mobile: Stacked with Arrow */}
+            <div className="lg:hidden mb-8 flex flex-col items-center">
+              <div className="w-12 h-12 rounded-full bg-surface border-2 border-accent/50 flex items-center justify-center mb-4">
+                <svg className="w-6 h-6 text-accent rotate-90" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </div>
+            </div>
 
-                <a
-                  href="https://calendly.com/pascal-digny/consultation-meeting"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                    className="btn-primary w-full text-center text-lg py-4"
+            {/* Two Column Grid */}
+            <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+              {pricing.map((plan, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, x: i === 0 ? -30 : 30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.15 }}
+                  className={`relative card p-8 h-full flex flex-col ${
+                    plan.popular 
+                      ? 'border-success/50 glow-accent' 
+                      : plan.comingSoon 
+                        ? 'border-accent/30 opacity-90' 
+                        : 'border-success/30'
+                  }`}
                 >
-                    Start Partnership
-                </a>
-              </motion.div>
-            ))}
+                  {/* Path Indicator */}
+                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                    <div className={`px-4 py-1.5 rounded-full text-xs font-bold ${
+                      plan.audience === 'schools'
+                        ? 'bg-success/20 text-success border border-success/30'
+                        : 'bg-accent/20 text-accent border border-accent/30'
+                    }`}>
+                      {plan.audience === 'schools' ? '🏫 FOR SCHOOLS' : '🌍 FOR EVERYONE'}
+                    </div>
+                  </div>
+
+                  {/* Coming Soon Badge */}
+                  {plan.comingSoon && (
+                    <div className="absolute top-4 right-4">
+                      <span className="px-3 py-1 bg-warning/20 text-warning text-xs font-bold rounded-full">
+                        COMING SOON
+                      </span>
+                    </div>
+                  )}
+
+                  {/* Content */}
+                  <div className="mt-4 mb-6">
+                    <h3 className="font-display text-2xl font-bold mb-3 text-center">{plan.name}</h3>
+                    <div className="text-center mb-4">
+                      <div className="font-display text-5xl font-bold text-success mb-1">
+                        {plan.price}
+                        <span className="text-xl text-muted font-normal ml-1">{plan.period}</span>
+                      </div>
+                      <p className="text-muted text-sm leading-relaxed">{plan.description}</p>
+                    </div>
+
+                  </div>
+
+                  {/* Features */}
+                  <ul className="space-y-3 mb-8 flex-grow">
+                    {plan.features.map((feature, j) => (
+                      <li key={j} className="flex items-start gap-3">
+                        <div className={`w-1.5 h-1.5 rounded-full flex-shrink-0 mt-2 ${
+                          plan.audience === 'schools' ? 'bg-success' : 'bg-accent'
+                        }`} />
+                        <span className="text-sm text-white leading-relaxed">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  {/* CTA */}
+                  {plan.comingSoon ? (
+                    <button
+                      onClick={() => setShowEarlyAccessModal(true)}
+                      className="btn-primary w-full text-center py-3"
+                    >
+                      Reserve Early Access
+                    </button>
+                  ) : (
+                    <a
+                      href="https://calendly.com/pascal-digny/consultation-meeting"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`w-full text-center py-3 rounded-lg font-semibold transition-all ${
+                        plan.audience === 'schools'
+                          ? 'btn-primary'
+                          : 'btn-secondary hover:border-accent hover:text-accent'
+                      }`}
+                    >
+                      {plan.name.includes('School') ? 'Start Partnership' : 'Get Started'}
+                    </a>
+                  )}
+                </motion.div>
+              ))}
             </div>
           </div>
         </div>
@@ -1014,6 +1111,153 @@ export default function FutureReadyGraduatePage() {
           </a>
         </div>
       </AnimatedSection>
+
+      {/* Early Access Reservation Modal */}
+      {showEarlyAccessModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="relative bg-surface border border-accent/30 rounded-2xl max-w-md w-full p-8 shadow-2xl"
+          >
+            {/* Close Button */}
+            <button
+              onClick={() => {
+                setShowEarlyAccessModal(false)
+                setSubmitSuccess(false)
+                setFormData({ name: '', email: '', phone: '', message: '' })
+              }}
+              className="absolute top-4 right-4 text-muted hover:text-white transition-colors"
+            >
+              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+
+            {!submitSuccess ? (
+              <>
+                <div className="text-center mb-6">
+                  <div className="w-16 h-16 bg-accent/20 rounded-2xl mx-auto mb-4 flex items-center justify-center text-3xl">
+                    🎓
+                  </div>
+                  <h3 className="font-display text-2xl font-bold mb-2">
+                    Reserve Early Access
+                  </h3>
+                  <p className="text-muted text-sm">
+                    Be the first to know when our online course launches. Get exclusive early access and special pricing.
+                  </p>
+                </div>
+
+                <form
+                  onSubmit={async (e) => {
+                    e.preventDefault()
+                    setIsSubmitting(true)
+                    
+                    // Simulate form submission (replace with actual API call)
+                    await new Promise(resolve => setTimeout(resolve, 1000))
+                    
+                    setIsSubmitting(false)
+                    setSubmitSuccess(true)
+                    
+                    // Here you would send the data to your backend/API
+                    console.log('Early Access Reservation:', formData)
+                  }}
+                  className="space-y-4"
+                >
+                  <div>
+                    <label htmlFor="name" className="block text-sm font-medium text-white mb-2">
+                      Full Name *
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      required
+                      value={formData.name}
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      className="w-full px-4 py-3 bg-surface-light border border-light rounded-lg text-white placeholder-muted focus:outline-none focus:border-accent transition-colors"
+                      placeholder="John Doe"
+                    />
+                  </div>
+
+                  <div>
+                    <label htmlFor="email" className="block text-sm font-medium text-white mb-2">
+                      Email Address *
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      required
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      className="w-full px-4 py-3 bg-surface-light border border-light rounded-lg text-white placeholder-muted focus:outline-none focus:border-accent transition-colors"
+                      placeholder="john@example.com"
+                    />
+                  </div>
+
+                  <div>
+                    <label htmlFor="phone" className="block text-sm font-medium text-white mb-2">
+                      Phone Number *
+                    </label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      required
+                      value={formData.phone}
+                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                      className="w-full px-4 py-3 bg-surface-light border border-light rounded-lg text-white placeholder-muted focus:outline-none focus:border-accent transition-colors"
+                      placeholder="+1 (555) 123-4567"
+                    />
+                  </div>
+
+                  <div>
+                    <label htmlFor="message" className="block text-sm font-medium text-white mb-2">
+                      Message (Optional)
+                    </label>
+                    <textarea
+                      id="message"
+                      rows={3}
+                      value={formData.message}
+                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                      className="w-full px-4 py-3 bg-surface-light border border-light rounded-lg text-white placeholder-muted focus:outline-none focus:border-accent transition-colors resize-none"
+                      placeholder="Tell us why you're interested in the course..."
+                    />
+                  </div>
+
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="btn-primary w-full py-3 text-center disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    {isSubmitting ? 'Submitting...' : 'Reserve My Spot'}
+                  </button>
+                </form>
+              </>
+            ) : (
+              <div className="text-center">
+                <div className="w-16 h-16 bg-success/20 rounded-2xl mx-auto mb-4 flex items-center justify-center text-3xl">
+                  ✅
+                </div>
+                <h3 className="font-display text-2xl font-bold mb-2 text-success">
+                  Reservation Confirmed!
+                </h3>
+                <p className="text-muted text-sm mb-6">
+                  We've received your early access request. We'll notify you as soon as the course is available with exclusive pricing.
+                </p>
+                <button
+                  onClick={() => {
+                    setShowEarlyAccessModal(false)
+                    setSubmitSuccess(false)
+                    setFormData({ name: '', email: '', phone: '', message: '' })
+                  }}
+                  className="btn-primary w-full py-3"
+                >
+                  Close
+                </button>
+              </div>
+            )}
+          </motion.div>
+        </div>
+      )}
 
       <VideoModal
         isOpen={selectedVideo !== null}

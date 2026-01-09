@@ -3,7 +3,7 @@ import Link from 'next/link'
 export default function Footer() {
   const links = {
     services: [
-      { name: 'AI Receptionist', href: '/ai-receptionist' },
+      { name: 'AI Employee', href: '/ai-receptionist' },
       { name: 'Future Ready Graduate', href: '/future-ready-graduate' },
       { name: 'Custom SaaS Development', href: '/custom-saas' },
     ],

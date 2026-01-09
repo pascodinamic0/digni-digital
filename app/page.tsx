@@ -301,9 +301,9 @@ function WhatWereFightingFor() {
 function WhatWeDo() {
   const services = [
     {
-      title: 'AI Receptionist Systems',
+      title: 'AI Employee Systems',
       subtitle: 'For Growing Businesses',
-      description: 'Deploy intelligent reception systems that capture every lead, qualify prospects, and book appointments 24/7 — so you never miss another opportunity.',
+      description: 'Deploy intelligent AI employee systems that capture every lead, qualify prospects, and book appointments 24/7 — so you never miss another opportunity.',
       approach: 'We don\'t just install software. We study your business, understand your customers, and build AI that represents your brand perfectly.',
       outcomes: ['300% increase in lead capture', '24/7 customer service', 'Zero missed opportunities', 'Seamless CRM integration'],
       icon: '🤖',
@@ -581,9 +581,9 @@ function WhatWeDo() {
 function Products() {
   const flagshipProducts = [
     {
-      name: 'AI Receptionist™',
+      name: 'AI Employee™',
       tagline: 'Never miss a lead again',
-      description: 'AI-powered reception system that handles calls, qualifies leads, and books appointments 24/7.',
+      description: 'AI-powered employee that handles calls, qualifies leads, and books appointments 24/7.',
       features: ['24/7 Call Handling', 'Lead Qualification', 'Appointment Booking', 'CRM Integration', 'Multi language Support', 'Analytics Dashboard'],
       pricing: { starter: '$297/month', pro: '$497/month', enterprise: 'Custom' },
       icon: '🤖',
@@ -728,7 +728,7 @@ function Counter({ end, suffix = '' }: { end: number; suffix?: string }) {
 // Stats Section
 function Stats() {
   const stats = [
-    { value: 300, suffix: '%', label: 'Lead Conversion Increase', sublabel: 'AI Receptionist™ Results' },
+    { value: 300, suffix: '%', label: 'Lead Conversion Increase', sublabel: 'AI Employee™ Results' },
     { value: 85, suffix: '%', label: 'Graduate Employment Rate', sublabel: 'Future Ready Graduate™ Success' },
     { value: 24, suffix: '/7', label: 'Always-On Service', sublabel: 'Never Miss Another Lead' },
     { value: 98, suffix: '%', label: 'Client Satisfaction', sublabel: 'Across Both Solutions' },
@@ -778,7 +778,7 @@ function Stats() {
               className="card p-6"
             >
               <div className="text-3xl mb-3">🤖</div>
-              <h3 className="font-display font-bold mb-2">AI Receptionist™</h3>
+              <h3 className="font-display font-bold mb-2">AI Employee™</h3>
               <p className="text-muted text-sm">Deployed across 50+ businesses, handling 10,000+ leads monthly</p>
             </motion.div>
             <motion.div
@@ -805,7 +805,7 @@ function CaseStudies() {
 
   const studies = [
     {
-      solution: 'AI Receptionist™',
+      solution: 'AI Employee™',
       industry: 'Healthcare',
       title: 'Regional Medical Center',
       duration: '2 weeks implementation',
@@ -833,7 +833,7 @@ function CaseStudies() {
       color: 'success'
     },
     {
-      solution: 'AI Receptionist™',
+      solution: 'AI Employee™',
       industry: 'Real Estate',
       title: 'Premium Property Group',
       duration: '1 week implementation',

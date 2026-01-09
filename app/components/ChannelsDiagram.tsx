@@ -87,7 +87,7 @@ const ChannelsDiagram = () => {
             transition={{ delay: 0.2 }}
             className="text-muted text-lg max-w-3xl mx-auto"
           >
-            Your AI receptionist seamlessly handles conversations across all platforms, 
+            Your AI employee seamlessly handles conversations across all platforms, 
             providing consistent, intelligent responses wherever your customers reach out.
           </motion.p>
         </div>

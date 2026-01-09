@@ -44,9 +44,9 @@ export default function Navigation() {
 
   const solutionLinks = [
     { 
-      name: 'AI Receptionist', 
+      name: 'AI Employee', 
       href: '/ai-receptionist',
-      description: 'Never miss a lead with 24/7 AI-powered reception'
+      description: 'Never miss a lead with 24/7 AI-powered employee'
     },
     { 
       name: 'Future Ready Graduate', 
