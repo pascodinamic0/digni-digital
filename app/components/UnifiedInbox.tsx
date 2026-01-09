@@ -84,9 +84,9 @@ const UnifiedInbox = () => {
     switch (status) {
       case 'qualified': return 'text-success bg-success/10'
       case 'appointment-booked': return 'text-accent bg-accent/10'
-      case 'in-progress': return 'text-blue-400 bg-blue-400/10'
+      case 'in-progress': return 'text-info bg-info/10'
       case 'follow-up': return 'text-orange-400 bg-orange-400/10'
-      case 'new-lead': return 'text-purple-400 bg-purple-400/10'
+      case 'new-lead': return 'text-purple bg-purple/10'
       default: return 'text-muted bg-muted/10'
     }
   }
@@ -332,7 +332,7 @@ const UnifiedInbox = () => {
                   <button className="px-3 py-1 bg-success/10 text-success text-xs rounded-full border border-success/30 hover:bg-success/20 transition-colors">
                     Send Pricing Details
                   </button>
-                  <button className="px-3 py-1 bg-blue-400/10 text-blue-400 text-xs rounded-full border border-blue-400/30 hover:bg-blue-400/20 transition-colors">
+                  <button className="px-3 py-1 bg-info/10 text-info text-xs rounded-full border border-info/30 hover:bg-info/20 transition-colors">
                     Add to CRM
                   </button>
                 </div>
@@ -357,8 +357,8 @@ const UnifiedInbox = () => {
             <div className="text-2xl font-display font-bold text-success mb-2">23</div>
             <p className="text-muted text-sm">Qualified Leads</p>
           </div>
-          <div className="text-center p-6 bg-surface-light rounded-xl border border-blue-400/10">
-            <div className="text-2xl font-display font-bold text-blue-400 mb-2">12</div>
+          <div className="text-center p-6 bg-surface-light rounded-xl border border-info/10">
+            <div className="text-2xl font-display font-bold text-info mb-2">12</div>
             <p className="text-muted text-sm">Appointments Booked</p>
           </div>
           <div className="text-center p-6 bg-surface-light rounded-xl border border-orange-400/10">

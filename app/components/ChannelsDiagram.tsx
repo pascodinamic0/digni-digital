@@ -11,7 +11,7 @@ const ChannelsDiagram = () => {
       id: 'website',
       name: 'Website Chat',
       description: 'Live chat widget on your website',
-      color: 'from-blue-500 to-blue-600',
+      color: 'from-info to-info',
       icon: '🌐',
       stats: '24/7 Available'
     },
@@ -19,7 +19,7 @@ const ChannelsDiagram = () => {
       id: 'sms',
       name: 'SMS Messages',
       description: 'Text message conversations',
-      color: 'from-green-500 to-green-600',
+      color: 'from-success to-success',
       icon: '💬',
       stats: '<2s Response'
     },
@@ -27,7 +27,7 @@ const ChannelsDiagram = () => {
       id: 'facebook',
       name: 'Facebook Messenger',
       description: 'Facebook page messaging',
-      color: 'from-blue-600 to-blue-700',
+      color: 'from-info to-info',
       icon: '📘',
       stats: 'Auto-Reply'
     },
@@ -35,7 +35,7 @@ const ChannelsDiagram = () => {
       id: 'instagram',
       name: 'Instagram DM',
       description: 'Instagram direct messages',
-      color: 'from-pink-500 to-purple-600',
+      color: 'from-accent to-purple',
       icon: '📸',
       stats: 'Smart Responses'
     },
@@ -43,7 +43,7 @@ const ChannelsDiagram = () => {
       id: 'whatsapp',
       name: 'WhatsApp',
       description: 'WhatsApp Business messaging',
-      color: 'from-green-600 to-green-700',
+      color: 'from-success to-success',
       icon: '📱',
       stats: 'Global Reach'
     },
@@ -51,7 +51,7 @@ const ChannelsDiagram = () => {
       id: 'voice',
       name: 'Voice Calls',
       description: 'Phone call handling',
-      color: 'from-orange-500 to-red-600',
+      color: 'from-warning to-destructive',
       icon: '📞',
       stats: 'Never Miss Calls'
     }

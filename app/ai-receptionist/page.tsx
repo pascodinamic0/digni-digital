@@ -144,19 +144,19 @@ export default function AIReceptionistPage() {
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="font-display text-4xl md:text-5xl font-bold mb-8">
             Every Missed Call Is Money<br />
-            <span className="text-red-400">Walking Out The Door</span>
+            <span className="text-destructive">Walking Out The Door</span>
           </h2>
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             <div className="card p-6">
-              <div className="text-3xl font-display font-bold text-red-400 mb-2">40%</div>
+              <div className="text-3xl font-display font-bold text-destructive mb-2">40%</div>
               <p className="text-muted text-sm">of calls go unanswered during business hours</p>
             </div>
             <div className="card p-6">
-              <div className="text-3xl font-display font-bold text-red-400 mb-2">$62B</div>
+              <div className="text-3xl font-display font-bold text-destructive mb-2">$62B</div>
               <p className="text-muted text-sm">lost annually by small businesses to missed leads</p>
             </div>
             <div className="card p-6">
-              <div className="text-3xl font-display font-bold text-red-400 mb-2">78%</div>
+              <div className="text-3xl font-display font-bold text-destructive mb-2">78%</div>
               <p className="text-muted text-sm">of customers call competitors after no answer</p>
             </div>
           </div>

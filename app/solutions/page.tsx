@@ -293,9 +293,9 @@ export default function SolutionsPage() {
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="card p-8 border-red-500/20"
+              className="card p-8 border-destructive/20"
             >
-              <h3 className="font-display text-2xl font-bold mb-6 text-red-400">
+              <h3 className="font-display text-2xl font-bold mb-6 text-destructive">
                 Before: The Chaos
               </h3>
               <ul className="space-y-4">
@@ -309,7 +309,7 @@ export default function SolutionsPage() {
                   'Scaling feels impossible and overwhelming'
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3 text-muted">
-                    <span className="text-red-400 mt-1">✗</span>
+                    <span className="text-destructive mt-1">✗</span>
                     {item}
                   </li>
                 ))}

@@ -338,7 +338,7 @@ export default function FutureReadyGraduatePage() {
           {/* Header */}
           <div className="text-center mb-20">
             <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-              Traditional Education Is <span className="text-red-400">Failing</span>
+              Traditional Education Is <span className="text-destructive">Failing</span>
               <br />
               While Digital Economy Is <span className="text-success">Exploding</span>
             </h2>
@@ -356,13 +356,13 @@ export default function FutureReadyGraduatePage() {
               viewport={{ once: true }}
               className="relative"
             >
-              <div className="card p-8 border-red-400/30 bg-gradient-to-br from-red-500/10 to-red-500/5 h-full">
+              <div className="card p-8 border-destructive/30 bg-gradient-to-br from-red-500/10 to-red-500/5 h-full">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="w-12 h-12 bg-red-400/20 rounded-xl flex items-center justify-center text-2xl">
+                  <div className="w-12 h-12 bg-destructive/20 rounded-xl flex items-center justify-center text-2xl">
                     📉
                   </div>
                   <div>
-                    <h3 className="font-display text-2xl font-bold text-red-400">
+                    <h3 className="font-display text-2xl font-bold text-destructive">
                       Traditional Education Crisis
                     </h3>
                     <p className="text-muted text-sm">The harsh reality of conventional graduation outcomes</p>
@@ -370,16 +370,16 @@ export default function FutureReadyGraduatePage() {
                 </div>
 
                 <div className="space-y-4">
-                  <div className="p-5 bg-red-400/10 border border-red-400/20 rounded-xl">
-                    <div className="text-4xl font-display font-bold text-red-400 mb-2">40%</div>
+                  <div className="p-5 bg-destructive/10 border border-destructive/20 rounded-xl">
+                    <div className="text-4xl font-display font-bold text-destructive mb-2">40%</div>
                     <p className="text-muted text-sm leading-relaxed">of graduates unemployed 6 months after graduation</p>
                   </div>
-                  <div className="p-5 bg-red-400/10 border border-red-400/20 rounded-xl">
-                    <div className="text-4xl font-display font-bold text-red-400 mb-2">75%</div>
+                  <div className="p-5 bg-destructive/10 border border-destructive/20 rounded-xl">
+                    <div className="text-4xl font-display font-bold text-destructive mb-2">75%</div>
                     <p className="text-muted text-sm leading-relaxed">of employers say graduates lack job ready skills</p>
                   </div>
-                  <div className="p-5 bg-red-400/10 border border-red-400/20 rounded-xl">
-                    <div className="text-4xl font-display font-bold text-red-400 mb-2">$1.7T</div>
+                  <div className="p-5 bg-destructive/10 border border-destructive/20 rounded-xl">
+                    <div className="text-4xl font-display font-bold text-destructive mb-2">$1.7T</div>
                     <p className="text-muted text-sm leading-relaxed">in student debt with poor employment outcomes</p>
                   </div>
                 </div>
@@ -697,17 +697,17 @@ export default function FutureReadyGraduatePage() {
                 className="card p-8"
               >
               <div className="text-center mb-8">
-                <div className="w-16 h-16 bg-blue-500/10 rounded-2xl mx-auto mb-4 flex items-center justify-center text-3xl">
+                <div className="w-16 h-16 bg-info/10 rounded-2xl mx-auto mb-4 flex items-center justify-center text-3xl">
                   🏫
                 </div>
-                <h3 className="font-display text-2xl font-bold text-blue-400">What Schools Provide</h3>
+                <h3 className="font-display text-2xl font-bold text-info">What Schools Provide</h3>
                 <p className="text-muted text-sm mt-2">Your essential contributions to the partnership</p>
                   </div>
 
               <div className="space-y-6">
                 <div>
                   <h4 className="font-semibold text-white mb-3 flex items-center gap-2">
-                    <div className="w-2 h-2 bg-blue-400 rounded-full" />
+                    <div className="w-2 h-2 bg-info rounded-full" />
                     Students (Finalists)
                   </h4>
                   <p className="text-muted text-sm leading-relaxed">
@@ -717,7 +717,7 @@ export default function FutureReadyGraduatePage() {
 
                   <div>
                   <h4 className="font-semibold text-white mb-3 flex items-center gap-2">
-                    <div className="w-2 h-2 bg-blue-400 rounded-full" />
+                    <div className="w-2 h-2 bg-info rounded-full" />
                     Computer Lab Facility
                   </h4>
                   <p className="text-muted text-sm leading-relaxed">
@@ -727,7 +727,7 @@ export default function FutureReadyGraduatePage() {
 
                 <div>
                   <h4 className="font-semibold text-white mb-3 flex items-center gap-2">
-                    <div className="w-2 h-2 bg-blue-400 rounded-full" />
+                    <div className="w-2 h-2 bg-info rounded-full" />
                     Computing Equipment
                   </h4>
                   <p className="text-muted text-sm leading-relaxed">
@@ -737,7 +737,7 @@ export default function FutureReadyGraduatePage() {
 
                   <div>
                   <h4 className="font-semibold text-white mb-3 flex items-center gap-2">
-                    <div className="w-2 h-2 bg-blue-400 rounded-full" />
+                    <div className="w-2 h-2 bg-info rounded-full" />
                     Program Integration
                   </h4>
                   <p className="text-muted text-sm leading-relaxed">

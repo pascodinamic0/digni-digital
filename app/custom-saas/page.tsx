@@ -166,7 +166,7 @@ export default function CustomSaaSPage() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-center mb-16"
           >
-            <span className="inline-block px-4 py-2 bg-blue-400/10 border border-blue-400/30 rounded-full text-blue-400 text-sm font-medium mb-6">
+            <span className="inline-block px-4 py-2 bg-info/10 border border-info/30 rounded-full text-info text-sm font-medium mb-6">
               SaaS Innovation & Development
             </span>
             <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 md:mb-8">
@@ -214,24 +214,24 @@ export default function CustomSaaSPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="card p-6 md:p-8 hover:border-blue-400/50 group"
+                className="card p-6 md:p-8 hover:border-info/50 group"
               >
                 <div className="flex items-start justify-between mb-6 gap-4">
                   <div className="flex items-center gap-3 md:gap-4 min-w-0">
-                    <div className="w-12 h-12 bg-blue-400/10 rounded-xl flex items-center justify-center text-xl md:text-2xl flex-shrink-0">
+                    <div className="w-12 h-12 bg-info/10 rounded-xl flex items-center justify-center text-xl md:text-2xl flex-shrink-0">
                       {app.icon}
                     </div>
                     <div className="min-w-0">
-                      <h3 className="font-display text-lg md:text-xl font-bold group-hover:text-blue-400 transition-colors">
+                      <h3 className="font-display text-lg md:text-xl font-bold group-hover:text-info transition-colors">
                         {app.title}
                       </h3>
                       <span className="text-sm text-muted-dark">{app.category}</span>
                     </div>
                   </div>
                   <span className={`px-3 py-1 text-xs font-medium rounded-full flex-shrink-0 ${
-                    app.status === 'Live' ? 'bg-green-400/10 text-green-400' :
-                    app.status === 'Beta' ? 'bg-yellow-400/10 text-yellow-400' :
-                    'bg-blue-400/10 text-blue-400'
+                    app.status === 'Live' ? 'bg-success/10 text-success' :
+                    app.status === 'Beta' ? 'bg-warning/10 text-warning' :
+                    'bg-info/10 text-info'
                   }`}>
                     {app.status}
                   </span>
@@ -308,13 +308,13 @@ export default function CustomSaaSPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="card p-6 md:p-8 hover:border-blue-400/50 group"
+                className="card p-6 md:p-8 hover:border-info/50 group"
               >
                 <div className="text-center mb-6 md:mb-8">
-                  <div className="w-14 h-14 md:w-16 md:h-16 bg-blue-400/10 rounded-2xl mx-auto mb-4 flex items-center justify-center text-2xl md:text-3xl">
+                  <div className="w-14 h-14 md:w-16 md:h-16 bg-info/10 rounded-2xl mx-auto mb-4 flex items-center justify-center text-2xl md:text-3xl">
                     {service.icon}
                   </div>
-                  <h3 className="font-display text-xl md:text-2xl font-bold mb-4 group-hover:text-blue-400 transition-colors">
+                  <h3 className="font-display text-xl md:text-2xl font-bold mb-4 group-hover:text-info transition-colors">
                     {service.title}
                   </h3>
                   <p className="text-muted leading-relaxed mb-6">{service.description}</p>
@@ -323,7 +323,7 @@ export default function CustomSaaSPage() {
                 <div className="space-y-6">
                   <div className="flex justify-between items-center">
                     <span className="text-sm text-muted-dark">Timeline:</span>
-                    <span className="text-blue-400 font-medium">{service.timeline}</span>
+                    <span className="text-info font-medium">{service.timeline}</span>
                   </div>
 
                   <div>
@@ -331,7 +331,7 @@ export default function CustomSaaSPage() {
                     <div className="space-y-2">
                       {service.process.map((step, j) => (
                         <div key={j} className="flex items-center gap-2">
-                          <div className="w-6 h-6 bg-blue-400/10 rounded-full flex items-center justify-center text-xs font-bold text-blue-400">
+                          <div className="w-6 h-6 bg-info/10 rounded-full flex items-center justify-center text-xs font-bold text-info">
                             {j + 1}
                           </div>
                           <span className="text-sm text-muted">{step}</span>
@@ -424,7 +424,7 @@ export default function CustomSaaSPage() {
                         <span className={`px-3 py-1 text-xs font-medium rounded-full ${
                           study.type === 'Internal Project' 
                             ? 'bg-purple-400/10 text-purple-400' 
-                            : 'bg-blue-400/10 text-blue-400'
+                            : 'bg-info/10 text-info'
                         }`}>
                           {study.type}
                         </span>
@@ -449,7 +449,7 @@ export default function CustomSaaSPage() {
                       <div className="grid sm:grid-cols-2 gap-4 md:gap-6">
                         <div>
                           <span className="text-xs uppercase tracking-wider text-muted-dark">Timeline</span>
-                          <p className="text-blue-400 font-medium mt-1">{study.timeline}</p>
+                          <p className="text-info font-medium mt-1">{study.timeline}</p>
                         </div>
                         <div>
                           <span className="text-xs uppercase tracking-wider text-muted-dark">Status</span>
@@ -478,7 +478,7 @@ export default function CustomSaaSPage() {
                     <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-1 gap-4 lg:gap-6">
                       {study.results.map((result, j) => (
                         <div key={j} className="text-center">
-                          <div className="font-display text-2xl md:text-3xl font-bold text-blue-400 mb-2">
+                          <div className="font-display text-2xl md:text-3xl font-bold text-info mb-2">
                             {result.metric}
                           </div>
                           <p className="text-muted text-sm">{result.description}</p>
@@ -519,12 +519,12 @@ export default function CustomSaaSPage() {
                 <div className="grid lg:grid-cols-4 gap-4 md:gap-6">
                   <div>
                     <div className="flex items-center gap-3 md:gap-4 mb-4">
-                      <div className="w-10 h-10 md:w-12 md:h-12 bg-blue-400/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <span className="font-display font-bold text-blue-400 text-sm md:text-base">{i + 1}</span>
+                      <div className="w-10 h-10 md:w-12 md:h-12 bg-info/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <span className="font-display font-bold text-info text-sm md:text-base">{i + 1}</span>
                       </div>
                       <div className="min-w-0">
                         <h3 className="font-display text-lg md:text-xl font-bold">{phase.phase}</h3>
-                        <span className="text-blue-400 text-sm font-medium">{phase.duration}</span>
+                        <span className="text-info text-sm font-medium">{phase.duration}</span>
                       </div>
                     </div>
                   </div>
@@ -534,7 +534,7 @@ export default function CustomSaaSPage() {
                     <div className="space-y-1">
                       {phase.activities.map((activity, j) => (
                         <div key={j} className="flex items-center gap-2">
-                          <div className="w-1.5 h-1.5 bg-blue-400 rounded-full" />
+                          <div className="w-1.5 h-1.5 bg-info rounded-full" />
                           <span className="text-sm text-muted">{activity}</span>
                         </div>
                       ))}

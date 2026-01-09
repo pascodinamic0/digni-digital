@@ -298,7 +298,7 @@ export default function AboutPage() {
               transition={{ delay: 0.2 }}
               className="card p-8"
             >
-              <div className="w-16 h-16 bg-blue-500/10 rounded-2xl flex items-center justify-center text-3xl mb-6">
+              <div className="w-16 h-16 bg-info/10 rounded-2xl flex items-center justify-center text-3xl mb-6">
                 📈
               </div>
               <h3 className="font-display text-2xl font-bold mb-4">Continuous Optimization</h3>
@@ -482,18 +482,18 @@ export default function AboutPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="card p-8 text-center group hover:border-blue-400/50"
+              className="card p-8 text-center group hover:border-info/50"
             >
-              <div className="w-16 h-16 bg-blue-400/10 rounded-2xl flex items-center justify-center text-3xl mx-auto mb-6">
+              <div className="w-16 h-16 bg-info/10 rounded-2xl flex items-center justify-center text-3xl mx-auto mb-6">
                 ⚙️
               </div>
-              <h3 className="font-display text-xl font-bold mb-4 group-hover:text-blue-400 transition-colors">
+              <h3 className="font-display text-xl font-bold mb-4 group-hover:text-info transition-colors">
                 Custom SaaS
               </h3>
               <p className="text-muted text-sm leading-relaxed mb-6">
                 Build custom software solutions tailored to your unique business challenges, from concept to deployment with ongoing optimization.
               </p>
-              <Link href="/custom-saas" className="text-blue-400 hover:text-blue-300 font-medium text-sm">
+              <Link href="/custom-saas" className="text-info hover:text-info-light font-medium text-sm">
                 Learn More →
               </Link>
             </motion.div>

@@ -231,27 +231,27 @@ function WhatWereFightingFor() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.15 }}
-              className="card p-8 hover:border-red-500/50 group relative overflow-hidden"
+              className="card p-8 hover:border-destructive/50 group relative overflow-hidden"
             >
               {/* Gradient background accent */}
-              <div className="absolute top-0 right-0 w-32 h-32 bg-red-500/5 rounded-full blur-3xl" />
+              <div className="absolute top-0 right-0 w-32 h-32 bg-destructive/5 rounded-full blur-3xl" />
               
               <div className="relative">
                 {/* Stat - Prominent and Bold */}
                 <div className="mb-6">
                   <div className="flex items-baseline gap-2 mb-2">
-                    <span className="font-display text-5xl md:text-6xl font-bold text-red-400 leading-none">
+                    <span className="font-display text-5xl md:text-6xl font-bold text-destructive leading-none">
                       {challenge.stat}
                     </span>
                   </div>
-                  <p className="text-red-400/80 text-sm font-medium uppercase tracking-wider">
+                  <p className="text-destructive/80 text-sm font-medium uppercase tracking-wider">
                     {challenge.statLabel}
                   </p>
                 </div>
 
                 {/* Icon and Title */}
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 bg-red-500/10 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 group-hover:scale-110 transition-transform">
+                  <div className="w-12 h-12 bg-destructive/10 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 group-hover:scale-110 transition-transform">
                     {challenge.icon}
                   </div>
                   <h3 className="font-display text-xl font-bold text-white">
@@ -260,11 +260,11 @@ function WhatWereFightingFor() {
                 </div>
 
                 {/* Problem */}
-                <div className="mb-4 pb-4 border-b border-white/10">
+                <div className="mb-4 pb-4 border-b border-light">
                   <span className="text-xs uppercase tracking-wider text-muted-dark block mb-2">
                     The Problem
                   </span>
-                  <p className="text-red-400 font-semibold text-sm leading-relaxed">
+                  <p className="text-destructive font-semibold text-sm leading-relaxed">
                     {challenge.problem}
                   </p>
                 </div>
@@ -280,7 +280,7 @@ function WhatWereFightingFor() {
                 </div>
 
                 {/* Our Fight */}
-                <div className="pt-4 border-t border-white/10">
+                <div className="pt-4 border-t border-light">
                   <span className="text-xs uppercase tracking-wider text-accent block mb-2">
                     Our Fight
                   </span>
@@ -332,7 +332,7 @@ function WhatWeDo() {
       outcomes: ['Scalable architecture', 'Enterprise grade security', 'Ongoing optimization', 'Full ownership of code'],
       icon: '⚙️',
       link: '/custom-saas',
-      color: 'blue-400',
+      color: 'info',
       primaryCta: 'Explore Process',
       secondaryCta: 'Discuss Your Project'
     }
@@ -368,14 +368,14 @@ function WhatWeDo() {
                 <div className={`w-14 h-14 rounded-xl flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform ${
                   service.color === 'accent' ? 'bg-accent/10' :
                   service.color === 'success' ? 'bg-success/10' :
-                  'bg-blue-400/10'
+                  'bg-info/10'
                 }`}>
                   {service.icon}
                 </div>
                 <span className={`text-xs font-semibold uppercase tracking-wider ${
                   service.color === 'accent' ? 'text-accent' :
                   service.color === 'success' ? 'text-success' :
-                  'text-blue-400'
+                  'text-info'
                 }`}>
                   {service.subtitle}
                 </span>
@@ -396,7 +396,7 @@ function WhatWeDo() {
                     <div className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${
                       service.color === 'accent' ? 'bg-accent' :
                       service.color === 'success' ? 'bg-success' :
-                      'bg-blue-400'
+                      'bg-info'
                     }`} />
                     <span className="text-sm text-muted">{outcome}</span>
                   </div>
@@ -556,7 +556,7 @@ function WhatWeDo() {
                   href="https://calendly.com/pascal-digny/consultation-meeting"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group inline-flex items-center gap-3 bg-accent hover:bg-accent-light text-background font-semibold px-8 py-4 rounded-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_50px_rgba(212,168,83,0.4)] text-lg"
+                  className="group inline-flex items-center gap-3 bg-accent hover:bg-accent-light text-background font-semibold px-8 py-4 rounded-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl text-lg"
                 >
                   <span>Book a Strategy Call</span>
                   <svg
@@ -1022,7 +1022,7 @@ function CTASection() {
                   href="https://calendly.com/pascal-digny/consultation-meeting"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group relative inline-flex items-center gap-3 bg-accent hover:bg-accent-light text-background font-semibold px-8 py-4 rounded-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_50px_rgba(212,168,83,0.4)]"
+                  className="group relative inline-flex items-center gap-3 bg-accent hover:bg-accent-light text-background font-semibold px-8 py-4 rounded-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
                 >
                   <span className="text-lg">Book Your Free Consultation</span>
                   <svg

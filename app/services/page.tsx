@@ -64,7 +64,7 @@ const services = [
     timeline: '8-16 weeks',
     link: '/custom-saas',
     icon: '⚙️',
-    color: 'blue-400',
+    color: 'info',
     outcomes: ['Scalable architecture', 'Enterprise grade security', 'Ongoing optimization']
   },
 ]
@@ -116,14 +116,14 @@ export default function ServicesPage() {
                   <div className={`w-14 h-14 rounded-xl flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform ${
                     service.color === 'accent' ? 'bg-accent/10' :
                     service.color === 'success' ? 'bg-success/10' :
-                    'bg-blue-400/10'
+                    'bg-info/10'
                   }`}>
                     {service.icon}
                   </div>
                   <span className={`text-xs font-semibold uppercase tracking-wider ${
                     service.color === 'accent' ? 'text-accent' :
                     service.color === 'success' ? 'text-success' :
-                    'text-blue-400'
+                    'text-info'
                   }`}>
                     {service.subtitle}
                   </span>
@@ -146,7 +146,7 @@ export default function ServicesPage() {
                       <div className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${
                         service.color === 'accent' ? 'bg-accent' :
                         service.color === 'success' ? 'bg-success' :
-                        'bg-blue-400'
+                        'bg-info'
                       }`} />
                       <span className="text-sm text-muted">{outcome}</span>
                     </div>
@@ -154,7 +154,7 @@ export default function ServicesPage() {
                 </div>
 
                 {/* Features Section */}
-                <div className="mb-6 pt-6 border-t border-white/10">
+                <div className="mb-6 pt-6 border-t border-light">
                   <h4 className="font-semibold text-sm mb-3 uppercase tracking-wider text-muted-dark">
                     Key Features
                   </h4>
@@ -164,7 +164,7 @@ export default function ServicesPage() {
                         <div className={`w-1 h-1 rounded-full mt-2 flex-shrink-0 ${
                           service.color === 'accent' ? 'bg-accent' :
                           service.color === 'success' ? 'bg-success' :
-                          'bg-blue-400'
+                          'bg-info'
                         }`} />
                         <span className="text-xs text-muted leading-relaxed">{feature}</span>
                       </div>
@@ -204,7 +204,7 @@ export default function ServicesPage() {
                     className={`btn-primary text-center ${
                       service.color === 'accent' ? '' :
                       service.color === 'success' ? 'bg-success hover:bg-success/90' :
-                      'bg-blue-400 hover:bg-blue-400/90'
+                      'bg-info hover:bg-info/90'
                     }`}
                   >
                     Learn More

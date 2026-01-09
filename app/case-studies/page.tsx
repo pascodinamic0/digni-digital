@@ -135,10 +135,10 @@ export default function CaseStudiesPage() {
     switch (type) {
       case 'revenue': return 'text-success'
       case 'improvement': return 'text-accent'
-      case 'efficiency': return 'text-blue-400'
-      case 'satisfaction': return 'text-purple-400'
+      case 'efficiency': return 'text-info'
+      case 'satisfaction': return 'text-purple'
       case 'volume': return 'text-orange-400'
-      case 'growth': return 'text-green-400'
+      case 'growth': return 'text-success'
       default: return 'text-accent'
     }
   }
