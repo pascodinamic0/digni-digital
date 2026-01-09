@@ -308,9 +308,9 @@ const ConversationMockups = () => {
                     <motion.button
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
-                      className="w-14 h-14 rounded-full bg-red-500/20 border-2 border-red-500/40 flex items-center justify-center hover:bg-red-500/30 transition-colors"
+                      className="w-14 h-14 rounded-full bg-destructive/20 border-2 border-red-500/40 flex items-center justify-center hover:bg-destructive/30 transition-colors"
                     >
-                      <svg className="w-6 h-6 text-red-400" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <svg className="w-6 h-6 text-destructive" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                       </svg>
                     </motion.button>

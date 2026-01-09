@@ -102,10 +102,10 @@ const BusinessTimeline = () => {
   const getColorClasses = (color: ColorType, isActive = false) => {
     const colors = {
       blue: {
-        bg: isActive ? 'bg-blue-500' : 'bg-blue-500/20',
-        text: 'text-blue-400',
-        border: 'border-blue-400/30',
-        glow: 'shadow-blue-500/20'
+        bg: isActive ? 'bg-info' : 'bg-info/20',
+        text: 'text-info',
+        border: 'border-info/30',
+        glow: 'shadow-accent/20'
       },
       accent: {
         bg: isActive ? 'bg-accent' : 'bg-accent/20',
@@ -120,10 +120,10 @@ const BusinessTimeline = () => {
         glow: 'shadow-success/20'
       },
       purple: {
-        bg: isActive ? 'bg-purple-500' : 'bg-purple-500/20',
-        text: 'text-purple-400',
-        border: 'border-purple-400/30',
-        glow: 'shadow-purple-500/20'
+        bg: isActive ? 'bg-purple' : 'bg-purple/20',
+        text: 'text-purple',
+        border: 'border-purple/30',
+        glow: 'shadow-accent/20'
       },
       orange: {
         bg: isActive ? 'bg-orange-500' : 'bg-orange-500/20',
@@ -176,7 +176,7 @@ const BusinessTimeline = () => {
             {/* Progress Line */}
             <div className="absolute top-16 left-0 right-0 h-0.5 bg-surface-light">
               <motion.div
-                className="h-full bg-gradient-to-r from-blue-500 via-accent via-success via-purple-500 to-orange-500"
+                className="h-full bg-gradient-to-r from-blue-500 via-accent via-success via-purple to-warning"
                 initial={{ width: '0%' }}
                 animate={{ width: `${((activeStep + 1) / steps.length) * 100}%` }}
                 transition={{ duration: 0.8, ease: 'easeInOut' }}
@@ -374,7 +374,7 @@ const BusinessTimeline = () => {
             <p className="text-muted text-sm">Lead-to-Appointment Rate</p>
           </div>
           <div className="text-center">
-            <div className="text-3xl font-display font-bold text-blue-400 mb-2">24/7</div>
+            <div className="text-3xl font-display font-bold text-info mb-2">24/7</div>
             <p className="text-muted text-sm">Never Miss Another Lead</p>
           </div>
         </motion.div>
