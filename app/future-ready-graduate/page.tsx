@@ -11,15 +11,6 @@ import VideoThumbnail from '../components/VideoThumbnail'
 
 export default function FutureReadyGraduatePage() {
   const [selectedVideo, setSelectedVideo] = useState<{ src: string; title: string; speaker: string; description: string } | null>(null)
-  const [showEarlyAccessModal, setShowEarlyAccessModal] = useState(false)
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: ''
-  })
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitSuccess, setSubmitSuccess] = useState(false)
 
   const trimesterPlan = [
     {
@@ -978,28 +969,6 @@ export default function FutureReadyGraduatePage() {
 
           {/* Two Paths Visual Layout */}
           <div className="relative">
-            {/* Visual Divider with Arrow */}
-            <div className="hidden lg:block absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
-              <div className="flex flex-col items-center">
-                <div className="w-px h-16 bg-gradient-to-b from-transparent via-accent/50 to-transparent" />
-                <div className="w-12 h-12 rounded-full bg-surface border-2 border-accent/50 flex items-center justify-center">
-                  <svg className="w-6 h-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </div>
-                <div className="w-px h-16 bg-gradient-to-t from-transparent via-accent/50 to-transparent" />
-              </div>
-            </div>
-
-            {/* Mobile: Stacked with Arrow */}
-            <div className="lg:hidden mb-8 flex flex-col items-center">
-              <div className="w-12 h-12 rounded-full bg-surface border-2 border-accent/50 flex items-center justify-center mb-4">
-                <svg className="w-6 h-6 text-accent rotate-90" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </div>
-            </div>
-
             {/* Two Column Grid */}
             <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
               {pricing.map((plan, i) => (
@@ -1064,12 +1033,14 @@ export default function FutureReadyGraduatePage() {
 
                   {/* CTA */}
                   {plan.comingSoon ? (
-                    <button
-                      onClick={() => setShowEarlyAccessModal(true)}
-                      className="btn-primary w-full text-center py-3"
+                    <a
+                      href="https://forms.gle/jEZAAVf7u8ba1pEK9"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-primary w-full text-center py-3 block"
                     >
                       Reserve Early Access
-                    </button>
+                    </a>
                   ) : (
                     <a
                       href="https://calendly.com/pascal-digny/consultation-meeting"
@@ -1111,153 +1082,6 @@ export default function FutureReadyGraduatePage() {
           </a>
         </div>
       </AnimatedSection>
-
-      {/* Early Access Reservation Modal */}
-      {showEarlyAccessModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            className="relative bg-surface border border-accent/30 rounded-2xl max-w-md w-full p-8 shadow-2xl"
-          >
-            {/* Close Button */}
-            <button
-              onClick={() => {
-                setShowEarlyAccessModal(false)
-                setSubmitSuccess(false)
-                setFormData({ name: '', email: '', phone: '', message: '' })
-              }}
-              className="absolute top-4 right-4 text-muted hover:text-white transition-colors"
-            >
-              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-
-            {!submitSuccess ? (
-              <>
-                <div className="text-center mb-6">
-                  <div className="w-16 h-16 bg-accent/20 rounded-2xl mx-auto mb-4 flex items-center justify-center text-3xl">
-                    🎓
-                  </div>
-                  <h3 className="font-display text-2xl font-bold mb-2">
-                    Reserve Early Access
-                  </h3>
-                  <p className="text-muted text-sm">
-                    Be the first to know when our online course launches. Get exclusive early access and special pricing.
-                  </p>
-                </div>
-
-                <form
-                  onSubmit={async (e) => {
-                    e.preventDefault()
-                    setIsSubmitting(true)
-                    
-                    // Simulate form submission (replace with actual API call)
-                    await new Promise(resolve => setTimeout(resolve, 1000))
-                    
-                    setIsSubmitting(false)
-                    setSubmitSuccess(true)
-                    
-                    // Here you would send the data to your backend/API
-                    console.log('Early Access Reservation:', formData)
-                  }}
-                  className="space-y-4"
-                >
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-white mb-2">
-                      Full Name *
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      required
-                      value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full px-4 py-3 bg-surface-light border border-light rounded-lg text-white placeholder-muted focus:outline-none focus:border-accent transition-colors"
-                      placeholder="John Doe"
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-white mb-2">
-                      Email Address *
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      required
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full px-4 py-3 bg-surface-light border border-light rounded-lg text-white placeholder-muted focus:outline-none focus:border-accent transition-colors"
-                      placeholder="john@example.com"
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-white mb-2">
-                      Phone Number *
-                    </label>
-                    <input
-                      type="tel"
-                      id="phone"
-                      required
-                      value={formData.phone}
-                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className="w-full px-4 py-3 bg-surface-light border border-light rounded-lg text-white placeholder-muted focus:outline-none focus:border-accent transition-colors"
-                      placeholder="+1 (555) 123-4567"
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-white mb-2">
-                      Message (Optional)
-                    </label>
-                    <textarea
-                      id="message"
-                      rows={3}
-                      value={formData.message}
-                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      className="w-full px-4 py-3 bg-surface-light border border-light rounded-lg text-white placeholder-muted focus:outline-none focus:border-accent transition-colors resize-none"
-                      placeholder="Tell us why you're interested in the course..."
-                    />
-                  </div>
-
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="btn-primary w-full py-3 text-center disabled:opacity-50 disabled:cursor-not-allowed"
-                  >
-                    {isSubmitting ? 'Submitting...' : 'Reserve My Spot'}
-                  </button>
-                </form>
-              </>
-            ) : (
-              <div className="text-center">
-                <div className="w-16 h-16 bg-success/20 rounded-2xl mx-auto mb-4 flex items-center justify-center text-3xl">
-                  ✅
-                </div>
-                <h3 className="font-display text-2xl font-bold mb-2 text-success">
-                  Reservation Confirmed!
-                </h3>
-                <p className="text-muted text-sm mb-6">
-                  We've received your early access request. We'll notify you as soon as the course is available with exclusive pricing.
-                </p>
-                <button
-                  onClick={() => {
-                    setShowEarlyAccessModal(false)
-                    setSubmitSuccess(false)
-                    setFormData({ name: '', email: '', phone: '', message: '' })
-                  }}
-                  className="btn-primary w-full py-3"
-                >
-                  Close
-                </button>
-              </div>
-            )}
-          </motion.div>
-        </div>
-      )}
 
       <VideoModal
         isOpen={selectedVideo !== null}
