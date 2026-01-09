@@ -155,7 +155,7 @@ const UnifiedInbox = () => {
                 </div>
                 <div>
                   <h3 className="font-display text-xl font-bold">Conversations</h3>
-                  <p className="text-muted text-sm">AI Receptionist Dashboard</p>
+                  <p className="text-muted text-sm">AI Employee Dashboard</p>
                 </div>
               </div>
               <div className="flex items-center gap-4">

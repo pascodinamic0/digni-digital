@@ -446,10 +446,10 @@ export default function AboutPage() {
                 🤖
               </div>
               <h3 className="font-display text-xl font-bold mb-4 group-hover:text-accent transition-colors">
-                AI Receptionist
+                AI Employee
               </h3>
               <p className="text-muted text-sm leading-relaxed mb-6">
-                Never miss another lead with our 24/7 AI-powered reception system that handles calls, qualifies prospects, and books appointments automatically.
+                Never miss another lead with our 24/7 AI-powered employee that handles calls, qualifies prospects, and books appointments automatically.
               </p>
               <Link href="/ai-receptionist" className="text-accent hover:text-accent-light font-medium text-sm">
                 Learn More →

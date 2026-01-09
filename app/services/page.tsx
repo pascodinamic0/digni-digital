@@ -9,9 +9,9 @@ import AnimatedSection from '../components/AnimatedSection'
 const services = [
   {
     id: 'ai-receptionist',
-    title: 'AI Receptionist System',
+    title: 'AI Employee System',
     subtitle: 'Never Miss a Lead',
-    description: 'Deploy intelligent reception systems that capture every lead, qualify prospects, and book appointments 24/7 — so you never miss another opportunity.',
+    description: 'Deploy intelligent AI employee systems that capture every lead, qualify prospects, and book appointments 24/7 — so you never miss another opportunity.',
     features: [
       '24/7 Call Handling',
       'Intelligent Lead Qualification',

@@ -60,10 +60,10 @@ export default function AIReceptionistPage() {
 
   const pricing = [
     {
-      name: 'AI Receptionist Pro',
+      name: 'AI Employee Pro',
       price: '$449',
       period: '/month',
-      description: 'Complete AI receptionist solution for your business',
+      description: 'Complete AI employee solution for your business',
       features: [
         'Unlimited calls & messages',
         'All communication channels',
@@ -84,7 +84,7 @@ export default function AIReceptionistPage() {
     company: 'Regional Medical Center',
     industry: 'Healthcare',
     challenge: 'Missing 40% of after hours calls, losing $80k monthly in potential revenue from missed appointments and consultations.',
-    solution: 'Deployed AI Receptionist with medical-specific training, HIPAA compliance, and integration with their existing patient management system.',
+    solution: 'Deployed AI Employee with medical-specific training, HIPAA compliance, and integration with their existing patient management system.',
     results: [
       { metric: '100%', description: 'Call capture rate (up from 60%)' },
       { metric: '$240k', description: 'Additional monthly revenue' },
@@ -107,14 +107,14 @@ export default function AIReceptionistPage() {
             className="text-center mb-16"
           >
             <span className="inline-block px-4 py-2 bg-accent/10 border border-accent/30 rounded-full text-accent text-sm font-medium mb-6">
-              AI Receptionist Systems
+              AI Employee Systems
             </span>
             <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-8">
               Never Miss Another<br />
               <span className="gradient-text">Lead Again</span>
             </h1>
             <p className="text-xl text-muted max-w-3xl mx-auto leading-relaxed mb-10">
-              Deploy intelligent reception systems that capture every opportunity, qualify prospects, 
+              Deploy intelligent AI employees that capture every opportunity, qualify prospects, 
               and book appointments 24/7 — so you can focus on serving customers instead of chasing them.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -271,7 +271,7 @@ export default function AIReceptionistPage() {
               <span className="gradient-text">Everything Included</span>
             </h2>
             <p className="text-muted text-lg">
-              Complete AI receptionist solution with all features included.
+              Complete AI employee solution with all features included.
             </p>
           </div>
 
@@ -332,7 +332,7 @@ export default function AIReceptionistPage() {
             Ready to Stop Missing Leads?
           </h2>
           <p className="text-muted text-lg mb-8">
-            See how AI Receptionist can transform your business in a live demo. 
+            See how AI Employee can transform your business in a live demo. 
             No commitment required.
           </p>
           <a
