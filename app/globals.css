@@ -402,6 +402,15 @@ body {
 }
 
 /* Tailwind color utilities */
+/* 3D Perspective utilities */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
 @layer utilities {
   .text-muted {
     color: var(--muted);

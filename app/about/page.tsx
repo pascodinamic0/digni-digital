@@ -6,6 +6,8 @@ import Link from 'next/link'
 import Navigation from '../components/Navigation'
 import Footer from '../components/Footer'
 import AnimatedSection from '../components/AnimatedSection'
+import ScrollIndicator from '../components/ScrollIndicator'
+import RotatingCards from '../components/RotatingCards'
 
 // Animated Counter Component
 function Counter({ end, suffix = '' }: { end: number; suffix?: string }) {
@@ -154,6 +156,11 @@ export default function AboutPage() {
               We democratize access to opportunity through technology that serves humanity first. Founded in 2019, we help small businesses capture every lead and ensure students graduate with job ready skills.
             </p>
           </motion.div>
+        </div>
+        
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
+          <ScrollIndicator direction="down" />
         </div>
       </section>
 
@@ -316,8 +323,8 @@ export default function AboutPage() {
         </div>
       </AnimatedSection>
 
-      {/* Our Values */}
-      <AnimatedSection className="py-24 bg-surface">
+      {/* Our Values - Rotating Cards */}
+      <AnimatedSection className="py-24 bg-surface relative">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">
@@ -326,22 +333,23 @@ export default function AboutPage() {
             <p className="text-muted text-lg">The principles that guide everything we do</p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {values.map((value, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="card p-8 text-center"
-              >
-                <div className="text-4xl mb-4">{value.icon}</div>
-                <h3 className="font-display text-xl font-bold mb-4">{value.title}</h3>
-                <p className="text-muted text-sm leading-relaxed">{value.description}</p>
-              </motion.div>
-            ))}
+          {/* Convert values to rotating cards format */}
+          <div className="max-w-4xl mx-auto">
+            <RotatingCards 
+              cards={values.map(v => ({
+                title: v.title,
+                description: v.description,
+                icon: v.icon
+              }))}
+              autoRotate={true}
+              rotationInterval={4500}
+            />
           </div>
+        </div>
+        
+        {/* Scroll Indicator */}
+        <div className="flex justify-center mt-12">
+          <ScrollIndicator direction="down" />
         </div>
       </AnimatedSection>
 

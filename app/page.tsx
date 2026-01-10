@@ -6,6 +6,8 @@ import Link from 'next/link'
 import Navigation from './components/Navigation'
 import Footer from './components/Footer'
 import AnimatedSection from './components/AnimatedSection'
+import ScrollIndicator from './components/ScrollIndicator'
+import RotatingCards from './components/RotatingCards'
 
 // Hero Section
 function Hero() {
@@ -46,22 +48,8 @@ function Hero() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          className="flex flex-col sm:flex-row gap-4 mb-16"
-        >
-          <Link href="/about" className="btn-primary">
-            Our Story
-          </Link>
-          <Link href="#what-we-do" className="btn-secondary">
-            What We Do
-          </Link>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1 }}
-          className="flex flex-wrap gap-8"
+          transition={{ duration: 0.8, delay: 0.7 }}
+          className="flex flex-wrap gap-8 mb-10"
         >
           {[
             { value: '150+', label: 'Businesses Transformed' },
@@ -75,8 +63,26 @@ function Hero() {
             </div>
           ))}
         </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
+          className="flex flex-col sm:flex-row gap-4 mb-16"
+        >
+          <Link href="/about" className="btn-primary">
+            Our Story
+          </Link>
+          <Link href="#what-we-do" className="btn-secondary">
+            What We Do
+          </Link>
+        </motion.div>
       </div>
 
+      {/* Scroll Indicator */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
+        <ScrollIndicator direction="down" />
+      </div>
     </section>
   )
 }
@@ -292,6 +298,11 @@ function WhatWereFightingFor() {
             </motion.div>
           ))}
         </div>
+      </div>
+      
+      {/* Scroll Indicator */}
+      <div className="flex justify-center mt-12">
+        <ScrollIndicator direction="down" />
       </div>
     </AnimatedSection>
   )
@@ -687,6 +698,11 @@ function Products() {
             View detailed product information →
           </Link>
         </motion.div>
+        
+        {/* Scroll Indicator */}
+        <div className="flex justify-center mt-12">
+          <ScrollIndicator direction="down" />
+        </div>
       </div>
     </AnimatedSection>
   )
