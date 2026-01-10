@@ -73,8 +73,8 @@ export default function Navigation() {
         <div className="flex items-center justify-between">
           <Link href="/" className="flex items-center gap-3 group">
             <div className="w-10 h-10 relative flex items-center justify-center">
-              <div className="absolute w-5 h-7 bg-accent/90 transform -skew-x-12 -translate-x-0.5 group-hover:skew-x-0 transition-transform duration-300" />
-              <div className="absolute w-5 h-7 bg-accent/40 transform skew-x-12 translate-x-0.5 group-hover:skew-x-0 transition-transform duration-300" />
+              <div className="absolute w-5 h-7 bg-accent transform -skew-x-12 -translate-x-0.5 group-hover:skew-x-0 transition-transform duration-300 rounded-sm" style={{ opacity: 0.9 }} />
+              <div className="absolute w-5 h-7 bg-accent transform skew-x-12 translate-x-0.5 group-hover:skew-x-0 transition-transform duration-300 rounded-sm" style={{ opacity: 0.4 }} />
             </div>
             <span className="font-display font-semibold text-xl">Digni Digital LLC</span>
           </Link>
