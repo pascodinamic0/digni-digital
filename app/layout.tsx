@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import { ThemeProvider } from './components/ThemeProvider'
 
 export const metadata: Metadata = {
   title: {
@@ -14,6 +15,11 @@ export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://dignidigital.com'),
   alternates: {
     canonical: '/',
+  },
+  icons: {
+    icon: '/Favicon.png',
+    shortcut: '/Favicon.png',
+    apple: '/Favicon.png',
   },
   openGraph: {
     title: 'Digni Digital | Technology That Serves Humanity',
@@ -48,8 +54,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <div className="grain-overlay" />
-        {children}
+        <ThemeProvider>
+          <div className="grain-overlay" />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   )

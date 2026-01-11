@@ -299,7 +299,7 @@ export default function FutureReadyGraduatePage() {
                   
                   <div>
                     <span className="text-xs uppercase tracking-wider text-muted-dark block mb-2">Focus Area</span>
-                    <p className="text-white font-semibold">{trimester.focus}</p>
+                    <p className="text font-semibold">{trimester.focus}</p>
                   </div>
 
                   <div>
@@ -336,15 +336,15 @@ export default function FutureReadyGraduatePage() {
               </h3>
               <div className="grid md:grid-cols-3 gap-6 text-sm">
                 <div>
-                  <span className="font-semibold text-white block">Program Start</span>
+                  <span className="font-semibold text block">Program Start</span>
                   <span className="text-muted">Monday, September 1, 2025</span>
                 </div>
                 <div>
-                  <span className="font-semibold text-white block">Respects All Breaks</span>
+                  <span className="font-semibold text block">Respects All Breaks</span>
                   <span className="text-muted">October, Christmas, February & Easter</span>
                 </div>
                 <div>
-                  <span className="font-semibold text-white block">Graduation Ready</span>
+                  <span className="font-semibold text block">Graduation Ready</span>
                   <span className="text-muted">July 2-4, 2026</span>
                 </div>
               </div>
@@ -360,10 +360,8 @@ export default function FutureReadyGraduatePage() {
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           {/* Header */}
           <div className="text-center mb-20">
-            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-              Traditional Education Is <span className="text-destructive">Failing</span>
-              <br />
-              While Digital Economy Is <span className="text-success">Exploding</span>
+            <h2 className="font-display text-3xl md:text-4xl font-bold mb-6 leading-tight">
+              Education <span className="text-destructive">Fails</span>, Digital Economy <span className="text-success">Thrives</span>
             </h2>
             <p className="text-muted text-lg max-w-2xl mx-auto leading-relaxed">
               The digital revolution offers unprecedented opportunities. Position your students at the forefront of this transformation.
@@ -385,7 +383,7 @@ export default function FutureReadyGraduatePage() {
                     📉
                   </div>
                   <div>
-                    <h3 className="font-display text-2xl font-bold text-destructive">
+                    <h3 className="font-display text-2xl font-bold text">
                       Traditional Education Crisis
                     </h3>
                     <p className="text-muted text-sm">The harsh reality of conventional graduation outcomes</p>
@@ -423,7 +421,7 @@ export default function FutureReadyGraduatePage() {
                     📈
                   </div>
                   <div>
-                    <h3 className="font-display text-2xl font-bold text-success">
+                    <h3 className="font-display text-2xl font-bold text">
                       Digital Economy Boom
                     </h3>
                     <p className="text-muted text-sm">The explosive growth of remote digital opportunities</p>
@@ -470,7 +468,7 @@ export default function FutureReadyGraduatePage() {
                 <div className="w-16 h-16 bg-success/10 rounded-2xl mx-auto mb-4 flex items-center justify-center text-3xl">
                   🌍
                 </div>
-                <h4 className="font-semibold text-white mb-2">Global Access</h4>
+                <h4 className="font-semibold text mb-2">Global Access</h4>
                 <p className="text-muted text-sm leading-relaxed">Work with clients from anywhere in the world, not limited by local job market</p>
               </div>
 
@@ -478,7 +476,7 @@ export default function FutureReadyGraduatePage() {
                 <div className="w-16 h-16 bg-success/10 rounded-2xl mx-auto mb-4 flex items-center justify-center text-3xl">
                   💰
                 </div>
-                <h4 className="font-semibold text-white mb-2">Higher Earning</h4>
+                <h4 className="font-semibold text mb-2">Higher Earning</h4>
                 <p className="text-muted text-sm leading-relaxed">Digital skills command premium rates - often 2-5x local salaries</p>
               </div>
 
@@ -486,7 +484,7 @@ export default function FutureReadyGraduatePage() {
                 <div className="w-16 h-16 bg-success/10 rounded-2xl mx-auto mb-4 flex items-center justify-center text-3xl">
                   🏠
                 </div>
-                <h4 className="font-semibold text-white mb-2">Location Freedom</h4>
+                <h4 className="font-semibold text mb-2">Location Freedom</h4>
                 <p className="text-muted text-sm leading-relaxed">Work from home, coffee shops, or anywhere with internet connection</p>
               </div>
 
@@ -494,15 +492,9 @@ export default function FutureReadyGraduatePage() {
                 <div className="w-16 h-16 bg-success/10 rounded-2xl mx-auto mb-4 flex items-center justify-center text-3xl">
                   🚀
                 </div>
-                <h4 className="font-semibold text-white mb-2">Instant Start</h4>
+                <h4 className="font-semibold text mb-2">Instant Start</h4>
                 <p className="text-muted text-sm leading-relaxed">Begin earning immediately - no waiting for job applications or interviews</p>
               </div>
-            </div>
-
-            <div className="text-center pt-6 border-t border-white/10">
-              <p className="text-success font-semibold text-lg">
-                Your students can capitalize on this massive opportunity from anywhere in the world
-              </p>
             </div>
           </motion.div>
         </div>
@@ -681,15 +673,15 @@ export default function FutureReadyGraduatePage() {
               </p>
               <div className="grid md:grid-cols-3 gap-6 text-sm">
                 <div>
-                  <span className="font-semibold text-white block mb-2">🚀 Expert-Level Output</span>
+                  <span className="font-semibold text block mb-2">🚀 Expert-Level Output</span>
                   <span className="text-muted">AI tools like Cursor and Lovable.dev enable beginners to build professional-grade projects</span>
                 </div>
                 <div>
-                  <span className="font-semibold text-white block mb-2">💡 Future-Proof Skills</span>
+                  <span className="font-semibold text block mb-2">💡 Future-Proof Skills</span>
                   <span className="text-muted">Master the AI tools that define 2026 and beyond, not outdated methods</span>
                 </div>
                 <div>
-                  <span className="font-semibold text-white block mb-2">💰 Immediate Income</span>
+                  <span className="font-semibold text block mb-2">💰 Immediate Income</span>
                   <span className="text-muted">Start earning with real projects while learning, not after graduation</span>
                 </div>
               </div>
@@ -729,7 +721,7 @@ export default function FutureReadyGraduatePage() {
 
               <div className="space-y-6">
                 <div>
-                  <h4 className="font-semibold text-white mb-3 flex items-center gap-2">
+                  <h4 className="font-semibold text mb-3 flex items-center gap-2">
                     <div className="w-2 h-2 bg-info rounded-full" />
                     Students (Finalists)
                   </h4>
@@ -739,7 +731,7 @@ export default function FutureReadyGraduatePage() {
                 </div>
 
                   <div>
-                  <h4 className="font-semibold text-white mb-3 flex items-center gap-2">
+                  <h4 className="font-semibold text mb-3 flex items-center gap-2">
                     <div className="w-2 h-2 bg-info rounded-full" />
                     Computer Lab Facility
                   </h4>
@@ -749,7 +741,7 @@ export default function FutureReadyGraduatePage() {
                         </div>
 
                 <div>
-                  <h4 className="font-semibold text-white mb-3 flex items-center gap-2">
+                  <h4 className="font-semibold text mb-3 flex items-center gap-2">
                     <div className="w-2 h-2 bg-info rounded-full" />
                     Computing Equipment
                   </h4>
@@ -759,7 +751,7 @@ export default function FutureReadyGraduatePage() {
                   </div>
 
                   <div>
-                  <h4 className="font-semibold text-white mb-3 flex items-center gap-2">
+                  <h4 className="font-semibold text mb-3 flex items-center gap-2">
                     <div className="w-2 h-2 bg-info rounded-full" />
                     Program Integration
                   </h4>
@@ -788,7 +780,7 @@ export default function FutureReadyGraduatePage() {
 
               <div className="space-y-6">
                 <div>
-                  <h4 className="font-semibold text-white mb-3 flex items-center gap-2">
+                  <h4 className="font-semibold text mb-3 flex items-center gap-2">
                     <div className="w-2 h-2 bg-success rounded-full" />
                     Internet Connectivity
                   </h4>
@@ -798,7 +790,7 @@ export default function FutureReadyGraduatePage() {
                 </div>
 
                 <div>
-                  <h4 className="font-semibold text-white mb-3 flex items-center gap-2">
+                  <h4 className="font-semibold text mb-3 flex items-center gap-2">
                     <div className="w-2 h-2 bg-success rounded-full" />
                     Site Facilitator
                   </h4>
@@ -808,7 +800,7 @@ export default function FutureReadyGraduatePage() {
                 </div>
 
                 <div>
-                  <h4 className="font-semibold text-white mb-3 flex items-center gap-2">
+                  <h4 className="font-semibold text mb-3 flex items-center gap-2">
                     <div className="w-2 h-2 bg-success rounded-full" />
                     AI Tools & Subscriptions
                   </h4>
@@ -818,7 +810,7 @@ export default function FutureReadyGraduatePage() {
                 </div>
 
                 <div>
-                  <h4 className="font-semibold text-white mb-3 flex items-center gap-2">
+                  <h4 className="font-semibold text mb-3 flex items-center gap-2">
                     <div className="w-2 h-2 bg-success rounded-full" />
                     Complete Curriculum
                   </h4>
@@ -828,7 +820,7 @@ export default function FutureReadyGraduatePage() {
                 </div>
 
                 <div>
-                  <h4 className="font-semibold text-white mb-3 flex items-center gap-2">
+                  <h4 className="font-semibold text mb-3 flex items-center gap-2">
                     <div className="w-2 h-2 bg-success rounded-full" />
                     Ongoing Support
                   </h4>
@@ -854,15 +846,15 @@ export default function FutureReadyGraduatePage() {
               </h3>
               <div className="grid md:grid-cols-3 gap-6 text-sm">
                 <div>
-                  <span className="font-semibold text-white block mb-2">Student Performance</span>
+                  <span className="font-semibold text block mb-2">Student Performance</span>
                   <span className="text-muted">Their determination and commitment drive employment success</span>
                 </div>
                 <div>
-                  <span className="font-semibold text-white block mb-2">Mutual Commitment</span>
+                  <span className="font-semibold text block mb-2">Mutual Commitment</span>
                   <span className="text-muted">Both parties dedicated to student success and program completion</span>
                 </div>
                 <div>
-                  <span className="font-semibold text-white block mb-2">Continuous Support</span>
+                  <span className="font-semibold text block mb-2">Continuous Support</span>
                   <span className="text-muted">Ongoing collaboration throughout the academic year</span>
                 </div>
               </div>
@@ -894,7 +886,7 @@ export default function FutureReadyGraduatePage() {
                 <div className="font-display text-4xl md:text-5xl font-bold text-success mb-2">
                   {outcome.metric}
                 </div>
-                <p className="text-white font-semibold mb-1">{outcome.description}</p>
+                <p className="text font-semibold mb-1">{outcome.description}</p>
                 <p className="text-muted text-sm">{outcome.detail}</p>
               </motion.div>
             ))}
@@ -920,7 +912,7 @@ export default function FutureReadyGraduatePage() {
 
                   <div>
                     <span className="text-xs uppercase tracking-wider text-muted-dark">Implementation</span>
-                    <p className="text-white mt-2 leading-relaxed">{caseStudy.implementation}</p>
+                    <p className="text mt-2 leading-relaxed">{caseStudy.implementation}</p>
                   </div>
 
                   <div>
@@ -929,7 +921,7 @@ export default function FutureReadyGraduatePage() {
                   </div>
 
                   <div className="card p-6 bg-success/5 border border-success/20">
-                    <blockquote className="text-white italic leading-relaxed">
+                    <blockquote className="text italic leading-relaxed">
                       {caseStudy.testimonial}
                     </blockquote>
                   </div>
@@ -963,7 +955,7 @@ export default function FutureReadyGraduatePage() {
               <span className="gradient-text">Digital Success</span>
             </h2>
             <p className="text-muted text-lg max-w-2xl mx-auto">
-              Choose the path that fits your needs. <span className="text-white font-medium">No one gets left behind.</span>
+              Choose the path that fits your needs. <span className="text font-medium">No one gets left behind.</span>
             </p>
           </div>
 
@@ -1026,7 +1018,7 @@ export default function FutureReadyGraduatePage() {
                         <div className={`w-1.5 h-1.5 rounded-full flex-shrink-0 mt-2 ${
                           plan.audience === 'schools' ? 'bg-success' : 'bg-accent'
                         }`} />
-                        <span className="text-sm text-white leading-relaxed">{feature}</span>
+                        <span className="text-sm text leading-relaxed">{feature}</span>
                       </li>
                     ))}
                   </ul>
