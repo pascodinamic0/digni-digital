@@ -8,6 +8,7 @@ import Footer from './components/Footer'
 import AnimatedSection from './components/AnimatedSection'
 import ScrollIndicator from './components/ScrollIndicator'
 import RotatingCards from './components/RotatingCards'
+import { useTheme } from './components/ThemeProvider'
 
 // Hero Section
 function Hero() {
@@ -58,8 +59,8 @@ function Hero() {
           ].map((stat, i) => (
             <div key={i} className="flex items-center gap-3">
               <div className="w-2 h-2 bg-accent rounded-full" />
-              <span className="text-white font-semibold">{stat.value}</span>
-              {stat.label && <span className="text-muted">{stat.label}</span>}
+              <span className="text font-semibold">{stat.value}</span>
+              {stat.label && <span className="text font-semibold">{stat.label}</span>}
             </div>
           ))}
         </motion.div>
@@ -260,7 +261,7 @@ function WhatWereFightingFor() {
                   <div className="w-12 h-12 bg-destructive/10 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 group-hover:scale-110 transition-transform">
                     {challenge.icon}
                   </div>
-                  <h3 className="font-display text-xl font-bold text-white">
+                  <h3 className="font-display text-xl font-bold text-text">
                     {challenge.title}
                   </h3>
                 </div>
@@ -447,13 +448,7 @@ function WhatWeDo() {
             <div className="absolute inset-0 bg-gradient-to-br from-accent/20 via-accent/10 to-success/20 rounded-3xl blur-2xl opacity-50" />
             <div className="absolute inset-0 bg-gradient-to-br from-accent/15 to-success/15 rounded-3xl" />
             
-            {/* Decorative border */}
-            <div className="absolute inset-0 rounded-3xl border-2 border-accent/30" />
-            
-            <div className="relative card p-12 md:p-16 bg-gradient-to-br from-accent/10 via-surface to-success/10 border-2 border-accent/20">
-              {/* Decorative corner accents */}
-              <div className="absolute top-0 left-0 w-24 h-24 border-l-2 border-t-2 border-accent/40 rounded-tl-3xl" />
-              <div className="absolute bottom-0 right-0 w-24 h-24 border-r-2 border-b-2 border-success/40 rounded-br-3xl" />
+            <div className="relative p-12 md:p-16 bg-gradient-to-br from-accent/10 via-surface to-success/10 border-2 border-transparent hover:border-white transition-all duration-300 rounded-3xl">
               
               <div className="relative z-10">
                 {/* Dynamic animated lightbulb */}
@@ -557,7 +552,7 @@ function WhatWeDo() {
                   </motion.div>
                 </motion.div>
                 
-                <h3 className="font-display text-3xl md:text-4xl font-bold mb-4 text-white">
+                <h3 className="font-display text-3xl md:text-4xl font-bold mb-4 text-text">
                   Not Sure Which Service You Need?
                 </h3>
                 <p className="text-lg md:text-xl text-muted mb-8 max-w-2xl mx-auto leading-relaxed">
@@ -779,7 +774,7 @@ function Stats() {
               <div className="font-display text-4xl md:text-5xl font-bold text-accent mb-2">
                 <Counter end={stat.value} suffix={stat.suffix} />
               </div>
-              <p className="text-white font-semibold mb-1">{stat.label}</p>
+              <p className="text-text font-semibold mb-1">{stat.label}</p>
               <p className="text-muted text-sm">{stat.sublabel}</p>
             </motion.div>
           ))}
@@ -969,6 +964,7 @@ function CaseStudies() {
 
 // CTA Section - Book Consultation
 function CTASection() {
+  const { theme } = useTheme()
   return (
     <AnimatedSection className="py-32 relative overflow-hidden">
       {/* Background elements */}
@@ -991,8 +987,12 @@ function CTASection() {
 
           <div className="relative bg-surface rounded-3xl p-12 md:p-16 lg:p-20">
             {/* Corner accents */}
-            <div className="absolute top-0 left-0 w-20 h-20 border-l-2 border-t-2 border-accent/50 rounded-tl-3xl" />
-            <div className="absolute bottom-0 right-0 w-20 h-20 border-r-2 border-b-2 border-accent/50 rounded-br-3xl" />
+            <div className={`absolute top-0 left-0 w-20 h-20 border-l-2 border-t-2 rounded-tl-3xl ${
+              theme === 'dark' ? 'border-white' : 'border-black'
+            }`} />
+            <div className={`absolute bottom-0 right-0 w-20 h-20 border-r-2 border-b-2 rounded-br-3xl ${
+              theme === 'dark' ? 'border-white' : 'border-black'
+            }`} />
 
             <div className="text-center">
               <motion.span

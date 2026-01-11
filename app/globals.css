@@ -5,7 +5,13 @@
 @tailwind utilities;
 
 :root {
-  /* Base Colors */
+  /* Brand Colors - Based on image (Blue) */
+  --brand-blue: #2563EB;
+  --brand-blue-rgb: 37, 99, 235;
+  --brand-blue-light: #3B82F6;
+  --brand-blue-dark: #1D4ED8;
+  
+  /* Theme: Dark (Default) */
   --background: #0A0A0B;
   --surface: #141416;
   --surface-light: #1C1C1F;
@@ -13,10 +19,10 @@
   --muted: #E4E4EA;
   --muted-dark: #D1D1DB;
   
-  /* Brand Colors */
-  --accent: #D4A853;
-  --accent-light: #E8C880;
-  --accent-rgb: 212, 168, 83;
+  /* Brand Colors - Using Blue */
+  --accent: var(--brand-blue);
+  --accent-light: var(--brand-blue-light);
+  --accent-rgb: var(--brand-blue-rgb);
   
   /* Semantic Colors */
   --success: #10B981;
@@ -39,7 +45,7 @@
   --purple-rgb: 168, 85, 247;
   --purple-light: #C084FC;
   
-  /* Border Colors */
+  /* Border Colors - Dark Theme */
   --border: rgba(255, 255, 255, 0.05);
   --border-light: rgba(255, 255, 255, 0.1);
   --border-medium: rgba(255, 255, 255, 0.2);
@@ -71,6 +77,10 @@
   --font-display: 'Outfit', sans-serif;
   --font-body: 'DM Sans', sans-serif;
   
+  /* Theme Toggle Gradients */
+  --toggle-gradient-light: linear-gradient(135deg, #E0E7FF 0%, #C7D2FE 100%);
+  --toggle-gradient-dark: linear-gradient(135deg, #1E3A8A 0%, #3B82F6 100%);
+  
   /* Spacing (for reference, Tailwind handles this) */
   --spacing-xs: 0.25rem;
   --spacing-sm: 0.5rem;
@@ -79,6 +89,35 @@
   --spacing-xl: 2rem;
   --spacing-2xl: 3rem;
   --spacing-3xl: 4rem;
+}
+
+/* Light Theme */
+[data-theme="light"] {
+  /* Base Colors - Light Theme */
+  --background: #F5F7FA;
+  --surface: #FFFFFF;
+  --surface-light: #F9FAFB;
+  --text: #1E293B;
+  --muted: #64748B;
+  --muted-dark: #475569;
+  
+  /* Border Colors - Light Theme */
+  --border: rgba(0, 0, 0, 0.05);
+  --border-light: rgba(0, 0, 0, 0.1);
+  --border-medium: rgba(0, 0, 0, 0.15);
+  --border-accent: rgba(var(--accent-rgb), 0.2);
+  --border-accent-light: rgba(var(--accent-rgb), 0.3);
+  
+  /* Shadows adjusted for light theme */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+  --shadow-md: 0 10px 15px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 10px 30px rgba(var(--accent-rgb), 0.15);
+  --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.12);
+  --shadow-2xl: 0 20px 50px rgba(var(--accent-rgb), 0.2);
+  --shadow-accent: 0 0 40px rgba(var(--accent-rgb), 0.15);
+  --shadow-accent-hover: 0 0 60px rgba(var(--accent-rgb), 0.2);
+  --shadow-card: 0 20px 40px rgba(0, 0, 0, 0.12), 0 0 40px rgba(var(--accent-rgb), 0.08);
 }
 
 * {
@@ -124,7 +163,7 @@ body {
   width: 100%;
   height: 100%;
   pointer-events: none;
-  z-index: 1000;
+  z-index: 1;
   opacity: 0.03;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
 }

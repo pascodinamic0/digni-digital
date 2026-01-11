@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import ThemeToggle from './ThemeToggle'
 
 export default function Navigation() {
   const [scrolled, setScrolled] = useState(false)
@@ -120,9 +121,9 @@ export default function Navigation() {
                         key={solution.name}
                         href={solution.href}
                         onClick={() => setSolutionsOpen(false)}
-                        className="block p-4 rounded-lg hover:bg-white/5 transition-colors group"
+                        className="block p-4 rounded-lg hover:bg-black/5 dark:hover:bg-white/5 transition-colors group"
                       >
-                        <div className="font-medium text-white group-hover:text-accent transition-colors">
+                        <div className="font-medium text-text group-hover:text-accent transition-colors">
                           {solution.name}
                         </div>
                         <div className="text-sm text-muted mt-1">
@@ -147,7 +148,7 @@ export default function Navigation() {
             ))}
           </div>
 
-          <div className="hidden lg:block">
+          <div className="hidden lg:flex items-center gap-6">
             <a
               href="https://calendly.com/pascal-digny/consultation-meeting"
               target="_blank"
@@ -156,6 +157,9 @@ export default function Navigation() {
             >
               Get Started
             </a>
+            <div className="ml-2">
+              <ThemeToggle />
+            </div>
           </div>
 
           <button
@@ -218,6 +222,12 @@ export default function Navigation() {
                 {link.name}
               </Link>
             ))}
+            
+            {/* Theme Toggle in Mobile */}
+            <div className="py-3 flex items-center justify-between">
+              <div className="text-muted font-medium">Theme</div>
+              <ThemeToggle />
+            </div>
             
             <a
               href="https://calendly.com/pascal-digny/consultation-meeting"

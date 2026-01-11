@@ -239,7 +239,7 @@ export default function AIReceptionistPage() {
 
                   <div>
                     <span className="text-xs uppercase tracking-wider text-muted-dark">Solution</span>
-                    <p className="text-white mt-2 leading-relaxed">{caseStudy.solution}</p>
+                    <p className="text-text mt-2 leading-relaxed">{caseStudy.solution}</p>
                   </div>
                 </div>
               </div>
@@ -303,7 +303,7 @@ export default function AIReceptionistPage() {
 
                   <ul className="space-y-4 mb-8">
                     {plan.features.map((feature, j) => (
-                      <li key={j} className="flex items-center gap-3 text-white">
+                      <li key={j} className="flex items-center gap-3 text-text">
                         <div className="w-2 h-2 bg-accent rounded-full flex-shrink-0" />
                         <span className="text-sm">{feature}</span>
                       </li>
