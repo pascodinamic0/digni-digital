@@ -13,15 +13,15 @@ import { useTheme } from './components/ThemeProvider'
 // Hero Section
 function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-gradient-mesh">
-      <div className="max-w-7xl mx-auto px-6 py-20 relative z-10">
+    <section className="relative min-h-screen flex items-center pt-16 sm:pt-20 overflow-hidden bg-gradient-mesh">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-20 relative z-10 w-full">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="mb-6"
+          className="mb-4 sm:mb-6"
         >
-          <span className="inline-block px-4 py-2 bg-accent/10 border border-accent/30 rounded-full text-accent text-sm font-medium">
+          <span className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-accent/10 border border-accent/30 rounded-full text-accent text-xs sm:text-sm font-medium">
             Digital Transformation Agency
           </span>
         </motion.div>
@@ -30,7 +30,7 @@ function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="font-display text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-8 max-w-4xl"
+          className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-4 sm:mb-6 md:mb-8 max-w-4xl px-2"
         >
           We Believe Technology Should{' '}
           <span className="gradient-text">Serve Humanity.</span>
@@ -40,7 +40,7 @@ function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="text-xl text-muted max-w-3xl mb-10 leading-relaxed"
+          className="text-base sm:text-lg md:text-xl text-muted max-w-3xl mb-6 sm:mb-8 md:mb-10 leading-relaxed px-2"
         >
           We build technology that amplifies human potential, creates opportunity where barriers exist, 
           and ensures that progress serves everyone — not just those who can afford it.
@@ -50,17 +50,19 @@ function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.7 }}
-          className="flex flex-wrap gap-8 mb-10"
+          className="flex flex-wrap gap-4 sm:gap-6 md:gap-8 mb-6 sm:mb-8 md:mb-10 px-2"
         >
           {[
             { value: '150+', label: 'Businesses Transformed' },
             { value: 'Since 2019', label: '' },
             { value: 'Africa & Beyond', label: '' },
           ].map((stat, i) => (
-            <div key={i} className="flex items-center gap-3">
-              <div className="w-2 h-2 bg-accent rounded-full" />
-              <span className="text font-semibold">{stat.value}</span>
-              {stat.label && <span className="text font-semibold">{stat.label}</span>}
+            <div key={i} className="flex items-center gap-2 sm:gap-3">
+              <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-accent rounded-full flex-shrink-0" />
+              <div className="flex flex-wrap items-center gap-1 sm:gap-2">
+                <span className="text-text text-sm sm:text-base font-semibold">{stat.value}</span>
+                {stat.label && <span className="text-text text-sm sm:text-base font-semibold">{stat.label}</span>}
+              </div>
             </div>
           ))}
         </motion.div>
@@ -69,12 +71,12 @@ function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="flex flex-col sm:flex-row gap-4 mb-16"
+          className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8 sm:mb-12 md:mb-16 px-2"
         >
-          <Link href="/about" className="btn-primary">
+          <Link href="/about" className="btn-primary text-sm sm:text-base md:text-lg px-6 sm:px-8 py-3 sm:py-4 w-full sm:w-auto text-center">
             Our Story
           </Link>
-          <Link href="#what-we-do" className="btn-secondary">
+          <Link href="#what-we-do" className="btn-secondary text-sm sm:text-base md:text-lg px-6 sm:px-8 py-3 sm:py-4 w-full sm:w-auto text-center">
             What We Do
           </Link>
         </motion.div>
@@ -1012,7 +1014,8 @@ function CTASection() {
                 transition={{ delay: 0.3 }}
                 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
               >
-                Technology Should Serve<br />
+                Technology Should Serve{' '}
+                <br />
                 <span className="gradient-text">Everyone.</span>
               </motion.h2>
 

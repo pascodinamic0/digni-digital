@@ -98,31 +98,32 @@ export default function AIReceptionistPage() {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-gradient-mesh">
-        <div className="max-w-7xl mx-auto px-6 py-20 relative z-10">
+      <section className="relative min-h-screen flex items-center pt-16 sm:pt-20 overflow-hidden bg-gradient-mesh">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-20 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-center mb-16"
+            className="text-center mb-8 sm:mb-12 md:mb-16"
           >
-            <span className="inline-block px-4 py-2 bg-accent/10 border border-accent/30 rounded-full text-accent text-sm font-medium mb-6">
+            <span className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-accent/10 border border-accent/30 rounded-full text-accent text-xs sm:text-sm font-medium mb-4 sm:mb-6">
               AI Employee Systems
             </span>
-            <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-8">
-              Never Miss Another<br />
+            <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-4 sm:mb-6 md:mb-8 px-2">
+              Never Miss Another{' '}
+              <br className="hidden sm:block" />
               <span className="gradient-text">Lead Again</span>
             </h1>
-            <p className="text-xl text-muted max-w-3xl mx-auto leading-relaxed mb-10">
+            <p className="text-base sm:text-lg md:text-xl text-muted max-w-3xl mx-auto leading-relaxed mb-6 sm:mb-8 md:mb-10 px-2">
               Deploy intelligent AI employees that capture every opportunity, qualify prospects, 
               and book appointments 24/7 — so you can focus on serving customers instead of chasing them.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-2">
               <a
                 href="https://calendly.com/pascal-digny/consultation-meeting"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-primary text-lg px-8 py-4"
+                className="btn-primary text-sm sm:text-base md:text-lg px-6 sm:px-8 py-3 sm:py-4 w-full sm:w-auto text-center"
               >
                 Schedule Demo
               </a>
@@ -130,7 +131,7 @@ export default function AIReceptionistPage() {
                 href="/Digni%20Digital%20-%20Revised.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-secondary text-lg px-8 py-4"
+                className="btn-secondary text-sm sm:text-base md:text-lg px-6 sm:px-8 py-3 sm:py-4 w-full sm:w-auto text-center"
               >
                 View Presentation
               </a>
@@ -181,7 +182,8 @@ export default function AIReceptionistPage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">
-              Enterprise-Grade AI<br />
+              Enterprise-Grade AI{' '}
+              <br />
               <span className="gradient-text">At Small Business Prices</span>
             </h2>
             <p className="text-muted text-lg max-w-3xl mx-auto">

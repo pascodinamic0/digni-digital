@@ -33,6 +33,18 @@ export default function Navigation() {
     }
   }, [solutionsOpen])
 
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [mobileOpen])
+
   const navLinks = [
     { name: 'Our Mission', href: '/#our-mission' },
     { name: 'About Us', href: '/about' },
@@ -62,15 +74,27 @@ export default function Navigation() {
   ]
 
   return (
-    <motion.nav
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.6, ease: 'easeOut' }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-background/80 backdrop-blur-xl border-b border-white/5' : ''
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-6 py-4">
+    <>
+      {/* Backdrop overlay - covers entire screen when mobile menu is open */}
+      {mobileOpen && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          onClick={() => setMobileOpen(false)}
+          className="fixed inset-0 bg-background z-[45] lg:hidden"
+        />
+      )}
+      
+      <motion.nav
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.6, ease: 'easeOut' }}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          scrolled || mobileOpen ? 'bg-background/95 backdrop-blur-xl border-b border-white/5' : ''
+        }`}
+      >
+        <div className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <Link href="/" className="flex items-center gap-3 group">
             <div className="w-10 h-10 relative flex items-center justify-center">
@@ -181,9 +205,10 @@ export default function Navigation() {
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
             id="mobile-menu"
             role="menu"
-            className="lg:hidden mt-4 pb-4"
+            className="lg:hidden mt-4 pb-4 relative z-50 bg-background"
           >
             {navLinks.map((link) => (
               <Link
@@ -239,7 +264,8 @@ export default function Navigation() {
             </a>
           </motion.div>
         )}
-      </div>
-    </motion.nav>
+        </div>
+      </motion.nav>
+    </>
   )
 }

@@ -1,7 +1,7 @@
 'use client'
 
 import { motion, AnimatePresence } from 'framer-motion'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
 interface VideoModalProps {
   isOpen: boolean
@@ -12,20 +12,48 @@ interface VideoModalProps {
 }
 
 export default function VideoModal({ isOpen, onClose, videoSrc, title, description }: VideoModalProps) {
+  const [mounted, setMounted] = useState(false)
+
   useEffect(() => {
-    if (isOpen) {
+    setMounted(true)
+  }, [])
+
+  useEffect(() => {
+    if (isOpen && mounted) {
       document.body.style.overflow = 'hidden'
+      // Prevent body scroll on mobile
+      document.body.style.position = 'fixed'
+      document.body.style.width = '100%'
     } else {
-      document.body.style.overflow = 'unset'
+      document.body.style.overflow = ''
+      document.body.style.position = ''
+      document.body.style.width = ''
     }
     return () => {
-      document.body.style.overflow = 'unset'
+      document.body.style.overflow = ''
+      document.body.style.position = ''
+      document.body.style.width = ''
     }
-  }, [isOpen])
+  }, [isOpen, mounted])
+
+  // Don't render anything until mounted (prevents hydration issues)
+  if (!mounted) {
+    return null
+  }
+
+  // Don't render modal if not open or no video source
+  if (!isOpen || !videoSrc) {
+    return null
+  }
+
+  // Early return if not open - prevents any rendering
+  if (!isOpen || !videoSrc) {
+    return null
+  }
 
   return (
-    <AnimatePresence>
-      {isOpen && (
+    <AnimatePresence mode="wait">
+      {(
         <>
           {/* Backdrop */}
           <motion.div
@@ -33,7 +61,7 @@ export default function VideoModal({ isOpen, onClose, videoSrc, title, descripti
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50"
+            className="fixed inset-0 bg-black/80 backdrop-blur-sm z-[9999]"
           />
           
           {/* Modal */}
@@ -41,7 +69,7 @@ export default function VideoModal({ isOpen, onClose, videoSrc, title, descripti
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.9 }}
-            className="fixed inset-0 z-50 flex items-center justify-center p-4"
+            className="fixed inset-0 z-[9999] flex items-center justify-center p-4"
             onClick={onClose}
           >
             <motion.div
