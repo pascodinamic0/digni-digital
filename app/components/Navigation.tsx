@@ -170,9 +170,9 @@ export default function Navigation() {
             aria-controls="mobile-menu"
           >
             <div className="w-6 h-5 flex flex-col justify-between">
-              <span className={`h-0.5 bg-white transition-all ${mobileOpen ? 'rotate-45 translate-y-2' : ''}`} />
-              <span className={`h-0.5 bg-white transition-all ${mobileOpen ? 'opacity-0' : ''}`} />
-              <span className={`h-0.5 bg-white transition-all ${mobileOpen ? '-rotate-45 -translate-y-2' : ''}`} />
+              <span className={`h-0.5 bg-text transition-all ${mobileOpen ? 'rotate-45 translate-y-2' : ''}`} />
+              <span className={`h-0.5 bg-text transition-all ${mobileOpen ? 'opacity-0' : ''}`} />
+              <span className={`h-0.5 bg-text transition-all ${mobileOpen ? '-rotate-45 -translate-y-2' : ''}`} />
             </div>
           </button>
         </div>
@@ -189,7 +189,7 @@ export default function Navigation() {
               <Link
                 key={link.name}
                 href={link.href}
-                className="block py-3 text-muted hover:text-white transition-colors"
+                className="block py-3 text-text hover:text-accent transition-colors font-medium"
                 onClick={() => setMobileOpen(false)}
               >
                 {link.name}
@@ -198,12 +198,12 @@ export default function Navigation() {
             
             {/* Mobile Solutions Section */}
             <div className="py-3">
-              <div className="text-muted font-medium mb-2">Solutions</div>
+              <div className="text-text font-semibold mb-2">Solutions</div>
               {solutionLinks.map((solution) => (
                 <Link
                   key={solution.name}
                   href={solution.href}
-                  className="block py-2 pl-4 text-sm text-muted hover:text-white transition-colors"
+                  className="block py-2 pl-4 text-sm text-text hover:text-accent transition-colors"
                   onClick={() => setMobileOpen(false)}
                 >
                   {solution.name}
@@ -216,7 +216,7 @@ export default function Navigation() {
               <Link
                 key={link.name}
                 href={link.href}
-                className="block py-3 text-muted hover:text-white transition-colors"
+                className="block py-3 text-text hover:text-accent transition-colors font-medium"
                 onClick={() => setMobileOpen(false)}
               >
                 {link.name}
@@ -225,7 +225,7 @@ export default function Navigation() {
             
             {/* Theme Toggle in Mobile */}
             <div className="py-3 flex items-center justify-between">
-              <div className="text-muted font-medium">Theme</div>
+              <div className="text-text font-semibold">Theme</div>
               <ThemeToggle />
             </div>
             
