@@ -15,7 +15,7 @@ const nextConfig = {
     return [
       {
         source: '/:path*',
-        destination: 'https://igni-digital-llc.com/:path*',
+        destination: 'https://digni-digital-llc.com/:path*',
         permanent: true,
       },
     ]
