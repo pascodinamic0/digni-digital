@@ -10,6 +10,16 @@ const nextConfig = {
   swcMinify: true,
   // Optimize fonts
   optimizeFonts: true,
+  // Redirect all traffic to main domain
+  async redirects() {
+    return [
+      {
+        source: '/:path*',
+        destination: 'https://igni-digital-llc.com/:path*',
+        permanent: true,
+      },
+    ]
+  },
 }
 
 module.exports = nextConfig
