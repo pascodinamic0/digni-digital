@@ -10,76 +10,45 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={toggleTheme}
-      className="relative w-14 h-8 rounded-full bg-surface border border-border focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-background transition-all duration-200"
+      className="relative w-10 h-10 rounded-lg bg-surface-light/50 border border-white/10 hover:border-accent/30 focus:outline-none focus:ring-2 focus:ring-accent/50 transition-all duration-300 flex items-center justify-center group"
       aria-label={`Switch to ${isDark ? 'light' : 'dark'} theme`}
       role="switch"
       aria-checked={isDark}
     >
-      {/* Track */}
-      <div className="absolute inset-0 rounded-full overflow-hidden">
-        {/* Light mode background gradient */}
-        <div 
-          className={`absolute inset-0 transition-opacity duration-300 ${
-            isDark ? 'opacity-0' : 'opacity-100'
-          }`}
-          style={{
-            background: 'var(--toggle-gradient-light)'
-          }}
-        />
-        {/* Dark mode background gradient */}
-        <div 
-          className={`absolute inset-0 transition-opacity duration-300 ${
-            isDark ? 'opacity-100' : 'opacity-0'
-          }`}
-          style={{
-            background: 'var(--toggle-gradient-dark)'
-          }}
-        />
-      </div>
-
-      {/* Toggle Circle */}
-      <motion.div
-        className="absolute top-1 left-1 w-6 h-6 bg-white rounded-full shadow-lg flex items-center justify-center"
+      {/* Sun Icon */}
+      <motion.svg
+        initial={false}
         animate={{
-          x: isDark ? 24 : 0
+          scale: isDark ? 0 : 1,
+          rotate: isDark ? -90 : 0,
+          opacity: isDark ? 0 : 1
         }}
-        transition={{
-          type: 'spring',
-          stiffness: 500,
-          damping: 30
-        }}
+        transition={{ duration: 0.3, ease: 'easeInOut' }}
+        className="absolute w-5 h-5 text-accent"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        strokeWidth={2}
       >
-        {/* Icon inside toggle */}
-        {isDark ? (
-          <motion.svg
-            key="moon"
-            initial={{ rotate: -90, opacity: 0 }}
-            animate={{ rotate: 0, opacity: 1 }}
-            exit={{ rotate: 90, opacity: 0 }}
-            className="w-3.5 h-3.5 text-text"
-            fill="currentColor"
-            viewBox="0 0 20 20"
-          >
-            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
-          </motion.svg>
-        ) : (
-          <motion.svg
-            key="sun"
-            initial={{ rotate: 90, opacity: 0 }}
-            animate={{ rotate: 0, opacity: 1 }}
-            exit={{ rotate: -90, opacity: 0 }}
-            className="w-3.5 h-3.5 text-warning"
-            fill="currentColor"
-            viewBox="0 0 20 20"
-          >
-            <path
-              fillRule="evenodd"
-              d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
-              clipRule="evenodd"
-            />
-          </motion.svg>
-        )}
-      </motion.div>
+        <circle cx="12" cy="12" r="5" />
+        <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+      </motion.svg>
+
+      {/* Moon Icon */}
+      <motion.svg
+        initial={false}
+        animate={{
+          scale: isDark ? 1 : 0,
+          rotate: isDark ? 0 : 90,
+          opacity: isDark ? 1 : 0
+        }}
+        transition={{ duration: 0.3, ease: 'easeInOut' }}
+        className="absolute w-5 h-5 text-accent"
+        fill="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
+      </motion.svg>
     </button>
   )
 }
