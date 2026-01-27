@@ -3,7 +3,6 @@
 import { useState, useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import ThemeToggle from './ThemeToggle'
 
 export default function Navigation() {
   const [scrolled, setScrolled] = useState(false)
@@ -181,9 +180,6 @@ export default function Navigation() {
             >
               Get Started
             </a>
-            <div className="ml-2">
-              <ThemeToggle />
-            </div>
           </div>
 
           <button
@@ -247,12 +243,6 @@ export default function Navigation() {
                 {link.name}
               </Link>
             ))}
-            
-            {/* Theme Toggle in Mobile */}
-            <div className="py-3 flex items-center justify-between">
-              <div className="text-text font-semibold">Theme</div>
-              <ThemeToggle />
-            </div>
             
             <a
               href="https://calendly.com/pascal-digny/consultation-meeting"

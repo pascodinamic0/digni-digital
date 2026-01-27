@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -74,8 +74,8 @@
   --radius-full: 9999px;
   
   /* Typography */
-  --font-display: 'Outfit', sans-serif;
-  --font-body: 'DM Sans', sans-serif;
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
   
   /* Theme Toggle Gradients */
   --toggle-gradient-light: linear-gradient(135deg, #E0E7FF 0%, #C7D2FE 100%);
@@ -133,7 +133,7 @@ html {
 body {
   background: var(--background);
   color: var(--text);
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Inter', sans-serif;
   overflow-x: hidden;
 }
 
@@ -199,12 +199,48 @@ body {
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(8px);
 }
 
 .card:hover {
   border-color: var(--border-accent);
   transform: translateY(-4px);
   box-shadow: var(--shadow-card);
+}
+
+/* Glass Card variant */
+.card-glass {
+  background: rgba(var(--surface), 0.5);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-lg);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-glass:hover {
+  border-color: var(--border-accent);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Premium gradient border */
+.gradient-border {
+  position: relative;
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, rgba(var(--accent-rgb), 0.5), transparent 50%, rgba(var(--accent-rgb), 0.3));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
 }
 
 /* Animated border */
@@ -545,7 +581,7 @@ body {
   font-weight: 700 !important;
   line-height: 1.25 !important;
   color: var(--text) !important;
-  font-family: 'Outfit', sans-serif !important;
+  font-family: 'Space Grotesk', sans-serif !important;
   letter-spacing: -0.02em;
   padding-top: 0 !important;
   padding-bottom: 0 !important;
@@ -567,7 +603,7 @@ body {
   font-weight: 600 !important;
   line-height: 1.35 !important;
   color: var(--text) !important;
-  font-family: 'Outfit', sans-serif !important;
+  font-family: 'Space Grotesk', sans-serif !important;
   letter-spacing: -0.01em;
   padding-top: 0 !important;
   padding-bottom: 0 !important;
@@ -585,7 +621,7 @@ body {
   font-weight: 600 !important;
   line-height: 1.5 !important;
   color: var(--text) !important;
-  font-family: 'Outfit', sans-serif !important;
+  font-family: 'Space Grotesk', sans-serif !important;
   padding-top: 0 !important;
   padding-bottom: 0 !important;
 }
@@ -774,4 +810,63 @@ body {
 
 .hero-button {
   @apply text-sm sm:text-base md:text-lg px-6 sm:px-8 py-3 sm:py-4 w-full sm:w-auto text-center;
+}
+
+/* Feature section consistent styling */
+.feature-section {
+  @apply py-20 md:py-24;
+}
+
+.feature-section-alt {
+  @apply py-20 md:py-24 bg-surface;
+}
+
+/* Consistent section headers */
+.section-badge {
+  @apply inline-block px-4 py-2 rounded-full text-accent text-xs font-semibold uppercase tracking-wide mb-4;
+  background-color: rgba(37, 99, 235, 0.1);
+  border: 1px solid rgba(37, 99, 235, 0.2);
+}
+
+[data-theme="light"] .section-badge {
+  background-color: rgba(37, 99, 235, 0.1);
+  border-color: rgba(37, 99, 235, 0.2);
+}
+
+.section-title {
+  @apply font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-6;
+}
+
+.section-description {
+  @apply text-muted text-base sm:text-lg max-w-3xl mx-auto;
+}
+
+/* Focus states for accessibility */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Smooth image loading */
+img {
+  transition: opacity 0.3s ease;
+}
+
+/* Text selection */
+::selection {
+  background-color: rgba(var(--accent-rgb), 0.3);
+  color: var(--text);
+}
+
+/* Typing indicator animation */
+@keyframes typing {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }

@@ -6,10 +6,6 @@ const nextConfig = {
   images: {
     formats: ['image/avif', 'image/webp'],
   },
-  // Enable modern JavaScript features
-  swcMinify: true,
-  // Optimize fonts
-  optimizeFonts: true,
 }
 
 module.exports = nextConfig

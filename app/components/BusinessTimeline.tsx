@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
 
-type ColorType = 'blue' | 'accent' | 'success' | 'purple' | 'orange'
+type ColorType = 'accent' | 'success' | 'info' | 'purple'
 
 interface Step {
   id: string
@@ -30,7 +30,7 @@ const BusinessTimeline = () => {
         </svg>
       ),
       metrics: ['Website', 'SMS', 'Social', 'Phone'],
-      color: 'blue'
+      color: 'info'
     },
     {
       id: 'response',
@@ -41,13 +41,13 @@ const BusinessTimeline = () => {
           <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
       ),
-      metrics: ['<2s Response', '24/7 Available', 'Natural Language', 'Context Aware'],
+      metrics: ['<2s Response', '24/7 Available'],
       color: 'accent'
     },
     {
       id: 'qualification',
       title: 'Contact Saved',
-      description: 'AI captures and stores all contact information automatically to your CRM',
+      description: 'AI captures and stores contact info to your CRM',
       icon: (
         <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z" stroke="currentColor" strokeWidth="2"/>
@@ -56,7 +56,7 @@ const BusinessTimeline = () => {
           <path d="M17 9H21" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
         </svg>
       ),
-      metrics: ['Auto Contact Capture', 'CRM Integration', 'Database Storage', 'Info Validation'],
+      metrics: ['Auto Capture', 'CRM Sync'],
       color: 'success'
     },
     {
@@ -72,22 +72,21 @@ const BusinessTimeline = () => {
           <path d="M8 14H16M8 18H12" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
         </svg>
       ),
-      metrics: ['Real-time Sync', 'Auto Confirmation', 'Reminder Setup', 'Calendar Block'],
+      metrics: ['Real-time Sync', 'Auto Confirm'],
       color: 'purple'
     },
     {
       id: 'followup',
       title: 'Smart Follow-Up',
-      description: 'Automated nurture sequence with database reactivation keeps leads warm until meeting',
+      description: 'Automated nurture keeps leads warm until meeting',
       icon: (
         <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentColor" strokeWidth="2"/>
           <polyline points="22,6 12,13 2,6" stroke="currentColor" strokeWidth="2"/>
-          <path d="M16 10L20 14M20 10L16 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
         </svg>
       ),
-      metrics: ['Database Reactivation', 'Email Sequences', 'SMS Reminders', 'Engagement Tracking'],
-      color: 'orange'
+      metrics: ['Email Sequences', 'SMS Reminders'],
+      color: 'accent'
     }
   ]
 
@@ -101,35 +100,33 @@ const BusinessTimeline = () => {
 
   const getColorClasses = (color: ColorType, isActive = false) => {
     const colors = {
-      blue: {
+      info: {
         bg: isActive ? 'bg-info' : 'bg-info/20',
         text: 'text-info',
-        border: 'border-info/30',
-        glow: 'shadow-accent/20'
+        border: 'border-info/40',
+        gradient: 'from-info/10 to-info/5',
+        glow: 'shadow-info/30'
       },
       accent: {
         bg: isActive ? 'bg-accent' : 'bg-accent/20',
         text: 'text-accent',
-        border: 'border-accent/30',
-        glow: 'shadow-accent/20'
+        border: 'border-accent/40',
+        gradient: 'from-accent/10 to-accent/5',
+        glow: 'shadow-accent/30'
       },
       success: {
         bg: isActive ? 'bg-success' : 'bg-success/20',
         text: 'text-success',
-        border: 'border-success/30',
-        glow: 'shadow-success/20'
+        border: 'border-success/40',
+        gradient: 'from-success/10 to-success/5',
+        glow: 'shadow-success/30'
       },
       purple: {
         bg: isActive ? 'bg-purple' : 'bg-purple/20',
         text: 'text-purple',
-        border: 'border-purple/30',
-        glow: 'shadow-accent/20'
-      },
-      orange: {
-        bg: isActive ? 'bg-orange-500' : 'bg-orange-500/20',
-        text: 'text-orange-400',
-        border: 'border-orange-400/30',
-        glow: 'shadow-orange-500/20'
+        border: 'border-purple/40',
+        gradient: 'from-purple/10 to-purple/5',
+        glow: 'shadow-purple/30'
       }
     }
     return colors[color] || colors.accent
@@ -166,17 +163,17 @@ const BusinessTimeline = () => {
             className="text-muted text-lg max-w-3xl mx-auto"
           >
             Watch how our AI transforms every lead into a structured sales opportunity, 
-            automatically moving prospects through your funnel while you focus on closing deals.
+            automatically moving prospects through your funnel.
           </motion.p>
         </div>
 
         {/* Desktop Timeline */}
         <div className="hidden lg:block">
           <div className="relative">
-            {/* Progress Line */}
-            <div className="absolute top-16 left-0 right-0 h-0.5 bg-surface-light">
+            {/* Progress Line - Positioned with gap from cards */}
+            <div className="absolute top-10 left-[10%] right-[10%] h-1 bg-surface-light rounded-full overflow-hidden">
               <motion.div
-                className="h-full bg-gradient-to-r from-blue-500 via-accent via-success via-purple to-warning"
+                className="h-full bg-gradient-to-r from-info via-accent via-success to-purple rounded-full"
                 initial={{ width: '0%' }}
                 animate={{ width: `${((activeStep + 1) / steps.length) * 100}%` }}
                 transition={{ duration: 0.8, ease: 'easeInOut' }}
@@ -184,7 +181,7 @@ const BusinessTimeline = () => {
             </div>
 
             {/* Timeline Steps */}
-            <div className="grid grid-cols-5 gap-8">
+            <div className="grid grid-cols-5 gap-6">
               {steps.map((step, index) => {
                 const isActive = index <= activeStep
                 const isCurrent = index === activeStep
@@ -196,65 +193,69 @@ const BusinessTimeline = () => {
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ delay: index * 0.2 }}
-                    className="relative"
+                    transition={{ delay: index * 0.15 }}
+                    className="relative pt-16"
                   >
-                    {/* Step Circle */}
-                    <div className="flex justify-center mb-6">
+                    {/* Step Circle - Positioned on the progress line */}
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 z-10">
                       <motion.div
-                        className={`w-16 h-16 rounded-full flex items-center justify-center border-2 transition-all duration-500 ${
+                        className={`w-20 h-20 rounded-2xl flex items-center justify-center border-2 transition-all duration-500 backdrop-blur-sm ${
                           isActive 
-                            ? `${colorClasses.bg} ${colorClasses.border} shadow-lg ${colorClasses.glow}` 
-                            : 'bg-surface border-muted-dark/30'
+                            ? `${colorClasses.bg} ${colorClasses.border} shadow-xl ${colorClasses.glow}` 
+                            : 'bg-surface/80 border-white/10'
                         }`}
-                        animate={isCurrent ? { scale: [1, 1.1, 1] } : { scale: 1 }}
+                        animate={isCurrent ? { scale: [1, 1.05, 1] } : { scale: 1 }}
                         transition={{ duration: 2, repeat: Infinity }}
                       >
                         <div className={isActive ? 'text-white' : 'text-muted'}>
                           {step.icon}
                         </div>
+                        {/* Step Number Badge */}
+                        <div className={`absolute -top-2 -right-2 w-7 h-7 rounded-full text-xs font-bold flex items-center justify-center shadow-lg ${
+                          isActive ? 'bg-white text-background' : 'bg-surface-light text-muted border border-white/10'
+                        }`}>
+                          {index + 1}
+                        </div>
                       </motion.div>
                     </div>
 
-                    {/* Step Content */}
-                    <div className="text-center">
+                    {/* Step Card */}
+                    <motion.div
+                      className={`mt-8 p-5 rounded-2xl border backdrop-blur-sm transition-all duration-500 ${
+                        isCurrent 
+                          ? `bg-gradient-to-br ${colorClasses.gradient} ${colorClasses.border} shadow-lg`
+                          : 'bg-surface/50 border-white/5 hover:border-white/10'
+                      }`}
+                      animate={isCurrent ? { y: -4 } : { y: 0 }}
+                    >
                       <h3 className={`font-display text-lg font-bold mb-2 transition-colors duration-300 ${
-                        isActive ? colorClasses.text : 'text-muted'
+                        isActive ? colorClasses.text : 'text-muted-dark'
                       }`}>
                         {step.title}
                       </h3>
-                      <p className="text-muted text-sm mb-4 leading-relaxed">
+                      <p className="text-muted text-sm mb-4 leading-relaxed min-h-[40px]">
                         {step.description}
                       </p>
 
                       {/* Metrics */}
-                      <div className="space-y-2">
+                      <div className="flex flex-wrap gap-2">
                         {step.metrics.map((metric, metricIndex) => (
-                          <motion.div
+                          <motion.span
                             key={metricIndex}
-                            initial={{ opacity: 0, x: -10 }}
-                            animate={isCurrent ? { opacity: 1, x: 0 } : { opacity: 0.6, x: 0 }}
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            animate={{ opacity: isCurrent ? 1 : 0.6, scale: 1 }}
                             transition={{ delay: metricIndex * 0.1 }}
-                            className={`text-xs px-3 py-1 rounded-full border ${
+                            className={`text-xs px-2.5 py-1 rounded-full border ${
                               isCurrent 
                                 ? `${colorClasses.bg} ${colorClasses.border} text-white` 
-                                : 'bg-surface-light border-muted-dark/30 text-muted'
+                                : 'bg-surface-light border-white/5 text-muted'
                             }`}
                           >
                             {metric}
-                          </motion.div>
+                          </motion.span>
                         ))}
                       </div>
-                    </div>
-
-                    {/* Step Number */}
-                    <div className="absolute -top-2 left-1/2 transform -translate-x-1/2">
-                      <div className={`w-6 h-6 rounded-full text-xs font-bold flex items-center justify-center ${
-                        isActive ? 'bg-white text-background' : 'bg-muted-dark text-muted'
-                      }`}>
-                        {index + 1}
-                      </div>
-                    </div>
+                    </motion.div>
                   </motion.div>
                 )
               })}
@@ -263,7 +264,7 @@ const BusinessTimeline = () => {
         </div>
 
         {/* Mobile Timeline */}
-        <div className="lg:hidden space-y-8">
+        <div className="lg:hidden space-y-6">
           {steps.map((step, index) => {
             const isActive = index <= activeStep
             const isCurrent = index === activeStep
@@ -278,15 +279,15 @@ const BusinessTimeline = () => {
                 transition={{ delay: index * 0.1 }}
                 className="flex gap-4"
               >
-                {/* Step Circle */}
+                {/* Step Circle and Line */}
                 <div className="flex flex-col items-center">
                   <motion.div
-                    className={`w-12 h-12 rounded-full flex items-center justify-center border-2 transition-all duration-500 ${
+                    className={`w-14 h-14 rounded-xl flex items-center justify-center border-2 transition-all duration-500 ${
                       isActive 
                         ? `${colorClasses.bg} ${colorClasses.border} shadow-lg ${colorClasses.glow}` 
-                        : 'bg-surface border-muted-dark/30'
+                        : 'bg-surface border-white/10'
                     }`}
-                    animate={isCurrent ? { scale: [1, 1.1, 1] } : { scale: 1 }}
+                    animate={isCurrent ? { scale: [1, 1.05, 1] } : { scale: 1 }}
                     transition={{ duration: 2, repeat: Infinity }}
                   >
                     <div className={isActive ? 'text-white' : 'text-muted'}>
@@ -294,20 +295,29 @@ const BusinessTimeline = () => {
                     </div>
                   </motion.div>
                   {index < steps.length - 1 && (
-                    <div className="w-0.5 h-16 bg-surface-light mt-4" />
+                    <div className={`w-0.5 h-full min-h-[60px] mt-3 rounded-full transition-colors duration-500 ${
+                      isActive ? colorClasses.bg : 'bg-surface-light'
+                    }`} />
                   )}
                 </div>
 
-                {/* Step Content */}
-                <div className="flex-1 pb-8">
-                  <div className="flex items-center gap-2 mb-2">
-                    <div className={`w-6 h-6 rounded-full text-xs font-bold flex items-center justify-center ${
-                      isActive ? 'bg-white text-background' : 'bg-muted-dark text-muted'
+                {/* Step Card */}
+                <motion.div
+                  className={`flex-1 p-5 rounded-2xl border backdrop-blur-sm transition-all duration-500 ${
+                    isCurrent 
+                      ? `bg-gradient-to-br ${colorClasses.gradient} ${colorClasses.border} shadow-lg`
+                      : 'bg-surface/50 border-white/5'
+                  }`}
+                  animate={isCurrent ? { x: 4 } : { x: 0 }}
+                >
+                  <div className="flex items-center gap-3 mb-2">
+                    <span className={`w-6 h-6 rounded-full text-xs font-bold flex items-center justify-center ${
+                      isActive ? 'bg-white text-background' : 'bg-surface-light text-muted'
                     }`}>
                       {index + 1}
-                    </div>
+                    </span>
                     <h3 className={`font-display text-lg font-bold transition-colors duration-300 ${
-                      isActive ? colorClasses.text : 'text-muted'
+                      isActive ? colorClasses.text : 'text-muted-dark'
                     }`}>
                       {step.title}
                     </h3>
@@ -320,22 +330,22 @@ const BusinessTimeline = () => {
                   {/* Metrics */}
                   <div className="flex flex-wrap gap-2">
                     {step.metrics.map((metric, metricIndex) => (
-                      <motion.div
+                      <motion.span
                         key={metricIndex}
                         initial={{ opacity: 0, scale: 0.8 }}
-                        animate={isCurrent ? { opacity: 1, scale: 1 } : { opacity: 0.6, scale: 1 }}
+                        animate={{ opacity: isCurrent ? 1 : 0.6, scale: 1 }}
                         transition={{ delay: metricIndex * 0.1 }}
-                        className={`text-xs px-3 py-1 rounded-full border ${
+                        className={`text-xs px-2.5 py-1 rounded-full border ${
                           isCurrent 
                             ? `${colorClasses.bg} ${colorClasses.border} text-white` 
-                            : 'bg-surface-light border-muted-dark/30 text-muted'
+                            : 'bg-surface-light border-white/5 text-muted'
                         }`}
                       >
                         {metric}
-                      </motion.div>
+                      </motion.span>
                     ))}
                   </div>
-                </div>
+                </motion.div>
               </motion.div>
             )
           })}
@@ -343,17 +353,22 @@ const BusinessTimeline = () => {
 
         {/* Timeline Controls */}
         <div className="flex justify-center mt-12">
-          <div className="flex space-x-2">
-            {steps.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setActiveStep(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  activeStep === index ? 'bg-accent scale-125' : 'bg-muted-dark hover:bg-muted'
-                }`}
-                aria-label={`View step ${index + 1}: ${steps[index].title}`}
-              />
-            ))}
+          <div className="flex space-x-3">
+            {steps.map((step, index) => {
+              const colorClasses = getColorClasses(step.color, activeStep === index)
+              return (
+                <button
+                  key={index}
+                  onClick={() => setActiveStep(index)}
+                  className={`h-2 rounded-full transition-all duration-300 ${
+                    activeStep === index 
+                      ? `w-8 ${colorClasses.bg}` 
+                      : 'w-2 bg-surface-light hover:bg-white/20'
+                  }`}
+                  aria-label={`View step ${index + 1}: ${step.title}`}
+                />
+              )
+            })}
           </div>
         </div>
 
@@ -363,18 +378,18 @@ const BusinessTimeline = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.5 }}
-          className="grid md:grid-cols-3 gap-8 mt-16 p-8 bg-surface-light rounded-2xl border border-accent/10"
+          className="grid md:grid-cols-3 gap-6 mt-16"
         >
-          <div className="text-center">
-            <div className="text-3xl font-display font-bold text-accent mb-2">3x</div>
+          <div className="text-center p-8 bg-gradient-to-br from-accent/10 to-accent/5 rounded-2xl border border-accent/20 backdrop-blur-sm">
+            <div className="text-4xl font-display font-bold text-accent mb-2">3x</div>
             <p className="text-muted text-sm">Faster Lead Response</p>
           </div>
-          <div className="text-center">
-            <div className="text-3xl font-display font-bold text-success mb-2">85%</div>
+          <div className="text-center p-8 bg-gradient-to-br from-success/10 to-success/5 rounded-2xl border border-success/20 backdrop-blur-sm">
+            <div className="text-4xl font-display font-bold text-success mb-2">85%</div>
             <p className="text-muted text-sm">Lead-to-Appointment Rate</p>
           </div>
-          <div className="text-center">
-            <div className="text-3xl font-display font-bold text-info mb-2">24/7</div>
+          <div className="text-center p-8 bg-gradient-to-br from-info/10 to-info/5 rounded-2xl border border-info/20 backdrop-blur-sm">
+            <div className="text-4xl font-display font-bold text-info mb-2">24/7</div>
             <p className="text-muted text-sm">Never Miss Another Lead</p>
           </div>
         </motion.div>

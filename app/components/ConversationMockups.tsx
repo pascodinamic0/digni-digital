@@ -15,6 +15,7 @@ interface Conversation {
   platform: string
   icon: React.ReactNode
   messages: Message[]
+  industry: string
 }
 
 const ConversationMockups = () => {
@@ -26,41 +27,49 @@ const ConversationMockups = () => {
       id: 'website',
       title: 'Website Chat',
       platform: 'Live Chat Widget',
+      industry: 'Dental Practice',
       icon: (
         <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          <path d="M2 17L12 22L22 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          <path d="M2 12L12 17L22 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M21 15C21 15.5304 20.7893 16.0391 20.4142 16.4142C20.0391 16.7893 19.5304 17 19 17H7L3 21V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H19C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V15Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
       ),
       messages: [
-        { sender: 'visitor' as const, text: 'Hi, I need help with pricing for your services', time: '2:34 PM' },
-        { sender: 'ai' as const, text: 'Hello! I\'d be happy to help you with pricing information. What type of service are you most interested in?', time: '2:34 PM' },
-        { sender: 'visitor' as const, text: 'Custom software development for my restaurant', time: '2:35 PM' },
-        { sender: 'ai' as const, text: 'Perfect! For restaurant software solutions, our packages start at $2,997. Would you like me to schedule a consultation to discuss your specific needs?', time: '2:35 PM' }
+        { sender: 'visitor', text: 'Hi, I saw your ad about teeth whitening. How much does it cost?', time: '2:34 PM' },
+        { sender: 'ai', text: 'Hi! Great question. Our professional whitening starts at $299. Quick question—are you currently a patient with us, or would this be your first visit?', time: '2:34 PM' },
+        { sender: 'visitor', text: 'First visit. Is that price for in-office or take-home?', time: '2:35 PM' },
+        { sender: 'ai', text: 'That\'s for our in-office Zoom whitening—results in one visit. For new patients, we include a free consultation. When works better for you: this week or next week?', time: '2:35 PM' },
+        { sender: 'visitor', text: 'This week if possible. I have a wedding coming up.', time: '2:36 PM' },
+        { sender: 'ai', text: 'Perfect timing! I have Thursday at 2pm or Friday at 10am open. Which works for you?', time: '2:36 PM' },
+        { sender: 'visitor', text: 'Thursday 2pm works great', time: '2:37 PM' },
+        { sender: 'ai', text: '✅ Done! You\'re booked for Thursday at 2pm with Dr. Martinez. I\'ll send confirmation to your email. Anything else you need before the big day?', time: '2:37 PM' }
       ]
     },
     {
       id: 'whatsapp',
       title: 'WhatsApp',
-      platform: 'WhatsApp Message',
+      platform: 'WhatsApp Business',
+      industry: 'HVAC Company',
       icon: (
-        <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M17.472 14.382C17.007 14.175 15.314 13.5 14.985 13.388C14.656 13.275 14.414 13.219 14.172 13.682C13.93 14.145 13.207 15.238 12.95 15.525C12.694 15.812 12.437 15.868 11.972 15.662C11.507 15.455 9.814 14.955 7.82 13.1C6.2 11.6 5.1 9.825 4.843 9.362C4.586 8.9 4.815 8.7 5.05 8.475C5.27 8.263 5.52 7.95 5.727 7.688C5.933 7.425 6.017 7.225 6.18 6.9C6.343 6.575 6.287 6.275 6.18 6.025C6.074 5.775 5.4 3.975 5.1 3.225C4.8 2.475 4.5 2.625 4.286 2.613C4.072 2.6 3.814 2.6 3.557 2.6C3.3 2.6 2.985 2.7 2.7 3C2.415 3.3 1.8 3.975 1.8 5.325C1.8 6.675 2.7 7.975 2.843 8.175C2.986 8.375 4.5 10.875 6.9 12.075C9.3 13.275 11.4 13.575 11.7 13.725C12 13.875 12.3 13.825 12.557 13.575C12.814 13.325 13.3 12.75 13.5 12.45C13.7 12.15 13.9 12.2 14.172 12.275C14.443 12.35 15.6 12.825 15.9 13.025C16.2 13.225 16.4 13.325 16.5 13.425C16.6 13.525 16.6 13.775 16.4 14.075C16.2 14.375 15.737 14.588 17.472 14.382Z" fill="currentColor"/>
-          <path d="M12 2C6.477 2 2 6.477 2 12C2 13.815 2.5 15.515 3.395 16.97L2 22L7.335 20.61C8.78 21.495 10.345 22 12 22C17.523 22 22 17.523 22 12C22 6.477 17.523 2 12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
         </svg>
       ),
       messages: [
-        { sender: 'visitor' as const, text: 'Hey, saw your ad. Do you do mobile apps?', time: '11:22 AM' },
-        { sender: 'ai' as const, text: 'Yes! We specialize in mobile app development. What kind of app are you looking to build?', time: '11:22 AM' },
-        { sender: 'visitor' as const, text: 'Fitness tracking app with social features', time: '11:24 AM' },
-        { sender: 'ai' as const, text: 'That sounds exciting! Fitness apps with social features typically range from $15k-$35k. I can book you a free strategy call to discuss your vision. Are you available this week?', time: '11:25 AM' }
+        { sender: 'visitor', text: 'Hey my AC stopped working. It\'s 95 degrees here 😰', time: '11:22 AM' },
+        { sender: 'ai', text: 'That\'s miserable! Let me help you fast. Is your AC not turning on at all, or is it running but not cooling?', time: '11:22 AM' },
+        { sender: 'visitor', text: 'It\'s running but just blowing warm air', time: '11:23 AM' },
+        { sender: 'ai', text: 'Got it—likely a refrigerant or compressor issue. We can have a tech there today. Are you at a residential address?', time: '11:23 AM' },
+        { sender: 'visitor', text: 'Yes, house in Cedar Park. How much for the service call?', time: '11:24 AM' },
+        { sender: 'ai', text: '$89 diagnostic fee, waived if you proceed with repair. We have a slot at 2pm or 4:30pm today. Which works?', time: '11:24 AM' },
+        { sender: 'visitor', text: '2pm please! Can you text me when they\'re on the way?', time: '11:25 AM' },
+        { sender: 'ai', text: '✅ Booked! Mike will be there at 2pm. You\'ll get a text when he\'s 15 min out + his photo so you know who to expect. Stay cool! 🧊', time: '11:25 AM' }
       ]
     },
     {
       id: 'instagram',
       title: 'Instagram DM',
       platform: 'Instagram Direct',
+      industry: 'Med Spa',
       icon: (
         <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke="currentColor" strokeWidth="2"/>
@@ -69,130 +78,176 @@ const ConversationMockups = () => {
         </svg>
       ),
       messages: [
-        { sender: 'visitor' as const, text: '👋 Love your recent post about AI! Can you help with automation?', time: '4:15 PM' },
-        { sender: 'ai' as const, text: 'Thank you! 🙏 Absolutely, we help businesses automate their workflows. What processes are you looking to streamline?', time: '4:15 PM' },
-        { sender: 'visitor' as const, text: 'Customer support and lead follow-up mainly', time: '4:16 PM' },
-        { sender: 'ai' as const, text: 'Perfect fit! Our AI systems can handle both seamlessly. We\'ve helped similar businesses reduce response time by 90%. Want to see a demo? 📅', time: '4:17 PM' }
-      ]
-    },
-    {
-      id: 'voice-ai',
-      title: 'Voice AI',
-      platform: 'Live Web Call & Bridge',
-      icon: (
-        <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 1C13.1 1 14 1.9 14 3V11C14 12.1 13.1 13 12 13C10.9 13 10 12.1 10 11V3C10 1.9 10.9 1 12 1Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          <path d="M19 10V11C19 15.4183 15.4183 19 11 19H10C5.58172 19 2 15.4183 2 11V10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          <path d="M22 10V11C22 16.5228 17.5228 21 12 21C6.47715 21 2 16.5228 2 11V10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          <path d="M19 2V6M17 4H21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-        </svg>
-      ),
-      messages: [
-        { sender: 'visitor' as const, text: '📞 Web call initiated from website', time: '10:42 AM' },
-        { sender: 'ai' as const, text: 'Hello! I\'m your AI employee. I can answer questions and also connect you directly with our team on a live call if needed. How can I help you today?', time: '10:42 AM' },
-        { sender: 'visitor' as const, text: 'I have some technical questions about your services', time: '10:43 AM' },
-        { sender: 'ai' as const, text: 'I can help with that! Would you like me to bridge this call with our technical team? You\'ll be on a live 3-way call with me and the team, and we can all talk together. Ready to connect?', time: '10:43 AM' }
+        { sender: 'visitor', text: 'Love your before/afters! 😍 How much for lip filler?', time: '4:15 PM' },
+        { sender: 'ai', text: 'Thank you! 💕 Our lip filler starts at $650/syringe. Most clients need 1-2 for natural results. Have you had filler before?', time: '4:15 PM' },
+        { sender: 'visitor', text: 'No first time! I want fuller but still natural looking', time: '4:16 PM' },
+        { sender: 'ai', text: 'You\'ll love it! First-timers usually do 1 syringe—subtle but noticeable. We\'re running 15% off for new clients this month. Want me to book you a free consult?', time: '4:16 PM' },
+        { sender: 'visitor', text: 'Yes! Do you have anything Saturday?', time: '4:17 PM' },
+        { sender: 'ai', text: 'Saturday works! I have 11am or 2pm with Dr. Kim—she\'s amazing with natural lips. Which do you prefer?', time: '4:17 PM' },
+        { sender: 'visitor', text: '2pm is perfect!', time: '4:18 PM' },
+        { sender: 'ai', text: '✅ You\'re all set! Saturday 2pm with Dr. Kim. I\'ll DM you our address + parking tips. See you then! 💋', time: '4:18 PM' }
       ]
     },
     {
       id: 'facebook',
       title: 'Facebook',
-      platform: 'AI Auto-Responder',
+      platform: 'Messenger',
+      industry: 'Roofing Company',
       icon: (
-        <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M18 2H15C13.6739 2 12.4021 2.52678 11.4645 3.46447C10.5268 4.40215 10 5.67392 10 7V10H7V14H10V22H14V14H17L18 10H14V7C14 6.73478 14.1054 6.48043 14.2929 6.29289C14.4804 6.10536 14.7348 6 15 6H18V2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2.04c-5.5 0-10 4.49-10 10.02 0 5 3.66 9.15 8.44 9.9v-7H7.9v-2.9h2.54V9.85c0-2.52 1.49-3.92 3.78-3.92 1.09 0 2.24.2 2.24.2v2.47h-1.26c-1.24 0-1.63.78-1.63 1.57v1.88h2.78l-.45 2.9h-2.33v7a10 10 0 008.44-9.9c0-5.53-4.5-10.02-10-10.02z"/>
         </svg>
       ),
       messages: [
-        { sender: 'visitor' as const, text: 'Hi! I saw your post about AI automation. Can you help with lead management?', time: '3:20 PM' },
-        { sender: 'ai' as const, text: 'Hello! Absolutely, I can help! Our AI automatically captures and stores all Facebook inquiries directly to your CRM. I can set up a lead management system that organizes all your leads in one place. Would you like to schedule a free consultation?', time: '3:20 PM' },
-        { sender: 'visitor' as const, text: 'Yes! Can you also integrate with our existing customer database?', time: '3:22 PM' },
-        { sender: 'ai' as const, text: 'Perfect! We integrate with all major CRM systems and can reactivate contacts from your existing database. I\'ve saved your contact info and scheduled your consultation for tomorrow at 2 PM. I\'ll send confirmation details via Facebook Messenger!', time: '3:22 PM' }
+        { sender: 'visitor', text: 'Hi, the storm damaged my roof. Do you do free inspections?', time: '3:20 PM' },
+        { sender: 'ai', text: 'Yes, absolutely free—no obligation. Sorry to hear about the storm damage. Is it a residential home or commercial building?', time: '3:20 PM' },
+        { sender: 'visitor', text: 'Residential. I can see some shingles in my yard 😬', time: '3:21 PM' },
+        { sender: 'ai', text: 'That needs attention fast before the next rain. We work with all major insurance companies too. What\'s your zip code? I\'ll check our availability in your area.', time: '3:21 PM' },
+        { sender: 'visitor', text: '78613', time: '3:22 PM' },
+        { sender: 'ai', text: 'Perfect, we cover Cedar Park! I can get an inspector out tomorrow morning or Thursday afternoon. Which works better?', time: '3:22 PM' },
+        { sender: 'visitor', text: 'Tomorrow morning would be great', time: '3:23 PM' },
+        { sender: 'ai', text: '✅ Done! Jake will be there tomorrow between 9-11am. He\'ll take photos, check for hidden damage, and give you a full report—even help with your insurance claim if needed. See you then! 🏠', time: '3:23 PM' }
       ]
     },
     {
-      id: 'reviews',
-      title: 'Reviews',
-      platform: 'Reputation Management',
+      id: 'sms',
+      title: 'SMS',
+      platform: 'Text Message',
+      industry: 'Law Firm',
       icon: (
         <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 2L15.09 8.26L22 9L17 13.14L18.18 20.02L12 16.77L5.82 20.02L7 13.14L2 9L8.91 8.26L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
       ),
       messages: [
-        { sender: 'visitor' as const, text: 'New review: "Amazing service! Response time was incredible" - ⭐⭐⭐⭐⭐', time: '9:15 AM' },
-        { sender: 'ai' as const, text: 'Thank you for the wonderful review! Your feedback has been automatically logged in our reputation management system. We\'re monitoring all reviews across platforms to maintain our excellent service standards.', time: '9:15 AM' },
-        { sender: 'visitor' as const, text: 'Review response sent automatically', time: '9:15 AM' },
-        { sender: 'ai' as const, text: 'Perfect! Your reputation score has been updated. Current rating: 4.9/5.0 across all platforms. All reviews are tracked, categorized, and responded to automatically.', time: '9:16 AM' }
+        { sender: 'visitor', text: 'I was in a car accident last week. Do I need a lawyer?', time: '9:15 AM' },
+        { sender: 'ai', text: 'I\'m sorry to hear that. Was anyone injured, including yourself?', time: '9:15 AM' },
+        { sender: 'visitor', text: 'Yes my back has been hurting since. The other driver ran a red light.', time: '9:16 AM' },
+        { sender: 'ai', text: 'That\'s important—back injuries can be serious and the other driver was clearly at fault. Have you seen a doctor yet?', time: '9:16 AM' },
+        { sender: 'visitor', text: 'Going tomorrow. Should I wait to call you?', time: '9:17 AM' },
+        { sender: 'ai', text: 'No, don\'t wait. Insurance companies move fast and what you say now matters. Our consultation is free, no obligation. We only get paid if you win. Can you talk today?', time: '9:17 AM' },
+        { sender: 'visitor', text: 'Yes I can do 3pm', time: '9:18 AM' },
+        { sender: 'ai', text: '✅ Perfect. Attorney Martinez will call you at 3pm sharp. Keep any photos, police reports, and medical records handy. We\'ll make sure you\'re protected. Talk soon.', time: '9:18 AM' }
+      ]
+    },
+    {
+      id: 'google',
+      title: 'Google',
+      platform: 'Google Business Chat',
+      industry: 'Auto Repair',
+      icon: (
+        <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+          <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+          <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+          <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+        </svg>
+      ),
+      messages: [
+        { sender: 'visitor', text: 'How much for an oil change? 2019 Honda Accord', time: '10:30 AM' },
+        { sender: 'ai', text: 'For your 2019 Accord, synthetic oil change is $59.99. Includes filter, top-offs, and 21-point inspection. How many miles since your last change?', time: '10:30 AM' },
+        { sender: 'visitor', text: 'About 7000 miles. Due for one', time: '10:31 AM' },
+        { sender: 'ai', text: 'Yep, you\'re due! We can usually get you in and out in 30 minutes. Are you looking for today or do you want to schedule ahead?', time: '10:31 AM' },
+        { sender: 'visitor', text: 'Today if possible, I\'m off work', time: '10:32 AM' },
+        { sender: 'ai', text: 'Perfect timing! We have openings at 1pm and 3:30pm today. We\'re at 1234 Main Street. Which slot works?', time: '10:32 AM' },
+        { sender: 'visitor', text: '1pm works. Do I need to wait or can I drop it off?', time: '10:33 AM' },
+        { sender: 'ai', text: '✅ Booked for 1pm! You can wait (we have wifi + coffee) or drop off and we\'ll text when it\'s ready. See you at 1! 🚗', time: '10:33 AM' }
       ]
     }
   ]
 
+  const [isTyping, setIsTyping] = useState(false)
+  const [conversationComplete, setConversationComplete] = useState(false)
+
+  // Handle conversation progression
   useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveDemo((prev) => (prev + 1) % conversations.length)
-      setMessageIndex(0)
-    }, 15000) // Increased from 8s to 15s for better exploration time
-
-    return () => clearInterval(interval)
-  }, [conversations.length])
+    // Reset state when conversation changes
+    setMessageIndex(0)
+    setIsTyping(false)
+    setConversationComplete(false)
+  }, [activeDemo])
 
   useEffect(() => {
-    setMessageIndex(0) // Reset when switching demos
-    const messageInterval = setInterval(() => {
-      setMessageIndex((prev) => {
-        const maxMessages = conversations[activeDemo].messages.length
-        return prev < maxMessages - 1 ? prev + 1 : prev
-      })
-    }, 2500) // Increased from 1.5s to 2.5s for better readability
+    if (conversationComplete) return
 
-    return () => clearInterval(messageInterval)
-  }, [activeDemo, conversations])
+    const currentMessages = conversations[activeDemo].messages
+    const maxMessages = currentMessages.length
 
-  const ChatBubble = ({ message, isAI, delay = 0 }: { message: Message; isAI: boolean; delay?: number }) => (
-    <motion.div
-      initial={{ opacity: 0, y: 20, scale: 0.8 }}
-      animate={{ opacity: 1, y: 0, scale: 1 }}
-      transition={{ duration: 0.4, delay }}
-      className={`flex ${isAI ? 'justify-start' : 'justify-end'} mb-4`}
-    >
-      <div className={`max-w-[80%] ${isAI ? 'order-2' : 'order-1'}`}>
+    // If we've shown all messages, mark as complete and wait before switching
+    if (messageIndex >= maxMessages - 1) {
+      setIsTyping(false)
+      setConversationComplete(true)
+      
+      // Wait 3 seconds then switch to next conversation
+      const switchTimeout = setTimeout(() => {
+        setActiveDemo((prev) => (prev + 1) % conversations.length)
+      }, 3000)
+      
+      return () => clearTimeout(switchTimeout)
+    }
+
+    // Determine next message sender
+    const nextMessage = currentMessages[messageIndex + 1]
+    const nextIsAI = nextMessage?.sender === 'ai'
+
+    // If next message is from AI, show typing indicator first
+    if (nextIsAI) {
+      setIsTyping(true)
+      const typingTimeout = setTimeout(() => {
+        setIsTyping(false)
+        setMessageIndex((prev) => prev + 1)
+      }, 2500) // Slower typing - 2.5 seconds to show typing indicator
+      
+      return () => clearTimeout(typingTimeout)
+    } else {
+      // Visitor message - show after a delay (simulates them typing)
+      const messageTimeout = setTimeout(() => {
+        setMessageIndex((prev) => prev + 1)
+      }, 1800) // 1.8 second delay before visitor message appears
+      
+      return () => clearTimeout(messageTimeout)
+    }
+  }, [messageIndex, activeDemo, conversations, conversationComplete])
+
+  const ChatBubble = ({ message, isAI }: { message: Message; isAI: boolean }) => (
+    <div className={`flex ${isAI ? 'justify-start' : 'justify-end'} mb-3`}>
+      <div className={`max-w-[85%] ${isAI ? 'order-2' : 'order-1'}`}>
         <div
-          className={`px-4 py-3 rounded-2xl text-sm leading-relaxed ${
+          className={`px-4 py-2.5 rounded-2xl text-sm leading-relaxed ${
             isAI
-              ? 'bg-accent/10 text-white border border-accent/20'
-              : 'bg-accent text-background'
-          } ${isAI ? 'rounded-bl-sm' : 'rounded-br-sm'}`}
+              ? 'bg-surface-light border border-white/10 text-text'
+              : 'bg-accent text-white'
+          } ${isAI ? 'rounded-tl-sm' : 'rounded-tr-sm'}`}
         >
           {message.text}
         </div>
-        <div className={`text-xs text-muted mt-1 ${isAI ? 'text-left' : 'text-right'}`}>
+        <div className={`text-[10px] text-muted mt-1 px-1 ${isAI ? 'text-left' : 'text-right'}`}>
           {message.time}
         </div>
       </div>
       {isAI && (
-        <div className="order-1 mr-3 mt-1">
-          <div className="w-8 h-8 bg-accent rounded-full flex items-center justify-center">
-            <svg className="w-4 h-4 text-background" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 2L13.09 8.26L22 9L13.09 9.74L12 16L10.91 9.74L2 9L10.91 8.26L12 2Z" fill="currentColor"/>
+        <div className="order-1 mr-2 mt-1 flex-shrink-0">
+          <div className="w-7 h-7 bg-gradient-to-br from-accent to-accent-light rounded-full flex items-center justify-center">
+            <svg className="w-3.5 h-3.5 text-white" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M13 3L4 14h7v7l9-11h-7V3z"/>
             </svg>
           </div>
         </div>
       )}
-    </motion.div>
+    </div>
   )
 
   return (
-    <section className="py-24" aria-labelledby="conversations-title">
+    <section className="py-24 bg-gradient-to-b from-background to-surface" aria-labelledby="conversations-title">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <motion.span
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-accent font-medium text-sm uppercase tracking-wider"
+            className="inline-block px-4 py-2 bg-accent/10 border border-accent/20 rounded-full text-accent text-xs font-semibold uppercase tracking-wide mb-4"
           >
-            Real Conversations
+            See It In Action
           </motion.span>
           <motion.h2
             id="conversations-title"
@@ -200,228 +255,182 @@ const ConversationMockups = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="font-display text-4xl md:text-5xl font-bold mt-4 mb-6"
+            className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
           >
-            See AI in Action<br />
-            <span className="gradient-text">Across Every Platform</span>
+            Real Conversations.<br />
+            <span className="gradient-text">Real Bookings.</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-muted text-lg max-w-3xl mx-auto"
+            className="text-muted text-lg md:text-xl max-w-3xl mx-auto"
           >
-            Watch how our AI naturally handles inquiries, qualifies leads, and books appointments 
-            with the same intelligence across all communication channels.
+            Watch how leads go from "just browsing" to booked appointments in under 4 minutes. 
+            Every channel. Every time. No human required.
           </motion.p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8">
-          {conversations.map((conversation, index) => (
-            <motion.div
-              key={conversation.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.2 }}
-              className={`card p-6 transition-all duration-500 ${
-                activeDemo === index ? 'border-accent/50 glow-accent' : ''
-              }`}
-            >
-              {/* Platform Header */}
-              <div className="flex items-center gap-3 mb-6 pb-4 border-b border-white/10">
-                <div className="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center text-accent">
-                  {conversation.icon}
-                </div>
-                <div>
-                  <h3 className="font-display text-lg font-bold">{conversation.title}</h3>
-                  <p className="text-muted text-sm">{conversation.platform}</p>
-                </div>
-                <div className="ml-auto">
-                  <div className={`w-3 h-3 rounded-full ${
-                    activeDemo === index ? 'bg-success animate-pulse' : 'bg-muted-dark'
-                  }`} />
-                </div>
-              </div>
-
-              {/* Phone Interface for Voice AI */}
-              {conversation.id === 'voice-ai' ? (
-                <div className="min-h-[300px] flex flex-col items-center justify-center py-8">
-                  {/* Phone Icon with Ringing Animation */}
-                  <motion.div
-                    animate={{
-                      scale: [1, 1.1, 1],
-                      rotate: [0, 5, -5, 0],
-                    }}
-                    transition={{
-                      duration: 1.5,
-                      repeat: Infinity,
-                      ease: 'easeInOut',
-                    }}
-                    className="relative mb-6"
-                  >
-                    {/* Ringing Circles */}
-                    <motion.div
-                      animate={{
-                        scale: [1, 1.5, 1],
-                        opacity: [0.5, 0, 0.5],
-                      }}
-                      transition={{
-                        duration: 2,
-                        repeat: Infinity,
-                        ease: 'easeOut',
-                      }}
-                      className="absolute inset-0 border-2 border-accent rounded-full"
-                    />
-                    <motion.div
-                      animate={{
-                        scale: [1, 1.8, 1],
-                        opacity: [0.3, 0, 0.3],
-                      }}
-                      transition={{
-                        duration: 2,
-                        repeat: Infinity,
-                        ease: 'easeOut',
-                        delay: 0.3,
-                      }}
-                      className="absolute inset-0 border-2 border-accent rounded-full"
-                    />
-                    {/* Phone Icon */}
-                    <div className="relative w-20 h-20 bg-gradient-to-br from-accent/20 to-accent/10 rounded-2xl flex items-center justify-center border-2 border-accent/40">
-                      <svg className="w-10 h-10 text-accent" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M22 16.92V19.92C22.0011 20.1985 21.9441 20.4742 21.8325 20.7292C21.7209 20.9841 21.5573 21.2126 21.3522 21.3997C21.1472 21.5867 20.9053 21.7282 20.6426 21.8148C20.3799 21.9014 20.1025 21.9312 19.828 21.902C16.7425 21.5857 13.7869 20.5341 11.19 18.82C8.77382 17.2148 6.72533 15.0977 5.19 12.62C3.49793 10.0383 2.42529 7.10528 2.05 4.05C2.02087 3.77571 2.05056 3.49844 2.13706 3.23595C2.22357 2.97345 2.36494 2.73178 2.5518 2.52701C2.73866 2.32224 2.96697 2.15899 3.22172 2.04772C3.47647 1.93646 3.75202 1.87988 4.03 1.88H7.05C7.45964 1.87989 7.85723 2.02141 8.17581 2.28048C8.49439 2.53955 8.71455 2.90058 8.8 3.3C8.96532 4.11588 9.21139 4.91305 9.53 5.68C9.69528 6.09343 9.76034 6.54187 9.71948 6.98552C9.67863 7.42917 9.53317 7.85465 9.3 8.23C9.06018 8.60558 8.74557 8.92895 8.38 9.18L7.38 10.18C9.16552 12.5076 11.4924 14.8345 13.82 16.62L14.82 15.62C15.071 15.2544 15.3944 14.9398 15.77 14.7C16.1453 14.4668 16.5708 14.3214 17.0145 14.2805C17.4581 14.2397 17.9066 14.3047 18.32 14.47C19.087 14.7886 19.8841 15.0347 20.7 15.2C21.0994 15.2855 21.4604 15.5056 21.7195 15.8242C21.9786 16.1428 22.1201 16.5404 22.12 16.95L22 16.92Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                      </svg>
+        {/* Main Demo Area */}
+        <div className="grid lg:grid-cols-2 gap-8 mb-12">
+          {/* Active Conversation */}
+          <motion.div
+            key={activeDemo}
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+            className="relative"
+          >
+            {/* Phone Frame */}
+            <div className="relative mx-auto max-w-sm">
+              <div className="absolute inset-0 bg-gradient-to-br from-accent/20 to-purple/20 rounded-[3rem] blur-2xl opacity-50" />
+              <div className="relative bg-surface border border-white/10 rounded-[2.5rem] p-2 shadow-2xl">
+                {/* Phone Notch */}
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-background rounded-b-2xl" />
+                
+                {/* Screen */}
+                <div className="bg-background rounded-[2rem] overflow-hidden">
+                  {/* Header */}
+                  <div className="bg-surface/80 backdrop-blur-xl px-4 py-3 border-b border-white/5">
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 bg-accent/10 rounded-full flex items-center justify-center text-accent">
+                        {conversations[activeDemo].icon}
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="font-display font-semibold text-sm text-text">{conversations[activeDemo].title}</h3>
+                        <p className="text-xs text-muted">{conversations[activeDemo].industry}</p>
+                      </div>
+                      <div className="flex items-center gap-1.5">
+                        <div className="w-2 h-2 rounded-full bg-success animate-pulse" />
+                        <span className="text-[10px] text-success font-medium">Live</span>
+                      </div>
                     </div>
-                  </motion.div>
-
-                  {/* Caller Info */}
-                  <div className="text-center mb-6">
-                    <p className="text-sm text-muted mb-1">Incoming Call</p>
-                    <h4 className="text-lg font-bold text-white mb-1">AI Web Calls</h4>
-                    <p className="text-xs text-muted">AI Employee</p>
                   </div>
-
-                  {/* Call Buttons */}
-                  <div className="flex gap-4 mt-4">
-                    {/* Decline Button */}
-                    <motion.button
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="w-14 h-14 rounded-full bg-destructive/20 border-2 border-red-500/40 flex items-center justify-center hover:bg-destructive/30 transition-colors"
-                    >
-                      <svg className="w-6 h-6 text-destructive" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                      </svg>
-                    </motion.button>
-
-                    {/* Answer Button */}
-                    <motion.button
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="w-14 h-14 rounded-full bg-success/20 border-2 border-success/40 flex items-center justify-center hover:bg-success/30 transition-colors"
-                    >
-                      <svg className="w-6 h-6 text-success" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M22 16.92V19.92C22.0011 20.1985 21.9441 20.4742 21.8325 20.7292C21.7209 20.9841 21.5573 21.2126 21.3522 21.3997C21.1472 21.5867 20.9053 21.7282 20.6426 21.8148C20.3799 21.9014 20.1025 21.9312 19.828 21.902C16.7425 21.5857 13.7869 20.5341 11.19 18.82C8.77382 17.2148 6.72533 15.0977 5.19 12.62C3.49793 10.0383 2.42529 7.10528 2.05 4.05C2.02087 3.77571 2.05056 3.49844 2.13706 3.23595C2.22357 2.97345 2.36494 2.73178 2.5518 2.52701C2.73866 2.32224 2.96697 2.15899 3.22172 2.04772C3.47647 1.93646 3.75202 1.87988 4.03 1.88H7.05C7.45964 1.87989 7.85723 2.02141 8.17581 2.28048C8.49439 2.53955 8.71455 2.90058 8.8 3.3C8.96532 4.11588 9.21139 4.91305 9.53 5.68C9.69528 6.09343 9.76034 6.54187 9.71948 6.98552C9.67863 7.42917 9.53317 7.85465 9.3 8.23C9.06018 8.60558 8.74557 8.92895 8.38 9.18L7.38 10.18C9.16552 12.5076 11.4924 14.8345 13.82 16.62L14.82 15.62C15.071 15.2544 15.3944 14.9398 15.77 14.7C16.1453 14.4668 16.5708 14.3214 17.0145 14.2805C17.4581 14.2397 17.9066 14.3047 18.32 14.47C19.087 14.7886 19.8841 15.0347 20.7 15.2C21.0994 15.2855 21.4604 15.5056 21.7195 15.8242C21.9786 16.1428 22.1201 16.5404 22.12 16.95L22 16.92Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                      </svg>
-                    </motion.button>
-                  </div>
-                </div>
-              ) : (
-                <>
-                  {/* Chat Messages */}
-                  <div className="space-y-1 min-h-[300px]">
-                    {conversation.messages.slice(0, messageIndex + 1).map((message, msgIndex) => (
+                  
+                  {/* Messages */}
+                  <div className="h-[420px] overflow-y-auto p-4 space-y-1 scrollbar-thin">
+                    {conversations[activeDemo].messages.slice(0, messageIndex + 1).map((message, msgIndex) => (
                       <ChatBubble
-                        key={msgIndex}
+                        key={`${activeDemo}-${msgIndex}`}
                         message={message}
                         isAI={message.sender === 'ai'}
-                        delay={activeDemo === index ? msgIndex * 0.3 : 0}
                       />
                     ))}
                     
-                    {/* Typing Indicator */}
-                    {activeDemo === index && messageIndex < conversation.messages.length - 1 && (
-                      <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        className="flex justify-start mb-4"
-                      >
-                        <div className="flex items-center gap-3">
-                          <div className="w-8 h-8 bg-accent rounded-full flex items-center justify-center">
-                            <svg className="w-4 h-4 text-background" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M12 2L13.09 8.26L22 9L13.09 9.74L12 16L10.91 9.74L2 9L10.91 8.26L12 2Z" fill="currentColor"/>
+                    {/* Typing Indicator - only show when AI is typing */}
+                    {isTyping && (
+                      <div className="flex justify-start mb-3">
+                        <div className="flex items-center gap-2">
+                          <div className="w-7 h-7 bg-gradient-to-br from-accent to-accent-light rounded-full flex items-center justify-center">
+                            <svg className="w-3.5 h-3.5 text-white" viewBox="0 0 24 24" fill="currentColor">
+                              <path d="M13 3L4 14h7v7l9-11h-7V3z"/>
                             </svg>
                           </div>
-                          <div className="bg-accent/10 border border-accent/20 px-4 py-3 rounded-2xl rounded-bl-sm">
-                            <div className="flex space-x-1">
-                              <div className="w-2 h-2 bg-accent rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
-                              <div className="w-2 h-2 bg-accent rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
-                              <div className="w-2 h-2 bg-accent rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
+                          <div className="bg-surface-light border border-white/10 px-5 py-3.5 rounded-2xl rounded-tl-sm">
+                            <div className="flex items-center gap-1">
+                              <span className="w-2.5 h-2.5 bg-accent rounded-full animate-[typing_1.4s_ease-in-out_infinite]" style={{ animationDelay: '0ms' }} />
+                              <span className="w-2.5 h-2.5 bg-accent rounded-full animate-[typing_1.4s_ease-in-out_infinite]" style={{ animationDelay: '200ms' }} />
+                              <span className="w-2.5 h-2.5 bg-accent rounded-full animate-[typing_1.4s_ease-in-out_infinite]" style={{ animationDelay: '400ms' }} />
                             </div>
                           </div>
                         </div>
-                      </motion.div>
+                      </div>
                     )}
                   </div>
-                </>
-              )}
-
-              {/* Platform Indicator */}
-              <div className="mt-6 pt-4 border-t border-white/10">
-                <div className="flex items-center justify-between text-xs text-muted">
-                  <span>Response Time: &lt;2 seconds</span>
-                  <span className="text-success">● Online</span>
+                  
+                  {/* Input Bar */}
+                  <div className="p-3 border-t border-white/5 bg-surface/50">
+                    <div className="flex items-center gap-2 bg-surface-light rounded-full px-4 py-2">
+                      <span className="text-muted text-sm flex-1">Type a message...</span>
+                      <div className="w-8 h-8 bg-accent rounded-full flex items-center justify-center">
+                        <svg className="w-4 h-4 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                          <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </motion.div>
-          ))}
-        </div>
+            </div>
+          </motion.div>
 
-        {/* Demo Controls */}
-        <div className="flex justify-center mt-12">
-          <div className="flex space-x-2">
-            {conversations.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => {
-                  setActiveDemo(index)
-                  setMessageIndex(0)
-                }}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  activeDemo === index ? 'bg-accent scale-125 w-8' : 'bg-muted-dark hover:bg-muted'
-                }`}
-                aria-label={`View ${conversations[index].title} demo`}
-                type="button"
-              />
-            ))}
+          {/* Channel Selector */}
+          <div className="flex flex-col justify-center">
+            <h3 className="font-display text-2xl font-bold mb-6 text-center lg:text-left">
+              Works on Every Channel
+            </h3>
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+              {conversations.map((conv, index) => (
+                <motion.button
+                  key={conv.id}
+                  onClick={() => {
+                    setActiveDemo(index)
+                    setMessageIndex(0)
+                  }}
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className={`p-4 rounded-xl border transition-all duration-300 text-left ${
+                    activeDemo === index
+                      ? 'bg-accent/10 border-accent/50 shadow-lg shadow-accent/10'
+                      : 'bg-surface border-white/5 hover:border-white/20'
+                  }`}
+                >
+                  <div className={`w-10 h-10 rounded-lg flex items-center justify-center mb-3 ${
+                    activeDemo === index ? 'bg-accent text-white' : 'bg-surface-light text-muted'
+                  }`}>
+                    {conv.icon}
+                  </div>
+                  <p className="font-medium text-sm text-text">{conv.title}</p>
+                  <p className="text-xs text-muted mt-0.5">{conv.industry}</p>
+                </motion.button>
+              ))}
+            </div>
+            
+            {/* Progress Indicator */}
+            <div className="flex gap-1.5 mt-8 justify-center lg:justify-start">
+              {conversations.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => {
+                    setActiveDemo(index)
+                    setMessageIndex(0)
+                  }}
+                  className={`h-1.5 rounded-full transition-all duration-300 ${
+                    activeDemo === index ? 'w-8 bg-accent' : 'w-1.5 bg-white/20 hover:bg-white/40'
+                  }`}
+                />
+              ))}
+            </div>
           </div>
         </div>
 
-        {/* Key Features */}
+        {/* Stats Bar */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.5 }}
-          className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-16"
+          className="grid grid-cols-2 md:grid-cols-4 gap-4"
         >
-          <div className="text-center p-6 bg-surface-light rounded-xl border border-accent/10">
-            <div className="text-2xl font-display font-bold text-accent mb-2">&lt;2s</div>
-            <p className="text-muted text-sm">Average Response Time</p>
-          </div>
-          <div className="text-center p-6 bg-surface-light rounded-xl border border-accent/10">
-            <div className="text-2xl font-display font-bold text-accent mb-2">24/7</div>
-            <p className="text-muted text-sm">Always Available</p>
-          </div>
-          <div className="text-center p-6 bg-surface-light rounded-xl border border-accent/10">
-            <div className="text-2xl font-display font-bold text-accent mb-2">95%</div>
-            <p className="text-muted text-sm">Lead Qualification Rate</p>
-          </div>
-          <div className="text-center p-6 bg-surface-light rounded-xl border border-accent/10">
-            <div className="text-2xl font-display font-bold text-accent mb-2">6</div>
-            <p className="text-muted text-sm">Supported Channels</p>
-          </div>
+          {[
+            { value: '<2s', label: 'Response Time', icon: '⚡' },
+            { value: '24/7', label: 'Always On', icon: '🌙' },
+            { value: '100%', label: 'Lead Capture', icon: '🎯' },
+            { value: '6+', label: 'Channels', icon: '📱' },
+          ].map((stat, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+              className="text-center p-6 rounded-2xl bg-surface border border-white/5"
+            >
+              <div className="text-2xl mb-2">{stat.icon}</div>
+              <div className="font-display text-3xl font-bold text-accent mb-1">{stat.value}</div>
+              <p className="text-muted text-sm">{stat.label}</p>
+            </motion.div>
+          ))}
         </motion.div>
       </div>
     </section>
