@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, ReactNode } from 'react'
 
 type ColorType = 'accent' | 'success' | 'info' | 'purple'
 
@@ -9,7 +9,7 @@ interface Step {
   id: string
   title: string
   description: string
-  icon: JSX.Element
+  icon: ReactNode
   metrics: string[]
   color: ColorType
 }
