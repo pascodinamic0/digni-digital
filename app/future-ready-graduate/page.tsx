@@ -8,6 +8,7 @@ import Footer from '../components/Footer'
 import AnimatedSection from '../components/AnimatedSection'
 import VideoModal from '../components/VideoModal'
 import VideoThumbnail from '../components/VideoThumbnail'
+import { ctaConfig, getBookingLinkProps } from '@/app/config/cta.config'
 
 export default function FutureReadyGraduatePage() {
   const [selectedVideo, setSelectedVideo] = useState<{ src: string; title: string; speaker: string; description: string } | null>(null)
@@ -194,12 +195,10 @@ export default function FutureReadyGraduatePage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-2">
               <a
-                href="https://calendly.com/pascal-digny/consultation-meeting"
-                target="_blank"
-                rel="noopener noreferrer"
+                {...getBookingLinkProps()}
                 className="btn-primary text-sm sm:text-base md:text-lg px-6 sm:px-8 py-3 sm:py-4 w-full sm:w-auto text-center"
               >
-                Schedule Consultation
+                {ctaConfig.buttonText.scheduleConsultation}
               </a>
               <a
                 href="/Digni%20Digital%20-%20Future-Ready%20Graduate%20Program.pdf"
@@ -1036,16 +1035,14 @@ export default function FutureReadyGraduatePage() {
                     </a>
                   ) : (
                     <a
-                      href="https://calendly.com/pascal-digny/consultation-meeting"
-                      target="_blank"
-                      rel="noopener noreferrer"
+                      {...getBookingLinkProps()}
                       className={`w-full text-center py-3 rounded-lg font-semibold transition-all ${
                         plan.audience === 'schools'
                           ? 'btn-primary'
                           : 'btn-secondary hover:border-accent hover:text-accent'
                       }`}
                     >
-                      {plan.name.includes('School') ? 'Start Partnership' : 'Get Started'}
+                      {plan.name.includes('School') ? 'Start Partnership' : ctaConfig.buttonText.getStarted}
                     </a>
                   )}
                 </motion.div>
@@ -1066,12 +1063,10 @@ export default function FutureReadyGraduatePage() {
             See curriculum details and success metrics in a personalized consultation.
           </p>
           <a
-            href="https://calendly.com/pascal-digny/consultation-meeting"
-            target="_blank"
-            rel="noopener noreferrer"
+            {...getBookingLinkProps()}
             className="btn-primary text-lg px-8 py-4"
           >
-            Schedule Consultation
+            {ctaConfig.buttonText.scheduleConsultation}
           </a>
         </div>
       </AnimatedSection>

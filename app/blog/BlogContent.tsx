@@ -5,6 +5,7 @@ import { motion } from 'framer-motion'
 import Link from 'next/link'
 import Navigation from '../components/Navigation'
 import Footer from '../components/Footer'
+import { ctaConfig, getBookingLinkProps } from '@/app/config/cta.config'
 
 interface Article {
   id: number
@@ -307,12 +308,10 @@ export default function BlogContent({ articles }: BlogContentProps) {
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://calendly.com/pascal-digny/consultation-meeting"
-                target="_blank"
-                rel="noopener noreferrer"
+                {...getBookingLinkProps()}
                 className="btn-primary"
               >
-                Book Free Consultation
+                {ctaConfig.buttonText.bookConsultation}
               </a>
               <Link href="/services" className="btn-secondary">
                 Explore Services

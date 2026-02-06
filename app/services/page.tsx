@@ -5,6 +5,7 @@ import Link from 'next/link'
 import Navigation from '../components/Navigation'
 import Footer from '../components/Footer'
 import AnimatedSection from '../components/AnimatedSection'
+import { ctaConfig, getBookingLinkProps } from '@/app/config/cta.config'
 
 const services = [
   {
@@ -211,12 +212,10 @@ export default function ServicesPage() {
                     Learn More
                   </Link>
                   <a
-                    href="https://calendly.com/pascal-digny/consultation-meeting"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    {...getBookingLinkProps()}
                     className="btn-secondary text-center"
                   >
-                    Book Consultation
+                    {ctaConfig.buttonText.bookConsultation}
                   </a>
                 </div>
               </motion.div>
@@ -263,12 +262,10 @@ export default function ServicesPage() {
             Let's discuss your project and create a custom solution that drives real results.
           </p>
           <a
-            href="https://calendly.com/pascal-digny/consultation-meeting"
-            target="_blank"
-            rel="noopener noreferrer"
+            {...getBookingLinkProps()}
             className="btn-primary text-lg px-8 py-4"
           >
-            Book Your Free Consultation
+            {ctaConfig.buttonText.bookConsultation}
           </a>
         </div>
       </AnimatedSection>

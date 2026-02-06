@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import Navigation from '../components/Navigation'
 import Footer from '../components/Footer'
 import AnimatedSection from '../components/AnimatedSection'
+import { ctaConfig, getBookingLinkProps } from '@/app/config/cta.config'
 
 const solutions = [
   {
@@ -203,12 +204,10 @@ export default function SolutionsPage() {
                       </div>
                       
                       <a
-                        href="https://calendly.com/pascal-digny/consultation-meeting"
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        {...getBookingLinkProps()}
                         className="btn-primary w-full text-center"
                       >
-                        Get Started
+                        {ctaConfig.buttonText.getStarted}
                       </a>
                     </div>
                     
@@ -358,12 +357,10 @@ export default function SolutionsPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="https://calendly.com/pascal-digny/consultation-meeting"
-              target="_blank"
-              rel="noopener noreferrer"
+              {...getBookingLinkProps()}
               className="btn-primary text-lg px-8 py-4"
             >
-              Book Strategy Session
+              {ctaConfig.buttonText.bookStrategy}
             </a>
             <a
               href="/case-studies"

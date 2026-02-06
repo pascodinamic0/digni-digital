@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { ctaConfig, getBookingLinkProps } from '@/app/config/cta.config'
 
 export default function SimpleFooter() {
   return (
@@ -20,12 +21,10 @@ export default function SimpleFooter() {
               Case Studies
             </Link>
             <a
-              href="https://calendly.com/pascal-digny/consultation-meeting"
-              target="_blank"
-              rel="noopener noreferrer"
+              {...getBookingLinkProps()}
               className="btn-primary text-sm px-6 py-2"
             >
-              Get Started
+              {ctaConfig.buttonText.getStarted}
             </a>
           </div>
         </div>

@@ -159,7 +159,7 @@ const blogArticles = [
 
       <hr>
 
-      <p><em>Ready to transform your customer service with AI employee systems? <a href="https://calendly.com/pascal-digny/consultation-meeting" target="_blank" rel="noopener noreferrer">Book a strategic consultation</a> with our AI automation experts to explore how AI employees can transform your business operations.</em></p>
+      <p><em>Ready to transform your customer service with AI employee systems? <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Book a strategic consultation</a> with our AI automation experts to explore how AI employees can transform your business operations.</em></p>
     `
   },
   {
@@ -406,7 +406,7 @@ const blogArticles = [
 
       <hr>
 
-      <p><em>Ready to calculate your ROI with AI employee systems? <a href="https://calendly.com/pascal-digny/consultation-meeting" target="_blank" rel="noopener noreferrer">Book a consultation</a> with our team to analyze your specific situation and project your potential ROI.</em></p>
+      <p><em>Ready to calculate your ROI with AI employee systems? <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Book a consultation</a> with our team to analyze your specific situation and project your potential ROI.</em></p>
     `
   },
   {
@@ -893,7 +893,7 @@ const blogArticles = [
 
       <hr>
 
-      <p><em>Ready to implement an AI receptionist? <a href="https://calendly.com/pascal-digny/consultation-meeting" target="_blank" rel="noopener noreferrer">Book a consultation</a> to create a customized implementation plan for your business.</em></p>
+      <p><em>Ready to implement an AI receptionist? <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Book a consultation</a> to create a customized implementation plan for your business.</em></p>
     `
   }
 ]
@@ -1081,7 +1081,7 @@ const remainingArticles = [
 
       <hr>
 
-      <p><em>Ready to prepare your students for modern careers? <a href="https://calendly.com/pascal-digny/consultation-meeting" target="_blank" rel="noopener noreferrer">Book a consultation</a> to learn how the Future Ready Graduate Program can transform your school's outcomes.</em></p>
+      <p><em>Ready to prepare your students for modern careers? <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Book a consultation</a> to learn how the Future Ready Graduate Program can transform your school's outcomes.</em></p>
     `
   },
   {
@@ -1234,7 +1234,7 @@ const remainingArticles = [
 
       <hr>
 
-      <p><em>Ready to transform your school's graduate outcomes? <a href="https://calendly.com/pascal-digny/consultation-meeting" target="_blank" rel="noopener noreferrer">Book a consultation</a> to learn how the Future Ready Graduate Program can be implemented at your school.</em></p>
+      <p><em>Ready to transform your school's graduate outcomes? <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Book a consultation</a> to learn how the Future Ready Graduate Program can be implemented at your school.</em></p>
     `
   },
   {
@@ -1387,7 +1387,7 @@ const remainingArticles = [
 
       <hr>
 
-      <p><em>Ready to bridge the skills gap at your school? <a href="https://calendly.com/pascal-digny/consultation-meeting" target="_blank" rel="noopener noreferrer">Book a consultation</a> to discuss how to integrate modern digital skills into your curriculum.</em></p>
+      <p><em>Ready to bridge the skills gap at your school? <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Book a consultation</a> to discuss how to integrate modern digital skills into your curriculum.</em></p>
     `
   },
   {
@@ -1517,7 +1517,7 @@ const remainingArticles = [
 
       <hr>
 
-      <p><em>Ready to create success stories at your school? <a href="https://calendly.com/pascal-digny/consultation-meeting" target="_blank" rel="noopener noreferrer">Book a consultation</a> to learn how the Future Ready Graduate Program can transform your students' futures.</em></p>
+      <p><em>Ready to create success stories at your school? <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Book a consultation</a> to learn how the Future Ready Graduate Program can transform your students' futures.</em></p>
     `
   },
   {
@@ -1737,7 +1737,7 @@ const remainingArticles = [
 
       <hr>
 
-      <p><em>Ready to implement the Future Ready Graduate Program at your school? <a href="https://calendly.com/pascal-digny/consultation-meeting" target="_blank" rel="noopener noreferrer">Book a consultation</a> to discuss implementation planning and get started.</em></p>
+      <p><em>Ready to implement the Future Ready Graduate Program at your school? <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Book a consultation</a> to discuss implementation planning and get started.</em></p>
     `
   },
   {
@@ -1886,7 +1886,7 @@ const remainingArticles = [
 
       <hr>
 
-      <p><em>Ready to explore custom SaaS for your business? <a href="https://calendly.com/pascal-digny/consultation-meeting" target="_blank" rel="noopener noreferrer">Book a consultation</a> to discuss whether custom SaaS is right for your needs.</em></p>
+      <p><em>Ready to explore custom SaaS for your business? <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Book a consultation</a> to discuss whether custom SaaS is right for your needs.</em></p>
     `
   },
   {
@@ -2061,7 +2061,7 @@ const remainingArticles = [
 
       <hr>
 
-      <p><em>Ready to build scalable SaaS? <a href="https://calendly.com/pascal-digny/consultation-meeting" target="_blank" rel="noopener noreferrer">Book a consultation</a> to discuss architecture planning for your SaaS product.</em></p>
+      <p><em>Ready to build scalable SaaS? <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Book a consultation</a> to discuss architecture planning for your SaaS product.</em></p>
     `
   },
   {
@@ -2285,7 +2285,7 @@ const remainingArticles = [
 
       <hr>
 
-      <p><em>Ready to build your custom SaaS? <a href="https://calendly.com/pascal-digny/consultation-meeting" target="_blank" rel="noopener noreferrer">Book a consultation</a> to discuss your SaaS development project.</em></p>
+      <p><em>Ready to build your custom SaaS? <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Book a consultation</a> to discuss your SaaS development project.</em></p>
     `
   },
   {
@@ -2449,7 +2449,7 @@ const remainingArticles = [
 
       <hr>
 
-      <p><em>Ready to create your SaaS success story? <a href="https://calendly.com/pascal-digny/consultation-meeting" target="_blank" rel="noopener noreferrer">Book a consultation</a> to discuss how custom SaaS can transform your business.</em></p>
+      <p><em>Ready to create your SaaS success story? <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Book a consultation</a> to discuss how custom SaaS can transform your business.</em></p>
     `
   },
   {
@@ -2649,7 +2649,7 @@ const remainingArticles = [
 
       <hr>
 
-      <p><em>Ready to find the right balance between AI and human staff? <a href="https://calendly.com/pascal-digny/consultation-meeting" target="_blank" rel="noopener noreferrer">Book a consultation</a> to discuss your customer service strategy.</em></p>
+      <p><em>Ready to find the right balance between AI and human staff? <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Book a consultation</a> to discuss your customer service strategy.</em></p>
     `
   },
   {
@@ -2830,7 +2830,7 @@ const remainingArticles = [
 
       <hr>
 
-      <p><em>Ready to scale your operations with AI? <a href="https://calendly.com/pascal-digny/consultation-meeting" target="_blank" rel="noopener noreferrer">Book a consultation</a> to discuss how AI employee systems can help your business scale.</em></p>
+      <p><em>Ready to scale your operations with AI? <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Book a consultation</a> to discuss how AI employee systems can help your business scale.</em></p>
     `
   },
   {
@@ -3010,13 +3010,13 @@ const remainingArticles = [
 
       <hr>
 
-      <p><em>Need help deciding between custom SaaS and ready-made solutions? <a href="https://calendly.com/pascal-digny/consultation-meeting" target="_blank" rel="noopener noreferrer">Book a consultation</a> to discuss your specific needs and get expert guidance.</em></p>
+      <p><em>Need help deciding between custom SaaS and ready-made solutions? <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Book a consultation</a> to discuss your specific needs and get expert guidance.</em></p>
 
       <p>African AI investment is at an inflection point. Companies building strong businesses today will attract the capital needed to scale and dominate their markets.</p>
 
       <hr>
 
-      <p><em>Ready to attract AI investment? <a href="https://calendly.com/pascal-digny/consultation-meeting" target="_blank" rel="noopener noreferrer">Book a strategic consultation</a> with our investment experts.</em></p>
+      <p><em>Ready to attract AI investment? <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Book a strategic consultation</a> with our investment experts.</em></p>
     `
   }
 ]

@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { ctaConfig, getBookingLinkProps } from '@/app/config/cta.config'
 
 export default function Footer() {
   const links = {
@@ -18,6 +19,7 @@ export default function Footer() {
       { name: 'Services', href: '/services' },
       { name: 'Careers', href: '/careers' },
       { name: 'Contact', href: '/contact' },
+      { name: 'Affiliate Program', href: '/affiliate' },
     ],
   }
 
@@ -38,12 +40,10 @@ export default function Footer() {
               real impact for businesses, schools, and communities.
             </p>
             <a
-              href="https://calendly.com/pascal-digny/consultation-meeting"
-              target="_blank"
-              rel="noopener noreferrer"
+              {...getBookingLinkProps()}
               className="btn-primary"
             >
-              Get Started
+              {ctaConfig.buttonText.getStarted}
             </a>
           </div>
 

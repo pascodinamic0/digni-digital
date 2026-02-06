@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import ThemeToggle from './ThemeToggle'
+import { ctaConfig, getBookingLinkProps } from '@/app/config/cta.config'
 
 export default function SimpleNavigation() {
   const [scrolled, setScrolled] = useState(false)
@@ -38,12 +39,10 @@ export default function SimpleNavigation() {
               Case Studies
             </Link>
             <a
-              href="https://calendly.com/pascal-digny/consultation-meeting"
-              target="_blank"
-              rel="noopener noreferrer"
+              {...getBookingLinkProps()}
               className="btn-primary text-sm px-6 py-2"
             >
-              Get Started
+              {ctaConfig.buttonText.getStarted}
             </a>
             <ThemeToggle />
           </div>

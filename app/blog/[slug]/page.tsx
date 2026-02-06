@@ -4,6 +4,7 @@ import Link from 'next/link'
 import Navigation from '../../components/Navigation'
 import Footer from '../../components/Footer'
 import { allArticles } from '../page'
+import { ctaConfig, getBookingLinkProps } from '@/app/config/cta.config'
 
 interface BlogPostPageProps {
   params: {
@@ -116,12 +117,10 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
               Let's discuss how these insights can be applied to your specific challenges.
             </p>
             <a
-              href="https://calendly.com/pascal-digny/consultation-meeting"
-              target="_blank"
-              rel="noopener noreferrer"
+              {...getBookingLinkProps()}
               className="btn-primary"
             >
-              Book Free Consultation
+              {ctaConfig.buttonText.bookConsultation}
             </a>
           </div>
         </div>
