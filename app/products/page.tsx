@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import Navigation from '../components/Navigation'
 import Footer from '../components/Footer'
 import AnimatedSection from '../components/AnimatedSection'
+import { ctaConfig, getBookingLinkProps } from '@/app/config/cta.config'
 
 const featuredProduct = {
   id: 'proposal-agent',
@@ -138,9 +139,7 @@ export default function ProductsPage() {
                 <div className="flex gap-4">
                   <a href="#pricing" className="btn-primary" aria-label="View pricing plans">Try Free</a>
                   <a 
-                    href="https://calendly.com/pascal-digny/consultation-meeting" 
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    {...getBookingLinkProps()}
                     className="btn-secondary"
                     aria-label="Schedule a demo"
                   >
@@ -205,13 +204,11 @@ export default function ProductsPage() {
                   </ul>
                   
                   <a
-                    href="https://calendly.com/pascal-digny/consultation-meeting"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    {...getBookingLinkProps()}
                     className={`w-full text-center ${plan === 'pro' ? 'btn-primary' : 'btn-secondary'}`}
                     aria-label={`Get started with ${plan} plan`}
                   >
-                    Get Started
+                    {ctaConfig.buttonText.getStarted}
                   </a>
                 </motion.div>
               ))}
@@ -288,9 +285,7 @@ export default function ProductsPage() {
             Can't find what you're looking for? We build custom software solutions tailored to your specific needs.
           </p>
           <a
-            href="https://calendly.com/pascal-digny/consultation-meeting"
-            target="_blank"
-            rel="noopener noreferrer"
+            {...getBookingLinkProps()}
             className="btn-primary text-lg px-8 py-4"
           >
             Discuss Custom Development

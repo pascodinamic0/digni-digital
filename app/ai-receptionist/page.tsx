@@ -8,6 +8,7 @@ import AnimatedSection from '../components/AnimatedSection'
 import ConversationMockups from '../components/ConversationMockups'
 import UnifiedInbox from '../components/UnifiedInbox'
 import BusinessTimeline from '../components/BusinessTimeline'
+import { ctaConfig, getBookingLinkProps } from '@/app/config/cta.config'
 
 export default function AIReceptionistPage() {
   const capabilities = [
@@ -160,9 +161,7 @@ export default function AIReceptionistPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-2">
               <a
-                href="https://calendly.com/pascal-digny/consultation-meeting"
-                target="_blank"
-                rel="noopener noreferrer"
+                {...getBookingLinkProps()}
                 className="btn-primary text-sm sm:text-base md:text-lg px-6 sm:px-8 py-3 sm:py-4 w-full sm:w-auto text-center"
               >
                 Stop Losing Leads Today
@@ -417,12 +416,10 @@ export default function AIReceptionistPage() {
                   <p className="text-white/60 text-sm">From decision to operation</p>
                 </div>
                 <a
-                  href="https://calendly.com/pascal-digny/consultation-meeting"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  {...getBookingLinkProps()}
                   className="inline-flex items-center gap-2 bg-white text-accent font-semibold px-6 py-3 rounded-xl hover:bg-white/90 transition-colors shadow-lg"
                 >
-                  Get Started Now
+                  {ctaConfig.buttonText.getStarted}
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
@@ -672,9 +669,7 @@ export default function AIReceptionistPage() {
                   </p>
 
                   <a
-                    href="https://calendly.com/pascal-digny/consultation-meeting"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    {...getBookingLinkProps()}
                     className="btn-primary w-full text-center text-lg py-4"
                   >
                     Install Follow-Up Infrastructure
@@ -698,9 +693,7 @@ export default function AIReceptionistPage() {
             System operates within 24 hours of your decision.
           </p>
           <a
-            href="https://calendly.com/pascal-digny/consultation-meeting"
-            target="_blank"
-            rel="noopener noreferrer"
+            {...getBookingLinkProps()}
             className="btn-primary text-lg px-8 py-4"
           >
             Put Intake on Autopilot

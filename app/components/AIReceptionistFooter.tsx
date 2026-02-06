@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import ThemeToggle from './ThemeToggle'
+import { ctaConfig, getBookingLinkProps } from '@/app/config/cta.config'
 
 export default function AIReceptionistFooter() {
   const links = {
@@ -43,12 +44,10 @@ export default function AIReceptionistFooter() {
                 real impact for businesses, schools, and communities.
               </p>
               <a
-                href="https://calendly.com/pascal-digny/consultation-meeting"
-                target="_blank"
-                rel="noopener noreferrer"
+                {...getBookingLinkProps()}
                 className="btn-primary"
               >
-                Get Started
+                {ctaConfig.buttonText.getStarted}
               </a>
             </div>
 

@@ -7,6 +7,7 @@ import Navigation from '../components/Navigation'
 import Footer from '../components/Footer'
 import AnimatedSection from '../components/AnimatedSection'
 import ScrollIndicator from '../components/ScrollIndicator'
+import { ctaConfig, getBookingLinkProps } from '@/app/config/cta.config'
 
 // Animated Counter Component
 function Counter({ end, suffix = '' }: { end: number; suffix?: string }) {
@@ -570,12 +571,10 @@ export default function AboutPage() {
             Let's discuss how we can help transform your business with the right growth infrastructure.
           </p>
           <a
-            href="https://calendly.com/pascal-digny/consultation-meeting"
-            target="_blank"
-            rel="noopener noreferrer"
+            {...getBookingLinkProps()}
             className="btn-primary text-lg px-8 py-4"
           >
-            Book Your Free Consultation
+            {ctaConfig.buttonText.bookConsultation}
           </a>
         </div>
       </AnimatedSection>

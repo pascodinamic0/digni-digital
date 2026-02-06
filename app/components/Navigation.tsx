@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import { ctaConfig, getBookingLinkProps } from '@/app/config/cta.config'
 
 export default function Navigation() {
   const [scrolled, setScrolled] = useState(false)
@@ -173,12 +174,10 @@ export default function Navigation() {
 
           <div className="hidden lg:flex items-center gap-6">
             <a
-              href="https://calendly.com/pascal-digny/consultation-meeting"
-              target="_blank"
-              rel="noopener noreferrer"
+              {...getBookingLinkProps()}
               className="btn-primary text-sm"
             >
-              Get Started
+              {ctaConfig.buttonText.getStarted}
             </a>
           </div>
 
@@ -245,12 +244,10 @@ export default function Navigation() {
             ))}
             
             <a
-              href="https://calendly.com/pascal-digny/consultation-meeting"
-              target="_blank"
-              rel="noopener noreferrer"
+              {...getBookingLinkProps()}
               className="btn-primary mt-4 w-full text-center block"
             >
-              Get Started
+              {ctaConfig.buttonText.getStarted}
             </a>
           </motion.div>
         )}

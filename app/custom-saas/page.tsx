@@ -5,6 +5,7 @@ import Link from 'next/link'
 import Navigation from '../components/Navigation'
 import Footer from '../components/Footer'
 import AnimatedSection from '../components/AnimatedSection'
+import { ctaConfig, getBookingLinkProps } from '@/app/config/cta.config'
 
 export default function CustomSaaSPage() {
   const ourApps = [
@@ -181,9 +182,7 @@ export default function CustomSaaSPage() {
             </p>
             <div className="flex justify-center px-2">
               <a
-                href="https://calendly.com/pascal-digny/consultation-meeting"
-                target="_blank"
-                rel="noopener noreferrer"
+                {...getBookingLinkProps()}
                 className="btn-primary text-sm sm:text-base md:text-lg px-6 sm:px-8 py-3 sm:py-4 w-full sm:w-auto text-center"
               >
                 Build Your Success Story
@@ -346,12 +345,10 @@ export default function CustomSaaSPage() {
 
                 <div className="mt-8">
                   <a
-                    href="https://calendly.com/pascal-digny/consultation-meeting"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    {...getBookingLinkProps()}
                     className="btn-secondary w-full text-center"
                   >
-                    Discuss Your Project
+                    {ctaConfig.buttonText.discussProject}
                   </a>
                 </div>
               </motion.div>
@@ -577,12 +574,10 @@ export default function CustomSaaSPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="https://calendly.com/pascal-digny/consultation-meeting"
-              target="_blank"
-              rel="noopener noreferrer"
+              {...getBookingLinkProps()}
               className="btn-primary text-lg px-8 py-4"
             >
-              Start Your Project
+              {ctaConfig.buttonText.startProject}
             </a>
             <Link href="/case-studies" className="btn-secondary text-lg px-8 py-4">
               View More Case Studies

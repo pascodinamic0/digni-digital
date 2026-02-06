@@ -8,7 +8,9 @@ import Footer from './components/Footer'
 import AnimatedSection from './components/AnimatedSection'
 import ScrollIndicator from './components/ScrollIndicator'
 import RotatingCards from './components/RotatingCards'
+import GlobalPresenceMap from './components/GlobalPresenceMap'
 import { useTheme } from './components/ThemeProvider'
+import { ctaConfig, getBookingLinkProps } from '@/app/config/cta.config'
 
 // Hero Section
 function Hero() {
@@ -426,9 +428,7 @@ function WhatWeDo() {
                   {service.primaryCta}
                 </Link>
                 <a
-                  href="https://calendly.com/pascal-digny/consultation-meeting"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  {...getBookingLinkProps()}
                   className="btn-secondary text-center text-sm py-2.5"
                 >
                   {service.secondaryCta}
@@ -561,12 +561,10 @@ function WhatWeDo() {
                   Let&apos;s discuss your challenges and find the right solution together.
                 </p>
                 <a
-                  href="https://calendly.com/pascal-digny/consultation-meeting"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  {...getBookingLinkProps()}
                   className="group inline-flex items-center gap-3 bg-accent hover:bg-accent-light text-background font-semibold px-8 py-4 rounded-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl text-lg"
                 >
-                  <span>Book a Strategy Call</span>
+                  <span>{ctaConfig.buttonText.bookStrategy}</span>
                   <svg
                     className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"
                     fill="none"
@@ -667,12 +665,10 @@ function Products() {
 
               <div className="flex gap-4">
                 <a 
-                  href="https://calendly.com/pascal-digny/consultation-meeting"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  {...getBookingLinkProps()}
                   className="btn-primary flex-1 text-center"
                 >
-                  Get Started
+                  {ctaConfig.buttonText.getStarted}
                 </a>
                 <Link href="/products" className="btn-secondary flex-1 text-center">
                   Learn More
@@ -807,6 +803,29 @@ function Stats() {
             </motion.div>
           </div>
         </div>
+      </div>
+    </AnimatedSection>
+  )
+}
+
+// Global Presence Section
+function GlobalPresence() {
+  return (
+    <AnimatedSection id="global-presence" className="py-24">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="text-center mb-12">
+          <span className="text-accent font-medium text-sm uppercase tracking-wider">Where We Operate</span>
+          <h2 className="font-display text-4xl md:text-5xl font-bold mt-4 mb-6">
+            Serving Clients<br />
+            <span className="gradient-text">Around the World</span>
+          </h2>
+          <p className="text-muted text-lg max-w-3xl mx-auto">
+            With offices across 4 continents, we're positioned to support businesses and institutions 
+            wherever they are — with local expertise and global standards.
+          </p>
+        </div>
+
+        <GlobalPresenceMap showToggle={true} initialExpanded={false} />
       </div>
     </AnimatedSection>
   )
@@ -950,12 +969,10 @@ function CaseStudies() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/case-studies" className="btn-secondary">View All Case Studies</Link>
             <a
-              href="https://calendly.com/pascal-digny/consultation-meeting"
-              target="_blank"
-              rel="noopener noreferrer"
+              {...getBookingLinkProps()}
               className="btn-primary"
             >
-              Get Similar Results
+              {ctaConfig.buttonText.getSimilarResults}
             </a>
           </div>
         </div>
@@ -1038,12 +1055,10 @@ function CTASection() {
                 className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-10"
               >
                 <a
-                  href="https://calendly.com/pascal-digny/consultation-meeting"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  {...getBookingLinkProps()}
                   className="group relative inline-flex items-center gap-3 bg-accent hover:bg-accent-light text-background font-semibold px-8 py-4 rounded-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
                 >
-                  <span className="text-lg">Book Your Free Consultation</span>
+                  <span className="text-lg">{ctaConfig.buttonText.bookConsultation}</span>
                   <svg
                     className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"
                     fill="none"
@@ -1094,6 +1109,7 @@ export default function Home() {
       <WhatWereFightingFor />
       <WhatWeDo />
       <Stats />
+      <GlobalPresence />
       <CaseStudies />
       <CTASection />
       <Footer />

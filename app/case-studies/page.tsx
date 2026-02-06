@@ -5,6 +5,7 @@ import { motion } from 'framer-motion'
 import Navigation from '../components/Navigation'
 import Footer from '../components/Footer'
 import AnimatedSection from '../components/AnimatedSection'
+import { ctaConfig, getBookingLinkProps } from '@/app/config/cta.config'
 
 const caseStudies = [
   {
@@ -303,12 +304,10 @@ export default function CaseStudiesPage() {
                     
                     <div className="mt-8">
                       <a
-                        href="https://calendly.com/pascal-digny/consultation-meeting"
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        {...getBookingLinkProps()}
                         className="btn-primary w-full text-center"
                       >
-                        Get Similar Results
+                        {ctaConfig.buttonText.getSimilarResults}
                       </a>
                     </div>
                   </div>
@@ -329,9 +328,7 @@ export default function CaseStudiesPage() {
             Every business is unique, but the principles of growth remain the same. Let's discuss how we can create similar results for your business.
           </p>
           <a
-            href="https://calendly.com/pascal-digny/consultation-meeting"
-            target="_blank"
-            rel="noopener noreferrer"
+            {...getBookingLinkProps()}
             className="btn-primary text-lg px-8 py-4"
           >
             Start Your Transformation
