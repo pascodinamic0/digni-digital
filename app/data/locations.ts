@@ -24,6 +24,8 @@ export interface OfficeLocation {
   phone?: string
   timezone: string
   isPrimary?: boolean
+  /** Google Business Profile URL; when set, used instead of coordinates-based Maps link */
+  googleBusinessUrl?: string
 }
 
 export const officeLocations: OfficeLocation[] = [
@@ -31,27 +33,28 @@ export const officeLocations: OfficeLocation[] = [
     id: 'usa',
     name: 'United States',
     country: 'United States',
-    city: 'New York',
+    city: 'Sheridan',
     region: 'North America',
     address: {
-      street: '350 Fifth Avenue',
-      city: 'New York',
-      state: 'NY',
-      postalCode: '10118',
+      street: '30 N Gould St Ste R',
+      city: 'Sheridan',
+      state: 'WY',
+      postalCode: '82801',
       country: 'United States'
     },
     coordinates: {
-      lat: 40.7484,
-      lng: -73.9857
+      lat: 44.7972,
+      lng: -106.9562
     },
     mapPosition: {
       x: 22,
       y: 35
     },
     email: 'usa@dignidigital.com',
-    phone: '+1 (212) 555-0100',
-    timezone: 'EST (UTC-5)',
-    isPrimary: true
+    phone: '+1 (307) 555-0100',
+    timezone: 'MST (UTC-7)',
+    isPrimary: true,
+    googleBusinessUrl: 'https://share.google/esoeHJdqRK5C5hbTF'
   },
   {
     id: 'south-africa',
@@ -201,6 +204,7 @@ export const formatFullAddress = (location: OfficeLocation): string => {
 }
 
 export const getGoogleMapsUrl = (location: OfficeLocation): string => {
+  if (location.googleBusinessUrl) return location.googleBusinessUrl
   const { lat, lng } = location.coordinates
   return `https://www.google.com/maps?q=${lat},${lng}`
 }

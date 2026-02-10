@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { ctaConfig, getBookingLinkProps } from '@/app/config/cta.config'
+import ThemeToggle from './ThemeToggle'
 
 export default function Navigation() {
   const [scrolled, setScrolled] = useState(false)
@@ -172,7 +173,8 @@ export default function Navigation() {
             ))}
           </div>
 
-          <div className="hidden lg:flex items-center gap-6">
+          <div className="hidden lg:flex items-center gap-4">
+            <ThemeToggle />
             <a
               {...getBookingLinkProps()}
               className="btn-primary text-sm"
@@ -242,6 +244,11 @@ export default function Navigation() {
                 {link.name}
               </Link>
             ))}
+            
+            <div className="flex items-center justify-between mt-6 pt-4 border-t border-white/10">
+              <span className="text-muted text-sm">Theme</span>
+              <ThemeToggle />
+            </div>
             
             <a
               {...getBookingLinkProps()}
