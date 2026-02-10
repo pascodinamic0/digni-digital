@@ -2,120 +2,143 @@
 
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import {
+  ComposableMap,
+  Geographies,
+  Geography,
+  Marker,
+} from 'react-simple-maps'
 import { officeLocations, OfficeLocation, formatFullAddress, getGoogleMapsUrl } from '@/app/data/locations'
+
+const GEO_URL = 'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json'
 
 interface GlobalPresenceMapProps {
   showToggle?: boolean
   initialExpanded?: boolean
 }
 
-// Simplified world map SVG path - continents outline
-const WorldMapSVG = () => (
-  <svg
-    viewBox="0 0 1000 500"
-    className="w-full h-full"
-    preserveAspectRatio="xMidYMid meet"
-  >
-    {/* Ocean background */}
-    <rect x="0" y="0" width="1000" height="500" className="fill-accent/5" />
-    
-    {/* Simplified continent paths */}
-    <g className="fill-accent/20 stroke-accent/40" strokeWidth="1">
-      {/* North America */}
-      <path d="M50,50 L180,45 L220,80 L260,75 L280,100 L270,140 L240,160 L220,200 L180,220 L150,210 L120,230 L100,200 L80,180 L60,140 L40,100 Z" />
-      
-      {/* South America */}
-      <path d="M180,260 L220,250 L250,280 L260,320 L250,380 L220,420 L180,440 L150,420 L140,380 L150,320 L160,280 Z" />
-      
-      {/* Europe */}
-      <path d="M440,60 L520,55 L540,80 L520,100 L540,120 L520,140 L480,150 L450,130 L440,100 Z" />
-      
-      {/* Africa */}
-      <path d="M440,180 L520,170 L560,200 L580,260 L560,320 L520,380 L480,390 L440,360 L420,300 L430,240 Z" />
-      
-      {/* Asia */}
-      <path d="M560,60 L700,50 L780,80 L820,60 L880,80 L900,120 L880,160 L820,180 L780,160 L740,180 L700,160 L660,180 L620,160 L580,180 L560,140 L580,100 Z" />
-      
-      {/* Middle East */}
-      <path d="M560,160 L620,150 L660,180 L640,220 L600,240 L560,220 L550,190 Z" />
-      
-      {/* India */}
-      <path d="M680,180 L740,180 L760,220 L740,280 L700,300 L660,280 L660,220 Z" />
-      
-      {/* Southeast Asia */}
-      <path d="M760,220 L820,200 L860,240 L840,280 L800,300 L760,280 Z" />
-      
-      {/* Australia */}
-      <path d="M800,340 L900,320 L940,360 L920,420 L860,440 L800,420 L780,380 Z" />
-      
-      {/* Indonesia archipelago */}
-      <path d="M760,300 L820,290 L850,310 L830,330 L780,340 L750,320 Z" />
-    </g>
-    
-    {/* Grid lines for visual effect */}
-    <g className="stroke-accent/10" strokeWidth="0.5" fill="none">
-      {[...Array(9)].map((_, i) => (
-        <line key={`h-${i}`} x1="0" y1={(i + 1) * 50} x2="1000" y2={(i + 1) * 50} />
-      ))}
-      {[...Array(19)].map((_, i) => (
-        <line key={`v-${i}`} x1={(i + 1) * 50} y1="0" x2={(i + 1) * 50} y2="500" />
-      ))}
-    </g>
-  </svg>
-)
-
-interface LocationMarkerProps {
-  location: OfficeLocation
-  isSelected: boolean
-  onSelect: (location: OfficeLocation) => void
+/* ── Pulsing ring keyframes (injected once via <style>) ── */
+const pulseKeyframes = `
+@keyframes map-ping {
+  0%   { r: 6;  opacity: 0.7; }
+  70%  { r: 18; opacity: 0; }
+  100% { r: 18; opacity: 0; }
 }
+`
 
-const LocationMarker = ({ location, isSelected, onSelect }: LocationMarkerProps) => {
+/* ── Interactive world map with office markers ── */
+const WorldMap = ({
+  selectedLocation,
+  onSelect,
+}: {
+  selectedLocation: OfficeLocation | null
+  onSelect: (location: OfficeLocation) => void
+}) => {
+  const [hoveredId, setHoveredId] = useState<string | null>(null)
+
   return (
-    <motion.button
-      className="absolute transform -translate-x-1/2 -translate-y-1/2 group cursor-pointer z-10"
-      style={{
-        left: `${location.mapPosition.x}%`,
-        top: `${location.mapPosition.y}%`
-      }}
-      onClick={() => onSelect(location)}
-      whileHover={{ scale: 1.2 }}
-      whileTap={{ scale: 0.95 }}
-      aria-label={`View ${location.city}, ${location.country} office`}
-    >
-      {/* Pulsing ring animation */}
-      <motion.div
-        className={`absolute inset-0 rounded-full ${location.isPrimary ? 'bg-accent' : 'bg-success'}`}
-        animate={{
-          scale: [1, 2, 2],
-          opacity: [0.6, 0.2, 0]
-        }}
-        transition={{
-          duration: 2,
-          repeat: Infinity,
-          ease: 'easeOut'
-        }}
-        style={{ width: 16, height: 16, marginLeft: -8, marginTop: -8 }}
-      />
-      
-      {/* Main dot */}
-      <div
-        className={`w-4 h-4 rounded-full border-2 border-white shadow-lg transition-all duration-300 ${
-          isSelected
-            ? 'bg-accent scale-125'
-            : location.isPrimary
-            ? 'bg-accent'
-            : 'bg-success group-hover:bg-accent'
-        }`}
-      />
-      
-      {/* Location label on hover */}
-      <div className="absolute left-1/2 -translate-x-1/2 -top-8 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap">
-        <div className="bg-surface border border-light px-2 py-1 rounded text-xs font-medium shadow-lg">
-          {location.city}
-        </div>
-      </div>
-    </motion.button>
+    <>
+      {/* inject keyframes once */}
+      <style>{pulseKeyframes}</style>
+
+      <ComposableMap
+        projection="geoNaturalEarth1"
+        projectionConfig={{ scale: 155, center: [10, 5] }}
+        className="w-full h-full"
+        style={{ background: 'transparent' }}
+      >
+        {/* Country shapes */}
+        <Geographies geography={GEO_URL}>
+          {({ geographies }) =>
+            geographies.map((geo) => (
+              <Geography
+                key={geo.rpigeographyid ?? geo.properties?.name ?? geo.id}
+                geography={geo}
+                fill="rgba(37, 99, 235, 0.25)"
+                stroke="rgba(37, 99, 235, 0.45)"
+                strokeWidth={0.5}
+                style={{
+                  default: { outline: 'none' },
+                  hover:   { outline: 'none', fill: 'rgba(37, 99, 235, 0.35)' },
+                  pressed: { outline: 'none' },
+                }}
+              />
+            ))
+          }
+        </Geographies>
+
+        {/* Graticule-style grid (optional subtle lines are baked into the map data) */}
+
+        {/* Office markers */}
+        {officeLocations.map((loc) => {
+          const isSelected = selectedLocation?.id === loc.id
+          const isHovered  = hoveredId === loc.id
+          const color      = loc.isPrimary ? '#2563EB' : '#10B981'
+
+          return (
+            <Marker
+              key={loc.id}
+              coordinates={[loc.coordinates.lng, loc.coordinates.lat]}
+            >
+              {/* Pulsing ring */}
+              <circle
+                r={6}
+                fill="none"
+                stroke={color}
+                strokeWidth={2}
+                style={{
+                  animation: 'map-ping 2s cubic-bezier(0, 0, 0.2, 1) infinite',
+                }}
+              />
+
+              {/* Main dot */}
+              <circle
+                r={isSelected ? 7 : 5}
+                fill={color}
+                stroke="#fff"
+                strokeWidth={2}
+                style={{
+                  cursor: 'pointer',
+                  transition: 'r 0.2s ease, fill 0.2s ease',
+                  filter: isSelected || isHovered ? 'drop-shadow(0 0 6px rgba(37,99,235,0.6))' : 'none',
+                }}
+                onMouseEnter={() => setHoveredId(loc.id)}
+                onMouseLeave={() => setHoveredId(null)}
+                onClick={() => onSelect(loc)}
+              />
+
+              {/* City label */}
+              {(isHovered || isSelected) && (
+                <g>
+                  <rect
+                    x={-loc.city.length * 3.5 - 6}
+                    y={-26}
+                    width={loc.city.length * 7 + 12}
+                    height={18}
+                    rx={4}
+                    fill="rgba(20, 20, 22, 0.92)"
+                    stroke="rgba(37, 99, 235, 0.35)"
+                    strokeWidth={1}
+                  />
+                  <text
+                    textAnchor="middle"
+                    y={-13}
+                    style={{
+                      fontFamily: 'Inter, system-ui, sans-serif',
+                      fontSize: '11px',
+                      fontWeight: 600,
+                      fill: '#FAFAFA',
+                    }}
+                  >
+                    {loc.city}
+                  </text>
+                </g>
+              )}
+            </Marker>
+          )
+        })}
+      </ComposableMap>
+    </>
   )
 }
 
@@ -308,17 +331,10 @@ export default function GlobalPresenceMap({ showToggle = true, initialExpanded =
             <div className="card p-6 md:p-8">
               {/* Map with markers */}
               <div className="relative aspect-[2/1] mb-6 rounded-xl overflow-hidden bg-gradient-to-br from-accent/10 via-surface to-accent/5 border border-accent/20">
-                <WorldMapSVG />
-                
-                {/* Location markers */}
-                {officeLocations.map((location) => (
-                  <LocationMarker
-                    key={location.id}
-                    location={location}
-                    isSelected={selectedLocation?.id === location.id}
-                    onSelect={handleLocationSelect}
-                  />
-                ))}
+                <WorldMap
+                  selectedLocation={selectedLocation}
+                  onSelect={handleLocationSelect}
+                />
               </div>
 
               {/* Location cards grid */}

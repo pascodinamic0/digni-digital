@@ -7,13 +7,14 @@ import { allArticles } from '../page'
 import { ctaConfig, getBookingLinkProps } from '@/app/config/cta.config'
 
 interface BlogPostPageProps {
-  params: {
+  params: Promise<{
     slug: string
-  }
+  }>
 }
 
 export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
-  const article = allArticles.find(article => article.slug === params.slug)
+  const { slug } = await params
+  const article = allArticles.find(article => article.slug === slug)
   
   if (!article) {
     return {
@@ -39,8 +40,9 @@ export async function generateStaticParams() {
   }))
 }
 
-export default function BlogPostPage({ params }: BlogPostPageProps) {
-  const article = allArticles.find(article => article.slug === params.slug)
+export default async function BlogPostPage({ params }: BlogPostPageProps) {
+  const { slug } = await params
+  const article = allArticles.find(article => article.slug === slug)
 
   if (!article) {
     notFound()

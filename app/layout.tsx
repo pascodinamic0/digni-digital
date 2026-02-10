@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   authors: [{ name: 'Digni Digital' }],
   creator: 'Digni Digital',
   publisher: 'Digni Digital',
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://dignidigital.com'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://digni-digital-llc.com'),
   alternates: {
     canonical: '/',
   },
