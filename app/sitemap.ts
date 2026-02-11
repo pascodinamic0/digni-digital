@@ -1,7 +1,8 @@
 import { MetadataRoute } from 'next'
 import { allArticles } from './blog/page'
 
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://digni-digital-llc.com'
+// Canonical site URL for sitemap (must match the domain verified in Google Search Console)
+const baseUrl = 'https://digni-digital-llc.com'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages: MetadataRoute.Sitemap = [
