@@ -50,7 +50,7 @@ export const officeLocations: OfficeLocation[] = [
       x: 22,
       y: 35
     },
-    email: 'usa@dignidigital.com',
+    email: 'usa@digni-digital-llc.com',
     phone: '+1 (307) 555-0100',
     timezone: 'MST (UTC-7)',
     isPrimary: true,
@@ -77,7 +77,7 @@ export const officeLocations: OfficeLocation[] = [
       x: 53,
       y: 75
     },
-    email: 'southafrica@dignidigital.com',
+    email: 'southafrica@digni-digital-llc.com',
     phone: '+27 21 555 0100',
     timezone: 'SAST (UTC+2)'
   },
@@ -101,7 +101,7 @@ export const officeLocations: OfficeLocation[] = [
       x: 78,
       y: 52
     },
-    email: 'singapore@dignidigital.com',
+    email: 'singapore@digni-digital-llc.com',
     phone: '+65 6555 0100',
     timezone: 'SGT (UTC+8)'
   },
@@ -125,7 +125,7 @@ export const officeLocations: OfficeLocation[] = [
       x: 62,
       y: 42
     },
-    email: 'dubai@dignidigital.com',
+    email: 'dubai@digni-digital-llc.com',
     phone: '+971 4 555 0100',
     timezone: 'GST (UTC+4)'
   },
@@ -149,8 +149,8 @@ export const officeLocations: OfficeLocation[] = [
       x: 57,
       y: 52
     },
-    email: 'kenya@dignidigital.com',
-    phone: '+254 20 555 0100',
+    email: 'kenya@digni-digital-llc.com',
+    phone: '+254702593518',
     timezone: 'EAT (UTC+3)'
   },
   {
@@ -173,7 +173,7 @@ export const officeLocations: OfficeLocation[] = [
       x: 51,
       y: 55
     },
-    email: 'drc@dignidigital.com',
+    email: 'drc@digni-digital-llc.com',
     phone: '+243 81 555 0100',
     timezone: 'WAT (UTC+1)'
   }

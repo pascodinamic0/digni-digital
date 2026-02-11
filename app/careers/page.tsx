@@ -300,7 +300,7 @@ export default function CareersPage() {
                     </div>
                     
                     <a
-                      href="mailto:careers@dignidigital.com?subject=Application for Senior Full-Stack Developer"
+                      href="mailto:careers@digni-digital-llc.com?subject=Application for Senior Full-Stack Developer"
                       className="btn-primary w-full text-center"
                     >
                       Apply Now
@@ -393,7 +393,7 @@ export default function CareersPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="mailto:careers@dignidigital.com"
+              href="mailto:careers@digni-digital-llc.com"
               className="btn-primary text-lg px-8 py-4"
             >
               Send Your Resume

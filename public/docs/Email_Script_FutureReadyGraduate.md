@@ -108,8 +108,8 @@ Pascal Digny
 Founder & CEO
 Digni Digital
 
-📧 pascal@dignidigital.com
-🌐 www.dignidigital.com
+📧 pascal@digni-digital-llc.com
+🌐 www.digni-digital-llc.com
 📱 +234 [Your Phone Number]
 📍 Lagos, Nigeria
 

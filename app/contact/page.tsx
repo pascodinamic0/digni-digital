@@ -21,8 +21,8 @@ const contactMethods = [
     title: 'Send an Email',
     description: 'Reach out directly for questions or project inquiries',
     icon: '✉️',
-    action: 'hello@dignidigital.com',
-    href: 'mailto:hello@dignidigital.com'
+    action: 'hello@digni-digital-llc.com',
+    href: 'mailto:hello@digni-digital-llc.com'
   },
   {
     title: 'WhatsApp',
