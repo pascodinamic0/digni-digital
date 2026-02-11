@@ -859,6 +859,12 @@ img {
   color: var(--text);
 }
 
+/* Next.js dev tools portal - remove fixed position so it doesn't overlay at 0,0 */
+nextjs-portal {
+  left: unset;
+  top: unset;
+}
+
 /* Typing indicator animation */
 @keyframes typing {
   0%, 100% {
