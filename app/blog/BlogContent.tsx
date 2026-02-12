@@ -5,7 +5,9 @@ import { motion } from 'framer-motion'
 import Link from 'next/link'
 import Navigation from '../components/Navigation'
 import Footer from '../components/Footer'
-import { ctaConfig, getBookingLinkProps } from '@/app/config/cta.config'
+import { getBookingLinkProps } from '@/app/config/cta.config'
+import { useLanguage } from '../context/LanguageContext'
+import { translations } from '../config/translations'
 
 interface Article {
   id: number
@@ -25,18 +27,22 @@ interface BlogContentProps {
   articles: Article[]
 }
 
+const ALL_KEY = '__ALL__'
+
 export default function BlogContent({ articles }: BlogContentProps) {
-  const [selectedCategory, setSelectedCategory] = useState('All')
+  const { language } = useLanguage()
+  const t = translations[language].blog
+  const [selectedCategory, setSelectedCategory] = useState(ALL_KEY)
   const [searchTerm, setSearchTerm] = useState('')
   const [currentPage, setCurrentPage] = useState(1)
   const articlesPerPage = 9
 
   // Get unique categories
-  const categories = ['All', ...Array.from(new Set(articles.map(article => article.category)))]
+  const categoryKeys = [ALL_KEY, ...Array.from(new Set(articles.map(article => article.category)))]
 
   // Filter articles
   const filteredArticles = articles.filter(article => {
-    const matchesCategory = selectedCategory === 'All' || article.category === selectedCategory
+    const matchesCategory = selectedCategory === ALL_KEY || article.category === selectedCategory
     const matchesSearch = article.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          article.excerpt.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          article.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()))
@@ -60,10 +66,10 @@ export default function BlogContent({ articles }: BlogContentProps) {
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center">
             <h1 className="font-display text-4xl md:text-5xl font-bold mb-6">
-              Digital Transformation <span className="text-accent">Insights</span>
+              {t.heroTitle} <span className="text-accent">{t.heroSubtitle}</span>
             </h1>
             <p className="text-xl text-muted max-w-3xl mx-auto mb-8">
-              Expert insights on African digital transformation, AI, and business success stories for leaders shaping the future.
+              {t.heroDesc}
             </p>
             
             {/* Combined Search and Category Filter */}
@@ -74,7 +80,7 @@ export default function BlogContent({ articles }: BlogContentProps) {
                   <div className="relative">
                     <input
                       type="text"
-                      placeholder="Search articles by title, content, or tags..."
+                      placeholder={t.searchPlaceholder}
                       value={searchTerm}
                       onChange={(e) => setSearchTerm(e.target.value)}
                       aria-label="Search articles"
@@ -91,10 +97,10 @@ export default function BlogContent({ articles }: BlogContentProps) {
                       <svg className="w-4 h-4 text-muted" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" />
                       </svg>
-                      <span className="text-xs font-semibold text-muted uppercase tracking-wider">Filter by Category</span>
+                      <span className="text-xs font-semibold text-muted uppercase tracking-wider">{t.filterByCategory}</span>
                     </div>
                     <div className="flex flex-wrap gap-3">
-                      {categories.map(category => (
+                      {categoryKeys.map(category => (
                         <button
                           key={category}
                           onClick={() => {
@@ -102,7 +108,7 @@ export default function BlogContent({ articles }: BlogContentProps) {
                             setCurrentPage(1)
                           }}
                           aria-pressed={selectedCategory === category}
-                          aria-label={`Filter articles by ${category}`}
+                          aria-label={`Filter articles by ${category === ALL_KEY ? t.all : category}`}
                           role="button"
                           className={`px-5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-300 whitespace-nowrap ${
                             selectedCategory === category
@@ -110,7 +116,7 @@ export default function BlogContent({ articles }: BlogContentProps) {
                               : 'bg-surface text-muted hover:text-accent hover:bg-surface-light border border-white/10 hover:border-accent/30 hover:shadow-md hover:scale-[1.02]'
                           }`}
                         >
-                          {category}
+                          {category === ALL_KEY ? t.all : category}
                         </button>
                       ))}
                     </div>
@@ -128,8 +134,8 @@ export default function BlogContent({ articles }: BlogContentProps) {
         <section className="py-16 bg-surface">
           <div className="max-w-7xl mx-auto px-6">
             <div className="flex items-center justify-between mb-8">
-              <h2 className="font-display text-3xl font-bold">Featured Articles</h2>
-              <span className="text-muted text-sm">{featuredArticles.length} featured</span>
+              <h2 className="font-display text-3xl font-bold">{t.featuredArticles}</h2>
+              <span className="text-muted text-sm">{featuredArticles.length} {t.featured}</span>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {featuredArticles.map((article) => (
@@ -152,7 +158,7 @@ export default function BlogContent({ articles }: BlogContentProps) {
                     
                     <div className="flex items-center justify-between text-xs text-muted">
                       <span>{article.publishDate}</span>
-                      <span>By {article.author}</span>
+                      <span>{t.by} {article.author}</span>
                     </div>
                   </article>
                 </Link>
@@ -165,7 +171,7 @@ export default function BlogContent({ articles }: BlogContentProps) {
       {/* All Articles Grid */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="font-display text-3xl font-bold mb-8">All Articles</h2>
+          <h2 className="font-display text-3xl font-bold mb-8">{t.allArticles}</h2>
           
           {paginatedArticles.length > 0 ? (
             <>
@@ -190,7 +196,7 @@ export default function BlogContent({ articles }: BlogContentProps) {
                       
                       <div className="flex items-center justify-between text-sm text-muted mb-4">
                         <span>{article.publishDate}</span>
-                        <span>By {article.author}</span>
+                        <span>{t.by} {article.author}</span>
                       </div>
                       
                       <div className="flex flex-wrap gap-2">
@@ -215,7 +221,7 @@ export default function BlogContent({ articles }: BlogContentProps) {
                       aria-label="Go to previous page"
                       className="px-4 py-2 bg-surface text-text rounded-lg disabled:opacity-50 disabled:cursor-not-allowed hover:bg-surface-light transition-colors"
                     >
-                      Previous
+                      {t.previous}
                     </button>
                     
                     {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
@@ -240,7 +246,7 @@ export default function BlogContent({ articles }: BlogContentProps) {
                       aria-label="Go to next page"
                       className="px-4 py-2 bg-surface text-text rounded-lg disabled:opacity-50 disabled:cursor-not-allowed hover:bg-surface-light transition-colors"
                     >
-                      Next
+                      {t.next}
                     </button>
                   </div>
                 </div>
@@ -248,12 +254,12 @@ export default function BlogContent({ articles }: BlogContentProps) {
             </>
           ) : (
             <div className="text-center py-12">
-              <h3 className="font-display text-2xl font-bold mb-2">No articles found</h3>
+              <h3 className="font-display text-2xl font-bold mb-2">{t.noArticles}</h3>
               <p className="text-muted mb-6">Try adjusting your search or filter criteria</p>
               <button
                 onClick={() => {
                   setSearchTerm('')
-                  setSelectedCategory('All')
+                  setSelectedCategory(ALL_KEY)
                 }}
                 className="btn-primary"
               >
@@ -311,7 +317,7 @@ export default function BlogContent({ articles }: BlogContentProps) {
                 {...getBookingLinkProps()}
                 className="btn-primary"
               >
-                {ctaConfig.buttonText.bookConsultation}
+                {translations[language].cta.bookConsultation}
               </a>
               <Link href="/services" className="btn-secondary">
                 Explore Services

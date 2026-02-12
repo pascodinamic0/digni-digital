@@ -5,17 +5,107 @@ import Link from 'next/link'
 import Navigation from '../components/Navigation'
 import AIReceptionistFooter from '../components/AIReceptionistFooter'
 import AnimatedSection from '../components/AnimatedSection'
+import ClientJourneyDemo from '../components/ClientJourneyDemo'
 import ConversationMockups from '../components/ConversationMockups'
 import UnifiedInbox from '../components/UnifiedInbox'
 import BusinessTimeline from '../components/BusinessTimeline'
+import DemoPresentationDownload from '../components/DemoPresentationDownload'
+import { useTheme } from '../components/ThemeProvider'
 import { ctaConfig, getBookingLinkProps } from '@/app/config/cta.config'
+
+function AIEmployeeCTASection() {
+  const { theme } = useTheme()
+  return (
+    <div className="relative bg-surface rounded-3xl p-12 md:p-16 lg:p-20 overflow-hidden">
+      <div className={`absolute top-0 left-0 w-20 h-20 border-l-2 border-t-2 rounded-tl-3xl ${theme === 'dark' ? 'border-white' : 'border-black'}`} />
+      <div className={`absolute bottom-0 right-0 w-20 h-20 border-r-2 border-b-2 rounded-br-3xl ${theme === 'dark' ? 'border-white' : 'border-black'}`} />
+      <div className="text-center">
+        <motion.span
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2 }}
+          className="inline-block px-5 py-2 bg-accent/10 border border-accent/30 rounded-full text-accent text-sm font-medium tracking-wide mb-6 uppercase"
+        >
+          Limited Availability
+        </motion.span>
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.3 }}
+          className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
+        >
+          We&apos;re Not Replacing Your Team.
+          <br />
+          <span className="gradient-text">We&apos;re Amplifying Them.</span>
+        </motion.h2>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.35 }}
+          className="text-muted text-lg md:text-xl max-w-2xl mx-auto mb-6 leading-relaxed"
+        >
+          We give them superpowers—so they can focus on delivery instead of manual work. Stay ahead. Dominate your market.
+        </motion.p>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.4 }}
+          className="text-accent font-semibold text-base md:text-lg mb-10"
+        >
+          We serve one client per market. Your spot is either yours or your competitor&apos;s.
+        </motion.p>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.5 }}
+          className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8"
+        >
+          <a
+            {...getBookingLinkProps()}
+            className="group relative inline-flex items-center justify-center gap-3 bg-accent hover:bg-accent-light text-background font-bold px-10 py-5 rounded-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl text-lg shadow-lg shadow-accent/25"
+          >
+            <span>Secure Your Position Now</span>
+            <svg className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.6 }}
+          className="flex flex-wrap justify-center gap-6 sm:gap-8 text-sm text-muted"
+        >
+          <div className="flex items-center gap-2">
+            <div className="w-2 h-2 bg-success rounded-full" />
+            <span>One client per market</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="w-2 h-2 bg-success rounded-full" />
+            <span>30-min Strategy Call</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="w-2 h-2 bg-success rounded-full" />
+            <span>No obligation</span>
+          </div>
+        </motion.div>
+      </div>
+    </div>
+  )
+}
 
 export default function AIReceptionistPage() {
   const capabilities = [
     {
       number: '01',
       title: 'Instant Response',
-      description: 'Every lead gets an immediate reply—no delays, no missed opportunities.',
+      description: 'Reply in under 2 seconds. No delay. No lost leads.',
       icon: (
         <svg className="w-7 h-7" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -26,7 +116,7 @@ export default function AIReceptionistPage() {
     {
       number: '02',
       title: 'Smart Qualification',
-      description: 'AI asks the right questions to determine fit before routing to your team.',
+      description: 'Asks the right questions. Sends only ready buyers.',
       icon: (
         <svg className="w-7 h-7" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M9 11L12 14L22 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -38,7 +128,7 @@ export default function AIReceptionistPage() {
     {
       number: '03',
       title: 'Auto Booking',
-      description: 'Qualified leads book directly into your calendar. Zero friction.',
+      description: 'Leads book themselves. Your calendar fills.',
       icon: (
         <svg className="w-7 h-7" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect x="3" y="4" width="18" height="18" rx="2" ry="2" stroke="currentColor" strokeWidth="2"/>
@@ -52,7 +142,7 @@ export default function AIReceptionistPage() {
     {
       number: '04',
       title: 'Follow-Up System',
-      description: 'Systematic follow-up until they book or disqualify themselves.',
+      description: 'Keeps following until they book or say no.',
       icon: (
         <svg className="w-7 h-7" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -66,7 +156,7 @@ export default function AIReceptionistPage() {
     {
       number: '05',
       title: 'Multi-Channel',
-      description: 'Handles calls, messages, WhatsApp, and email from one system.',
+      description: 'Calls, WhatsApp, email. One inbox.',
       icon: (
         <svg className="w-7 h-7" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect x="5" y="2" width="14" height="20" rx="2" ry="2" stroke="currentColor" strokeWidth="2"/>
@@ -78,7 +168,7 @@ export default function AIReceptionistPage() {
     {
       number: '06',
       title: 'Revenue Recovery',
-      description: 'Re-engages cold contacts automatically. Turns old leads into sales.',
+      description: 'Wakes up cold leads. Turns them into sales.',
       icon: (
         <svg className="w-7 h-7" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <line x1="12" y1="1" x2="12" y2="23" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -92,34 +182,39 @@ export default function AIReceptionistPage() {
   const pricing = [
     {
       name: 'Done-For-You System',
+      limited: true,
+      limitedLabel: 'Limited availability',
+      setupFee: '$2,000',
+      setupLabel: 'one-time setup',
       price: '$449',
+      originalPrice: '$500',
       period: '/month',
-      description: 'Complete installation and operation. No software to manage.',
+      description: 'Done-for-you. No software to manage. Live in 24h.',
       included: [
-        'Full system installation within 24 hours',
-        'All communication channels covered',
-        'Custom qualification workflows',
-        'Appointment booking integration',
-        'CRM and calendar connections',
-        'Ongoing system management',
-        'Performance monitoring and optimization',
-        'Unlimited usage across all channels'
+        'Live in 24 hours',
+        'All channels (phone, WhatsApp, email)',
+        'Custom qualification',
+        'Calendar booking',
+        'CRM connected',
+        'We manage it',
+        'Performance tracked',
+        'Unlimited usage'
       ],
-      note: 'Priced against typical ad spend. If you can afford ads, you can afford the system that makes them work.'
+      note: 'If you pay for ads, you can afford the system that makes them work.'
     }
   ]
 
   const caseStudy = {
     company: 'Regional Medical Center',
     industry: 'Healthcare',
-    context: 'Running $15k monthly in Facebook and Instagram ads. System failing to handle lead volume.',
-    challenge: 'Missing 40% of leads from paid ads. Leads going cold before follow-up. $80k monthly revenue leakage from system failure, not offer failure.',
-    solution: 'Installed done-for-you system in 18 hours. Integrated with existing patient management. System handles all initial intake and qualification.',
+    context: '$15k/month in ads. System couldn\'t handle the leads.',
+    challenge: '40% of leads missed. Going cold. $80k/month lost.',
+    solution: 'Done-for-you system live in 18 hours. Handles all intake.',
     results: [
-      { metric: '100%', description: 'Lead capture rate. Every paid lead responded to instantly.' },
-      { metric: 'Zero', description: 'Leads going cold. System follows up until booking or disqualification.' },
-      { metric: '18 hours', description: 'Time from decision to full operation.' },
-      { metric: '85%', description: 'Conversion improvement from instant response and systematic follow-up.' }
+      { metric: '100%', description: 'Every lead answered. Instantly.' },
+      { metric: 'Zero', description: 'No cold leads. System follows up.' },
+      { metric: '18 hours', description: 'Decision to live.' },
+      { metric: '85%', description: 'Better conversion from instant response.' }
     ]
   }
 
@@ -155,17 +250,17 @@ export default function AIReceptionistPage() {
               <span className="gradient-text">Your Team Is Losing Them.</span>
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-muted max-w-3xl mx-auto leading-relaxed mb-6 sm:mb-8 md:mb-10 px-2">
-              Every minute a lead waits, your conversion drops 10%. Every unanswered message is money you already spent—gone. 
-              We install a system that responds in <span className="text-accent font-semibold">under 2 seconds</span>, qualifies instantly, 
-              and books appointments while you sleep.
+              Slow reply = lost sale. We respond in <span className="text-accent font-semibold">under 2 seconds</span>. 
+              Qualify. Book. 24/7. You sleep. It works.
             </p>
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-2">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-2">
               <a
                 {...getBookingLinkProps()}
                 className="btn-primary text-sm sm:text-base md:text-lg px-6 sm:px-8 py-3 sm:py-4 w-full sm:w-auto text-center"
               >
                 Stop Losing Leads Today
               </a>
+              <DemoPresentationDownload service="aiEmployee" variant="hero" label="Download Demo Presentation" />
             </div>
             <p className="text-muted/60 text-sm mt-4">Live in 24 hours. No software to manage. Done-for-you.</p>
           </motion.div>
@@ -184,8 +279,7 @@ export default function AIReceptionistPage() {
               <span className="text-destructive">This Is a Cash Leak.</span>
             </h2>
             <p className="text-muted text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
-              You answered that lead 4 hours late. They're already talking to your competitor. 
-              That $50 you spent acquiring them? Gone.
+              4 hours late = competitor wins. Your ad spend? Wasted.
             </p>
           </div>
           
@@ -200,7 +294,7 @@ export default function AIReceptionistPage() {
             >
               <div className="font-display text-5xl md:text-6xl font-bold text-destructive mb-3">40%</div>
               <p className="text-text font-medium mb-2">of your calls go unanswered</p>
-              <p className="text-muted text-sm">Even during business hours. That's nearly half your ad spend—wasted.</p>
+              <p className="text-muted text-sm">Half your ad spend. Gone.</p>
             </motion.div>
             
             <motion.div
@@ -212,7 +306,7 @@ export default function AIReceptionistPage() {
             >
               <div className="font-display text-5xl md:text-6xl font-bold text-destructive mb-3">78%</div>
               <p className="text-text font-medium mb-2">call your competitor next</p>
-              <p className="text-muted text-sm">One missed call = one customer for someone else. They don't wait.</p>
+              <p className="text-muted text-sm">They call your competitor next. Simple.</p>
             </motion.div>
             
             <motion.div
@@ -224,7 +318,7 @@ export default function AIReceptionistPage() {
             >
               <div className="font-display text-5xl md:text-6xl font-bold text-destructive mb-3">5 min</div>
               <p className="text-text font-medium mb-2">is all you have</p>
-              <p className="text-muted text-sm">Response after 5 minutes = 80% drop in qualification. The clock is ticking.</p>
+              <p className="text-muted text-sm">5 min late = 80% fewer conversions. Clock's ticking.</p>
             </motion.div>
           </div>
 
@@ -244,8 +338,7 @@ export default function AIReceptionistPage() {
               </div>
               <h3 className="font-display text-xl font-bold text-text mb-2">Slow Response</h3>
               <p className="text-muted text-sm leading-relaxed">
-                Lead comes in at 2pm. You call back at 6pm. They've already booked with someone else. 
-                <span className="text-destructive font-medium"> Your ad spend: burned.</span>
+                Lead at 2pm. You call 6pm. Too late. <span className="text-destructive font-medium">Ad spend burned.</span>
               </p>
             </motion.div>
             
@@ -263,8 +356,7 @@ export default function AIReceptionistPage() {
               </div>
               <h3 className="font-display text-xl font-bold text-text mb-2">Missed Messages</h3>
               <p className="text-muted text-sm leading-relaxed">
-                DM at 11pm. WhatsApp at 7am. You're sleeping. They're ready to buy. 
-                <span className="text-destructive font-medium"> By morning, they're gone.</span>
+                Message at 11pm. You sleep. They buy elsewhere. <span className="text-destructive font-medium">Gone by morning.</span>
               </p>
             </motion.div>
             
@@ -282,8 +374,7 @@ export default function AIReceptionistPage() {
               </div>
               <h3 className="font-display text-xl font-bold text-text mb-2">No Follow-Up</h3>
               <p className="text-muted text-sm leading-relaxed">
-                "I'll call them tomorrow." Tomorrow becomes next week. Lead goes cold. 
-                <span className="text-destructive font-medium"> Revenue you'll never recover.</span>
+                "I'll call tomorrow." Becomes never. <span className="text-destructive font-medium">Revenue gone.</span>
               </p>
             </motion.div>
           </div>
@@ -304,6 +395,8 @@ export default function AIReceptionistPage() {
         </div>
       </AnimatedSection>
 
+      {/* Client Journey Demo - Before vs After */}
+      <ClientJourneyDemo />
 
       {/* Conversation Mockups */}
       <ConversationMockups />
@@ -343,7 +436,7 @@ export default function AIReceptionistPage() {
               transition={{ delay: 0.2 }}
               className="text-muted text-lg max-w-2xl mx-auto"
             >
-              Not software you manage. Infrastructure that operates as part of your business.
+              We run it. You grow.
             </motion.p>
           </div>
 
@@ -405,8 +498,7 @@ export default function AIReceptionistPage() {
                   Live in 24 Hours
                 </h3>
                 <p className="text-white/80 text-lg max-w-lg leading-relaxed">
-                  System installs and begins operating within 24 hours. No setup. No training. No software to learn. 
-                  We handle intake work so you focus on growth.
+                  Live in 24 hours. No setup. No training. We run it. You sell.
                 </p>
               </div>
               
@@ -478,12 +570,12 @@ export default function AIReceptionistPage() {
                 
                 <ul className="space-y-4">
                   {[
-                    'Service businesses running Facebook, Instagram, or WhatsApp ads',
-                    'Selling services valued at $500+ per transaction',
-                    'Business depends on appointments or consultations',
-                    'Currently missing leads due to slow or inconsistent response',
-                    'Spending $1,000+ monthly on paid advertising',
-                    'Want to capture every lead you pay for'
+                    'Running Facebook, Instagram, or WhatsApp ads',
+                    'Selling $500+ per transaction',
+                    'Appointments or consultations required',
+                    'Missing leads from slow response',
+                    'Spending $1k+ monthly on ads',
+                    'Want every lead you pay for'
                   ].map((item, i) => (
                     <motion.li
                       key={i}
@@ -528,12 +620,12 @@ export default function AIReceptionistPage() {
                 
                 <ul className="space-y-4">
                   {[
-                    'Businesses not running paid advertising',
-                    'Selling products under $100 per transaction',
-                    'No appointment or consultation process',
-                    'Already have 100% lead capture with instant response',
-                    'Looking for marketing strategy or ad management',
-                    'Want software to install and manage yourself'
+                    'No paid ads',
+                    'Products under $100',
+                    'No appointments needed',
+                    'Already capturing 100% of leads',
+                    'Need ad strategy, not intake',
+                    'Want to self-manage software'
                   ].map((item, i) => (
                     <motion.li
                       key={i}
@@ -624,8 +716,7 @@ export default function AIReceptionistPage() {
               <span className="gradient-text">Complete System</span>
             </h2>
             <p className="text-muted text-lg max-w-3xl mx-auto leading-relaxed">
-              One price. Everything included. Done-for-you installation and operation. 
-              No per-call fees. No per-lead charges. No hidden costs.
+              One price. Everything included. No per-call fees. No hidden costs.
             </p>
           </div>
 
@@ -640,19 +731,35 @@ export default function AIReceptionistPage() {
                   transition={{ delay: 0.2 }}
                   className="card p-8 border-accent/50 glow-accent"
                 >
-                  <div className="text-center mb-4">
-                    <span className="px-4 py-2 bg-accent/20 text-accent text-sm font-bold rounded-full">
-                      DONE-FOR-YOU SYSTEM
-                    </span>
+                  <div className="text-center mb-6">
+                    {plan.limited && (
+                      <span className="inline-block px-3 py-1.5 bg-destructive/20 text-destructive text-xs font-semibold rounded-full border border-destructive/30 mb-4">
+                        {plan.limitedLabel || 'Limited availability'}
+                      </span>
+                    )}
+                    <h3 className="font-display text-2xl font-bold text-text mb-1">{plan.name}</h3>
+                    <p className="text-muted text-sm">{plan.description}</p>
                   </div>
 
-                  <div className="text-center mb-8">
-                    <h3 className="font-display text-2xl font-bold mb-2">{plan.name}</h3>
-                    <div className="font-display text-5xl font-bold text-accent mb-2">
-                      {plan.price}
-                      <span className="text-xl text-muted font-normal">{plan.period}</span>
+                  <div className="flex flex-col sm:flex-row items-stretch justify-center gap-4 mb-8">
+                    {plan.setupFee && (
+                      <div className="flex-1 min-w-0 rounded-xl bg-surface/80 border border-border/50 px-5 py-4 flex flex-col justify-center text-center">
+                        <div className="text-muted text-[11px] uppercase tracking-wider font-medium mb-1">{plan.setupLabel || 'Setup'}</div>
+                        <div className="font-display text-xl font-bold text-text">{plan.setupFee}</div>
+                      </div>
+                    )}
+                    <div className="flex-1 min-w-0 rounded-xl bg-accent/10 border border-accent/20 px-5 py-5 flex flex-col justify-center text-center">
+                      <div className="text-muted text-[11px] uppercase tracking-wider font-medium mb-1">Monthly</div>
+                      <div className="flex items-baseline justify-center gap-2 flex-wrap">
+                        {plan.originalPrice && (
+                          <span className="font-display text-base text-muted line-through">{plan.originalPrice}{plan.period}</span>
+                        )}
+                        <span className="font-display text-3xl font-bold text-accent">
+                          {plan.price}
+                          <span className="text-base font-normal text-muted">{plan.period}</span>
+                        </span>
+                      </div>
                     </div>
-                    <p className="text-muted text-sm leading-relaxed">{plan.description}</p>
                   </div>
 
                   <ul className="space-y-4 mb-6">
@@ -682,22 +789,27 @@ export default function AIReceptionistPage() {
         </div>
       </AnimatedSection>
 
-      {/* CTA */}
-      <AnimatedSection className="py-24">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">
-            Install The Missing Infrastructure
-          </h2>
-          <p className="text-muted text-lg mb-8 leading-relaxed max-w-2xl mx-auto">
-            If you run paid ads and depend on appointments or consultations, this system is necessary. 
-            System operates within 24 hours of your decision.
-          </p>
-          <a
-            {...getBookingLinkProps()}
-            className="btn-primary text-lg px-8 py-4"
+      {/* Strong CTA - One step from footer */}
+      <AnimatedSection className="py-32 relative overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-gradient-to-br from-accent/10 via-transparent to-accent/15" />
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-accent/15 rounded-full blur-3xl" />
+        </div>
+
+        <div className="max-w-5xl mx-auto px-6 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="relative"
           >
-            Put Intake on Autopilot
-          </a>
+            <div className="absolute -inset-px bg-gradient-to-br from-accent/40 via-accent/10 to-accent/40 rounded-3xl" />
+            <div className="relative rounded-3xl overflow-hidden">
+              <AIEmployeeCTASection />
+            </div>
+          </motion.div>
         </div>
       </AnimatedSection>
 

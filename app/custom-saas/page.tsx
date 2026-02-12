@@ -11,16 +11,16 @@ export default function CustomSaaSPage() {
   const ourApps = [
     {
       title: 'Proposal Agent',
-      description: 'AI-powered proposal generation platform that helps businesses create winning proposals in minutes.',
+      description: 'AI creates proposals. Minutes, not hours.',
       category: 'Business Automation',
       status: 'Live',
-      link: 'https://proposal-agent.com',
+      link: 'https://voicetoproposal.ai',
       tech: ['Next.js', 'OpenAI API', 'Supabase', 'Stripe'],
       icon: '📝'
     },
     {
       title: 'TaskFlow Pro',
-      description: 'Advanced project management and team collaboration platform with AI-driven insights.',
+      description: 'Project management. AI insights. Team collaboration.',
       category: 'Productivity',
       status: 'Beta',
       link: 'https://taskflow-pro.com',
@@ -29,7 +29,7 @@ export default function CustomSaaSPage() {
     },
     {
       title: 'DataViz Studio',
-      description: 'Interactive data visualization tool that transforms complex datasets into compelling stories.',
+      description: 'Data to visuals. Complex numbers made simple.',
       category: 'Analytics',
       status: 'Coming Soon',
       link: '#',
@@ -38,7 +38,7 @@ export default function CustomSaaSPage() {
     },
     {
       title: 'ContentCraft AI',
-      description: 'Content creation platform that generates marketing copy, blogs, and social media content.',
+      description: 'AI writes your marketing. Fast.',
       category: 'Marketing',
       status: 'Live',
       link: 'https://contentcraft-ai.com',
@@ -50,21 +50,21 @@ export default function CustomSaaSPage() {
   const services = [
     {
       title: 'MVP Development',
-      description: 'Turn your idea into a working product in 8-12 weeks. Perfect for startups and new business ventures.',
+      description: 'Idea to product. 8-12 weeks. For startups.',
       process: ['Discovery & Planning', 'UI/UX Design', 'Core Development', 'Testing & Launch'],
       timeline: '8-12 weeks',
       icon: '🚀'
     },
     {
       title: 'Enterprise Software',
-      description: 'Custom business applications that scale with your organization. Built for performance and security.',
+      description: 'Custom apps. Scales with you. Secure.',
       process: ['Requirements Analysis', 'Architecture Design', 'Development & Integration', 'Deployment & Training'],
       timeline: '3-6 months',
       icon: '🏢'
     },
     {
       title: 'SaaS Platform Development',
-      description: 'Complete multi-tenant platforms with subscription management, user roles, and advanced features.',
+      description: 'Full SaaS. Subscriptions. Multi-tenant. Done.',
       process: ['Market Research', 'Platform Architecture', 'Full-Stack Development', 'Go-to-Market Support'],
       timeline: '6-12 months',
       icon: '☁️'
@@ -99,8 +99,8 @@ export default function CustomSaaSPage() {
       title: 'Proposal Agent',
       type: 'Internal Project',
       industry: 'Business Automation',
-      challenge: 'Businesses spend countless hours creating proposals manually, often missing opportunities due to slow turnaround times.',
-      solution: 'Developed AI-powered proposal generation platform that creates professional proposals in minutes using advanced language models.',
+      challenge: 'Manual proposals. Slow. Lost deals.',
+      solution: 'AI creates proposals. Minutes. Professional. Shipped.',
       results: [
         { metric: '90%', description: 'Faster proposal creation' },
         { metric: '10k+', description: 'Proposals generated' },
@@ -114,8 +114,8 @@ export default function CustomSaaSPage() {
       title: 'HealthTrack Pro',
       type: 'Client Project',
       industry: 'Healthcare',
-      challenge: 'Medical practice needed custom patient management system with HIPAA compliance and insurance integration.',
-      solution: 'Built comprehensive practice management SaaS with appointment scheduling, billing, and patient portal.',
+      challenge: 'Needed patient management. HIPAA. Insurance.',
+      solution: 'Built it. Scheduling. Billing. Patient portal.',
       results: [
         { metric: '60%', description: 'Reduction in administrative time' },
         { metric: '$200k', description: 'Annual cost savings' },
@@ -176,9 +176,7 @@ export default function CustomSaaSPage() {
               <span className="gradient-text">Industry Leader</span>
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-muted max-w-3xl mx-auto leading-relaxed mb-6 sm:mb-8 md:mb-10 px-2">
-              We don't just build software – we create market-defining SaaS platforms. 
-              From our own successful applications like Proposal Agent to transformative client solutions, 
-              we turn ambitious visions into profitable realities.
+              Idea to product. Proposal Agent proves we ship. Your vision. Our build.
             </p>
             <div className="flex justify-center px-2">
               <a

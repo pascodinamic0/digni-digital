@@ -12,7 +12,7 @@ const services = [
     id: 'ai-receptionist',
     title: 'AI Employee System',
     subtitle: 'Never Miss a Lead',
-    description: 'Deploy intelligent AI employee systems that capture every lead, qualify prospects, and book appointments 24/7 — so you never miss another opportunity.',
+    description: 'Capture every lead. Qualify. Book. 24/7. Never miss again.',
     features: [
       '24/7 Call Handling',
       'Intelligent Lead Qualification',
@@ -32,7 +32,7 @@ const services = [
     id: 'future-ready-graduate',
     title: 'Future Ready Graduate Program',
     subtitle: 'Job-Ready Graduates',
-    description: 'Transform your students into job-ready professionals with our comprehensive 9-month program. Learn cutting-edge AI tools and digital skills that create immediate income opportunities.',
+    description: '9-month program. 85% employed. Real skills. Real jobs.',
     features: [
       'AI-Powered Web Development',
       'Digital Marketing & Analytics',
@@ -52,7 +52,7 @@ const services = [
     id: 'custom-saas',
     title: 'Custom SaaS Development',
     subtitle: 'Build Your Vision',
-    description: 'Turn your idea into a fully functional SaaS platform. We build scalable, cloud-native software products from scratch with modern architecture and best practices.',
+    description: 'Your idea. Our build. Scalable. You own it.',
     features: [
       'Full-Stack Development',
       'Scalable Architecture',
@@ -93,8 +93,7 @@ export default function ServicesPage() {
               <span className="gradient-text">Drive Real Impact</span>
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-muted max-w-3xl mx-auto leading-relaxed px-2">
-              AI-powered solutions that transform businesses, empower students, and create opportunities. 
-              Every service we offer delivers measurable results from day one.
+              AI systems. Graduate programs. Custom software. Results from day one.
             </p>
           </motion.div>
         </div>
@@ -258,9 +257,9 @@ export default function ServicesPage() {
           <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">
             Ready to Transform Your Business?
           </h2>
-          <p className="text-muted text-lg mb-8">
-            Let's discuss your project and create a custom solution that drives real results.
-          </p>
+            <p className="text-muted text-lg mb-8">
+              Tell us your problem. We'll build the fix.
+            </p>
           <a
             {...getBookingLinkProps()}
             className="btn-primary text-lg px-8 py-4"
