@@ -10,7 +10,7 @@ const featuredProduct = {
   id: 'proposal-agent',
   name: 'ProposalAgent',
   tagline: 'Speak. We structure. You send.',
-  description: 'Turn voice notes into client-ready proposals with AI-powered structuring. Proposals in minutes, not hours.',
+  description: 'Voice to proposal. AI structures. Minutes, not hours.',
   features: [
     'Voice-to-Text Conversion',
     'AI-Powered Structuring',
@@ -39,7 +39,7 @@ const comingSoonProducts = [
     id: 'crm-lite',
     initial: 'C',
     name: 'CRM Lite',
-    description: 'Simple, powerful customer relationship management for small businesses.',
+    description: 'CRM for small biz. Contacts. Deals. Simple.',
     features: ['Contact Management', 'Deal Pipeline', 'Email Integration', 'Reporting'],
     launchDate: 'Q2 2024'
   },
@@ -47,7 +47,7 @@ const comingSoonProducts = [
     id: 'invoice-ai',
     initial: 'I',
     name: 'Invoice AI',
-    description: 'Automated invoicing and payment tracking with intelligent reminders.',
+    description: 'Auto invoices. Payment tracking. Smart reminders.',
     features: ['Auto Invoice Generation', 'Payment Tracking', 'Smart Reminders', 'Tax Compliance'],
     launchDate: 'Q3 2024'
   },
@@ -55,7 +55,7 @@ const comingSoonProducts = [
     id: 'social-assistant',
     initial: 'S',
     name: 'Social Assistant',
-    description: 'AI-powered social media management and content creation.',
+    description: 'AI content. Scheduling. Analytics. Done.',
     features: ['Content Generation', 'Scheduling', 'Analytics', 'Multi-platform'],
     launchDate: 'Q4 2024'
   },
@@ -84,7 +84,7 @@ export default function ProductsPage() {
               <span className="gradient-text">We build SaaS.</span>
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-muted max-w-3xl mx-auto leading-relaxed px-2">
-              Powerful, affordable tools for every stage of growth. Even if you can't hire us directly, you can still grow with our tools.
+              Tools that work. Affordable. Grow with or without us.
             </p>
           </motion.div>
         </div>

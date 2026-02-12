@@ -10,30 +10,30 @@ import { ctaConfig, getBookingLinkProps } from '@/app/config/cta.config'
 
 const contactMethods = [
   {
-    title: 'Book a Consultation',
-    description: 'Schedule a free 30-minute strategy call to discuss your project',
+    title: 'Book a Call',
+    description: '30-min free. We discuss. You decide.',
     icon: '📅',
     action: 'Book Now',
     href: ctaConfig.bookingUrl,
     primary: true
   },
   {
-    title: 'Send an Email',
-    description: 'Reach out directly for questions or project inquiries',
+    title: 'Email',
+    description: 'Questions? Drop a line.',
     icon: '✉️',
     action: 'hello@digni-digital-llc.com',
     href: 'mailto:hello@digni-digital-llc.com'
   },
   {
     title: 'WhatsApp',
-    description: 'Quick questions? Message us on WhatsApp',
+    description: 'Quick reply. Fast.',
     icon: '💬',
     action: 'Message Us',
     href: 'https://wa.me/1234567890' // Replace with actual WhatsApp number
   },
   {
     title: 'LinkedIn',
-    description: 'Connect with us professionally on LinkedIn',
+    description: 'Connect. Network.',
     icon: '💼',
     action: 'Connect',
     href: 'https://linkedin.com/company/digni-digital' // Replace with actual LinkedIn
@@ -42,28 +42,28 @@ const contactMethods = [
 
 const faqs = [
   {
-    question: 'How long does a typical project take?',
-    answer: 'Project timelines vary based on scope and complexity. Simple websites take 2-4 weeks, while custom SaaS applications can take 8-16 weeks. We provide detailed timelines during our consultation.'
+    question: 'How long does a project take?',
+    answer: 'Websites: 2-4 weeks. Custom SaaS: 8-16 weeks. We give you a timeline in our call.'
   },
   {
-    question: 'Do you work with businesses outside Africa?',
-    answer: 'Absolutely! While we\'re based in Africa, we serve clients globally. We work with businesses across different time zones and have experience with international projects.'
+    question: 'Do you work outside Africa?',
+    answer: 'Yes. Global clients. We work your time zone.'
   },
   {
-    question: 'What\'s included in your consultation?',
-    answer: 'Our free consultation includes a business analysis, technology audit, growth opportunity identification, and a custom strategy roadmap. No obligation, just actionable insights.'
+    question: 'What\'s in the consultation?',
+    answer: 'Business review. Tech audit. Strategy. 30 min. Free. No obligation.'
   },
   {
-    question: 'Do you provide ongoing support?',
-    answer: 'Yes, we offer various support packages including maintenance, updates, hosting, and optimization services. We believe in long term partnerships with our clients.'
+    question: 'Ongoing support?',
+    answer: 'Yes. Maintenance, hosting, optimization. We stay with you.'
   },
   {
-    question: 'What industries do you specialize in?',
-    answer: 'We work across various industries including healthcare, real estate, e-commerce, professional services, and more. Our growth infrastructure approach adapts to any business model.'
+    question: 'What industries?',
+    answer: 'Healthcare, real estate, e-commerce, services. We adapt to your model.'
   },
   {
-    question: 'Can you help with existing systems?',
-    answer: 'Definitely! We can audit, optimize, and integrate with your existing systems. Sometimes the best solution is improving what you already have rather than starting from scratch.'
+    question: 'Can you fix existing systems?',
+    answer: 'Yes. Audit. Optimize. Integrate. Sometimes fixing beats rebuilding.'
   }
 ]
 
@@ -113,7 +113,7 @@ export default function ContactPage() {
               <span className="gradient-text">Amazing Together</span>
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-muted max-w-3xl mx-auto leading-relaxed px-2">
-              Ready to transform your business? We'd love to hear about your project and discuss how we can help you achieve your growth goals.
+              Tell us your problem. We'll find the fix.
             </p>
           </motion.div>
         </div>
@@ -124,10 +124,10 @@ export default function ContactPage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">
-              Choose Your Preferred Way to Connect
+              How to Reach Us
             </h2>
             <p className="text-muted text-lg">
-              We're here to help and respond quickly to all inquiries
+              We reply fast.
             </p>
           </div>
           
@@ -168,7 +168,7 @@ export default function ContactPage() {
               Send Us a Message
             </h2>
             <p className="text-muted text-lg">
-              Prefer to write? Fill out the form below and we'll get back to you within 24 hours.
+              Form below. Reply within 24 hours.
             </p>
           </div>
           

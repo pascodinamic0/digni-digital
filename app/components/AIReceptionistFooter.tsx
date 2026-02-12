@@ -2,26 +2,34 @@
 
 import Link from 'next/link'
 import ThemeToggle from './ThemeToggle'
-import { ctaConfig, getBookingLinkProps } from '@/app/config/cta.config'
+import { getBookingLinkProps } from '@/app/config/cta.config'
+import { useLanguage } from '@/app/context/LanguageContext'
+import { translations } from '@/app/config/translations'
+import { downloadsConfig } from '@/app/config/downloads.config'
 
 export default function AIReceptionistFooter() {
+  const { language } = useLanguage()
+  const t = translations[language]
+
   const links = {
     services: [
-      { name: 'AI Employee', href: '/ai-receptionist' },
-      { name: 'Future Ready Graduate', href: '/future-ready-graduate' },
-      { name: 'Custom SaaS Development', href: '/custom-saas' },
+      { name: t.nav.aiEmployee, href: '/ai-receptionist' },
+      { name: t.nav.futureReadyGraduate, href: '/future-ready-graduate' },
+      { name: t.nav.customSaaS, href: '/custom-saas' },
     ],
     resources: [
-      { name: 'Case Studies', href: '/case-studies' },
-      { name: 'Blog', href: '/blog' },
-      { name: 'Our Mission', href: '/#our-mission' },
-      { name: 'What We Fight For', href: '/#what-were-fighting-for' },
+      { name: t.nav.caseStudies, href: '/case-studies' },
+      { name: t.nav.articles, href: '/blog' },
+      { name: t.footer.futureReadyDemo, href: downloadsConfig.futureReadyGraduate[language] ?? downloadsConfig.futureReadyGraduate.en },
+      { name: t.footer.aiEmployeeDemo, href: downloadsConfig.aiEmployee[language] ?? downloadsConfig.aiEmployee.en },
+      { name: t.footer.ourMission, href: '/#our-mission' },
+      { name: t.footer.whatWeFightFor, href: '/#what-were-fighting-for' },
     ],
     company: [
-      { name: 'About Us', href: '/about' },
-      { name: 'Services', href: '/services' },
-      { name: 'Careers', href: '/careers' },
-      { name: 'Contact', href: '/contact' },
+      { name: t.footer.aboutUs, href: '/about' },
+      { name: t.footer.services, href: '/services' },
+      { name: t.footer.careers, href: '/careers' },
+      { name: t.footer.contact, href: '/contact' },
     ],
   }
 
@@ -40,19 +48,18 @@ export default function AIReceptionistFooter() {
                 <span className="font-display font-semibold text-xl">Digni Digital LLC</span>
               </Link>
               <p className="text-muted mb-6 max-w-sm">
-                Technology should serve humanity. We build digital solutions that create 
-                real impact for businesses, schools, and communities.
+                {t.footer.tagline}
               </p>
               <a
                 {...getBookingLinkProps()}
                 className="btn-primary"
               >
-                {ctaConfig.buttonText.getStarted}
+                {t.cta.getStarted}
               </a>
             </div>
 
             <div>
-              <h4 className="font-display font-semibold mb-4">Services</h4>
+              <h4 className="font-display font-semibold mb-4">{t.footer.services}</h4>
               <ul className="space-y-3">
                 {links.services.map((link) => (
                   <li key={link.name}>
@@ -65,7 +72,7 @@ export default function AIReceptionistFooter() {
             </div>
 
             <div>
-              <h4 className="font-display font-semibold mb-4">Resources</h4>
+              <h4 className="font-display font-semibold mb-4">{t.footer.resources}</h4>
               <ul className="space-y-3">
                 {links.resources.map((link) => (
                   <li key={link.name}>
@@ -78,7 +85,7 @@ export default function AIReceptionistFooter() {
             </div>
 
             <div>
-              <h4 className="font-display font-semibold mb-4">Company</h4>
+              <h4 className="font-display font-semibold mb-4">{t.footer.company}</h4>
               <ul className="space-y-3">
                 {links.company.map((link) => (
                   <li key={link.name}>
@@ -93,7 +100,7 @@ export default function AIReceptionistFooter() {
 
           <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-muted text-sm">
-              &copy; {new Date().getFullYear()} Digni Digital. All rights reserved.
+              &copy; {new Date().getFullYear()} Digni Digital. {t.footer.copyright}
             </p>
             <ThemeToggle />
           </div>

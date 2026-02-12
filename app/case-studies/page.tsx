@@ -92,45 +92,42 @@ const caseStudies = [
       position: "Founder & CEO"
     }
   },
-  {
-    id: 'ecommerce-store',
-    industry: 'E-commerce',
-    title: 'Fashion E-commerce Platform',
-    client: 'AfroStyle Boutique',
-    duration: '8 weeks',
-    location: 'Nairobi, Kenya',
-    challenge: 'Low conversion rates, high cart abandonment, and poor mobile experience. Manual inventory management causing stockouts.',
-    solution: [
-      'Mobile-first e-commerce platform',
-      'Automated inventory management',
-      'Personalized product recommendations',
-      'Multi-payment gateway integration',
-      'Social media integration'
-    ],
-    results: [
-      { metric: '150%', description: 'Increase in conversion rate', type: 'improvement' },
-      { metric: '65%', description: 'Reduction in cart abandonment', type: 'improvement' },
-      { metric: '300%', description: 'Mobile sales increase', type: 'growth' },
-      { metric: '$75k', description: 'Monthly revenue growth', type: 'revenue' }
-    ],
-    technologies: ['Shopify Plus', 'React', 'Node.js', 'Stripe', 'Mailchimp'],
-    testimonial: {
-      quote: "Our online sales have tripled since the new platform launch. The mobile experience is incredible and our customers love it.",
-      author: "Amina Hassan",
-      position: "Store Owner"
-    }
-  }
 ]
 
-const industries = ['All', 'Healthcare', 'Real Estate', 'Marketing', 'E-commerce']
+// Client websites portfolio – add your images and URLs here
+const clientWebsites = [
+  {
+    id: 'website-1',
+    clientName: 'Client Name',
+    url: 'https://example.com',
+    image: '/case-studies/website-1.jpg', // Add your image to public/case-studies/
+  },
+  {
+    id: 'website-2',
+    clientName: 'Client Name',
+    url: 'https://example.com',
+    image: '/case-studies/website-2.jpg',
+  },
+  {
+    id: 'website-3',
+    clientName: 'Client Name',
+    url: 'https://example.com',
+    image: '/case-studies/website-3.jpg',
+  },
+]
+
+const industries = ['All', 'Healthcare', 'Real Estate', 'Marketing', 'Websites We\'ve Built']
 
 export default function CaseStudiesPage() {
   const [selectedIndustry, setSelectedIndustry] = useState('All')
   const [expandedStudy, setExpandedStudy] = useState<string | null>(null)
 
+  const showWebsitesPortfolio = selectedIndustry === "Websites We've Built"
   const filteredStudies = selectedIndustry === 'All' 
     ? caseStudies 
-    : caseStudies.filter(study => study.industry === selectedIndustry)
+    : selectedIndustry === "Websites We've Built"
+      ? []
+      : caseStudies.filter(study => study.industry === selectedIndustry)
 
   const getResultColor = (type: string) => {
     switch (type) {
@@ -195,7 +192,55 @@ export default function CaseStudiesPage() {
         </div>
       </AnimatedSection>
 
+      {/* Websites We've Built – Portfolio Grid */}
+      {showWebsitesPortfolio && (
+        <AnimatedSection className="py-24">
+          <div className="max-w-7xl mx-auto px-6">
+            <h2 className="font-display text-2xl md:text-3xl font-bold mb-8 text-center">
+              Websites We&apos;ve Built for Our Clients
+            </h2>
+            <p className="text-muted text-center mb-12 max-w-2xl mx-auto">
+              A showcase of websites we&apos;ve designed and developed. Each project is tailored to the client&apos;s brand and business goals.
+            </p>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+              {clientWebsites.map((site, i) => (
+                <motion.a
+                  key={site.id}
+                  href={site.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  className="group card overflow-hidden p-0 block hover:border-accent/50 transition-colors"
+                >
+                  <div className="aspect-video bg-surface-light relative overflow-hidden">
+                    <img
+                      src={site.image}
+                      alt={`${site.clientName} website`}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      onError={(e) => {
+                        e.currentTarget.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="225" viewBox="0 0 400 225"%3E%3Crect fill="%231a1a2e" width="400" height="225"/%3E%3Ctext fill="%236b7280" font-family="sans-serif" font-size="14" x="50%25" y="50%25" text-anchor="middle" dy=".3em"%3EAdd screenshot%3C/text%3E%3C/svg%3E'
+                      }}
+                    />
+                  </div>
+                  <div className="p-4">
+                    <h3 className="font-semibold group-hover:text-accent transition-colors">{site.clientName}</h3>
+                    <p className="text-muted text-sm truncate">{site.url.replace(/^https?:\/\//, '')}</p>
+                    <span className="text-accent text-sm font-medium mt-2 inline-block">
+                      Visit site →
+                    </span>
+                  </div>
+                </motion.a>
+              ))}
+            </div>
+          </div>
+        </AnimatedSection>
+      )}
+
       {/* Case Studies Grid */}
+      {!showWebsitesPortfolio && (
       <AnimatedSection className="py-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid gap-12">
@@ -317,6 +362,7 @@ export default function CaseStudiesPage() {
           </div>
         </div>
       </AnimatedSection>
+      )}
 
       {/* CTA Section */}
       <AnimatedSection className="py-24 bg-surface">

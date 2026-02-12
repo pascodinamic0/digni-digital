@@ -8,6 +8,7 @@ import Footer from '../components/Footer'
 import AnimatedSection from '../components/AnimatedSection'
 import VideoModal from '../components/VideoModal'
 import VideoThumbnail from '../components/VideoThumbnail'
+import DemoPresentationDownload from '../components/DemoPresentationDownload'
 import { ctaConfig, getBookingLinkProps } from '@/app/config/cta.config'
 
 export default function FutureReadyGraduatePage() {
@@ -67,8 +68,8 @@ export default function FutureReadyGraduatePage() {
   const caseStudy = {
     school: 'Riverside Technical High School',
     location: 'Lagos, Nigeria',
-    challenge: 'Only 45% of graduates finding employment within 12 months. Students lacked practical digital skills that employers needed.',
-    implementation: 'Integrated full-year Future Ready Graduate program into final year curriculum, following the September-July academic calendar with modules perfectly timed around ministry breaks.',
+    challenge: '45% employed after 12 months. No practical skills.',
+    implementation: 'Full program. Final year. September-July. Ministry breaks respected.',
     results: [
       { metric: '85%', description: 'Graduate employment rate' },
       { metric: '₦240k', description: 'Average starting salary (up from ₦120k)' },
@@ -84,7 +85,7 @@ export default function FutureReadyGraduatePage() {
       name: 'School Partnership Program',
       price: '$500',
       period: '/month',
-      description: 'Complete Future Ready Graduate program for schools and institutions',
+      description: 'Full program. Schools and institutions.',
       audience: 'schools',
       features: [
         'Full academic year curriculum (42 weeks)',
@@ -105,7 +106,7 @@ export default function FutureReadyGraduatePage() {
       name: 'Online Course',
       price: '$25',
       period: ' one-time',
-      description: 'Complete digital skills program for everyone - learn from anywhere, start earning online',
+      description: 'Digital skills. Learn anywhere. Earn online.',
       features: [
         'Full digital skills curriculum (start from scratch)',
         'Learn from home, school, university, or vocational center',
@@ -191,23 +192,16 @@ export default function FutureReadyGraduatePage() {
               <span className="gradient-text">Industry-Ready Professionals</span>
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-muted max-w-3xl mx-auto leading-relaxed mb-6 sm:mb-8 md:mb-10 px-2">
-              Transform your final-year students into job-ready professionals. We provide internet, facilitators, and curriculum. You provide students and facilities.
+              85% employed. We bring curriculum and internet. You bring students and space.
             </p>
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-2">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-2">
               <a
                 {...getBookingLinkProps()}
                 className="btn-primary text-sm sm:text-base md:text-lg px-6 sm:px-8 py-3 sm:py-4 w-full sm:w-auto text-center"
               >
                 {ctaConfig.buttonText.scheduleConsultation}
               </a>
-              <a
-                href="/Digni%20Digital%20-%20Future-Ready%20Graduate%20Program.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-secondary text-sm sm:text-base md:text-lg px-6 sm:px-8 py-3 sm:py-4 w-full sm:w-auto text-center"
-              >
-                View Demo Presentation
-              </a>
+              <DemoPresentationDownload service="futureReadyGraduate" variant="hero" label="Download Demo Presentation" />
             </div>
           </motion.div>
         </div>
@@ -224,8 +218,7 @@ export default function FutureReadyGraduatePage() {
               <span className="gradient-text">National Academic Calendar</span>
             </h2>
             <p className="text-muted text-lg max-w-3xl mx-auto">
-              Our program is perfectly structured to work with your existing September-July school year,
-              respecting all ministry-scheduled breaks and holidays.
+              September to July. Fits your school year. Respects breaks.
             </p>
           </div>
 

@@ -3,7 +3,7 @@ import type { NextRequest } from 'next/server'
 
 const CANONICAL_HOST = 'digni-digital-llc.com'
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const host = request.headers.get('host') ?? ''
   const normalizedHost = host.toLowerCase().replace(/:\d+$/, '')
 

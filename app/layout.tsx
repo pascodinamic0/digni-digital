@@ -1,6 +1,10 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import { ThemeProvider } from './components/ThemeProvider'
+import { LanguageProvider } from './context/LanguageContext'
+import { initLangScript } from './i18n/init-lang'
+
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://digni-digital-llc.com'
 
 export const metadata: Metadata = {
   title: {
@@ -12,9 +16,15 @@ export const metadata: Metadata = {
   authors: [{ name: 'Digni Digital' }],
   creator: 'Digni Digital',
   publisher: 'Digni Digital',
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://digni-digital-llc.com'),
+  metadataBase: new URL(SITE_URL),
   alternates: {
-    canonical: '/',
+    canonical: SITE_URL,
+    languages: {
+      'en': SITE_URL,
+      'fr': SITE_URL,
+      'ar': SITE_URL,
+      'x-default': SITE_URL,
+    },
   },
   icons: {
     icon: '/Favicon.png',
@@ -52,11 +62,16 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: initLangScript }} />
+      </head>
       <body>
         <ThemeProvider>
-          <div className="grain-overlay" />
-          {children}
+          <LanguageProvider>
+            <div className="grain-overlay" />
+            {children}
+          </LanguageProvider>
         </ThemeProvider>
       </body>
     </html>

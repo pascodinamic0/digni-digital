@@ -3,10 +3,15 @@
 import { useState, useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { ctaConfig, getBookingLinkProps } from '@/app/config/cta.config'
+import { getBookingLinkProps } from '@/app/config/cta.config'
+import { useLanguage } from '@/app/context/LanguageContext'
+import { translations } from '@/app/config/translations'
 import ThemeToggle from './ThemeToggle'
+import LanguageToggler from './LanguageToggler'
 
 export default function Navigation() {
+  const { language } = useLanguage()
+  const t = translations[language]
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
   const [solutionsOpen, setSolutionsOpen] = useState(false)
@@ -47,31 +52,19 @@ export default function Navigation() {
   }, [mobileOpen])
 
   const navLinks = [
-    { name: 'Our Mission', href: '/#our-mission' },
-    { name: 'About Us', href: '/about' },
-    { name: 'Case Studies', href: '/case-studies' },
+    { name: t.nav.ourMission, href: '/#our-mission' },
+    { name: t.nav.aboutUs, href: '/about' },
+    { name: t.nav.caseStudies, href: '/case-studies' },
   ]
 
   const rightNavLinks = [
-    { name: 'Articles', href: '/blog' },
+    { name: t.nav.articles, href: '/blog' },
   ]
 
   const solutionLinks = [
-    { 
-      name: 'AI Employee', 
-      href: '/ai-receptionist',
-      description: 'Never miss a lead with 24/7 AI-powered employee'
-    },
-    { 
-      name: 'Future Ready Graduate', 
-      href: '/future-ready-graduate',
-      description: 'Transform students into job ready professionals'
-    },
-    { 
-      name: 'Custom SaaS', 
-      href: '/custom-saas',
-      description: 'Tailored software solutions for unique challenges'
-    },
+    { name: t.nav.aiEmployee, href: '/ai-receptionist', description: t.nav.aiEmployeeDesc },
+    { name: t.nav.futureReadyGraduate, href: '/future-ready-graduate', description: t.nav.futureReadyGraduateDesc },
+    { name: t.nav.customSaaS, href: '/custom-saas', description: t.nav.customSaaSDesc },
   ]
 
   return (
@@ -122,10 +115,10 @@ export default function Navigation() {
                 onClick={() => setSolutionsOpen(!solutionsOpen)}
                 aria-expanded={solutionsOpen}
                 aria-haspopup="true"
-                aria-label="Solutions menu"
+                aria-label={`${t.nav.solutions} menu`}
                 className="text-muted hover:text-white transition-colors duration-200 text-sm font-medium flex items-center gap-1"
               >
-                Solutions
+                {t.nav.solutions}
                 <svg className={`w-4 h-4 transition-transform duration-200 ${solutionsOpen ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
@@ -173,13 +166,14 @@ export default function Navigation() {
             ))}
           </div>
 
-          <div className="hidden lg:flex items-center gap-4">
+          <div className="hidden lg:flex items-center gap-2">
+            <LanguageToggler variant="compact" />
             <ThemeToggle />
             <a
               {...getBookingLinkProps()}
               className="btn-primary text-sm"
             >
-              {ctaConfig.buttonText.getStarted}
+              {t.cta.getStarted}
             </a>
           </div>
 
@@ -220,7 +214,7 @@ export default function Navigation() {
             
             {/* Mobile Solutions Section */}
             <div className="py-3">
-              <div className="text-text font-semibold mb-2">Solutions</div>
+              <div className="text-text font-semibold mb-2">{t.nav.solutions}</div>
               {solutionLinks.map((solution) => (
                 <Link
                   key={solution.name}
@@ -245,16 +239,21 @@ export default function Navigation() {
               </Link>
             ))}
             
-            <div className="flex items-center justify-between mt-6 pt-4 border-t border-white/10">
-              <span className="text-muted text-sm">Theme</span>
-              <ThemeToggle />
+            <div className="flex items-center gap-4 mt-6 pt-4 border-t border-white/10">
+              <div className="flex items-center gap-2">
+                <LanguageToggler variant="full" className="flex-1" />
+              </div>
+              <div className="flex items-center justify-between flex-1">
+                <span className="text-muted text-sm">{t.footer.theme}</span>
+                <ThemeToggle />
+              </div>
             </div>
             
             <a
               {...getBookingLinkProps()}
               className="btn-primary mt-4 w-full text-center block"
             >
-              {ctaConfig.buttonText.getStarted}
+              {t.cta.getStarted}
             </a>
           </motion.div>
         )}

@@ -53,14 +53,14 @@ const team = [
   {
     name: 'Pascal Digny',
     role: 'Founder & CEO',
-    bio: 'Full-stack developer and business strategist with 7+ years of experience building growth infrastructures for businesses across Africa and beyond.',
+    bio: '7+ years. Builds systems that capture leads and grow revenue.',
     expertise: ['Full-Stack Development', 'Business Strategy', 'Growth Hacking', 'Team Leadership'],
     image: '/team/pascal.jpg' // Placeholder
   },
   {
     name: 'Technical Team',
     role: 'Development Specialists',
-    bio: 'Our network of expert developers, designers, and digital marketers who bring diverse skills and perspectives to every project.',
+    bio: 'Developers, designers, marketers. We deliver.',
     expertise: ['Frontend Development', 'Backend Development', 'UI/UX Design', 'Digital Marketing'],
     image: '/team/team.jpg' // Placeholder
   }
@@ -68,68 +68,36 @@ const team = [
 
 const values = [
   {
-    title: 'Growth-Focused',
-    description: 'Every solution we build is designed to drive measurable business growth and ROI.',
+    title: 'Results',
+    description: 'We measure leads, jobs, revenue. Not buzzwords.',
     icon: '📈'
   },
   {
-    title: 'Quality First',
-    description: 'We never compromise on quality. Every project meets our high standards before delivery.',
+    title: 'Quality',
+    description: 'No shortcuts. Delivered right or not at all.',
     icon: '⭐'
   },
   {
-    title: 'Client Partnership',
-    description: 'We work as an extension of your team, not just another vendor.',
+    title: 'Partnership',
+    description: "We're on your team. Not a vendor.",
     icon: '🤝'
   },
   {
-    title: 'Innovation',
-    description: 'We stay ahead of technology trends to give our clients competitive advantages.',
+    title: 'Ahead',
+    description: 'We use tech that works. Today.',
     icon: '🚀'
   }
 ]
 
 const timeline = [
-  {
-    year: '2019',
-    title: 'Founded Digni Digital',
-    description: 'Started with a mission to help African businesses leverage technology for growth.'
-  },
-  {
-    year: '2020',
-    title: 'First 10 Clients',
-    description: 'Successfully delivered websites and digital solutions for local businesses.'
-  },
-  {
-    year: '2021',
-    title: 'Expanded Services',
-    description: 'Added mobile app development and digital marketing to our service portfolio.'
-  },
-  {
-    year: '2022',
-    title: 'International Growth',
-    description: 'Began serving clients across multiple countries and continents.'
-  },
-  {
-    year: '2023',
-    title: 'SaaS Products',
-    description: 'Launched our first SaaS product and began building our product suite.'
-  },
-  {
-    year: '2024',
-    title: 'Growth Infrastructure',
-    description: 'Evolved into a full growth infrastructure agency with proven methodologies.'
-  },
-  {
-    year: '2025',
-    title: 'AI Integration',
-    description: 'Integrated AI-powered solutions into our service offerings and launched ProposalAgent.'
-  },
-  {
-    year: '2026',
-    title: 'Market Leadership',
-    description: 'Established as a leading growth infrastructure agency with 150+ successful transformations.'
-  }
+  { year: '2019', title: 'Founded', description: 'Started helping African businesses grow with tech.' },
+  { year: '2020', title: 'First Clients', description: 'Websites and digital solutions delivered.' },
+  { year: '2021', title: 'Expanded', description: 'Added apps and marketing.' },
+  { year: '2022', title: 'International', description: 'Clients across continents.' },
+  { year: '2023', title: 'SaaS', description: 'First product launched.' },
+  { year: '2024', title: 'Growth Systems', description: 'Full infrastructure agency.' },
+  { year: '2025', title: 'AI', description: 'AI solutions. ProposalAgent.' },
+  { year: '2026', title: '150+ Clients', description: 'Market leader.' }
 ]
 
 export default function AboutPage() {
@@ -153,7 +121,7 @@ export default function AboutPage() {
               <span className="gradient-text">About Us</span>
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-muted max-w-3xl mx-auto leading-relaxed px-2">
-              We democratize access to opportunity through technology that serves humanity first. Founded in 2019, we help small businesses capture every lead and ensure students graduate with job-ready skills.
+              Since 2019. We help businesses capture leads. We help students get jobs.
             </p>
           </motion.div>
         </div>
@@ -206,16 +174,13 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-6 text-muted leading-relaxed">
                 <p>
-                  Digni Digital was born from a simple observation: too many businesses were struggling with disconnected tools, manual processes, and missed opportunities. We saw talented entrepreneurs held back by technology barriers rather than empowered by them.
+                  Businesses were missing leads. Students were graduating unemployed. We built fixes.
                 </p>
                 <p>
-                  Founded in 2019, we started with a mission to democratize access to high-quality digital solutions. What began as a small web development service has evolved into a comprehensive growth infrastructure agency over the past 8 years.
+                  Founded 2019. Started with websites. Now: AI systems, graduate programs, custom software.
                 </p>
                 <p>
-                  Today, we don't just build websites or apps – we architect complete growth systems that turn chaos into clients. Our approach combines strategic thinking, technical excellence, AI-powered solutions, and deep understanding of business growth.
-                </p>
-                <p>
-                  Our latest innovations include AI-integrated solutions and advanced automation platforms.
+                  We don't build websites. We build systems that get you clients and students jobs.
                 </p>
               </div>
             </div>
@@ -264,9 +229,9 @@ export default function AboutPage() {
               <div className="w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center text-3xl mb-6">
                 🔍
               </div>
-              <h3 className="font-display text-2xl font-bold mb-4">Deep Discovery</h3>
+              <h3 className="font-display text-2xl font-bold mb-4">Discovery</h3>
               <p className="text-muted leading-relaxed mb-4">
-                We don't start with solutions. We start by understanding your business, your customers, and your unique challenges. Every project begins with comprehensive discovery.
+                We learn your business first. Then we build.
               </p>
               <ul className="text-sm text-muted space-y-2">
                 <li>• Business process analysis</li>
@@ -286,9 +251,9 @@ export default function AboutPage() {
               <div className="w-16 h-16 bg-success/10 rounded-2xl flex items-center justify-center text-3xl mb-6">
                 🛠️
               </div>
-              <h3 className="font-display text-2xl font-bold mb-4">Strategic Implementation</h3>
+              <h3 className="font-display text-2xl font-bold mb-4">Build</h3>
               <p className="text-muted leading-relaxed mb-4">
-                We build solutions that integrate seamlessly with your existing operations while positioning you for future growth. No disruption, just enhancement.
+                We fit into what you have. No disruption. Just upgrade.
               </p>
               <ul className="text-sm text-muted space-y-2">
                 <li>• Phased rollout approach</li>
@@ -308,9 +273,9 @@ export default function AboutPage() {
               <div className="w-16 h-16 bg-info/10 rounded-2xl flex items-center justify-center text-3xl mb-6">
                 📈
               </div>
-              <h3 className="font-display text-2xl font-bold mb-4">Continuous Optimization</h3>
+              <h3 className="font-display text-2xl font-bold mb-4">Optimize</h3>
               <p className="text-muted leading-relaxed mb-4">
-                Launch is just the beginning. We monitor, analyze, and continuously optimize your systems to ensure maximum ROI and sustained growth.
+                We keep improving. Launch is day one. We make it better.
               </p>
               <ul className="text-sm text-muted space-y-2">
                 <li>• Performance monitoring</li>
@@ -369,9 +334,9 @@ export default function AboutPage() {
                   <span className="text-accent font-bold">01</span>
                 </div>
                 <div>
-                  <h3 className="font-display text-xl font-bold mb-3">Human First Technology</h3>
+                  <h3 className="font-display text-xl font-bold mb-3">Human First</h3>
                   <p className="text-muted leading-relaxed">
-                    We don't replace humans with technology – we amplify human potential. Our AI solutions work alongside your team, not instead of them.
+                    AI helps your team. Doesn't replace them.
                   </p>
                 </div>
               </div>
@@ -381,9 +346,9 @@ export default function AboutPage() {
                   <span className="text-accent font-bold">02</span>
                 </div>
                 <div>
-                  <h3 className="font-display text-xl font-bold mb-3">Proven Track Record</h3>
+                  <h3 className="font-display text-xl font-bold mb-3">Proven</h3>
                   <p className="text-muted leading-relaxed">
-                    8+ years in business, 150+ successful transformations, 98% client satisfaction rate. Our results speak for themselves.
+                    8 years. 150+ clients. 98% satisfaction.
                   </p>
                 </div>
               </div>
@@ -393,9 +358,9 @@ export default function AboutPage() {
                   <span className="text-accent font-bold">03</span>
                 </div>
                 <div>
-                  <h3 className="font-display text-xl font-bold mb-3">End-to-End Partnership</h3>
+                  <h3 className="font-display text-xl font-bold mb-3">Full Partnership</h3>
                   <p className="text-muted leading-relaxed">
-                    From strategy to implementation to ongoing optimization – we're with you every step of the way. No handoffs, no gaps.
+                    Strategy. Build. Optimize. We're there. No handoffs.
                   </p>
                 </div>
               </div>
@@ -405,9 +370,9 @@ export default function AboutPage() {
                   <span className="text-accent font-bold">04</span>
                 </div>
                 <div>
-                  <h3 className="font-display text-xl font-bold mb-3">ROI-Focused Solutions</h3>
+                  <h3 className="font-display text-xl font-bold mb-3">ROI Focus</h3>
                   <p className="text-muted leading-relaxed">
-                    Every solution we build is designed to deliver measurable business value. We track results, not just features.
+                    We track revenue. Leads. Jobs. Not just features.
                   </p>
                 </div>
               </div>
@@ -416,7 +381,7 @@ export default function AboutPage() {
             <div className="card p-8 bg-gradient-to-br from-accent/5 to-success/5">
               <h3 className="font-display text-2xl font-bold mb-6">Our Promise</h3>
               <blockquote className="text-lg italic text-muted leading-relaxed mb-6">
-                "We don't just deliver projects – we deliver transformation. Every business we work with should be measurably better after our partnership than before."
+                "You'll have more leads, more revenue, or more employed grads. Or we failed."
               </blockquote>
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center">
@@ -456,7 +421,7 @@ export default function AboutPage() {
                 AI Employee
               </h3>
               <p className="text-muted text-sm leading-relaxed mb-6">
-                Never miss another lead with our 24/7 AI-powered employee that handles calls, qualifies prospects, and books appointments automatically.
+                AI answers calls. Qualifies. Books. 24/7.
               </p>
               <Link href="/ai-receptionist" className="text-accent hover:text-accent-light font-medium text-sm">
                 Learn More →
@@ -477,7 +442,7 @@ export default function AboutPage() {
                 Future Ready Graduate
               </h3>
               <p className="text-muted text-sm leading-relaxed mb-6">
-                Transform your educational institution with our comprehensive program that guarantees students graduate with job ready digital skills.
+                85% employed. We bring curriculum and internet. You bring students.
               </p>
               <Link href="/future-ready-graduate" className="text-success hover:text-success-light font-medium text-sm">
                 Learn More →
@@ -498,7 +463,7 @@ export default function AboutPage() {
                 Custom SaaS
               </h3>
               <p className="text-muted text-sm leading-relaxed mb-6">
-                Build custom software solutions tailored to your unique business challenges, from concept to deployment with ongoing optimization.
+                Your idea. Our build. Scalable. You own it.
               </p>
               <Link href="/custom-saas" className="text-info hover:text-info-light font-medium text-sm">
                 Learn More →
@@ -567,9 +532,9 @@ export default function AboutPage() {
           <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">
             Ready to Work Together?
           </h2>
-          <p className="text-muted text-lg mb-8">
-            Let's discuss how we can help transform your business with the right growth infrastructure.
-          </p>
+            <p className="text-muted text-lg mb-8">
+              Tell us your problem. We'll find the fix.
+            </p>
           <a
             {...getBookingLinkProps()}
             className="btn-primary text-lg px-8 py-4"
