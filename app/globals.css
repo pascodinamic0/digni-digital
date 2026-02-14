@@ -779,9 +779,10 @@ body {
   margin-top: 2.5em !important;
 }
 
-/* Global Hero Section Styles - Mobile Responsive */
+/* Global Hero Section Styles - Mobile Responsive
+   Uses isolate for stacking context; hero content uses z-10 to sit above bg/overlay */
 .hero-section {
-  @apply relative min-h-screen flex items-center pt-16 sm:pt-20 overflow-hidden bg-gradient-mesh;
+  @apply relative isolate min-h-screen flex items-center pt-16 sm:pt-20 overflow-hidden bg-gradient-mesh;
 }
 
 .hero-container {
