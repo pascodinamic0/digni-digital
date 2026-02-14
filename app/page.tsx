@@ -654,7 +654,7 @@ function Products() {
       status: 'LIVE'
     },
     {
-      name: 'Future Ready Graduate™',
+      name: 'Digni Digital Literacy',
       tagline: 'Students who get jobs',
       description: '9-month program. Real skills. 85% employed.',
       features: ['Digital Skills', 'Portfolio', 'Job Placement', 'Income Tracked', 'Employer Network', 'Certified'],
@@ -912,7 +912,7 @@ function CaseStudies() {
       color: 'accent' as const
     },
     {
-      solution: 'Future Ready Graduate™',
+      solution: 'Digni Digital Literacy',
       industry: c.education,
       title: c.study2Title,
       duration: c.study2Duration,

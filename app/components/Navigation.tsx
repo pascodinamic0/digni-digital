@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
+import { usePathname } from 'next/navigation'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { getBookingLinkProps } from '@/app/config/cta.config'
@@ -10,10 +11,13 @@ import ThemeToggle from './ThemeToggle'
 import LanguageToggler from './LanguageToggler'
 
 export default function Navigation() {
+  const pathname = usePathname()
   const { language } = useLanguage()
   const t = translations[language]
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
+  const isBlogPage = pathname?.startsWith('/blog') ?? false
+  const showSolidNav = scrolled || mobileOpen || isBlogPage
   const [solutionsOpen, setSolutionsOpen] = useState(false)
   const dropdownRef = useRef<HTMLDivElement>(null)
 
@@ -84,8 +88,8 @@ export default function Navigation() {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.6, ease: 'easeOut' }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled || mobileOpen ? 'bg-background/95 backdrop-blur-xl border-b border-white/5' : ''
+        className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ${
+          showSolidNav ? 'bg-background/95 backdrop-blur-xl border-b border-white/5' : ''
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 py-4">
@@ -95,7 +99,7 @@ export default function Navigation() {
               <div className="absolute w-5 h-7 bg-accent transform -skew-x-12 -translate-x-0.5 group-hover:skew-x-0 transition-transform duration-300 rounded-sm" style={{ opacity: 0.9 }} />
               <div className="absolute w-5 h-7 bg-accent transform skew-x-12 translate-x-0.5 group-hover:skew-x-0 transition-transform duration-300 rounded-sm" style={{ opacity: 0.4 }} />
             </div>
-            <span className={`font-display font-semibold text-xl transition-colors duration-300 ${scrolled ? '' : 'text-white'}`}>Digni Digital LLC</span>
+            <span className={`font-display font-semibold text-xl transition-colors duration-300 ${showSolidNav ? '' : 'text-white'}`}>Digni Digital LLC</span>
           </Link>
 
           <div className="hidden lg:flex items-center gap-8">
@@ -103,7 +107,7 @@ export default function Navigation() {
               <Link
                 key={link.name}
                 href={link.href}
-                className={`hover:text-white transition-colors duration-300 text-sm font-medium ${scrolled ? 'text-muted' : 'text-white/80'}`}
+                className={`hover:text-white transition-colors duration-300 text-sm font-medium ${showSolidNav ? 'text-muted' : 'text-white/80'}`}
               >
                 {link.name}
               </Link>
@@ -116,7 +120,7 @@ export default function Navigation() {
                 aria-expanded={solutionsOpen}
                 aria-haspopup="true"
                 aria-label={`${t.nav.solutions} menu`}
-                className={`hover:text-white transition-colors duration-300 text-sm font-medium flex items-center gap-1 ${scrolled ? 'text-muted' : 'text-white/80'}`}
+                className={`hover:text-white transition-colors duration-300 text-sm font-medium flex items-center gap-1 ${showSolidNav ? 'text-muted' : 'text-white/80'}`}
               >
                 {t.nav.solutions}
                 <svg className={`w-4 h-4 transition-transform duration-200 ${solutionsOpen ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -159,7 +163,7 @@ export default function Navigation() {
               <Link
                 key={link.name}
                 href={link.href}
-                className={`hover:text-white transition-colors duration-300 text-sm font-medium ${scrolled ? 'text-muted' : 'text-white/80'}`}
+                className={`hover:text-white transition-colors duration-300 text-sm font-medium ${showSolidNav ? 'text-muted' : 'text-white/80'}`}
               >
                 {link.name}
               </Link>
@@ -185,9 +189,9 @@ export default function Navigation() {
             aria-controls="mobile-menu"
           >
             <div className="w-6 h-5 flex flex-col justify-between">
-              <span className={`h-0.5 transition-all ${scrolled ? 'bg-text' : 'bg-white'} ${mobileOpen ? 'rotate-45 translate-y-2' : ''}`} />
-              <span className={`h-0.5 transition-all ${scrolled ? 'bg-text' : 'bg-white'} ${mobileOpen ? 'opacity-0' : ''}`} />
-              <span className={`h-0.5 transition-all ${scrolled ? 'bg-text' : 'bg-white'} ${mobileOpen ? '-rotate-45 -translate-y-2' : ''}`} />
+              <span className={`h-0.5 transition-all ${showSolidNav ? 'bg-text' : 'bg-white'} ${mobileOpen ? 'rotate-45 translate-y-2' : ''}`} />
+              <span className={`h-0.5 transition-all ${showSolidNav ? 'bg-text' : 'bg-white'} ${mobileOpen ? 'opacity-0' : ''}`} />
+              <span className={`h-0.5 transition-all ${showSolidNav ? 'bg-text' : 'bg-white'} ${mobileOpen ? '-rotate-45 -translate-y-2' : ''}`} />
             </div>
           </button>
         </div>

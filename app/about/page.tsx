@@ -439,7 +439,7 @@ export default function AboutPage() {
                 🎓
               </div>
               <h3 className="font-display text-xl font-bold mb-4 group-hover:text-success transition-colors">
-                Future Ready Graduate
+                Digni Digital Literacy Program
               </h3>
               <p className="text-muted text-sm leading-relaxed mb-6">
                 85% employed. We bring curriculum and internet. You bring students.

@@ -83,7 +83,7 @@ Your school provides the foundation for success:
 
 I've attached our complete presentation and proposal documents for your review:
 
-1. **[Future-Ready Graduate Program Presentation.pdf](Digni Digital - Future-Ready Graduate Program.pdf)** - Detailed curriculum, outcomes, and success metrics
+1. **[Digni Digital Literacy Program Presentation.pdf](Digni Digital - Digni Digital Literacy Program.pdf)** - Detailed curriculum, outcomes, and success metrics
 2. **[Partnership Proposal & Contract](Contract_FutureReadyGraduate.docx)** - Terms, pricing, and implementation details
 
 I'd love to schedule a brief consultation call to discuss how this program could work specifically for [School Name] and answer any questions you might have.

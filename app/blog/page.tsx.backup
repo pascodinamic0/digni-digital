@@ -3,12 +3,12 @@ import BlogContent from './BlogContent'
 
 // Blog metadata for SEO
 export const metadata: Metadata = {
-  title: 'AI Employee Systems, Future Ready Education & Custom SaaS | Digni Digital Blog',
-  description: 'Expert insights on AI employee systems for growing businesses, Future Ready Graduate programs for private high schools, and custom SaaS development solutions.',
-  keywords: ['AI employee system', 'AI receptionist', 'business automation', 'Future Ready Graduate program', 'private high school education', 'custom SaaS development', 'SaaS solutions', 'business growth', 'student career readiness'],
+  title: 'AI Employee Systems, Digni Digital Literacy & Custom SaaS | Digni Digital Blog',
+  description: 'Expert insights on AI employee systems for growing businesses, Digni Digital Literacy program for private high schools, and custom SaaS development solutions.',
+  keywords: ['AI employee system', 'AI receptionist', 'business automation', 'Digni Digital Literacy program', 'private high school education', 'custom SaaS development', 'SaaS solutions', 'business growth', 'student career readiness'],
   openGraph: {
-    title: 'AI Employee Systems, Future Ready Education & Custom SaaS | Digni Digital Blog',
-    description: 'Expert insights on AI employee systems, Future Ready Graduate programs, and custom SaaS development.',
+    title: 'AI Employee Systems, Digni Digital Literacy & Custom SaaS | Digni Digital Blog',
+    description: 'Expert insights on AI employee systems, Digni Digital Literacy program, and custom SaaS development.',
     type: 'website',
   },
 }

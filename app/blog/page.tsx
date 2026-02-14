@@ -4,12 +4,12 @@ import BlogContent from './BlogContent'
 
 // Blog metadata for SEO
 export const metadata: Metadata = {
-  title: 'AI Employee Systems, Future Ready Education & Custom SaaS | Digni Digital Blog',
-  description: 'Expert insights on AI employee systems for growing businesses, Future Ready Graduate programs for private high schools, and custom SaaS development solutions.',
-  keywords: ['AI employee system', 'AI receptionist', 'business automation', 'Future Ready Graduate program', 'private high school education', 'custom SaaS development', 'SaaS solutions', 'business growth', 'student career readiness'],
+  title: 'AI Employee Systems, Digni Digital Literacy & Custom SaaS | Digni Digital Blog',
+  description: 'Expert insights on AI employee systems for growing businesses, Digni Digital Literacy program for private high schools, and custom SaaS development solutions.',
+  keywords: ['AI employee system', 'AI receptionist', 'business automation', 'Digni Digital Literacy program', 'private high school education', 'custom SaaS development', 'SaaS solutions', 'business growth', 'student career readiness'],
   openGraph: {
-    title: 'AI Employee Systems, Future Ready Education & Custom SaaS | Digni Digital Blog',
-    description: 'Expert insights on AI employee systems, Future Ready Graduate programs, and custom SaaS development.',
+    title: 'AI Employee Systems, Digni Digital Literacy & Custom SaaS | Digni Digital Blog',
+    description: 'Expert insights on AI employee systems, Digni Digital Literacy program, and custom SaaS development.',
     type: 'website',
   },
 }
@@ -910,7 +910,7 @@ const remainingArticles = [
     readTime: "14 min read",
     publishDate: "February 12, 2025",
     author: "Pascal Digny",
-    tags: ["Claude Code", "AI Agents", "Future of Work", "Africa", "Digital Skills", "Future Ready Graduate", "Youth Employment"],
+    tags: ["Claude Code", "AI Agents", "Future of Work", "Africa", "Digital Skills", "Digni Digital Literacy", "Youth Employment"],
     featured: true,
     content: `
       <h2>A Warning to Every African: The Famine You're Not Seeing</h2>
@@ -1037,7 +1037,7 @@ const remainingArticles = [
 
       <h2>Case Study: Riverside Technical High School, Lagos</h2>
 
-      <p>Riverside Technical High School in Lagos, Nigeria, faced a crisis: 45% of graduates were employed 12 months after graduation. No practical skills. No portfolios. No connection to the digital economy. They implemented the <strong>Future Ready Graduate Program</strong>—a full-year curriculum teaching AI-powered web development, digital marketing, content creation, and professional branding.</p>
+      <p>Riverside Technical High School in Lagos, Nigeria, faced a crisis: 45% of graduates were employed 12 months after graduation. No practical skills. No portfolios. No connection to the digital economy. They implemented the <strong>Digni Digital Literacy Program</strong>—a full-year curriculum teaching AI-powered web development, digital marketing, content creation, and professional branding.</p>
 
       <p><strong>Results after one year:</strong></p>
 
@@ -1071,7 +1071,7 @@ const remainingArticles = [
 
       <p><strong>To African Governments:</strong></p>
 
-      <p>Position yourselves now. Invest in digital skills training. Partner with programs like the Future Ready Graduate. Make internet connectivity and computer access a national priority. The countries that train their youth today will lead the continent tomorrow. Those that don't will face a generation of frustration and lost potential.</p>
+      <p>Position yourselves now. Invest in digital skills training. Partner with programs like the Digni Digital Literacy Program. Make internet connectivity and computer access a national priority. The countries that train their youth today will lead the continent tomorrow. Those that don't will face a generation of frustration and lost potential.</p>
 
       <p><strong>To Parents:</strong></p>
 
@@ -1081,9 +1081,9 @@ const remainingArticles = [
 
       <p>Integrate digital skills into your curriculum. The world evolved. Education didn't. Cars transformed, cities transformed, communication transformed—but too many classrooms look the same as they did 30 years ago. Students need to learn how the world they live in actually works. They need Cursor, ChatGPT, Lovable.dev, and tools that let them compete globally.</p>
 
-      <h2>The Future Ready Graduate Program: Start From Zero, End as a Professional</h2>
+      <h2>The Digni Digital Literacy Program: Start From Zero, End as a Professional</h2>
 
-      <p>We built the <strong>Future Ready Graduate Program</strong> exactly for this moment. It's designed for anyone—from any background, any industry—to start from nowhere and learn to:</p>
+      <p>We built the <strong>Digni Digital Literacy Program</strong> exactly for this moment. It's designed for anyone—from any background, any industry—to start from nowhere and learn to:</p>
 
       <ul>
         <li><strong>Operate a computer in a completely new way</strong>—using AI as a multiplier</li>
@@ -1112,7 +1112,7 @@ const remainingArticles = [
 
       <hr>
 
-      <p><em>Ready to prepare yourself—or your students—for the AI-powered future? <a href="/future-ready-graduate" target="_blank" rel="noopener noreferrer">Explore the Future Ready Graduate Program</a> or <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">book a consultation</a> to learn how we can partner with your institution.</em></p>
+      <p><em>Ready to prepare yourself—or your students—for the AI-powered future? <a href="/future-ready-graduate" target="_blank" rel="noopener noreferrer">Explore the Digni Digital Literacy Program</a> or <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">book a consultation</a> to learn how we can partner with your institution.</em></p>
     `
   },
   {
@@ -1120,23 +1120,23 @@ const remainingArticles = [
     title: "Preparing Students for the Future: Why Private High Schools Need Digital Skills Programs",
     slug: "preparing-students-future-private-high-schools-digital-skills-programs",
     excerpt: "Discover why private high schools must integrate digital skills programs to prepare students for modern careers and ensure graduate success.",
-    category: "Future Ready Graduate",
+    category: "Digni Digital Literacy",
     readTime: "10 min read",
     publishDate: "January 10, 2025",
     author: "Pascal Digny",
-    tags: ["Future Ready Graduate", "Private High Schools", "Digital Skills", "Student Success", "Career Readiness"],
+    tags: ["Digni Digital Literacy", "Private High Schools", "Digital Skills", "Student Success", "Career Readiness"],
     featured: true,
     content: `
       <h2>The Critical Need: Preparing Students for Modern Careers</h2>
       
-      <p>Private high schools face an unprecedented challenge: traditional curricula are failing to prepare students for the modern workforce. While students graduate with strong academic credentials, <strong>60% lack the digital skills employers demand</strong>. The Future Ready Graduate Program addresses this gap by ensuring students graduate with job-ready skills, resulting in <strong>85% employment rates within 6 months</strong> compared to the industry average of 45%.</p>
+      <p>Private high schools face an unprecedented challenge: traditional curricula are failing to prepare students for the modern workforce. While students graduate with strong academic credentials, <strong>60% lack the digital skills employers demand</strong>. The Digni Digital Literacy Program addresses this gap by ensuring students graduate with job-ready skills, resulting in <strong>85% employment rates within 6 months</strong> compared to the industry average of 45%.</p>
 
       <h3>The Skills Gap Crisis in Private Education</h3>
       
       <p>Private high schools invest significant resources in preparing students for success, yet many graduates struggle to find employment. The disconnect between education and employment is clear: employers need candidates with practical digital skills, project experience, and professional portfolios—skills that traditional curricula rarely provide.</p>
 
       <blockquote>
-        <p>"The Future Ready Graduate Program transformed our school's outcomes. Our graduates now enter the workforce with real skills, not just diplomas. That's the difference between education and preparation." - <em>Principal Sarah Johnson, St. Mary's Private High School</em></p>
+        <p>"The Digni Digital Literacy Program transformed our school's outcomes. Our graduates now enter the workforce with real skills, not just diplomas. That's the difference between education and preparation." - <em>Principal Sarah Johnson, St. Mary's Private High School</em></p>
       </blockquote>
 
       <h3>Why Private High Schools Must Act Now</h3>
@@ -1166,7 +1166,7 @@ const remainingArticles = [
       <h3>Real Results: Success Stories from Private Schools</h3>
 
       <h4>Case Study: St. Mary's Private High School</h4>
-      <p>St. Mary's implemented the Future Ready Graduate Program three years ago. Here are their results:</p>
+      <p>St. Mary's implemented the Digni Digital Literacy Program three years ago. Here are their results:</p>
 
       <p><strong>Before the Program:</strong></p>
       <ul>
@@ -1176,7 +1176,7 @@ const remainingArticles = [
         <li>Declining enrollment due to lack of differentiation</li>
       </ul>
 
-      <p><strong>After Implementing Future Ready Graduate Program:</strong></p>
+      <p><strong>After Implementing Digni Digital Literacy Program:</strong></p>
       <ul>
         <li><strong>87% of graduates employed within 6 months</strong></li>
         <li><strong>Average starting salary: $42,000</strong> (68% increase)</li>
@@ -1196,7 +1196,7 @@ const remainingArticles = [
 
       <h3>Program Structure: How It Works</h3>
 
-      <p>The Future Ready Graduate Program is structured as a three-trimester program integrated into the school year:</p>
+      <p>The Digni Digital Literacy Program is structured as a three-trimester program integrated into the school year:</p>
 
       <h4>First Trimester: Digital Foundation & Web Development</h4>
       <p>Students learn fundamental digital skills and web development:</p>
@@ -1269,9 +1269,9 @@ const remainingArticles = [
         <li><strong>Employment Opportunities</strong>: 85% employment rate within 6 months vs 45% industry average</li>
       </ul>
 
-      <h3>The Future Ready Graduate Program Solution</h3>
+      <h3>The Digni Digital Literacy Program Solution</h3>
 
-      <p>The Future Ready Graduate Program is specifically designed for private high schools, providing:</p>
+      <p>The Digni Digital Literacy Program is specifically designed for private high schools, providing:</p>
       <ul>
         <li><strong>Comprehensive Curriculum</strong>: Web development, digital marketing, and professional branding</li>
         <li><strong>Project-Based Learning</strong>: Students build real portfolios through hands-on projects</li>
@@ -1287,40 +1287,40 @@ const remainingArticles = [
       <ol>
         <li><strong>Assess Current Curriculum</strong>: Evaluate what digital skills your school currently teaches</li>
         <li><strong>Engage Stakeholders</strong>: Discuss the program with faculty, parents, and board members</li>
-        <li><strong>Review Program Details</strong>: Understand the Future Ready Graduate Program structure and requirements</li>
+        <li><strong>Review Program Details</strong>: Understand the Digni Digital Literacy Program structure and requirements</li>
         <li><strong>Plan Implementation</strong>: Determine how to integrate the program into your school's schedule</li>
         <li><strong>Measure Success</strong>: Track student outcomes and employment rates</li>
       </ol>
 
-      <p>Private high schools that integrate digital skills programs today will produce graduates who are truly prepared for the modern workforce. The Future Ready Graduate Program provides the structure, curriculum, and support needed to ensure student success.</p>
+      <p>Private high schools that integrate digital skills programs today will produce graduates who are truly prepared for the modern workforce. The Digni Digital Literacy Program provides the structure, curriculum, and support needed to ensure student success.</p>
 
       <hr>
 
-      <p><em>Ready to prepare your students for modern careers? <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Book a consultation</a> to learn how the Future Ready Graduate Program can transform your school's outcomes.</em></p>
+      <p><em>Ready to prepare your students for modern careers? <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Book a consultation</a> to learn how the Digni Digital Literacy Program can transform your school's outcomes.</em></p>
     `
   },
   {
     id: 5,
-    title: "The Future Ready Graduate Program: Transforming Education for Career Success",
+    title: "The Digni Digital Literacy Program: Transforming Education for Career Success",
     slug: "future-ready-graduate-program-transforming-education-career-success",
-    excerpt: "Learn how the Future Ready Graduate Program equips students with job-ready digital skills, ensuring 85% employment rates within 6 months of graduation.",
-    category: "Future Ready Graduate",
+    excerpt: "Learn how the Digni Digital Literacy Program equips students with job-ready digital skills, ensuring 85% employment rates within 6 months of graduation.",
+    category: "Digni Digital Literacy",
     readTime: "9 min read",
     publishDate: "January 9, 2025",
     author: "Pascal Digny",
-    tags: ["Future Ready Graduate", "Education Transformation", "Career Success", "Student Outcomes", "Private Schools"],
+    tags: ["Digni Digital Literacy", "Education Transformation", "Career Success", "Student Outcomes", "Private Schools"],
     featured: false,
     content: `
-      <h2>Transforming Education: The Future Ready Graduate Program</h2>
+      <h2>Transforming Education: The Digni Digital Literacy Program</h2>
       
-      <p>The Future Ready Graduate Program represents a fundamental shift in how private high schools prepare students for careers. Unlike traditional education that focuses on academic achievement alone, this program ensures students graduate with <strong>job-ready digital skills, professional portfolios, and industry experience</strong>. The results speak for themselves: <strong>85% employment rate within 6 months</strong> and <strong>150% average salary increase</strong> compared to graduates from traditional programs.</p>
+      <p>The Digni Digital Literacy Program represents a fundamental shift in how private high schools prepare students for careers. Unlike traditional education that focuses on academic achievement alone, this program ensures students graduate with <strong>job-ready digital skills, professional portfolios, and industry experience</strong>. The results speak for themselves: <strong>85% employment rate within 6 months</strong> and <strong>150% average salary increase</strong> compared to graduates from traditional programs.</p>
 
       <h3>The Program's Comprehensive Approach</h3>
       
-      <p>The Future Ready Graduate Program is a three-trimester curriculum that integrates seamlessly into the school year, ensuring students develop practical skills alongside their academic studies. The program is specifically designed for private high schools, recognizing the unique needs and resources of these institutions.</p>
+      <p>The Digni Digital Literacy Program is a three-trimester curriculum that integrates seamlessly into the school year, ensuring students develop practical skills alongside their academic studies. The program is specifically designed for private high schools, recognizing the unique needs and resources of these institutions.</p>
 
       <blockquote>
-        <p>"The Future Ready Graduate Program doesn't just teach skills—it transforms students into professionals. Our graduates don't just have diplomas; they have portfolios, experience, and confidence." - <em>Dr. Michael Chen, Director of Academic Programs</em></p>
+        <p>"The Digni Digital Literacy Program doesn't just teach skills—it transforms students into professionals. Our graduates don't just have diplomas; they have portfolios, experience, and confidence." - <em>Dr. Michael Chen, Director of Academic Programs</em></p>
       </blockquote>
 
       <h3>Trimester 1: Digital Foundation & Web Development</h3>
@@ -1371,7 +1371,7 @@ const remainingArticles = [
 
       <h3>Program Results: Measurable Success</h3>
 
-      <p>The Future Ready Graduate Program delivers exceptional outcomes:</p>
+      <p>The Digni Digital Literacy Program delivers exceptional outcomes:</p>
       <ul>
         <li><strong>85% Employment Rate</strong> - Within 6 months of graduation (vs 45% industry average)</li>
         <li><strong>Smart Water Management</strong>: Detected and fixed 2,400 leaks in first year</li>
@@ -1445,11 +1445,11 @@ const remainingArticles = [
         <li><strong>Partner with Program Providers</strong>: Work with experienced implementation teams</li>
       </ol>
 
-      <p>The Future Ready Graduate Program transforms how private high schools prepare students for careers. By combining academic excellence with practical digital skills, schools produce graduates who are truly ready for the modern workforce.</p>
+      <p>The Digni Digital Literacy Program transforms how private high schools prepare students for careers. By combining academic excellence with practical digital skills, schools produce graduates who are truly ready for the modern workforce.</p>
 
       <hr>
 
-      <p><em>Ready to transform your school's graduate outcomes? <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Book a consultation</a> to learn how the Future Ready Graduate Program can be implemented at your school.</em></p>
+      <p><em>Ready to transform your school's graduate outcomes? <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Book a consultation</a> to learn how the Digni Digital Literacy Program can be implemented at your school.</em></p>
     `
   },
   {
@@ -1457,11 +1457,11 @@ const remainingArticles = [
     title: "How Private Schools Can Bridge the Skills Gap with Modern Curriculum",
     slug: "private-schools-bridge-skills-gap-modern-curriculum",
     excerpt: "Explore how private high schools can integrate modern digital skills into their curriculum to bridge the gap between education and employment.",
-    category: "Future Ready Graduate",
+    category: "Digni Digital Literacy",
     readTime: "8 min read",
     publishDate: "January 8, 2025",
     author: "Pascal Digny",
-    tags: ["Future Ready Graduate", "Private Schools", "Curriculum Development", "Skills Gap", "Modern Education"],
+    tags: ["Digni Digital Literacy", "Private Schools", "Curriculum Development", "Skills Gap", "Modern Education"],
     featured: false,
     content: `
       <h2>Bridging the Skills Gap: Modern Curriculum for Modern Careers</h2>
@@ -1470,7 +1470,7 @@ const remainingArticles = [
 
       <h3>Understanding the Skills Gap</h3>
       
-      <p>The disconnect is clear: employers need candidates with practical skills, portfolios, and professional experience, but traditional curricula focus on theory and testing. The Future Ready Graduate Program addresses this by integrating job-ready digital skills into the school curriculum.</p>
+      <p>The disconnect is clear: employers need candidates with practical skills, portfolios, and professional experience, but traditional curricula focus on theory and testing. The Digni Digital Literacy Program addresses this by integrating job-ready digital skills into the school curriculum.</p>
 
       <blockquote>
         <p>"Integrating digital skills into our curriculum was the best decision we made. Our graduates now have real skills that employers value, not just grades." - <em>Principal Maria Rodriguez, Riverside Academy</em></p>
@@ -1607,19 +1607,19 @@ const remainingArticles = [
   },
   {
     id: 7,
-    title: "Student Success Stories: How Future Ready Programs Lead to Employment",
+    title: "Student Success Stories: How the Digni Digital Literacy Program Leads to Employment",
     slug: "student-success-stories-future-ready-programs-employment",
-    excerpt: "Read inspiring success stories of students who graduated with job-ready skills through the Future Ready Graduate Program and secured employment.",
-    category: "Future Ready Graduate",
+    excerpt: "Read inspiring success stories of students who graduated with job-ready skills through the Digni Digital Literacy Program and secured employment.",
+    category: "Digni Digital Literacy",
     readTime: "7 min read",
     publishDate: "January 7, 2025",
     author: "Pascal Digny",
-    tags: ["Future Ready Graduate", "Student Success", "Employment", "Career Outcomes", "Graduate Stories"],
+    tags: ["Digni Digital Literacy", "Student Success", "Employment", "Career Outcomes", "Graduate Stories"],
     featured: false,
     content: `
       <h2>Real Success: Students Who Transformed Their Futures</h2>
       
-      <p>The Future Ready Graduate Program doesn't just teach skills—it transforms lives. These success stories demonstrate how students who complete the program secure employment, build careers, and achieve professional success. With <strong>85% employment rates within 6 months</strong> and <strong>150% average salary increases</strong>, the program delivers measurable results.</p>
+      <p>The Digni Digital Literacy Program doesn't just teach skills—it transforms lives. These success stories demonstrate how students who complete the program secure employment, build careers, and achieve professional success. With <strong>85% employment rates within 6 months</strong> and <strong>150% average salary increases</strong>, the program delivers measurable results.</p>
 
       <h3>Success Story 1: From Student to Web Developer</h3>
       
@@ -1630,7 +1630,7 @@ const remainingArticles = [
       <p><strong>Starting Salary:</strong> $45,000 (vs $28,000 average for traditional graduates)</p>
 
       <blockquote>
-        <p>"The Future Ready Graduate Program gave me real skills and a portfolio. When I interviewed, I could show actual websites I built, not just talk about grades. That made all the difference." - <em>Sarah Chen, Web Developer</em></p>
+        <p>"The Digni Digital Literacy Program gave me real skills and a portfolio. When I interviewed, I could show actual websites I built, not just talk about grades. That made all the difference." - <em>Sarah Chen, Web Developer</em></p>
       </blockquote>
 
       <h3>Success Story 2: Digital Marketing Specialist</h3>
@@ -1719,7 +1719,7 @@ const remainingArticles = [
 
       <h3>What Makes These Students Successful</h3>
 
-      <p>The Future Ready Graduate Program provides the foundation, but student success comes from:</p>
+      <p>The Digni Digital Literacy Program provides the foundation, but student success comes from:</p>
       <ol>
         <li><strong>Active Participation</strong>: Engaging fully in all program activities</li>
         <li><strong>Portfolio Building</strong>: Creating quality projects that demonstrate skills</li>
@@ -1728,28 +1728,28 @@ const remainingArticles = [
         <li><strong>Persistence</strong>: Continuing to apply and improve after graduation</li>
       </ol>
 
-      <p>These success stories demonstrate the transformative power of the Future Ready Graduate Program. Students who complete the program don't just graduate—they launch careers.</p>
+      <p>These success stories demonstrate the transformative power of the Digni Digital Literacy Program. Students who complete the program don't just graduate—they launch careers.</p>
 
       <hr>
 
-      <p><em>Ready to create success stories at your school? <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Book a consultation</a> to learn how the Future Ready Graduate Program can transform your students' futures.</em></p>
+      <p><em>Ready to create success stories at your school? <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Book a consultation</a> to learn how the Digni Digital Literacy Program can transform your students' futures.</em></p>
     `
   },
   {
     id: 8,
-    title: "Implementing Future Ready Programs: A Guide for Private School Administrators",
+    title: "Implementing the Digni Digital Literacy Program: A Guide for Private School Administrators",
     slug: "implementing-future-ready-programs-guide-private-school-administrators",
-    excerpt: "A comprehensive guide for private school administrators on implementing the Future Ready Graduate Program, from planning to execution.",
-    category: "Future Ready Graduate",
+    excerpt: "A comprehensive guide for private school administrators on implementing the Digni Digital Literacy Program, from planning to execution.",
+    category: "Digni Digital Literacy",
     readTime: "11 min read",
     publishDate: "January 6, 2025",
     author: "Pascal Digny",
-    tags: ["Future Ready Graduate", "School Administration", "Program Implementation", "Private Schools", "Education Leadership"],
+    tags: ["Digni Digital Literacy", "School Administration", "Program Implementation", "Private Schools", "Education Leadership"],
     featured: false,
     content: `
-      <h2>Your Complete Implementation Guide: Future Ready Graduate Program</h2>
+      <h2>Your Complete Implementation Guide: Digni Digital Literacy Program</h2>
       
-      <p>Implementing the Future Ready Graduate Program at your private high school requires careful planning, stakeholder engagement, and strategic execution. This comprehensive guide walks administrators through every step of implementation, from initial assessment to full program deployment and ongoing success measurement.</p>
+      <p>Implementing the Digni Digital Literacy Program at your private high school requires careful planning, stakeholder engagement, and strategic execution. This comprehensive guide walks administrators through every step of implementation, from initial assessment to full program deployment and ongoing success measurement.</p>
 
       <h3>Phase 1: Pre-Implementation Assessment</h3>
       
@@ -1937,7 +1937,7 @@ const remainingArticles = [
 
       <h3>Action Steps for Administrators</h3>
 
-      <p>For school administrators ready to implement the Future Ready Graduate Program:</p>
+      <p>For school administrators ready to implement the Digni Digital Literacy Program:</p>
 
       <ol>
         <li><strong>Complete Assessment</strong>: Evaluate school resources, stakeholder readiness, and requirements</li>
@@ -1948,11 +1948,11 @@ const remainingArticles = [
         <li><strong>Monitor and Optimize</strong>: Track metrics and continuously improve</li>
       </ol>
 
-      <p>Successful implementation of the Future Ready Graduate Program transforms how your school prepares students for careers. With proper planning and execution, you'll see improved employment rates, higher parent satisfaction, and stronger school reputation.</p>
+      <p>Successful implementation of the Digni Digital Literacy Program transforms how your school prepares students for careers. With proper planning and execution, you'll see improved employment rates, higher parent satisfaction, and stronger school reputation.</p>
 
       <hr>
 
-      <p><em>Ready to implement the Future Ready Graduate Program at your school? <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Book a consultation</a> to discuss implementation planning and get started.</em></p>
+      <p><em>Ready to implement the Digni Digital Literacy Program at your school? <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Book a consultation</a> to discuss implementation planning and get started.</em></p>
     `
   },
   {
@@ -3247,7 +3247,7 @@ export default function BlogPage() {
     '@context': 'https://schema.org',
     '@type': 'Blog',
     name: 'Digni Digital Blog',
-    description: 'Expert insights on AI employee systems, Future Ready Graduate programs, and custom SaaS development.',
+    description: 'Expert insights on AI employee systems, Digni Digital Literacy programs, and custom SaaS development.',
     url: `${baseUrl}/blog`,
     numberOfPosts: allArticles.length,
     blogPost: allArticles.map((article) => ({

@@ -30,7 +30,7 @@ const services = [
   },
   {
     id: 'future-ready-graduate',
-    title: 'Future Ready Graduate Program',
+    title: 'Digni Digital Literacy Program',
     subtitle: 'Job-Ready Graduates',
     description: '9-month program. 85% employed. Real skills. Real jobs.',
     features: [
