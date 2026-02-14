@@ -98,7 +98,7 @@ export default function AffiliatePage() {
       link: '/ai-receptionist'
     },
     {
-      name: 'Future Ready Graduate',
+      name: 'Digni Digital Literacy Program',
       tagline: 'Students with real income skills',
       price: '$500/month',
       commission: '20% recurring',
@@ -193,7 +193,7 @@ export default function AffiliatePage() {
   const faqs = [
     {
       question: 'What are the commission rates?',
-      answer: 'You earn 20% recurring commission on AI Employee and Future Ready Graduate subscriptions, and 10% on Custom SaaS projects. Commissions are paid for as long as the customer remains active.'
+      answer: 'You earn 20% recurring commission on AI Employee and Digni Digital Literacy Program subscriptions, and 10% on Custom SaaS projects. Commissions are paid for as long as the customer remains active.'
     },
     {
       question: 'When and how do I get paid?',

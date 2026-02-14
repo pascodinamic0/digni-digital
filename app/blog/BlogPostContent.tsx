@@ -81,7 +81,7 @@ export default function BlogPostContent({ article }: BlogPostContentProps) {
       </div>
 
       <div className="mt-12 p-8 bg-surface rounded-lg text-center">
-        {['Future of Work', 'Future Ready Graduate'].includes(article.category) ? (
+        {['Future of Work', 'Digni Digital Literacy'].includes(article.category) ? (
           <>
             <h3 className="font-display text-2xl font-bold mb-4">
               {t.readyFutureReady}
