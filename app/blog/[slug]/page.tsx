@@ -11,8 +11,8 @@ interface BlogPostPageProps {
   }>
 }
 
-export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
-  const { slug } = await params
+export async function generateMetadata(props: BlogPostPageProps): Promise<Metadata> {
+  const { slug } = await props.params
   const article = allArticles.find(article => article.slug === slug)
   
   if (!article) {
@@ -39,8 +39,8 @@ export async function generateStaticParams() {
   }))
 }
 
-export default async function BlogPostPage({ params }: BlogPostPageProps) {
-  const { slug } = await params
+export default async function BlogPostPage(props: BlogPostPageProps) {
+  const { slug } = await props.params
   const article = allArticles.find(article => article.slug === slug)
 
   if (!article) {
