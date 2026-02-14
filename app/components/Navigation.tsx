@@ -95,7 +95,7 @@ export default function Navigation() {
               <div className="absolute w-5 h-7 bg-accent transform -skew-x-12 -translate-x-0.5 group-hover:skew-x-0 transition-transform duration-300 rounded-sm" style={{ opacity: 0.9 }} />
               <div className="absolute w-5 h-7 bg-accent transform skew-x-12 translate-x-0.5 group-hover:skew-x-0 transition-transform duration-300 rounded-sm" style={{ opacity: 0.4 }} />
             </div>
-            <span className="font-display font-semibold text-xl">Digni Digital LLC</span>
+            <span className={`font-display font-semibold text-xl transition-colors duration-300 ${scrolled ? '' : 'text-white'}`}>Digni Digital LLC</span>
           </Link>
 
           <div className="hidden lg:flex items-center gap-8">
@@ -103,7 +103,7 @@ export default function Navigation() {
               <Link
                 key={link.name}
                 href={link.href}
-                className="text-muted hover:text-white transition-colors duration-200 text-sm font-medium"
+                className={`hover:text-white transition-colors duration-300 text-sm font-medium ${scrolled ? 'text-muted' : 'text-white/80'}`}
               >
                 {link.name}
               </Link>
@@ -116,7 +116,7 @@ export default function Navigation() {
                 aria-expanded={solutionsOpen}
                 aria-haspopup="true"
                 aria-label={`${t.nav.solutions} menu`}
-                className="text-muted hover:text-white transition-colors duration-200 text-sm font-medium flex items-center gap-1"
+                className={`hover:text-white transition-colors duration-300 text-sm font-medium flex items-center gap-1 ${scrolled ? 'text-muted' : 'text-white/80'}`}
               >
                 {t.nav.solutions}
                 <svg className={`w-4 h-4 transition-transform duration-200 ${solutionsOpen ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -159,7 +159,7 @@ export default function Navigation() {
               <Link
                 key={link.name}
                 href={link.href}
-                className="text-muted hover:text-white transition-colors duration-200 text-sm font-medium"
+                className={`hover:text-white transition-colors duration-300 text-sm font-medium ${scrolled ? 'text-muted' : 'text-white/80'}`}
               >
                 {link.name}
               </Link>
@@ -185,9 +185,9 @@ export default function Navigation() {
             aria-controls="mobile-menu"
           >
             <div className="w-6 h-5 flex flex-col justify-between">
-              <span className={`h-0.5 bg-text transition-all ${mobileOpen ? 'rotate-45 translate-y-2' : ''}`} />
-              <span className={`h-0.5 bg-text transition-all ${mobileOpen ? 'opacity-0' : ''}`} />
-              <span className={`h-0.5 bg-text transition-all ${mobileOpen ? '-rotate-45 -translate-y-2' : ''}`} />
+              <span className={`h-0.5 transition-all ${scrolled ? 'bg-text' : 'bg-white'} ${mobileOpen ? 'rotate-45 translate-y-2' : ''}`} />
+              <span className={`h-0.5 transition-all ${scrolled ? 'bg-text' : 'bg-white'} ${mobileOpen ? 'opacity-0' : ''}`} />
+              <span className={`h-0.5 transition-all ${scrolled ? 'bg-text' : 'bg-white'} ${mobileOpen ? '-rotate-45 -translate-y-2' : ''}`} />
             </div>
           </button>
         </div>

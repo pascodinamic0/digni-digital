@@ -14,12 +14,109 @@ import { getBookingLinkProps } from '@/app/config/cta.config'
 import { useLanguage } from './context/LanguageContext'
 import { translations } from './config/translations'
 
+// Badge options for the hero — randomly cycled via TypeScript
+const HERO_BADGE_OPTIONS: readonly string[] = [
+  'Digital Transformation Agency',
+  'Business Development Agency',
+  'AI Automation Startup',
+]
+
+const TYPING_INTERVAL_MS = 80
+const PAUSE_WHEN_COMPLETE_MS = 1800
+
 // Hero Section
 function Hero() {
   const { language } = useLanguage()
   const t = translations[language].home.hero
+  const videoRef = useRef<HTMLVideoElement>(null)
+  const [videoReady, setVideoReady] = useState(false)
+  const [targetPhrase, setTargetPhrase] = useState<string>(HERO_BADGE_OPTIONS[0])
+  const [displayedText, setDisplayedText] = useState<string>('')
+  const [isTyping, setIsTyping] = useState(true)
+  const indexRef = useRef(0)
+  const targetRef = useRef(HERO_BADGE_OPTIONS[0])
+  const phraseIndexRef = useRef(0)
+  const pauseTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+
+  // Typewriter: when target phrase changes, clear and type it out character by character
+  useEffect(() => {
+    targetRef.current = targetPhrase
+    setDisplayedText('')
+    indexRef.current = 0
+    setIsTyping(true)
+
+    const id = setInterval(() => {
+      const t = targetRef.current
+      const i = indexRef.current
+      if (i >= t.length) {
+        clearInterval(id)
+        setIsTyping(false)
+        pauseTimeoutRef.current = setTimeout(() => {
+          setDisplayedText('')
+          const next = (phraseIndexRef.current + 1) % HERO_BADGE_OPTIONS.length
+          phraseIndexRef.current = next
+          setTargetPhrase(HERO_BADGE_OPTIONS[next])
+          pauseTimeoutRef.current = null
+        }, PAUSE_WHEN_COMPLETE_MS)
+        return
+      }
+      indexRef.current = i + 1
+      setDisplayedText(t.slice(0, i + 1))
+    }, TYPING_INTERVAL_MS)
+
+    return () => {
+      clearInterval(id)
+      if (pauseTimeoutRef.current) {
+        clearTimeout(pauseTimeoutRef.current)
+        pauseTimeoutRef.current = null
+      }
+    }
+  }, [targetPhrase])
+
+  useEffect(() => {
+    const video = videoRef.current
+    if (!video) return
+
+    const handleReady = () => {
+      setVideoReady(true)
+    }
+
+    // If the video already loaded before this effect ran, catch it
+    if (video.readyState >= 3) {
+      setVideoReady(true)
+    }
+
+    video.addEventListener('canplay', handleReady)
+    video.addEventListener('loadeddata', handleReady)
+
+    // Safety net: force load after a small delay
+    const timer = setTimeout(() => {
+      try { video.load() } catch {}
+    }, 100)
+
+    return () => {
+      clearTimeout(timer)
+      video.removeEventListener('canplay', handleReady)
+      video.removeEventListener('loadeddata', handleReady)
+    }
+  }, [])
+
   return (
-    <section className="relative min-h-screen flex items-center pt-16 sm:pt-20 overflow-hidden bg-gradient-mesh">
+    <section className="relative min-h-screen flex items-center pt-16 sm:pt-20 overflow-hidden bg-[#0A0A0B]">
+      {/* Video Background */}
+      <video
+        ref={videoRef}
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        src="/hero-bg.mp4"
+        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[2000ms] ${videoReady ? 'opacity-70' : 'opacity-30'}`}
+      />
+      {/* Simple semi-transparent overlay for text readability */}
+      <div className="absolute inset-0 bg-black/50" />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-20 relative z-10 w-full">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -28,7 +125,10 @@ function Hero() {
           className="mb-4 sm:mb-6"
         >
           <span className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-accent/10 border border-accent/30 rounded-full text-accent text-xs sm:text-sm font-medium">
-            {t.badge}
+            {displayedText}
+            {isTyping && (
+              <span className="inline-block w-0.5 h-4 sm:h-[1.1em] bg-accent ml-0.5 align-middle animate-pulse" aria-hidden />
+            )}
           </span>
         </motion.div>
 
@@ -36,17 +136,17 @@ function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-4 sm:mb-6 md:mb-8 max-w-4xl px-2"
+          className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-4 sm:mb-6 md:mb-8 max-w-4xl px-2 text-white"
         >
           {t.title}
-          <span className="gradient-text">{t.titleHighlight}</span>
+          <span className="text-accent">{t.titleHighlight}</span>
         </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="text-base sm:text-lg md:text-xl text-muted max-w-3xl mb-6 sm:mb-8 md:mb-10 leading-relaxed px-2"
+          className="text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl mb-6 sm:mb-8 md:mb-10 leading-relaxed px-2"
         >
           {t.subtitle}
         </motion.p>
@@ -64,8 +164,8 @@ function Hero() {
             <div key={i} className="flex items-center gap-2 sm:gap-3">
               <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-accent rounded-full flex-shrink-0" />
               <div className="flex flex-wrap items-center gap-1 sm:gap-2">
-                <span className="text-text text-sm sm:text-base font-semibold">{stat.value}</span>
-                {stat.label && <span className="text-text text-sm sm:text-base font-semibold">{stat.label}</span>}
+                <span className="text-white text-sm sm:text-base font-semibold">{stat.value}</span>
+                {stat.label && <span className="text-white text-sm sm:text-base font-semibold">{stat.label}</span>}
               </div>
             </div>
           ))}
@@ -80,7 +180,7 @@ function Hero() {
           <Link href="/about" className="btn-primary text-sm sm:text-base md:text-lg px-6 sm:px-8 py-3 sm:py-4 w-full sm:w-auto text-center">
             {t.ourStory}
           </Link>
-          <Link href="#what-we-do" className="btn-secondary text-sm sm:text-base md:text-lg px-6 sm:px-8 py-3 sm:py-4 w-full sm:w-auto text-center">
+          <Link href="#what-we-do" className="!text-white !border-white/30 hover:!text-accent hover:!border-accent btn-secondary text-sm sm:text-base md:text-lg px-6 sm:px-8 py-3 sm:py-4 w-full sm:w-auto text-center">
             {t.whatWeDo}
           </Link>
         </motion.div>
