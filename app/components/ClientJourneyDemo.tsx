@@ -2,118 +2,18 @@
 
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
+import { useLanguage } from '@/app/context/LanguageContext'
+import { translations } from '@/app/config/translations'
 
-const CHANNELS = [
-  { id: 'ads', label: 'Paid Ads', icon: '📢' },
-  { id: 'website', label: 'Website', icon: '🌐' },
-  { id: 'instagram', label: 'Instagram', icon: '📸' },
-  { id: 'whatsapp', label: 'WhatsApp', icon: '💬' },
-  { id: 'phone', label: 'Phone', icon: '📞' },
-]
-
-const BROKEN_STAGES = [
-  {
-    step: 1,
-    title: 'Lead Arrives',
-    icon: '📢',
-    description: 'Incoming calls, website forms, DMs, and ads—all hitting different inboxes. No single view. Sales and admin each check their own systems. Nobody has the full picture.',
-    leak: 'Leads slip through gaps between platforms.',
-  },
-  {
-    step: 2,
-    title: 'First Contact',
-    icon: '📵',
-    description: 'Calls go to voicemail (40% unanswered). Emails sit for hours. DMs get buried. No one knows whose job it is. By the time someone responds, the lead has moved on.',
-    leak: '78% of leads buy from whoever answers first.',
-  },
-  {
-    step: 3,
-    title: 'Qualification',
-    icon: '❓',
-    description: 'If you do respond, it’s manual. Different reps ask different questions. Some skip qualification. Budget and timeline get lost in notes—or never asked.',
-    leak: 'Hot leads mixed with tire-kickers. Wasted time.',
-  },
-  {
-    step: 4,
-    title: 'Booking Attempt',
-    icon: '📅',
-    description: 'Handoff to sales or scheduling. Calendar links sent via email. Back-and-forth to find a time. Meetings get double-booked or forgotten. Lead goes cold during the wait.',
-    leak: 'Manual handoffs fail. No one owns the close.',
-  },
-  {
-    step: 5,
-    title: 'Follow-Up',
-    icon: '📬',
-    description: 'No system. Leads who don’t book fall through the cracks. No reminders, no nurture. They come back later—and buy from a competitor.',
-    leak: 'Zero follow-up = lost deals you never chased.',
-  },
-  {
-    step: 6,
-    title: 'Outcome',
-    icon: '❌',
-    description: 'Leads go cold. Competitors win. Your ad spend keeps generating leads—but your team can’t convert them. Revenue leaks at every stage.',
-    leak: 'Same ads. Same leads. Different result: loss.',
-  },
-  {
-    step: 7,
-    title: 'Referrals & Continuity',
-    icon: '🔄',
-    description: 'No loop. Lost clients don’t come back. No referral system. Every customer is a one-time transaction. Growth stalls. You keep spending on ads to replace what you lost.',
-    leak: 'Cycle breaks. No repeat business. No referrals.',
-  },
-]
-
-const AI_STAGES = [
-  {
-    step: 1,
-    title: 'Lead Arrives',
-    icon: '📥',
-    description: 'Same channels—ads, website, phone, WhatsApp, email. All feed into one system. AI sees every lead in real time. One place. One view.',
-    win: 'No more scattered inboxes. Complete visibility.',
-  },
-  {
-    step: 2,
-    title: 'Instant Response',
-    icon: '⚡',
-    description: 'Reply in under 2 seconds. 24/7. Calls answered. Messages replied. No voicemail. No waiting. The lead gets immediate attention while they’re hot.',
-    win: 'You answer first. Competitors are still playing catch-up.',
-  },
-  {
-    step: 3,
-    title: 'Smart Qualification',
-    icon: '✓',
-    description: 'AI asks the right questions. Budget, timeline, readiness. Captures intent. Qualifies before your team spends time. Only ready buyers reach your calendar.',
-    win: 'Your team talks to buyers. Not tire-kickers.',
-  },
-  {
-    step: 4,
-    title: 'Auto-Booking',
-    icon: '📅',
-    description: 'Qualified lead picks a slot. Calendar syncs. No back-and-forth. No handoffs. Meeting is booked before the conversation goes cold.',
-    win: 'Zero friction. Filled calendar. No double-booking.',
-  },
-  {
-    step: 5,
-    title: 'Follow-Up Until Close',
-    icon: '🔄',
-    description: 'If they don’t book, AI keeps following up. Reminders. Gentle nudges. Until they book or say no. No lead left behind.',
-    win: 'Every lead chased. No more cold drops.',
-  },
-  {
-    step: 6,
-    title: 'Outcome',
-    icon: '✅',
-    description: 'Complete journey. Every lead captured, qualified, and either booked or properly nurtured. Revenue that used to leak is now closing.',
-    win: 'Closed loop. Deals close. Revenue flows.',
-  },
-  {
-    step: 7,
-    title: 'Referrals & Continuity',
-    icon: '🔄',
-    description: 'Happy clients refer others. Delighted customers come back. The loop continues—more referrals flow in as new leads. Your best growth is free. The cycle never stops.',
-    win: 'Referrals feed new leads. The loop is continuous.',
-  },
-]
+const CHANNEL_ICONS: Record<string, string> = {
+  ads: '📢',
+  website: '🌐',
+  instagram: '📸',
+  whatsapp: '💬',
+  phone: '📞',
+}
+const BROKEN_STAGE_ICONS = ['📢', '📵', '❓', '📅', '📬', '❌', '🔄']
+const AI_STAGE_ICONS = ['📥', '⚡', '✓', '📅', '🔄', '✅', '🔄']
 
 function StageCard({
   step,
@@ -159,7 +59,11 @@ function StageCard({
   )
 }
 
-function BrokenFlowDiagram() {
+type ChannelItem = { id: string; label: string; icon: string }
+type BrokenStageItem = { step: number; title: string; icon: string; description: string; leak: string }
+type AIStageItem = { step: number; title: string; icon: string; description: string; win: string }
+
+function BrokenFlowDiagram({ channels, brokenStages }: { channels: ChannelItem[]; brokenStages: BrokenStageItem[] }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -174,7 +78,7 @@ function BrokenFlowDiagram() {
         <span className="text-destructive text-sm font-bold">❌ Broken Journey</span>
       </div>
       <div className="flex flex-wrap justify-center gap-2 mb-4">
-        {CHANNELS.map((ch) => (
+        {channels.map((ch) => (
           <div key={ch.id} className="flex flex-col items-center p-2 rounded-lg bg-surface border border-destructive/20 min-w-[52px] sm:min-w-[60px]">
             <span className="text-base sm:text-lg">{ch.icon}</span>
             <span className="text-[10px] sm:text-[9px] text-muted text-center leading-tight">{ch.label}</span>
@@ -182,7 +86,7 @@ function BrokenFlowDiagram() {
         ))}
       </div>
       <div className="space-y-3 max-h-[60vh] overflow-y-auto pr-1">
-        {BROKEN_STAGES.map((stage) => (
+        {brokenStages.map((stage) => (
           <StageCard key={stage.step} {...stage} isBroken={true} callout={stage.leak} />
         ))}
       </div>
@@ -195,7 +99,7 @@ function BrokenFlowDiagram() {
   )
 }
 
-function AIPoweredFlowDiagram() {
+function AIPoweredFlowDiagram({ channels, aiStages }: { channels: ChannelItem[]; aiStages: AIStageItem[] }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -212,7 +116,7 @@ function AIPoweredFlowDiagram() {
         <span className="text-success text-sm font-bold">✅ AI-Powered Journey</span>
       </div>
       <div className="flex flex-wrap justify-center gap-2 mb-3">
-        {CHANNELS.map((ch) => (
+        {channels.map((ch) => (
           <div key={ch.id} className="flex flex-col items-center p-2 rounded-lg bg-surface border border-success/20 min-w-[52px] sm:min-w-[55px]">
             <span className="text-base sm:text-base">{ch.icon}</span>
             <span className="text-[10px] sm:text-[9px] text-muted text-center leading-tight">{ch.label}</span>
@@ -227,7 +131,7 @@ function AIPoweredFlowDiagram() {
         <p className="text-text text-xs font-semibold mt-0.5">Single brain. One inbox.</p>
       </div>
       <div className="space-y-3 max-h-[60vh] overflow-y-auto pr-1">
-        {AI_STAGES.map((stage) => (
+        {aiStages.map((stage) => (
           <StageCard key={stage.step} {...stage} isBroken={false} callout={stage.win} />
         ))}
       </div>
@@ -245,8 +149,11 @@ function AIPoweredFlowDiagram() {
 
 const ClientJourneyDemo = () => {
   const [activeView, setActiveView] = useState<'before' | 'after'>('before')
-
-  const channels = CHANNELS
+  const { language } = useLanguage()
+  const t = translations[language].clientJourney
+  const channels: ChannelItem[] = t.channels.map((c) => ({ ...c, icon: CHANNEL_ICONS[c.id] }))
+  const brokenStages: BrokenStageItem[] = t.brokenStages.map((s, i) => ({ ...s, icon: BROKEN_STAGE_ICONS[i] }))
+  const aiStages: AIStageItem[] = t.aiStages.map((s, i) => ({ ...s, icon: AI_STAGE_ICONS[i] }))
 
   return (
     <section className="py-16 sm:py-24 overflow-hidden bg-gradient-to-b from-surface to-background" aria-labelledby="journey-demo-title">
@@ -316,8 +223,8 @@ const ClientJourneyDemo = () => {
 
         {/* Desktop: Side-by-side | Mobile: Toggle */}
         <div className="hidden lg:grid lg:grid-cols-2 gap-6 xl:gap-8">
-          <BrokenFlowDiagram />
-          <AIPoweredFlowDiagram />
+          <BrokenFlowDiagram channels={channels} brokenStages={brokenStages} />
+          <AIPoweredFlowDiagram channels={channels} aiStages={aiStages} />
         </div>
 
         <div className="lg:hidden px-0 sm:px-2">
@@ -352,7 +259,7 @@ const ClientJourneyDemo = () => {
                     ))}
                   </div>
                   <div className="space-y-3">
-                    {BROKEN_STAGES.map((stage) => (
+                    {brokenStages.map((stage) => (
                       <StageCard key={stage.step} {...stage} isBroken={true} callout={stage.leak} />
                     ))}
                   </div>
@@ -400,7 +307,7 @@ const ClientJourneyDemo = () => {
                     <p className="text-text text-xs font-semibold mt-0.5">Single brain. One inbox.</p>
                   </div>
                   <div className="space-y-3">
-                    {AI_STAGES.map((stage) => (
+                    {aiStages.map((stage) => (
                       <StageCard key={stage.step} {...stage} isBroken={false} callout={stage.win} />
                     ))}
                   </div>

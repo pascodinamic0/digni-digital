@@ -120,6 +120,16 @@
   --shadow-card: 0 20px 40px rgba(0, 0, 0, 0.12), 0 0 40px rgba(var(--accent-rgb), 0.08);
 }
 
+/* Light theme: header section is solid white (same single-color treatment as dark header) */
+[data-theme="light"] .site-header-nav,
+[data-theme="light"] .site-header-overlay,
+[data-theme="light"] .site-header-nav-mobile {
+  background: #ffffff !important;
+}
+[data-theme="light"] .site-header-nav {
+  border-bottom-color: rgba(0, 0, 0, 0.08);
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -759,6 +769,59 @@ body {
   margin-top: 2.5em !important;
 }
 
+.blog-content figure,
+.blog-content .blog-content-figure {
+  margin-top: 2.5em !important;
+  margin-bottom: 2.5em !important;
+}
+
+.blog-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius-lg);
+  display: block;
+}
+
+.blog-content figcaption {
+  margin-top: 0.5em;
+  font-size: 0.9rem;
+  color: var(--muted);
+  text-align: center;
+}
+
+/* Impact card in blog: theme-aware so text is visible in light and dark mode */
+.blog-content .blog-impact-card {
+  background: linear-gradient(135deg, rgba(var(--success-rgb), 0.12) 0%, rgba(var(--accent-rgb), 0.08) 100%);
+  border: 1px solid rgba(var(--success-rgb), 0.35);
+  border-radius: 16px;
+  padding: 28px;
+  margin: 32px 0;
+  color: var(--text);
+}
+
+.blog-content .blog-impact-card:focus-within {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.blog-content .blog-impact-card .blog-impact-value {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--success);
+}
+
+.blog-content .blog-impact-card .blog-impact-label {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.blog-content .blog-impact-card .blog-impact-footer {
+  margin: 16px 0 0 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+  text-align: center;
+}
+
 /* Ensure all elements have proper spacing */
 .blog-content > * {
   margin-top: 0;
@@ -840,6 +903,11 @@ body {
 
 .section-description {
   @apply text-muted text-base sm:text-lg max-w-3xl mx-auto;
+}
+
+/* Keep links visible in all states (avoid white/invisible visited or focus) */
+a:visited {
+  color: inherit;
 }
 
 /* Focus states for accessibility */

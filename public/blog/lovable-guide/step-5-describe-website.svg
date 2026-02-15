@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450">
+  <rect width="800" height="450" fill="#0f172a"/>
+  <rect x="24" y="24" width="752" height="402" rx="12" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="2"/>
+  <text x="400" y="180" font-family="system-ui,sans-serif" font-size="22" font-weight="600" fill="#e2e8f0" text-anchor="middle">Step 5: Describe your website in chat</text>
+  <text x="400" y="230" font-family="system-ui,sans-serif" font-size="16" fill="#94a3b8" text-anchor="middle">Screenshot: Chat input with your website description</text>
+  <text x="400" y="280" font-family="system-ui,sans-serif" font-size="14" fill="#64748b" text-anchor="middle">Replace with your screenshot</text>
+  <rect x="300" y="320" width="200" height="44" rx="8" fill="rgba(59,130,246,0.2)" stroke="#3b82f6" stroke-width="1"/>
+  <text x="400" y="348" font-family="system-ui,sans-serif" font-size="14" fill="#93c5fd" text-anchor="middle">Type prompt ’ Send</text>
+</svg>

@@ -7,67 +7,21 @@ import Footer from '../components/Footer'
 import AnimatedSection from '../components/AnimatedSection'
 import { officeLocations, formatFullAddress, getGoogleMapsUrl } from '@/app/data/locations'
 import { ctaConfig, getBookingLinkProps } from '@/app/config/cta.config'
+import { useLanguage } from '../context/LanguageContext'
+import { translations } from '../config/translations'
 
-const contactMethods = [
-  {
-    title: 'Book a Call',
-    description: '30-min free. We discuss. You decide.',
-    icon: '📅',
-    action: 'Book Now',
-    href: ctaConfig.bookingUrl,
-    primary: true
-  },
-  {
-    title: 'Email',
-    description: 'Questions? Drop a line.',
-    icon: '✉️',
-    action: 'hello@digni-digital-llc.com',
-    href: 'mailto:hello@digni-digital-llc.com'
-  },
-  {
-    title: 'WhatsApp',
-    description: 'Quick reply. Fast.',
-    icon: '💬',
-    action: 'Message Us',
-    href: 'https://wa.me/1234567890' // Replace with actual WhatsApp number
-  },
-  {
-    title: 'LinkedIn',
-    description: 'Connect. Network.',
-    icon: '💼',
-    action: 'Connect',
-    href: 'https://linkedin.com/company/digni-digital' // Replace with actual LinkedIn
-  }
-]
-
-const faqs = [
-  {
-    question: 'How long does a project take?',
-    answer: 'Websites: 2-4 weeks. Custom SaaS: 8-16 weeks. We give you a timeline in our call.'
-  },
-  {
-    question: 'Do you work outside Africa?',
-    answer: 'Yes. Global clients. We work your time zone.'
-  },
-  {
-    question: 'What\'s in the consultation?',
-    answer: 'Business review. Tech audit. Strategy. 30 min. Free. No obligation.'
-  },
-  {
-    question: 'Ongoing support?',
-    answer: 'Yes. Maintenance, hosting, optimization. We stay with you.'
-  },
-  {
-    question: 'What industries?',
-    answer: 'Healthcare, real estate, e-commerce, services. We adapt to your model.'
-  },
-  {
-    question: 'Can you fix existing systems?',
-    answer: 'Yes. Audit. Optimize. Integrate. Sometimes fixing beats rebuilding.'
-  }
+const contactMethodConfig = [
+  { icon: '📅', href: ctaConfig.bookingUrl, primary: true as const },
+  { icon: '✉️', href: 'mailto:hello@digni-digital-llc.com', primary: false as const },
+  { icon: '💬', href: 'https://wa.me/1234567890', primary: false as const },
+  { icon: '💼', href: 'https://linkedin.com/company/digni-digital', primary: false as const },
 ]
 
 export default function ContactPage() {
+  const { language } = useLanguage()
+  const t = translations[language].contact
+  const contactMethods = contactMethodConfig.map((cfg, i) => ({ ...cfg, ...t.methods[i] }))
+  const faqs = t.faqs
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null)
   const [formData, setFormData] = useState({
     name: '',
@@ -105,15 +59,15 @@ export default function ContactPage() {
             className="text-center mb-8 sm:mb-12 md:mb-16"
           >
             <span className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-accent/10 border border-accent/30 rounded-full text-accent text-xs sm:text-sm font-medium mb-4 sm:mb-6">
-              Get In Touch
+              {t.heroBadge}
             </span>
             <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-4 sm:mb-6 md:mb-8 px-2">
-              Let's Build Something{' '}
+              {t.heroTitle}{' '}
               <br className="hidden sm:block" />
-              <span className="gradient-text">Amazing Together</span>
+              <span className="gradient-text">{t.heroSubtitle}</span>
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-muted max-w-3xl mx-auto leading-relaxed px-2">
-              Tell us your problem. We'll find the fix.
+              {t.heroDesc}
             </p>
           </motion.div>
         </div>
@@ -124,10 +78,10 @@ export default function ContactPage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">
-              How to Reach Us
+              {t.howToReachUs}
             </h2>
             <p className="text-muted text-lg">
-              We reply fast.
+              {t.howToReachUsDesc}
             </p>
           </div>
           
@@ -165,10 +119,10 @@ export default function ContactPage() {
         <div className="max-w-4xl mx-auto px-6">
           <div className="text-center mb-12">
             <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">
-              Send Us a Message
+              {t.sendMessage}
             </h2>
             <p className="text-muted text-lg">
-              Form below. Reply within 24 hours.
+              {t.sendMessageDesc}
             </p>
           </div>
           
