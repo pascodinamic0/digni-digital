@@ -392,9 +392,9 @@ function buildTranslations(): Record<Language, TranslationKeys> {
   const homeEn: HomeTranslations = {
     hero: {
       badge: 'Digital Transformation Agency',
-      title: 'We Believe Technology Should ',
-      titleHighlight: 'Serve Humanity.',
-      subtitle: 'We help small businesses win. Capture every lead. Train students who get jobs.',
+      title: 'We Close the Gaps. ',
+      titleHighlight: 'You Get the Results.',
+      subtitle: 'Lost leads. Untapped talent. Ideas on the shelf. We help you turn them into what matters.',
       stat1Value: '150+',
       stat1Label: 'Businesses Transformed',
       stat2Value: 'Since 2019',
@@ -557,9 +557,9 @@ function buildTranslations(): Record<Language, TranslationKeys> {
   const homeFr: HomeTranslations = {
     hero: {
       badge: 'Agence de Transformation Digitale',
-      title: 'Nous croyons que la technologie doit ',
-      titleHighlight: 'servir l\'humanité.',
-      subtitle: 'Nous aidons les PME à gagner. Capturez chaque prospect. Formez des étudiants qui décrochent des emplois.',
+      title: 'Nous fermons les écarts. ',
+      titleHighlight: 'Vous obtenez les résultats.',
+      subtitle: 'Prospects perdus. Talents inexploités. Idées en attente. Nous vous aidons à les transformer en ce qui compte.',
       stat1Value: '150+',
       stat1Label: 'Entreprises transformées',
       stat2Value: 'Depuis 2019',
@@ -721,9 +721,9 @@ function buildTranslations(): Record<Language, TranslationKeys> {
   const homeAr: HomeTranslations = {
     hero: {
       badge: 'وكالة التحول الرقمي',
-      title: 'نؤمن بأن التقنية يجب أن ',
-      titleHighlight: 'تخدم البشرية.',
-      subtitle: 'نساعد الشركات الصغيرة على النجاح. استقطاب كل عميل محتمل. تدريب طلاب يجدون وظائف.',
+      title: 'نحن نغلق الفجوات. ',
+      titleHighlight: 'تحصل أنت على النتائج.',
+      subtitle: 'عملاء محتملون ضاعوا. مواهب معطّلة. أفكار على الرف. نساعدك على تحويلها إلى ما يهم.',
       stat1Value: '+150',
       stat1Label: 'شركة تم تحويلها',
       stat2Value: 'منذ 2019',

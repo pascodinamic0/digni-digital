@@ -159,7 +159,6 @@ function Hero() {
         >
           {[
             { value: t.stat2Value, label: '' },
-            { value: t.stat3Value, label: t.stat3Label },
           ].map((stat, i) => (
             <div key={i} className="flex items-center gap-2 sm:gap-3">
               <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-accent rounded-full flex-shrink-0" />
