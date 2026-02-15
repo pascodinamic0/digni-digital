@@ -5,6 +5,8 @@ import { createContext, useContext, useState, useEffect, useCallback } from 'rea
 export type Language = 'en' | 'fr' | 'ar'
 
 const STORAGE_KEY = 'digni-language'
+const COOKIE_NAME = 'digni-language'
+const COOKIE_MAX_AGE_DAYS = 365
 
 interface LanguageContextValue {
   language: Language
@@ -28,6 +30,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const setLanguage = useCallback((lang: Language) => {
     if (typeof window === 'undefined') return
     localStorage.setItem(STORAGE_KEY, lang)
+    document.cookie = `${COOKIE_NAME}=${lang}; path=/; max-age=${COOKIE_MAX_AGE_DAYS * 86400}; SameSite=Lax`
     // Reload to ensure all content (including static/cached) renders in new language
     window.location.reload()
   }, [])

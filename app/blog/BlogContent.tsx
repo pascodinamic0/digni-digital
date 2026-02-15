@@ -8,29 +8,18 @@ import Footer from '../components/Footer'
 import { getBookingLinkProps } from '@/app/config/cta.config'
 import { useLanguage } from '../context/LanguageContext'
 import { translations } from '../config/translations'
-
-interface Article {
-  id: number
-  title: string
-  slug: string
-  excerpt: string
-  category: string
-  readTime: string
-  publishDate: string
-  author: string
-  tags: string[]
-  featured: boolean
-  content: string
-}
+import type { Language } from '@/app/i18n/translations'
+import type { BlogArticle } from '@/content/blog'
 
 interface BlogContentProps {
-  articles: Article[]
+  articlesByLang: Record<Language, BlogArticle[]>
 }
 
 const ALL_KEY = '__ALL__'
 
-export default function BlogContent({ articles }: BlogContentProps) {
+export default function BlogContent({ articlesByLang }: BlogContentProps) {
   const { language } = useLanguage()
+  const articles = articlesByLang[language] ?? articlesByLang.en
   const t = translations[language].blog
   const [selectedCategory, setSelectedCategory] = useState(ALL_KEY)
   const [searchTerm, setSearchTerm] = useState('')

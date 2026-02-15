@@ -63,7 +63,7 @@ export default function AIReceptionistFooter() {
               <ul className="space-y-3">
                 {links.services.map((link) => (
                   <li key={link.name}>
-                    <Link href={link.href} className="text-muted hover:text-white transition-colors text-sm">
+                    <Link href={link.href} className="text-muted hover:text-accent transition-colors text-sm">
                       {link.name}
                     </Link>
                   </li>
@@ -76,7 +76,7 @@ export default function AIReceptionistFooter() {
               <ul className="space-y-3">
                 {links.resources.map((link) => (
                   <li key={link.name}>
-                    <Link href={link.href} className="text-muted hover:text-white transition-colors text-sm">
+                    <Link href={link.href} className="text-muted hover:text-accent transition-colors text-sm">
                       {link.name}
                     </Link>
                   </li>
@@ -89,7 +89,7 @@ export default function AIReceptionistFooter() {
               <ul className="space-y-3">
                 {links.company.map((link) => (
                   <li key={link.name}>
-                    <Link href={link.href} className="text-muted hover:text-white transition-colors text-sm">
+                    <Link href={link.href} className="text-muted hover:text-accent transition-colors text-sm">
                       {link.name}
                     </Link>
                   </li>

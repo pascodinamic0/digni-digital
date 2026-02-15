@@ -80,7 +80,7 @@ export default function Navigation() {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           onClick={() => setMobileOpen(false)}
-          className="fixed inset-0 bg-background z-[45] lg:hidden"
+          className="site-header-overlay fixed inset-0 bg-background z-[45] lg:hidden"
         />
       )}
       
@@ -88,7 +88,7 @@ export default function Navigation() {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.6, ease: 'easeOut' }}
-        className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 bg-background/95 backdrop-blur-xl border-b border-border ${
+        className={`site-header-nav fixed top-0 left-0 right-0 z-[100] transition-all duration-300 bg-background/95 backdrop-blur-xl border-b border-border ${
           showSolidNav ? 'shadow-sm' : ''
         }`}
       >
@@ -107,7 +107,7 @@ export default function Navigation() {
               <Link
                 key={link.name}
                 href={link.href}
-                className="hover:text-accent transition-colors duration-300 text-sm font-medium text-muted"
+                className="hover:text-accent transition-colors duration-300 text-sm font-medium text-text"
               >
                 {link.name}
               </Link>
@@ -120,7 +120,7 @@ export default function Navigation() {
                 aria-expanded={solutionsOpen}
                 aria-haspopup="true"
                 aria-label={`${t.nav.solutions} menu`}
-                className="hover:text-accent transition-colors duration-300 text-sm font-medium flex items-center gap-1 text-muted"
+                className="hover:text-accent transition-colors duration-300 text-sm font-medium flex items-center gap-1 text-text"
               >
                 {t.nav.solutions}
                 <svg className={`w-4 h-4 transition-transform duration-200 ${solutionsOpen ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -163,7 +163,7 @@ export default function Navigation() {
               <Link
                 key={link.name}
                 href={link.href}
-                className="hover:text-accent transition-colors duration-300 text-sm font-medium text-muted"
+                className="hover:text-accent transition-colors duration-300 text-sm font-medium text-text"
               >
                 {link.name}
               </Link>
@@ -203,7 +203,7 @@ export default function Navigation() {
             exit={{ opacity: 0, height: 0 }}
             id="mobile-menu"
             role="menu"
-            className="lg:hidden mt-4 pb-4 relative z-50 bg-background"
+            className="site-header-nav-mobile lg:hidden mt-4 pb-4 relative z-50 bg-background"
           >
             {navLinks.map((link) => (
               <Link

@@ -209,7 +209,22 @@ type AboutTranslations = {
 }
 
 type ContactTranslations = {
-  [key: string]: string
+  heroBadge: string
+  heroTitle: string
+  heroSubtitle: string
+  heroDesc: string
+  howToReachUs: string
+  howToReachUsDesc: string
+  sendMessage: string
+  sendMessageDesc: string
+  methods: Array<{ title: string; description: string; action: string }>
+  faqs: Array<{ question: string; answer: string }>
+}
+
+type ClientJourneyTranslations = {
+  channels: Array<{ id: string; label: string }>
+  brokenStages: Array<{ step: number; title: string; description: string; leak: string }>
+  aiStages: Array<{ step: number; title: string; description: string; win: string }>
 }
 
 export type TranslationKeys = CommonTranslations & {
@@ -217,6 +232,7 @@ export type TranslationKeys = CommonTranslations & {
   blog: BlogTranslations
   about: AboutTranslations
   contact: ContactTranslations
+  clientJourney: ClientJourneyTranslations
 }
 
 function buildTranslations(): Record<Language, TranslationKeys> {
@@ -944,10 +960,137 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     featured: 'مميز',
   }
 
+  const contactEn: ContactTranslations = {
+    heroBadge: 'Get In Touch',
+    heroTitle: "Let's Build Something",
+    heroSubtitle: 'Amazing Together',
+    heroDesc: "Tell us your problem. We'll find the fix.",
+    howToReachUs: 'How to Reach Us',
+    howToReachUsDesc: 'We reply fast.',
+    sendMessage: 'Send Us a Message',
+    sendMessageDesc: 'Form below. Reply within 24 hours.',
+    methods: [
+      { title: 'Book a Call', description: '30-min free. We discuss. You decide.', action: 'Book Now' },
+      { title: 'Email', description: 'Questions? Drop a line.', action: 'hello@digni-digital-llc.com' },
+      { title: 'WhatsApp', description: 'Quick reply. Fast.', action: 'Message Us' },
+      { title: 'LinkedIn', description: 'Connect. Network.', action: 'Connect' },
+    ],
+    faqs: [
+      { question: 'How long does a project take?', answer: 'Websites: 2-4 weeks. Custom SaaS: 8-16 weeks. We give you a timeline in our call.' },
+      { question: 'Do you work outside Africa?', answer: 'Yes. Global clients. We work your time zone.' },
+      { question: "What's in the consultation?", answer: 'Business review. Tech audit. Strategy. 30 min. Free. No obligation.' },
+      { question: 'Ongoing support?', answer: 'Yes. Maintenance, hosting, optimization. We stay with you.' },
+      { question: 'What industries?', answer: 'Healthcare, real estate, e-commerce, services. We adapt to your model.' },
+      { question: 'Can you fix existing systems?', answer: 'Yes. Audit. Optimize. Integrate. Sometimes fixing beats rebuilding.' },
+    ],
+  }
+
+  const contactFr: ContactTranslations = {
+    heroBadge: 'Contactez-nous',
+    heroTitle: 'Construisons ensemble',
+    heroSubtitle: 'quelque chose de génial',
+    heroDesc: 'Dites-nous votre problème. Nous trouverons la solution.',
+    howToReachUs: 'Comment nous joindre',
+    howToReachUsDesc: 'Nous répondons rapidement.',
+    sendMessage: 'Envoyez-nous un message',
+    sendMessageDesc: 'Formulaire ci-dessous. Réponse sous 24 h.',
+    methods: [
+      { title: 'Réserver un appel', description: '30 min gratuites. On discute. Vous décidez.', action: 'Réserver' },
+      { title: 'E-mail', description: 'Des questions ? Écrivez-nous.', action: 'hello@digni-digital-llc.com' },
+      { title: 'WhatsApp', description: 'Réponse rapide.', action: 'Nous contacter' },
+      { title: 'LinkedIn', description: 'Connectons-nous.', action: 'Connecter' },
+    ],
+    faqs: [
+      { question: 'Combien de temps dure un projet ?', answer: 'Sites web : 2-4 semaines. SaaS sur mesure : 8-16 semaines. Nous vous donnons un délai lors de l\'appel.' },
+      { question: 'Travaillez-vous en dehors de l\'Afrique ?', answer: 'Oui. Clients internationaux. Nous nous adaptons à votre fuseau.' },
+      { question: 'Que comprend la consultation ?', answer: 'Revue activité, audit tech, stratégie. 30 min. Gratuit. Sans engagement.' },
+      { question: 'Support continu ?', answer: 'Oui. Maintenance, hébergement, optimisation. Nous restons à vos côtés.' },
+      { question: 'Quels secteurs ?', answer: 'Santé, immobilier, e-commerce, services. Nous nous adaptons à votre modèle.' },
+      { question: 'Pouvez-vous corriger des systèmes existants ?', answer: 'Oui. Audit. Optimisation. Intégration. Parfois corriger vaut mieux que reconstruire.' },
+    ],
+  }
+
+  const contactAr: ContactTranslations = {
+    heroBadge: 'تواصل معنا',
+    heroTitle: 'لنبني معاً',
+    heroSubtitle: 'شيئاً رائعاً',
+    heroDesc: 'أخبرنا بمشكلتك. سنجد الحل.',
+    howToReachUs: 'كيف تصل إلينا',
+    howToReachUsDesc: 'نرد بسرعة.',
+    sendMessage: 'أرسل لنا رسالة',
+    sendMessageDesc: 'النموذج أدناه. رد خلال 24 ساعة.',
+    methods: [
+      { title: 'حجز مكالمة', description: '30 دقيقة مجانية. نناقش. أنت تقرر.', action: 'احجز الآن' },
+      { title: 'البريد', description: 'أسئلة؟ راسلنا.', action: 'hello@digni-digital-llc.com' },
+      { title: 'واتساب', description: 'رد سريع.', action: 'راسلنا' },
+      { title: 'لينكد إن', description: 'تواصل. شبكة.', action: 'تواصل' },
+    ],
+    faqs: [
+      { question: 'كم تستغرق المشاريع؟', answer: 'المواقع: 2-4 أسابيع. SaaS مخصص: 8-16 أسبوعاً. نعطيك جدولاً في المكالمة.' },
+      { question: 'هل تعملون خارج أفريقيا؟', answer: 'نعم. عملاء عالميون. نعمل وفق منطقتكم الزمنية.' },
+      { question: 'ماذا تتضمن الاستشارة؟', answer: 'مراجعة أعمال. تدقيق تقني. استراتيجية. 30 دقيقة. مجانية. بدون التزام.' },
+      { question: 'دعم مستمر؟', answer: 'نعم. صيانة، استضافة، تحسين. نبقى معك.' },
+      { question: 'أي قطاعات؟', answer: 'الصحة، العقارات، التجارة الإلكترونية، الخدمات. نتكيف مع نموذجك.' },
+      { question: 'هل يمكنكم إصلاح أنظمة موجودة؟', answer: 'نعم. تدقيق. تحسين. تكامل. أحياناً الإصلاح أفضل من إعادة البناء.' },
+    ],
+  }
+
+  const clientJourneyEn: ClientJourneyTranslations = {
+    channels: [
+      { id: 'ads', label: 'Paid Ads' },
+      { id: 'website', label: 'Website' },
+      { id: 'instagram', label: 'Instagram' },
+      { id: 'whatsapp', label: 'WhatsApp' },
+      { id: 'phone', label: 'Phone' },
+    ],
+    brokenStages: [
+      { step: 1, title: 'Lead Arrives', description: 'Incoming calls, website forms, DMs, and ads—all hitting different inboxes. No single view. Sales and admin each check their own systems. Nobody has the full picture.', leak: 'Leads slip through gaps between platforms.' },
+      { step: 2, title: 'First Contact', description: 'Calls go to voicemail (40% unanswered). Emails sit for hours. DMs get buried. No one knows whose job it is. By the time someone responds, the lead has moved on.', leak: '78% of leads buy from whoever answers first.' },
+      { step: 3, title: 'Qualification', description: 'If you do respond, it\'s manual. Different reps ask different questions. Some skip qualification. Budget and timeline get lost in notes—or never asked.', leak: 'Hot leads mixed with tire-kickers. Wasted time.' },
+      { step: 4, title: 'Booking Attempt', description: 'Handoff to sales or scheduling. Calendar links sent via email. Back-and-forth to find a time. Meetings get double-booked or forgotten. Lead goes cold during the wait.', leak: 'Manual handoffs fail. No one owns the close.' },
+      { step: 5, title: 'Follow-Up', description: 'No system. Leads who don\'t book fall through the cracks. No reminders, no nurture. They come back later—and buy from a competitor.', leak: 'Zero follow-up = lost deals you never chased.' },
+      { step: 6, title: 'Outcome', description: 'Leads go cold. Competitors win. Your ad spend keeps generating leads—but your team can\'t convert them. Revenue leaks at every stage.', leak: 'Same ads. Same leads. Different result: loss.' },
+      { step: 7, title: 'Referrals & Continuity', description: 'No loop. Lost clients don\'t come back. No referral system. Every customer is a one-time transaction. Growth stalls. You keep spending on ads to replace what you lost.', leak: 'Cycle breaks. No repeat business. No referrals.' },
+    ],
+    aiStages: [
+      { step: 1, title: 'Lead Arrives', description: 'Same channels—ads, website, phone, WhatsApp, email. All feed into one system. AI sees every lead in real time. One place. One view.', win: 'No more scattered inboxes. Complete visibility.' },
+      { step: 2, title: 'Instant Response', description: 'Reply in under 2 seconds. 24/7. Calls answered. Messages replied. No voicemail. No waiting. The lead gets immediate attention while they\'re hot.', win: 'You answer first. Competitors are still playing catch-up.' },
+      { step: 3, title: 'Smart Qualification', description: 'AI asks the right questions. Budget, timeline, readiness. Captures intent. Qualifies before your team spends time. Only ready buyers reach your calendar.', win: 'Your team talks to buyers. Not tire-kickers.' },
+      { step: 4, title: 'Auto-Booking', description: 'Qualified lead picks a slot. Calendar syncs. No back-and-forth. No handoffs. Meeting is booked before the conversation goes cold.', win: 'Zero friction. Filled calendar. No double-booking.' },
+      { step: 5, title: 'Follow-Up Until Close', description: 'If they don\'t book, AI keeps following up. Reminders. Gentle nudges. Until they book or say no. No lead left behind.', win: 'Every lead chased. No more cold drops.' },
+      { step: 6, title: 'Outcome', description: 'Complete journey. Every lead captured, qualified, and either booked or properly nurtured. Revenue that used to leak is now closing.', win: 'Closed loop. Deals close. Revenue flows.' },
+      { step: 7, title: 'Referrals & Continuity', description: 'Happy clients refer others. Delighted customers come back. The loop continues—more referrals flow in as new leads. Your best growth is free. The cycle never stops.', win: 'Referrals feed new leads. The loop is continuous.' },
+    ],
+  }
+
+  const clientJourneyFr: ClientJourneyTranslations = {
+    channels: [
+      { id: 'ads', label: 'Annonces payantes' },
+      { id: 'website', label: 'Site web' },
+      { id: 'instagram', label: 'Instagram' },
+      { id: 'whatsapp', label: 'WhatsApp' },
+      { id: 'phone', label: 'Téléphone' },
+    ],
+    brokenStages: clientJourneyEn.brokenStages.map((s) => ({ ...s, title: s.title + ' (FR)', description: s.description + ' (FR)', leak: s.leak + ' (FR)' })),
+    aiStages: clientJourneyEn.aiStages.map((s) => ({ ...s, title: s.title + ' (FR)', description: s.description + ' (FR)', win: s.win + ' (FR)' })),
+  }
+
+  const clientJourneyAr: ClientJourneyTranslations = {
+    channels: [
+      { id: 'ads', label: 'إعلانات مدفوعة' },
+      { id: 'website', label: 'الموقع' },
+      { id: 'instagram', label: 'إنستغرام' },
+      { id: 'whatsapp', label: 'واتساب' },
+      { id: 'phone', label: 'هاتف' },
+    ],
+    brokenStages: clientJourneyEn.brokenStages.map((s) => ({ ...s, title: s.title + ' (AR)', description: s.description + ' (AR)', leak: s.leak + ' (AR)' })),
+    aiStages: clientJourneyEn.aiStages.map((s) => ({ ...s, title: s.title + ' (AR)', description: s.description + ' (AR)', win: s.win + ' (AR)' })),
+  }
+
   return {
-    en: { ...commonEn, home: homeEn, blog: blogEn, about: {}, contact: {} },
-    fr: { ...commonFr, home: homeFr, blog: blogFr, about: {}, contact: {} },
-    ar: { ...commonAr, home: homeAr, blog: blogAr, about: {}, contact: {} },
+    en: { ...commonEn, home: homeEn, blog: blogEn, about: {}, contact: contactEn, clientJourney: clientJourneyEn },
+    fr: { ...commonFr, home: homeFr, blog: blogFr, about: {}, contact: contactFr, clientJourney: clientJourneyFr },
+    ar: { ...commonAr, home: homeAr, blog: blogAr, about: {}, contact: contactAr, clientJourney: clientJourneyAr },
   }
 }
 

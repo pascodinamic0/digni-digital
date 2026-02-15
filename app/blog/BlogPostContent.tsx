@@ -4,25 +4,16 @@ import Link from 'next/link'
 import { useLanguage } from '../context/LanguageContext'
 import { translations } from '../config/translations'
 import { getBookingLinkProps } from '@/app/config/cta.config'
-
-interface Article {
-  title: string
-  slug: string
-  excerpt: string
-  category: string
-  readTime: string
-  publishDate: string
-  author: string
-  tags: string[]
-  content: string
-}
+import type { Language } from '@/app/i18n/translations'
+import type { BlogArticle } from '@/content/blog'
 
 interface BlogPostContentProps {
-  article: Article
+  articleByLang: Record<Language, BlogArticle>
 }
 
-export default function BlogPostContent({ article }: BlogPostContentProps) {
+export default function BlogPostContent({ articleByLang }: BlogPostContentProps) {
   const { language } = useLanguage()
+  const article = articleByLang[language] ?? articleByLang.en
   const t = translations[language].blog
   const cta = translations[language].cta
 

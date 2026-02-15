@@ -17,7 +17,7 @@ export default function SimpleFooter() {
             We build operational infrastructure that allows service businesses to grow without friction, waste, or human bottlenecks.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-            <Link href="/case-studies" className="text-muted hover:text-white transition-colors text-sm">
+            <Link href="/case-studies" className="text-muted hover:text-accent transition-colors text-sm">
               Case Studies
             </Link>
             <a
