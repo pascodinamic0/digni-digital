@@ -148,17 +148,17 @@ const UnifiedInbox = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.3 }}
-          className="relative overflow-hidden rounded-2xl md:rounded-3xl border border-white/10 backdrop-blur-xl bg-gradient-to-br from-surface-light/80 via-surface/90 to-surface-light/80 shadow-2xl shadow-accent/5 max-w-6xl mx-auto"
+          className="relative overflow-hidden rounded-2xl md:rounded-3xl border border-border-light backdrop-blur-xl bg-gradient-to-br from-surface-light/80 via-surface/90 to-surface-light/80 shadow-2xl shadow-accent/5 max-w-6xl mx-auto"
         >
           {/* Gradient overlay for premium feel */}
           <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-transparent to-purple/5 pointer-events-none" />
           
           {/* Dashboard Header */}
-          <div className="relative bg-surface-light/50 backdrop-blur-sm border-b border-white/5 p-4 md:p-6">
+          <div className="relative bg-surface-light/50 backdrop-blur-sm border-b border-border p-4 md:p-6">
             <div className="flex items-center justify-between flex-wrap gap-4">
               <div className="flex items-center gap-3 md:gap-4">
                 <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-accent to-accent-light rounded-xl flex items-center justify-center shadow-lg shadow-accent/20">
-                  <svg className="w-5 h-5 md:w-6 md:h-6 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <svg className="w-5 h-5 md:w-6 md:h-6 text-background" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M21 15C21 15.5304 20.7893 16.0391 20.4142 16.4142C20.0391 16.7893 19.5304 17 19 17H7L3 21V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H19C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V15Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </div>
@@ -175,7 +175,7 @@ const UnifiedInbox = () => {
                   </div>
                   <span className="text-success text-xs md:text-sm font-medium">AI Active</span>
                 </div>
-                <div className="hidden sm:block text-xs md:text-sm text-muted px-3 py-1.5 bg-surface/50 rounded-full border border-white/5">
+                <div className="hidden sm:block text-xs md:text-sm text-muted px-3 py-1.5 bg-surface/50 rounded-full border border-border">
                   5 active conversations
                 </div>
               </div>
@@ -185,10 +185,10 @@ const UnifiedInbox = () => {
           {/* Main Content Area */}
           <div className="relative flex flex-col md:flex-row min-h-[500px] md:h-[500px]">
             {/* Conversations List */}
-            <div className={`${showConversationDetail ? 'hidden md:block' : 'block'} w-full md:w-2/5 lg:w-1/3 border-r border-white/5 overflow-hidden flex flex-col`}>
+            <div className={`${showConversationDetail ? 'hidden md:block' : 'block'} w-full md:w-2/5 lg:w-1/3 border-r border-border overflow-hidden flex flex-col`}>
               {/* Search */}
-              <div className="p-3 md:p-4 border-b border-white/5">
-                <div className="flex items-center gap-2 text-sm text-muted bg-surface/50 rounded-xl px-4 py-2.5 border border-white/5 focus-within:border-accent/30 transition-colors">
+              <div className="p-3 md:p-4 border-b border-border">
+                <div className="flex items-center gap-2 text-sm text-muted bg-surface/50 rounded-xl px-4 py-2.5 border border-border focus-within:border-accent/30 transition-colors">
                   <svg className="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="11" cy="11" r="8" stroke="currentColor" strokeWidth="2"/>
                     <path d="M21 21L16.65 16.65" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -227,7 +227,7 @@ const UnifiedInbox = () => {
                         }`}>
                           {conv.avatar}
                         </div>
-                        <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-surface rounded-md flex items-center justify-center text-xs shadow-sm border border-white/10">
+                        <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-surface rounded-md flex items-center justify-center text-xs shadow-sm border border-border-light">
                           {conv.channelIcon}
                         </div>
                       </div>
@@ -248,7 +248,7 @@ const UnifiedInbox = () => {
                         
                         {conv.unread > 0 && (
                           <div className="flex justify-end mt-2">
-                            <span className="bg-accent text-white text-[10px] w-5 h-5 rounded-full font-bold flex items-center justify-center shadow-lg shadow-accent/30">
+                            <span className="bg-accent text-background text-[10px] w-5 h-5 rounded-full font-bold flex items-center justify-center shadow-lg shadow-accent/30">
                               {conv.unread}
                             </span>
                           </div>
@@ -271,12 +271,12 @@ const UnifiedInbox = () => {
                 className={`${showConversationDetail ? 'block' : 'hidden md:block'} w-full md:w-3/5 lg:w-2/3 flex flex-col`}
               >
                 {/* Conversation Header */}
-                <div className="p-3 md:p-4 border-b border-white/5 bg-surface-light/30 backdrop-blur-sm">
+                <div className="p-3 md:p-4 border-b border-border bg-surface-light/30 backdrop-blur-sm">
                   <div className="flex items-center gap-3">
                     {/* Back button for mobile */}
                     <button 
                       onClick={() => setShowConversationDetail(false)}
-                      className="md:hidden w-9 h-9 rounded-lg bg-surface/50 border border-white/10 flex items-center justify-center text-muted hover:text-text transition-colors"
+                      className="md:hidden w-9 h-9 rounded-lg bg-surface/50 border border-border-light flex items-center justify-center text-muted hover:text-text transition-colors"
                     >
                       <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                         <path d="M15 18l-6-6 6-6" />
@@ -287,7 +287,7 @@ const UnifiedInbox = () => {
                       <div className="w-10 h-10 md:w-11 md:h-11 bg-accent/20 rounded-xl flex items-center justify-center text-accent font-semibold text-sm">
                         {selectedConv.avatar}
                       </div>
-                      <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-surface rounded-md flex items-center justify-center text-xs shadow-sm border border-white/10">
+                      <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-surface rounded-md flex items-center justify-center text-xs shadow-sm border border-border-light">
                         {selectedConv.channelIcon}
                       </div>
                     </div>
@@ -307,7 +307,7 @@ const UnifiedInbox = () => {
                   <div className="flex justify-start">
                     <div className="flex items-start gap-2 max-w-[85%]">
                       <div className="w-7 h-7 bg-gradient-to-br from-accent to-accent-light rounded-lg flex items-center justify-center mt-1 flex-shrink-0 shadow-lg shadow-accent/20">
-                        <svg className="w-3.5 h-3.5 text-white" viewBox="0 0 24 24" fill="currentColor">
+                        <svg className="w-3.5 h-3.5 text-background" viewBox="0 0 24 24" fill="currentColor">
                           <path d="M13 3L4 14h7v7l9-11h-7V3z"/>
                         </svg>
                       </div>
@@ -323,7 +323,7 @@ const UnifiedInbox = () => {
                   {/* User Message */}
                   <div className="flex justify-end">
                     <div className="max-w-[85%]">
-                      <div className="bg-gradient-to-br from-accent to-accent-light text-white px-4 py-3 rounded-2xl rounded-br-md shadow-lg shadow-accent/20">
+                      <div className="bg-gradient-to-br from-accent to-accent-light text-background px-4 py-3 rounded-2xl rounded-br-md shadow-lg shadow-accent/20">
                         <p className="text-sm leading-relaxed">Custom software development for my restaurant</p>
                       </div>
                       <p className="text-[10px] text-muted mt-1.5 text-right mr-1">2:35 PM</p>
@@ -334,7 +334,7 @@ const UnifiedInbox = () => {
                   <div className="flex justify-start">
                     <div className="flex items-start gap-2 max-w-[85%]">
                       <div className="w-7 h-7 bg-gradient-to-br from-accent to-accent-light rounded-lg flex items-center justify-center mt-1 flex-shrink-0 shadow-lg shadow-accent/20">
-                        <svg className="w-3.5 h-3.5 text-white" viewBox="0 0 24 24" fill="currentColor">
+                        <svg className="w-3.5 h-3.5 text-background" viewBox="0 0 24 24" fill="currentColor">
                           <path d="M13 3L4 14h7v7l9-11h-7V3z"/>
                         </svg>
                       </div>
@@ -350,7 +350,7 @@ const UnifiedInbox = () => {
                   {/* User Message */}
                   <div className="flex justify-end">
                     <div className="max-w-[85%]">
-                      <div className="bg-gradient-to-br from-accent to-accent-light text-white px-4 py-3 rounded-2xl rounded-br-md shadow-lg shadow-accent/20">
+                      <div className="bg-gradient-to-br from-accent to-accent-light text-background px-4 py-3 rounded-2xl rounded-br-md shadow-lg shadow-accent/20">
                         <p className="text-sm leading-relaxed">{selectedConv.lastMessage}</p>
                       </div>
                       <p className="text-[10px] text-muted mt-1.5 text-right mr-1">{selectedConv.time}</p>
@@ -359,7 +359,7 @@ const UnifiedInbox = () => {
                 </div>
 
                 {/* AI Actions */}
-                <div className="p-3 md:p-4 border-t border-white/5 bg-surface-light/30 backdrop-blur-sm">
+                <div className="p-3 md:p-4 border-t border-border bg-surface-light/30 backdrop-blur-sm">
                   <div className="flex items-center gap-2 text-xs text-muted mb-3">
                     <div className="w-5 h-5 bg-accent/10 rounded-md flex items-center justify-center">
                       <svg className="w-3 h-3 text-accent" viewBox="0 0 24 24" fill="currentColor">

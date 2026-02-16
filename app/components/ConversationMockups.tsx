@@ -215,8 +215,8 @@ const ConversationMockups = () => {
         <div
           className={`px-4 py-2.5 rounded-2xl text-sm leading-relaxed ${
             isAI
-              ? 'bg-surface-light border border-white/10 text-text'
-              : 'bg-accent text-white'
+              ? 'bg-surface-light border border-border-light text-text'
+              : 'bg-accent text-background'
           } ${isAI ? 'rounded-tl-sm' : 'rounded-tr-sm'}`}
         >
           {message.text}
@@ -228,7 +228,7 @@ const ConversationMockups = () => {
       {isAI && (
         <div className="order-1 mr-2 mt-1 flex-shrink-0">
           <div className="w-7 h-7 bg-gradient-to-br from-accent to-accent-light rounded-full flex items-center justify-center">
-            <svg className="w-3.5 h-3.5 text-white" viewBox="0 0 24 24" fill="currentColor">
+            <svg className="w-3.5 h-3.5 text-background" viewBox="0 0 24 24" fill="currentColor">
               <path d="M13 3L4 14h7v7l9-11h-7V3z"/>
             </svg>
           </div>
@@ -285,14 +285,14 @@ const ConversationMockups = () => {
             {/* Phone Frame */}
             <div className="relative mx-auto max-w-sm">
               <div className="absolute inset-0 bg-gradient-to-br from-accent/20 to-purple/20 rounded-[3rem] blur-2xl opacity-50" />
-              <div className="relative bg-surface border border-white/10 rounded-[2.5rem] p-2 shadow-2xl">
+              <div className="relative bg-surface border border-border-light rounded-3xl p-2 shadow-2xl">
                 {/* Phone Notch */}
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-background rounded-b-2xl" />
                 
                 {/* Screen */}
                 <div className="bg-background rounded-[2rem] overflow-hidden">
                   {/* Header */}
-                  <div className="bg-surface/80 backdrop-blur-xl px-4 py-3 border-b border-white/5">
+                  <div className="bg-surface/80 backdrop-blur-xl px-4 py-3 border-b border-border">
                     <div className="flex items-center gap-3">
                       <div className="w-10 h-10 bg-accent/10 rounded-full flex items-center justify-center text-accent">
                         {conversations[activeDemo].icon}
@@ -323,11 +323,11 @@ const ConversationMockups = () => {
                       <div className="flex justify-start mb-3">
                         <div className="flex items-center gap-2">
                           <div className="w-7 h-7 bg-gradient-to-br from-accent to-accent-light rounded-full flex items-center justify-center">
-                            <svg className="w-3.5 h-3.5 text-white" viewBox="0 0 24 24" fill="currentColor">
+                            <svg className="w-3.5 h-3.5 text-background" viewBox="0 0 24 24" fill="currentColor">
                               <path d="M13 3L4 14h7v7l9-11h-7V3z"/>
                             </svg>
                           </div>
-                          <div className="bg-surface-light border border-white/10 px-5 py-3.5 rounded-2xl rounded-tl-sm">
+                          <div className="bg-surface-light border border-border-light px-5 py-3.5 rounded-2xl rounded-tl-sm">
                             <div className="flex items-center gap-1">
                               <span className="w-2.5 h-2.5 bg-accent rounded-full animate-[typing_1.4s_ease-in-out_infinite]" style={{ animationDelay: '0ms' }} />
                               <span className="w-2.5 h-2.5 bg-accent rounded-full animate-[typing_1.4s_ease-in-out_infinite]" style={{ animationDelay: '200ms' }} />
@@ -340,11 +340,11 @@ const ConversationMockups = () => {
                   </div>
                   
                   {/* Input Bar */}
-                  <div className="p-3 border-t border-white/5 bg-surface/50">
+                  <div className="p-3 border-t border-border bg-surface/50">
                     <div className="flex items-center gap-2 bg-surface-light rounded-full px-4 py-2">
                       <span className="text-muted text-sm flex-1">Type a message...</span>
                       <div className="w-8 h-8 bg-accent rounded-full flex items-center justify-center">
-                        <svg className="w-4 h-4 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <svg className="w-4 h-4 text-background" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                           <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
                         </svg>
                       </div>
@@ -373,11 +373,11 @@ const ConversationMockups = () => {
                   className={`p-4 rounded-xl border transition-all duration-300 text-left ${
                     activeDemo === index
                       ? 'bg-accent/10 border-accent/50 shadow-lg shadow-accent/10'
-                      : 'bg-surface border-white/5 hover:border-white/20'
+                      : 'bg-surface border-border hover:border-border-medium'
                   }`}
                 >
                   <div className={`w-10 h-10 rounded-lg flex items-center justify-center mb-3 ${
-                    activeDemo === index ? 'bg-accent text-white' : 'bg-surface-light text-muted'
+                    activeDemo === index ? 'bg-accent text-background' : 'bg-surface-light text-muted'
                   }`}>
                     {conv.icon}
                   </div>
@@ -397,7 +397,7 @@ const ConversationMockups = () => {
                     setMessageIndex(0)
                   }}
                   className={`h-1.5 rounded-full transition-all duration-300 ${
-                    activeDemo === index ? 'w-8 bg-accent' : 'w-1.5 bg-white/20 hover:bg-white/40'
+                    activeDemo === index ? 'w-8 bg-accent' : 'w-1.5 bg-foreground/20 hover:bg-foreground/40'
                   }`}
                 />
               ))}
@@ -424,7 +424,7 @@ const ConversationMockups = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="text-center p-6 rounded-2xl bg-surface border border-white/5"
+              className="text-center p-6 rounded-2xl bg-surface border border-border"
             >
               <div className="text-2xl mb-2">{stat.icon}</div>
               <div className="font-display text-3xl font-bold text-accent mb-1">{stat.value}</div>

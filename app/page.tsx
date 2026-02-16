@@ -102,7 +102,7 @@ function Hero() {
   }, [])
 
   return (
-    <section className="relative isolate min-h-screen flex items-center pt-16 sm:pt-20 overflow-hidden bg-[#0A0A0B]">
+    <section className="relative isolate min-h-screen flex items-center pt-16 sm:pt-20 overflow-hidden bg-background">
       {/* Video Background */}
       <video
         ref={videoRef}
@@ -136,7 +136,7 @@ function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-4 sm:mb-6 md:mb-8 max-w-4xl px-2 text-white"
+          className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-4 sm:mb-6 md:mb-8 max-w-4xl px-2 text-text"
         >
           {t.title}
           <span className="text-accent">{t.titleHighlight}</span>
@@ -146,7 +146,7 @@ function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl mb-6 sm:mb-8 md:mb-10 leading-relaxed px-2"
+          className="text-base sm:text-lg md:text-xl text-muted max-w-3xl mb-6 sm:mb-8 md:mb-10 leading-relaxed px-2"
         >
           {t.subtitle}
         </motion.p>
@@ -163,8 +163,8 @@ function Hero() {
             <div key={i} className="flex items-center gap-2 sm:gap-3">
               <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-accent rounded-full flex-shrink-0" />
               <div className="flex flex-wrap items-center gap-1 sm:gap-2">
-                <span className="text-white text-sm sm:text-base font-semibold">{stat.value}</span>
-                {stat.label && <span className="text-white text-sm sm:text-base font-semibold">{stat.label}</span>}
+                <span className="text-text text-sm sm:text-base font-semibold">{stat.value}</span>
+                {stat.label && <span className="text-text text-sm sm:text-base font-semibold">{stat.label}</span>}
               </div>
             </div>
           ))}
@@ -179,7 +179,7 @@ function Hero() {
           <Link href="/about" className="btn-primary text-sm sm:text-base md:text-lg px-6 sm:px-8 py-3 sm:py-4 w-full sm:w-auto text-center">
             {t.ourStory}
           </Link>
-          <Link href="#what-we-do" className="!text-white !border-white/30 hover:!text-accent hover:!border-accent btn-secondary text-sm sm:text-base md:text-lg px-6 sm:px-8 py-3 sm:py-4 w-full sm:w-auto text-center">
+          <Link href="#what-we-do" className="!text-text !border-border-medium hover:!text-accent hover:!border-accent btn-secondary text-sm sm:text-base md:text-lg px-6 sm:px-8 py-3 sm:py-4 w-full sm:w-auto text-center">
             {t.whatWeDo}
           </Link>
         </motion.div>
@@ -504,7 +504,7 @@ function WhatWeDo() {
             <div className="absolute inset-0 bg-gradient-to-br from-accent/20 via-accent/10 to-success/20 rounded-3xl blur-2xl opacity-50" />
             <div className="absolute inset-0 bg-gradient-to-br from-accent/15 to-success/15 rounded-3xl" />
             
-            <div className="relative p-12 md:p-16 bg-gradient-to-br from-accent/10 via-surface to-success/10 border-2 border-transparent hover:border-white transition-all duration-300 rounded-3xl">
+            <div className="relative p-12 md:p-16 bg-gradient-to-br from-accent/10 via-surface to-success/10 border-2 border-transparent hover:border-border-foreground transition-all duration-300 rounded-3xl">
               
               <div className="relative z-10">
                 {/* Dynamic animated lightbulb */}
@@ -1001,7 +1001,7 @@ function CaseStudies() {
                 animate={{ height: expanded === i ? 'auto' : 0, opacity: expanded === i ? 1 : 0 }}
                 className="overflow-hidden"
               >
-                <div className="space-y-4 pt-4 border-t border-white/10">
+                <div className="space-y-4 pt-4 border-t border-border-light">
                   <span className="text-xs uppercase tracking-wider text-muted-dark">{c.results}</span>
                   {study.results.map((result, j) => (
                     <div key={j} className="flex justify-between items-center">
@@ -1070,10 +1070,10 @@ function CTASection() {
           <div className="relative bg-surface rounded-3xl p-12 md:p-16 lg:p-20">
             {/* Corner accents */}
             <div className={`absolute top-0 left-0 w-20 h-20 border-l-2 border-t-2 rounded-tl-3xl ${
-              theme === 'dark' ? 'border-white' : 'border-black'
+              'border-border-foreground'
             }`} />
             <div className={`absolute bottom-0 right-0 w-20 h-20 border-r-2 border-b-2 rounded-br-3xl ${
-              theme === 'dark' ? 'border-white' : 'border-black'
+              'border-border-foreground'
             }`} />
 
             <div className="text-center">

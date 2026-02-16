@@ -60,7 +60,7 @@ export default function BlogPostContent({ articleByLang }: BlogPostContentProps)
         aria-label="Article content"
       />
 
-      <div className="mt-12 pt-8 border-t border-white/10">
+      <div className="mt-12 pt-8 border-t border-border-light">
         <h3 className="font-display text-lg font-bold mb-4">{t.tags}</h3>
         <div className="flex flex-wrap gap-2">
           {article.tags.map(tag => (

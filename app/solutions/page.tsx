@@ -180,7 +180,7 @@ export default function SolutionsPage() {
                       
                       <div>
                         <h4 className="text-sm uppercase tracking-wider text-muted-dark mb-3">Our Solution</h4>
-                        <p className="text-white leading-relaxed">{solution.solution}</p>
+                        <p className="text-text leading-relaxed">{solution.solution}</p>
                       </div>
                       
                       <div>

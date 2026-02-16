@@ -77,7 +77,7 @@ export default function VideoModal({ isOpen, onClose, videoSrc, title, descripti
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 20 }}
               onClick={(e) => e.stopPropagation()}
-              className="relative bg-surface border border-white/10 rounded-2xl max-w-4xl w-full overflow-hidden shadow-2xl"
+              className="relative bg-surface border border-border-light rounded-2xl max-w-4xl w-full overflow-hidden shadow-2xl"
             >
               {/* Close button */}
               <button
@@ -86,7 +86,7 @@ export default function VideoModal({ isOpen, onClose, videoSrc, title, descripti
                 aria-label="Close video"
               >
                 <svg
-                  className="w-6 h-6 text-white group-hover:text-accent transition-colors"
+                  className="w-6 h-6 text-text group-hover:text-accent transition-colors"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -97,7 +97,7 @@ export default function VideoModal({ isOpen, onClose, videoSrc, title, descripti
 
               {/* Header */}
               {(title || description) && (
-                <div className="p-6 pb-4 border-b border-white/10">
+                <div className="p-6 pb-4 border-b border-border-light">
                   {title && (
                     <h3 className="font-display text-2xl font-bold mb-2">{title}</h3>
                   )}

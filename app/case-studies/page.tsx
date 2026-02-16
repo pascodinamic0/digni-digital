@@ -182,7 +182,7 @@ export default function CaseStudiesPage() {
                 className={`px-6 py-2 rounded-full text-sm font-medium transition-all ${
                   selectedIndustry === industry
                     ? 'bg-accent text-background'
-                    : 'bg-surface border border-white/10 text-muted hover:text-white hover:border-accent/50'
+                    : 'bg-surface border border-border-light text-muted hover:text-text hover:border-accent/50'
                 }`}
               >
                 {industry}

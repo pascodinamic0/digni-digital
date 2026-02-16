@@ -457,7 +457,7 @@ export default function FutureReadyGraduatePage() {
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-              <div className="text-center p-6 bg-surface-light/50 rounded-xl border border-white/5 hover:border-success/30 transition-colors">
+              <div className="text-center p-6 bg-surface-light/50 rounded-xl border border-border hover:border-success/30 transition-colors">
                 <div className="w-16 h-16 bg-success/10 rounded-2xl mx-auto mb-4 flex items-center justify-center text-3xl">
                   🌍
                 </div>
@@ -465,7 +465,7 @@ export default function FutureReadyGraduatePage() {
                 <p className="text-muted text-sm leading-relaxed">Work with clients from anywhere in the world, not limited by local job market</p>
               </div>
 
-              <div className="text-center p-6 bg-surface-light/50 rounded-xl border border-white/5 hover:border-success/30 transition-colors">
+              <div className="text-center p-6 bg-surface-light/50 rounded-xl border border-border hover:border-success/30 transition-colors">
                 <div className="w-16 h-16 bg-success/10 rounded-2xl mx-auto mb-4 flex items-center justify-center text-3xl">
                   💰
                 </div>
@@ -473,7 +473,7 @@ export default function FutureReadyGraduatePage() {
                 <p className="text-muted text-sm leading-relaxed">Digital skills command premium rates - often 2-5x local salaries</p>
               </div>
 
-              <div className="text-center p-6 bg-surface-light/50 rounded-xl border border-white/5 hover:border-success/30 transition-colors">
+              <div className="text-center p-6 bg-surface-light/50 rounded-xl border border-border hover:border-success/30 transition-colors">
                 <div className="w-16 h-16 bg-success/10 rounded-2xl mx-auto mb-4 flex items-center justify-center text-3xl">
                   🏠
                 </div>
@@ -481,7 +481,7 @@ export default function FutureReadyGraduatePage() {
                 <p className="text-muted text-sm leading-relaxed">Work from home, coffee shops, or anywhere with internet connection</p>
               </div>
 
-              <div className="text-center p-6 bg-surface-light/50 rounded-xl border border-white/5 hover:border-success/30 transition-colors">
+              <div className="text-center p-6 bg-surface-light/50 rounded-xl border border-border hover:border-success/30 transition-colors">
                 <div className="w-16 h-16 bg-success/10 rounded-2xl mx-auto mb-4 flex items-center justify-center text-3xl">
                   🚀
                 </div>

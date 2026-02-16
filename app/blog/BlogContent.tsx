@@ -63,7 +63,7 @@ export default function BlogContent({ articlesByLang }: BlogContentProps) {
             
             {/* Combined Search and Category Filter */}
             <div className="max-w-5xl mx-auto mb-8">
-              <div className="bg-background/50 backdrop-blur-sm border border-white/10 rounded-2xl p-6 shadow-xl shadow-black/20">
+              <div className="bg-background/50 backdrop-blur-sm border border-border-light rounded-2xl p-6 shadow-xl shadow-xl">
                 <div className="flex flex-col gap-6">
                   {/* Search Box */}
                   <div className="relative">
@@ -73,7 +73,7 @@ export default function BlogContent({ articlesByLang }: BlogContentProps) {
                       value={searchTerm}
                       onChange={(e) => setSearchTerm(e.target.value)}
                       aria-label="Search articles"
-                      className="w-full px-5 py-4 pl-14 bg-surface border border-white/20 rounded-xl text-text placeholder-muted focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition-all duration-200"
+                      className="w-full px-5 py-4 pl-14 bg-surface border border-border-medium rounded-xl text-text placeholder-muted focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition-all duration-200"
                     />
                     <svg className="absolute left-5 top-1/2 transform -translate-y-1/2 w-5 h-5 text-muted" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -102,7 +102,7 @@ export default function BlogContent({ articlesByLang }: BlogContentProps) {
                           className={`px-5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-300 whitespace-nowrap ${
                             selectedCategory === category
                               ? 'bg-accent text-background shadow-lg shadow-accent/30 scale-105 transform'
-                              : 'bg-surface text-muted hover:text-accent hover:bg-surface-light border border-white/10 hover:border-accent/30 hover:shadow-md hover:scale-[1.02]'
+                              : 'bg-surface text-muted hover:text-accent hover:bg-surface-light border border-border-light hover:border-accent/30 hover:shadow-md hover:scale-[1.02]'
                           }`}
                         >
                           {category === ALL_KEY ? t.all : category}
@@ -129,7 +129,7 @@ export default function BlogContent({ articlesByLang }: BlogContentProps) {
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {featuredArticles.map((article) => (
                 <Link key={article.id} href={`/blog/${article.slug}`}>
-                  <article className="bg-background border border-white/10 rounded-lg p-6 hover:border-accent/50 hover:shadow-lg hover:shadow-accent/10 transition-all cursor-pointer h-full group">
+                  <article className="bg-background border border-border-light rounded-lg p-6 hover:border-accent/50 hover:shadow-lg hover:shadow-accent/10 transition-all cursor-pointer h-full group">
                     <div className="flex items-center gap-2 mb-4">
                       <span className="px-3 py-1 bg-accent/10 text-accent text-xs font-medium rounded-full">
                         {article.category}
@@ -167,7 +167,7 @@ export default function BlogContent({ articlesByLang }: BlogContentProps) {
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {paginatedArticles.map((article) => (
                   <Link key={article.id} href={`/blog/${article.slug}`}>
-                    <article className="bg-surface border border-white/10 rounded-lg p-6 hover:border-accent/50 transition-colors cursor-pointer h-full">
+                    <article className="bg-surface border border-border-light rounded-lg p-6 hover:border-accent/50 transition-colors cursor-pointer h-full">
                       <div className="flex items-center gap-2 mb-4">
                         <span className="px-3 py-1 bg-accent/10 text-accent text-xs font-medium rounded-full">
                           {article.category}
@@ -274,7 +274,7 @@ export default function BlogContent({ articlesByLang }: BlogContentProps) {
               type="email"
               placeholder="Enter your email"
               aria-label="Email address for newsletter subscription"
-              className="flex-1 px-4 py-3 bg-background border border-white/20 rounded-lg text-text placeholder-muted focus:outline-none focus:border-accent"
+              className="flex-1 px-4 py-3 bg-background border border-border-medium rounded-lg text-text placeholder-muted focus:outline-none focus:border-accent"
             />
             <button 
               className="btn-primary whitespace-nowrap"
@@ -293,7 +293,7 @@ export default function BlogContent({ articlesByLang }: BlogContentProps) {
       {/* Simple CTA */}
       <section className="py-16">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <div className="bg-surface border border-white/10 rounded-lg p-12">
+          <div className="bg-surface border border-border-light rounded-lg p-12">
             <h2 className="font-display text-3xl font-bold mb-4">
               Ready to Transform Your Business?
             </h2>

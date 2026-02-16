@@ -217,6 +217,11 @@ type ContactTranslations = {
   howToReachUsDesc: string
   sendMessage: string
   sendMessageDesc: string
+  formSending: string
+  formSuccess: string
+  formError: string
+  projectTypePlaceholder: string
+  projectTypes: Array<{ value: string; label: string }>
   methods: Array<{ title: string; description: string; action: string }>
   faqs: Array<{ question: string; answer: string }>
 }
@@ -969,9 +974,18 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     howToReachUsDesc: 'We reply fast.',
     sendMessage: 'Send Us a Message',
     sendMessageDesc: 'Form below. Reply within 24 hours.',
+    formSending: 'Sending...',
+    formSuccess: 'Message sent! We\'ll reply within 24 hours.',
+    formError: 'Something went wrong. Please try again or email us directly.',
+    projectTypePlaceholder: 'Select a service',
+    projectTypes: [
+      { value: 'ai-employee', label: 'AI Employee' },
+      { value: 'future-ready-graduate', label: 'Digni Digital Literacy' },
+      { value: 'custom-saas', label: 'Custom SaaS' },
+    ],
     methods: [
       { title: 'Book a Call', description: '30-min free. We discuss. You decide.', action: 'Book Now' },
-      { title: 'Email', description: 'Questions? Drop a line.', action: 'hello@digni-digital-llc.com' },
+      { title: 'Email', description: 'Questions? Drop a line.', action: 'digni.digital.llc@gmail.com' },
       { title: 'WhatsApp', description: 'Quick reply. Fast.', action: 'Message Us' },
       { title: 'LinkedIn', description: 'Connect. Network.', action: 'Connect' },
     ],
@@ -994,9 +1008,18 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     howToReachUsDesc: 'Nous répondons rapidement.',
     sendMessage: 'Envoyez-nous un message',
     sendMessageDesc: 'Formulaire ci-dessous. Réponse sous 24 h.',
+    formSending: 'Envoi en cours...',
+    formSuccess: 'Message envoyé ! Nous répondrons sous 24 h.',
+    formError: 'Une erreur s\'est produite. Réessayez ou écrivez-nous directement.',
+    projectTypePlaceholder: 'Choisir un service',
+    projectTypes: [
+      { value: 'ai-employee', label: 'Employé IA' },
+      { value: 'future-ready-graduate', label: 'Digni Digital Literacy' },
+      { value: 'custom-saas', label: 'SaaS Personnalisé' },
+    ],
     methods: [
       { title: 'Réserver un appel', description: '30 min gratuites. On discute. Vous décidez.', action: 'Réserver' },
-      { title: 'E-mail', description: 'Des questions ? Écrivez-nous.', action: 'hello@digni-digital-llc.com' },
+      { title: 'E-mail', description: 'Des questions ? Écrivez-nous.', action: 'digni.digital.llc@gmail.com' },
       { title: 'WhatsApp', description: 'Réponse rapide.', action: 'Nous contacter' },
       { title: 'LinkedIn', description: 'Connectons-nous.', action: 'Connecter' },
     ],
@@ -1019,9 +1042,18 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     howToReachUsDesc: 'نرد بسرعة.',
     sendMessage: 'أرسل لنا رسالة',
     sendMessageDesc: 'النموذج أدناه. رد خلال 24 ساعة.',
+    formSending: 'جاري الإرسال...',
+    formSuccess: 'تم إرسال الرسالة! سنجيب خلال 24 ساعة.',
+    formError: 'حدث خطأ. حاول مرة أخرى أو راسلنا مباشرة.',
+    projectTypePlaceholder: 'اختر خدمة',
+    projectTypes: [
+      { value: 'ai-employee', label: 'الموظف الذكي' },
+      { value: 'future-ready-graduate', label: 'Digni Digital Literacy' },
+      { value: 'custom-saas', label: 'برمجيات مخصصة' },
+    ],
     methods: [
       { title: 'حجز مكالمة', description: '30 دقيقة مجانية. نناقش. أنت تقرر.', action: 'احجز الآن' },
-      { title: 'البريد', description: 'أسئلة؟ راسلنا.', action: 'hello@digni-digital-llc.com' },
+      { title: 'البريد', description: 'أسئلة؟ راسلنا.', action: 'digni.digital.llc@gmail.com' },
       { title: 'واتساب', description: 'رد سريع.', action: 'راسلنا' },
       { title: 'لينكد إن', description: 'تواصل. شبكة.', action: 'تواصل' },
     ],
@@ -1054,7 +1086,7 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     ],
     aiStages: [
       { step: 1, title: 'Lead Arrives', description: 'Same channels—ads, website, phone, WhatsApp, email. All feed into one system. AI sees every lead in real time. One place. One view.', win: 'No more scattered inboxes. Complete visibility.' },
-      { step: 2, title: 'Instant Response', description: 'Reply in under 2 seconds. 24/7. Calls answered. Messages replied. No voicemail. No waiting. The lead gets immediate attention while they\'re hot.', win: 'You answer first. Competitors are still playing catch-up.' },
+      { step: 2, title: 'Instant Response', description: 'Reply in under 2 seconds. 24/7. Calls answered. Messages replied. No voicemail. No waiting. The lead gets immediate attention while they\'re hot.', win: 'AI responds to all incoming leads at once.' },
       { step: 3, title: 'Smart Qualification', description: 'AI asks the right questions. Budget, timeline, readiness. Captures intent. Qualifies before your team spends time. Only ready buyers reach your calendar.', win: 'Your team talks to buyers. Not tire-kickers.' },
       { step: 4, title: 'Auto-Booking', description: 'Qualified lead picks a slot. Calendar syncs. No back-and-forth. No handoffs. Meeting is booked before the conversation goes cold.', win: 'Zero friction. Filled calendar. No double-booking.' },
       { step: 5, title: 'Follow-Up Until Close', description: 'If they don\'t book, AI keeps following up. Reminders. Gentle nudges. Until they book or say no. No lead left behind.', win: 'Every lead chased. No more cold drops.' },

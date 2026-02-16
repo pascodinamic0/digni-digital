@@ -17,8 +17,8 @@ function AIEmployeeCTASection() {
   const { theme } = useTheme()
   return (
     <div className="relative bg-surface rounded-3xl p-12 md:p-16 lg:p-20 overflow-hidden">
-      <div className={`absolute top-0 left-0 w-20 h-20 border-l-2 border-t-2 rounded-tl-3xl ${theme === 'dark' ? 'border-white' : 'border-black'}`} />
-      <div className={`absolute bottom-0 right-0 w-20 h-20 border-r-2 border-b-2 rounded-br-3xl ${theme === 'dark' ? 'border-white' : 'border-black'}`} />
+      <div className={`absolute top-0 left-0 w-20 h-20 border-l-2 border-t-2 rounded-tl-3xl ${'border-border-foreground'}`} />
+      <div className={`absolute bottom-0 right-0 w-20 h-20 border-r-2 border-b-2 rounded-br-3xl ${'border-border-foreground'}`} />
       <div className="text-center">
         <motion.span
           initial={{ opacity: 0, y: 20 }}
@@ -454,7 +454,7 @@ export default function AIReceptionistPage() {
                   className={`relative p-6 rounded-2xl bg-gradient-to-br ${colors.gradient} border ${colors.border} backdrop-blur-sm hover:border-opacity-50 transition-all duration-300 group`}
                 >
                   {/* Number badge */}
-                  <div className="absolute -top-2 -left-2 w-10 h-10 bg-surface rounded-xl border border-white/10 flex items-center justify-center shadow-lg">
+                  <div className="absolute -top-2 -left-2 w-10 h-10 bg-surface rounded-xl border border-border-light flex items-center justify-center shadow-lg">
                     <span className={`font-display font-bold text-sm ${colors.text}`}>{capability.number}</span>
                   </div>
                   
@@ -483,33 +483,33 @@ export default function AIReceptionistPage() {
             className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-accent via-accent/90 to-purple p-8 md:p-12"
           >
             {/* Background decoration */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl" />
-            <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/5 rounded-full blur-2xl" />
+            <div className="absolute top-0 right-0 w-64 h-64 bg-foreground/10 rounded-full blur-3xl" />
+            <div className="absolute bottom-0 left-0 w-48 h-48 bg-foreground/5 rounded-full blur-2xl" />
             
             <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
               <div className="text-center md:text-left">
-                <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/10 rounded-full text-white/80 text-xs font-medium mb-4 backdrop-blur-sm border border-white/10">
+                <div className="inline-flex items-center gap-2 px-3 py-1 bg-foreground/10 rounded-full text-foreground/80 text-xs font-medium mb-4 backdrop-blur-sm border border-border-light">
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                   Time to Value
                 </div>
-                <h3 className="font-display text-3xl md:text-4xl font-bold text-white mb-4">
+                <h3 className="font-display text-3xl md:text-4xl font-bold text-text mb-4">
                   Live in 24 Hours
                 </h3>
-                <p className="text-white/80 text-lg max-w-lg leading-relaxed">
+                <p className="text-foreground/80 text-lg max-w-lg leading-relaxed">
                   Live in 24 hours. No setup. No training. We run it. You sell.
                 </p>
               </div>
               
               <div className="flex flex-col items-center md:items-end gap-4">
                 <div className="text-center md:text-right">
-                  <div className="font-display text-6xl md:text-7xl font-bold text-white mb-2">24h</div>
-                  <p className="text-white/60 text-sm">From decision to operation</p>
+                  <div className="font-display text-6xl md:text-7xl font-bold text-text mb-2">24h</div>
+                  <p className="text-foreground/60 text-sm">From decision to operation</p>
                 </div>
                 <a
                   {...getBookingLinkProps()}
-                  className="inline-flex items-center gap-2 bg-white text-accent font-semibold px-6 py-3 rounded-xl hover:bg-white/90 transition-colors shadow-lg"
+                  className="inline-flex items-center gap-2 bg-on-accent text-accent font-semibold px-6 py-3 rounded-xl hover:opacity-90 transition-opacity shadow-lg"
                 >
                   {ctaConfig.buttonText.getStarted}
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">

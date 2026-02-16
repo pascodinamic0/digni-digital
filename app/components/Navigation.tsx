@@ -63,6 +63,7 @@ export default function Navigation() {
 
   const rightNavLinks = [
     { name: t.nav.articles, href: '/blog' },
+    { name: t.nav.contact, href: '/contact' },
   ]
 
   const solutionLinks = [
@@ -105,7 +106,7 @@ export default function Navigation() {
           <div className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
               <Link
-                key={link.name}
+                key={link.href}
                 href={link.href}
                 className="hover:text-accent transition-colors duration-300 text-sm font-medium text-text"
               >
@@ -135,15 +136,15 @@ export default function Navigation() {
                   exit={{ opacity: 0, y: 10 }}
                   role="menu"
                   aria-label="Solutions submenu"
-                  className="absolute top-full left-0 mt-2 w-80 bg-surface border border-white/10 rounded-xl shadow-2xl backdrop-blur-xl z-50"
+                  className="absolute top-full left-0 mt-2 w-80 bg-surface border border-border-light rounded-xl shadow-2xl backdrop-blur-xl z-50"
                 >
                   <div className="p-2">
                     {solutionLinks.map((solution) => (
                       <Link
-                        key={solution.name}
+                        key={solution.href}
                         href={solution.href}
                         onClick={() => setSolutionsOpen(false)}
-                        className="block p-4 rounded-lg hover:bg-black/5 dark:hover:bg-white/5 transition-colors group"
+                        className="block p-4 rounded-lg hover:bg-foreground/5 transition-colors group"
                       >
                         <div className="font-medium text-text group-hover:text-accent transition-colors">
                           {solution.name}
@@ -161,7 +162,7 @@ export default function Navigation() {
             {/* Right Navigation Links (Blog) */}
             {rightNavLinks.map((link) => (
               <Link
-                key={link.name}
+                key={link.href}
                 href={link.href}
                 className="hover:text-accent transition-colors duration-300 text-sm font-medium text-text"
               >
@@ -207,7 +208,7 @@ export default function Navigation() {
           >
             {navLinks.map((link) => (
               <Link
-                key={link.name}
+                key={link.href}
                 href={link.href}
                 className="block py-3 text-text hover:text-accent transition-colors font-medium"
                 onClick={() => setMobileOpen(false)}
@@ -221,7 +222,7 @@ export default function Navigation() {
               <div className="text-text font-semibold mb-2">{t.nav.solutions}</div>
               {solutionLinks.map((solution) => (
                 <Link
-                  key={solution.name}
+                  key={solution.href}
                   href={solution.href}
                   className="block py-2 pl-4 text-sm text-text hover:text-accent transition-colors"
                   onClick={() => setMobileOpen(false)}
@@ -234,7 +235,7 @@ export default function Navigation() {
             {/* Right Navigation Links in Mobile */}
             {rightNavLinks.map((link) => (
               <Link
-                key={link.name}
+                key={link.href}
                 href={link.href}
                 className="block py-3 text-text hover:text-accent transition-colors font-medium"
                 onClick={() => setMobileOpen(false)}
@@ -243,7 +244,7 @@ export default function Navigation() {
               </Link>
             ))}
             
-            <div className="flex items-center gap-4 mt-6 pt-4 border-t border-white/10">
+            <div className="flex items-center gap-4 mt-6 pt-4 border-t border-border-light">
               <div className="flex items-center gap-2">
                 <LanguageToggler variant="full" className="flex-1" />
               </div>

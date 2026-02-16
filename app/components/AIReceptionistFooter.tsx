@@ -34,7 +34,7 @@ export default function AIReceptionistFooter() {
   }
 
   return (
-    <footer id="contact" className="border-t border-white/5">
+    <footer id="contact" className="border-t border-border">
       {/* Standard Footer Content */}
       <div className="py-16">
         <div className="max-w-7xl mx-auto px-6">
@@ -98,7 +98,7 @@ export default function AIReceptionistFooter() {
             </div>
           </div>
 
-          <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+          <div className="pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-muted text-sm">
               &copy; {new Date().getFullYear()} Digni Digital. {t.footer.copyright}
             </p>

@@ -12,9 +12,9 @@ import { translations } from '../config/translations'
 
 const contactMethodConfig = [
   { icon: '📅', href: ctaConfig.bookingUrl, primary: true as const },
-  { icon: '✉️', href: 'mailto:hello@digni-digital-llc.com', primary: false as const },
-  { icon: '💬', href: 'https://wa.me/1234567890', primary: false as const },
-  { icon: '💼', href: 'https://linkedin.com/company/digni-digital', primary: false as const },
+  { icon: '✉️', href: 'mailto:digni.digital.llc@gmail.com', primary: false as const },
+  { icon: '💬', href: 'https://wa.me/254702593518', primary: false as const },
+  { icon: '💼', href: 'https://www.linkedin.com/company/digni-digital-llc', primary: false as const },
 ]
 
 export default function ContactPage() {
@@ -30,12 +30,56 @@ export default function ContactPage() {
     message: '',
     projectType: ''
   })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
+  const [errorDetail, setErrorDetail] = useState<string | null>(null)
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle form submission here
-    // TODO: Integrate with your preferred form handling service (e.g., Formspree, SendGrid, etc.)
-    // For now, form data is captured in formData state
+    if (isSubmitting) return
+
+    setIsSubmitting(true)
+    setSubmitStatus('idle')
+    setErrorDetail(null)
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      })
+
+      let data: { error?: string; success?: boolean }
+      try {
+        data = await res.json()
+      } catch {
+        // API returned HTML (e.g. error page, 404) instead of JSON
+        setErrorDetail(
+          res.ok
+            ? 'Invalid response from server.'
+            : `Server error (${res.status}). The contact API may be unavailable.`
+        )
+        setSubmitStatus('error')
+        return
+      }
+
+      if (!res.ok) {
+        const msg = data.error || 'Failed to send'
+        setErrorDetail(msg)
+        setSubmitStatus('error')
+        return
+      }
+
+      setSubmitStatus('success')
+      setFormData({ name: '', email: '', company: '', message: '', projectType: '' })
+    } catch (err) {
+      setSubmitStatus('error')
+      if (err instanceof Error && err.message !== 'Failed to send') {
+        setErrorDetail(err.message)
+      }
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -147,7 +191,7 @@ export default function ContactPage() {
                   required
                   value={formData.name}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 bg-surface-light border border-white/10 rounded-lg focus:border-accent/50 focus:outline-none transition-colors"
+                  className="w-full px-4 py-3 bg-surface-light border border-border-light rounded-lg focus:border-accent/50 focus:outline-none transition-colors"
                   placeholder="Your full name"
                   aria-required="true"
                 />
@@ -164,7 +208,7 @@ export default function ContactPage() {
                   required
                   value={formData.email}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 bg-surface-light border border-white/10 rounded-lg focus:border-accent/50 focus:outline-none transition-colors"
+                  className="w-full px-4 py-3 bg-surface-light border border-border-light rounded-lg focus:border-accent/50 focus:outline-none transition-colors"
                   placeholder="your@email.com"
                   aria-required="true"
                 />
@@ -182,7 +226,7 @@ export default function ContactPage() {
                   name="company"
                   value={formData.company}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 bg-surface-light border border-white/10 rounded-lg focus:border-accent/50 focus:outline-none transition-colors"
+                  className="w-full px-4 py-3 bg-surface-light border border-border-light rounded-lg focus:border-accent/50 focus:outline-none transition-colors"
                   placeholder="Your company name"
                 />
               </div>
@@ -196,15 +240,14 @@ export default function ContactPage() {
                   name="projectType"
                   value={formData.projectType}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 bg-surface-light border border-white/10 rounded-lg focus:border-accent/50 focus:outline-none transition-colors"
+                  className="w-full px-4 py-3 bg-surface-light border border-border-light rounded-lg focus:border-accent/50 focus:outline-none transition-colors"
                 >
-                  <option value="">Select a project type</option>
-                  <option value="website">Website Development</option>
-                  <option value="mobile-app">Mobile Application</option>
-                  <option value="saas">Custom SaaS</option>
-                  <option value="seo">SEO & Marketing</option>
-                  <option value="automation">Business Automation</option>
-                  <option value="other">Other</option>
+                  <option value="">{t.projectTypePlaceholder}</option>
+                  {t.projectTypes.map((opt) => (
+                    <option key={opt.value} value={opt.value}>
+                      {opt.label}
+                    </option>
+                  ))}
                 </select>
               </div>
             </div>
@@ -220,19 +263,36 @@ export default function ContactPage() {
                 rows={6}
                 value={formData.message}
                 onChange={handleInputChange}
-                className="w-full px-4 py-3 bg-surface-light border border-white/10 rounded-lg focus:border-accent/50 focus:outline-none transition-colors resize-none"
+                className="w-full px-4 py-3 bg-surface-light border border-border-light rounded-lg focus:border-accent/50 focus:outline-none transition-colors resize-none"
                 placeholder="Tell us about your project, goals, timeline, and any specific requirements..."
                 aria-required="true"
               />
             </div>
             
             <div className="text-center">
-              <button type="submit" className="btn-primary text-lg px-8 py-4">
-                Send Message
+              {submitStatus === 'success' && (
+                <p className="mb-4 text-success font-medium">{t.formSuccess}</p>
+              )}
+              {submitStatus === 'error' && (
+                <div className="mb-4 text-destructive">
+                  <p className="font-medium">{t.formError}</p>
+                  {errorDetail && (
+                    <p className="mt-2 text-sm opacity-90">{errorDetail}</p>
+                  )}
+                </div>
+              )}
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="btn-primary text-lg px-8 py-4 disabled:opacity-70 disabled:cursor-not-allowed"
+              >
+                {isSubmitting ? t.formSending : t.sendMessage}
               </button>
-              <p className="text-muted text-sm mt-4">
-                We'll respond within 24 hours with next steps
-              </p>
+              {submitStatus !== 'success' && (
+                <p className="text-muted text-sm mt-4">
+                  We&apos;ll respond within 24 hours with next steps
+                </p>
+              )}
             </div>
           </motion.form>
         </div>

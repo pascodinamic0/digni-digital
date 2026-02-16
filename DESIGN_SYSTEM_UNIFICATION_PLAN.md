@@ -1,275 +1,234 @@
 # Design System Unification Plan
-## Complete Audit & Implementation Strategy
+
+**Objective:** Unify entire app visual design so every screen and component matches the Home/Landing page styling. The landing page is the single source of truth.
+
+**Rules:** No feature additions, layout changes, or UX redesign. Only normalize styling. Remove all hard-coded visual values. Use tokens and Tailwind theme mappings exclusively.
 
 ---
 
-## Summary of Approach
+## 1. Audit Summary
 
-This document outlines a systematic approach to unify the entire application's visual design, using the Home/Landing page (`app/page.tsx`) as the single source of truth. The goal is to eliminate all hard-coded visual values and ensure every component uses centralized design tokens.
+### Styling Sources
 
-### Core Principles
-1. **Landing page is the source of truth** - All design decisions extracted from `app/page.tsx`
-2. **Zero hard-coded values** - Remove all hex/rgb/hsl, arbitrary Tailwind values, inline color styles
-3. **Token-first approach** - All styling via CSS variables and Tailwind theme mappings
-4. **No UX changes** - Only normalize styling, preserve all functionality and layouts
+| Source | Location | Purpose |
+|--------|----------|---------|
+| Global CSS | `app/globals.css` | Tokens, base styles, utilities, hero/card/button classes |
+| Tailwind Config | `tailwind.config.ts` | Theme extensions (colors, radii, shadows, borders) |
+| Components | `app/components/*.tsx` | Component-level classNames |
+| Pages | `app/**/page.tsx` | Page-level classNames |
+| Blog Content | `content/blog/*.ts` | Inline styles in HTML (tables) |
+| No toast system | — | Not present in codebase |
+| No shadcn/ui | — | Custom components, no Radix/shadcn |
 
----
+### Conflicts & Issues Found
 
-## Phase 1: Audit Results
+1. **Hard-coded hex in Hero:** `bg-[#0A0A0B]` in `app/page.tsx` (should use `bg-background`)
+2. **Hard-coded text colors:** `text-white`, `text-gray-300` (should use `text-text` / `text-muted`)
+3. **Hard-coded border opacity:** `border-white/5`, `border-white/10`, `border-white/20`, `border-white/30` (should use token-backed `border-border`, `border-border-light`, `border-border-medium`)
+4. **Theme-dependent borders:** `border-white` vs `border-black` for corner accents (need semantic token)
+5. **Invalid CSS in .card-glass:** `rgba(var(--surface), 0.5)` — `--surface` is hex, not RGB (needs `--surface-rgb`)
+6. **Hard-coded rgba in components:** `ClientJourneyDemo.tsx`, `GlobalPresenceMap.tsx` use `rgba(239,68,68,...)`, `rgba(34,197,94,...)`, `rgba(37,99,235,...)` etc.
+7. **Missing `foreground`:** `ClientJourneyDemo` uses `text-foreground/90`, `muted-foreground` — not in theme
+8. **section-badge:** Uses `rgba(37, 99, 235, 0.1)` instead of `accent/10` token
+9. **Blog content tables:** Inline `style="border: 1px solid #ddd"` etc. in `content/blog/en.ts`
+10. **.card-glass:** Uses `rgba(255, 255, 255, 0.1)` — should use `var(--border-light)`
 
-### Current Token System Analysis
+### Duplicates
 
-**✅ Existing Infrastructure:**
-- `app/globals.css` contains comprehensive CSS variable tokens
-- `tailwind.config.ts` maps theme values to CSS variables
-- Dark/Light theme support via `[data-theme]` selector
-
-**❌ Issues Found:**
-1. Hard-coded gradient colors in `ThemeToggle.tsx` (lines 26, 35)
-2. Tailwind color utilities (e.g., `text-slate-700`, `text-amber-500`) instead of semantic tokens
-3. Inline opacity styles (acceptable per rules, but should be reviewed)
-4. Some components may not fully use token system
-
-### Token Extraction from Landing Page
-
-From `app/page.tsx`, the following design patterns are established as the source of truth:
-
-#### Color Usage Patterns:
-- **Primary Actions**: `bg-accent`, `text-background` (buttons)
-- **Secondary Actions**: `bg-transparent`, `border-border-medium`, `text-text`
-- **Text Hierarchy**: `text-text` (primary), `text-muted` (secondary), `text-muted-dark` (tertiary)
-- **Accent Colors**: `text-accent`, `bg-accent/10`, `border-accent/30`
-- **Semantic Colors**: `text-success`, `text-destructive`, `text-info`
-- **Surfaces**: `bg-surface`, `bg-surface-light`, `bg-background`
-- **Borders**: `border-border`, `border-border-light`, `border-border-medium`
-
-#### Typography Patterns:
-- **Display Font**: `font-display` (Outfit) for headings
-- **Body Font**: Default (DM Sans) for body text
-- **Heading Sizes**: `text-4xl md:text-5xl lg:text-6xl` (h1), `text-3xl md:text-4xl` (h2), `text-xl md:text-2xl` (h3)
-- **Weights**: `font-bold` (headings), `font-semibold` (subheadings), `font-medium` (labels)
-
-#### Spacing Patterns:
-- **Section Padding**: `py-24` (standard), `py-32` (CTA sections)
-- **Container**: `max-w-7xl mx-auto px-6`
-- **Card Padding**: `p-8` (standard), `p-6` (compact), `p-12 md:p-16` (hero cards)
-- **Gaps**: `gap-4` (buttons), `gap-8` (grid items), `gap-12` (sections)
-
-#### Border Radius:
-- **Cards**: `rounded-lg` (var(--radius-lg) = 16px)
-- **Buttons**: `rounded-xl` (var(--radius-xl) = 20px) or `rounded` (var(--radius) = 8px)
-- **Badges/Pills**: `rounded-full`
-- **Icons**: `rounded-xl` or `rounded-2xl`
-
-#### Shadows:
-- **Cards**: `shadow-card` (default), `hover:shadow-2xl`
-- **Buttons**: `hover:shadow-lg`
-- **Glow Effects**: `glow-accent`, `shadow-accent-hover`
+- Multiple components repeat `border-white/10`, `border-white/5` — consolidate to `border-border-light`, `border-border`
+- `text-white` used for hero overlay text where `text-text` is appropriate for theme consistency
 
 ---
 
-## Phase 2: Token System
+## 2. Token Table (Landing Page = Source of Truth)
 
-### Complete Token Table
+### Semantic Colors (Dark Default)
 
-#### Base Colors
-| Token | Dark Mode | Light Mode | Usage |
-|-------|-----------|------------|-------|
+| Token | Dark Value | Light Value | Usage |
+|-------|------------|-------------|-------|
 | `--background` | `#0A0A0B` | `#F5F7FA` | Page background |
+| `--foreground` | `#FAFAFA` | `#1E293B` | Primary text (alias for --text) |
 | `--surface` | `#141416` | `#FFFFFF` | Card/surface backgrounds |
 | `--surface-light` | `#1C1C1F` | `#F9FAFB` | Elevated surfaces |
 | `--text` | `#FAFAFA` | `#1E293B` | Primary text |
+| `--text-muted` | `#E4E4EA` | `#64748B` | Secondary text (alias --muted) |
 | `--muted` | `#E4E4EA` | `#64748B` | Secondary text |
+| `--muted-foreground` | `#D1D1DB` | `#475569` | Tertiary (alias --muted-dark) |
 | `--muted-dark` | `#D1D1DB` | `#475569` | Tertiary text |
+| `--accent` | `#2563EB` | (same) | Primary brand |
+| `--accent-light` | `#3B82F6` | (same) | Hover states |
+| `--success` | `#10B981` | (same) | Success states |
+| `--destructive` | `#EF4444` | (same) | Errors/critical |
+| `--warning` | `#F59E0B` | (same) | Warning states |
+| `--info` | `#3B82F6` | (same) | Info states |
+| `--ring` | `rgba(var(--accent-rgb), 0.5)` | (same) | Focus ring |
 
-#### Brand Colors
-| Token | Value | Usage |
-|-------|-------|-------|
-| `--accent` | `#2563EB` | Primary brand color (blue) |
-| `--accent-light` | `#3B82F6` | Hover states |
-| `--accent-rgb` | `37, 99, 235` | RGBA usage |
+### RGB Tokens (for rgba() usage)
 
-#### Semantic Colors
-| Token | Value | Usage |
-|-------|-------|-------|
-| `--success` | `#10B981` | Success states, positive metrics |
-| `--success-light` | `#34D399` | Success hover |
-| `--destructive` | `#EF4444` | Errors, warnings, critical states |
-| `--destructive-light` | `#F87171` | Destructive hover |
-| `--warning` | `#F59E0B` | Warning states |
-| `--warning-light` | `#FBBF24` | Warning hover |
-| `--info` | `#3B82F6` | Informational states |
-| `--info-light` | `#60A5FA` | Info hover |
+| Token | Dark Value | Usage |
+|-------|------------|-------|
+| `--background-rgb` | `10, 10, 11` | rgba backgrounds |
+| `--surface-rgb` | `20, 20, 22` | rgba surfaces |
+| `--accent-rgb` | `37, 99, 235` | accent opacity |
+| `--success-rgb` | `16, 185, 129` | success opacity |
+| `--destructive-rgb` | `239, 68, 68` | destructive opacity |
+| `--text-rgb` | `250, 250, 250` | text opacity |
 
-#### Border Colors
-| Token | Dark | Light | Usage |
-|-------|------|-------|-------|
-| `--border` | `rgba(255,255,255,0.05)` | `rgba(0,0,0,0.05)` | Default borders |
-| `--border-light` | `rgba(255,255,255,0.1)` | `rgba(0,0,0,0.1)` | Subtle borders |
-| `--border-medium` | `rgba(255,255,255,0.2)` | `rgba(0,0,0,0.15)` | Medium borders |
-| `--border-accent` | `rgba(var(--accent-rgb),0.3)` | `rgba(var(--accent-rgb),0.2)` | Accent borders |
-| `--border-accent-light` | `rgba(var(--accent-rgb),0.5)` | `rgba(var(--accent-rgb),0.3)` | Accent hover |
+### Borders
 
-#### Shadows
-| Token | Dark | Light | Usage |
-|-------|------|-------|-------|
-| `--shadow-sm` | `0 1px 2px rgba(0,0,0,0.05)` | `0 1px 2px rgba(0,0,0,0.05)` | Small elevation |
-| `--shadow` | `0 4px 6px rgba(0,0,0,0.1)` | `0 4px 6px rgba(0,0,0,0.07)` | Default elevation |
-| `--shadow-md` | `0 10px 15px rgba(0,0,0,0.1)` | `0 10px 15px rgba(0,0,0,0.08)` | Medium elevation |
-| `--shadow-lg` | `0 10px 30px rgba(var(--accent-rgb),0.3)` | `0 10px 30px rgba(var(--accent-rgb),0.15)` | Large elevation |
-| `--shadow-xl` | `0 20px 40px rgba(0,0,0,0.3)` | `0 20px 40px rgba(0,0,0,0.12)` | Extra large |
-| `--shadow-2xl` | `0 20px 50px rgba(var(--accent-rgb),0.4)` | `0 20px 50px rgba(var(--accent-rgb),0.2)` | Maximum elevation |
-| `--shadow-accent` | `0 0 40px rgba(var(--accent-rgb),0.2)` | `0 0 40px rgba(var(--accent-rgb),0.15)` | Accent glow |
-| `--shadow-accent-hover` | `0 0 60px rgba(var(--accent-rgb),0.3)` | `0 0 60px rgba(var(--accent-rgb),0.2)` | Accent hover glow |
-| `--shadow-card` | Complex multi-shadow | Complex multi-shadow | Card elevation |
+| Token | Dark | Light | Tailwind Class |
+|-------|------|-------|----------------|
+| `--border` | `rgba(255,255,255,0.05)` | `rgba(0,0,0,0.05)` | `border-border` |
+| `--border-light` | `rgba(255,255,255,0.1)` | `rgba(0,0,0,0.1)` | `border-border-light` |
+| `--border-medium` | `rgba(255,255,255,0.2)` | `rgba(0,0,0,0.15)` | `border-border-medium` |
+| `--border-accent` | `rgba(var(--accent-rgb),0.3)` | `rgba(var(--accent-rgb),0.2)` | `border-border-accent` |
+| `--border-foreground` | `rgba(255,255,255,1)` | `rgba(0,0,0,1)` | Corner accents (theme-aware) |
 
-#### Border Radius
-| Token | Value | Usage |
-|-------|-------|-------|
-| `--radius-sm` | `4px` | Small elements |
-| `--radius` | `8px` | Default (buttons) |
-| `--radius-md` | `12px` | Medium elements |
-| `--radius-lg` | `16px` | Cards |
-| `--radius-xl` | `20px` | Large cards |
-| `--radius-2xl` | `24px` | Extra large |
-| `--radius-3xl` | `32px` | Hero sections |
-| `--radius-full` | `9999px` | Pills/badges |
+### Typography
 
-#### Typography
-| Token | Value | Usage |
-|-------|-------|-------|
-| `--font-display` | `'Outfit', sans-serif` | Headings, titles |
-| `--font-body` | `'DM Sans', sans-serif` | Body text |
+| Token | Value |
+|-------|-------|
+| `--font-display` | `'Space Grotesk', sans-serif` |
+| `--font-body` | `'Inter', sans-serif` |
+
+### Shape & Elevation
+
+| Token | Value | Tailwind |
+|-------|-------|----------|
+| `--radius-sm` | `4px` | `rounded-sm` |
+| `--radius` | `8px` | `rounded` |
+| `--radius-md` | `12px` | `rounded-md` |
+| `--radius-lg` | `16px` | `rounded-lg` |
+| `--radius-xl` | `20px` | `rounded-xl` |
+| `--radius-2xl` | `24px` | `rounded-2xl` |
+| `--radius-3xl` | `32px` | `rounded-3xl` |
+| `--shadow-sm` … `--shadow-card` | (existing) | (existing) |
 
 ---
 
-## Phase 3: File-by-File Change List
+## 3. File-by-File Change List
 
-### Core System Files (Already Complete ✅)
-1. **app/globals.css** - ✅ Token system exists and is comprehensive
-2. **tailwind.config.ts** - ✅ Maps to CSS variables correctly
+### globals.css
+- Add `--foreground`, `--muted-foreground`, `--surface-rgb`, `--background-rgb`, `--text-rgb`, `--border-foreground`, `--ring`
+- Fix `.card-glass`: `background: rgba(var(--surface-rgb), 0.5)`, `border: 1px solid var(--border-light)`
+- Fix `.animated-border`: `border-radius: var(--radius-lg)` (replace `16px`)
+- Replace `rgba(37, 99, 235, 0.1)` in `.section-badge` with `rgba(var(--accent-rgb), 0.1)`
+- Light theme: add `--foreground`, `--border-foreground`, `--surface-rgb`, etc.
+- Light header overrides: use `var(--surface)` instead of `#ffffff`
 
-### Components Requiring Updates
+### tailwind.config.ts
+- Add `foreground`, `muted-foreground` to colors
+- Add `ring: 'var(--ring)'` for ring color
+- Add `border-foreground` to borderColor
 
-#### High Priority (Hard-coded Values Found)
+### app/page.tsx
+- `bg-[#0A0A0B]` → `bg-background`
+- `text-white` → `text-text`
+- `text-gray-300` → `text-muted`
+- `!text-white !border-white/30` → `!text-text !border-border-medium`
+- `border-white/10` → `border-border-light`
+- `hover:border-white` → `hover:border-border-foreground` (or keep for gradient card)
+- `theme === 'dark' ? 'border-white' : 'border-black'` → `border-border-foreground`
 
-1. **app/components/ThemeToggle.tsx**
-   - **Issue**: Hard-coded gradient colors `#E0E7FF`, `#C7D2FE`, `#1E3A8A`, `#3B82F6`
-   - **Fix**: Create CSS variables for theme toggle gradients or use semantic tokens
-   - **Change**: Replace inline gradient styles with CSS variable references
-   - **Lines**: 26, 35
-   - **Also**: Replace `text-slate-700`, `text-amber-500` with semantic tokens
+### app/components/*
+- Replace all `border-white/5` → `border-border`
+- Replace all `border-white/10` → `border-border-light`
+- Replace all `border-white/20` → `border-border-medium`
+- Replace all `text-white` (on dark surfaces) → `text-text` where thematic
+- Replace `text-white` (on accent buttons) → keep (accent buttons use `text-background` per btn-primary)
+- `hover:bg-white/5` → `hover:bg-foreground/5` (add token) or `hover:bg-surface-light/50`
+- `rounded-[2.5rem]` → `rounded-3xl` (closest token)
+- `text-[10px]` → `text-xs` where acceptable, or add `--text-2xs` token
+- Navigation dropdown: `border-white/10` → `border-border-light`
+- Footer/SimpleFooter/AIReceptionistFooter: `border-white/5` → `border-border`
 
-2. **app/components/Navigation.tsx**
-   - **Issue**: Inline opacity styles (acceptable, but should review)
-   - **Change**: Opacity values are dynamic, acceptable per rules
-   - **Lines**: 77, 78
+### app/components/ClientJourneyDemo.tsx
+- Replace inline `rgba(239,68,68,...)` with CSS variable refs or add `--destructive-rgb` usage
+- Replace `rgba(34,197,94,...)` — success is `#10B981` = rgb(16,185,129). Add `--success-rgb` if not present.
+- Use `var(--destructive)` / `var(--success)` with opacity utilities where possible
 
-3. **app/components/Footer.tsx**
-   - **Issue**: Inline opacity styles (acceptable)
-   - **Change**: No changes needed (dynamic values)
+### app/components/GlobalPresenceMap.tsx
+- Replace `fill="rgba(37, 99, 235, 0.25)"` with token or pass via CSS variable
+- Replace `#2563EB`, `#10B981`, `#FAFAFA`, `#fff` with token-backed values
+- Use `stroke="var(--border-light)"`-style if SVG supports, or define map colors in globals
 
-#### Medium Priority (Review Token Usage)
+### app/ai-receptionist/page.tsx, app/custom-saas/page.tsx, app/solutions/page.tsx, app/case-studies/page.tsx
+- `border-white` / `border-black` → `border-border-foreground`
+- `text-white` on overlay sections → `text-text` (hero overlays)
 
-4. **All page components** (app/**/page.tsx)
-   - **Action**: Verify all use tokens (spot check completed - most are good)
-   - **Focus**: Ensure no arbitrary Tailwind values remain
+### app/contact/page.tsx
+- `border-white/10` → `border-border-light`
 
-5. **All component files** (app/components/*.tsx)
-   - **Action**: Verify token usage throughout
-   - **Focus**: Check for any missed hard-coded values
+### app/blog/BlogContent.tsx, BlogPostContent.tsx
+- `border-white/10`, `border-white/20` → `border-border-light`, `border-border-medium`
+- `shadow-black/20` → `shadow-xl` or token
+
+### content/blog/en.ts
+- Inline table styles: replace `#f5f5f5`, `#ddd`, `#f9f9f9` with CSS classes in blog-content scope or use `var(--surface)`, `var(--border-light)` via class-based styling. **Note:** Content is in TS, not components; may need a wrapper class for tables.
 
 ---
 
-## Phase 4: Implementation Steps
+## 4. Regression Test Checklist
 
-### Step 1: Enhance Token System
-- [ ] Add theme toggle gradient tokens to `globals.css`
-- [ ] Verify all semantic colors are mapped in Tailwind
-- [ ] Ensure border color utilities are comprehensive
-
-### Step 2: Fix ThemeToggle Component
-- [ ] Replace hard-coded gradient colors with tokens
-- [ ] Replace `text-slate-700` with semantic token
-- [ ] Replace `text-amber-500` with semantic token
-
-### Step 3: Comprehensive Audit
-- [ ] Search for all arbitrary Tailwind values (`bg-[`, `text-[`, etc.)
-- [ ] Search for hard-coded hex colors in className attributes
-- [ ] Verify all components use token-based classes
-
-### Step 4: Verification
-- [ ] Run grep patterns to verify no hard-coded values remain
-- [ ] Visual regression check
-- [ ] Test both light and dark themes
+- [ ] Home page renders correctly (dark + light theme)
+- [ ] Hero section: background, text contrast, buttons
+- [ ] Navigation: dropdown, mobile menu, borders
+- [ ] Footer: borders, links
+- [ ] Cards: hover states, borders, shadows
+- [ ] Forms (contact): inputs, borders, focus states
+- [ ] Blog: search, cards, post content, tables
+- [ ] AI Receptionist page: hero, CTA, cards
+- [ ] Case studies: hover, borders
+- [ ] ClientJourneyDemo: green/red bands, labels
+- [ ] GlobalPresenceMap: map colors, tooltips
+- [ ] Theme toggle: light/dark switch works
+- [ ] All pages: no visual regressions
 
 ---
 
-## Phase 5: Verification Checklist
+## 5. Grep Patterns to Delete (Verification)
 
-### ✅ Verification Patterns
-
-Run these commands to verify completion:
+After refactor, these patterns should NOT appear (except in globals.css :root token definitions):
 
 ```bash
-# Find arbitrary Tailwind values (should be minimal - only in ThemeToggle currently)
-grep -r "bg-\[" app/ --exclude-dir=node_modules
-grep -r "text-\[" app/ --exclude-dir=node_modules
-grep -r "border-\[" app/ --exclude-dir=node_modules
-grep -r "shadow-\[" app/ --exclude-dir=node_modules
-grep -r "rounded-\[" app/ --exclude-dir=node_modules
+# Arbitrary hex/rgb in classNames
+grep -r "bg-\[#" app/ components/ --include="*.tsx"
+grep -r "text-\[#" app/ components/ --include="*.tsx"
+grep -r "border-\[#" app/ components/ --include="*.tsx"
+grep -r "shadow-\[" app/ components/ --include="*.tsx"
 
-# Find hard-coded hex colors in JSX/TSX (should only show CSS variable definitions)
-grep -r "#[0-9A-Fa-f]\{6\}" app/ --exclude-dir=node_modules | grep -v "globals.css"
+# Hard-coded Tailwind color names (gray, white, black for semantic use)
+grep -r "text-gray-" app/ components/ --include="*.tsx"
+grep -r "text-white" app/ components/ --include="*.tsx"  # except btn-primary children
+grep -r "border-white/" app/ components/ --include="*.tsx"
+grep -r "border-black" app/ components/ --include="*.tsx"
+grep -r "bg-white/" app/ components/ --include="*.tsx"   # may allow for overlays
+grep -r "hover:bg-black/" app/ components/ --include="*.tsx"
 
-# Find Tailwind color utilities (should only show semantic tokens)
-grep -r "text-slate-\|text-amber-\|text-blue-\|text-red-\|text-green-\|text-yellow-\|bg-slate-\|bg-amber-\|bg-blue-\|bg-red-\|bg-green-\|bg-yellow-" app/ --exclude-dir=node_modules
-
-# Find hard-coded rgba/hsl values in className (should be empty)
-grep -r "rgba(" app/ --exclude-dir=node_modules | grep -v "globals.css" | grep -v "style="
+# Inline hex in style={}
+grep -r "style=.*#[0-9A-Fa-f]" app/ components/ --include="*.tsx"
+grep -r "rgba([0-9]" app/ components/ --include="*.tsx"
 ```
 
-### Acceptable Exceptions
-1. **CSS Variable Definitions**: Hex values in `globals.css` are the source of truth
-2. **Dynamic Inline Styles**: Opacity values, transform values, animation values
-3. **SVG Attributes**: Stop colors using CSS variables (modern browser support)
+**Allowlist:** `globals.css` may contain hex in `:root` and `[data-theme="light"]`. SVG `fill`/`stroke` in static attributes may need to stay if no CSS variable injection.
 
 ---
 
-## Phase 6: Regression Testing
+## 6. Implementation Order
 
-### Visual Regression Checklist
-- [ ] Landing page renders correctly (all sections)
-- [ ] Navigation works in both themes
-- [ ] Theme toggle functions correctly
-- [ ] All buttons styled consistently
-- [ ] Cards have consistent styling
-- [ ] Typography scales correctly
-- [ ] Colors match in both light/dark themes
-- [ ] Shadows and elevations are consistent
-- [ ] Border radius is consistent
-- [ ] Spacing is consistent
-
-### Functional Testing
-- [ ] All interactive elements work
-- [ ] Theme switching works
-- [ ] No console errors
-- [ ] All pages load correctly
+1. **globals.css** — Add tokens, fix invalid CSS
+2. **tailwind.config.ts** — Map new tokens
+3. **app/page.tsx** — Landing fixes
+4. **app/components/** — All shared components
+5. **app/** pages — Remaining pages
+6. **content/blog** — Table styling (if feasible)
+7. **ClientJourneyDemo, GlobalPresenceMap** — Dynamic style tokens
+8. **Verify** — Run grep, manual check
 
 ---
 
-## Notes
+## 7. Implementation Complete (Status)
 
-- This is a **styling-only refactor** - no features or layouts are changed
-- All changes maintain backward compatibility
-- The token system is already well-established, so this is primarily verification and cleanup
-- Focus on eliminating remaining hard-coded values, not redesigning
+**Completed:** All app components and pages have been refactored to use token-backed Tailwind classes. Build passes.
 
----
-
-## Estimated Impact
-
-- **Files to Review**: ~29 component/page files
-- **Files Requiring Changes**: ~2-5 files (ThemeToggle + any missed issues)
-- **Risk Level**: Low (token system already exists)
-- **Effort**: Medium (systematic audit and cleanup)
+**Remaining (optional):** `content/blog/en.ts` contains inline table styles (`#f5f5f5`, `#ddd`, etc.). These are in content/HTML; to tokenize, either (a) replace inline styles with `class="blog-content"` table classes (requires content edits), or (b) add `!important` overrides in `.blog-content table` rules. The current `.blog-content table` rules already use `var(--border-light)`, `var(--surface)` — inline styles in content will override. Consider a follow-up content migration.
