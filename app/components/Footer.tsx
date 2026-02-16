@@ -34,7 +34,7 @@ export default function Footer() {
   }
 
   return (
-    <footer id="contact" className="py-16 border-t border-white/5">
+    <footer id="contact" className="py-16 border-t border-border">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
           <div className="lg:col-span-2">
@@ -96,7 +96,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-muted text-sm">
             &copy; {new Date().getFullYear()} Digni Digital. {t.footer.copyright}
           </p>

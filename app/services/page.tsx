@@ -191,7 +191,7 @@ export default function ServicesPage() {
                 </div>
 
                 {/* Timeline */}
-                <div className="mb-6 pt-6 border-t border-white/10">
+                <div className="mb-6 pt-6 border-t border-border-light">
                   <div className="flex items-center justify-between">
                     <span className="text-xs uppercase tracking-wider text-muted-dark">Timeline</span>
                     <span className="font-semibold text-sm">{service.timeline}</span>

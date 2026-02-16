@@ -202,17 +202,17 @@ const BusinessTimeline = () => {
                         className={`w-20 h-20 rounded-2xl flex items-center justify-center border-2 transition-all duration-500 backdrop-blur-sm ${
                           isActive 
                             ? `${colorClasses.bg} ${colorClasses.border} shadow-xl ${colorClasses.glow}` 
-                            : 'bg-surface/80 border-white/10'
+                            : 'bg-surface/80 border-border-light'
                         }`}
                         animate={isCurrent ? { scale: [1, 1.05, 1] } : { scale: 1 }}
                         transition={{ duration: 2, repeat: Infinity }}
                       >
-                        <div className={isActive ? 'text-white' : 'text-muted'}>
+                        <div className={isActive ? 'text-text' : 'text-muted'}>
                           {step.icon}
                         </div>
                         {/* Step Number Badge */}
                         <div className={`absolute -top-2 -right-2 w-7 h-7 rounded-full text-xs font-bold flex items-center justify-center shadow-lg ${
-                          isActive ? 'bg-white text-background' : 'bg-surface-light text-muted border border-white/10'
+                          isActive ? 'bg-foreground text-background' : 'bg-surface-light text-muted border border-border-light'
                         }`}>
                           {index + 1}
                         </div>
@@ -224,7 +224,7 @@ const BusinessTimeline = () => {
                       className={`mt-8 p-5 rounded-2xl border backdrop-blur-sm transition-all duration-500 ${
                         isCurrent 
                           ? `bg-gradient-to-br ${colorClasses.gradient} ${colorClasses.border} shadow-lg`
-                          : 'bg-surface/50 border-white/5 hover:border-white/10'
+                          : 'bg-surface/50 border-border hover:border-border-light'
                       }`}
                       animate={isCurrent ? { y: -4 } : { y: 0 }}
                     >
@@ -247,8 +247,8 @@ const BusinessTimeline = () => {
                             transition={{ delay: metricIndex * 0.1 }}
                             className={`text-xs px-2.5 py-1 rounded-full border ${
                               isCurrent 
-                                ? `${colorClasses.bg} ${colorClasses.border} text-white` 
-                                : 'bg-surface-light border-white/5 text-muted'
+                                ? `${colorClasses.bg} ${colorClasses.border} text-text` 
+                                : 'bg-surface-light border-border text-muted'
                             }`}
                           >
                             {metric}
@@ -285,12 +285,12 @@ const BusinessTimeline = () => {
                     className={`w-14 h-14 rounded-xl flex items-center justify-center border-2 transition-all duration-500 ${
                       isActive 
                         ? `${colorClasses.bg} ${colorClasses.border} shadow-lg ${colorClasses.glow}` 
-                        : 'bg-surface border-white/10'
+                        : 'bg-surface border-border-light'
                     }`}
                     animate={isCurrent ? { scale: [1, 1.05, 1] } : { scale: 1 }}
                     transition={{ duration: 2, repeat: Infinity }}
                   >
-                    <div className={isActive ? 'text-white' : 'text-muted'}>
+                    <div className={isActive ? 'text-text' : 'text-muted'}>
                       {step.icon}
                     </div>
                   </motion.div>
@@ -306,13 +306,13 @@ const BusinessTimeline = () => {
                   className={`flex-1 p-5 rounded-2xl border backdrop-blur-sm transition-all duration-500 ${
                     isCurrent 
                       ? `bg-gradient-to-br ${colorClasses.gradient} ${colorClasses.border} shadow-lg`
-                      : 'bg-surface/50 border-white/5'
+                      : 'bg-surface/50 border-border'
                   }`}
                   animate={isCurrent ? { x: 4 } : { x: 0 }}
                 >
                   <div className="flex items-center gap-3 mb-2">
                     <span className={`w-6 h-6 rounded-full text-xs font-bold flex items-center justify-center ${
-                      isActive ? 'bg-white text-background' : 'bg-surface-light text-muted'
+                      isActive ? 'bg-foreground text-background' : 'bg-surface-light text-muted'
                     }`}>
                       {index + 1}
                     </span>
@@ -337,8 +337,8 @@ const BusinessTimeline = () => {
                         transition={{ delay: metricIndex * 0.1 }}
                         className={`text-xs px-2.5 py-1 rounded-full border ${
                           isCurrent 
-                            ? `${colorClasses.bg} ${colorClasses.border} text-white` 
-                            : 'bg-surface-light border-white/5 text-muted'
+                            ? `${colorClasses.bg} ${colorClasses.border} text-text` 
+                            : 'bg-surface-light border-border text-muted'
                         }`}
                       >
                         {metric}
@@ -363,7 +363,7 @@ const BusinessTimeline = () => {
                   className={`h-2 rounded-full transition-all duration-300 ${
                     activeStep === index 
                       ? `w-8 ${colorClasses.bg}` 
-                      : 'w-2 bg-surface-light hover:bg-white/20'
+                      : 'w-2 bg-surface-light hover:bg-foreground/20'
                   }`}
                   aria-label={`View step ${index + 1}: ${step.title}`}
                 />

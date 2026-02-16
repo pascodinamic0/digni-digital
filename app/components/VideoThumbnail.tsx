@@ -116,7 +116,7 @@ export default function VideoThumbnail({ src, onPlay }: VideoThumbnailProps) {
       )}
       <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/10 transition-colors pointer-events-none">
         <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:bg-success/30 transition-colors shadow-lg pointer-events-none">
-          <svg className="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+          <svg className="w-8 h-8 text-text ml-1" fill="currentColor" viewBox="0 0 24 24">
             <path d="M8 5v14l11-7z" />
           </svg>
         </div>

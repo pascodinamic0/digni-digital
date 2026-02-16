@@ -443,7 +443,7 @@ export default function CustomSaaSPage() {
 
                       <div>
                         <span className="text-xs uppercase tracking-wider text-muted-dark">Solution</span>
-                        <p className="text-white mt-2 leading-relaxed">{study.solution}</p>
+                        <p className="text-text mt-2 leading-relaxed">{study.solution}</p>
                       </div>
 
                       <div className="grid sm:grid-cols-2 gap-4 md:gap-6">

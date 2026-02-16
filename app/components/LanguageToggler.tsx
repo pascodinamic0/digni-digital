@@ -39,7 +39,7 @@ export default function LanguageToggler({ variant = 'compact', className = '' }:
         aria-expanded={open}
         aria-haspopup="true"
         aria-label={`Language: ${current.label}. Change language`}
-        className="flex items-center gap-2 px-3 py-2 rounded-lg text-muted hover:text-white hover:bg-white/5 transition-colors text-sm font-medium"
+        className="flex items-center gap-2 px-3 py-2 rounded-lg text-muted hover:text-text hover:bg-foreground/5 transition-colors text-sm font-medium"
       >
         <span aria-hidden className="text-lg">
           {current.flag}
@@ -61,7 +61,7 @@ export default function LanguageToggler({ variant = 'compact', className = '' }:
       {open && (
         <div
           role="menu"
-          className="absolute top-full right-0 mt-2 min-w-[10rem] py-1 bg-surface border border-white/10 rounded-xl shadow-xl z-50"
+          className="absolute top-full right-0 mt-2 min-w-[10rem] py-1 bg-surface border border-border-light rounded-xl shadow-xl z-50"
         >
           {languages.map(({ code, label, flag }) => (
             <button
@@ -75,7 +75,7 @@ export default function LanguageToggler({ variant = 'compact', className = '' }:
               className={`w-full flex items-center gap-3 px-4 py-2.5 text-left text-sm transition-colors first:rounded-t-xl last:rounded-b-xl ${
                 code === language
                   ? 'bg-accent/20 text-accent'
-                  : 'text-muted hover:bg-white/5 hover:text-white'
+                  : 'text-muted hover:bg-foreground/5 hover:text-text'
               }`}
             >
               <span aria-hidden className="text-lg">{flag}</span>

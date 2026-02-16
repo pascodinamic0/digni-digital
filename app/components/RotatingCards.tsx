@@ -156,7 +156,7 @@ export default function RotatingCards({
         <>
           <button
             onClick={() => goToCard((currentIndex - 1 + cards.length) % cards.length)}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-8 w-12 h-12 rounded-full bg-surface border border-white/10 flex items-center justify-center hover:bg-white/5 hover:border-accent/50 transition-all group"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-8 w-12 h-12 rounded-full bg-surface border border-border-light flex items-center justify-center hover:bg-foreground/5 hover:border-accent/50 transition-all group"
             aria-label="Previous card"
           >
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="text-muted group-hover:text-accent transition-colors">
@@ -166,7 +166,7 @@ export default function RotatingCards({
           
           <button
             onClick={() => goToCard((currentIndex + 1) % cards.length)}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-8 w-12 h-12 rounded-full bg-surface border border-white/10 flex items-center justify-center hover:bg-white/5 hover:border-accent/50 transition-all group"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-8 w-12 h-12 rounded-full bg-surface border border-border-light flex items-center justify-center hover:bg-foreground/5 hover:border-accent/50 transition-all group"
             aria-label="Next card"
           >
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="text-muted group-hover:text-accent transition-colors">

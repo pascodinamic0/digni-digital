@@ -54,12 +54,12 @@ const WorldMap = ({
               <Geography
                 key={geo.rpigeographyid ?? geo.properties?.name ?? geo.id}
                 geography={geo}
-                fill="rgba(37, 99, 235, 0.25)"
-                stroke="rgba(37, 99, 235, 0.45)"
+                fill="rgba(var(--accent-rgb), 0.25)"
+                stroke="rgba(var(--accent-rgb), 0.45)"
                 strokeWidth={0.5}
                 style={{
                   default: { outline: 'none' },
-                  hover:   { outline: 'none', fill: 'rgba(37, 99, 235, 0.35)' },
+                  hover:   { outline: 'none', fill: 'rgba(var(--accent-rgb), 0.35)' },
                   pressed: { outline: 'none' },
                 }}
               />
@@ -73,7 +73,7 @@ const WorldMap = ({
         {officeLocations.map((loc) => {
           const isSelected = selectedLocation?.id === loc.id
           const isHovered  = hoveredId === loc.id
-          const color      = loc.isPrimary ? '#2563EB' : '#10B981'
+          const color      = loc.isPrimary ? 'var(--accent)' : 'var(--success)'
 
           return (
             <Marker
@@ -95,12 +95,12 @@ const WorldMap = ({
               <circle
                 r={isSelected ? 7 : 5}
                 fill={color}
-                stroke="#fff"
+                stroke="var(--foreground)"
                 strokeWidth={2}
                 style={{
                   cursor: 'pointer',
                   transition: 'r 0.2s ease, fill 0.2s ease',
-                  filter: isSelected || isHovered ? 'drop-shadow(0 0 6px rgba(37,99,235,0.6))' : 'none',
+                  filter: isSelected || isHovered ? 'drop-shadow(0 0 6px rgba(var(--accent-rgb), 0.6))' : 'none',
                 }}
                 onMouseEnter={() => setHoveredId(loc.id)}
                 onMouseLeave={() => setHoveredId(null)}
@@ -116,8 +116,8 @@ const WorldMap = ({
                     width={loc.city.length * 7 + 12}
                     height={18}
                     rx={4}
-                    fill="rgba(20, 20, 22, 0.92)"
-                    stroke="rgba(37, 99, 235, 0.35)"
+                    fill="rgba(var(--surface-rgb), 0.92)"
+                    stroke="rgba(var(--accent-rgb), 0.35)"
                     strokeWidth={1}
                   />
                   <text
@@ -127,7 +127,7 @@ const WorldMap = ({
                       fontFamily: 'Inter, system-ui, sans-serif',
                       fontSize: '11px',
                       fontWeight: 600,
-                      fill: '#FAFAFA',
+                      fill: 'var(--text)',
                     }}
                   >
                     {loc.city}

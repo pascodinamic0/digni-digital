@@ -130,7 +130,7 @@ const ChannelsDiagram = () => {
                 <div className={`relative p-6 rounded-2xl border transition-all duration-300 ${
                   activeChannel === channel.id 
                     ? 'border-accent/50 bg-accent/5 scale-105' 
-                    : 'border-white/10 bg-surface-light hover:border-accent/30'
+                    : 'border-border-light bg-surface-light hover:border-accent/30'
                 }`}>
                   {/* Connection Line to Center */}
                   <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-full">
@@ -155,7 +155,7 @@ const ChannelsDiagram = () => {
                     <div className={`w-16 h-16 mx-auto rounded-xl bg-gradient-to-br ${channel.color} flex items-center justify-center text-2xl mb-3 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
                       {channel.icon}
                     </div>
-                    <h3 className="font-display text-lg font-bold text-white mb-1">
+                    <h3 className="font-display text-lg font-bold text-text mb-1">
                       {channel.name}
                     </h3>
                     <p className="text-muted text-sm mb-3">
