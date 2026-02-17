@@ -34,7 +34,7 @@ export default function ContactPage() {
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
   const [errorDetail, setErrorDetail] = useState<string | null>(null)
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     if (isSubmitting) return
 
@@ -42,11 +42,23 @@ export default function ContactPage() {
     setSubmitStatus('idle')
     setErrorDetail(null)
 
+    // Read from form directly so we get real values even if React state is
+    // out of sync (e.g. browser autofill, password managers)
+    const form = e.currentTarget
+    const fd = new FormData(form)
+    const payload = {
+      name: (fd.get('name') as string) || formData.name,
+      email: (fd.get('email') as string) || formData.email,
+      company: (fd.get('company') as string) || formData.company,
+      message: (fd.get('message') as string) || formData.message,
+      projectType: (fd.get('projectType') as string) || formData.projectType,
+    }
+
     try {
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(payload),
       })
 
       let data: { error?: string; success?: boolean }
