@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import Link from 'next/link'
+import Image from 'next/image'
 import Navigation from '../components/Navigation'
 import Footer from '../components/Footer'
 import AnimatedSection from '../components/AnimatedSection'
@@ -47,46 +48,6 @@ const stats = [
   { value: 500, suffix: '+', label: 'Students Trained' },
   { value: 10, suffix: 'k+', label: 'Leads Captured' },
   { value: 98, suffix: '%', label: 'Client Satisfaction' },
-]
-
-const team = [
-  {
-    name: 'Pascal Digny',
-    role: 'Founder & CEO',
-    bio: 'Refugee youth who started in Kenya and refused limits. Failing forward since day one—building a world where everyone gets access to the tech and skills that change lives.',
-    expertise: ['Full-Stack Development', 'Business Strategy', 'Growth Hacking', 'Team Leadership'],
-    image: '/team/pascal.jpg' // Placeholder
-  },
-  {
-    name: 'Technical Team',
-    role: 'Development Specialists',
-    bio: 'Developers, designers, marketers. We deliver.',
-    expertise: ['Frontend Development', 'Backend Development', 'UI/UX Design', 'Digital Marketing'],
-    image: '/team/team.jpg' // Placeholder
-  }
-]
-
-const values = [
-  {
-    title: 'Results',
-    description: 'We measure leads, jobs, revenue. Not buzzwords.',
-    icon: '📈'
-  },
-  {
-    title: 'Quality',
-    description: 'No shortcuts. Delivered right or not at all.',
-    icon: '⭐'
-  },
-  {
-    title: 'Partnership',
-    description: "We're on your team. Not a vendor.",
-    icon: '🤝'
-  },
-  {
-    title: 'Ahead',
-    description: 'We use tech that works. Today.',
-    icon: '🚀'
-  }
 ]
 
 const timeline = [
@@ -288,112 +249,69 @@ export default function AboutPage() {
         </div>
       </AnimatedSection>
 
-      {/* Our Values */}
+      {/* What Makes Us Different */}
       <AnimatedSection className="py-24 bg-surface">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">
-              Our Values
+          <div className="text-center mb-14">
+            <h2 className="font-display text-4xl md:text-5xl font-bold mb-4">
+              What Makes Us Different
             </h2>
-            <p className="text-muted text-lg">The principles that guide everything we do</p>
+            <p className="text-muted text-lg max-w-2xl mx-auto">
+              Why businesses and schools choose Digni Digital
+            </p>
           </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {values.map((value, i) => (
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mb-16">
+            {[
+              { num: '01', title: 'Human First', desc: 'AI helps your team. Doesn\'t replace them.' },
+              { num: '02', title: 'Proven', desc: '8 years. 150+ clients. 98% satisfaction.' },
+              { num: '03', title: 'Full Partnership', desc: 'Strategy. Build. Optimize. We\'re there. No handoffs.' },
+              { num: '04', title: 'ROI Focus', desc: 'We track revenue. Leads. Jobs. Not just features.' },
+            ].map((item, i) => (
               <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 30 }}
+                key={item.num}
+                initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="card p-8 text-center"
+                transition={{ delay: i * 0.08 }}
+                className="card p-6 lg:p-8 flex flex-col border-border hover:border-accent/40 transition-colors"
               >
-                <div className="text-4xl mb-4">{value.icon}</div>
-                <h3 className="font-display text-xl font-bold mb-4">{value.title}</h3>
-                <p className="text-muted text-sm leading-relaxed">{value.description}</p>
+                <div className="w-11 h-11 bg-accent/10 rounded-xl flex items-center justify-center mb-5 flex-shrink-0">
+                  <span className="text-accent font-display font-bold text-sm">{item.num}</span>
+                </div>
+                <h3 className="font-display text-lg font-bold mb-2 text-text">{item.title}</h3>
+                <p className="text-muted text-sm leading-relaxed mt-auto">{item.desc}</p>
               </motion.div>
             ))}
           </div>
-        </div>
-      </AnimatedSection>
 
-      {/* What Makes Us Different */}
-      <AnimatedSection className="py-24">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">
-              What Makes Us Different
-            </h2>
-            <p className="text-muted text-lg">Why businesses choose Digni Digital</p>
-          </div>
-          
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-8">
-              <div className="flex gap-6">
-                <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <span className="text-accent font-bold">01</span>
-                </div>
-                <div>
-                  <h3 className="font-display text-xl font-bold mb-3">Human First</h3>
-                  <p className="text-muted leading-relaxed">
-                    AI helps your team. Doesn't replace them.
-                  </p>
-                </div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="rounded-2xl border border-border bg-gradient-to-br from-accent/5 to-transparent p-8 md:p-10 text-center flex flex-col items-center"
+          >
+            <h3 className="font-display text-xl md:text-2xl font-bold mb-4 text-text">Our Promise</h3>
+            <blockquote className="text-muted text-base md:text-lg leading-relaxed mb-6 max-w-3xl mx-auto">
+              &ldquo;A better world is one where everyone is enabled, empowered, and connected—to the same technology and skills that elites get. You&apos;ll have more leads, more revenue, or more employed grads. Or we failed.&rdquo;
+            </blockquote>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <div className="relative w-24 h-24 sm:w-20 sm:h-20 rounded-full overflow-hidden flex-shrink-0 border-2 border-accent/20">
+                <Image
+                  src="/images/pascal-digny-headshot.png"
+                  alt="Pascal Digny - Founder & CEO"
+                  fill
+                  className="object-cover object-center"
+                  sizes="96px"
+                  priority
+                />
               </div>
-
-              <div className="flex gap-6">
-                <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <span className="text-accent font-bold">02</span>
-                </div>
-                <div>
-                  <h3 className="font-display text-xl font-bold mb-3">Proven</h3>
-                  <p className="text-muted leading-relaxed">
-                    8 years. 150+ clients. 98% satisfaction.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex gap-6">
-                <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <span className="text-accent font-bold">03</span>
-                </div>
-                <div>
-                  <h3 className="font-display text-xl font-bold mb-3">Full Partnership</h3>
-                  <p className="text-muted leading-relaxed">
-                    Strategy. Build. Optimize. We're there. No handoffs.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex gap-6">
-                <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <span className="text-accent font-bold">04</span>
-                </div>
-                <div>
-                  <h3 className="font-display text-xl font-bold mb-3">ROI Focus</h3>
-                  <p className="text-muted leading-relaxed">
-                    We track revenue. Leads. Jobs. Not just features.
-                  </p>
-                </div>
+              <div className="text-center">
+                <div className="font-semibold text-text">Pascal Digny</div>
+                <div className="text-sm text-muted">Founder & CEO</div>
               </div>
             </div>
-
-            <div className="card p-8 bg-gradient-to-br from-accent/5 to-success/5">
-              <h3 className="font-display text-2xl font-bold mb-6">Our Promise</h3>
-              <blockquote className="text-lg italic text-muted leading-relaxed mb-6">
-                "A better world is one where everyone is enabled, empowered, and connected—to the same technology and skills that elites get. You'll have more leads, more revenue, or more employed grads. Or we failed."
-              </blockquote>
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center">
-                  <span className="font-display font-bold text-accent">PD</span>
-                </div>
-                <div>
-                  <div className="font-semibold">Pascal Digny</div>
-                  <div className="text-sm text-muted">Founder & CEO</div>
-                </div>
-              </div>
-            </div>
-          </div>
+          </motion.div>
         </div>
       </AnimatedSection>
 
@@ -469,59 +387,6 @@ export default function AboutPage() {
                 Learn More →
               </Link>
             </motion.div>
-          </div>
-        </div>
-      </AnimatedSection>
-
-      {/* Team Section */}
-      <AnimatedSection className="py-24">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">
-              Meet Our Team
-            </h2>
-            <p className="text-muted text-lg">The people behind the growth</p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 gap-12">
-            {team.map((member, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.2 }}
-                className="card p-8"
-              >
-                <div className="flex flex-col md:flex-row gap-6">
-                  <div className="w-24 h-24 bg-accent/10 rounded-full flex items-center justify-center flex-shrink-0">
-                    <span className="font-display text-2xl font-bold text-accent">
-                      {member.name.split(' ').map(n => n[0]).join('')}
-                    </span>
-                  </div>
-                  
-                  <div className="flex-1">
-                    <h3 className="font-display text-xl font-bold mb-2">{member.name}</h3>
-                    <p className="text-accent font-medium mb-4">{member.role}</p>
-                    <p className="text-muted text-sm mb-6 leading-relaxed">{member.bio}</p>
-                    
-                    <div>
-                      <h4 className="font-semibold mb-2">Expertise</h4>
-                      <div className="flex flex-wrap gap-2">
-                        {member.expertise.map((skill, j) => (
-                          <span
-                            key={j}
-                            className="px-3 py-1 bg-surface-light rounded-full text-xs text-muted-dark"
-                          >
-                            {skill}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
           </div>
         </div>
       </AnimatedSection>
