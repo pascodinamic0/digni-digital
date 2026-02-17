@@ -332,12 +332,17 @@ export default function ContactPage() {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
                 className={`card p-6 hover:border-accent/50 transition-all duration-300 ${
-                  location.isPrimary ? 'border-accent/30 relative overflow-hidden' : ''
+                  location.isPrimary ? 'border-accent/30 relative overflow-hidden' : location.isPrimaryInRegion ? 'border-success/30 relative overflow-hidden' : ''
                 }`}
               >
                 {location.isPrimary && (
                   <div className="absolute top-0 right-0 px-3 py-1 bg-accent text-background text-xs font-semibold rounded-bl-lg">
                     Headquarters
+                  </div>
+                )}
+                {location.isPrimaryInRegion && (
+                  <div className="absolute top-0 right-0 px-3 py-1 bg-success/90 text-background text-xs font-semibold rounded-bl-lg">
+                    Main office in Africa
                   </div>
                 )}
                 
@@ -346,11 +351,8 @@ export default function ContactPage() {
                     location.isPrimary ? 'bg-accent/10' : 'bg-success/10'
                   }`}>
                     {location.region === 'North America' && '🇺🇸'}
-                    {location.region === 'Africa' && location.id === 'south-africa' && '🇿🇦'}
                     {location.region === 'Africa' && location.id === 'kenya' && '🇰🇪'}
                     {location.region === 'Africa' && location.id === 'congo-drc' && '🇨🇩'}
-                    {location.region === 'Asia-Pacific' && '🇸🇬'}
-                    {location.region === 'Middle East' && '🇦🇪'}
                   </div>
                   
                   <div className="flex-1 min-w-0">

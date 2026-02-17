@@ -290,6 +290,15 @@ function buildTranslations(): Record<Language, TranslationKeys> {
       affiliateProgram: 'Affiliate Program',
       copyright: 'All rights reserved.',
       trustedBy: 'Trusted by Businesses & Schools Worldwide',
+      newsletterTitle: 'Stay Ahead of the Curve',
+      newsletterSubtitle: 'Get exclusive insights, transformation tips, and industry trends delivered to your inbox monthly.',
+      newsletterPlaceholder: 'Enter your email',
+      subscribe: 'Subscribe',
+      newsletterThanks: 'Subscribed',
+      newsletterError: 'Something went wrong. Please try again.',
+      privacyPolicy: 'Privacy Policy',
+      termsOfService: 'Terms of Service',
+      cookiePolicy: 'Cookie Policy',
     },
   }
 
@@ -342,6 +351,15 @@ function buildTranslations(): Record<Language, TranslationKeys> {
       affiliateProgram: 'Programme d\'affiliation',
       copyright: 'Tous droits réservés.',
       trustedBy: 'Approuvé par entreprises et écoles dans le monde',
+      newsletterTitle: 'Restez en avance',
+      newsletterSubtitle: 'Insights exclusifs, conseils de transformation et tendances du secteur, une fois par mois.',
+      newsletterPlaceholder: 'Votre adresse e-mail',
+      subscribe: 'S\'abonner',
+      newsletterThanks: 'Inscrit',
+      newsletterError: 'Une erreur s\'est produite. Réessayez.',
+      privacyPolicy: 'Politique de confidentialité',
+      termsOfService: 'Conditions d\'utilisation',
+      cookiePolicy: 'Politique des cookies',
     },
   }
 
@@ -394,6 +412,15 @@ function buildTranslations(): Record<Language, TranslationKeys> {
       affiliateProgram: 'برنامج الشركاء',
       copyright: 'جميع الحقوق محفوظة.',
       trustedBy: 'موثوق من الشركات والمدارس حول العالم',
+      newsletterTitle: 'ابقَ في الصدارة',
+      newsletterSubtitle: 'رؤى حصرية ونصائح تحويلية واتجاهات القطاع إلى بريدك شهرياً.',
+      newsletterPlaceholder: 'أدخل بريدك الإلكتروني',
+      subscribe: 'اشترك',
+      newsletterThanks: 'تم الاشتراك',
+      newsletterError: 'حدث خطأ. يرجى المحاولة مرة أخرى.',
+      privacyPolicy: 'سياسة الخصوصية',
+      termsOfService: 'شروط الخدمة',
+      cookiePolicy: 'سياسة ملفات تعريف الارتباط',
     },
   }
 
@@ -414,7 +441,7 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     mission: {
       title: 'Our Mission',
       statement: 'Technology that serves everyone.',
-      description: 'Every business captures every lead. Every student graduates job-ready.',
+      description: 'We dream of a world where everyone is enabled, empowered, and connected to the technology and skills that change lives. Every business captures every lead. Every student graduates job-ready.',
       valuesTitle: 'Our Values',
       valuesSubtitle: "What We Stand For",
       humanFirst: 'Human First',
@@ -579,7 +606,7 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     mission: {
       title: 'Notre Mission',
       statement: 'Une technologie au service de tous.',
-      description: 'Chaque entreprise capture chaque prospect. Chaque étudiant obtient un emploi.',
+      description: 'Nous rêvons d\'un monde où chacun est outillé, responsabilisé et connecté aux technologies et compétences qui changent les vies. Chaque entreprise capture chaque prospect. Chaque étudiant obtient un emploi.',
       valuesTitle: 'Nos Valeurs',
       valuesSubtitle: 'Ce qui nous anime',
       humanFirst: 'L\'Humain d\'abord',

@@ -53,7 +53,7 @@ const team = [
   {
     name: 'Pascal Digny',
     role: 'Founder & CEO',
-    bio: '7+ years. Builds systems that capture leads and grow revenue.',
+    bio: 'Refugee youth who started in Kenya and refused limits. Failing forward since day one—building a world where everyone gets access to the tech and skills that change lives.',
     expertise: ['Full-Stack Development', 'Business Strategy', 'Growth Hacking', 'Team Leadership'],
     image: '/team/pascal.jpg' // Placeholder
   },
@@ -121,7 +121,7 @@ export default function AboutPage() {
               <span className="gradient-text">About Us</span>
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-muted max-w-3xl mx-auto leading-relaxed px-2">
-              Since 2019. We help businesses capture leads. We help students get jobs.
+              An American company started in Kenya by a refugee youth—driven by hunger and greatness to build a world where everyone is enabled, empowered, and connected to the technology and skills that change lives.
             </p>
           </motion.div>
         </div>
@@ -174,13 +174,13 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-6 text-muted leading-relaxed">
                 <p>
-                  Businesses were missing leads. Students were graduating unemployed. We built fixes.
+                  We are an American-registered company that started in Kenya—founded by a refugee youth who refused to accept the rules and limitations set upon him. Driven by hunger and greatness, he chose to fail forward: to keep pushing, dreaming, and building toward a better world.
                 </p>
                 <p>
-                  Founded 2019. Started with websites. Now: AI systems, graduate programs, custom software.
+                  That dream is simple and urgent: <strong className="text-foreground">everyone enabled, empowered, and connected</strong> to the same technology and skills that have long been reserved for elites and elite kids. Businesses shouldn’t lose leads because they can’t afford big systems. Students shouldn’t graduate without the skills employers hire for. We build the fixes—AI that captures every lead, curricula that make graduates job-ready, and custom software that scales with you.
                 </p>
                 <p>
-                  We don't build websites. We build systems that get you clients and students jobs.
+                  Founded 2019. Started with websites. Now: AI systems, graduate programs, custom software. We don’t just build websites—we build systems that get you clients and students jobs.
                 </p>
               </div>
             </div>
@@ -381,7 +381,7 @@ export default function AboutPage() {
             <div className="card p-8 bg-gradient-to-br from-accent/5 to-success/5">
               <h3 className="font-display text-2xl font-bold mb-6">Our Promise</h3>
               <blockquote className="text-lg italic text-muted leading-relaxed mb-6">
-                "You'll have more leads, more revenue, or more employed grads. Or we failed."
+                "A better world is one where everyone is enabled, empowered, and connected—to the same technology and skills that elites get. You'll have more leads, more revenue, or more employed grads. Or we failed."
               </blockquote>
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center">
