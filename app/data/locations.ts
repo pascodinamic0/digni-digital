@@ -24,6 +24,8 @@ export interface OfficeLocation {
   phone?: string
   timezone: string
   isPrimary?: boolean
+  /** Main office in its region (e.g. Africa); shown as badge on map and contact page */
+  isPrimaryInRegion?: boolean
   /** Google Business Profile URL; when set, used instead of coordinates-based Maps link */
   googleBusinessUrl?: string
 }
@@ -50,84 +52,11 @@ export const officeLocations: OfficeLocation[] = [
       x: 22,
       y: 35
     },
-    email: 'usa@digni-digital-llc.com',
+    email: 'hq@digni-digital-llc.com',
     phone: '+1 (307) 555-0100',
     timezone: 'MST (UTC-7)',
     isPrimary: true,
     googleBusinessUrl: 'https://share.google/esoeHJdqRK5C5hbTF'
-  },
-  {
-    id: 'south-africa',
-    name: 'South Africa',
-    country: 'South Africa',
-    city: 'Cape Town',
-    region: 'Africa',
-    address: {
-      street: '1 Waterfront Drive, V&A Waterfront',
-      city: 'Cape Town',
-      state: 'Western Cape',
-      postalCode: '8001',
-      country: 'South Africa'
-    },
-    coordinates: {
-      lat: -33.9249,
-      lng: 18.4241
-    },
-    mapPosition: {
-      x: 53,
-      y: 75
-    },
-    email: 'southafrica@digni-digital-llc.com',
-    phone: '+27 21 555 0100',
-    timezone: 'SAST (UTC+2)'
-  },
-  {
-    id: 'singapore',
-    name: 'Singapore',
-    country: 'Singapore',
-    city: 'Singapore',
-    region: 'Asia-Pacific',
-    address: {
-      street: '1 Raffles Place, #20-01',
-      city: 'Singapore',
-      postalCode: '048616',
-      country: 'Singapore'
-    },
-    coordinates: {
-      lat: 1.2840,
-      lng: 103.8515
-    },
-    mapPosition: {
-      x: 78,
-      y: 52
-    },
-    email: 'singapore@digni-digital-llc.com',
-    phone: '+65 6555 0100',
-    timezone: 'SGT (UTC+8)'
-  },
-  {
-    id: 'uae',
-    name: 'Dubai',
-    country: 'United Arab Emirates',
-    city: 'Dubai',
-    region: 'Middle East',
-    address: {
-      street: 'Dubai International Financial Centre, Gate Village',
-      city: 'Dubai',
-      postalCode: '506538',
-      country: 'United Arab Emirates'
-    },
-    coordinates: {
-      lat: 25.2048,
-      lng: 55.2708
-    },
-    mapPosition: {
-      x: 62,
-      y: 42
-    },
-    email: 'dubai@digni-digital-llc.com',
-    phone: '+971 4 555 0100',
-    timezone: 'GST (UTC+4)'
   },
   {
     id: 'kenya',
@@ -149,9 +78,10 @@ export const officeLocations: OfficeLocation[] = [
       x: 57,
       y: 52
     },
-    email: 'kenya@digni-digital-llc.com',
+    email: 'growth@digni-digital-llc.com',
     phone: '+254702593518',
-    timezone: 'EAT (UTC+3)'
+    timezone: 'EAT (UTC+3)',
+    isPrimaryInRegion: true
   },
   {
     id: 'congo-drc',
@@ -173,7 +103,7 @@ export const officeLocations: OfficeLocation[] = [
       x: 51,
       y: 55
     },
-    email: 'drc@digni-digital-llc.com',
+    email: 'growth@digni-digital-llc.com',
     phone: '+243 81 555 0100',
     timezone: 'WAT (UTC+1)'
   }

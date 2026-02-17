@@ -10,6 +10,9 @@
 **Mission Statement:**
 "To democratize access to opportunity through technology that serves humanity first."
 
+**Origin & Story:**
+Digni Digital is an American-registered company that started in Kenya, founded by a refugee youth who refused the rules and limitations set upon him. Driven by hunger and greatness, he has been failing forward ever since—dreaming of a better world where everyone is **enabled, empowered, and connected** to the same technology and skills that have long been reserved for elites and elite kids.
+
 **Vision:**
 We believe technology should serve everyone, not just those who can afford it. Every business should capture every lead, every student should graduate job ready, and every organization should have access to enterprise-level technology—regardless of size or budget.
 
