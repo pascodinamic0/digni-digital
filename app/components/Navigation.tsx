@@ -248,8 +248,7 @@ export default function Navigation() {
               <div className="flex items-center gap-2">
                 <LanguageToggler variant="full" className="flex-1" />
               </div>
-              <div className="flex items-center justify-between flex-1">
-                <span className="text-muted text-sm">{t.footer.theme}</span>
+              <div className="flex items-center justify-end flex-1">
                 <ThemeToggle />
               </div>
             </div>
