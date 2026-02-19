@@ -1,14 +1,14 @@
 'use client'
 
-import Link from 'next/link'
+import { Link } from '@/i18n/navigation'
 import ThemeToggle from './ThemeToggle'
 import { getBookingLinkProps } from '@/app/config/cta.config'
-import { useLanguage } from '@/app/context/LanguageContext'
+import { useLanguage } from '@/app/context/LocaleContext'
 import { translations } from '@/app/config/translations'
 import { downloadsConfig } from '@/app/config/downloads.config'
 
 export default function AIReceptionistFooter() {
-  const { language } = useLanguage()
+  const language = useLanguage()
   const t = translations[language]
 
   const links = {

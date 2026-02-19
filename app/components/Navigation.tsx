@@ -1,18 +1,17 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
-import { usePathname } from 'next/navigation'
 import { motion } from 'framer-motion'
-import Link from 'next/link'
+import { Link, usePathname } from '@/i18n/navigation'
 import { getBookingLinkProps } from '@/app/config/cta.config'
-import { useLanguage } from '@/app/context/LanguageContext'
+import { useLanguage } from '@/app/context/LocaleContext'
 import { translations } from '@/app/config/translations'
 import ThemeToggle from './ThemeToggle'
 import LanguageToggler from './LanguageToggler'
 
 export default function Navigation() {
   const pathname = usePathname()
-  const { language } = useLanguage()
+  const language = useLanguage()
   const t = translations[language]
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)

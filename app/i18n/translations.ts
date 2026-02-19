@@ -3,7 +3,7 @@
  * Every section, every page, every UI element.
  */
 
-export type Language = 'en' | 'fr' | 'ar'
+export type Language = 'en' | 'fr' | 'ar' | 'de' | 'es'
 
 type HomeTranslations = {
   hero: {
@@ -1153,6 +1153,8 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     en: { ...commonEn, home: homeEn, blog: blogEn, about: {}, contact: contactEn, clientJourney: clientJourneyEn },
     fr: { ...commonFr, home: homeFr, blog: blogFr, about: {}, contact: contactFr, clientJourney: clientJourneyFr },
     ar: { ...commonAr, home: homeAr, blog: blogAr, about: {}, contact: contactAr, clientJourney: clientJourneyAr },
+    de: { ...commonEn, home: homeEn, blog: blogEn, about: {}, contact: contactEn, clientJourney: clientJourneyEn },
+    es: { ...commonEn, home: homeEn, blog: blogEn, about: {}, contact: contactEn, clientJourney: clientJourneyEn },
   }
 }
 

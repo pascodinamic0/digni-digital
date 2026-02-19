@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import { Link } from '@/i18n/navigation'
 import { ctaConfig, getBookingLinkProps } from '@/app/config/cta.config'
 
 export default function SimpleFooter() {
