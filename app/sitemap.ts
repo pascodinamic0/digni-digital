@@ -1,32 +1,49 @@
 import { MetadataRoute } from 'next'
-import { allArticles } from './blog/page'
+import { allArticlesEn } from '@/lib/blog'
+import { locales } from '@/i18n/routing'
 
-// Canonical site URL for sitemap (must match the domain verified in Google Search Console)
 const baseUrl = 'https://digni-digital-llc.com'
 
+const staticPaths = [
+  '',
+  '/about',
+  '/solutions',
+  '/products',
+  '/services',
+  '/case-studies',
+  '/blog',
+  '/contact',
+  '/affiliate',
+  '/ai-receptionist',
+  '/careers',
+  '/custom-saas',
+  '/future-ready-graduate',
+  '/privacy',
+  '/terms',
+  '/cookie-policy',
+]
+
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticPages: MetadataRoute.Sitemap = [
-    { url: baseUrl, lastModified: new Date(), changeFrequency: 'weekly', priority: 1 },
-    { url: `${baseUrl}/about`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${baseUrl}/solutions`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.9 },
-    { url: `${baseUrl}/products`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.9 },
-    { url: `${baseUrl}/services`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.9 },
-    { url: `${baseUrl}/case-studies`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.8 },
-    { url: `${baseUrl}/blog`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.7 },
-    { url: `${baseUrl}/contact`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${baseUrl}/affiliate`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.6 },
-    { url: `${baseUrl}/ai-receptionist`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${baseUrl}/careers`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.6 },
-    { url: `${baseUrl}/custom-saas`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${baseUrl}/future-ready-graduate`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
-  ]
+  const entries: MetadataRoute.Sitemap = []
 
-  const blogPages: MetadataRoute.Sitemap = allArticles.map((article) => ({
-    url: `${baseUrl}/blog/${article.slug}`,
-    lastModified: new Date(),
-    changeFrequency: 'weekly' as const,
-    priority: 0.6,
-  }))
+  for (const locale of locales) {
+    for (const path of staticPaths) {
+      entries.push({
+        url: `${baseUrl}/${locale}${path}`,
+        lastModified: new Date(),
+        changeFrequency: path === '' ? 'weekly' : 'monthly',
+        priority: path === '' ? 1 : path === '/blog' ? 0.7 : 0.8,
+      })
+    }
+    for (const article of allArticlesEn) {
+      entries.push({
+        url: `${baseUrl}/${locale}/blog/${article.slug}`,
+        lastModified: new Date(),
+        changeFrequency: 'weekly' as const,
+        priority: 0.6,
+      })
+    }
+  }
 
-  return [...staticPages, ...blogPages]
+  return entries
 }

@@ -1,8 +1,8 @@
 'use client'
 
-import Link from 'next/link'
-import { useLanguage } from '../context/LanguageContext'
-import { translations } from '../config/translations'
+import { Link } from '@/i18n/navigation'
+import { useLanguage } from '@/app/context/LocaleContext'
+import { translations } from '@/app/config/translations'
 import { getBookingLinkProps } from '@/app/config/cta.config'
 import type { Language } from '@/app/i18n/translations'
 import type { BlogArticle } from '@/content/blog'
@@ -12,7 +12,7 @@ interface BlogPostContentProps {
 }
 
 export default function BlogPostContent({ articleByLang }: BlogPostContentProps) {
-  const { language } = useLanguage()
+  const language = useLanguage()
   const article = articleByLang[language] ?? articleByLang.en
   const t = translations[language].blog
   const cta = translations[language].cta

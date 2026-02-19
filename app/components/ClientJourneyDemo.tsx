@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState, useEffect } from 'react'
-import { useLanguage } from '@/app/context/LanguageContext'
+import { useLanguage } from '@/app/context/LocaleContext'
 import { translations } from '@/app/config/translations'
 
 // Animate number from 0 to value when step is active (for drop/count display)
@@ -347,7 +347,7 @@ const FUNNEL_STEP_INTERVAL_MS = 2800
 const ClientJourneyDemo = () => {
   const [activeView, setActiveView] = useState<'before' | 'after'>('before')
   const [activeFunnelStep, setActiveFunnelStep] = useState(0)
-  const { language } = useLanguage()
+  const language = useLanguage()
   const t = translations[language].clientJourney
   const channels: ChannelItem[] = t.channels.map((c) => ({ ...c, icon: CHANNEL_ICONS[c.id] ?? '📩' }))
   const brokenStages: BrokenStageItem[] = t.brokenStages.map((s, i) => ({ ...s, icon: BROKEN_STAGE_ICONS[i] }))

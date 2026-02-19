@@ -1,6 +1,6 @@
 'use client'
 
-import { useLanguage } from '@/app/context/LanguageContext'
+import { useLanguage } from '@/app/context/LocaleContext'
 import { downloadsConfig } from '@/app/config/downloads.config'
 import { translations } from '@/app/config/translations'
 
@@ -23,7 +23,7 @@ export default function DemoPresentationDownload({
   variant = 'hero',
   label,
 }: DemoPresentationDownloadProps) {
-  const { language } = useLanguage()
+  const language = useLanguage()
   const pdfs = downloadsConfig[service]
   const href = pdfs[language] ?? pdfs.en
   const flag = langFlags[language] ?? langFlags.en

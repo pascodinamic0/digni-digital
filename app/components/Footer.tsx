@@ -1,10 +1,10 @@
 'use client'
 
 import { useState } from 'react'
-import Link from 'next/link'
+import { Link } from '@/i18n/navigation'
 import { getBookingLinkProps } from '@/app/config/cta.config'
 import { downloadsConfig } from '@/app/config/downloads.config'
-import { useLanguage } from '@/app/context/LanguageContext'
+import { useLanguage } from '@/app/context/LocaleContext'
 import { translations } from '@/app/config/translations'
 import { officeLocations, getPrimaryLocation } from '@/app/data/locations'
 
@@ -14,7 +14,7 @@ const SOCIAL_LINKS = [
 ] as const
 
 export default function Footer() {
-  const { language } = useLanguage()
+  const language = useLanguage()
   const t = translations[language]
   const primary = getPrimaryLocation()
   const [email, setEmail] = useState('')

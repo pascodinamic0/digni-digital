@@ -1,8 +1,8 @@
 /**
  * Centralized CTA (Call-to-Action) Configuration
- * 
- * Update the booking URL and button text in ONE place,
- * and changes will apply across the entire website.
+ *
+ * For region-specific booking URL, promo codes, and contact info,
+ * use getRegionalConfig(locale) from '@/lib/getRegionalConfig' (e.g. with useLocale() from LocaleContext).
  */
 
 export const ctaConfig = {

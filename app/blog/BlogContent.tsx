@@ -2,12 +2,12 @@
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import Link from 'next/link'
-import Navigation from '../components/Navigation'
-import Footer from '../components/Footer'
+import { Link } from '@/i18n/navigation'
+import Navigation from '@/app/components/Navigation'
+import Footer from '@/app/components/Footer'
 import { getBookingLinkProps } from '@/app/config/cta.config'
-import { useLanguage } from '../context/LanguageContext'
-import { translations } from '../config/translations'
+import { useLanguage } from '@/app/context/LocaleContext'
+import { translations } from '@/app/config/translations'
 import type { Language } from '@/app/i18n/translations'
 import type { BlogArticle } from '@/content/blog'
 
@@ -18,7 +18,7 @@ interface BlogContentProps {
 const ALL_KEY = '__ALL__'
 
 export default function BlogContent({ articlesByLang }: BlogContentProps) {
-  const { language } = useLanguage()
+  const language = useLanguage()
   const articles = articlesByLang[language] ?? articlesByLang.en
   const t = translations[language].blog
   const [selectedCategory, setSelectedCategory] = useState(ALL_KEY)
