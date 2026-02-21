@@ -1015,7 +1015,7 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     ],
     methods: [
       { title: 'Book a Call', description: '30-min free. We discuss. You decide.', action: 'Book Now' },
-      { title: 'Email', description: 'Questions? Drop a line.', action: 'digni.digital.llc@gmail.com' },
+      { title: 'Email', description: 'Questions? Drop a line.', action: 'support@digni-digital-llc.com' },
       { title: 'WhatsApp', description: 'Quick reply. Fast.', action: 'Message Us' },
       { title: 'LinkedIn', description: 'Connect. Network.', action: 'Connect' },
     ],
@@ -1049,7 +1049,7 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     ],
     methods: [
       { title: 'Réserver un appel', description: '30 min gratuites. On discute. Vous décidez.', action: 'Réserver' },
-      { title: 'E-mail', description: 'Des questions ? Écrivez-nous.', action: 'digni.digital.llc@gmail.com' },
+      { title: 'E-mail', description: 'Des questions ? Écrivez-nous.', action: 'support@digni-digital-llc.com' },
       { title: 'WhatsApp', description: 'Réponse rapide.', action: 'Nous contacter' },
       { title: 'LinkedIn', description: 'Connectons-nous.', action: 'Connecter' },
     ],
@@ -1083,7 +1083,7 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     ],
     methods: [
       { title: 'حجز مكالمة', description: '30 دقيقة مجانية. نناقش. أنت تقرر.', action: 'احجز الآن' },
-      { title: 'البريد', description: 'أسئلة؟ راسلنا.', action: 'digni.digital.llc@gmail.com' },
+      { title: 'البريد', description: 'أسئلة؟ راسلنا.', action: 'support@digni-digital-llc.com' },
       { title: 'واتساب', description: 'رد سريع.', action: 'راسلنا' },
       { title: 'لينكد إن', description: 'تواصل. شبكة.', action: 'تواصل' },
     ],

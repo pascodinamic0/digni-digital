@@ -3,7 +3,7 @@ import { Resend } from 'resend'
 
 const RESEND_API_KEY = process.env.RESEND_API_KEY
 
-const CONTACT_EMAIL = process.env.CONTACT_EMAIL || 'digni.digital.llc@gmail.com'
+const CONTACT_EMAIL = process.env.CONTACT_EMAIL || 'support@digni-digital-llc.com'
 const FROM_EMAIL = process.env.RESEND_FROM_EMAIL || 'onboarding@resend.dev'
 
 const PROJECT_TYPE_LABELS: Record<string, string> = {

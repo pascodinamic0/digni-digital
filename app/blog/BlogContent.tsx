@@ -53,7 +53,7 @@ export default function BlogContent({ articlesByLang }: BlogContentProps) {
       {/* Simple Hero Section */}
       <section className="pt-24 pb-12 bg-surface">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center">
+          <div className="text-center pt-20">
             <h1 className="font-display text-4xl md:text-5xl font-bold mb-6">
               {t.heroTitle} <span className="text-accent">{t.heroSubtitle}</span>
             </h1>
