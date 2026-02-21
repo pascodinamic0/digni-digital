@@ -90,7 +90,7 @@ export const officeLocations: OfficeLocation[] = [
     city: 'Kinshasa',
     region: 'Africa',
     address: {
-      street: 'Boulevard du 30 Juin, Gombe',
+      street: 'Immeuble Crown Towers, Sur Batetela, Floor 15, Office 1502',
       city: 'Kinshasa',
       postalCode: '',
       country: 'Democratic Republic of the Congo'
@@ -104,8 +104,9 @@ export const officeLocations: OfficeLocation[] = [
       y: 55
     },
     email: 'growth@digni-digital-llc.com',
-    phone: '+243 81 555 0100',
-    timezone: 'WAT (UTC+1)'
+    phone: '+243 822 378 097',
+    timezone: 'WAT (UTC+1)',
+    googleBusinessUrl: 'https://share.google/TduwbXrcnQSjCaENN'
   }
 ]
 
