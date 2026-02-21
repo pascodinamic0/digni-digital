@@ -102,7 +102,7 @@ function Hero() {
   }, [])
 
   return (
-    <section className="relative isolate min-h-screen flex items-center pt-16 sm:pt-20 overflow-hidden bg-background">
+    <section className="home-hero relative isolate min-h-screen flex items-center pt-16 sm:pt-20 overflow-hidden bg-background">
       {/* Video Background */}
       <video
         ref={videoRef}
