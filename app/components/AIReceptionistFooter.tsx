@@ -5,7 +5,7 @@ import ThemeToggle from './ThemeToggle'
 import { getBookingLinkProps } from '@/app/config/cta.config'
 import { useLanguage } from '@/app/context/LocaleContext'
 import { translations } from '@/app/config/translations'
-import { downloadsConfig } from '@/app/config/downloads.config'
+import { downloadsConfig, getDownloadUrl } from '@/app/config/downloads.config'
 
 export default function AIReceptionistFooter() {
   const language = useLanguage()
@@ -20,8 +20,8 @@ export default function AIReceptionistFooter() {
     resources: [
       { name: t.nav.caseStudies, href: '/case-studies' },
       { name: t.nav.articles, href: '/blog' },
-      { name: t.footer.futureReadyDemo, href: downloadsConfig.futureReadyGraduate[language] ?? downloadsConfig.futureReadyGraduate.en },
-      { name: t.footer.aiEmployeeDemo, href: downloadsConfig.aiEmployee[language] ?? downloadsConfig.aiEmployee.en },
+      { name: t.footer.futureReadyDemo, href: getDownloadUrl(downloadsConfig.futureReadyGraduate, language) },
+      { name: t.footer.aiEmployeeDemo, href: getDownloadUrl(downloadsConfig.aiEmployee, language) },
       { name: t.footer.ourMission, href: '/#our-mission' },
       { name: t.footer.whatWeFightFor, href: '/#what-were-fighting-for' },
     ],
