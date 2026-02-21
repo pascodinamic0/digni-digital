@@ -18,6 +18,17 @@
 
 export type DownloadLanguage = 'en' | 'fr' | 'ar'
 
+/** Supported locales for PDF downloads (de/es fall back to en) */
+const downloadLocales: DownloadLanguage[] = ['en', 'fr', 'ar']
+
+export function getDownloadUrl(
+  config: Record<DownloadLanguage, string>,
+  language: string
+): string {
+  const lang = downloadLocales.includes(language as DownloadLanguage) ? (language as DownloadLanguage) : 'en'
+  return config[lang] ?? config.en
+}
+
 export const downloadsConfig = {
   futureReadyGraduate: {
     en: '/Digni%20Digital%20-%20Digni%20Digital%20Literacy%20Program.pdf',

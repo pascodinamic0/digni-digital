@@ -1,7 +1,7 @@
 'use client'
 
 import { useLanguage } from '@/app/context/LocaleContext'
-import { downloadsConfig } from '@/app/config/downloads.config'
+import { downloadsConfig, getDownloadUrl } from '@/app/config/downloads.config'
 import { translations } from '@/app/config/translations'
 
 type Service = 'futureReadyGraduate' | 'aiEmployee'
@@ -25,7 +25,7 @@ export default function DemoPresentationDownload({
 }: DemoPresentationDownloadProps) {
   const language = useLanguage()
   const pdfs = downloadsConfig[service]
-  const href = pdfs[language] ?? pdfs.en
+  const href = getDownloadUrl(pdfs, language)
   const flag = langFlags[language] ?? langFlags.en
   const displayLabel = label ?? translations[language].download.demoPresentation
 
