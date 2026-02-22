@@ -49,8 +49,8 @@ const services = [
     outcomes: ['85% graduate employment rate', 'Direct employer partnerships', 'Real world skill development']
   },
   {
-    id: 'custom-saas',
-    title: 'Agentic SaaS Development',
+    id: 'agentic-softwares',
+    title: 'Agentic Softwares Development',
     subtitle: 'AI-Native Software That Works Autonomously',
     description: 'Software with agentic DNA: perceives, reasons, acts. Built for autonomy.',
     features: [
@@ -63,7 +63,7 @@ const services = [
     ],
     technologies: ['Next.js', 'LangChain', 'OpenAI', 'PostgreSQL', 'AWS'],
     timeline: '8-16 weeks',
-    link: '/custom-saas',
+    link: '/agentic-softwares',
     icon: '⚙️',
     color: 'info',
     outcomes: ['Autonomous agents', 'AI-native architecture', 'Intelligent workflows']
@@ -93,7 +93,7 @@ export default function ServicesPage() {
               <span className="gradient-text">Drive Real Impact</span>
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-muted max-w-3xl mx-auto leading-relaxed px-2">
-              AI systems. Graduate programs. Agentic SaaS. Results from day one.
+              AI systems. Graduate programs. Agentic Softwares. Results from day one.
             </p>
           </motion.div>
         </div>

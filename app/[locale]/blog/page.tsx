@@ -6,7 +6,7 @@ import { allArticlesEn } from '@/lib/blog'
 
 const blogMetaByLang: Record<string, { title: string; description: string }> = {
   en: {
-    title: 'AI Employee Systems, Digni Digital Literacy & Agentic SaaS | Digni Digital Blog',
+    title: 'AI Employee Systems, Digni Digital Literacy & Agentic Softwares | Digni Digital Blog',
     description: 'Expert insights on AI employee systems for growing businesses, Digni Digital Literacy program for private high schools, and custom SaaS development solutions.',
   },
   fr: {

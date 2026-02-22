@@ -149,7 +149,7 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
       <ol>
         <li><strong>Génération et qualification de leads</strong> : les employés IA et <a href="/ai-receptionist">réceptionnistes IA</a> capturent et qualifient les leads 24h/24. Résultat : plus d'opportunités, réponse plus rapide.</li>
         <li><strong>Automatisation des processus</strong> : automatiser devis, rendez-vous et relances pour que l'équipe se concentre sur la conclusion des ventes.</li>
-        <li><strong>Web et SaaS</strong> : une présence <a href="/custom-saas">web ou SaaS sur mesure</a> professionnelle renforce la confiance et transforme les visiteurs en leads.</li>
+        <li><strong>Web et SaaS</strong> : une présence <a href="/agentic-softwares">web ou SaaS sur mesure</a> professionnelle renforce la confiance et transforme les visiteurs en leads.</li>
       </ol>
 
       <h3>ROI mesurable</h3>
@@ -181,7 +181,7 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
         <li>Qualification automatique (budget, délai, besoin) pour que les ventes se concentrent sur les bons prospects.</li>
         <li>Prise de rendez-vous et suivi intégrés à votre calendrier et CRM.</li>
       </ul>
-      <p>Nos solutions de <a href="/ai-receptionist">réceptionniste IA et qualification de leads</a> sont conçues pour cela. Combinez-les à une présence web solide (<a href="/custom-saas">sites et SaaS sur mesure</a>) pour un impact maximum.</p>
+      <p>Nos solutions de <a href="/ai-receptionist">réceptionniste IA et qualification de leads</a> sont conçues pour cela. Combinez-les à une présence web solide (<a href="/agentic-softwares">sites et SaaS sur mesure</a>) pour un impact maximum.</p>
 
       <hr>
       <p><em><a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Réservez votre stratégie call gratuite</a> pour booster votre business development avec l'IA.</em></p>
@@ -210,7 +210,7 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
         <li>Design mobile-first (essentiel en RDC et pour le SEO local).</li>
         <li>Chargement rapide et navigation simple pour que les visiteurs convertissent au lieu de quitter.</li>
       </ul>
-      <p>Nous construisons des <a href="/custom-saas">sites et applications web sur mesure</a> qui s'intègrent à notre <a href="/ai-receptionist">réceptionniste IA</a> pour que chaque visite puisse devenir un lead qualifié ou un rendez-vous réservé.</p>
+      <p>Nous construisons des <a href="/agentic-softwares">sites et applications web sur mesure</a> qui s'intègrent à notre <a href="/ai-receptionist">réceptionniste IA</a> pour que chaque visite puisse devenir un lead qualifié ou un rendez-vous réservé.</p>
 
       <hr>
       <p><em><a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Réservez votre stratégie call gratuite</a> pour concevoir votre site générateur de leads.</em></p>
@@ -238,7 +238,7 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
         <li>Vous avez besoin d'intégrations profondes avec vos systèmes existants (CRM, facturation, etc.).</li>
         <li>Vous voulez posséder le code et les données sur le long terme.</li>
       </ul>
-      <p>Digni Digital conçoit des <a href="/custom-saas">SaaS et applications web sur mesure</a> de l'idée au déploiement—y compris des outils voix-vers-proposition comme ProposalAgent—pour que vous ayez une solution pensée pour vous, pas adaptée à partir d'un modèle.</p>
+      <p>Digni Digital conçoit des <a href="/agentic-softwares">SaaS et applications web sur mesure</a> de l'idée au déploiement—y compris des outils voix-vers-proposition comme ProposalAgent—pour que vous ayez une solution pensée pour vous, pas adaptée à partir d'un modèle.</p>
 
       <hr>
       <p><em><a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Réservez votre stratégie call gratuite</a> pour parler de votre projet web ou SaaS sur mesure.</em></p>
@@ -258,7 +258,7 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
     content: `
       <h2>SaaS personnalisé vs solutions prêtes à l'emploi : Le choix qui fait la différence pour les PME africaines et françaises</h2>
       
-      <p><strong>SaaS personnalisé</strong> vs <strong>solutions prêtes à l'emploi</strong> est une décision stratégique : le sur mesure apporte l'adéquation et la propriété ; le prêt-à-l'emploi apporte la rapidité et un coût initial plus bas. Pour les PME africaines et françaises, le bon choix dépend de l'unicité des processus, du budget et des plans de croissance. Nous vous aidons à décider et, quand le sur mesure l'emporte, à livrer des <a href="/custom-saas">solutions scalables dont vous êtes pleinement propriétaire</a>.</p>
+      <p><strong>SaaS personnalisé</strong> vs <strong>solutions prêtes à l'emploi</strong> est une décision stratégique : le sur mesure apporte l'adéquation et la propriété ; le prêt-à-l'emploi apporte la rapidité et un coût initial plus bas. Pour les PME africaines et françaises, le bon choix dépend de l'unicité des processus, du budget et des plans de croissance. Nous vous aidons à décider et, quand le sur mesure l'emporte, à livrer des <a href="/agentic-softwares">solutions scalables dont vous êtes pleinement propriétaire</a>.</p>
 
       <h3>Comparaison rapide</h3>
       <p>Sur mesure : workflows sur mesure, pleine propriété, investissement initial plus élevé. Prêt-à-l'emploi : démarrage rapide, coût d'abonnement, limites et lock-in possibles. Beaucoup de nos clients ont un besoin clair (ex. génération de propositions, portail client) que les outils génériques ne couvrent pas—ils choisissent le sur mesure et ne reviennent pas en arrière.</p>
@@ -286,7 +286,7 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
       <h3>Trois piliers de la transformation</h3>
       <ol>
         <li><strong>Employés IA et automatisation</strong> : <a href="/ai-receptionist">réceptionnistes IA</a> et agents qui captent et qualifient les leads 24h/24, en français, pour Kinshasa et la région.</li>
-        <li><strong>Web et SaaS</strong> : <a href="/custom-saas">développement web et SaaS sur mesure</a> pour que vous soyez propriétaire de vos outils et scaliez à votre rythme.</li>
+        <li><strong>Web et SaaS</strong> : <a href="/agentic-softwares">développement web et SaaS sur mesure</a> pour que vous soyez propriétaire de vos outils et scaliez à votre rythme.</li>
         <li><strong>Croissance et stratégie</strong> : génération de leads, stratégie digitale et ROI mesurable pour que la transformation se traduise en revenus.</li>
       </ol>
       <p>Nous sommes présents à Kinshasa depuis 2019 et servons plus de 150 clients sur quatre continents—avec une base solide en RDC et une portée internationale. Nos valeurs : IA human-first, accès égal pour les PME, partenariat durable.</p>
@@ -338,7 +338,7 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
       <p>Les agents IA de codage et l'IA conversationnelle (Claude, Grok et l'écosystème des <strong>agents IA</strong>) redéfinissent le travail. Une personne avec l'IA peut produire ce que 10 ou 100 faisaient auparavant. L'Afrique francophone—RDC, Sénégal, Côte d'Ivoire—ne peut pas se permettre d'attendre : l'écart entre ceux qui adoptent et les autres se creusera. Cet article est la version française de notre post « Claude Code & AI Agents Africa », avec un focus <strong>Afrique francophone</strong> et sur la façon dont Digni Digital aide les PME et les institutions à adopter l'IA de manière responsable.</p>
 
       <h3>Ce qui est en jeu</h3>
-      <p>Le Code Numérique, ADIS Kinshasa et des rapports comme MicroSave/Malabar montrent que les MPME en RDC attendent des gains de productivité grâce à l'automatisation mais font face à des barrières internet et compétences. La réponse n'est pas d'attendre mais d'adopter des solutions accessibles et en français : <a href="/ai-receptionist">réceptionnistes IA</a>, <a href="/custom-saas">web et SaaS sur mesure</a>, et services de croissance adaptés à votre contexte.</p>
+      <p>Le Code Numérique, ADIS Kinshasa et des rapports comme MicroSave/Malabar montrent que les MPME en RDC attendent des gains de productivité grâce à l'automatisation mais font face à des barrières internet et compétences. La réponse n'est pas d'attendre mais d'adopter des solutions accessibles et en français : <a href="/ai-receptionist">réceptionnistes IA</a>, <a href="/agentic-softwares">web et SaaS sur mesure</a>, et services de croissance adaptés à votre contexte.</p>
 
       <h3>Comment nous aidons</h3>
       <p>Digni Digital a été fondée à Kinshasa en 2019. Nous servons plus de 150 clients sur quatre continents avec une base solide en RDC. Nous apportons une IA human-first, un accompagnement local et un ROI mesurable—pour que l'Afrique francophone n'ait pas à choisir entre rester en retard et miser sur des solutions inadaptées.</p>
@@ -371,7 +371,7 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
       </ul>
 
       <h3>France, RDC et Afrique</h3>
-      <p>Fort volume de recherche en France sur « agents IA », « automatisation PME », « transformation numérique ». En RDC, le français domine ; l'accompagnement local et le design mobile-first sont essentiels. Digni Digital fait le lien : nous aidons les PME francophones à adopter des <a href="/ai-receptionist">employés IA</a> et du <a href="/custom-saas">SaaS sur mesure</a> avec un ROI mesurable et une présence locale.</p>
+      <p>Fort volume de recherche en France sur « agents IA », « automatisation PME », « transformation numérique ». En RDC, le français domine ; l'accompagnement local et le design mobile-first sont essentiels. Digni Digital fait le lien : nous aidons les PME francophones à adopter des <a href="/ai-receptionist">employés IA</a> et du <a href="/agentic-softwares">SaaS sur mesure</a> avec un ROI mesurable et une présence locale.</p>
 
       <h3>Prochaines étapes</h3>
       <p>Auditez vos tâches à fort volume, choisissez un pilote (ex. capture de leads ou service client), et alignez-vous avec un partenaire qui apporte E-E-A-T et de vrais cas clients. Nous vous invitons à commencer par un call stratégie gratuit.</p>

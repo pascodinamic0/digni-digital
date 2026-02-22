@@ -90,15 +90,15 @@ type HomeTranslations = {
     futureReadyOutcome4: string
     futureReadyPrimaryCta: string
     futureReadySecondaryCta: string
-    customSaaSTitle: string
-    customSaaSDesc: string
-    customSaaSApproach: string
-    customSaaSOutcome1: string
-    customSaaSOutcome2: string
-    customSaaSOutcome3: string
-    customSaaSOutcome4: string
-    customSaaSPrimaryCta: string
-    customSaaSSecondaryCta: string
+    agenticSoftwaresTitle: string
+    agenticSoftwaresDesc: string
+    agenticSoftwaresApproach: string
+    agenticSoftwaresOutcome1: string
+    agenticSoftwaresOutcome2: string
+    agenticSoftwaresOutcome3: string
+    agenticSoftwaresOutcome4: string
+    agenticSoftwaresPrimaryCta: string
+    agenticSoftwaresSecondaryCta: string
     notSureTitle: string
     notSureSubtitle: string
     whatWeDoDescription: string
@@ -253,8 +253,8 @@ function buildTranslations(): Record<Language, TranslationKeys> {
       aiEmployeeDesc: 'Never miss a lead with 24/7 AI-powered employee',
       futureReadyGraduate: 'Digni Digital Literacy',
       futureReadyGraduateDesc: 'Transform students into job ready professionals',
-      customSaaS: 'Agentic SaaS',
-      customSaaSDesc: 'AI-native software that perceives, reasons, and acts autonomously',
+      agenticSoftwares: 'Agentic Softwares',
+      agenticSoftwaresDesc: 'AI-native software that perceives, reasons, and acts autonomously',
     },
     cta: {
       getStarted: 'Get Started',
@@ -314,8 +314,8 @@ function buildTranslations(): Record<Language, TranslationKeys> {
       aiEmployeeDesc: 'Ne manquez aucun prospect avec un employé IA 24/7',
       futureReadyGraduate: 'Digni Digital Literacy',
       futureReadyGraduateDesc: 'Transformez les étudiants en professionnels prêts pour l\'emploi',
-      customSaaS: 'Agentic SaaS',
-      customSaaSDesc: 'Logiciels IA natifs qui perçoivent, raisonnent et agissent de façon autonome',
+      agenticSoftwares: 'Agentic Softwares',
+      agenticSoftwaresDesc: 'Logiciels IA natifs qui perçoivent, raisonnent et agissent de façon autonome',
     },
     cta: {
       getStarted: 'Commencer',
@@ -375,8 +375,8 @@ function buildTranslations(): Record<Language, TranslationKeys> {
       aiEmployeeDesc: 'لا تفوت أي عميل محتمل مع موظف ذكاء اصطناعي يعمل 24/7',
       futureReadyGraduate: 'Digni Digital Literacy',
       futureReadyGraduateDesc: 'حول الطلاب إلى محترفين جاهزين للعمل',
-      customSaaS: 'Agentic SaaS',
-      customSaaSDesc: 'برمجيات ذكاء اصطناعي أصيلة تدرك وتفكّر وتعمل بذاتها',
+      agenticSoftwares: 'Agentic Softwares',
+      agenticSoftwaresDesc: 'برمجيات ذكاء اصطناعي أصيلة تدرك وتفكّر وتعمل بذاتها',
     },
     cta: {
       getStarted: 'ابدأ الآن',
@@ -509,15 +509,15 @@ function buildTranslations(): Record<Language, TranslationKeys> {
       futureReadyOutcome4: 'Measurable ROI',
       futureReadyPrimaryCta: 'View Program Details',
       futureReadySecondaryCta: 'Schedule Consultation',
-      customSaaSTitle: 'Agentic SaaS',
-      customSaaSDesc: 'AI-native software that perceives, reasons, and acts autonomously.',
-      customSaaSApproach: 'We build software with agentic DNA: autonomous workflows, intelligent automation.',
-      customSaaSOutcome1: 'Autonomous agents',
-      customSaaSOutcome2: 'AI-native architecture',
-      customSaaSOutcome3: 'Intelligent workflows',
-      customSaaSOutcome4: 'You own it',
-      customSaaSPrimaryCta: 'Explore Process',
-      customSaaSSecondaryCta: 'Discuss Your Project',
+      agenticSoftwaresTitle: 'Agentic Softwares',
+      agenticSoftwaresDesc: 'AI-native software that perceives, reasons, and acts autonomously.',
+      agenticSoftwaresApproach: 'We build software with agentic DNA: autonomous workflows, intelligent automation.',
+      agenticSoftwaresOutcome1: 'Autonomous agents',
+      agenticSoftwaresOutcome2: 'AI-native architecture',
+      agenticSoftwaresOutcome3: 'Intelligent workflows',
+      agenticSoftwaresOutcome4: 'You own it',
+      agenticSoftwaresPrimaryCta: 'Explore Process',
+      agenticSoftwaresSecondaryCta: 'Discuss Your Project',
       notSureTitle: 'Not Sure Which Service You Need?',
       notSureSubtitle: "Tell us your problem. We'll find the fix.",
       whatWeDoDescription: 'Each service fixes a real problem. Impact, not buzzwords.',
@@ -674,15 +674,15 @@ function buildTranslations(): Record<Language, TranslationKeys> {
       futureReadyOutcome4: 'ROI mesurable',
       futureReadyPrimaryCta: 'Détails du programme',
       futureReadySecondaryCta: 'Planifier une consultation',
-      customSaaSTitle: 'Agentic SaaS',
-      customSaaSDesc: 'Logiciels IA natifs qui perçoivent, raisonnent et agissent de façon autonome.',
-      customSaaSApproach: 'Nous construisons des logiciels à ADN agentique : workflows autonomes, automatisation intelligente.',
-      customSaaSOutcome1: 'Agents autonomes',
-      customSaaSOutcome2: 'Architecture IA native',
-      customSaaSOutcome3: 'Workflows intelligents',
-      customSaaSOutcome4: 'Vous en êtes propriétaire',
-      customSaaSPrimaryCta: 'Explorer le processus',
-      customSaaSSecondaryCta: 'Discuter de votre projet',
+      agenticSoftwaresTitle: 'Agentic Softwares',
+      agenticSoftwaresDesc: 'Logiciels IA natifs qui perçoivent, raisonnent et agissent de façon autonome.',
+      agenticSoftwaresApproach: 'Nous construisons des logiciels à ADN agentique : workflows autonomes, automatisation intelligente.',
+      agenticSoftwaresOutcome1: 'Agents autonomes',
+      agenticSoftwaresOutcome2: 'Architecture IA native',
+      agenticSoftwaresOutcome3: 'Workflows intelligents',
+      agenticSoftwaresOutcome4: 'Vous en êtes propriétaire',
+      agenticSoftwaresPrimaryCta: 'Explorer le processus',
+      agenticSoftwaresSecondaryCta: 'Discuter de votre projet',
       notSureTitle: 'Pas sûr du service qu\'il vous faut ?',
       notSureSubtitle: 'Dites-nous votre problème. Nous trouverons la solution.',
       whatWeDoDescription: 'Chaque service résout un vrai problème. Impact, pas de buzzwords.',
@@ -838,15 +838,15 @@ function buildTranslations(): Record<Language, TranslationKeys> {
       futureReadyOutcome4: 'عائد استثمار قابل للقياس',
       futureReadyPrimaryCta: 'تفاصيل البرنامج',
       futureReadySecondaryCta: 'جدولة استشارة',
-      customSaaSTitle: 'Agentic SaaS',
-      customSaaSDesc: 'برمجيات ذكاء اصطناعي أصيلة تدرك وتفكّر وتعمل بذاتها.',
-      customSaaSApproach: 'نبني برمجيات بجينات وكيلية: سير عمل مستقل، أتمتة ذكية.',
-      customSaaSOutcome1: 'وكلاء مستقلون',
-      customSaaSOutcome2: 'بنية IA أصلية',
-      customSaaSOutcome3: 'سير عمل ذكي',
-      customSaaSOutcome4: 'أنت تملكه',
-      customSaaSPrimaryCta: 'اكتشف العملية',
-      customSaaSSecondaryCta: 'ناقش مشروعك',
+      agenticSoftwaresTitle: 'Agentic Softwares',
+      agenticSoftwaresDesc: 'برمجيات ذكاء اصطناعي أصيلة تدرك وتفكّر وتعمل بذاتها.',
+      agenticSoftwaresApproach: 'نبني برمجيات بجينات وكيلية: سير عمل مستقل، أتمتة ذكية.',
+      agenticSoftwaresOutcome1: 'وكلاء مستقلون',
+      agenticSoftwaresOutcome2: 'بنية IA أصلية',
+      agenticSoftwaresOutcome3: 'سير عمل ذكي',
+      agenticSoftwaresOutcome4: 'أنت تملكه',
+      agenticSoftwaresPrimaryCta: 'اكتشف العملية',
+      agenticSoftwaresSecondaryCta: 'ناقش مشروعك',
       notSureTitle: 'لست متأكداً من الخدمة التي تحتاجها؟',
       notSureSubtitle: 'أخبرنا بمشكلتك. نجد الحل.',
       whatWeDoDescription: 'كل خدمة تحل مشكلة حقيقية. أثر، لا كلمات جوفاء.',
@@ -1011,7 +1011,7 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     projectTypes: [
       { value: 'ai-employee', label: 'AI Employee' },
       { value: 'future-ready-graduate', label: 'Digni Digital Literacy' },
-      { value: 'custom-saas', label: 'Agentic SaaS' },
+      { value: 'agentic-softwares', label: 'Agentic Softwares' },
     ],
     methods: [
       { title: 'Book a Call', description: '30-min free. We discuss. You decide.', action: 'Book Now' },
@@ -1020,7 +1020,7 @@ function buildTranslations(): Record<Language, TranslationKeys> {
       { title: 'LinkedIn', description: 'Connect. Network.', action: 'Connect' },
     ],
     faqs: [
-      { question: 'How long does a project take?', answer: 'Websites: 2-4 weeks. Agentic SaaS: 8-16 weeks. We give you a timeline in our call.' },
+      { question: 'How long does a project take?', answer: 'Websites: 2-4 weeks. Agentic Softwares: 8-16 weeks. We give you a timeline in our call.' },
       { question: 'Do you work outside Africa?', answer: 'Yes. Global clients. We work your time zone.' },
       { question: "What's in the consultation?", answer: 'Business review. Tech audit. Strategy. 30 min. Free. No obligation.' },
       { question: 'Ongoing support?', answer: 'Yes. Maintenance, hosting, optimization. We stay with you.' },
@@ -1045,7 +1045,7 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     projectTypes: [
       { value: 'ai-employee', label: 'Employé IA' },
       { value: 'future-ready-graduate', label: 'Digni Digital Literacy' },
-      { value: 'custom-saas', label: 'Agentic SaaS' },
+      { value: 'agentic-softwares', label: 'Agentic Softwares' },
     ],
     methods: [
       { title: 'Réserver un appel', description: '30 min gratuites. On discute. Vous décidez.', action: 'Réserver' },
@@ -1054,7 +1054,7 @@ function buildTranslations(): Record<Language, TranslationKeys> {
       { title: 'LinkedIn', description: 'Connectons-nous.', action: 'Connecter' },
     ],
     faqs: [
-      { question: 'Combien de temps dure un projet ?', answer: 'Sites web : 2-4 semaines. Agentic SaaS : 8-16 semaines. Nous vous donnons un délai lors de l\'appel.' },
+      { question: 'Combien de temps dure un projet ?', answer: 'Sites web : 2-4 semaines. Agentic Softwares : 8-16 semaines. Nous vous donnons un délai lors de l\'appel.' },
       { question: 'Travaillez-vous en dehors de l\'Afrique ?', answer: 'Oui. Clients internationaux. Nous nous adaptons à votre fuseau.' },
       { question: 'Que comprend la consultation ?', answer: 'Revue activité, audit tech, stratégie. 30 min. Gratuit. Sans engagement.' },
       { question: 'Support continu ?', answer: 'Oui. Maintenance, hébergement, optimisation. Nous restons à vos côtés.' },
@@ -1079,7 +1079,7 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     projectTypes: [
       { value: 'ai-employee', label: 'الموظف الذكي' },
       { value: 'future-ready-graduate', label: 'Digni Digital Literacy' },
-      { value: 'custom-saas', label: 'Agentic SaaS' },
+      { value: 'agentic-softwares', label: 'Agentic Softwares' },
     ],
     methods: [
       { title: 'حجز مكالمة', description: '30 دقيقة مجانية. نناقش. أنت تقرر.', action: 'احجز الآن' },
@@ -1088,7 +1088,7 @@ function buildTranslations(): Record<Language, TranslationKeys> {
       { title: 'لينكد إن', description: 'تواصل. شبكة.', action: 'تواصل' },
     ],
     faqs: [
-      { question: 'كم تستغرق المشاريع؟', answer: 'المواقع: 2-4 أسابيع. Agentic SaaS: 8-16 أسبوعاً. نعطيك جدولاً في المكالمة.' },
+      { question: 'كم تستغرق المشاريع؟', answer: 'المواقع: 2-4 أسابيع. Agentic Softwares: 8-16 أسبوعاً. نعطيك جدولاً في المكالمة.' },
       { question: 'هل تعملون خارج أفريقيا؟', answer: 'نعم. عملاء عالميون. نعمل وفق منطقتكم الزمنية.' },
       { question: 'ماذا تتضمن الاستشارة؟', answer: 'مراجعة أعمال. تدقيق تقني. استراتيجية. 30 دقيقة. مجانية. بدون التزام.' },
       { question: 'دعم مستمر؟', answer: 'نعم. صيانة، استضافة، تحسين. نبقى معك.' },

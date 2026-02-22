@@ -3470,7 +3470,7 @@ const remainingArticles: BlogArticle[] = [
       <ol>
         <li><strong>Lead generation and qualification</strong>: AI employees and <a href="/ai-receptionist">AI receptionists</a> capture and qualify leads 24/7. Result: more opportunities, faster response.</li>
         <li><strong>Process automation</strong>: Automate quotes, scheduling, and follow-ups so your team focuses on closing deals.</li>
-        <li><strong>Web and SaaS</strong>: A professional <a href="/custom-saas">custom web or SaaS</a> presence builds trust and converts visitors into leads.</li>
+        <li><strong>Web and SaaS</strong>: A professional <a href="/agentic-softwares">custom web or SaaS</a> presence builds trust and converts visitors into leads.</li>
       </ol>
 
       <h3>Measurable ROI</h3>
@@ -3502,7 +3502,7 @@ const remainingArticles: BlogArticle[] = [
         <li>Automatic qualification (budget, timeline, need) so sales focus on the right prospects.</li>
         <li>Booking and follow-up integrated with your calendar and CRM.</li>
       </ul>
-      <p>Our <a href="/ai-receptionist">AI receptionist and lead qualification</a> solutions are designed for this. Combine them with a strong web presence (<a href="/custom-saas">custom sites and SaaS</a>) for maximum impact.</p>
+      <p>Our <a href="/ai-receptionist">AI receptionist and lead qualification</a> solutions are designed for this. Combine them with a strong web presence (<a href="/agentic-softwares">custom sites and SaaS</a>) for maximum impact.</p>
 
       <hr>
       <p><em><a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Réservez votre stratégie call gratuite</a> to boost your business development with AI.</em></p>
@@ -3531,7 +3531,7 @@ const remainingArticles: BlogArticle[] = [
         <li>Mobile-first design (essential in the DRC and for local SEO).</li>
         <li>Fast load and simple navigation so visitors convert instead of bouncing.</li>
       </ul>
-      <p>We build <a href="/custom-saas">custom websites and web apps</a> that integrate with our <a href="/ai-receptionist">AI receptionist</a> so every visit can turn into a qualified lead or booked call.</p>
+      <p>We build <a href="/agentic-softwares">custom websites and web apps</a> that integrate with our <a href="/ai-receptionist">AI receptionist</a> so every visit can turn into a qualified lead or booked call.</p>
 
       <hr>
       <p><em><a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Réservez votre stratégie call gratuite</a> to design your lead-generating website.</em></p>
@@ -3559,7 +3559,7 @@ const remainingArticles: BlogArticle[] = [
         <li>You need deep integration with existing systems (CRM, billing, etc.).</li>
         <li>You want to own the code and data for the long term.</li>
       </ul>
-      <p>Digni Digital builds <a href="/custom-saas">custom SaaS and web applications</a> from idea to deployment—including voice-to-proposal tools like ProposalAgent—so you get a solution built for you, not adapted from a template.</p>
+      <p>Digni Digital builds <a href="/agentic-softwares">custom SaaS and web applications</a> from idea to deployment—including voice-to-proposal tools like ProposalAgent—so you get a solution built for you, not adapted from a template.</p>
 
       <hr>
       <p><em><a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Réservez votre stratégie call gratuite</a> to discuss your custom web or SaaS project.</em></p>
@@ -3579,7 +3579,7 @@ const remainingArticles: BlogArticle[] = [
     content: `
       <h2>Custom SaaS vs Off-the-Shelf: The Choice That Makes the Difference for African and French SMBs</h2>
       
-      <p><strong>SaaS personnalisé</strong> vs <strong>solutions prêtes à l'emploi</strong> is a strategic decision: custom gives fit and ownership; off-the-shelf gives speed and lower upfront cost. For African and French SMBs, the right choice depends on process uniqueness, budget, and growth plans. We help you decide and, when custom wins, deliver <a href="/custom-saas">scalable solutions you fully own</a>.</p>
+      <p><strong>SaaS personnalisé</strong> vs <strong>solutions prêtes à l'emploi</strong> is a strategic decision: custom gives fit and ownership; off-the-shelf gives speed and lower upfront cost. For African and French SMBs, the right choice depends on process uniqueness, budget, and growth plans. We help you decide and, when custom wins, deliver <a href="/agentic-softwares">scalable solutions you fully own</a>.</p>
 
       <h3>Quick Comparison</h3>
       <p>Custom: tailored workflows, full ownership, higher initial investment. Off-the-shelf: fast start, subscription cost, possible limits and lock-in. Many of our clients start with a clear need (e.g. proposal generation, client portal) that generic tools don't cover—so they choose custom and never look back.</p>
@@ -3607,7 +3607,7 @@ const remainingArticles: BlogArticle[] = [
       <h3>Three Pillars of Transformation</h3>
       <ol>
         <li><strong>AI employees and automation</strong>: <a href="/ai-receptionist">AI receptionists</a> and agents that capture and qualify leads 24/7, in French, for Kinshasa and the region.</li>
-        <li><strong>Web and SaaS</strong>: <a href="/custom-saas">Custom web and SaaS development</a> so you own your tools and scale on your terms.</li>
+        <li><strong>Web and SaaS</strong>: <a href="/agentic-softwares">Custom web and SaaS development</a> so you own your tools and scale on your terms.</li>
         <li><strong>Growth and strategy</strong>: Lead generation, digital strategy, and measurable ROI so transformation translates into revenue.</li>
       </ol>
       <p>We've been present in Kinshasa since 2019 and serve 150+ clients across four continents—with a strong DRC base and international reach. Our values: human-first AI, equal access for SMBs, and built-to-last partnership.</p>
@@ -3659,7 +3659,7 @@ const remainingArticles: BlogArticle[] = [
       <p>AI coding agents and conversational AI (Claude, Grok, and the broader <strong>agents IA</strong> ecosystem) are reshaping work. One person with AI can deliver what 10 or 100 used to do. Francophone Africa—including the DRC, Senegal, and Côte d'Ivoire—cannot afford to wait: the gap between those who adopt and those who don't will widen. This article is the French counterpart to our English "Claude Code & AI Agents Africa" post, with a focus on <strong>Afrique francophone</strong> and how Digni Digital helps SMBs and institutions adopt AI responsibly.</p>
 
       <h3>What's at Stake</h3>
-      <p>Code Numérique, ADIS Kinshasa, and reports like MicroSave/Malabar show that MPME in the DRC expect productivity gains from automation but face internet and skills barriers. The answer is not to wait but to adopt accessible, French-first solutions: <a href="/ai-receptionist">AI receptionists</a>, <a href="/custom-saas">custom web and SaaS</a>, and growth services that work in your context.</p>
+      <p>Code Numérique, ADIS Kinshasa, and reports like MicroSave/Malabar show that MPME in the DRC expect productivity gains from automation but face internet and skills barriers. The answer is not to wait but to adopt accessible, French-first solutions: <a href="/ai-receptionist">AI receptionists</a>, <a href="/agentic-softwares">custom web and SaaS</a>, and growth services that work in your context.</p>
 
       <h3>How We Help</h3>
       <p>Digni Digital was founded in Kinshasa in 2019. We serve 150+ clients across four continents with a strong DRC base. We bring human-first AI, local support, and measurable ROI—so francophone Africa doesn't have to choose between falling behind and betting on solutions that don't fit.</p>
@@ -3692,7 +3692,7 @@ const remainingArticles: BlogArticle[] = [
       </ul>
 
       <h3>France, DRC, and Africa</h3>
-      <p>High search volume in France on "agents IA", "automatisation PME", "transformation numérique". In the DRC, French dominates; local support and mobile-first design are critical. Digni Digital bridges both: we help francophone SMBs adopt <a href="/ai-receptionist">AI employees</a> and <a href="/custom-saas">custom SaaS</a> with measurable ROI and local presence.</p>
+      <p>High search volume in France on "agents IA", "automatisation PME", "transformation numérique". In the DRC, French dominates; local support and mobile-first design are critical. Digni Digital bridges both: we help francophone SMBs adopt <a href="/ai-receptionist">AI employees</a> and <a href="/agentic-softwares">custom SaaS</a> with measurable ROI and local presence.</p>
 
       <h3>Next Steps</h3>
       <p>Audit your high-volume tasks, choose a pilot (e.g. lead capture or customer service), and align with a partner who offers E-E-A-T and real case studies. We invite you to start with a free strategy call.</p>

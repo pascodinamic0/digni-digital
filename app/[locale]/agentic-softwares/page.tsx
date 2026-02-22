@@ -7,7 +7,7 @@ import Footer from '@/app/components/Footer'
 import AnimatedSection from '@/app/components/AnimatedSection'
 import { ctaConfig, getBookingLinkProps } from '@/app/config/cta.config'
 
-export default function CustomSaaSPage() {
+export default function AgenticSoftwaresPage() {
   const ourApps = [
     {
       title: 'Proposal Agent',
@@ -63,8 +63,8 @@ export default function CustomSaaSPage() {
       icon: '🏢'
     },
     {
-      title: 'Agentic SaaS Platform',
-      description: 'Full agentic SaaS. Intelligent automation. Multi-tenant. You own it.',
+      title: 'Agentic Softwares Platform',
+      description: 'Full Agentic Softwares. Intelligent automation. Multi-tenant. You own it.',
       process: ['Agent Strategy', 'Platform Architecture', 'Multi-Agent Development', 'Go-to-Market Support'],
       timeline: '6-12 months',
       icon: '☁️'
@@ -168,7 +168,7 @@ export default function CustomSaaSPage() {
             className="text-center mb-8 sm:mb-12 md:mb-16"
           >
             <span className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-info/10 border border-info/30 rounded-full text-info text-xs sm:text-sm font-medium mb-4 sm:mb-6">
-              Agentic SaaS — AI-Native Software
+              Agentic Softwares — AI-Native Software
             </span>
             <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-4 sm:mb-6 md:mb-8 px-2">
               Software That{' '}
@@ -295,7 +295,7 @@ export default function CustomSaaSPage() {
               <span className="gradient-text">Services</span>
             </h2>
             <p className="text-muted text-lg max-w-3xl mx-auto">
-              We build software with the DNA of agentic SaaS companies: autonomous AI agents, 
+              We build software with the DNA of Agentic Softwares companies: autonomous AI agents, 
               intelligent workflows, and systems that reason and act. Your ideas become intelligent software.
             </p>
           </div>
@@ -567,7 +567,7 @@ export default function CustomSaaSPage() {
             Ready to Build Agentic Software?
           </h2>
           <p className="text-muted text-lg mb-8">
-            Whether you need AI agents that work autonomously, intelligent workflows, or a full agentic SaaS platform, 
+            Whether you need AI agents that work autonomously, intelligent workflows, or a full Agentic Softwares platform, 
             let's discuss how we can bring your vision to life with software that perceives, reasons, and acts.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

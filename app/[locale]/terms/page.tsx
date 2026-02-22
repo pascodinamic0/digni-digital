@@ -26,7 +26,7 @@ export default function TermsPage() {
             </p>
             <h2 className="font-display font-semibold text-text text-lg mt-8">Services and agreements</h2>
             <p>
-              Specific services (e.g. AI Employee, Digni Digital Literacy, Agentic SaaS) are subject to separate agreements, statements of work, or terms presented at the time of engagement.
+              Specific services (e.g. AI Employee, Digni Digital Literacy, Agentic Softwares) are subject to separate agreements, statements of work, or terms presented at the time of engagement.
             </p>
             <h2 className="font-display font-semibold text-text text-lg mt-8">Intellectual property</h2>
             <p>

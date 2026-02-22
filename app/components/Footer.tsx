@@ -23,7 +23,7 @@ export default function Footer() {
     services: [
       { name: t.nav.aiEmployee, href: '/ai-receptionist' },
       { name: t.nav.futureReadyGraduate, href: '/future-ready-graduate' },
-      { name: t.nav.customSaaS, href: '/custom-saas' },
+      { name: t.nav.agenticSoftwares, href: '/agentic-softwares' },
     ],
     resources: [
       { name: t.nav.caseStudies, href: '/case-studies' },
