@@ -9,7 +9,7 @@ const FROM_EMAIL = process.env.RESEND_FROM_EMAIL || 'onboarding@resend.dev'
 const PROJECT_TYPE_LABELS: Record<string, string> = {
   'ai-employee': 'AI Employee',
   'future-ready-graduate': 'Digni Digital Literacy',
-  'custom-saas': 'Custom SaaS',
+  'custom-saas': 'Agentic SaaS',
 }
 
 export async function GET() {

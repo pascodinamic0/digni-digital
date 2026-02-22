@@ -49,23 +49,23 @@ export default function CustomSaaSPage() {
 
   const services = [
     {
-      title: 'MVP Development',
-      description: 'Idea to product. 8-12 weeks. For startups.',
-      process: ['Discovery & Planning', 'UI/UX Design', 'Core Development', 'Testing & Launch'],
+      title: 'Agentic MVP',
+      description: 'AI-native MVP with autonomous workflows. 8-12 weeks. For startups.',
+      process: ['Agent Design', 'Workflow Automation', 'AI Integration', 'Testing & Launch'],
       timeline: '8-12 weeks',
-      icon: '🚀'
+      icon: '🤖'
     },
     {
-      title: 'Enterprise Software',
-      description: 'Custom apps. Scales with you. Secure.',
-      process: ['Requirements Analysis', 'Architecture Design', 'Development & Integration', 'Deployment & Training'],
+      title: 'Enterprise Agentic Software',
+      description: 'AI agents that scale. Autonomous. Secure. Multi-agent orchestration.',
+      process: ['Agent Architecture', 'Autonomous Workflow Design', 'LLM Integration', 'Deployment & Training'],
       timeline: '3-6 months',
       icon: '🏢'
     },
     {
-      title: 'SaaS Platform Development',
-      description: 'Full SaaS. Subscriptions. Multi-tenant. Done.',
-      process: ['Market Research', 'Platform Architecture', 'Full-Stack Development', 'Go-to-Market Support'],
+      title: 'Agentic SaaS Platform',
+      description: 'Full agentic SaaS. Intelligent automation. Multi-tenant. You own it.',
+      process: ['Agent Strategy', 'Platform Architecture', 'Multi-Agent Development', 'Go-to-Market Support'],
       timeline: '6-12 months',
       icon: '☁️'
     }
@@ -73,14 +73,14 @@ export default function CustomSaaSPage() {
 
   const technologies = [
     {
-      category: 'Frontend',
-      tools: ['React', 'Next.js', 'Vue.js', 'TypeScript', 'Tailwind CSS'],
-      icon: '🎨'
+      category: 'AI & Agents',
+      tools: ['LangChain', 'OpenAI API', 'Anthropic', 'Vector DBs', 'Agent Frameworks'],
+      icon: '🤖'
     },
     {
-      category: 'Backend',
-      tools: ['Node.js', 'Python', 'PHP', 'PostgreSQL', 'MongoDB'],
-      icon: '⚙️'
+      category: 'Frontend & Backend',
+      tools: ['React', 'Next.js', 'Node.js', 'TypeScript', 'Tailwind CSS'],
+      icon: '🎨'
     },
     {
       category: 'Cloud & DevOps',
@@ -88,9 +88,9 @@ export default function CustomSaaSPage() {
       icon: '☁️'
     },
     {
-      category: 'Mobile',
-      tools: ['React Native', 'Flutter', 'iOS', 'Android', 'Progressive Web Apps'],
-      icon: '📱'
+      category: 'Data & Integration',
+      tools: ['PostgreSQL', 'Supabase', 'Redis', 'API Integrations', 'Webhooks'],
+      icon: '📊'
     }
   ]
 
@@ -131,26 +131,26 @@ export default function CustomSaaSPage() {
     {
       phase: 'Discovery',
       duration: '1-2 weeks',
-      activities: ['Stakeholder interviews', 'Requirements gathering', 'Technical feasibility analysis', 'Project roadmap creation'],
-      deliverables: ['Requirements document', 'Technical specification', 'Project timeline', 'Cost estimate']
+      activities: ['Stakeholder interviews', 'Agent & workflow definition', 'Technical feasibility', 'Project roadmap'],
+      deliverables: ['Requirements document', 'Agent architecture spec', 'Project timeline', 'Cost estimate']
     },
     {
       phase: 'Design',
       duration: '2-3 weeks',
-      activities: ['User experience design', 'System architecture', 'Database design', 'API specification'],
-      deliverables: ['UI/UX mockups', 'System architecture diagram', 'Database schema', 'API documentation']
+      activities: ['Agent architecture design', 'Autonomous workflow mapping', 'Database design', 'API specification'],
+      deliverables: ['Agent design doc', 'Workflow diagrams', 'Database schema', 'API documentation']
     },
     {
       phase: 'Development',
       duration: '8-20 weeks',
-      activities: ['Agile development sprints', 'Regular client reviews', 'Quality assurance testing', 'Performance optimization'],
-      deliverables: ['Working software', 'Test reports', 'Documentation', 'Training materials']
+      activities: ['Agent implementation', 'Workflow automation', 'LLM integration', 'QA & optimization'],
+      deliverables: ['Working agentic software', 'Test reports', 'Documentation', 'Training materials']
     },
     {
       phase: 'Launch & Support',
       duration: 'Ongoing',
-      activities: ['Deployment to production', 'User training', 'Performance monitoring', 'Feature enhancements'],
-      deliverables: ['Live application', 'Support documentation', 'Monitoring setup', 'Maintenance plan']
+      activities: ['Deployment to production', 'Agent tuning', 'Performance monitoring', 'Continuous improvement'],
+      deliverables: ['Live agentic application', 'Support documentation', 'Monitoring setup', 'Maintenance plan']
     }
   ]
 
@@ -168,15 +168,15 @@ export default function CustomSaaSPage() {
             className="text-center mb-8 sm:mb-12 md:mb-16"
           >
             <span className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-info/10 border border-info/30 rounded-full text-info text-xs sm:text-sm font-medium mb-4 sm:mb-6">
-              SaaS Innovation & Development
+              Agentic SaaS — AI-Native Software
             </span>
             <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-4 sm:mb-6 md:mb-8 px-2">
-              From Idea to{' '}
+              Software That{' '}
               <br className="hidden sm:block" />
-              <span className="gradient-text">Industry Leader</span>
+              <span className="gradient-text">Perceives, Reasons & Acts</span>
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-muted max-w-3xl mx-auto leading-relaxed mb-6 sm:mb-8 md:mb-10 px-2">
-              Idea to product. Proposal Agent proves we ship. Your vision. Our build.
+              AI agents that work autonomously. Built with agentic DNA: intelligent workflows, multi-agent orchestration, and systems that learn. Your vision. Our build.
             </p>
             <div className="flex justify-center px-2">
               <a
@@ -195,13 +195,13 @@ export default function CustomSaaSPage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-6 md:mb-8">
-              Our SaaS{' '}
+              Our Agentic{' '}
               <br />
               <span className="gradient-text">Applications</span>
             </h2>
             <p className="text-muted text-lg max-w-3xl mx-auto">
-              We don't just build for clients – we innovate for ourselves. 
-              Here are some of the SaaS applications we've developed to solve real world challenges.
+              We build software with agentic DNA – AI agents that perceive, reason, and act autonomously. 
+              Here are applications we've developed that embody intelligent automation and agent-based workflows.
             </p>
           </div>
 
@@ -290,13 +290,13 @@ export default function CustomSaaSPage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
-              Custom Development{' '}
+              Agentic Development{' '}
               <br />
               <span className="gradient-text">Services</span>
             </h2>
             <p className="text-muted text-lg max-w-3xl mx-auto">
-              Leveraging our experience building our own successful SaaS applications, 
-              we help clients transform their ideas into powerful software solutions.
+              We build software with the DNA of agentic SaaS companies: autonomous AI agents, 
+              intelligent workflows, and systems that reason and act. Your ideas become intelligent software.
             </p>
           </div>
 
@@ -360,12 +360,12 @@ export default function CustomSaaSPage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
-              Modern Technology{' '}
+              Agentic Technology{' '}
               <br />
               <span className="gradient-text">Stack</span>
             </h2>
             <p className="text-muted text-lg max-w-3xl mx-auto">
-              We use proven, scalable technologies to build software that performs today and adapts tomorrow.
+              AI-first stack: LLMs, agent frameworks, and intelligent automation. Software that perceives, reasons, and acts.
             </p>
           </div>
 
@@ -498,12 +498,12 @@ export default function CustomSaaSPage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
-              Our Development{' '}
+              Our Agentic{' '}
               <br />
               <span className="gradient-text">Process</span>
             </h2>
             <p className="text-muted text-lg max-w-3xl mx-auto">
-              Transparent, collaborative, and designed to deliver results on time and on budget.
+              We design for autonomy from day one. Agent architecture, intelligent workflows, and systems that learn.
             </p>
           </div>
 
@@ -564,11 +564,11 @@ export default function CustomSaaSPage() {
       <AnimatedSection className="py-24">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
-            Ready to Build Something Amazing?
+            Ready to Build Agentic Software?
           </h2>
           <p className="text-muted text-lg mb-8">
-            Whether you have an idea for the next big SaaS application or need a custom solution for your business, 
-            let's discuss how we can bring your vision to life.
+            Whether you need AI agents that work autonomously, intelligent workflows, or a full agentic SaaS platform, 
+            let's discuss how we can bring your vision to life with software that perceives, reasons, and acts.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a

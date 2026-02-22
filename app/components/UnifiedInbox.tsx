@@ -324,7 +324,7 @@ const UnifiedInbox = () => {
                   <div className="flex justify-end">
                     <div className="max-w-[85%]">
                       <div className="bg-gradient-to-br from-accent to-accent-light text-background px-4 py-3 rounded-2xl rounded-br-md shadow-lg shadow-accent/20">
-                        <p className="text-sm leading-relaxed">Custom software development for my restaurant</p>
+                        <p className="text-sm leading-relaxed">Agentic SaaS development for my restaurant</p>
                       </div>
                       <p className="text-[10px] text-muted mt-1.5 text-right mr-1">2:35 PM</p>
                     </div>
