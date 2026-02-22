@@ -68,7 +68,7 @@ export default function Navigation() {
   const solutionLinks = [
     { name: t.nav.aiEmployee, href: '/ai-receptionist', description: t.nav.aiEmployeeDesc },
     { name: t.nav.futureReadyGraduate, href: '/future-ready-graduate', description: t.nav.futureReadyGraduateDesc },
-    { name: t.nav.customSaaS, href: '/custom-saas', description: t.nav.customSaaSDesc },
+    { name: t.nav.agenticSoftwares, href: '/agentic-softwares', description: t.nav.agenticSoftwaresDesc },
   ]
 
   return (

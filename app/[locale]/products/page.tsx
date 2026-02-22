@@ -282,7 +282,7 @@ export default function ProductsPage() {
             Need a Custom Solution?
           </h2>
           <p className="text-muted text-lg mb-8">
-            Can't find what you're looking for? We build Agentic SaaS—AI-native software that perceives, reasons, and acts autonomously.
+            Can't find what you're looking for? We build Agentic Softwares—AI-native software that perceives, reasons, and acts autonomously.
           </p>
           <a
             {...getBookingLinkProps()}

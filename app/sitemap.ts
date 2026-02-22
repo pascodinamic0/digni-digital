@@ -16,7 +16,7 @@ const staticPaths = [
   '/affiliate',
   '/ai-receptionist',
   '/careers',
-  '/custom-saas',
+  '/agentic-softwares',
   '/future-ready-graduate',
   '/privacy',
   '/terms',

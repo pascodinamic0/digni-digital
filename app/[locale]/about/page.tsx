@@ -141,7 +141,7 @@ export default function AboutPage() {
                   That dream is simple and urgent: <strong className="text-foreground">everyone enabled, empowered, and connected</strong> to the same technology and skills that have long been reserved for elites and elite kids. Businesses shouldn’t lose leads because they can’t afford big systems. Students shouldn’t graduate without the skills employers hire for. We build the fixes—AI that captures every lead, curricula that make graduates job-ready, and agentic software that perceives, reasons, and acts—scaling with you.
                 </p>
                 <p>
-                  Founded 2019. Started with websites. Now: AI systems, graduate programs, Agentic SaaS. We don’t just build websites—we build systems that get you clients and students jobs.
+                  Founded 2019. Started with websites. Now: AI systems, graduate programs, Agentic Softwares. We don’t just build websites—we build systems that get you clients and students jobs.
                 </p>
               </div>
             </div>
@@ -378,12 +378,12 @@ export default function AboutPage() {
                 ⚙️
               </div>
               <h3 className="font-display text-xl font-bold mb-4 group-hover:text-info transition-colors">
-                Agentic SaaS
+                Agentic Softwares
               </h3>
               <p className="text-muted text-sm leading-relaxed mb-6">
                 AI-native software that perceives, reasons, and acts autonomously.
               </p>
-              <Link href="/custom-saas" className="text-info hover:text-info-light font-medium text-sm">
+              <Link href="/agentic-softwares" className="text-info hover:text-info-light font-medium text-sm">
                 Learn More →
               </Link>
             </motion.div>

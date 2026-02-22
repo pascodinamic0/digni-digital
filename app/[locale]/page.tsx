@@ -396,16 +396,16 @@ function WhatWeDo() {
       secondaryCta: w.futureReadySecondaryCta,
     },
     {
-      title: w.customSaaSTitle,
+      title: w.agenticSoftwaresTitle,
       subtitle: w.forUniqueNeeds,
-      description: w.customSaaSDesc,
-      approach: w.customSaaSApproach,
-      outcomes: [w.customSaaSOutcome1, w.customSaaSOutcome2, w.customSaaSOutcome3, w.customSaaSOutcome4],
+      description: w.agenticSoftwaresDesc,
+      approach: w.agenticSoftwaresApproach,
+      outcomes: [w.agenticSoftwaresOutcome1, w.agenticSoftwaresOutcome2, w.agenticSoftwaresOutcome3, w.agenticSoftwaresOutcome4],
       icon: '⚙️',
-      link: '/custom-saas',
+      link: '/agentic-softwares',
       color: 'info' as const,
-      primaryCta: w.customSaaSPrimaryCta,
-      secondaryCta: w.customSaaSSecondaryCta,
+      primaryCta: w.agenticSoftwaresPrimaryCta,
+      secondaryCta: w.agenticSoftwaresSecondaryCta,
     },
   ]
 
