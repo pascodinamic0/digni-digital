@@ -50,23 +50,23 @@ const services = [
   },
   {
     id: 'custom-saas',
-    title: 'Custom SaaS Development',
-    subtitle: 'Build Your Vision',
-    description: 'Your idea. Our build. Scalable. You own it.',
+    title: 'Agentic SaaS Development',
+    subtitle: 'AI-Native Software That Works Autonomously',
+    description: 'Software with agentic DNA: perceives, reasons, acts. Built for autonomy.',
     features: [
-      'Full-Stack Development',
-      'Scalable Architecture',
-      'Cloud-Native',
-      'Multi-tenant Systems',
-      'Payment Integration',
-      'Admin Dashboard'
+      'AI Agent Integration',
+      'Autonomous Workflows',
+      'Intelligent Automation',
+      'Multi-agent Orchestration',
+      'LLM-Powered Features',
+      'Human-in-the-Loop Design'
     ],
-    technologies: ['Next.js', 'Node.js', 'PostgreSQL', 'AWS'],
+    technologies: ['Next.js', 'LangChain', 'OpenAI', 'PostgreSQL', 'AWS'],
     timeline: '8-16 weeks',
     link: '/custom-saas',
     icon: '⚙️',
     color: 'info',
-    outcomes: ['Scalable architecture', 'Enterprise grade security', 'Ongoing optimization']
+    outcomes: ['Autonomous agents', 'AI-native architecture', 'Intelligent workflows']
   },
 ]
 
@@ -93,7 +93,7 @@ export default function ServicesPage() {
               <span className="gradient-text">Drive Real Impact</span>
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-muted max-w-3xl mx-auto leading-relaxed px-2">
-              AI systems. Graduate programs. Custom software. Results from day one.
+              AI systems. Graduate programs. Agentic SaaS. Results from day one.
             </p>
           </motion.div>
         </div>

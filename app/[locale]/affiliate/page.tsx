@@ -109,12 +109,12 @@ export default function AffiliatePage() {
       link: '/future-ready-graduate'
     },
     {
-      name: 'Custom SaaS',
+      name: 'Agentic SaaS',
       tagline: 'Your vision, built to scale',
       price: 'Custom pricing',
       commission: '10% of project value',
       target: 'Businesses with unique challenges',
-      description: 'Custom software solutions built from concept to deployment.',
+      description: 'Agentic SaaS—AI-native software that perceives, reasons, and acts autonomously.',
       icon: '⚙️',
       color: 'info',
       link: '/custom-saas'
@@ -193,7 +193,7 @@ export default function AffiliatePage() {
   const faqs = [
     {
       question: 'What are the commission rates?',
-      answer: 'You earn 20% recurring commission on AI Employee and Digni Digital Literacy Program subscriptions, and 10% on Custom SaaS projects. Commissions are paid for as long as the customer remains active.'
+      answer: 'You earn 20% recurring commission on AI Employee and Digni Digital Literacy Program subscriptions, and 10% on Agentic SaaS projects. Commissions are paid for as long as the customer remains active.'
     },
     {
       question: 'When and how do I get paid?',
