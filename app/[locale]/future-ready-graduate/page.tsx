@@ -83,8 +83,13 @@ export default function FutureReadyGraduatePage() {
   const pricing = [
     {
       name: 'School Partnership Program',
-      price: '$500',
+      price: '$2,000',
       period: '/month',
+      priceOptions: [
+        { amount: '$2,000', period: '/month' },
+        { amount: '$10,000', period: '/semester' },
+        { amount: '$20,000', period: '/year' }
+      ],
       description: 'Full program. Schools and institutions.',
       audience: 'schools',
       features: [
@@ -103,10 +108,11 @@ export default function FutureReadyGraduatePage() {
       comingSoon: false
     },
     {
-      name: 'Online Course',
+      name: 'Self-Learning',
       price: '$25',
       period: ' one-time',
       description: 'Digital skills. Learn anywhere. Earn online.',
+      audience: 'everyone',
       features: [
         'Full digital skills curriculum (start from scratch)',
         'Learn from home, school, university, or vocational center',
@@ -120,8 +126,28 @@ export default function FutureReadyGraduatePage() {
         'Start earning while you learn'
       ],
       popular: false,
-      comingSoon: true,
-      audience: 'everyone'
+      comingSoon: true
+    },
+    {
+      name: 'Professional Institutes',
+      price: '$2,000',
+      period: '/month',
+      description: 'For vocational centers, training academies, and professional institutes.',
+      audience: 'professional',
+      features: [
+        'Full professional curriculum for adult learners',
+        'Flexible schedule for working professionals',
+        'Dedicated facilitator and cohort support',
+        'Premium AI tools & subscriptions',
+        'All learning materials provided',
+        'Progress tracking and certification',
+        'Job placement and industry partnerships',
+        'Customizable program length',
+        'On-site or hybrid delivery options',
+        'Partnership success guarantee'
+      ],
+      popular: false,
+      comingSoon: false
     }
   ]
 
@@ -944,7 +970,7 @@ export default function FutureReadyGraduatePage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="font-display text-4xl md:text-5xl font-bold mb-4">
-              Two Paths to<br />
+              Three Paths to<br />
               <span className="gradient-text">Digital Success</span>
             </h2>
             <p className="text-muted text-lg max-w-2xl mx-auto">
@@ -952,15 +978,14 @@ export default function FutureReadyGraduatePage() {
             </p>
           </div>
 
-          {/* Two Paths Visual Layout */}
+          {/* Three Tiers Visual Layout */}
           <div className="relative">
-            {/* Two Column Grid */}
-            <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
               {pricing.map((plan, i) => (
                 <motion.div
                   key={i}
-                  initial={{ opacity: 0, x: i === 0 ? -30 : 30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.15 }}
                   className={`relative card p-8 h-full flex flex-col ${
@@ -976,9 +1001,11 @@ export default function FutureReadyGraduatePage() {
                     <div className={`px-4 py-1.5 rounded-full text-xs font-bold ${
                       plan.audience === 'schools'
                         ? 'bg-success/20 text-success border border-success/30'
-                        : 'bg-accent/20 text-accent border border-accent/30'
+                        : plan.audience === 'professional'
+                          ? 'bg-accent/20 text-accent border border-accent/30'
+                          : 'bg-muted/30 text-muted border border-border'
                     }`}>
-                      {plan.audience === 'schools' ? '🏫 FOR SCHOOLS' : '🌍 FOR EVERYONE'}
+                      {plan.audience === 'schools' ? '🏫 FOR SCHOOLS' : plan.audience === 'professional' ? '🏢 FOR PROFESSIONAL INSTITUTES' : '🌍 SELF-LEARNING'}
                     </div>
                   </div>
 
@@ -995,13 +1022,23 @@ export default function FutureReadyGraduatePage() {
                   <div className="mt-4 mb-6">
                     <h3 className="font-display text-2xl font-bold mb-3 text-center">{plan.name}</h3>
                     <div className="text-center mb-4">
-                      <div className="font-display text-5xl font-bold text-success mb-1">
-                        {plan.price}
-                        <span className="text-xl text-muted font-normal ml-1">{plan.period}</span>
-                      </div>
+                      {'priceOptions' in plan && plan.priceOptions ? (
+                        <div className="space-y-2 mb-2">
+                          {plan.priceOptions.map((opt: { amount: string; period: string }, j: number) => (
+                            <div key={j} className="font-display text-lg font-bold text-success">
+                              {opt.amount}
+                              <span className="text-base text-muted font-normal ml-1">{opt.period}</span>
+                            </div>
+                          ))}
+                        </div>
+                      ) : (
+                        <div className="font-display text-5xl font-bold text-success mb-1">
+                          {plan.price}
+                          <span className="text-xl text-muted font-normal ml-1">{plan.period}</span>
+                        </div>
+                      )}
                       <p className="text-muted text-sm leading-relaxed">{plan.description}</p>
                     </div>
-
                   </div>
 
                   {/* Features */}
@@ -1009,7 +1046,7 @@ export default function FutureReadyGraduatePage() {
                     {plan.features.map((feature, j) => (
                       <li key={j} className="flex items-start gap-3">
                         <div className={`w-1.5 h-1.5 rounded-full flex-shrink-0 mt-2 ${
-                          plan.audience === 'schools' ? 'bg-success' : 'bg-accent'
+                          plan.audience === 'schools' ? 'bg-success' : plan.audience === 'professional' ? 'bg-accent' : 'bg-muted'
                         }`} />
                         <span className="text-sm text leading-relaxed">{feature}</span>
                       </li>
@@ -1030,12 +1067,12 @@ export default function FutureReadyGraduatePage() {
                     <a
                       {...getBookingLinkProps()}
                       className={`w-full text-center py-3 rounded-lg font-semibold transition-all ${
-                        plan.audience === 'schools'
+                        plan.audience === 'schools' || plan.audience === 'professional'
                           ? 'btn-primary'
                           : 'btn-secondary hover:border-accent hover:text-accent'
                       }`}
                     >
-                      {plan.name.includes('School') ? 'Start Partnership' : ctaConfig.buttonText.getStarted}
+                      {plan.audience === 'schools' || plan.audience === 'professional' ? 'Start Partnership' : ctaConfig.buttonText.getStarted}
                     </a>
                   )}
                 </motion.div>
