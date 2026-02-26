@@ -12,7 +12,7 @@ import { translations } from '@/app/config/translations'
 
 const contactMethodConfig = [
   { icon: '📅', href: ctaConfig.bookingUrl, primary: true as const },
-  { icon: '✉️', href: 'mailto:digni.digital.llc@gmail.com', primary: false as const },
+  { icon: '✉️', href: 'mailto:support@digni-digital-llc.com', primary: false as const },
   { icon: '💬', href: 'https://wa.me/254702593518', primary: false as const },
   { icon: '💼', href: 'https://www.linkedin.com/company/digni-digital-llc', primary: false as const },
 ]
