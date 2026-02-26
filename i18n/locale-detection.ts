@@ -7,7 +7,7 @@ import { locales, defaultLocale } from './routing'
  */
 const countryToLocale: Record<string, Locale> = {
   US: 'us-en',
-  CA: 'ca-en', // will be overridden by accept-language if user prefers French
+  CA: 'us-en', // overridden by accept-language if user prefers French
   FR: 'fr-fr',
   DE: 'de-de',
   AT: 'de-de',
@@ -41,7 +41,7 @@ function parseAcceptLanguage(header: string | null): Array<{ lang: string; q: nu
 /**
  * Best locale for this country + accept-language.
  * - If country has a single obvious locale (e.g. FR -> fr-fr), use it.
- * - If country has multiple (e.g. CA -> ca-en or ca-fr), pick by accept-language.
+ * - If country has multiple (e.g. CA -> us-en or fr-fr), pick by accept-language.
  */
 export function detectLocaleFromRequest(
   countryHeader: string | null,
@@ -52,7 +52,7 @@ export function detectLocaleFromRequest(
 
   if (country === 'CA') {
     const wantsFr = preferred.some((p) => p.lang === 'fr')
-    return wantsFr ? 'ca-fr' : 'ca-en'
+    return wantsFr ? 'fr-fr' : 'us-en'
   }
 
   if (country === 'CH') {

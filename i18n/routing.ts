@@ -1,10 +1,11 @@
 import { defineRouting } from 'next-intl/routing'
 
 /**
- * Regional locales: [country]-[language] (e.g. us-en, fr-fr, ca-fr).
+ * Regional locales: [country]-[language] (e.g. us-en, fr-fr).
  * Used for routing, hreflang, and regional config.
+ * One locale per language (no regional variants like ca-en/ca-fr).
  */
-export const locales = ['us-en', 'fr-fr', 'ca-fr', 'ca-en', 'de-de', 'es-es', 'sa-ar'] as const
+export const locales = ['us-en', 'fr-fr', 'de-de', 'es-es', 'sa-ar'] as const
 export type Locale = (typeof locales)[number]
 
 export const defaultLocale: Locale = 'us-en'
@@ -13,8 +14,6 @@ export const defaultLocale: Locale = 'us-en'
 export const localeToMessageLocale: Record<Locale, Locale> = {
   'us-en': 'us-en',
   'fr-fr': 'fr-fr',
-  'ca-fr': 'fr-fr',
-  'ca-en': 'us-en',
   'de-de': 'de-de',
   'es-es': 'es-es',
   'sa-ar': 'sa-ar',

@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import { Link } from '@/i18n/navigation'
 import Navigation from '@/app/components/Navigation'
-import AIReceptionistFooter from '@/app/components/AIReceptionistFooter'
+import Footer from '@/app/components/Footer'
 import AnimatedSection from '@/app/components/AnimatedSection'
 import ClientJourneyDemo from '@/app/components/ClientJourneyDemo'
 import ConversationMockups from '@/app/components/ConversationMockups'
@@ -189,9 +189,9 @@ export default function AIReceptionistPage() {
       price: '$449',
       originalPrice: '$500',
       period: '/month',
-      description: 'Done-for-you. No software to manage. Live in 24h.',
+      description: 'Done-for-you. No software to manage. Live in 48h.',
       included: [
-        'Live in 24 hours',
+        'Live in 48 hours',
         'All channels (phone, WhatsApp, email)',
         'Custom qualification',
         'Calendar booking',
@@ -262,7 +262,7 @@ export default function AIReceptionistPage() {
               </a>
               <DemoPresentationDownload service="aiEmployee" variant="hero" label="Download Demo Presentation" />
             </div>
-            <p className="text-muted/60 text-sm mt-4">Live in 24 hours. No software to manage. Done-for-you.</p>
+            <p className="text-muted/60 text-sm mt-4">Live in 48 hours. No software to manage. Done-for-you.</p>
           </motion.div>
         </div>
       </section>
@@ -495,16 +495,16 @@ export default function AIReceptionistPage() {
                   Time to Value
                 </div>
                 <h3 className="font-display text-3xl md:text-4xl font-bold text-text mb-4">
-                  Live in 24 Hours
+                  Live in 48 Hours
                 </h3>
                 <p className="text-foreground/80 text-lg max-w-lg leading-relaxed">
-                  Live in 24 hours. No setup. No training. We run it. You sell.
+                  Live in 48 hours. No setup. No training. We run it. You sell.
                 </p>
               </div>
               
               <div className="flex flex-col items-center md:items-end gap-4">
                 <div className="text-center md:text-right">
-                  <div className="font-display text-6xl md:text-7xl font-bold text-text mb-2">24h</div>
+                  <div className="font-display text-6xl md:text-7xl font-bold text-text mb-2">48h</div>
                   <p className="text-foreground/60 text-sm">From decision to operation</p>
                 </div>
                 <a
@@ -813,7 +813,7 @@ export default function AIReceptionistPage() {
         </div>
       </AnimatedSection>
 
-      <AIReceptionistFooter />
+      <Footer />
     </main>
   )
 }
