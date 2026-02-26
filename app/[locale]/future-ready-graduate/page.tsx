@@ -88,7 +88,7 @@ export default function FutureReadyGraduatePage() {
       priceOptions: [
         { amount: '$1,000', period: '/month' },
         { amount: '$5,000', period: '/semester (5 months)' },
-        { amount: '$10,000', period: '/year (2 months free)' }
+        { amount: '$12,000', period: '/year' }
       ],
       description: 'Full program. Schools and institutions.',
       audience: 'schools',
@@ -130,13 +130,8 @@ export default function FutureReadyGraduatePage() {
     },
     {
       name: 'Professional Institutes',
-      price: '$1,000',
+      price: '$1,500',
       period: '/month',
-      priceOptions: [
-        { amount: '$1,000', period: '/month' },
-        { amount: '$5,000', period: '/semester (5 months)' },
-        { amount: '$10,000', period: '/year (2 months free)' }
-      ],
       description: 'For vocational centers, training academies, and professional institutes.',
       audience: 'professional',
       features: [
@@ -1002,26 +997,24 @@ export default function FutureReadyGraduatePage() {
                   }`}
                 >
                   {/* Path Indicator */}
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                    <div className={`px-4 py-1.5 rounded-full text-xs font-bold ${
+                  <div className={`absolute left-1/2 transform -translate-x-1/2 w-full max-w-[calc(100%-1rem)] px-2 flex flex-col items-center gap-2 ${plan.comingSoon ? '-top-14' : '-top-4'}`}>
+                    <div className={`px-3 py-1.5 rounded-full text-xs font-bold whitespace-normal text-center w-max max-w-full mx-auto ${
                       plan.audience === 'schools'
                         ? 'bg-success/20 text-success border border-success/30'
                         : plan.audience === 'professional'
                           ? 'bg-accent/20 text-accent border border-accent/30'
                           : 'bg-muted/30 text-muted border border-border'
                     }`}>
-                      {plan.audience === 'schools' ? '🏫 FOR SCHOOLS' : plan.audience === 'professional' ? '🏢 FOR PROFESSIONAL INSTITUTES' : '🌍 SELF-LEARNING'}
+                      {plan.audience === 'schools' ? '🏫 FOR SCHOOLS' : plan.audience === 'professional' ? (
+                        <>🏢 FOR PROFESSIONAL<wbr />INSTITUTES</>
+                      ) : '🌍 SELF-LEARNING'}
                     </div>
-                  </div>
-
-                  {/* Coming Soon Badge */}
-                  {plan.comingSoon && (
-                    <div className="absolute top-4 right-4">
+                    {plan.comingSoon && (
                       <span className="px-3 py-1 bg-warning/20 text-warning text-xs font-bold rounded-full">
                         COMING SOON
                       </span>
-                    </div>
-                  )}
+                    )}
+                  </div>
 
                   {/* Content */}
                   <div className="mt-4 mb-6">
