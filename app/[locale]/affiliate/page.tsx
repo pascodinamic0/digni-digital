@@ -100,7 +100,7 @@ export default function AffiliatePage() {
     {
       name: 'Digni Digital Literacy Program',
       tagline: 'Students with real income skills',
-      price: '$500/month',
+      price: '$1,000/month',
       commission: '20% recurring',
       target: 'Schools & universities',
       description: 'Complete employability program transforming students into job-ready professionals.',

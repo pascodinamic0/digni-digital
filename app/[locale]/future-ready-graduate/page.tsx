@@ -83,12 +83,12 @@ export default function FutureReadyGraduatePage() {
   const pricing = [
     {
       name: 'School Partnership Program',
-      price: '$2,000',
+      price: '$1,000',
       period: '/month',
       priceOptions: [
-        { amount: '$2,000', period: '/month' },
-        { amount: '$10,000', period: '/semester' },
-        { amount: '$20,000', period: '/year' }
+        { amount: '$1,000', period: '/month' },
+        { amount: '$5,000', period: '/semester (5 months)' },
+        { amount: '$10,000', period: '/year (2 months free)' }
       ],
       description: 'Full program. Schools and institutions.',
       audience: 'schools',
@@ -130,8 +130,13 @@ export default function FutureReadyGraduatePage() {
     },
     {
       name: 'Professional Institutes',
-      price: '$2,000',
+      price: '$1,000',
       period: '/month',
+      priceOptions: [
+        { amount: '$1,000', period: '/month' },
+        { amount: '$5,000', period: '/semester (5 months)' },
+        { amount: '$10,000', period: '/year (2 months free)' }
+      ],
       description: 'For vocational centers, training academies, and professional institutes.',
       audience: 'professional',
       features: [
