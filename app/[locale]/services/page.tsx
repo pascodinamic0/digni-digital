@@ -208,7 +208,7 @@ export default function ServicesPage() {
                       'bg-info hover:bg-info/90'
                     }`}
                   >
-                    Learn More
+                    See How It Works
                   </Link>
                   <a
                     {...getBookingLinkProps()}

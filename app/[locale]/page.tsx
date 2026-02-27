@@ -1104,9 +1104,19 @@ function CTASection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.4 }}
-                className="text-muted text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed"
+                className="text-muted text-lg md:text-xl max-w-2xl mx-auto mb-6 leading-relaxed"
               >
                 {cta.subtitle}
+              </motion.p>
+
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.42 }}
+                className="text-text/90 text-base md:text-lg max-w-xl mx-auto mb-10 font-medium"
+              >
+                {cta.mechanism}
               </motion.p>
 
               <motion.div
@@ -1162,6 +1172,7 @@ function CTASection() {
 
 
 // Main Page Component
+// Growth operator: Proof (Stats, CaseStudies) before conversion CTAs (WhatWeDo, CTA)
 export default function Home() {
   return (
     <main>
@@ -1169,10 +1180,10 @@ export default function Home() {
       <Hero />
       <MissionValues />
       <WhatWereFightingFor />
-      <WhatWeDo />
       <Stats />
-      <GlobalPresence />
       <CaseStudies />
+      <WhatWeDo />
+      <GlobalPresence />
       <CTASection />
       <Footer />
     </main>
