@@ -165,6 +165,7 @@ type HomeTranslations = {
     title: string
     titleHighlight: string
     subtitle: string
+    mechanism: string
     bullet1: string
     bullet2: string
     bullet3: string
@@ -583,6 +584,7 @@ function buildTranslations(): Record<Language, TranslationKeys> {
       title: 'Technology Should Serve ',
       titleHighlight: 'Everyone.',
       subtitle: "Let's fix what's broken. Book a call.",
+      mechanism: "We listen → We build the fix → You get results. No fluff. No lock-in.",
       bullet1: '30-min Strategy Call',
       bullet2: 'No Obligation',
       bullet3: 'Actionable Insights',
@@ -747,6 +749,7 @@ function buildTranslations(): Record<Language, TranslationKeys> {
       title: 'La technologie doit servir ',
       titleHighlight: 'tout le monde.',
       subtitle: 'Corrigeons ce qui ne va pas. Réservez un appel.',
+      mechanism: "Nous écoutons → Nous construisons la solution → Vous obtenez des résultats. Sans blabla. Sans enfermement.",
       bullet1: 'Appel stratégique de 30 min',
       bullet2: 'Sans engagement',
       bullet3: 'Conseils actionnables',
@@ -911,6 +914,7 @@ function buildTranslations(): Record<Language, TranslationKeys> {
       title: 'التقنية يجب أن تخدم ',
       titleHighlight: 'الجميع.',
       subtitle: 'لنصلح ما هو معطّل. احجز مكالمة.',
+      mechanism: "نستمع → نبني الحل → تحصل على النتائج. دون ثرثرة. دون قيود.",
       bullet1: 'مكالمة استراتيجية 30 دقيقة',
       bullet2: 'بدون التزام',
       bullet3: 'رؤى قابلة للتطبيق',

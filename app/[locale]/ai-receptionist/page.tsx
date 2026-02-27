@@ -395,6 +395,39 @@ export default function AIReceptionistPage() {
         </div>
       </AnimatedSection>
 
+      {/* Why Traditional Receptionists Don't Scale - Contrast Positioning */}
+      <AnimatedSection className="py-24">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <span className="inline-block px-4 py-2 bg-accent/10 border border-accent/20 rounded-full text-accent text-xs font-semibold uppercase tracking-wide mb-4">
+              Why Traditional Reception Fails
+            </span>
+            <h2 className="font-display text-4xl md:text-5xl font-bold mb-6 leading-tight">
+              Hiring More People
+              <br />
+              <span className="gradient-text">Isn't the Answer.</span>
+            </h2>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="card p-6">
+              <h3 className="font-display text-lg font-bold mb-2">Human limits</h3>
+              <p className="text-muted text-sm">One person. One line. After hours? Voicemail. Weekends? Missed. Scale = more hires = more cost.</p>
+            </motion.div>
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="card p-6">
+              <h3 className="font-display text-lg font-bold mb-2">Answering services</h3>
+              <p className="text-muted text-sm">Generic scripts. No qualification. They take messages—they don't convert. You pay for volume, not results.</p>
+            </motion.div>
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} className="card p-6">
+              <h3 className="font-display text-lg font-bold mb-2">Off-the-shelf chatbots</h3>
+              <p className="text-muted text-sm">Calls go to humans. Chatbots can't qualify. No CRM. No booking. You still do the manual work.</p>
+            </motion.div>
+          </div>
+          <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="text-center text-accent font-medium mt-8">
+            Our model: AI that talks like you. Qualifies. Books. Runs 24/7. Done-for-you. One system replaces the broken three.
+          </motion.p>
+        </div>
+      </AnimatedSection>
+
       {/* Client Journey Demo - Before vs After */}
       <ClientJourneyDemo />
 

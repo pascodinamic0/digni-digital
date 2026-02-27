@@ -1,0 +1,70 @@
+---
+description: Growth operator principles — site must convert like infrastructure, not a brochure
+globs: app/**/*.{tsx,ts},app/i18n/*.ts,app/config/*.ts,content/**/*
+alwaysApply: true
+---
+
+# Growth Operator Principles
+
+This site behaves like a **growth operator**, not a brochure. Every page, section, and CTA must follow these rules.
+
+## 1. Belief Before Monetization (CTA Pre-Requisites)
+
+**Before any CTA appears, the page must show:**
+- Outcome (what they get)
+- Mechanism (why it works)
+- Proof (case study, metric, testimonial)
+- Risk removal (guarantee, trial, no-obligation)
+
+**Section order:** Transformation promise → Why it works → Case proof → Pricing/booking.
+
+## 2. Contrast Positioning
+
+Every service page must contain:
+- **Enemy:** What broken system we replace (e.g., "Why Traditional [X] Fails")
+- **Problem:** With current market/approach
+- **Our mechanism:** Differentiated how
+- **Outcome:** Measurable result
+
+Add global sections: "Why Traditional X Fails", "Why This Model Is Different".
+
+## 3. Attention Architecture
+
+- Strong headlines with specificity (numbers, outcomes)
+- Micro open loops, scroll-based curiosity
+- Short paragraphs, bold for scanning
+- No text walls; visual hierarchy; interactive proof
+- Lead magnet capture, retargeting pixels where applicable
+
+## 4. Proof Every Page
+
+Every page needs proof: case studies, screenshots, testimonials, metrics, before/after.
+
+**Proof ladder:** Social proof → Logical proof → Demonstration proof → Risk reversal proof.
+
+If a page has no proof, it does not deserve to exist.
+
+## 5. Clarity Test
+
+Can a 14-year-old summarize what we do in one sentence?
+
+**Framework:** "We help [specific audience] achieve [measurable outcome] without [primary pain] using [unique mechanism]."
+
+- Remove abstract words and jargon
+- Add measurable outcome
+- Hero headline and subheadline must be crystal clear in 5 seconds
+
+## 6. Simplicity
+
+- One primary CTA per page
+- No competing offers
+- Button copy: specific action (not "Learn More")
+- Clear navigation, no clutter
+
+**Funnel order:** What is this? → Is this for me? → How does it work? → Why trust? → What next?
+
+## 7. Human Psychology
+
+Copy must hit: status, safety, certainty, belonging, advantage, loss avoidance.
+
+Audit: Does the site promise upward mobility? Remove risk? Create urgency? Show authority? Signal exclusivity? Show transformation identity?
