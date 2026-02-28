@@ -161,6 +161,13 @@
   border-color: var(--accent) !important;
 }
 
+/* Light theme: transformation callout uses success/green for better visibility */
+[data-theme="light"] .transformation-callout {
+  background: linear-gradient(90deg, rgba(var(--success-rgb), 0.12), rgba(var(--success-rgb), 0.2), rgba(var(--success-rgb), 0.12)) !important;
+  border-color: rgba(var(--success-rgb), 0.4) !important;
+  box-shadow: 0 20px 40px rgba(var(--success-rgb), 0.2) !important;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -168,6 +175,7 @@
 }
 
 html {
+  font-size: 14px; /* Base font scaled down for comfortable desktop viewing */
   scroll-behavior: smooth;
 }
 
