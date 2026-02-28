@@ -268,9 +268,9 @@ function WhatWereFightingFor() {
   const language = useLanguage()
   const f = translations[language].home.fighting
   const challenges = [
-    { title: f.missedLeads, problem: f.missedLeadsProblem, reality: f.missedLeadsReality, ourFight: f.missedLeadsFight, icon: '📞', stat: f.missedLeadsStat, statLabel: f.missedLeadsStatLabel },
-    { title: f.skillsGap, problem: f.skillsGapProblem, reality: f.skillsGapReality, ourFight: f.skillsGapFight, icon: '🎓', stat: f.skillsGapStat, statLabel: f.skillsGapStatLabel },
-    { title: f.techDivide, problem: f.techDivideProblem, reality: f.techDivideReality, ourFight: f.techDivideFight, icon: '⚖️', stat: f.techDivideStat, statLabel: f.techDivideStatLabel },
+    { title: f.missedLeads, problem: f.missedLeadsProblem, solution: f.missedLeadsSolution, outcome: f.missedLeadsOutcome, icon: '📞', stat: f.missedLeadsStat, statLabel: f.missedLeadsStatLabel },
+    { title: f.skillsGap, problem: f.skillsGapProblem, solution: f.skillsGapSolution, outcome: f.skillsGapOutcome, icon: '🎓', stat: f.skillsGapStat, statLabel: f.skillsGapStatLabel },
+    { title: f.techDivide, problem: f.techDivideProblem, solution: f.techDivideSolution, outcome: f.techDivideOutcome, icon: '⚖️', stat: f.techDivideStat, statLabel: f.techDivideStatLabel },
   ]
 
   return (
@@ -333,22 +333,23 @@ function WhatWereFightingFor() {
                   </p>
                 </div>
 
-                {/* Reality */}
+                {/* Solution */}
                 <div className="mb-4">
                   <span className="text-xs uppercase tracking-wider text-muted-dark block mb-2">
-                    {f.theReality}
+                    {f.theSolution}
                   </span>
                   <p className="text-muted text-sm leading-relaxed">
-                    {challenge.reality}
+                    {challenge.solution}
                   </p>
                 </div>
 
+                {/* Outcome */}
                 <div className="pt-4 border-t border-light">
                   <span className="text-xs uppercase tracking-wider text-accent block mb-2">
-                    {f.ourFightLabel}
+                    {f.theOutcome}
                   </span>
                   <p className="text-accent font-medium text-sm leading-relaxed">
-                    {challenge.ourFight}
+                    {challenge.outcome}
                   </p>
                 </div>
               </div>

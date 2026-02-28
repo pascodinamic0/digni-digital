@@ -45,25 +45,25 @@ type HomeTranslations = {
     realProblems: string
     missedLeads: string
     missedLeadsProblem: string
-    missedLeadsReality: string
-    missedLeadsFight: string
+    missedLeadsSolution: string
+    missedLeadsOutcome: string
     missedLeadsStat: string
     missedLeadsStatLabel: string
     skillsGap: string
     skillsGapProblem: string
-    skillsGapReality: string
-    skillsGapFight: string
+    skillsGapSolution: string
+    skillsGapOutcome: string
     skillsGapStat: string
     skillsGapStatLabel: string
     techDivide: string
     techDivideProblem: string
-    techDivideReality: string
-    techDivideFight: string
+    techDivideSolution: string
+    techDivideOutcome: string
     techDivideStat: string
     techDivideStatLabel: string
     theProblem: string
-    theReality: string
-    ourFightLabel: string
+    theSolution: string
+    theOutcome: string
   }
   whatWeDo: {
     badge: string
@@ -461,30 +461,30 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     },
     fighting: {
       badge: "What We're Fighting For",
-      title: 'These Problems Keep Us',
-      subtitle: 'Up At Night',
-      realProblems: 'Real problems. Real solutions.',
+      title: 'We Lead in These Areas —',
+      subtitle: 'Experts Who Stay Ahead & Love What We Do',
+      realProblems: 'We stay current on every trend. You get peace of mind.',
       missedLeads: 'Missed Leads',
       missedLeadsProblem: '$62B lost yearly because leads go unanswered',
-      missedLeadsReality: 'Missed call = competitor wins. Slow reply = money gone.',
-      missedLeadsFight: 'No business loses customers to bad systems.',
+      missedLeadsSolution: 'AI receptionist 24/7. Every call answered, every lead qualified and booked.',
+      missedLeadsOutcome: 'Zero missed leads. Every inquiry converted to revenue.',
       missedLeadsStat: '$62B',
       missedLeadsStatLabel: 'Lost annually to missed leads',
-      skillsGap: 'Skills Gap',
-      skillsGapProblem: '40% of grads unemployed after 6 months',
-      skillsGapReality: 'School teaches theory. Employers want skills. Mismatch.',
-      skillsGapFight: 'Graduates with skills employers actually hire for.',
+      skillsGap: 'Skills Access Gap',
+      skillsGapProblem: 'The world changed. Those who win master digital & tools literacy—but access is unequal.',
+      skillsGapSolution: 'Digni Digital Literacy bridges theory and practice with real-world digital skills training.',
+      skillsGapOutcome: 'Graduates with the digital literacy employers hire for.',
       skillsGapStat: '40%',
-      skillsGapStatLabel: 'Graduate unemployment rate',
+      skillsGapStatLabel: 'Lack digital literacy access',
       techDivide: 'Tech Divide',
       techDivideProblem: "Big tech costs millions. You can't afford it.",
-      techDivideReality: 'Fortune 500 tools. Your budget. You lose.',
-      techDivideFight: 'Same power. Your budget.',
+      techDivideSolution: 'Enterprise-grade tools adapted for SMB budgets. Same power, accessible pricing.',
+      techDivideOutcome: 'Same power. Your budget. Level playing field.',
       techDivideStat: '10:1',
       techDivideStatLabel: 'Enterprise vs SMB tech advantage',
       theProblem: 'The Problem',
-      theReality: 'The Reality',
-      ourFightLabel: 'Our Fight',
+      theSolution: 'The Solution',
+      theOutcome: 'The Outcome',
     },
     whatWeDo: {
       badge: 'What We Do',
@@ -628,30 +628,30 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     },
     fighting: {
       badge: 'Ce pour quoi nous nous battons',
-      title: 'Ces problèmes nous',
-      subtitle: 'tiennent éveillés',
-      realProblems: 'De vrais problèmes. De vraies solutions.',
+      title: 'Nous menons dans ces domaines —',
+      subtitle: 'Experts à jour et passionnés par notre métier',
+      realProblems: 'Nous restons à la pointe. Vous avez l\'esprit tranquille.',
       missedLeads: 'Prospects manqués',
       missedLeadsProblem: '62 milliards $ perdus chaque année car les prospects restent sans réponse',
-      missedLeadsReality: 'Appel manqué = concurrent gagne. Réponse lente = argent perdu.',
-      missedLeadsFight: 'Aucune entreprise ne perd de clients à cause de mauvais systèmes.',
+      missedLeadsSolution: 'Réceptionniste IA 24/7. Chaque appel répondu, chaque prospect qualifié et planifié.',
+      missedLeadsOutcome: 'Zéro prospect manqué. Chaque demande convertie en revenu.',
       missedLeadsStat: '62 Mds $',
       missedLeadsStatLabel: 'Perdus annuellement en prospects manqués',
-      skillsGap: 'Fossé des compétences',
-      skillsGapProblem: '40% des diplômés au chômage après 6 mois',
-      skillsGapReality: 'L\'école enseigne la théorie. Les employeurs veulent des compétences.',
-      skillsGapFight: 'Des diplômés avec les compétences que les employeurs recherchent.',
+      skillsGap: 'Fossé d\'accès aux compétences',
+      skillsGapProblem: 'Le monde a changé. Gagnent ceux qui maîtrisent la littératie digitale et les outils—l\'accès reste inégal.',
+      skillsGapSolution: 'Digni Digital Literacy relie théorie et pratique avec une formation aux compétences digitales réelles.',
+      skillsGapOutcome: 'Des diplômés avec la littératie digitale que les employeurs recherchent.',
       skillsGapStat: '40%',
-      skillsGapStatLabel: 'Taux de chômage des diplômés',
+      skillsGapStatLabel: 'Manquent d\'accès à la littératie digitale',
       techDivide: 'Fracture technologique',
       techDivideProblem: 'La tech coûte des millions. Vous ne pouvez pas vous le permettre.',
-      techDivideReality: 'Outils Fortune 500. Votre budget. Vous perdez.',
-      techDivideFight: 'Même puissance. Votre budget.',
+      techDivideSolution: 'Outils de niveau entreprise adaptés aux budgets PME. Même puissance, prix accessible.',
+      techDivideOutcome: 'Même puissance. Votre budget. Concurrence équitable.',
       techDivideStat: '10:1',
       techDivideStatLabel: 'Avantage tech entreprise vs PME',
       theProblem: 'Le Problème',
-      theReality: 'La Réalité',
-      ourFightLabel: 'Notre Combat',
+      theSolution: 'La Solution',
+      theOutcome: 'Le Résultat',
     },
     whatWeDo: {
       badge: 'Ce que nous faisons',
@@ -794,30 +794,30 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     },
     fighting: {
       badge: 'ما نكافح من أجله',
-      title: 'هذه المشاكل تبقينا',
-      subtitle: 'مستيقظين',
-      realProblems: 'مشاكل حقيقية. حلول حقيقية.',
+      title: 'نحن رواد في هذه المجالات —',
+      subtitle: 'خبراء محدثون ومتحمسون لعملنا',
+      realProblems: 'نبقى على اطلاع بكل تطور. وأنت مطمئن.',
       missedLeads: 'عملاء محتملون ضائعون',
       missedLeadsProblem: '62 مليار $ تضيع سنوياً لأن العملاء لا يُجابون',
-      missedLeadsReality: 'مكالمة ضائعة = المنافس يفوز. رد بطيء = مال ضائع.',
-      missedLeadsFight: 'لا تخسر أي شركة عملاء بسبب أنظمة رديئة.',
+      missedLeadsSolution: 'موظف استقبال ذكي 24/7. كل مكالمة تُجاب، كل عميل يُؤهل ويُحجز.',
+      missedLeadsOutcome: 'صفر عملاء مفقودين. كل استفسار يتحول إلى إيرادات.',
       missedLeadsStat: '62 مليار $',
       missedLeadsStatLabel: 'تضيع سنوياً في عملاء محتملين',
-      skillsGap: 'فجوة المهارات',
-      skillsGapProblem: '40% من الخريجين عاطلون بعد 6 أشهر',
-      skillsGapReality: 'المدرسة تعلّم النظرية. أصحاب العمل يريدون المهارات.',
-      skillsGapFight: 'خريجون بمهارات يبحث عنها أصحاب العمل.',
+      skillsGap: 'فجوة الوصول للمهارات',
+      skillsGapProblem: 'العالم تغيّر. من يفوز هم من يتقنون القراءة الرقمية والأدوات—لكن الوصول غير متساوٍ.',
+      skillsGapSolution: 'Digni Digital Literacy يربط النظرية بالممارسة مع تدريب على مهارات رقمية حقيقية.',
+      skillsGapOutcome: 'خريجون بالقراءة الرقمية التي يبحث عنها أصحاب العمل.',
       skillsGapStat: '40%',
-      skillsGapStatLabel: 'معدل بطالة الخريجين',
+      skillsGapStatLabel: 'يفتقدون الوصول للقراءة الرقمية',
       techDivide: 'الفجوة التقنية',
       techDivideProblem: 'التقنية تكلف الملايين. لا تستطيع تحملها.',
-      techDivideReality: 'أدوات فورتشن 500. ميزانيتك. أنت تخسر.',
-      techDivideFight: 'نفس القوة. ميزانيتك.',
+      techDivideSolution: 'أدوات مستوى enterprise لميزانيات المشاريع الصغيرة. نفس القوة، أسعار في المتناول.',
+      techDivideOutcome: 'نفس القوة. ميزانيتك. منافسة عادلة.',
       techDivideStat: '10:1',
       techDivideStatLabel: 'ميزة الشركات vs المشاريع الصغيرة',
       theProblem: 'المشكلة',
-      theReality: 'الواقع',
-      ourFightLabel: 'كفاحنا',
+      theSolution: 'الحل',
+      theOutcome: 'النتيجة',
     },
     whatWeDo: {
       badge: 'ماذا نفعل',

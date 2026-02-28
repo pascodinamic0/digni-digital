@@ -453,16 +453,6 @@ const ClientJourneyDemo = () => {
             <BrokenFlowDiagram channels={channels} brokenStages={brokenStages} activeStep={activeFunnelStep} />
             <AIPoweredFlowDiagram channels={channels} aiStages={aiStages} activeStep={activeFunnelStep} />
           </motion.div>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mt-6 text-center"
-          >
-            <p className="text-muted text-sm max-w-xl mx-auto">
-              Example: 100 leads. Left: bounces at every stage until the cycle breaks. Right: fully automated, zero drop, higher conversion, referrals feed the loop.
-            </p>
-          </motion.div>
         </div>
 
         <div className="lg:hidden px-0 sm:px-2">
@@ -544,16 +534,6 @@ const ClientJourneyDemo = () => {
               </motion.div>
             )}
           </AnimatePresence>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mt-6 text-center"
-          >
-            <p className="text-muted text-sm max-w-xl mx-auto">
-              Example: 100 leads. Left: bounces at every stage until the cycle breaks. Right: fully automated, zero drop, higher conversion, referrals feed the loop.
-            </p>
-          </motion.div>
         </div>
       </div>
     </section>
