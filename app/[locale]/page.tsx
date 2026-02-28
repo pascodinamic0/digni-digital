@@ -925,18 +925,18 @@ function CaseStudies() {
       color: 'success' as const
     },
     {
-      solution: 'AI Employee™',
-      industry: c.realEstate,
+      solution: 'Agentic Softwares',
+      industry: c.software,
       title: c.study3Title,
       duration: c.study3Duration,
       problem: c.study3Problem,
       results: [
-        { value: '24/7', label: c.study3Result1 },
-        { value: '250%', label: c.study3Result2 },
-        { value: '$180k', label: c.study3Result3 },
+        { value: '90%', label: c.study3Result1 },
+        { value: '10k+', label: c.study3Result2 },
+        { value: '4.8/5', label: c.study3Result3 },
       ],
-      icon: '🤖',
-      color: 'accent' as const
+      icon: '⚙️',
+      color: 'purple' as const
     },
   ]
 
@@ -975,13 +975,13 @@ function CaseStudies() {
             >
               <div className="flex items-center gap-3 mb-6">
                 <div className={`w-10 h-10 rounded-lg flex items-center justify-center text-xl ${
-                  study.color === 'accent' ? 'bg-accent/10' : 'bg-success/10'
+                  study.color === 'accent' ? 'bg-accent/10' : study.color === 'purple' ? 'bg-purple/10' : 'bg-success/10'
                 }`}>
                   {study.icon}
                 </div>
                 <div>
                   <span className={`px-3 py-1 text-xs font-medium rounded-full whitespace-nowrap ${
-                    study.color === 'accent' ? 'bg-accent/10 text-accent' : 'bg-success/10 text-success'
+                    study.color === 'accent' ? 'bg-accent/10 text-accent' : study.color === 'purple' ? 'bg-purple/10 text-purple' : 'bg-success/10 text-success'
                   }`}>
                     {study.solution}
                   </span>
@@ -1004,10 +1004,10 @@ function CaseStudies() {
                 <div className="space-y-4 pt-4 border-t border-border-light">
                   <span className="text-xs uppercase tracking-wider text-muted-dark">{c.results}</span>
                   {study.results.map((result, j) => (
-                    <div key={j} className="flex justify-between items-center">
-                      <span className="text-muted text-sm">{result.label}</span>
-                      <span className={`font-display text-xl font-bold ${
-                        study.color === 'accent' ? 'text-accent' : 'text-success'
+                    <div key={j} className="flex justify-between items-center gap-4">
+                      <span className="text-muted text-sm flex-1 min-w-0">{result.label}</span>
+                      <span className={`font-display text-xl font-bold whitespace-nowrap shrink-0 ${
+                        study.color === 'accent' ? 'text-accent' : study.color === 'purple' ? 'text-purple' : 'text-success'
                       }`}>{result.value}</span>
                     </div>
                   ))}
@@ -1017,7 +1017,9 @@ function CaseStudies() {
               <div className={`mt-4 text-sm font-medium transition-colors ${
                 study.color === 'accent' 
                   ? 'text-accent group-hover:text-accent-light' 
-                  : 'text-success group-hover:text-success/80'
+                  : study.color === 'purple'
+                    ? 'text-purple group-hover:text-purple-light'
+                    : 'text-success group-hover:text-success/80'
               }`}>
                 {expanded === i ? c.clickCollapse : c.clickExpand}
               </div>

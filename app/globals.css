@@ -965,3 +965,9 @@ img {
     transform: scale(1);
   }
 }
+
+/* Next.js DevTools portal: override injected left/top positioning */
+nextjs-portal {
+  left: unset;
+  top: unset;
+}
