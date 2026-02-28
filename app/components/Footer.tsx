@@ -122,7 +122,7 @@ export default function Footer() {
                   <div className="absolute w-4 h-6 bg-accent transform -skew-x-12 -translate-x-0.5 group-hover:skew-x-0 transition-transform duration-300 rounded-sm" style={{ opacity: 0.9 }} />
                   <div className="absolute w-4 h-6 bg-accent transform skew-x-12 translate-x-0.5 group-hover:skew-x-0 transition-transform duration-300 rounded-sm" style={{ opacity: 0.4 }} />
                 </div>
-                <span className="font-display font-semibold text-lg text-text">Digni Digital LLC</span>
+                <span className="font-body font-semibold text-lg tracking-tight text-text">Digni Digital LLC</span>
               </Link>
               <p className="text-muted text-sm max-w-xs mb-5">
                 {t.footer.tagline}

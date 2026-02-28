@@ -99,7 +99,7 @@ export default function Navigation() {
               <div className="absolute w-5 h-7 bg-accent transform -skew-x-12 -translate-x-0.5 group-hover:skew-x-0 transition-transform duration-300 rounded-sm" style={{ opacity: 0.9 }} />
               <div className="absolute w-5 h-7 bg-accent transform skew-x-12 translate-x-0.5 group-hover:skew-x-0 transition-transform duration-300 rounded-sm" style={{ opacity: 0.4 }} />
             </div>
-            <span className="font-display font-semibold text-xl transition-colors duration-300 text-text">Digni Digital LLC</span>
+            <span className="font-body font-semibold text-xl tracking-tight transition-colors duration-300 text-text">Digni Digital LLC</span>
           </Link>
 
           <div className="hidden lg:flex items-center gap-8">
@@ -134,7 +134,7 @@ export default function Navigation() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 10 }}
                   role="menu"
-                  aria-label="Solutions submenu"
+                  aria-label="Services submenu"
                   className="absolute top-full left-0 mt-2 w-80 bg-surface border border-border-light rounded-xl shadow-2xl backdrop-blur-xl z-50"
                 >
                   <div className="p-2">
