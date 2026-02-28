@@ -229,6 +229,12 @@ type ContactTranslations = {
 }
 
 type ClientJourneyTranslations = {
+  badge: string
+  title: string
+  subtitle: string
+  subtext: string
+  brokenLabel: string
+  aiFlowLabel: string
   channels: Array<{ id: string; label: string }>
   brokenStages: Array<{ step: number; title: string; description: string; leak: string }>
   aiStages: Array<{ step: number; title: string; description: string; win: string }>
@@ -461,25 +467,25 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     },
     fighting: {
       badge: "What We're Fighting For",
-      title: 'We Lead in These Areas —',
-      subtitle: 'Experts Who Stay Ahead & Love What We Do',
-      realProblems: 'We stay current on every trend. You get peace of mind.',
+      title: 'We Lead Here.',
+      subtitle: 'Experts Who Stay Ahead.',
+      realProblems: 'Current. You get peace of mind.',
       missedLeads: 'Missed Leads',
-      missedLeadsProblem: '$62B lost yearly because leads go unanswered',
-      missedLeadsSolution: 'AI receptionist 24/7. Every call answered, every lead qualified and booked.',
-      missedLeadsOutcome: 'Zero missed leads. Every inquiry converted to revenue.',
+      missedLeadsProblem: '$62B lost yearly. Leads unanswered.',
+      missedLeadsSolution: 'AI 24/7. Answer. Qualify. Book.',
+      missedLeadsOutcome: 'Zero missed. Every inquiry converted.',
       missedLeadsStat: '$62B',
       missedLeadsStatLabel: 'Lost annually to missed leads',
       skillsGap: 'Skills Access Gap',
-      skillsGapProblem: 'The world changed. Those who win master digital & tools literacy—but access is unequal.',
-      skillsGapSolution: 'Digni Digital Literacy bridges theory and practice with real-world digital skills training.',
-      skillsGapOutcome: 'Graduates with the digital literacy employers hire for.',
+      skillsGapProblem: 'World changed. Winners master digital literacy. Access is unequal.',
+      skillsGapSolution: 'Bridges theory and practice. Real digital skills.',
+      skillsGapOutcome: 'Graduates employers actually hire.',
       skillsGapStat: '40%',
       skillsGapStatLabel: 'Lack digital literacy access',
       techDivide: 'Tech Divide',
-      techDivideProblem: "Big tech costs millions. You can't afford it.",
-      techDivideSolution: 'Enterprise-grade tools adapted for SMB budgets. Same power, accessible pricing.',
-      techDivideOutcome: 'Same power. Your budget. Level playing field.',
+      techDivideProblem: "Big tech costs millions.",
+      techDivideSolution: 'Enterprise tools. SMB budget.',
+      techDivideOutcome: 'Same power. Your budget.',
       techDivideStat: '10:1',
       techDivideStatLabel: 'Enterprise vs SMB tech advantage',
       theProblem: 'The Problem',
@@ -494,8 +500,8 @@ function buildTranslations(): Record<Language, TranslationKeys> {
       forSchools: 'For Schools',
       forUniqueNeeds: 'For Unique Needs',
       aiEmployeeTitle: 'AI Employee Systems',
-      aiEmployeeDesc: 'Capture every lead. Qualify. Book appointments. 24/7. Never miss again.',
-      aiEmployeeApproach: 'We study your business. Build AI that talks like you. Done.',
+      aiEmployeeDesc: 'Capture every lead. Qualify. Book. 24/7.',
+      aiEmployeeApproach: 'AI that talks like you. Done.',
       aiEmployeeOutcome1: '300% more leads captured',
       aiEmployeeOutcome2: '24/7 response',
       aiEmployeeOutcome3: 'Zero missed calls',
@@ -503,8 +509,8 @@ function buildTranslations(): Record<Language, TranslationKeys> {
       aiEmployeePrimaryCta: 'See How It Works',
       aiEmployeeSecondaryCta: 'Book a Demo',
       futureReadyTitle: 'Digni Digital Literacy',
-      futureReadyDesc: 'Students graduate with real skills. 85% get jobs. We provide curriculum and internet.',
-      futureReadyApproach: "We train. Employers hire. You're the bridge.",
+      futureReadyDesc: 'Real skills. 85% employed.',
+      futureReadyApproach: 'We train. Employers hire.',
       futureReadyOutcome1: '85% employment rate',
       futureReadyOutcome2: 'Direct employer links',
       futureReadyOutcome3: 'Real skills',
@@ -512,17 +518,17 @@ function buildTranslations(): Record<Language, TranslationKeys> {
       futureReadyPrimaryCta: 'View Program Details',
       futureReadySecondaryCta: 'Schedule Consultation',
       agenticSoftwaresTitle: 'Agentic Softwares',
-      agenticSoftwaresDesc: 'AI-native software that perceives, reasons, and acts autonomously.',
-      agenticSoftwaresApproach: 'We build software with agentic DNA: autonomous workflows, intelligent automation.',
+      agenticSoftwaresDesc: 'AI that perceives, reasons, acts.',
+      agenticSoftwaresApproach: 'Autonomous workflows. Smart automation.',
       agenticSoftwaresOutcome1: 'Autonomous agents',
       agenticSoftwaresOutcome2: 'AI-native architecture',
       agenticSoftwaresOutcome3: 'Intelligent workflows',
       agenticSoftwaresOutcome4: 'You own it',
       agenticSoftwaresPrimaryCta: 'Explore Process',
       agenticSoftwaresSecondaryCta: 'Discuss Your Project',
-      notSureTitle: 'Not Sure Which Service You Need?',
-      notSureSubtitle: "Tell us your problem. We'll find the fix.",
-      whatWeDoDescription: 'Each service fixes a real problem. Impact, not buzzwords.',
+      notSureTitle: 'Not Sure Which Service?',
+      notSureSubtitle: "Tell us. We'll find the fix.",
+      whatWeDoDescription: 'Each fixes a real problem.',
     },
     stats: {
       badge: 'Proven Track Record',
@@ -1106,6 +1112,12 @@ function buildTranslations(): Record<Language, TranslationKeys> {
   }
 
   const clientJourneyEn: ClientJourneyTranslations = {
+    badge: 'Same 100 Leads. Two Outcomes.',
+    title: '99 Leak.',
+    subtitle: '95 Close. Referrals Compound.',
+    subtext: 'One path bleeds. One compounds. The playbook is simple. The execution isn\'t.',
+    brokenLabel: 'The Leak',
+    aiFlowLabel: 'The Loop',
     channels: [
       { id: 'ads', label: 'Paid Ads' },
       { id: 'website', label: 'Website' },
@@ -1114,26 +1126,32 @@ function buildTranslations(): Record<Language, TranslationKeys> {
       { id: 'phone', label: 'Phone' },
     ],
     brokenStages: [
-      { step: 1, title: 'Lead Arrives', description: '100 leads hit different inboxes—calls, forms, DMs, ads. No single view. Sales and admin each check their own systems. Nobody has the full picture.', leak: 'Scattered platforms. No unified view.' },
-      { step: 2, title: 'First Contact', description: 'Calls go to voicemail. Emails sit for hours. DMs get buried. 78% of leads buy from whoever answers first. By the time someone responds, they\'re gone.', leak: '62 lost: slow response, voicemail, no 24/7.' },
-      { step: 3, title: 'Qualification', description: 'Manual response. Different reps, different questions. Budget and timeline get lost in notes. Hot leads mixed with tire-kickers.', leak: '26 lost: inconsistent qualification, wasted time.' },
-      { step: 4, title: 'Booking Attempt', description: 'Handoff to sales. Calendar links via email. Back-and-forth to find a time. Double-booking, forgotten meetings. Lead goes cold.', leak: '7 lost: manual handoffs, calendar chaos.' },
-      { step: 5, title: 'Follow-Up', description: 'No system. Leads who don\'t book fall through the cracks. No reminders, no nurture. They buy from a competitor.', leak: '3 lost: zero follow-up, deals you never chased.' },
-      { step: 6, title: 'Outcome', description: 'Leads go cold. Competitors win. Ad spend generates leads—but your team can\'t convert. Revenue leaks at every stage.', leak: '1 lost: goes cold. Competitor closes.' },
-      { step: 7, title: 'Referrals & Continuity', description: 'No loop. No referral system. Every customer is one-time. Growth stalls. You keep spending on ads to replace what you lost.', leak: 'Cycle breaks. 0 referrals. No repeat business.' },
+      { step: 1, title: 'Lead Arrives', description: 'Leads hit different inboxes. No single view.', leak: 'Scattered. No unified view.' },
+      { step: 2, title: 'First Contact', description: 'Voicemail. Emails sit. 78% buy from first answer.', leak: '62 lost: slow, no 24/7.' },
+      { step: 3, title: 'Qualification', description: 'Manual. Different reps, different questions.', leak: '26 lost: inconsistent.' },
+      { step: 4, title: 'Booking Attempt', description: 'Handoff chaos. Calendar back-and-forth.', leak: '7 lost: manual handoffs.' },
+      { step: 5, title: 'Follow-Up', description: 'No system. Leads fall through cracks.', leak: '3 lost: zero follow-up.' },
+      { step: 6, title: 'Outcome', description: 'Leads go cold. Competitors win.', leak: '1 lost. Competitor closes.' },
+      { step: 7, title: 'Referrals', description: 'No loop. Growth stalls.', leak: '0 referrals.' },
     ],
     aiStages: [
-      { step: 1, title: 'Lead Arrives', description: 'Same 100 leads. All channels feed into one system. AI sees every lead in real time. One place. One view.', win: '100 captured. No scattered inboxes.' },
-      { step: 2, title: 'Instant Response', description: 'Reply in under 2 seconds. 24/7. Calls answered. Messages replied. No voicemail. No waiting.', win: '100 reached. 0 lost. AI responds to all.' },
-      { step: 3, title: 'Smart Qualification', description: 'AI asks the right questions. Budget, timeline, readiness. Only ready buyers reach your calendar.', win: '100 qualified. 0 lost.' },
-      { step: 4, title: 'Auto-Booking', description: 'Qualified lead picks a slot. Calendar syncs. No back-and-forth. No handoffs. Booked before it goes cold.', win: '100 booked or nurtured. 0 lost.' },
-      { step: 5, title: 'Follow-Up Until Close', description: 'AI keeps following up until they book or say no. No lead left behind.', win: '100 chased. 0 cold drops.' },
-      { step: 6, title: 'Outcome', description: 'Every lead captured, qualified, and either closed or nurtured. Revenue that used to leak is now closing.', win: '95 closed. Higher conversion.' },
-      { step: 7, title: 'Referrals & Continuity', description: 'Happy clients refer others. The loop continues—referrals flow in as new leads. Your best growth is free.', win: '+23 referrals. Cycle never stops.' },
+      { step: 1, title: 'Lead Arrives', description: 'All channels → one system. One view.', win: '100 captured.' },
+      { step: 2, title: 'Instant Response', description: 'Under 2 sec. 24/7. No voicemail.', win: '100 reached. 0 lost.' },
+      { step: 3, title: 'Smart Qualification', description: 'Right questions. Ready buyers only.', win: '100 qualified.' },
+      { step: 4, title: 'Auto-Booking', description: 'Pick slot. Sync. Booked.', win: '100 booked.' },
+      { step: 5, title: 'Follow-Up', description: 'Until they book or say no.', win: '0 cold drops.' },
+      { step: 6, title: 'Outcome', description: 'Captured. Qualified. Closed.', win: '95 closed.' },
+      { step: 7, title: 'Referrals', description: 'Clients refer. Loop continues.', win: '+23 referrals.' },
     ],
   }
 
   const clientJourneyFr: ClientJourneyTranslations = {
+    badge: 'Mêmes 100 leads. Deux résultats.',
+    title: '99 perdus.',
+    subtitle: 'Ou 95 convertis + 23 parrainages.',
+    subtext: 'Un fuit. L\'autre convertit. IA répond en 2 sec, qualifie, réserve. Parrainages alimentent la boucle.',
+    brokenLabel: 'La fuite',
+    aiFlowLabel: 'La boucle',
     channels: [
       { id: 'ads', label: 'Annonces payantes' },
       { id: 'website', label: 'Site web' },
@@ -1146,6 +1164,12 @@ function buildTranslations(): Record<Language, TranslationKeys> {
   }
 
   const clientJourneyAr: ClientJourneyTranslations = {
+    badge: 'نفس المائة. نتيجتان.',
+    title: '99 ضائعون.',
+    subtitle: 'أو 95 محولين + 23 إحالة.',
+    subtext: 'واحد ينسرب. الآخر يحول. الذكاء يرد في ثانيتين، يصنف، يحجز. الإحالات تغذي الحلقة.',
+    brokenLabel: 'التسرب',
+    aiFlowLabel: 'الحلقة',
     channels: [
       { id: 'ads', label: 'إعلانات مدفوعة' },
       { id: 'website', label: 'الموقع' },

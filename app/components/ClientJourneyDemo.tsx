@@ -275,7 +275,7 @@ function VisualFunnel({
   )
 }
 
-function BrokenFlowDiagram({ channels, brokenStages, activeStep }: { channels: ChannelItem[]; brokenStages: BrokenStageItem[]; activeStep: number }) {
+function BrokenFlowDiagram({ channels, brokenStages, activeStep, label }: { channels: ChannelItem[]; brokenStages: BrokenStageItem[]; activeStep: number; label: string }) {
   const funnelStages: FunnelStage[] = brokenStages.map((s, i) => ({
     step: s.step,
     title: s.title,
@@ -293,7 +293,7 @@ function BrokenFlowDiagram({ channels, brokenStages, activeStep }: { channels: C
         LEAKS EVERYWHERE
       </div>
       <div className="text-center mb-4 min-h-[1.5rem] flex items-center justify-center">
-        <span className="text-destructive text-sm font-bold">❌ Broken Journey</span>
+        <span className="text-destructive text-sm font-bold">❌ {label}</span>
       </div>
       <VisualFunnel
         stages={funnelStages}
@@ -305,13 +305,13 @@ function BrokenFlowDiagram({ channels, brokenStages, activeStep }: { channels: C
       />
       <div className="mt-4 flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-destructive/5 border border-dashed border-destructive/40">
         <span className="text-destructive text-2xl">↻</span>
-        <span className="text-destructive/80 text-xs font-medium">Cycle breaks. No referrals. Start over with more ad spend.</span>
+        <span className="text-destructive/80 text-xs font-medium">Cycle breaks. No referrals.</span>
       </div>
     </motion.div>
   )
 }
 
-function AIPoweredFlowDiagram({ channels, aiStages, activeStep }: { channels: ChannelItem[]; aiStages: AIStageItem[]; activeStep: number }) {
+function AIPoweredFlowDiagram({ channels, aiStages, activeStep, label }: { channels: ChannelItem[]; aiStages: AIStageItem[]; activeStep: number; label: string }) {
   const funnelStages: FunnelStage[] = aiStages.map((s, i) => ({
     step: s.step,
     title: s.title,
@@ -331,7 +331,7 @@ function AIPoweredFlowDiagram({ channels, aiStages, activeStep }: { channels: Ch
         AI HANDLES ALL
       </div>
       <div className="text-center mb-4 min-h-[1.5rem] flex items-center justify-center">
-        <span className="text-success text-sm font-bold">✅ AI-Powered Journey</span>
+        <span className="text-success text-sm font-bold">✅ {label}</span>
       </div>
       <VisualFunnel
         stages={funnelStages}
@@ -343,7 +343,7 @@ function AIPoweredFlowDiagram({ channels, aiStages, activeStep }: { channels: Ch
       />
       <div className="mt-4 flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-success/5 border-2 border-success/30">
         <span className="text-success text-2xl animate-pulse">↻</span>
-        <span className="text-success/90 text-xs font-semibold">Referrals → New leads → Cycle repeats. Growth compounds.</span>
+        <span className="text-success/90 text-xs font-semibold">Referrals → New leads → Loop repeats.</span>
         <svg className="w-4 h-4 text-success flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
         </svg>
@@ -380,7 +380,7 @@ const ClientJourneyDemo = () => {
             viewport={{ once: true }}
             className="inline-block px-4 py-2 bg-accent/10 border border-accent/20 rounded-full text-accent text-xs font-semibold uppercase tracking-wide mb-4"
           >
-            The Client Journey
+            {t.badge}
           </motion.span>
           <motion.h2
             id="journey-demo-title"
@@ -390,8 +390,8 @@ const ClientJourneyDemo = () => {
             transition={{ delay: 0.1 }}
             className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
           >
-            100 Leads. Same Channels.<br />
-            <span className="gradient-text">Where They Bounce vs. Where They Thrive.</span>
+            {t.title}<br />
+            <span className="gradient-text">{t.subtitle}</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -400,7 +400,7 @@ const ClientJourneyDemo = () => {
             transition={{ delay: 0.2 }}
             className="text-muted text-lg max-w-2xl mx-auto"
           >
-            Example: 100 leads arrive. One path leaks at every stage until the cycle breaks. The other: fully automated, zero drop, higher conversion.
+            {t.subtext}
           </motion.p>
 
           {/* Toggle - Mobile/Tablet (switch between Broken / AI Flow) */}
@@ -425,7 +425,7 @@ const ClientJourneyDemo = () => {
                 }`}
                 aria-pressed={activeView === 'before'}
               >
-                ❌ Broken
+                ❌ {t.brokenLabel}
               </button>
               <button
                 onClick={() => setActiveView('after')}
@@ -436,7 +436,7 @@ const ClientJourneyDemo = () => {
                 }`}
                 aria-pressed={activeView === 'after'}
               >
-                ✅ AI Flow
+                ✅ {t.aiFlowLabel}
               </button>
             </div>
           </motion.div>
@@ -450,8 +450,8 @@ const ClientJourneyDemo = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
           >
-            <BrokenFlowDiagram channels={channels} brokenStages={brokenStages} activeStep={activeFunnelStep} />
-            <AIPoweredFlowDiagram channels={channels} aiStages={aiStages} activeStep={activeFunnelStep} />
+            <BrokenFlowDiagram channels={channels} brokenStages={brokenStages} activeStep={activeFunnelStep} label={t.brokenLabel} />
+            <AIPoweredFlowDiagram channels={channels} aiStages={aiStages} activeStep={activeFunnelStep} label={t.aiFlowLabel} />
           </motion.div>
         </div>
 
@@ -469,7 +469,7 @@ const ClientJourneyDemo = () => {
                 <div className="relative rounded-2xl sm:rounded-3xl border-2 border-destructive/30 bg-destructive/5 p-4 sm:p-6 overflow-visible">
                   <div className="flex flex-col sm:flex-row sm:relative items-center sm:block mb-4">
                     <div className="text-center sm:text-center mb-2 sm:mb-0">
-                      <span className="text-destructive text-sm font-bold">❌ Broken Journey</span>
+                      <span className="text-destructive text-sm font-bold">❌ {t.brokenLabel}</span>
                     </div>
                     <div className="sm:absolute sm:top-4 sm:right-4 px-2.5 py-1 bg-destructive/20 text-destructive text-[10px] font-bold rounded-full border border-destructive/30">
                       99 OF 100 LOST
@@ -506,8 +506,8 @@ const ClientJourneyDemo = () => {
                         ✅
                       </div>
                       <div>
-                        <h3 className="font-display text-lg font-bold text-foreground">AI-Powered Journey</h3>
-                        <p className="text-[11px] text-success font-medium tracking-wide">Zero drop · Full automation</p>
+                        <h3 className="font-display text-lg font-bold text-foreground">{t.aiFlowLabel}</h3>
+                        <p className="text-[11px] text-success font-medium tracking-wide">Zero drop</p>
                       </div>
                     </div>
                     <div className="flex items-center gap-2 px-3 py-2 rounded-xl bg-success/15 border border-success/25 shadow-inner">
@@ -528,7 +528,7 @@ const ClientJourneyDemo = () => {
                     <div className="w-10 h-10 rounded-xl bg-success/20 flex items-center justify-center">
                       <span className="text-success text-xl animate-pulse">↻</span>
                     </div>
-                    <span className="text-sm font-semibold text-foreground">Referrals → New leads → Cycle repeats.</span>
+                    <span className="text-sm font-semibold text-foreground">Referrals → Leads → Loop.</span>
                   </div>
                 </div>
               </motion.div>

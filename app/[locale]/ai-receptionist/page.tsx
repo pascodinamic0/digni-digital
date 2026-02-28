@@ -27,7 +27,7 @@ function AIEmployeeCTASection() {
           transition={{ delay: 0.2 }}
           className="inline-block px-5 py-2 bg-accent/10 border border-accent/30 rounded-full text-accent text-sm font-medium tracking-wide mb-6 uppercase"
         >
-          Limited Availability
+          One Market. One Client. That&apos;s the Model.
         </motion.span>
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -36,27 +36,16 @@ function AIEmployeeCTASection() {
           transition={{ delay: 0.3 }}
           className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
         >
-          We&apos;re Not Replacing Your Team.
-          <br />
-          <span className="gradient-text">We&apos;re Amplifying Them.</span>
+          Your Territory. <span className="gradient-text">Or Theirs.</span>
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.35 }}
-          className="text-muted text-lg md:text-xl max-w-2xl mx-auto mb-6 leading-relaxed"
+          className="text-muted text-lg max-w-xl mx-auto mb-10"
         >
-          We give them superpowers—so they can focus on delivery instead of manual work. Stay ahead. Dominate your market.
-        </motion.p>
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.4 }}
-          className="text-accent font-semibold text-base md:text-lg mb-10"
-        >
-          We serve one client per market. Your spot is either yours or your competitor&apos;s.
+          Infrastructure compounds. Hustle doesn&apos;t scale. Apply for a 30-minute conversation.
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -69,7 +58,7 @@ function AIEmployeeCTASection() {
             {...getBookingLinkProps()}
             className="group relative inline-flex items-center justify-center gap-3 bg-accent hover:bg-accent-light text-background font-bold px-10 py-5 rounded-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl text-lg shadow-lg shadow-accent/25"
           >
-            <span>Secure Your Position Now</span>
+            <span>Apply for a Conversation</span>
             <svg className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
@@ -84,15 +73,15 @@ function AIEmployeeCTASection() {
         >
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 bg-success rounded-full" />
-            <span>One client per market</span>
+            <span>One market. One client.</span>
           </div>
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 bg-success rounded-full" />
-            <span>30-min Strategy Call</span>
+            <span>30-minute conversation</span>
           </div>
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 bg-success rounded-full" />
-            <span>No obligation</span>
+            <span>We decide fit</span>
           </div>
         </motion.div>
       </div>
@@ -105,7 +94,7 @@ export default function AIReceptionistPage() {
     {
       number: '01',
       title: 'Instant Response',
-      description: 'Reply in under 2 seconds. No delay. No lost leads.',
+      description: '2 seconds. Every lead. Every time.',
       icon: (
         <svg className="w-7 h-7" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -116,7 +105,7 @@ export default function AIReceptionistPage() {
     {
       number: '02',
       title: 'Smart Qualification',
-      description: 'Asks the right questions. Sends only ready buyers.',
+      description: 'Right questions. Only ready buyers reach you.',
       icon: (
         <svg className="w-7 h-7" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M9 11L12 14L22 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -128,7 +117,7 @@ export default function AIReceptionistPage() {
     {
       number: '03',
       title: 'Auto Booking',
-      description: 'Leads book themselves. Your calendar fills.',
+      description: 'They pick. Calendar fills. No handoffs.',
       icon: (
         <svg className="w-7 h-7" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect x="3" y="4" width="18" height="18" rx="2" ry="2" stroke="currentColor" strokeWidth="2"/>
@@ -141,8 +130,8 @@ export default function AIReceptionistPage() {
     },
     {
       number: '04',
-      title: 'Follow-Up System',
-      description: 'Keeps following until they book or say no.',
+      title: 'Follow-Up',
+      description: 'Until book or no.',
       icon: (
         <svg className="w-7 h-7" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -168,7 +157,7 @@ export default function AIReceptionistPage() {
     {
       number: '06',
       title: 'Revenue Recovery',
-      description: 'Wakes up cold leads. Turns them into sales.',
+      description: 'Wakes cold leads. Turns to sales.',
       icon: (
         <svg className="w-7 h-7" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <line x1="12" y1="1" x2="12" y2="23" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -183,7 +172,7 @@ export default function AIReceptionistPage() {
     {
       name: 'Done-For-You System',
       limited: true,
-      limitedLabel: 'Limited availability',
+      limitedLabel: 'One client per market',
       setupFee: '$2,000',
       setupLabel: 'one-time setup',
       price: '$449',
@@ -200,7 +189,7 @@ export default function AIReceptionistPage() {
         'Performance tracked',
         'Unlimited usage'
       ],
-      note: 'If you pay for ads, you can afford the system that makes them work.'
+      note: 'The math is simple: if you pay for ads, the system pays for itself.'
     }
   ]
 
@@ -242,27 +231,26 @@ export default function AIReceptionistPage() {
             className="text-center mb-8 sm:mb-12 md:mb-16"
           >
             <span className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-destructive/10 border border-destructive/30 rounded-full text-destructive text-xs sm:text-sm font-semibold mb-4 sm:mb-6 uppercase tracking-wide">
-              You're Losing Money Right Now
+              First Response Wins. Every Time.
             </span>
             <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.1] mb-4 sm:mb-6 md:mb-8 px-2">
-              Your Ads Are Generating Leads.{' '}
+              Your Ad Spend Works.
               <br className="hidden sm:block" />
-              <span className="gradient-text">Your Team Is Losing Them.</span>
+              <span className="gradient-text">Your Intake Doesn&apos;t.</span>
             </h1>
-            <p className="text-base sm:text-lg md:text-xl text-muted max-w-3xl mx-auto leading-relaxed mb-6 sm:mb-8 md:mb-10 px-2">
-              Slow reply = lost sale. We respond in <span className="text-accent font-semibold">under 2 seconds</span>. 
-              Qualify. Book. 24/7. You sleep. It works.
+            <p className="text-base sm:text-lg md:text-xl text-muted max-w-2xl mx-auto leading-relaxed mb-6 sm:mb-8 md:mb-10 px-2">
+              The bottleneck isn&apos;t marketing. It&apos;s response. We run the system. You run the business. One market. One client.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-2">
               <a
                 {...getBookingLinkProps()}
                 className="btn-primary text-sm sm:text-base md:text-lg px-6 sm:px-8 py-3 sm:py-4 w-full sm:w-auto text-center"
               >
-                Stop Losing Leads Today
+                Apply for a Conversation
               </a>
               <DemoPresentationDownload service="aiEmployee" variant="hero" label="Download Demo Presentation" />
             </div>
-            <p className="text-muted/60 text-sm mt-4">Live in 48 hours. No software to manage. Done-for-you.</p>
+            <p className="text-muted/60 text-sm mt-4">Live in 48 hours. Apply for a 30-minute conversation.</p>
           </motion.div>
         </div>
       </section>
@@ -272,14 +260,14 @@ export default function AIReceptionistPage() {
         <div className="max-w-5xl mx-auto px-6">
           <div className="text-center mb-16">
             <span className="inline-block px-4 py-2 bg-destructive/10 border border-destructive/20 rounded-full text-destructive text-xs font-semibold mb-6 uppercase tracking-wide">
-              The Math Doesn't Lie
+              We&apos;ve Seen This a Thousand Times
             </span>
             <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-              This Isn't a Marketing Problem.<br />
-              <span className="text-destructive">This Is a Cash Leak.</span>
+              The Winners Have a System.<br />
+              <span className="text-destructive">The Rest Have a Bottleneck.</span>
             </h2>
-            <p className="text-muted text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
-              4 hours late = competitor wins. Your ad spend? Wasted.
+            <p className="text-muted text-lg max-w-2xl mx-auto">
+              99 leak. Or 95 close plus referrals compound. The difference isn&apos;t hustle—it&apos;s infrastructure.
             </p>
           </div>
           
@@ -305,8 +293,8 @@ export default function AIReceptionistPage() {
               className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-destructive/20 to-destructive/5 border border-destructive/20 p-8 text-center"
             >
               <div className="font-display text-5xl md:text-6xl font-bold text-destructive mb-3">78%</div>
-              <p className="text-text font-medium mb-2">call your competitor next</p>
-              <p className="text-muted text-sm">They call your competitor next. Simple.</p>
+              <p className="text-text font-medium mb-2">buy from whoever answers first</p>
+              <p className="text-muted text-sm">Market doesn&apos;t care. First answer takes it.</p>
             </motion.div>
             
             <motion.div
@@ -337,8 +325,8 @@ export default function AIReceptionistPage() {
                 </svg>
               </div>
               <h3 className="font-display text-xl font-bold text-text mb-2">Slow Response</h3>
-              <p className="text-muted text-sm leading-relaxed">
-                Lead at 2pm. You call 6pm. Too late. <span className="text-destructive font-medium">Ad spend burned.</span>
+              <p className="text-muted text-sm">
+                Lead 2pm. You call 6pm. Gone.
               </p>
             </motion.div>
             
@@ -355,8 +343,8 @@ export default function AIReceptionistPage() {
                 </svg>
               </div>
               <h3 className="font-display text-xl font-bold text-text mb-2">Missed Messages</h3>
-              <p className="text-muted text-sm leading-relaxed">
-                Message at 11pm. You sleep. They buy elsewhere. <span className="text-destructive font-medium">Gone by morning.</span>
+              <p className="text-muted text-sm">
+                11pm message. Morning: competitor closed.
               </p>
             </motion.div>
             
@@ -373,8 +361,8 @@ export default function AIReceptionistPage() {
                 </svg>
               </div>
               <h3 className="font-display text-xl font-bold text-text mb-2">No Follow-Up</h3>
-              <p className="text-muted text-sm leading-relaxed">
-                "I'll call tomorrow." Becomes never. <span className="text-destructive font-medium">Revenue gone.</span>
+              <p className="text-muted text-sm">
+                "I'll call tomorrow." Never happens.
               </p>
             </motion.div>
           </div>
@@ -383,13 +371,15 @@ export default function AIReceptionistPage() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center p-8 rounded-2xl bg-gradient-to-r from-accent/5 via-accent/10 to-accent/5 border border-accent/20"
+            animate={{ scale: [1, 1.02, 1] }}
+            transition={{ duration: 2.5, repeat: Infinity, repeatType: 'reverse' }}
+            className="transformation-callout text-center p-8 rounded-2xl bg-gradient-to-r from-accent/10 via-accent/20 to-accent/10 border-2 border-accent/40 shadow-xl shadow-accent/20"
           >
-            <p className="text-text text-xl md:text-2xl font-display font-semibold mb-2">
-              This isn't a sales problem. It's a systems problem.
+            <p className="text-text text-xl font-display font-semibold mb-2">
+              Sleep. Wake. Calendar full. That&apos;s the system.
             </p>
-            <p className="text-muted text-lg">
-              The fix isn't "try harder." The fix is infrastructure that never sleeps.
+            <p className="text-muted">
+              We run it. One client per market. Live in 48 hours.
             </p>
           </motion.div>
         </div>
@@ -400,30 +390,40 @@ export default function AIReceptionistPage() {
         <div className="max-w-5xl mx-auto px-6">
           <div className="text-center mb-12">
             <span className="inline-block px-4 py-2 bg-accent/10 border border-accent/20 rounded-full text-accent text-xs font-semibold uppercase tracking-wide mb-4">
-              Why Traditional Reception Fails
+              The Old Playbook Is Broken
             </span>
             <h2 className="font-display text-4xl md:text-5xl font-bold mb-6 leading-tight">
-              Hiring More People
-              <br />
-              <span className="gradient-text">Isn't the Answer.</span>
+              More People <span className="gradient-text">Doesn&apos;t Scale.</span>
             </h2>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="card p-6">
-              <h3 className="font-display text-lg font-bold mb-2">Human limits</h3>
-              <p className="text-muted text-sm">One person. One line. After hours? Voicemail. Weekends? Missed. Scale = more hires = more cost.</p>
+              <h3 className="font-display text-lg font-bold mb-2">Humans</h3>
+              <p className="text-muted text-sm">One line. Voicemail after hours. Scale = more cost.</p>
+            </motion.div>
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.05 }} className="card p-6">
+              <h3 className="font-display text-lg font-bold mb-2">Answering services</h3>
+              <p className="text-muted text-sm">Generic scripts. Messages, not conversions.</p>
             </motion.div>
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="card p-6">
-              <h3 className="font-display text-lg font-bold mb-2">Answering services</h3>
-              <p className="text-muted text-sm">Generic scripts. No qualification. They take messages—they don't convert. You pay for volume, not results.</p>
+              <h3 className="font-display text-lg font-bold mb-2">Chatbots</h3>
+              <p className="text-muted text-sm">Calls go to humans. No qualify. No book.</p>
+            </motion.div>
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.15 }} className="card p-6">
+              <h3 className="font-display text-lg font-bold mb-2">Scattered inboxes</h3>
+              <p className="text-muted text-sm">Leads everywhere. No single view.</p>
             </motion.div>
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} className="card p-6">
-              <h3 className="font-display text-lg font-bold mb-2">Off-the-shelf chatbots</h3>
-              <p className="text-muted text-sm">Calls go to humans. Chatbots can't qualify. No CRM. No booking. You still do the manual work.</p>
+              <h3 className="font-display text-lg font-bold mb-2">No follow-up</h3>
+              <p className="text-muted text-sm">"I'll call back." Never happens.</p>
+            </motion.div>
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.25 }} className="card p-6">
+              <h3 className="font-display text-lg font-bold mb-2">Manual handoffs</h3>
+              <p className="text-muted text-sm">Sales to admin. Lead goes cold.</p>
             </motion.div>
           </div>
           <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="text-center text-accent font-medium mt-8">
-            Our model: AI that talks like you. Qualifies. Books. Runs 24/7. Done-for-you. One system replaces the broken three.
+            One system. Your voice. Qualifies. Books. Never sleeps. One client per market.
           </motion.p>
         </div>
       </AnimatedSection>
@@ -450,7 +450,7 @@ export default function AIReceptionistPage() {
               viewport={{ once: true }}
               className="inline-block px-4 py-2 bg-accent/10 border border-accent/20 rounded-full text-accent text-xs font-semibold uppercase tracking-wide mb-4"
             >
-              The System
+              The Playbook
             </motion.span>
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
@@ -459,17 +459,16 @@ export default function AIReceptionistPage() {
               transition={{ delay: 0.1 }}
               className="font-display text-4xl md:text-5xl font-bold mb-6"
             >
-              Six Capabilities.<br />
-              <span className="gradient-text">One System.</span>
+              Six Capabilities. <span className="gradient-text">Zero Compromise.</span>
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="text-muted text-lg max-w-2xl mx-auto"
+              className="text-muted max-w-xl mx-auto"
             >
-              We run it. You grow.
+              We run it. You scale. Live in 48 hours.
             </motion.p>
           </div>
 
@@ -565,7 +564,7 @@ export default function AIReceptionistPage() {
               viewport={{ once: true }}
               className="inline-block px-4 py-2 bg-accent/10 border border-accent/20 rounded-full text-accent text-xs font-semibold uppercase tracking-wide mb-4"
             >
-              Clear Qualification
+              Who We Work With
             </motion.span>
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
@@ -574,25 +573,24 @@ export default function AIReceptionistPage() {
               transition={{ delay: 0.1 }}
               className="font-display text-4xl md:text-5xl font-bold mb-6"
             >
-              This system is not for everyone.<br />
-              <span className="gradient-text">Here's who it serves.</span>
+              We Select. <span className="gradient-text">We Choose Who We Work With.</span>
             </motion.h2>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6 md:gap-8">
+          <div className="grid md:grid-cols-2 gap-6 md:gap-8 place-items-center">
             {/* Who This Is For */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="relative overflow-hidden rounded-3xl backdrop-blur-xl bg-gradient-to-br from-success/10 via-success/5 to-transparent border border-success/20 p-8"
+              className="relative overflow-hidden rounded-3xl backdrop-blur-xl bg-gradient-to-br from-success/10 via-success/5 to-transparent border border-success/20 p-8 w-full max-w-xl text-center"
             >
               {/* Glass effect overlay */}
               <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent pointer-events-none" />
               
-              <div className="relative z-10">
-                <div className="flex items-center gap-3 mb-6">
+              <div className="relative z-10 flex flex-col items-center">
+                <div className="flex items-center justify-center gap-3 mb-6">
                   <div className="w-12 h-12 bg-success/20 rounded-xl flex items-center justify-center">
                     <svg className="w-6 h-6 text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -601,28 +599,24 @@ export default function AIReceptionistPage() {
                   <h3 className="font-display text-2xl font-bold text-success">Who This Is For</h3>
                 </div>
                 
-                <ul className="space-y-4">
+                <ul className="space-y-4 w-full">
                   {[
-                    'Running Facebook, Instagram, or WhatsApp ads',
-                    'Selling $500+ per transaction',
-                    'Appointments or consultations required',
-                    'Missing leads from slow response',
-                    'Spending $1k+ monthly on ads',
-                    'Want every lead you pay for'
-                  ].map((item, i) => (
+                    ['📱', 'Running Facebook, Instagram, or WhatsApp ads'],
+                    ['💰', 'Selling $500+ per transaction'],
+                    ['📅', 'Appointments or consultations required'],
+                    ['⏱️', 'Missing leads from slow response'],
+                    ['💵', 'Spending $1k+ monthly on ads'],
+                    ['🎯', 'Want every lead you pay for']
+                  ].map(([emoji, item], i) => (
                     <motion.li
                       key={i}
                       initial={{ opacity: 0, x: -10 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
                       transition={{ delay: 0.3 + i * 0.05 }}
-                      className="flex items-start gap-3"
+                      className="flex items-center gap-3"
                     >
-                      <div className="w-5 h-5 bg-success/20 rounded-md flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <svg className="w-3 h-3 text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                        </svg>
-                      </div>
+                      <span className="text-xl flex-shrink-0">{emoji}</span>
                       <span className="text-muted text-sm leading-relaxed">{item}</span>
                     </motion.li>
                   ))}
@@ -636,13 +630,13 @@ export default function AIReceptionistPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
-              className="relative overflow-hidden rounded-3xl backdrop-blur-xl bg-gradient-to-br from-destructive/10 via-destructive/5 to-transparent border border-destructive/20 p-8"
+              className="relative overflow-hidden rounded-3xl backdrop-blur-xl bg-gradient-to-br from-destructive/10 via-destructive/5 to-transparent border border-destructive/20 p-8 w-full max-w-xl text-center"
             >
               {/* Glass effect overlay */}
               <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent pointer-events-none" />
               
-              <div className="relative z-10">
-                <div className="flex items-center gap-3 mb-6">
+              <div className="relative z-10 flex flex-col items-center">
+                <div className="flex items-center justify-center gap-3 mb-6">
                   <div className="w-12 h-12 bg-destructive/20 rounded-xl flex items-center justify-center">
                     <svg className="w-6 h-6 text-destructive" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -651,28 +645,24 @@ export default function AIReceptionistPage() {
                   <h3 className="font-display text-2xl font-bold text-destructive">Not The Right Fit</h3>
                 </div>
                 
-                <ul className="space-y-4">
+                <ul className="space-y-4 w-full">
                   {[
-                    'No paid ads',
-                    'Products under $100',
-                    'No appointments needed',
-                    'Already capturing 100% of leads',
-                    'Need ad strategy, not intake',
-                    'Want to self-manage software'
-                  ].map((item, i) => (
+                    ['🚫', 'No paid ads'],
+                    ['📦', 'Products under $100'],
+                    ['❌', 'No appointments needed'],
+                    ['✅', 'Already capturing 100% of leads'],
+                    ['📊', 'Need ad strategy, not intake'],
+                    ['🔧', 'Want to self-manage software']
+                  ].map(([emoji, item], i) => (
                     <motion.li
                       key={i}
                       initial={{ opacity: 0, x: 10 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
                       transition={{ delay: 0.4 + i * 0.05 }}
-                      className="flex items-start gap-3"
+                      className="flex items-center gap-3"
                     >
-                      <div className="w-5 h-5 bg-destructive/20 rounded-md flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <svg className="w-3 h-3 text-destructive" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M6 18L18 6M6 6l12 12" />
-                        </svg>
-                      </div>
+                      <span className="text-xl flex-shrink-0">{emoji}</span>
                       <span className="text-muted text-sm leading-relaxed">{item}</span>
                     </motion.li>
                   ))}
@@ -687,10 +677,9 @@ export default function AIReceptionistPage() {
       <AnimatedSection className="py-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <span className="text-accent font-medium text-sm uppercase tracking-wider">Success Story</span>
+            <span className="text-accent font-medium text-sm uppercase tracking-wider">Proof</span>
             <h2 className="font-display text-4xl md:text-5xl font-bold mt-4 mb-6">
-              Real Results from<br />
-              <span className="gradient-text">Real Implementation</span>
+              From 40% Missed to 100% Captured. <span className="gradient-text">18 Hours.</span>
             </h2>
           </div>
 
@@ -745,11 +734,10 @@ export default function AIReceptionistPage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">
-              Fixed Pricing,<br />
-              <span className="gradient-text">Complete System</span>
+              Clean. Transparent. <span className="gradient-text">No Surprises.</span>
             </h2>
-            <p className="text-muted text-lg max-w-3xl mx-auto leading-relaxed">
-              One price. Everything included. No per-call fees. No hidden costs.
+            <p className="text-muted max-w-xl mx-auto">
+              One price. Everything included. If you pay for ads, the math works.
             </p>
           </div>
 
@@ -812,7 +800,7 @@ export default function AIReceptionistPage() {
                     {...getBookingLinkProps()}
                     className="btn-primary w-full text-center text-lg py-4"
                   >
-                    Install Follow-Up Infrastructure
+                    Apply for a Conversation
                   </a>
                 </motion.div>
               ))}
