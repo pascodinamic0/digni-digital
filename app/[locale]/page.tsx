@@ -728,7 +728,7 @@ function Products() {
                   {cta.getStarted}
                 </a>
                 <Link href="/products" className="btn-secondary flex-1 text-center">
-                  {cta.learnMore}
+                  {cta.exploreProducts}
                 </Link>
               </div>
             </motion.div>

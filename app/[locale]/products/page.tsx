@@ -217,6 +217,31 @@ export default function ProductsPage() {
         </div>
       </AnimatedSection>
 
+      {/* Social Proof */}
+      <AnimatedSection className="py-16 bg-surface/50">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            {[
+              { metric: '10x', label: 'Faster proposal creation' },
+              { metric: '85%', label: 'Average time saved' },
+              { metric: '40%', label: 'Higher close rates' },
+              { metric: '500+', label: 'Proposals generated' },
+            ].map((stat, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+              >
+                <div className="font-display text-3xl md:text-4xl font-bold text-accent mb-2">{stat.metric}</div>
+                <p className="text-muted text-sm">{stat.label}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </AnimatedSection>
+
       {/* Coming Soon Products */}
       <AnimatedSection className="py-24 bg-surface">
         <div className="max-w-7xl mx-auto px-6">

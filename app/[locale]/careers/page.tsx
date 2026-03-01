@@ -193,6 +193,31 @@ export default function CareersPage() {
         </div>
       </section>
 
+      {/* Team Stats — Proof Section */}
+      <AnimatedSection className="py-16 bg-surface/50">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            {[
+              { metric: '100%', label: 'Remote team' },
+              { metric: '5+', label: 'Countries represented' },
+              { metric: '3', label: 'Live products shipped' },
+              { metric: '50+', label: 'Client projects delivered' },
+            ].map((stat, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+              >
+                <div className="font-display text-3xl md:text-4xl font-bold text-accent mb-2">{stat.metric}</div>
+                <p className="text-muted text-sm">{stat.label}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </AnimatedSection>
+
       {/* Why Join Us */}
       <AnimatedSection className="py-24">
         <div className="max-w-7xl mx-auto px-6">

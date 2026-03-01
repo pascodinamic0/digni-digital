@@ -197,12 +197,13 @@ const UnifiedInbox = () => {
                     type="text"
                     placeholder="Search conversations..."
                     className="bg-transparent border-none outline-none flex-1 text-text placeholder-muted text-sm"
+                    aria-label="Search conversations"
                   />
                 </div>
               </div>
 
               {/* Conversation Items */}
-              <div className="flex-1 overflow-y-auto space-y-1 p-2">
+              <div className="flex-1 overflow-y-auto space-y-1 p-2" role="listbox" aria-label="Conversations">
                 {conversations.map((conv, index) => (
                   <motion.button
                     key={conv.id}

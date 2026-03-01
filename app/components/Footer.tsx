@@ -28,6 +28,7 @@ export default function Footer() {
     resources: [
       { name: t.nav.caseStudies, href: '/case-studies' },
       { name: t.nav.articles, href: '/blog' },
+      { name: 'Products', href: '/products' },
       { name: t.footer.futureReadyDemo, href: getDownloadUrl(downloadsConfig.futureReadyGraduate, language) },
       { name: t.footer.aiEmployeeDemo, href: getDownloadUrl(downloadsConfig.aiEmployee, language) },
       { name: t.footer.ourMission, href: '/#our-mission' },

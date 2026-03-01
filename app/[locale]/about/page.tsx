@@ -342,7 +342,7 @@ export default function AboutPage() {
                 AI answers calls. Qualifies. Books. 24/7.
               </p>
               <Link href="/ai-receptionist" className="text-accent hover:text-accent-light font-medium text-sm">
-                Learn More →
+                See How It Captures Leads →
               </Link>
             </motion.div>
 
@@ -363,7 +363,7 @@ export default function AboutPage() {
                 85% employed. We bring curriculum and internet. You bring students.
               </p>
               <Link href="/future-ready-graduate" className="text-success hover:text-success-light font-medium text-sm">
-                Learn More →
+                Explore the Curriculum →
               </Link>
             </motion.div>
 
@@ -384,7 +384,7 @@ export default function AboutPage() {
                 AI-native software that perceives, reasons, and acts autonomously.
               </p>
               <Link href="/agentic-softwares" className="text-info hover:text-info-light font-medium text-sm">
-                Learn More →
+                See What We Build →
               </Link>
             </motion.div>
           </div>
