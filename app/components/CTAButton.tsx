@@ -10,6 +10,8 @@ import { ctaConfig, getBookingLinkProps } from '@/app/config/cta.config'
 interface CTAButtonProps {
   /** Button text - defaults to "Get Started" */
   text?: string
+  /** Accessible label for screen readers - defaults to "Book a consultation" when not provided */
+  'aria-label'?: string
   /** Visual variant */
   variant?: 'primary' | 'secondary' | 'outline' | 'ghost'
   /** Button size */
@@ -24,6 +26,7 @@ interface CTAButtonProps {
 
 export function CTAButton({
   text = ctaConfig.buttonText.getStarted,
+  'aria-label': ariaLabel = 'Book a consultation',
   variant = 'primary',
   size = 'md',
   className = '',
@@ -60,6 +63,7 @@ export function CTAButton({
       href={linkProps.href}
       target={linkProps.target}
       rel={linkProps.rel}
+      aria-label={ariaLabel}
       className={baseClasses}
     >
       <span>{text}</span>
@@ -85,6 +89,8 @@ export function CTAButton({
  */
 interface CTAButtonStyledProps {
   text?: string
+  /** Accessible label for screen readers - defaults to "Book a consultation" when not provided */
+  'aria-label'?: string
   className?: string
   showArrow?: boolean
   children?: React.ReactNode
@@ -92,6 +98,7 @@ interface CTAButtonStyledProps {
 
 export function CTAButtonStyled({
   text,
+  'aria-label': ariaLabel = 'Book a consultation',
   className = '',
   showArrow = false,
   children,
@@ -103,6 +110,7 @@ export function CTAButtonStyled({
       href={linkProps.href}
       target={linkProps.target}
       rel={linkProps.rel}
+      aria-label={ariaLabel}
       className={className}
     >
       {children || (

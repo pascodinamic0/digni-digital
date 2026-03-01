@@ -276,6 +276,39 @@ export default function SolutionsPage() {
         </div>
       </AnimatedSection>
 
+      {/* Client Results — Proof Section */}
+      <AnimatedSection className="py-16">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">
+              Results Our Clients Achieve
+            </h2>
+            <p className="text-muted text-lg max-w-2xl mx-auto">
+              Measurable outcomes from real implementations across industries.
+            </p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            {[
+              { metric: '85%', label: 'Reduction in missed leads' },
+              { metric: '$200k+', label: 'Monthly revenue increase' },
+              { metric: '60%', label: 'Time saved on operations' },
+              { metric: '95%', label: 'Client satisfaction rate' },
+            ].map((stat, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+              >
+                <div className="font-display text-3xl md:text-4xl font-bold text-accent mb-2">{stat.metric}</div>
+                <p className="text-muted text-sm">{stat.label}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </AnimatedSection>
+
       {/* Comparison Section */}
       <AnimatedSection className="py-24">
         <div className="max-w-7xl mx-auto px-6">

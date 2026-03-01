@@ -41,12 +41,6 @@ export default function VideoModal({ isOpen, onClose, videoSrc, title, descripti
     return null
   }
 
-  // Don't render modal if not open or no video source
-  if (!isOpen || !videoSrc) {
-    return null
-  }
-
-  // Early return if not open - prevents any rendering
   if (!isOpen || !videoSrc) {
     return null
   }
@@ -116,16 +110,6 @@ export default function VideoModal({ isOpen, onClose, videoSrc, title, descripti
                   playsInline
                   className="w-full h-full"
                   onEnded={onClose}
-                  onError={(e) => {
-                    console.error('Video playback error:', videoSrc, e)
-                    const target = e.target as HTMLVideoElement
-                    if (target.error) {
-                      console.error('Video error code:', target.error.code, 'Message:', target.error.message)
-                    }
-                  }}
-                  onLoadedData={() => {
-                    console.log('Video loaded successfully:', videoSrc)
-                  }}
                 >
                   Your browser does not support the video tag.
                 </video>

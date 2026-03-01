@@ -1,5 +1,5 @@
 import { MetadataRoute } from 'next'
-import { allArticlesEn } from '@/lib/blog'
+import { getArticlesForLocale } from '@/lib/blog'
 import { locales } from '@/i18n/routing'
 
 const baseUrl = 'https://digni-digital-llc.com'
@@ -35,7 +35,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
         priority: path === '' ? 1 : path === '/blog' ? 0.7 : 0.8,
       })
     }
-    for (const article of allArticlesEn) {
+
+    const articles = getArticlesForLocale(locale)
+    for (const article of articles) {
       entries.push({
         url: `${baseUrl}/${locale}/blog/${article.slug}`,
         lastModified: new Date(),

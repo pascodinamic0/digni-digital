@@ -51,6 +51,15 @@ export default function ScrollIndicator({
       transition={{ duration: 0.6 }}
       className={`flex flex-col items-center gap-2 cursor-pointer group ${className}`}
       onClick={handleClick}
+      role="button"
+      tabIndex={0}
+      aria-label={direction === 'down' ? 'Scroll down' : 'Scroll to top'}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault()
+          handleClick()
+        }
+      }}
     >
       <motion.div
         animate={{ 

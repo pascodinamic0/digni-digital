@@ -18,13 +18,26 @@ export default function AffiliatePage() {
     audienceSize: '',
     message: ''
   })
-  const [formSubmitted, setFormSubmitted] = useState(false)
+  const [formStatus, setFormStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // TODO: Integrate with backend/email service
-    console.log('Affiliate application:', formData)
-    setFormSubmitted(true)
+    if (formStatus === 'loading') return
+    setFormStatus('loading')
+    try {
+      const res = await fetch('/api/affiliate', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      })
+      if (res.ok) {
+        setFormStatus('success')
+      } else {
+        setFormStatus('error')
+      }
+    } catch {
+      setFormStatus('error')
+    }
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -465,7 +478,7 @@ export default function AffiliatePage() {
                   href={product.link}
                   className="text-accent hover:text-accent-light text-sm font-medium transition-colors"
                 >
-                  Learn more about this product →
+                  See results from this product →
                 </Link>
               </motion.div>
             ))}
@@ -567,12 +580,12 @@ export default function AffiliatePage() {
             >
               <h3 className="font-display text-2xl font-bold mb-6">Apply Now</h3>
               
-              {formSubmitted ? (
+              {formStatus === 'success' ? (
                 <div className="text-center py-12">
                   <div className="text-5xl mb-4">🎉</div>
                   <h4 className="font-display text-xl font-bold mb-2">Application Received!</h4>
                   <p className="text-muted">
-                    Thank you for applying. We'll review your application and get back to you within 48 hours.
+                    Thank you for applying. We&apos;ll review your application and get back to you within 48 hours.
                   </p>
                 </div>
               ) : (
@@ -692,10 +705,16 @@ export default function AffiliatePage() {
 
                   <button
                     type="submit"
-                    className="w-full btn-primary py-4 text-lg"
+                    disabled={formStatus === 'loading'}
+                    className="w-full btn-primary py-4 text-lg disabled:opacity-60"
                   >
-                    Submit Application
+                    {formStatus === 'loading' ? 'Submitting...' : 'Submit Application'}
                   </button>
+                  {formStatus === 'error' && (
+                    <p className="text-red-500 text-sm text-center">
+                      Something went wrong. Please try again or email us directly.
+                    </p>
+                  )}
                 </form>
               )}
             </motion.div>

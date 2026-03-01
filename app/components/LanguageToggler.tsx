@@ -1,7 +1,7 @@
 'use client'
 
-import { useState, useRef, useEffect } from 'react'
-import { usePathname } from '@/i18n/navigation'
+import { useState, useRef, useEffect, useTransition } from 'react'
+import { usePathname, useRouter } from '@/i18n/navigation'
 import { useLocale } from '@/app/context/LocaleContext'
 import type { Locale } from '@/i18n/routing'
 
@@ -21,6 +21,8 @@ interface LanguageTogglerProps {
 export default function LanguageToggler({ variant = 'compact', className = '' }: LanguageTogglerProps) {
   const currentLocale = useLocale()
   const pathname = usePathname()
+  const router = useRouter()
+  const [isPending, startTransition] = useTransition()
   const [open, setOpen] = useState(false)
   const ref = useRef<HTMLDivElement>(null)
 
@@ -66,15 +68,19 @@ export default function LanguageToggler({ variant = 'compact', className = '' }:
           role="menu"
           className="absolute top-full right-0 mt-2 min-w-[10rem] py-1 bg-surface border border-border-light rounded-xl shadow-xl z-50"
         >
-          {localeOptions.map(({ locale, label, flag }) => {
-            const href = `/${locale}${pathname === '/' ? '' : pathname}`
-            return (
-              <a
+          {localeOptions.map(({ locale, label, flag }) => (
+              <button
                 key={locale}
-                href={href}
+                type="button"
                 role="menuitem"
-                onClick={() => setOpen(false)}
-                className={`block w-full flex items-center gap-3 px-4 py-2.5 text-left text-sm transition-colors first:rounded-t-xl last:rounded-b-xl ${
+                disabled={isPending}
+                onClick={() => {
+                  setOpen(false)
+                  startTransition(() => {
+                    router.push(pathname, { locale })
+                  })
+                }}
+                className={`w-full flex items-center gap-3 px-4 py-2.5 text-left text-sm transition-colors first:rounded-t-xl last:rounded-b-xl disabled:opacity-60 ${
                   locale === currentLocale
                     ? 'bg-accent/20 text-accent'
                     : 'text-muted hover:bg-foreground/5 hover:text-text'
@@ -82,9 +88,8 @@ export default function LanguageToggler({ variant = 'compact', className = '' }:
               >
                 <span aria-hidden className="text-lg">{flag}</span>
                 <span>{label}</span>
-              </a>
-            )
-          })}
+              </button>
+          ))}
         </div>
       )}
     </div>

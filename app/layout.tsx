@@ -48,9 +48,31 @@ export default async function RootLayout({
   const lang = localeSegment.split('-')[1] || 'en'
   const dir = lang === 'ar' ? 'rtl' : 'ltr'
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'Digni Digital LLC',
+    url: SITE_URL,
+    logo: `${SITE_URL}/Favicon.png`,
+    description:
+      'Digital transformation agency building AI Employee systems, employability programs, and custom software that creates real impact.',
+    sameAs: [
+      'https://www.linkedin.com/company/digni-digital-llc',
+    ],
+    contactPoint: {
+      '@type': 'ContactPoint',
+      email: 'support@digni-digital-llc.com',
+      contactType: 'customer service',
+    },
+  }
+
   return (
     <html lang={lang} dir={dir} suppressHydrationWarning>
       <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <ThemeProvider>
           {children}
         </ThemeProvider>

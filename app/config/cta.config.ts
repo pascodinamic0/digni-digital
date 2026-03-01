@@ -34,7 +34,7 @@ export const ctaConfig = {
     bookAConsultation: 'Book a consultation',
     
     // Generic
-    learnMore: 'Learn More',
+    exploreProducts: 'Explore Our Products',
     startProject: 'Start Your Project',
     discussProject: 'Discuss Your Project',
   },

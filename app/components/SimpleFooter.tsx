@@ -3,7 +3,7 @@ import { ctaConfig, getBookingLinkProps } from '@/app/config/cta.config'
 
 export default function SimpleFooter() {
   return (
-    <footer className="py-16 border-t border-border">
+    <footer aria-label="Site footer" className="py-16 border-t border-border">
       <div className="max-w-7xl mx-auto px-6">
         <div className="max-w-2xl mx-auto text-center">
           <Link href="/ai-receptionist" className="flex items-center justify-center gap-3 mb-6 group cursor-pointer">

@@ -11,12 +11,15 @@ import { ctaConfig, getBookingLinkProps } from '@/app/config/cta.config'
 interface CTALinkProps {
   /** Link text - defaults to "Book a consultation" */
   text?: string
+  /** Accessible label for screen readers - defaults to link text when not provided */
+  'aria-label'?: string
   /** Additional CSS classes */
   className?: string
 }
 
 export function CTALink({
   text = ctaConfig.buttonText.bookAConsultation,
+  'aria-label': ariaLabel,
   className = '',
 }: CTALinkProps) {
   const linkProps = getBookingLinkProps()
@@ -26,6 +29,7 @@ export function CTALink({
       href={linkProps.href}
       target={linkProps.target}
       rel={linkProps.rel}
+      aria-label={ariaLabel ?? text}
       className={className}
     >
       {text}
