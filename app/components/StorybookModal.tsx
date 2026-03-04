@@ -149,23 +149,27 @@ export default function StorybookModal({ isOpen, onClose }: StorybookModalProps)
 
   return (
     <AnimatePresence mode="wait">
-      {/* Backdrop */}
       <motion.div
+        key="storybook-modal"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        onClick={onClose}
-        className="fixed inset-0 bg-black/85 backdrop-blur-sm z-[9999]"
-      />
-
-      {/* Modal */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        className="fixed inset-0 z-[9999] flex items-center justify-center p-4 sm:p-6"
-        onClick={onClose}
+        className="fixed inset-0 z-[9999]"
       >
+        {/* Backdrop */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          onClick={onClose}
+          className="absolute inset-0 bg-black/85 backdrop-blur-sm"
+        />
+
+        {/* Modal content */}
+        <div
+          className="absolute inset-0 flex items-center justify-center p-4 sm:p-6"
+          onClick={onClose}
+        >
         <motion.div
           initial={{ opacity: 0, scale: 0.95, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -303,6 +307,7 @@ export default function StorybookModal({ isOpen, onClose }: StorybookModalProps)
             )}
           </div>
         </motion.div>
+        </div>
       </motion.div>
     </AnimatePresence>
   )
