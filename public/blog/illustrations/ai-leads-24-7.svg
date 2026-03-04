@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="350" viewBox="0 0 800 350">
+  <defs>
+    <linearGradient id="bg-leads" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="350" fill="url(#bg-leads)"/>
+  <rect x="24" y="24" width="752" height="302" rx="12" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+  <circle cx="400" cy="100" r="50" fill="rgba(16,185,129,0.2)" stroke="rgba(16,185,129,0.5)" stroke-width="2"/>
+  <text x="400" y="108" font-family="system-ui,sans-serif" font-size="36" fill="#34d399" text-anchor="middle">Ç</text>
+  <text x="400" y="180" font-family="system-ui,sans-serif" font-size="20" font-weight="700" fill="#e2e8f0" text-anchor="middle">AI captures every lead 24/7</text>
+  <text x="400" y="210" font-family="system-ui,sans-serif" font-size="14" fill="#94a3b8" text-anchor="middle">Phone " Email " Chat " Forms " WhatsApp</text>
+  <rect x="150" y="240" width="150" height="50" rx="8" fill="rgba(16,185,129,0.15)" stroke="rgba(16,185,129,0.3)" stroke-width="1"/>
+  <text x="225" y="272" font-family="system-ui,sans-serif" font-size="12" font-weight="600" fill="#34d399" text-anchor="middle">Qualify</text>
+  <rect x="325" y="240" width="150" height="50" rx="8" fill="rgba(16,185,129,0.15)" stroke="rgba(16,185,129,0.3)" stroke-width="1"/>
+  <text x="400" y="272" font-family="system-ui,sans-serif" font-size="12" font-weight="600" fill="#34d399" text-anchor="middle">Route</text>
+  <rect x="500" y="240" width="150" height="50" rx="8" fill="rgba(16,185,129,0.15)" stroke="rgba(16,185,129,0.3)" stroke-width="1"/>
+  <text x="575" y="272" font-family="system-ui,sans-serif" font-size="12" font-weight="600" fill="#34d399" text-anchor="middle">Close</text>
+  <text x="400" y="320" font-family="system-ui,sans-serif" font-size="12" fill="#64748b" text-anchor="middle">First response in minutes " Zero missed opportunities</text>
+</svg>
