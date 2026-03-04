@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
+  <defs>
+    <linearGradient id="bg-custom" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#34d399"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="400" fill="url(#bg-custom)"/>
+  <rect x="24" y="24" width="352" height="352" rx="12" fill="rgba(16,185,129,0.08)" stroke="rgba(16,185,129,0.3)" stroke-width="1"/>
+  <rect x="424" y="24" width="352" height="352" rx="12" fill="rgba(100,116,139,0.08)" stroke="rgba(100,116,139,0.3)" stroke-width="1"/>
+  <text x="200" y="70" font-family="system-ui,sans-serif" font-size="18" font-weight="700" fill="#34d399" text-anchor="middle">Custom SaaS</text>
+  <text x="200" y="100" font-family="system-ui,sans-serif" font-size="12" fill="#94a3b8" text-anchor="middle">Tailored " Ownership " Scale</text>
+  <rect x="60" y="130" width="280" height="40" rx="6" fill="rgba(255,255,255,0.05)"/>
+  <text x="200" y="155" font-family="system-ui,sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">Your workflows, your data</text>
+  <rect x="60" y="190" width="280" height="40" rx="6" fill="rgba(255,255,255,0.05)"/>
+  <text x="200" y="215" font-family="system-ui,sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">No vendor lock-in</text>
+  <rect x="60" y="250" width="280" height="40" rx="6" fill="rgba(255,255,255,0.05)"/>
+  <text x="200" y="275" font-family="system-ui,sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">Built for your market</text>
+  <text x="600" y="70" font-family="system-ui,sans-serif" font-size="18" font-weight="700" fill="#64748b" text-anchor="middle">Off-the-Shelf</text>
+  <text x="600" y="100" font-family="system-ui,sans-serif" font-size="12" fill="#94a3b8" text-anchor="middle">Fast start " Subscription " Limits</text>
+  <rect x="460" y="130" width="280" height="40" rx="6" fill="rgba(255,255,255,0.05)"/>
+  <text x="600" y="155" font-family="system-ui,sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">Generic workflows</text>
+  <rect x="460" y="190" width="280" height="40" rx="6" fill="rgba(255,255,255,0.05)"/>
+  <text x="600" y="215" font-family="system-ui,sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">Possible lock-in</text>
+  <rect x="460" y="250" width="280" height="40" rx="6" fill="rgba(255,255,255,0.05)"/>
+  <text x="600" y="275" font-family="system-ui,sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">One size fits all</text>
+  <text x="400" y="340" font-family="system-ui,sans-serif" font-size="14" font-weight="600" fill="#e2e8f0" text-anchor="middle">The right choice depends on your process, budget, and growth plans</text>
+</svg>
