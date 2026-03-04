@@ -8,6 +8,7 @@ import Navigation from '@/app/components/Navigation'
 import Footer from '@/app/components/Footer'
 import AnimatedSection from '@/app/components/AnimatedSection'
 import ScrollIndicator from '@/app/components/ScrollIndicator'
+import StorybookModal from '@/app/components/StorybookModal'
 import { ctaConfig, getBookingLinkProps } from '@/app/config/cta.config'
 
 // Animated Counter Component
@@ -62,6 +63,8 @@ const timeline = [
 ]
 
 export default function AboutPage() {
+  const [storybookOpen, setStorybookOpen] = useState(false)
+
   return (
     <main>
       <Navigation />
@@ -143,6 +146,15 @@ export default function AboutPage() {
                 <p>
                   Founded 2019. Started with websites. Now: AI systems, graduate programs, Agentic Softwares. We don’t just build websites—we build systems that get you clients and students jobs.
                 </p>
+                <button
+                  onClick={() => setStorybookOpen(true)}
+                  className="mt-8 btn-primary inline-flex items-center gap-2"
+                >
+                  <span>Take the journey</span>
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
+                </button>
               </div>
             </div>
             
@@ -169,6 +181,8 @@ export default function AboutPage() {
           </div>
         </div>
       </AnimatedSection>
+
+      <StorybookModal isOpen={storybookOpen} onClose={() => setStorybookOpen(false)} />
 
       {/* Our Approach */}
       <AnimatedSection className="py-24">
