@@ -6,8 +6,6 @@ import { getBookingLinkProps } from '@/app/config/cta.config'
 import { downloadsConfig, getDownloadUrl } from '@/app/config/downloads.config'
 import { useLanguage } from '@/app/context/LocaleContext'
 import { translations } from '@/app/config/translations'
-import { officeLocations } from '@/app/data/locations'
-
 const SOCIAL_LINKS = [
   { label: 'LinkedIn', href: 'https://www.linkedin.com/company/digni-digital-llc', icon: 'linkedin' },
   { label: 'WhatsApp', href: 'https://wa.me/254702593518', icon: 'whatsapp' },
@@ -128,23 +126,6 @@ export default function Footer() {
               <p className="text-muted text-sm max-w-xs mb-5">
                 {t.footer.tagline}
               </p>
-              {(officeLocations.some((l) => l.email) || officeLocations.some((l) => l.phone)) && (
-                <div className="space-y-1 text-sm text-muted mb-5">
-                  {[...new Set(officeLocations.map((loc) => loc.email).filter((e): e is string => Boolean(e)))].map((addr) => (
-                    <a key={addr} href={`mailto:${addr}`} className="block hover:text-accent transition-colors">
-                      {addr}
-                    </a>
-                  ))}
-                  {[...new Set(officeLocations.map((loc) => loc.phone).filter((p): p is string => Boolean(p)))].map((phone) => (
-                    <a key={phone} href={`tel:${phone.replace(/\s/g, '')}`} className="block hover:text-accent transition-colors">
-                      {phone}
-                    </a>
-                  ))}
-                  <p className="text-muted/80 text-xs">
-                    {officeLocations.map((loc) => loc.city).join(', ')}
-                  </p>
-                </div>
-              )}
               <div className="flex items-center gap-2">
                 {SOCIAL_LINKS.map(({ label, href }) => (
                   <a

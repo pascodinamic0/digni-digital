@@ -48,23 +48,44 @@ export default async function RootLayout({
   const lang = localeSegment.split('-')[1] || 'en'
   const dir = lang === 'ar' ? 'rtl' : 'ltr'
 
-  const jsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'Organization',
-    name: 'Digni Digital LLC',
-    url: SITE_URL,
-    logo: `${SITE_URL}/Favicon.png`,
-    description:
-      'Digital transformation agency building AI Employee systems, employability programs, and custom software that creates real impact.',
-    sameAs: [
-      'https://www.linkedin.com/company/digni-digital-llc',
-    ],
-    contactPoint: {
-      '@type': 'ContactPoint',
-      email: 'support@digni-digital-llc.com',
-      contactType: 'customer service',
+  const jsonLd = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Organization',
+      name: 'Digni Digital LLC',
+      url: SITE_URL,
+      logo: `${SITE_URL}/Favicon.png`,
+      description:
+        'Digital transformation agency building AI Employee systems, employability programs, and custom software that creates real impact.',
+      foundingDate: '2019',
+      founder: {
+        '@type': 'Person',
+        name: 'Pascal Digny',
+        jobTitle: 'Founder & CEO',
+      },
+      sameAs: [
+        'https://www.linkedin.com/company/digni-digital-llc',
+      ],
+      contactPoint: {
+        '@type': 'ContactPoint',
+        email: 'support@digni-digital-llc.com',
+        contactType: 'customer service',
+      },
+      areaServed: ['US', 'KE', 'RW', 'UG', 'CD', 'GH', 'NG', 'ZA'],
+      knowsAbout: ['AI Employee Systems', 'Digital Literacy', 'Agentic Software', 'Web Development', 'Digital Transformation'],
     },
-  }
+    {
+      '@context': 'https://schema.org',
+      '@type': 'WebSite',
+      name: 'Digni Digital',
+      url: SITE_URL,
+      potentialAction: {
+        '@type': 'SearchAction',
+        target: `${SITE_URL}/us-en/blog?q={search_term_string}`,
+        'query-input': 'required name=search_term_string',
+      },
+    },
+  ]
 
   return (
     <html lang={lang} dir={dir} suppressHydrationWarning>

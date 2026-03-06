@@ -6,7 +6,7 @@ import { detectLocaleFromRequest } from './i18n/locale-detection'
 
 const CANONICAL_HOST = 'digni-digital-llc.com'
 
-export default async function proxy(request: NextRequest) {
+export default async function middleware(request: NextRequest) {
   const host = request.headers.get('host') ?? ''
   const normalizedHost = host.toLowerCase().replace(/:\d+$/, '')
 
@@ -40,6 +40,5 @@ export default async function proxy(request: NextRequest) {
 export const config = {
   matcher: [
     '/((?!api|trpc|_next|_vercel|sitemap\\.xml|robots\\.txt|.*\\..*).*)',
-    '/((?!_next/static|_next/image|favicon\\.ico|sitemap\\.xml|robots\\.txt|.*\\.(?:ico|png|jpg|jpeg|gif|webp|svg|mp4|pdf|docx|doc|xml|txt)).*)',
   ],
 }

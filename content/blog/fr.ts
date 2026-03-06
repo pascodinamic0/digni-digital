@@ -414,7 +414,7 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
 
       <h3>À quoi ressemble une IA accessible pour l'Afrique francophone</h3>
 
-      <p><a href="/ai-receptionist">Réceptionnistes IA</a> 24h/24 en français. <a href="/agentic-softwares">Web et SaaS sur mesure</a> pour vos workflows. Services de croissance. Mobile-first. Digni Digital, fondée à Kinshasa en 2019, apporte : IA human-first, accompagnement local, ROI mesurable, français par défaut. Pour les institutions : programme <a href="/future-ready-graduate">Future-Ready Graduate</a>, 85 % d'emploi dans les 6 mois.</p>
+      <p><a href="/ai-receptionist">Réceptionnistes IA</a> 24h/24 en français. <a href="/agentic-softwares">Web et SaaS sur mesure</a> pour vos workflows. Services de croissance. Mobile-first. Digni Digital, fondée à Kinshasa en 2019, apporte : IA human-first, accompagnement local, ROI mesurable, français par défaut. Pour les institutions : programme <a href="/future-ready-graduate">Digni Digital Literacy</a>, 85 % d'emploi dans les 6 mois.</p>
 
       <hr>
       <p><em><a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Réservez votre stratégie call gratuite</a> pour parler de l'adoption de l'IA pour votre organisation.</em></p>
