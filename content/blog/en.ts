@@ -1125,9 +1125,9 @@ const remainingArticles: BlogArticle[] = [
 
       <p>This isn't speculation. Job postings already prioritize "AI proficiency," "prompt engineering," and "AI-assisted workflows." Graduates with these skills see <strong>85% employment rates within 6 months</strong>. Those without? Closer to 45%—or worse in markets with high youth unemployment like South Africa (58.5%) or Angola (48.7%).</p>
 
-      <h2>Case Study: Riverside Technical High School, Lagos</h2>
+      <h2>Case Study: GS Laricharde, Kigali</h2>
 
-      <p>Riverside Technical High School in Lagos, Nigeria, faced a crisis: 45% of graduates were employed 12 months after graduation. No practical skills. No portfolios. No connection to the digital economy. They implemented the <strong>Digni Digital Literacy Program</strong>—a full-year curriculum teaching AI-powered web development, digital marketing, content creation, and professional branding.</p>
+      <p>GS Laricharde in Kigali, Rwanda, faced a crisis: 45% of graduates were employed 12 months after graduation. No practical skills. No portfolios. No connection to the digital economy. They implemented the <strong>Digni Digital Literacy Program</strong>—a full-year curriculum teaching AI-powered web development, digital marketing, content creation, and professional branding.</p>
 
       <p><strong>Results after one year:</strong></p>
 
@@ -1139,7 +1139,7 @@ const remainingArticles: BlogArticle[] = [
       </ul>
 
       <blockquote>
-        <p>"The program timing was perfect. Students learned during school hours, and the breaks gave them time to practice. By graduation, they were genuinely job ready." - <em>Principal Mary Adebayo, Riverside Technical High School</em></p>
+        <p>"The program timing was perfect. Students learned during school hours, and the breaks gave them time to practice. By graduation, they were genuinely job ready." - <em>GS Laricharde Administration</em></p>
       </blockquote>
 
       <h2>The Fear I Have: We're Sleeping Through a Hurricane</h2>
@@ -4087,7 +4087,7 @@ const remainingArticles: BlogArticle[] = [
 
       <h3>For Institutions: Future-Ready Programs</h3>
 
-      <p>Schools and training centers can prepare students for the AI era. Our <a href="/future-ready-graduate">Future-Ready Graduate</a> program equips youth with digital skills that lead to employment. 85% employment rate within 6 months of graduation.</p>
+      <p>Schools and training centers can prepare students for the AI era. Our <a href="/future-ready-graduate">Digni Digital Literacy</a> program equips youth with digital skills that lead to employment. 85% employment rate within 6 months of graduation.</p>
 
       <h3>Next Steps</h3>
 

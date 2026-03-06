@@ -204,10 +204,77 @@ type BlogTranslations = {
   featuredArticles: string
   allArticles: string
   featured: string
+  stayUpdated: string
+  stayUpdatedDesc: string
+  emailPlaceholder: string
+  subscribeCta: string
+  joinReaders: string
+  clearFilters: string
+  exploreServices: string
 }
 
 type AboutTranslations = {
-  [key: string]: string
+  badge: string
+  heroTitle: string
+  heroSubtitle: string
+  statsTitle: string
+  statYears: string
+  statStudents: string
+  statLeads: string
+  statSatisfaction: string
+  ourStoryTitle: string
+  storyP1: string
+  storyP2: string
+  storyP3: string
+  takeTheJourney: string
+  approachTitle: string
+  approachSubtitle: string
+  discoveryTitle: string
+  discoveryDesc: string
+  discoveryBullet1: string
+  discoveryBullet2: string
+  discoveryBullet3: string
+  discoveryBullet4: string
+  buildTitle: string
+  buildDesc: string
+  buildBullet1: string
+  buildBullet2: string
+  buildBullet3: string
+  buildBullet4: string
+  optimizeTitle: string
+  optimizeDesc: string
+  optimizeBullet1: string
+  optimizeBullet2: string
+  optimizeBullet3: string
+  optimizeBullet4: string
+  differentTitle: string
+  differentSubtitle: string
+  humanFirstTitle: string
+  humanFirstDesc: string
+  provenTitle: string
+  provenDesc: string
+  partnershipTitle: string
+  partnershipDesc: string
+  roiFocusTitle: string
+  roiFocusDesc: string
+  promiseTitle: string
+  promiseQuote: string
+  founderName: string
+  founderRole: string
+  servicesTitle: string
+  servicesSubtitle: string
+  aiEmployeeTitle: string
+  aiEmployeeDesc: string
+  aiEmployeeCta: string
+  literacyTitle: string
+  literacyDesc: string
+  literacyCta: string
+  agenticTitle: string
+  agenticDesc: string
+  agenticCta: string
+  ctaTitle: string
+  ctaSubtitle: string
+  trustedByTitle: string
 }
 
 type ContactTranslations = {
@@ -675,7 +742,7 @@ function buildTranslations(): Record<Language, TranslationKeys> {
       aiEmployeeOutcome4: 'Connecté au CRM',
       aiEmployeePrimaryCta: 'Voir comment ça marche',
       aiEmployeeSecondaryCta: 'Réserver une démo',
-      futureReadyTitle: 'Diplômé Prêt pour l\'Avenir',
+      futureReadyTitle: 'Digni Digital Literacy',
       futureReadyDesc: 'Des étudiants diplômés avec de vraies compétences. 85% obtiennent un emploi.',
       futureReadyApproach: 'Nous formons. Les employeurs recrutent. Vous êtes le pont.',
       futureReadyOutcome1: '85% d\'emploi',
@@ -705,14 +772,14 @@ function buildTranslations(): Record<Language, TranslationKeys> {
       stat1Label: 'Hausse de conversion des prospects',
       stat1Sublabel: 'Résultats Employé IA™',
       stat2Label: 'Taux d\'emploi des diplômés',
-      stat2Sublabel: 'Succès Diplômé Prêt™',
+      stat2Sublabel: 'Succès Digni Digital Literacy',
       stat3Label: 'Service toujours disponible',
       stat3Sublabel: 'Ne manquez plus aucun prospect',
       stat4Label: 'Satisfaction client',
       stat4Sublabel: 'Sur les deux solutions',
       aiEmployeeCard: 'Employé IA™',
       aiEmployeeCardSub: '50+ entreprises. 10 000+ prospects/mois.',
-      futureReadyCard: 'Diplômé Prêt™',
+      futureReadyCard: 'Digni Digital Literacy',
       futureReadyCardSub: '500+ étudiants/an. 85% employés.',
     } as HomeTranslations['stats'],
     globalPresence: {
@@ -841,7 +908,7 @@ function buildTranslations(): Record<Language, TranslationKeys> {
       aiEmployeeOutcome4: 'متصل بنظام إدارة العملاء',
       aiEmployeePrimaryCta: 'اكتشف كيف يعمل',
       aiEmployeeSecondaryCta: 'احجز عرضاً',
-      futureReadyTitle: 'الخريج الجاهز للمستقبل',
+      futureReadyTitle: 'Digni Digital Literacy',
       futureReadyDesc: 'طلاب يتخرجون بمهارات حقيقية. 85% يحصلون على وظائف.',
       futureReadyApproach: 'نحن ندرّب. أصحاب العمل يوظفون. أنت الجسر.',
       futureReadyOutcome1: '85% معدل توظيف',
@@ -871,14 +938,14 @@ function buildTranslations(): Record<Language, TranslationKeys> {
       stat1Label: 'زيادة تحويل العملاء',
       stat1Sublabel: 'نتائج الموظف الذكي™',
       stat2Label: 'معدل توظيف الخريجين',
-      stat2Sublabel: 'نجاح الخريج الجاهز™',
+      stat2Sublabel: 'نجاح Digni Digital Literacy',
       stat3Label: 'خدمة متاحة دائماً',
       stat3Sublabel: 'لا تفوت عميلاً آخر',
       stat4Label: 'رضا العملاء',
       stat4Sublabel: 'عبر الحلين',
       aiEmployeeCard: 'الموظف الذكي™',
       aiEmployeeCardSub: '50+ شركة. 10,000+ عميل/شهر.',
-      futureReadyCard: 'الخريج الجاهز™',
+      futureReadyCard: 'Digni Digital Literacy',
       futureReadyCardSub: '500+ طالب/سنة. 85% موظفون.',
     } as HomeTranslations['stats'],
     globalPresence: {
@@ -955,6 +1022,13 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     featuredArticles: 'Featured Articles',
     allArticles: 'All Articles',
     featured: 'featured',
+    stayUpdated: 'Stay Updated',
+    stayUpdatedDesc: 'Get weekly insights on digital transformation and AI innovations.',
+    emailPlaceholder: 'Enter your email',
+    subscribeCta: 'Subscribe',
+    joinReaders: 'Join 10,000+ business leaders. No spam, unsubscribe anytime.',
+    clearFilters: 'Clear Filters',
+    exploreServices: 'Explore Services',
   }
 
   const blogFr: BlogTranslations = {
@@ -981,6 +1055,13 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     featuredArticles: 'Articles à la une',
     allArticles: 'Tous les articles',
     featured: 'à la une',
+    stayUpdated: 'Restez informé',
+    stayUpdatedDesc: 'Recevez des insights hebdomadaires sur la transformation digitale et les innovations IA.',
+    emailPlaceholder: 'Votre adresse e-mail',
+    subscribeCta: 'S\'abonner',
+    joinReaders: 'Rejoignez 10 000+ dirigeants. Pas de spam, désinscription à tout moment.',
+    clearFilters: 'Effacer les filtres',
+    exploreServices: 'Explorer les services',
   }
 
   const blogAr: BlogTranslations = {
@@ -1007,6 +1088,79 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     featuredArticles: 'المقالات المميزة',
     allArticles: 'جميع المقالات',
     featured: 'مميز',
+    stayUpdated: 'ابقَ على اطلاع',
+    stayUpdatedDesc: 'احصل على رؤى أسبوعية حول التحول الرقمي وابتكارات الذكاء الاصطناعي.',
+    emailPlaceholder: 'أدخل بريدك الإلكتروني',
+    subscribeCta: 'اشترك',
+    joinReaders: 'انضم إلى أكثر من 10,000 قائد أعمال. بدون إزعاج، إلغاء الاشتراك في أي وقت.',
+    clearFilters: 'مسح الفلاتر',
+    exploreServices: 'استكشف الخدمات',
+  }
+
+  const blogDe: BlogTranslations = {
+    heroTitle: 'Digitale Transformation',
+    heroSubtitle: 'Einblicke',
+    heroDesc: 'Expertenwissen zu digitaler Transformation in Afrika, KI und Erfolgsgeschichten für Führungskräfte, die die Zukunft gestalten.',
+    searchPlaceholder: 'Artikel nach Titel, Inhalt oder Tags durchsuchen...',
+    filterByCategory: 'Nach Kategorie filtern',
+    all: 'Alle',
+    readMore: 'Weiterlesen',
+    backToBlog: 'Zurück zum Blog',
+    tags: 'Tags',
+    by: 'Von',
+    minRead: 'Min. Lesezeit',
+    readyFutureReady: 'Bereit für das Digni Digital Literacy Programm?',
+    readyFutureReadyDesc: 'Entdecken Sie das Digni Digital Literacy Programm—verwandeln Sie Schüler in berufsreife Fachkräfte mit KI-gestützten digitalen Fähigkeiten. 85% Beschäftigung innerhalb von 6 Monaten.',
+    exploreFutureReady: 'Digni Digital Literacy Programm erkunden',
+    readyTransform: 'Bereit, Ihr Unternehmen zu transformieren?',
+    readyTransformDesc: 'Lassen Sie uns besprechen, wie diese Erkenntnisse auf Ihre spezifischen Herausforderungen angewendet werden können.',
+    noArticles: 'Keine Artikel gefunden',
+    previous: 'Zurück',
+    next: 'Weiter',
+    page: 'Seite',
+    featuredArticles: 'Empfohlene Artikel',
+    allArticles: 'Alle Artikel',
+    featured: 'empfohlen',
+    stayUpdated: 'Bleiben Sie informiert',
+    stayUpdatedDesc: 'Wöchentliche Einblicke zu digitaler Transformation und KI-Innovationen.',
+    emailPlaceholder: 'Ihre E-Mail-Adresse',
+    subscribeCta: 'Abonnieren',
+    joinReaders: 'Schließen Sie sich 10.000+ Führungskräften an. Kein Spam, jederzeit abmelden.',
+    clearFilters: 'Filter löschen',
+    exploreServices: 'Services entdecken',
+  }
+
+  const blogEs: BlogTranslations = {
+    heroTitle: 'Transformación Digital',
+    heroSubtitle: 'Perspectivas',
+    heroDesc: 'Información experta sobre transformación digital en África, IA e historias de éxito empresarial para líderes que moldean el futuro.',
+    searchPlaceholder: 'Buscar artículos por título, contenido o etiquetas...',
+    filterByCategory: 'Filtrar por categoría',
+    all: 'Todos',
+    readMore: 'Leer más',
+    backToBlog: 'Volver al blog',
+    tags: 'Etiquetas',
+    by: 'Por',
+    minRead: 'min de lectura',
+    readyFutureReady: '¿Listo para el programa Digni Digital Literacy?',
+    readyFutureReadyDesc: 'Explore el programa Digni Digital Literacy—transforme estudiantes en profesionales listos para el empleo con habilidades digitales impulsadas por IA. 85% de empleo en 6 meses.',
+    exploreFutureReady: 'Explorar el programa Digni Digital Literacy',
+    readyTransform: '¿Listo para transformar su negocio?',
+    readyTransformDesc: 'Hablemos de cómo estas perspectivas pueden aplicarse a sus desafíos específicos.',
+    noArticles: 'No se encontraron artículos',
+    previous: 'Anterior',
+    next: 'Siguiente',
+    page: 'Página',
+    featuredArticles: 'Artículos destacados',
+    allArticles: 'Todos los artículos',
+    featured: 'destacado',
+    stayUpdated: 'Manténgase informado',
+    stayUpdatedDesc: 'Reciba perspectivas semanales sobre transformación digital e innovaciones en IA.',
+    emailPlaceholder: 'Ingrese su correo electrónico',
+    subscribeCta: 'Suscribirse',
+    joinReaders: 'Únase a más de 10,000 líderes empresariales. Sin spam, cancele en cualquier momento.',
+    clearFilters: 'Borrar filtros',
+    exploreServices: 'Explorar servicios',
   }
 
   const contactEn: ContactTranslations = {
@@ -1213,12 +1367,332 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     ],
   }
 
+  const aboutEn: AboutTranslations = {
+    badge: 'About Us',
+    heroTitle: 'About Us',
+    heroSubtitle: 'An American company started in Kenya by a refugee youth—driven by hunger and greatness to build a world where everyone is enabled, empowered, and connected to the technology and skills that change lives.',
+    statsTitle: 'Numbers that demonstrate our commitment to client success',
+    statYears: 'Years Experience',
+    statStudents: 'Students Trained',
+    statLeads: 'Leads Captured',
+    statSatisfaction: 'Client Satisfaction',
+    ourStoryTitle: 'Our Story',
+    storyP1: 'We are an American-registered company that started in Kenya—founded by a refugee youth who refused to accept the rules and limitations set upon him. Driven by hunger and greatness, he chose to fail forward: to keep pushing, dreaming, and building toward a better world.',
+    storyP2: 'That dream is simple and urgent: everyone enabled, empowered, and connected to the same technology and skills that have long been reserved for elites and elite kids. Businesses shouldn\'t lose leads because they can\'t afford big systems. Students shouldn\'t graduate without the skills employers hire for. We build the fixes—AI that captures every lead, curricula that make graduates job-ready, and agentic software that perceives, reasons, and acts—scaling with you.',
+    storyP3: 'Founded 2019. Started with websites. Now: AI systems, graduate programs, Agentic Softwares. We don\'t just build websites—we build systems that get you clients and students jobs.',
+    takeTheJourney: 'Take the journey',
+    approachTitle: 'Our Approach',
+    approachSubtitle: 'How we deliver transformational results',
+    discoveryTitle: 'Discovery',
+    discoveryDesc: 'We learn your business first. Then we build.',
+    discoveryBullet1: 'Business process analysis',
+    discoveryBullet2: 'Customer journey mapping',
+    discoveryBullet3: 'Technology audit',
+    discoveryBullet4: 'Growth bottleneck identification',
+    buildTitle: 'Build',
+    buildDesc: 'We fit into what you have. No disruption. Just upgrade.',
+    buildBullet1: 'Phased rollout approach',
+    buildBullet2: 'Team training & support',
+    buildBullet3: 'Integration with existing systems',
+    buildBullet4: 'Minimal business disruption',
+    optimizeTitle: 'Optimize',
+    optimizeDesc: 'We keep improving. Launch is day one. We make it better.',
+    optimizeBullet1: 'Performance monitoring',
+    optimizeBullet2: 'Data-driven improvements',
+    optimizeBullet3: 'Regular strategy reviews',
+    optimizeBullet4: 'Ongoing technical support',
+    differentTitle: 'What Makes Us Different',
+    differentSubtitle: 'Why businesses and schools choose Digni Digital',
+    humanFirstTitle: 'Human First',
+    humanFirstDesc: 'AI helps your team. Doesn\'t replace them.',
+    provenTitle: 'Proven',
+    provenDesc: '8 years. 150+ clients. 98% satisfaction.',
+    partnershipTitle: 'Full Partnership',
+    partnershipDesc: 'Strategy. Build. Optimize. We\'re there. No handoffs.',
+    roiFocusTitle: 'ROI Focus',
+    roiFocusDesc: 'We track revenue. Leads. Jobs. Not just features.',
+    promiseTitle: 'Our Promise',
+    promiseQuote: 'A better world is one where everyone is enabled, empowered, and connected—to the same technology and skills that elites get. You\'ll have more leads, more revenue, or more employed grads. Or we failed.',
+    founderName: 'Pascal Digny',
+    founderRole: 'Founder & CEO',
+    servicesTitle: 'Our Services',
+    servicesSubtitle: 'Three core solutions that drive real business impact',
+    aiEmployeeTitle: 'AI Employee',
+    aiEmployeeDesc: 'AI answers calls. Qualifies. Books. 24/7.',
+    aiEmployeeCta: 'See How It Captures Leads',
+    literacyTitle: 'Digni Digital Literacy Program',
+    literacyDesc: '85% employed. We bring curriculum and internet. You bring students.',
+    literacyCta: 'Explore the Curriculum',
+    agenticTitle: 'Agentic Softwares',
+    agenticDesc: 'AI-native software that perceives, reasons, and acts autonomously.',
+    agenticCta: 'See What We Build',
+    ctaTitle: 'Ready to Work Together?',
+    ctaSubtitle: 'Tell us your problem. We\'ll find the fix.',
+    trustedByTitle: 'Trusted by businesses across the globe',
+  }
+
+  const aboutFr: AboutTranslations = {
+    badge: 'À propos',
+    heroTitle: 'À propos',
+    heroSubtitle: 'Une entreprise américaine née au Kenya, fondée par un jeune réfugié—animé par la faim et la grandeur pour bâtir un monde où chacun est outillé, responsabilisé et connecté aux technologies et compétences qui changent les vies.',
+    statsTitle: 'Des chiffres qui démontrent notre engagement envers le succès de nos clients',
+    statYears: 'Années d\'expérience',
+    statStudents: 'Étudiants formés',
+    statLeads: 'Prospects capturés',
+    statSatisfaction: 'Satisfaction client',
+    ourStoryTitle: 'Notre histoire',
+    storyP1: 'Nous sommes une entreprise enregistrée aux États-Unis qui a démarré au Kenya—fondée par un jeune réfugié qui a refusé d\'accepter les règles et les limites qu\'on lui imposait. Animé par la faim et la grandeur, il a choisi d\'échouer vers l\'avant : continuer à pousser, rêver et construire un monde meilleur.',
+    storyP2: 'Ce rêve est simple et urgent : chacun outillé, responsabilisé et connecté aux mêmes technologies et compétences longtemps réservées aux élites. Les entreprises ne devraient pas perdre de prospects parce qu\'elles ne peuvent pas s\'offrir de grands systèmes. Les étudiants ne devraient pas obtenir leur diplôme sans les compétences que les employeurs recherchent. Nous construisons les solutions—IA qui capture chaque prospect, cursus qui rendent les diplômés opérationnels, et logiciels agentiques qui perçoivent, raisonnent et agissent—évoluant avec vous.',
+    storyP3: 'Fondée en 2019. Nous avons commencé avec des sites web. Aujourd\'hui : systèmes IA, programmes diplômants, Agentic Softwares. Nous ne construisons pas que des sites—nous bâtissons des systèmes qui vous apportent des clients et offrent des emplois aux étudiants.',
+    takeTheJourney: 'Découvrir le parcours',
+    approachTitle: 'Notre approche',
+    approachSubtitle: 'Comment nous obtenons des résultats transformationnels',
+    discoveryTitle: 'Découverte',
+    discoveryDesc: 'Nous apprenons d\'abord votre business. Puis nous construisons.',
+    discoveryBullet1: 'Analyse des processus métier',
+    discoveryBullet2: 'Cartographie du parcours client',
+    discoveryBullet3: 'Audit technologique',
+    discoveryBullet4: 'Identification des freins à la croissance',
+    buildTitle: 'Construction',
+    buildDesc: 'Nous nous intégrons à l\'existant. Pas de perturbation. Juste une amélioration.',
+    buildBullet1: 'Déploiement par phases',
+    buildBullet2: 'Formation et accompagnement d\'équipe',
+    buildBullet3: 'Intégration aux systèmes existants',
+    buildBullet4: 'Perturbation minimale de l\'activité',
+    optimizeTitle: 'Optimisation',
+    optimizeDesc: 'Nous améliorons en continu. Le lancement n\'est que le jour un. Nous rendons tout meilleur.',
+    optimizeBullet1: 'Suivi des performances',
+    optimizeBullet2: 'Améliorations basées sur les données',
+    optimizeBullet3: 'Revues stratégiques régulières',
+    optimizeBullet4: 'Support technique continu',
+    differentTitle: 'Ce qui nous différencie',
+    differentSubtitle: 'Pourquoi les entreprises et les écoles choisissent Digni Digital',
+    humanFirstTitle: 'L\'humain d\'abord',
+    humanFirstDesc: 'L\'IA aide votre équipe. Elle ne la remplace pas.',
+    provenTitle: 'Prouvé',
+    provenDesc: '8 ans. 150+ clients. 98% de satisfaction.',
+    partnershipTitle: 'Partenariat total',
+    partnershipDesc: 'Stratégie. Construction. Optimisation. Nous sommes là. Pas de transferts.',
+    roiFocusTitle: 'Focus ROI',
+    roiFocusDesc: 'Nous suivons le chiffre d\'affaires. Les prospects. Les emplois. Pas juste les fonctionnalités.',
+    promiseTitle: 'Notre promesse',
+    promiseQuote: 'Un monde meilleur est un monde où chacun est outillé, responsabilisé et connecté—aux mêmes technologies et compétences réservées aux élites. Vous aurez plus de prospects, plus de revenus ou plus de diplômés embauchés. Sinon, nous avons échoué.',
+    founderName: 'Pascal Digny',
+    founderRole: 'Fondateur & PDG',
+    servicesTitle: 'Nos services',
+    servicesSubtitle: 'Trois solutions clés qui génèrent un impact réel',
+    aiEmployeeTitle: 'Employé IA',
+    aiEmployeeDesc: 'L\'IA répond aux appels. Qualifie. Réserve. 24/7.',
+    aiEmployeeCta: 'Découvrir la capture de prospects',
+    literacyTitle: 'Programme Digni Digital Literacy',
+    literacyDesc: '85% employés. Nous apportons le cursus et internet. Vous amenez les étudiants.',
+    literacyCta: 'Explorer le cursus',
+    agenticTitle: 'Agentic Softwares',
+    agenticDesc: 'Logiciels IA natifs qui perçoivent, raisonnent et agissent de façon autonome.',
+    agenticCta: 'Voir ce que nous construisons',
+    ctaTitle: 'Prêt à travailler ensemble ?',
+    ctaSubtitle: 'Dites-nous votre problème. Nous trouverons la solution.',
+    trustedByTitle: 'Approuvé par des entreprises à travers le monde',
+  }
+
+  const aboutAr: AboutTranslations = {
+    badge: 'من نحن',
+    heroTitle: 'من نحن',
+    heroSubtitle: 'شركة أمريكية بدأت في كينيا على يد شاب لاجئ—مدفوعاً بالطموح والعظمة لبناء عالم يُمكّن الجميع ويربطهم بالتقنية والمهارات التي تغيّر الحياة.',
+    statsTitle: 'أرقام تعكس التزامنا بنجاح عملائنا',
+    statYears: 'سنوات خبرة',
+    statStudents: 'طالب تم تدريبهم',
+    statLeads: 'عميل محتمل تم التقاطه',
+    statSatisfaction: 'رضا العملاء',
+    ourStoryTitle: 'قصتنا',
+    storyP1: 'نحن شركة مسجلة في الولايات المتحدة بدأت في كينيا—أسسها شاب لاجئ رفض قبول القيود المفروضة عليه. مدفوعاً بالطموح والعظمة، اختار أن يفشل إلى الأمام: أن يستمر في الدفع والحلم والبناء نحو عالم أفضل.',
+    storyP2: 'الحلم بسيط وملحّ: أن يكون الجميع مُمكّنين ومتصلين بنفس التقنيات والمهارات المحتكرة للنخب. لا ينبغي أن تخسر الشركات عملاء لأنها لا تستطيع تحمّل أنظمة كبيرة. لا ينبغي أن يتخرج الطلاب بدون المهارات التي يوظّف أصحاب العمل لأجلها. نبني الحلول—ذكاء اصطناعي يلتقط كل عميل، مناهج تجعل الخريجين جاهزين للعمل، وبرمجيات وكيلية تدرك وتفكر وتعمل—تنمو معك.',
+    storyP3: 'تأسست عام 2019. بدأنا بالمواقع الإلكترونية. الآن: أنظمة ذكاء اصطناعي، برامج تخرّج، Agentic Softwares. لا نبني مواقع فحسب—نبني أنظمة تجلب لك عملاء وتمنح الطلاب وظائف.',
+    takeTheJourney: 'اكتشف الرحلة',
+    approachTitle: 'نهجنا',
+    approachSubtitle: 'كيف نحقق نتائج تحويلية',
+    discoveryTitle: 'الاكتشاف',
+    discoveryDesc: 'نتعلم عملك أولاً. ثم نبني.',
+    discoveryBullet1: 'تحليل العمليات التجارية',
+    discoveryBullet2: 'رسم خريطة رحلة العميل',
+    discoveryBullet3: 'تدقيق تقني',
+    discoveryBullet4: 'تحديد عوائق النمو',
+    buildTitle: 'البناء',
+    buildDesc: 'نندمج مع ما لديك. بدون إزعاج. مجرد ترقية.',
+    buildBullet1: 'نشر على مراحل',
+    buildBullet2: 'تدريب ودعم الفريق',
+    buildBullet3: 'التكامل مع الأنظمة الحالية',
+    buildBullet4: 'أقل تأثير على سير العمل',
+    optimizeTitle: 'التحسين',
+    optimizeDesc: 'نستمر في التحسين. الإطلاق هو اليوم الأول. نجعله أفضل.',
+    optimizeBullet1: 'مراقبة الأداء',
+    optimizeBullet2: 'تحسينات مبنية على البيانات',
+    optimizeBullet3: 'مراجعات استراتيجية دورية',
+    optimizeBullet4: 'دعم تقني مستمر',
+    differentTitle: 'ما يميزنا',
+    differentSubtitle: 'لماذا تختار الشركات والمدارس Digni Digital',
+    humanFirstTitle: 'الإنسان أولاً',
+    humanFirstDesc: 'الذكاء الاصطناعي يساعد فريقك. لا يستبدله.',
+    provenTitle: 'مُثبت',
+    provenDesc: '8 سنوات. 150+ عميل. 98% رضا.',
+    partnershipTitle: 'شراكة كاملة',
+    partnershipDesc: 'استراتيجية. بناء. تحسين. نحن هنا. بدون تسليمات.',
+    roiFocusTitle: 'تركيز على العائد',
+    roiFocusDesc: 'نتابع الإيرادات. العملاء المحتملين. الوظائف. ليس فقط الميزات.',
+    promiseTitle: 'وعدنا',
+    promiseQuote: 'عالم أفضل هو عالم يُمكّن الجميع ويربطهم بنفس التقنيات والمهارات المتاحة للنخب. ستحصل على المزيد من العملاء، والمزيد من الإيرادات، أو المزيد من الخريجين الموظفين. وإلا فقد فشلنا.',
+    founderName: 'باسكال ديني',
+    founderRole: 'المؤسس والرئيس التنفيذي',
+    servicesTitle: 'خدماتنا',
+    servicesSubtitle: 'ثلاثة حلول أساسية تحقق أثراً حقيقياً في الأعمال',
+    aiEmployeeTitle: 'الموظف الذكي',
+    aiEmployeeDesc: 'الذكاء الاصطناعي يرد على المكالمات. يؤهّل. يحجز. 24/7.',
+    aiEmployeeCta: 'اكتشف كيف يلتقط العملاء',
+    literacyTitle: 'برنامج Digni Digital Literacy',
+    literacyDesc: '85% موظفون. نوفر المنهج والإنترنت. أنت توفر الطلاب.',
+    literacyCta: 'استكشف المنهج',
+    agenticTitle: 'Agentic Softwares',
+    agenticDesc: 'برمجيات ذكاء اصطناعي أصيلة تدرك وتفكّر وتعمل بذاتها.',
+    agenticCta: 'اكتشف ما نبنيه',
+    ctaTitle: 'مستعد للعمل معاً؟',
+    ctaSubtitle: 'أخبرنا بمشكلتك. سنجد الحل.',
+    trustedByTitle: 'موثوق من شركات حول العالم',
+  }
+
+  const aboutDe: AboutTranslations = {
+    badge: 'Über uns',
+    heroTitle: 'Über uns',
+    heroSubtitle: 'Ein amerikanisches Unternehmen, gegründet in Kenia von einem jungen Geflüchteten—angetrieben von Hunger und Größe, um eine Welt zu bauen, in der jeder befähigt, ermächtigt und mit den Technologien und Fähigkeiten verbunden ist, die Leben verändern.',
+    statsTitle: 'Zahlen, die unser Engagement für den Erfolg unserer Kunden belegen',
+    statYears: 'Jahre Erfahrung',
+    statStudents: 'Ausgebildete Studierende',
+    statLeads: 'Erfasste Leads',
+    statSatisfaction: 'Kundenzufriedenheit',
+    ourStoryTitle: 'Unsere Geschichte',
+    storyP1: 'Wir sind ein in den USA registriertes Unternehmen, das in Kenia gestartet wurde—gegründet von einem jungen Geflüchteten, der sich weigerte, die ihm auferlegten Regeln und Grenzen zu akzeptieren. Angetrieben von Hunger und Größe entschied er sich, vorwärts zu scheitern: weiterzumachen, zu träumen und auf eine bessere Welt hinzuarbeiten.',
+    storyP2: 'Dieser Traum ist einfach und dringend: Jeder befähigt, ermächtigt und verbunden mit den gleichen Technologien und Fähigkeiten, die lange den Eliten vorbehalten waren. Unternehmen sollten keine Leads verlieren, weil sie sich große Systeme nicht leisten können. Studierende sollten nicht ohne die Fähigkeiten abschließen, die Arbeitgeber suchen. Wir bauen die Lösungen—KI, die jeden Lead erfasst, Lehrpläne, die Absolventen berufsfertig machen, und agentische Software, die wahrnimmt, denkt und handelt—und mit Ihnen wächst.',
+    storyP3: 'Gegründet 2019. Angefangen mit Websites. Heute: KI-Systeme, Absolventenprogramme, Agentic Softwares. Wir bauen nicht nur Websites—wir bauen Systeme, die Ihnen Kunden bringen und Studierenden Jobs verschaffen.',
+    takeTheJourney: 'Entdecken Sie die Reise',
+    approachTitle: 'Unser Ansatz',
+    approachSubtitle: 'Wie wir transformative Ergebnisse liefern',
+    discoveryTitle: 'Entdeckung',
+    discoveryDesc: 'Wir lernen zuerst Ihr Geschäft kennen. Dann bauen wir.',
+    discoveryBullet1: 'Geschäftsprozessanalyse',
+    discoveryBullet2: 'Customer-Journey-Mapping',
+    discoveryBullet3: 'Technologie-Audit',
+    discoveryBullet4: 'Identifikation von Wachstumshindernissen',
+    buildTitle: 'Aufbau',
+    buildDesc: 'Wir integrieren uns nahtlos. Keine Störung. Nur Upgrade.',
+    buildBullet1: 'Stufenweiser Rollout',
+    buildBullet2: 'Teamschulung & Support',
+    buildBullet3: 'Integration mit bestehenden Systemen',
+    buildBullet4: 'Minimale Geschäftsunterbrechung',
+    optimizeTitle: 'Optimierung',
+    optimizeDesc: 'Wir verbessern kontinuierlich. Der Launch ist Tag eins. Wir machen es besser.',
+    optimizeBullet1: 'Performance-Monitoring',
+    optimizeBullet2: 'Datengetriebene Verbesserungen',
+    optimizeBullet3: 'Regelmäßige Strategie-Reviews',
+    optimizeBullet4: 'Laufender technischer Support',
+    differentTitle: 'Was uns unterscheidet',
+    differentSubtitle: 'Warum Unternehmen und Schulen Digni Digital wählen',
+    humanFirstTitle: 'Mensch zuerst',
+    humanFirstDesc: 'KI unterstützt Ihr Team. Ersetzt es nicht.',
+    provenTitle: 'Bewährt',
+    provenDesc: '8 Jahre. 150+ Kunden. 98% Zufriedenheit.',
+    partnershipTitle: 'Volle Partnerschaft',
+    partnershipDesc: 'Strategie. Aufbau. Optimierung. Wir sind da. Keine Übergaben.',
+    roiFocusTitle: 'ROI-Fokus',
+    roiFocusDesc: 'Wir verfolgen Umsatz. Leads. Jobs. Nicht nur Features.',
+    promiseTitle: 'Unser Versprechen',
+    promiseQuote: 'Eine bessere Welt ist eine, in der jeder befähigt, ermächtigt und verbunden ist—mit den gleichen Technologien und Fähigkeiten, die Eliten haben. Sie werden mehr Leads, mehr Umsatz oder mehr angestellte Absolventen haben. Oder wir haben versagt.',
+    founderName: 'Pascal Digny',
+    founderRole: 'Gründer & CEO',
+    servicesTitle: 'Unsere Dienstleistungen',
+    servicesSubtitle: 'Drei Kernlösungen für echten geschäftlichen Mehrwert',
+    aiEmployeeTitle: 'KI-Mitarbeiter',
+    aiEmployeeDesc: 'KI beantwortet Anrufe. Qualifiziert. Bucht. 24/7.',
+    aiEmployeeCta: 'So werden Leads erfasst',
+    literacyTitle: 'Digni Digital Literacy Programm',
+    literacyDesc: '85% beschäftigt. Wir bringen Lehrplan und Internet. Sie bringen Studierende.',
+    literacyCta: 'Lehrplan entdecken',
+    agenticTitle: 'Agentic Softwares',
+    agenticDesc: 'KI-native Software, die wahrnimmt, denkt und autonom handelt.',
+    agenticCta: 'Sehen, was wir bauen',
+    ctaTitle: 'Bereit zur Zusammenarbeit?',
+    ctaSubtitle: 'Sagen Sie uns Ihr Problem. Wir finden die Lösung.',
+    trustedByTitle: 'Vertraut von Unternehmen weltweit',
+  }
+
+  const aboutEs: AboutTranslations = {
+    badge: 'Sobre nosotros',
+    heroTitle: 'Sobre nosotros',
+    heroSubtitle: 'Una empresa estadounidense que nació en Kenia, fundada por un joven refugiado—impulsado por el hambre y la grandeza para construir un mundo donde todos estén capacitados, empoderados y conectados con la tecnología y las habilidades que cambian vidas.',
+    statsTitle: 'Cifras que demuestran nuestro compromiso con el éxito del cliente',
+    statYears: 'Años de experiencia',
+    statStudents: 'Estudiantes formados',
+    statLeads: 'Leads capturados',
+    statSatisfaction: 'Satisfacción del cliente',
+    ourStoryTitle: 'Nuestra historia',
+    storyP1: 'Somos una empresa registrada en Estados Unidos que empezó en Kenia—fundada por un joven refugiado que se negó a aceptar las reglas y limitaciones impuestas sobre él. Impulsado por el hambre y la grandeza, eligió fracasar hacia adelante: seguir empujando, soñando y construyendo hacia un mundo mejor.',
+    storyP2: 'Ese sueño es simple y urgente: todos capacitados, empoderados y conectados con las mismas tecnologías y habilidades reservadas durante mucho tiempo para las élites. Las empresas no deberían perder leads porque no pueden permitirse grandes sistemas. Los estudiantes no deberían graduarse sin las habilidades que los empleadores buscan. Construimos las soluciones—IA que captura cada lead, currículos que preparan a los graduados para el empleo, y software agéntico que percibe, razona y actúa—escalando contigo.',
+    storyP3: 'Fundada en 2019. Empezamos con sitios web. Ahora: sistemas de IA, programas de graduados, Agentic Softwares. No solo construimos sitios web—construimos sistemas que te traen clientes y consiguen empleos para los estudiantes.',
+    takeTheJourney: 'Descubre el recorrido',
+    approachTitle: 'Nuestro enfoque',
+    approachSubtitle: 'Cómo logramos resultados transformadores',
+    discoveryTitle: 'Descubrimiento',
+    discoveryDesc: 'Primero conocemos tu negocio. Luego construimos.',
+    discoveryBullet1: 'Análisis de procesos de negocio',
+    discoveryBullet2: 'Mapeo del recorrido del cliente',
+    discoveryBullet3: 'Auditoría tecnológica',
+    discoveryBullet4: 'Identificación de cuellos de botella',
+    buildTitle: 'Construcción',
+    buildDesc: 'Nos integramos con lo que tienes. Sin interrupciones. Solo mejora.',
+    buildBullet1: 'Despliegue por fases',
+    buildBullet2: 'Formación y soporte al equipo',
+    buildBullet3: 'Integración con sistemas existentes',
+    buildBullet4: 'Mínima interrupción del negocio',
+    optimizeTitle: 'Optimización',
+    optimizeDesc: 'Seguimos mejorando. El lanzamiento es el día uno. Lo hacemos mejor.',
+    optimizeBullet1: 'Monitoreo de rendimiento',
+    optimizeBullet2: 'Mejoras basadas en datos',
+    optimizeBullet3: 'Revisiones estratégicas periódicas',
+    optimizeBullet4: 'Soporte técnico continuo',
+    differentTitle: 'Lo que nos diferencia',
+    differentSubtitle: 'Por qué empresas y escuelas eligen Digni Digital',
+    humanFirstTitle: 'Personas primero',
+    humanFirstDesc: 'La IA ayuda a tu equipo. No lo reemplaza.',
+    provenTitle: 'Comprobado',
+    provenDesc: '8 años. 150+ clientes. 98% de satisfacción.',
+    partnershipTitle: 'Alianza total',
+    partnershipDesc: 'Estrategia. Construcción. Optimización. Estamos ahí. Sin traspasos.',
+    roiFocusTitle: 'Enfoque en ROI',
+    roiFocusDesc: 'Medimos ingresos. Leads. Empleos. No solo funcionalidades.',
+    promiseTitle: 'Nuestra promesa',
+    promiseQuote: 'Un mundo mejor es uno donde todos están capacitados, empoderados y conectados—con las mismas tecnologías y habilidades que tienen las élites. Tendrás más leads, más ingresos o más graduados empleados. O habremos fallado.',
+    founderName: 'Pascal Digny',
+    founderRole: 'Fundador y CEO',
+    servicesTitle: 'Nuestros servicios',
+    servicesSubtitle: 'Tres soluciones clave que generan impacto real en el negocio',
+    aiEmployeeTitle: 'Empleado IA',
+    aiEmployeeDesc: 'La IA responde llamadas. Califica. Reserva. 24/7.',
+    aiEmployeeCta: 'Descubre cómo captura leads',
+    literacyTitle: 'Programa Digni Digital Literacy',
+    literacyDesc: '85% empleados. Nosotros traemos el currículo e internet. Tú traes los estudiantes.',
+    literacyCta: 'Explorar el currículo',
+    agenticTitle: 'Agentic Softwares',
+    agenticDesc: 'Software nativo de IA que percibe, razona y actúa de forma autónoma.',
+    agenticCta: 'Descubre lo que construimos',
+    ctaTitle: '¿Listo para trabajar juntos?',
+    ctaSubtitle: 'Cuéntanos tu problema. Encontraremos la solución.',
+    trustedByTitle: 'Empresas de todo el mundo confían en nosotros',
+  }
+
   return {
-    en: { ...commonEn, home: homeEn, blog: blogEn, about: {}, contact: contactEn, clientJourney: clientJourneyEn },
-    fr: { ...commonFr, home: homeFr, blog: blogFr, about: {}, contact: contactFr, clientJourney: clientJourneyFr },
-    ar: { ...commonAr, home: homeAr, blog: blogAr, about: {}, contact: contactAr, clientJourney: clientJourneyAr },
-    de: { ...commonEn, home: homeEn, blog: blogEn, about: {}, contact: contactEn, clientJourney: clientJourneyEn },
-    es: { ...commonEn, home: homeEn, blog: blogEn, about: {}, contact: contactEn, clientJourney: clientJourneyEn },
+    en: { ...commonEn, home: homeEn, blog: blogEn, about: aboutEn, contact: contactEn, clientJourney: clientJourneyEn },
+    fr: { ...commonFr, home: homeFr, blog: blogFr, about: aboutFr, contact: contactFr, clientJourney: clientJourneyFr },
+    ar: { ...commonAr, home: homeAr, blog: blogAr, about: aboutAr, contact: contactAr, clientJourney: clientJourneyAr },
+    de: { ...commonEn, home: homeEn, blog: blogDe, about: aboutDe, contact: contactEn, clientJourney: clientJourneyEn },
+    es: { ...commonEn, home: homeEn, blog: blogEs, about: aboutEs, contact: contactEn, clientJourney: clientJourneyEn },
   }
 }
 

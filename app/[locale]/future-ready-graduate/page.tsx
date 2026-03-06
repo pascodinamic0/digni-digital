@@ -66,8 +66,8 @@ export default function FutureReadyGraduatePage() {
 
 
   const caseStudy = {
-    school: 'Riverside Technical High School',
-    location: 'Lagos, Nigeria',
+    school: 'GS Laricharde',
+    location: 'Kigali, Rwanda',
     challenge: '45% employed after 12 months. No practical skills.',
     implementation: 'Full program. Final year. September-July. Ministry breaks respected.',
     results: [
@@ -77,7 +77,7 @@ export default function FutureReadyGraduatePage() {
       { metric: '8 months', description: 'Program ROI payback period' }
     ],
     timeline: 'September 2024 - July 2025 (Full Academic Year)',
-    testimonial: '"The program timing was perfect. Students learned during school hours, and the breaks gave them time to practice. By graduation, they were genuinely job ready." - Principal Mary Adebayo'
+    testimonial: '"The program timing was perfect. Students learned during school hours, and the breaks gave them time to practice. By graduation, they were genuinely job ready." - GS Laricharde Administration'
   }
 
   const pricing = [

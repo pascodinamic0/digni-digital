@@ -244,7 +244,7 @@ export default function BlogContent({ articlesByLang }: BlogContentProps) {
           ) : (
             <div className="text-center py-12">
               <h3 className="font-display text-2xl font-bold mb-2">{t.noArticles}</h3>
-              <p className="text-muted mb-6">Try adjusting your search or filter criteria</p>
+              <p className="text-muted mb-6">{t.readyTransformDesc}</p>
               <button
                 onClick={() => {
                   setSearchTerm('')
@@ -252,27 +252,26 @@ export default function BlogContent({ articlesByLang }: BlogContentProps) {
                 }}
                 className="btn-primary"
               >
-                Clear Filters
+                {t.clearFilters}
               </button>
             </div>
           )}
         </div>
       </section>
 
-      {/* Simple Newsletter */}
       <section className="py-16 bg-surface">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="font-display text-3xl font-bold mb-4">
-            Stay Updated
+            {t.stayUpdated}
           </h2>
           <p className="text-muted text-lg mb-8">
-            Get weekly insights on African digital transformation and AI innovations.
+            {t.stayUpdatedDesc}
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
             <input
               type="email"
-              placeholder="Enter your email"
+              placeholder={t.emailPlaceholder}
               aria-label="Email address for newsletter subscription"
               className="flex-1 px-4 py-3 bg-background border border-border-medium rounded-lg text-text placeholder-muted focus:outline-none focus:border-accent"
             />
@@ -280,25 +279,24 @@ export default function BlogContent({ articlesByLang }: BlogContentProps) {
               className="btn-primary whitespace-nowrap"
               aria-label="Subscribe to newsletter"
             >
-              Subscribe
+              {t.subscribeCta}
             </button>
           </div>
           
           <p className="text-muted text-sm mt-4">
-            Join 10,000+ business leaders. No spam, unsubscribe anytime.
+            {t.joinReaders}
           </p>
         </div>
       </section>
 
-      {/* Simple CTA */}
       <section className="py-16">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <div className="bg-surface border border-border-light rounded-lg p-12">
             <h2 className="font-display text-3xl font-bold mb-4">
-              Ready to Transform Your Business?
+              {t.readyTransform}
             </h2>
             <p className="text-muted text-lg mb-8">
-              Let's discuss how AI can revolutionize your business operations.
+              {t.readyTransformDesc}
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -309,7 +307,7 @@ export default function BlogContent({ articlesByLang }: BlogContentProps) {
                 {translations[language].cta.bookConsultation}
               </a>
               <Link href="/services" className="btn-secondary">
-                Explore Services
+                {t.exploreServices}
               </Link>
             </div>
           </div>

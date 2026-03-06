@@ -12,7 +12,7 @@ const caseStudies = [
     id: 'healthcare-clinic',
     industry: 'Healthcare',
     title: 'Regional Healthcare Clinic',
-    client: 'MedCare Clinic Network',
+    client: 'Fremo Medical & Birth Center',
     duration: '6 weeks',
     location: 'Lagos, Nigeria',
     challenge: 'Manual appointment booking system leading to 40% no-shows, lost revenue, and frustrated patients. Staff spending 3+ hours daily on scheduling conflicts.',
@@ -32,15 +32,15 @@ const caseStudies = [
     technologies: ['Next.js', 'Node.js', 'PostgreSQL', 'Twilio', 'Stripe'],
     testimonial: {
       quote: "Digni Digital transformed our entire patient experience. The booking system alone has saved us countless hours and significantly improved our revenue.",
-      author: "Dr. Sarah Okafor",
-      position: "Chief Medical Officer"
+      author: "The Fremo Medical Team",
+      position: "Healthcare Staff"
     }
   },
   {
     id: 'real-estate-agency',
     industry: 'Real Estate',
     title: 'Premium Real Estate Agency',
-    client: 'Elite Properties Group',
+    client: 'Shep Engineering',
     duration: '4 weeks',
     location: 'Accra, Ghana',
     challenge: 'Agents spending 5+ hours per property proposal, losing deals to faster competitors. Inconsistent proposal quality affecting brand reputation.',
@@ -60,17 +60,17 @@ const caseStudies = [
     technologies: ['React Native', 'Express.js', 'MongoDB', 'AWS S3', 'OpenAI API'],
     testimonial: {
       quote: "Our agents can now create professional proposals in minutes instead of hours. This has been a game-changer for our competitive advantage.",
-      author: "Kwame Asante",
-      position: "Managing Director"
+      author: "The Shep Engineering Team",
+      position: "Management"
     }
   },
   {
     id: 'digital-agency',
     industry: 'Marketing',
     title: 'Digital Marketing Agency',
-    client: 'GrowthMax Digital',
+    client: 'GlamSquad Kenya',
     duration: '3 weeks',
-    location: 'Cape Town, South Africa',
+    location: 'Nairobi, Kenya',
     challenge: 'Inconsistent proposal quality and pricing leading to 60% rejection rate. Manual client reporting consuming 20+ hours weekly.',
     solution: [
       'Standardized proposal templates',
@@ -88,8 +88,8 @@ const caseStudies = [
     technologies: ['Vue.js', 'Laravel', 'MySQL', 'Chart.js', 'SendGrid'],
     testimonial: {
       quote: "The proposal system has completely transformed our sales process. We're closing more deals and spending less time on admin work.",
-      author: "Thandiwe Mthembu",
-      position: "Founder & CEO"
+      author: "The GlamSquad Kenya Team",
+      position: "Founders"
     }
   },
 ]

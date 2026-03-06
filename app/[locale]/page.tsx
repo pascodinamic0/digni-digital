@@ -110,7 +110,7 @@ function Hero() {
         muted
         loop
         playsInline
-        preload="auto"
+        preload="metadata"
         src="/hero-bg.mp4"
         className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[2000ms] ${videoReady ? 'opacity-70' : 'opacity-30'}`}
       />
