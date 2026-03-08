@@ -17,6 +17,7 @@ import { translations } from '@/app/config/translations'
 export default function FutureReadyGraduatePage() {
   const [selectedVideo, setSelectedVideo] = useState<{ src: string; title: string; speaker: string; description: string } | null>(null)
   const [earlyAccessOpen, setEarlyAccessOpen] = useState(false)
+  const skillsScrollRef = useRef<HTMLDivElement>(null)
   const language = useLanguage()
   const ctaT = translations[language].cta
 
@@ -595,7 +596,31 @@ export default function FutureReadyGraduatePage() {
             <div className="absolute left-0 top-0 bottom-0 w-16 md:w-24 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
             <div className="absolute right-0 top-0 bottom-0 w-16 md:w-24 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
 
-            <div className="flex animate-scroll-left-slow gap-6 pb-4">
+            <button
+              type="button"
+              onClick={() => skillsScrollRef.current?.scrollBy({ left: -344, behavior: 'smooth' })}
+              className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-background/90 border border-border shadow-lg flex items-center justify-center hover:bg-surface hover:border-success/50 transition-colors"
+              aria-label="Scroll left"
+            >
+              <svg className="w-5 h-5 text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+            <button
+              type="button"
+              onClick={() => skillsScrollRef.current?.scrollBy({ left: 344, behavior: 'smooth' })}
+              className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-background/90 border border-border shadow-lg flex items-center justify-center hover:bg-surface hover:border-success/50 transition-colors"
+              aria-label="Scroll right"
+            >
+              <svg className="w-5 h-5 text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+
+            <div
+              ref={skillsScrollRef}
+              className="flex gap-6 pb-4 overflow-x-auto overflow-y-hidden scroll-smooth scrollbar-hide snap-x snap-mandatory"
+            >
               {(() => {
                 const skills = [
                   {
@@ -711,36 +736,46 @@ export default function FutureReadyGraduatePage() {
                     demand: 'Very High'
                   }
                 ]
-                return [...skills, ...skills].map((item, i) => (
-                  <div
-                    key={`${item.skill}-${i}`}
-                    className="card p-6 hover:border-success/50 group flex-shrink-0 w-[320px] min-h-[340px] flex flex-col"
-                  >
+                const half = Math.ceil(skills.length / 2)
+                const topRow = skills.slice(0, half)
+                const bottomRow = skills.slice(half)
+                const columns = topRow.map((item, i) => [item, bottomRow[i] ?? null])
+                const scrollColumns = [...columns, ...columns]
+
+                const SkillCard = ({ item }: { item: typeof skills[0] }) => (
+                  <div className="card p-6 hover:border-success/50 group w-[320px] min-h-[300px] flex flex-col">
                     <div className="text-center mb-4">
-                      <div className="w-16 h-16 bg-success/10 rounded-2xl mx-auto mb-3 flex items-center justify-center text-3xl">
+                      <div className="w-14 h-14 bg-success/10 rounded-2xl mx-auto mb-2 flex items-center justify-center text-2xl">
                         {item.icon}
                       </div>
-                      <h3 className="font-display text-lg font-bold group-hover:text-success transition-colors mb-2">
+                      <h3 className="font-display text-base font-bold group-hover:text-success transition-colors mb-2">
                         {item.skill}
                       </h3>
-                      <div className="flex items-center justify-center gap-2 mb-3">
-                        <span className="text-success font-bold text-lg">{item.earning}</span>
-                        <span className="px-2 py-1 bg-success/10 text-success text-xs rounded-full">
+                      <div className="flex items-center justify-center gap-2 mb-2">
+                        <span className="text-success font-bold">{item.earning}</span>
+                        <span className="px-2 py-0.5 bg-success/10 text-success text-xs rounded-full">
                           {item.demand}
                         </span>
                       </div>
                     </div>
-                    <p className="text-muted text-sm leading-relaxed mb-4 flex-1">{item.description}</p>
+                    <p className="text-muted text-xs leading-relaxed mb-3 flex-1 line-clamp-3">{item.description}</p>
                     <div>
-                      <span className="text-xs uppercase tracking-wider text-muted-dark block mb-2">Key Tools</span>
+                      <span className="text-xs uppercase tracking-wider text-muted-dark block mb-1">Key Tools</span>
                       <div className="flex flex-wrap gap-1">
-                        {item.tools.map((tool, j) => (
-                          <span key={j} className="px-2 py-1 bg-surface-light text-xs rounded text-muted">
+                        {item.tools.slice(0, 4).map((tool, j) => (
+                          <span key={j} className="px-2 py-0.5 bg-surface-light text-xs rounded text-muted">
                             {tool}
                           </span>
                         ))}
                       </div>
                     </div>
+                  </div>
+                )
+
+                return scrollColumns.map(([top, bottom], i) => (
+                  <div key={i} className="flex flex-col gap-4 flex-shrink-0 snap-start">
+                    <SkillCard item={top} />
+                    {bottom && <SkillCard item={bottom} />}
                   </div>
                 ))
               })()}
