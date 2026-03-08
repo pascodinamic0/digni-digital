@@ -9,10 +9,16 @@ import AnimatedSection from '@/app/components/AnimatedSection'
 import VideoModal from '@/app/components/VideoModal'
 import VideoThumbnail from '@/app/components/VideoThumbnail'
 import DemoPresentationDownload from '@/app/components/DemoPresentationDownload'
+import EarlyAccessFormModal from '@/app/components/EarlyAccessFormModal'
 import { ctaConfig, getBookingLinkProps } from '@/app/config/cta.config'
+import { useLanguage } from '@/app/context/LocaleContext'
+import { translations } from '@/app/config/translations'
 
 export default function FutureReadyGraduatePage() {
   const [selectedVideo, setSelectedVideo] = useState<{ src: string; title: string; speaker: string; description: string } | null>(null)
+  const [earlyAccessOpen, setEarlyAccessOpen] = useState(false)
+  const language = useLanguage()
+  const ctaT = translations[language].cta
 
   const trimesterPlan = [
     {
@@ -67,16 +73,16 @@ export default function FutureReadyGraduatePage() {
 
   const caseStudy = {
     school: 'GS Laricharde',
-    location: 'Kigali, Rwanda',
+    location: 'Kinshasa, Monga Fula',
     challenge: '45% employed after 12 months. No practical skills.',
     implementation: 'Full program. Final year. September-July. Ministry breaks respected.',
-    results: [
-      { metric: '85%', description: 'Graduate employment rate' },
-      { metric: '₦240k', description: 'Average starting salary (up from ₦120k)' },
-      { metric: '50+', description: 'Employer partnerships established' },
-      { metric: '8 months', description: 'Program ROI payback period' }
+    projections: [
+      { metric: '85%', description: 'Target graduate employment rate' },
+      { metric: '≥1.4M FC', description: 'Projected starting salary (min. ~$500 equiv.)' },
+      { metric: '50+', description: 'Target employer partnerships' },
+      { metric: '8 months', description: 'Projected program ROI payback period' }
     ],
-    timeline: 'September 2024 - July 2025 (Full Academic Year)',
+    timeline: 'September 2024 - July 2025 (Full Academic Year - Ongoing)',
     testimonial: '"The program timing was perfect. Students learned during school hours, and the breaks gave them time to practice. By graduation, they were genuinely job ready." - GS Laricharde Administration'
   }
 
@@ -108,7 +114,7 @@ export default function FutureReadyGraduatePage() {
       comingSoon: false
     },
     {
-      name: 'Self-Learning',
+      name: 'Guided Learning',
       price: '$25',
       period: ' one-time',
       description: 'Digital skills. Learn anywhere. Earn online.',
@@ -117,7 +123,7 @@ export default function FutureReadyGraduatePage() {
         'Full digital skills curriculum (start from scratch)',
         'Learn from home, school, university, or vocational center',
         'AI-powered tools and techniques for making money online',
-        'Self-paced learning - study on your own schedule',
+        'Guided learning - study on your own schedule with support',
         'Community support and peer learning forums',
         'Digital certificates upon completion',
         'Lifetime access to all course materials',
@@ -126,7 +132,8 @@ export default function FutureReadyGraduatePage() {
         'Start earning while you learn'
       ],
       popular: false,
-      comingSoon: true
+      isNew: true,
+      spotsAvailable: 25
     },
     {
       name: 'Professional Institutes',
@@ -584,96 +591,160 @@ export default function FutureReadyGraduatePage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-            {[
-              {
-                skill: 'AI-Powered Web Development',
-                icon: '🌐',
-                earning: '$40-100/hour',
-                description: 'Build professional websites and web apps using AI tools that let beginners compete with expert developers.',
-                tools: ['Lovable.dev', 'Cursor', 'Vercel', 'Render', 'v0.dev', 'GitHub Copilot'],
-                demand: 'Extremely High'
-              },
-              {
-                skill: 'AI Content Creation & Copywriting',
-                icon: '✍️',
-                earning: '$30-80/hour',
-                description: 'Create high-quality blogs, social media content, and marketing copy using advanced AI writing tools.',
-                tools: ['ChatGPT-4', 'Claude 3.5', 'Midjourney', 'Runway', 'Copy.ai', 'Jasper'],
-                demand: 'Extremely High'
-              },
-              {
-                skill: 'AI-Powered Digital Marketing',
-                icon: '📊',
-                earning: '$25-70/hour',
-                description: 'Leverage AI for social media management, SEO, analytics, and data-driven marketing campaigns.',
-                tools: ['Canva AI', 'Google Analytics AI', 'Meta AI Ads', 'ChatGPT Marketing'],
-                demand: 'Very High'
-              },
-              {
-                skill: 'AI Video Production & Editing',
-                icon: '🎬',
-                earning: '$35-90/hour',
-                description: 'Create professional videos using AI tools for editing, animation, voiceovers, and content generation.',
-                tools: ['Runway ML', 'Pika Labs', 'Synthesia', 'CapCut AI', 'DaVinci Resolve AI'],
-                demand: 'Very High'
-              },
-              {
-                skill: 'AI E-commerce & Store Building',
-                icon: '🛒',
-                earning: '$30-75/hour',
-                description: 'Build and manage online stores using AI-powered platforms that automate product creation and marketing.',
-                tools: ['Shopify AI', 'WooCommerce AI', 'Amazon AI Tools'],
-                demand: 'Growing Fast'
-              },
-              {
-                skill: 'AI Automation & Virtual Assistance',
-                icon: '⚡',
-                earning: '$20-60/hour',
-                description: 'Automate business processes and provide AI-enhanced virtual assistance using cutting-edge tools.',
-                tools: ['Zapier AI', 'Make.com', 'n8n', 'Notion AI'],
-                demand: 'Exploding'
-              }
-            ].map((item, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="card p-6 hover:border-success/50 group"
-              >
-                <div className="text-center mb-4">
-                  <div className="w-16 h-16 bg-success/10 rounded-2xl mx-auto mb-3 flex items-center justify-center text-3xl">
-                    {item.icon}
-                  </div>
-                  <h3 className="font-display text-lg font-bold group-hover:text-success transition-colors mb-2">
-                    {item.skill}
-                  </h3>
-                  <div className="flex items-center justify-center gap-2 mb-3">
-                    <span className="text-success font-bold text-lg">{item.earning}</span>
-                    <span className="px-2 py-1 bg-success/10 text-success text-xs rounded-full">
-                      {item.demand}
-                    </span>
-                  </div>
-                  </div>
+          <div className="relative overflow-hidden mb-16">
+            <div className="absolute left-0 top-0 bottom-0 w-16 md:w-24 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-16 md:w-24 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
 
-                <p className="text-muted text-sm leading-relaxed mb-4">{item.description}</p>
-
-                <div className="space-y-3">
-                  <div>
-                    <span className="text-xs uppercase tracking-wider text-muted-dark block mb-2">Key Tools</span>
-                    <div className="flex flex-wrap gap-1">
-                      {item.tools.map((tool, j) => (
-                        <span key={j} className="px-2 py-1 bg-surface-light text-xs rounded text-muted">
-                          {tool}
+            <div className="flex animate-scroll-left-slow gap-6 pb-4">
+              {(() => {
+                const skills = [
+                  {
+                    skill: 'AI-Powered Web Development',
+                    icon: '🌐',
+                    earning: '$40-100/hour',
+                    description: 'Build professional websites and web apps using AI tools that let beginners compete with expert developers.',
+                    tools: ['Lovable.dev', 'Cursor', 'Vercel', 'Render', 'v0.dev', 'GitHub Copilot'],
+                    demand: 'Extremely High'
+                  },
+                  {
+                    skill: 'AI Content Creation & Copywriting',
+                    icon: '✍️',
+                    earning: '$30-80/hour',
+                    description: 'Create high-quality blogs, social media content, and marketing copy using advanced AI writing tools.',
+                    tools: ['ChatGPT-4', 'Claude 3.5', 'Midjourney', 'Runway', 'Copy.ai', 'Jasper'],
+                    demand: 'Extremely High'
+                  },
+                  {
+                    skill: 'AI-Powered Digital Marketing',
+                    icon: '📊',
+                    earning: '$25-70/hour',
+                    description: 'Leverage AI for social media management, SEO, analytics, and data-driven marketing campaigns.',
+                    tools: ['Canva AI', 'Google Analytics AI', 'Meta AI Ads', 'ChatGPT Marketing'],
+                    demand: 'Very High'
+                  },
+                  {
+                    skill: 'AI Video Production & Editing',
+                    icon: '🎬',
+                    earning: '$35-90/hour',
+                    description: 'Create professional videos using AI tools for editing, animation, voiceovers, and content generation.',
+                    tools: ['Runway ML', 'Pika Labs', 'Synthesia', 'CapCut AI', 'DaVinci Resolve AI'],
+                    demand: 'Very High'
+                  },
+                  {
+                    skill: 'AI E-commerce & Store Building',
+                    icon: '🛒',
+                    earning: '$30-75/hour',
+                    description: 'Build and manage online stores using AI-powered platforms that automate product creation and marketing.',
+                    tools: ['Shopify AI', 'WooCommerce AI', 'Amazon AI Tools'],
+                    demand: 'Growing Fast'
+                  },
+                  {
+                    skill: 'AI Automation & Virtual Assistance',
+                    icon: '⚡',
+                    earning: '$20-60/hour',
+                    description: 'Automate business processes and provide AI-enhanced virtual assistance using cutting-edge tools.',
+                    tools: ['Zapier AI', 'Make.com', 'n8n', 'Notion AI'],
+                    demand: 'Exploding'
+                  },
+                  {
+                    skill: 'AI Data Annotation & Labeling',
+                    icon: '🏷️',
+                    earning: '$15-50/hour',
+                    description: 'Label and annotate data for AI training. Critical for ML models—demand surged 220%+. Work from anywhere.',
+                    tools: ['Scale AI', 'Label Studio', 'Amazon SageMaker', 'Supervisely'],
+                    demand: 'Exploding'
+                  },
+                  {
+                    skill: 'AI Image Generation & Editing',
+                    icon: '🎨',
+                    earning: '$25-80/hour',
+                    description: 'Create stunning visuals with AI. Design assets, marketing imagery, and creative content for brands.',
+                    tools: ['Midjourney', 'DALL·E 3', 'Adobe Firefly', 'Leonardo.ai', 'Ideogram'],
+                    demand: 'Very High'
+                  },
+                  {
+                    skill: 'AI Chatbot Development',
+                    icon: '🤖',
+                    earning: '$35-100/hour',
+                    description: 'Build custom AI assistants and conversational agents. Integrate chatbots into websites and apps.',
+                    tools: ['OpenAI API', 'Claude API', 'Voiceflow', 'Botpress', 'LangChain'],
+                    demand: 'Very High'
+                  },
+                  {
+                    skill: 'Prompt Engineering',
+                    icon: '💬',
+                    earning: '$30-90/hour',
+                    description: 'Specialize in crafting prompts that get the best from AI. Essential skill for AI-powered workflows.',
+                    tools: ['ChatGPT', 'Claude', 'Anthropic', 'Prompt libraries'],
+                    demand: 'Growing Fast'
+                  },
+                  {
+                    skill: 'Career Coaching & Training',
+                    icon: '🎯',
+                    earning: '$40-150/hour',
+                    description: 'Help workers reskill and adapt to AI. Human guidance and empathy remain irreplaceable—demand +74%.',
+                    tools: ['Coaching platforms', 'Notion AI', 'Loom', 'Zoom'],
+                    demand: 'Very High'
+                  },
+                  {
+                    skill: 'AI Meeting Transcription',
+                    icon: '📝',
+                    earning: '$20-50/hour',
+                    description: 'Transcribe meetings, generate summaries, and extract action items. Enable async collaboration globally.',
+                    tools: ['Fireflies.ai', 'Otter.ai', 'Clara', 'Krisp', 'Rev'],
+                    demand: 'Growing Fast'
+                  },
+                  {
+                    skill: 'AI Integration & Automation',
+                    icon: '🔗',
+                    earning: '$40-120/hour',
+                    description: 'Connect AI tools to business workflows. Custom integrations that embed AI into everyday operations.',
+                    tools: ['Zapier', 'Make.com', 'n8n', 'API integrations'],
+                    demand: 'Exploding'
+                  },
+                  {
+                    skill: 'AI-Powered Email Marketing',
+                    icon: '📧',
+                    earning: '$25-70/hour',
+                    description: 'High-volume, high-demand. Create campaigns, automate sequences, and optimize with AI copywriting.',
+                    tools: ['Copy.ai', 'Jasper', 'Mailchimp AI', 'HubSpot', 'Woodpecker'],
+                    demand: 'Very High'
+                  }
+                ]
+                return [...skills, ...skills].map((item, i) => (
+                  <div
+                    key={`${item.skill}-${i}`}
+                    className="card p-6 hover:border-success/50 group flex-shrink-0 w-[320px] min-h-[340px] flex flex-col"
+                  >
+                    <div className="text-center mb-4">
+                      <div className="w-16 h-16 bg-success/10 rounded-2xl mx-auto mb-3 flex items-center justify-center text-3xl">
+                        {item.icon}
+                      </div>
+                      <h3 className="font-display text-lg font-bold group-hover:text-success transition-colors mb-2">
+                        {item.skill}
+                      </h3>
+                      <div className="flex items-center justify-center gap-2 mb-3">
+                        <span className="text-success font-bold text-lg">{item.earning}</span>
+                        <span className="px-2 py-1 bg-success/10 text-success text-xs rounded-full">
+                          {item.demand}
                         </span>
-                      ))}
+                      </div>
+                    </div>
+                    <p className="text-muted text-sm leading-relaxed mb-4 flex-1">{item.description}</p>
+                    <div>
+                      <span className="text-xs uppercase tracking-wider text-muted-dark block mb-2">Key Tools</span>
+                      <div className="flex flex-wrap gap-1">
+                        {item.tools.map((tool, j) => (
+                          <span key={j} className="px-2 py-1 bg-surface-light text-xs rounded text-muted">
+                            {tool}
+                          </span>
+                        ))}
+                      </div>
                     </div>
                   </div>
-                </div>
-              </motion.div>
-            ))}
+                ))
+              })()}
+            </div>
           </div>
 
           {/* AI Advantage Callout */}
@@ -917,7 +988,7 @@ export default function FutureReadyGraduatePage() {
               <div className="lg:col-span-2">
                 <div className="flex items-center gap-4 mb-6">
                   <span className="px-3 py-1 bg-success/10 text-success text-xs font-medium rounded-full">
-                    Success Story
+                    Program in Progress
                   </span>
                   <h3 className="font-display text-2xl font-bold">{caseStudy.school}</h3>
                   <span className="text-muted text-sm">{caseStudy.location}</span>
@@ -948,9 +1019,9 @@ export default function FutureReadyGraduatePage() {
               </div>
 
               <div>
-                <h4 className="font-display text-xl font-bold mb-6">Results</h4>
+                <h4 className="font-display text-xl font-bold mb-6">Projections</h4>
                 <div className="space-y-6">
-                  {caseStudy.results.map((result, i) => (
+                  {caseStudy.projections.map((result, i) => (
                     <div key={i} className="text-center">
                       <div className="font-display text-3xl font-bold text-success mb-2">
                         {result.metric}
@@ -991,13 +1062,13 @@ export default function FutureReadyGraduatePage() {
                   className={`relative card p-8 h-full flex flex-col ${
                     plan.popular 
                       ? 'border-success/50 glow-accent' 
-                      : plan.comingSoon 
-                        ? 'border-accent/30 opacity-90' 
+                      : 'spotsAvailable' in plan && plan.spotsAvailable
+                        ? 'border-accent/30'
                         : 'border-success/30'
                   }`}
                 >
                   {/* Path Indicator */}
-                  <div className={`absolute left-1/2 transform -translate-x-1/2 w-full max-w-[calc(100%-1rem)] px-2 flex flex-col items-center gap-2 ${plan.comingSoon ? '-top-14' : '-top-4'}`}>
+                  <div className={`absolute left-1/2 transform -translate-x-1/2 w-full max-w-[calc(100%-1rem)] px-2 flex flex-col items-center gap-2 ${'spotsAvailable' in plan && plan.spotsAvailable ? '-top-14' : '-top-4'}`}>
                     <div className={`px-3 py-1.5 rounded-full text-xs font-bold whitespace-normal text-center w-max max-w-full mx-auto ${
                       plan.audience === 'schools'
                         ? 'bg-success/20 text-success border border-success/30'
@@ -1007,11 +1078,16 @@ export default function FutureReadyGraduatePage() {
                     }`}>
                       {plan.audience === 'schools' ? '🏫 FOR SCHOOLS' : plan.audience === 'professional' ? (
                         <>🏢 FOR PROFESSIONAL<wbr />INSTITUTES</>
-                      ) : '🌍 SELF-LEARNING'}
+                      ) : '🌍 GUIDED LEARNING'}
                     </div>
-                    {plan.comingSoon && (
-                      <span className="px-3 py-1 bg-warning/20 text-warning text-xs font-bold rounded-full">
-                        COMING SOON
+                    {'isNew' in plan && plan.isNew && (
+                      <span className="px-3 py-1 bg-accent/20 text-accent text-xs font-bold rounded-full">
+                        NEW
+                      </span>
+                    )}
+                    {'spotsAvailable' in plan && plan.spotsAvailable && (
+                      <span className="px-3 py-1 bg-muted/30 text-muted text-xs font-medium rounded-full">
+                        Only {plan.spotsAvailable} spots available
                       </span>
                     )}
                   </div>
@@ -1052,15 +1128,14 @@ export default function FutureReadyGraduatePage() {
                   </ul>
 
                   {/* CTA */}
-                  {plan.comingSoon ? (
-                    <a
-                      href="https://forms.gle/jEZAAVf7u8ba1pEK9"
-                      target="_blank"
-                      rel="noopener noreferrer"
+                  {'spotsAvailable' in plan && plan.spotsAvailable ? (
+                    <button
+                      type="button"
+                      onClick={() => setEarlyAccessOpen(true)}
                       className="btn-primary w-full text-center py-3 block"
                     >
-                      Reserve Early Access
-                    </a>
+                      {ctaT.bookYourSpot}
+                    </button>
                   ) : (
                     <a
                       {...getBookingLinkProps()}
@@ -1098,6 +1173,8 @@ export default function FutureReadyGraduatePage() {
           </a>
         </div>
       </AnimatedSection>
+
+      <EarlyAccessFormModal isOpen={earlyAccessOpen} onClose={() => setEarlyAccessOpen(false)} />
 
       {selectedVideo && selectedVideo.src && (
         <VideoModal

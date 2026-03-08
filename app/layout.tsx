@@ -60,7 +60,7 @@ export default async function RootLayout({
       foundingDate: '2019',
       founder: {
         '@type': 'Person',
-        name: 'Pascal Digny',
+        name: 'Pascal Digny Djohodo',
         jobTitle: 'Founder & CEO',
       },
       sameAs: [
