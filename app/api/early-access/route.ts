@@ -5,6 +5,20 @@ const RESEND_API_KEY = process.env.RESEND_API_KEY
 const CONTACT_EMAIL = process.env.CONTACT_EMAIL || 'support@digni-digital-llc.com'
 const FROM_EMAIL = process.env.RESEND_FROM_EMAIL || 'onboarding@resend.dev'
 
+const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSeqLxEb7t89Ju-sTx7s4MQj8PYBX-otT40f-R3nNSZ61DGRMA/formResponse'
+
+/** Google Form entry IDs (from form HTML) */
+const GOOGLE_FORM_ENTRIES = {
+  firstName: '947564554',
+  lastName: '1035176219',
+  email: '577361950',
+  whatsapp: '1724937528',
+  profession: '675305182',
+  whyJoin: '37476322',
+  commitReady: '1964017135',
+  paidProgram: '1668826988',
+} as const
+
 export async function POST(request: Request) {
   try {
     if (!RESEND_API_KEY) {
@@ -61,6 +75,23 @@ export async function POST(request: Request) {
       console.error('Resend error:', error)
       return NextResponse.json({ error: error.message }, { status: 500 })
     }
+
+    // Also submit to Google Form (fire-and-forget; don't fail if it errors)
+    const googleFormBody = new URLSearchParams({
+      [`entry.${GOOGLE_FORM_ENTRIES.firstName}`]: firstName,
+      [`entry.${GOOGLE_FORM_ENTRIES.lastName}`]: lastName,
+      [`entry.${GOOGLE_FORM_ENTRIES.email}`]: email,
+      [`entry.${GOOGLE_FORM_ENTRIES.whatsapp}`]: whatsapp,
+      [`entry.${GOOGLE_FORM_ENTRIES.profession}`]: profession,
+      [`entry.${GOOGLE_FORM_ENTRIES.whyJoin}`]: whyJoin,
+      [`entry.${GOOGLE_FORM_ENTRIES.commitReady}`]: commitReady === 'yes' ? 'Yes' : 'No',
+      [`entry.${GOOGLE_FORM_ENTRIES.paidProgram}`]: paidProgram === 'yes' ? 'Yes' : 'No',
+    })
+    fetch(GOOGLE_FORM_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: googleFormBody.toString(),
+    }).catch((err) => console.error('Google Form submission error:', err))
 
     return NextResponse.json({ success: true, data })
   } catch (err) {
