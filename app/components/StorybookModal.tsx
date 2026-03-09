@@ -292,7 +292,7 @@ export default function StorybookModal({ isOpen, onClose }: StorybookModalProps)
   }, [isOpen, mounted])
 
   const goNext = useCallback(() => {
-    setCurrentIndex((i) => (i < STORY_SLIDES.length - 1 ? i + 1 : i))
+    setCurrentIndex((i) => (i < STORY_SLIDES.length - 1 ? i + 1 : 0))
   }, [])
 
   const goPrev = useCallback(() => {
@@ -313,6 +313,12 @@ export default function StorybookModal({ isOpen, onClose }: StorybookModalProps)
   useEffect(() => {
     if (isOpen) setCurrentIndex(0)
   }, [isOpen])
+
+  useEffect(() => {
+    if (!isOpen || !mounted) return
+    const interval = setInterval(goNext, 8000)
+    return () => clearInterval(interval)
+  }, [isOpen, mounted, goNext])
 
   if (!mounted || !isOpen) return null
 
