@@ -7,14 +7,14 @@ const FROM_EMAIL = process.env.RESEND_FROM_EMAIL || 'onboarding@resend.dev'
 
 const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSeqLxEb7t89Ju-sTx7s4MQj8PYBX-otT40f-R3nNSZ61DGRMA/formResponse'
 
-/** Google Form entry IDs (from form HTML) */
+/** Google Form entry IDs (from form HTML - text inputs use nested entry ID, not question ID) */
 const GOOGLE_FORM_ENTRIES = {
-  firstName: '947564554',
-  lastName: '1035176219',
-  email: '577361950',
-  whatsapp: '1724937528',
-  profession: '675305182',
-  whyJoin: '37476322',
+  firstName: '1040531968',
+  lastName: '1389620957',
+  email: '528719712',
+  whatsapp: '1342436349',
+  profession: '1333221041',
+  whyJoin: '1386820400',
   commitReady: '1964017135',
   paidProgram: '1668826988',
 } as const
