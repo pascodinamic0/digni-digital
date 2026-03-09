@@ -200,7 +200,7 @@ const STORY_SLIDES: StorySlide[] = [
     },
     content: {
       en: 'Put my head down and built. Every experience from every country, every failure, every lesson—poured into Digni Digital. AI Employee systems that capture every lead. The Future-Ready Graduate Program. Agentic software. All the pieces coming together.',
-      fr: 'J\'ai baissé la tête et construit. Chaque expérience de chaque pays, chaque échec, chaque leçon—versés dans Digni Digital. Des systèmes d\'employés IA qui capturent chaque prospect. Le programme Future-Ready Graduate. Des logiciels agentiques. Toutes les pièces s\'assemblent.',
+      fr: 'J\'ai baissé la tête et construit. Chaque expérience de chaque pays, chaque échec, chaque leçon—versés dans Digni Digital. Des systèmes d\'employés IA qui capturent chaque prospect. Le programme Future Pre. Des logiciels agentiques. Toutes les pièces s\'assemblent.',
       ar: 'أنكببت على العمل والبناء. كل تجربة من كل بلد، كل فشل، كل درس—صُب في ديجني ديجيتال. أنظمة موظف ذكاء اصطناعي تلتقط كل عميل محتمل. برنامج Future-Ready Graduate. برمجيات وكيلة. كل القطع تتجمع.',
       de: 'Kopf runter und gebaut. Jede Erfahrung aus jedem Land, jedes Scheitern, jede Lektion—alles in Digni Digital gegossen. KI-Mitarbeiter-Systeme, die jeden Lead erfassen. Das Future-Ready Graduate Programm. Agentic Software. Alle Puzzleteile fügen sich zusammen.',
       es: 'Cabeza abajo a construir. Cada experiencia de cada país, cada fracaso, cada lección—vertidos en Digni Digital. Sistemas de empleados IA que capturan cada lead. El programa Future-Ready Graduate. Software agéntico. Todas las piezas encajando.',
