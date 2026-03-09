@@ -1,4 +1,4 @@
-# Digni Digital Literacy Program - Complete Curriculum Outline 2026
+# Future-Ready Graduate Program - Complete Curriculum Outline 2026
 ## AI-Powered Digital Skills Training for High School Students
 
 ---

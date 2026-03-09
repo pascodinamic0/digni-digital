@@ -6,24 +6,24 @@ import { allArticlesEn } from '@/lib/blog'
 
 const blogMetaByLang: Record<string, { title: string; description: string }> = {
   en: {
-    title: 'AI Employee Systems, Digni Digital Literacy & Agentic Softwares | Digni Digital Blog',
-    description: 'Expert insights on AI employee systems for growing businesses, Digni Digital Literacy program for private high schools, and custom SaaS development solutions.',
+    title: 'AI Employee Systems, Future-Ready Graduate Program & Agentic Softwares | Digni Digital Blog',
+    description: 'Expert insights on AI employee systems for growing businesses, Future-Ready Graduate Program for private high schools, and custom SaaS development solutions.',
   },
   fr: {
     title: 'Transformation Digitale - Insights | Blog Digni Digital',
-    description: 'Expertises sur les systèmes employés IA, le programme Digni Digital Literacy et le développement SaaS sur mesure.',
+    description: 'Expertises sur les systèmes employés IA, le programme Future-Ready Graduate et le développement SaaS sur mesure.',
   },
   de: {
-    title: 'KI-Mitarbeiter, Digni Digital Literacy & SaaS | Digni Digital Blog',
-    description: 'Expertenwissen zu KI-Mitarbeiter-Systemen, dem Digni Digital Literacy Programm und individueller SaaS-Entwicklung.',
+    title: 'KI-Mitarbeiter, Future-Ready Graduate Program & SaaS | Digni Digital Blog',
+    description: 'Expertenwissen zu KI-Mitarbeiter-Systemen, dem Future-Ready Graduate Programm und individueller SaaS-Entwicklung.',
   },
   es: {
-    title: 'Empleado IA, Digni Digital Literacy & SaaS | Blog Digni Digital',
-    description: 'Información experta sobre empleados IA, el programa Digni Digital Literacy y desarrollo SaaS a medida.',
+    title: 'Empleado IA, Future-Ready Graduate Program & SaaS | Blog Digni Digital',
+    description: 'Información experta sobre empleados IA, el programa Future-Ready Graduate y desarrollo SaaS a medida.',
   },
   ar: {
     title: 'التحول الرقمي - رؤى | مدونة Digni Digital',
-    description: 'رؤى خبراء حول أنظمة الموظفين بالذكاء الاصطناعي وبرنامج Digni Digital Literacy وحلول تطوير SaaS.',
+    description: 'رؤى خبراء حول أنظمة الموظفين بالذكاء الاصطناعي وبرنامج Future-Ready Graduate وحلول تطوير SaaS.',
   },
 }
 
@@ -38,7 +38,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: meta.title,
     description: meta.description,
-    keywords: ['AI employee system', 'AI receptionist', 'business automation', 'Digni Digital Literacy program', 'private high school education', 'custom SaaS development', 'SaaS solutions', 'business growth', 'student career readiness'],
+    keywords: ['AI employee system', 'AI receptionist', 'business automation', 'Future-Ready Graduate Program', 'private high school education', 'custom SaaS development', 'SaaS solutions', 'business growth', 'student career readiness'],
     openGraph: {
       title: meta.title,
       description: meta.description,
@@ -62,7 +62,7 @@ export default async function BlogPage({ params }: Props) {
     '@context': 'https://schema.org',
     '@type': 'Blog',
     name: 'Digni Digital Blog',
-    description: 'Expert insights on AI employee systems, Digni Digital Literacy programs, and custom SaaS development.',
+    description: 'Expert insights on AI employee systems, Future-Ready Graduate Program, and custom SaaS development.',
     url: `${baseUrl}/${locale}/blog`,
     numberOfPosts: articles.length,
     blogPost: articles.map((article) => ({

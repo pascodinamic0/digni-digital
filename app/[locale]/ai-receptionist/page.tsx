@@ -3,6 +3,8 @@
 import { motion } from 'framer-motion'
 import { Link } from '@/i18n/navigation'
 import Navigation from '@/app/components/Navigation'
+import { useLanguage } from '@/app/context/LocaleContext'
+import { getCtaButtonText, getBookingLinkProps } from '@/app/config/cta.config'
 import Footer from '@/app/components/Footer'
 import AnimatedSection from '@/app/components/AnimatedSection'
 import ClientJourneyDemo from '@/app/components/ClientJourneyDemo'
@@ -11,8 +13,6 @@ import UnifiedInbox from '@/app/components/UnifiedInbox'
 import BusinessTimeline from '@/app/components/BusinessTimeline'
 import DemoPresentationDownload from '@/app/components/DemoPresentationDownload'
 import { useTheme } from '@/app/components/ThemeProvider'
-import { ctaConfig, getBookingLinkProps } from '@/app/config/cta.config'
-
 function AIEmployeeCTASection() {
   const { theme } = useTheme()
   return (
@@ -90,6 +90,8 @@ function AIEmployeeCTASection() {
 }
 
 export default function AIReceptionistPage() {
+  const language = useLanguage()
+  const cta = getCtaButtonText(language)
   const capabilities = [
     {
       number: '01',
@@ -248,7 +250,7 @@ export default function AIReceptionistPage() {
               >
                 Apply for a Conversation
               </a>
-              <DemoPresentationDownload service="aiEmployee" variant="hero" label="Download Demo Presentation" />
+              <DemoPresentationDownload service="aiEmployee" variant="hero" />
             </div>
             <p className="text-muted/60 text-sm mt-4">Live in 48 hours. Apply for a 30-minute conversation.</p>
           </motion.div>
@@ -543,7 +545,7 @@ export default function AIReceptionistPage() {
                   {...getBookingLinkProps()}
                   className="inline-flex items-center gap-2 bg-on-accent text-accent font-semibold px-6 py-3 rounded-xl hover:opacity-90 transition-opacity shadow-lg"
                 >
-                  {ctaConfig.buttonText.getStarted}
+                  {cta.getStarted}
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>

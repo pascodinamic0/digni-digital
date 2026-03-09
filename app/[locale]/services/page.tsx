@@ -5,7 +5,8 @@ import { Link } from '@/i18n/navigation'
 import Navigation from '@/app/components/Navigation'
 import Footer from '@/app/components/Footer'
 import AnimatedSection from '@/app/components/AnimatedSection'
-import { ctaConfig, getBookingLinkProps } from '@/app/config/cta.config'
+import { getCtaButtonText, getBookingLinkProps } from '@/app/config/cta.config'
+import { useLanguage } from '@/app/context/LocaleContext'
 
 const services = [
   {
@@ -30,7 +31,7 @@ const services = [
   },
   {
     id: 'future-ready-graduate',
-    title: 'Digni Digital Literacy Program',
+    title: 'Future-Ready Graduate Program',
     subtitle: 'Job-Ready Graduates & Entrepreneurial Talents',
     description: '9-month program. 85% employed. Guided learning personalized to each person\'s talents—bringing out entrepreneurial gifts. Real skills. Real jobs—or create your own.',
     features: [
@@ -72,6 +73,8 @@ const services = [
 ]
 
 export default function ServicesPage() {
+  const language = useLanguage()
+  const cta = getCtaButtonText(language)
   return (
     <main>
       <Navigation />
@@ -215,7 +218,7 @@ export default function ServicesPage() {
                     {...getBookingLinkProps()}
                     className="btn-secondary text-center"
                   >
-                    {ctaConfig.buttonText.bookConsultation}
+                    {cta.bookConsultation}
                   </a>
                 </div>
               </motion.div>
@@ -265,7 +268,7 @@ export default function ServicesPage() {
             {...getBookingLinkProps()}
             className="btn-primary text-lg px-8 py-4"
           >
-            {ctaConfig.buttonText.bookConsultation}
+            {cta.bookConsultation}
           </a>
         </div>
       </AnimatedSection>

@@ -4,7 +4,8 @@ import { motion } from 'framer-motion'
 import Navigation from '@/app/components/Navigation'
 import Footer from '@/app/components/Footer'
 import AnimatedSection from '@/app/components/AnimatedSection'
-import { ctaConfig, getBookingLinkProps } from '@/app/config/cta.config'
+import { getCtaButtonText, getBookingLinkProps } from '@/app/config/cta.config'
+import { useLanguage } from '@/app/context/LocaleContext'
 
 const featuredProduct = {
   id: 'proposal-agent',
@@ -62,6 +63,8 @@ const comingSoonProducts = [
 ]
 
 export default function ProductsPage() {
+  const language = useLanguage()
+  const cta = getCtaButtonText(language)
   return (
     <main>
       <Navigation />
@@ -208,7 +211,7 @@ export default function ProductsPage() {
                     className={`w-full text-center ${plan === 'pro' ? 'btn-primary' : 'btn-secondary'}`}
                     aria-label={`Get started with ${plan} plan`}
                   >
-                    {ctaConfig.buttonText.getStarted}
+                    {cta.getStarted}
                   </a>
                 </motion.div>
               ))}

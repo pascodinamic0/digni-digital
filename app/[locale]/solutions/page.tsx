@@ -4,7 +4,8 @@ import { motion } from 'framer-motion'
 import Navigation from '@/app/components/Navigation'
 import Footer from '@/app/components/Footer'
 import AnimatedSection from '@/app/components/AnimatedSection'
-import { ctaConfig, getBookingLinkProps } from '@/app/config/cta.config'
+import { getCtaButtonText, getBookingLinkProps } from '@/app/config/cta.config'
+import { useLanguage } from '@/app/context/LocaleContext'
 
 const solutions = [
   {
@@ -121,6 +122,8 @@ const processSteps = [
 ]
 
 export default function SolutionsPage() {
+  const language = useLanguage()
+  const cta = getCtaButtonText(language)
   return (
     <main>
       <Navigation />
@@ -207,7 +210,7 @@ export default function SolutionsPage() {
                         {...getBookingLinkProps()}
                         className="btn-primary w-full text-center"
                       >
-                        {ctaConfig.buttonText.getStarted}
+                        {cta.getStarted}
                       </a>
                     </div>
                     
@@ -393,7 +396,7 @@ export default function SolutionsPage() {
               {...getBookingLinkProps()}
               className="btn-primary text-lg px-8 py-4"
             >
-              {ctaConfig.buttonText.bookStrategy}
+              {cta.bookStrategy}
             </a>
             <a
               href="/case-studies"

@@ -5,9 +5,12 @@ import { Link } from '@/i18n/navigation'
 import Navigation from '@/app/components/Navigation'
 import Footer from '@/app/components/Footer'
 import AnimatedSection from '@/app/components/AnimatedSection'
-import { ctaConfig, getBookingLinkProps } from '@/app/config/cta.config'
+import { getCtaButtonText, getBookingLinkProps } from '@/app/config/cta.config'
+import { useLanguage } from '@/app/context/LocaleContext'
 
 export default function AgenticSoftwaresPage() {
+  const language = useLanguage()
+  const cta = getCtaButtonText(language)
   const ourApps = [
     {
       title: 'Proposal Agent',
@@ -346,7 +349,7 @@ export default function AgenticSoftwaresPage() {
                     {...getBookingLinkProps()}
                     className="btn-secondary w-full text-center"
                   >
-                    {ctaConfig.buttonText.discussProject}
+                    {cta.discussProject}
                   </a>
                 </div>
               </motion.div>
@@ -575,7 +578,7 @@ export default function AgenticSoftwaresPage() {
               {...getBookingLinkProps()}
               className="btn-primary text-lg px-8 py-4"
             >
-              {ctaConfig.buttonText.startProject}
+              {cta.startProject}
             </a>
             <Link href="/case-studies" className="btn-secondary text-lg px-8 py-4">
               View More Case Studies

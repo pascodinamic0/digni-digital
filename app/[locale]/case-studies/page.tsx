@@ -5,7 +5,8 @@ import { motion } from 'framer-motion'
 import Navigation from '@/app/components/Navigation'
 import Footer from '@/app/components/Footer'
 import AnimatedSection from '@/app/components/AnimatedSection'
-import { ctaConfig, getBookingLinkProps } from '@/app/config/cta.config'
+import { getCtaButtonText, getBookingLinkProps } from '@/app/config/cta.config'
+import { useLanguage } from '@/app/context/LocaleContext'
 
 const caseStudies = [
   {
@@ -97,6 +98,8 @@ const caseStudies = [
 const industries = ['All', 'Healthcare', 'Real Estate', 'Marketing']
 
 export default function CaseStudiesPage() {
+  const language = useLanguage()
+  const cta = getCtaButtonText(language)
   const [selectedIndustry, setSelectedIndustry] = useState('All')
   const [expandedStudy, setExpandedStudy] = useState<string | null>(null)
 
@@ -279,7 +282,7 @@ export default function CaseStudiesPage() {
                         {...getBookingLinkProps()}
                         className="btn-primary w-full text-center"
                       >
-                        {ctaConfig.buttonText.getSimilarResults}
+                        {cta.getSimilarResults}
                       </a>
                     </div>
                   </div>

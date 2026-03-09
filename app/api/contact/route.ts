@@ -8,7 +8,7 @@ const FROM_EMAIL = process.env.RESEND_FROM_EMAIL || 'onboarding@resend.dev'
 
 const PROJECT_TYPE_LABELS: Record<string, string> = {
   'ai-employee': 'AI Employee',
-  'future-ready-graduate': 'Digni Digital Literacy',
+  'future-ready-graduate': 'Future-Ready Graduate Program',
   'agentic-softwares': 'Agentic Softwares',
   'custom-saas': 'Agentic Softwares', // backward compat for old form submissions
 }

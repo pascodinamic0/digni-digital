@@ -6,9 +6,12 @@ import { Link } from '@/i18n/navigation'
 import Navigation from '@/app/components/Navigation'
 import Footer from '@/app/components/Footer'
 import AnimatedSection from '@/app/components/AnimatedSection'
-import { ctaConfig, getBookingLinkProps } from '@/app/config/cta.config'
+import { getCtaButtonText, getBookingLinkProps } from '@/app/config/cta.config'
+import { useLanguage } from '@/app/context/LocaleContext'
 
 export default function AffiliatePage() {
+  const language = useLanguage()
+  const cta = getCtaButtonText(language)
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -111,7 +114,7 @@ export default function AffiliatePage() {
       link: '/ai-receptionist'
     },
     {
-      name: 'Digni Digital Literacy Program',
+      name: 'Future-Ready Graduate Program',
       tagline: 'Students with real income skills',
       price: '$1,000/month',
       commission: '20% recurring',
@@ -206,7 +209,7 @@ export default function AffiliatePage() {
   const faqs = [
     {
       question: 'What are the commission rates?',
-      answer: 'You earn 20% recurring commission on AI Employee and Digni Digital Literacy Program subscriptions, and 10% on Agentic Softwares projects. Commissions are paid for as long as the customer remains active.'
+      answer: 'You earn 20% recurring commission on AI Employee and Future-Ready Graduate Program subscriptions, and 10% on Agentic Softwares projects. Commissions are paid for as long as the customer remains active.'
     },
     {
       question: 'When and how do I get paid?',
@@ -753,7 +756,7 @@ export default function AffiliatePage() {
                 {...getBookingLinkProps()}
                 className="btn-primary w-full py-4 text-lg text-center"
               >
-                {ctaConfig.buttonText.bookStrategy}
+                {cta.bookStrategy}
               </a>
 
               <p className="text-center text-muted text-sm mt-4">
