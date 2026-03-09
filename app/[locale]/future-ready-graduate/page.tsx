@@ -18,7 +18,19 @@ export default function FutureReadyGraduatePage() {
   const [selectedVideo, setSelectedVideo] = useState<{ src: string; title: string; speaker: string; description: string } | null>(null)
   const [earlyAccessOpen, setEarlyAccessOpen] = useState(false)
   const skillsScrollRef = useRef<HTMLDivElement>(null)
+  const reasonsScrollRef = useRef<HTMLDivElement>(null)
   const language = useLanguage()
+
+  const digitalSkillsReasons = [
+    { icon: '🌍', title: 'Global Access', description: 'Work with clients from anywhere in the world, not limited by local job market' },
+    { icon: '💰', title: 'Higher Earning', description: 'Digital skills command premium rates - often 2-5x local salaries' },
+    { icon: '🏠', title: 'Location Freedom', description: 'Work from home, coffee shops, or anywhere with internet connection' },
+    { icon: '🚀', title: 'Instant Start', description: 'Begin earning immediately - no waiting for job applications or interviews' },
+    { icon: '🤖', title: 'AI Multiplier', description: 'AI tools amplify your output; compete with senior professionals from day one' },
+    { icon: '📊', title: 'Portfolio Career', description: 'Build multiple income streams; never dependent on a single employer' },
+    { icon: '🛡️', title: 'Future-Proof', description: 'Digital skills evolve with the economy; traditional jobs are being automated' },
+    { icon: '⏰', title: 'Flexible Schedule', description: 'Work around your life - study, family, or side projects on your terms' },
+  ]
   const ctaT = translations[language].cta
 
   const trimesterPlan = [
@@ -28,7 +40,7 @@ export default function FutureReadyGraduatePage() {
       focus: 'Digital Foundation & Web Development',
       modules: ['Digital Foundation Skills', 'Web Development Basics'],
       weeks: '16 weeks (before Christmas break)',
-      icon: '🍂'
+      number: 1
     },
     {
       trimester: 'Second Trimester', 
@@ -36,7 +48,7 @@ export default function FutureReadyGraduatePage() {
       focus: 'Marketing & Professional Branding',
       modules: ['Digital Marketing & Analytics', 'Professional Portfolio'],
       weeks: '14 weeks (before Easter break)',
-      icon: '🌱'
+      number: 2
     },
     {
       trimester: 'Third Trimester',
@@ -44,7 +56,7 @@ export default function FutureReadyGraduatePage() {
       focus: 'Job Readiness & Industry Placement',
       modules: ['Job Readiness & Placement', 'Industry Internships'],
       weeks: '12 weeks (graduation preparation)',
-      icon: '🎓'
+      number: 3
     }
   ]
 
@@ -262,7 +274,7 @@ export default function FutureReadyGraduatePage() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="card p-6 text-center"
+              className="card p-6 text-center hover:border-success/40 transition-all duration-300"
             >
               <div className="w-16 h-16 bg-success/10 rounded-2xl mx-auto mb-4 flex items-center justify-center text-3xl">
                 📅
@@ -276,7 +288,7 @@ export default function FutureReadyGraduatePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="card p-6 text-center"
+              className="card p-6 text-center hover:border-success/40 transition-all duration-300"
             >
               <div className="w-16 h-16 bg-success/10 rounded-2xl mx-auto mb-4 flex items-center justify-center text-3xl">
                 🔄
@@ -290,7 +302,7 @@ export default function FutureReadyGraduatePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="card p-6 text-center"
+              className="card p-6 text-center hover:border-success/40 transition-all duration-300"
             >
               <div className="w-16 h-16 bg-success/10 rounded-2xl mx-auto mb-4 flex items-center justify-center text-3xl">
                 🎯
@@ -309,12 +321,12 @@ export default function FutureReadyGraduatePage() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="card p-8 hover:border-success/50 group"
+                className="card p-8 hover:border-success/50 group transition-all duration-300 hover:shadow-lg"
               >
                 <div className="grid lg:grid-cols-4 gap-6 items-center">
                   <div className="flex items-center gap-4">
-                    <div className="w-16 h-16 bg-success/10 rounded-2xl flex items-center justify-center text-3xl">
-                      {trimester.icon}
+                    <div className="w-16 h-16 bg-success/20 rounded-2xl flex items-center justify-center border border-success/30">
+                      <span className="font-display text-2xl font-bold text-success">{trimester.number}</span>
                     </div>
                     <div>
                       <h3 className="font-display text-xl font-bold group-hover:text-success transition-colors">
@@ -355,24 +367,27 @@ export default function FutureReadyGraduatePage() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mt-16 card p-8 bg-gradient-to-br from-success/5 to-success/10 border-success/20"
+            className="mt-16 card p-8 bg-gradient-to-br from-success/5 to-success/10 border-success/20 border-l-4 border-l-success"
           >
             <div className="text-center">
-              <h3 className="font-display text-2xl font-bold mb-4 text-success">
+              <h3 className="font-display text-2xl font-bold mb-6 text-success">
                 2025-2026 Academic Year Integration
               </h3>
-              <div className="grid md:grid-cols-3 gap-6 text-sm">
-                <div>
+              <div className="grid md:grid-cols-3 gap-8 text-sm">
+                <div className="flex flex-col items-center gap-2 p-4 rounded-xl bg-success/5 border border-success/10">
+                  <span className="font-display text-lg font-bold text-success">1</span>
                   <span className="font-semibold text block">Program Start</span>
-                  <span className="text-muted">Monday, September 1, 2025</span>
+                  <span className="text-muted text-center">Monday, September 1, 2025</span>
                 </div>
-                <div>
+                <div className="flex flex-col items-center gap-2 p-4 rounded-xl bg-success/5 border border-success/10">
+                  <span className="font-display text-lg font-bold text-success">2</span>
                   <span className="font-semibold text block">Respects All Breaks</span>
-                  <span className="text-muted">October, Christmas, February & Easter</span>
+                  <span className="text-muted text-center">October, Christmas, February & Easter</span>
                 </div>
-                <div>
+                <div className="flex flex-col items-center gap-2 p-4 rounded-xl bg-success/5 border border-success/10">
+                  <span className="font-display text-lg font-bold text-success">3</span>
                   <span className="font-semibold text block">Graduation Ready</span>
-                  <span className="text-muted">July 2-4, 2026</span>
+                  <span className="text-muted text-center">July 2-4, 2026</span>
                 </div>
               </div>
             </div>
@@ -490,37 +505,44 @@ export default function FutureReadyGraduatePage() {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-              <div className="text-center p-6 bg-surface-light/50 rounded-xl border border-border hover:border-success/30 transition-colors">
-                <div className="w-16 h-16 bg-success/10 rounded-2xl mx-auto mb-4 flex items-center justify-center text-3xl">
-                  🌍
-                </div>
-                <h4 className="font-semibold text mb-2">Global Access</h4>
-                <p className="text-muted text-sm leading-relaxed">Work with clients from anywhere in the world, not limited by local job market</p>
-              </div>
+            <div className="relative">
+              <button
+                type="button"
+                onClick={() => reasonsScrollRef.current?.scrollBy({ left: -320, behavior: 'smooth' })}
+                className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 z-20 w-12 h-12 rounded-full bg-background/95 border border-border shadow-lg flex items-center justify-center hover:bg-surface hover:border-success/50 transition-colors"
+                aria-label="Previous"
+              >
+                <svg className="w-5 h-5 text-text" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
+              <button
+                type="button"
+                onClick={() => reasonsScrollRef.current?.scrollBy({ left: 320, behavior: 'smooth' })}
+                className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 z-20 w-12 h-12 rounded-full bg-background/95 border border-border shadow-lg flex items-center justify-center hover:bg-surface hover:border-success/50 transition-colors"
+                aria-label="Next"
+              >
+                <svg className="w-5 h-5 text-text" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
 
-              <div className="text-center p-6 bg-surface-light/50 rounded-xl border border-border hover:border-success/30 transition-colors">
-                <div className="w-16 h-16 bg-success/10 rounded-2xl mx-auto mb-4 flex items-center justify-center text-3xl">
-                  💰
-                </div>
-                <h4 className="font-semibold text mb-2">Higher Earning</h4>
-                <p className="text-muted text-sm leading-relaxed">Digital skills command premium rates - often 2-5x local salaries</p>
-              </div>
-
-              <div className="text-center p-6 bg-surface-light/50 rounded-xl border border-border hover:border-success/30 transition-colors">
-                <div className="w-16 h-16 bg-success/10 rounded-2xl mx-auto mb-4 flex items-center justify-center text-3xl">
-                  🏠
-                </div>
-                <h4 className="font-semibold text mb-2">Location Freedom</h4>
-                <p className="text-muted text-sm leading-relaxed">Work from home, coffee shops, or anywhere with internet connection</p>
-              </div>
-
-              <div className="text-center p-6 bg-surface-light/50 rounded-xl border border-border hover:border-success/30 transition-colors">
-                <div className="w-16 h-16 bg-success/10 rounded-2xl mx-auto mb-4 flex items-center justify-center text-3xl">
-                  🚀
-                </div>
-                <h4 className="font-semibold text mb-2">Instant Start</h4>
-                <p className="text-muted text-sm leading-relaxed">Begin earning immediately - no waiting for job applications or interviews</p>
+              <div
+                ref={reasonsScrollRef}
+                className="flex gap-6 pb-4 overflow-x-auto overflow-y-hidden scroll-smooth scrollbar-hide snap-x snap-mandatory"
+              >
+                {digitalSkillsReasons.map((reason, i) => (
+                  <div
+                    key={i}
+                    className="flex-shrink-0 w-[280px] snap-start text-center p-6 bg-surface-light/50 rounded-xl border border-border hover:border-success/30 transition-colors"
+                  >
+                    <div className="w-16 h-16 bg-success/10 rounded-2xl mx-auto mb-4 flex items-center justify-center text-3xl">
+                      {reason.icon}
+                    </div>
+                    <h4 className="font-semibold text mb-2">{reason.title}</h4>
+                    <p className="text-muted text-sm leading-relaxed">{reason.description}</p>
+                  </div>
+                ))}
               </div>
             </div>
           </motion.div>
@@ -787,26 +809,35 @@ export default function FutureReadyGraduatePage() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="card p-8 bg-gradient-to-br from-success/5 to-success/10 border-success/20"
+            className="card p-8 bg-gradient-to-br from-success/5 to-success/10 border-success/20 border-l-4 border-l-success"
           >
             <div className="text-center">
               <h3 className="font-display text-2xl font-bold mb-4">
                 <span className="gradient-text">The 2026 AI Advantage</span>
               </h3>
-              <p className="text-muted text-lg mb-6 max-w-3xl mx-auto">
+              <p className="text-muted text-lg mb-8 max-w-3xl mx-auto">
                 With cutting-edge 2026 AI tools like Lovable.dev and Cursor, your students can compete with expert-level professionals from day one and start earning immediately.
               </p>
               <div className="grid md:grid-cols-3 gap-6 text-sm">
-                <div>
-                  <span className="font-semibold text block mb-2">🚀 Expert-Level Output</span>
+                <div className="flex flex-col items-center gap-3 p-5 rounded-xl bg-success/5 border border-success/10 text-center">
+                  <div className="w-12 h-12 bg-success/20 rounded-xl flex items-center justify-center border border-success/30">
+                    <span className="font-display text-xl font-bold text-success">1</span>
+                  </div>
+                  <span className="font-semibold text block">Expert-Level Output</span>
                   <span className="text-muted">AI tools like Cursor and Lovable.dev enable beginners to build professional-grade projects</span>
                 </div>
-                <div>
-                  <span className="font-semibold text block mb-2">💡 Future-Proof Skills</span>
+                <div className="flex flex-col items-center gap-3 p-5 rounded-xl bg-success/5 border border-success/10 text-center">
+                  <div className="w-12 h-12 bg-success/20 rounded-xl flex items-center justify-center border border-success/30">
+                    <span className="font-display text-xl font-bold text-success">2</span>
+                  </div>
+                  <span className="font-semibold text block">Future-Proof Skills</span>
                   <span className="text-muted">Master the AI tools that define 2026 and beyond, not outdated methods</span>
                 </div>
-                <div>
-                  <span className="font-semibold text block mb-2">💰 Immediate Income</span>
+                <div className="flex flex-col items-center gap-3 p-5 rounded-xl bg-success/5 border border-success/10 text-center">
+                  <div className="w-12 h-12 bg-success/20 rounded-xl flex items-center justify-center border border-success/30">
+                    <span className="font-display text-xl font-bold text-success">3</span>
+                  </div>
+                  <span className="font-semibold text block">Immediate Income</span>
                   <span className="text-muted">Start earning with real projects while learning, not after graduation</span>
                 </div>
               </div>
