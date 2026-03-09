@@ -18,7 +18,6 @@ export default function FutureReadyGraduatePage() {
   const [selectedVideo, setSelectedVideo] = useState<{ src: string; title: string; speaker: string; description: string } | null>(null)
   const [earlyAccessOpen, setEarlyAccessOpen] = useState(false)
   const skillsScrollRef = useRef<HTMLDivElement>(null)
-  const reasonsScrollRef = useRef<HTMLDivElement>(null)
   const language = useLanguage()
 
   const digitalSkillsReasons = [
@@ -27,10 +26,12 @@ export default function FutureReadyGraduatePage() {
     { icon: '🏠', title: 'Location Freedom', description: 'Work from home, coffee shops, or anywhere with internet connection' },
     { icon: '🚀', title: 'Instant Start', description: 'Begin earning immediately - no waiting for job applications or interviews' },
     { icon: '🤖', title: 'AI Multiplier', description: 'AI tools amplify your output; compete with senior professionals from day one' },
+    { icon: '💡', title: 'Entrepreneurial Path', description: 'Create your own jobs—our guided learning brings out your entrepreneurial talents and gifts' },
     { icon: '📊', title: 'Portfolio Career', description: 'Build multiple income streams; never dependent on a single employer' },
     { icon: '🛡️', title: 'Future-Proof', description: 'Digital skills evolve with the economy; traditional jobs are being automated' },
     { icon: '⏰', title: 'Flexible Schedule', description: 'Work around your life - study, family, or side projects on your terms' },
   ]
+
   const ctaT = translations[language].cta
 
   const trimesterPlan = [
@@ -120,7 +121,8 @@ export default function FutureReadyGraduatePage() {
         'Progress tracking and reporting',
         'Student assessment and certification',
         'Ongoing program support',
-        'Job readiness training',
+        'Job readiness training—and skills to create your own jobs',
+        "Guided learning personalized to each student's talents and gifts",
         'Partnership success guarantee'
       ],
       popular: true,
@@ -130,19 +132,21 @@ export default function FutureReadyGraduatePage() {
       name: 'Guided Learning',
       price: '$25',
       period: ' one-time',
-      description: 'Digital skills. Learn anywhere. Earn online.',
+      description: 'Digital skills. Personalized to your talents. Learn anywhere. Earn online.',
       audience: 'everyone',
       features: [
         'Full digital skills curriculum (start from scratch)',
+        'Personalized guided learning—tailored to your unique talents and gifts',
         'Learn from home, school, university, or vocational center',
         'AI-powered tools and techniques for making money online',
         'Guided learning - study on your own schedule with support',
+        'Skills that bring out your entrepreneurial potential',
         'Community support and peer learning forums',
         'Digital certificates upon completion',
         'Lifetime access to all course materials',
         'Portfolio building and job placement resources',
         'Learn how to use AI to compete with experts',
-        'Start earning while you learn'
+        'Start earning while you learn—create jobs or get hired'
       ],
       popular: false,
       isNew: true,
@@ -238,7 +242,7 @@ export default function FutureReadyGraduatePage() {
               <span className="gradient-text">Industry-Ready Professionals</span>
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-muted max-w-3xl mx-auto leading-relaxed mb-6 sm:mb-8 md:mb-10 px-2">
-              85% employed. We bring curriculum and internet. You bring students and space.
+              85% employed. Job creation is in our DNA—we teach skills that bring out entrepreneurial talents through guided learning personalized to everyone&apos;s gifts. We bring curriculum and internet. You bring students and space.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-2">
               <a
@@ -312,6 +316,37 @@ export default function FutureReadyGraduatePage() {
             </motion.div>
           </div>
 
+          {/* Key Dates Callout */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-16 card p-8 bg-gradient-to-br from-success/5 to-success/10 border-success/20 border-l-4 border-l-success"
+          >
+            <div className="text-center">
+              <h3 className="font-display text-2xl font-bold mb-6 text-success">
+                2025-2026 Academic Year Integration
+              </h3>
+              <div className="grid md:grid-cols-3 gap-8 text-sm">
+                <div className="flex flex-col items-center gap-2 p-4 rounded-xl bg-success/5 border border-success/10">
+                  <span className="font-display text-lg font-bold text-success">1</span>
+                  <span className="font-semibold text block">Program Start</span>
+                  <span className="text-muted text-center">Monday, September 1, 2025</span>
+                </div>
+                <div className="flex flex-col items-center gap-2 p-4 rounded-xl bg-success/5 border border-success/10">
+                  <span className="font-display text-lg font-bold text-success">2</span>
+                  <span className="font-semibold text block">Respects All Breaks</span>
+                  <span className="text-muted text-center">October, Christmas, February & Easter</span>
+                </div>
+                <div className="flex flex-col items-center gap-2 p-4 rounded-xl bg-success/5 border border-success/10">
+                  <span className="font-display text-lg font-bold text-success">3</span>
+                  <span className="font-semibold text block">Graduation Ready</span>
+                  <span className="text-muted text-center">July 2-4, 2026</span>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
           {/* Trimester Breakdown */}
           <div className="space-y-8">
             {trimesterPlan.map((trimester, i) => (
@@ -361,37 +396,6 @@ export default function FutureReadyGraduatePage() {
               </motion.div>
             ))}
           </div>
-
-          {/* Key Dates Callout */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mt-16 card p-8 bg-gradient-to-br from-success/5 to-success/10 border-success/20 border-l-4 border-l-success"
-          >
-            <div className="text-center">
-              <h3 className="font-display text-2xl font-bold mb-6 text-success">
-                2025-2026 Academic Year Integration
-              </h3>
-              <div className="grid md:grid-cols-3 gap-8 text-sm">
-                <div className="flex flex-col items-center gap-2 p-4 rounded-xl bg-success/5 border border-success/10">
-                  <span className="font-display text-lg font-bold text-success">1</span>
-                  <span className="font-semibold text block">Program Start</span>
-                  <span className="text-muted text-center">Monday, September 1, 2025</span>
-                </div>
-                <div className="flex flex-col items-center gap-2 p-4 rounded-xl bg-success/5 border border-success/10">
-                  <span className="font-display text-lg font-bold text-success">2</span>
-                  <span className="font-semibold text block">Respects All Breaks</span>
-                  <span className="text-muted text-center">October, Christmas, February & Easter</span>
-                </div>
-                <div className="flex flex-col items-center gap-2 p-4 rounded-xl bg-success/5 border border-success/10">
-                  <span className="font-display text-lg font-bold text-success">3</span>
-                  <span className="font-semibold text block">Graduation Ready</span>
-                  <span className="text-muted text-center">July 2-4, 2026</span>
-                </div>
-              </div>
-            </div>
-          </motion.div>
         </div>
       </AnimatedSection>
 
@@ -494,56 +498,30 @@ export default function FutureReadyGraduatePage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="card p-10 bg-gradient-to-br from-success/10 via-success/5 to-transparent border-success/30"
+            className="card p-12 md:p-14 bg-gradient-to-br from-success/10 via-success/5 to-transparent border-success/30"
           >
-            <div className="text-center mb-10">
+            <div className="text-center mb-12">
               <h3 className="font-display text-3xl md:text-4xl font-bold mb-4">
                 <span className="gradient-text">Why Digital Skills Are the Future</span>
               </h3>
               <p className="text-muted text-lg max-w-2xl mx-auto leading-relaxed">
-                The digital economy offers unprecedented advantages that traditional careers simply cannot match.
+                The digital economy offers unprecedented advantages that traditional careers simply cannot match. Our guided learning is personalized to each participant&apos;s talents and gifts—bringing out entrepreneurial potential in students and anyone who joins.
               </p>
             </div>
 
-            <div className="relative">
-              <button
-                type="button"
-                onClick={() => reasonsScrollRef.current?.scrollBy({ left: -320, behavior: 'smooth' })}
-                className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 z-20 w-12 h-12 rounded-full bg-background/95 border border-border shadow-lg flex items-center justify-center hover:bg-surface hover:border-success/50 transition-colors"
-                aria-label="Previous"
-              >
-                <svg className="w-5 h-5 text-text" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                </svg>
-              </button>
-              <button
-                type="button"
-                onClick={() => reasonsScrollRef.current?.scrollBy({ left: 320, behavior: 'smooth' })}
-                className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 z-20 w-12 h-12 rounded-full bg-background/95 border border-border shadow-lg flex items-center justify-center hover:bg-surface hover:border-success/50 transition-colors"
-                aria-label="Next"
-              >
-                <svg className="w-5 h-5 text-text" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </button>
-
-              <div
-                ref={reasonsScrollRef}
-                className="flex gap-6 pb-4 overflow-x-auto overflow-y-hidden scroll-smooth scrollbar-hide snap-x snap-mandatory"
-              >
-                {digitalSkillsReasons.map((reason, i) => (
-                  <div
-                    key={i}
-                    className="flex-shrink-0 w-[280px] snap-start text-center p-6 bg-surface-light/50 rounded-xl border border-border hover:border-success/30 transition-colors"
-                  >
-                    <div className="w-16 h-16 bg-success/10 rounded-2xl mx-auto mb-4 flex items-center justify-center text-3xl">
+            <div className="grid grid-cols-3 gap-6">
+              {digitalSkillsReasons.map((reason, i) => (
+                <div
+                  key={i}
+                  className="min-w-0 text-center p-6 md:p-8 bg-surface-light/50 rounded-xl border border-border hover:border-success/30 transition-colors"
+                >
+                    <div className="w-20 h-20 bg-success/10 rounded-2xl mx-auto mb-5 flex items-center justify-center text-4xl">
                       {reason.icon}
                     </div>
-                    <h4 className="font-semibold text mb-2">{reason.title}</h4>
+                    <h4 className="font-semibold text mb-3 text-base">{reason.title}</h4>
                     <p className="text-muted text-sm leading-relaxed">{reason.description}</p>
-                  </div>
-                ))}
-              </div>
+                </div>
+              ))}
             </div>
           </motion.div>
         </div>
@@ -557,8 +535,8 @@ export default function FutureReadyGraduatePage() {
               Global Leaders<br />
               <span className="gradient-text">Supporting Our Mission</span>
             </h2>
-            <p className="text-muted text-lg max-w-3xl mx-auto">
-              Listen to world-renowned figures discuss the same principles and values that drive our Digni Digital Literacy program.
+              <p className="text-muted text-lg max-w-3xl mx-auto">
+              Listen to world-renowned figures discuss the same principles and values that drive our Digni Digital Literacy program—job creation, entrepreneurial development, and personalized learning that brings out everyone&apos;s talents.
             </p>
           </div>
 
@@ -879,6 +857,16 @@ export default function FutureReadyGraduatePage() {
                 <div>
                   <h4 className="font-semibold text mb-3 flex items-center gap-2">
                     <div className="w-2 h-2 bg-info rounded-full" />
+                    Program Investment
+                  </h4>
+                  <p className="text-muted text-sm leading-relaxed">
+                    Partnership fee: <span className="font-medium text">$1,000/month</span>, <span className="font-medium text">$5,000/semester</span> (5 months), or <span className="font-medium text">$12,000/year</span>—flexible to your budget and academic calendar.
+                  </p>
+                </div>
+
+                <div>
+                  <h4 className="font-semibold text mb-3 flex items-center gap-2">
+                    <div className="w-2 h-2 bg-info rounded-full" />
                     Students (Finalists)
                   </h4>
                   <p className="text-muted text-sm leading-relaxed">
@@ -1000,10 +988,14 @@ export default function FutureReadyGraduatePage() {
               <h3 className="font-display text-2xl font-bold mb-6">
                 <span className="gradient-text">Partnership Success Factors</span>
               </h3>
-              <div className="grid md:grid-cols-3 gap-6 text-sm">
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 text-sm">
                 <div>
                   <span className="font-semibold text block mb-2">Student Performance</span>
-                  <span className="text-muted">Their determination and commitment drive employment success</span>
+                  <span className="text-muted">Their determination and commitment drive employment success—or job creation</span>
+                </div>
+                <div>
+                  <span className="font-semibold text block mb-2">Personalized to Talents</span>
+                  <span className="text-muted">Guided learning tailored to each person&apos;s gifts—bringing out entrepreneurial talents</span>
                 </div>
                 <div>
                   <span className="font-semibold text block mb-2">Mutual Commitment</span>

@@ -184,7 +184,7 @@ export default function AboutPage() {
 
       <StorybookModal isOpen={storybookOpen} onClose={() => setStorybookOpen(false)} />
 
-      <ClientLogos title={t.trustedByTitle} />
+      <ClientLogos badge={t.trustedByBadge} title={t.trustedByTitle} />
 
       <AnimatedSection className="py-24">
         <div className="max-w-7xl mx-auto px-6">

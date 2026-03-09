@@ -323,12 +323,8 @@ export default function StorybookModal({ isOpen, onClose }: StorybookModalProps)
   if (!mounted || !isOpen) return null
 
   const slide = STORY_SLIDES[currentIndex]
-  const isFirst = currentIndex === 0
-  const isLast = currentIndex === STORY_SLIDES.length - 1
   const lang = language as Language
 
-  const prevLabel = { en: 'Previous', fr: 'Précédent', ar: 'السابق', de: 'Zurück', es: 'Anterior' }
-  const nextLabel = { en: 'Next', fr: 'Suivant', ar: 'التالي', de: 'Weiter', es: 'Siguiente' }
   const endLabel = { en: 'End & leave', fr: 'Fin & quitter', ar: 'إنهاء ومغادرة', de: 'Beenden', es: 'Fin y salir' }
 
   return (
@@ -349,7 +345,7 @@ export default function StorybookModal({ isOpen, onClose }: StorybookModalProps)
         />
 
         <div
-          className="absolute inset-0 flex items-center justify-center p-4 sm:p-6"
+          className="absolute inset-0 flex items-center justify-center p-2 sm:p-4 md:p-6"
           onClick={onClose}
         >
         <motion.div
@@ -358,11 +354,11 @@ export default function StorybookModal({ isOpen, onClose }: StorybookModalProps)
           exit={{ opacity: 0, scale: 0.95, y: 20 }}
           transition={{ type: 'spring', damping: 25, stiffness: 300 }}
           onClick={(e) => e.stopPropagation()}
-          className="relative bg-surface border border-border-light rounded-2xl w-full max-w-3xl max-h-[90vh] overflow-hidden shadow-2xl flex flex-col"
+          className="relative bg-surface border border-border-light rounded-2xl w-full max-w-[calc(100vw-1rem)] sm:max-w-7xl max-h-[95dvh] sm:max-h-[96vh] overflow-hidden shadow-2xl flex flex-col"
         >
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 z-20 w-10 h-10 bg-black/50 hover:bg-black/70 rounded-full flex items-center justify-center transition-colors group"
+            className="absolute top-2 right-2 sm:top-4 sm:right-4 z-20 w-9 h-9 sm:w-10 sm:h-10 bg-black/50 hover:bg-black/70 rounded-full flex items-center justify-center transition-colors group"
             aria-label="Close story"
           >
             <svg
@@ -375,7 +371,7 @@ export default function StorybookModal({ isOpen, onClose }: StorybookModalProps)
             </svg>
           </button>
 
-          <div className="flex-1 overflow-y-auto relative min-h-[320px]">
+          <div className="flex-1 overflow-y-auto relative min-h-[280px] sm:min-h-[420px] md:min-h-[540px] lg:min-h-[640px]">
             {(slide.backgroundImage || slide.backgroundVideo) && (
               <div className="absolute inset-0 z-0">
                 {slide.backgroundVideo ? (
@@ -393,13 +389,13 @@ export default function StorybookModal({ isOpen, onClose }: StorybookModalProps)
                     alt=""
                     fill
                     className="object-cover"
-                    sizes="(max-width: 768px) 100vw, 48rem"
+                    sizes="(max-width: 768px) 100vw, 80rem"
                   />
                 ) : null}
-                <div className="absolute inset-0 bg-black/60 backdrop-blur-[1px]" />
+                <div className="absolute inset-0 bg-black/50 backdrop-blur-[1px]" aria-hidden="true" />
               </div>
             )}
-            <div className="relative z-10 p-8 sm:p-12 pt-14">
+            <div className="storybook-modal-content relative z-10 p-4 sm:p-8 md:p-12 pt-12 sm:pt-14">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={slide.id}
@@ -407,21 +403,21 @@ export default function StorybookModal({ isOpen, onClose }: StorybookModalProps)
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: -20 }}
                   transition={{ duration: 0.3 }}
-                  className="min-h-[280px]"
+                  className="min-h-[240px] sm:min-h-[340px] md:min-h-[420px] lg:min-h-[500px]"
                 >
                   {slide.year && (
-                    <span className="inline-block px-4 py-1.5 bg-accent/10 border border-accent/30 rounded-full text-accent text-sm font-medium mb-6">
+                    <span className="inline-block px-3 py-1 sm:px-4 sm:py-1.5 bg-accent/10 border border-accent/30 rounded-full text-accent text-xs sm:text-sm font-medium mb-4 sm:mb-6">
                       {slide.year}
                     </span>
                   )}
-                  <h3 className="font-display text-2xl sm:text-3xl font-bold mb-4 text-foreground drop-shadow-lg">
+                  <h3 className="font-display text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4 text-foreground drop-shadow-lg">
                     {slide.title[lang] || slide.title.en}
                   </h3>
-                  <p className="text-muted leading-relaxed text-base sm:text-lg drop-shadow-md">
+                  <p className="text-muted leading-relaxed text-sm sm:text-base md:text-lg drop-shadow-md">
                     {slide.content[lang] || slide.content.en}
                   </p>
                   {slide.highlight && (
-                    <p className="mt-6 text-accent font-medium text-sm sm:text-base drop-shadow-md">
+                    <p className="mt-4 sm:mt-6 text-accent font-medium text-xs sm:text-sm md:text-base drop-shadow-md">
                       — {slide.highlight[lang] || slide.highlight.en}
                     </p>
                   )}
@@ -430,18 +426,8 @@ export default function StorybookModal({ isOpen, onClose }: StorybookModalProps)
             </div>
           </div>
 
-          <div className="border-t border-border-light p-4 sm:p-6 flex items-center justify-between gap-4">
-            <button
-              onClick={goPrev}
-              disabled={isFirst}
-              className="flex items-center gap-2 px-4 py-2 rounded-lg border border-border-medium hover:border-accent hover:text-accent disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:border-border-medium disabled:hover:text-inherit transition-colors text-sm font-medium"
-              aria-label="Previous slide"
-            >
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-              </svg>
-              {prevLabel[lang] || prevLabel.en}
-            </button>
+          <div className="border-t border-border-light p-3 sm:p-4 md:p-6 flex flex-wrap items-center justify-between gap-2 sm:gap-4">
+            <div className="flex-1 min-w-0" />
 
             <div className="flex items-center gap-1.5 flex-wrap justify-center">
               {STORY_SLIDES.map((_, i) => (
@@ -458,29 +444,18 @@ export default function StorybookModal({ isOpen, onClose }: StorybookModalProps)
               ))}
             </div>
 
-            {isLast ? (
+            <div className="flex-1 flex justify-end min-w-0">
               <button
                 onClick={onClose}
-                className="flex items-center gap-2 px-4 py-2 rounded-lg border border-border-medium hover:border-accent hover:text-accent transition-colors text-sm font-medium"
+                className="flex items-center justify-center gap-2 px-3 py-2 sm:px-4 rounded-lg border border-border-medium hover:border-accent hover:text-accent transition-colors text-sm font-medium"
                 aria-label="End and leave"
               >
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="w-4 h-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
                 </svg>
-                {endLabel[lang] || endLabel.en}
+                <span className="hidden sm:inline">{endLabel[lang] || endLabel.en}</span>
               </button>
-            ) : (
-              <button
-                onClick={goNext}
-                className="flex items-center gap-2 px-4 py-2 rounded-lg border border-border-medium hover:border-accent hover:text-accent transition-colors text-sm font-medium"
-                aria-label="Next slide"
-              >
-                {nextLabel[lang] || nextLabel.en}
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </button>
-            )}
+            </div>
           </div>
         </motion.div>
         </div>
