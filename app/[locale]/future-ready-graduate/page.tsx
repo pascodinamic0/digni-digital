@@ -234,7 +234,7 @@ export default function FutureReadyGraduatePage() {
             className="text-center mb-8 sm:mb-12 md:mb-16"
           >
             <span className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-success/10 border border-success/30 rounded-full text-success text-xs sm:text-sm font-medium mb-4 sm:mb-6">
-              Digni Digital Literacy Program
+              Future-Ready Graduate Program
             </span>
             <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight sm:leading-tight mb-4 sm:mb-6 md:mb-8 px-2">
               Turn Your Graduates Into{' '}
@@ -249,9 +249,9 @@ export default function FutureReadyGraduatePage() {
                 {...getBookingLinkProps()}
                 className="btn-primary text-sm sm:text-base md:text-lg px-6 sm:px-8 py-3 sm:py-4 w-full sm:w-auto text-center"
               >
-                {ctaConfig.buttonText.scheduleConsultation}
+                {ctaT.scheduleConsultation}
               </a>
-              <DemoPresentationDownload service="futureReadyGraduate" variant="hero" label="Download Demo Presentation" />
+              <DemoPresentationDownload service="futureReadyGraduate" variant="hero" />
             </div>
           </motion.div>
         </div>
@@ -536,7 +536,7 @@ export default function FutureReadyGraduatePage() {
               <span className="gradient-text">Supporting Our Mission</span>
             </h2>
               <p className="text-muted text-lg max-w-3xl mx-auto">
-              Listen to world-renowned figures discuss the same principles and values that drive our Digni Digital Literacy program—job creation, entrepreneurial development, and personalized learning that brings out everyone&apos;s talents.
+              Listen to world-renowned figures discuss the same principles and values that drive our Future-Ready Graduate Program—job creation, entrepreneurial development, and personalized learning that brings out everyone&apos;s talents.
             </p>
           </div>
 
@@ -1203,7 +1203,7 @@ export default function FutureReadyGraduatePage() {
                           : 'btn-secondary hover:border-accent hover:text-accent'
                       }`}
                     >
-                      {plan.audience === 'schools' || plan.audience === 'professional' ? 'Start Partnership' : ctaConfig.buttonText.getStarted}
+                      {plan.audience === 'schools' || plan.audience === 'professional' ? ctaT.startPartnership : ctaT.getStarted}
                     </a>
                   )}
                 </motion.div>
@@ -1220,7 +1220,7 @@ export default function FutureReadyGraduatePage() {
             Ready to Transform Student Outcomes?
           </h2>
           <p className="text-muted text-lg mb-8">
-            Let's discuss how the Digni Digital Literacy Program can work for your institution. 
+            Let's discuss how the Future-Ready Graduate Program can work for your institution. 
             See curriculum details and success metrics in a personalized consultation.
           </p>
           <a

@@ -6,12 +6,12 @@ import Navigation from '@/app/components/Navigation'
 import Footer from '@/app/components/Footer'
 import AnimatedSection from '@/app/components/AnimatedSection'
 import { officeLocations, formatFullAddress, getGoogleMapsUrl } from '@/app/data/locations'
-import { ctaConfig, getBookingLinkProps } from '@/app/config/cta.config'
+import { getCtaButtonText, getBookingLinkProps, getBookingUrl } from '@/app/config/cta.config'
 import { useLanguage } from '@/app/context/LocaleContext'
 import { translations } from '@/app/config/translations'
 
 const contactMethodConfig = [
-  { icon: '📅', href: ctaConfig.bookingUrl, primary: true as const },
+  { icon: '📅', href: getBookingUrl(), primary: true as const },
   { icon: '✉️', href: 'mailto:support@digni-digital-llc.com', primary: false as const },
   { icon: '💬', href: 'https://wa.me/254702593518', primary: false as const },
   { icon: '💼', href: 'https://www.linkedin.com/company/digni-digital-llc', primary: false as const },
@@ -20,6 +20,7 @@ const contactMethodConfig = [
 export default function ContactPage() {
   const language = useLanguage()
   const t = translations[language].contact
+  const cta = getCtaButtonText(language)
   const contactMethods = contactMethodConfig.map((cfg, i) => ({ ...cfg, ...t.methods[i] }))
   const faqs = t.faqs
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null)
@@ -485,7 +486,7 @@ export default function ContactPage() {
             {...getBookingLinkProps()}
             className="btn-primary text-lg px-8 py-4"
           >
-            {ctaConfig.buttonText.bookConsultation}
+            {cta.bookConsultation}
           </a>
         </div>
       </AnimatedSection>

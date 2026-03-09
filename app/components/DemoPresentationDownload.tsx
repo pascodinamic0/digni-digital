@@ -16,6 +16,8 @@ const langFlags: Record<string, string> = {
   en: '🇬🇧',
   fr: '🇫🇷',
   ar: '🇸🇦',
+  de: '🇩🇪',
+  es: '🇪🇸',
 }
 
 export default function DemoPresentationDownload({

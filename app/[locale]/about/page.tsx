@@ -10,7 +10,7 @@ import AnimatedSection from '@/app/components/AnimatedSection'
 import ScrollIndicator from '@/app/components/ScrollIndicator'
 import StorybookModal from '@/app/components/StorybookModal'
 import ClientLogos from '@/app/components/ClientLogos'
-import { ctaConfig, getBookingLinkProps } from '@/app/config/cta.config'
+import { getCtaButtonText, getBookingLinkProps } from '@/app/config/cta.config'
 import { translations } from '@/app/config/translations'
 import { useLanguage } from '@/app/context/LocaleContext'
 
@@ -50,6 +50,7 @@ export default function AboutPage() {
   const [storybookOpen, setStorybookOpen] = useState(false)
   const language = useLanguage()
   const t = translations[language].about
+  const cta = getCtaButtonText(language)
 
   const stats = [
     { value: 8, suffix: '+', label: t.statYears },
@@ -405,7 +406,7 @@ export default function AboutPage() {
             {...getBookingLinkProps()}
             className="btn-primary text-lg px-8 py-4"
           >
-            {ctaConfig.buttonText.bookConsultation}
+            {cta.bookConsultation}
           </a>
         </div>
       </AnimatedSection>

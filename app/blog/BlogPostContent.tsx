@@ -72,7 +72,7 @@ export default function BlogPostContent({ articleByLang }: BlogPostContentProps)
       </div>
 
       <div className="mt-12 p-8 bg-surface rounded-lg text-center">
-        {['Future of Work', 'Digni Digital Literacy'].includes(article.category) ? (
+        {['Future of Work', 'Future-Ready Graduate Program'].includes(article.category) ? (
           <>
             <h3 className="font-display text-2xl font-bold mb-4">
               {t.readyFutureReady}

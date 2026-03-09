@@ -11,11 +11,11 @@ export const metadata: Metadata = {
     template: '%s | Digni Digital',
   },
   description:
-    'We believe technology should serve humanity. Digital transformation agency building AI Employee systems, Digni Digital Literacy program, and custom SaaS solutions that create real impact.',
+    'We believe technology should serve humanity. Digital transformation agency building AI Employee systems, Future-Ready Graduate Program, and custom SaaS solutions that create real impact.',
   keywords: [
     'digital transformation',
     'AI Employee',
-    'Digni Digital Literacy',
+    'Future-Ready Graduate Program',
     'custom SaaS',
     'technology for humanity',
     'business automation',

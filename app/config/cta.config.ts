@@ -3,7 +3,17 @@
  *
  * For region-specific booking URL, promo codes, and contact info,
  * use getRegionalConfig(locale) from '@/lib/getRegionalConfig' (e.g. with useLocale() from LocaleContext).
+ *
+ * For localized button text, use getCtaButtonText(language) - components should pass language from useLanguage().
  */
+
+import { translations } from '@/app/config/translations'
+import type { Language } from '@/app/i18n/translations'
+
+/** Get localized CTA button text. Use in components with useLanguage() from LocaleContext. */
+export function getCtaButtonText(language: Language) {
+  return translations[language].cta
+}
 
 export const ctaConfig = {
   // ============================================
