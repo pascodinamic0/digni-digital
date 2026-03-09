@@ -14,13 +14,14 @@
 Digni Digital is an American-registered company that started in Kenya, founded by a refugee youth who refused the rules and limitations set upon him. Driven by hunger and greatness, he has been failing forward ever since—dreaming of a better world where everyone is **enabled, empowered, and connected** to the same technology and skills that have long been reserved for elites and elite kids.
 
 **Vision:**
-We believe technology should serve everyone, not just those who can afford it. Every business should capture every lead, every student should graduate job ready, and every organization should have access to enterprise-level technology—regardless of size or budget.
+We believe technology should serve everyone, not just those who can afford it. Job creation is in our DNA—we teach skills that bring out entrepreneurial talents through guided learning personalized to everyone's gifts. Every business should capture every lead, every student should graduate job ready (or create their own jobs), and every organization should have access to enterprise-level technology—regardless of size or budget.
 
 **Core Values:**
 1. **Human First Technology** - Technology amplifies human potential, not replaces it
 2. **Opportunity Equality** - Access to opportunity should not depend on privilege or resources
-3. **Immediate Impact** - Every solution must deliver measurable value from day one
-4. **Sustainable Growth** - True success is measured in decades, not quarters
+3. **Job Creation as Core DNA** - We create jobs as a value. We teach skills that bring out entrepreneurial talents through guided learning personalized to everyone's gifts—students, participants, or anyone in our programs
+4. **Immediate Impact** - Every solution must deliver measurable value from day one
+5. **Sustainable Growth** - True success is measured in decades, not quarters
 
 **Company History:**
 - Founded in 2019

@@ -161,6 +161,22 @@
   border-color: var(--accent) !important;
 }
 
+/* Storybook modal: content sits on dark image overlay, so text must always be light */
+.storybook-modal-content,
+.storybook-modal-content h3,
+.storybook-modal-content p {
+  color: #FAFAFA !important;
+}
+.storybook-modal-content .text-muted {
+  color: #E4E4EA !important;
+}
+.storybook-modal-content .text-accent {
+  color: var(--accent) !important;
+}
+.storybook-modal-content .text-foreground {
+  color: #FAFAFA !important;
+}
+
 /* Light theme: transformation callout uses success/green for better visibility */
 [data-theme="light"] .transformation-callout {
   background: linear-gradient(90deg, rgba(var(--success-rgb), 0.12), rgba(var(--success-rgb), 0.2), rgba(var(--success-rgb), 0.12)) !important;
@@ -994,11 +1010,40 @@ img {
   }
 }
 
+/* Triple-buffered scroll for seamless loop (no blank gaps) */
+@keyframes scroll-left-triple {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-33.333%);
+  }
+}
+
+@keyframes scroll-right-triple {
+  0% {
+    transform: translateX(-33.333%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
 .animate-scroll-left {
   animation: scroll-left 40s linear infinite;
 }
 
-.animate-scroll-left:hover {
+.animate-scroll-left-triple {
+  animation: scroll-left-triple 40s linear infinite;
+}
+
+.animate-scroll-right-triple {
+  animation: scroll-right-triple 40s linear infinite;
+}
+
+.animate-scroll-left:hover,
+.animate-scroll-left-triple:hover,
+.animate-scroll-right-triple:hover {
   animation-play-state: paused;
 }
 

@@ -31,13 +31,14 @@ const services = [
   {
     id: 'future-ready-graduate',
     title: 'Digni Digital Literacy Program',
-    subtitle: 'Job-Ready Graduates',
-    description: '9-month program. 85% employed. Real skills. Real jobs.',
+    subtitle: 'Job-Ready Graduates & Entrepreneurial Talents',
+    description: '9-month program. 85% employed. Guided learning personalized to each person\'s talents—bringing out entrepreneurial gifts. Real skills. Real jobs—or create your own.',
     features: [
       'AI-Powered Web Development',
       'Digital Marketing & Analytics',
       'Professional Portfolio Building',
-      'Job Readiness Training',
+      'Guided learning personalized to each student\'s talents',
+      'Job Readiness Training—and skills to create jobs',
       'Industry Internships',
       'Career Placement Support'
     ],
@@ -46,7 +47,7 @@ const services = [
     link: '/future-ready-graduate',
     icon: '🎓',
     color: 'success',
-    outcomes: ['85% graduate employment rate', 'Direct employer partnerships', 'Real world skill development']
+    outcomes: ['85% graduate employment rate', 'Entrepreneurial talents unlocked', 'Personalized to your gifts', 'Job creation as core value']
   },
   {
     id: 'agentic-softwares',
