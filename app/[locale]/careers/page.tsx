@@ -7,93 +7,93 @@ import AnimatedSection from '@/app/components/AnimatedSection'
 
 const openPositions = [
   {
-    title: 'Senior Full-Stack Developer',
+    title: 'Executive Virtual Assistant',
     type: 'Full-time',
     location: 'Remote (Africa/Europe timezone)',
-    salary: '$40,000 - $60,000',
-    description: 'Join our core development team building growth infrastructure solutions for businesses across Africa and beyond.',
+    salary: '$18,000 - $28,000',
+    description: 'Support our leadership team and clients with administrative excellence. Manage calendars, communications, and operations that keep growth projects on track.',
     requirements: [
-      '5+ years of full-stack development experience',
-      'Expert in React, Node.js, and TypeScript',
-      'Experience with cloud platforms (AWS/Azure)',
-      'Strong understanding of database design',
-      'Experience with API development and integration',
-      'Excellent communication skills in English'
+      '2+ years of executive or administrative assistant experience',
+      'Proficiency in Google Workspace, Microsoft 365, and scheduling tools',
+      'Excellent written and verbal communication in English',
+      'Strong organizational and time-management skills',
+      'Experience with CRM tools (HubSpot, Salesforce, or similar)',
+      'Ability to work across Africa/Europe time zones'
     ],
     responsibilities: [
-      'Develop custom web applications and SaaS products',
-      'Collaborate with clients on technical requirements',
-      'Mentor junior developers and contribute to code reviews',
-      'Participate in architecture decisions and technical planning',
-      'Ensure code quality and best practices'
+      'Manage calendars, scheduling, and meeting coordination',
+      'Handle email triage and client communications',
+      'Prepare reports, presentations, and meeting materials',
+      'Support project coordination and follow-up tasks',
+      'Maintain organized systems for documents and workflows'
     ],
     benefits: [
       'Competitive salary with performance bonuses',
       'Fully remote work environment',
       'Professional development budget',
-      'Health insurance coverage',
       'Flexible working hours',
-      'Annual team retreat'
+      'Direct exposure to growth operations',
+      'Stable, long-term engagement'
     ]
   },
   {
-    title: 'Digital Marketing Specialist',
+    title: 'Virtual Assistant — Operations & Support',
     type: 'Full-time',
     location: 'Remote (Africa timezone)',
-    salary: '$25,000 - $40,000',
-    description: 'Lead digital marketing campaigns and growth strategies for our diverse client portfolio.',
+    salary: '$15,000 - $24,000',
+    description: 'Keep our client operations running smoothly. Handle customer inquiries, data entry, and support tasks that enable our growth infrastructure to scale.',
     requirements: [
-      '3+ years of digital marketing experience',
-      'Expertise in SEO, SEM, and social media marketing',
-      'Experience with marketing automation tools',
-      'Strong analytical and data interpretation skills',
-      'Content creation and copywriting abilities',
-      'Knowledge of African markets preferred'
+      '1+ years of VA, customer support, or operations experience',
+      'Strong attention to detail and accuracy',
+      'Comfort with spreadsheets, databases, and basic tools',
+      'Clear written communication in English',
+      'Reliable internet and quiet workspace',
+      'Self-motivated with minimal supervision'
     ],
     responsibilities: [
-      'Develop and execute digital marketing strategies',
-      'Manage client social media accounts and campaigns',
-      'Create content for various digital channels',
-      'Analyze campaign performance and optimize ROI',
-      'Collaborate with development team on marketing websites'
+      'Respond to client inquiries and support tickets',
+      'Perform data entry and CRM updates',
+      'Assist with onboarding and offboarding workflows',
+      'Support internal documentation and process tracking',
+      'Coordinate with team on task handoffs and deadlines'
     ],
     benefits: [
-      'Competitive salary with commission structure',
+      'Competitive salary with growth potential',
       'Remote work flexibility',
-      'Access to premium marketing tools',
-      'Professional certification support',
-      'Creative freedom in campaign development',
-      'Direct client interaction opportunities'
+      'Structured training and onboarding',
+      'Clear career progression path',
+      'Supportive team environment',
+      'Consistent, predictable workload'
     ]
   },
   {
-    title: 'UI/UX Designer',
+    title: 'Virtual Assistant — Social Media & Content',
     type: 'Contract',
     location: 'Remote (Global)',
-    salary: '$30 - $50 per hour',
-    description: 'Create beautiful, user-centered designs for web applications, mobile apps, and SaaS products.',
+    salary: '$12 - $22 per hour',
+    description: 'Support our digital presence and client campaigns. Create and schedule content, manage social accounts, and help grow audiences across platforms.',
     requirements: [
-      '4+ years of UI/UX design experience',
-      'Proficiency in Figma, Adobe Creative Suite',
-      'Strong portfolio showcasing web and mobile designs',
-      'Understanding of user research and testing methodologies',
-      'Experience with design systems and component libraries',
-      'Knowledge of frontend development principles'
+      '1+ years of social media or content support experience',
+      'Familiarity with Meta Business Suite, LinkedIn, and scheduling tools',
+      'Basic graphic design skills (Canva or similar)',
+      'Strong written English and attention to detail',
+      'Understanding of content calendars and posting best practices',
+      'Ability to work independently and meet deadlines'
     ],
     responsibilities: [
-      'Design user interfaces for web and mobile applications',
-      'Conduct user research and usability testing',
-      'Create wireframes, prototypes, and design systems',
-      'Collaborate with developers on implementation',
-      'Maintain brand consistency across all projects'
+      'Schedule and publish social media content',
+      'Draft captions and light copy for posts',
+      'Create simple graphics and visual assets',
+      'Monitor engagement and compile basic analytics',
+      'Support content calendar planning and coordination'
     ],
     benefits: [
       'Flexible contract arrangements',
-      'Work on diverse, challenging projects',
-      'Direct collaboration with international clients',
-      'Portfolio building opportunities',
-      'Potential for long term partnership',
-      'Creative freedom and autonomy'
+      'Work on diverse client brands',
+      'Portfolio-building opportunities',
+      'Potential for long-term partnership',
+      'Creative input on content strategy',
+      'Remote-first, async-friendly workflow'
     ]
   }
 ]
@@ -153,9 +153,9 @@ const perks = [
     icon: '💻'
   },
   {
-    title: 'Health Coverage',
-    description: 'Comprehensive health insurance coverage for you and your family.',
-    icon: '🏥'
+    title: 'Wellness Stipend',
+    description: 'Annual stipend for wellness activities, home office setup, or tools that support your wellbeing.',
+    icon: '🌱'
   },
   {
     title: 'Team Retreats',
@@ -325,7 +325,7 @@ export default function CareersPage() {
                     </div>
                     
                     <a
-                      href="mailto:careers@digni-digital-llc.com?subject=Application for Senior Full-Stack Developer"
+                      href={`mailto:careers@digni-digital-llc.com?subject=Application for ${encodeURIComponent(position.title)}`}
                       className="btn-primary w-full text-center"
                     >
                       Apply Now
