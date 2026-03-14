@@ -121,6 +121,8 @@ type HomeTranslations = {
     aiEmployeeCardSub: string
     futureReadyCard: string
     futureReadyCardSub: string
+    agenticCard: string
+    agenticCardSub: string
   }
   globalPresence: {
     badge: string
@@ -654,7 +656,7 @@ function buildTranslations(): Record<Language, TranslationKeys> {
       equalAccessDesc: 'Small businesses get big-business tools.',
       equalAccessPrinciple: "Budget shouldn't decide who wins.",
       realResults: 'Real Results',
-      realResultsDesc: 'Leads. Jobs created. Revenue. We measure what matters—and job creation is core to who we are.',
+      realResultsDesc: 'Leads. Jobs created. Revenue. We measure what matters.',
       realResultsPrinciple: 'Results from day one.',
       builtToLast: 'Built to Last',
       builtToLastDesc: 'Systems that grow with you. No obsolescence.',
@@ -742,6 +744,8 @@ function buildTranslations(): Record<Language, TranslationKeys> {
       aiEmployeeCardSub: '50+ businesses. 10,000+ leads/month.',
       futureReadyCard: 'Future-Ready Graduate Program',
       futureReadyCardSub: '500+ students/year. 85% employed. Entrepreneurial talents unlocked through personalized learning.',
+      agenticCard: 'Agentic Softwares',
+      agenticCardSub: 'Custom projects. 90% faster workflows. Intelligent automation.',
     } as HomeTranslations['stats'],
     globalPresence: {
       badge: 'Where We Operate',
@@ -821,7 +825,7 @@ function buildTranslations(): Record<Language, TranslationKeys> {
       equalAccessDesc: 'Les PME accèdent aux outils des grandes entreprises.',
       equalAccessPrinciple: 'Le budget ne décide pas du gagnant.',
       realResults: 'Résultats concrets',
-      realResultsDesc: 'Prospects. Emplois créés. Revenus. Nous mesurons l\'essentiel—la création d\'emplois est au cœur de notre identité.',
+      realResultsDesc: 'Prospects. Emplois créés. Revenus. Nous mesurons l\'essentiel.',
       realResultsPrinciple: 'Des résultats dès le premier jour.',
       builtToLast: 'Conçu pour durer',
       builtToLastDesc: 'Des systèmes qui évoluent avec vous. Pas d\'obsolescence.',
@@ -909,6 +913,8 @@ function buildTranslations(): Record<Language, TranslationKeys> {
       aiEmployeeCardSub: '50+ entreprises. 10 000+ prospects/mois.',
       futureReadyCard: 'Future Pre Program',
       futureReadyCardSub: '500+ étudiants/an. 85% employés. Talents entrepreneuriaux révélés par un apprentissage personnalisé.',
+      agenticCard: 'Agentic Softwares',
+      agenticCardSub: 'Projets sur mesure. 90% plus rapide. Automatisation intelligente.',
     } as HomeTranslations['stats'],
     globalPresence: {
       badge: 'Où nous opérons',
@@ -1075,6 +1081,8 @@ function buildTranslations(): Record<Language, TranslationKeys> {
       aiEmployeeCardSub: '50+ شركة. 10,000+ عميل/شهر.',
       futureReadyCard: 'Future-Ready Graduate Program',
       futureReadyCardSub: '500+ طالب/سنة. 85% موظفون. مواهب ريادية مكشوفة عبر تعلم شخصي.',
+      agenticCard: 'Agentic Softwares',
+      agenticCardSub: 'مشاريع مخصصة. 90% أسرع. أتمتة ذكية.',
     } as HomeTranslations['stats'],
     globalPresence: {
       badge: 'أين نعمل',
@@ -1153,7 +1161,7 @@ function buildTranslations(): Record<Language, TranslationKeys> {
       equalAccessDesc: 'Kleine Unternehmen erhalten Großunternehmen-Tools.',
       equalAccessPrinciple: 'Budget sollte nicht entscheiden, wer gewinnt.',
       realResults: 'Echte Ergebnisse',
-      realResultsDesc: 'Leads. Geschaffene Jobs. Umsatz. Wir messen, was zählt—und Jobschaffung ist unser Kern.',
+      realResultsDesc: 'Leads. Geschaffene Jobs. Umsatz. Wir messen, was zählt.',
       realResultsPrinciple: 'Ergebnisse von Tag eins.',
       builtToLast: 'Für die Ewigkeit gebaut',
       builtToLastDesc: 'Systeme, die mit Ihnen wachsen. Keine Veralterung.',
@@ -1241,6 +1249,8 @@ function buildTranslations(): Record<Language, TranslationKeys> {
       aiEmployeeCardSub: '50+ Unternehmen. 10.000+ Leads/Monat.',
       futureReadyCard: 'Future-Ready Graduate Program',
       futureReadyCardSub: '500+ Studenten/Jahr. 85% beschäftigt. Unternehmerische Talente durch personalisiertes Lernen.',
+      agenticCard: 'Agentic Softwares',
+      agenticCardSub: 'Individuelle Projekte. 90% schneller. Intelligente Automatisierung.',
     } as HomeTranslations['stats'],
     globalPresence: {
       badge: 'Wo wir tätig sind',
@@ -1320,7 +1330,7 @@ function buildTranslations(): Record<Language, TranslationKeys> {
       equalAccessDesc: 'Las pequeñas empresas obtienen herramientas de grandes empresas.',
       equalAccessPrinciple: 'El presupuesto no debe decidir quién gana.',
       realResults: 'Resultados reales',
-      realResultsDesc: 'Leads. Empleos creados. Ingresos. Medimos lo que importa—y la creación de empleos es nuestro núcleo.',
+      realResultsDesc: 'Leads. Empleos creados. Ingresos. Medimos lo que importa.',
       realResultsPrinciple: 'Resultados desde el día uno.',
       builtToLast: 'Construido para durar',
       builtToLastDesc: 'Sistemas que crecen contigo. Sin obsolescencia.',
@@ -1408,6 +1418,8 @@ function buildTranslations(): Record<Language, TranslationKeys> {
       aiEmployeeCardSub: '50+ empresas. 10.000+ leads/mes.',
       futureReadyCard: 'Future-Ready Graduate Program',
       futureReadyCardSub: '500+ estudiantes/año. 85% empleados. Talentos emprendedores mediante aprendizaje personalizado.',
+      agenticCard: 'Agentic Softwares',
+      agenticCardSub: 'Proyectos a medida. 90% más rápido. Automatización inteligente.',
     } as HomeTranslations['stats'],
     globalPresence: {
       badge: 'Dónde operamos',
