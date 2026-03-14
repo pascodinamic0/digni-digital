@@ -139,7 +139,8 @@ function Hero() {
           className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-4 sm:mb-6 md:mb-8 max-w-4xl px-2 text-text"
         >
           {t.title}
-          <span className="text-accent">{t.titleHighlight}</span>
+          <br />
+          <span className="gradient-text hero-highlight">{t.titleHighlight}</span>
         </motion.h1>
 
         <motion.p

@@ -145,6 +145,13 @@
   border-bottom-color: var(--border-light);
 }
 
+/* Hero headline highlight: gradient with subtle glow for video-background readability */
+.home-hero .hero-highlight {
+  display: inline-block;
+  text-shadow: 0 0 40px rgba(var(--accent-rgb), 0.25);
+  letter-spacing: -0.02em;
+}
+
 /* Light theme: hero has dark video background, so content must stay light for visibility */
 [data-theme="light"] .home-hero .text-text {
   color: #FAFAFA !important;
