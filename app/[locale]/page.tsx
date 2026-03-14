@@ -838,7 +838,7 @@ function Stats() {
         </div>
 
         <div className="text-center mt-16">
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -859,6 +859,17 @@ function Stats() {
               <div className="text-3xl mb-3">🎓</div>
               <h3 className="font-display font-bold mb-2">{s.futureReadyCard}</h3>
               <p className="text-muted text-sm">{s.futureReadyCardSub}</p>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="card p-6"
+            >
+              <div className="text-3xl mb-3">⚙️</div>
+              <h3 className="font-display font-bold mb-2">{s.agenticCard}</h3>
+              <p className="text-muted text-sm">{s.agenticCardSub}</p>
             </motion.div>
           </div>
         </div>
