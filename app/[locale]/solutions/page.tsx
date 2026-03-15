@@ -1,8 +1,7 @@
 'use client'
 
+import { use } from 'react'
 import { motion } from 'framer-motion'
-import Navigation from '@/app/components/Navigation'
-import Footer from '@/app/components/Footer'
 import AnimatedSection from '@/app/components/AnimatedSection'
 import { getCtaButtonText, getBookingLinkProps } from '@/app/config/cta.config'
 import { useLanguage } from '@/app/context/LocaleContext'
@@ -121,13 +120,18 @@ const processSteps = [
   }
 ]
 
-export default function SolutionsPage() {
+type SolutionsPageProps = {
+  params: Promise<{ locale: string }>
+  searchParams?: Promise<{ [key: string]: string | string[] | undefined }>
+}
+
+export default function SolutionsPage({ params, searchParams }: SolutionsPageProps) {
+  use(params)
+  use(searchParams ?? Promise.resolve({}))
   const language = useLanguage()
   const cta = getCtaButtonText(language)
   return (
     <main>
-      <Navigation />
-      
       {/* Hero Section */}
       <section className="relative isolate min-h-screen flex items-center pt-16 sm:pt-20 overflow-hidden bg-gradient-mesh">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-20 relative z-10">
@@ -407,8 +411,6 @@ export default function SolutionsPage() {
           </div>
         </div>
       </AnimatedSection>
-
-      <Footer />
     </main>
   )
 }

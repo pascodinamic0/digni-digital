@@ -1,7 +1,5 @@
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import Navigation from '@/app/components/Navigation'
-import Footer from '@/app/components/Footer'
 import BlogPostContent from '@/app/blog/BlogPostContent'
 import { getArticleBySlugForLocale } from '@/lib/blog'
 import { allArticlesEn } from '@/lib/blog'
@@ -56,13 +54,11 @@ export default async function BlogPostPage({ params }: Props) {
 
   return (
     <main className="min-h-screen bg-background">
-      <Navigation />
       <article className="pt-24 pb-16">
         <div className="max-w-4xl mx-auto px-6 pt-20">
           <BlogPostContent articleByLang={articleByLang} />
         </div>
       </article>
-      <Footer />
     </main>
   )
 }

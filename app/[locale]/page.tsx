@@ -1,14 +1,13 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
+import { use, useState, useEffect, useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { Link } from '@/i18n/navigation'
-import Navigation from '@/app/components/Navigation'
-import Footer from '@/app/components/Footer'
 import AnimatedSection from '@/app/components/AnimatedSection'
 import ScrollIndicator from '@/app/components/ScrollIndicator'
 import RotatingCards from '@/app/components/RotatingCards'
 import GlobalPresenceMap from '@/app/components/GlobalPresenceMap'
+import ClientLogos from '@/app/components/ClientLogos'
 import { useTheme } from '@/app/components/ThemeProvider'
 import { getBookingLinkProps } from '@/app/config/cta.config'
 import { useLanguage } from '@/app/context/LocaleContext'
@@ -264,6 +263,78 @@ function MissionValues() {
   )
 }
 
+// Our 2026 Commitment Section
+function Commitment2026() {
+  const language = useLanguage()
+  const c = translations[language].home.commitment2026
+
+  return (
+    <AnimatedSection id="our-2026-commitment" className="py-24 md:py-28 relative overflow-hidden">
+      {/* Distinct background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-surface via-background to-surface opacity-90" />
+      <div className="absolute inset-0 bg-gradient-mesh opacity-30" />
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+        {/* Header: badge + headline with emphasis on numbers */}
+        <div className="text-center mb-14">
+          <span className="section-label">{c.badge}</span>
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mt-6 mb-5 max-w-4xl mx-auto leading-tight gradient-text">
+            {c.title}
+          </h2>
+          <p className="text-muted text-base md:text-lg max-w-2xl mx-auto">
+            {c.subtitle}
+          </p>
+        </div>
+
+        {/* Two pillars as prominent stat cards */}
+        <div className="grid md:grid-cols-2 gap-6 md:gap-8 mb-14">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1, duration: 0.4 }}
+            className="relative rounded-2xl border-2 border-accent/30 bg-accent/5 p-8 md:p-10 hover:border-accent/50 hover:bg-accent/10 transition-all duration-300 group overflow-hidden"
+          >
+            <div className="absolute top-0 right-0 w-40 h-40 bg-accent/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:scale-110 transition-transform" />
+            <div className="relative flex flex-col sm:flex-row sm:items-center gap-6">
+              <div className="flex items-center justify-center w-20 h-20 rounded-2xl bg-accent/20 text-4xl flex-shrink-0">
+                💼
+              </div>
+              <div className="flex-1">
+                <div className="font-display text-5xl md:text-6xl font-bold text-accent mb-1">100</div>
+                <h3 className="font-display text-lg font-bold text-text mb-2">
+                  {c.pillar1Title}
+                </h3>
+                <p className="text-muted text-sm leading-relaxed">{c.pillar1Desc}</p>
+              </div>
+            </div>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2, duration: 0.4 }}
+            className="relative rounded-2xl border-2 border-success/30 bg-success/5 p-8 md:p-10 hover:border-success/50 hover:bg-success/10 transition-all duration-300 group overflow-hidden"
+          >
+            <div className="absolute top-0 right-0 w-40 h-40 bg-success/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:scale-110 transition-transform" />
+            <div className="relative flex flex-col sm:flex-row sm:items-center gap-6">
+              <div className="flex items-center justify-center w-20 h-20 rounded-2xl bg-success/20 text-4xl flex-shrink-0">
+                🎓
+              </div>
+              <div className="flex-1">
+                <div className="font-display text-5xl md:text-6xl font-bold text-success mb-1">10,000</div>
+                <h3 className="font-display text-lg font-bold text-text mb-2">
+                  {c.pillar2Title}
+                </h3>
+                <p className="text-muted text-sm leading-relaxed">{c.pillar2Desc}</p>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+    </AnimatedSection>
+  )
+}
+
 // What We're Fighting For Section
 function WhatWereFightingFor() {
   const language = useLanguage()
@@ -278,7 +349,7 @@ function WhatWereFightingFor() {
     <AnimatedSection id="what-were-fighting-for" className="py-24">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
-          <span className="text-accent font-medium text-sm uppercase tracking-wider">{f.badge}</span>
+          <span className="section-label">{f.badge}</span>
           <h2 className="font-display text-4xl md:text-5xl font-bold mt-4 mb-6">
             {f.title}<br />
             <span className="gradient-text">{f.subtitle}</span>
@@ -893,7 +964,7 @@ function GlobalPresence() {
             <span className="gradient-text">{g.subtitle}</span>
           </h2>
           <p className="text-muted text-lg max-w-3xl mx-auto">
-            {g.subtext || '4 continents. Local support. Global standards.'}
+            {g.subtext}
           </p>
         </div>
 
@@ -1188,19 +1259,28 @@ function CTASection() {
 
 // Main Page Component
 // Growth operator: Proof (Stats, CaseStudies) before conversion CTAs (WhatWeDo, CTA)
-export default function Home() {
+type HomePageProps = {
+  params: Promise<{ locale: string }>
+  searchParams?: Promise<{ [key: string]: string | string[] | undefined }>
+}
+
+export default function Home({ params, searchParams }: HomePageProps) {
+  use(params)
+  use(searchParams ?? Promise.resolve({}))
+  const language = useLanguage()
+  const aboutT = translations[language].about
   return (
     <main>
-      <Navigation />
       <Hero />
+      <ClientLogos badge={aboutT.trustedByBadge} title={aboutT.trustedByTitle} subtitle={aboutT.trustedBySubtitle} />
       <MissionValues />
+      <Commitment2026 />
       <WhatWereFightingFor />
       <Stats />
       <CaseStudies />
       <WhatWeDo />
       <GlobalPresence />
       <CTASection />
-      <Footer />
     </main>
   )
 }

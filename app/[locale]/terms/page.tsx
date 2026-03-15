@@ -1,13 +1,17 @@
 'use client'
 
+import { use } from 'react'
 import { Link } from '@/i18n/navigation'
-import Navigation from '@/app/components/Navigation'
-import Footer from '@/app/components/Footer'
+type TermsPageProps = {
+  params: Promise<{ locale: string }>
+  searchParams?: Promise<{ [key: string]: string | string[] | undefined }>
+}
 
-export default function TermsPage() {
+export default function TermsPage({ params, searchParams }: TermsPageProps) {
+  use(params)
+  use(searchParams ?? Promise.resolve({}))
   return (
     <>
-      <Navigation />
       <main className="min-h-screen pt-24 pb-16">
         <div className="max-w-3xl mx-auto px-6">
           <h1 className="font-display text-3xl md:text-4xl font-bold text-text mb-2">
@@ -43,7 +47,6 @@ export default function TermsPage() {
           </div>
         </div>
       </main>
-      <Footer />
     </>
   )
 }

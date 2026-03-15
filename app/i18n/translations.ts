@@ -23,6 +23,7 @@ type HomeTranslations = {
     title: string
     statement: string
     description: string
+    commitmentOneLiner?: string
     valuesTitle: string
     valuesSubtitle: string
     humanFirst: string
@@ -64,6 +65,19 @@ type HomeTranslations = {
     theProblem: string
     theSolution: string
     theOutcome: string
+  }
+  commitment2026: {
+    badge: string
+    title: string
+    subtitle: string
+    pillar1Title: string
+    pillar1Desc: string
+    pillar2Title: string
+    pillar2Desc: string
+    proofLine: string
+    proofLink1Text: string
+    proofLink2Text: string
+    ctaPrimary: string
   }
   whatWeDo: {
     badge: string
@@ -180,6 +194,8 @@ type CommonTranslations = {
   cta: Record<string, string>
   download: Record<string, string>
   footer: Record<string, string>
+  /** Section labels (ALL CAPS in UI via .section-label). Use for SOLUTIONS, LOCATIONS, PROOF, etc. */
+  sectionLabels?: Record<string, string>
 }
 
 type BlogTranslations = {
@@ -224,6 +240,11 @@ type AboutTranslations = {
   statStudents: string
   statLeads: string
   statSatisfaction: string
+  statEmployed: string
+  statSkilled: string
+  timeline2026Title: string
+  timeline2026Description: string
+  storyBadge: string
   ourStoryTitle: string
   storyP1: string
   storyP2: string
@@ -278,6 +299,8 @@ type AboutTranslations = {
   ctaSubtitle: string
   trustedByBadge: string
   trustedByTitle: string
+  trustedByTitleHighlight?: string
+  trustedBySubtitle?: string
 }
 
 type ContactTranslations = {
@@ -336,6 +359,7 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     },
     cta: {
       getStarted: 'Get Started',
+      contactUsToLearnMore: 'Contact us to learn more',
       bookStrategy: 'Book a Strategy Call',
       bookConsultation: 'Book Your Free Consultation',
       scheduleConsultation: 'Schedule Consultation',
@@ -350,6 +374,15 @@ function buildTranslations(): Record<Language, TranslationKeys> {
       bookYourSpot: 'Book Your Spot. Only 25 Spaces Left',
       startPartnership: 'Start Partnership',
     },
+    sectionLabels: {
+      solutions: 'Solutions',
+      locations: 'Locations',
+      proof: 'Proof',
+      howItWorks: 'How it works',
+      services: 'Our Services',
+      trustedBy: 'Trusted by',
+      ourApproach: 'Our Approach',
+    },
     download: {
       demoPresentation: 'Download Demo Presentation',
     },
@@ -363,6 +396,7 @@ function buildTranslations(): Record<Language, TranslationKeys> {
       aiEmployeeDemo: 'AI Employee Demo',
       ourMission: 'Our Mission',
       whatWeFightFor: "What We Fight For",
+      our2026Commitment: 'Our 2026 Commitment',
       aboutUs: 'About Us',
       careers: 'Careers',
       contact: 'Contact',
@@ -398,6 +432,7 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     },
     cta: {
       getStarted: 'Commencer',
+      contactUsToLearnMore: 'Contactez-nous pour en savoir plus',
       bookStrategy: 'Réserver un appel stratégique',
       bookConsultation: 'Réserver votre consultation gratuite',
       scheduleConsultation: 'Planifier une consultation',
@@ -412,6 +447,15 @@ function buildTranslations(): Record<Language, TranslationKeys> {
       bookYourSpot: 'Réservez votre place. Plus que 25 places',
       startPartnership: 'Démarrer le partenariat',
     },
+    sectionLabels: {
+      solutions: 'Solutions',
+      locations: 'Emplacements',
+      proof: 'Preuves',
+      howItWorks: 'Comment ça marche',
+      services: 'Nos services',
+      trustedBy: 'Ils nous font confiance',
+      ourApproach: 'Notre approche',
+    },
     download: {
       demoPresentation: 'Télécharger la démo',
     },
@@ -425,6 +469,7 @@ function buildTranslations(): Record<Language, TranslationKeys> {
       aiEmployeeDemo: 'Démo Employé IA',
       ourMission: 'Notre Mission',
       whatWeFightFor: 'Ce pour quoi nous nous battons',
+      our2026Commitment: 'Notre engagement 2026',
       aboutUs: 'À propos',
       careers: 'Carrières',
       contact: 'Contact',
@@ -460,6 +505,7 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     },
     cta: {
       getStarted: 'Loslegen',
+      contactUsToLearnMore: 'Kontaktieren Sie uns für mehr Informationen',
       bookStrategy: 'Strategiegespräch buchen',
       bookConsultation: 'Kostenlose Beratung buchen',
       scheduleConsultation: 'Beratung planen',
@@ -474,6 +520,15 @@ function buildTranslations(): Record<Language, TranslationKeys> {
       bookYourSpot: 'Ihren Platz sichern. Nur noch 25 Plätze.',
       startPartnership: 'Partnerschaft starten',
     },
+    sectionLabels: {
+      solutions: 'Lösungen',
+      locations: 'Standorte',
+      proof: 'Beweis',
+      howItWorks: 'So funktioniert es',
+      services: 'Unsere Leistungen',
+      trustedBy: 'Vertrauen uns',
+      ourApproach: 'Unser Ansatz',
+    },
     download: {
       demoPresentation: 'Demo herunterladen',
     },
@@ -487,6 +542,7 @@ function buildTranslations(): Record<Language, TranslationKeys> {
       aiEmployeeDemo: 'KI-Mitarbeiter Demo',
       ourMission: 'Unsere Mission',
       whatWeFightFor: 'Wofür wir kämpfen',
+      our2026Commitment: 'Unser 2026-Verprechen',
       aboutUs: 'Über uns',
       careers: 'Karriere',
       contact: 'Kontakt',
@@ -522,6 +578,7 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     },
     cta: {
       getStarted: 'Empezar',
+      contactUsToLearnMore: 'Contáctenos para más información',
       bookStrategy: 'Reservar llamada estratégica',
       bookConsultation: 'Reservar consulta gratuita',
       scheduleConsultation: 'Programar consulta',
@@ -535,6 +592,15 @@ function buildTranslations(): Record<Language, TranslationKeys> {
       reserveEarlyAccess: 'Reservar acceso anticipado',
       bookYourSpot: 'Reserve su plaza. Solo quedan 25 plazas.',
       startPartnership: 'Iniciar asociación',
+    },
+    sectionLabels: {
+      solutions: 'Soluciones',
+      locations: 'Ubicaciones',
+      proof: 'Prueba',
+      howItWorks: 'Cómo funciona',
+      services: 'Nuestros servicios',
+      trustedBy: 'Confían en nosotros',
+      ourApproach: 'Nuestro enfoque',
     },
     download: {
       demoPresentation: 'Descargar demo',
@@ -584,6 +650,7 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     },
     cta: {
       getStarted: 'ابدأ الآن',
+      contactUsToLearnMore: 'اتصل بنا لمعرفة المزيد',
       bookStrategy: 'احجز مكالمة استراتيجية',
       bookConsultation: 'احجز استشارتك المجانية',
       scheduleConsultation: 'جدولة استشارة',
@@ -598,6 +665,15 @@ function buildTranslations(): Record<Language, TranslationKeys> {
       bookYourSpot: 'احجز مكانك. 25 مكاناً فقط متبقي',
       startPartnership: 'ابدأ الشراكة',
     },
+    sectionLabels: {
+      solutions: 'الحلول',
+      locations: 'المواقع',
+      proof: 'الدليل',
+      howItWorks: 'كيف يعمل',
+      services: 'خدماتنا',
+      trustedBy: 'يثق بنا',
+      ourApproach: 'نهجنا',
+    },
     download: {
       demoPresentation: 'تحميل العرض التوضيحي',
     },
@@ -611,6 +687,7 @@ function buildTranslations(): Record<Language, TranslationKeys> {
       aiEmployeeDemo: 'عرض الموظف الذكي',
       ourMission: 'مهمتنا',
       whatWeFightFor: 'ما نكافح من أجله',
+      our2026Commitment: 'التزامنا 2026',
       aboutUs: 'من نحن',
       careers: 'الوظائف',
       contact: 'اتصل بنا',
@@ -647,6 +724,7 @@ function buildTranslations(): Record<Language, TranslationKeys> {
       title: 'Our Mission',
       statement: 'Technology that serves everyone.',
       description: 'We dream of a world where everyone is enabled, empowered, and connected to the technology and skills that change lives.',
+      commitmentOneLiner: 'By end of 2026 we\'re committed to creating employment for 100 people and equipping 10,000 more with digital skills so they can thrive in the gig economy and as entrepreneurs.',
       valuesTitle: 'Our Values',
       valuesSubtitle: "What We Stand For",
       humanFirst: 'Human First',
@@ -688,6 +766,19 @@ function buildTranslations(): Record<Language, TranslationKeys> {
       theProblem: 'The Problem',
       theSolution: 'The Solution',
       theOutcome: 'The Outcome',
+    },
+    commitment2026: {
+      badge: 'Our 2026 Commitment',
+      title: '100 employed. 10,000 skilled for the gig economy.',
+      subtitle: 'We equip people with digital skills that unlock entrepreneurship and competitiveness in the gig economy.',
+      pillar1Title: '100 people in employment',
+      pillar1Desc: 'Direct jobs at Digni or with our partners by end of 2026.',
+      pillar2Title: '10,000 equipped with digital skills',
+      pillar2Desc: 'Skilled for entrepreneurship and gig work through programs like our Future-Ready Graduate Program.',
+      proofLine: 'Already delivering: 85% employment rate, 500+ students per year.',
+      proofLink1Text: 'Future-Ready Graduate Program',
+      proofLink2Text: 'Careers',
+      ctaPrimary: 'Book a Strategy Call',
     },
     whatWeDo: {
       badge: 'What We Do',
@@ -751,7 +842,7 @@ function buildTranslations(): Record<Language, TranslationKeys> {
       badge: 'Where We Operate',
       title: 'Serving Clients',
       subtitle: 'Around the World',
-      subtext: '4 continents. Local support. Global standards.',
+      subtext: "We're not in 4 continents just yet. Our HQ is in the US; we work with teams and clients across Africa and beyond.",
     } as HomeTranslations['globalPresence'],
     caseStudies: {
       badge: 'Case Studies',
@@ -816,6 +907,7 @@ function buildTranslations(): Record<Language, TranslationKeys> {
       title: 'Notre Mission',
       statement: 'Une technologie au service de tous.',
       description: 'Nous rêvons d\'un monde où chacun est outillé, responsabilisé et connecté aux technologies et compétences qui changent les vies.',
+      commitmentOneLiner: 'D\'ici fin 2026, nous nous engageons à créer des emplois pour 100 personnes et à former 10 000 autres aux compétences numériques pour qu\'elles prospèrent dans l\'économie des petits boulots et en tant qu\'entrepreneurs.',
       valuesTitle: 'Nos Valeurs',
       valuesSubtitle: 'Ce qui nous anime',
       humanFirst: 'L\'Humain d\'abord',
@@ -857,6 +949,19 @@ function buildTranslations(): Record<Language, TranslationKeys> {
       theProblem: 'Le Problème',
       theSolution: 'La Solution',
       theOutcome: 'Le Résultat',
+    },
+    commitment2026: {
+      badge: 'Notre engagement 2026',
+      title: '100 en emploi. 10 000 formés pour l\'économie des petits boulots.',
+      subtitle: 'Nous dotons les gens de compétences numériques qui libèrent l\'esprit d\'entreprise et la compétitivité dans l\'économie des petits boulots.',
+      pillar1Title: '100 personnes en emploi',
+      pillar1Desc: 'Emplois directs chez Digni ou avec nos partenaires d\'ici fin 2026.',
+      pillar2Title: '10 000 formés aux compétences numériques',
+      pillar2Desc: 'Compétences pour l\'entrepreneuriat et le travail à la tâche via des programmes comme Future Pre.',
+      proofLine: 'Déjà en place : 85% d\'emploi, 500+ étudiants par an.',
+      proofLink1Text: 'Future Pre',
+      proofLink2Text: 'Carrières',
+      ctaPrimary: 'Réserver un appel stratégique',
     },
     whatWeDo: {
       badge: 'Ce que nous faisons',
@@ -920,7 +1025,7 @@ function buildTranslations(): Record<Language, TranslationKeys> {
       badge: 'Où nous opérons',
       title: 'Au service des clients',
       subtitle: 'dans le monde entier',
-      subtext: '4 continents. Support local. Normes mondiales.',
+      subtext: "Nous ne sommes pas encore sur 4 continents. Notre siège est aux États-Unis ; nous travaillons avec des équipes et des clients en Afrique et au-delà.",
     } as HomeTranslations['globalPresence'],
     caseStudies: {
       badge: 'Études de cas',
@@ -984,6 +1089,7 @@ function buildTranslations(): Record<Language, TranslationKeys> {
       title: 'مهمتنا',
       statement: 'تقنية تخدم الجميع.',
       description: 'نحلم بعالم يُمكّن الجميع ويربطهم بالتقنية والمهارات التي تغيّر الحياة.',
+      commitmentOneLiner: 'بحلول نهاية 2026 نلتزم بخلق فرص عمل لـ 100 شخص وتأهيل 10,000 آخرين بالمهارات الرقمية ليزدهروا في اقتصاد العمل الحر وكرواد أعمال.',
       valuesTitle: 'قيمنا',
       valuesSubtitle: 'ما نؤمن به',
       humanFirst: 'الإنسان أولاً',
@@ -1025,6 +1131,19 @@ function buildTranslations(): Record<Language, TranslationKeys> {
       theProblem: 'المشكلة',
       theSolution: 'الحل',
       theOutcome: 'النتيجة',
+    },
+    commitment2026: {
+      badge: 'التزامنا 2026',
+      title: '100 موظّف. 10,000 مؤهّلون لاقتصاد العمل الحر.',
+      subtitle: 'نؤهل الناس بمهارات رقمية تطلق ريادة الأعمال والقدرة التنافسية في اقتصاد العمل الحر.',
+      pillar1Title: '100 شخص في وظائف',
+      pillar1Desc: 'وظائف مباشرة في Digni أو مع شركائنا بحلول نهاية 2026.',
+      pillar2Title: '10,000 مؤهّلون بالمهارات الرقمية',
+      pillar2Desc: 'مؤهّلون لريادة الأعمال والعمل الحر عبر برامج مثل Future-Ready Graduate.',
+      proofLine: 'ننفّذ بالفعل: 85% توظيف، 500+ طالب سنوياً.',
+      proofLink1Text: 'برنامج Future-Ready Graduate',
+      proofLink2Text: 'الوظائف',
+      ctaPrimary: 'احجز مكالمة استراتيجية',
     },
     whatWeDo: {
       badge: 'ماذا نفعل',
@@ -1088,7 +1207,7 @@ function buildTranslations(): Record<Language, TranslationKeys> {
       badge: 'أين نعمل',
       title: 'نخدم العملاء',
       subtitle: 'حول العالم',
-      subtext: '4 قارات. دعم محلي. معايير عالمية.',
+      subtext: 'لسنا بعد في 4 قارات. مقرنا في الولايات المتحدة؛ نعمل مع فرق وعملاء في أفريقيا وما بعدها.',
     } as HomeTranslations['globalPresence'],
     caseStudies: {
       badge: 'دراسات الحالة',
@@ -1152,6 +1271,7 @@ function buildTranslations(): Record<Language, TranslationKeys> {
       title: 'Unsere Mission',
       statement: 'Technologie, die allen dient.',
       description: 'Wir träumen von einer Welt, in der jeder befähigt, ermächtigt und mit den Technologien und Fähigkeiten verbunden ist, die Leben verändern.',
+      commitmentOneLiner: 'Bis Ende 2026 verpflichten wir uns, 100 Menschen in Lohn und Brot zu bringen und 10.000 weitere mit digitalen Fähigkeiten auszustatten, damit sie in der Gig-Economy und als Unternehmer bestehen können.',
       valuesTitle: 'Unsere Werte',
       valuesSubtitle: 'Wofür wir stehen',
       humanFirst: 'Mensch zuerst',
@@ -1193,6 +1313,19 @@ function buildTranslations(): Record<Language, TranslationKeys> {
       theProblem: 'Das Problem',
       theSolution: 'Die Lösung',
       theOutcome: 'Das Ergebnis',
+    },
+    commitment2026: {
+      badge: 'Unser 2026-Verprechen',
+      title: '100 in Arbeit. 10.000 qualifiziert für die Gig-Economy.',
+      subtitle: 'Wir statten Menschen mit digitalen Fähigkeiten aus, die Unternehmertum und Wettbewerbsfähigkeit in der Gig-Economy ermöglichen.',
+      pillar1Title: '100 Menschen in Beschäftigung',
+      pillar1Desc: 'Direkte Jobs bei Digni oder mit Partnern bis Ende 2026.',
+      pillar2Title: '10.000 mit digitalen Fähigkeiten ausgestattet',
+      pillar2Desc: 'Qualifiziert für Unternehmertum und Gig-Arbeit durch Programme wie Future-Ready Graduate.',
+      proofLine: 'Bereits umgesetzt: 85% Beschäftigungsrate, 500+ Studierende pro Jahr.',
+      proofLink1Text: 'Future-Ready Graduate Program',
+      proofLink2Text: 'Karriere',
+      ctaPrimary: 'Strategiegespräch buchen',
     },
     whatWeDo: {
       badge: 'Was wir tun',
@@ -1321,6 +1454,7 @@ function buildTranslations(): Record<Language, TranslationKeys> {
       title: 'Nuestra Misión',
       statement: 'Tecnología que sirve a todos.',
       description: 'Soñamos con un mundo donde todos estén capacitados, empoderados y conectados con la tecnología y las habilidades que cambian vidas.',
+      commitmentOneLiner: 'Para finales de 2026 nos comprometemos a crear empleo para 100 personas y capacitar a 10.000 más en competencias digitales para que prosperen en la economía gig y como emprendedores.',
       valuesTitle: 'Nuestros Valores',
       valuesSubtitle: 'Por lo que luchamos',
       humanFirst: 'Personas primero',
@@ -1362,6 +1496,19 @@ function buildTranslations(): Record<Language, TranslationKeys> {
       theProblem: 'El problema',
       theSolution: 'La solución',
       theOutcome: 'El resultado',
+    },
+    commitment2026: {
+      badge: 'Nuestro compromiso 2026',
+      title: '100 empleados. 10.000 capacitados para la economía gig.',
+      subtitle: 'Capacitamos a las personas con competencias digitales que desbloquean el emprendimiento y la competitividad en la economía gig.',
+      pillar1Title: '100 personas empleadas',
+      pillar1Desc: 'Empleos directos en Digni o con nuestros socios para finales de 2026.',
+      pillar2Title: '10.000 capacitados en competencias digitales',
+      pillar2Desc: 'Capacitados para el emprendimiento y el trabajo gig mediante programas como Future-Ready Graduate.',
+      proofLine: 'Ya en marcha: 85% de empleo, 500+ estudiantes al año.',
+      proofLink1Text: 'Future-Ready Graduate Program',
+      proofLink2Text: 'Carreras',
+      ctaPrimary: 'Reservar llamada estratégica',
     },
     whatWeDo: {
       badge: 'Lo que hacemos',
@@ -1425,7 +1572,7 @@ function buildTranslations(): Record<Language, TranslationKeys> {
       badge: 'Dónde operamos',
       title: 'Sirviendo clientes',
       subtitle: 'en todo el mundo',
-      subtext: '4 continentes. Soporte local. Estándares globales.',
+      subtext: "Aún no estamos en 4 continentes. Nuestra sede está en EE. UU.; trabajamos con equipos y clientes en África y más allá.",
     } as HomeTranslations['globalPresence'],
     caseStudies: {
       badge: 'Casos de éxito',
@@ -1986,8 +2133,13 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     statStudents: 'Students Trained',
     statLeads: 'Leads Captured',
     statSatisfaction: 'Client Satisfaction',
+    statEmployed: 'Jobs by 2026',
+    statSkilled: 'Skilled by 2026',
+    timeline2026Title: '150+ Clients',
+    timeline2026Description: '100 employed, 10,000 skilled for the gig economy.',
+    storyBadge: 'The Journey',
     ourStoryTitle: 'Our Story',
-    storyP1: 'We are an American-registered company that started in Kenya—founded by a refugee youth who refused to accept the rules and limitations set upon him. Driven by hunger and greatness, he chose to fail forward: to keep pushing, dreaming, and building toward a better world.',
+    storyP1: 'We are an American-registered company that started in Kenya—founded by a refugee youth who, from an early age, has been focused on eliminating poverty and refused to accept the rules and limitations set upon him. Driven by hunger and greatness, he chose to fail forward: to keep pushing, dreaming, and building toward a better world.',
     storyP2: 'That dream is simple and urgent: everyone enabled, empowered, and connected to the same technology and skills that have long been reserved for elites and elite kids. Businesses shouldn\'t lose leads because they can\'t afford big systems. Students shouldn\'t graduate without the skills employers hire for. We build the fixes—AI that captures every lead, curricula that make graduates job-ready, and agentic software that perceives, reasons, and acts—scaling with you.',
     storyP3: 'Founded 2019. Started with websites. Now: AI systems, graduate programs, Agentic Softwares. We don\'t just build websites—we build systems that get you clients and students jobs.',
     takeTheJourney: 'Take the journey',
@@ -2016,7 +2168,7 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     humanFirstTitle: 'Human First',
     humanFirstDesc: 'AI helps your team. Doesn\'t replace them.',
     provenTitle: 'Proven',
-    provenDesc: '8 years. 150+ clients. 98% satisfaction.',
+    provenDesc: '6 years. 150+ clients. 98% satisfaction.',
     partnershipTitle: 'Full Partnership',
     partnershipDesc: 'Strategy. Build. Optimize. We\'re there. No handoffs.',
     roiFocusTitle: 'ROI Focus',
@@ -2039,7 +2191,8 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     ctaTitle: 'Ready to Work Together?',
     ctaSubtitle: 'Tell us your problem. We\'ll find the fix.',
     trustedByBadge: 'Trusted by',
-    trustedByTitle: 'businesses across the globe',
+    trustedByTitle: '150+ teams that capture every lead.',
+    trustedBySubtitle: '98% satisfaction. From 40% missed calls to 100% captured.',
   }
 
   const aboutFr: AboutTranslations = {
@@ -2051,8 +2204,13 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     statStudents: 'Étudiants formés',
     statLeads: 'Prospects capturés',
     statSatisfaction: 'Satisfaction client',
+    statEmployed: 'Emplois d\'ici 2026',
+    statSkilled: 'Formés d\'ici 2026',
+    timeline2026Title: '150+ clients',
+    timeline2026Description: '100 en emploi, 10 000 formés pour l\'économie des petits boulots.',
+    storyBadge: 'Le parcours',
     ourStoryTitle: 'Notre histoire',
-    storyP1: 'Nous sommes une entreprise enregistrée aux États-Unis qui a démarré au Kenya—fondée par un jeune réfugié qui a refusé d\'accepter les règles et les limites qu\'on lui imposait. Animé par la faim et la grandeur, il a choisi d\'échouer vers l\'avant : continuer à pousser, rêver et construire un monde meilleur.',
+    storyP1: 'Nous sommes une entreprise enregistrée aux États-Unis qui a démarré au Kenya—fondée par un jeune réfugié qui, dès son plus jeune âge, a été focalisé sur l\'élimination de la pauvreté et a refusé d\'accepter les règles et les limites qu\'on lui imposait. Animé par la faim et la grandeur, il a choisi d\'échouer vers l\'avant : continuer à pousser, rêver et construire un monde meilleur.',
     storyP2: 'Ce rêve est simple et urgent : chacun outillé, responsabilisé et connecté aux mêmes technologies et compétences longtemps réservées aux élites. Les entreprises ne devraient pas perdre de prospects parce qu\'elles ne peuvent pas s\'offrir de grands systèmes. Les étudiants ne devraient pas obtenir leur diplôme sans les compétences que les employeurs recherchent. Nous construisons les solutions—IA qui capture chaque prospect, cursus qui rendent les diplômés opérationnels, et logiciels agentiques qui perçoivent, raisonnent et agissent—évoluant avec vous.',
     storyP3: 'Fondée en 2019. Nous avons commencé avec des sites web. Aujourd\'hui : systèmes IA, programmes diplômants, Agentic Softwares. Nous ne construisons pas que des sites—nous bâtissons des systèmes qui vous apportent des clients et offrent des emplois aux étudiants.',
     takeTheJourney: 'Découvrir le parcours',
@@ -2081,7 +2239,7 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     humanFirstTitle: 'L\'humain d\'abord',
     humanFirstDesc: 'L\'IA aide votre équipe. Elle ne la remplace pas.',
     provenTitle: 'Prouvé',
-    provenDesc: '8 ans. 150+ clients. 98% de satisfaction.',
+    provenDesc: '6 ans. 150+ clients. 98% de satisfaction.',
     partnershipTitle: 'Partenariat total',
     partnershipDesc: 'Stratégie. Construction. Optimisation. Nous sommes là. Pas de transferts.',
     roiFocusTitle: 'Focus ROI',
@@ -2104,7 +2262,8 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     ctaTitle: 'Prêt à travailler ensemble ?',
     ctaSubtitle: 'Dites-nous votre problème. Nous trouverons la solution.',
     trustedByBadge: 'Approuvé par',
-    trustedByTitle: 'des entreprises à travers le monde',
+    trustedByTitle: '150+ équipes qui captent chaque prospect.',
+    trustedBySubtitle: '98% de satisfaction. De 40% d\'appels manqués à 100% captés.',
   }
 
   const aboutAr: AboutTranslations = {
@@ -2116,6 +2275,11 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     statStudents: 'طالب تم تدريبهم',
     statLeads: 'عميل محتمل تم التقاطه',
     statSatisfaction: 'رضا العملاء',
+    statEmployed: 'وظائف بحلول 2026',
+    statSkilled: 'مؤهّلون بحلول 2026',
+    timeline2026Title: '150+ عميل',
+    timeline2026Description: '100 موظّف، 10,000 مؤهّلون لاقتصاد العمل الحر.',
+    storyBadge: 'الرحلة',
     ourStoryTitle: 'قصتنا',
     storyP1: 'نحن شركة مسجلة في الولايات المتحدة بدأت في كينيا—أسسها شاب لاجئ رفض قبول القيود المفروضة عليه. مدفوعاً بالطموح والعظمة، اختار أن يفشل إلى الأمام: أن يستمر في الدفع والحلم والبناء نحو عالم أفضل.',
     storyP2: 'الحلم بسيط وملحّ: أن يكون الجميع مُمكّنين ومتصلين بنفس التقنيات والمهارات المحتكرة للنخب. لا ينبغي أن تخسر الشركات عملاء لأنها لا تستطيع تحمّل أنظمة كبيرة. لا ينبغي أن يتخرج الطلاب بدون المهارات التي يوظّف أصحاب العمل لأجلها. نبني الحلول—ذكاء اصطناعي يلتقط كل عميل، مناهج تجعل الخريجين جاهزين للعمل، وبرمجيات وكيلية تدرك وتفكر وتعمل—تنمو معك.',
@@ -2146,7 +2310,7 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     humanFirstTitle: 'الإنسان أولاً',
     humanFirstDesc: 'الذكاء الاصطناعي يساعد فريقك. لا يستبدله.',
     provenTitle: 'مُثبت',
-    provenDesc: '8 سنوات. 150+ عميل. 98% رضا.',
+    provenDesc: '6 سنوات. 150+ عميل. 98% رضا.',
     partnershipTitle: 'شراكة كاملة',
     partnershipDesc: 'استراتيجية. بناء. تحسين. نحن هنا. بدون تسليمات.',
     roiFocusTitle: 'تركيز على العائد',
@@ -2169,7 +2333,8 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     ctaTitle: 'مستعد للعمل معاً؟',
     ctaSubtitle: 'أخبرنا بمشكلتك. سنجد الحل.',
     trustedByBadge: 'موثوق من',
-    trustedByTitle: 'شركات حول العالم',
+    trustedByTitle: 'أكثر من 150 فريقاً يلتقط كل عميل محتمل.',
+    trustedBySubtitle: '98% رضا. من 40% مكالمات فائتة إلى 100% مُلتقطة.',
   }
 
   const aboutDe: AboutTranslations = {
@@ -2181,8 +2346,13 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     statStudents: 'Ausgebildete Studierende',
     statLeads: 'Erfasste Leads',
     statSatisfaction: 'Kundenzufriedenheit',
+    statEmployed: 'Jobs bis 2026',
+    statSkilled: 'Qualifiziert bis 2026',
+    timeline2026Title: '150+ Kunden',
+    timeline2026Description: '100 in Arbeit, 10.000 qualifiziert für die Gig-Economy.',
+    storyBadge: 'Die Reise',
     ourStoryTitle: 'Unsere Geschichte',
-    storyP1: 'Wir sind ein in den USA registriertes Unternehmen, das in Kenia gestartet wurde—gegründet von einem jungen Geflüchteten, der sich weigerte, die ihm auferlegten Regeln und Grenzen zu akzeptieren. Angetrieben von Hunger und Größe entschied er sich, vorwärts zu scheitern: weiterzumachen, zu träumen und auf eine bessere Welt hinzuarbeiten.',
+    storyP1: 'Wir sind ein in den USA registriertes Unternehmen, das in Kenia gestartet wurde—gegründet von einem jungen Geflüchteten, der von klein auf darauf fokussiert war, Armut zu bekämpfen, und sich weigerte, die ihm auferlegten Regeln und Grenzen zu akzeptieren. Angetrieben von Hunger und Größe entschied er sich, vorwärts zu scheitern: weiterzumachen, zu träumen und auf eine bessere Welt hinzuarbeiten.',
     storyP2: 'Dieser Traum ist einfach und dringend: Jeder befähigt, ermächtigt und verbunden mit den gleichen Technologien und Fähigkeiten, die lange den Eliten vorbehalten waren. Unternehmen sollten keine Leads verlieren, weil sie sich große Systeme nicht leisten können. Studierende sollten nicht ohne die Fähigkeiten abschließen, die Arbeitgeber suchen. Wir bauen die Lösungen—KI, die jeden Lead erfasst, Lehrpläne, die Absolventen berufsfertig machen, und agentische Software, die wahrnimmt, denkt und handelt—und mit Ihnen wächst.',
     storyP3: 'Gegründet 2019. Angefangen mit Websites. Heute: KI-Systeme, Absolventenprogramme, Agentic Softwares. Wir bauen nicht nur Websites—wir bauen Systeme, die Ihnen Kunden bringen und Studierenden Jobs verschaffen.',
     takeTheJourney: 'Entdecken Sie die Reise',
@@ -2211,7 +2381,7 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     humanFirstTitle: 'Mensch zuerst',
     humanFirstDesc: 'KI unterstützt Ihr Team. Ersetzt es nicht.',
     provenTitle: 'Bewährt',
-    provenDesc: '8 Jahre. 150+ Kunden. 98% Zufriedenheit.',
+    provenDesc: '6 Jahre. 150+ Kunden. 98% Zufriedenheit.',
     partnershipTitle: 'Volle Partnerschaft',
     partnershipDesc: 'Strategie. Aufbau. Optimierung. Wir sind da. Keine Übergaben.',
     roiFocusTitle: 'ROI-Fokus',
@@ -2234,7 +2404,8 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     ctaTitle: 'Bereit zur Zusammenarbeit?',
     ctaSubtitle: 'Sagen Sie uns Ihr Problem. Wir finden die Lösung.',
     trustedByBadge: 'Vertraut von',
-    trustedByTitle: 'Unternehmen weltweit',
+    trustedByTitle: '150+ Teams, die jeden Lead erfassen.',
+    trustedBySubtitle: '98% Zufriedenheit. Von 40% verpassten Anrufen zu 100% erfasst.',
   }
 
   const aboutEs: AboutTranslations = {
@@ -2246,8 +2417,13 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     statStudents: 'Estudiantes formados',
     statLeads: 'Leads capturados',
     statSatisfaction: 'Satisfacción del cliente',
+    statEmployed: 'Empleos para 2026',
+    statSkilled: 'Capacitados para 2026',
+    timeline2026Title: '150+ clientes',
+    timeline2026Description: '100 empleados, 10.000 capacitados para la economía gig.',
+    storyBadge: 'El recorrido',
     ourStoryTitle: 'Nuestra historia',
-    storyP1: 'Somos una empresa registrada en Estados Unidos que empezó en Kenia—fundada por un joven refugiado que se negó a aceptar las reglas y limitaciones impuestas sobre él. Impulsado por el hambre y la grandeza, eligió fracasar hacia adelante: seguir empujando, soñando y construyendo hacia un mundo mejor.',
+    storyP1: 'Somos una empresa registrada en Estados Unidos que empezó en Kenia—fundada por un joven refugiado que, desde muy joven, ha estado enfocado en eliminar la pobreza y se negó a aceptar las reglas y limitaciones impuestas sobre él. Impulsado por el hambre y la grandeza, eligió fracasar hacia adelante: seguir empujando, soñando y construyendo hacia un mundo mejor.',
     storyP2: 'Ese sueño es simple y urgente: todos capacitados, empoderados y conectados con las mismas tecnologías y habilidades reservadas durante mucho tiempo para las élites. Las empresas no deberían perder leads porque no pueden permitirse grandes sistemas. Los estudiantes no deberían graduarse sin las habilidades que los empleadores buscan. Construimos las soluciones—IA que captura cada lead, currículos que preparan a los graduados para el empleo, y software agéntico que percibe, razona y actúa—escalando contigo.',
     storyP3: 'Fundada en 2019. Empezamos con sitios web. Ahora: sistemas de IA, programas de graduados, Agentic Softwares. No solo construimos sitios web—construimos sistemas que te traen clientes y consiguen empleos para los estudiantes.',
     takeTheJourney: 'Descubre el recorrido',
@@ -2276,7 +2452,7 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     humanFirstTitle: 'Personas primero',
     humanFirstDesc: 'La IA ayuda a tu equipo. No lo reemplaza.',
     provenTitle: 'Comprobado',
-    provenDesc: '8 años. 150+ clientes. 98% de satisfacción.',
+    provenDesc: '6 años. 150+ clientes. 98% de satisfacción.',
     partnershipTitle: 'Alianza total',
     partnershipDesc: 'Estrategia. Construcción. Optimización. Estamos ahí. Sin traspasos.',
     roiFocusTitle: 'Enfoque en ROI',
@@ -2299,7 +2475,8 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     ctaTitle: '¿Listo para trabajar juntos?',
     ctaSubtitle: 'Cuéntanos tu problema. Encontraremos la solución.',
     trustedByBadge: 'Confían en nosotros',
-    trustedByTitle: 'empresas de todo el mundo',
+    trustedByTitle: '150+ equipos que capturan cada lead.',
+    trustedBySubtitle: '98% satisfacción. De 40% llamadas perdidas a 100% capturadas.',
   }
 
   return {

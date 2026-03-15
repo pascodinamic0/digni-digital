@@ -15,6 +15,11 @@ export function getCtaButtonText(language: Language) {
   return translations[language].cta
 }
 
+/** Get localized secondary in-section CTA text (e.g. "Contact us to learn more"). */
+export function getSecondaryCtaText(language: Language) {
+  return translations[language].cta.contactUsToLearnMore
+}
+
 export const ctaConfig = {
   // ============================================
   // PRIMARY BOOKING LINK
@@ -27,9 +32,9 @@ export const ctaConfig = {
   // Use different text for different contexts
   // ============================================
   buttonText: {
-    // Navigation & Header
+    // Navigation & Header (primary CTA - use site-wide)
     getStarted: 'Get Started',
-    
+
     // Primary CTAs
     bookStrategy: 'Book a Strategy Call',
     bookConsultation: 'Book Your Free Consultation',

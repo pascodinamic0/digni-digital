@@ -1,13 +1,17 @@
 'use client'
 
+import { use } from 'react'
 import { Link } from '@/i18n/navigation'
-import Navigation from '@/app/components/Navigation'
-import Footer from '@/app/components/Footer'
+type CookiePolicyPageProps = {
+  params: Promise<{ locale: string }>
+  searchParams?: Promise<{ [key: string]: string | string[] | undefined }>
+}
 
-export default function CookiePolicyPage() {
+export default function CookiePolicyPage({ params, searchParams }: CookiePolicyPageProps) {
+  use(params)
+  use(searchParams ?? Promise.resolve({}))
   return (
     <>
-      <Navigation />
       <main className="min-h-screen pt-24 pb-16">
         <div className="max-w-3xl mx-auto px-6">
           <h1 className="font-display text-3xl md:text-4xl font-bold text-text mb-2">
@@ -39,7 +43,6 @@ export default function CookiePolicyPage() {
           </div>
         </div>
       </main>
-      <Footer />
     </>
   )
 }

@@ -52,18 +52,18 @@ const STORY_SLIDES: StorySlide[] = [
       es: 'El momento que lo cambió todo',
     },
     content: {
-      en: 'At 16, I attended Microsoft\'s Digital Literacy program. It changed my life. I learned web development, discovered the power of technology, and realized that the skills reserved for the privileged could be mine too. That program planted a seed: one day, I would give back exactly what was given to me.',
-      fr: 'À 16 ans, j\'ai participé au programme d\'alphabétisation numérique de Microsoft. Ça a changé ma vie. J\'ai appris le développement web et réalisé que les compétences réservées aux privilégiés pouvaient aussi être les miennes. Ce programme a planté une graine : un jour, je rendrais exactement ce qu\'on m\'avait donné.',
-      ar: 'في سن السادسة عشرة، حضرت برنامج محو الأمية الرقمية من مايكروسوفت. غيّر حياتي. تعلمت تطوير الويب وأدركت أن المهارات المحجوزة للنخبة يمكن أن تكون لي أيضاً. زرع ذلك البرنامج بذرة: يوماً ما سأرد بالضبط ما أُعطي لي.',
-      de: 'Mit 16 nahm ich an Microsofts Digital-Literacy-Programm teil. Es veränderte mein Leben. Ich lernte Webentwicklung und erkannte, dass die Fähigkeiten der Privilegierten auch mir gehören könnten. Dieses Programm pflanzte einen Samen: Eines Tages würde ich genau das zurückgeben.',
-      es: 'A los 16 años, asistí al programa de Alfabetización Digital de Microsoft. Cambió mi vida. Aprendí desarrollo web y me di cuenta de que las habilidades reservadas para los privilegiados también podían ser mías. Ese programa plantó una semilla: algún día devolvería exactamente lo que me dieron.',
+      en: 'From an early age, I\'ve been focused on eliminating poverty. It all started with a course I participated in, offered by Microsoft—a program much like our Future-Ready Graduate program today. It taught me how to hunt clients online and the value of value creation. With that foundation, I learned web development, discovered the power of technology, and realized that the skills reserved for the privileged could be mine too. That program planted a seed: one day, I would give back exactly what was given to me.',
+      fr: 'Dès mon plus jeune âge, j\'ai été focalisé sur l\'élimination de la pauvreté. Tout a commencé par une formation à laquelle j\'ai participé, offerte par Microsoft—un programme proche de notre programme Future-Ready Graduate d\'aujourd\'hui. Il m\'a appris à trouver des clients en ligne et la valeur de la création de valeur. Sur cette base, j\'ai appris le développement web et réalisé que les compétences réservées aux privilégiés pouvaient aussi être les miennes. Ce programme a planté une graine : un jour, je rendrais exactement ce qu\'on m\'avait donné.',
+      ar: 'منذ سن مبكرة، كنت مركّزاً على القضاء على الفقر. كل شيء بدأ بدورة شاركت فيها، قدمتها مايكروسوفت—برنامج يشبه برنامج Future-Ready Graduate اليوم. علمني كيف أجد العملاء عبر الإنترنت وقيمة خلق القيمة. على هذه الأسس تعلمت تطوير الويب وأدركت أن المهارات المحجوزة للنخبة يمكن أن تكون لي أيضاً. زرع ذلك البرنامج بذرة: يوماً ما سأرد بالضبط ما أُعطي لي.',
+      de: 'Von klein auf war ich darauf fokussiert, Armut zu bekämpfen. Alles begann mit einem Kurs, an dem ich teilnahm—angeboten von Microsoft, ein Programm ähnlich unserem Future-Ready Graduate Programm heute. Es lehrte mich, wie man Kunden online gewinnt und was Wertschöpfung bedeutet. Auf dieser Grundlage lernte ich Webentwicklung und erkannte, dass die Fähigkeiten der Privilegierten auch mir gehören könnten. Dieses Programm pflanzte einen Samen: Eines Tages würde ich genau das zurückgeben.',
+      es: 'Desde muy joven, he estado enfocado en eliminar la pobreza. Todo empezó con un curso en el que participé, ofrecido por Microsoft—un programa muy parecido a nuestro programa Future-Ready Graduate de hoy. Me enseñó a conseguir clientes en línea y el valor de la creación de valor. Con esa base, aprendí desarrollo web y me di cuenta de que las habilidades reservadas para los privilegiados también podían ser mías. Ese programa plantó una semilla: algún día devolvería exactamente lo que me dieron.',
     },
     highlight: {
-      en: 'One day, I would give back what was given to me',
-      fr: 'Un jour, je rendrais ce qu\'on m\'avait donné',
-      ar: 'يوماً ما سأرد ما أُعطي لي',
-      de: 'Eines Tages würde ich genau das zurückgeben',
-      es: 'Algún día devolvería lo que me dieron',
+      en: 'That program taught me to hunt clients and create value—today I give that same gift forward',
+      fr: 'Ce programme m\'a appris à trouver des clients et à créer de la valeur—aujourd\'hui je transmets ce même cadeau',
+      ar: 'ذلك البرنامج علمني أن أجد العملاء وأخلق قيمة—اليوم أقدم نفس الهدية',
+      de: 'Dieses Programm lehrte mich, Kunden zu gewinnen und Wert zu schaffen—heute gebe ich dasselbe weiter',
+      es: 'Ese programa me enseñó a conseguir clientes y crear valor—hoy doy ese mismo regalo',
     },
     backgroundImage: '/story/class-image-1.jpeg',
   },
@@ -314,18 +314,16 @@ export default function StorybookModal({ isOpen, onClose }: StorybookModalProps)
     if (isOpen) setCurrentIndex(0)
   }, [isOpen])
 
-  useEffect(() => {
-    if (!isOpen || !mounted) return
-    const interval = setInterval(goNext, 8000)
-    return () => clearInterval(interval)
-  }, [isOpen, mounted, goNext])
-
   if (!mounted || !isOpen) return null
 
   const slide = STORY_SLIDES[currentIndex]
   const lang = language as Language
 
   const endLabel = { en: 'End & leave', fr: 'Fin & quitter', ar: 'إنهاء ومغادرة', de: 'Beenden', es: 'Fin y salir' }
+  const prevLabel = { en: 'Previous', fr: 'Précédent', ar: 'السابق', de: 'Zurück', es: 'Anterior' }
+  const nextLabel = { en: 'Next', fr: 'Suivant', ar: 'التالي', de: 'Weiter', es: 'Siguiente' }
+  const isFirst = currentIndex === 0
+  const isLast = currentIndex === STORY_SLIDES.length - 1
 
   return (
     <AnimatePresence mode="wait">
@@ -354,7 +352,7 @@ export default function StorybookModal({ isOpen, onClose }: StorybookModalProps)
           exit={{ opacity: 0, scale: 0.95, y: 20 }}
           transition={{ type: 'spring', damping: 25, stiffness: 300 }}
           onClick={(e) => e.stopPropagation()}
-          className="relative bg-surface border border-border-light rounded-2xl w-full max-w-[calc(100vw-1rem)] sm:max-w-7xl max-h-[95dvh] sm:max-h-[96vh] overflow-hidden shadow-2xl flex flex-col"
+          className="relative bg-surface border border-border-light rounded-2xl w-full max-w-[calc(100vw-1rem)] sm:max-w-4xl max-h-[85dvh] sm:max-h-[88vh] overflow-hidden shadow-2xl flex flex-col"
         >
           <button
             onClick={onClose}
@@ -371,7 +369,7 @@ export default function StorybookModal({ isOpen, onClose }: StorybookModalProps)
             </svg>
           </button>
 
-          <div className="flex-1 overflow-y-auto relative min-h-[280px] sm:min-h-[420px] md:min-h-[540px] lg:min-h-[640px]">
+          <div className="flex-1 overflow-y-auto relative min-h-[200px] sm:min-h-[280px] md:min-h-[360px]">
             {(slide.backgroundImage || slide.backgroundVideo) && (
               <div className="absolute inset-0 z-0">
                 {slide.backgroundVideo ? (
@@ -403,7 +401,7 @@ export default function StorybookModal({ isOpen, onClose }: StorybookModalProps)
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: -20 }}
                   transition={{ duration: 0.3 }}
-                  className="min-h-[240px] sm:min-h-[340px] md:min-h-[420px] lg:min-h-[500px]"
+                  className="min-h-[180px] sm:min-h-[240px] md:min-h-[300px]"
                 >
                   {slide.year && (
                     <span className="inline-block px-3 py-1 sm:px-4 sm:py-1.5 bg-accent/10 border border-accent/30 rounded-full text-accent text-xs sm:text-sm font-medium mb-4 sm:mb-6">
@@ -427,7 +425,22 @@ export default function StorybookModal({ isOpen, onClose }: StorybookModalProps)
           </div>
 
           <div className="border-t border-border-light p-3 sm:p-4 md:p-6 flex flex-wrap items-center justify-between gap-2 sm:gap-4">
-            <div className="flex-1 min-w-0" />
+            <div className="flex-1 min-w-0 flex justify-start">
+              {!isFirst ? (
+                <button
+                  onClick={goPrev}
+                  className="flex items-center justify-center gap-2 px-3 py-2 sm:px-4 rounded-lg border border-border-medium hover:border-accent hover:text-accent transition-colors text-sm font-medium"
+                  aria-label={prevLabel[lang] || prevLabel.en}
+                >
+                  <svg className="w-4 h-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                  </svg>
+                  <span className="hidden sm:inline">{prevLabel[lang] || prevLabel.en}</span>
+                </button>
+              ) : (
+                <span />
+              )}
+            </div>
 
             <div className="flex items-center gap-1.5 flex-wrap justify-center">
               {STORY_SLIDES.map((_, i) => (
@@ -445,16 +458,29 @@ export default function StorybookModal({ isOpen, onClose }: StorybookModalProps)
             </div>
 
             <div className="flex-1 flex justify-end min-w-0">
-              <button
-                onClick={onClose}
-                className="flex items-center justify-center gap-2 px-3 py-2 sm:px-4 rounded-lg border border-border-medium hover:border-accent hover:text-accent transition-colors text-sm font-medium"
-                aria-label="End and leave"
-              >
-                <svg className="w-4 h-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
-                </svg>
-                <span className="hidden sm:inline">{endLabel[lang] || endLabel.en}</span>
-              </button>
+              {!isLast ? (
+                <button
+                  onClick={goNext}
+                  className="flex items-center justify-center gap-2 px-3 py-2 sm:px-4 rounded-lg border border-border-medium hover:border-accent hover:text-accent transition-colors text-sm font-medium"
+                  aria-label={nextLabel[lang] || nextLabel.en}
+                >
+                  <span className="hidden sm:inline">{nextLabel[lang] || nextLabel.en}</span>
+                  <svg className="w-4 h-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
+              ) : (
+                <button
+                  onClick={onClose}
+                  className="flex items-center justify-center gap-2 px-3 py-2 sm:px-4 rounded-lg border border-border-medium hover:border-accent hover:text-accent transition-colors text-sm font-medium"
+                  aria-label="End and leave"
+                >
+                  <svg className="w-4 h-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                  </svg>
+                  <span className="hidden sm:inline">{endLabel[lang] || endLabel.en}</span>
+                </button>
+              )}
             </div>
           </div>
         </motion.div>

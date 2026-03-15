@@ -1,9 +1,7 @@
 'use client'
 
-import { useState } from 'react'
+import { use, useState } from 'react'
 import { motion } from 'framer-motion'
-import Navigation from '@/app/components/Navigation'
-import Footer from '@/app/components/Footer'
 import AnimatedSection from '@/app/components/AnimatedSection'
 import { officeLocations, formatFullAddress, getGoogleMapsUrl } from '@/app/data/locations'
 import { getCtaButtonText, getBookingLinkProps, getBookingUrl } from '@/app/config/cta.config'
@@ -17,7 +15,14 @@ const contactMethodConfig = [
   { icon: '💼', href: 'https://www.linkedin.com/company/digni-digital-llc', primary: false as const },
 ]
 
-export default function ContactPage() {
+type ContactPageProps = {
+  params: Promise<{ locale: string }>
+  searchParams?: Promise<{ [key: string]: string | string[] | undefined }>
+}
+
+export default function ContactPage({ params, searchParams }: ContactPageProps) {
+  use(params)
+  use(searchParams ?? Promise.resolve({}))
   const language = useLanguage()
   const t = translations[language].contact
   const cta = getCtaButtonText(language)
@@ -104,8 +109,6 @@ export default function ContactPage() {
 
   return (
     <main>
-      <Navigation />
-      
       {/* Hero Section */}
       <section className="relative isolate min-h-screen flex items-center pt-16 sm:pt-20 overflow-hidden bg-gradient-mesh">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-20 relative z-10">
@@ -490,8 +493,6 @@ export default function ContactPage() {
           </a>
         </div>
       </AnimatedSection>
-
-      <Footer />
     </main>
   )
 }

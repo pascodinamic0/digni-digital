@@ -1,10 +1,8 @@
 'use client'
 
-import { useState, useRef, useEffect } from 'react'
+import { use, useState, useRef, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Link } from '@/i18n/navigation'
-import Navigation from '@/app/components/Navigation'
-import Footer from '@/app/components/Footer'
 import AnimatedSection from '@/app/components/AnimatedSection'
 import VideoModal from '@/app/components/VideoModal'
 import VideoThumbnail from '@/app/components/VideoThumbnail'
@@ -14,7 +12,14 @@ import { ctaConfig, getBookingLinkProps } from '@/app/config/cta.config'
 import { useLanguage } from '@/app/context/LocaleContext'
 import { translations } from '@/app/config/translations'
 
-export default function FutureReadyGraduatePage() {
+type FutureReadyGraduatePageProps = {
+  params: Promise<{ locale: string }>
+  searchParams?: Promise<{ [key: string]: string | string[] | undefined }>
+}
+
+export default function FutureReadyGraduatePage({ params, searchParams }: FutureReadyGraduatePageProps) {
+  use(params)
+  use(searchParams ?? Promise.resolve({}))
   const [selectedVideo, setSelectedVideo] = useState<{ src: string; title: string; speaker: string; description: string } | null>(null)
   const [earlyAccessOpen, setEarlyAccessOpen] = useState(false)
   const skillsScrollRef = useRef<HTMLDivElement>(null)
@@ -222,8 +227,6 @@ export default function FutureReadyGraduatePage() {
 
   return (
     <main>
-      <Navigation />
-      
       {/* Hero Section */}
       <section className="relative isolate min-h-screen flex items-center pt-16 sm:pt-20 overflow-hidden bg-gradient-mesh">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-20 relative z-10">
@@ -1243,8 +1246,6 @@ export default function FutureReadyGraduatePage() {
           description={`${selectedVideo.speaker}: ${selectedVideo.description}`}
         />
       )}
-
-      <Footer />
     </main>
   )
 }

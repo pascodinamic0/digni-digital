@@ -12,14 +12,6 @@ interface DemoPresentationDownloadProps {
   label?: string
 }
 
-const langFlags: Record<string, string> = {
-  en: '🇬🇧',
-  fr: '🇫🇷',
-  ar: '🇸🇦',
-  de: '🇩🇪',
-  es: '🇪🇸',
-}
-
 export default function DemoPresentationDownload({
   service,
   variant = 'hero',
@@ -28,7 +20,6 @@ export default function DemoPresentationDownload({
   const language = useLanguage()
   const pdfs = downloadsConfig[service]
   const href = getDownloadUrl(pdfs, language)
-  const flag = langFlags[language] ?? langFlags.en
   const displayLabel = label ?? translations[language].download.demoPresentation
 
   if (variant === 'hero') {
@@ -41,7 +32,6 @@ export default function DemoPresentationDownload({
         className="btn-secondary text-sm sm:text-base md:text-lg px-6 sm:px-8 py-3 sm:py-4 w-full sm:w-auto text-center inline-flex items-center justify-center gap-2"
         aria-label="Download demo presentation"
       >
-        <span aria-hidden>{flag}</span>
         {displayLabel}
       </a>
     )
@@ -56,7 +46,6 @@ export default function DemoPresentationDownload({
       className="btn-secondary text-sm py-2 px-4 inline-flex items-center gap-2"
       aria-label="Download demo presentation"
     >
-      <span aria-hidden>{flag}</span>
       {displayLabel}
     </a>
   )

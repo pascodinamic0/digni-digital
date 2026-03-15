@@ -6,6 +6,8 @@ import { headers } from 'next/headers'
 import '../globals.css'
 import { routing } from '@/i18n/routing'
 import { LocaleProvider } from '../context/LocaleContext'
+import Navigation from '@/app/components/Navigation'
+import Footer from '@/app/components/Footer'
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://digni-digital-llc.com'
 
@@ -65,7 +67,9 @@ export default async function LocaleLayout({ children, params }: Props) {
     <LocaleProvider locale={locale}>
       <NextIntlClientProvider messages={messages}>
         <div className="grain-overlay" />
+        <Navigation />
         {children}
+        <Footer />
       </NextIntlClientProvider>
     </LocaleProvider>
   )

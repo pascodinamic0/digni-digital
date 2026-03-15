@@ -31,6 +31,7 @@ export default function Footer() {
       { name: t.footer.aiEmployeeDemo, href: getDownloadUrl(downloadsConfig.aiEmployee, language) },
       { name: t.footer.ourMission, href: '/#our-mission' },
       { name: t.footer.whatWeFightFor, href: '/#what-were-fighting-for' },
+      { name: t.footer.our2026Commitment, href: '/#our-2026-commitment' },
     ],
     company: [
       { name: t.footer.aboutUs, href: '/about' },
