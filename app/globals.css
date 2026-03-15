@@ -51,13 +51,13 @@
   --purple-rgb: 168, 85, 247;
   --purple-light: #C084FC;
   
-  /* Border Colors - Dark Theme */
-  --border: rgba(255, 255, 255, 0.05);
-  --border-light: rgba(255, 255, 255, 0.1);
-  --border-medium: rgba(255, 255, 255, 0.2);
+  /* Border Colors - Dark Theme (clearly visible) */
+  --border: rgba(255, 255, 255, 0.18);
+  --border-light: rgba(255, 255, 255, 0.24);
+  --border-medium: rgba(255, 255, 255, 0.4);
   --border-foreground: rgba(255, 255, 255, 1);
-  --border-accent: rgba(var(--accent-rgb), 0.3);
-  --border-accent-light: rgba(var(--accent-rgb), 0.5);
+  --border-accent: rgba(var(--accent-rgb), 0.5);
+  --border-accent-light: rgba(var(--accent-rgb), 0.65);
   --ring: rgba(var(--accent-rgb), 0.5);
   
   /* Shadow Tokens */
@@ -114,13 +114,13 @@
   --muted-dark: #475569;
   --muted-foreground: #475569;
   
-  /* Border Colors - Light Theme */
-  --border: rgba(0, 0, 0, 0.05);
-  --border-light: rgba(0, 0, 0, 0.1);
-  --border-medium: rgba(0, 0, 0, 0.15);
+  /* Border Colors - Light Theme (clearly visible) */
+  --border: rgba(0, 0, 0, 0.16);
+  --border-light: rgba(0, 0, 0, 0.22);
+  --border-medium: rgba(0, 0, 0, 0.35);
   --border-foreground: rgba(0, 0, 0, 1);
-  --border-accent: rgba(var(--accent-rgb), 0.2);
-  --border-accent-light: rgba(var(--accent-rgb), 0.3);
+  --border-accent: rgba(var(--accent-rgb), 0.4);
+  --border-accent-light: rgba(var(--accent-rgb), 0.55);
   --on-accent: #FFFFFF;
   
   /* Shadows adjusted for light theme */
@@ -185,12 +185,6 @@
 }
 
 /* Light theme: transformation callout uses success/green for better visibility */
-[data-theme="light"] .transformation-callout {
-  background: linear-gradient(90deg, rgba(var(--success-rgb), 0.12), rgba(var(--success-rgb), 0.2), rgba(var(--success-rgb), 0.12)) !important;
-  border-color: rgba(var(--success-rgb), 0.4) !important;
-  box-shadow: 0 20px 40px rgba(var(--success-rgb), 0.2) !important;
-}
-
 * {
   box-sizing: border-box;
   padding: 0;
@@ -258,6 +252,39 @@ body {
   background-clip: text;
 }
 
+/* Section label: small ALL CAPS accent label above section headlines (NP-style) */
+.section-label {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+}
+
+/* Client logos section: stronger headline treatment */
+.client-logos-section .client-logos-headline {
+  letter-spacing: -0.03em;
+}
+.client-logos-section .client-logos-highlight {
+  background: linear-gradient(120deg, var(--text) 0%, var(--accent) 35%, var(--accent-light) 70%, var(--accent) 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.02em;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .client-logos-section .client-logos-highlight {
+    animation: gradient-text-shift 8s ease-in-out infinite;
+  }
+}
+@keyframes gradient-text-shift {
+  0%, 100% { background-position: 0% center; }
+  50% { background-position: 100% center; }
+}
+
 /* Gradient mesh background */
 .bg-gradient-mesh {
   background:
@@ -278,7 +305,7 @@ body {
 /* Card styles */
 .card {
   background: var(--surface);
-  border: 1px solid var(--border);
+  border: 2px solid var(--border);
   border-radius: var(--radius-lg);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   backdrop-filter: blur(8px);
@@ -294,7 +321,7 @@ body {
 .card-glass {
   background: rgba(var(--surface-rgb), 0.5);
   backdrop-filter: blur(20px);
-  border: 1px solid var(--border-light);
+  border: 2px solid var(--border-light);
   border-radius: var(--radius-lg);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -409,7 +436,7 @@ body {
   font-weight: 500;
   padding: 14px 28px;
   border-radius: var(--radius);
-  border: 1px solid var(--border-medium);
+  border: 2px solid var(--border-medium);
   transition: all 0.3s ease;
   display: inline-flex;
   align-items: center;
@@ -430,7 +457,7 @@ body {
   font-weight: 500;
   padding: 14px 28px;
   border-radius: var(--radius);
-  border: 1px solid var(--border-light);
+  border: 2px solid var(--border-light);
   transition: all 0.3s ease;
   text-decoration: none;
   display: inline-flex;
@@ -961,7 +988,7 @@ body {
 .section-badge {
   @apply inline-block px-4 py-2 rounded-full text-accent text-xs font-semibold uppercase tracking-wide mb-4;
   background-color: rgba(var(--accent-rgb), 0.1);
-  border: 1px solid rgba(var(--accent-rgb), 0.2);
+  border: 2px solid rgba(var(--accent-rgb), 0.35);
 }
 
 .section-title {

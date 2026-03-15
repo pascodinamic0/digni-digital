@@ -1,10 +1,10 @@
 'use client'
 
+import { useMemo } from 'react'
 import { motion } from 'framer-motion'
 import { Link } from '@/i18n/navigation'
 import {
   officeLocations,
-  OfficeLocation,
   formatFullAddress,
   getGoogleMapsUrl,
 } from '@/app/data/locations'
@@ -22,10 +22,17 @@ function countryShort(country: string): string {
 }
 
 export default function GlobalPresenceMap(_props: GlobalPresenceMapProps) {
+  const orderedLocations = useMemo(() => {
+    const primary = officeLocations.find((l) => l.isPrimary)
+    const others = officeLocations.filter((l) => !l.isPrimary)
+    if (!primary || others.length < 2) return officeLocations
+    return [others[0], primary, others[1]]
+  }, [])
+
   return (
     <div className="w-full">
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {officeLocations.map((location, i) => (
+        {orderedLocations.map((location, i) => (
           <motion.article
             key={location.id}
             initial={{ opacity: 0, y: 20 }}

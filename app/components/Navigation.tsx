@@ -8,6 +8,7 @@ import { useLanguage } from '@/app/context/LocaleContext'
 import { translations } from '@/app/config/translations'
 import ThemeToggle from './ThemeToggle'
 import LanguageToggler from './LanguageToggler'
+import Logo from './Logo'
 
 export default function Navigation() {
   const pathname = usePathname()
@@ -94,13 +95,7 @@ export default function Navigation() {
       >
         <div className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 relative flex items-center justify-center">
-              <div className="absolute w-5 h-7 bg-accent transform -skew-x-12 -translate-x-0.5 group-hover:skew-x-0 transition-transform duration-300 rounded-sm" style={{ opacity: 0.9 }} />
-              <div className="absolute w-5 h-7 bg-accent transform skew-x-12 translate-x-0.5 group-hover:skew-x-0 transition-transform duration-300 rounded-sm" style={{ opacity: 0.4 }} />
-            </div>
-            <span className="font-body font-semibold text-xl tracking-tight transition-colors duration-300 text-text">Digni Digital LLC</span>
-          </Link>
+          <Logo href="/" label="Digni Digital LLC" />
 
           <div className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (

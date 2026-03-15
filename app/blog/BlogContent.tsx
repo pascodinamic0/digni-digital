@@ -3,8 +3,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Link } from '@/i18n/navigation'
-import Navigation from '@/app/components/Navigation'
-import Footer from '@/app/components/Footer'
 import { getBookingLinkProps } from '@/app/config/cta.config'
 import { useLanguage } from '@/app/context/LocaleContext'
 import { translations } from '@/app/config/translations'
@@ -48,7 +46,6 @@ export default function BlogContent({ articlesByLang }: BlogContentProps) {
 
   return (
     <main className="min-h-screen bg-background">
-      <Navigation />
       
       {/* Simple Hero Section */}
       <section className="pt-24 pb-12 bg-surface">
@@ -313,8 +310,6 @@ export default function BlogContent({ articlesByLang }: BlogContentProps) {
           </div>
         </div>
       </section>
-
-      <Footer />
     </main>
   )
 }

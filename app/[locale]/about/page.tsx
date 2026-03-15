@@ -1,12 +1,11 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
+import { use, useState, useEffect, useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { Link } from '@/i18n/navigation'
 import Image from 'next/image'
-import Navigation from '@/app/components/Navigation'
-import Footer from '@/app/components/Footer'
 import AnimatedSection from '@/app/components/AnimatedSection'
+import SectionBlock from '@/app/components/SectionBlock'
 import ScrollIndicator from '@/app/components/ScrollIndicator'
 import StorybookModal from '@/app/components/StorybookModal'
 import ClientLogos from '@/app/components/ClientLogos'
@@ -46,17 +45,26 @@ function Counter({ end, suffix = '' }: { end: number; suffix?: string }) {
   )
 }
 
-export default function AboutPage() {
+type AboutPageProps = {
+  params: Promise<{ locale: string }>
+  searchParams?: Promise<{ [key: string]: string | string[] | undefined }>
+}
+
+export default function AboutPage({ params, searchParams }: AboutPageProps) {
+  use(params)
+  use(searchParams ?? Promise.resolve({}))
   const [storybookOpen, setStorybookOpen] = useState(false)
   const language = useLanguage()
   const t = translations[language].about
   const cta = getCtaButtonText(language)
 
   const stats = [
-    { value: 8, suffix: '+', label: t.statYears },
+    { value: 6, suffix: '+', label: t.statYears },
     { value: 500, suffix: '+', label: t.statStudents },
     { value: 10, suffix: 'k+', label: t.statLeads },
     { value: 98, suffix: '%', label: t.statSatisfaction },
+    { value: 100, suffix: '', label: t.statEmployed },
+    { value: 10000, suffix: '', label: t.statSkilled },
   ]
 
   const timeline = [
@@ -67,7 +75,7 @@ export default function AboutPage() {
     { year: '2023', title: 'SaaS', description: 'First product launched.' },
     { year: '2024', title: 'Growth Systems', description: 'Full infrastructure agency.' },
     { year: '2025', title: 'AI', description: 'AI solutions. ProposalAgent.' },
-    { year: '2026', title: '150+ Clients', description: 'Market leader.' }
+    { year: '2026', title: t.timeline2026Title, description: t.timeline2026Description }
   ]
 
   const differentiators = [
@@ -79,8 +87,6 @@ export default function AboutPage() {
 
   return (
     <main>
-      <Navigation />
-      
       <section className="relative isolate min-h-screen flex items-center pt-16 sm:pt-20 overflow-hidden bg-gradient-mesh">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-20 relative z-10">
           <motion.div
@@ -116,7 +122,7 @@ export default function AboutPage() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
             {stats.map((stat, i) => (
               <motion.div
                 key={i}
@@ -136,48 +142,69 @@ export default function AboutPage() {
         </div>
       </AnimatedSection>
 
-      <AnimatedSection className="py-24 bg-surface">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <h2 className="font-display text-4xl md:text-5xl font-bold mb-8">
-                {t.ourStoryTitle}
-              </h2>
-              <div className="space-y-6 text-muted leading-relaxed">
-                <p>{t.storyP1}</p>
-                <p dangerouslySetInnerHTML={{ __html: t.storyP2 }} />
-                <p>{t.storyP3}</p>
+      <AnimatedSection className="py-24 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-surface via-background to-surface opacity-80" />
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <div className="text-center mb-14">
+            <span className="section-label">{t.storyBadge}</span>
+            <h2 className="font-display text-4xl md:text-5xl font-bold mt-3 text-text">
+              {t.ourStoryTitle}
+            </h2>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+            {/* Story card with accent border */}
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="relative rounded-2xl border border-border bg-surface/80 backdrop-blur-sm p-8 md:p-10 shadow-sm hover:shadow-md hover:border-accent/30 transition-all duration-300"
+            >
+              <div className="absolute left-0 top-8 bottom-8 w-1 bg-gradient-to-b from-accent/60 to-accent/20 rounded-full" />
+              <div className="pl-6 space-y-6">
+                <p className="text-text/90 leading-relaxed text-lg">
+                  {t.storyP1}
+                </p>
+                <div className="text-muted leading-relaxed" dangerouslySetInnerHTML={{ __html: t.storyP2 }} />
+                <p className="text-muted leading-relaxed">
+                  {t.storyP3}
+                </p>
                 <button
                   onClick={() => setStorybookOpen(true)}
-                  className="mt-8 btn-primary inline-flex items-center gap-2"
+                  className="mt-6 btn-primary inline-flex items-center gap-2 group"
                 >
                   <span>{t.takeTheJourney}</span>
-                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
                 </button>
               </div>
-            </div>
-            
-            <div className="space-y-6">
-              {timeline.map((item, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, x: 50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                  className="flex gap-4"
-                >
-                  <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center flex-shrink-0">
-                    <span className="font-display font-bold text-accent">{item.year}</span>
-                  </div>
-                  <div>
-                    <h4 className="font-display font-bold mb-2">{item.title}</h4>
-                    <p className="text-muted text-sm">{item.description}</p>
-                  </div>
-                </motion.div>
-              ))}
+            </motion.div>
+
+            {/* Timeline with vertical line */}
+            <div className="relative pl-10 md:pl-12">
+              <div className="absolute left-5 top-2 bottom-2 w-px bg-gradient-to-b from-accent/40 via-accent/20 to-transparent" />
+              <div className="space-y-0">
+                {timeline.map((item, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, x: 20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.08, duration: 0.4 }}
+                    className="relative flex gap-5 pb-8 last:pb-0"
+                  >
+                    <div className="absolute left-[-2.25rem] md:left-[-2.75rem] top-0.5 w-10 h-10 rounded-full bg-background border-2 border-accent/50 flex items-center justify-center flex-shrink-0 shadow-sm z-10">
+                      <span className="font-display font-bold text-accent text-sm">{item.year}</span>
+                    </div>
+                    <div className="flex-1 min-w-0 pt-0.5">
+                      <h4 className="font-display font-bold text-text mb-1">{item.title}</h4>
+                      <p className="text-muted text-sm leading-relaxed">{item.description}</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -185,18 +212,18 @@ export default function AboutPage() {
 
       <StorybookModal isOpen={storybookOpen} onClose={() => setStorybookOpen(false)} />
 
-      <ClientLogos badge={t.trustedByBadge} title={t.trustedByTitle} />
+      <ClientLogos badge={t.trustedByBadge} title={t.trustedByTitle} subtitle={t.trustedBySubtitle} />
 
       <AnimatedSection className="py-24">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">
-              {t.approachTitle}
-            </h2>
-            <p className="text-muted text-lg">{t.approachSubtitle}</p>
-          </div>
-          
-          <div className="grid lg:grid-cols-3 gap-12">
+          <SectionBlock
+            label={translations[language].sectionLabels?.ourApproach}
+            title={t.approachTitle}
+            titleClassName="mb-6"
+            className="mb-16"
+          >
+            <p className="text-center text-lg mb-12">{t.approachSubtitle}</p>
+            <div className="grid lg:grid-cols-3 gap-12 text-left">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -255,7 +282,8 @@ export default function AboutPage() {
                 <li>• {t.optimizeBullet4}</li>
               </ul>
             </motion.div>
-          </div>
+            </div>
+          </SectionBlock>
         </div>
       </AnimatedSection>
 
@@ -410,8 +438,6 @@ export default function AboutPage() {
           </a>
         </div>
       </AnimatedSection>
-
-      <Footer />
     </main>
   )
 }

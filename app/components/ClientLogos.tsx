@@ -33,7 +33,7 @@ export default function ClientLogos({
         className="flex-shrink-0 px-6 md:px-8 flex items-center justify-center"
       >
         <div
-          className="relative grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300"
+          className="relative grayscale opacity-70 transition-opacity duration-300"
           style={{ width: w, height: h, minWidth: w, minHeight: h }}
         >
           <Image
@@ -50,25 +50,22 @@ export default function ClientLogos({
   }
 
   return (
-    <section className="pt-40 md:pt-52 lg:pt-64 pb-20 overflow-hidden bg-surface/30">
+    <section className="client-logos-section pt-40 md:pt-52 lg:pt-64 pb-20 overflow-hidden bg-surface/30">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-12 md:mb-16">
-          <span className="inline-block px-4 py-2 bg-accent/10 border border-accent/20 rounded-full text-accent text-xs font-semibold uppercase tracking-wider mb-6">
-            {badge}
-          </span>
-          <h3 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-text leading-tight">
+          <span className="section-label block mb-6">{badge}</span>
+          <h3 className="client-logos-headline font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-text leading-tight tracking-tight">
             {titleHighlight ? (
               <>
-                {title}
-                <br />
-                <span className="gradient-text">{titleHighlight}</span>
+                <span className="block text-text/90">{title}</span>
+                <span className="gradient-text client-logos-highlight block mt-1">{titleHighlight}</span>
               </>
             ) : (
-              <span className="gradient-text">{title}</span>
+              <span className="gradient-text client-logos-highlight">{title}</span>
             )}
           </h3>
           {subtitle && (
-            <p className="text-muted text-base md:text-lg max-w-2xl mx-auto">{subtitle}</p>
+            <p className="text-muted text-base md:text-lg max-w-2xl mx-auto font-medium">{subtitle}</p>
           )}
         </div>
 

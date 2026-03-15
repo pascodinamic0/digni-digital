@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { Link } from '@/i18n/navigation'
 import ThemeToggle from './ThemeToggle'
+import Logo from './Logo'
 import { getCtaButtonText, getBookingLinkProps } from '@/app/config/cta.config'
 import { useLanguage } from '@/app/context/LocaleContext'
 
@@ -19,13 +20,7 @@ export default function SimpleNavigation() {
     >
       <div className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <Link href="/ai-receptionist" className="flex items-center gap-3 group cursor-pointer">
-            <div className="w-10 h-10 relative flex items-center justify-center">
-              <div className="absolute w-5 h-7 bg-accent transform -skew-x-12 -translate-x-0.5 group-hover:skew-x-0 transition-transform duration-300 rounded-sm" style={{ opacity: 0.9 }} />
-              <div className="absolute w-5 h-7 bg-accent transform skew-x-12 translate-x-0.5 group-hover:skew-x-0 transition-transform duration-300 rounded-sm" style={{ opacity: 0.4 }} />
-            </div>
-            <span className="font-display font-semibold text-xl text-text">System</span>
-          </Link>
+          <Logo href="/ai-receptionist" label="System" />
 
           <div className="hidden md:flex items-center gap-8">
             <Link href="/case-studies" className="text-muted hover:text-accent transition-colors text-sm font-medium">

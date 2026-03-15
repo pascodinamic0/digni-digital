@@ -1,14 +1,20 @@
 'use client'
 
+import { use } from 'react'
 import { motion } from 'framer-motion'
 import { Link } from '@/i18n/navigation'
-import Navigation from '@/app/components/Navigation'
-import Footer from '@/app/components/Footer'
 import AnimatedSection from '@/app/components/AnimatedSection'
 import { getCtaButtonText, getBookingLinkProps } from '@/app/config/cta.config'
 import { useLanguage } from '@/app/context/LocaleContext'
 
-export default function AgenticSoftwaresPage() {
+type AgenticSoftwaresPageProps = {
+  params: Promise<{ locale: string }>
+  searchParams?: Promise<{ [key: string]: string | string[] | undefined }>
+}
+
+export default function AgenticSoftwaresPage({ params, searchParams }: AgenticSoftwaresPageProps) {
+  use(params)
+  use(searchParams ?? Promise.resolve({}))
   const language = useLanguage()
   const cta = getCtaButtonText(language)
   const ourApps = [
@@ -159,8 +165,6 @@ export default function AgenticSoftwaresPage() {
 
   return (
     <main>
-      <Navigation />
-      
       {/* Hero Section */}
       <section className="relative isolate min-h-screen flex items-center pt-16 sm:pt-20 overflow-hidden bg-gradient-mesh">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-20 relative z-10">
@@ -586,8 +590,6 @@ export default function AgenticSoftwaresPage() {
           </div>
         </div>
       </AnimatedSection>
-
-      <Footer />
     </main>
   )
 }

@@ -1,11 +1,10 @@
 'use client'
 
+import { use } from 'react'
 import { motion } from 'framer-motion'
 import { Link } from '@/i18n/navigation'
-import Navigation from '@/app/components/Navigation'
 import { useLanguage } from '@/app/context/LocaleContext'
 import { getCtaButtonText, getBookingLinkProps } from '@/app/config/cta.config'
-import Footer from '@/app/components/Footer'
 import AnimatedSection from '@/app/components/AnimatedSection'
 import ClientJourneyDemo from '@/app/components/ClientJourneyDemo'
 import ConversationMockups from '@/app/components/ConversationMockups'
@@ -13,6 +12,11 @@ import UnifiedInbox from '@/app/components/UnifiedInbox'
 import BusinessTimeline from '@/app/components/BusinessTimeline'
 import DemoPresentationDownload from '@/app/components/DemoPresentationDownload'
 import { useTheme } from '@/app/components/ThemeProvider'
+type AIReceptionistPageProps = {
+  params: Promise<{ locale: string }>
+  searchParams?: Promise<{ [key: string]: string | string[] | undefined }>
+}
+
 function AIEmployeeCTASection() {
   const { theme } = useTheme()
   return (
@@ -89,7 +93,9 @@ function AIEmployeeCTASection() {
   )
 }
 
-export default function AIReceptionistPage() {
+export default function AIReceptionistPage({ params, searchParams }: AIReceptionistPageProps) {
+  use(params)
+  use(searchParams ?? Promise.resolve({}))
   const language = useLanguage()
   const cta = getCtaButtonText(language)
   const capabilities = [
@@ -221,7 +227,6 @@ export default function AIReceptionistPage() {
 
   return (
     <main>
-      <Navigation />
       
       {/* Hero Section */}
       <section className="relative isolate min-h-screen flex items-center pt-16 sm:pt-20 overflow-hidden bg-gradient-mesh">
@@ -373,9 +378,7 @@ export default function AIReceptionistPage() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            animate={{ scale: [1, 1.02, 1] }}
-            transition={{ duration: 2.5, repeat: Infinity, repeatType: 'reverse' }}
-            className="transformation-callout text-center p-8 rounded-2xl bg-gradient-to-r from-accent/10 via-accent/20 to-accent/10 border-2 border-accent/40 shadow-xl shadow-accent/20"
+            className="text-center p-6 rounded-lg border border-accent/20 bg-accent/5"
           >
             <p className="text-text text-xl font-display font-semibold mb-2">
               Sleep. Wake. Calendar full. That&apos;s the system.
@@ -601,7 +604,7 @@ export default function AIReceptionistPage() {
                   <h3 className="font-display text-2xl font-bold text-success">Who This Is For</h3>
                 </div>
                 
-                <ul className="space-y-4 w-full">
+                <ul className="space-y-3 w-full flex flex-col items-center">
                   {[
                     ['📱', 'Running Facebook, Instagram, or WhatsApp ads'],
                     ['💰', 'Selling $500+ per transaction'],
@@ -616,7 +619,7 @@ export default function AIReceptionistPage() {
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
                       transition={{ delay: 0.3 + i * 0.05 }}
-                      className="flex items-center gap-3"
+                      className="flex items-center justify-center gap-3 w-full max-w-sm rounded-xl bg-success/5 border border-success/10 px-4 py-3 text-left"
                     >
                       <span className="text-xl flex-shrink-0">{emoji}</span>
                       <span className="text-muted text-sm leading-relaxed">{item}</span>
@@ -647,14 +650,14 @@ export default function AIReceptionistPage() {
                   <h3 className="font-display text-2xl font-bold text-destructive">Not The Right Fit</h3>
                 </div>
                 
-                <ul className="space-y-4 w-full">
+                <ul className="space-y-3 w-full flex flex-col items-center">
                   {[
                     ['🚫', 'No paid ads'],
                     ['📦', 'Products under $100'],
                     ['❌', 'No appointments needed'],
-                    ['✅', 'Already capturing 100% of leads'],
+                    ['✅', 'Lead response isn’t a bottleneck'],
                     ['📊', 'Need ad strategy, not intake'],
-                    ['🔧', 'Want to self-manage software']
+                    ['🔧', 'Only want software, not managed intake']
                   ].map(([emoji, item], i) => (
                     <motion.li
                       key={i}
@@ -662,7 +665,7 @@ export default function AIReceptionistPage() {
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
                       transition={{ delay: 0.4 + i * 0.05 }}
-                      className="flex items-center gap-3"
+                      className="flex items-center justify-center gap-3 w-full max-w-sm rounded-xl bg-destructive/5 border border-destructive/10 px-4 py-3 text-left"
                     >
                       <span className="text-xl flex-shrink-0">{emoji}</span>
                       <span className="text-muted text-sm leading-relaxed">{item}</span>
@@ -835,8 +838,6 @@ export default function AIReceptionistPage() {
           </motion.div>
         </div>
       </AnimatedSection>
-
-      <Footer />
     </main>
   )
 }

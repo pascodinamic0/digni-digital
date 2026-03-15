@@ -442,8 +442,9 @@ const ClientJourneyDemo = () => {
           </motion.div>
         </div>
 
-        {/* Desktop: Side-by-side, scaled down so the block is smaller without affecting inner sections */}
-        <div className="hidden lg:block origin-top -mt-6">
+        {/* Desktop: Side-by-side, scaled down so the block is smaller without affecting inner sections.
+            scale-[0.72] only affects paint; layout still reserves full height. Compensate with negative margin (~28% of content height). */}
+        <div className="hidden lg:block origin-top -mt-6 -mb-[200px]">
           <motion.div
             className="grid grid-cols-2 gap-6 xl:gap-8 scale-[0.72]"
             initial={{ opacity: 0 }}
