@@ -135,7 +135,7 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
     },
     {
       name: 'Guided Learning',
-      price: '$25',
+      price: '$49',
       period: ' one-time',
       description: 'Digital skills. Personalized to your talents. Learn anywhere. Earn online.',
       audience: 'everyone',
