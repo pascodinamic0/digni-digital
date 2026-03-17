@@ -58,7 +58,7 @@ export async function POST(request: Request) {
       <p><strong>Why join:</strong></p>
       <p>${escapeHtml(whyJoin).replace(/\n/g, '<br>')}</p>
       <p><strong>Ready to commit 3 days/week for 1 month:</strong> ${escapeHtml(commitReady)}</p>
-      <p><strong>Agrees to paid program ($25/month):</strong> ${escapeHtml(paidProgram)}</p>
+      <p><strong>Agrees to paid program ($49/month):</strong> ${escapeHtml(paidProgram)}</p>
       <hr>
       <p style="color:#666;font-size:12px;">Sent from Digni Digital Early Access form</p>
     `
