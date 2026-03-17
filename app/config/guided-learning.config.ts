@@ -1,10 +1,14 @@
 /**
  * Guided Learning (Early Access) Program Configuration
- * Payment and WhatsApp contact for $25 enrollment
+ * Payment and WhatsApp contact for $49 enrollment
  */
 
 export const guidedLearningConfig = {
-  /** Phone number to receive $25 payment (Vodacom Mpesa) */
+  /** Vodacom Mpesa number for $49 payment */
+  vodacomPhoneNumber: '+243822378097',
+  /** Airtel Money number for $49 payment */
+  airtelPhoneNumber: '+243984469371',
+  /** @deprecated Use vodacomPhoneNumber */
   paymentPhoneNumber: '+243822378097',
   /** WhatsApp click-to-chat URL (same as contact page) */
   whatsappUrl: 'https://wa.me/254702593518',

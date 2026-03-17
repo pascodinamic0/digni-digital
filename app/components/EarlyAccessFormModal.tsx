@@ -34,6 +34,8 @@ const FORM_TRANSLATIONS: Record<Language, {
   // Payment flow
   nextSteps: string
   step1: string
+  step1Airtel: string
+  step1Vodacom: string
   step2: string
   step3: string
   step4: string
@@ -52,7 +54,7 @@ const FORM_TRANSLATIONS: Record<Language, {
     commitReady: 'Are you ready to commit 3 days/week for 1 month?',
     commitReadyYes: 'Yes',
     commitReadyNo: 'No',
-    paidProgram: 'I understand and agree this is a paid program ($25/month after completion) to remain part of the community and get access to info faster than anyone else.',
+    paidProgram: 'I understand and agree this is a paid program ($49/month after completion) to remain part of the community and get access to info faster than anyone else.',
     paidProgramYes: 'Yes, I agree',
     paidProgramNo: 'No',
     submit: 'Submit',
@@ -62,12 +64,14 @@ const FORM_TRANSLATIONS: Record<Language, {
     error: 'Something went wrong. Please try again.',
     close: 'Cancel',
     nextSteps: 'Next steps',
-    step1: 'Send $25 to our Vodacom Mpesa number. The name will show Pascal Digny Djohodo',
+    step1: 'Send $49 to our Vodacom Mpesa number.',
+    step1Airtel: 'Send $49 to our Airtel Money number.',
+    step1Vodacom: 'Send $49 to our Vodacom Mpesa number.',
     step2: 'Take a screenshot of your payment',
     step3: 'Click the button below to open WhatsApp and send us the screenshot',
     step4: 'We\'ll add you to the community group immediately',
     sendToWhatsApp: 'Send screenshot on WhatsApp',
-    whatsappMessage: 'Hi! I just completed the Guided Learning Early Access form. I\'ve sent $25. Please find my payment screenshot attached. I\'m ready to join the community!',
+    whatsappMessage: 'Hi! I just completed the Guided Learning Early Access form. I\'ve sent $49. Please find my payment screenshot attached. I\'m ready to join the community!',
     spotFullyBookedNote: 'Your spot is fully booked only after you send the payment screenshot to the WhatsApp above.',
   },
   fr: {
@@ -91,7 +95,9 @@ const FORM_TRANSLATIONS: Record<Language, {
     error: 'Une erreur s\'est produite. Veuillez réessayer.',
     close: 'Annuler',
     nextSteps: 'Prochaines étapes',
-    step1: 'Envoyez 25 $ à notre numéro Vodacom Mpesa. Le nom affiché sera Pascal Digny Djohodo',
+    step1: 'Envoyez 49 $ à notre numéro Vodacom Mpesa.',
+    step1Airtel: 'Envoyez 49 $ à notre numéro Airtel Money.',
+    step1Vodacom: 'Envoyez 49 $ à notre numéro Vodacom Mpesa.',
     step2: 'Prenez une capture d\'écran de votre paiement',
     step3: 'Cliquez sur le bouton ci-dessous pour ouvrir WhatsApp et nous envoyer la capture',
     step4: 'Nous vous ajouterons au groupe communautaire immédiatement',
@@ -120,7 +126,9 @@ const FORM_TRANSLATIONS: Record<Language, {
     error: 'حدث خطأ. يرجى المحاولة مرة أخرى.',
     close: 'إلغاء',
     nextSteps: 'الخطوات التالية',
-    step1: 'أرسل 25 دولاراً إلى رقم Vodacom Mpesa. الاسم المعروض سيكون Pascal Digny Djohodo',
+    step1: 'أرسل 49 دولاراً إلى رقم Vodacom Mpesa.',
+    step1Airtel: 'أرسل 49 دولاراً إلى رقم Airtel Money.',
+    step1Vodacom: 'أرسل 49 دولاراً إلى رقم Vodacom Mpesa.',
     step2: 'التقط لقطة شاشة للدفع',
     step3: 'انقر على الزر أدناه لفتح واتساب وإرسال اللقطة إلينا',
     step4: 'سنضيفك إلى مجموعة المجتمع فوراً',
@@ -149,7 +157,9 @@ const FORM_TRANSLATIONS: Record<Language, {
     error: 'Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut.',
     close: 'Abbrechen',
     nextSteps: 'Nächste Schritte',
-    step1: 'Senden Sie 25 $ an unsere Vodacom Mpesa-Nummer. Der angezeigte Name ist Pascal Digny Djohodo',
+    step1: 'Senden Sie 49 $ an unsere Vodacom Mpesa-Nummer.',
+    step1Airtel: 'Senden Sie 49 $ an unsere Airtel Money-Nummer.',
+    step1Vodacom: 'Senden Sie 49 $ an unsere Vodacom Mpesa-Nummer.',
     step2: 'Machen Sie einen Screenshot Ihrer Zahlung',
     step3: 'Klicken Sie auf die Schaltfläche unten, um WhatsApp zu öffnen und uns den Screenshot zu senden',
     step4: 'Wir fügen Sie sofort zur Community-Gruppe hinzu',
@@ -168,7 +178,7 @@ const FORM_TRANSLATIONS: Record<Language, {
     commitReady: '¿Estás dispuesto a comprometerte 3 días/semana durante 1 mes?',
     commitReadyYes: 'Sí',
     commitReadyNo: 'No',
-    paidProgram: 'Entiendo y acepto que es un programa de pago ($25/mes tras completarlo) para permanecer en la comunidad y acceder a la información más rápido que nadie.',
+    paidProgram: 'Entiendo y acepto que es un programa de pago ($49/mes tras completarlo) para permanecer en la comunidad y acceder a la información más rápido que nadie.',
     paidProgramYes: 'Sí, acepto',
     paidProgramNo: 'No',
     submit: 'Enviar',
@@ -178,12 +188,14 @@ const FORM_TRANSLATIONS: Record<Language, {
     error: 'Algo salió mal. Por favor, inténtalo de nuevo.',
     close: 'Cancelar',
     nextSteps: 'Próximos pasos',
-    step1: 'Envía $25 a nuestro número Vodacom Mpesa. El nombre que aparecerá es Pascal Digny Djohodo',
+    step1: 'Envía $49 a nuestro número Vodacom Mpesa.',
+    step1Airtel: 'Envía $49 a nuestro número Airtel Money.',
+    step1Vodacom: 'Envía $49 a nuestro número Vodacom Mpesa.',
     step2: 'Toma una captura de pantalla de tu pago',
     step3: 'Haz clic en el botón de abajo para abrir WhatsApp y enviarnos la captura',
     step4: 'Te añadiremos al grupo de la comunidad inmediatamente',
     sendToWhatsApp: 'Enviar captura por WhatsApp',
-    whatsappMessage: '¡Hola! Acabo de completar el formulario de Early Access de Guided Learning. He enviado $25. Por favor, encuentra mi captura de pantalla del pago adjunta. ¡Estoy listo para unirme a la comunidad!',
+    whatsappMessage: '¡Hola! Acabo de completar el formulario de Early Access de Guided Learning. He enviado $49. Por favor, encuentra mi captura de pantalla del pago adjunta. ¡Estoy listo para unirme a la comunidad!',
     spotFullyBookedNote: 'Tu plaza queda totalmente reservada solo después de enviar la captura del pago al WhatsApp de arriba.',
   },
 }
@@ -193,6 +205,7 @@ export default function EarlyAccessFormModal({ isOpen, onClose }: EarlyAccessFor
   const t = FORM_TRANSLATIONS[language] || FORM_TRANSLATIONS.en
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
   const [errorMsg, setErrorMsg] = useState<string | null>(null)
+  const [paymentMethod, setPaymentMethod] = useState<'airtel' | 'vodacom'>('vodacom')
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -310,7 +323,6 @@ export default function EarlyAccessFormModal({ isOpen, onClose }: EarlyAccessFor
                 <h2 className="font-display text-xl sm:text-2xl font-bold text-text">
                   {t.title}
                 </h2>
-                <p className="text-muted text-sm mt-1">Pascal Digny Djohodo</p>
               </div>
               <button
                 onClick={onClose}
@@ -334,10 +346,44 @@ export default function EarlyAccessFormModal({ isOpen, onClose }: EarlyAccessFor
                 <p className="text-muted text-sm text-center mb-6">{t.successMessage}</p>
 
                 <h4 className="font-display font-semibold text-sm text-text mb-3">{t.nextSteps}</h4>
+                <div className="flex gap-2 mb-4">
+                  <button
+                    type="button"
+                    onClick={() => setPaymentMethod('airtel')}
+                    className={`flex-1 py-2.5 px-4 rounded-lg text-sm font-medium transition-colors border ${
+                      paymentMethod === 'airtel'
+                        ? 'bg-accent text-white border-accent'
+                        : 'bg-background border-border text-muted hover:border-accent/50 hover:text-text'
+                    }`}
+                  >
+                    Airtel Money
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setPaymentMethod('vodacom')}
+                    className={`flex-1 py-2.5 px-4 rounded-lg text-sm font-medium transition-colors border ${
+                      paymentMethod === 'vodacom'
+                        ? 'bg-accent text-white border-accent'
+                        : 'bg-background border-border text-muted hover:border-accent/50 hover:text-text'
+                    }`}
+                  >
+                    Vodacom Mpesa
+                  </button>
+                </div>
                 <ol className="space-y-3 mb-6 text-sm text-muted">
                   <li className="flex gap-3">
                     <span className="flex-shrink-0 w-6 h-6 rounded-full bg-accent/20 text-accent flex items-center justify-center text-xs font-bold">1</span>
-                    <span><strong className="text-text">{t.step1}</strong> <a href={`tel:${guidedLearningConfig.paymentPhoneNumber.replace(/\s/g, '')}`} className="text-accent hover:underline font-mono">{guidedLearningConfig.paymentPhoneNumber}</a></span>
+                    <span>
+                      <strong className="text-text">
+                        {paymentMethod === 'airtel' ? t.step1Airtel : t.step1Vodacom}
+                      </strong>{' '}
+                      <a
+                        href={`tel:${(paymentMethod === 'airtel' ? guidedLearningConfig.airtelPhoneNumber : guidedLearningConfig.vodacomPhoneNumber).replace(/\s/g, '')}`}
+                        className="text-accent hover:underline font-mono"
+                      >
+                        {paymentMethod === 'airtel' ? guidedLearningConfig.airtelPhoneNumber : guidedLearningConfig.vodacomPhoneNumber}
+                      </a>
+                    </span>
                   </li>
                   <li className="flex gap-3">
                     <span className="flex-shrink-0 w-6 h-6 rounded-full bg-accent/20 text-accent flex items-center justify-center text-xs font-bold">2</span>
