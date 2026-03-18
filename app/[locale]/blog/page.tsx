@@ -11,7 +11,7 @@ const blogMetaByLang: Record<string, { title: string; description: string }> = {
   },
   fr: {
     title: 'Transformation Digitale - Insights | Blog Digni Digital',
-    description: 'Expertises sur les systèmes employés IA, le programme Future Pre et le développement SaaS sur mesure.',
+    description: 'Expertises sur les systèmes employés IA, le Programme Diplômé Prêt pour l'Avenir et le développement SaaS sur mesure.',
   },
   de: {
     title: 'KI-Mitarbeiter, Future-Ready Graduate Program & SaaS | Digni Digital Blog',
