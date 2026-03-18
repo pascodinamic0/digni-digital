@@ -6,6 +6,7 @@ import { headers } from 'next/headers'
 import '../globals.css'
 import { routing } from '@/i18n/routing'
 import { LocaleProvider } from '../context/LocaleContext'
+import LocaleKeyedContent from '@/app/components/LocaleKeyedContent'
 import Navigation from '@/app/components/Navigation'
 import Footer from '@/app/components/Footer'
 
@@ -65,10 +66,10 @@ export default async function LocaleLayout({ children, params }: Props) {
 
   return (
     <LocaleProvider locale={locale}>
-      <NextIntlClientProvider messages={messages}>
+      <NextIntlClientProvider messages={messages} locale={locale}>
         <div className="grain-overlay" />
         <Navigation />
-        {children}
+        <LocaleKeyedContent locale={locale}>{children}</LocaleKeyedContent>
         <Footer />
       </NextIntlClientProvider>
     </LocaleProvider>

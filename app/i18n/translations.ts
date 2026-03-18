@@ -8,6 +8,9 @@ export type Language = 'en' | 'fr' | 'ar' | 'de' | 'es'
 type HomeTranslations = {
   hero: {
     badge: string
+    badge1: string
+    badge2: string
+    badge3: string
     title: string
     titleHighlight: string
     subtitle: string
@@ -709,6 +712,9 @@ function buildTranslations(): Record<Language, TranslationKeys> {
   const homeEn: HomeTranslations = {
     hero: {
       badge: 'Digital Transformation Agency',
+      badge1: 'Digital Transformation Agency',
+      badge2: 'Business Development Agency',
+      badge3: 'AI Automation Startup',
       title: 'We Close the Gaps. ',
       titleHighlight: 'You Get the Results.',
       subtitle: 'Lost leads. Untapped talent. Ideas on the shelf. We help you turn them into what matters.',
@@ -892,6 +898,9 @@ function buildTranslations(): Record<Language, TranslationKeys> {
   const homeFr: HomeTranslations = {
     hero: {
       badge: 'Agence de Transformation Digitale',
+      badge1: 'Agence de Transformation Digitale',
+      badge2: 'Agence de Développement d\'Affaires',
+      badge3: 'Startup d\'Automatisation IA',
       title: 'Nous fermons les écarts. ',
       titleHighlight: 'Vous obtenez les résultats.',
       subtitle: 'Prospects perdus. Talents inexploités. Idées en attente. Nous vous aidons à les transformer en ce qui compte.',
@@ -1074,6 +1083,9 @@ function buildTranslations(): Record<Language, TranslationKeys> {
   const homeAr: HomeTranslations = {
     hero: {
       badge: 'وكالة التحول الرقمي',
+      badge1: 'وكالة التحول الرقمي',
+      badge2: 'وكالة تطوير الأعمال',
+      badge3: 'شركة ناشئة لأتمتة الذكاء الاصطناعي',
       title: 'نحن نغلق الفجوات. ',
       titleHighlight: 'تحصل أنت على النتائج.',
       subtitle: 'عملاء محتملون ضاعوا. مواهب معطّلة. أفكار على الرف. نساعدك على تحويلها إلى ما يهم.',
@@ -1256,6 +1268,9 @@ function buildTranslations(): Record<Language, TranslationKeys> {
   const homeDe: HomeTranslations = {
     hero: {
       badge: 'Agentur für digitale Transformation',
+      badge1: 'Agentur für digitale Transformation',
+      badge2: 'Agentur für Geschäftsentwicklung',
+      badge3: 'KI-Automatisierungs-Startup',
       title: 'Wir schließen die Lücken. ',
       titleHighlight: 'Sie erhalten die Ergebnisse.',
       subtitle: 'Verlorene Leads. Ungenutztes Talent. Ideen auf Eis. Wir helfen Ihnen, sie in das zu verwandeln, was zählt.',
@@ -1439,6 +1454,9 @@ function buildTranslations(): Record<Language, TranslationKeys> {
   const homeEs: HomeTranslations = {
     hero: {
       badge: 'Agencia de Transformación Digital',
+      badge1: 'Agencia de Transformación Digital',
+      badge2: 'Agencia de Desarrollo de Negocios',
+      badge3: 'Startup de Automatización con IA',
       title: 'Cerramos las brechas. ',
       titleHighlight: 'Usted obtiene los resultados.',
       subtitle: 'Leads perdidos. Talento sin explotar. Ideas en espera. Le ayudamos a convertirlos en lo que importa.',

@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!data) {
     return { title: 'Article Not Found | Digni Digital Blog' }
   }
-  const lang = (locale.includes('fr') ? 'fr' : locale.includes('de') ? 'de' : locale.includes('es') ? 'es' : locale.includes('ar') ? 'ar' : 'en') as Language
+  const lang = (locale.includes('fr') ? 'fr' : locale.includes('es') ? 'es' : locale.includes('ar') ? 'ar' : 'en') as Language
   const article = data[lang] ?? data.en
   return {
     title: `${article.title} | Digni Digital Blog`,
