@@ -1120,7 +1120,7 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.15 }}
-                  className={`relative card p-8 h-full flex flex-col ${
+                  className={`relative card p-8 pt-10 h-full flex flex-col ${
                     plan.popular 
                       ? 'border-success/50 glow-accent' 
                       : 'spotsAvailable' in plan && plan.spotsAvailable
@@ -1128,33 +1128,33 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
                         : 'border-success/30'
                   }`}
                 >
-                  {/* Path Indicator */}
-                  <div className={`absolute left-1/2 transform -translate-x-1/2 w-full max-w-[calc(100%-1rem)] px-2 flex flex-col items-center gap-2 ${'spotsAvailable' in plan && plan.spotsAvailable ? '-top-14' : '-top-4'}`}>
-                    <div className={`px-3 py-1.5 rounded-full text-xs font-bold whitespace-normal text-center w-max max-w-full mx-auto ${
+                  {/* Path Indicator – in-flow, responsive, opaque so no overlay or color clash */}
+                  <div className="flex flex-wrap justify-center items-center gap-2 mb-4">
+                    <span className={`shrink-0 px-3 py-1.5 rounded-full text-xs font-bold whitespace-normal text-center ${
                       plan.audience === 'schools'
-                        ? 'bg-success/20 text-success border border-success/30'
+                        ? 'bg-surface-light border border-success/60 text-success'
                         : plan.audience === 'professional'
-                          ? 'bg-accent/20 text-accent border border-accent/30'
-                          : 'bg-muted/30 text-muted border border-border'
+                          ? 'bg-surface-light border border-accent/60 text-accent'
+                          : 'bg-surface-light border border-border text-muted'
                     }`}>
                       {plan.audience === 'schools' ? '🏫 FOR SCHOOLS' : plan.audience === 'professional' ? (
                         <>🏢 FOR PROFESSIONAL<wbr />INSTITUTES</>
                       ) : '🌍 GUIDED LEARNING'}
-                    </div>
+                    </span>
                     {'isNew' in plan && plan.isNew && (
-                      <span className="px-3 py-1 bg-accent/20 text-accent text-xs font-bold rounded-full">
+                      <span className="shrink-0 px-3 py-1 bg-surface-light border border-accent/60 text-accent text-xs font-bold rounded-full">
                         NEW
                       </span>
                     )}
                     {'spotsAvailable' in plan && plan.spotsAvailable && (
-                      <span className="px-3 py-1 bg-muted/30 text-muted text-xs font-medium rounded-full">
+                      <span className="shrink-0 px-3 py-1 bg-surface-light border border-border text-muted text-xs font-medium rounded-full">
                         Only {plan.spotsAvailable} spots available
                       </span>
                     )}
                   </div>
 
                   {/* Content */}
-                  <div className="mt-4 mb-6">
+                  <div className="mb-6">
                     <h3 className="font-display text-2xl font-bold mb-3 text-center">{plan.name}</h3>
                     <div className="text-center mb-4">
                       {'priceOptions' in plan && plan.priceOptions ? (
