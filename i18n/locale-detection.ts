@@ -9,8 +9,8 @@ const countryToLocale: Record<string, Locale> = {
   US: 'us-en',
   CA: 'us-en', // overridden by accept-language if user prefers French
   FR: 'fr-fr',
-  DE: 'de-de',
-  AT: 'de-de',
+  DE: 'us-en',
+  AT: 'us-en',
   // CH handled above (fr/de by preference)
   ES: 'es-es',
   MX: 'es-es',
@@ -57,9 +57,7 @@ export function detectLocaleFromRequest(
 
   if (country === 'CH') {
     const wantsFr = preferred.some((p) => p.lang === 'fr')
-    const wantsDe = preferred.some((p) => p.lang === 'de')
     if (wantsFr) return 'fr-fr'
-    if (wantsDe) return 'de-de'
     return 'us-en'
   }
 

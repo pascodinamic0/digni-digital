@@ -11,7 +11,7 @@ const blogMetaByLang: Record<string, { title: string; description: string }> = {
   },
   fr: {
     title: 'Transformation Digitale - Insights | Blog Digni Digital',
-    description: 'Expertises sur les systèmes employés IA, le Programme Diplômé Prêt pour l'Avenir et le développement SaaS sur mesure.',
+    description: 'Expertises sur les systèmes employés IA, le Programme Diplômé Prêt pour l\'Avenir et le développement SaaS sur mesure.',
   },
   de: {
     title: 'KI-Mitarbeiter, Future-Ready Graduate Program & SaaS | Digni Digital Blog',
@@ -33,7 +33,7 @@ type Props = { params: Promise<{ locale: string }> }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params
-  const lang = locale.includes('fr') ? 'fr' : locale.includes('de') ? 'de' : locale.includes('es') ? 'es' : locale.includes('ar') ? 'ar' : 'en'
+  const lang = locale.includes('fr') ? 'fr' : locale.includes('es') ? 'es' : locale.includes('ar') ? 'ar' : 'en'
   const meta = blogMetaByLang[lang] ?? blogMetaByLang.en
   return {
     title: meta.title,
@@ -54,8 +54,8 @@ export default async function BlogPage({ params }: Props) {
     en: getArticlesForLocale('us-en'),
     fr: getArticlesForLocale('fr-fr'),
     ar: getArticlesForLocale('sa-ar'),
-    de: getArticlesForLocale('de-de'),
     es: getArticlesForLocale('es-es'),
+    de: getArticlesForLocale('us-en'), // German removed from site; fallback to English
   }
 
   const blogListJsonLd = {

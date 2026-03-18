@@ -159,7 +159,7 @@ export default function Footer() {
                 </h4>
                 <ul className="space-y-3">
                   {links.services.map((link) => (
-                    <li key={link.name}>
+                    <li key={link.href}>
                       <Link href={link.href} className="text-muted hover:text-accent text-sm transition-colors">
                         {link.name}
                       </Link>
@@ -173,7 +173,7 @@ export default function Footer() {
                 </h4>
                 <ul className="space-y-3">
                   {links.resources.map((link) => (
-                    <li key={link.name}>
+                    <li key={link.href}>
                       <Link href={link.href} className="text-muted hover:text-accent text-sm transition-colors" {...(link.href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}>
                         {link.name}
                       </Link>
@@ -187,7 +187,7 @@ export default function Footer() {
                 </h4>
                 <ul className="space-y-3">
                   {links.company.map((link) => (
-                    <li key={link.name}>
+                    <li key={link.href}>
                       <Link href={link.href} className="text-muted hover:text-accent text-sm transition-colors">
                         {link.name}
                       </Link>

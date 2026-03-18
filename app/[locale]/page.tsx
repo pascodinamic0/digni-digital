@@ -1,6 +1,6 @@
 'use client'
 
-import { use, useState, useEffect, useRef } from 'react'
+import { use, useState, useEffect, useRef, useMemo } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { Link } from '@/i18n/navigation'
 import AnimatedSection from '@/app/components/AnimatedSection'
@@ -13,27 +13,21 @@ import { getBookingLinkProps } from '@/app/config/cta.config'
 import { useLanguage } from '@/app/context/LocaleContext'
 import { translations } from '@/app/config/translations'
 
-// Badge options for the hero — randomly cycled via TypeScript
-const HERO_BADGE_OPTIONS: readonly string[] = [
-  'Digital Transformation Agency',
-  'Business Development Agency',
-  'AI Automation Startup',
-]
-
 const TYPING_INTERVAL_MS = 80
 const PAUSE_WHEN_COMPLETE_MS = 1800
 
-// Hero Section
+// Hero Section — keyed by language so it remounts and shows correct translations when locale changes
 function Hero() {
   const language = useLanguage()
   const t = translations[language].home.hero
+  const badgeOptions = useMemo(() => [t.badge1, t.badge2, t.badge3], [t.badge1, t.badge2, t.badge3])
   const videoRef = useRef<HTMLVideoElement>(null)
   const [videoReady, setVideoReady] = useState(false)
-  const [targetPhrase, setTargetPhrase] = useState<string>(HERO_BADGE_OPTIONS[0])
+  const [targetPhrase, setTargetPhrase] = useState<string>(t.badge1)
   const [displayedText, setDisplayedText] = useState<string>('')
   const [isTyping, setIsTyping] = useState(true)
   const indexRef = useRef(0)
-  const targetRef = useRef(HERO_BADGE_OPTIONS[0])
+  const targetRef = useRef(t.badge1)
   const phraseIndexRef = useRef(0)
   const pauseTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
 
@@ -45,22 +39,22 @@ function Hero() {
     setIsTyping(true)
 
     const id = setInterval(() => {
-      const t = targetRef.current
+      const currentTarget = targetRef.current
       const i = indexRef.current
-      if (i >= t.length) {
+      if (i >= currentTarget.length) {
         clearInterval(id)
         setIsTyping(false)
         pauseTimeoutRef.current = setTimeout(() => {
           setDisplayedText('')
-          const next = (phraseIndexRef.current + 1) % HERO_BADGE_OPTIONS.length
+          const next = (phraseIndexRef.current + 1) % badgeOptions.length
           phraseIndexRef.current = next
-          setTargetPhrase(HERO_BADGE_OPTIONS[next])
+          setTargetPhrase(badgeOptions[next])
           pauseTimeoutRef.current = null
         }, PAUSE_WHEN_COMPLETE_MS)
         return
       }
       indexRef.current = i + 1
-      setDisplayedText(t.slice(0, i + 1))
+      setDisplayedText(currentTarget.slice(0, i + 1))
     }, TYPING_INTERVAL_MS)
 
     return () => {
@@ -70,7 +64,7 @@ function Hero() {
         pauseTimeoutRef.current = null
       }
     }
-  }, [targetPhrase])
+  }, [targetPhrase, badgeOptions])
 
   useEffect(() => {
     const video = videoRef.current
@@ -101,7 +95,7 @@ function Hero() {
   }, [])
 
   return (
-    <section className="home-hero relative isolate min-h-screen flex items-center pt-16 sm:pt-20 overflow-hidden bg-background">
+    <section key={language} className="home-hero relative isolate min-h-screen flex items-center pt-16 sm:pt-20 overflow-hidden bg-background">
       {/* Video Background */}
       <video
         ref={videoRef}
