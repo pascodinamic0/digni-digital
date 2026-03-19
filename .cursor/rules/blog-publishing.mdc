@@ -1,0 +1,28 @@
+---
+description: Blog publishing and update workflow - dates must always look current
+globs: content/blog/**/*.ts
+alwaysApply: false
+---
+
+# Blog Publishing Workflow
+
+## 1. New Blog Posts
+
+When **publishing a new blog post**, always use the **current date and time** (today). Never use past dates—posts must look new and fresh.
+
+- `publishDate`: Use today's date in the correct locale format
+- Formats: EN "March 19, 2026" | FR "19 mars 2026" | DE "19. März 2026" | ES "19 de marzo de 2026" | AR "19 مارس 2026"
+
+## 2. Any Edit = Complete Update to All Blogs
+
+When making **any edit** to a blog post (even a small typo or minor change):
+
+1. **Update ALL locale files** that contain that article: `en.ts`, `fr.ts`, `de.ts`, `ar.ts`, `es.ts`
+2. Set **all** `publishDate` (and `updatedDate` if present) to the **current/recent date** across the entire blog
+3. Every article in every locale must get the latest date so the blog looks freshly updated
+
+## 3. Date Consistency
+
+- All articles in a locale file should use the same recent date when doing a "complete update"
+- Use the current date at the time of the edit
+- Never leave old dates when updating—refresh everything

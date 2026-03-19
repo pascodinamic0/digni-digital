@@ -7,7 +7,7 @@ const contentEs: Record<string, Partial<BlogArticle>> = {
     excerpt: 'Descubra cómo los sistemas de empleados IA revolucionan el servicio al cliente, reducen costos en un 60% y permiten disponibilidad 24/7 para empresas en crecimiento.',
     category: 'Sistema de Empleados IA',
     readTime: '10 min de lectura',
-    publishDate: '15 de enero de 2025',
+    publishDate: '19 de marzo de 2026',
     tags: ['Sistema de Empleados IA', 'Servicio al Cliente', 'Automatización Empresarial', 'Recepcionista IA', 'Crecimiento Empresarial'],
     content: `
       <h2>La Revolución del Servicio al Cliente: Empleados IA que Nunca Duermen</h2>
@@ -150,7 +150,7 @@ const contentEs: Record<string, Partial<BlogArticle>> = {
     excerpt: 'Aprenda cómo los sistemas de empleados IA generan un ROI medible a través de reducción de costos, ganancias de eficiencia y crecimiento de ingresos para empresas en crecimiento.',
     category: 'Sistema de Empleados IA',
     readTime: '9 min de lectura',
-    publishDate: '14 de enero de 2025',
+    publishDate: '19 de marzo de 2026',
     tags: ['Sistema de Empleados IA', 'ROI', 'Reducción de Costos', 'Eficiencia Empresarial', 'Crecimiento Empresarial'],
     content: `
       <h2>Calculando el Verdadero ROI de los Sistemas de Empleados IA</h2>
@@ -393,7 +393,7 @@ const contentEs: Record<string, Partial<BlogArticle>> = {
     excerpt: 'Guía paso a paso para implementar sistemas de recepcionistas IA en su negocio, desde la planificación y configuración hasta la capacitación de su equipo y la medición del éxito.',
     category: 'Sistema de Empleados IA',
     readTime: '11 min de lectura',
-    publishDate: '13 de enero de 2025',
+    publishDate: '19 de marzo de 2026',
     tags: ['Recepcionista IA', 'Implementación Empresarial', 'Sistema de Empleados IA', 'Automatización Empresarial', 'Servicio al Cliente'],
     content: `
       <h2>Su Guía Completa para la Implementación de Recepcionistas IA</h2>
@@ -613,7 +613,7 @@ const contentEs: Record<string, Partial<BlogArticle>> = {
     excerpt: 'Una guía completa paso a paso para la creación gratuita de sitios web con IA. Aprenda a crear su sitio web empresarial desde cero en Lovable.dev—desde registrarse hasta publicar su primer sitio, con un consejo PRD para obtener mejores resultados.',
     category: 'Sistema de Empleados IA',
     readTime: '18 min de lectura',
-    publishDate: '15 de febrero de 2026',
+    publishDate: '19 de marzo de 2026',
     tags: ['Cómo crear un sitio web empresarial', 'creación de sitio web gratis', 'Lovable.dev', 'crear sitio web empresarial gratis con IA', 'cómo crear mi sitio web empresarial', 'constructor de sitios web IA', 'constructor de sitios web gratis'],
     content: `
       <p>Si estás buscando <strong>cómo crear un sitio web empresarial</strong> sin gastar una fortuna, estás en el lugar correcto. La <strong>creación de sitios web gratis</strong> es posible hoy gracias a la IA—y en esta guía te mostramos exactamente cómo <strong>crear un sitio web empresarial gratis con IA</strong> usando <a href="https://www.lovable.dev" target="_blank" rel="noopener noreferrer">Lovable.dev</a>. Ya sea que te preguntes <strong>"cómo crear mi sitio web empresarial"</strong> por primera vez o quieras un camino claro desde la idea hasta el sitio en línea, esta guía te lleva paso a paso desde abrir www.lovable.dev hasta publicar tu primer sitio web, con un recorrido visual paso a paso y un consejo profesional sobre cómo preparar un PRD para que la IA se mantenga en el camino correcto.</p>
@@ -715,7 +715,7 @@ const contentEs: Record<string, Partial<BlogArticle>> = {
     excerpt: 'Los agentes de codificación IA como Claude Code están transformando el trabajo para siempre. Una persona con IA puede entregar lo que 10—o 100—solían hacer. Los 532 millones de jóvenes de África enfrentan una elección: adoptar habilidades digitales ahora o ver cómo la oportunidad desaparece.',
     category: 'Futuro del Trabajo',
     readTime: '14 min de lectura',
-    publishDate: '12 de febrero de 2025',
+    publishDate: '19 de marzo de 2026',
     tags: ['Claude Code', 'Agentes IA', 'Futuro del Trabajo', 'África', 'Habilidades Digitales', 'Alfabetización Digital Digni', 'Empleo Juvenil'],
     content: `
       <h2>Una Advertencia para Cada Africano: La Hambruna que No Estás Viendo</h2>
@@ -920,12 +920,28 @@ const contentEs: Record<string, Partial<BlogArticle>> = {
       <p><em>¿Listo para prepararte—o a tus estudiantes—para el futuro impulsado por IA? <a href="/future-ready-graduate" target="_blank" rel="noopener noreferrer">Explora el Programa de Alfabetización Digital Digni</a> o <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">reserva una consulta</a> para aprender cómo podemos asociarnos con tu institución.</em></p>
     `
   },
+  'ai-automation-scaling-business-growth': {
+    title: 'Escalar un negocio: el papel de las plataformas de automatización IA en el crecimiento',
+    excerpt: 'Automatice la escalabilidad con IA: aprenda cómo las plataformas de automatización IA aumentan la eficiencia, reducen costos y desbloquean un crecimiento sostenible.',
+    category: 'Sistema de Empleados IA',
+    readTime: '11 min de lectura',
+    publishDate: '19 de marzo de 2026',
+    tags: ['Automatización escala negocio', 'Automatización IA', 'Escalabilidad empresarial', 'Plataformas sin código', 'Crecimiento empresarial'],
+  },
+  'vibecoding-african-youth-make-money-online-build-products': {
+    title: 'Vibecoding: cómo los jóvenes africanos pueden ganar dinero en línea construyendo productos',
+    excerpt: 'Jóvenes africanos: el vibecoding les permite construir y vender productos digitales con IA sin escribir código. Aprenda qué dominar y cómo monetizar su audiencia.',
+    category: 'Futuro del Trabajo',
+    readTime: '18 min de lectura',
+    publishDate: '19 de marzo de 2026',
+    tags: ['Vibecoding', 'Juventud africana', 'Ganar dinero en línea', 'Construcción de productos IA', 'Futuro del Trabajo'],
+  },
   '__PLACEHOLDER__': {
     title: '__PLACEHOLDER__',
     excerpt: '__PLACEHOLDER__',
     category: '__PLACEHOLDER__',
     readTime: '__PLACEHOLDER__',
-    publishDate: '__PLACEHOLDER__',
+    publishDate: '19 de marzo de 2026',
     tags: ['__PLACEHOLDER__'],
     content: `<p>__PLACEHOLDER__</p>`
   }
