@@ -7,7 +7,7 @@ const contentDe: Record<string, Partial<BlogArticle>> = {
     excerpt: 'Entdecken Sie, wie KI-Mitarbeiter-Systeme den Kundenservice revolutionieren, Kosten um 60 % senken und rund um die Uhr Verfügbarkeit für wachsende Unternehmen ermöglichen.',
     category: 'KI-Mitarbeiter-System',
     readTime: '10 Min. Lesezeit',
-    publishDate: '15. Januar 2025',
+    publishDate: '19. März 2026',
     tags: ['KI-Mitarbeiter-System', 'Kundenservice', 'Geschäftsautomatisierung', 'KI-Rezeptionist', 'Unternehmenswachstum'],
     content: `
       <h2>Die Kundenservice-Revolution: KI-Mitarbeiter, die nie schlafen</h2>
@@ -151,7 +151,7 @@ const contentDe: Record<string, Partial<BlogArticle>> = {
     excerpt: 'Erfahren Sie, wie KI-Mitarbeiter-Systeme messbaren ROI durch Kostensenkung, Effizienzgewinne und Umsatzwachstum für wachsende Unternehmen liefern.',
     category: 'KI-Mitarbeiter-System',
     readTime: '9 Min. Lesezeit',
-    publishDate: '14. Januar 2025',
+    publishDate: '19. März 2026',
     tags: ['KI-Mitarbeiter-System', 'ROI', 'Kostensenkung', 'Geschäftseffizienz', 'Unternehmenswachstum'],
     content: `
       <h2>Den wahren ROI von KI-Mitarbeiter-Systemen berechnen</h2>
@@ -395,7 +395,7 @@ const contentDe: Record<string, Partial<BlogArticle>> = {
     excerpt: 'Schritt-für-Schritt-Anleitung zur Implementierung von KI-Rezeptionisten-Systemen in Ihrem Unternehmen – von Planung und Einrichtung bis zur Schulung Ihres Teams und Erfolgsmessung.',
     category: 'KI-Mitarbeiter-System',
     readTime: '11 Min. Lesezeit',
-    publishDate: '13. Januar 2025',
+    publishDate: '19. März 2026',
     tags: ['KI-Rezeptionist', 'Geschäftsimplementierung', 'KI-Mitarbeiter-System', 'Geschäftsautomatisierung', 'Kundenservice'],
     content: `
       <h2>Ihr vollständiger Leitfaden zur KI-Rezeptionisten-Implementierung</h2>
@@ -550,7 +550,7 @@ const contentDe: Record<string, Partial<BlogArticle>> = {
     excerpt: 'Eine vollständige Schritt-für-Schritt-Anleitung zur kostenlosen Website-Erstellung mit KI. Erfahren Sie, wie Sie Ihre Business-Website von Grund auf mit Lovable.dev erstellen – von der Anmeldung bis zur Veröffentlichung Ihrer ersten Website, mit einem PRD-Tipp für bessere Ergebnisse.',
     category: 'KI-Mitarbeiter-System',
     readTime: '18 Min. Lesezeit',
-    publishDate: '15. Februar 2026',
+    publishDate: '19. März 2026',
     tags: ['Business-Website erstellen', 'Kostenlose Website-Erstellung', 'Lovable.dev', 'Business-Website kostenlos mit KI erstellen', 'Meine Business-Website erstellen', 'KI-Website-Builder', 'Kostenloser Website-Builder'],
     content: `
       <p>Wenn Sie nach einer Möglichkeit suchen, <strong>eine Business-Website zu erstellen</strong>, ohne ein Vermögen auszugeben, sind Sie hier richtig. <strong>Kostenlose Website-Erstellung</strong> ist heute dank KI möglich – und in diesem Leitfaden zeigen wir Ihnen genau, wie Sie <strong>eine Business-Website kostenlos mit KI erstellen</strong> können, mit <a href="https://www.lovable.dev" target="_blank" rel="noopener noreferrer">Lovable.dev</a>. Ob Sie zum ersten Mal fragen, <strong>„wie erstelle ich meine Business-Website"</strong>, oder einen klaren Weg von der Idee zur Live-Website suchen – dieser Leitfaden führt Sie Schritt für Schritt von www.lovable.dev bis zur Veröffentlichung Ihrer ersten Website, mit einer visuellen Anleitung und einem Profi-Tipp zur Vorbereitung eines PRD, damit die KI auf Kurs bleibt.</p>
@@ -621,7 +621,7 @@ const contentDe: Record<string, Partial<BlogArticle>> = {
     excerpt: 'KI-Coding-Agenten wie Claude Code verändern die Arbeitswelt für immer. Eine Person mit KI kann leisten, wofür früher 10 oder 100 nötig waren. Afrikas 532 Millionen Jugendliche stehen vor einer Wahl: Jetzt digitale Kompetenzen erwerben oder zusehen, wie Chancen verschwinden.',
     category: 'Zukunft der Arbeit',
     readTime: '14 Min. Lesezeit',
-    publishDate: '12. Februar 2025',
+    publishDate: '19. März 2026',
     tags: ['Claude Code', 'KI-Agenten', 'Zukunft der Arbeit', 'Afrika', 'Digitale Kompetenzen', 'Digni Digital Literacy', 'Jugendbeschäftigung'],
     content: `
       <h2>Eine Warnung an jeden Afrikaner: Die Hungersnot, die Sie nicht sehen</h2>
@@ -718,7 +718,7 @@ const contentDe: Record<string, Partial<BlogArticle>> = {
     excerpt: 'Erfahren Sie, warum Privatschulen Programme für digitale Kompetenzen integrieren müssen, um Schüler auf moderne Karrieren vorzubereiten und den Erfolg der Absolventen zu sichern.',
     category: 'Digni Digital Literacy',
     readTime: '10 Min. Lesezeit',
-    publishDate: '10. Januar 2025',
+    publishDate: '19. März 2026',
     tags: ['Digni Digital Literacy', 'Privatschulen', 'Digitale Kompetenzen', 'Schülererfolg', 'Berufsreife'],
     content: `
       <h2>Der dringende Bedarf: Schüler auf moderne Karrieren vorbereiten</h2>
@@ -811,7 +811,7 @@ const contentDe: Record<string, Partial<BlogArticle>> = {
     excerpt: 'Erfahren Sie, wie das Digni Digital Literacy Programm Schüler mit berufsreifen digitalen Kompetenzen ausstattet und 85 % Beschäftigungsquoten innerhalb von 6 Monaten nach dem Abschluss sicherstellt.',
     category: 'Digni Digital Literacy',
     readTime: '9 Min. Lesezeit',
-    publishDate: '9. Januar 2025',
+    publishDate: '19. März 2026',
     tags: ['Digni Digital Literacy', 'Bildungstransformation', 'Karriereerfolg', 'Schülerergebnisse', 'Privatschulen'],
     content: `
       <h2>Bildung transformieren: Das Digni Digital Literacy Programm</h2>
@@ -865,7 +865,7 @@ const contentDe: Record<string, Partial<BlogArticle>> = {
     excerpt: 'Erfahren Sie, wie Privatschulen moderne digitale Kompetenzen in ihren Lehrplan integrieren können, um die Kluft zwischen Bildung und Beschäftigung zu überbrücken.',
     category: 'Digni Digital Literacy',
     readTime: '8 Min. Lesezeit',
-    publishDate: '8. Januar 2025',
+    publishDate: '19. März 2026',
     tags: ['Digni Digital Literacy', 'Privatschulen', 'Lehrplanentwicklung', 'Kompetenzlücke', 'Moderne Bildung'],
     content: `
       <h2>Die Kompetenzlücke schließen: Moderner Lehrplan für moderne Karrieren</h2>
@@ -925,7 +925,7 @@ const contentDe: Record<string, Partial<BlogArticle>> = {
     excerpt: 'Lesen Sie inspirierende Erfolgsgeschichten von Schülern, die mit berufsreifen Fähigkeiten durch das Digni Digital Literacy Programm abgeschlossen und eine Anstellung gefunden haben.',
     category: 'Digni Digital Literacy',
     readTime: '7 Min. Lesezeit',
-    publishDate: '7. Januar 2025',
+    publishDate: '19. März 2026',
     tags: ['Digni Digital Literacy', 'Schülererfolg', 'Beschäftigung', 'Karriereergebnisse', 'Absolventengeschichten'],
     content: `
       <h2>Echter Erfolg: Schüler, die ihre Zukunft verändert haben</h2>
@@ -973,7 +973,7 @@ const contentDe: Record<string, Partial<BlogArticle>> = {
     excerpt: 'Ein umfassender Leitfaden für Privatschul-Verwaltungen zur Implementierung des Digni Digital Literacy Programms – von der Planung bis zur Umsetzung.',
     category: 'Digni Digital Literacy',
     readTime: '11 Min. Lesezeit',
-    publishDate: '6. Januar 2025',
+    publishDate: '19. März 2026',
     tags: ['Digni Digital Literacy', 'Schulverwaltung', 'Programmimplementierung', 'Privatschulen', 'Bildungsführung'],
     content: `
       <h2>Ihr vollständiger Implementierungsleitfaden: Digni Digital Literacy Programm</h2>
@@ -1054,7 +1054,7 @@ const contentDe: Record<string, Partial<BlogArticle>> = {
     excerpt: 'Erfahren Sie, warum maßgeschneiderte SaaS-Lösungen oft besser abschneiden als generische Software und maßgeschneiderte Funktionalität bieten, die echte Geschäftsergebnisse liefert.',
     category: 'Maßgeschneiderte SaaS-Entwicklung',
     readTime: '10 Min. Lesezeit',
-    publishDate: '5. Januar 2025',
+    publishDate: '19. März 2026',
     tags: ['Maßgeschneidertes SaaS', 'SaaS-Entwicklung', 'Business-Software', 'Maßgeschneiderte Lösungen', 'Softwareentwicklung'],
     content: `
       <h2>Warum maßgeschneidertes SaaS Standardlösungen übertrifft</h2>
@@ -1112,7 +1112,7 @@ const contentDe: Record<string, Partial<BlogArticle>> = {
     excerpt: 'Lernen Sie die Architekturmuster und Best Practices zum Aufbau von SaaS-Produkten, die vom Start-up bis zum Unternehmen skalieren, ohne umfangreiche Neuentwicklungen.',
     category: 'Maßgeschneiderte SaaS-Entwicklung',
     readTime: '9 Min. Lesezeit',
-    publishDate: '4. Januar 2025',
+    publishDate: '19. März 2026',
     tags: ['SaaS-Entwicklung', 'Softwarearchitektur', 'Skalierbarkeit', 'Best Practices', 'SaaS-Design'],
     content: `
       <h2>Skalierbares SaaS bauen: Architektur, die mit Ihnen wächst</h2>
@@ -1163,7 +1163,7 @@ const contentDe: Record<string, Partial<BlogArticle>> = {
     excerpt: 'Ein umfassender Leitfaden, der jede Phase der maßgeschneiderten SaaS-Entwicklung abdeckt – vom ersten Konzept über Design, Entwicklung bis zum erfolgreichen Launch.',
     category: 'Maßgeschneiderte SaaS-Entwicklung',
     readTime: '12 Min. Lesezeit',
-    publishDate: '3. Januar 2025',
+    publishDate: '19. März 2026',
     tags: ['Maßgeschneidertes SaaS', 'SaaS-Entwicklung', 'Softwareentwicklungsprozess', 'Produktentwicklung', 'SaaS-Launch'],
     content: `
       <h2>Vollständiger Leitfaden: Maßgeschneiderte SaaS-Entwicklung von der Idee zum Launch</h2>
@@ -1233,7 +1233,7 @@ const contentDe: Record<string, Partial<BlogArticle>> = {
     excerpt: 'Entdecken Sie reale Fallstudien von Unternehmen, die durch maßgeschneiderte SaaS-Lösungen, zugeschnitten auf ihre individuellen Bedürfnisse, signifikantes Wachstum erzielt haben.',
     category: 'Maßgeschneiderte SaaS-Entwicklung',
     readTime: '8 Min. Lesezeit',
-    publishDate: '2. Januar 2025',
+    publishDate: '19. März 2026',
     tags: ['Maßgeschneidertes SaaS', 'Unternehmenswachstum', 'Fallstudien', 'SaaS-Erfolg', 'Geschäftstransformation'],
     content: `
       <h2>SaaS-Erfolgsgeschichten: Echte Ergebnisse durch maßgeschneiderte Lösungen</h2>
@@ -1290,7 +1290,7 @@ const contentDe: Record<string, Partial<BlogArticle>> = {
     excerpt: 'Erfahren Sie, wann KI-Mitarbeiter-Systeme oder menschliches Personal eingesetzt werden sollten und wie Sie die optimale Mischung aus Automatisierung und menschlicher Note schaffen.',
     category: 'KI-Mitarbeiter-System',
     readTime: '8 Min. Lesezeit',
-    publishDate: '12. Januar 2025',
+    publishDate: '19. März 2026',
     tags: ['KI-Mitarbeiter-System', 'Geschäftsautomatisierung', 'Kundenservice-Strategie', 'KI vs. Mensch', 'Unternehmenswachstum'],
     content: `
       <h2>KI-Mitarbeiter-Systeme vs. traditionelles Personal: Die richtige Balance finden</h2>
@@ -1363,7 +1363,7 @@ const contentDe: Record<string, Partial<BlogArticle>> = {
     excerpt: 'Entdecken Sie, wie KI-Mitarbeiter-Systeme Unternehmen ermöglichen, Abläufe ohne proportionale Kostensteigerungen zu skalieren und Wachstum nahtlos zu bewältigen.',
     category: 'KI-Mitarbeiter-System',
     readTime: '9 Min. Lesezeit',
-    publishDate: '11. Januar 2025',
+    publishDate: '19. März 2026',
     tags: ['KI-Mitarbeiter-System', 'Geschäftsskalierung', 'Automatisierung', 'Unternehmenswachstum', 'Operative Effizienz'],
     content: `
       <h2>Geschäftsabläufe mit KI-gestützter Automatisierung skalieren</h2>
@@ -1423,7 +1423,7 @@ const contentDe: Record<string, Partial<BlogArticle>> = {
     excerpt: 'Ein praktischer Rahmen, der Ihnen hilft zu entscheiden, wann Sie maßgeschneidertes SaaS entwickeln sollten vs. Standardlösungen nutzen, mit klaren Kriterien und Beispielen.',
     category: 'Maßgeschneiderte SaaS-Entwicklung',
     readTime: '9 Min. Lesezeit',
-    publishDate: '1. Januar 2025',
+    publishDate: '19. März 2026',
     tags: ['Maßgeschneidertes SaaS', 'Software-Entscheidungsfindung', 'Build vs. Buy', 'SaaS-Strategie', 'Technologieentscheidungen'],
     content: `
       <h2>Entscheidungsrahmen: Maßgeschneidertes SaaS vs. Standardlösungen</h2>
@@ -1468,7 +1468,7 @@ const contentDe: Record<string, Partial<BlogArticle>> = {
     excerpt: 'Erfahren Sie, wie KI-Mitarbeiter den Kundenservice automatisieren und Leads verdreifachen – ohne Neueinstellungen. Echte Statistiken, Fallstudien und schrittweise Implementierung für KMU.',
     category: 'KI-Mitarbeiter-System',
     readTime: '11 Min. Lesezeit',
-    publishDate: '17. Februar 2026',
+    publishDate: '19. März 2026',
     tags: ['KI-Mitarbeiter', 'KI-Agenten Kundenservice', 'Lead-Automatisierung KMU', 'Agentische KI 2026', 'Kundenservice-Automatisierung'],
     content: `
       <h2>KI-Mitarbeiter 2026: Kundenservice automatisieren und Leads verdreifachen – ohne Einstellungen</h2>
@@ -1522,7 +1522,7 @@ const contentDe: Record<string, Partial<BlogArticle>> = {
     excerpt: 'Deloitte- und PwC-Trends zu agentischer KI. Wann KI-Agenten statt traditioneller Automatisierung wählen, mit konkreten Beispielen für Anrufqualifizierung und Angebotserstellung.',
     category: 'KI-Mitarbeiter-System',
     readTime: '10 Min. Lesezeit',
-    publishDate: '17. Februar 2026',
+    publishDate: '19. März 2026',
     tags: ['KI-Agenten', 'Agentische KI 2026', 'Frankreich DR Kongo', 'Automatisierung KMU', 'Kundenservice-KI'],
     content: `
       <h2>KI-Agenten vs. traditionelle Automatisierung: Die neue Ära für KMU in Frankreich und dem Kongo</h2>
@@ -1552,7 +1552,7 @@ const contentDe: Record<string, Partial<BlogArticle>> = {
     excerpt: 'Wie Unternehmen in Kinshasa und der DR Kongo Prozessautomatisierung nutzen, um bis zu 50 % Produktivitätsgewinne zu erzielen. Digitale Transformation und lokale Unterstützung für kongolesische KMU.',
     category: 'KI-Mitarbeiter-System',
     readTime: '11 Min. Lesezeit',
-    publishDate: '17. Februar 2026',
+    publishDate: '19. März 2026',
     tags: ['Prozessautomatisierung DR Kongo', 'Digitale Transformation Kinshasa', 'KMU Kongo', 'Produktivität 2026', 'KI-Mitarbeiter', 'Code Numérique'],
     content: `
       <h2>Geschäftsprozessautomatisierung in der DR Kongo: Wie Unternehmen in Kinshasa 2026 50 % Produktivität gewinnen</h2>
@@ -1603,7 +1603,7 @@ const contentDe: Record<string, Partial<BlogArticle>> = {
     excerpt: 'Konkrete Strategien für Unternehmenswachstum mit KI in Frankreich und der DR Kongo. Lead-Generierung, Prozessoptimierung und messbarer ROI für KMU.',
     category: 'Unternehmenswachstum',
     readTime: '12 Min. Lesezeit',
-    publishDate: '17. Februar 2026',
+    publishDate: '19. März 2026',
     tags: ['Unternehmenswachstum KI', 'Geschäftsentwicklung', 'KI KMU', 'Frankreich DR Kongo', 'Lead-Generierung', 'KI-Wachstum'],
     content: `
       <h2>Unternehmenswachstum mit KI: Konkrete Strategien für Frankreich und die DR Kongo</h2>
@@ -1644,7 +1644,7 @@ const contentDe: Record<string, Partial<BlogArticle>> = {
     excerpt: 'Wie KI-gestützte Geschäftsentwicklung jeden Lead erfasst und hilft, rund um die Uhr mehr Abschlüsse zu erzielen. Lead-Generierung, Qualifizierung und Follow-up-Automatisierung.',
     category: 'Unternehmenswachstum',
     readTime: '11 Min. Lesezeit',
-    publishDate: '17. Februar 2026',
+    publishDate: '19. März 2026',
     tags: ['Geschäftsentwicklung KI', 'Lead-Generierung', 'Lead-Automatisierung', 'Rund um die Uhr', 'KI-Rezeptionist', 'Lead-Qualifizierung'],
     content: `
       <h2>KI-gestützte Geschäftsentwicklung: Jeden Lead erfassen und rund um die Uhr mehr Abschlüsse erzielen</h2>
@@ -1681,7 +1681,7 @@ const contentDe: Record<string, Partial<BlogArticle>> = {
     excerpt: 'Der 2026-Leitfaden zur Erstellung einer Business-Website mit KI, die automatisch Leads generiert und Termine bucht. Intelligente, leadgenerierende Websites für KMU.',
     category: 'Webentwicklung',
     readTime: '12 Min. Lesezeit',
-    publishDate: '17. Februar 2026',
+    publishDate: '19. März 2026',
     tags: ['Website-Erstellung KI', 'Website-Entwicklung', 'Intelligente Website', 'Leads', 'KI-Website', 'Lead-Generierung'],
     content: `
       <h2>Website-Erstellung mit KI: Der 2026-Leitfaden für eine Website, die automatisch Termine bucht</h2>
@@ -1723,7 +1723,7 @@ const contentDe: Record<string, Partial<BlogArticle>> = {
     excerpt: 'Warum wachsende Unternehmen in Frankreich und der DR Kongo 2026 auf maßgeschneiderte Web- und SaaS-Entwicklung setzen. Eigentum, Skalierbarkeit und perfekte Prozessanpassung.',
     category: 'Maßgeschneiderte SaaS-Entwicklung',
     readTime: '12 Min. Lesezeit',
-    publishDate: '17. Februar 2026',
+    publishDate: '19. März 2026',
     tags: ['Webanwendungsentwicklung', 'Maßgeschneidertes SaaS', 'Frankreich DR Kongo', 'Custom SaaS', 'Webentwicklung', 'Individualsoftware'],
     content: `
       <h2>Maßgeschneiderte Web- und SaaS-Entwicklung: Warum wachsende Unternehmen 2026 auf Individuallösungen setzen</h2>
@@ -1764,7 +1764,7 @@ const contentDe: Record<string, Partial<BlogArticle>> = {
     excerpt: 'Maßgeschneidertes SaaS vs. Standardlösungen für afrikanische und französische KMU. Wann bauen, wann kaufen, und wie Sie für Ihr Unternehmen entscheiden.',
     category: 'Maßgeschneiderte SaaS-Entwicklung',
     readTime: '11 Min. Lesezeit',
-    publishDate: '17. Februar 2026',
+    publishDate: '19. März 2026',
     tags: ['Maßgeschneidertes SaaS', 'Standardlösungen', 'KMU Afrika Frankreich', 'Build vs. Buy', 'Individualsoftware', 'Software-Entscheidung'],
     content: `
       <h2>Maßgeschneidertes SaaS vs. Standardlösungen: Die Wahl, die für afrikanische und französische KMU den Unterschied macht</h2>
@@ -1815,7 +1815,7 @@ const contentDe: Record<string, Partial<BlogArticle>> = {
     excerpt: 'Pillar-Artikel: Warum digitale Transformation und KI die entscheidende Wahl für die DR Kongo 2026 sind. Links zu allen Digni Digital Service-Clustern.',
     category: 'Digitale Transformation',
     readTime: '14 Min. Lesezeit',
-    publishDate: '17. Februar 2026',
+    publishDate: '19. März 2026',
     tags: ['Digitale Transformation DR Kongo', 'KI Unternehmen Kongo 2026', 'Kinshasa', 'KMU', 'Digitale Transformation', 'Code Numérique'],
     content: `
       <h2>Digitale Transformation in der DR Kongo 2026: Warum KI die entscheidende Wahl ist, um im Spiel zu bleiben</h2>
@@ -1855,7 +1855,7 @@ const contentDe: Record<string, Partial<BlogArticle>> = {
     excerpt: 'Wie französische KMU KI-Agenten und intelligente Automatisierung ohne Silicon-Valley-Budget einführen können. Zugängliche, menschenzentrierte Lösungen für KMU.',
     category: 'KI-Mitarbeiter-System',
     readTime: '11 Min. Lesezeit',
-    publishDate: '17. Februar 2026',
+    publishDate: '19. März 2026',
     tags: ['KI KMU Frankreich', 'Zugängliche KI-Agenten', 'Automatisierung KMU', 'Frankreich', 'KI-Rezeptionist', 'Digitale Transformation'],
     content: `
       <h2>KI für französische KMU: Intelligente Agenten einführen – ohne Silicon-Valley-Budget</h2>
@@ -1900,7 +1900,7 @@ const contentDe: Record<string, Partial<BlogArticle>> = {
     excerpt: 'Warum das frankophone Afrika es sich nicht leisten kann, bei Claude, Grok und KI-Agenten zu warten. Mit DR-Kongo-Fokus und Digni-Digital-Lösungen.',
     category: 'Zukunft der Arbeit',
     readTime: '12 Min. Lesezeit',
-    publishDate: '17. Februar 2026',
+    publishDate: '19. März 2026',
     tags: ['Claude', 'Grok', 'KI-Agenten', 'Frankophon Afrika', 'DR Kongo', 'Digni Digital', 'KI-Einführung'],
     content: `
       <h2>Claude, Grok und KI-Agenten: Warum das frankophone Afrika nicht warten kann (und wie Digni Digital hilft)</h2>
@@ -1936,7 +1936,7 @@ const contentDe: Record<string, Partial<BlogArticle>> = {
     excerpt: 'KI-Trends 2026 für frankphones Unternehmenswachstum: Frankreich, DR Kongo und Afrika. Agentische KI, verantwortungsvolle Automatisierung und praktische nächste Schritte für KMU.',
     category: 'KI-Mitarbeiter-System',
     readTime: '14 Min. Lesezeit',
-    publishDate: '17. Februar 2026',
+    publishDate: '19. März 2026',
     tags: ['KI-Trends 2026', 'KI Frankreich DR Kongo', 'Frankophone Unternehmen', 'Agentische KI', 'KI-Automatisierung Afrika', 'KMU digitale Transformation'],
     content: `
       <h2>Vollständiger 2026-Leitfaden: KI-Trends für frankphones Unternehmenswachstum (Frankreich + DR Kongo + Afrika)</h2>
@@ -2006,7 +2006,7 @@ const contentDe: Record<string, Partial<BlogArticle>> = {
     excerpt: 'In San Francisco ist Claude Code ein Produktivitäts-Tool. In Kinshasa ist es ein eingeschränktes Privileg. Für junge kongolesische Entwickler ist der Unterschied zwischen einer globalen Karriere und lokalem Stillstand oft davon abhängig, wie gut sie die Regeln umgehen können, die sie ausschließen sollen.',
     category: 'Zukunft der Arbeit',
     readTime: '8 Min. Lesezeit',
-    publishDate: '4. März 2026',
+    publishDate: '19. März 2026',
     tags: ['DR Kongo', 'Digitale Barrieren', 'Entwicklerzugang', 'Lokale KI', 'Open Source', 'Kinshasa', 'Afrikanische Tech'],
     content: `
       <h2>Die digitale Grenze: Warum Programmieren in der DR Kongo ein Akt des Widerstands ist</h2>
@@ -2057,6 +2057,22 @@ const contentDe: Record<string, Partial<BlogArticle>> = {
       
       <p><em>Bereit, ohne Grenzen zu bauen? <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Buchen Sie ein kostenloses Strategiegespräch</a>, um zu besprechen, wie wir Ihre digitale Transformation unterstützen können – ob Sie Entwickler, Start-up oder Institution sind, die die nächste Generation vorbereitet.</em></p>
     `
+  },
+  'ai-automation-scaling-business-growth': {
+    title: 'Unternehmen skalieren: Die Rolle von KI-Automatisierungsplattformen beim Wachstum',
+    excerpt: 'Skalieren Sie mit KI-Automatisierung: Erfahren Sie, wie KI-Plattformen Effizienz steigern, Kosten senken und nachhaltiges Wachstum ermöglichen.',
+    category: 'KI-Mitarbeiter-System',
+    readTime: '11 Min. Lesezeit',
+    publishDate: '19. März 2026',
+    tags: ['Geschäftsautomatisierung skalieren', 'KI-Automatisierung', 'Unternehmensskalierung', 'No-Code-Plattformen', 'Unternehmenswachstum'],
+  },
+  'vibecoding-african-youth-make-money-online-build-products': {
+    title: 'Vibecoding: Wie afrikanische Jugendliche online Geld verdienen können, indem sie Produkte bauen',
+    excerpt: 'Afrikanische Jugend: Vibecoding ermöglicht es Ihnen, digitale Produkte mit KI zu bauen und zu verkaufen—ohne Code. Lernen Sie, was Sie beherrschen müssen und wie Sie monetarisieren.',
+    category: 'Zukunft der Arbeit',
+    readTime: '18 Min. Lesezeit',
+    publishDate: '19. März 2026',
+    tags: ['Vibecoding', 'Afrikanische Jugend', 'Online Geld verdienen', 'KI-Produktentwicklung', 'Zukunft der Arbeit'],
   }
 }
 

@@ -10,7 +10,7 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
     excerpt: "Découvrez comment les employés IA automatisent le service client et multiplient les leads par 3 sans recruter. Statistiques réelles, études de cas et mise en œuvre pas à pas pour les PME en France et en RDC.",
     category: "Système d'employés IA",
     readTime: "11 min de lecture",
-    publishDate: "17 février 2026",
+    publishDate: "19 mars 2026",
     author: "Pascal Digny",
     tags: ["employés IA", "agents IA service client", "automatisation leads PME", "IA agentique 2026", "automatisation service client"],
     featured: true,
@@ -76,7 +76,7 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
     excerpt: "Tendances Deloitte et PwC sur l'IA agentique. Quand choisir les agents IA plutôt que l'automatisation traditionnelle, avec des exemples concrets (qualification d'appels, génération de propositions).",
     category: "Système d'employés IA",
     readTime: "10 min de lecture",
-    publishDate: "17 février 2026",
+    publishDate: "19 mars 2026",
     author: "Pascal Digny",
     tags: ["agents IA", "IA agentique 2026", "France RDC", "automatisation PME", "service client IA"],
     featured: false,
@@ -110,7 +110,7 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
     excerpt: "Comment les entreprises de Kinshasa et de RDC utilisent l'automatisation des processus pour gagner jusqu'à 50 % de productivité. Transformation digitale et accompagnement local pour les PME congolaises.",
     category: "Système d'employés IA",
     readTime: "11 min de lecture",
-    publishDate: "17 février 2026",
+    publishDate: "19 mars 2026",
     author: "Pascal Digny",
     tags: ["automatisation processus RDC", "transformation digitale Kinshasa", "PME Congo", "productivité 2026", "employés IA", "Code Numérique"],
     featured: false,
@@ -143,7 +143,7 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
     excerpt: "Stratégies concrètes pour faire croître votre entreprise avec l'IA en France et en RDC. Génération de leads, optimisation des processus et ROI mesurable pour les PME.",
     category: "Croissance d'entreprise",
     readTime: "12 min de lecture",
-    publishDate: "17 février 2026",
+    publishDate: "19 mars 2026",
     author: "Pascal Digny",
     tags: ["croissance entreprise IA", "développement des affaires", "IA PME", "France RDC", "génération leads", "croissance IA"],
     featured: true,
@@ -175,7 +175,7 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
     excerpt: "Comment le business development piloté par l'IA capture chaque lead et aide à fermer plus de deals 24h/24. Génération de leads, qualification et automatisation du suivi.",
     category: "Croissance d'entreprise",
     readTime: "11 min de lecture",
-    publishDate: "17 février 2026",
+    publishDate: "19 mars 2026",
     author: "Pascal Digny",
     tags: ["business development IA", "lead generation", "automatisation leads", "24h/24", "réceptionniste IA", "qualification leads"],
     featured: false,
@@ -204,7 +204,7 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
     excerpt: "Le guide 2026 pour créer un site d'entreprise avec l'IA qui génère et prend des rendez-vous automatiquement. Sites intelligents et générateurs de leads pour les PME.",
     category: "Développement web",
     readTime: "12 min de lecture",
-    publishDate: "17 février 2026",
+    publishDate: "19 mars 2026",
     author: "Pascal Digny",
     tags: ["création site web IA", "développement site web", "site web intelligent", "leads", "site web IA", "génération leads"],
     featured: true,
@@ -237,7 +237,7 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
     excerpt: "Pourquoi les entreprises en croissance en France et en RDC choisissent le développement web et SaaS sur mesure en 2026. Propriété, scalabilité et adéquation à vos processus.",
     category: "Développement SaaS sur mesure",
     readTime: "12 min de lecture",
-    publishDate: "17 février 2026",
+    publishDate: "19 mars 2026",
     author: "Pascal Digny",
     tags: ["développement application web", "SaaS sur mesure", "France RDC", "custom SaaS", "développement web", "logiciel sur mesure"],
     featured: true,
@@ -269,7 +269,7 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
     excerpt: "SaaS sur mesure vs solutions prêtes à l'emploi pour les PME africaines et françaises. Quand construire, quand acheter, et comment décider pour votre entreprise.",
     category: "Développement SaaS sur mesure",
     readTime: "11 min de lecture",
-    publishDate: "17 février 2026",
+    publishDate: "19 mars 2026",
     author: "Pascal Digny",
     tags: ["SaaS sur mesure", "prêt-à-l'emploi", "PME Afrique France", "construire ou acheter", "logiciel sur mesure", "décision logicielle"],
     featured: false,
@@ -318,7 +318,7 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
     excerpt: "Article pilier : pourquoi la transformation digitale et l'IA sont le choix décisif pour la RDC en 2026. Liens vers tous les pôles de services Digni Digital.",
     category: "Transformation digitale",
     readTime: "14 min de lecture",
-    publishDate: "17 février 2026",
+    publishDate: "19 mars 2026",
     author: "Pascal Digny",
     tags: ["transformation digitale RDC", "IA entreprises Congo 2026", "Kinshasa", "PME", "transformation digitale", "Code Numérique"],
     featured: true,
@@ -359,7 +359,7 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
     excerpt: "Comment les PME françaises peuvent adopter les agents IA et l'automatisation intelligente sans un budget Silicon Valley. Solutions accessibles et human-first pour les PME.",
     category: "Système d'employés IA",
     readTime: "11 min de lecture",
-    publishDate: "17 février 2026",
+    publishDate: "19 mars 2026",
     author: "Pascal Digny",
     tags: ["IA PME France", "agents IA accessible", "automatisation PME", "France", "réceptionniste IA", "transformation numérique"],
     featured: false,
@@ -399,7 +399,7 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
     excerpt: "Pourquoi l'Afrique francophone ne peut pas se permettre d'attendre avec Claude, Grok et les agents IA. Version française de notre article IA Afrique, avec focus RDC et solutions Digni Digital.",
     category: "Avenir du travail",
     readTime: "12 min de lecture",
-    publishDate: "17 février 2026",
+    publishDate: "19 mars 2026",
     author: "Pascal Digny",
     tags: ["Claude", "Grok", "agents IA", "Afrique francophone", "RDC", "Digni Digital", "adoption IA"],
     featured: true,
@@ -427,7 +427,7 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
     excerpt: "À San Francisco, Claude Code est un outil de productivité. À Kinshasa, c'est un privilège restreint. Pour un jeune développeur congolais, la différence entre une carrière mondiale et une stagnation locale tient souvent à sa capacité à contourner les règles conçues pour l'exclure.",
     category: "Avenir du travail",
     readTime: "8 min de lecture",
-    publishDate: "4 mars 2026",
+    publishDate: "19 mars 2026",
     author: "Pascal Digny",
     tags: ["RDC", "barrières numériques", "accès développeurs", "IA locale", "open source", "Kinshasa", "tech africaine"],
     featured: true,
@@ -490,7 +490,7 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
     excerpt: "Tendances IA 2026 pour la croissance des entreprises francophones : France, RDC et Afrique. IA agentique, automatisation responsable, études de cas et plan d'action concret pour les PME.",
     category: "Système d'employés IA",
     readTime: "14 min de lecture",
-    publishDate: "17 février 2026",
+    publishDate: "19 mars 2026",
     author: "Pascal Digny",
     tags: ["tendances IA 2026", "IA France RDC", "entreprises francophones", "IA agentique", "automatisation IA Afrique", "PME transformation numérique"],
     featured: true,
@@ -692,6 +692,137 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
       <p><a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Réservez votre appel stratégie gratuit</a> — nous auditons vos opérations, identifions votre opportunité d'automatisation au meilleur ROI et vous donnons un plan d'implémentation concret. Sans engagement, sans pression commerciale. Si nous ne sommes pas le bon fit, nous vous le dirons.</p>
 
       <p><em>Digni Digital — IA human-first pour les entreprises francophones. Fondée à Kinshasa. Plus de 150 clients sur quatre continents.</em></p>
+    `,
+  },
+  'ai-automation-scaling-business-growth': {
+    id: 29,
+    title: "Scaler une entreprise : le rôle des plateformes d'automatisation IA dans la croissance",
+    slug: "ai-automation-scaling-business-growth",
+    excerpt: "Automatisez la montée en charge avec l'IA : découvrez comment les plateformes d'automatisation IA augmentent l'efficacité, réduisent les coûts et libèrent une croissance durable.",
+    category: "Système d'employés IA",
+    readTime: "11 min de lecture",
+    publishDate: "19 mars 2026",
+    author: "Pascal Digny",
+    tags: ["Automatisation scale business", "Automatisation IA", "Montée en charge", "Plateformes no-code", "Croissance entreprise"],
+    featured: true,
+    content: `
+      <h2>Scaler une entreprise : pourquoi l'automatisation IA compte</h2>
+      
+      <p>La montée en charge est une phase critique du cycle de vie de toute entreprise. C'est le moment où une organisation passe d'une petite structure à une entreprise plus grande et complexe. Pour y parvenir, les entreprises ont besoin d'outils qui leur permettent de s'étendre sans les douleurs de croissance typiques. Les <strong>plateformes d'automatisation IA</strong> sont parmi les moyens les plus efficaces de gérer et faciliter cette croissance—en permettant aux entreprises de scaler leurs opérations sans augmentation proportionnelle de la main-d'œuvre, des coûts ou de la complexité.</p>
+
+      <figure class="blog-content-figure" style="margin: 2em 0;">
+        <img src="/blog/its-time-to-expand.gif" alt="GIF réaction d'Estelle Costanza disant C'est le moment de s'étendre, illustrant la montée en charge d'une entreprise avec l'automatisation IA et la croissance." width="600" height="400" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
+        <figcaption>C'est le moment de s'étendre—l'automatisation IA aide les entreprises à scaler sans les douleurs de croissance.</figcaption>
+      </figure>
+
+      <h2>Comment l'automatisation IA débloque la montée en charge</h2>
+      
+      <p>L'automatisation IA joue un rôle crucial pour aider les entreprises à scaler de manière efficace et durable de plusieurs façons :</p>
+
+      <h3>Efficacité accrue</h3>
+      
+      <p>Au cœur de toute montée en charge réussie se trouve l'efficacité. L'automatisation IA réduit le besoin d'intervention manuelle dans les tâches routinières, rationalisant les processus en production, administration et service client. Cette efficacité accrue permet aux entreprises de traiter des volumes plus importants sans augmentation proportionnelle de la main-d'œuvre. Les entreprises peuvent étendre leurs opérations plus rapidement et avec moins de ressources, tout en maîtrisant les coûts.</p>
+
+      <h3>Cohérence et contrôle qualité</h3>
+      
+      <p>À mesure que les entreprises grandissent, maintenir la cohérence dans la livraison de produits et services devient plus difficile. Les systèmes automatisés garantissent que les processus sont exécutés de manière uniforme, réduisant les erreurs et les retouches. Cette cohérence est essentielle pour maintenir la satisfaction et la confiance des clients. L'automatisation IA permet aussi d'appliquer des contrôles qualité stricts de manière cohérente à tous les niveaux.</p>
+
+      <p>Peloton, autrefois chouchou du fitness à domicile, a connu de graves difficultés en scalant rapidement pendant la pandémie. Des incidents tragiques et des rappels massifs de plus de 125 000 unités en 2021 ont entaché sa réputation et fait chuter sa valorisation. L'entreprise a eu du mal à gérer son expansion rapide, illustrant les dangers d'une montée en charge trop rapide sans infrastructure robuste de contrôles qualité et d'automatisation.</p>
+
+      <h3>Réduction des coûts</h3>
+      
+      <p>L'un des avantages les plus tangibles de l'automatisation IA est la réduction des coûts. En minimisant l'intervention humaine dans les tâches répétitives et en réduisant le gaspillage via des processus optimisés, l'automatisation aide à baisser les coûts opérationnels. Ces économies peuvent être réinvesties dans le marketing, le développement produit ou l'embauche—alimentant ainsi la croissance. L'automatisation offre aussi une prévisibilité des coûts cruciale pour planifier une montée en charge.</p>
+
+      <h3>Infrastructure scalable</h3>
+      
+      <p>À mesure que la demande augmente, les systèmes automatisés peuvent être étendus pour gérer des charges accrues sans refonte complète de l'infrastructure existante. Cette flexibilité permet aux entreprises de s'adapter rapidement aux conditions du marché.</p>
+
+      <h3>Décisions pilotées par les données</h3>
+      
+      <p>L'accès aux données en temps réel est essentiel pour prendre des décisions éclairées. Les systèmes d'automatisation IA fournissent des données et analyses complètes, permettant aux entreprises d'identifier les tendances, d'optimiser les processus et de réagir plus efficacement aux changements du marché.</p>
+
+      <h2>Le rôle des plateformes no-code et low-code</h2>
+      
+      <p>Les plateformes no-code et low-code sont devenues des outils puissants pour les entreprises qui veulent scaler rapidement. Elles permettent de créer et gérer des applications sans connaissances approfondies en codage.</p>
+
+      <h3>Simplification du développement</h3>
+      
+      <p>Les plateformes no-code simplifient le développement en se concentrant sur la fonctionnalité plutôt que sur la complexité technique. Les entreprises peuvent créer, déployer et modifier des applications beaucoup plus vite qu'avec les méthodes traditionnelles.</p>
+
+      <h3>Flexibilité et adaptabilité</h3>
+      
+      <p>À mesure que les entreprises grandissent, leurs besoins évoluent. Les plateformes no-code offrent la flexibilité d'adapter les applications : ajuster les workflows, ajouter des fonctionnalités ou scaler pour supporter plus d'utilisateurs sans temps d'arrêt ni coûts significatifs.</p>
+
+      <h3>Scalabilité</h3>
+      
+      <p>Toutes les plateformes no-code ne se valent pas en matière de scalabilité. Les meilleures sont conçues pour la croissance. Des solutions IA comme le <a href="/ai-receptionist">réceptionniste IA</a> de Digni Digital sont conçues pour gérer des volumes et complexités croissants sans compromettre les performances.</p>
+
+      <h2>Choisir la bonne technologie</h2>
+      
+      <p>Les plateformes no-code offrent des avantages significatifs, mais ne sont pas toujours la solution optimale. Selon les cas, le low-code, le codage traditionnel ou des solutions prêtes à l'emploi peuvent être plus appropriés. Le choix doit reposer sur les besoins spécifiques de l'entreprise.</p>
+
+      <h2>Conclusion</h2>
+      
+      <p>Les plateformes d'automatisation IA sont vitales pour toute entreprise qui souhaite scaler efficacement. En augmentant l'efficacité, en maintenant la cohérence, en réduisant les coûts et en permettant des décisions pilotées par les données, ces plateformes aident les entreprises à croître durablement.</p>
+
+      <hr>
+
+      <p><em>Prêt à scaler votre entreprise avec l'automatisation IA ? <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Réservez une consultation stratégique</a> avec nos experts en automatisation IA pour explorer comment l'IA peut aider votre entreprise à grandir sans les douleurs de croissance.</em></p>
+    `,
+  },
+  'vibecoding-african-youth-make-money-online-build-products': {
+    id: 30,
+    title: "Vibecoding : comment les jeunes Africains peuvent gagner de l'argent en ligne en créant des produits—sans coder",
+    slug: "vibecoding-african-youth-make-money-online-build-products",
+    excerpt: "Jeunes Africains : le vibecoding vous permet de créer et vendre des produits numériques avec l'IA—sans coder. Apprenez quoi maîtriser, pourquoi le niche bat les grandes idées, et comment monétiser votre audience. La fenêtre est ouverte.",
+    category: "Future of Work",
+    readTime: "18 min de lecture",
+    publishDate: "19 mars 2026",
+    author: "Pascal Digny",
+    tags: ["Vibecoding", "Jeunesse africaine", "Gagner en ligne", "Création produits IA", "Future of Work", "Future-Ready Graduate Program", "Entrepreneuriat digital"],
+    featured: true,
+    content: `
+      <h2>L'opportunité en or que presque personne en Afrique ne connaît</h2>
+      
+      <p>En ce moment, pendant que vous lisez ceci, des jeunes à Nairobi, Lagos, Kinshasa, Accra et Cape Town gagnent de l'argent en ligne—pas seulement via le gig work ou la création de contenu, mais en <strong>créant et vendant des produits numériques</strong>. Ce ne sont pas des développeurs. Ils n'ont pas étudié l'informatique. Ils utilisent le <strong>vibecoding</strong> : décrire ce qu'ils veulent en langage clair, et laisser l'IA le construire. Collins Dictionary l'a nommé Mot de l'année 2025. Et la plupart des jeunes Africains n'en ont jamais entendu parler.</p>
+
+      <p>Ce fossé—entre ceux qui savent et ceux qui ne savent pas—est votre opportunité. La fenêtre est ouverte. Elle ne restera pas ouverte indéfiniment.</p>
+
+      <h2>Qu'est-ce que le vibecoding ?</h2>
+      
+      <p>Le <strong>vibecoding</strong> est un changement de paradigme : vous décrivez ce que vous voulez en langage clair, et des outils IA comme Lovable.dev, Cursor, Bolt.new et v0.dev construisent le produit. Pas de code. Pas de diplôme. En 2021, un MVP prenait 3 mois et 50 000 $. En 2026, vous pouvez construire, tester et déployer un produit fonctionnel en un week-end.</p>
+
+      <h2>Ce qu'il faut apprendre pour maîtriser le vibecoding</h2>
+      
+      <p>1. <strong>Prompt engineering et bases de l'IA</strong>—Savoir parler à l'IA efficacement. 2. <strong>Outils de construction</strong>—Lovable.dev, Cursor, Bolt.new, v0.dev, GitHub Copilot. 3. <strong>Déploiement</strong>—Vercel, GitHub, bases du domaine et de l'hébergement. 4. <strong>Pensée produit</strong>—Identifier les vrais points de douleur, viser petit, valider avant de construire.</p>
+
+      <h2>Ne résolvez pas de grands problèmes. Résolvez des problèmes de niche.</h2>
+      
+      <p>Ne construisez pas la prochaine grande chose. Les meilleurs fondateurs construisent vite. Choisissez un petit problème spécifique. Résolvez-le pour un public spécifique. Facturez. Itérez.</p>
+
+      <h2>Monétisation pour ceux qui ont une audience sociale</h2>
+      
+      <p>Si vous avez une audience—même petite—vous avez un avantage : la distribution. Écoutez les plaintes de vos followers. Identifiez un point de douleur. Construisez une solution avec le vibecoding. Vendez-la à votre audience.</p>
+
+      <h2>Distribution : options pour vos apps vibecodées</h2>
+      
+      <p>Votre audience sociale, votre communauté de niche, le outreach direct, le building in public, les app stores, les partenariats, la pub payante (une fois que vous avez de la traction). Ce business va de pair avec la distribution.</p>
+
+      <h2>Construisez vite. Ne perfectionnez pas.</h2>
+      
+      <p>Les meilleurs fondateurs construisent vite sans perfectionner. Expédiez un MVP. Obtenez des retours. Itérez.</p>
+
+      <h2>Building in public : une opportunité en or pour la jeunesse africaine</h2>
+      
+      <p>Partager votre parcours en construisant vous distingue. Peu de builders africains le font. Vous créez de la distribution avant d'avoir un produit. Vous attirez des opportunités.</p>
+
+      <h2>Apprenez le programme</h2>
+      
+      <p>Le <a href="/future-ready-graduate">Future-Ready Graduate Program</a>—notre plan—enseigne le vibecoding et les compétences numériques IA. 85 % d'emploi en 6 mois. 150 % d'augmentation salariale moyenne. Cours en ligne à venir : 25 $ une fois, accès à vie.</p>
+
+      <hr>
+
+      <p><em>Prêt à apprendre le vibecoding ? <a href="/future-ready-graduate" target="_blank" rel="noopener noreferrer">Explorez le Future-Ready Graduate Program</a> ou <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">réservez une consultation</a>.</em></p>
     `,
   },
 }
