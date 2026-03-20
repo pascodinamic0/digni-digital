@@ -60,23 +60,23 @@ export default function AgenticSoftwaresPage({ params, searchParams }: AgenticSo
   const services = [
     {
       title: 'Agentic MVP',
-      description: 'AI-native MVP with autonomous workflows. 8-12 weeks. For startups.',
+      description: 'AI-native MVP with autonomous workflows. 7 days–2 weeks. For startups.',
       process: ['Agent Design', 'Workflow Automation', 'AI Integration', 'Testing & Launch'],
-      timeline: '8-12 weeks',
+      timeline: '7 days–2 weeks',
       icon: '🤖'
     },
     {
       title: 'Enterprise Agentic Software',
-      description: 'AI agents that scale. Autonomous. Secure. Multi-agent orchestration.',
+      description: 'AI agents that scale. Autonomous. Secure. Multi-agent orchestration. 2 weeks–1 month.',
       process: ['Agent Architecture', 'Autonomous Workflow Design', 'LLM Integration', 'Deployment & Training'],
-      timeline: '3-6 months',
+      timeline: '2 weeks–1 month',
       icon: '🏢'
     },
     {
       title: 'Agentic Softwares Platform',
-      description: 'Full Agentic Softwares. Intelligent automation. Multi-tenant. You own it.',
+      description: 'Full Agentic Softwares. Intelligent automation. Multi-tenant. You own it. 1 month–3 months.',
       process: ['Agent Strategy', 'Platform Architecture', 'Multi-Agent Development', 'Go-to-Market Support'],
-      timeline: '6-12 months',
+      timeline: '1 month–3 months',
       icon: '☁️'
     }
   ]
@@ -134,25 +134,43 @@ export default function AgenticSoftwaresPage({ params, searchParams }: AgenticSo
       tech: ['React', 'Node.js', 'PostgreSQL', 'AWS'],
       timeline: '4 months',
       status: 'Successfully Deployed'
+    },
+    {
+      title: 'Kabinda Lodge',
+      type: 'Client Project',
+      industry: 'Hospitality',
+      challenge:
+        'Owners needed to run the property from a distance—block rooms on demand, see real performance, and stop key handoffs that bypass the front desk. Payments and restaurant service had to stay in one auditable flow.',
+      solution:
+        'A full hotel OS: online stays and conference-room booking, role-based access from super admin to restaurant lead, Stripe-backed payment methods, and smart cards issued from the dashboard so room access stays tied to the system.',
+      results: [
+        { metric: '4+', description: 'Role levels from owner to front desk & restaurant' },
+        { metric: '360°', description: 'Operations, bookings, and access in one dashboard' },
+        { metric: 'Live', description: 'Production guest booking & smart access' }
+      ],
+      tech: ['Next.js', 'OpenAI', 'Supabase', 'Stripe'],
+      timeline: '2 months',
+      status: 'Live',
+      link: 'https://kabinda-lodge.com/'
     }
   ]
 
   const process = [
     {
       phase: 'Discovery',
-      duration: '1-2 weeks',
+      duration: '1 day',
       activities: ['Stakeholder interviews', 'Agent & workflow definition', 'Technical feasibility', 'Project roadmap'],
       deliverables: ['Requirements document', 'Agent architecture spec', 'Project timeline', 'Cost estimate']
     },
     {
       phase: 'Design',
-      duration: '2-3 weeks',
+      duration: '1 week',
       activities: ['Agent architecture design', 'Autonomous workflow mapping', 'Database design', 'API specification'],
       deliverables: ['Agent design doc', 'Workflow diagrams', 'Database schema', 'API documentation']
     },
     {
       phase: 'Development',
-      duration: '8-20 weeks',
+      duration: '2-10 weeks',
       activities: ['Agent implementation', 'Workflow automation', 'LLM integration', 'QA & optimization'],
       deliverables: ['Working agentic software', 'Test reports', 'Documentation', 'Training materials']
     },
@@ -478,6 +496,17 @@ export default function AgenticSoftwaresPage({ params, searchParams }: AgenticSo
                           ))}
                         </div>
                       </div>
+
+                      {'link' in study && study.link ? (
+                        <a
+                          href={study.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="btn-primary inline-flex w-full sm:w-auto justify-center text-center"
+                        >
+                          View live product
+                        </a>
+                      ) : null}
                     </div>
                   </div>
 
