@@ -38,6 +38,7 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
   ]
 
   const ctaT = translations[language].cta
+  const pageT = translations[language].futureReadyGraduate
 
   const trimesterPlan = [
     {
@@ -237,15 +238,15 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
             className="text-center mb-8 sm:mb-12 md:mb-16"
           >
             <span className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-success/10 border border-success/30 rounded-full text-success text-xs sm:text-sm font-medium mb-4 sm:mb-6">
-              Future-Ready Graduate Program
+              {pageT.heroBadge}
             </span>
             <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight sm:leading-tight mb-4 sm:mb-6 md:mb-8 px-2">
-              Turn Your Graduates Into{' '}
+              {pageT.heroTitleLine1}{' '}
               <br className="hidden sm:block" />
-              <span className="gradient-text">Industry-Ready Professionals</span>
+              <span className="gradient-text">{pageT.heroTitleHighlight}</span>
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-muted max-w-3xl mx-auto leading-relaxed mb-6 sm:mb-8 md:mb-10 px-2">
-              85% employed. Job creation is in our DNA—we teach skills that bring out entrepreneurial talents through guided learning personalized to everyone&apos;s gifts. We bring curriculum and internet. You bring students and space.
+              {pageT.heroDescription}
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-2">
               <a
@@ -267,11 +268,11 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
             <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">
-              Designed for the<br />
-              <span className="gradient-text">National Academic Calendar</span>
+              {pageT.calendarTitle}<br />
+              <span className="gradient-text">{pageT.calendarTitleHighlight}</span>
             </h2>
             <p className="text-muted text-lg max-w-3xl mx-auto">
-              September to July. Fits your school year. Respects breaks.
+              {pageT.calendarSubtitle}
             </p>
           </div>
 
@@ -286,8 +287,8 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
               <div className="w-16 h-16 bg-success/10 rounded-2xl mx-auto mb-4 flex items-center justify-center text-3xl">
                 📅
               </div>
-              <h3 className="font-display text-xl font-bold mb-2">Full School Year</h3>
-              <p className="text-muted text-sm">September to July (222 school days)</p>
+              <h3 className="font-display text-xl font-bold mb-2">{pageT.fullSchoolYear}</h3>
+              <p className="text-muted text-sm">{pageT.fullSchoolYearDesc}</p>
             </motion.div>
 
             <motion.div
@@ -300,8 +301,8 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
               <div className="w-16 h-16 bg-success/10 rounded-2xl mx-auto mb-4 flex items-center justify-center text-3xl">
                 🔄
               </div>
-              <h3 className="font-display text-xl font-bold mb-2">Three Trimesters</h3>
-              <p className="text-muted text-sm">Structured around ministry breaks</p>
+              <h3 className="font-display text-xl font-bold mb-2">{pageT.threeTrimesters}</h3>
+              <p className="text-muted text-sm">{pageT.threeTrimestersDesc}</p>
             </motion.div>
 
             <motion.div
@@ -314,8 +315,8 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
               <div className="w-16 h-16 bg-success/10 rounded-2xl mx-auto mb-4 flex items-center justify-center text-3xl">
                 🎯
               </div>
-              <h3 className="font-display text-xl font-bold mb-2">Seamless Integration</h3>
-              <p className="text-muted text-sm">No disruption to existing curriculum</p>
+              <h3 className="font-display text-xl font-bold mb-2">{pageT.seamlessIntegration}</h3>
+              <p className="text-muted text-sm">{pageT.seamlessIntegrationDesc}</p>
             </motion.div>
           </div>
 
@@ -328,23 +329,23 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
           >
             <div className="text-center">
               <h3 className="font-display text-2xl font-bold mb-6 text-success">
-                2025-2026 Academic Year Integration
+                {pageT.academicYearIntegration}
               </h3>
               <div className="grid md:grid-cols-3 gap-8 text-sm">
                 <div className="flex flex-col items-center gap-2 p-4 rounded-xl bg-success/5 border border-success/10">
                   <span className="font-display text-lg font-bold text-success">1</span>
-                  <span className="font-semibold text block">Program Start</span>
-                  <span className="text-muted text-center">Monday, September 1, 2025</span>
+                  <span className="font-semibold text block">{pageT.programStart}</span>
+                  <span className="text-muted text-center">{pageT.programStartDate}</span>
                 </div>
                 <div className="flex flex-col items-center gap-2 p-4 rounded-xl bg-success/5 border border-success/10">
                   <span className="font-display text-lg font-bold text-success">2</span>
-                  <span className="font-semibold text block">Respects All Breaks</span>
-                  <span className="text-muted text-center">October, Christmas, February & Easter</span>
+                  <span className="font-semibold text block">{pageT.respectsBreaks}</span>
+                  <span className="text-muted text-center">{pageT.respectsBreaksDates}</span>
                 </div>
                 <div className="flex flex-col items-center gap-2 p-4 rounded-xl bg-success/5 border border-success/10">
                   <span className="font-display text-lg font-bold text-success">3</span>
-                  <span className="font-semibold text block">Graduation Ready</span>
-                  <span className="text-muted text-center">July 2-4, 2026</span>
+                  <span className="font-semibold text block">{pageT.graduationReady}</span>
+                  <span className="text-muted text-center">{pageT.graduationReadyDate}</span>
                 </div>
               </div>
             </div>
@@ -368,24 +369,24 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
                     </div>
                     <div>
                       <h3 className="font-display text-xl font-bold group-hover:text-success transition-colors">
-                        {trimester.trimester}
+                        {trimester.number === 1 ? pageT.firstTrimester : trimester.number === 2 ? pageT.secondTrimester : pageT.thirdTrimester}
                       </h3>
                       <span className="text-success text-sm font-medium">{trimester.period}</span>
                     </div>
                   </div>
                   
                   <div>
-                    <span className="text-xs uppercase tracking-wider text-muted-dark block mb-2">Focus Area</span>
+                    <span className="text-xs uppercase tracking-wider text-muted-dark block mb-2">{pageT.focusArea}</span>
                     <p className="text font-semibold">{trimester.focus}</p>
                   </div>
 
                   <div>
-                    <span className="text-xs uppercase tracking-wider text-muted-dark block mb-2">Duration</span>
+                    <span className="text-xs uppercase tracking-wider text-muted-dark block mb-2">{pageT.duration}</span>
                     <p className="text-muted">{trimester.weeks}</p>
                   </div>
 
                   <div>
-                    <span className="text-xs uppercase tracking-wider text-muted-dark block mb-2">Core Modules</span>
+                    <span className="text-xs uppercase tracking-wider text-muted-dark block mb-2">{pageT.coreModules}</span>
                     <div className="space-y-1">
                       {trimester.modules.map((module, j) => (
                         <div key={j} className="flex items-center gap-2">
@@ -410,10 +411,10 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
           {/* Header */}
           <div className="text-center mb-20">
             <h2 className="font-display text-3xl md:text-4xl font-bold mb-6 leading-tight">
-              Education <span className="text-destructive">Fails</span>, Digital Economy <span className="text-success">Thrives</span>
+              {pageT.educationPrefix}<span className="text-destructive">{pageT.educationFails}</span>{pageT.digitalEconomyPrefix}<span className="text-success">{pageT.digitalThrives}</span>
             </h2>
             <p className="text-muted text-lg max-w-2xl mx-auto leading-relaxed">
-              The digital revolution offers unprecedented opportunities. Position your students at the forefront of this transformation.
+              {pageT.educationFailsSubtitle}
             </p>
           </div>
 
@@ -433,9 +434,9 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
                   </div>
                   <div>
                     <h3 className="font-display text-2xl font-bold text">
-                      Traditional Education Crisis
+                      {pageT.traditionalCrisis}
                     </h3>
-                    <p className="text-muted text-sm">The harsh reality of conventional graduation outcomes</p>
+                    <p className="text-muted text-sm">{pageT.traditionalCrisisDesc}</p>
                   </div>
                 </div>
 
@@ -471,9 +472,9 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
                   </div>
                   <div>
                     <h3 className="font-display text-2xl font-bold text">
-                      Digital Economy Boom
+                      {pageT.digitalBoom}
                     </h3>
-                    <p className="text-muted text-sm">The explosive growth of remote digital opportunities</p>
+                    <p className="text-muted text-sm">{pageT.digitalBoomDesc}</p>
                   </div>
                 </div>
 
@@ -505,10 +506,10 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
           >
             <div className="text-center mb-12">
               <h3 className="font-display text-3xl md:text-4xl font-bold mb-4">
-                <span className="gradient-text">Why Digital Skills Are the Future</span>
+                <span className="gradient-text">{pageT.whyDigitalSkills}</span>
               </h3>
               <p className="text-muted text-lg max-w-2xl mx-auto leading-relaxed">
-                The digital economy offers unprecedented advantages that traditional careers simply cannot match. Our guided learning is personalized to each participant&apos;s talents and gifts—bringing out entrepreneurial potential in students and anyone who joins.
+                {pageT.whyDigitalSkillsDesc}
               </p>
             </div>
 
@@ -535,11 +536,11 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">
-              Global Leaders<br />
-              <span className="gradient-text">Supporting Our Mission</span>
+              {pageT.globalLeaders}<br />
+              <span className="gradient-text">{pageT.globalLeadersHighlight}</span>
             </h2>
               <p className="text-muted text-lg max-w-3xl mx-auto">
-              Listen to world-renowned figures discuss the same principles and values that drive our Future-Ready Graduate Program—job creation, entrepreneurial development, and personalized learning that brings out everyone&apos;s talents.
+              {pageT.globalLeadersSubtitle}
             </p>
           </div>
 
@@ -586,12 +587,11 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">
-              High-Demand Digital Skills<br />
-              <span className="gradient-text">That Actually Pay</span>
+              {pageT.highDemandSkills}<br />
+              <span className="gradient-text">{pageT.highDemandSkillsHighlight}</span>
             </h2>
             <p className="text-muted text-lg max-w-3xl mx-auto">
-              The digital economy is exploding with opportunities. With 2026 AI tools like Lovable.dev, Cursor, and advanced AI platforms, 
-              beginners can now compete with expert-level professionals in these lucrative fields—if they master the right AI-powered skills.
+              {pageT.highDemandSkillsSubtitle}
             </p>
           </div>
 
@@ -794,10 +794,10 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
           >
             <div className="text-center">
               <h3 className="font-display text-2xl font-bold mb-4">
-                <span className="gradient-text">The 2026 AI Advantage</span>
+                <span className="gradient-text">{pageT.aiAdvantage}</span>
               </h3>
               <p className="text-muted text-lg mb-8 max-w-3xl mx-auto">
-                With cutting-edge 2026 AI tools like Lovable.dev and Cursor, your students can compete with expert-level professionals from day one and start earning immediately.
+                {pageT.aiAdvantageDesc}
               </p>
               <div className="grid md:grid-cols-3 gap-6 text-sm">
                 <div className="flex flex-col items-center gap-3 p-5 rounded-xl bg-success/5 border border-success/10 text-center">
@@ -832,11 +832,11 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">
-              Partnership<br />
-              <span className="gradient-text">Requirements</span>
+              {pageT.partnershipRequirements}<br />
+              <span className="gradient-text">{pageT.partnershipRequirementsHighlight}</span>
             </h2>
             <p className="text-muted text-lg max-w-3xl mx-auto">
-              A successful partnership requires commitment from both sides. Here's what we each bring to ensure student success.
+              {pageT.partnershipRequirementsDesc}
             </p>
           </div>
 
@@ -852,8 +852,8 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
                 <div className="w-16 h-16 bg-info/10 rounded-2xl mx-auto mb-4 flex items-center justify-center text-3xl">
                   🏫
                 </div>
-                <h3 className="font-display text-2xl font-bold text-info">What Schools Provide</h3>
-                <p className="text-muted text-sm mt-2">Your essential contributions to the partnership</p>
+                <h3 className="font-display text-2xl font-bold text-info">{pageT.whatSchoolsProvide}</h3>
+                <p className="text-muted text-sm mt-2">{pageT.whatSchoolsProvideDesc}</p>
                   </div>
 
               <div className="space-y-6">
@@ -921,8 +921,8 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
                 <div className="w-16 h-16 bg-success/10 rounded-2xl mx-auto mb-4 flex items-center justify-center text-3xl">
                   🚀
                 </div>
-                <h3 className="font-display text-2xl font-bold text-success">What We Provide</h3>
-                <p className="text-muted text-sm mt-2">Our comprehensive support and resources</p>
+                <h3 className="font-display text-2xl font-bold text-success">{pageT.whatWeProvide}</h3>
+                <p className="text-muted text-sm mt-2">{pageT.whatWeProvideDesc}</p>
               </div>
 
               <div className="space-y-6">
@@ -1019,8 +1019,8 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">
-              Proven Results<br />
-              <span className="gradient-text">Across Africa</span>
+              {pageT.provenResults}<br />
+              <span className="gradient-text">{pageT.provenResultsHighlight}</span>
             </h2>
           </div>
 
@@ -1102,11 +1102,11 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="font-display text-4xl md:text-5xl font-bold mb-4">
-              Three Paths to<br />
-              <span className="gradient-text">Digital Success</span>
+              {pageT.threePaths}<br />
+              <span className="gradient-text">{pageT.threePathsHighlight}</span>
             </h2>
             <p className="text-muted text-lg max-w-2xl mx-auto">
-              Choose the path that fits your needs. <span className="text font-medium">No one gets left behind.</span>
+              {pageT.threePathsSubtitle} <span className="text font-medium">{pageT.noOneLeftBehind}</span>
             </p>
           </div>
 
@@ -1137,18 +1137,18 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
                           ? 'bg-surface-light border border-accent/60 text-accent'
                           : 'bg-surface-light border border-border text-muted'
                     }`}>
-                      {plan.audience === 'schools' ? '🏫 FOR SCHOOLS' : plan.audience === 'professional' ? (
-                        <>🏢 FOR PROFESSIONAL<wbr />INSTITUTES</>
-                      ) : '🌍 GUIDED LEARNING'}
+                      {plan.audience === 'schools' ? `🏫 ${pageT.forSchools}` : plan.audience === 'professional' ? (
+                        <>🏢 {pageT.forProfessional}</>
+                      ) : `🌍 ${pageT.guidedLearning}`}
                     </span>
                     {'isNew' in plan && plan.isNew && (
                       <span className="shrink-0 px-3 py-1 bg-surface-light border border-accent/60 text-accent text-xs font-bold rounded-full">
-                        NEW
+                        {pageT.newLabel}
                       </span>
                     )}
                     {'spotsAvailable' in plan && plan.spotsAvailable && (
                       <span className="shrink-0 px-3 py-1 bg-surface-light border border-border text-muted text-xs font-medium rounded-full">
-                        Only {plan.spotsAvailable} spots available
+                        {pageT.onlySpotsAvailable.replace('{count}', String(plan.spotsAvailable))}
                       </span>
                     )}
                   </div>
@@ -1220,11 +1220,10 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
       <AnimatedSection className="py-24">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">
-            Ready to Transform Student Outcomes?
+            {pageT.readyToTransform}
           </h2>
           <p className="text-muted text-lg mb-8">
-            Let's discuss how the Future-Ready Graduate Program can work for your institution. 
-            See curriculum details and success metrics in a personalized consultation.
+            {pageT.readyToTransformDesc}
           </p>
           <a
             {...getBookingLinkProps()}
