@@ -1,7 +1,8 @@
 import type { BlogArticle } from './types'
 import { articlesEn } from './en'
+import { blogDeBodyOverrides } from './generated/blog-de-body-overrides'
 
-const contentDe: Record<string, Partial<BlogArticle>> = {
+export const contentDe: Record<string, Partial<BlogArticle>> = {
   'ai-employee-systems-transform-customer-service-growing-businesses': {
     title: 'Wie KI-Mitarbeiter-Systeme den Kundenservice für wachsende Unternehmen transformieren',
     excerpt: 'Entdecken Sie, wie KI-Mitarbeiter-Systeme den Kundenservice revolutionieren, Kosten um 60 % senken und rund um die Uhr Verfügbarkeit für wachsende Unternehmen ermöglichen.',
@@ -2073,11 +2074,85 @@ const contentDe: Record<string, Partial<BlogArticle>> = {
     readTime: '18 Min. Lesezeit',
     publishDate: '19. März 2026',
     tags: ['Vibecoding', 'Afrikanische Jugend', 'Online Geld verdienen', 'KI-Produktentwicklung', 'Zukunft der Arbeit'],
-  }
+  },
+  'one-software-life-changing-stories-youth-millionaires-2024-2026': {
+    title: 'Eine Software, ein Leben verändert: Was junge Builder in den Medien vormachen (2024–2026)',
+    excerpt: 'Das richtige Produkt zur richtigen Zeit—mit Distribution—kann die Laufbahn eines Builders ändern. Fünf reale Muster aus der Berichterstattung 2024–2026 (Cal AI, Beem, Vidovo …) mit ehrlichen Einschränkungen.',
+    category: 'Zukunft der Arbeit',
+    readTime: '14 Min. Lesezeit',
+    publishDate: '20. März 2026',
+    tags: [
+      'Jugendgründung',
+      'Gen-Z-Gründer',
+      'KI-Apps',
+      'SaaS',
+      'Zukunft der Arbeit',
+      'Cal AI',
+      'Produktvertrieb',
+    ],
+    content: `
+      <h2>Nicht «schnell reich»—sondern «ein seriöses Produkt, ernsthaft verteilt»</h2>
+
+      <p>Schlagzeilen über Teen-Gründer sind laut. Ohne Hype bleibt eine klarere Linie: <strong>ein gut gewähltes Softwareprodukt</strong>, das eine tägliche, schmerzhafte Gewohnheit adressiert, schnell gebaut und ausgeliefert wird und der richtigen Zielgruppe gezeigt wird, kann ein Leben verändern—Kapital, Optionen und der Beweis, dass Sie es wiederholen können.</p>
+      <p>Dieses Muster taucht 2024–2026 immer wieder in seriösen Medien auf. Hier sind <strong>fünf Archetypen</strong> mit Namen und Produkten, Links zu <strong>dem, was sie gebaut haben</strong>, und zu <strong>tragfähiger Berichterstattung</strong>—nicht als Garantie, sondern als Beleg für den Mechanismus.</p>
+
+      <blockquote>
+        <p>«Survivorship Bias ist real. Für jede virale App gibt es Tausende ohne Traktion. Die Lernleistung ist nicht Glück—sondern <strong>enges Problem, schnelles Shipping, hartnäckige Distribution und Iteration</strong>.»</p>
+      </blockquote>
+
+      <h2>Warum eine Software mehr zählen kann als eine CV-Zeile</h2>
+      <ul>
+        <li><strong>Portabler Beweis</strong>—ein Link für DM oder Interview.</li>
+        <li><strong>Möglicher Cashflow</strong>—Abo oder Nutzung, wenn Akquise und Retention sitzen.</li>
+        <li><strong>Zusammengesetzte Skills</strong>—Go-to-Market, Support, Analytics, Produkturteil.</li>
+        <li><strong>Strategischer Exit</strong>—wenn die Passung zu einem etablierten Anbieter stimmt.</li>
+      </ul>
+
+      <p>KI-gestütztes Bauen und App-Stores haben das Experimentieren verbilligt—aber <strong>nicht den Bedarf an Distribution</strong> abgeschafft.</p>
+
+      <h2>Szenario 1: Erster Exit finanziert die nächste Wette</h2>
+      <p><strong>Muster:</strong> Früh liefern; kleine Liquidität; Zeit und Geld in den größeren Schwung reinvestieren.</p>
+      <p><strong>Beispiel:</strong> Profile von <strong>Zach Yadegari</strong> nennen den Verkauf von <strong>Totally Science</strong> in der Größenordnung von <strong>100.000 $ mit 16</strong>, Berichte um <strong>früh 2024</strong>.</p>
+      <p><strong>Danach gebaut:</strong> <a href="https://www.calai.app/" target="_blank" rel="noopener noreferrer">Cal AI</a>. <a href="https://apps.apple.com/us/app/cal-ai-food-calorie-tracker/id6480417616" target="_blank" rel="noopener noreferrer">App Store</a> · <a href="https://play.google.com/store/apps/details?id=com.viraldevelopment.calai" target="_blank" rel="noopener noreferrer">Google Play</a>.</p>
+      <p><strong>Medien:</strong> <a href="https://www.cnbc.com/2025/09/06/cal-ai-how-a-teenage-ceo-built-a-fast-growing-calorie-tracking-app.html" target="_blank" rel="noopener noreferrer">CNBC</a>; <a href="https://nordic.businessinsider.com/teenager-built-million-dollar-startup-how-he-did-it-2025-10" target="_blank" rel="noopener noreferrer">Business Insider Nordic</a>.</p>
+
+      <h2>Szenario 2: KI-Nützlichkeit für Alltagsgewohnheit → Consumer-Skalierung</h2>
+      <p><strong>Beispiel:</strong> <strong>Cal AI</strong>, mitgründet von <strong>Zach Yadegari</strong> und <strong>Henry Langmack</strong>, Start <strong>Mai 2024</strong>.</p>
+      <p><strong>Links:</strong> <a href="https://www.calai.app/" target="_blank" rel="noopener noreferrer">calai.app</a> · iOS/Android oben.</p>
+      <p><strong>Medien:</strong> <a href="https://techcrunch.com/2025/03/16/photo-calorie-app-cal-ai-downloaded-over-a-million-times-was-built-by-two-teenagers/" target="_blank" rel="noopener noreferrer">TechCrunch Mär 2025</a>; <a href="https://www.cnbc.com/2025/09/06/cal-ai-how-a-teenage-ceo-built-a-fast-growing-calorie-tracking-app.html" target="_blank" rel="noopener noreferrer">CNBC Sep 2025</a>.</p>
+      <p><em>Hinweis:</em> Umsatzzahlen variieren—als <strong>berichtete Momentaufnahmen</strong> lesen.</p>
+
+      <h2>Szenario 3: Ernstes Kapital vor dem Abschluss</h2>
+      <p><strong>Beispiel:</strong> <strong>Toby Brown</strong> und <strong>Beem</strong>. <em>The Times</em> berichtete ~<strong>1 Mio. $</strong> von <strong>South Park Commons</strong>, <strong>Feb. 2025</strong>.</p>
+      <p><strong>Links:</strong> <a href="https://beem.computer" target="_blank" rel="noopener noreferrer">beem.computer</a> · <a href="https://www.southparkcommons.com/companies/beem" target="_blank" rel="noopener noreferrer">South Park Commons — Beem</a>.</p>
+      <p><strong>Medium:</strong> <a href="https://www.thetimes.com/business/entrepreneurs/article/the-16-year-old-swapping-gcses-for-silicon-valley-and-his-1m-start-up-00cptjxqh" target="_blank" rel="noopener noreferrer">The Times</a>.</p>
+
+      <h2>Szenario 4: „Schlafzimmer“-Pfad—Vidovo</h2>
+      <p><strong>Beispiel:</strong> <strong>Elijah Khasabo</strong> und <strong>Vidovo</strong> (Marken und UGC-Creator). <em>Fortune</em> Nov. 2025.</p>
+      <p><strong>Link:</strong> <a href="https://www.vidovo.com" target="_blank" rel="noopener noreferrer">vidovo.com</a>.</p>
+      <p><strong>Medium:</strong> <a href="https://fortune.com/2025/11/27/gen-z-entrepreneur-elijah-khasabo-tech-startup-college-student-degree-networking/" target="_blank" rel="noopener noreferrer">Fortune</a>.</p>
+
+      <h2>Szenario 5: Strategische Übernahme</h2>
+      <p><strong>Beispiel:</strong> <strong>MyFitnessPal</strong> übernimmt <strong>Cal AI</strong>—<strong>TechCrunch</strong>, 2. März 2026.</p>
+      <p><strong>Links:</strong> <a href="https://www.myfitnesspal.com" target="_blank" rel="noopener noreferrer">MyFitnessPal</a> · <a href="https://www.calai.app/" target="_blank" rel="noopener noreferrer">Cal AI</a>.</p>
+      <p><strong>Medium:</strong> <a href="https://techcrunch.com/2026/03/02/myfitnesspal-has-acquired-cal-ai-the-viral-calorie-app-built-by-teens/" target="_blank" rel="noopener noreferrer">TechCrunch</a>.</p>
+
+      <h2>Was am alten Modell bricht</h2>
+      <p>Ein Jahr geheim bauen, ein Problem lösen, das niemand sucht, und hoffen, Merit verteilt sich von selbst. Gegensteuer: kleinerer Scope, schnellere Zyklen, klare Kanäle.</p>
+
+      <h2>Der reproducierbare Teil</h2>
+      <p>Wir haben das <a href="/future-ready-graduate">Future-Ready Graduate Program</a> für genau diese Ära gebaut: KI-gestütztes Bauen, echte Projekte, und wie Produkte gefunden und bezahlt werden—ohne zu behaupten, Ergebnisse seien einfach oder „durchschnittlich“.</p>
+
+      <hr>
+
+      <p><em>Bereit, die Skills hinter diesen Mustern zu lernen? <a href="/future-ready-graduate" target="_blank" rel="noopener noreferrer">Programm ansehen</a> oder <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Beratung buchen</a> bei Digni Digital.</em></p>
+    `,
+  },
 }
 
 export const articlesDe: BlogArticle[] = articlesEn.map((article) => {
   const override = contentDe[article.slug]
-  if (!override) return { ...article, readTime: article.readTime.replace('min read', 'Min. Lesezeit') }
-  return { ...article, ...override }
+  const body = blogDeBodyOverrides[article.slug]
+  if (!override && !body) return { ...article, readTime: article.readTime.replace('min read', 'Min. Lesezeit') }
+  return { ...article, ...(override ?? {}), ...(body ?? {}) }
 })

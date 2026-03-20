@@ -1,7 +1,8 @@
 import type { BlogArticle } from './types'
 import { articlesEn } from './en'
+import { blogFrOverrides } from './generated/blog-fr-overrides'
 
-/** Full French content for the 12 strategy articles (Digni Digital LLC docx). Others keep placeholder until translated. */
+/** Hand-localized French. Other slugs merge `blogFrOverrides` (run `bun run generate-blog-locale-fills`). */
 const frenchArticlesBySlug: Record<string, BlogArticle> = {
   'employes-ia-2026-service-client-triple-leads': {
     id: 16,
@@ -825,20 +826,121 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
       <p><em>Prêt à apprendre le vibecoding ? <a href="/future-ready-graduate" target="_blank" rel="noopener noreferrer">Explorez le Future-Ready Graduate Program</a> ou <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">réservez une consultation</a>.</em></p>
     `,
   },
+  'one-software-life-changing-stories-youth-millionaires-2024-2026': {
+    id: 101,
+    title: "Un logiciel, une vie qui change : ce que nous apprennent les jeunes builders millionnaires (2024–2026)",
+    slug: "one-software-life-changing-stories-youth-millionaires-2024-2026",
+    excerpt: "Le bon produit au bon moment—avec de la distribution—peut changer la trajectoire d’un jeune builder. Cinq schémas réels tirés de la presse 2024–2026 (Cal AI, Beem, Vidovo…), avec réserves honnêtes et ce qu’il faut copier.",
+    category: "Future of Work",
+    readTime: "14 min de lecture",
+    publishDate: "20 mars 2026",
+    author: "Pascal Digny",
+    tags: [
+      "Entrepreneuriat jeunesse",
+      "Fondateurs Gen Z",
+      "Applis IA",
+      "SaaS",
+      "Future of Work",
+      "Cal AI",
+      "Distribution produit",
+    ],
+    featured: true,
+    content: `
+      <h2>L’opportunité n’est pas « devenir riche vite »—c’est « un produit sérieux, sérieusement distribué »</h2>
+
+      <p>Les titres sur les fondateurs adolescents et les applis à huit chiffres font du bruit. En enlevant le bruit, une histoire plus nette apparaît : <strong>un produit logiciel bien choisi</strong>, qui attaque une habitude quotidienne douloureuse, construit et livré vite, et montré au bon public, peut changer une vie—capital, options et preuve que vous pouvez recommencer.</p>
+      <p>Ce schéma revient dans la grande presse entre <strong>2024 et 2026</strong>. Voici <strong>cinq archétypes</strong> illustrés par des builders et produits nommés, avec des liens vers <strong>ce qu’ils ont construit</strong> et vers des <strong>reportages fiables</strong>—non comme garantie de reproduire leurs résultats, mais comme preuve que le mécanisme existe.</p>
+
+      <blockquote>
+        <p>« Le biais de survie est réel. Pour chaque appli virale dans la presse, des milliers de produits ne décollent pas. La leçon n’est pas la chance—c’est <strong>problème étroit, ship rapide, distribution tenace et itération</strong>. »</p>
+      </blockquote>
+
+      <h2>Pourquoi un logiciel peut peser plus qu’une ligne de CV</h2>
+
+      <p>Aujourd’hui, un seul produit peut être :</p>
+      <ul>
+        <li><strong>Une preuve portable</strong>—quelque chose à envoyer en DM, entretien ou message investisseur.</li>
+        <li><strong>Une machine à cash-flow</strong>—abonnement ou usage, si rétention et acquisition fonctionnent.</li>
+        <li><strong>Une machine à compétences composées</strong>—go-to-market, support, analytics, jugement produit.</li>
+        <li><strong>Une option de sortie</strong>—un repreneur stratégique achète traction et équipe (quand le fit est bon).</li>
+      </ul>
+
+      <p>Construire assisté par IA et la distribution via les stores ont baissé le coût d’essayer—mais <strong>n’ont pas supprimé le besoin de distribution</strong>. Les cas ci-dessous marient une histoire produit nette et du mouvement sur le marché.</p>
+
+      <h2>Scénario 1 : une première sortie finance le pari suivant</h2>
+
+      <p><strong>Schéma :</strong> Livrer quelque chose tôt ; obtenir une petite liquidité ; réinvestir temps et argent dans un coup plus large.</p>
+
+      <p><strong>Exemple :</strong> Les profils de <strong>Zach Yadegari</strong> décrivent la vente d’un projet antérieur, <strong>Totally Science</strong> (site lié au jeu vidéo), pour de l’ordre de <strong>100 000 $ à 16 ans</strong>, avec une date de vente dans les médias autour du <strong>début 2024</strong>—capital et crédibilité avant que le produit suivant ne scale.</p>
+
+      <p><strong>Ce qu’ils ont construit ensuite :</strong> <a href="https://www.calai.app/" target="_blank" rel="noopener noreferrer">Cal AI</a>—suivi calorique par photo—est devenu le breakout grand public (voir scénarios 2 et 5). <a href="https://apps.apple.com/us/app/cal-ai-food-calorie-tracker/id6480417616" target="_blank" rel="noopener noreferrer">App Store : Cal AI</a> · <a href="https://play.google.com/store/apps/details?id=com.viraldevelopment.calai" target="_blank" rel="noopener noreferrer">Google Play : Cal AI</a>.</p>
+
+      <p><strong>Sources :</strong> <a href="https://www.cnbc.com/2025/09/06/cal-ai-how-a-teenage-ceo-built-a-fast-growing-calorie-tracking-app.html" target="_blank" rel="noopener noreferrer">CNBC — profil teenage CEO / Cal AI</a> ; <a href="https://nordic.businessinsider.com/teenager-built-million-dollar-startup-how-he-did-it-2025-10" target="_blank" rel="noopener noreferrer">Business Insider Nordic</a>.</p>
+
+      <h2>Scénario 2 : utilité IA sur une habitude du quotidien → scale grand public</h2>
+
+      <p><strong>Schéma :</strong> Choisir une habitude récurrente et émotionnelle (santé, argent, etc.) ; rendre le premier gain trivial ; laisser le partage et le store travailler.</p>
+
+      <p><strong>Exemple :</strong> <strong>Cal AI</strong>, co-fondée par <strong>Zach Yadegari</strong> et <strong>Henry Langmack</strong>, lancée en <strong>mai 2024</strong>. La presse a documenté des téléchargements rapides et une traction précoce forte pour une expérience calorie par photo liée à l’IA.</p>
+
+      <p><strong>Liens produit :</strong> <a href="https://www.calai.app/" target="_blank" rel="noopener noreferrer">calai.app</a> · <a href="https://apps.apple.com/us/app/cal-ai-food-calorie-tracker/id6480417616" target="_blank" rel="noopener noreferrer">iOS</a> · <a href="https://play.google.com/store/apps/details?id=com.viraldevelopment.calai" target="_blank" rel="noopener noreferrer">Android</a>.</p>
+
+      <p><strong>Sources :</strong> <a href="https://techcrunch.com/2025/03/16/photo-calorie-app-cal-ai-downloaded-over-a-million-times-was-built-by-two-teenagers/" target="_blank" rel="noopener noreferrer">TechCrunch — mars 2025</a> ; <a href="https://www.cnbc.com/2025/09/06/cal-ai-how-a-teenage-ceo-built-a-fast-growing-calorie-tracking-app.html" target="_blank" rel="noopener noreferrer">CNBC — sept. 2025</a>.</p>
+
+      <p><em>Remarque :</em> chiffres de revenus ou marge diffèrent selon les titres et trimestres—traiter les chiffres publics comme des <strong>instantanés reportés</strong>, pas des faits audités.</p>
+
+      <h2>Scénario 3 : du capital sérieux avant le diplôme</h2>
+
+      <p><strong>Schéma :</strong> clarté de pitch + démo + accès réseau → un fonds parie sur vous très tôt.</p>
+
+      <p><strong>Exemple :</strong> <strong>Toby Brown</strong> a fondé <strong>Beem</strong>, décrit comme une couche IA native pour automatiser le travail quotidien sur ordinateur. <em>The Times</em> a rapporté environ <strong>1 million de dollars</strong> levés auprès de <strong>South Park Commons</strong> en <strong>février 2025</strong>, avec un déménagement dans la Bay Area pour builder à plein temps.</p>
+
+      <p><strong>Liens :</strong> <a href="https://beem.computer" target="_blank" rel="noopener noreferrer">beem.computer</a> · <a href="https://www.southparkcommons.com/companies/beem" target="_blank" rel="noopener noreferrer">South Park Commons — Beem</a>.</p>
+
+      <p><strong>Source :</strong> <a href="https://www.thetimes.com/business/entrepreneurs/article/the-16-year-old-swapping-gcses-for-silicon-valley-and-his-1m-start-up-00cptjxqh" target="_blank" rel="noopener noreferrer">The Times — févr. 2025</a>.</p>
+
+      <h2>Scénario 4 : trajectoire « chambre à coucher » (traction sans buzzword)</h2>
+
+      <p><strong>Schéma :</strong> logiciel de workflow de niche ; exécution obsessive ; créateurs ou PME paient car l’outil se rembourse.</p>
+
+      <p><strong>Exemple :</strong> <strong>Elijah Khasabo</strong> et <strong>Vidovo</strong>—plateforme reliant marques et créateurs pour de l’UGC—construite en parallèle des études. <em>Fortune</em> présente l’entreprise sur une trajectoire vers un <strong>chiffre d’affaires annuel significatif</strong> depuis un démarrage depuis une chambre avec peu de capital.</p>
+
+      <p><strong>Lien produit :</strong> <a href="https://www.vidovo.com" target="_blank" rel="noopener noreferrer">vidovo.com</a>.</p>
+
+      <p><strong>Source :</strong> <a href="https://fortune.com/2025/11/27/gen-z-entrepreneur-elijah-khasabo-tech-startup-college-student-degree-networking/" target="_blank" rel="noopener noreferrer">Fortune — nov. 2025</a>.</p>
+
+      <h2>Scénario 5 : traction → acquisition stratégique</h2>
+
+      <p><strong>Schéma :</strong> votre produit comble un trou dans la feuille de route d’une grande plateforme ; ils achètent la vitesse et le talent.</p>
+
+      <p><strong>Exemple :</strong> en <strong>mars 2026</strong>, <strong>TechCrunch</strong> rapporte <strong>MyFitnessPal</strong> acquérant <strong>Cal AI</strong>, l’appli calorie fondée par des adolescents—en conservant l’équipe et en combinant l’expérience Cal AI avec la base nutrition de MyFitnessPal.</p>
+
+      <p><strong>Liens :</strong> <a href="https://www.myfitnesspal.com" target="_blank" rel="noopener noreferrer">MyFitnessPal</a> · <a href="https://www.calai.app/" target="_blank" rel="noopener noreferrer">Cal AI</a>.</p>
+
+      <p><strong>Source :</strong> <a href="https://techcrunch.com/2026/03/02/myfitnesspal-has-acquired-cal-ai-the-viral-calorie-app-built-by-teens/" target="_blank" rel="noopener noreferrer">TechCrunch — 2 mars 2026</a>.</p>
+
+      <h2>Ce qui échoue dans l’ancien modèle</h2>
+
+      <p>Le schéma cassé n’est pas « les jeunes ne peuvent pas builder ». C’est <strong>builder en secret pendant un an</strong>, <strong>résoudre un problème que personne ne cherche</strong> et <strong>attendre que le mérite trouve tout seul la distribution</strong>. Le contre-mouvement : périmètre plus petit, cycles plus rapides, canaux : vidéo courte, communautés, outreach, partenariats, hooks produit (gratuit, partage, etc.).</p>
+
+      <h2>Si vous voulez la partie reproductible—pas le ticket de loterie</h2>
+
+      <p>Nous avons conçu le <a href="/future-ready-graduate">Future-Ready Graduate Program</a> pour cette époque : construction assistée par IA, livraison de vrais projets, et comment les produits se font trouver et payer. C’est la couche pratique derrière « un produit peut changer votre trajectoire »—sans prétendre que les résultats sont moyens ou faciles.</p>
+
+      <hr>
+
+      <p><em>Prêt à apprendre les compétences derrière ces schémas ? <a href="/future-ready-graduate" target="_blank" rel="noopener noreferrer">Découvrez le Future-Ready Graduate Program</a> ou <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">réservez une consultation</a> avec Digni Digital.</em></p>
+    `,
+  },
 }
 
-/** French articles: full content for the 12 strategy articles, placeholders for the rest (same slugs/order as EN). */
 export const articlesFr: BlogArticle[] = articlesEn.map((article) => {
-  const fullFr = frenchArticlesBySlug[article.slug]
-  if (fullFr) return fullFr
+  const hand = frenchArticlesBySlug[article.slug]
+  if (hand) return { ...article, ...hand, id: article.id }
+  const gen = blogFrOverrides[article.slug]
+  if (gen) return { ...article, ...gen }
   return {
     ...article,
-    title: article.title + ' (FR)',
-    excerpt: article.excerpt + ' (FR)',
-    category: article.category + ' (FR)',
     readTime: article.readTime.replace('min read', 'min de lecture'),
-    publishDate: article.publishDate,
-    tags: article.tags.map((t) => t + ' (FR)'),
-    content: `<p>(Contenu en français à venir.)</p><p>Slug: ${article.slug}</p>`,
   }
 })

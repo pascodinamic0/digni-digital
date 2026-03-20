@@ -7,7 +7,8 @@
     "dev:webpack": "next dev --webpack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "generate-blog-locale-fills": "bun scripts/generate-blog-locale-fills.ts"
   },
   "dependencies": {
     "framer-motion": "^11.0.0",

@@ -26,3 +26,16 @@ When making **any edit** to a blog post (even a small typo or minor change):
 - All articles in a locale file should use the same recent date when doing a "complete update"
 - Use the current date at the time of the edit
 - Never leave old dates when updating—refresh everything
+
+## 4. Locale Parity (Required for Every Slug)
+
+Every `slug` in `content/blog/en.ts` **must** resolve to a localized article when the user switches language on `/[locale]/blog/[slug]`:
+
+- **`fr.ts`** — `contentFr` (or equivalent map) must supply `title`, `excerpt`, `category`, `readTime`, `publishDate`, `tags`, and **`content`** HTML. Never ship `(FR)` suffix placeholders or stub `content` for production.
+- **`de.ts`, `ar.ts`, `es.ts`** — `contentDe` / `contentAr` / `contentEs` must each include a `content` override for every slug, not only metadata. If `content` is missing, the post reuses English body text and **fails the parity check**.
+- **Single slug** ties locales together; new posts always add all five files in one change set.
+
+When adding or refreshing bulk translations, use `bun run generate-blog-locale-fills` (see `scripts/generate-blog-locale-fills.ts`) and commit the generated `content/blog/generated/*.ts` output together with any hand edits.
+
+- **MyMemory limits:** The script uses the free MyMemory API; daily caps apply. Re-run later (progress is resumable in `content/blog/generated/cache/`, gitignored) or set `MYMEMORY_EMAIL` in the environment for a higher allowance (see [MyMemory usage](https://mymemory.translated.net/doc/usagelimits.php)).
+- **Until overrides are complete:** `fr.ts` / `es.ts` fall back to the English article for any slug missing from the generated map, with localized `readTime` only—treat as temporary; finish runs or hand-translate to match the flagship posts.

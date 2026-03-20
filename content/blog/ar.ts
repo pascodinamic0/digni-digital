@@ -1,7 +1,7 @@
 import type { BlogArticle } from './types'
 import { articlesEn } from './en'
 
-const contentAr: Record<string, Partial<BlogArticle>> = {
+export const contentAr: Record<string, Partial<BlogArticle>> = {
   'ai-employee-systems-transform-customer-service-growing-businesses': {
     title: 'كيف تُحوِّل أنظمة الموظف الذكي خدمة العملاء في الشركات النامية',
     excerpt: 'اكتشف كيف تُحدث أنظمة الموظف الذكي ثورة في عمليات خدمة العملاء، وتخفض التكاليف بنسبة 60%، وتوفر خدمة متاحة على مدار الساعة للشركات النامية.',
@@ -2460,7 +2460,73 @@ const contentAr: Record<string, Partial<BlogArticle>> = {
     readTime: '18 دقيقة قراءة',
     publishDate: '19 مارس 2026',
     tags: ['الترميز بالذكاء الاصطناعي', 'الشباب الأفريقي', 'كسب المال عبر الإنترنت', 'بناء منتجات بالذكاء الاصطناعي', 'مستقبل العمل'],
-  }
+  },
+  'one-software-life-changing-stories-youth-millionaires-2024-2026': {
+    title: 'برنامج واحد يغيّر الحياة: ماذا يعلّمنا شبّان بناء الثروة عبر البرمجيات (2024–2026)',
+    excerpt: 'المنتج المناسب في الوقت المناسب—مع التوزيع—يمكن أن يغيّر مسار من يبني. خمسة أنماط من تغطية إعلامية موثوقة 2024–2026 (Cal AI، Beem، Vidovo…) مع تحفظات صادقة.',
+    category: 'مستقبل العمل',
+    readTime: '14 دقيقة قراءة',
+    publishDate: '20 مارس 2026',
+    tags: ['ريادة شبابية', 'مؤسسو جيل Z', 'تطبيقات الذكاء الاصطناعي', 'SaaS', 'مستقبل العمل', 'Cal AI', 'توزيع المنتج'],
+    content: `
+      <h2>الفرصة ليست «الثراء السريع»—بل «منتج جاد، موزَّع بجدية»</h2>
+
+      <p>عناوين مؤسِّين مراهقين وتطبيقات بثمانية أرقام مزعجة. بعيدًا عن الضجيج، يظهر خطّ أوضح: <strong>منتج برمجي واحد مختار بعناية</strong> يستهدف عادة يومية مؤلمة، يُبنى ويُطلَق بسرعة، ويُعرَض للجمهور المناسب، قد يغيّر حياةً—رأس مال وخيارات وإثبات أنك تستطيع التكرار.</p>
+      <p>ظهر هذا النمط مرارًا في التقارير الصحافية الكبرى بين <strong>2024 و2026</strong>. فيما يلي <strong>خمسة أنماط</strong> مع أسماء ومنتجات، وروابط لـ<strong>ما بَنوه</strong> ول<strong>مصادر موثوقة</strong>—لا كضمان لاستنساخ النتائج، بل كدليل أن الآلية حقيقية.</p>
+
+      <blockquote>
+        <p>«تحيّز البقاء حقيقي. لكل تطبيق «فيروسي» في الصحافة، آلاف المنتجات لا تُقلع. الدرسّ ليس الحظ—بل <strong>مشكلة ضيقة، إطلاق سريع، توزيع عنيد، وتكرار</strong>.»</p>
+      </blockquote>
+
+      <h2>لماذا قد يفوق برنامج واحد سطرًا في السيرة الذاتية</h2>
+
+      <ul>
+        <li><strong>إثبات يُحمَل</strong>—رابط ترسله في رسالة أو مقابلة.</li>
+        <li><strong>تدفق نقدي محتمل</strong>—اشتراك أو استخدام إذا نجح الاكتساب والاحتفاظ.</li>
+        <li><strong>مهارات مركّبة</strong>—الوصول للسوق، الدعم، التحليلات، حكم المنتج.</li>
+        <li><strong>خيار استحواذ</strong>—عندما يكون الانسجام استراتيجيًا.</li>
+      </ul>
+
+      <p>البناء بمساعدة الذكاء الاصطناعي ومتاجر التطبيقات خفّضا تكلفة التجربة—لكن <strong>لم يلغيا الحاجة للتوزيع</strong>.</p>
+
+      <h2>السيناريو 1: أول خروج يمول الرهان التالي</h2>
+      <p><strong>النمط:</strong> شحن منتج مبكرًا؛ سيولة صغيرة؛ إعادة استثمار الوقت والمال في أرجوحة أكبر.</p>
+      <p><strong>مثال:</strong> تتحدث ملفات <strong>Zach Yadegari</strong> عن بيع مشروعه <strong>Totally Science</strong> بحوالي <strong>100 ألف دولار في 16 عامًا</strong>، مع تاريخ تقريبي في التقارير أوائل <strong>2024</strong>.</p>
+      <p><strong>ما بُني بعده:</strong> <a href="https://www.calai.app/" target="_blank" rel="noopener noreferrer">Cal AI</a> لتتبع السعرات بالصورة. <a href="https://apps.apple.com/us/app/cal-ai-food-calorie-tracker/id6480417616" target="_blank" rel="noopener noreferrer">App Store</a> · <a href="https://play.google.com/store/apps/details?id=com.viraldevelopment.calai" target="_blank" rel="noopener noreferrer">Google Play</a>.</p>
+      <p><strong>تقارير:</strong> <a href="https://www.cnbc.com/2025/09/06/cal-ai-how-a-teenage-ceo-built-a-fast-growing-calorie-tracking-app.html" target="_blank" rel="noopener noreferrer">CNBC</a>؛ <a href="https://nordic.businessinsider.com/teenager-built-million-dollar-startup-how-he-did-it-2025-10" target="_blank" rel="noopener noreferrer">Business Insider Nordic</a>.</p>
+
+      <h2>السيناريو 2: عادة يومية + ذكاء اصطناعي ← نطاق استهلاكي</h2>
+      <p><strong>مثال:</strong> <strong>Cal AI</strong> المشترك تأسيسها <strong>Zach Yadegari</strong> و<strong>Henry Langmack</strong>، إطلاق <strong>مايو 2024</strong>.</p>
+      <p><strong>روابط:</strong> <a href="https://www.calai.app/" target="_blank" rel="noopener noreferrer">calai.app</a> · iOS وAndroid أعلاه.</p>
+      <p><strong>تقارير:</strong> <a href="https://techcrunch.com/2025/03/16/photo-calorie-app-cal-ai-downloaded-over-a-million-times-was-built-by-two-teenagers/" target="_blank" rel="noopener noreferrer">TechCrunch 2025</a>؛ <a href="https://www.cnbc.com/2025/09/06/cal-ai-how-a-teenage-ceo-built-a-fast-growing-calorie-tracking-app.html" target="_blank" rel="noopener noreferrer">CNBC</a>.</p>
+      <p><em>ملاحظة:</em> أرقام الإيرادات تختلف حسب المصدر—عامل معها ك<strong>لقطات إعلامية</strong>.</p>
+
+      <h2>السيناريو 3: رأس مال مؤسسي قبل التخرج</h2>
+      <p><strong>مثال:</strong> <strong>Toby Brown</strong> و<strong>Beem</strong>. ذكرت <em>The Times</em> نحو <strong>مليون دولار</strong> من <strong>South Park Commons</strong> في <strong>فبراير 2025</strong>.</p>
+      <p><strong>روابط:</strong> <a href="https://beem.computer" target="_blank" rel="noopener noreferrer">beem.computer</a> · <a href="https://www.southparkcommons.com/companies/beem" target="_blank" rel="noopener noreferrer">South Park Commons — Beem</a>.</p>
+      <p><strong>تقرير:</strong> <a href="https://www.thetimes.com/business/entrepreneurs/article/the-16-year-old-swapping-gcses-for-silicon-valley-and-his-1m-start-up-00cptjxqh" target="_blank" rel="noopener noreferrer">The Times</a>.</p>
+
+      <h2>السيناريو 4: مسار «الغرفة»—Vidovo</h2>
+      <p><strong>مثال:</strong> <strong>Elijah Khasabo</strong> و<strong>Vidovo</strong> لربط العلامات والمبدعين (UGC)، مع تقرير <em>Fortune</em> نوفمبر 2025.</p>
+      <p><strong>رابط:</strong> <a href="https://www.vidovo.com" target="_blank" rel="noopener noreferrer">vidovo.com</a>.</p>
+      <p><strong>تقرير:</strong> <a href="https://fortune.com/2025/11/27/gen-z-entrepreneur-elijah-khasabo-tech-startup-college-student-degree-networking/" target="_blank" rel="noopener noreferrer">Fortune</a>.</p>
+
+      <h2>السيناريو 5: استحواذ استراتيجي</h2>
+      <p><strong>مثال:</strong> <strong>MyFitnessPal</strong> تستحوذ على <strong>Cal AI</strong>—تقرير <strong>TechCrunch</strong> 2 مارس 2026.</p>
+      <p><strong>روابط:</strong> <a href="https://www.myfitnesspal.com" target="_blank" rel="noopener noreferrer">MyFitnessPal</a> · <a href="https://www.calai.app/" target="_blank" rel="noopener noreferrer">Cal AI</a>.</p>
+      <p><strong>تقرير:</strong> <a href="https://techcrunch.com/2026/03/02/myfitnesspal-has-acquired-cal-ai-the-viral-calorie-app-built-by-teens/" target="_blank" rel="noopener noreferrer">TechCrunch</a>.</p>
+
+      <h2>ما ينكسر في النموذج القديم</h2>
+      <p>البناء سرًا لعام، مشكلة لا يبحث عنها أحد، وانتظار أن «الجدارة» تجد التوزيع وحدها. البديل: نطاق أصغر، دورات أسرع، قنوات واضحة.</p>
+
+      <h2>الجزء القابل للتكرار</h2>
+      <p>صمّمنا <a href="/future-ready-graduate">برنامج Future-Ready Graduate</a> لهذه المرحلة: بناء بمساعدة الذكاء الاصطناعي، مشاريع حقيقية، وطرق يُوجَد بها المنتج ويُدفَع مقابله—دون زعم أن النتائج سهلة أو متوسطة.</p>
+
+      <hr>
+
+      <p><em>جاهز لتعلم المهارات؟ <a href="/future-ready-graduate" target="_blank" rel="noopener noreferrer">استكشف البرنامج</a> أو <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">احجز استشارة</a> مع Digni Digital.</em></p>
+    `,
+  },
 }
 
 export const articlesAr: BlogArticle[] = articlesEn.map((article) => {
