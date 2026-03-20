@@ -336,12 +336,81 @@ type ClientJourneyTranslations = {
   aiStages: Array<{ step: number; title: string; description: string; win: string }>
 }
 
+type FutureReadyGraduateTranslations = {
+  heroBadge: string
+  heroTitleLine1: string
+  heroTitleHighlight: string
+  heroDescription: string
+  calendarTitle: string
+  calendarTitleHighlight: string
+  calendarSubtitle: string
+  fullSchoolYear: string
+  fullSchoolYearDesc: string
+  threeTrimesters: string
+  threeTrimestersDesc: string
+  seamlessIntegration: string
+  seamlessIntegrationDesc: string
+  academicYearIntegration: string
+  programStart: string
+  programStartDate: string
+  respectsBreaks: string
+  respectsBreaksDates: string
+  graduationReady: string
+  graduationReadyDate: string
+  focusArea: string
+  duration: string
+  coreModules: string
+    firstTrimester: string
+    secondTrimester: string
+    thirdTrimester: string
+    educationPrefix: string
+    educationFails: string
+    digitalEconomyPrefix: string
+    digitalThrives: string
+  educationFailsSubtitle: string
+  traditionalCrisis: string
+  traditionalCrisisDesc: string
+  digitalBoom: string
+  digitalBoomDesc: string
+  whyDigitalSkills: string
+  whyDigitalSkillsDesc: string
+    globalLeaders: string
+    globalLeadersHighlight: string
+    globalLeadersSubtitle: string
+    highDemandSkills: string
+    highDemandSkillsHighlight: string
+    highDemandSkillsSubtitle: string
+  aiAdvantage: string
+  aiAdvantageDesc: string
+    partnershipRequirements: string
+    partnershipRequirementsHighlight: string
+    partnershipRequirementsDesc: string
+  whatSchoolsProvide: string
+  whatSchoolsProvideDesc: string
+  whatWeProvide: string
+  whatWeProvideDesc: string
+    provenResults: string
+    provenResultsHighlight: string
+    readyToTransform: string
+  readyToTransformDesc: string
+    threePaths: string
+    threePathsHighlight: string
+    threePathsSubtitle: string
+  forSchools: string
+  forProfessional: string
+  guidedLearning: string
+  newLabel: string
+  onlySpotsAvailable: string
+  noOneLeftBehind: string
+}
+
 export type TranslationKeys = CommonTranslations & {
   home: HomeTranslations
   blog: BlogTranslations
   about: AboutTranslations
   contact: ContactTranslations
   clientJourney: ClientJourneyTranslations
+  futureReadyGraduate: FutureReadyGraduateTranslations
 }
 
 function buildTranslations(): Record<Language, TranslationKeys> {
@@ -2142,6 +2211,142 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     ],
   }
 
+  const futureReadyGraduateEn: FutureReadyGraduateTranslations = {
+    heroBadge: 'Future-Ready Graduate Program',
+    heroTitleLine1: 'Turn Your Graduates Into',
+    heroTitleHighlight: 'Industry-Ready Professionals',
+    heroDescription: '85% employed. Job creation is in our DNA—we teach skills that bring out entrepreneurial talents through guided learning personalized to everyone\'s gifts. We bring curriculum and internet. You bring students and space.',
+    calendarTitle: 'Designed for the',
+    calendarTitleHighlight: 'National Academic Calendar',
+    calendarSubtitle: 'September to July. Fits your school year. Respects breaks.',
+    fullSchoolYear: 'Full School Year',
+    fullSchoolYearDesc: 'September to July (222 school days)',
+    threeTrimesters: 'Three Trimesters',
+    threeTrimestersDesc: 'Structured around ministry breaks',
+    seamlessIntegration: 'Seamless Integration',
+    seamlessIntegrationDesc: 'No disruption to existing curriculum',
+    academicYearIntegration: '2025-2026 Academic Year Integration',
+    programStart: 'Program Start',
+    programStartDate: 'Monday, September 1, 2025',
+    respectsBreaks: 'Respects All Breaks',
+    respectsBreaksDates: 'October, Christmas, February & Easter',
+    graduationReady: 'Graduation Ready',
+    graduationReadyDate: 'July 2-4, 2026',
+    focusArea: 'Focus Area',
+    duration: 'Duration',
+    coreModules: 'Core Modules',
+    firstTrimester: 'First Trimester',
+    secondTrimester: 'Second Trimester',
+    thirdTrimester: 'Third Trimester',
+    educationPrefix: 'Education ',
+    educationFails: 'Fails',
+    digitalEconomyPrefix: ', Digital Economy ',
+    digitalThrives: 'Thrives',
+    educationFailsSubtitle: 'The digital revolution offers unprecedented opportunities. Position your students at the forefront of this transformation.',
+    traditionalCrisis: 'Traditional Education Crisis',
+    traditionalCrisisDesc: 'The harsh reality of conventional graduation outcomes',
+    digitalBoom: 'Digital Economy Boom',
+    digitalBoomDesc: 'The explosive growth of remote digital opportunities',
+    whyDigitalSkills: 'Why Digital Skills Are the Future',
+    whyDigitalSkillsDesc: 'The digital economy offers unprecedented advantages that traditional careers simply cannot match. Our guided learning is personalized to each participant\'s talents and gifts—bringing out entrepreneurial potential in students and anyone who joins.',
+    globalLeaders: 'Global Leaders',
+    globalLeadersHighlight: 'Supporting Our Mission',
+    globalLeadersSubtitle: 'Listen to world-renowned figures discuss the same principles and values that drive our Future-Ready Graduate Program—job creation, entrepreneurial development, and personalized learning that brings out everyone\'s talents.',
+    highDemandSkills: 'High-Demand Digital Skills',
+    highDemandSkillsHighlight: 'That Actually Pay',
+    highDemandSkillsSubtitle: 'The digital economy is exploding with opportunities. With 2026 AI tools like Lovable.dev, Cursor, and advanced AI platforms, beginners can now compete with expert-level professionals in these lucrative fields—if they master the right AI-powered skills.',
+    aiAdvantage: 'The 2026 AI Advantage',
+    aiAdvantageDesc: 'With cutting-edge 2026 AI tools like Lovable.dev and Cursor, your students can compete with expert-level professionals from day one and start earning immediately.',
+    partnershipRequirements: 'Partnership',
+    partnershipRequirementsHighlight: 'Requirements',
+    partnershipRequirementsDesc: 'A successful partnership requires commitment from both sides. Here\'s what we each bring to ensure student success.',
+    whatSchoolsProvide: 'What Schools Provide',
+    whatSchoolsProvideDesc: 'Your essential contributions to the partnership',
+    whatWeProvide: 'What We Provide',
+    whatWeProvideDesc: 'Our comprehensive support and resources',
+    provenResults: 'Proven Results',
+    provenResultsHighlight: 'Across Africa',
+    readyToTransform: 'Ready to Transform Student Outcomes?',
+    readyToTransformDesc: 'Let\'s discuss how the Future-Ready Graduate Program can work for your institution. See curriculum details and success metrics in a personalized consultation.',
+    threePaths: 'Three Paths to',
+    threePathsHighlight: 'Digital Success',
+    threePathsSubtitle: 'Choose the path that fits your needs.',
+    forSchools: 'FOR SCHOOLS',
+    forProfessional: 'FOR PROFESSIONAL INSTITUTES',
+    guidedLearning: 'GUIDED LEARNING',
+    newLabel: 'NEW',
+    onlySpotsAvailable: 'Only {count} spots available',
+    noOneLeftBehind: 'No one gets left behind.',
+  }
+
+  const futureReadyGraduateFr: FutureReadyGraduateTranslations = {
+    heroBadge: 'Programme Diplômé Prêt pour l\'Avenir',
+    heroTitleLine1: 'Transformez vos diplômés en',
+    heroTitleHighlight: 'Professionnels prêts pour l\'industrie',
+    heroDescription: '85 % employés. La création d\'emplois est dans notre ADN—nous enseignons des compétences qui révèlent les talents entrepreneuriaux grâce à un apprentissage guidé personnalisé aux dons de chacun. Nous apportons le programme et l\'internet. Vous apportez les étudiants et l\'espace.',
+    calendarTitle: 'Conçu pour le',
+    calendarTitleHighlight: 'Calendrier académique national',
+    calendarSubtitle: 'De septembre à juillet. S\'adapte à votre année scolaire. Respecte les vacances.',
+    fullSchoolYear: 'Année scolaire complète',
+    fullSchoolYearDesc: 'Septembre à juillet (222 jours d\'école)',
+    threeTrimesters: 'Trois trimestres',
+    threeTrimestersDesc: 'Structuré autour des vacances ministérielles',
+    seamlessIntegration: 'Intégration transparente',
+    seamlessIntegrationDesc: 'Aucune perturbation du programme existant',
+    academicYearIntegration: 'Intégration année académique 2025-2026',
+    programStart: 'Début du programme',
+    programStartDate: 'Lundi 1er septembre 2025',
+    respectsBreaks: 'Respecte toutes les vacances',
+    respectsBreaksDates: 'Octobre, Noël, février et Pâques',
+    graduationReady: 'Prêt pour la remise des diplômes',
+    graduationReadyDate: '2-4 juillet 2026',
+    focusArea: 'Domaine d\'étude',
+    duration: 'Durée',
+    coreModules: 'Modules principaux',
+    firstTrimester: 'Premier trimestre',
+    secondTrimester: 'Deuxième trimestre',
+    thirdTrimester: 'Troisième trimestre',
+    educationPrefix: 'L\'éducation ',
+    educationFails: 'échoue',
+    digitalEconomyPrefix: ', l\'économie numérique ',
+    digitalThrives: 'prospère',
+    educationFailsSubtitle: 'La révolution numérique offre des opportunités sans précédent. Placez vos étudiants à l\'avant-garde de cette transformation.',
+    traditionalCrisis: 'Crise de l\'éducation traditionnelle',
+    traditionalCrisisDesc: 'La dure réalité des résultats de fin d\'études conventionnels',
+    digitalBoom: 'Boom de l\'économie numérique',
+    digitalBoomDesc: 'La croissance explosive des opportunités numériques à distance',
+    whyDigitalSkills: 'Pourquoi les compétences numériques sont l\'avenir',
+    whyDigitalSkillsDesc: 'L\'économie numérique offre des avantages sans précédent que les carrières traditionnelles ne peuvent tout simplement pas égaler. Notre apprentissage guidé est personnalisé aux talents et dons de chaque participant—révélant le potentiel entrepreneurial des étudiants et de tous ceux qui nous rejoignent.',
+    globalLeaders: 'Leaders mondiaux',
+    globalLeadersHighlight: 'qui soutiennent notre mission',
+    globalLeadersSubtitle: 'Écoutez des figures de renommée mondiale discuter des mêmes principes et valeurs qui animent notre Programme Diplômé Prêt pour l\'Avenir—création d\'emplois, développement entrepreneurial et apprentissage personnalisé qui révèle les talents de chacun.',
+    highDemandSkills: 'Compétences numériques très demandées',
+    highDemandSkillsHighlight: 'qui paient vraiment',
+    highDemandSkillsSubtitle: 'L\'économie numérique explose d\'opportunités. Avec les outils IA 2026 comme Lovable.dev, Cursor et les plateformes IA avancées, les débutants peuvent désormais rivaliser avec des professionnels de niveau expert dans ces domaines lucratifs—s\'ils maîtrisent les bonnes compétences propulsées par l\'IA.',
+    aiAdvantage: 'L\'avantage IA 2026',
+    aiAdvantageDesc: 'Avec les outils IA 2026 de pointe comme Lovable.dev et Cursor, vos étudiants peuvent rivaliser avec des professionnels de niveau expert dès le premier jour et commencer à gagner immédiatement.',
+    partnershipRequirements: 'Exigences',
+    partnershipRequirementsHighlight: 'du partenariat',
+    partnershipRequirementsDesc: 'Un partenariat réussi nécessite l\'engagement des deux parties. Voici ce que chacun apporte pour assurer la réussite des étudiants.',
+    whatSchoolsProvide: 'Ce que les écoles fournissent',
+    whatSchoolsProvideDesc: 'Vos contributions essentielles au partenariat',
+    whatWeProvide: 'Ce que nous fournissons',
+    whatWeProvideDesc: 'Notre soutien et nos ressources complets',
+    provenResults: 'Résultats prouvés',
+    provenResultsHighlight: 'À travers l\'Afrique',
+    readyToTransform: 'Prêt à transformer les résultats des étudiants ?',
+    readyToTransformDesc: 'Discutons de la façon dont le Programme Diplômé Prêt pour l\'Avenir peut fonctionner pour votre institution. Découvrez les détails du programme et les indicateurs de succès lors d\'une consultation personnalisée.',
+    threePaths: 'Trois chemins vers',
+    threePathsHighlight: 'la réussite numérique',
+    threePathsSubtitle: 'Choisissez le chemin qui vous convient.',
+    forSchools: 'POUR LES ÉCOLES',
+    forProfessional: 'POUR LES INSTITUTS PROFESSIONNELS',
+    guidedLearning: 'APPRENTISSAGE GUIDÉ',
+    newLabel: 'NOUVEAU',
+    onlySpotsAvailable: 'Plus que {count} places disponibles',
+    noOneLeftBehind: 'Personne n\'est laissé pour compte.',
+  }
+
   const aboutEn: AboutTranslations = {
     badge: 'About Us',
     heroTitle: 'About Us',
@@ -2498,11 +2703,11 @@ function buildTranslations(): Record<Language, TranslationKeys> {
   }
 
   return {
-    en: { ...commonEn, home: homeEn, blog: blogEn, about: aboutEn, contact: contactEn, clientJourney: clientJourneyEn },
-    fr: { ...commonFr, home: homeFr, blog: blogFr, about: aboutFr, contact: contactFr, clientJourney: clientJourneyFr },
-    ar: { ...commonAr, home: homeAr, blog: blogAr, about: aboutAr, contact: contactAr, clientJourney: clientJourneyAr },
-    de: { ...commonDe, home: homeDe, blog: blogDe, about: aboutDe, contact: contactDe, clientJourney: clientJourneyDe },
-    es: { ...commonEs, home: homeEs, blog: blogEs, about: aboutEs, contact: contactEs, clientJourney: clientJourneyEs },
+    en: { ...commonEn, home: homeEn, blog: blogEn, about: aboutEn, contact: contactEn, clientJourney: clientJourneyEn, futureReadyGraduate: futureReadyGraduateEn },
+    fr: { ...commonFr, home: homeFr, blog: blogFr, about: aboutFr, contact: contactFr, clientJourney: clientJourneyFr, futureReadyGraduate: futureReadyGraduateFr },
+    ar: { ...commonAr, home: homeAr, blog: blogAr, about: aboutAr, contact: contactAr, clientJourney: clientJourneyAr, futureReadyGraduate: futureReadyGraduateEn },
+    de: { ...commonDe, home: homeDe, blog: blogDe, about: aboutDe, contact: contactDe, clientJourney: clientJourneyDe, futureReadyGraduate: futureReadyGraduateEn },
+    es: { ...commonEs, home: homeEs, blog: blogEs, about: aboutEs, contact: contactEs, clientJourney: clientJourneyEs, futureReadyGraduate: futureReadyGraduateEn },
   }
 }
 
