@@ -37,13 +37,14 @@ export default function AgenticSoftwaresPage({ params, searchParams }: AgenticSo
       icon: '⚡'
     },
     {
-      title: 'DataViz Studio',
-      description: 'Data to visuals. Complex numbers made simple.',
-      category: 'Analytics',
-      status: 'Coming Soon',
-      link: '#',
-      tech: ['D3.js', 'Python', 'FastAPI', 'MongoDB'],
-      icon: '📊'
+      title: 'Kabinda Lodge',
+      description:
+        'Run the hotel from anywhere—bookings, rooms, keys, and payments in one command center. Role-based access, smart door cards, and full visibility for investors and staff.',
+      category: 'Hospitality',
+      status: 'Live',
+      link: 'https://kabinda-lodge.com/',
+      tech: ['Next.js', 'OpenAI', 'Supabase', 'Stripe'],
+      icon: '🏨'
     },
     {
       title: 'ContentCraft AI',
