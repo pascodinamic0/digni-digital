@@ -1,5 +1,6 @@
 import type { BlogArticle } from './types'
 import { articlesEn } from './en'
+import { blogEsOverrides } from './generated/blog-es-overrides'
 
 const contentEs: Record<string, Partial<BlogArticle>> = {
   'ai-employee-systems-transform-customer-service-growing-businesses': {
@@ -936,19 +937,83 @@ const contentEs: Record<string, Partial<BlogArticle>> = {
     publishDate: '19 de marzo de 2026',
     tags: ['Vibecoding', 'Juventud africana', 'Ganar dinero en línea', 'Construcción de productos IA', 'Futuro del Trabajo'],
   },
-  '__PLACEHOLDER__': {
-    title: '__PLACEHOLDER__',
-    excerpt: '__PLACEHOLDER__',
-    category: '__PLACEHOLDER__',
-    readTime: '__PLACEHOLDER__',
-    publishDate: '19 de marzo de 2026',
-    tags: ['__PLACEHOLDER__'],
-    content: `<p>__PLACEHOLDER__</p>`
-  }
+  'one-software-life-changing-stories-youth-millionaires-2024-2026': {
+    title: 'Un software, vidas transformadas: qué enseñan los jóvenes builders en los medios (2024–2026)',
+    excerpt: 'El producto adecuado en el momento adecuado—con distribución—puede cambiar la trayectoria de quien construye. Cinco patrones reales en la prensa 2024–2026 (Cal AI, Beem, Vidovo…), con matices honestos.',
+    category: 'Futuro del Trabajo',
+    readTime: '14 min de lectura',
+    publishDate: '20 de marzo de 2026',
+    tags: [
+      'Emprendimiento joven',
+      'Fundadores Gen Z',
+      'Apps de IA',
+      'SaaS',
+      'Futuro del Trabajo',
+      'Cal AI',
+      'Distribución de producto',
+    ],
+    content: `
+      <h2>No es «haremos rico rápido»—es «un producto serio, bien distribuido»</h2>
+
+      <p>Los titulares sobre fundadores adolescentes generan ruido. Sin el hype, queda una línea más clara: <strong>un producto software bien elegido</strong>, sobre un hábito diario doloroso, construido y lanzado rápido y mostrado al público correcto, puede cambiar una vida—capital, opciones y prueba de que puedes repetir.</p>
+      <p>Ese patrón aparece en medios sólidos entre <strong>2024 y 2026</strong>. Aquí van <strong>cinco arquetipos</strong> con nombres y productos, enlaces a <strong>lo que construyeron</strong> y a <strong>reportajes creíbles</strong>—no como promesa de copiar el resultado, sino como prueba de mecanismo.</p>
+
+      <blockquote>
+        <p>«El sesgo de supervivencia es real. Por cada app viral, miles de productos no despegan. La lección no es la suerte—es <strong>problema estrecho, envío rápido, distribución constante e iteración</strong>.»</p>
+      </blockquote>
+
+      <h2>Por qué un software puede valer más que una línea en el CV</h2>
+      <ul>
+        <li><strong>Prueba portable</strong>—un enlace que envías en un DM o entrevista.</li>
+        <li><strong>Posible flujo de caja</strong>—suscripción o uso si la retención funciona.</li>
+        <li><strong>Competencias compuestas</strong>—go-to-market, soporte, analítica, criterio de producto.</li>
+        <li><strong>Salida estratégica</strong>—cuando el encaje con un incumbente es real.</li>
+      </ul>
+
+      <p>Construir con IA y las tiendas móviles abarataron probar—pero <strong>no eliminaron la necesidad de distribución</strong>.</p>
+
+      <h2>Escenario 1: una primera salida financia la siguiente apuesta</h2>
+      <p><strong>Patrón:</strong> lanzar algo antes; obtener liquidez pequeña; reinvertir en un golpe mayor.</p>
+      <p><strong>Ejemplo:</strong> perfiles de <strong>Zach Yadegari</strong> describen la venta de <strong>Totally Science</strong> por del orden de <strong>100 000 $ a los 16 años</strong>, con fecha en prensa hacia <strong>principios de 2024</strong>.</p>
+      <p><strong>Lo que construyeron después:</strong> <a href="https://www.calai.app/" target="_blank" rel="noopener noreferrer">Cal AI</a>. <a href="https://apps.apple.com/us/app/cal-ai-food-calorie-tracker/id6480417616" target="_blank" rel="noopener noreferrer">App Store</a> · <a href="https://play.google.com/store/apps/details?id=com.viraldevelopment.calai" target="_blank" rel="noopener noreferrer">Google Play</a>.</p>
+      <p><strong>Medios:</strong> <a href="https://www.cnbc.com/2025/09/06/cal-ai-how-a-teenage-ceo-built-a-fast-growing-calorie-tracking-app.html" target="_blank" rel="noopener noreferrer">CNBC</a>; <a href="https://nordic.businessinsider.com/teenager-built-million-dollar-startup-how-he-did-it-2025-10" target="_blank" rel="noopener noreferrer">Business Insider Nordic</a>.</p>
+
+      <h2>Escenario 2: utilidad de IA en un hábito diario → escala de consumo</h2>
+      <p><strong>Ejemplo:</strong> <strong>Cal AI</strong>, cofundada por <strong>Zach Yadegari</strong> y <strong>Henry Langmack</strong>, lanzada en <strong>mayo de 2024</strong>.</p>
+      <p><strong>Enlaces:</strong> <a href="https://www.calai.app/" target="_blank" rel="noopener noreferrer">calai.app</a> · iOS/Android arriba.</p>
+      <p><strong>Medios:</strong> <a href="https://techcrunch.com/2025/03/16/photo-calorie-app-cal-ai-downloaded-over-a-million-times-was-built-by-two-teenagers/" target="_blank" rel="noopener noreferrer">TechCrunch mar 2025</a>; <a href="https://www.cnbc.com/2025/09/06/cal-ai-how-a-teenage-ceo-built-a-fast-growing-calorie-tracking-app.html" target="_blank" rel="noopener noreferrer">CNBC sep 2025</a>.</p>
+      <p><em>Nota:</em> las cifras de ingresos varían—trátelas como <strong>instantáneas reportadas</strong>.</p>
+
+      <h2>Escenario 3: capital serio antes de graduarte</h2>
+      <p><strong>Ejemplo:</strong> <strong>Toby Brown</strong> y <strong>Beem</strong>. <em>The Times</em> reportó ~<strong>1 M$</strong> de <strong>South Park Commons</strong> en <strong>feb 2025</strong>.</p>
+      <p><strong>Enlaces:</strong> <a href="https://beem.computer" target="_blank" rel="noopener noreferrer">beem.computer</a> · <a href="https://www.southparkcommons.com/companies/beem" target="_blank" rel="noopener noreferrer">South Park Commons — Beem</a>.</p>
+      <p><strong>Medio:</strong> <a href="https://www.thetimes.com/business/entrepreneurs/article/the-16-year-old-swapping-gcses-for-silicon-valley-and-his-1m-start-up-00cptjxqh" target="_blank" rel="noopener noreferrer">The Times</a>.</p>
+
+      <h2>Escenario 4: camino «dormitorio»—Vidovo</h2>
+      <p><strong>Ejemplo:</strong> <strong>Elijah Khasabo</strong> y <strong>Vidovo</strong> (marcas y creadores UGC). <em>Fortune</em> nov 2025.</p>
+      <p><strong>Enlace:</strong> <a href="https://www.vidovo.com" target="_blank" rel="noopener noreferrer">vidovo.com</a>.</p>
+      <p><strong>Medio:</strong> <a href="https://fortune.com/2025/11/27/gen-z-entrepreneur-elijah-khasabo-tech-startup-college-student-degree-networking/" target="_blank" rel="noopener noreferrer">Fortune</a>.</p>
+
+      <h2>Escenario 5: adquisición estratégica</h2>
+      <p><strong>Ejemplo:</strong> <strong>MyFitnessPal</strong> adquiere <strong>Cal AI</strong>—<strong>TechCrunch</strong>, 2 mar 2026.</p>
+      <p><strong>Enlaces:</strong> <a href="https://www.myfitnesspal.com" target="_blank" rel="noopener noreferrer">MyFitnessPal</a> · <a href="https://www.calai.app/" target="_blank" rel="noopener noreferrer">Cal AI</a>.</p>
+      <p><strong>Medio:</strong> <a href="https://techcrunch.com/2026/03/02/myfitnesspal-has-acquired-cal-ai-the-viral-calorie-app-built-by-teens/" target="_blank" rel="noopener noreferrer">TechCrunch</a>.</p>
+
+      <h2>Qué falla en el modelo viejo</h2>
+      <p>Construir en secreto un año, resolver algo que nadie busca y esperar que el mérito solo genere distribución. La respuesta: alcance menor, ciclos más rápidos, canales claros.</p>
+
+      <h2>La parte reproducible</h2>
+      <p>Diseñamos el <a href="/future-ready-graduate">Future-Ready Graduate Program</a> para esta era: construcción con IA, proyectos reales y cómo los productos se encuentran y se pagan—sin prometer resultados fáciles ni «promedio».</p>
+
+      <hr>
+
+      <p><em>¿Listo para las habilidades detrás de estos patrones? <a href="/future-ready-graduate" target="_blank" rel="noopener noreferrer">Explore el programa</a> o <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">reserve una consulta</a> con Digni Digital.</em></p>
+    `,
+  },
 }
 
 export const articlesEs: BlogArticle[] = articlesEn.map((article) => {
-  const override = contentEs[article.slug]
+  const override = contentEs[article.slug] ?? blogEsOverrides[article.slug]
   if (!override) return { ...article, readTime: article.readTime.replace('min read', 'min de lectura') }
   return { ...article, ...override }
 })
