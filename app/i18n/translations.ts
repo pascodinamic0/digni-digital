@@ -3,6 +3,15 @@
  * Every section, every page, every UI element.
  */
 
+import type { AiEmployeeProductDemosTranslations } from '@/app/i18n/aiEmployeeProductDemos'
+import {
+  aiEmployeeProductDemosAr,
+  aiEmployeeProductDemosDe,
+  aiEmployeeProductDemosEn,
+  aiEmployeeProductDemosEs,
+  aiEmployeeProductDemosFr,
+} from '@/app/i18n/aiEmployeeProductDemos'
+
 export type Language = 'en' | 'fr' | 'ar' | 'de' | 'es'
 
 type HomeTranslations = {
@@ -411,6 +420,7 @@ export type TranslationKeys = CommonTranslations & {
   contact: ContactTranslations
   clientJourney: ClientJourneyTranslations
   futureReadyGraduate: FutureReadyGraduateTranslations
+  aiEmployeeProductDemos: AiEmployeeProductDemosTranslations
 }
 
 function buildTranslations(): Record<Language, TranslationKeys> {
@@ -2703,11 +2713,11 @@ function buildTranslations(): Record<Language, TranslationKeys> {
   }
 
   return {
-    en: { ...commonEn, home: homeEn, blog: blogEn, about: aboutEn, contact: contactEn, clientJourney: clientJourneyEn, futureReadyGraduate: futureReadyGraduateEn },
-    fr: { ...commonFr, home: homeFr, blog: blogFr, about: aboutFr, contact: contactFr, clientJourney: clientJourneyFr, futureReadyGraduate: futureReadyGraduateFr },
-    ar: { ...commonAr, home: homeAr, blog: blogAr, about: aboutAr, contact: contactAr, clientJourney: clientJourneyAr, futureReadyGraduate: futureReadyGraduateEn },
-    de: { ...commonDe, home: homeDe, blog: blogDe, about: aboutDe, contact: contactDe, clientJourney: clientJourneyDe, futureReadyGraduate: futureReadyGraduateEn },
-    es: { ...commonEs, home: homeEs, blog: blogEs, about: aboutEs, contact: contactEs, clientJourney: clientJourneyEs, futureReadyGraduate: futureReadyGraduateEn },
+    en: { ...commonEn, home: homeEn, blog: blogEn, about: aboutEn, contact: contactEn, clientJourney: clientJourneyEn, futureReadyGraduate: futureReadyGraduateEn, aiEmployeeProductDemos: aiEmployeeProductDemosEn },
+    fr: { ...commonFr, home: homeFr, blog: blogFr, about: aboutFr, contact: contactFr, clientJourney: clientJourneyFr, futureReadyGraduate: futureReadyGraduateFr, aiEmployeeProductDemos: aiEmployeeProductDemosFr },
+    ar: { ...commonAr, home: homeAr, blog: blogAr, about: aboutAr, contact: contactAr, clientJourney: clientJourneyAr, futureReadyGraduate: futureReadyGraduateEn, aiEmployeeProductDemos: aiEmployeeProductDemosAr },
+    de: { ...commonDe, home: homeDe, blog: blogDe, about: aboutDe, contact: contactDe, clientJourney: clientJourneyDe, futureReadyGraduate: futureReadyGraduateEn, aiEmployeeProductDemos: aiEmployeeProductDemosDe },
+    es: { ...commonEs, home: homeEs, blog: blogEs, about: aboutEs, contact: contactEs, clientJourney: clientJourneyEs, futureReadyGraduate: futureReadyGraduateEn, aiEmployeeProductDemos: aiEmployeeProductDemosEs },
   }
 }
 

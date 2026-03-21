@@ -9,6 +9,11 @@ import AnimatedSection from '@/app/components/AnimatedSection'
 import ClientJourneyDemo from '@/app/components/ClientJourneyDemo'
 import ConversationMockups from '@/app/components/ConversationMockups'
 import UnifiedInbox from '@/app/components/UnifiedInbox'
+import LeadPipelineDemo from '@/app/components/LeadPipelineDemo'
+import PerformancePulseDemo from '@/app/components/PerformancePulseDemo'
+import TaskQueueDemo from '@/app/components/TaskQueueDemo'
+import ContactDirectoryDemo from '@/app/components/ContactDirectoryDemo'
+import AiReceptionistExplainerVideo from '@/app/components/AiReceptionistExplainerVideo'
 import BusinessTimeline from '@/app/components/BusinessTimeline'
 import DemoPresentationDownload from '@/app/components/DemoPresentationDownload'
 import { useTheme } from '@/app/components/ThemeProvider'
@@ -390,6 +395,9 @@ export default function AIReceptionistPage({ params, searchParams }: AIReception
         </div>
       </AnimatedSection>
 
+      {/* Locale-specific explainer (FR asset today; add other languages in aiReceptionistExplainer.ts) */}
+      <AiReceptionistExplainerVideo />
+
       {/* Why Traditional Receptionists Don't Scale - Contrast Positioning */}
       <AnimatedSection className="py-24">
         <div className="max-w-5xl mx-auto px-6">
@@ -441,6 +449,11 @@ export default function AIReceptionistPage({ params, searchParams }: AIReception
 
       {/* Unified Inbox */}
       <UnifiedInbox />
+
+      <LeadPipelineDemo />
+      <PerformancePulseDemo />
+      <TaskQueueDemo />
+      <ContactDirectoryDemo />
 
       {/* Business Timeline */}
       <BusinessTimeline />
