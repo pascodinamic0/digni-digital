@@ -5,7 +5,6 @@ import { motion, useInView } from 'framer-motion'
 import { Link } from '@/i18n/navigation'
 import AnimatedSection from '@/app/components/AnimatedSection'
 import ScrollIndicator from '@/app/components/ScrollIndicator'
-import RotatingCards from '@/app/components/RotatingCards'
 import GlobalPresenceMap from '@/app/components/GlobalPresenceMap'
 import ClientLogos from '@/app/components/ClientLogos'
 import { useTheme } from '@/app/components/ThemeProvider'
@@ -106,15 +105,17 @@ function Hero() {
         preload="metadata"
         src="/hero-bg.mp4"
         className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[2000ms] ${videoReady ? 'opacity-70' : 'opacity-30'}`}
-      />
+      >
+        <track kind="captions" srcLang="en" label="English" src="/hero-bg-captions.vtt" />
+      </video>
       {/* Simple semi-transparent overlay for text readability */}
       <div className="absolute inset-0 bg-black/50" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-20 relative z-10 w-full">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 1, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
           className="mb-4 sm:mb-6"
         >
           <span className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-accent/10 border border-accent/30 rounded-full text-accent text-xs sm:text-sm font-medium">
@@ -125,16 +126,12 @@ function Hero() {
           </span>
         </motion.div>
 
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-4 sm:mb-6 md:mb-8 max-w-4xl px-2 text-text"
-        >
+        {/* Plain h1 for LCP: motion.* with opacity:0 deferred paint until hydration + animation */}
+        <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-4 sm:mb-6 md:mb-8 max-w-4xl px-2 text-text">
           {t.title}
           <br />
           <span className="gradient-text hero-highlight">{t.titleHighlight}</span>
-        </motion.h1>
+        </h1>
 
         <motion.p
           initial={{ opacity: 0, y: 30 }}
@@ -699,126 +696,6 @@ function WhatWeDo() {
             </div>
           </div>
         </motion.div>
-      </div>
-    </AnimatedSection>
-  )
-}
-
-// Products Section
-function Products() {
-  const language = useLanguage()
-  const cta = translations[language].cta
-  const flagshipProducts = [
-    {
-      name: 'AI Employee™',
-      tagline: 'Never miss a lead again',
-      description: 'AI answers calls. Qualifies. Books. 24/7.',
-      features: ['24/7 Calls', 'Lead Qualification', 'Auto Booking', 'CRM Sync', 'Multi-language', 'Analytics'],
-      pricing: { starter: '$297/month', pro: '$497/month', enterprise: 'Custom' },
-      icon: '🤖',
-      gradient: 'from-accent/20 to-accent/5',
-      status: 'LIVE'
-    },
-    {
-      name: 'Future-Ready Graduate Program',
-      tagline: 'Students who get jobs',
-      description: '9-month program. Real skills. 85% employed.',
-      features: ['Digital Skills', 'Portfolio', 'Job Placement', 'Income Tracked', 'Employer Network', 'Certified'],
-      pricing: { starter: '$1,997/student', pro: '$2,997/student', enterprise: 'Custom' },
-      icon: '🎓',
-      gradient: 'from-success/20 to-success/5',
-      status: 'LIVE'
-    }
-  ]
-
-  return (
-    <AnimatedSection id="products" className="py-24">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <span className="text-accent font-medium text-sm uppercase tracking-wider">Our Products</span>
-          <h2 className="font-display text-4xl md:text-5xl font-bold mt-4 mb-4">
-            Two Flagship Solutions.<br />
-            <span className="gradient-text">Immediate Impact.</span>
-          </h2>
-          <p className="text-muted text-lg">Systems that work. Results that show.</p>
-        </div>
-
-        <div className="grid lg:grid-cols-2 gap-12">
-          {flagshipProducts.map((product, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.2 }}
-              className="card p-8 md:p-12 glow-accent-hover"
-            >
-              <div className="text-center mb-8">
-                <div className="flex items-center justify-center gap-3 mb-4">
-                  <span className="px-3 py-1 bg-success/20 text-success text-xs font-bold rounded-full">{product.status}</span>
-                </div>
-                <div className={`w-20 h-20 bg-gradient-to-br ${product.gradient} rounded-2xl mx-auto mb-4 flex items-center justify-center text-4xl`}>
-                  {product.icon}
-                </div>
-                <h3 className="font-display text-3xl font-bold mb-2">{product.name}</h3>
-                <p className="text-xl text-accent font-medium mb-4">{product.tagline}</p>
-              </div>
-
-              <p className="text-muted text-lg mb-8 text-center leading-relaxed">
-                {product.description}
-              </p>
-
-              <div className="grid grid-cols-2 gap-2 mb-8">
-                {product.features.map((feature, j) => (
-                  <div key={j} className="flex items-center gap-2">
-                    <div className="w-1.5 h-1.5 bg-accent rounded-full" />
-                    <span className="text-sm text-muted">{feature}</span>
-                  </div>
-                ))}
-              </div>
-
-              <div className="text-center mb-8">
-                <div className="text-2xl font-display font-bold text-accent mb-2">
-                  Starting at {product.pricing.starter}
-                </div>
-                <div className="text-sm text-muted">
-                  Pro: {product.pricing.pro} • Enterprise: {product.pricing.enterprise}
-                </div>
-              </div>
-
-              <div className="flex gap-4">
-                <a 
-                  {...getBookingLinkProps()}
-                  className="btn-primary flex-1 text-center"
-                >
-                  {cta.getStarted}
-                </a>
-                <Link href="/products" className="btn-secondary flex-1 text-center">
-                  {cta.exploreProducts}
-                </Link>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="mt-16 text-center"
-        >
-          <p className="text-xl text-muted italic mb-8">
-            &quot;Two solutions. Unlimited possibilities. Immediate results.&quot;
-          </p>
-          <Link href="/products" className="text-accent hover:text-accent-light transition-colors font-medium">
-            View detailed product information →
-          </Link>
-        </motion.div>
-        
-        {/* Scroll Indicator */}
-        <div className="flex justify-center mt-12">
-          <ScrollIndicator direction="down" />
-        </div>
       </div>
     </AnimatedSection>
   )

@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -82,8 +80,6 @@
   --radius-full: 9999px;
   
   /* Typography */
-  --font-display: 'Space Grotesk', sans-serif;
-  --font-body: 'Inter', sans-serif;
   
   /* Theme Toggle Gradients */
   --toggle-gradient-light: linear-gradient(135deg, #E0E7FF 0%, #C7D2FE 100%);
@@ -110,9 +106,10 @@
   --text: #1E293B;
   --text-rgb: 30, 41, 59;
   --foreground: #1E293B;
-  --muted: #64748B;
-  --muted-dark: #475569;
-  --muted-foreground: #475569;
+  /* Slate-600/700: ≥4.5:1 on #F5F7FA / #FFFFFF (slate-500 was borderline for WCAG AA body text) */
+  --muted: #475569;
+  --muted-dark: #334155;
+  --muted-foreground: #334155;
   
   /* Border Colors - Light Theme (clearly visible) */
   --border: rgba(0, 0, 0, 0.16);
@@ -199,7 +196,7 @@ html {
 body {
   background: var(--background);
   color: var(--text);
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-body);
   overflow-x: hidden;
 }
 
@@ -690,7 +687,7 @@ body {
   font-weight: 700 !important;
   line-height: 1.25 !important;
   color: var(--text) !important;
-  font-family: 'Space Grotesk', sans-serif !important;
+  font-family: var(--font-display) !important;
   letter-spacing: -0.02em;
   padding-top: 0 !important;
   padding-bottom: 0 !important;
@@ -712,7 +709,7 @@ body {
   font-weight: 600 !important;
   line-height: 1.35 !important;
   color: var(--text) !important;
-  font-family: 'Space Grotesk', sans-serif !important;
+  font-family: var(--font-display) !important;
   letter-spacing: -0.01em;
   padding-top: 0 !important;
   padding-bottom: 0 !important;
@@ -730,7 +727,7 @@ body {
   font-weight: 600 !important;
   line-height: 1.5 !important;
   color: var(--text) !important;
-  font-family: 'Space Grotesk', sans-serif !important;
+  font-family: var(--font-display) !important;
   padding-top: 0 !important;
   padding-bottom: 0 !important;
 }

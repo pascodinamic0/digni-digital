@@ -10,6 +10,14 @@ export type Locale = (typeof locales)[number]
 
 export const defaultLocale: Locale = 'us-en'
 
+/** BCP 47 tags for `<link rel="alternate" hreflang>` — language first, then region (not route segments like us-en). */
+export const localeToHreflang: Record<Locale, string> = {
+  'us-en': 'en-US',
+  'fr-fr': 'fr-FR',
+  'es-es': 'es-ES',
+  'sa-ar': 'ar-SA',
+}
+
 /** Locales that share the same language (for message fallback) */
 export const localeToMessageLocale: Record<Locale, Locale> = {
   'us-en': 'us-en',
