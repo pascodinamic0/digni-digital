@@ -340,6 +340,17 @@ type ClientJourneyTranslations = {
   subtext: string
   brokenLabel: string
   aiFlowLabel: string
+  /** Explains that counts are one 100-lead batch, per-stage pipeline size */
+  funnelLegend: string
+  funnelSectionIntake: string
+  funnelSectionConversion: string
+  funnelSectionOutcome: string
+  funnelPipelineLabel: string
+  funnelColumnLost: string
+  funnelColumnNet: string
+  funnelLostBadge: string
+  funnelReferralBadge: string
+  funnelLeadsUnit: string
   channels: Array<{ id: string; label: string }>
   brokenStages: Array<{ step: number; title: string; description: string; leak: string }>
   aiStages: Array<{ step: number; title: string; description: string; win: string }>
@@ -2058,6 +2069,17 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     subtext: 'One path bleeds. One compounds. The playbook is simple. The execution isn\'t.',
     brokenLabel: 'The Leak',
     aiFlowLabel: 'The Loop',
+    funnelLegend:
+      'Scenario: 100 new leads enter. Each big number = how many from that same batch are still in your pipeline after the step.',
+    funnelSectionIntake: 'Intake',
+    funnelSectionConversion: 'Conversion',
+    funnelSectionOutcome: 'Outcome & loop',
+    funnelPipelineLabel: 'In pipeline',
+    funnelColumnLost: 'Leak',
+    funnelColumnNet: 'Net',
+    funnelLostBadge: 'lost',
+    funnelReferralBadge: 'referral',
+    funnelLeadsUnit: 'leads',
     channels: [
       { id: 'ads', label: 'Paid Ads' },
       { id: 'website', label: 'Website' },
@@ -2092,6 +2114,17 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     subtext: 'Un fuit. L\'autre convertit. IA répond en 2 sec, qualifie, réserve. Parrainages alimentent la boucle.',
     brokenLabel: 'La fuite',
     aiFlowLabel: 'La boucle',
+    funnelLegend:
+      'Scénario : 100 nouveaux leads entrent. Chaque gros chiffre = combien du même lot sont encore dans le pipeline après l’étape.',
+    funnelSectionIntake: 'Entrée',
+    funnelSectionConversion: 'Conversion',
+    funnelSectionOutcome: 'Résultat & boucle',
+    funnelPipelineLabel: 'Dans le pipeline',
+    funnelColumnLost: 'Fuite',
+    funnelColumnNet: 'Net',
+    funnelLostBadge: 'perdus',
+    funnelReferralBadge: 'parrainage',
+    funnelLeadsUnit: 'leads',
     channels: [
       { id: 'ads', label: 'Annonces payantes' },
       { id: 'website', label: 'Site web' },
@@ -2126,6 +2159,17 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     subtext: 'واحد ينسرب. الآخر يحول. الذكاء يرد في ثانيتين، يصنف، يحجز. الإحالات تغذي الحلقة.',
     brokenLabel: 'التسرب',
     aiFlowLabel: 'الحلقة',
+    funnelLegend:
+      'سيناريو: يدخل 100 عميل محتمل جديد. كل رقم كبير = كم بقي من نفس الدفعة في مسارك بعد الخطوة.',
+    funnelSectionIntake: 'الاستقبال',
+    funnelSectionConversion: 'التحويل',
+    funnelSectionOutcome: 'النتيجة والحلقة',
+    funnelPipelineLabel: 'في المسار',
+    funnelColumnLost: 'تسرب',
+    funnelColumnNet: 'صافي',
+    funnelLostBadge: 'ضائع',
+    funnelReferralBadge: 'إحالة',
+    funnelLeadsUnit: 'leads',
     channels: [
       { id: 'ads', label: 'إعلانات مدفوعة' },
       { id: 'website', label: 'الموقع' },
@@ -2160,6 +2204,17 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     subtext: 'Ein Weg blutet. Einer vervielfacht. Das Playbook ist einfach. Die Ausführung nicht.',
     brokenLabel: 'Der Verlust',
     aiFlowLabel: 'Die Schleife',
+    funnelLegend:
+      'Szenario: 100 neue Leads starten. Jede große Zahl = wie viele aus derselben Charge nach der Stufe noch in der Pipeline sind.',
+    funnelSectionIntake: 'Eingang',
+    funnelSectionConversion: 'Conversion',
+    funnelSectionOutcome: 'Ergebnis & Schleife',
+    funnelPipelineLabel: 'In der Pipeline',
+    funnelColumnLost: 'Verlust',
+    funnelColumnNet: 'Netto',
+    funnelLostBadge: 'verloren',
+    funnelReferralBadge: 'Empfehlung',
+    funnelLeadsUnit: 'Leads',
     channels: [
       { id: 'ads', label: 'Bezahlte Anzeigen' },
       { id: 'website', label: 'Website' },
@@ -2194,6 +2249,17 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     subtext: 'Un camino sangra. Otro se multiplica. El manual es simple. La ejecución no.',
     brokenLabel: 'La fuga',
     aiFlowLabel: 'El bucle',
+    funnelLegend:
+      'Escenario: entran 100 leads nuevos. Cada número grande = cuántos del mismo lote siguen en tu embudo tras el paso.',
+    funnelSectionIntake: 'Entrada',
+    funnelSectionConversion: 'Conversión',
+    funnelSectionOutcome: 'Resultado y bucle',
+    funnelPipelineLabel: 'En embudo',
+    funnelColumnLost: 'Fuga',
+    funnelColumnNet: 'Neto',
+    funnelLostBadge: 'perdidos',
+    funnelReferralBadge: 'referido',
+    funnelLeadsUnit: 'leads',
     channels: [
       { id: 'ads', label: 'Anuncios pagados' },
       { id: 'website', label: 'Sitio web' },
