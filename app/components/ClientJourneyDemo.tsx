@@ -180,12 +180,12 @@ function VisualFunnel({
         </svg>
       </div>
 
-      {/* Column headers: pipeline (implicit) + delta */}
-      <div className="w-full flex items-end gap-2 mb-1.5 mt-1">
+      {/* Column headers: pipeline + delta (stacked on mobile; delta hides here — shown per row on small screens) */}
+      <div className="w-full flex flex-col sm:flex-row sm:items-end gap-1 sm:gap-2 mb-1.5 mt-1">
         <div className="flex-1 min-w-0 pl-1">
           <span className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">{funnelCopy.pipelineLabel}</span>
         </div>
-        <div className="flex-shrink-0 w-[4.5rem] sm:w-14 flex flex-col items-end justify-end text-right">
+        <div className="hidden sm:flex flex-shrink-0 w-14 flex-col items-end justify-end text-right">
           <span
             className={`text-[10px] font-bold uppercase tracking-wider ${isBroken ? 'text-destructive/90' : 'text-success'}`}
             title={isBroken ? funnelCopy.columnLost : funnelCopy.columnNet}
@@ -236,12 +236,12 @@ function VisualFunnel({
               )}
 
               <motion.div
-                className={`relative flex items-stretch gap-1.5 sm:gap-2 ${!isBroken ? 'rounded-xl overflow-hidden' : ''} ${bandHeightClass}`}
+                className={`relative flex flex-col sm:flex-row items-stretch gap-1.5 sm:gap-2 ${!isBroken ? 'sm:rounded-xl sm:overflow-hidden' : ''}`}
                 animate={isActive ? { scale: [1, 1.01, 1] } : {}}
                 transition={{ duration: 0.4 }}
               >
                 <motion.div
-                  className={`relative flex-1 flex flex-col items-center justify-center text-center px-2 sm:px-3 py-2 sm:py-0 overflow-hidden min-h-0 ${bandHeightClass} ${!isBroken && isActive ? 'shadow-lg shadow-success/20' : ''}`}
+                  className={`relative flex-1 min-w-0 flex flex-col items-center justify-center text-center px-2 sm:px-3 py-2 sm:py-0 overflow-hidden ${bandHeightClass} ${displayDrop !== 0 ? 'order-2 sm:order-1' : ''} ${!isBroken && isActive ? 'shadow-lg shadow-success/20' : ''}`}
                   style={{
                     clipPath: layerClip,
                     WebkitClipPath: layerClip,
@@ -288,38 +288,56 @@ function VisualFunnel({
                     </p>
                   )}
                 </motion.div>
-                <div className={`flex-shrink-0 w-[4.5rem] sm:w-14 flex flex-col items-end justify-center gap-0.5 ${bandHeightClass}`}>
-                  {displayDrop > 0 && (
-                    <>
-                      <span className="text-[9px] sm:text-[10px] font-semibold uppercase text-foreground/70 text-right leading-tight">
-                        {funnelCopy.lostBadge}
-                      </span>
-                      <motion.span
-                        className={`text-xs sm:text-sm font-bold tabular-nums text-right ${isGreenBand ? 'text-muted-foreground' : 'text-destructive'}`}
-                        animate={isActive ? { scale: [1, 1.08, 1] } : {}}
-                        transition={{ duration: 0.3 }}
+                {displayDrop !== 0 && (
+                  <div
+                    className={`
+                      order-1 sm:order-2 flex-shrink-0 w-full sm:w-14 min-h-0 sm:self-stretch
+                      flex flex-row sm:flex-col items-center justify-between sm:items-end sm:justify-center gap-2 sm:gap-0.5
+                      px-2.5 py-2 sm:p-0 rounded-lg sm:rounded-none border sm:border-0
+                      ${displayDrop > 0
+                        ? isBroken
+                          ? 'border-destructive/25 bg-destructive/10 sm:bg-transparent sm:border-0'
+                          : 'border-border/30 bg-muted/30 sm:bg-transparent sm:border-0'
+                        : ''}
+                      ${displayDrop < 0 && !isBroken ? 'border-success/25 bg-success/10 sm:bg-transparent sm:border-0' : ''}
+                    `}
+                  >
+                    {displayDrop > 0 && (
+                      <>
+                        <span className="text-[10px] font-bold uppercase tracking-wide text-foreground/80 sm:text-foreground/70 sm:font-semibold sm:text-right leading-tight">
+                          {funnelCopy.lostBadge}
+                        </span>
+                        <motion.span
+                          className={`inline-flex items-baseline gap-1 text-sm font-bold tabular-nums sm:flex sm:flex-col sm:items-end ${isGreenBand ? 'text-muted-foreground' : 'text-destructive'}`}
+                          animate={isActive ? { scale: [1, 1.08, 1] } : {}}
+                          transition={{ duration: 0.3 }}
+                        >
+                          <span className="inline-flex items-baseline gap-1">
+                            −<AnimatedCount value={displayDrop} isActive={isActive} suffix="" />
+                            <span className="text-[11px] font-medium">{funnelCopy.leadsUnit}</span>
+                          </span>
+                        </motion.span>
+                      </>
+                    )}
+                    {displayDrop < 0 && (
+                      <div
+                        className={`flex w-full flex-row items-center justify-between gap-2 sm:flex-col sm:items-end sm:gap-0.5 sm:p-0 ${!isBroken ? 'sm:rounded-lg sm:bg-success/15 sm:border sm:border-success/25 sm:px-1.5 sm:py-1' : ''}`}
                       >
-                        −<AnimatedCount value={displayDrop} isActive={isActive} suffix="" />
-                        <span className="text-[10px] font-medium ml-0.5">{funnelCopy.leadsUnit}</span>
-                      </motion.span>
-                    </>
-                  )}
-                  {displayDrop < 0 && (
-                    <div className={!isBroken ? 'px-1.5 py-1 rounded-lg bg-success/15 border border-success/25 max-w-full' : ''}>
-                      <span className={`text-[9px] sm:text-[10px] font-semibold uppercase block text-right ${!isBroken ? 'text-success' : 'text-success'}`}>
-                        {funnelCopy.referralBadge}
-                      </span>
-                      <motion.span
-                        className={`block text-xs sm:text-sm font-bold tabular-nums text-right ${!isBroken ? 'text-success' : 'text-success'}`}
-                        animate={isActive ? { scale: [1, 1.08, 1] } : {}}
-                        transition={{ duration: 0.3 }}
-                      >
-                        +<AnimatedCount value={Math.abs(displayDrop)} isActive={isActive} suffix="" />
-                        <span className="text-[10px] font-medium ml-0.5">{funnelCopy.leadsUnit}</span>
-                      </motion.span>
-                    </div>
-                  )}
-                </div>
+                        <span className="text-[10px] font-bold uppercase tracking-wide text-success sm:font-semibold">
+                          {funnelCopy.referralBadge}
+                        </span>
+                        <motion.span
+                          className="inline-flex items-baseline gap-1 text-sm font-bold tabular-nums text-success"
+                          animate={isActive ? { scale: [1, 1.08, 1] } : {}}
+                          transition={{ duration: 0.3 }}
+                        >
+                          +<AnimatedCount value={Math.abs(displayDrop)} isActive={isActive} suffix="" />
+                          <span className="text-[11px] font-medium">{funnelCopy.leadsUnit}</span>
+                        </motion.span>
+                      </div>
+                    )}
+                  </div>
+                )}
               </motion.div>
             </div>
           )
