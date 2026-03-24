@@ -68,17 +68,39 @@ function funnelPolygon(i: number, n: number): string {
 
 // Section breaks: thin divider before these stage indices (0-based). No extra vertical space.
 const FUNNEL_SECTION_AT = [0, 2, 5] as const
-const FUNNEL_SECTION_LABELS: Record<number, string> = {
-  0: 'Intake',
-  2: 'Conversion',
-  5: 'Outcome & loop',
+
+function funnelSectionLabel(
+  index: number,
+  c: {
+    sectionIntake: string
+    sectionConversion: string
+    sectionOutcome: string
+  }
+): string | null {
+  if (index === 0) return c.sectionIntake
+  if (index === 2) return c.sectionConversion
+  if (index === 5) return c.sectionOutcome
+  return null
 }
 
-// Band heights: enlarged so all text has room; last two tiers taller for Outcome & loop.
-const BAND_HEIGHT_PX = 76
-const BAND_HEIGHT_LAST_TIERS_PX = 100
+// Band heights: extra room on small screens so stacked copy fits
+const BAND_HEIGHT_CLASS = 'min-h-[5.5rem] sm:min-h-[4.75rem]'
+const BAND_HEIGHT_LAST_CLASS = 'min-h-[6.75rem] sm:min-h-[6.25rem]'
 
 type FunnelStage = { step: number; title: string; icon: string; description?: string; leak?: string; win?: string }
+
+type FunnelCopy = {
+  legend: string
+  sectionIntake: string
+  sectionConversion: string
+  sectionOutcome: string
+  pipelineLabel: string
+  columnLost: string
+  columnNet: string
+  lostBadge: string
+  referralBadge: string
+  leadsUnit: string
+}
 
 function VisualFunnel({
   stages,
@@ -87,6 +109,7 @@ function VisualFunnel({
   channelIcons,
   variant,
   activeStep = 0,
+  funnelCopy,
 }: {
   stages: FunnelStage[]
   counts: number[]
@@ -94,6 +117,7 @@ function VisualFunnel({
   channelIcons: Record<string, string>
   variant: 'broken' | 'ai'
   activeStep?: number
+  funnelCopy: FunnelCopy
 }) {
   const isBroken = variant === 'broken'
   const totalLayers = stages.length
@@ -102,28 +126,43 @@ function VisualFunnel({
 
   return (
     <div className="w-full flex flex-col items-center relative">
-      {/* Channel icons above funnel */}
-      <div className={`w-full grid grid-cols-[repeat(5,minmax(0,1fr))] sm:flex sm:flex-wrap sm:justify-center gap-2 sm:gap-3 mb-1 relative ${!isBroken ? 'mb-3' : ''}`}>
-        {channels.map((ch, idx) => (
+      {/* Channel sources: horizontal scroll on narrow screens so icons never compress */}
+      <div
+        className={`w-full flex flex-nowrap sm:flex-wrap justify-start sm:justify-center gap-3 overflow-x-auto overflow-y-visible pb-0.5 pt-1 -mx-1 px-1 scroll-smooth [scrollbar-width:thin] relative ${!isBroken ? 'mb-1' : ''}`}
+        role="list"
+        aria-label="Lead sources"
+      >
+        {channels.map((ch) => (
           <motion.div
             key={ch.id}
+            role="listitem"
             initial={{ opacity: 0, y: -8 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className={`flex flex-col items-center justify-center p-2 rounded-xl w-full min-w-0 sm:min-w-[52px] sm:w-auto relative z-10 transition-all ${
+            className={`flex flex-col items-center justify-center gap-1.5 rounded-2xl px-3 py-3 min-w-[5.75rem] max-w-[6.5rem] shrink-0 snap-start relative z-10 transition-all ${
               isBroken
-                ? 'bg-destructive/5 border border-destructive/25 shadow-sm'
-                : 'bg-success/5 border border-success/20 shadow-md shadow-success/5 backdrop-blur-sm'
+                ? 'bg-destructive/[0.07] border border-destructive/20 shadow-sm shadow-destructive/5'
+                : 'bg-success/[0.08] border border-success/25 shadow-md shadow-success/5 backdrop-blur-sm'
             }`}
           >
-            <span className="text-xl sm:text-2xl leading-none">{channelIcons[ch.id] ?? ch.icon}</span>
-            <span className={`text-[10px] font-medium text-center leading-tight mt-0.5 ${isBroken ? 'text-foreground/90' : 'text-success/90'}`}>{ch.label}</span>
+            <span className="text-[1.6rem] sm:text-[1.75rem] leading-none select-none" aria-hidden>
+              {channelIcons[ch.id] ?? ch.icon}
+            </span>
+            <span
+              className={`text-[10px] sm:text-[11px] font-semibold text-center leading-tight line-clamp-2 ${isBroken ? 'text-foreground/90' : 'text-success'}`}
+            >
+              {ch.label}
+            </span>
           </motion.div>
         ))}
       </div>
 
+      <p className="text-[11px] sm:text-xs text-center text-muted-foreground leading-snug max-w-md mx-auto mt-3 mb-px px-1">
+        {funnelCopy.legend}
+      </p>
+
       {/* Animated lines: channels flow into Intake */}
-      <div className="w-full h-8 relative flex justify-center pointer-events-none" aria-hidden>
+      <div className="w-full h-8 relative flex justify-center pointer-events-none mt-1" aria-hidden>
         <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
           {[10, 30, 50, 70, 90].map((x, i) => (
             <motion.path
@@ -141,12 +180,17 @@ function VisualFunnel({
         </svg>
       </div>
 
-      {/* Funnel header: aligned with band row (Lost / Referrals over column) */}
-      <div className="w-full flex items-center gap-2 mb-1">
-        <div className="flex-1 min-w-0" />
-        <div className="flex-shrink-0 w-14 flex justify-end">
-          <span className="text-xs font-semibold uppercase tracking-wide text-foreground/90">
-            {isBroken ? 'Lost' : 'Net'}
+      {/* Column headers: pipeline (implicit) + delta */}
+      <div className="w-full flex items-end gap-2 mb-1.5 mt-1">
+        <div className="flex-1 min-w-0 pl-1">
+          <span className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">{funnelCopy.pipelineLabel}</span>
+        </div>
+        <div className="flex-shrink-0 w-[4.5rem] sm:w-14 flex flex-col items-end justify-end text-right">
+          <span
+            className={`text-[10px] font-bold uppercase tracking-wider ${isBroken ? 'text-destructive/90' : 'text-success'}`}
+            title={isBroken ? funnelCopy.columnLost : funnelCopy.columnNet}
+          >
+            {isBroken ? funnelCopy.columnLost : funnelCopy.columnNet}
           </span>
         </div>
       </div>
@@ -161,9 +205,9 @@ function VisualFunnel({
           const displayDrop = variant === 'broken' && i === 0 ? 0 : drop
           const layerClip = funnelPolygon(i, totalLayers)
           const showSectionBreak = (FUNNEL_SECTION_AT as readonly number[]).includes(i)
-          const sectionLabel = showSectionBreak ? FUNNEL_SECTION_LABELS[i] : null
+          const sectionLabel = showSectionBreak ? funnelSectionLabel(i, funnelCopy) : null
           const isLastTwoTiers = i >= totalLayers - 2
-          const bandHeight = isLastTwoTiers ? BAND_HEIGHT_LAST_TIERS_PX : BAND_HEIGHT_PX
+          const bandHeightClass = isLastTwoTiers ? BAND_HEIGHT_LAST_CLASS : BAND_HEIGHT_CLASS
           const isActive = i === activeStep
           // Broken journey: only step 1 (Lead Arrives) is green — no drop yet. Red from First Contact onward (manual response delays, etc.)
           const isGreenBand = !isBroken || i === 0
@@ -192,13 +236,12 @@ function VisualFunnel({
               )}
 
               <motion.div
-                className={`relative flex items-stretch gap-2 ${!isBroken ? 'rounded-xl overflow-hidden' : ''}`}
-                style={{ height: bandHeight, minHeight: bandHeight }}
-                animate={isActive ? { scale: [1, 1.02, 1] } : {}}
+                className={`relative flex items-stretch gap-1.5 sm:gap-2 ${!isBroken ? 'rounded-xl overflow-hidden' : ''} ${bandHeightClass}`}
+                animate={isActive ? { scale: [1, 1.01, 1] } : {}}
                 transition={{ duration: 0.4 }}
               >
                 <motion.div
-                  className={`relative flex-1 flex flex-col items-center justify-center text-center px-2 sm:px-3 overflow-hidden ${!isBroken && isActive ? 'shadow-lg shadow-success/20' : ''}`}
+                  className={`relative flex-1 flex flex-col items-center justify-center text-center px-2 sm:px-3 py-2 sm:py-0 overflow-hidden min-h-0 ${bandHeightClass} ${!isBroken && isActive ? 'shadow-lg shadow-success/20' : ''}`}
                   style={{
                     clipPath: layerClip,
                     WebkitClipPath: layerClip,
@@ -210,58 +253,69 @@ function VisualFunnel({
                         ? 'linear-gradient(135deg, rgba(var(--success-rgb), 0.25) 0%, rgba(var(--success-rgb), 0.12) 50%, rgba(var(--success-rgb), 0.08) 100%)'
                         : 'linear-gradient(135deg, rgba(var(--success-rgb), 0.12) 0%, rgba(var(--success-rgb), 0.06) 100%)'),
                     border: `2px solid ${isBroken ? (isGreenBand ? (isActive ? 'rgba(var(--success-rgb), 0.7)' : 'rgba(var(--success-rgb), 0.45)') : (isActive ? 'rgba(var(--destructive-rgb), 0.7)' : 'rgba(var(--destructive-rgb), 0.45)')) : (isActive ? 'rgba(var(--success-rgb), 0.5)' : 'rgba(var(--success-rgb), 0.25)')}`,
-                    height: bandHeight,
                   }}
                 >
-                  <div className="flex items-center justify-center gap-1.5 flex-wrap leading-tight">
-                    <span
-                      className={`w-5 h-5 rounded flex items-center justify-center text-xs font-bold flex-shrink-0 ${!isBroken ? (isActive ? 'bg-success/40 text-success' : 'bg-success/20 text-success/90') : 'bg-foreground/15 text-foreground'}`}
-                      aria-hidden
-                    >
-                      {stage.step}
-                    </span>
-                    <span className="text-sm" aria-hidden>{stage.icon}</span>
-                    <span className={`font-semibold text-sm ${isGreenBand ? 'text-success' : 'text-destructive'}`}>
-                      {stage.title}
-                    </span>
-                    <AnimatedCount
-                      value={count}
-                      isActive={isActive}
-                      suffix=" leads"
-                      className={`text-sm font-mono tabular-nums font-medium ${isGreenBand ? 'text-success' : 'text-destructive'}`}
-                    />
+                  <div className="flex flex-col sm:flex-row sm:flex-wrap sm:items-center justify-center gap-1 sm:gap-1.5 w-full leading-tight">
+                    <div className="flex items-center justify-center gap-1.5 flex-wrap">
+                      <span
+                        className={`w-6 h-6 rounded-lg flex items-center justify-center text-xs font-bold flex-shrink-0 ${!isBroken ? (isActive ? 'bg-success/40 text-success' : 'bg-success/20 text-success/90') : 'bg-foreground/15 text-foreground'}`}
+                        aria-hidden
+                      >
+                        {stage.step}
+                      </span>
+                      <span className="text-lg sm:text-base leading-none select-none" aria-hidden>
+                        {stage.icon}
+                      </span>
+                      <span className={`font-semibold text-sm sm:text-sm text-left sm:text-center ${isGreenBand ? 'text-success' : 'text-destructive'}`}>
+                        {stage.title}
+                      </span>
+                    </div>
+                    <div className="flex items-baseline justify-center gap-1 flex-wrap">
+                      <AnimatedCount
+                        value={count}
+                        isActive={isActive}
+                        suffix=""
+                        className={`text-base sm:text-sm font-mono tabular-nums font-bold ${isGreenBand ? 'text-success' : 'text-destructive'}`}
+                      />
+                      <span className={`text-[10px] sm:text-xs font-medium uppercase tracking-wide ${isGreenBand ? 'text-success/80' : 'text-destructive/80'}`}>
+                        {funnelCopy.leadsUnit}
+                      </span>
+                    </div>
                   </div>
                   {elaboration(stage) && (
-                    <p className={`text-xs leading-snug mt-0.5 max-w-full px-1 font-medium ${isGreenBand ? (isBroken ? 'text-success' : 'text-success/90') : 'text-destructive'}`}>
+                    <p className={`text-[11px] sm:text-xs leading-snug mt-1 max-w-full px-1 font-medium ${isGreenBand ? (isBroken ? 'text-success' : 'text-success/90') : 'text-destructive'}`}>
                       {elaboration(stage)}
                     </p>
                   )}
                 </motion.div>
-                <div
-                  className="flex-shrink-0 w-14 flex flex-col items-end justify-center gap-0"
-                  style={{ height: bandHeight }}
-                >
+                <div className={`flex-shrink-0 w-[4.5rem] sm:w-14 flex flex-col items-end justify-center gap-0.5 ${bandHeightClass}`}>
                   {displayDrop > 0 && (
                     <>
-                      <span className="text-[10px] font-semibold uppercase text-foreground/70">lost</span>
+                      <span className="text-[9px] sm:text-[10px] font-semibold uppercase text-foreground/70 text-right leading-tight">
+                        {funnelCopy.lostBadge}
+                      </span>
                       <motion.span
-                        className={`text-sm font-bold tabular-nums ${isGreenBand ? 'text-muted-foreground' : 'text-destructive'}`}
-                        animate={isActive ? { scale: [1, 1.15, 1] } : {}}
+                        className={`text-xs sm:text-sm font-bold tabular-nums text-right ${isGreenBand ? 'text-muted-foreground' : 'text-destructive'}`}
+                        animate={isActive ? { scale: [1, 1.08, 1] } : {}}
                         transition={{ duration: 0.3 }}
                       >
-                        −<AnimatedCount value={displayDrop} isActive={isActive} suffix=" leads" />
+                        −<AnimatedCount value={displayDrop} isActive={isActive} suffix="" />
+                        <span className="text-[10px] font-medium ml-0.5">{funnelCopy.leadsUnit}</span>
                       </motion.span>
                     </>
                   )}
                   {displayDrop < 0 && (
-                    <div className={!isBroken ? 'px-1.5 py-1 rounded-lg bg-success/15 border border-success/25' : ''}>
-                      <span className={`text-[10px] font-semibold uppercase ${!isBroken ? 'text-success' : 'text-success'}`}>referral</span>
+                    <div className={!isBroken ? 'px-1.5 py-1 rounded-lg bg-success/15 border border-success/25 max-w-full' : ''}>
+                      <span className={`text-[9px] sm:text-[10px] font-semibold uppercase block text-right ${!isBroken ? 'text-success' : 'text-success'}`}>
+                        {funnelCopy.referralBadge}
+                      </span>
                       <motion.span
-                        className={`block text-sm font-bold tabular-nums ${!isBroken ? 'text-success' : 'text-success'}`}
-                        animate={isActive ? { scale: [1, 1.15, 1] } : {}}
+                        className={`block text-xs sm:text-sm font-bold tabular-nums text-right ${!isBroken ? 'text-success' : 'text-success'}`}
+                        animate={isActive ? { scale: [1, 1.08, 1] } : {}}
                         transition={{ duration: 0.3 }}
                       >
-                        +<AnimatedCount value={Math.abs(displayDrop)} isActive={isActive} suffix=" leads" />
+                        +<AnimatedCount value={Math.abs(displayDrop)} isActive={isActive} suffix="" />
+                        <span className="text-[10px] font-medium ml-0.5">{funnelCopy.leadsUnit}</span>
                       </motion.span>
                     </div>
                   )}
@@ -275,7 +329,19 @@ function VisualFunnel({
   )
 }
 
-function BrokenFlowDiagram({ channels, brokenStages, activeStep, label }: { channels: ChannelItem[]; brokenStages: BrokenStageItem[]; activeStep: number; label: string }) {
+function BrokenFlowDiagram({
+  channels,
+  brokenStages,
+  activeStep,
+  label,
+  funnelCopy,
+}: {
+  channels: ChannelItem[]
+  brokenStages: BrokenStageItem[]
+  activeStep: number
+  label: string
+  funnelCopy: FunnelCopy
+}) {
   const funnelStages: FunnelStage[] = brokenStages.map((s, i) => ({
     step: s.step,
     title: s.title,
@@ -287,7 +353,7 @@ function BrokenFlowDiagram({ channels, brokenStages, activeStep, label }: { chan
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      className="relative rounded-3xl border-2 border-destructive/30 bg-destructive/5 p-5 xl:p-6 overflow-hidden flex flex-col min-h-0"
+      className="relative rounded-3xl border-2 border-destructive/35 bg-gradient-to-b from-destructive/10 via-surface/90 to-destructive/5 p-5 xl:p-6 overflow-hidden flex flex-col min-h-0 shadow-xl shadow-destructive/5 ring-1 ring-destructive/10"
     >
       <div className="absolute top-3 right-3 px-2.5 py-1 bg-destructive/20 text-destructive text-[10px] font-bold rounded-full border border-destructive/30">
         LEAKS EVERYWHERE
@@ -302,6 +368,7 @@ function BrokenFlowDiagram({ channels, brokenStages, activeStep, label }: { chan
         channelIcons={CHANNEL_ICONS}
         variant="broken"
         activeStep={activeStep}
+        funnelCopy={funnelCopy}
       />
       <div className="mt-4 flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-destructive/5 border border-dashed border-destructive/40">
         <span className="text-destructive text-2xl">↻</span>
@@ -311,7 +378,19 @@ function BrokenFlowDiagram({ channels, brokenStages, activeStep, label }: { chan
   )
 }
 
-function AIPoweredFlowDiagram({ channels, aiStages, activeStep, label }: { channels: ChannelItem[]; aiStages: AIStageItem[]; activeStep: number; label: string }) {
+function AIPoweredFlowDiagram({
+  channels,
+  aiStages,
+  activeStep,
+  label,
+  funnelCopy,
+}: {
+  channels: ChannelItem[]
+  aiStages: AIStageItem[]
+  activeStep: number
+  label: string
+  funnelCopy: FunnelCopy
+}) {
   const funnelStages: FunnelStage[] = aiStages.map((s, i) => ({
     step: s.step,
     title: s.title,
@@ -324,7 +403,7 @@ function AIPoweredFlowDiagram({ channels, aiStages, activeStep, label }: { chann
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: 0.1 }}
-      className="relative rounded-3xl border-2 border-success/30 bg-success/5 p-5 xl:p-6 overflow-hidden flex flex-col min-h-0"
+      className="relative rounded-3xl border-2 border-success/35 bg-gradient-to-b from-success/10 via-surface/90 to-success/5 p-5 xl:p-6 overflow-hidden flex flex-col min-h-0 shadow-xl shadow-success/10 ring-1 ring-success/15"
     >
       <div className="absolute top-3 right-3 px-2.5 py-1 bg-success/20 text-success text-[10px] font-bold rounded-full border border-success/30 flex items-center gap-1">
         <span className="w-1.5 h-1.5 rounded-full bg-success animate-pulse" />
@@ -340,6 +419,7 @@ function AIPoweredFlowDiagram({ channels, aiStages, activeStep, label }: { chann
         channelIcons={CHANNEL_ICONS}
         variant="ai"
         activeStep={activeStep}
+        funnelCopy={funnelCopy}
       />
       <div className="mt-4 flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-success/5 border-2 border-success/30">
         <span className="text-success text-2xl animate-pulse">↻</span>
@@ -359,6 +439,18 @@ const ClientJourneyDemo = () => {
   const [activeFunnelStep, setActiveFunnelStep] = useState(0)
   const language = useLanguage()
   const t = translations[language].clientJourney
+  const funnelCopy: FunnelCopy = {
+    legend: t.funnelLegend,
+    sectionIntake: t.funnelSectionIntake,
+    sectionConversion: t.funnelSectionConversion,
+    sectionOutcome: t.funnelSectionOutcome,
+    pipelineLabel: t.funnelPipelineLabel,
+    columnLost: t.funnelColumnLost,
+    columnNet: t.funnelColumnNet,
+    lostBadge: t.funnelLostBadge,
+    referralBadge: t.funnelReferralBadge,
+    leadsUnit: t.funnelLeadsUnit,
+  }
   const channels: ChannelItem[] = t.channels.map((c) => ({ ...c, icon: CHANNEL_ICONS[c.id] ?? '📩' }))
   const brokenStages: BrokenStageItem[] = t.brokenStages.map((s, i) => ({ ...s, icon: BROKEN_STAGE_ICONS[i] }))
   const aiStages: AIStageItem[] = t.aiStages.map((s, i) => ({ ...s, icon: AI_STAGE_ICONS[i] }))
@@ -451,8 +543,20 @@ const ClientJourneyDemo = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
           >
-            <BrokenFlowDiagram channels={channels} brokenStages={brokenStages} activeStep={activeFunnelStep} label={t.brokenLabel} />
-            <AIPoweredFlowDiagram channels={channels} aiStages={aiStages} activeStep={activeFunnelStep} label={t.aiFlowLabel} />
+            <BrokenFlowDiagram
+              channels={channels}
+              brokenStages={brokenStages}
+              activeStep={activeFunnelStep}
+              label={t.brokenLabel}
+              funnelCopy={funnelCopy}
+            />
+            <AIPoweredFlowDiagram
+              channels={channels}
+              aiStages={aiStages}
+              activeStep={activeFunnelStep}
+              label={t.aiFlowLabel}
+              funnelCopy={funnelCopy}
+            />
           </motion.div>
         </div>
 
@@ -467,7 +571,7 @@ const ClientJourneyDemo = () => {
                 transition={{ duration: 0.4 }}
                 className="relative"
               >
-                <div className="relative rounded-2xl sm:rounded-3xl border-2 border-destructive/30 bg-destructive/5 p-4 sm:p-6 overflow-visible">
+                <div className="relative rounded-2xl sm:rounded-3xl border-2 border-destructive/35 bg-gradient-to-b from-destructive/10 via-surface/95 to-destructive/5 p-4 sm:p-6 overflow-visible shadow-lg shadow-destructive/10 ring-1 ring-destructive/10">
                   <div className="flex flex-col sm:flex-row sm:relative items-center sm:block mb-4">
                     <div className="text-center sm:text-center mb-2 sm:mb-0">
                       <span className="text-destructive text-sm font-bold">❌ {t.brokenLabel}</span>
@@ -483,6 +587,7 @@ const ClientJourneyDemo = () => {
                     channelIcons={CHANNEL_ICONS}
                     variant="broken"
                     activeStep={activeFunnelStep}
+                    funnelCopy={funnelCopy}
                   />
                   <div className="mt-4 flex items-center justify-center gap-2 py-3 px-3 sm:px-4 rounded-xl bg-destructive/5 border border-dashed border-destructive/40">
                     <span className="text-destructive text-xl sm:text-2xl">↻</span>
@@ -523,6 +628,7 @@ const ClientJourneyDemo = () => {
                     channelIcons={CHANNEL_ICONS}
                     variant="ai"
                     activeStep={activeFunnelStep}
+                    funnelCopy={funnelCopy}
                   />
                   {/* Footer - Referral loop */}
                   <div className="mt-6 flex items-center justify-center gap-3 py-4 px-4 rounded-2xl bg-gradient-to-r from-success/15 via-success/10 to-success/15 border border-success/20 shadow-inner">
