@@ -1,7 +1,22 @@
 import type { Metadata } from 'next'
+import { Space_Grotesk, Inter } from 'next/font/google'
 import { headers } from 'next/headers'
 import './globals.css'
 import { ThemeProvider } from './components/ThemeProvider'
+
+const fontDisplay = Space_Grotesk({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-display',
+  display: 'swap',
+})
+
+const fontBody = Inter({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-body',
+  display: 'swap',
+})
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://digni-digital-llc.com'
 
@@ -88,7 +103,12 @@ export default async function RootLayout({
   ]
 
   return (
-    <html lang={lang} dir={dir} suppressHydrationWarning>
+    <html
+      lang={lang}
+      dir={dir}
+      suppressHydrationWarning
+      className={`${fontDisplay.variable} ${fontBody.variable}`}
+    >
       <body>
         <script
           type="application/ld+json"

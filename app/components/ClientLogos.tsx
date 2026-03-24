@@ -54,7 +54,7 @@ export default function ClientLogos({
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-12 md:mb-16">
           <span className="section-label block mb-6">{badge}</span>
-          <h3 className="client-logos-headline font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-text leading-tight tracking-tight">
+          <h2 className="client-logos-headline font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-text leading-tight tracking-tight">
             {titleHighlight ? (
               <>
                 <span className="block text-text/90">{title}</span>
@@ -63,7 +63,7 @@ export default function ClientLogos({
             ) : (
               <span className="gradient-text client-logos-highlight">{title}</span>
             )}
-          </h3>
+          </h2>
           {subtitle && (
             <p className="text-muted text-base md:text-lg max-w-2xl mx-auto font-medium">{subtitle}</p>
           )}

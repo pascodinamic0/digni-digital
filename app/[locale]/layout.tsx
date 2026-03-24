@@ -3,8 +3,7 @@ import { NextIntlClientProvider } from 'next-intl'
 import { getMessages, setRequestLocale } from 'next-intl/server'
 import { notFound } from 'next/navigation'
 import { headers } from 'next/headers'
-import '../globals.css'
-import { routing } from '@/i18n/routing'
+import { localeToHreflang, routing } from '@/i18n/routing'
 import { LocaleProvider } from '../context/LocaleContext'
 import LocaleKeyedContent from '@/app/components/LocaleKeyedContent'
 import Navigation from '@/app/components/Navigation'
@@ -28,7 +27,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const localeAlternates: Record<string, string> = {}
   for (const loc of routing.locales) {
     const path = pathname.replace(/^\/[^/]+/, `/${loc}`)
-    localeAlternates[loc] = `${SITE_URL}${path}`
+    localeAlternates[localeToHreflang[loc]] = `${SITE_URL}${path}`
   }
   localeAlternates['x-default'] = `${SITE_URL}${pathname.replace(/^\/[^/]+/, `/${routing.defaultLocale}`)}`
 

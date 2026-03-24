@@ -17,16 +17,25 @@ export default function ScrollIndicator({
   const [isVisible, setIsVisible] = useState(true)
 
   useEffect(() => {
+    let raf = 0
     const handleScroll = () => {
-      if (direction === 'down') {
-        setIsVisible(window.scrollY < window.innerHeight * 0.8)
-      } else {
-        setIsVisible(window.scrollY > 100)
-      }
+      if (raf) return
+      raf = requestAnimationFrame(() => {
+        raf = 0
+        const next =
+          direction === 'down'
+            ? window.scrollY < window.innerHeight * 0.8
+            : window.scrollY > 100
+        setIsVisible((prev) => (prev === next ? prev : next))
+      })
     }
 
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
+    handleScroll()
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      if (raf) cancelAnimationFrame(raf)
+    }
   }, [direction])
 
   if (!isVisible) return null
