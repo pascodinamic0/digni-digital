@@ -8,6 +8,7 @@ import { LocaleProvider } from '../context/LocaleContext'
 import LocaleKeyedContent from '@/app/components/LocaleKeyedContent'
 import Navigation from '@/app/components/Navigation'
 import Footer from '@/app/components/Footer'
+import LiveChatWidget from '@/app/components/LiveChatWidget'
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://digni-digital-llc.com'
 
@@ -70,6 +71,7 @@ export default async function LocaleLayout({ children, params }: Props) {
         <Navigation />
         <LocaleKeyedContent locale={locale}>{children}</LocaleKeyedContent>
         <Footer />
+        <LiveChatWidget />
       </NextIntlClientProvider>
     </LocaleProvider>
   )

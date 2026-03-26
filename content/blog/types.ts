@@ -10,4 +10,6 @@ export interface BlogArticle {
   tags: string[]
   featured: boolean
   content: string
+  /** Set when a published DB override supplies a hero/cover image */
+  coverImageUrl?: string | null
 }
