@@ -54,6 +54,20 @@ export default function BlogPostContent({ articleByLang }: BlogPostContentProps)
         </div>
       </header>
 
+      {article.coverImageUrl ? (
+        <figure className="mb-10 overflow-hidden rounded-2xl border border-border-light/60 shadow-sm">
+          <img
+            src={article.coverImageUrl}
+            alt=""
+            className="max-h-[min(420px,50vh)] w-full object-cover"
+            width={1200}
+            height={630}
+            loading="eager"
+            decoding="async"
+          />
+        </figure>
+      ) : null}
+
       <div 
         className="blog-content max-w-none"
         dangerouslySetInnerHTML={{ __html: article.content }}

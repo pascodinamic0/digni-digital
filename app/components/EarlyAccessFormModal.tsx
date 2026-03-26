@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { useLanguage } from '@/app/context/LocaleContext'
+import { useLanguage, useLocale } from '@/app/context/LocaleContext'
 import type { Language } from '@/app/i18n/translations'
 import { guidedLearningConfig } from '@/app/config/guided-learning.config'
 
@@ -201,7 +201,8 @@ const FORM_TRANSLATIONS: Record<Language, {
 }
 
 export default function EarlyAccessFormModal({ isOpen, onClose }: EarlyAccessFormModalProps) {
-  const language = useLanguage() as Language
+  const language = useLanguage()
+  const regionalLocale = useLocale()
   const t = FORM_TRANSLATIONS[language] || FORM_TRANSLATIONS.en
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
   const [errorMsg, setErrorMsg] = useState<string | null>(null)
@@ -272,6 +273,7 @@ export default function EarlyAccessFormModal({ isOpen, onClose }: EarlyAccessFor
           whyJoin: formData.whyJoin,
           commitReady: formData.commitReady,
           paidProgram: formData.paidProgram,
+          locale: regionalLocale,
         }),
       })
 

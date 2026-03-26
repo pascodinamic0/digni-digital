@@ -13,13 +13,14 @@ type AffiliatePageProps = {
 }
 
 export default function AffiliatePage({ params, searchParams }: AffiliatePageProps) {
-  use(params)
+  const { locale } = use(params)
   use(searchParams ?? Promise.resolve({}))
   const language = useLanguage()
   const cta = getCtaButtonText(language)
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    phone: '',
     instagram: '',
     tiktok: '',
     youtube: '',
@@ -36,7 +37,7 @@ export default function AffiliatePage({ params, searchParams }: AffiliatePagePro
       const res = await fetch('/api/affiliate', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ ...formData, locale }),
       })
       if (res.ok) {
         setFormStatus('success')
@@ -626,6 +627,22 @@ export default function AffiliatePage({ params, searchParams }: AffiliatePagePro
                       onChange={handleChange}
                       className="w-full px-4 py-3 bg-background border border-light rounded-lg focus:border-accent focus:outline-none transition-colors"
                       placeholder="you@example.com"
+                    />
+                  </div>
+
+                  <div>
+                    <label htmlFor="phone" className="block text-sm font-medium mb-2">
+                      Phone / WhatsApp
+                    </label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 bg-background border border-light rounded-lg focus:border-accent focus:outline-none transition-colors"
+                      placeholder="+1 …"
+                      autoComplete="tel"
                     />
                   </div>
 

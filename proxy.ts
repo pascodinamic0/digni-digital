@@ -3,10 +3,11 @@ import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 import { routing } from './i18n/routing'
 import { detectLocaleFromRequest } from './i18n/locale-detection'
+import { updateSession } from './lib/supabase/middleware'
 
 const CANONICAL_HOST = 'digni-digital-llc.com'
 
-export default async function middleware(request: NextRequest) {
+export default async function proxy(request: NextRequest) {
   const host = request.headers.get('host') ?? ''
   const normalizedHost = host.toLowerCase().replace(/:\d+$/, '')
 
@@ -19,6 +20,13 @@ export default async function middleware(request: NextRequest) {
       const canonicalUrl = new URL(url.pathname + url.search, `https://${CANONICAL_HOST}`)
       return NextResponse.redirect(canonicalUrl, 301)
     }
+  }
+
+  const pathname = request.nextUrl.pathname
+  if (pathname.startsWith('/admin') || pathname.startsWith('/auth')) {
+    const response = NextResponse.next({ request })
+    response.headers.set('x-pathname', pathname)
+    return updateSession(request, response)
   }
 
   const countryHeader = request.headers.get('x-vercel-ip-country')
@@ -34,7 +42,7 @@ export default async function middleware(request: NextRequest) {
   if (response && request.nextUrl.pathname) {
     response.headers.set('x-pathname', request.nextUrl.pathname)
   }
-  return response
+  return response ? updateSession(request, response) : updateSession(request, NextResponse.next({ request }))
 }
 
 export const config = {

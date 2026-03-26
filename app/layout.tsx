@@ -3,6 +3,7 @@ import { Space_Grotesk, Inter } from 'next/font/google'
 import { headers } from 'next/headers'
 import './globals.css'
 import { ThemeProvider } from './components/ThemeProvider'
+import { routing } from '@/i18n/routing'
 
 const fontDisplay = Space_Grotesk({
   subsets: ['latin'],
@@ -59,7 +60,10 @@ export default async function RootLayout({
   children: React.ReactNode
 }) {
   const pathname = (await headers()).get('x-pathname') || '/us-en'
-  const localeSegment = pathname.split('/')[1] || 'us-en'
+  const firstSegment = pathname.split('/')[1] || routing.defaultLocale
+  const localeSegment = routing.locales.includes(firstSegment as (typeof routing.locales)[number])
+    ? firstSegment
+    : routing.defaultLocale
   const lang = localeSegment.split('-')[1] || 'en'
   const dir = lang === 'ar' ? 'rtl' : 'ltr'
 
