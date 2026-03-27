@@ -23,7 +23,13 @@ export default async function proxy(request: NextRequest) {
   }
 
   const pathname = request.nextUrl.pathname
-  if (pathname.startsWith('/admin') || pathname.startsWith('/auth')) {
+  // Session refresh must run for LMS/admin API routes too (matcher previously skipped all /api).
+  if (
+    pathname.startsWith('/admin') ||
+    pathname.startsWith('/auth') ||
+    pathname.startsWith('/api/admin') ||
+    pathname.startsWith('/api/learn')
+  ) {
     const response = NextResponse.next({ request })
     response.headers.set('x-pathname', pathname)
     return updateSession(request, response)
@@ -48,5 +54,7 @@ export default async function proxy(request: NextRequest) {
 export const config = {
   matcher: [
     '/((?!api|trpc|_next|_vercel|sitemap\\.xml|robots\\.txt|.*\\..*).*)',
+    '/api/admin/:path*',
+    '/api/learn/:path*',
   ],
 }

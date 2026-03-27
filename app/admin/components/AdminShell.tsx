@@ -14,6 +14,9 @@ import {
   Users,
   Handshake,
   KeyRound,
+  GraduationCap,
+  UserCheck,
+  Mail,
 } from 'lucide-react'
 import ThemeToggle from '@/app/components/ThemeToggle'
 import { createClient } from '@/lib/supabase/client'
@@ -21,6 +24,9 @@ import { defaultLocale } from '@/i18n/routing'
 
 const WORKSPACE_NAV: { href: string; label: string; Icon: LucideIcon }[] = [
   { href: '/admin', label: 'Overview', Icon: LayoutDashboard },
+  { href: '/admin/courses', label: 'Courses', Icon: GraduationCap },
+  { href: '/admin/students', label: 'Students', Icon: UserCheck },
+  { href: '/admin/invites', label: 'Invites', Icon: Mail },
   { href: '/admin/pipeline', label: 'Pipeline', Icon: Kanban },
   { href: '/admin/contacts', label: 'Contacts', Icon: Users },
 ]
