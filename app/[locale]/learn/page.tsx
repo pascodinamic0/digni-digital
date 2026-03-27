@@ -26,6 +26,16 @@ export default async function LearnIndexPage({ params }: Props) {
     redirect(`/${locale}/learn/pending`)
   }
 
+  const { data: profile, error: profileErr } = await supabase
+    .from('profiles')
+    .select('lms_welcome_video_seen_at')
+    .eq('id', user.id)
+    .maybeSingle()
+
+  if (!profileErr && !profile?.lms_welcome_video_seen_at) {
+    redirect(`/${locale}/learn/welcome`)
+  }
+
   const { data: course } = await supabase.from('courses').select('slug').eq('id', en.course_id ?? FUTURE_READY_COURSE_ID).single()
 
   if (course?.slug) {

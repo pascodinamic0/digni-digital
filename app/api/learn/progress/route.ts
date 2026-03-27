@@ -1,5 +1,10 @@
 import { NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase/server'
+import {
+  canAccessLesson,
+  canMarkLessonComplete,
+  canUncompleteLesson,
+} from '@/lib/lms/lesson-gates'
 
 export async function POST(request: Request) {
   const supabase = await createClient()
@@ -48,7 +53,17 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: 'Not enrolled' }, { status: 403 })
   }
 
+  const allowed = await canAccessLesson(supabase, user.id, courseId, lessonId)
+  if (!allowed) {
+    return NextResponse.json({ error: 'Complete the previous lesson first.' }, { status: 403 })
+  }
+
   if (complete) {
+    const gate = await canMarkLessonComplete(supabase, user.id, lessonId)
+    if (!gate.ok) {
+      return NextResponse.json({ error: gate.reason }, { status: 400 })
+    }
+
     const { error } = await supabase.from('lesson_progress').upsert(
       {
         user_id: user.id,
@@ -61,6 +76,14 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: error.message }, { status: 500 })
     }
   } else {
+    const ok = await canUncompleteLesson(supabase, user.id, courseId, lessonId)
+    if (!ok) {
+      return NextResponse.json(
+        { error: 'Unmark this lesson only after clearing completion on later lessons.' },
+        { status: 400 }
+      )
+    }
+
     const { error } = await supabase.from('lesson_progress').delete().eq('user_id', user.id).eq('lesson_id', lessonId)
     if (error) {
       return NextResponse.json({ error: error.message }, { status: 500 })

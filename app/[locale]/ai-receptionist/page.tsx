@@ -181,15 +181,26 @@ export default function AIReceptionistPage({ params, searchParams }: AIReception
     }
   ]
 
-  const pricing = [
+  const pricing: {
+    name: string
+    limited: boolean
+    limitedLabel: string
+    setupFee: string
+    setupLabel: string
+    price: string
+    period: string
+    description: string
+    included: string[]
+    note: string
+    originalPrice?: string
+  }[] = [
     {
       name: 'Done-For-You System',
       limited: true,
       limitedLabel: 'One client per market',
       setupFee: '$2,000',
       setupLabel: 'one-time setup',
-      price: '$449',
-      originalPrice: '$500',
+      price: '$500',
       period: '/month',
       description: 'Done-for-you. No software to manage. Live in 48h.',
       included: [
@@ -622,8 +633,8 @@ export default function AIReceptionistPage({ params, searchParams }: AIReception
                     ['📱', 'Running Facebook, Instagram, or WhatsApp ads'],
                     ['💰', 'Selling $500+ per transaction'],
                     ['📅', 'Appointments or consultations required'],
-                    ['⏱️', 'Missing leads from slow response'],
-                    ['💵', 'Spending $1k+ monthly on ads'],
+                    ['⏱️', 'Would like to convert more sales and don\'t know how'],
+                    ['💵', 'Spending money on ads'],
                     ['🎯', 'Want every lead you pay for']
                   ].map(([emoji, item], i) => (
                     <motion.li

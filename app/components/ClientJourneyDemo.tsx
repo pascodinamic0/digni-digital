@@ -196,7 +196,7 @@ function VisualFunnel({
       </div>
 
       {/* Funnel: all bands same height, no gap, section breaks are thin lines only */}
-      <div className="relative w-full flex flex-col" style={{ gap: 0 }}>
+      <div className="relative w-full flex flex-col overflow-hidden" style={{ gap: 0 }}>
         {stages.map((stage, i) => {
           const count = counts[i] ?? 0
           const nextCount = counts[i + 1] ?? count
@@ -216,7 +216,7 @@ function VisualFunnel({
             <div key={stage.step} className="flex flex-col" style={{ gap: 0 }}>
               {showSectionBreak && sectionLabel && (
                 <div
-                  className={`grid grid-cols-[1fr_auto_1fr] items-center gap-3 w-full py-1.5 ${!isBroken ? 'py-2' : ''}`}
+                  className="grid grid-cols-[1fr_auto_1fr] items-center gap-3 w-full py-1.5"
                   style={{ minHeight: 28 }}
                 >
                   <div
@@ -224,7 +224,11 @@ function VisualFunnel({
                     style={isBroken ? { background: 'rgba(var(--destructive-rgb), 0.4)' } : {}}
                   />
                   <span
-                    className={`text-xs font-bold uppercase tracking-wider whitespace-nowrap px-3 py-1 rounded-lg ${isBroken ? 'text-destructive' : 'text-success bg-success/10 border border-success/20'}`}
+                    className={`text-xs font-bold uppercase tracking-wider whitespace-nowrap px-3 py-1 rounded-lg border ${
+                      isBroken
+                        ? 'text-destructive bg-destructive/10 border-destructive/20'
+                        : 'text-success bg-success/10 border-success/20'
+                    }`}
                   >
                     {sectionLabel}
                   </span>
@@ -236,29 +240,38 @@ function VisualFunnel({
               )}
 
               <motion.div
-                className={`relative flex flex-col sm:flex-row items-stretch gap-1.5 sm:gap-2 ${!isBroken ? 'sm:rounded-xl sm:overflow-hidden' : ''}`}
-                animate={isActive ? { scale: [1, 1.01, 1] } : {}}
-                transition={{ duration: 0.4 }}
+                className={`relative flex flex-col sm:flex-row items-stretch gap-1.5 sm:gap-2 overflow-hidden ${!isBroken ? 'sm:rounded-xl' : ''}`}
               >
                 <motion.div
-                  className={`relative flex-1 min-w-0 flex flex-col items-center justify-center text-center px-2 sm:px-3 py-2 sm:py-0 overflow-hidden ${bandHeightClass} ${displayDrop !== 0 ? 'order-2 sm:order-1' : ''} ${!isBroken && isActive ? 'shadow-lg shadow-success/20' : ''}`}
+                  className={`relative flex-1 min-w-0 flex flex-col items-center justify-center text-center px-2 sm:px-3 py-2 sm:py-0 overflow-hidden ${bandHeightClass} ${displayDrop !== 0 ? 'order-2 sm:order-1' : ''}`}
                   style={{
                     clipPath: layerClip,
                     WebkitClipPath: layerClip,
                     background: isBroken
                       ? (isGreenBand
-                        ? (isActive ? 'linear-gradient(180deg, rgba(var(--success-rgb), 0.35) 0%, rgba(var(--success-rgb), 0.2) 100%)' : 'linear-gradient(180deg, rgba(var(--success-rgb), 0.22) 0%, rgba(var(--success-rgb), 0.12) 100%)')
-                        : (isActive ? 'linear-gradient(180deg, rgba(var(--destructive-rgb), 0.35) 0%, rgba(var(--destructive-rgb), 0.2) 100%)' : 'linear-gradient(180deg, rgba(var(--destructive-rgb), 0.22) 0%, rgba(var(--destructive-rgb), 0.12) 100%)'))
+                        ? (isActive
+                          ? 'linear-gradient(180deg, rgba(var(--success-rgb), 0.26) 0%, rgba(var(--success-rgb), 0.14) 100%)'
+                          : 'linear-gradient(180deg, rgba(var(--success-rgb), 0.22) 0%, rgba(var(--success-rgb), 0.12) 100%)')
+                        : (isActive
+                          ? 'linear-gradient(180deg, rgba(var(--destructive-rgb), 0.26) 0%, rgba(var(--destructive-rgb), 0.14) 100%)'
+                          : 'linear-gradient(180deg, rgba(var(--destructive-rgb), 0.22) 0%, rgba(var(--destructive-rgb), 0.12) 100%)'))
                       : (isActive
-                        ? 'linear-gradient(135deg, rgba(var(--success-rgb), 0.25) 0%, rgba(var(--success-rgb), 0.12) 50%, rgba(var(--success-rgb), 0.08) 100%)'
+                        ? 'linear-gradient(135deg, rgba(var(--success-rgb), 0.14) 0%, rgba(var(--success-rgb), 0.08) 55%, rgba(var(--success-rgb), 0.05) 100%)'
                         : 'linear-gradient(135deg, rgba(var(--success-rgb), 0.12) 0%, rgba(var(--success-rgb), 0.06) 100%)'),
-                    border: `2px solid ${isBroken ? (isGreenBand ? (isActive ? 'rgba(var(--success-rgb), 0.7)' : 'rgba(var(--success-rgb), 0.45)') : (isActive ? 'rgba(var(--destructive-rgb), 0.7)' : 'rgba(var(--destructive-rgb), 0.45)')) : (isActive ? 'rgba(var(--success-rgb), 0.5)' : 'rgba(var(--success-rgb), 0.25)')}`,
+                    border: `2px solid ${isBroken ? (isGreenBand ? (isActive ? 'rgba(var(--success-rgb), 0.52)' : 'rgba(var(--success-rgb), 0.45)') : (isActive ? 'rgba(var(--destructive-rgb), 0.52)' : 'rgba(var(--destructive-rgb), 0.45)')) : (isActive ? 'rgba(var(--success-rgb), 0.34)' : 'rgba(var(--success-rgb), 0.25)')}`,
+                    boxShadow: isActive
+                      ? (isBroken
+                        ? (isGreenBand
+                          ? 'inset 0 0 0 1px rgba(var(--success-rgb), 0.22)'
+                          : 'inset 0 0 0 1px rgba(var(--destructive-rgb), 0.22)')
+                        : 'inset 0 0 0 1px rgba(var(--success-rgb), 0.18)')
+                      : 'none',
                   }}
                 >
                   <div className="flex flex-col sm:flex-row sm:flex-wrap sm:items-center justify-center gap-1 sm:gap-1.5 w-full leading-tight">
                     <div className="flex items-center justify-center gap-1.5 flex-wrap">
                       <span
-                        className={`w-6 h-6 rounded-lg flex items-center justify-center text-xs font-bold flex-shrink-0 ${!isBroken ? (isActive ? 'bg-success/40 text-success' : 'bg-success/20 text-success/90') : 'bg-foreground/15 text-foreground'}`}
+                        className={`w-6 h-6 rounded-lg flex items-center justify-center text-xs font-bold flex-shrink-0 ${!isBroken ? (isActive ? 'bg-success/22 text-success' : 'bg-success/20 text-success/90') : 'bg-foreground/15 text-foreground'}`}
                         aria-hidden
                       >
                         {stage.step}
@@ -288,56 +301,57 @@ function VisualFunnel({
                     </p>
                   )}
                 </motion.div>
-                {displayDrop !== 0 && (
-                  <div
-                    className={`
-                      order-1 sm:order-2 flex-shrink-0 w-full sm:w-14 min-h-0 sm:self-stretch
-                      flex flex-row sm:flex-col items-center justify-between sm:items-end sm:justify-center gap-2 sm:gap-0.5
-                      px-2.5 py-2 sm:p-0 rounded-lg sm:rounded-none border sm:border-0
-                      ${displayDrop > 0
-                        ? isBroken
-                          ? 'border-destructive/25 bg-destructive/10 sm:bg-transparent sm:border-0'
-                          : 'border-border/30 bg-muted/30 sm:bg-transparent sm:border-0'
-                        : ''}
-                      ${displayDrop < 0 && !isBroken ? 'border-success/25 bg-success/10 sm:bg-transparent sm:border-0' : ''}
-                    `}
-                  >
-                    {displayDrop > 0 && (
-                      <>
-                        <span className="text-[10px] font-bold uppercase tracking-wide text-foreground/80 sm:text-foreground/70 sm:font-semibold sm:text-right leading-tight">
-                          {funnelCopy.lostBadge}
-                        </span>
-                        <motion.span
-                          className={`inline-flex items-baseline gap-1 text-sm font-bold tabular-nums sm:flex sm:flex-col sm:items-end ${isGreenBand ? 'text-muted-foreground' : 'text-destructive'}`}
-                          animate={isActive ? { scale: [1, 1.08, 1] } : {}}
-                          transition={{ duration: 0.3 }}
-                        >
-                          <span className="inline-flex items-baseline gap-1">
-                            −<AnimatedCount value={displayDrop} isActive={isActive} suffix="" />
-                            <span className="text-[11px] font-medium">{funnelCopy.leadsUnit}</span>
-                          </span>
-                        </motion.span>
-                      </>
-                    )}
-                    {displayDrop < 0 && (
-                      <div
-                        className={`flex w-full flex-row items-center justify-between gap-2 sm:flex-col sm:items-end sm:gap-0.5 sm:p-0 ${!isBroken ? 'sm:rounded-lg sm:bg-success/15 sm:border sm:border-success/25 sm:px-1.5 sm:py-1' : ''}`}
+                {/* Reserve sm:w-14 always so clip-path trapezoids use the same band width as rows with NET/LEAK deltas */}
+                <div
+                  className={`
+                    flex-shrink-0 w-full sm:w-14 min-h-0 sm:self-stretch
+                    flex flex-row sm:flex-col items-center justify-between sm:items-end sm:justify-center gap-2 sm:gap-0.5
+                    px-2.5 py-2 sm:p-0 rounded-lg sm:rounded-none border sm:border-0
+                    ${displayDrop !== 0 ? 'order-1 sm:order-2' : 'hidden sm:flex'}
+                    ${displayDrop > 0
+                      ? isBroken
+                        ? 'border-destructive/25 bg-destructive/10 sm:bg-transparent sm:border-0'
+                        : 'border-border/30 bg-muted/30 sm:bg-transparent sm:border-0'
+                      : ''}
+                    ${displayDrop < 0 && !isBroken ? 'border-success/25 bg-success/10 sm:bg-transparent sm:border-0' : ''}
+                  `}
+                  aria-hidden={displayDrop === 0}
+                >
+                  {displayDrop > 0 && (
+                    <>
+                      <span className="text-[10px] font-bold uppercase tracking-wide text-foreground/80 sm:text-foreground/70 sm:font-semibold sm:text-right leading-tight">
+                        {funnelCopy.lostBadge}
+                      </span>
+                      <motion.span
+                        className={`inline-flex items-baseline gap-1 text-sm font-bold tabular-nums sm:flex sm:flex-col sm:items-end ${isGreenBand ? 'text-muted-foreground' : 'text-destructive'}`}
+                        animate={isActive ? { scale: [1, 1.08, 1] } : {}}
+                        transition={{ duration: 0.3 }}
                       >
-                        <span className="text-[10px] font-bold uppercase tracking-wide text-success sm:font-semibold">
-                          {funnelCopy.referralBadge}
-                        </span>
-                        <motion.span
-                          className="inline-flex items-baseline gap-1 text-sm font-bold tabular-nums text-success"
-                          animate={isActive ? { scale: [1, 1.08, 1] } : {}}
-                          transition={{ duration: 0.3 }}
-                        >
-                          +<AnimatedCount value={Math.abs(displayDrop)} isActive={isActive} suffix="" />
+                        <span className="inline-flex items-baseline gap-1">
+                          −<AnimatedCount value={displayDrop} isActive={isActive} suffix="" />
                           <span className="text-[11px] font-medium">{funnelCopy.leadsUnit}</span>
-                        </motion.span>
-                      </div>
-                    )}
-                  </div>
-                )}
+                        </span>
+                      </motion.span>
+                    </>
+                  )}
+                  {displayDrop < 0 && (
+                    <div
+                      className={`flex w-full flex-row items-center justify-between gap-2 sm:flex-col sm:items-end sm:gap-0.5 sm:p-0 ${!isBroken ? 'sm:rounded-lg sm:bg-success/15 sm:border sm:border-success/25 sm:px-1.5 sm:py-1' : ''}`}
+                    >
+                      <span className="text-[10px] font-bold uppercase tracking-wide text-success sm:font-semibold">
+                        {funnelCopy.referralBadge}
+                      </span>
+                      <motion.span
+                        className="inline-flex items-baseline gap-1 text-sm font-bold tabular-nums text-success"
+                        animate={isActive ? { scale: [1, 1.08, 1] } : {}}
+                        transition={{ duration: 0.3 }}
+                      >
+                        +<AnimatedCount value={Math.abs(displayDrop)} isActive={isActive} suffix="" />
+                        <span className="text-[11px] font-medium">{funnelCopy.leadsUnit}</span>
+                      </motion.span>
+                    </div>
+                  )}
+                </div>
               </motion.div>
             </div>
           )

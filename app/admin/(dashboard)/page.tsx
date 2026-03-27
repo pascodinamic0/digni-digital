@@ -3,6 +3,20 @@ import { requireAdminWithServiceDb } from '@/lib/auth/admin-data'
 
 const TILES = [
   {
+    href: '/admin/courses',
+    title: 'Learning portal',
+    blurb: 'Your one program: structure, lessons, videos, assignments, invites, and learner progress.',
+    icon: (
+      <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden>
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.902 59.902 0 0 1 10.399 5.84 50.716 50.716 0 0 0-2.658.814m-15.482 0A50.726 50.726 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm4.5 0a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm4.5 0a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z"
+        />
+      </svg>
+    ),
+  },
+  {
     href: '/admin/applications',
     title: 'Program applications',
     blurb: 'Early Access intake, verify payment, send LMS invites.',
@@ -90,13 +104,15 @@ const TILES = [
 
 export default async function AdminHomePage() {
   const db = await requireAdminWithServiceDb()
-  const [appsRes, affRes, dealsRes, contactsRes, chatRes, postsRes] = await Promise.all([
+  const [appsRes, affRes, dealsRes, contactsRes, chatRes, postsRes, coursesRes, enrollRes] = await Promise.all([
     db.from('program_applications').select('id', { count: 'exact', head: true }),
     db.from('affiliate_applications').select('id', { count: 'exact', head: true }),
     db.from('deals').select('id', { count: 'exact', head: true }),
     db.from('contacts').select('id', { count: 'exact', head: true }),
     db.from('chat_conversations').select('id', { count: 'exact', head: true }),
     db.from('blog_posts').select('id', { count: 'exact', head: true }),
+    db.from('courses').select('id', { count: 'exact', head: true }),
+    db.from('enrollments').select('id', { count: 'exact', head: true }),
   ])
 
   const nApps = appsRes.count ?? 0
@@ -105,10 +121,14 @@ export default async function AdminHomePage() {
   const nContacts = contactsRes.count ?? 0
   const nChat = chatRes.count ?? 0
   const nPosts = postsRes.count ?? 0
+  const nCourses = coursesRes.count ?? 0
+  const nEnroll = enrollRes.count ?? 0
 
   const stats = [
     { label: 'Applications', value: nApps, href: '/admin/applications' },
     { label: 'Affiliates', value: nAffiliates, href: '/admin/affiliates' },
+    { label: 'Course', value: nCourses, href: '/admin/courses' },
+    { label: 'Learners', value: nEnroll, href: '/admin/students' },
     { label: 'Open deals', value: nDeals, href: '/admin/pipeline' },
     { label: 'Contacts', value: nContacts, href: '/admin/contacts' },
     { label: 'Chat threads', value: nChat, href: '/admin/chat' },
@@ -123,11 +143,11 @@ export default async function AdminHomePage() {
           <span className="gradient-text">Overview</span>
         </h1>
         <p className="max-w-xl text-base leading-relaxed text-muted md:text-lg">
-          Snapshot of applications, pipeline, conversations, and content—same system as the live site.
+          Snapshot of applications, your learning portal, pipeline, conversations, and content—same system as the live site.
         </p>
       </header>
 
-      <ul className="mb-10 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
+      <ul className="mb-10 grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-4">
         {stats.map((s) => (
           <li key={s.label}>
             <Link

@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import { notFound, redirect } from 'next/navigation'
 import { createClient } from '@/lib/supabase/server'
+import { getLearnerSyllabusState } from '@/lib/lms/learner-course-syllabus'
+import { CourseSyllabusSidebar } from './course-syllabus-sidebar'
 
 type Props = { params: Promise<{ locale: string; courseSlug: string }> }
 
@@ -28,50 +30,68 @@ export default async function CoursePage({ params }: Props) {
     return notFound()
   }
 
-  const { data: modules } = await supabase
-    .from('modules')
-    .select('id, title, sort_order, lessons (id, title, sort_order)')
-    .eq('course_id', course.id)
-    .order('sort_order')
+  const { modules, order, access, done, totalLessons, completed, pct } = await getLearnerSyllabusState(
+    supabase,
+    user.id,
+    course.id
+  )
 
-  const lessonIds = (modules ?? []).flatMap((m) => (m.lessons as { id: string }[] | null)?.map((l) => l.id) ?? [])
-  const { data: progress } =
-    lessonIds.length > 0
-      ? await supabase.from('lesson_progress').select('lesson_id').eq('user_id', user.id).in('lesson_id', lessonIds)
-      : { data: [] as { lesson_id: string }[] }
-
-  const done = new Set((progress ?? []).map((p) => p.lesson_id))
+  const firstIncomplete = order.find((id) => !done.has(id))
+  const nextLessonId =
+    firstIncomplete && access.get(firstIncomplete)?.unlocked ? firstIncomplete : order[0] && access.get(order[0])?.unlocked ? order[0] : null
 
   return (
-    <div className="max-w-3xl mx-auto py-10 px-4">
-      <h1 className="font-display text-3xl font-bold mb-2">{course.title}</h1>
-      {course.description && <p className="text-muted mb-8">{course.description}</p>}
-      <div className="space-y-8">
-        {(modules ?? []).map((mod) => {
-          const lessons = (mod.lessons as { id: string; title: string; sort_order: number }[] | null | undefined)?.slice().sort((a, b) => a.sort_order - b.sort_order) ?? []
-          return (
-            <section key={mod.id}>
-              <h2 className="font-semibold text-lg mb-3 border-b border-border pb-2">{mod.title}</h2>
-              <ul className="space-y-2">
-                {lessons.map((lesson) => (
-                  <li key={lesson.id}>
-                    <Link
-                      href={`/${locale}/learn/${courseSlug}/${lesson.id}`}
-                      className="flex items-center justify-between rounded-lg border border-border px-4 py-3 hover:border-accent transition-colors"
-                    >
-                      <span>{lesson.title}</span>
-                      {done.has(lesson.id) ? (
-                        <span className="text-xs text-success">Done</span>
-                      ) : (
-                        <span className="text-xs text-muted">Open</span>
-                      )}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </section>
-          )
-        })}
+    <div className="grid gap-8 lg:grid-cols-[minmax(0,280px)_1fr] lg:items-start lg:gap-10">
+      <div className="order-2 lg:sticky lg:top-24 lg:order-1">
+        <CourseSyllabusSidebar
+          locale={locale}
+          courseSlug={courseSlug}
+          modules={modules}
+          access={access}
+          done={done}
+          currentLessonId={null}
+        />
+      </div>
+
+      <div className="order-1 min-w-0 lg:order-2">
+        <header className="mb-8">
+          <span className="section-label">Your course</span>
+          <h1 className="font-display mt-2 text-3xl font-bold tracking-tight text-text md:text-4xl">{course.title}</h1>
+          {course.description && (
+            <p className="mt-3 max-w-2xl text-base leading-relaxed text-muted">{course.description}</p>
+          )}
+          {totalLessons > 0 && (
+            <div className="mt-6 flex flex-wrap items-center gap-4 rounded-2xl border border-border-accent/25 bg-surface/60 px-4 py-3 md:px-5">
+              <div className="min-w-[140px] flex-1">
+                <p className="text-[11px] font-semibold uppercase tracking-wider text-muted">Progress</p>
+                <p className="font-display text-2xl font-bold tabular-nums text-accent">
+                  {completed}/{totalLessons}{' '}
+                  <span className="text-base font-semibold text-muted">lessons</span>
+                </p>
+              </div>
+              <div className="h-2 min-w-[120px] flex-1 overflow-hidden rounded-full bg-border/80">
+                <div className="h-full rounded-full bg-accent transition-[width]" style={{ width: `${pct}%` }} />
+              </div>
+              <span className="text-sm font-medium tabular-nums text-muted">{pct}%</span>
+            </div>
+          )}
+        </header>
+
+        <div className="rounded-2xl border border-border-light/80 bg-surface/40 p-6 md:p-8">
+          <p className="text-sm leading-relaxed text-muted">
+            Pick a lesson from the <strong className="text-text">outline</strong> on the left (or below on mobile). Watch the video,
+            complete any quiz or assignment, then mark the lesson complete to unlock the next one.
+          </p>
+          {nextLessonId && (
+            <Link
+              href={`/${locale}/learn/${courseSlug}/${nextLessonId}`}
+              className="mt-6 inline-flex rounded-xl bg-accent px-6 py-3 text-sm font-semibold text-background hover:opacity-95"
+            >
+              {completed === 0 ? 'Start first lesson' : firstIncomplete ? 'Continue learning' : 'Review lessons'}
+            </Link>
+          )}
+          {totalLessons === 0 && <p className="mt-4 text-sm text-muted">Your instructor hasn&apos;t added lessons yet.</p>}
+        </div>
       </div>
     </div>
   )
