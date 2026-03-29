@@ -112,16 +112,23 @@ export default function Navigation() {
               </Link>
             ))}
             
-            {/* Solutions Dropdown */}
-            <div className="relative" ref={dropdownRef}>
-              <button 
+            {/* Solutions: link to overview + chevron opens submenu */}
+            <div className="relative flex items-center gap-0.5" ref={dropdownRef}>
+              <Link
+                href="/services"
+                onClick={() => setSolutionsOpen(false)}
+                className="hover:text-accent transition-colors duration-300 text-sm font-medium text-text"
+              >
+                {t.nav.solutions}
+              </Link>
+              <button
+                type="button"
                 onClick={() => setSolutionsOpen(!solutionsOpen)}
                 aria-expanded={solutionsOpen}
                 aria-haspopup="true"
-                aria-label={`${t.nav.solutions} menu`}
-                className="hover:text-accent transition-colors duration-300 text-sm font-medium flex items-center gap-1 text-text"
+                aria-label={`${t.nav.solutions} submenu`}
+                className="hover:text-accent transition-colors duration-300 p-0.5 flex items-center text-text rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
               >
-                {t.nav.solutions}
                 <svg className={`w-4 h-4 transition-transform duration-200 ${solutionsOpen ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
@@ -217,7 +224,13 @@ export default function Navigation() {
             
             {/* Mobile Solutions Section */}
             <div className="py-3">
-              <div className="text-text font-semibold mb-2">{t.nav.solutions}</div>
+              <Link
+                href="/services"
+                className="block text-text font-semibold mb-2 hover:text-accent transition-colors"
+                onClick={() => setMobileOpen(false)}
+              >
+                {t.nav.solutions}
+              </Link>
               {solutionLinks.map((solution) => (
                 <Link
                   key={solution.href}
