@@ -854,7 +854,7 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     fighting: {
       badge: "What We're Fighting For",
       title: 'Three Threats to Growth.',
-      subtitle: 'Service teams feel these first—then intelligent systems close the gaps.',
+      subtitle: 'Teams feel them first. Systems close the gaps.',
       realProblems: 'We watch the numbers that matter. You get clarity—not noise.',
       missedLeads: 'Missed & Slow Responses',
       missedLeadsProblem:
@@ -1050,7 +1050,7 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     fighting: {
       badge: 'Ce pour quoi nous nous battons',
       title: 'Trois freins à la croissance.',
-      subtitle: 'Les équipes de services les ressentent en premier—puis des systèmes intelligents referment les brèches.',
+      subtitle: 'Les équipes les constatent en premier. Les systèmes comblent les brèches.',
       realProblems: 'Nous suivons les indicateurs qui comptent. Vous voyez clair—pas le bruit.',
       missedLeads: 'Réponses trop tard ou absentes',
       missedLeadsProblem:
@@ -1246,7 +1246,7 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     fighting: {
       badge: 'ما نكافح من أجله',
       title: 'ثلاث تهديدات للنمو.',
-      subtitle: 'فرق الخدمات تشعر بها أولاً—ثم الأنظمة الذكية تسد الثغرات.',
+      subtitle: 'الفرق تشعر بها أولاً. الأنظمة تسدّ الثغرات.',
       realProblems: 'نراقب الأرقام التي تهم. تحصل على وضوح لا ضجيجاً.',
       missedLeads: 'تأخر الرد أو غيابه',
       missedLeadsProblem:
@@ -1439,7 +1439,7 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     fighting: {
       badge: 'Wofür wir kämpfen',
       title: 'Drei Bremsen für Wachstum.',
-      subtitle: 'Dienstleister spüren sie zuerst—dann schließen intelligente Systeme die Lücken.',
+      subtitle: 'Teams spüren sie zuerst. Systeme schließen die Lücken.',
       realProblems: 'Wir beobachten die Kennzahlen, die zählen. Sie bekommen Klarheit—kein Rauschen.',
       missedLeads: 'Zu spät oder keine Antwort',
       missedLeadsProblem:
@@ -1635,7 +1635,7 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     fighting: {
       badge: 'Por lo que luchamos',
       title: 'Tres amenazas al crecimiento.',
-      subtitle: 'Los equipos de servicio las sienten primero—luego los sistemas inteligentes cierran las brechas.',
+      subtitle: 'Los equipos las sienten primero. Los sistemas cierran las brechas.',
       realProblems: 'Seguimos las métricas que importan. Usted obtiene claridad—no ruido.',
       missedLeads: 'Respuestas lentas o ausentes',
       missedLeadsProblem:
