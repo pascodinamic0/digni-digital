@@ -1,8 +1,6 @@
 import { Metadata } from 'next'
-import { Link } from '@/i18n/navigation'
 import BlogContent from '@/app/blog/BlogContent'
 import { getArticlesForLocale } from '@/lib/blog'
-import { allArticlesEn } from '@/lib/blog'
 
 const blogMetaByLang: Record<string, { title: string; description: string }> = {
   en: {
@@ -82,20 +80,6 @@ export default async function BlogPage({ params }: Props) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(blogListJsonLd) }}
       />
       <BlogContent articlesByLang={articlesByLang} />
-      <nav
-        aria-label="All blog articles"
-        className="sr-only"
-        data-crawler-links="all-posts"
-      >
-        <h2>All blog posts</h2>
-        <ul>
-          {allArticlesEn.map((article) => (
-            <li key={article.slug}>
-              <Link href={`/blog/${article.slug}`}>{article.title}</Link>
-            </li>
-          ))}
-        </ul>
-      </nav>
     </>
   )
 }
