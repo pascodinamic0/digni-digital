@@ -39,6 +39,12 @@ const nextConfig = {
       { source: '/:locale/custom-saas', destination: '/:locale/agentic-softwares', permanent: true },
     ]
   },
+  async rewrites() {
+    return [
+      // Browsers and crawlers request /favicon.ico; Next serves app/icon.png at /icon.png
+      { source: '/favicon.ico', destination: '/icon.png' },
+    ]
+  },
 }
 
 module.exports = withNextIntl(nextConfig)
