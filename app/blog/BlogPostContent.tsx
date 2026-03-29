@@ -1,11 +1,15 @@
 'use client'
 
+import Image from 'next/image'
 import { Link } from '@/i18n/navigation'
 import { useLanguage } from '@/app/context/LocaleContext'
 import { translations } from '@/app/config/translations'
 import { getBookingLinkProps } from '@/app/config/cta.config'
+import { AUTHOR_HEADSHOT_PATH } from '@/lib/site-assets'
 import type { Language } from '@/app/i18n/translations'
 import type { BlogArticle } from '@/content/blog'
+
+const HEADSHOT_AUTHOR = 'Pascal Digny'
 
 interface BlogPostContentProps {
   articleByLang: Record<Language, BlogArticle>
@@ -44,9 +48,22 @@ export default function BlogPostContent({ articleByLang }: BlogPostContentProps)
         
         <div className="flex items-center gap-4 text-muted">
           <div className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-gradient-to-r from-accent to-success rounded-full flex items-center justify-center text-sm font-bold text-background">
-              {article.author.split(' ').map(n => n[0]).join('')}
-            </div>
+            {article.author === HEADSHOT_AUTHOR ? (
+              <div className="relative h-10 w-10 shrink-0 overflow-hidden rounded-full ring-1 ring-border-light/60">
+                <Image
+                  src={AUTHOR_HEADSHOT_PATH}
+                  alt=""
+                  width={40}
+                  height={40}
+                  className="object-cover object-center"
+                  sizes="40px"
+                />
+              </div>
+            ) : (
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gradient-to-r from-accent to-success text-sm font-bold text-background">
+                {article.author.split(' ').map(n => n[0]).join('')}
+              </div>
+            )}
             <span>{t.by} {article.author}</span>
           </div>
           <span>•</span>
