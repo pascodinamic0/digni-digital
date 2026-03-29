@@ -820,7 +820,7 @@ function buildTranslations(): Record<Language, TranslationKeys> {
       badge2: 'Growth & Skills',
       badge3: 'AI for Real Businesses',
       title: 'We Close the Gaps. ',
-      titleHighlight: 'You Get the Results That Matter.',
+      titleHighlight: 'You Get the Results.',
       subtitle:
         'Lost leads, untapped talent, ideas stuck on the shelf—we help you turn them into growth. Digital systems, skills, and AI that fit your budget, not a Fortune 500 invoice.',
       stat1Value: '150+',
@@ -1016,7 +1016,7 @@ function buildTranslations(): Record<Language, TranslationKeys> {
       badge2: 'Croissance & compétences',
       badge3: 'IA pour les PME',
       title: 'Nous fermons les écarts. ',
-      titleHighlight: 'Vous obtenez les résultats qui comptent.',
+      titleHighlight: 'Vous obtenez les résultats.',
       subtitle:
         'Prospects perdus, talents inexploités, idées en attente—nous vous aidons à en faire une croissance concrète. Systèmes numériques, compétences et IA adaptés à votre budget, pas à celui des grands groupes.',
       stat1Value: '150+',
@@ -1212,7 +1212,7 @@ function buildTranslations(): Record<Language, TranslationKeys> {
       badge2: 'نمو ومهارات',
       badge3: 'ذكاء اصطناعي للأعمال',
       title: 'نسدّ الفجوات. ',
-      titleHighlight: 'تحصل على النتائج التي تهمّك.',
+      titleHighlight: 'تحصل على النتائج.',
       subtitle:
         'عملاء محتملون ضائعون، مواهب بلا استثمار، أفكار على الرف—نساعدك على تحويلها إلى نمو. أنظمة رقمية وتأهيل وذكاء اصطناعي يناسب ميزانيتك لا ميزانية العمالقة.',
       stat1Value: '+150',
@@ -1405,7 +1405,7 @@ function buildTranslations(): Record<Language, TranslationKeys> {
       badge2: 'Wachstum & Skills',
       badge3: 'KI für KMU',
       title: 'Wir schließen die Lücken. ',
-      titleHighlight: 'Sie erhalten Ergebnisse, die zählen.',
+      titleHighlight: 'Sie erhalten Ergebnisse.',
       subtitle:
         'Verlorene Leads, ungenutztes Talent, Ideen auf Eis—wir helfen Ihnen, daraus Wachstum zu machen. Digitale Systeme, Qualifizierung und KI für echte Budgets, nicht für Konzernrechnungen.',
       stat1Value: '150+',
@@ -1601,7 +1601,7 @@ function buildTranslations(): Record<Language, TranslationKeys> {
       badge2: 'Crecimiento y habilidades',
       badge3: 'IA para pymes',
       title: 'Cerramos las brechas. ',
-      titleHighlight: 'Usted obtiene los resultados que importan.',
+      titleHighlight: 'Usted obtiene los resultados.',
       subtitle:
         'Leads perdidos, talento sin explotar, ideas en espera—le ayudamos a convertirlos en crecimiento. Sistemas digitales, capacitación e IA que encajan en su presupuesto, no en una factura corporativa.',
       stat1Value: '150+',
