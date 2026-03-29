@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { Link } from '@/i18n/navigation'
 import { BRAND_LOGO_PATH } from '@/lib/site-assets'
 
-const LOGO_MARK_SIZE = 40
+const LOGO_MARK_SIZE = 50
 
 interface LogoProps {
   href?: string
@@ -25,7 +25,7 @@ export default function Logo({ href = '/', label = 'Digni Digital LLC', classNam
           priority
         />
       </span>
-      <span className="font-body font-semibold text-xl tracking-tight text-text truncate max-w-[calc(210px-48px)]">
+      <span className="font-body font-semibold text-xl tracking-tight text-text truncate max-w-[calc(210px-62px)]">
         {label}
       </span>
     </>
