@@ -6,6 +6,7 @@ import { allArticlesEn } from '@/lib/blog'
 import { mergeArticleBundleWithOverrides, fetchPublishedOverrides } from '@/lib/blog-merge'
 import { createClient } from '@/lib/supabase/server'
 import { routing } from '@/i18n/routing'
+import { BRAND_LOGO_PATH } from '@/lib/site-assets'
 import type { Language } from '@/app/i18n/translations'
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://digni-digital-llc.com'
@@ -95,7 +96,7 @@ export default async function BlogPostPage({ params }: Props) {
     publisher: {
       '@type': 'Organization',
       name: 'Digni Digital',
-      logo: { '@type': 'ImageObject', url: `${SITE_URL}/Favicon.png` },
+      logo: { '@type': 'ImageObject', url: `${SITE_URL}${BRAND_LOGO_PATH}` },
     },
   }
 

@@ -119,7 +119,7 @@ export default function TaskQueueDemo() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-block px-4 py-2 bg-accent/10 border border-accent/20 rounded-full text-accent text-xs font-semibold uppercase tracking-wide mb-4"
+            className="inline-block px-4 py-2 bg-success/10 border border-success/20 rounded-full text-success text-xs font-semibold uppercase tracking-wide mb-4"
           >
             {t.badge}
           </motion.span>
@@ -131,7 +131,7 @@ export default function TaskQueueDemo() {
             transition={{ delay: 0.1 }}
             className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mt-4 mb-4"
           >
-            {t.title} <span className="gradient-text">{t.titleHighlight}</span>
+            {t.title} <span className="gradient-text-brand">{t.titleHighlight}</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -149,13 +149,13 @@ export default function TaskQueueDemo() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.15 }}
-          className="relative overflow-hidden rounded-2xl md:rounded-3xl border border-border-light backdrop-blur-xl bg-gradient-to-br from-surface-light/80 via-surface/90 to-surface-light/80 shadow-2xl shadow-accent/5 max-w-5xl mx-auto"
+          className="relative overflow-hidden rounded-2xl md:rounded-3xl border border-border-light backdrop-blur-xl bg-gradient-to-br from-surface-light/80 via-surface/90 to-surface-light/80 shadow-demo-card max-w-5xl mx-auto"
         >
-          <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-transparent to-purple/5 pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-br from-success/5 via-transparent to-success/[0.08] pointer-events-none" />
 
           <div className="relative bg-surface-light/50 backdrop-blur-sm border-b border-border p-4 md:p-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
             <div className="flex items-start gap-3 min-w-0">
-              <div className="w-10 h-10 md:w-11 md:h-11 flex-shrink-0 bg-gradient-to-br from-accent to-accent-light rounded-xl flex items-center justify-center shadow-lg shadow-accent/20">
+              <div className="w-10 h-10 md:w-11 md:h-11 flex-shrink-0 bg-gradient-to-br from-success to-success-light rounded-xl flex items-center justify-center shadow-lg shadow-demo-icon">
                 <svg className="w-5 h-5 md:w-6 md:h-6 text-background" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                   <rect x="3" y="4" width="18" height="18" rx="2" strokeWidth="2" />
                   <path d="M16 2v4M8 2v4M3 10h18" strokeWidth="2" strokeLinecap="round" />
@@ -175,7 +175,7 @@ export default function TaskQueueDemo() {
               </button>
               <button
                 type="button"
-                className="text-[11px] px-4 py-2 rounded-lg bg-accent text-background font-semibold hover:bg-accent-light shadow-md shadow-accent/20"
+                className="text-[11px] px-4 py-2 rounded-lg bg-success text-background font-semibold hover:bg-success-light shadow-md shadow-demo-icon"
               >
                 {t.newPostBtn}
               </button>
@@ -193,7 +193,7 @@ export default function TaskQueueDemo() {
                 <div
                   key={d}
                   className={`text-center text-[9px] sm:text-[10px] font-semibold uppercase tracking-wide py-2 rounded-lg ${
-                    i === activeDayIndex ? 'bg-accent/15 text-accent border border-accent/25' : 'text-muted border border-transparent'
+                    i === activeDayIndex ? 'bg-success/15 text-success border border-success/25' : 'text-muted border border-transparent'
                   }`}
                 >
                   {d}
@@ -220,7 +220,7 @@ export default function TaskQueueDemo() {
                           key={`${row}-${col}`}
                           className={`rounded-lg border border-dashed min-h-[100px] sm:min-h-[112px] relative overflow-hidden p-1.5 flex flex-col ${
                             isLive
-                              ? 'border-accent/45 bg-accent/[0.06] ring-1 ring-accent/15'
+                              ? 'border-success/45 bg-success/[0.06] ring-1 ring-success/15'
                               : 'border-border/50 bg-surface/25'
                           }`}
                         >
@@ -234,14 +234,14 @@ export default function TaskQueueDemo() {
                                 className="flex flex-col flex-1 rounded-md border border-border bg-surface shadow-sm p-2 text-left z-[1]"
                               >
                                 {phase === 'compose' && (
-                                  <p className="text-[10px] text-accent font-medium animate-pulse">{t.hintComposer}</p>
+                                  <p className="text-[10px] text-success font-medium animate-pulse">{t.hintComposer}</p>
                                 )}
                                 {(phase === 'scheduled' || phase === 'publishing') && (
                                   <>
                                     <p className="text-[10px] font-semibold text-text leading-snug line-clamp-3">{t.postSampleTitle}</p>
                                     <p
                                       className={`text-[9px] mt-1.5 ${
-                                        phase === 'publishing' ? 'text-accent font-semibold' : 'text-muted'
+                                        phase === 'publishing' ? 'text-success font-semibold' : 'text-muted'
                                       }`}
                                     >
                                       {phase === 'publishing' ? t.autoPostBanner : t.hintScheduled}
@@ -264,7 +264,7 @@ export default function TaskQueueDemo() {
 
                           {phase === 'publishing' && isLive && (
                             <motion.div
-                              className="pointer-events-none absolute inset-0 rounded-lg bg-accent/10 z-0"
+                              className="pointer-events-none absolute inset-0 rounded-lg bg-success/10 z-0"
                               initial={{ opacity: 0 }}
                               animate={{ opacity: [0, 1, 0] }}
                               transition={{ duration: 1.1, repeat: Infinity }}

@@ -142,37 +142,38 @@ export default function AboutPage({ params, searchParams }: AboutPageProps) {
         </div>
       </AnimatedSection>
 
-      <AnimatedSection className="py-24 relative overflow-hidden">
+      <AnimatedSection className="py-16 sm:py-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-surface via-background to-surface opacity-80" />
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="text-center mb-14">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 min-w-0">
+          <div className="text-center mb-10 sm:mb-14">
             <span className="section-label">{t.storyBadge}</span>
-            <h2 className="font-display text-4xl md:text-5xl font-bold mt-3 text-text">
+            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mt-3 text-text px-1">
               {t.ourStoryTitle}
             </h2>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-            {/* Story card with accent border */}
+          <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-16 items-start min-w-0">
+            {/* Story card: top accent on mobile, left accent on lg+ */}
             <motion.div
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="relative rounded-2xl border border-border bg-surface/80 backdrop-blur-sm p-8 md:p-10 shadow-sm hover:shadow-md hover:border-accent/30 transition-all duration-300"
+              className="relative min-w-0 rounded-xl sm:rounded-2xl border border-border border-t-[3px] border-t-accent/50 lg:border-t bg-surface/80 backdrop-blur-sm p-5 sm:p-8 md:p-10 shadow-sm hover:shadow-md hover:border-accent/30 transition-all duration-300"
             >
-              <div className="absolute left-0 top-8 bottom-8 w-1 bg-gradient-to-b from-accent/60 to-accent/20 rounded-full" />
-              <div className="pl-6 space-y-6">
-                <p className="text-text/90 leading-relaxed text-lg">
+              <div className="hidden lg:block absolute left-0 top-8 bottom-8 w-1 bg-gradient-to-b from-accent/60 to-accent/20 rounded-full" />
+              <div className="space-y-5 sm:space-y-6 lg:pl-6">
+                <p className="text-text/90 leading-relaxed text-base sm:text-lg">
                   {t.storyP1}
                 </p>
-                <div className="text-muted leading-relaxed" dangerouslySetInnerHTML={{ __html: t.storyP2 }} />
-                <p className="text-muted leading-relaxed">
+                <div className="text-muted leading-relaxed text-sm sm:text-base" dangerouslySetInnerHTML={{ __html: t.storyP2 }} />
+                <p className="text-muted leading-relaxed text-sm sm:text-base">
                   {t.storyP3}
                 </p>
                 <button
+                  type="button"
                   onClick={() => setStorybookOpen(true)}
-                  className="mt-6 btn-primary inline-flex items-center gap-2 group"
+                  className="mt-4 sm:mt-6 btn-primary w-full sm:w-auto justify-center sm:justify-start inline-flex items-center gap-2 group"
                 >
                   <span>{t.takeTheJourney}</span>
                   <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -182,9 +183,9 @@ export default function AboutPage({ params, searchParams }: AboutPageProps) {
               </div>
             </motion.div>
 
-            {/* Timeline with vertical line */}
-            <div className="relative pl-10 md:pl-12">
-              <div className="absolute left-5 top-2 bottom-2 w-px bg-gradient-to-b from-accent/40 via-accent/20 to-transparent" />
+            {/* Timeline: large screens only (hidden on mobile & tablet) */}
+            <div className="hidden lg:block relative pl-10 min-w-0">
+              <div className="absolute left-[1.125rem] top-2 bottom-2 w-px bg-gradient-to-b from-accent/40 via-accent/20 to-transparent" />
               <div className="space-y-0">
                 {timeline.map((item, i) => (
                   <motion.div
@@ -195,7 +196,7 @@ export default function AboutPage({ params, searchParams }: AboutPageProps) {
                     transition={{ delay: i * 0.08, duration: 0.4 }}
                     className="relative flex gap-5 pb-8 last:pb-0"
                   >
-                    <div className="absolute left-[-2.25rem] md:left-[-2.75rem] top-0.5 w-10 h-10 rounded-full bg-background border-2 border-accent/50 flex items-center justify-center flex-shrink-0 shadow-sm z-10">
+                    <div className="absolute left-[-2.25rem] top-0.5 w-10 h-10 rounded-full bg-background border-2 border-accent/50 flex items-center justify-center flex-shrink-0 shadow-sm z-10">
                       <span className="font-display font-bold text-accent text-sm">{item.year}</span>
                     </div>
                     <div className="flex-1 min-w-0 pt-0.5">

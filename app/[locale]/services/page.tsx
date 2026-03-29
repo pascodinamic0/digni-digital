@@ -4,6 +4,7 @@ import { use } from 'react'
 import { motion } from 'framer-motion'
 import { Link } from '@/i18n/navigation'
 import AnimatedSection from '@/app/components/AnimatedSection'
+import ScrollIndicator from '@/app/components/ScrollIndicator'
 import { getCtaButtonText, getBookingLinkProps } from '@/app/config/cta.config'
 import { useLanguage } from '@/app/context/LocaleContext'
 import { translations } from '@/app/config/translations'
@@ -11,23 +12,24 @@ import { translations } from '@/app/config/translations'
 const services = [
   {
     id: 'ai-receptionist',
-    title: 'AI Employee System',
-    subtitle: 'Never Miss a Lead',
-    description: 'Capture every lead. Qualify. Book. 24/7. Never miss again.',
+    title: 'AI Employee Systems',
+    subtitle: 'Intelligent infrastructure for service businesses',
+    description:
+      'Most teams don’t need more software—they need infrastructure that runs without them. We map bottlenecks and deploy AI that answers, qualifies, and follows up so you keep clients longer and convert more leads.',
     features: [
-      '24/7 Call Handling',
-      'Intelligent Lead Qualification',
-      'Appointment Booking',
-      'CRM Integration',
-      'Multi-Language Support',
-      'Analytics Dashboard'
+      'Human bottleneck mapping',
+      '24/7 lead capture & qualification',
+      'Automated booking & follow-up',
+      'CRM-connected workflows',
+      'Retention-focused playbooks',
+      'Dashboards you actually use',
     ],
-    technologies: ['AI Voice Technology', 'Natural Language Processing', 'CRM Integration'],
-    timeline: '2-4 weeks setup',
+    technologies: ['AI Voice & messaging', 'Natural language processing', 'CRM integration'],
+    timeline: '2–4 weeks to go live',
     link: '/ai-receptionist',
     icon: '🤖',
     color: 'accent',
-    outcomes: ['300% increase in lead capture', '24/7 customer service', 'Zero missed opportunities']
+    outcomes: ['Longer client relationships', 'More qualified conversions', 'Scaling without chaos'],
   },
   {
     id: 'future-ready-graduate',
@@ -106,6 +108,9 @@ export default function ServicesPage({ params, searchParams }: ServicesPageProps
               AI systems. Graduate programs. Agentic Softwares. Results from day one.
             </p>
           </motion.div>
+        </div>
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
+          <ScrollIndicator direction="down" />
         </div>
       </section>
 

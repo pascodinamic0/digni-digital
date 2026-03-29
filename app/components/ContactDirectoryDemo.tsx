@@ -99,7 +99,7 @@ export default function ContactDirectoryDemo() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-block px-4 py-2 bg-accent/10 border border-accent/20 rounded-full text-accent text-xs font-semibold uppercase tracking-wide mb-4"
+            className="inline-block px-4 py-2 bg-success/10 border border-success/20 rounded-full text-success text-xs font-semibold uppercase tracking-wide mb-4"
           >
             {t.badge}
           </motion.span>
@@ -111,7 +111,7 @@ export default function ContactDirectoryDemo() {
             transition={{ delay: 0.1 }}
             className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mt-4 mb-6"
           >
-            {t.title} <span className="gradient-text">{t.titleHighlight}</span>
+            {t.title} <span className="gradient-text-brand">{t.titleHighlight}</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -129,13 +129,13 @@ export default function ContactDirectoryDemo() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
-          className="relative overflow-hidden rounded-2xl md:rounded-3xl border border-border-light backdrop-blur-xl bg-gradient-to-br from-surface-light/80 via-surface/90 to-surface-light/80 shadow-2xl shadow-accent/5 max-w-6xl mx-auto"
+          className="relative overflow-hidden rounded-2xl md:rounded-3xl border border-border-light backdrop-blur-xl bg-gradient-to-br from-surface-light/80 via-surface/90 to-surface-light/80 shadow-demo-card max-w-6xl mx-auto"
         >
-          <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-transparent to-purple/5 pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-br from-success/5 via-transparent to-success/[0.08] pointer-events-none" />
 
           <div className="relative bg-surface-light/50 backdrop-blur-sm border-b border-border p-4 md:p-6 space-y-4">
             <div className="flex flex-wrap items-center gap-2">
-              <span className="text-xs px-3 py-1.5 rounded-full bg-accent/10 text-accent border border-accent/20 font-medium">
+              <span className="text-xs px-3 py-1.5 rounded-full bg-success/10 text-success border border-success/20 font-medium">
                 {t.allTab}
               </span>
               <button type="button" className="text-xs px-3 py-1.5 rounded-full border border-dashed border-border text-muted">
@@ -191,7 +191,7 @@ export default function ContactDirectoryDemo() {
                     <button
                       type="button"
                       onClick={() => toggleSort('name')}
-                      className="inline-flex items-center gap-1 font-semibold hover:text-accent"
+                      className="inline-flex items-center gap-1 font-semibold hover:text-success"
                     >
                       {t.headers.name}
                       <SortArrows active={sortKey === 'name'} dir={sortDir} />
@@ -205,7 +205,7 @@ export default function ContactDirectoryDemo() {
                     <button
                       type="button"
                       onClick={() => toggleSort('created')}
-                      className="inline-flex items-center gap-1 font-semibold hover:text-accent"
+                      className="inline-flex items-center gap-1 font-semibold hover:text-success"
                     >
                       {t.headers.created}
                       <SortArrows active={sortKey === 'created'} dir={sortDir} />
@@ -221,7 +221,7 @@ export default function ContactDirectoryDemo() {
                     key={row.id}
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    className="border-b border-border/70 hover:bg-accent/[0.04] transition-colors"
+                    className="border-b border-border/70 hover:bg-success/[0.04] transition-colors"
                   >
                     <td className="py-3 px-4">
                       <input type="checkbox" className="rounded border-border" aria-label={`Select ${row.name}`} readOnly />
@@ -312,9 +312,9 @@ export default function ContactDirectoryDemo() {
 
 function SortArrows({ active, dir }: { active: boolean; dir: SortDir }) {
   return (
-    <span className={`inline-flex flex-col text-[8px] leading-none ${active ? 'text-accent' : 'opacity-40'}`} aria-hidden>
-      <span className={active && dir === 'asc' ? 'text-accent' : ''}>▲</span>
-      <span className={active && dir === 'desc' ? 'text-accent' : ''}>▼</span>
+    <span className={`inline-flex flex-col text-[8px] leading-none ${active ? 'text-success' : 'opacity-40'}`} aria-hidden>
+      <span className={active && dir === 'asc' ? 'text-success' : ''}>▲</span>
+      <span className={active && dir === 'desc' ? 'text-success' : ''}>▼</span>
     </span>
   )
 }

@@ -68,6 +68,11 @@
   --shadow-accent: 0 0 40px rgba(var(--accent-rgb), 0.2);
   --shadow-accent-hover: 0 0 60px rgba(var(--accent-rgb), 0.3);
   --shadow-card: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 40px rgba(var(--accent-rgb), 0.1);
+  /* Brand green glow (demo dashboards, pricing card) */
+  --shadow-success-glow: 0 0 40px rgba(var(--success-rgb), 0.22);
+  --shadow-success-hover-glow: 0 0 60px rgba(var(--success-rgb), 0.32);
+  --shadow-demo-card: 0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 40px rgba(var(--success-rgb), 0.1);
+  --shadow-demo-icon: 0 10px 15px rgba(0, 0, 0, 0.1), 0 0 24px rgba(var(--success-rgb), 0.18);
   
   /* Border Radius */
   --radius-sm: 4px;
@@ -93,6 +98,53 @@
   --spacing-xl: 2rem;
   --spacing-2xl: 3rem;
   --spacing-3xl: 4rem;
+
+  /* Brand green–tinted scrims (aligned with --success / logo); tune opacity here only */
+  --overlay-scrim-soft: linear-gradient(
+      rgba(var(--success-rgb), 0.11),
+      rgba(var(--success-rgb), 0.11)
+    ),
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  --overlay-scrim: linear-gradient(
+      rgba(var(--success-rgb), 0.14),
+      rgba(var(--success-rgb), 0.14)
+    ),
+    linear-gradient(rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.72));
+  --overlay-scrim-medium: linear-gradient(
+      rgba(var(--success-rgb), 0.11),
+      rgba(var(--success-rgb), 0.11)
+    ),
+    linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
+  --overlay-scrim-strong: linear-gradient(
+      rgba(var(--success-rgb), 0.17),
+      rgba(var(--success-rgb), 0.17)
+    ),
+    linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85));
+  --overlay-scrim-dim: linear-gradient(
+      rgba(var(--success-rgb), 0.1),
+      rgba(var(--success-rgb), 0.1)
+    ),
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  --overlay-scrim-thumb: linear-gradient(
+      rgba(var(--success-rgb), 0.06),
+      rgba(var(--success-rgb), 0.06)
+    ),
+    linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+  --overlay-scrim-thumb-hover: linear-gradient(
+      rgba(var(--success-rgb), 0.04),
+      rgba(var(--success-rgb), 0.04)
+    ),
+    linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
+  --overlay-scrim-chip: linear-gradient(
+      rgba(var(--success-rgb), 0.12),
+      rgba(var(--success-rgb), 0.12)
+    ),
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  --overlay-scrim-chip-hover: linear-gradient(
+      rgba(var(--success-rgb), 0.14),
+      rgba(var(--success-rgb), 0.14)
+    ),
+    linear-gradient(rgba(0, 0, 0, 0.62), rgba(0, 0, 0, 0.62));
 }
 
 /* Light Theme */
@@ -249,6 +301,14 @@ body {
   background-clip: text;
 }
 
+/* Product demos / brand-green headline highlights (logo-aligned) */
+.gradient-text-brand {
+  background: linear-gradient(135deg, var(--text) 0%, var(--success) 50%, var(--success-light) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 /* Section label: small ALL CAPS accent label above section headlines (NP-style) */
 .section-label {
   display: inline-block;
@@ -290,6 +350,14 @@ body {
     radial-gradient(ellipse at 50% 50%, var(--surface) 0%, var(--background) 100%);
 }
 
+/* Logo-aligned green mesh (AI Employee / product pages) */
+.bg-gradient-mesh-brand {
+  background:
+    radial-gradient(ellipse at 20% 20%, rgba(var(--success-rgb), 0.1) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 80%, rgba(var(--success-rgb), 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 50%, var(--surface) 0%, var(--background) 100%);
+}
+
 /* Glow effects */
 .glow-accent {
   box-shadow: var(--shadow-accent);
@@ -297,6 +365,10 @@ body {
 
 .glow-accent-hover:hover {
   box-shadow: var(--shadow-accent-hover);
+}
+
+.glow-success {
+  box-shadow: var(--shadow-success-glow);
 }
 
 /* Card styles */
@@ -654,6 +726,43 @@ body {
   }
   .border-info {
     border-color: var(--info);
+  }
+
+  /* Green-tinted backdrop scrims (modal / hero / video) */
+  .bg-overlay-scrim-soft {
+    background-color: transparent;
+    background-image: var(--overlay-scrim-soft);
+  }
+  .bg-overlay-scrim {
+    background-color: transparent;
+    background-image: var(--overlay-scrim);
+  }
+  .bg-overlay-scrim-medium {
+    background-color: transparent;
+    background-image: var(--overlay-scrim-medium);
+  }
+  .bg-overlay-scrim-strong {
+    background-color: transparent;
+    background-image: var(--overlay-scrim-strong);
+  }
+  .bg-overlay-scrim-dim {
+    background-color: transparent;
+    background-image: var(--overlay-scrim-dim);
+  }
+  .bg-overlay-scrim-thumb {
+    background-color: transparent;
+    background-image: var(--overlay-scrim-thumb);
+  }
+  .group:hover .bg-overlay-scrim-thumb {
+    background-image: var(--overlay-scrim-thumb-hover);
+  }
+  .bg-overlay-scrim-chip {
+    background-color: transparent;
+    background-image: var(--overlay-scrim-chip);
+  }
+  .bg-overlay-scrim-chip-hover {
+    background-color: transparent;
+    background-image: var(--overlay-scrim-chip-hover);
   }
 }
 

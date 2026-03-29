@@ -109,7 +109,7 @@ function Hero() {
         <track kind="captions" srcLang="en" label="English" src="/hero-bg-captions.vtt" />
       </video>
       {/* Simple semi-transparent overlay for text readability */}
-      <div className="absolute inset-0 bg-black/50" />
+      <div className="absolute inset-0 bg-[image:var(--overlay-scrim-soft)] bg-cover" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-20 relative z-10 w-full">
         <motion.div

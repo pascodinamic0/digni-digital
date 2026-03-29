@@ -4719,6 +4719,108 @@ const remainingArticles: BlogArticle[] = [
 
       <p><em>Ready to learn the skills behind these patterns? <a href="/future-ready-graduate" target="_blank" rel="noopener noreferrer">Explore the Future-Ready Graduate Program</a> or <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">book a consultation</a> with Digni Digital.</em></p>
     `
+  },
+  {
+    id: 102,
+    title: "The Modern Fractional COO: How to Pair Operating Leadership With an AI Employee Layer",
+    slug: "modern-fractional-coo-ai-employee-business-partner",
+    excerpt: "A practical guide for growing businesses: what a modern fractional COO actually does, how it differs from a VA or bookkeeper, and how the same benefits people expect from an AI employee—speed, consistency, coverage—fit into one partnership model.",
+    category: "Business Operations",
+    readTime: "12 min read",
+    publishDate: "March 27, 2026",
+    author: "Pascal Digny",
+    tags: ["Fractional COO", "AI Employee", "Business Operations", "Leadership", "Scaling", "Digni Digital"],
+    featured: true,
+    content: `
+      <h2>Why “fractional COO” and “AI employee” belong in one sentence</h2>
+
+      <p>Growing businesses rarely fail because leaders lack ambition. They fail because <strong>clarity, cadence, and execution</strong> do not scale at the same rate as demand. A <strong>modern fractional COO</strong> gives you part-time executive ownership of how the business runs and grows: priorities, metrics, handoffs, and accountability. An <strong>AI employee layer</strong>—think intelligent reception, triage, documentation, and follow-through—gives you the <strong>execution volume and consistency</strong> leaders expect from automation, without pretending software replaces judgment.</p>
+
+      <p>At Digni Digital we position ourselves as a <strong>partner</strong>, not a brochure vendor: we help you design the operating model, then embed the AI layer so it matches your standards. This article is a reader-first guide to what that means and how to use it.</p>
+
+      <h2>What a modern fractional COO actually does</h2>
+
+      <p>A fractional COO is not a rebranded virtual assistant, bookkeeper, or project manager. Those roles can be valuable, but they solve different problems:</p>
+
+      <ul>
+        <li><strong>Bookkeeper / finance support</strong> — accuracy of the numbers, not necessarily how the business wins next quarter.</li>
+        <li><strong>Virtual assistant</strong> — task execution from a list, not necessarily which list matters.</li>
+        <li><strong>Project manager</strong> — delivery of a defined initiative, not necessarily the portfolio of what should be built.</li>
+      </ul>
+
+      <p>A <strong>fractional COO</strong> owns the <strong>operating system</strong>: the weekly rhythm, the few metrics that matter, the sequence between sales, delivery, and support, and the guardrails so quality does not collapse when volume spikes. In practice that often spans:</p>
+
+      <ul>
+        <li><strong>Growth and pipeline</strong> — is demand healthy, repeatable, and measured?</li>
+        <li><strong>Business development and relationships</strong> — are key accounts and partners on a rhythm, not forgotten?</li>
+        <li><strong>Operations and SOPs</strong> — can new people follow how you work without heroics?</li>
+        <li><strong>Customer experience</strong> — do responses, escalations, and reputation reflect your brand?</li>
+      </ul>
+
+      <h2>What people want from an “AI employee”—and what still needs a human architect</h2>
+
+      <p>When leaders say they want an AI employee, they usually mean a short list of outcomes:</p>
+
+      <ul>
+        <li><strong>Speed</strong> — first response in minutes, not hours.</li>
+        <li><strong>Coverage</strong> — after hours and peak times without burning out the team.</li>
+        <li><strong>Consistency</strong> — every caller and chatter gets the same baseline quality.</li>
+        <li><strong>Less administrative drag</strong> — fewer dropped follow-ups and fewer “we forgot to log that” moments.</li>
+      </ul>
+
+      <p>Those outcomes are real. What AI cannot do alone is <strong>decide your risk tolerance, your brand voice, or which trade-offs are acceptable this quarter</strong>. That is where a COO-level partner sets the rules: escalation paths, approved messaging, what gets automated first, and what must stay human.</p>
+
+      <blockquote>
+        <p><strong>Simple frame:</strong> the fractional COO designs the railway; the AI layer runs the trains on schedule.</p>
+      </blockquote>
+
+      <h2>A practical weekly rhythm you can steal</h2>
+
+      <p>You do not need a hundred KPIs. You need a <strong>weekly loop</strong> that leadership can run in under an hour:</p>
+
+      <ol>
+        <li><strong>Revenue and pipeline</strong> — new opportunities, conversion, stalled deals.</li>
+        <li><strong>Delivery health</strong> — backlog, SLA breaches, repeat issues.</li>
+        <li><strong>Customer signals</strong> — complaints, reviews, churn risk.</li>
+        <li><strong>One operational fix</strong> — single biggest bottleneck to remove before next week.</li>
+      </ol>
+
+      <p>The AI layer supports this loop by <strong>capturing interactions, summarizing themes, and flagging anomalies</strong>—so the meeting is about decisions, not hunting for data.</p>
+
+      <h2>Common mistakes when adding AI without COO-level clarity</h2>
+
+      <ul>
+        <li><strong>Automating chaos</strong> — faster responses to the wrong process just scale confusion.</li>
+        <li><strong>No owner</strong> — tools without a named person reviewing quality drift quickly.</li>
+        <li><strong>Generic scripts</strong> — customers feel “chatbot wallpaper”; your differentiation disappears.</li>
+        <li><strong>Ignoring handoffs</strong> — sales-to-onboarding and support-to-product gaps are where reputation breaks.</li>
+      </ul>
+
+      <p>A partner-led approach fixes those failure modes before you invest heavily in tooling.</p>
+
+      <h2>How Digni Digital fits: partner, not a one-off tool</h2>
+
+      <p>We combine <strong>strategic operating support</strong> with <strong>implementation of AI systems</strong>—for example, intelligent front-office coverage aligned to how you sell and serve. That might include an <a href="/ai-receptionist">AI receptionist</a> that qualifies leads and routes calls, integrated with the way you already work, rather than a disconnected demo.</p>
+
+      <p>If you are evaluating a fractional COO or an AI employee initiative, the honest question is the same: <strong>will this make how we run the business simpler and more measurable?</strong> If the answer is yes, you are in the right conversation.</p>
+
+      <h2>Checklist: are you ready for this model?</h2>
+
+      <ul>
+        <li>You have <strong>repeated demand</strong> (you are not still searching for product–market fit in a vacuum).</li>
+        <li>Leadership can name <strong>one or two metrics</strong> they would trust to judge the next 90 days.</li>
+        <li>You are willing to <strong>document how work flows</strong> enough that AI and humans share the same map.</li>
+        <li>You want a <strong>partner</strong> who will challenge the calendar, not only install software.</li>
+      </ul>
+
+      <h2>Next step</h2>
+
+      <p>If you want to explore whether a <strong>modern fractional COO plus an AI execution layer</strong> fits your stage, <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">book a strategy call</a> with our team. We will look at your operating bottlenecks and whether intelligent automation belongs in the mix—no obligation.</p>
+
+      <hr>
+
+      <p><em>Questions about scaling operations without adding headcount? <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Schedule time with Digni Digital</a> or explore our <a href="/ai-receptionist">AI receptionist</a> capabilities for always-on front-office coverage.</em></p>
+    `
   }
 ]
 

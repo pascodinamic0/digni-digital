@@ -55,6 +55,10 @@ export default {
         accent: 'var(--shadow-accent)',
         'accent-hover': 'var(--shadow-accent-hover)',
         card: 'var(--shadow-card)',
+        'demo-card': 'var(--shadow-demo-card)',
+        'demo-icon': 'var(--shadow-demo-icon)',
+        'success-glow': 'var(--shadow-success-glow)',
+        'success-glow-hover': 'var(--shadow-success-hover-glow)',
       },
       borderColor: {
         DEFAULT: 'var(--border)',
@@ -66,5 +70,15 @@ export default {
       },
     },
   },
+  safelist: [
+    'bg-overlay-scrim',
+    'bg-overlay-scrim-soft',
+    'bg-overlay-scrim-medium',
+    'bg-overlay-scrim-strong',
+    'bg-overlay-scrim-dim',
+    'bg-overlay-scrim-thumb',
+    'bg-overlay-scrim-chip',
+    'bg-overlay-scrim-chip-hover',
+  ],
   plugins: [],
 } satisfies Config;

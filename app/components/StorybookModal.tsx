@@ -339,7 +339,7 @@ export default function StorybookModal({ isOpen, onClose }: StorybookModalProps)
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           onClick={onClose}
-          className="absolute inset-0 bg-black/85 backdrop-blur-sm"
+          className="absolute inset-0 bg-[image:var(--overlay-scrim-strong)] backdrop-blur-sm bg-cover"
         />
 
         <div
@@ -356,7 +356,7 @@ export default function StorybookModal({ isOpen, onClose }: StorybookModalProps)
         >
           <button
             onClick={onClose}
-            className="absolute top-2 right-2 sm:top-4 sm:right-4 z-20 w-9 h-9 sm:w-10 sm:h-10 bg-black/50 hover:bg-black/70 rounded-full flex items-center justify-center transition-colors group"
+            className="absolute top-2 right-2 sm:top-4 sm:right-4 z-20 w-9 h-9 sm:w-10 sm:h-10 bg-overlay-scrim-chip hover:bg-overlay-scrim-chip-hover rounded-full flex items-center justify-center transition-colors group"
             aria-label="Close story"
           >
             <svg
@@ -390,7 +390,7 @@ export default function StorybookModal({ isOpen, onClose }: StorybookModalProps)
                     sizes="(max-width: 768px) 100vw, 80rem"
                   />
                 ) : null}
-                <div className="absolute inset-0 bg-black/50 backdrop-blur-[1px]" aria-hidden="true" />
+                <div className="absolute inset-0 bg-[image:var(--overlay-scrim-dim)] backdrop-blur-[1px] bg-cover" aria-hidden="true" />
               </div>
             )}
             <div className="storybook-modal-content relative z-10 p-4 sm:p-8 md:p-12 pt-12 sm:pt-14">

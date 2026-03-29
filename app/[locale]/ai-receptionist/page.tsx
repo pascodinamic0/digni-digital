@@ -1,11 +1,12 @@
 'use client'
 
-import { use } from 'react'
+import { use, type ReactElement } from 'react'
 import { motion } from 'framer-motion'
-import { Link } from '@/i18n/navigation'
 import { useLanguage } from '@/app/context/LocaleContext'
-import { getCtaButtonText, getBookingLinkProps } from '@/app/config/cta.config'
+import { getBookingLinkProps } from '@/app/config/cta.config'
+import { translations } from '@/app/config/translations'
 import AnimatedSection from '@/app/components/AnimatedSection'
+import ScrollIndicator from '@/app/components/ScrollIndicator'
 import ClientJourneyDemo from '@/app/components/ClientJourneyDemo'
 import ConversationMockups from '@/app/components/ConversationMockups'
 import UnifiedInbox from '@/app/components/UnifiedInbox'
@@ -16,14 +17,16 @@ import ContactDirectoryDemo from '@/app/components/ContactDirectoryDemo'
 import AiReceptionistExplainerVideo from '@/app/components/AiReceptionistExplainerVideo'
 import BusinessTimeline from '@/app/components/BusinessTimeline'
 import DemoPresentationDownload from '@/app/components/DemoPresentationDownload'
-import { useTheme } from '@/app/components/ThemeProvider'
+import { Check, Minus } from 'lucide-react'
+
 type AIReceptionistPageProps = {
   params: Promise<{ locale: string }>
   searchParams?: Promise<{ [key: string]: string | string[] | undefined }>
 }
 
 function AIEmployeeCTASection() {
-  const { theme } = useTheme()
+  const language = useLanguage()
+  const f = translations[language].aiEmployeePage.finalCta
   return (
     <div className="relative bg-surface rounded-3xl p-12 md:p-16 lg:p-20 overflow-hidden">
       <div className={`absolute top-0 left-0 w-20 h-20 border-l-2 border-t-2 rounded-tl-3xl ${'border-border-foreground'}`} />
@@ -36,7 +39,7 @@ function AIEmployeeCTASection() {
           transition={{ delay: 0.2 }}
           className="inline-block px-5 py-2 bg-accent/10 border border-accent/30 rounded-full text-accent text-sm font-medium tracking-wide mb-6 uppercase"
         >
-          One Market. One Client. That&apos;s the Model.
+          {f.badge}
         </motion.span>
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -45,16 +48,16 @@ function AIEmployeeCTASection() {
           transition={{ delay: 0.3 }}
           className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
         >
-          Your Territory. <span className="gradient-text">Or Theirs.</span>
+          {f.title} <span className="gradient-text">{f.titleHighlight}</span>
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.35 }}
-          className="text-muted text-lg max-w-xl mx-auto mb-10"
+          className="text-muted text-lg max-w-2xl mx-auto mb-10"
         >
-          Infrastructure compounds. Hustle doesn&apos;t scale. Apply for a 30-minute conversation.
+          {f.subtitle}
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -67,7 +70,7 @@ function AIEmployeeCTASection() {
             {...getBookingLinkProps()}
             className="group relative inline-flex items-center justify-center gap-3 bg-accent hover:bg-accent-light text-background font-bold px-10 py-5 rounded-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl text-lg shadow-lg shadow-accent/25"
           >
-            <span>Apply for a Conversation</span>
+            <span>{f.primaryCta}</span>
             <svg className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
@@ -82,15 +85,15 @@ function AIEmployeeCTASection() {
         >
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 bg-success rounded-full" />
-            <span>One market. One client.</span>
+            <span>{f.bullet1}</span>
           </div>
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 bg-success rounded-full" />
-            <span>30-minute conversation</span>
+            <span>{f.bullet2}</span>
           </div>
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 bg-success rounded-full" />
-            <span>We decide fit</span>
+            <span>{f.bullet3}</span>
           </div>
         </motion.div>
       </div>
@@ -102,35 +105,27 @@ export default function AIReceptionistPage({ params, searchParams }: AIReception
   use(params)
   use(searchParams ?? Promise.resolve({}))
   const language = useLanguage()
-  const cta = getCtaButtonText(language)
-  const capabilities = [
+  const t = translations[language].aiEmployeePage
+
+  const capabilityMeta: { icon: ReactElement; color: string }[] = [
     {
-      number: '01',
-      title: 'Instant Response',
-      description: '2 seconds. Every lead. Every time.',
       icon: (
         <svg className="w-7 h-7" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
       ),
-      color: 'accent'
+      color: 'accent',
     },
     {
-      number: '02',
-      title: 'Smart Qualification',
-      description: 'Right questions. Only ready buyers reach you.',
       icon: (
         <svg className="w-7 h-7" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M9 11L12 14L22 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
           <path d="M21 12V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
       ),
-      color: 'success'
+      color: 'success',
     },
     {
-      number: '03',
-      title: 'Auto Booking',
-      description: 'They pick. Calendar fills. No handoffs.',
       icon: (
         <svg className="w-7 h-7" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect x="3" y="4" width="18" height="18" rx="2" ry="2" stroke="currentColor" strokeWidth="2"/>
@@ -139,12 +134,9 @@ export default function AIReceptionistPage({ params, searchParams }: AIReception
           <line x1="3" y1="10" x2="21" y2="10" stroke="currentColor" strokeWidth="2"/>
         </svg>
       ),
-      color: 'info'
+      color: 'info',
     },
     {
-      number: '04',
-      title: 'Follow-Up',
-      description: 'Until book or no.',
       icon: (
         <svg className="w-7 h-7" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -153,99 +145,68 @@ export default function AIReceptionistPage({ params, searchParams }: AIReception
           <path d="M16 3.13C16.8604 3.35031 17.623 3.85071 18.1676 4.55232C18.7122 5.25392 19.0078 6.11683 19.0078 7.005C19.0078 7.89318 18.7122 8.75608 18.1676 9.45769C17.623 10.1593 16.8604 10.6597 16 10.88" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
       ),
-      color: 'purple'
+      color: 'purple',
     },
     {
-      number: '05',
-      title: 'Multi-Channel',
-      description: 'Calls, WhatsApp, email. One inbox.',
       icon: (
         <svg className="w-7 h-7" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect x="5" y="2" width="14" height="20" rx="2" ry="2" stroke="currentColor" strokeWidth="2"/>
           <line x1="12" y1="18" x2="12.01" y2="18" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
         </svg>
       ),
-      color: 'accent'
+      color: 'accent',
     },
     {
-      number: '06',
-      title: 'Revenue Recovery',
-      description: 'Wakes cold leads. Turns to sales.',
       icon: (
         <svg className="w-7 h-7" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <line x1="12" y1="1" x2="12" y2="23" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
           <path d="M17 5H9.5C8.57174 5 7.6815 5.36875 7.02513 6.02513C6.36875 6.6815 6 7.57174 6 8.5C6 9.42826 6.36875 10.3185 7.02513 10.9749C7.6815 11.6313 8.57174 12 9.5 12H14.5C15.4283 12 16.3185 12.3687 16.9749 13.0251C17.6313 13.6815 18 14.5717 18 15.5C18 16.4283 17.6313 17.3185 16.9749 17.9749C16.3185 18.6313 15.4283 19 14.5 19H6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
       ),
-      color: 'success'
-    }
+      color: 'success',
+    },
   ]
 
-  const pricing: {
-    name: string
-    limited: boolean
-    limitedLabel: string
-    setupFee: string
-    setupLabel: string
-    price: string
-    period: string
-    description: string
-    included: string[]
-    note: string
-    originalPrice?: string
-  }[] = [
-    {
-      name: 'Done-For-You System',
-      limited: true,
-      limitedLabel: 'One client per market',
-      setupFee: '$2,000',
-      setupLabel: 'one-time setup',
-      price: '$500',
-      period: '/month',
-      description: 'Done-for-you. No software to manage. Live in 48h.',
-      included: [
-        'Live in 48 hours',
-        'All channels (phone, WhatsApp, email)',
-        'Custom qualification',
-        'Calendar booking',
-        'CRM connected',
-        'We manage it',
-        'Performance tracked',
-        'Unlimited usage'
-      ],
-      note: 'The math is simple: if you pay for ads, the system pays for itself.'
-    }
-  ]
-
-  const caseStudy = {
-    company: 'Regional Medical Center',
-    industry: 'Healthcare',
-    context: '$15k/month in ads. System couldn\'t handle the leads.',
-    challenge: '40% of leads missed. Going cold. $80k/month lost.',
-    solution: 'Done-for-you system live in 18 hours. Handles all intake.',
-    results: [
-      { metric: '100%', description: 'Every lead answered. Instantly.' },
-      { metric: 'Zero', description: 'No cold leads. System follows up.' },
-      { metric: '18 hours', description: 'Decision to live.' },
-      { metric: '85%', description: 'Better conversion from instant response.' }
-    ]
-  }
+  const capabilities = t.capabilities.items.map((cap, i) => ({
+    number: String(i + 1).padStart(2, '0'),
+    title: cap.title,
+    description: cap.body,
+    icon: capabilityMeta[i]!.icon,
+    color: capabilityMeta[i]!.color,
+  }))
 
   const getColorClasses = (color: string) => {
     switch (color) {
-      case 'accent': return { bg: 'bg-accent/10', text: 'text-accent', border: 'border-accent/30', gradient: 'from-accent/20 to-accent/5' }
-      case 'success': return { bg: 'bg-success/10', text: 'text-success', border: 'border-success/30', gradient: 'from-success/20 to-success/5' }
+      case 'accent':
+      case 'success':
+        return { bg: 'bg-success/10', text: 'text-success', border: 'border-success/30', gradient: 'from-success/20 to-success/5' }
       case 'info': return { bg: 'bg-info/10', text: 'text-info', border: 'border-info/30', gradient: 'from-info/20 to-info/5' }
       case 'purple': return { bg: 'bg-purple/10', text: 'text-purple', border: 'border-purple/30', gradient: 'from-purple/20 to-purple/5' }
-      default: return { bg: 'bg-accent/10', text: 'text-accent', border: 'border-accent/30', gradient: 'from-accent/20 to-accent/5' }
+      default: return { bg: 'bg-success/10', text: 'text-success', border: 'border-success/30', gradient: 'from-success/20 to-success/5' }
     }
   }
 
+  const forYouItems: [string, string][] = [
+    ['📱', t.qualification.forItems[0]],
+    ['💰', t.qualification.forItems[1]],
+    ['📅', t.qualification.forItems[2]],
+    ['⏱️', t.qualification.forItems[3]],
+    ['💵', t.qualification.forItems[4]],
+    ['🎯', t.qualification.forItems[5]],
+  ]
+  const notForItems: [string, string][] = [
+    ['🚫', t.qualification.notItems[0]],
+    ['📦', t.qualification.notItems[1]],
+    ['❌', t.qualification.notItems[2]],
+    ['✅', t.qualification.notItems[3]],
+    ['📊', t.qualification.notItems[4]],
+    ['🔧', t.qualification.notItems[5]],
+  ]
+
   return (
     <main>
-      
       {/* Hero Section */}
-      <section className="relative isolate min-h-screen flex items-center pt-16 sm:pt-20 overflow-hidden bg-gradient-mesh">
+      <section className="relative isolate min-h-screen flex items-center pt-16 sm:pt-20 overflow-hidden bg-gradient-mesh-brand">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-20 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -253,141 +214,131 @@ export default function AIReceptionistPage({ params, searchParams }: AIReception
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-center mb-8 sm:mb-12 md:mb-16"
           >
-            <span className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-destructive/10 border border-destructive/30 rounded-full text-destructive text-xs sm:text-sm font-semibold mb-4 sm:mb-6 uppercase tracking-wide">
-              First Response Wins. Every Time.
-            </span>
-            <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.1] mb-4 sm:mb-6 md:mb-8 px-2">
-              Your Ad Spend Works.
+            {t.hero.badge.trim() ? (
+              <span className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-success/10 border border-success/25 rounded-full text-success text-xs sm:text-sm font-medium mb-4 sm:mb-6 tracking-wide">
+                {t.hero.badge}
+              </span>
+            ) : null}
+            <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.1] mb-4 sm:mb-5 md:mb-6 px-2">
+              {t.hero.titleLine1}
               <br className="hidden sm:block" />
-              <span className="gradient-text">Your Intake Doesn&apos;t.</span>
+              <span className="gradient-text-brand">{t.hero.titleHighlight}</span>
             </h1>
-            <p className="text-base sm:text-lg md:text-xl text-muted max-w-2xl mx-auto leading-relaxed mb-6 sm:mb-8 md:mb-10 px-2">
-              The bottleneck isn&apos;t marketing. It&apos;s response. We run the system. You run the business. One market. One client.
+            <p className="text-sm sm:text-base text-muted max-w-xl mx-auto leading-relaxed mb-7 sm:mb-8 px-2">
+              {t.hero.hook}
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-2">
               <a
                 {...getBookingLinkProps()}
                 className="btn-primary text-sm sm:text-base md:text-lg px-6 sm:px-8 py-3 sm:py-4 w-full sm:w-auto text-center"
               >
-                Apply for a Conversation
+                {t.hero.primaryCta}
               </a>
               <DemoPresentationDownload service="aiEmployee" variant="hero" />
             </div>
-            <p className="text-muted/60 text-sm mt-4">Live in 48 hours. Apply for a 30-minute conversation.</p>
+            <p className="text-muted/60 text-sm mt-4">{t.hero.footnote}</p>
           </motion.div>
         </div>
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
+          <ScrollIndicator direction="down" />
+        </div>
       </section>
+
+      {/* No more / Just — stakes vs success */}
+      <AnimatedSection className="py-16 bg-surface border-y border-border/50">
+        <div className="max-w-5xl mx-auto px-6">
+          <h2 className="font-display text-2xl md:text-3xl font-bold text-center mb-10">{t.noMoreJust.title}</h2>
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12 md:items-stretch">
+            <div className="flex h-full flex-col rounded-2xl border border-destructive/20 bg-destructive/5 p-6 md:p-8 font-body">
+              <p className="text-xs font-semibold uppercase tracking-wider text-destructive mb-4">
+                {t.noMoreJust.noMoreLabel}
+              </p>
+              <ul className="flex flex-1 flex-col gap-3 text-sm leading-relaxed text-muted md:text-base">
+                {t.noMoreJust.noMoreItems.map((line, i) => (
+                  <li key={i} className="flex gap-2.5 items-start">
+                    <Minus
+                      className="mt-0.5 h-4 w-4 shrink-0 text-destructive"
+                      strokeWidth={2}
+                      aria-hidden
+                    />
+                    <span>{line}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="flex h-full flex-col rounded-2xl border border-success/30 bg-success/5 p-6 md:p-8 font-body">
+              <p className="text-xs font-semibold uppercase tracking-wider text-success mb-4">
+                {t.noMoreJust.justLabel}
+              </p>
+              <ul className="flex flex-1 flex-col gap-3 text-sm leading-relaxed text-muted md:text-base">
+                {t.noMoreJust.justItems.map((line, i) => (
+                  <li key={i} className="flex gap-2.5 items-start">
+                    <Check
+                      className="mt-0.5 h-4 w-4 shrink-0 text-success"
+                      strokeWidth={2}
+                      aria-hidden
+                    />
+                    <span>{line}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </AnimatedSection>
 
       {/* Problem Statement */}
       <AnimatedSection className="py-24 bg-surface">
         <div className="max-w-5xl mx-auto px-6">
           <div className="text-center mb-16">
             <span className="inline-block px-4 py-2 bg-destructive/10 border border-destructive/20 rounded-full text-destructive text-xs font-semibold mb-6 uppercase tracking-wide">
-              We&apos;ve Seen This a Thousand Times
+              {t.problem.badge}
             </span>
             <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-              The Winners Have a System.<br />
-              <span className="text-destructive">The Rest Have a Bottleneck.</span>
+              {t.problem.title}<br />
+              <span className="text-destructive">{t.problem.titleHighlight}</span>
             </h2>
             <p className="text-muted text-lg max-w-2xl mx-auto">
-              99 leak. Or 95 close plus referrals compound. The difference isn&apos;t hustle—it&apos;s infrastructure.
+              {t.problem.subtitle}
             </p>
           </div>
-          
-          {/* The brutal truth */}
+
           <div className="grid md:grid-cols-3 gap-6 mb-12">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-destructive/20 to-destructive/5 border border-destructive/20 p-8 text-center"
-            >
-              <div className="font-display text-5xl md:text-6xl font-bold text-destructive mb-3">40%</div>
-              <p className="text-text font-medium mb-2">of your calls go unanswered</p>
-              <p className="text-muted text-sm">Half your ad spend. Gone.</p>
-            </motion.div>
-            
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-destructive/20 to-destructive/5 border border-destructive/20 p-8 text-center"
-            >
-              <div className="font-display text-5xl md:text-6xl font-bold text-destructive mb-3">78%</div>
-              <p className="text-text font-medium mb-2">buy from whoever answers first</p>
-              <p className="text-muted text-sm">Market doesn&apos;t care. First answer takes it.</p>
-            </motion.div>
-            
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3 }}
-              className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-destructive/20 to-destructive/5 border border-destructive/20 p-8 text-center"
-            >
-              <div className="font-display text-5xl md:text-6xl font-bold text-destructive mb-3">5 min</div>
-              <p className="text-text font-medium mb-2">is all you have</p>
-              <p className="text-muted text-sm">5 min late = 80% fewer conversions. Clock's ticking.</p>
-            </motion.div>
+            {t.problem.stats.map((stat, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 * (i + 1) }}
+                className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-destructive/20 to-destructive/5 border border-destructive/20 p-8 text-center"
+              >
+                <div className="font-display text-5xl md:text-6xl font-bold text-destructive mb-3">{stat.value}</div>
+                <p className="text-text font-medium mb-2">{stat.label}</p>
+                <p className="text-muted text-sm">{stat.hint}</p>
+              </motion.div>
+            ))}
           </div>
 
-          {/* The problems */}
           <div className="grid md:grid-cols-3 gap-6 mb-12">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="card p-6 border-destructive/10 hover:border-destructive/30"
-            >
-              <div className="w-12 h-12 rounded-xl bg-destructive/10 flex items-center justify-center mb-4">
-                <svg className="w-6 h-6 text-destructive" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </div>
-              <h3 className="font-display text-xl font-bold text-text mb-2">Slow Response</h3>
-              <p className="text-muted text-sm">
-                Lead 2pm. You call 6pm. Gone.
-              </p>
-            </motion.div>
-            
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="card p-6 border-destructive/10 hover:border-destructive/30"
-            >
-              <div className="w-12 h-12 rounded-xl bg-destructive/10 flex items-center justify-center mb-4">
-                <svg className="w-6 h-6 text-destructive" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636" />
-                </svg>
-              </div>
-              <h3 className="font-display text-xl font-bold text-text mb-2">Missed Messages</h3>
-              <p className="text-muted text-sm">
-                11pm message. Morning: competitor closed.
-              </p>
-            </motion.div>
-            
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3 }}
-              className="card p-6 border-destructive/10 hover:border-destructive/30"
-            >
-              <div className="w-12 h-12 rounded-xl bg-destructive/10 flex items-center justify-center mb-4">
-                <svg className="w-6 h-6 text-destructive" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6" />
-                </svg>
-              </div>
-              <h3 className="font-display text-xl font-bold text-text mb-2">No Follow-Up</h3>
-              <p className="text-muted text-sm">
-                "I'll call tomorrow." Never happens.
-              </p>
-            </motion.div>
+            {t.problem.painCards.map((card, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 * (i + 1) }}
+                className="card p-6 border-destructive/10 hover:border-destructive/30"
+              >
+                <div className="w-12 h-12 rounded-xl bg-destructive/10 flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-destructive" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <h3 className="font-display text-xl font-bold text-text mb-2">{card.title}</h3>
+                <p className="text-muted text-sm">{card.body}</p>
+              </motion.div>
+            ))}
           </div>
 
           <motion.div
@@ -397,79 +348,58 @@ export default function AIReceptionistPage({ params, searchParams }: AIReception
             className="text-center p-6 rounded-lg border border-accent/20 bg-accent/5"
           >
             <p className="text-text text-xl font-display font-semibold mb-2">
-              Sleep. Wake. Calendar full. That&apos;s the system.
+              {t.problem.closing.title}
             </p>
             <p className="text-muted">
-              We run it. One client per market. Live in 48 hours.
+              {t.problem.closing.subtitle}
             </p>
           </motion.div>
         </div>
       </AnimatedSection>
 
-      {/* Locale-specific explainer (FR asset today; add other languages in aiReceptionistExplainer.ts) */}
       <AiReceptionistExplainerVideo />
 
-      {/* Why Traditional Receptionists Don't Scale - Contrast Positioning */}
+      {/* Why traditional stack fails */}
       <AnimatedSection className="py-24">
         <div className="max-w-5xl mx-auto px-6">
           <div className="text-center mb-12">
             <span className="inline-block px-4 py-2 bg-accent/10 border border-accent/20 rounded-full text-accent text-xs font-semibold uppercase tracking-wide mb-4">
-              The Old Playbook Is Broken
+              {t.traditionalFails.badge}
             </span>
             <h2 className="font-display text-4xl md:text-5xl font-bold mb-6 leading-tight">
-              More People <span className="gradient-text">Doesn&apos;t Scale.</span>
+              {t.traditionalFails.title} <span className="gradient-text">{t.traditionalFails.titleHighlight}</span>
             </h2>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="card p-6">
-              <h3 className="font-display text-lg font-bold mb-2">Humans</h3>
-              <p className="text-muted text-sm">One line. Voicemail after hours. Scale = more cost.</p>
-            </motion.div>
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.05 }} className="card p-6">
-              <h3 className="font-display text-lg font-bold mb-2">Answering services</h3>
-              <p className="text-muted text-sm">Generic scripts. Messages, not conversions.</p>
-            </motion.div>
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="card p-6">
-              <h3 className="font-display text-lg font-bold mb-2">Chatbots</h3>
-              <p className="text-muted text-sm">Calls go to humans. No qualify. No book.</p>
-            </motion.div>
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.15 }} className="card p-6">
-              <h3 className="font-display text-lg font-bold mb-2">Scattered inboxes</h3>
-              <p className="text-muted text-sm">Leads everywhere. No single view.</p>
-            </motion.div>
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} className="card p-6">
-              <h3 className="font-display text-lg font-bold mb-2">No follow-up</h3>
-              <p className="text-muted text-sm">"I'll call back." Never happens.</p>
-            </motion.div>
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.25 }} className="card p-6">
-              <h3 className="font-display text-lg font-bold mb-2">Manual handoffs</h3>
-              <p className="text-muted text-sm">Sales to admin. Lead goes cold.</p>
-            </motion.div>
+            {t.traditionalFails.items.map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.05 * i }}
+                className="card p-6"
+              >
+                <h3 className="font-display text-lg font-bold mb-2">{item.title}</h3>
+                <p className="text-muted text-sm">{item.body}</p>
+              </motion.div>
+            ))}
           </div>
-          <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="text-center text-accent font-medium mt-8">
-            One system. Your voice. Qualifies. Books. Never sleeps. One client per market.
+          <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="text-center text-accent font-medium mt-8 max-w-3xl mx-auto leading-relaxed">
+            {t.traditionalFails.closing}
           </motion.p>
         </div>
       </AnimatedSection>
 
-      {/* Client Journey Demo - Before vs After */}
       <ClientJourneyDemo />
-
-      {/* Conversation Mockups */}
       <ConversationMockups />
-
-      {/* Unified Inbox */}
       <UnifiedInbox />
-
       <LeadPipelineDemo />
       <PerformancePulseDemo />
       <TaskQueueDemo />
       <ContactDirectoryDemo />
-
-      {/* Business Timeline */}
       <BusinessTimeline />
 
-      {/* How It Works - Redesigned */}
       <AnimatedSection id="features" className="py-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
@@ -479,7 +409,7 @@ export default function AIReceptionistPage({ params, searchParams }: AIReception
               viewport={{ once: true }}
               className="inline-block px-4 py-2 bg-accent/10 border border-accent/20 rounded-full text-accent text-xs font-semibold uppercase tracking-wide mb-4"
             >
-              The Playbook
+              {t.capabilities.badge}
             </motion.span>
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
@@ -488,20 +418,19 @@ export default function AIReceptionistPage({ params, searchParams }: AIReception
               transition={{ delay: 0.1 }}
               className="font-display text-4xl md:text-5xl font-bold mb-6"
             >
-              Six Capabilities. <span className="gradient-text">Zero Compromise.</span>
+              {t.capabilities.title} <span className="gradient-text">{t.capabilities.titleHighlight}</span>
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="text-muted max-w-xl mx-auto"
+              className="text-muted max-w-2xl mx-auto leading-relaxed"
             >
-              We run it. You scale. Live in 48 hours.
+              {t.capabilities.subtitle}
             </motion.p>
           </div>
 
-          {/* Capability Cards - Visual grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-12">
             {capabilities.map((capability, i) => {
               const colors = getColorClasses(capability.color)
@@ -514,11 +443,9 @@ export default function AIReceptionistPage({ params, searchParams }: AIReception
                   transition={{ delay: i * 0.08 }}
                   className={`relative p-6 rounded-2xl bg-gradient-to-br ${colors.gradient} border ${colors.border} backdrop-blur-sm hover:border-opacity-50 transition-all duration-300 group`}
                 >
-                  {/* Number badge */}
                   <div className="absolute -top-2 -left-2 w-10 h-10 bg-surface rounded-xl border border-border-light flex items-center justify-center shadow-lg">
                     <span className={`font-display font-bold text-sm ${colors.text}`}>{capability.number}</span>
                   </div>
-                  
                   <div className="flex items-start gap-4 pt-4">
                     <div className={`w-12 h-12 rounded-xl ${colors.bg} flex items-center justify-center flex-shrink-0 ${colors.text} group-hover:scale-110 transition-transform duration-300`}>
                       {capability.icon}
@@ -535,7 +462,6 @@ export default function AIReceptionistPage({ params, searchParams }: AIReception
             })}
           </div>
 
-          {/* Time to Value - Hero Card */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -543,36 +469,33 @@ export default function AIReceptionistPage({ params, searchParams }: AIReception
             transition={{ delay: 0.4 }}
             className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-accent via-accent/90 to-purple p-8 md:p-12"
           >
-            {/* Background decoration */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-foreground/10 rounded-full blur-3xl" />
             <div className="absolute bottom-0 left-0 w-48 h-48 bg-foreground/5 rounded-full blur-2xl" />
-            
             <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
               <div className="text-center md:text-left">
                 <div className="inline-flex items-center gap-2 px-3 py-1 bg-foreground/10 rounded-full text-foreground/80 text-xs font-medium mb-4 backdrop-blur-sm border border-border-light">
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
-                  Time to Value
+                  {t.timeToValue.badge}
                 </div>
                 <h3 className="font-display text-3xl md:text-4xl font-bold text-text mb-4">
-                  Live in 48 Hours
+                  {t.timeToValue.title}
                 </h3>
                 <p className="text-foreground/80 text-lg max-w-lg leading-relaxed">
-                  Live in 48 hours. No setup. No training. We run it. You sell.
+                  {t.timeToValue.subtitle}
                 </p>
               </div>
-              
               <div className="flex flex-col items-center md:items-end gap-4">
                 <div className="text-center md:text-right">
-                  <div className="font-display text-6xl md:text-7xl font-bold text-text mb-2">48h</div>
-                  <p className="text-foreground/60 text-sm">From decision to operation</p>
+                  <div className="font-display text-6xl md:text-7xl font-bold text-text mb-2">{t.timeToValue.statBig}</div>
+                  <p className="text-foreground/60 text-sm">{t.timeToValue.statSmall}</p>
                 </div>
                 <a
                   {...getBookingLinkProps()}
                   className="inline-flex items-center gap-2 bg-on-accent text-accent font-semibold px-6 py-3 rounded-xl hover:opacity-90 transition-opacity shadow-lg"
                 >
-                  {cta.getStarted}
+                  {t.timeToValue.cta}
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
@@ -583,7 +506,6 @@ export default function AIReceptionistPage({ params, searchParams }: AIReception
         </div>
       </AnimatedSection>
 
-      {/* Clear Qualification Section - Glassmorphism (MOVED BEFORE PRICING) */}
       <AnimatedSection className="py-24 bg-surface">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
@@ -593,7 +515,7 @@ export default function AIReceptionistPage({ params, searchParams }: AIReception
               viewport={{ once: true }}
               className="inline-block px-4 py-2 bg-accent/10 border border-accent/20 rounded-full text-accent text-xs font-semibold uppercase tracking-wide mb-4"
             >
-              Who We Work With
+              {t.qualification.badge}
             </motion.span>
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
@@ -602,12 +524,11 @@ export default function AIReceptionistPage({ params, searchParams }: AIReception
               transition={{ delay: 0.1 }}
               className="font-display text-4xl md:text-5xl font-bold mb-6"
             >
-              We Select. <span className="gradient-text">We Choose Who We Work With.</span>
+              {t.qualification.title} <span className="gradient-text">{t.qualification.titleHighlight}</span>
             </motion.h2>
           </div>
 
           <div className="grid md:grid-cols-2 gap-6 md:gap-8 place-items-center">
-            {/* Who This Is For */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -615,9 +536,7 @@ export default function AIReceptionistPage({ params, searchParams }: AIReception
               transition={{ delay: 0.2 }}
               className="relative overflow-hidden rounded-3xl backdrop-blur-xl bg-gradient-to-br from-success/10 via-success/5 to-transparent border border-success/20 p-8 w-full max-w-xl text-center"
             >
-              {/* Glass effect overlay */}
               <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent pointer-events-none" />
-              
               <div className="relative z-10 flex flex-col items-center">
                 <div className="flex items-center justify-center gap-3 mb-6">
                   <div className="w-12 h-12 bg-success/20 rounded-xl flex items-center justify-center">
@@ -625,18 +544,10 @@ export default function AIReceptionistPage({ params, searchParams }: AIReception
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
-                  <h3 className="font-display text-2xl font-bold text-success">Who This Is For</h3>
+                  <h3 className="font-display text-2xl font-bold text-success">{t.qualification.forHeading}</h3>
                 </div>
-                
                 <ul className="space-y-3 w-full flex flex-col items-center">
-                  {[
-                    ['📱', 'Running Facebook, Instagram, or WhatsApp ads'],
-                    ['💰', 'Selling $500+ per transaction'],
-                    ['📅', 'Appointments or consultations required'],
-                    ['⏱️', 'Would like to convert more sales and don\'t know how'],
-                    ['💵', 'Spending money on ads'],
-                    ['🎯', 'Want every lead you pay for']
-                  ].map(([emoji, item], i) => (
+                  {forYouItems.map(([emoji, item], i) => (
                     <motion.li
                       key={i}
                       initial={{ opacity: 0, x: -10 }}
@@ -653,7 +564,6 @@ export default function AIReceptionistPage({ params, searchParams }: AIReception
               </div>
             </motion.div>
 
-            {/* Who This Is NOT For */}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -661,9 +571,7 @@ export default function AIReceptionistPage({ params, searchParams }: AIReception
               transition={{ delay: 0.3 }}
               className="relative overflow-hidden rounded-3xl backdrop-blur-xl bg-gradient-to-br from-destructive/10 via-destructive/5 to-transparent border border-destructive/20 p-8 w-full max-w-xl text-center"
             >
-              {/* Glass effect overlay */}
               <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent pointer-events-none" />
-              
               <div className="relative z-10 flex flex-col items-center">
                 <div className="flex items-center justify-center gap-3 mb-6">
                   <div className="w-12 h-12 bg-destructive/20 rounded-xl flex items-center justify-center">
@@ -671,18 +579,10 @@ export default function AIReceptionistPage({ params, searchParams }: AIReception
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                     </svg>
                   </div>
-                  <h3 className="font-display text-2xl font-bold text-destructive">Not The Right Fit</h3>
+                  <h3 className="font-display text-2xl font-bold text-destructive">{t.qualification.notHeading}</h3>
                 </div>
-                
                 <ul className="space-y-3 w-full flex flex-col items-center">
-                  {[
-                    ['🚫', 'No paid ads'],
-                    ['📦', 'Products under $100'],
-                    ['❌', 'No appointments needed'],
-                    ['✅', 'Lead response isn’t a bottleneck'],
-                    ['📊', 'Need ad strategy, not intake'],
-                    ['🔧', 'Only want software, not managed intake']
-                  ].map(([emoji, item], i) => (
+                  {notForItems.map(([emoji, item], i) => (
                     <motion.li
                       key={i}
                       initial={{ opacity: 0, x: 10 }}
@@ -702,13 +602,12 @@ export default function AIReceptionistPage({ params, searchParams }: AIReception
         </div>
       </AnimatedSection>
 
-      {/* Case Study */}
       <AnimatedSection className="py-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <span className="text-accent font-medium text-sm uppercase tracking-wider">Proof</span>
+            <span className="text-accent font-medium text-sm uppercase tracking-wider">{t.caseStudy.label}</span>
             <h2 className="font-display text-4xl md:text-5xl font-bold mt-4 mb-6">
-              From 40% Missed to 100% Captured. <span className="gradient-text">18 Hours.</span>
+              {t.caseStudy.title}
             </h2>
           </div>
 
@@ -717,33 +616,33 @@ export default function AIReceptionistPage({ params, searchParams }: AIReception
               <div className="lg:col-span-2">
                 <div className="flex items-center gap-4 mb-6">
                   <span className="px-3 py-1 bg-accent/10 text-accent text-xs font-medium rounded-full">
-                    {caseStudy.industry}
+                    {t.caseStudy.industry}
                   </span>
-                  <h3 className="font-display text-2xl font-bold">{caseStudy.company}</h3>
+                  <h3 className="font-display text-2xl font-bold">{t.caseStudy.company}</h3>
                 </div>
 
                 <div className="space-y-6">
                   <div>
-                    <span className="text-xs uppercase tracking-wider text-muted-dark">Context</span>
-                    <p className="text-muted mt-2 leading-relaxed">{caseStudy.context}</p>
+                    <span className="text-xs uppercase tracking-wider text-muted-dark">{t.caseStudy.contextLabel}</span>
+                    <p className="text-muted mt-2 leading-relaxed">{t.caseStudy.context}</p>
                   </div>
 
                   <div>
-                    <span className="text-xs uppercase tracking-wider text-muted-dark">Challenge</span>
-                    <p className="text-muted mt-2 leading-relaxed">{caseStudy.challenge}</p>
+                    <span className="text-xs uppercase tracking-wider text-muted-dark">{t.caseStudy.challengeLabel}</span>
+                    <p className="text-muted mt-2 leading-relaxed">{t.caseStudy.challenge}</p>
                   </div>
 
                   <div>
-                    <span className="text-xs uppercase tracking-wider text-muted-dark">Solution</span>
-                    <p className="text-text mt-2 leading-relaxed">{caseStudy.solution}</p>
+                    <span className="text-xs uppercase tracking-wider text-muted-dark">{t.caseStudy.solutionLabel}</span>
+                    <p className="text-text mt-2 leading-relaxed">{t.caseStudy.solution}</p>
                   </div>
                 </div>
               </div>
 
               <div>
-                <h4 className="font-display text-xl font-bold mb-6">Outcomes</h4>
+                <h4 className="font-display text-xl font-bold mb-6">{t.caseStudy.outcomesHeading}</h4>
                 <div className="space-y-6">
-                  {caseStudy.results.map((result, i) => (
+                  {t.caseStudy.results.map((result, i) => (
                     <div key={i} className="text-center">
                       <div className="font-display text-3xl font-bold text-accent mb-2">
                         {result.metric}
@@ -758,93 +657,70 @@ export default function AIReceptionistPage({ params, searchParams }: AIReception
         </div>
       </AnimatedSection>
 
-      {/* Pricing */}
       <AnimatedSection className="py-24 bg-surface">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">
-              Clean. Transparent. <span className="gradient-text">No Surprises.</span>
+              {t.pricing.title}
             </h2>
-            <p className="text-muted max-w-xl mx-auto">
-              One price. Everything included. If you pay for ads, the math works.
+            <p className="text-muted max-w-2xl mx-auto leading-relaxed">
+              {t.pricing.subtitle}
             </p>
           </div>
 
           <div className="flex justify-center mb-8">
             <div className="max-w-md w-full">
-              {pricing.map((plan, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.2 }}
-                  className="card p-8 border-accent/50 glow-accent"
-                >
-                  <div className="text-center mb-6">
-                    {plan.limited && (
-                      <span className="inline-block px-3 py-1.5 bg-destructive/20 text-destructive text-xs font-semibold rounded-full border border-destructive/30 mb-4">
-                        {plan.limitedLabel || 'Limited availability'}
-                      </span>
-                    )}
-                    <h3 className="font-display text-2xl font-bold text-text mb-1">{plan.name}</h3>
-                    <p className="text-muted text-sm">{plan.description}</p>
-                  </div>
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+                className="card p-8 border-success/50 glow-success hover:border-success/60"
+              >
+                <div className="text-center mb-6">
+                  <span className="inline-block px-3 py-1.5 bg-destructive/20 text-destructive text-xs font-semibold rounded-full border border-destructive/30 mb-4">
+                    {t.pricing.limitedLabel}
+                  </span>
+                  <h3 className="font-display text-2xl font-bold text-text">{t.pricing.planName}</h3>
+                </div>
 
-                  <div className="flex flex-col sm:flex-row items-stretch justify-center gap-4 mb-8">
-                    {plan.setupFee && (
-                      <div className="flex-1 min-w-0 rounded-xl bg-surface/80 border border-border/50 px-5 py-4 flex flex-col justify-center text-center">
-                        <div className="text-muted text-[11px] uppercase tracking-wider font-medium mb-1">{plan.setupLabel || 'Setup'}</div>
-                        <div className="font-display text-xl font-bold text-text">{plan.setupFee}</div>
-                      </div>
-                    )}
-                    <div className="flex-1 min-w-0 rounded-xl bg-accent/10 border border-accent/20 px-5 py-5 flex flex-col justify-center text-center">
-                      <div className="text-muted text-[11px] uppercase tracking-wider font-medium mb-1">Monthly</div>
-                      <div className="flex items-baseline justify-center gap-2 flex-wrap">
-                        {plan.originalPrice && (
-                          <span className="font-display text-base text-muted line-through">{plan.originalPrice}{plan.period}</span>
-                        )}
-                        <span className="font-display text-3xl font-bold text-accent">
-                          {plan.price}
-                          <span className="text-base font-normal text-muted">{plan.period}</span>
-                        </span>
-                      </div>
+                <div className="flex flex-col sm:flex-row items-stretch justify-center gap-4 mb-8">
+                  <div className="flex-1 min-w-0 rounded-xl bg-surface/80 border border-border/50 px-5 py-4 flex flex-col justify-center text-center">
+                    <div className="text-muted text-[11px] uppercase tracking-wider font-medium mb-1">{t.pricing.setupLabel}</div>
+                    <div className="font-display text-xl font-bold text-text">{t.pricing.setupFee}</div>
+                  </div>
+                  <div className="flex-1 min-w-0 rounded-xl bg-success/10 border border-success/20 px-5 py-5 flex flex-col justify-center text-center">
+                    <div className="text-muted text-[11px] uppercase tracking-wider font-medium mb-1">{t.pricing.monthlyLabel}</div>
+                    <div className="flex items-baseline justify-center gap-2 flex-wrap">
+                      <span className="font-display text-3xl font-bold text-success">
+                        {t.pricing.price}
+                        <span className="text-base font-normal text-muted">{t.pricing.period}</span>
+                      </span>
                     </div>
                   </div>
+                </div>
 
-                  <ul className="space-y-4 mb-6">
-                    {plan.included.map((item, j) => (
-                      <li key={j} className="flex items-start gap-3 text-text">
-                        <div className="w-2 h-2 bg-accent rounded-full flex-shrink-0 mt-2" />
-                        <span className="text-sm leading-relaxed">{item}</span>
-                      </li>
-                    ))}
-                  </ul>
+                <p className="text-muted text-xs text-center mb-6 leading-relaxed">
+                  {t.pricing.note}
+                </p>
 
-                  <p className="text-muted text-xs text-center mb-6 leading-relaxed">
-                    {plan.note}
-                  </p>
-
-                  <a
-                    {...getBookingLinkProps()}
-                    className="btn-primary w-full text-center text-lg py-4"
-                  >
-                    Apply for a Conversation
-                  </a>
-                </motion.div>
-              ))}
+                <a
+                  {...getBookingLinkProps()}
+                  className="btn-primary w-full text-center text-lg py-4"
+                >
+                  {t.pricing.cta}
+                </a>
+              </motion.div>
             </div>
           </div>
-
         </div>
       </AnimatedSection>
 
-      {/* Strong CTA - One step from footer */}
       <AnimatedSection className="py-32 relative overflow-hidden">
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-accent/10 via-transparent to-accent/15" />
-          <div className="absolute top-0 left-1/4 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-accent/15 rounded-full blur-3xl" />
+          <div className="absolute inset-0 bg-gradient-to-br from-success/10 via-transparent to-success/15" />
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-success/10 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-success/15 rounded-full blur-3xl" />
         </div>
 
         <div className="max-w-5xl mx-auto px-6 relative z-10">
@@ -855,7 +731,7 @@ export default function AIReceptionistPage({ params, searchParams }: AIReception
             transition={{ duration: 0.8 }}
             className="relative"
           >
-            <div className="absolute -inset-px bg-gradient-to-br from-accent/40 via-accent/10 to-accent/40 rounded-3xl" />
+            <div className="absolute -inset-px bg-gradient-to-br from-success/40 via-success/10 to-success/40 rounded-3xl" />
             <div className="relative rounded-3xl overflow-hidden">
               <AIEmployeeCTASection />
             </div>
