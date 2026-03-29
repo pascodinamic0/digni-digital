@@ -4,6 +4,7 @@ import { use } from 'react'
 import { motion } from 'framer-motion'
 import { Link } from '@/i18n/navigation'
 import AnimatedSection from '@/app/components/AnimatedSection'
+import ScrollIndicator from '@/app/components/ScrollIndicator'
 import { getCtaButtonText, getBookingLinkProps } from '@/app/config/cta.config'
 import { useLanguage } from '@/app/context/LocaleContext'
 
@@ -213,6 +214,9 @@ export default function AgenticSoftwaresPage({ params, searchParams }: AgenticSo
               </a>
             </div>
           </motion.div>
+        </div>
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
+          <ScrollIndicator direction="down" />
         </div>
       </section>
 

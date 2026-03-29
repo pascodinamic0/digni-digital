@@ -54,7 +54,7 @@ function BlendedRing({ value }: { value: number }) {
           stroke="currentColor"
           strokeWidth={RING_STROKE}
           strokeLinecap="round"
-          className="text-accent"
+          className="text-success"
           strokeDasharray={RING_CIRC}
           initial={{ strokeDashoffset: RING_CIRC }}
           animate={{ strokeDashoffset: offset }}
@@ -139,7 +139,7 @@ export default function PerformancePulseDemo() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-block px-4 py-2 bg-accent/10 border border-accent/20 rounded-full text-accent text-xs font-semibold uppercase tracking-wide mb-4"
+            className="inline-block px-4 py-2 bg-success/10 border border-success/20 rounded-full text-success text-xs font-semibold uppercase tracking-wide mb-4"
           >
             {t.badge}
           </motion.span>
@@ -151,7 +151,7 @@ export default function PerformancePulseDemo() {
             transition={{ delay: 0.1 }}
             className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mt-4 mb-4"
           >
-            {t.title} <span className="gradient-text">{t.titleHighlight}</span>
+            {t.title} <span className="gradient-text-brand">{t.titleHighlight}</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -169,14 +169,14 @@ export default function PerformancePulseDemo() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.25 }}
           onViewportEnter={() => setStarted(true)}
-          className="relative overflow-hidden rounded-2xl md:rounded-3xl border border-border-light backdrop-blur-xl bg-gradient-to-br from-surface-light/85 via-surface/92 to-surface-light/85 shadow-2xl shadow-accent/5 max-w-5xl mx-auto ring-1 ring-border/40"
+          className="relative overflow-hidden rounded-2xl md:rounded-3xl border border-border-light backdrop-blur-xl bg-gradient-to-br from-surface-light/85 via-surface/92 to-surface-light/85 shadow-demo-card max-w-5xl mx-auto ring-1 ring-border/40"
         >
-          <div className="absolute inset-0 bg-gradient-to-br from-accent/[0.035] via-transparent to-transparent pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-br from-success/[0.06] via-transparent to-transparent pointer-events-none" />
 
           <div className="relative border-b border-border bg-surface-light/40 backdrop-blur-sm px-4 py-4 md:px-6 md:py-5">
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
               <div className="flex items-center gap-3 min-w-0">
-                <div className="w-10 h-10 md:w-11 md:h-11 shrink-0 rounded-xl bg-gradient-to-br from-accent to-accent-light flex items-center justify-center shadow-lg shadow-accent/20">
+                <div className="w-10 h-10 md:w-11 md:h-11 shrink-0 rounded-xl bg-gradient-to-br from-success to-success-light flex items-center justify-center shadow-lg shadow-demo-icon">
                   <svg
                     className="w-5 h-5 md:w-6 md:h-6 text-background"
                     viewBox="0 0 24 24"
@@ -274,7 +274,7 @@ export default function PerformancePulseDemo() {
                 initial={{ opacity: 0, y: 8 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 4 }}
-                className="absolute bottom-4 left-1/2 -translate-x-1/2 px-4 py-2 rounded-full bg-accent text-background text-xs font-semibold shadow-lg shadow-accent/30 whitespace-nowrap max-w-[90vw] truncate"
+                className="absolute bottom-4 left-1/2 -translate-x-1/2 px-4 py-2 rounded-full bg-success text-background text-xs font-semibold shadow-lg shadow-demo-icon whitespace-nowrap max-w-[90vw] truncate"
               >
                 {t.newReviewToast}
               </motion.div>

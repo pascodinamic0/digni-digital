@@ -521,7 +521,7 @@ export function ContentClient() {
 
       {modalOpen && (
         <div
-          className="fixed inset-0 z-50 flex items-start justify-center overflow-y-auto bg-black/55 p-4 pb-8 pt-12 backdrop-blur-[2px]"
+          className="fixed inset-0 z-50 flex items-start justify-center overflow-y-auto bg-[image:var(--overlay-scrim-medium)] bg-cover p-4 pb-8 pt-12 backdrop-blur-[2px]"
           role="dialog"
           aria-modal="true"
           aria-labelledby="blog-editor-title"

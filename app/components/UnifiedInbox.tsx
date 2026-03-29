@@ -84,7 +84,7 @@ const UnifiedInbox = () => {
   const getStatusColor = (status: ConversationStatus) => {
     switch (status) {
       case 'qualified': return 'text-success bg-success/10 border-success/30'
-      case 'appointment-booked': return 'text-accent bg-accent/10 border-accent/30'
+      case 'appointment-booked': return 'text-success bg-success/10 border-success/30'
       case 'in-progress': return 'text-info bg-info/10 border-info/30'
       case 'follow-up': return 'text-warning bg-warning/10 border-warning/30'
       case 'new-lead': return 'text-purple bg-purple/10 border-purple/30'
@@ -116,7 +116,7 @@ const UnifiedInbox = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-block px-4 py-2 bg-accent/10 border border-accent/20 rounded-full text-accent text-xs font-semibold uppercase tracking-wide mb-4"
+            className="inline-block px-4 py-2 bg-success/10 border border-success/20 rounded-full text-success text-xs font-semibold uppercase tracking-wide mb-4"
           >
             Command Center
           </motion.span>
@@ -129,7 +129,7 @@ const UnifiedInbox = () => {
             className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mt-4 mb-6"
           >
             Every Lead. Every Channel.<br />
-            <span className="gradient-text">One Dashboard.</span>
+            <span className="gradient-text-brand">One Dashboard.</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -148,16 +148,16 @@ const UnifiedInbox = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.3 }}
-          className="relative overflow-hidden rounded-2xl md:rounded-3xl border border-border-light backdrop-blur-xl bg-gradient-to-br from-surface-light/80 via-surface/90 to-surface-light/80 shadow-2xl shadow-accent/5 max-w-6xl mx-auto"
+          className="relative overflow-hidden rounded-2xl md:rounded-3xl border border-border-light backdrop-blur-xl bg-gradient-to-br from-surface-light/80 via-surface/90 to-surface-light/80 shadow-demo-card max-w-6xl mx-auto"
         >
           {/* Gradient overlay for premium feel */}
-          <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-transparent to-purple/5 pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-br from-success/5 via-transparent to-success/[0.08] pointer-events-none" />
           
           {/* Dashboard Header */}
           <div className="relative bg-surface-light/50 backdrop-blur-sm border-b border-border p-4 md:p-6">
             <div className="flex items-center justify-between flex-wrap gap-4">
               <div className="flex items-center gap-3 md:gap-4">
-                <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-accent to-accent-light rounded-xl flex items-center justify-center shadow-lg shadow-accent/20">
+                <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-success to-success-light rounded-xl flex items-center justify-center shadow-lg shadow-demo-icon">
                   <svg className="w-5 h-5 md:w-6 md:h-6 text-background" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M21 15C21 15.5304 20.7893 16.0391 20.4142 16.4142C20.0391 16.7893 19.5304 17 19 17H7L3 21V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H19C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V15Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
@@ -188,7 +188,7 @@ const UnifiedInbox = () => {
             <div className={`${showConversationDetail ? 'hidden md:block' : 'block'} w-full md:w-2/5 lg:w-1/3 border-r border-border overflow-hidden flex flex-col`}>
               {/* Search */}
               <div className="p-3 md:p-4 border-b border-border">
-                <div className="flex items-center gap-2 text-sm text-muted bg-surface/50 rounded-xl px-4 py-2.5 border border-border focus-within:border-accent/30 transition-colors">
+                <div className="flex items-center gap-2 text-sm text-muted bg-surface/50 rounded-xl px-4 py-2.5 border border-border focus-within:border-success/30 transition-colors">
                   <svg className="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="11" cy="11" r="8" stroke="currentColor" strokeWidth="2"/>
                     <path d="M21 21L16.65 16.65" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -214,7 +214,7 @@ const UnifiedInbox = () => {
                     onClick={() => handleConversationClick(index)}
                     className={`w-full p-3 md:p-4 rounded-xl text-left transition-all duration-200 ${
                       selectedConversation === index
-                        ? 'bg-gradient-to-r from-accent/15 to-accent/5 border border-accent/30 shadow-lg shadow-accent/10'
+                        ? 'bg-gradient-to-r from-success/15 to-success/5 border border-success/30 shadow-lg shadow-demo-icon'
                         : 'hover:bg-surface-light/50 border border-transparent'
                     }`}
                   >
@@ -223,8 +223,8 @@ const UnifiedInbox = () => {
                       <div className="relative flex-shrink-0">
                         <div className={`w-11 h-11 rounded-xl flex items-center justify-center font-semibold text-sm ${
                           selectedConversation === index 
-                            ? 'bg-accent/30 text-accent' 
-                            : 'bg-accent/10 text-accent'
+                            ? 'bg-success/30 text-success' 
+                            : 'bg-success/10 text-success'
                         }`}>
                           {conv.avatar}
                         </div>
@@ -249,7 +249,7 @@ const UnifiedInbox = () => {
                         
                         {conv.unread > 0 && (
                           <div className="flex justify-end mt-2">
-                            <span className="bg-accent text-background text-[10px] w-5 h-5 rounded-full font-bold flex items-center justify-center shadow-lg shadow-accent/30">
+                            <span className="bg-success text-background text-[10px] w-5 h-5 rounded-full font-bold flex items-center justify-center shadow-lg shadow-demo-icon">
                               {conv.unread}
                             </span>
                           </div>
@@ -285,7 +285,7 @@ const UnifiedInbox = () => {
                     </button>
                     
                     <div className="relative">
-                      <div className="w-10 h-10 md:w-11 md:h-11 bg-accent/20 rounded-xl flex items-center justify-center text-accent font-semibold text-sm">
+                      <div className="w-10 h-10 md:w-11 md:h-11 bg-success/20 rounded-xl flex items-center justify-center text-success font-semibold text-sm">
                         {selectedConv.avatar}
                       </div>
                       <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-surface rounded-md flex items-center justify-center text-xs shadow-sm border border-border-light">
@@ -307,13 +307,13 @@ const UnifiedInbox = () => {
                   {/* AI Message */}
                   <div className="flex justify-start">
                     <div className="flex items-start gap-2 max-w-[85%]">
-                      <div className="w-7 h-7 bg-gradient-to-br from-accent to-accent-light rounded-lg flex items-center justify-center mt-1 flex-shrink-0 shadow-lg shadow-accent/20">
+                      <div className="w-7 h-7 bg-gradient-to-br from-success to-success-light rounded-lg flex items-center justify-center mt-1 flex-shrink-0 shadow-lg shadow-demo-icon">
                         <svg className="w-3.5 h-3.5 text-background" viewBox="0 0 24 24" fill="currentColor">
                           <path d="M13 3L4 14h7v7l9-11h-7V3z"/>
                         </svg>
                       </div>
                       <div>
-                        <div className="bg-gradient-to-br from-accent/15 to-accent/5 border border-accent/20 px-4 py-3 rounded-2xl rounded-bl-md backdrop-blur-sm">
+                        <div className="bg-gradient-to-br from-success/15 to-success/5 border border-success/20 px-4 py-3 rounded-2xl rounded-bl-md backdrop-blur-sm">
                           <p className="text-sm text-text leading-relaxed">Hello! I'd be happy to help you with pricing information. What type of service are you most interested in?</p>
                         </div>
                         <p className="text-[10px] text-muted mt-1.5 ml-1">AI • 2:34 PM</p>
@@ -324,7 +324,7 @@ const UnifiedInbox = () => {
                   {/* User Message */}
                   <div className="flex justify-end">
                     <div className="max-w-[85%]">
-                      <div className="bg-gradient-to-br from-accent to-accent-light text-background px-4 py-3 rounded-2xl rounded-br-md shadow-lg shadow-accent/20">
+                      <div className="bg-gradient-to-br from-success to-success-light text-background px-4 py-3 rounded-2xl rounded-br-md shadow-lg shadow-demo-icon">
                         <p className="text-sm leading-relaxed">Agentic Softwares development for my restaurant</p>
                       </div>
                       <p className="text-[10px] text-muted mt-1.5 text-right mr-1">2:35 PM</p>
@@ -334,13 +334,13 @@ const UnifiedInbox = () => {
                   {/* AI Message */}
                   <div className="flex justify-start">
                     <div className="flex items-start gap-2 max-w-[85%]">
-                      <div className="w-7 h-7 bg-gradient-to-br from-accent to-accent-light rounded-lg flex items-center justify-center mt-1 flex-shrink-0 shadow-lg shadow-accent/20">
+                      <div className="w-7 h-7 bg-gradient-to-br from-success to-success-light rounded-lg flex items-center justify-center mt-1 flex-shrink-0 shadow-lg shadow-demo-icon">
                         <svg className="w-3.5 h-3.5 text-background" viewBox="0 0 24 24" fill="currentColor">
                           <path d="M13 3L4 14h7v7l9-11h-7V3z"/>
                         </svg>
                       </div>
                       <div>
-                        <div className="bg-gradient-to-br from-accent/15 to-accent/5 border border-accent/20 px-4 py-3 rounded-2xl rounded-bl-md backdrop-blur-sm">
+                        <div className="bg-gradient-to-br from-success/15 to-success/5 border border-success/20 px-4 py-3 rounded-2xl rounded-bl-md backdrop-blur-sm">
                           <p className="text-sm text-text leading-relaxed">Perfect! For restaurant software solutions, our packages start at $2,997. Would you like me to schedule a consultation to discuss your specific needs?</p>
                         </div>
                         <p className="text-[10px] text-muted mt-1.5 ml-1">AI • 2:35 PM</p>
@@ -351,7 +351,7 @@ const UnifiedInbox = () => {
                   {/* User Message */}
                   <div className="flex justify-end">
                     <div className="max-w-[85%]">
-                      <div className="bg-gradient-to-br from-accent to-accent-light text-background px-4 py-3 rounded-2xl rounded-br-md shadow-lg shadow-accent/20">
+                      <div className="bg-gradient-to-br from-success to-success-light text-background px-4 py-3 rounded-2xl rounded-br-md shadow-lg shadow-demo-icon">
                         <p className="text-sm leading-relaxed">{selectedConv.lastMessage}</p>
                       </div>
                       <p className="text-[10px] text-muted mt-1.5 text-right mr-1">{selectedConv.time}</p>
@@ -362,15 +362,15 @@ const UnifiedInbox = () => {
                 {/* AI Actions */}
                 <div className="p-3 md:p-4 border-t border-border bg-surface-light/30 backdrop-blur-sm">
                   <div className="flex items-center gap-2 text-xs text-muted mb-3">
-                    <div className="w-5 h-5 bg-accent/10 rounded-md flex items-center justify-center">
-                      <svg className="w-3 h-3 text-accent" viewBox="0 0 24 24" fill="currentColor">
+                    <div className="w-5 h-5 bg-success/10 rounded-md flex items-center justify-center">
+                      <svg className="w-3 h-3 text-success" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M13 3L4 14h7v7l9-11h-7V3z"/>
                       </svg>
                     </div>
                     <span>AI Suggested Actions</span>
                   </div>
                   <div className="flex flex-wrap gap-2">
-                    <button className="px-3 py-1.5 bg-accent/10 text-accent text-xs rounded-lg border border-accent/20 hover:bg-accent/20 hover:border-accent/40 transition-all duration-200 font-medium">
+                    <button className="px-3 py-1.5 bg-success/10 text-success text-xs rounded-lg border border-success/20 hover:bg-success/20 hover:border-success/40 transition-all duration-200 font-medium">
                       Schedule Consultation
                     </button>
                     <button className="px-3 py-1.5 bg-success/10 text-success text-xs rounded-lg border border-success/20 hover:bg-success/20 hover:border-success/40 transition-all duration-200 font-medium">
@@ -394,21 +394,23 @@ const UnifiedInbox = () => {
           transition={{ delay: 0.5 }}
           className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6 mt-8 md:mt-12"
         >
-          {[
-            { value: '47', label: 'Conversations Today', color: 'accent' },
-            { value: '23', label: 'Qualified Leads', color: 'success' },
-            { value: '12', label: 'Appointments Booked', color: 'info' },
-            { value: '98%', label: 'Response Rate', color: 'purple' },
-          ].map((stat, i) => (
+          {(
+            [
+              { value: '47', label: 'Conversations Today', card: 'from-success/10 to-success/5 border-success/20', valueClass: 'text-success' },
+              { value: '23', label: 'Qualified Leads', card: 'from-success/10 to-success/5 border-success/20', valueClass: 'text-success' },
+              { value: '12', label: 'Appointments Booked', card: 'from-info/10 to-info/5 border-info/20', valueClass: 'text-info' },
+              { value: '98%', label: 'Response Rate', card: 'from-purple/10 to-purple/5 border-purple/20', valueClass: 'text-purple' },
+            ] as const
+          ).map((stat, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.6 + i * 0.1 }}
-              className={`text-center p-4 md:p-6 bg-gradient-to-br from-${stat.color}/10 to-${stat.color}/5 rounded-xl md:rounded-2xl border border-${stat.color}/20 backdrop-blur-sm`}
+              className={`text-center p-4 md:p-6 bg-gradient-to-br ${stat.card} rounded-xl md:rounded-2xl border backdrop-blur-sm`}
             >
-              <div className={`text-2xl md:text-3xl font-display font-bold text-${stat.color} mb-1 md:mb-2`}>{stat.value}</div>
+              <div className={`text-2xl md:text-3xl font-display font-bold ${stat.valueClass} mb-1 md:mb-2`}>{stat.value}</div>
               <p className="text-muted text-xs md:text-sm">{stat.label}</p>
             </motion.div>
           ))}

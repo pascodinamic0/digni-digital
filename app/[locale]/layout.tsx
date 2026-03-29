@@ -7,6 +7,7 @@ import { localeToHreflang, routing } from '@/i18n/routing'
 import { LocaleProvider } from '../context/LocaleContext'
 import LocaleKeyedContent from '@/app/components/LocaleKeyedContent'
 import Navigation from '@/app/components/Navigation'
+import { BRAND_LOGO_PATH } from '@/lib/site-assets'
 import Footer from '@/app/components/Footer'
 import LiveChatWidget from '@/app/components/LiveChatWidget'
 
@@ -39,9 +40,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       languages: localeAlternates,
     },
     icons: {
-      icon: '/Favicon.png',
-      shortcut: '/Favicon.png',
-      apple: '/Favicon.png',
+      icon: BRAND_LOGO_PATH,
+      shortcut: BRAND_LOGO_PATH,
+      apple: BRAND_LOGO_PATH,
     },
     robots: {
       index: true,

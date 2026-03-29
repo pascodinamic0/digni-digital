@@ -78,7 +78,7 @@ export default function LeadPipelineDemo() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-block px-4 py-2 bg-accent/10 border border-accent/20 rounded-full text-accent text-xs font-semibold uppercase tracking-wide mb-4"
+            className="inline-block px-4 py-2 bg-success/10 border border-success/20 rounded-full text-success text-xs font-semibold uppercase tracking-wide mb-4"
           >
             {t.badge}
           </motion.span>
@@ -90,7 +90,7 @@ export default function LeadPipelineDemo() {
             transition={{ delay: 0.1 }}
             className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mt-4 mb-4"
           >
-            {t.title} <span className="gradient-text">{t.titleHighlight}</span>
+            {t.title} <span className="gradient-text-brand">{t.titleHighlight}</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -108,14 +108,14 @@ export default function LeadPipelineDemo() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
-          className="relative overflow-hidden rounded-2xl md:rounded-3xl border border-border-light backdrop-blur-xl bg-gradient-to-br from-surface-light/80 via-surface/90 to-surface-light/80 shadow-2xl shadow-accent/5 max-w-6xl mx-auto"
+          className="relative overflow-hidden rounded-2xl md:rounded-3xl border border-border-light backdrop-blur-xl bg-gradient-to-br from-surface-light/80 via-surface/90 to-surface-light/80 shadow-demo-card max-w-6xl mx-auto"
         >
-          <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-transparent to-purple/5 pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-br from-success/5 via-transparent to-success/[0.08] pointer-events-none" />
 
           <div className="relative bg-surface-light/50 backdrop-blur-sm border-b border-border p-4 md:p-6">
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 md:w-11 md:h-11 bg-gradient-to-br from-accent to-accent-light rounded-xl flex items-center justify-center shadow-lg shadow-accent/20">
+                <div className="w-10 h-10 md:w-11 md:h-11 bg-gradient-to-br from-success to-success-light rounded-xl flex items-center justify-center shadow-lg shadow-demo-icon">
                   <svg className="w-5 h-5 md:w-6 md:h-6 text-background" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                     <path d="M4 5h16M4 9h16M4 13h10M4 17h10" strokeWidth="2" strokeLinecap="round" />
                   </svg>
@@ -126,7 +126,7 @@ export default function LeadPipelineDemo() {
                 </div>
               </div>
               <div className="flex flex-wrap items-center gap-2">
-                <span className="text-[11px] px-2.5 py-1 rounded-full bg-accent/10 border border-accent/20 text-accent font-medium">
+                <span className="text-[11px] px-2.5 py-1 rounded-full bg-success/10 border border-success/20 text-success font-medium">
                   {t.pipelineName}
                 </span>
                 <span className="text-[11px] text-muted hidden sm:inline">{t.activeDeals}</span>
@@ -135,7 +135,7 @@ export default function LeadPipelineDemo() {
                   onClick={() => setDemoPlaying((p) => !p)}
                   className={`text-[11px] px-3 py-1.5 rounded-lg border font-semibold transition-colors ${
                     demoPlaying
-                      ? 'border-accent bg-accent/15 text-accent'
+                      ? 'border-success bg-success/15 text-success'
                       : 'border-border bg-surface/50 hover:bg-surface-light/80'
                   }`}
                 >
@@ -149,7 +149,7 @@ export default function LeadPipelineDemo() {
                 </button>
                 <button
                   type="button"
-                  className="text-[11px] px-3 py-2 rounded-lg bg-accent text-background font-semibold hover:bg-accent-light"
+                  className="text-[11px] px-3 py-2 rounded-lg bg-success text-background font-semibold hover:bg-success-light"
                 >
                   {t.addDeal}
                 </button>
@@ -203,8 +203,8 @@ export default function LeadPipelineDemo() {
                                 setSelectedId(card.id)
                               }
                             }}
-                            className={`w-full text-left rounded-lg border bg-surface px-2 py-2 shadow-sm transition-all hover:shadow-md hover:border-accent/30 cursor-grab active:cursor-grabbing ${
-                              dragId === card.id ? 'opacity-60 ring-2 ring-accent/40' : 'border-border-light'
+                            className={`w-full text-left rounded-lg border bg-surface px-2 py-2 shadow-sm transition-all hover:shadow-md hover:border-success/30 cursor-grab active:cursor-grabbing ${
+                              dragId === card.id ? 'opacity-60 ring-2 ring-success/40' : 'border-border-light'
                             } ${card.id === FLOW_CARD_ID && demoPlaying ? 'ring-2 ring-success/40' : ''}`}
                           >
                             <p className="font-semibold text-[11px] text-text leading-snug line-clamp-1">{card.name}</p>
@@ -215,7 +215,7 @@ export default function LeadPipelineDemo() {
                             <p className="text-[10px] text-muted line-clamp-2 leading-snug mt-0.5">{card.context}</p>
                             <div className="mt-1.5 flex justify-between gap-1 text-[10px]">
                               <span className="text-muted">{card.valueLabel}</span>
-                              <span className="font-medium text-accent tabular-nums">{card.valueDisplay}</span>
+                              <span className="font-medium text-success tabular-nums">{card.valueDisplay}</span>
                             </div>
                           </div>
                         </motion.div>
@@ -234,7 +234,7 @@ export default function LeadPipelineDemo() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-4 bg-background/70 backdrop-blur-sm"
+            className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-4 bg-[image:var(--overlay-scrim)] backdrop-blur-sm bg-cover"
             role="dialog"
             aria-modal="true"
             aria-labelledby="pipeline-detail-title"
@@ -256,10 +256,10 @@ export default function LeadPipelineDemo() {
               <p className="text-sm text-text mb-3">{selected.context}</p>
               <p className="text-sm text-muted mb-4">
                 {selected.valueLabel}:{' '}
-                <span className="font-semibold text-accent tabular-nums">{selected.valueDisplay}</span>
+                <span className="font-semibold text-success tabular-nums">{selected.valueDisplay}</span>
               </p>
-              <div className="rounded-xl bg-accent/5 border border-accent/20 p-4 mb-4">
-                <p className="text-xs font-semibold text-accent mb-2">{t.detailHint}</p>
+              <div className="rounded-xl bg-success/5 border border-success/20 p-4 mb-4">
+                <p className="text-xs font-semibold text-success mb-2">{t.detailHint}</p>
                 <p className="text-sm text-text leading-relaxed">{t.detailModalBody}</p>
               </div>
               <p className="text-xs font-semibold text-muted mb-2">{t.detailNext}</p>
@@ -267,7 +267,7 @@ export default function LeadPipelineDemo() {
               <button
                 type="button"
                 onClick={() => setSelectedId(null)}
-                className="w-full py-3 rounded-xl bg-accent text-background font-semibold hover:bg-accent-light transition-colors"
+                className="w-full py-3 rounded-xl bg-success text-background font-semibold hover:bg-success-light transition-colors"
               >
                 {t.closeLabel}
               </button>

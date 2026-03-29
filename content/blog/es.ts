@@ -1010,6 +1010,104 @@ const contentEs: Record<string, Partial<BlogArticle>> = {
       <p><em>¿Listo para las habilidades detrás de estos patrones? <a href="/future-ready-graduate" target="_blank" rel="noopener noreferrer">Explore el programa</a> o <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">reserve una consulta</a> con Digni Digital.</em></p>
     `,
   },
+  'modern-fractional-coo-ai-employee-business-partner': {
+    title: 'El COO fraccional moderno: combinar liderazgo operativo con una capa de «empleado IA»',
+    excerpt: 'Guía práctica para empresas en crecimiento: qué hace realmente un COO fraccional moderno, en qué se diferencia de un asistente o un contable, y cómo encajan en un solo modelo de alianza los beneficios que la gente espera de un empleado IA: velocidad, constancia y cobertura.',
+    category: 'Operaciones',
+    readTime: '12 min de lectura',
+    publishDate: '27 de marzo de 2026',
+    tags: ['COO fraccional', 'empleado IA', 'operaciones', 'liderazgo', 'escala', 'Digni Digital'],
+    content: `
+      <h2>Por qué «COO fraccional» y «empleado IA» van en la misma frase</h2>
+
+      <p>Las empresas en crecimiento rara vez fracasan por falta de ambición. Fracasan porque <strong>claridad, cadencia y ejecución</strong> no escalan al mismo ritmo que la demanda. Un <strong>COO fraccional moderno</strong> aporta a tiempo parcial la propiedad ejecutiva de cómo funciona y crece el negocio: prioridades, métricas, traspasos y responsabilidad. Una <strong>capa de empleado IA</strong>—recepción inteligente, triaje, documentación, seguimiento—ofrece el <strong>volumen y la constancia de ejecución</strong> que los líderes esperan de la automatización, sin pretender que el software sustituya el criterio.</p>
+
+      <p>En Digni Digital nos posicionamos como <strong>socio</strong>, no como vendedor de folleto: ayudamos a diseñar el modelo operativo y luego integrar la capa de IA para que cumpla sus estándares. Este artículo explica qué significa en la práctica.</p>
+
+      <h2>Qué hace realmente un COO fraccional moderno</h2>
+
+      <p>Un COO fraccional no es un asistente virtual renombrado, ni un contable, ni un director de proyecto. Esos roles pueden ser valiosos, pero resuelven problemas distintos:</p>
+
+      <ul>
+        <li><strong>Contabilidad / finanzas</strong> — exactitud de las cifras, no necesariamente cómo ganar el próximo trimestre.</li>
+        <li><strong>Asistente virtual</strong> — ejecución de una lista de tareas, no necesariamente qué lista importa.</li>
+        <li><strong>Director de proyecto</strong> — entrega de una iniciativa definida, no necesariamente la cartera de qué construir.</li>
+      </ul>
+
+      <p>Un <strong>COO fraccional</strong> posee el <strong>sistema operativo</strong> del negocio: el ritmo semanal, las pocas métricas que importan, la secuencia ventas → entrega → soporte, y los límites para que la calidad no colapse cuando sube el volumen. En la práctica suele abarcar:</p>
+
+      <ul>
+        <li><strong>Crecimiento y embudo</strong> — ¿la demanda es sana, repetible y medible?</li>
+        <li><strong>Desarrollo de negocio y relaciones</strong> — ¿cuentas clave y socios con ritmo, no olvidados?</li>
+        <li><strong>Operaciones y procedimientos</strong> — ¿puede la gente nueva seguir el trabajo sin heroísmo?</li>
+        <li><strong>Experiencia del cliente</strong> — ¿respuestas, escaladas y reputación reflejan su marca?</li>
+      </ul>
+
+      <h2>Qué quieren los líderes de un «empleado IA»—y qué sigue necesitando un arquitecto humano</h2>
+
+      <p>Cuando los líderes dicen que quieren un empleado IA, suelen referirse a:</p>
+
+      <ul>
+        <li><strong>Velocidad</strong> — primera respuesta en minutos, no en horas.</li>
+        <li><strong>Cobertura</strong> — fuera de horas pico y después del horario sin quemar al equipo.</li>
+        <li><strong>Constancia</strong> — la misma calidad base para cada llamada o chat.</li>
+        <li><strong>Menos carga administrativa</strong> — menos seguimientos perdidos y «no lo anotamos».</li>
+      </ul>
+
+      <p>Esos resultados son reales. Lo que la IA no sustituye sola es <strong>definir tolerancia al riesgo, voz de marca o compensaciones aceptables este trimestre</strong>. Ahí un socio a nivel COO fija las reglas: rutas de escalación, mensajes aprobados, qué automatizar primero y qué debe seguir siendo humano.</p>
+
+      <blockquote>
+        <p><strong>Marco simple:</strong> el COO fraccional diseña la vía; la capa IA hace circular los trenes a tiempo.</p>
+      </blockquote>
+
+      <h2>Un ritmo semanal que puede copiar</h2>
+
+      <p>No necesita cien KPI. Necesita un <strong>bucle semanal</strong> que quepa en menos de una hora:</p>
+
+      <ol>
+        <li><strong>Ingresos y embudo</strong> — oportunidades nuevas, conversión, tratos estancados.</li>
+        <li><strong>Salud de la entrega</strong> — colas, incumplimientos de SLA, problemas repetidos.</li>
+        <li><strong>Señales de clientes</strong> — quejas, reseñas, riesgo de abandono.</li>
+        <li><strong>Un arreglo operativo</strong> — el mayor cuello de botella a quitar antes de la próxima semana.</li>
+      </ol>
+
+      <p>La capa IA apoya este bucle <strong>capturando interacciones, resumiendo temas y señalando anomalías</strong>—para que la reunión sea de decisiones, no de caza de datos.</p>
+
+      <h2>Errores frecuentes: añadir IA sin claridad «tipo COO»</h2>
+
+      <ul>
+        <li><strong>Automatizar el caos</strong> — respuestas más rápidas al proceso equivocado solo amplían la confusión.</li>
+        <li><strong>Sin responsable</strong> — sin revisión de calidad nombrada, las herramientas se desvían pronto.</li>
+        <li><strong>Scripts genéricos</strong> — el cliente percibe «chatbot de adorno»; su diferenciación desaparece.</li>
+        <li><strong>Ignorar traspasos</strong> — ventas a onboarding y soporte a producto: ahí se rompe la reputación.</li>
+      </ul>
+
+      <p>Un enfoque liderado por socio corrige esos fallos antes de invertir mucho en herramientas.</p>
+
+      <h2>Rol de Digni Digital: socio, no herramienta puntual</h2>
+
+      <p>Combinamos <strong>apoyo estratégico a operaciones</strong> con <strong>implementación de sistemas de IA</strong>—por ejemplo cobertura inteligente de primera línea alineada con cómo vende y sirve. Puede incluir un <a href="/ai-receptionist">recepcionista IA</a> que califica leads y enruta llamadas, integrado en su forma real de trabajar, no una demo aislada.</p>
+
+      <p>Si evalúa un COO fraccional o una iniciativa de empleado IA, la pregunta honesta es la misma: <strong>¿esto hace más simple y medible cómo dirigimos el negocio?</strong> Si sí, está en la conversación correcta.</p>
+
+      <h2>Lista de verificación: ¿encaja este modelo?</h2>
+
+      <ul>
+        <li>Tiene <strong>demanda repetida</strong> (ya no busca encaje producto-mercado en el vacío).</li>
+        <li>El liderazgo puede nombrar <strong>una o dos métricas</strong> en las que confía para los próximos 90 días.</li>
+        <li>Está dispuesto a <strong>documentar el flujo de trabajo</strong> lo suficiente para que IA y humanos compartan el mismo mapa.</li>
+        <li>Quiere un <strong>socio</strong> que desafíe la agenda, no solo quien instale software.</li>
+      </ul>
+
+      <h2>Siguiente paso</h2>
+
+      <p>Si desea explorar si un <strong>COO fraccional moderno más una capa de ejecución IA</strong> encaja con su etapa, <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">reserve una llamada estratégica</a> con nuestro equipo. Revisamos cuellos operativos y si la automatización inteligente tiene sentido—sin compromiso.</p>
+
+      <hr>
+
+      <p><em>¿Preguntas sobre escalar sin más contrataciones a tiempo completo? <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Agende con Digni Digital</a> o explore nuestras capacidades de <a href="/ai-receptionist">recepcionista IA</a> para cobertura continua.</em></p>
+    `,
+  },
 }
 
 export const articlesEs: BlogArticle[] = articlesEn.map((article) => {

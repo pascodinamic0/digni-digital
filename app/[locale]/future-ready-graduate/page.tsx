@@ -4,6 +4,7 @@ import { use, useState, useRef, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Link } from '@/i18n/navigation'
 import AnimatedSection from '@/app/components/AnimatedSection'
+import ScrollIndicator from '@/app/components/ScrollIndicator'
 import VideoModal from '@/app/components/VideoModal'
 import VideoThumbnail from '@/app/components/VideoThumbnail'
 import DemoPresentationDownload from '@/app/components/DemoPresentationDownload'
@@ -258,6 +259,9 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
               <DemoPresentationDownload service="futureReadyGraduate" variant="hero" />
             </div>
           </motion.div>
+        </div>
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
+          <ScrollIndicator direction="down" />
         </div>
       </section>
 

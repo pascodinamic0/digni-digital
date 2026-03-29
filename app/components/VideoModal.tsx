@@ -55,7 +55,7 @@ export default function VideoModal({ isOpen, onClose, videoSrc, title, descripti
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="fixed inset-0 bg-black/80 backdrop-blur-sm z-[9999]"
+            className="fixed inset-0 bg-[image:var(--overlay-scrim)] backdrop-blur-sm bg-cover z-[9999]"
           />
           
           {/* Modal */}
@@ -76,7 +76,7 @@ export default function VideoModal({ isOpen, onClose, videoSrc, title, descripti
               {/* Close button */}
               <button
                 onClick={onClose}
-                className="absolute top-4 right-4 z-10 w-10 h-10 bg-black/50 hover:bg-black/70 rounded-full flex items-center justify-center transition-colors group"
+                className="absolute top-4 right-4 z-10 w-10 h-10 bg-overlay-scrim-chip hover:bg-overlay-scrim-chip-hover rounded-full flex items-center justify-center transition-colors group"
                 aria-label="Close video"
               >
                 <svg

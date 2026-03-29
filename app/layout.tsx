@@ -4,6 +4,7 @@ import { headers } from 'next/headers'
 import './globals.css'
 import { ThemeProvider } from './components/ThemeProvider'
 import { routing } from '@/i18n/routing'
+import { BRAND_LOGO_PATH } from '@/lib/site-assets'
 
 const fontDisplay = Space_Grotesk({
   subsets: ['latin'],
@@ -73,7 +74,7 @@ export default async function RootLayout({
       '@type': 'Organization',
       name: 'Digni Digital LLC',
       url: SITE_URL,
-      logo: `${SITE_URL}/Favicon.png`,
+      logo: `${SITE_URL}${BRAND_LOGO_PATH}`,
       description:
         'Digital transformation agency building AI Employee systems, employability programs, and custom software that creates real impact.',
       foundingDate: '2019',

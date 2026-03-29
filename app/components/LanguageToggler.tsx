@@ -8,7 +8,7 @@ import type { Locale } from '@/i18n/routing'
 const localeOptions: { locale: Locale; label: string; flag: string }[] = [
   { locale: 'us-en', label: 'English', flag: '🇺🇸' },
   { locale: 'fr-fr', label: 'Français', flag: '🇫🇷' },
-  { locale: 'es-es', label: 'Español', flag: '🇪🇸' },
+  { locale: 'es-es', label: 'Spanish', flag: '🇪🇸' },
   { locale: 'sa-ar', label: 'العربية', flag: '🇸🇦' },
 ]
 
