@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { Link } from '@/i18n/navigation'
 import { getBookingLinkProps } from '@/app/config/cta.config'
@@ -40,9 +41,6 @@ export default function BlogContent({ articlesByLang }: BlogContentProps) {
   const totalPages = Math.ceil(filteredArticles.length / articlesPerPage)
   const startIndex = (currentPage - 1) * articlesPerPage
   const paginatedArticles = filteredArticles.slice(startIndex, startIndex + articlesPerPage)
-
-  // Featured articles (first 4)
-  const featuredArticles = articles.filter(article => article.featured).slice(0, 4)
 
   return (
     <main className="min-h-screen bg-background">
@@ -114,83 +112,56 @@ export default function BlogContent({ articlesByLang }: BlogContentProps) {
         </div>
       </section>
 
-
-      {/* Featured Articles - 4 in a row */}
-      {featuredArticles.length > 0 && (
-        <section className="py-16 bg-surface">
-          <div className="max-w-7xl mx-auto px-6">
-            <div className="flex items-center justify-between mb-8">
-              <h2 className="font-display text-3xl font-bold">{t.featuredArticles}</h2>
-              <span className="text-muted text-sm">{featuredArticles.length} {t.featured}</span>
-            </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {featuredArticles.map((article) => (
-                <Link key={article.id} href={`/blog/${article.slug}`}>
-                  <article className="bg-background border border-border-light rounded-lg p-6 hover:border-accent/50 hover:shadow-lg hover:shadow-accent/10 transition-all cursor-pointer h-full group">
-                    <div className="flex items-center gap-2 mb-4">
-                      <span className="px-3 py-1 bg-accent/10 text-accent text-xs font-medium rounded-full">
-                        {article.category}
-                      </span>
-                      <span className="text-muted text-sm">{article.readTime}</span>
-                    </div>
-                    
-                    <h3 className="font-display text-lg font-bold mb-3 group-hover:text-accent transition-colors line-clamp-2">
-                      {article.title}
-                    </h3>
-                    
-                    <p className="text-muted text-sm mb-4 line-clamp-3">
-                      {article.excerpt}
-                    </p>
-                    
-                    <div className="flex items-center justify-between text-xs text-muted">
-                      <span>{article.publishDate}</span>
-                      <span>{t.by} {article.author}</span>
-                    </div>
-                  </article>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
-
       {/* All Articles Grid */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="font-display text-3xl font-bold mb-8">{t.allArticles}</h2>
+          <h2 className="font-display text-3xl font-bold mb-8 text-center">{t.allArticles}</h2>
           
           {paginatedArticles.length > 0 ? (
             <>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {paginatedArticles.map((article) => (
                   <Link key={article.id} href={`/blog/${article.slug}`}>
-                    <article className="bg-surface border border-border-light rounded-lg p-6 hover:border-accent/50 transition-colors cursor-pointer h-full">
-                      <div className="flex items-center gap-2 mb-4">
-                        <span className="px-3 py-1 bg-accent/10 text-accent text-xs font-medium rounded-full">
-                          {article.category}
-                        </span>
-                        <span className="text-muted text-sm">{article.readTime}</span>
-                      </div>
-                      
-                      <h3 className="font-display text-xl font-bold mb-3 hover:text-accent transition-colors line-clamp-2">
-                        {article.title}
-                      </h3>
-                      
-                      <p className="text-muted mb-4 line-clamp-3">
-                        {article.excerpt}
-                      </p>
-                      
-                      <div className="flex items-center justify-between text-sm text-muted mb-4">
-                        <span>{article.publishDate}</span>
-                        <span>{t.by} {article.author}</span>
-                      </div>
-                      
-                      <div className="flex flex-wrap gap-2">
-                        {article.tags.slice(0, 3).map(tag => (
-                          <span key={tag} className="px-2 py-1 bg-white/5 text-xs rounded">
-                            {tag}
+                    <article className="bg-surface border border-border-light rounded-lg overflow-hidden hover:border-accent/50 transition-colors cursor-pointer h-full flex flex-col">
+                      {article.coverImageUrl ? (
+                        <div className="relative aspect-[16/10] w-full shrink-0 bg-muted">
+                          <Image
+                            src={article.coverImageUrl}
+                            alt=""
+                            fill
+                            className="object-cover"
+                            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                          />
+                        </div>
+                      ) : null}
+                      <div className="p-6 flex flex-col flex-1">
+                        <div className="flex items-center gap-2 mb-4">
+                          <span className="px-3 py-1 bg-accent/10 text-accent text-xs font-medium rounded-full">
+                            {article.category}
                           </span>
-                        ))}
+                          <span className="text-muted text-sm">{article.readTime}</span>
+                        </div>
+
+                        <h3 className="font-display text-xl font-bold mb-3 hover:text-accent transition-colors line-clamp-2">
+                          {article.title}
+                        </h3>
+
+                        <p className="text-muted mb-4 line-clamp-3">
+                          {article.excerpt}
+                        </p>
+
+                        <div className="flex items-center justify-between text-sm text-muted mb-4 mt-auto">
+                          <span>{article.publishDate}</span>
+                          <span>{t.by} {article.author}</span>
+                        </div>
+
+                        <div className="flex flex-wrap gap-2">
+                          {article.tags.slice(0, 3).map(tag => (
+                            <span key={tag} className="px-2 py-1 bg-white/5 text-xs rounded">
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
                       </div>
                     </article>
                   </Link>

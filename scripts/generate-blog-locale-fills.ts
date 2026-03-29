@@ -30,8 +30,6 @@ const FR_SLUGS = new Set([
   'claude-code-ai-agents-africa-future-of-work-future-ready',
   'preparing-students-future-private-high-schools-digital-skills-programs',
   'future-ready-graduate-program-transforming-education-career-success',
-  'private-schools-bridge-skills-gap-modern-curriculum',
-  'student-success-stories-future-ready-programs-employment',
   'implementing-future-ready-programs-guide-private-school-administrators',
   'why-business-needs-custom-saas-beyond-off-shelf-solutions',
   'building-scalable-saas-products-architecture-best-practices',
@@ -45,8 +43,6 @@ const FR_SLUGS = new Set([
 const ES_SLUGS = new Set([
   'preparing-students-future-private-high-schools-digital-skills-programs',
   'future-ready-graduate-program-transforming-education-career-success',
-  'private-schools-bridge-skills-gap-modern-curriculum',
-  'student-success-stories-future-ready-programs-employment',
   'implementing-future-ready-programs-guide-private-school-administrators',
   'why-business-needs-custom-saas-beyond-off-shelf-solutions',
   'building-scalable-saas-products-architecture-best-practices',

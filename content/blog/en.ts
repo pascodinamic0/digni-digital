@@ -12,6 +12,7 @@ const blogArticles: BlogArticle[] = [
     author: "Pascal Digny",
     tags: ["AI Employee System", "Customer Service", "Business Automation", "AI Receptionist", "Business Growth"],
     featured: true,
+    coverImageUrl: '/blog/ai-employee-systems-transform-customer-service-growing-businesses.png',
     content: `
       <h2>The Customer Service Revolution: AI Employees That Never Sleep</h2>
       
@@ -159,6 +160,7 @@ const blogArticles: BlogArticle[] = [
     author: "Pascal Digny",
     tags: ["AI Employee System", "ROI", "Cost Reduction", "Business Efficiency", "Business Growth"],
     featured: true,
+    coverImageUrl: '/blog/roi-ai-employees-growing-businesses-save-operational-costs.png',
     content: `
       <h2>Calculating the True ROI of AI Employee Systems</h2>
       
@@ -406,6 +408,7 @@ const blogArticles: BlogArticle[] = [
     author: "Pascal Digny",
     tags: ["AI Receptionist", "Business Implementation", "AI Employee System", "Business Automation", "Customer Service"],
     featured: false,
+    coverImageUrl: '/blog/implementing-ai-receptionists-complete-guide-growing-businesses.png',
     content: `
       <h2>Your Complete Guide to AI Receptionist Implementation</h2>
       
@@ -896,6 +899,7 @@ const remainingArticles: BlogArticle[] = [
     author: "Pascal Digny",
     tags: ["How to create a business website", "website creation for free", "Lovable.dev", "create business website for free with AI", "how to create my business website", "AI website builder", "free website builder"],
     featured: true,
+    coverImageUrl: '/blog/how-to-create-business-website-free-ai-lovable-dev.png',
     content: `
       <p>If you're looking for <strong>how to create a business website</strong> without spending a fortune, you're in the right place. <strong>Website creation for free</strong> is possible today thanks to AI—and in this guide we show you exactly how to <strong>create a business website for free with AI</strong> using <a href="https://www.lovable.dev" target="_blank" rel="noopener noreferrer">Lovable.dev</a>. Whether you're asking <strong>"how to create my business website"</strong> for the first time or want a clear path from idea to live site, this guide walks you step-by-step from opening www.lovable.dev to publishing your first website, with a visual step-by-step and a pro tip on preparing a PRD so the AI stays on track.</p>
 
@@ -1002,6 +1006,7 @@ const remainingArticles: BlogArticle[] = [
     author: "Pascal Digny",
     tags: ["Claude Code", "AI Agents", "Future of Work", "Africa", "Digital Skills", "Digni Digital Literacy", "Youth Employment"],
     featured: true,
+    coverImageUrl: '/blog/claude-code-ai-agents-africa-future-of-work-future-ready.png',
     content: `
       <h2>A Warning to Every African: The Famine You're Not Seeing</h2>
       
@@ -1216,6 +1221,7 @@ const remainingArticles: BlogArticle[] = [
     author: "Pascal Digny",
     tags: ["Digni Digital Literacy", "Private High Schools", "Digital Skills", "Student Success", "Career Readiness"],
     featured: true,
+    coverImageUrl: '/blog/preparing-students-future-private-high-schools-digital-skills-programs.png',
     content: `
       <h2>The Critical Need: Preparing Students for Modern Careers</h2>
       
@@ -1400,6 +1406,7 @@ const remainingArticles: BlogArticle[] = [
     author: "Pascal Digny",
     tags: ["Digni Digital Literacy", "Education Transformation", "Career Success", "Student Outcomes", "Private Schools"],
     featured: false,
+    coverImageUrl: '/blog/future-ready-graduate-program-transforming-education-career-success.png',
     content: `
       <h2>Transforming Education: The Digni Digital Literacy Program</h2>
       
@@ -1543,289 +1550,6 @@ const remainingArticles: BlogArticle[] = [
     `
   },
   {
-    id: 6,
-    title: "How Private Schools Can Bridge the Skills Gap with Modern Curriculum",
-    slug: "private-schools-bridge-skills-gap-modern-curriculum",
-    excerpt: "Explore how private high schools can integrate modern digital skills into their curriculum to bridge the gap between education and employment.",
-    category: "Digni Digital Literacy",
-    readTime: "8 min read",
-    publishDate: "March 19, 2026",
-    author: "Pascal Digny",
-    tags: ["Digni Digital Literacy", "Private Schools", "Curriculum Development", "Skills Gap", "Modern Education"],
-    featured: false,
-    content: `
-      <h2>Bridging the Skills Gap: Modern Curriculum for Modern Careers</h2>
-      
-      <p>The skills gap between education and employment is widening. While private high schools excel at academic preparation, many graduates lack the practical digital skills employers demand. Integrating modern digital skills into the curriculum bridges this gap, ensuring students graduate ready for careers, not just college.</p>
-
-      <h3>Understanding the Skills Gap</h3>
-      
-      <p>The disconnect is clear: employers need candidates with practical skills, portfolios, and professional experience, but traditional curricula focus on theory and testing. The Digni Digital Literacy Program addresses this by integrating job-ready digital skills into the school curriculum.</p>
-
-      <blockquote>
-        <p>"Integrating digital skills into our curriculum was the best decision we made. Our graduates now have real skills that employers value, not just grades." - <em>Principal Maria Rodriguez, Riverside Academy</em></p>
-      </blockquote>
-
-      <h3>Strategies for Curriculum Integration</h3>
-
-      <h4>1. Complementary, Not Replacement</h4>
-      <p>Modern digital skills complement traditional academic subjects rather than replacing them. Students develop technical skills while maintaining strong academic performance:</p>
-      
-      <ul>
-        <li><strong>Web Development</strong> - Enhances problem-solving and logical thinking</li>
-        <li><strong>Digital Marketing</strong> - Develops communication and analytical skills</li>
-        <li><strong>Portfolio Development</strong> - Builds creativity and presentation abilities</li>
-        <li><strong>Professional Branding</strong> - Develops self-awareness and career planning</li>
-      </ul>
-
-      <h4>2. Project-Based Learning Approach</h4>
-      <p>Students learn digital skills by building real projects, creating portfolios that demonstrate capabilities to employers. This hands-on approach ensures practical skill development.</p>
-
-      <h4>3. Industry-Relevant Content</h4>
-      <p>The curriculum focuses on skills employers actually need: web development, digital marketing, analytics, and professional communication. Students graduate with immediately applicable skills.</p>
-
-      <h3>Implementation Models for Private Schools</h3>
-      
-      <h4>Model 1: Integrated Curriculum</h4>
-      <p>Digital skills are woven throughout existing subjects:</p>
-
-      <ul>
-        <li><strong>Route Optimization</strong>: AI calculates fastest delivery paths</li>
-        <li><strong>Demand Prediction</strong>: Forecasts medical supply needs</li>
-        <li><strong>Weather Analysis</strong>: Adjusts routes based on conditions</li>
-        <li><strong>Inventory Management</strong>: Ensures critical supplies are always available</li>
-      </ul>
-
-      <p><strong>Results</strong>: Zipline has delivered <strong>2.5 million medical products</strong> across Rwanda and Ghana, reducing delivery time from days to minutes.</p>
-
-      <h3>The Global Impact of African HealthTech</h3>
-
-      <p>African healthcare AI innovations are being adopted globally:</p>
-
-      <ul>
-        <li><strong>Rural Healthcare Models</strong>: Solutions designed for Africa work in rural America and Asia</li>
-        <li><strong>Cost-Effective Diagnostics</strong>: Low-cost AI tools reduce healthcare expenses worldwide</li>
-        <li><strong>Mobile-First Platforms</strong>: Telemedicine apps built for mobile-only users</li>
-        <li><strong>Disease Surveillance</strong>: Outbreak prediction systems used by WHO and CDC</li>
-      </ul>
-
-      <h3>Investment Landscape: Where Capital Is Flowing</h3>
-
-      <p>The African HealthTech sector has attracted significant investment:</p>
-
-      <ul>
-        <li><strong>Diagnostic AI</strong>: $850 million in funding</li>
-        <li><strong>Telemedicine Platforms</strong>: $620 million in investment</li>
-        <li><strong>Drug Discovery AI</strong>: $450 million in research funding</li>
-        <li><strong>Health Data Analytics</strong>: $380 million in venture capital</li>
-      </ul>
-
-      <h3>Key Success Factors</h3>
-
-      <h4>1. Mobile-First Design</h4>
-      <p>Healthcare AI that works on basic smartphones reaches more patients. Mobile-optimized platforms have <strong>5x higher adoption rates</strong> than desktop solutions.</p>
-
-      <h4>2. Local Data Training</h4>
-      <p>AI models trained on African patient data perform better than generic models. Local data improves accuracy by <strong>35%</strong>.</p>
-
-      <h4>3. Regulatory Collaboration</h4>
-      <p>Working with health ministries ensures compliance and adoption. Companies engaging regulators early see <strong>3x faster approval</strong>.</p>
-
-      <h3>Future Outlook</h3>
-
-      <p>The next phase will focus on:</p>
-
-      <ul>
-        <li><strong>AI Drug Discovery</strong>: Accelerating pharmaceutical development</li>
-        <li><strong>Personalized Medicine</strong>: Tailored treatments based on genetic data</li>
-        <li><strong>Mental Health AI</strong>: Accessible mental health support</li>
-        <li><strong>Surgical Robotics</strong>: AI-assisted surgery in resource-limited settings</li>
-      </ul>
-
-      <ul>
-        <li>Digital skills taught alongside traditional subjects</li>
-        <li>Projects integrate multiple disciplines</li>
-        <li>Students see connections between academic and practical skills</li>
-      </ul>
-
-      <h4>Model 2: Dedicated Program Track</h4>
-      <p>Separate program track running parallel to traditional curriculum:</p>
-      <ul>
-        <li>Students opt into the program</li>
-        <li>Dedicated time blocks for digital skills</li>
-        <li>Clear progression through three trimesters</li>
-      </ul>
-
-      <h4>Model 3: After-School Enhancement</h4>
-      <p>Program offered as after-school or summer program:</p>
-      <ul>
-        <li>Doesn't disrupt existing schedule</li>
-        <li>Optional participation</li>
-        <li>Intensive skill development</li>
-      </ul>
-
-      <h3>Measuring Success: Key Outcomes</h3>
-
-      <p>Schools implementing modern digital skills curricula see:</p>
-      <ul>
-        <li><strong>Higher Employment Rates</strong>: 85% vs 45% industry average</li>
-        <li><strong>Better Salary Outcomes</strong>: 150% average salary increase</li>
-        <li><strong>Student Confidence</strong>: Graduates enter workforce with real skills</li>
-        <li><strong>School Reputation</strong>: Improved outcomes attract more students</li>
-        <li><strong>Parent Satisfaction</strong>: Higher satisfaction with career preparation</li>
-      </ul>
-
-      <h3>Action Steps for School Administrators</h3>
-
-      <p>For private school leaders ready to bridge the skills gap:</p>
-
-      <ol>
-        <li><strong>Assess Current Curriculum</strong>: Identify gaps between what you teach and what employers need</li>
-        <li><strong>Review Program Options</strong>: Evaluate digital skills programs that fit your school</li>
-        <li><strong>Plan Integration</strong>: Determine how to integrate modern skills into your schedule</li>
-        <li><strong>Engage Faculty</strong>: Get buy-in from teachers and staff</li>
-        <li><strong>Communicate with Parents</strong>: Explain the value of digital skills programs</li>
-        <li><strong>Measure Results</strong>: Track employment rates and student outcomes</li>
-      </ol>
-
-      <p>Private schools that integrate modern digital skills into their curriculum bridge the gap between education and employment, ensuring graduates are truly prepared for modern careers.</p>
-
-      <hr>
-
-      <p><em>Ready to bridge the skills gap at your school? <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Book a consultation</a> to discuss how to integrate modern digital skills into your curriculum.</em></p>
-    `
-  },
-  {
-    id: 7,
-    title: "Student Success Stories: How the Digni Digital Literacy Program Leads to Employment",
-    slug: "student-success-stories-future-ready-programs-employment",
-    excerpt: "Read inspiring success stories of students who graduated with job-ready skills through the Digni Digital Literacy Program and secured employment.",
-    category: "Digni Digital Literacy",
-    readTime: "7 min read",
-    publishDate: "March 19, 2026",
-    author: "Pascal Digny",
-    tags: ["Digni Digital Literacy", "Student Success", "Employment", "Career Outcomes", "Graduate Stories"],
-    featured: false,
-    content: `
-      <h2>Real Success: Students Who Transformed Their Futures</h2>
-      
-      <p>The Digni Digital Literacy Program doesn't just teach skills—it transforms lives. These success stories demonstrate how students who complete the program secure employment, build careers, and achieve professional success. With <strong>85% employment rates within 6 months</strong> and <strong>150% average salary increases</strong>, the program delivers measurable results.</p>
-
-      <h3>Success Story 1: From Student to Web Developer</h3>
-      
-      <p><strong>Student:</strong> Sarah Chen, 18, graduated from St. Mary's Private High School</p>
-      <p><strong>Background:</strong> Strong academic student but no technical experience before the program</p>
-      <p><strong>Program Experience:</strong> Completed all three trimesters, built 8 portfolio projects, completed internship at local web agency</p>
-      <p><strong>Outcome:</strong> Hired as junior web developer at TechStart Solutions within 2 months of graduation</p>
-      <p><strong>Starting Salary:</strong> $45,000 (vs $28,000 average for traditional graduates)</p>
-
-      <blockquote>
-        <p>"The Digni Digital Literacy Program gave me real skills and a portfolio. When I interviewed, I could show actual websites I built, not just talk about grades. That made all the difference." - <em>Sarah Chen, Web Developer</em></p>
-      </blockquote>
-
-      <h3>Success Story 2: Digital Marketing Specialist</h3>
-
-      <p><strong>Student:</strong> Marcus Johnson, 17, graduated from Riverside Academy</p>
-      <p><strong>Background:</strong> Interested in business and marketing, wanted practical skills</p>
-      <p><strong>Program Experience:</strong> Excelled in digital marketing trimester, created successful social media campaigns during internship</p>
-      <p><strong>Outcome:</strong> Hired as digital marketing coordinator at Growth Marketing Agency</p>
-      <p><strong>Starting Salary:</strong> $42,000 with performance bonuses</p>
-
-      <h3>Success Story 3: Full-Stack Developer</h3>
-
-      <p><strong>Student:</strong> Emily Rodriguez, 18, graduated from Oakwood Private School</p>
-      <p><strong>Background:</strong> Natural problem-solver, enjoyed programming from first trimester</p>
-      <p><strong>Program Experience:</strong> Built complex web applications, contributed to open-source projects, completed internship at software company</p>
-      <p><strong>Outcome:</strong> Hired as junior full-stack developer at InnovateTech</p>
-      <p><strong>Starting Salary:</strong> $52,000 (highest in her graduating class)</p>
-
-      <h3>Case Study: Kenya's AI-Powered Solar Grid</h3>
-      
-      <p>Kenya has implemented AI-managed solar microgrids serving <strong>2.3 million rural residents</strong>:</p>
-
-      <ul>
-        <li><strong>Smart Metering</strong>: AI tracks usage and optimizes distribution</li>
-        <li><strong>Battery Management</strong>: AI controls energy storage for peak times</li>
-        <li><strong>Payment Systems</strong>: Mobile money integration for easy access</li>
-        <li><strong>Predictive Analytics</strong>: Forecasts energy needs and adjusts supply</li>
-      </ul>
-
-      <p><strong>Results</strong>: Kenya's solar grid has reduced energy costs by <strong>60%</strong> and increased access from 23% to 75% in rural areas.</p>
-
-      <h3>The Economic Impact</h3>
-
-      <p>AI-powered renewable energy is driving economic growth:</p>
-
-      <ul>
-        <li><strong>Job Creation</strong>: 1.2 million jobs in renewable energy sector</li>
-        <li><strong>Cost Reduction</strong>: 45% lower energy costs for businesses</li>
-        <li><strong>Industrial Growth</strong>: Reliable power attracting manufacturing</li>
-        <li><strong>Rural Development</strong>: Electricity enabling new businesses</li>
-      </ul>
-
-      <h3>Key Success Factors</h3>
-
-      <h4>1. Mobile Payment Integration</h4>
-      <p>Pay-as-you-go solar systems using mobile money have <strong>8x higher adoption</strong> than traditional models.</p>
-
-      <h4>2. Microgrid Solutions</h4>
-      <p>AI-managed microgrids serve communities without waiting for national grid expansion, reaching <strong>3x more people</strong> faster.</p>
-
-      <h4>3. Data-Driven Optimization</h4>
-      <p>Continuous AI learning improves system efficiency over time, reducing costs by <strong>15% annually</strong>.</p>
-
-      <h3>Future Outlook</h3>
-
-      <p>The next phase will focus on:</p>
-
-      <ul>
-        <li><strong>Hydrogen Production</strong>: AI-optimized green hydrogen systems</li>
-        <li><strong>Energy Trading</strong>: Peer-to-peer energy markets</li>
-        <li><strong>Electric Vehicle Integration</strong>: Smart charging networks</li>
-        <li><strong>Carbon Capture</strong>: AI-managed carbon removal systems</li>
-      </ul>
-
-      <h3>Common Success Patterns</h3>
-
-      <p>While each student's journey is unique, successful graduates share common patterns:</p>
-      <ul>
-        <li><strong>Portfolio Development</strong>: Students with strong portfolios secure jobs faster</li>
-        <li><strong>Internship Experience</strong>: Real work experience makes graduates more competitive</li>
-        <li><strong>Professional Branding</strong>: Strong LinkedIn profiles and personal brands attract employers</li>
-        <li><strong>Networking</strong>: Program connections and industry partnerships open doors</li>
-        <li><strong>Confidence</strong>: Practical skills build confidence in interviews and on the job</li>
-      </ul>
-
-      <h3>The Impact: Beyond Individual Success</h3>
-
-      <p>Student success creates ripple effects:</p>
-      <ul>
-        <li><strong>School Reputation</strong>: Successful graduates improve school standing</li>
-        <li><strong>Alumni Network</strong>: Graduates help current students find opportunities</li>
-        <li><strong>Parent Satisfaction</strong>: High employment rates increase parent confidence</li>
-        <li><strong>Enrollment Growth</strong>: Schools with strong outcomes attract more students</li>
-        <li><strong>Community Impact</strong>: Employed graduates contribute to local economy</li>
-      </ul>
-
-      <h3>What Makes These Students Successful</h3>
-
-      <p>The Digni Digital Literacy Program provides the foundation, but student success comes from:</p>
-      <ol>
-        <li><strong>Active Participation</strong>: Engaging fully in all program activities</li>
-        <li><strong>Portfolio Building</strong>: Creating quality projects that demonstrate skills</li>
-        <li><strong>Professional Development</strong>: Taking career preparation seriously</li>
-        <li><strong>Networking</strong>: Building relationships with industry professionals</li>
-        <li><strong>Persistence</strong>: Continuing to apply and improve after graduation</li>
-      </ol>
-
-      <p>These success stories demonstrate the transformative power of the Digni Digital Literacy Program. Students who complete the program don't just graduate—they launch careers.</p>
-
-      <hr>
-
-      <p><em>Ready to create success stories at your school? <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Book a consultation</a> to learn how the Digni Digital Literacy Program can transform your students' futures.</em></p>
-    `
-  },
-  {
     id: 8,
     title: "Implementing the Digni Digital Literacy Program: A Guide for Private School Administrators",
     slug: "implementing-future-ready-programs-guide-private-school-administrators",
@@ -1836,6 +1560,7 @@ const remainingArticles: BlogArticle[] = [
     author: "Pascal Digny",
     tags: ["Digni Digital Literacy", "School Administration", "Program Implementation", "Private Schools", "Education Leadership"],
     featured: false,
+    coverImageUrl: '/blog/implementing-future-ready-programs-guide-private-school-administrators.png',
     content: `
       <h2>Your Complete Implementation Guide: Digni Digital Literacy Program</h2>
       
@@ -2056,6 +1781,7 @@ const remainingArticles: BlogArticle[] = [
     author: "Pascal Digny",
     tags: ["Custom SaaS", "SaaS Development", "Business Software", "Custom Solutions", "Software Development"],
     featured: true,
+    coverImageUrl: '/blog/why-business-needs-custom-saas-beyond-off-shelf-solutions.png',
     content: `
       <h2>Why Custom SaaS Beats Off-the-Shelf Solutions</h2>
       
@@ -2205,6 +1931,7 @@ const remainingArticles: BlogArticle[] = [
     author: "Pascal Digny",
     tags: ["SaaS Development", "Software Architecture", "Scalability", "Best Practices", "SaaS Design"],
     featured: false,
+    coverImageUrl: '/blog/building-scalable-saas-products-architecture-best-practices.png',
     content: `
       <h2>Building Scalable SaaS: Architecture That Grows With You</h2>
       
@@ -2380,6 +2107,7 @@ const remainingArticles: BlogArticle[] = [
     author: "Pascal Digny",
     tags: ["Custom SaaS", "SaaS Development", "Software Development Process", "Product Development", "SaaS Launch"],
     featured: false,
+    coverImageUrl: '/blog/complete-guide-custom-saas-development-idea-to-launch.png',
     content: `
       <h2>Complete Guide: Custom SaaS Development from Idea to Launch</h2>
       
@@ -2604,6 +2332,7 @@ const remainingArticles: BlogArticle[] = [
     author: "Pascal Digny",
     tags: ["Custom SaaS", "Business Growth", "Case Studies", "SaaS Success", "Business Transformation"],
     featured: false,
+    coverImageUrl: '/blog/saas-success-stories-custom-solutions-drive-business-growth.png',
     content: `
       <h2>SaaS Success Stories: Real Results from Custom Solutions</h2>
       
@@ -2768,6 +2497,7 @@ const remainingArticles: BlogArticle[] = [
     author: "Pascal Digny",
     tags: ["AI Employee System", "Business Automation", "Customer Service Strategy", "AI vs Human", "Business Growth"],
     featured: false,
+    coverImageUrl: '/blog/ai-employee-systems-vs-traditional-staff-when-to-automate.png',
     content: `
       <h2>AI Employee Systems vs Traditional Staff: Finding the Right Balance</h2>
       
@@ -2968,6 +2698,7 @@ const remainingArticles: BlogArticle[] = [
     author: "Pascal Digny",
     tags: ["AI Employee System", "Business Scaling", "Automation", "Business Growth", "Operational Efficiency"],
     featured: false,
+    coverImageUrl: '/blog/scaling-business-operations-ai-powered-automation.png',
     content: `
       <h2>Scaling Business Operations with AI-Powered Automation</h2>
       
@@ -3149,6 +2880,7 @@ const remainingArticles: BlogArticle[] = [
     author: "Pascal Digny",
     tags: ["Custom SaaS", "Software Decision Making", "Build vs Buy", "SaaS Strategy", "Technology Choices"],
     featured: false,
+    coverImageUrl: '/blog/choosing-custom-saas-vs-ready-made-solutions-decision-framework.png',
     content: `
       <h2>Decision Framework: Custom SaaS vs Ready-Made Solutions</h2>
       
@@ -3335,6 +3067,7 @@ const remainingArticles: BlogArticle[] = [
     author: "Pascal Digny",
     tags: ["AI employees", "AI agents customer service", "lead automation SMB", "agentic AI 2026", "customer service automation"],
     featured: true,
+    coverImageUrl: '/blog/employes-ia-2026-service-client-triple-leads.png',
     content: `
       <h2>AI Employees 2026: Automate Customer Service and Triple Your Leads Without Hiring</h2>
       
@@ -3401,6 +3134,7 @@ const remainingArticles: BlogArticle[] = [
     author: "Pascal Digny",
     tags: ["AI agents", "agentic AI 2026", "France RDC", "automation SMB", "customer service AI"],
     featured: false,
+    coverImageUrl: '/blog/agents-ia-vs-automatisation-traditionnelle-pme.png',
     content: `
       <h2>AI Agents vs Traditional Automation: The New Era for French and Congolese SMBs</h2>
       
@@ -3435,6 +3169,7 @@ const remainingArticles: BlogArticle[] = [
     author: "Pascal Digny",
     tags: ["automatisation processus RDC", "transformation digitale Kinshasa", "PME Congo", "productivité 2026", "AI employees", "Code Numérique"],
     featured: false,
+    coverImageUrl: '/blog/automatisation-processus-rdc-kinshasa-productivite-2026.png',
     content: `
       <h2>Business Process Automation in the DRC: How Kinshasa Companies Gain 50% Productivity in 2026</h2>
 
