@@ -26,8 +26,6 @@ const FR_SLUGS = new Set([
   'ai-employee-systems-transform-customer-service-growing-businesses',
   'roi-ai-employees-growing-businesses-save-operational-costs',
   'implementing-ai-receptionists-complete-guide-growing-businesses',
-  'how-to-create-business-website-free-ai-lovable-dev',
-  'claude-code-ai-agents-africa-future-of-work-future-ready',
   'preparing-students-future-private-high-schools-digital-skills-programs',
   'future-ready-graduate-program-transforming-education-career-success',
   'implementing-future-ready-programs-guide-private-school-administrators',
@@ -54,24 +52,15 @@ const ES_SLUGS = new Set([
   'employes-ia-2026-service-client-triple-leads',
   'agents-ia-vs-automatisation-traditionnelle-pme',
   'automatisation-processus-rdc-kinshasa-productivite-2026',
-  'croissance-entreprise-ia-france-rdc',
   'business-development-ia-leads-24-7',
-  'creation-site-web-ia-guide-2026',
-  'developpement-application-web-saas-sur-mesure-2026',
   'saas-personnalise-vs-pret-a-l-emploi-pme',
   'transformation-digitale-rdc-2026-ia',
   'ia-pme-francaises-agents-sans-budget',
   'claude-grok-agents-ia-afrique-francophone',
   'guide-2026-tendances-ia-entreprises-francophones',
-  'digital-border-coding-drc-act-resistance',
-  'ai-automation-scaling-business-growth',
-  'vibecoding-african-youth-make-money-online-build-products',
 ])
 
-const DE_BODY_SLUGS = new Set([
-  'ai-automation-scaling-business-growth',
-  'vibecoding-african-youth-make-money-online-build-products',
-])
+const DE_BODY_SLUGS = new Set<string>([])
 
 function sleep(ms: number) {
   return new Promise((r) => setTimeout(r, ms))

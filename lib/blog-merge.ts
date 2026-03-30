@@ -1,5 +1,6 @@
 import type { BlogArticle } from '@/content/blog'
 import type { SupabaseClient } from '@supabase/supabase-js'
+import { createClient } from '@/lib/supabase/server'
 
 export type BlogPostOverrideRow = {
   id: string
@@ -33,12 +34,13 @@ const DB_LOCALE_TO_BUNDLE_KEY: Record<string, keyof ArticleBundle> = {
 
 function mergeOne(base: BlogArticle, o: BlogPostOverrideRow): BlogArticle {
   const body = o.body_md?.trim()
+  const ovTags = o.tags
   return {
     ...base,
     title: o.title || base.title,
     excerpt: o.excerpt ?? base.excerpt,
     content: body || base.content,
-    tags: o.tags && o.tags.length > 0 ? o.tags : base.tags,
+    tags: Array.isArray(ovTags) && ovTags.length > 0 ? ovTags : base.tags,
     category: o.category || base.category,
     readTime: o.read_time || base.readTime,
     coverImageUrl: o.cover_image_url ?? base.coverImageUrl,
@@ -75,4 +77,20 @@ export async function fetchPublishedOverrides(
 
   if (error || !data) return []
   return data as BlogPostOverrideRow[]
+}
+
+/**
+ * Loads CMS overrides for a blog slug without breaking the page when Supabase
+ * env is missing (build/preview) or the network/query fails (live).
+ */
+export async function fetchPublishedBlogOverrides(slug: string): Promise<BlogPostOverrideRow[]> {
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL?.trim()
+  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY?.trim()
+  if (!url || !key) return []
+  try {
+    const supabase = await createClient()
+    return await fetchPublishedOverrides(supabase, slug)
+  } catch {
+    return []
+  }
 }

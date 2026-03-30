@@ -3,8 +3,7 @@ import { notFound } from 'next/navigation'
 import BlogPostContent from '@/app/blog/BlogPostContent'
 import { getArticleBySlugForLocale } from '@/lib/blog'
 import { allArticlesEn } from '@/lib/blog'
-import { mergeArticleBundleWithOverrides, fetchPublishedOverrides } from '@/lib/blog-merge'
-import { createClient } from '@/lib/supabase/server'
+import { mergeArticleBundleWithOverrides, fetchPublishedBlogOverrides } from '@/lib/blog-merge'
 import { routing } from '@/i18n/routing'
 import { BRAND_LOGO_PATH } from '@/lib/site-assets'
 import type { Language } from '@/app/i18n/translations'
@@ -26,17 +25,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!data) {
     return { title: 'Article Not Found | Digni Digital Blog' }
   }
-  const supabase = await createClient()
-  const overrides = await fetchPublishedOverrides(supabase, slug)
+  const overrides = await fetchPublishedBlogOverrides(slug)
   const merged = mergeArticleBundleWithOverrides(data, overrides)
   const lang = (locale.includes('fr') ? 'fr' : locale.includes('es') ? 'es' : locale.includes('ar') ? 'ar' : 'en') as Language
   const article = merged[lang] ?? merged.en
   const canonicalUrl = `${SITE_URL}/${locale}/blog/${slug}`
   const ogImage = article.coverImageUrl
     ? [{ url: article.coverImageUrl, width: 1200, height: 630, alt: article.title }]
-    : slug === 'ai-automation-scaling-business-growth'
-      ? [{ url: `${SITE_URL}/blog/its-time-to-expand.gif`, width: 600, height: 400, alt: article.title }]
-      : undefined
+    : undefined
   return {
     title: `${article.title} | Digni Digital Blog`,
     description: article.excerpt,
@@ -65,8 +61,7 @@ export default async function BlogPostPage({ params }: Props) {
     notFound()
   }
 
-  const supabase = await createClient()
-  const overrides = await fetchPublishedOverrides(supabase, slug)
+  const overrides = await fetchPublishedBlogOverrides(slug)
   const merged = mergeArticleBundleWithOverrides(data, overrides)
 
   const articleByLang: Record<Language, typeof data.en> = {

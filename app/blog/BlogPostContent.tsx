@@ -1,5 +1,6 @@
 'use client'
 
+import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { Link } from '@/i18n/navigation'
 import { useLanguage } from '@/app/context/LocaleContext'
@@ -8,6 +9,7 @@ import { getBookingLinkProps } from '@/app/config/cta.config'
 import { AUTHOR_HEADSHOT_PATH } from '@/lib/site-assets'
 import type { Language } from '@/app/i18n/translations'
 import type { BlogArticle } from '@/content/blog'
+import { BLOG_LISTING_RETURN_SEARCH_KEY } from '@/lib/blog-listing-storage'
 
 const HEADSHOT_AUTHOR = 'Pascal Digny'
 
@@ -18,13 +20,26 @@ interface BlogPostContentProps {
 export default function BlogPostContent({ articleByLang }: BlogPostContentProps) {
   const language = useLanguage()
   const article = articleByLang[language] ?? articleByLang.en
+  const bodyHtml = article.content ?? ''
+  const tags = article.tags ?? []
   const t = translations[language].blog
   const cta = translations[language].cta
+
+  const [blogListingHref, setBlogListingHref] = useState('/blog')
+
+  useEffect(() => {
+    try {
+      const q = sessionStorage.getItem(BLOG_LISTING_RETURN_SEARCH_KEY)
+      setBlogListingHref(q ? `/blog?${q}` : '/blog')
+    } catch {
+      setBlogListingHref('/blog')
+    }
+  }, [])
 
   return (
     <>
       <Link 
-        href="/blog" 
+        href={blogListingHref}
         className="inline-flex items-center gap-2 text-accent hover:text-accent-light transition-colors mb-8"
         aria-label="Back to blog listing"
       >
@@ -37,7 +52,7 @@ export default function BlogPostContent({ articleByLang }: BlogPostContentProps)
       <header className="mb-12">
         <div className="flex items-center gap-3 mb-6">
           <span className="px-3 py-1 bg-accent/10 text-accent text-sm font-medium rounded-full">
-            {article.category}
+            {article.category ?? ''}
           </span>
           <span className="text-muted text-sm">{article.readTime}</span>
         </div>
@@ -87,14 +102,14 @@ export default function BlogPostContent({ articleByLang }: BlogPostContentProps)
 
       <div 
         className="blog-content max-w-none"
-        dangerouslySetInnerHTML={{ __html: article.content }}
+        dangerouslySetInnerHTML={{ __html: bodyHtml }}
         aria-label="Article content"
       />
 
       <div className="mt-12 pt-8 border-t border-border-light">
         <h3 className="font-display text-lg font-bold mb-4">{t.tags}</h3>
         <div className="flex flex-wrap gap-2">
-          {article.tags.map(tag => (
+          {tags.map(tag => (
             <span key={tag} className="px-3 py-1 bg-surface text-sm rounded-lg">
               {tag}
             </span>
@@ -103,7 +118,7 @@ export default function BlogPostContent({ articleByLang }: BlogPostContentProps)
       </div>
 
       <div className="mt-12 p-8 bg-surface rounded-lg text-center">
-        {['Future of Work', 'Future-Ready Graduate Program'].includes(article.category) ? (
+        {['Future of Work', 'Future-Ready Graduate Program'].includes(article.category ?? '') ? (
           <>
             <h3 className="font-display text-2xl font-bold mb-4">
               {t.readyFutureReady}

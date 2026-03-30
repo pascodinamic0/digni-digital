@@ -1,3 +1,4 @@
+import { Suspense } from 'react'
 import { Metadata } from 'next'
 import BlogContent from '@/app/blog/BlogContent'
 import { getArticlesForLocale } from '@/lib/blog'
@@ -79,7 +80,22 @@ export default async function BlogPage({ params }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(blogListJsonLd) }}
       />
-      <BlogContent articlesByLang={articlesByLang} />
+      <Suspense
+        fallback={
+          <section className="py-16">
+            <div className="max-w-7xl mx-auto px-6">
+              <div className="h-10 w-48 bg-muted/30 rounded animate-pulse mb-8" />
+              <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                {[1, 2, 3].map((i) => (
+                  <div key={i} className="h-64 bg-muted/20 rounded-xl animate-pulse" />
+                ))}
+              </div>
+            </div>
+          </section>
+        }
+      >
+        <BlogContent articlesByLang={articlesByLang} />
+      </Suspense>
     </>
   )
 }
