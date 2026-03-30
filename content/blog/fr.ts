@@ -137,38 +137,6 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
       <p><em><a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Réservez votre stratégie call gratuite</a> pour parler d'automatisation pour votre entreprise à Kinshasa ou en RDC.</em></p>
     `,
   },
-  'croissance-entreprise-ia-france-rdc': {
-    id: 19,
-    title: "Croissance d'entreprise avec l'IA : Stratégies concrètes pour développer ses affaires en France et en RDC",
-    slug: "croissance-entreprise-ia-france-rdc",
-    excerpt: "Stratégies concrètes pour faire croître votre entreprise avec l'IA en France et en RDC. Génération de leads, optimisation des processus et ROI mesurable pour les PME.",
-    category: "Croissance d'entreprise",
-    readTime: "12 min de lecture",
-    publishDate: "19 mars 2026",
-    author: "Pascal Digny",
-    tags: ["croissance entreprise IA", "développement des affaires", "IA PME", "France RDC", "génération leads", "croissance IA"],
-    featured: true,
-    content: `
-      <h2>Croissance d'entreprise avec l'IA : Stratégies concrètes pour France et RDC</h2>
-
-      <p>La <strong>croissance d'entreprise</strong> et le <strong>développement des affaires</strong> en 2026 passent de plus en plus par l'IA là où elle a le plus d'impact. En France, <strong>75 % des employés</strong> utilisent déjà des outils IA ; en RDC, CIOMAG présente 2026 comme « l'année du choix ». Ce guide donne des stratégies concrètes, pas de la théorie.</p>
-
-      <h3>Pourquoi « Nous allons croître à l'ancienne » ne fonctionne plus</h3>
-
-      <p>Fuites de leads, traînée des processus, invisibilité web. Les entreprises qui gagnent en 2026 utilisent l'IA pour multiplier ce que leur équipe peut faire.</p>
-
-      <h3>Trois leviers de croissance</h3>
-
-      <p><strong>1. Génération et qualification de leads</strong> : <a href="/ai-receptionist">réceptionnistes IA</a> 24h/24. Jusqu'à 300 % de leads qualifiés en plus. <strong>2. Automatisation des processus</strong> : gain typique 40–50 %. <strong>3. Web et SaaS</strong> : <a href="/agentic-softwares">web ou SaaS sur mesure</a> professionnel. Jusqu'à x10 conversion de leads.</p>
-
-      <h3>France vs RDC : mêmes leviers, contexte différent</h3>
-
-      <p>France : volume de recherche élevé, AI Act, IA en français mature. RDC : mobile-first, WhatsApp, français essentiel, local support. Digni Digital sert les deux. Étude de cas : cabinet de conseil à Lyon, 15 % → 3 % d'abandon client, +30 % de nouveaux clients en 60 jours.</p>
-
-      <hr>
-      <p><em><a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Réservez votre stratégie call gratuite</a> pour définir votre plan de croissance IA.</em></p>
-    `,
-  },
   'business-development-ia-leads-24-7': {
     id: 20,
     title: "Business development boosté par l'IA : Capturer tous les leads et fermer plus de deals 24h/24",
@@ -215,7 +183,7 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
       <p>La <strong>création de site web</strong> et le <strong>développement site web</strong> en 2026 ne consistent plus seulement à bien paraître—ils servent à générer des leads et des rendez-vous. Un site intelligent allie message clair, CTA forts et intégration avec des <strong>employés IA</strong> qui captent et qualifient les visiteurs 24h/24.</p>
 
       <figure class="blog-content-figure" style="margin: 2em 0;">
-        <img src="/blog/illustrations/lead-generating-website.svg" alt="Site web générateur de leads : valeur claire, options de contact, capture IA" width="800" height="350" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
+        <img src="/blog/website-creation-ai-2026-guide-books-appointments.png" alt="Création de site avec IA : automatiser les rendez-vous et la capture de leads" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
         <figcaption style="text-align: center; color: var(--muted); font-size: 0.9rem; margin-top: 0.5em;">Un site générateur de leads relie chaque visiteur à votre réceptionniste IA</figcaption>
       </figure>
 
@@ -231,40 +199,8 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
       <p><em><a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Réservez votre stratégie call gratuite</a> pour concevoir votre site générateur de leads.</em></p>
     `,
   },
-  'developpement-application-web-saas-sur-mesure-2026': {
-    id: 22,
-    title: "Développement d'application web et SaaS sur mesure : Pourquoi les entreprises en croissance choisissent le sur mesure en 2026",
-    slug: "developpement-application-web-saas-sur-mesure-2026",
-    excerpt: "Pourquoi les entreprises en croissance en France et en RDC choisissent le développement web et SaaS sur mesure en 2026. Propriété, scalabilité et adéquation à vos processus.",
-    category: "Développement SaaS sur mesure",
-    readTime: "12 min de lecture",
-    publishDate: "19 mars 2026",
-    author: "Pascal Digny",
-    tags: ["développement application web", "SaaS sur mesure", "France RDC", "custom SaaS", "développement web", "logiciel sur mesure"],
-    featured: true,
-    content: `
-      <h2>Développement d'application web et SaaS sur mesure : Pourquoi les entreprises en croissance choisissent le sur mesure en 2026</h2>
-
-      <p>Le <strong>développement d'application web</strong> et le <strong>SaaS sur mesure</strong> offrent ce que le prêt-à-l'emploi ne peut pas : pleine propriété, workflows alignés sur vos processus, scalabilité sans lock-in. En 2026, les entreprises en croissance en France et en RDC choisissent le sur mesure lorsque les outils génériques ne conviennent pas. Voici pourquoi, et quand cela a du sens pour vous.</p>
-
-      <h3>Pourquoi « Utilisez un modèle » échoue aux entreprises en croissance</h3>
-
-      <p>Les modèles et builders no-code fonctionnent pour des cas simples. Mais à mesure que vous grandissez : rigidité des workflows, murs d'intégration, plafond de scalabilité, piège des données. Le sur mesure bat le prêt-à-l'emploi quand : processus uniques, intégrations profondes, propriété long terme, besoins sectoriels spécifiques.</p>
-
-      <h3>Ce que nous construisons</h3>
-
-      <p>Digni Digital conçoit des <a href="/agentic-softwares">SaaS et applications web sur mesure</a> : portails clients, outils internes, outils voix-vers-proposition comme ProposalAgent, applications sectorielles. Étude de cas : cabinet de conseil à Paris, portail client sur mesure. Résultats : +35 % NPS, 15 h/semaine économisées, cycle de facturation réduit de 14 à 5 jours, ROI en 5 mois.</p>
-
-      <h3>De l'idée au déploiement</h3>
-
-      <p>Découverte → conception → développement (agile) → déploiement → support. Délai typique : 2–4 mois pour un projet bien cadré. <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Réservez un call stratégie gratuit</a> pour parler de votre projet web ou SaaS sur mesure.</p>
-
-      <hr>
-      <p><em><a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Réservez votre stratégie call gratuite</a> pour parler de votre projet web ou SaaS sur mesure.</em></p>
-    `,
-  },
   'saas-personnalise-vs-pret-a-l-emploi-pme': {
-    id: 23,
+    id: 22,
     title: "SaaS personnalisé vs solutions prêtes à l'emploi : Le choix qui fait la différence pour les PME africaines et françaises",
     slug: "saas-personnalise-vs-pret-a-l-emploi-pme",
     excerpt: "SaaS sur mesure vs solutions prêtes à l'emploi pour les PME africaines et françaises. Quand construire, quand acheter, et comment décider pour votre entreprise.",
@@ -313,7 +249,7 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
     `,
   },
   'transformation-digitale-rdc-2026-ia': {
-    id: 24,
+    id: 23,
     title: "Transformation digitale RDC 2026 : Pourquoi l'IA est le choix décisif pour ne pas être exclu du marché",
     slug: "transformation-digitale-rdc-2026-ia",
     excerpt: "Article pilier : pourquoi la transformation digitale et l'IA sont le choix décisif pour la RDC en 2026. Liens vers tous les pôles de services Digni Digital.",
@@ -354,7 +290,7 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
     `,
   },
   'ia-pme-francaises-agents-sans-budget': {
-    id: 25,
+    id: 24,
     title: "IA pour les PME françaises : Comment adopter les agents intelligents sans budget Silicon Valley",
     slug: "ia-pme-francaises-agents-sans-budget",
     excerpt: "Comment les PME françaises peuvent adopter les agents IA et l'automatisation intelligente sans un budget Silicon Valley. Solutions accessibles et human-first pour les PME.",
@@ -394,7 +330,7 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
     `,
   },
   'claude-grok-agents-ia-afrique-francophone': {
-    id: 26,
+    id: 25,
     title: "Claude, Grok et agents IA : Pourquoi l'Afrique francophone ne peut plus attendre (et comment Digni Digital vous aide)",
     slug: "claude-grok-agents-ia-afrique-francophone",
     excerpt: "Pourquoi l'Afrique francophone ne peut pas se permettre d'attendre avec Claude, Grok et les agents IA. Version française de notre article IA Afrique, avec focus RDC et solutions Digni Digital.",
@@ -421,71 +357,9 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
       <p><em><a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Réservez votre stratégie call gratuite</a> pour parler de l'adoption de l'IA pour votre organisation.</em></p>
     `,
   },
-  'digital-border-coding-drc-act-resistance': {
-    id: 28,
-    title: "La frontière numérique : Pourquoi coder en RDC est un acte de résistance",
-    slug: "digital-border-coding-drc-act-resistance",
-    excerpt: "À San Francisco, Claude Code est un outil de productivité. À Kinshasa, c'est un privilège restreint. Pour un jeune développeur congolais, la différence entre une carrière mondiale et une stagnation locale tient souvent à sa capacité à contourner les règles conçues pour l'exclure.",
-    category: "Avenir du travail",
-    readTime: "8 min de lecture",
-    publishDate: "19 mars 2026",
-    author: "Pascal Digny",
-    tags: ["RDC", "barrières numériques", "accès développeurs", "IA locale", "open source", "Kinshasa", "tech africaine"],
-    featured: true,
-    content: `
-      <h2>La frontière numérique : Pourquoi coder en RDC est un acte de résistance</h2>
-      
-      <p>À San Francisco, Claude Code est un outil de productivité. À Kinshasa, c'est un privilège restreint. Pour un jeune développeur congolais, la différence entre une carrière mondiale et une stagnation locale tient souvent à sa capacité à contourner les règles conçues pour l'exclure.</p>
 
-      <h3>L'accroche : le « mur de papier »</h3>
-      
-      <p>Imaginez une nuit tardive à Kinshasa ou Goma. Un développeur voit un nouvel outil révolutionnaire comme Claude Code tendance sur X (Twitter). Il se rend sur le site, impatient de l'essayer—pour voir : <strong>« Ce service n'est pas disponible dans votre région. »</strong></p>
-      
-      <p>La géographie ne devrait pas dicter le génie. En 2025, votre adresse IP est un obstacle plus important à votre carrière que votre niveau de compétence réel. Les mêmes outils qui permettent aux développeurs de la Silicon Valley de travailler 10 fois plus vite sont verrouillés derrière des géo-bloquages, des sanctions et des systèmes de paiement qui excluent des pays entiers. Résultat ? Une génération de développeurs africains talentueux qui doivent choisir entre suivre les règles et prendre du retard.</p>
-
-      <h3>Le dilemme « innovation vs violation »</h3>
-      
-      <p>Pour les jeunes dans les pays sanctionnés ou négligés, « suivre les règles » signifie souvent « prendre du retard ». Le conflit est brutal : les mêmes agents IA et assistants de codage qui alimentent les géants de la tech mondiale sont interdits aux développeurs en RDC, non pas à cause de leurs compétences, mais à cause de leur lieu de naissance.</p>
-      
-      <p>Utiliser des VPN ou des comptes tiers ne fait pas de vous un « hacker »—c'est une tactique de survie pour accéder à la même puissance agentique que les développeurs de San Francisco utilisent pour travailler 10 fois plus vite. Quand la porte officielle est fermée, on apprend à trouver une autre entrée. Ce n'est pas tricher. C'est de la résilience.</p>
-
-      <blockquote>
-        <p>« Le meilleur code est écrit par ceux qui ont dû construire leurs propres portes parce que l'entrée principale était verrouillée. »</p>
-      </blockquote>
-
-      <h3>L'essor du « développeur fantôme »</h3>
-      
-      <p>Des milliers de développeurs africains talentueux contribuent à des projets mondiaux—mais ils doivent cacher leur localisation pour être payés ou utiliser les API standard. Ils travaillent sur des bases de code open source, livrent des fonctionnalités pour des clients internationaux et construisent des produits qui touchent des millions de personnes. Pourtant, officiellement, ils n'existent pas dans l'écosystème.</p>
-      
-      <p>Cela crée une <strong>économie numérique parallèle</strong> : le monde bénéficie du talent africain tout en l'excluant officiellement. Les entreprises obtiennent le code. Les plateformes obtiennent l'engagement. Mais les développeurs qui l'ont rendu possible restent invisibles—incapables de mentionner leur vraie localisation sur leurs profils, incapables de recevoir des paiements par les canaux standard, incapables d'accéder aux mêmes outils que leurs pairs du Nord prennent pour acquis.</p>
-
-      <h3>Reprendre le contrôle : la révolution local-first</h3>
-      
-      <p>La solution n'est pas de continuer à demander l'accès. C'est de construire notre propre infrastructure. L'<strong>open source et l'IA locale</strong> changent la donne : s'ils bloquent le cloud, nous exécutons les modèles sur notre propre silicium.</p>
-      
-      <p>Des outils comme Ollama, LocalAI et les modèles à poids ouverts (Llama, Mistral, Qwen) s'exécutent entièrement sur votre machine. Pas de géo-bloquages. Pas de clés API liées à une adresse de facturation en Californie. Pas de « service non disponible dans votre région ». Juste du code, du calcul et une communauté—accessibles à quiconque possède un ordinateur portable et une connexion internet.</p>
-      
-      <ul>
-        <li><strong>Ollama</strong> : Exécutez Llama, Mistral et d'autres modèles localement. Une commande, aucune dépendance cloud.</li>
-        <li><strong>LocalAI</strong> : API compatible OpenAI sur votre matériel. Changez l'endpoint, gardez votre flux de travail.</li>
-        <li><strong>Modèles à poids ouverts</strong> : Des modèles que vous pouvez télécharger, affiner et exécuter sans permission d'une entreprise américaine.</li>
-      </ul>
-      
-      <p>La révolution local-first ne consiste pas à rejeter le cloud. Il s'agit d'avoir le choix. Quand l'entrée principale est verrouillée, on n'attend pas que quelqu'un l'ouvre—on construit sa propre porte.</p>
-
-      <h3>Appel à l'action</h3>
-      
-      <p>Si vous êtes développeur dans un « désert numérique »—Kinshasa, Goma, Lubumbashi ou partout où le cloud a tracé une ligne—partagez vos solutions de contournement. Documentez ce qui fonctionne. Construisez à ciel ouvert. Plus nous partageons, moins une seule barrière peut nous retenir.</p>
-      
-      <p>Chez Digni Digital, nous construisons des <a href="/agentic-softwares">solutions qui fonctionnent en Afrique francophone</a>—non comme une réflexion après coup, mais par conception. Français d'abord. Mobile d'abord. Accessible. Parce que l'avenir de la tech ne devrait pas dépendre de votre code postal.</p>
-
-      <hr>
-      
-      <p><em>Prêt à construire sans frontières ? <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Réservez votre stratégie call gratuite</a> pour discuter de comment nous pouvons soutenir votre transformation digitale—que vous soyez développeur, startup ou institution préparant la prochaine génération.</em></p>
-    `,
-  },
   'guide-2026-tendances-ia-entreprises-francophones': {
-    id: 27,
+    id: 26,
     title: "Guide complet 2026 : Tendances IA pour la croissance des entreprises francophones (France + RDC + Afrique)",
     slug: "guide-2026-tendances-ia-entreprises-francophones",
     excerpt: "Tendances IA 2026 pour la croissance des entreprises francophones : France, RDC et Afrique. IA agentique, automatisation responsable, études de cas et plan d'action concret pour les PME.",
@@ -695,245 +569,11 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
       <p><em>Digni Digital — IA human-first pour les entreprises francophones. Fondée à Kinshasa. Plus de 150 clients sur quatre continents.</em></p>
     `,
   },
-  'ai-automation-scaling-business-growth': {
-    id: 29,
-    title: "Scaler une entreprise : le rôle des plateformes d'automatisation IA dans la croissance",
-    slug: "ai-automation-scaling-business-growth",
-    excerpt: "Automatisez la montée en charge avec l'IA : découvrez comment les plateformes d'automatisation IA augmentent l'efficacité, réduisent les coûts et libèrent une croissance durable.",
-    category: "Système d'employés IA",
-    readTime: "11 min de lecture",
-    publishDate: "19 mars 2026",
-    author: "Pascal Digny",
-    tags: ["Automatisation scale business", "Automatisation IA", "Montée en charge", "Plateformes no-code", "Croissance entreprise"],
-    featured: true,
-    content: `
-      <h2>Scaler une entreprise : pourquoi l'automatisation IA compte</h2>
-      
-      <p>La montée en charge est une phase critique du cycle de vie de toute entreprise. C'est le moment où une organisation passe d'une petite structure à une entreprise plus grande et complexe. Pour y parvenir, les entreprises ont besoin d'outils qui leur permettent de s'étendre sans les douleurs de croissance typiques. Les <strong>plateformes d'automatisation IA</strong> sont parmi les moyens les plus efficaces de gérer et faciliter cette croissance—en permettant aux entreprises de scaler leurs opérations sans augmentation proportionnelle de la main-d'œuvre, des coûts ou de la complexité.</p>
 
-      <figure class="blog-content-figure" style="margin: 2em 0;">
-        <img src="/blog/its-time-to-expand.gif" alt="GIF réaction d'Estelle Costanza disant C'est le moment de s'étendre, illustrant la montée en charge d'une entreprise avec l'automatisation IA et la croissance." width="600" height="400" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
-        <figcaption>C'est le moment de s'étendre—l'automatisation IA aide les entreprises à scaler sans les douleurs de croissance.</figcaption>
-      </figure>
 
-      <h2>Comment l'automatisation IA débloque la montée en charge</h2>
-      
-      <p>L'automatisation IA joue un rôle crucial pour aider les entreprises à scaler de manière efficace et durable de plusieurs façons :</p>
 
-      <h3>Efficacité accrue</h3>
-      
-      <p>Au cœur de toute montée en charge réussie se trouve l'efficacité. L'automatisation IA réduit le besoin d'intervention manuelle dans les tâches routinières, rationalisant les processus en production, administration et service client. Cette efficacité accrue permet aux entreprises de traiter des volumes plus importants sans augmentation proportionnelle de la main-d'œuvre. Les entreprises peuvent étendre leurs opérations plus rapidement et avec moins de ressources, tout en maîtrisant les coûts.</p>
-
-      <h3>Cohérence et contrôle qualité</h3>
-      
-      <p>À mesure que les entreprises grandissent, maintenir la cohérence dans la livraison de produits et services devient plus difficile. Les systèmes automatisés garantissent que les processus sont exécutés de manière uniforme, réduisant les erreurs et les retouches. Cette cohérence est essentielle pour maintenir la satisfaction et la confiance des clients. L'automatisation IA permet aussi d'appliquer des contrôles qualité stricts de manière cohérente à tous les niveaux.</p>
-
-      <p>Peloton, autrefois chouchou du fitness à domicile, a connu de graves difficultés en scalant rapidement pendant la pandémie. Des incidents tragiques et des rappels massifs de plus de 125 000 unités en 2021 ont entaché sa réputation et fait chuter sa valorisation. L'entreprise a eu du mal à gérer son expansion rapide, illustrant les dangers d'une montée en charge trop rapide sans infrastructure robuste de contrôles qualité et d'automatisation.</p>
-
-      <h3>Réduction des coûts</h3>
-      
-      <p>L'un des avantages les plus tangibles de l'automatisation IA est la réduction des coûts. En minimisant l'intervention humaine dans les tâches répétitives et en réduisant le gaspillage via des processus optimisés, l'automatisation aide à baisser les coûts opérationnels. Ces économies peuvent être réinvesties dans le marketing, le développement produit ou l'embauche—alimentant ainsi la croissance. L'automatisation offre aussi une prévisibilité des coûts cruciale pour planifier une montée en charge.</p>
-
-      <h3>Infrastructure scalable</h3>
-      
-      <p>À mesure que la demande augmente, les systèmes automatisés peuvent être étendus pour gérer des charges accrues sans refonte complète de l'infrastructure existante. Cette flexibilité permet aux entreprises de s'adapter rapidement aux conditions du marché.</p>
-
-      <h3>Décisions pilotées par les données</h3>
-      
-      <p>L'accès aux données en temps réel est essentiel pour prendre des décisions éclairées. Les systèmes d'automatisation IA fournissent des données et analyses complètes, permettant aux entreprises d'identifier les tendances, d'optimiser les processus et de réagir plus efficacement aux changements du marché.</p>
-
-      <h2>Le rôle des plateformes no-code et low-code</h2>
-      
-      <p>Les plateformes no-code et low-code sont devenues des outils puissants pour les entreprises qui veulent scaler rapidement. Elles permettent de créer et gérer des applications sans connaissances approfondies en codage.</p>
-
-      <h3>Simplification du développement</h3>
-      
-      <p>Les plateformes no-code simplifient le développement en se concentrant sur la fonctionnalité plutôt que sur la complexité technique. Les entreprises peuvent créer, déployer et modifier des applications beaucoup plus vite qu'avec les méthodes traditionnelles.</p>
-
-      <h3>Flexibilité et adaptabilité</h3>
-      
-      <p>À mesure que les entreprises grandissent, leurs besoins évoluent. Les plateformes no-code offrent la flexibilité d'adapter les applications : ajuster les workflows, ajouter des fonctionnalités ou scaler pour supporter plus d'utilisateurs sans temps d'arrêt ni coûts significatifs.</p>
-
-      <h3>Scalabilité</h3>
-      
-      <p>Toutes les plateformes no-code ne se valent pas en matière de scalabilité. Les meilleures sont conçues pour la croissance. Des solutions IA comme le <a href="/ai-receptionist">réceptionniste IA</a> de Digni Digital sont conçues pour gérer des volumes et complexités croissants sans compromettre les performances.</p>
-
-      <h2>Choisir la bonne technologie</h2>
-      
-      <p>Les plateformes no-code offrent des avantages significatifs, mais ne sont pas toujours la solution optimale. Selon les cas, le low-code, le codage traditionnel ou des solutions prêtes à l'emploi peuvent être plus appropriés. Le choix doit reposer sur les besoins spécifiques de l'entreprise.</p>
-
-      <h2>Conclusion</h2>
-      
-      <p>Les plateformes d'automatisation IA sont vitales pour toute entreprise qui souhaite scaler efficacement. En augmentant l'efficacité, en maintenant la cohérence, en réduisant les coûts et en permettant des décisions pilotées par les données, ces plateformes aident les entreprises à croître durablement.</p>
-
-      <hr>
-
-      <p><em>Prêt à scaler votre entreprise avec l'automatisation IA ? <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Réservez une consultation stratégique</a> avec nos experts en automatisation IA pour explorer comment l'IA peut aider votre entreprise à grandir sans les douleurs de croissance.</em></p>
-    `,
-  },
-  'vibecoding-african-youth-make-money-online-build-products': {
-    id: 30,
-    title: "Vibecoding : comment les jeunes Africains peuvent gagner de l'argent en ligne en créant des produits—sans coder",
-    slug: "vibecoding-african-youth-make-money-online-build-products",
-    excerpt: "Jeunes Africains : le vibecoding vous permet de créer et vendre des produits numériques avec l'IA—sans coder. Apprenez quoi maîtriser, pourquoi le niche bat les grandes idées, et comment monétiser votre audience. La fenêtre est ouverte.",
-    category: "Future of Work",
-    readTime: "18 min de lecture",
-    publishDate: "19 mars 2026",
-    author: "Pascal Digny",
-    tags: ["Vibecoding", "Jeunesse africaine", "Gagner en ligne", "Création produits IA", "Future of Work", "Future-Ready Graduate Program", "Entrepreneuriat digital"],
-    featured: true,
-    content: `
-      <h2>L'opportunité en or que presque personne en Afrique ne connaît</h2>
-      
-      <p>En ce moment, pendant que vous lisez ceci, des jeunes à Nairobi, Lagos, Kinshasa, Accra et Cape Town gagnent de l'argent en ligne—pas seulement via le gig work ou la création de contenu, mais en <strong>créant et vendant des produits numériques</strong>. Ce ne sont pas des développeurs. Ils n'ont pas étudié l'informatique. Ils utilisent le <strong>vibecoding</strong> : décrire ce qu'ils veulent en langage clair, et laisser l'IA le construire. Collins Dictionary l'a nommé Mot de l'année 2025. Et la plupart des jeunes Africains n'en ont jamais entendu parler.</p>
-
-      <p>Ce fossé—entre ceux qui savent et ceux qui ne savent pas—est votre opportunité. La fenêtre est ouverte. Elle ne restera pas ouverte indéfiniment.</p>
-
-      <h2>Qu'est-ce que le vibecoding ?</h2>
-      
-      <p>Le <strong>vibecoding</strong> est un changement de paradigme : vous décrivez ce que vous voulez en langage clair, et des outils IA comme Lovable.dev, Cursor, Bolt.new et v0.dev construisent le produit. Pas de code. Pas de diplôme. En 2021, un MVP prenait 3 mois et 50 000 $. En 2026, vous pouvez construire, tester et déployer un produit fonctionnel en un week-end.</p>
-
-      <h2>Ce qu'il faut apprendre pour maîtriser le vibecoding</h2>
-      
-      <p>1. <strong>Prompt engineering et bases de l'IA</strong>—Savoir parler à l'IA efficacement. 2. <strong>Outils de construction</strong>—Lovable.dev, Cursor, Bolt.new, v0.dev, GitHub Copilot. 3. <strong>Déploiement</strong>—Vercel, GitHub, bases du domaine et de l'hébergement. 4. <strong>Pensée produit</strong>—Identifier les vrais points de douleur, viser petit, valider avant de construire.</p>
-
-      <h2>Ne résolvez pas de grands problèmes. Résolvez des problèmes de niche.</h2>
-      
-      <p>Ne construisez pas la prochaine grande chose. Les meilleurs fondateurs construisent vite. Choisissez un petit problème spécifique. Résolvez-le pour un public spécifique. Facturez. Itérez.</p>
-
-      <h2>Monétisation pour ceux qui ont une audience sociale</h2>
-      
-      <p>Si vous avez une audience—même petite—vous avez un avantage : la distribution. Écoutez les plaintes de vos followers. Identifiez un point de douleur. Construisez une solution avec le vibecoding. Vendez-la à votre audience.</p>
-
-      <h2>Distribution : options pour vos apps vibecodées</h2>
-      
-      <p>Votre audience sociale, votre communauté de niche, le outreach direct, le building in public, les app stores, les partenariats, la pub payante (une fois que vous avez de la traction). Ce business va de pair avec la distribution.</p>
-
-      <h2>Construisez vite. Ne perfectionnez pas.</h2>
-      
-      <p>Les meilleurs fondateurs construisent vite sans perfectionner. Expédiez un MVP. Obtenez des retours. Itérez.</p>
-
-      <h2>Building in public : une opportunité en or pour la jeunesse africaine</h2>
-      
-      <p>Partager votre parcours en construisant vous distingue. Peu de builders africains le font. Vous créez de la distribution avant d'avoir un produit. Vous attirez des opportunités.</p>
-
-      <h2>Apprenez le programme</h2>
-      
-      <p>Le <a href="/future-ready-graduate">Future-Ready Graduate Program</a>—notre plan—enseigne le vibecoding et les compétences numériques IA. 85 % d'emploi en 6 mois. 150 % d'augmentation salariale moyenne. Cours en ligne à venir : 25 $ une fois, accès à vie.</p>
-
-      <hr>
-
-      <p><em>Prêt à apprendre le vibecoding ? <a href="/future-ready-graduate" target="_blank" rel="noopener noreferrer">Explorez le Future-Ready Graduate Program</a> ou <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">réservez une consultation</a>.</em></p>
-    `,
-  },
-  'one-software-life-changing-stories-youth-millionaires-2024-2026': {
-    id: 101,
-    title: "Un logiciel, une vie qui change : ce que nous apprennent les jeunes builders millionnaires (2024–2026)",
-    slug: "one-software-life-changing-stories-youth-millionaires-2024-2026",
-    excerpt: "Le bon produit au bon moment—avec de la distribution—peut changer la trajectoire d’un jeune builder. Cinq schémas réels tirés de la presse 2024–2026 (Cal AI, Beem, Vidovo…), avec réserves honnêtes et ce qu’il faut copier.",
-    category: "Future of Work",
-    readTime: "14 min de lecture",
-    publishDate: "20 mars 2026",
-    author: "Pascal Digny",
-    tags: [
-      "Entrepreneuriat jeunesse",
-      "Fondateurs Gen Z",
-      "Applis IA",
-      "SaaS",
-      "Future of Work",
-      "Cal AI",
-      "Distribution produit",
-    ],
-    featured: true,
-    content: `
-      <h2>L’opportunité n’est pas « devenir riche vite »—c’est « un produit sérieux, sérieusement distribué »</h2>
-
-      <p>Les titres sur les fondateurs adolescents et les applis à huit chiffres font du bruit. En enlevant le bruit, une histoire plus nette apparaît : <strong>un produit logiciel bien choisi</strong>, qui attaque une habitude quotidienne douloureuse, construit et livré vite, et montré au bon public, peut changer une vie—capital, options et preuve que vous pouvez recommencer.</p>
-      <p>Ce schéma revient dans la grande presse entre <strong>2024 et 2026</strong>. Voici <strong>cinq archétypes</strong> illustrés par des builders et produits nommés, avec des liens vers <strong>ce qu’ils ont construit</strong> et vers des <strong>reportages fiables</strong>—non comme garantie de reproduire leurs résultats, mais comme preuve que le mécanisme existe.</p>
-
-      <blockquote>
-        <p>« Le biais de survie est réel. Pour chaque appli virale dans la presse, des milliers de produits ne décollent pas. La leçon n’est pas la chance—c’est <strong>problème étroit, ship rapide, distribution tenace et itération</strong>. »</p>
-      </blockquote>
-
-      <h2>Pourquoi un logiciel peut peser plus qu’une ligne de CV</h2>
-
-      <p>Aujourd’hui, un seul produit peut être :</p>
-      <ul>
-        <li><strong>Une preuve portable</strong>—quelque chose à envoyer en DM, entretien ou message investisseur.</li>
-        <li><strong>Une machine à cash-flow</strong>—abonnement ou usage, si rétention et acquisition fonctionnent.</li>
-        <li><strong>Une machine à compétences composées</strong>—go-to-market, support, analytics, jugement produit.</li>
-        <li><strong>Une option de sortie</strong>—un repreneur stratégique achète traction et équipe (quand le fit est bon).</li>
-      </ul>
-
-      <p>Construire assisté par IA et la distribution via les stores ont baissé le coût d’essayer—mais <strong>n’ont pas supprimé le besoin de distribution</strong>. Les cas ci-dessous marient une histoire produit nette et du mouvement sur le marché.</p>
-
-      <h2>Scénario 1 : une première sortie finance le pari suivant</h2>
-
-      <p><strong>Schéma :</strong> Livrer quelque chose tôt ; obtenir une petite liquidité ; réinvestir temps et argent dans un coup plus large.</p>
-
-      <p><strong>Exemple :</strong> Les profils de <strong>Zach Yadegari</strong> décrivent la vente d’un projet antérieur, <strong>Totally Science</strong> (site lié au jeu vidéo), pour de l’ordre de <strong>100 000 $ à 16 ans</strong>, avec une date de vente dans les médias autour du <strong>début 2024</strong>—capital et crédibilité avant que le produit suivant ne scale.</p>
-
-      <p><strong>Ce qu’ils ont construit ensuite :</strong> <a href="https://www.calai.app/" target="_blank" rel="noopener noreferrer">Cal AI</a>—suivi calorique par photo—est devenu le breakout grand public (voir scénarios 2 et 5). <a href="https://apps.apple.com/us/app/cal-ai-food-calorie-tracker/id6480417616" target="_blank" rel="noopener noreferrer">App Store : Cal AI</a> · <a href="https://play.google.com/store/apps/details?id=com.viraldevelopment.calai" target="_blank" rel="noopener noreferrer">Google Play : Cal AI</a>.</p>
-
-      <p><strong>Sources :</strong> <a href="https://www.cnbc.com/2025/09/06/cal-ai-how-a-teenage-ceo-built-a-fast-growing-calorie-tracking-app.html" target="_blank" rel="noopener noreferrer">CNBC — profil teenage CEO / Cal AI</a> ; <a href="https://nordic.businessinsider.com/teenager-built-million-dollar-startup-how-he-did-it-2025-10" target="_blank" rel="noopener noreferrer">Business Insider Nordic</a>.</p>
-
-      <h2>Scénario 2 : utilité IA sur une habitude du quotidien → scale grand public</h2>
-
-      <p><strong>Schéma :</strong> Choisir une habitude récurrente et émotionnelle (santé, argent, etc.) ; rendre le premier gain trivial ; laisser le partage et le store travailler.</p>
-
-      <p><strong>Exemple :</strong> <strong>Cal AI</strong>, co-fondée par <strong>Zach Yadegari</strong> et <strong>Henry Langmack</strong>, lancée en <strong>mai 2024</strong>. La presse a documenté des téléchargements rapides et une traction précoce forte pour une expérience calorie par photo liée à l’IA.</p>
-
-      <p><strong>Liens produit :</strong> <a href="https://www.calai.app/" target="_blank" rel="noopener noreferrer">calai.app</a> · <a href="https://apps.apple.com/us/app/cal-ai-food-calorie-tracker/id6480417616" target="_blank" rel="noopener noreferrer">iOS</a> · <a href="https://play.google.com/store/apps/details?id=com.viraldevelopment.calai" target="_blank" rel="noopener noreferrer">Android</a>.</p>
-
-      <p><strong>Sources :</strong> <a href="https://techcrunch.com/2025/03/16/photo-calorie-app-cal-ai-downloaded-over-a-million-times-was-built-by-two-teenagers/" target="_blank" rel="noopener noreferrer">TechCrunch — mars 2025</a> ; <a href="https://www.cnbc.com/2025/09/06/cal-ai-how-a-teenage-ceo-built-a-fast-growing-calorie-tracking-app.html" target="_blank" rel="noopener noreferrer">CNBC — sept. 2025</a>.</p>
-
-      <p><em>Remarque :</em> chiffres de revenus ou marge diffèrent selon les titres et trimestres—traiter les chiffres publics comme des <strong>instantanés reportés</strong>, pas des faits audités.</p>
-
-      <h2>Scénario 3 : du capital sérieux avant le diplôme</h2>
-
-      <p><strong>Schéma :</strong> clarté de pitch + démo + accès réseau → un fonds parie sur vous très tôt.</p>
-
-      <p><strong>Exemple :</strong> <strong>Toby Brown</strong> a fondé <strong>Beem</strong>, décrit comme une couche IA native pour automatiser le travail quotidien sur ordinateur. <em>The Times</em> a rapporté environ <strong>1 million de dollars</strong> levés auprès de <strong>South Park Commons</strong> en <strong>février 2025</strong>, avec un déménagement dans la Bay Area pour builder à plein temps.</p>
-
-      <p><strong>Liens :</strong> <a href="https://beem.computer" target="_blank" rel="noopener noreferrer">beem.computer</a> · <a href="https://www.southparkcommons.com/companies/beem" target="_blank" rel="noopener noreferrer">South Park Commons — Beem</a>.</p>
-
-      <p><strong>Source :</strong> <a href="https://www.thetimes.com/business/entrepreneurs/article/the-16-year-old-swapping-gcses-for-silicon-valley-and-his-1m-start-up-00cptjxqh" target="_blank" rel="noopener noreferrer">The Times — févr. 2025</a>.</p>
-
-      <h2>Scénario 4 : trajectoire « chambre à coucher » (traction sans buzzword)</h2>
-
-      <p><strong>Schéma :</strong> logiciel de workflow de niche ; exécution obsessive ; créateurs ou PME paient car l’outil se rembourse.</p>
-
-      <p><strong>Exemple :</strong> <strong>Elijah Khasabo</strong> et <strong>Vidovo</strong>—plateforme reliant marques et créateurs pour de l’UGC—construite en parallèle des études. <em>Fortune</em> présente l’entreprise sur une trajectoire vers un <strong>chiffre d’affaires annuel significatif</strong> depuis un démarrage depuis une chambre avec peu de capital.</p>
-
-      <p><strong>Lien produit :</strong> <a href="https://www.vidovo.com" target="_blank" rel="noopener noreferrer">vidovo.com</a>.</p>
-
-      <p><strong>Source :</strong> <a href="https://fortune.com/2025/11/27/gen-z-entrepreneur-elijah-khasabo-tech-startup-college-student-degree-networking/" target="_blank" rel="noopener noreferrer">Fortune — nov. 2025</a>.</p>
-
-      <h2>Scénario 5 : traction → acquisition stratégique</h2>
-
-      <p><strong>Schéma :</strong> votre produit comble un trou dans la feuille de route d’une grande plateforme ; ils achètent la vitesse et le talent.</p>
-
-      <p><strong>Exemple :</strong> en <strong>mars 2026</strong>, <strong>TechCrunch</strong> rapporte <strong>MyFitnessPal</strong> acquérant <strong>Cal AI</strong>, l’appli calorie fondée par des adolescents—en conservant l’équipe et en combinant l’expérience Cal AI avec la base nutrition de MyFitnessPal.</p>
-
-      <p><strong>Liens :</strong> <a href="https://www.myfitnesspal.com" target="_blank" rel="noopener noreferrer">MyFitnessPal</a> · <a href="https://www.calai.app/" target="_blank" rel="noopener noreferrer">Cal AI</a>.</p>
-
-      <p><strong>Source :</strong> <a href="https://techcrunch.com/2026/03/02/myfitnesspal-has-acquired-cal-ai-the-viral-calorie-app-built-by-teens/" target="_blank" rel="noopener noreferrer">TechCrunch — 2 mars 2026</a>.</p>
-
-      <h2>Ce qui échoue dans l’ancien modèle</h2>
-
-      <p>Le schéma cassé n’est pas « les jeunes ne peuvent pas builder ». C’est <strong>builder en secret pendant un an</strong>, <strong>résoudre un problème que personne ne cherche</strong> et <strong>attendre que le mérite trouve tout seul la distribution</strong>. Le contre-mouvement : périmètre plus petit, cycles plus rapides, canaux : vidéo courte, communautés, outreach, partenariats, hooks produit (gratuit, partage, etc.).</p>
-
-      <h2>Si vous voulez la partie reproductible—pas le ticket de loterie</h2>
-
-      <p>Nous avons conçu le <a href="/future-ready-graduate">Future-Ready Graduate Program</a> pour cette époque : construction assistée par IA, livraison de vrais projets, et comment les produits se font trouver et payer. C’est la couche pratique derrière « un produit peut changer votre trajectoire »—sans prétendre que les résultats sont moyens ou faciles.</p>
-
-      <hr>
-
-      <p><em>Prêt à apprendre les compétences derrière ces schémas ? <a href="/future-ready-graduate" target="_blank" rel="noopener noreferrer">Découvrez le Future-Ready Graduate Program</a> ou <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">réservez une consultation</a> avec Digni Digital.</em></p>
-    `,
-  },
   'modern-fractional-coo-ai-employee-business-partner': {
-    id: 102,
+    id: 101,
     title: "Le COO fractionnel moderne : allier leadership opérationnel et couche « employé IA »",
     slug: "modern-fractional-coo-ai-employee-business-partner",
     excerpt: "Guide pratique pour les entreprises en croissance : ce que fait vraiment un COO fractionnel moderne, en quoi il diffère d’un assistant ou d’un comptable, et comment les bénéfices qu’on attend d’un employé IA—rapidité, constance, couverture—s’inscrivent dans un même modèle de partenariat.",

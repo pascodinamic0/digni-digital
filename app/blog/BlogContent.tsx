@@ -1,14 +1,16 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useMemo, useEffect, useCallback } from 'react'
 import Image from 'next/image'
+import { useSearchParams } from 'next/navigation'
 import { motion } from 'framer-motion'
-import { Link } from '@/i18n/navigation'
+import { Link, usePathname, useRouter } from '@/i18n/navigation'
 import { getBookingLinkProps } from '@/app/config/cta.config'
 import { useLanguage } from '@/app/context/LocaleContext'
 import { translations } from '@/app/config/translations'
 import type { Language } from '@/app/i18n/translations'
 import type { BlogArticle } from '@/content/blog'
+import { BLOG_LISTING_RETURN_SEARCH_KEY } from '@/lib/blog-listing-storage'
 
 interface BlogContentProps {
   articlesByLang: Record<Language, BlogArticle[]>
@@ -20,10 +22,32 @@ export default function BlogContent({ articlesByLang }: BlogContentProps) {
   const language = useLanguage()
   const articles = articlesByLang[language] ?? articlesByLang.en
   const t = translations[language].blog
+  const router = useRouter()
+  const pathname = usePathname()
+  const searchParams = useSearchParams()
   const [selectedCategory, setSelectedCategory] = useState(ALL_KEY)
   const [searchTerm, setSearchTerm] = useState('')
-  const [currentPage, setCurrentPage] = useState(1)
   const articlesPerPage = 9
+
+  const currentPage = useMemo(() => {
+    const raw = searchParams.get('page')
+    const n = raw ? Number.parseInt(raw, 10) : 1
+    return Number.isFinite(n) && n >= 1 ? n : 1
+  }, [searchParams])
+
+  const setPage = useCallback(
+    (page: number) => {
+      const params = new URLSearchParams(searchParams.toString())
+      if (page <= 1) {
+        params.delete('page')
+      } else {
+        params.set('page', String(page))
+      }
+      const qs = params.toString()
+      router.replace(qs ? `${pathname}?${qs}` : pathname, { scroll: false })
+    },
+    [router, pathname, searchParams]
+  )
 
   // Get unique categories
   const categoryKeys = [ALL_KEY, ...Array.from(new Set(articles.map(article => article.category)))]
@@ -41,6 +65,26 @@ export default function BlogContent({ articlesByLang }: BlogContentProps) {
   const totalPages = Math.ceil(filteredArticles.length / articlesPerPage)
   const startIndex = (currentPage - 1) * articlesPerPage
   const paginatedArticles = filteredArticles.slice(startIndex, startIndex + articlesPerPage)
+
+  // Keep URL page in range when filters reduce result count
+  useEffect(() => {
+    if (totalPages < 1) {
+      if (currentPage > 1) setPage(1)
+      return
+    }
+    if (currentPage > totalPages) {
+      setPage(totalPages)
+    }
+  }, [totalPages, currentPage, setPage])
+
+  // Remember ?page= (and future filters) for "Back to blog" on article pages
+  useEffect(() => {
+    try {
+      sessionStorage.setItem(BLOG_LISTING_RETURN_SEARCH_KEY, searchParams.toString())
+    } catch {
+      /* ignore quota / private mode */
+    }
+  }, [searchParams])
 
   return (
     <main className="min-h-screen bg-background">
@@ -66,7 +110,10 @@ export default function BlogContent({ articlesByLang }: BlogContentProps) {
                       type="text"
                       placeholder={t.searchPlaceholder}
                       value={searchTerm}
-                      onChange={(e) => setSearchTerm(e.target.value)}
+                      onChange={(e) => {
+                        setSearchTerm(e.target.value)
+                        if (currentPage !== 1) setPage(1)
+                      }}
                       aria-label="Search articles"
                       className="w-full px-5 py-4 pl-14 bg-surface border border-border-medium rounded-xl text-text placeholder-muted focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition-all duration-200"
                     />
@@ -89,7 +136,7 @@ export default function BlogContent({ articlesByLang }: BlogContentProps) {
                           key={category}
                           onClick={() => {
                             setSelectedCategory(category)
-                            setCurrentPage(1)
+                            setPage(1)
                           }}
                           aria-pressed={selectedCategory === category}
                           aria-label={`Filter articles by ${category === ALL_KEY ? t.all : category}`}
@@ -173,7 +220,7 @@ export default function BlogContent({ articlesByLang }: BlogContentProps) {
                 <div className="flex justify-center mt-12">
                   <div className="flex gap-2">
                     <button
-                      onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
+                      onClick={() => setPage(Math.max(currentPage - 1, 1))}
                       disabled={currentPage === 1}
                       aria-label="Go to previous page"
                       className="px-4 py-2 bg-surface text-text rounded-lg disabled:opacity-50 disabled:cursor-not-allowed hover:bg-surface-light transition-colors"
@@ -184,7 +231,7 @@ export default function BlogContent({ articlesByLang }: BlogContentProps) {
                     {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
                       <button
                         key={page}
-                        onClick={() => setCurrentPage(page)}
+                        onClick={() => setPage(page)}
                         aria-label={`Go to page ${page}`}
                         aria-current={currentPage === page ? 'page' : undefined}
                         className={`px-4 py-2 rounded-lg transition-colors ${
@@ -198,7 +245,7 @@ export default function BlogContent({ articlesByLang }: BlogContentProps) {
                     ))}
                     
                     <button
-                      onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
+                      onClick={() => setPage(Math.min(currentPage + 1, totalPages))}
                       disabled={currentPage === totalPages}
                       aria-label="Go to next page"
                       className="px-4 py-2 bg-surface text-text rounded-lg disabled:opacity-50 disabled:cursor-not-allowed hover:bg-surface-light transition-colors"
@@ -217,6 +264,7 @@ export default function BlogContent({ articlesByLang }: BlogContentProps) {
                 onClick={() => {
                   setSearchTerm('')
                   setSelectedCategory(ALL_KEY)
+                  setPage(1)
                 }}
                 className="btn-primary"
               >

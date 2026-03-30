@@ -546,173 +546,9 @@ export const contentDe: Record<string, Partial<BlogArticle>> = {
     `
   },
 
-  'how-to-create-business-website-free-ai-lovable-dev': {
-    title: 'So erstellen Sie eine Business-Website kostenlos mit KI: Vollständiger Leitfaden mit Lovable.dev',
-    excerpt: 'Eine vollständige Schritt-für-Schritt-Anleitung zur kostenlosen Website-Erstellung mit KI. Erfahren Sie, wie Sie Ihre Business-Website von Grund auf mit Lovable.dev erstellen – von der Anmeldung bis zur Veröffentlichung Ihrer ersten Website, mit einem PRD-Tipp für bessere Ergebnisse.',
-    category: 'KI-Mitarbeiter-System',
-    readTime: '18 Min. Lesezeit',
-    publishDate: '19. März 2026',
-    tags: ['Business-Website erstellen', 'Kostenlose Website-Erstellung', 'Lovable.dev', 'Business-Website kostenlos mit KI erstellen', 'Meine Business-Website erstellen', 'KI-Website-Builder', 'Kostenloser Website-Builder'],
-    content: `
-      <p>Wenn Sie nach einer Möglichkeit suchen, <strong>eine Business-Website zu erstellen</strong>, ohne ein Vermögen auszugeben, sind Sie hier richtig. <strong>Kostenlose Website-Erstellung</strong> ist heute dank KI möglich – und in diesem Leitfaden zeigen wir Ihnen genau, wie Sie <strong>eine Business-Website kostenlos mit KI erstellen</strong> können, mit <a href="https://www.lovable.dev" target="_blank" rel="noopener noreferrer">Lovable.dev</a>. Ob Sie zum ersten Mal fragen, <strong>„wie erstelle ich meine Business-Website"</strong>, oder einen klaren Weg von der Idee zur Live-Website suchen – dieser Leitfaden führt Sie Schritt für Schritt von www.lovable.dev bis zur Veröffentlichung Ihrer ersten Website, mit einer visuellen Anleitung und einem Profi-Tipp zur Vorbereitung eines PRD, damit die KI auf Kurs bleibt.</p>
 
-      <h2>Warum sollten Sie Ihre Business-Website mit KI erstellen?</h2>
-      <p>Eine Business-Website zu erstellen bedeutete früher, Entwickler zu beauftragen oder Code zu lernen. Heute ermöglichen KI-gestützte Tools wie Lovable.dev, in einfacher Sprache zu beschreiben, was Sie möchten, und innerhalb von Minuten eine funktionierende Website zu erhalten. Sie erhalten <strong>kostenlose Website-Erstellung</strong> (im kostenlosen Tarif), keine Programmierkenntnisse erforderlich – ideal für kleine Unternehmen, Freiberufler und alle, die schnell von der Idee zur Live-Website gelangen möchten.</p>
 
-      <h2>Was ist Lovable.dev?</h2>
-      <p>Lovable.dev ist ein KI-gestützter App- und Website-Builder. Sie beschreiben Ihr Projekt im Chat – z. B. „Eine Landingpage für meine Bäckerei mit Menü, Öffnungszeiten und Kontaktformular" – und die KI generiert und aktualisiert die Website, während Sie iterieren. Es ist eine der einfachsten Möglichkeiten, <strong>eine Business-Website kostenlos mit KI zu erstellen</strong>, und eignet sich hervorragend für Landingpages, Portfolios und einfache Business-Websites.</p>
 
-      <figure class="blog-content-figure" style="margin: 2em 0;">
-        <img src="/blog/lovable-guide/banner-hero.png" alt="Infografik: So erstellen Sie eine Business-Website kostenlos mit KI über Lovable.dev" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
-        <figcaption style="text-align: center; color: var(--muted); font-size: 0.9rem; margin-top: 0.5em;">Banner: Erstellen Sie Ihre Business-Website kostenlos mit KI — Lovable.dev</figcaption>
-      </figure>
-
-      <h2>Schritt für Schritt: Von www.lovable.dev zu Ihrer veröffentlichten Website</h2>
-      <p>Jeder Schritt unten enthält, was zu tun ist und wo geklickt werden muss.</p>
-
-      <h3>Schritt 1 — Lovable.dev öffnen</h3>
-      <p><strong>Was zu tun ist:</strong> Gehen Sie in Ihrem Browser zu <strong>www.lovable.dev</strong> (oder suchen Sie nach „lovable.dev" und öffnen Sie die offizielle Website).</p>
-      <p><strong>Wo klicken:</strong> Sie müssen noch nichts anklicken – landen Sie einfach auf der Startseite.</p>
-
-      <h3>Schritt 2 — Konto erstellen</h3>
-      <p><strong>Was zu tun ist:</strong> Registrieren Sie sich für ein kostenloses Konto, damit Sie Ihr Projekt speichern und veröffentlichen können.</p>
-      <p><strong>Wo klicken:</strong> Klicken Sie auf <strong>„Sign up"</strong> oder <strong>„Get started"</strong> (normalerweise oben rechts). Melden Sie sich mit Google, GitHub oder E-Mail an.</p>
-
-      <h3>Schritt 3 — Bereiten Sie Ihre Idee vor (Profi-Tipp: Nutzen Sie ein PRD oder Dokument)</h3>
-      <p>Bevor Sie mit dem Bauen beginnen, nehmen Sie sich ein paar Minuten, um aufzuschreiben, was Sie möchten. Das hilft der KI, fokussiert zu bleiben, und reduziert vage oder abweichende Ergebnisse.</p>
-      <ul>
-        <li><strong>Option A — Produktanforderungsdokument (PRD):</strong> Listen Sie in einem Dokument auf: Ziel der Website, Hauptseiten (z. B. Startseite, Über uns, Dienstleistungen, Kontakt), Schlüsselinhalte (Überschriften, kurze Beschreibungen) und unverzichtbare Funktionen (Kontaktformular, Öffnungszeiten etc.). Halten Sie es kurz (ein bis zwei Seiten).</li>
-        <li><strong>Option B — Separate „Produktanforderungen"-Notiz:</strong> Wenn Sie möchten, schreiben Sie eine kurze Notiz, die nur Funktionen und Inhalte beschreibt. Die Idee ist, der KI klare, konkrete Anforderungen zu geben.</li>
-      </ul>
-      <p><strong>Warum das hilft:</strong> Wenn die KI eine klare Liste von Anforderungen hat, ist es weniger wahrscheinlich, dass sie „halluziniert" oder Dinge hinzufügt, die Sie nicht verlangt haben. Dies ist ein <strong>Profi-Tipp</strong>, der sowohl Qualität als auch Konsistenz verbessert. Sie können auch <strong>ChatGPT</strong> verwenden, z. B.: „Ich möchte eine Business-Website für [Ihr Unternehmen]. Generiere ein kurzes PRD mit Seiten und Funktionen." Dann fügen Sie das in Lovable ein.</p>
-
-      <h3>Schritt 4 — Neues Projekt erstellen</h3>
-      <p><strong>Was zu tun ist:</strong> Starten Sie von Ihrem Dashboard aus ein neues Projekt.</p>
-      <p><strong>Wo klicken:</strong> Klicken Sie auf <strong>„New project"</strong> oder <strong>„Create project"</strong>. Geben Sie dem Projekt einen Namen (z. B. „Meine Business-Website") und bestätigen Sie.</p>
-
-      <h3>Schritt 5 — Beschreiben Sie Ihre Website im Chat</h3>
-      <p><strong>Was zu tun ist:</strong> Beschreiben Sie im Projektchat die Website, die Sie möchten. Verwenden Sie Ihr PRD oder Ihre Notizen. Seien Sie spezifisch: Art des Unternehmens, Seiten, Ton (professionell, freundlich etc.) und gewünschte Funktionen (Kontaktformular, CTA-Buttons etc.).</p>
-      <p><strong>Wo klicken:</strong> Klicken Sie in die <strong>Chat-Eingabe</strong> unten, geben oder fügen Sie Ihre Beschreibung ein und senden Sie sie. Die KI generiert Ihre erste Website. Warten Sie, bis die erste Version in der Vorschau erscheint.</p>
-
-      <h3>Schritt 6 — Überprüfen und Iterieren</h3>
-      <p><strong>Was zu tun ist:</strong> Überprüfen Sie die Vorschau. Fordern Sie Änderungen im Chat an: z. B. „Mache die Hero-Überschrift kürzer", „Füge ein Kontaktformular hinzu", „Ändere die Farben zu Blau und Weiß". Wiederholen Sie, bis Sie zufrieden sind.</p>
-
-      <h3>Schritt 7 — Ihre Website veröffentlichen</h3>
-      <p><strong>Was zu tun ist:</strong> Veröffentlichen Sie Ihr Projekt, damit es im Web live ist.</p>
-      <p><strong>Wo klicken:</strong> Klicken Sie auf das <strong>Veröffentlichen</strong>-Symbol (normalerweise oben rechts im Projekt). Im Veröffentlichungspanel: (1) Bestätigen oder bearbeiten Sie Ihre Website-URL. (2) Legen Sie fest, wer die Seite besuchen kann. (3) Optional Titel, Beschreibung und Vorschaubild für SEO festlegen. Dann Veröffentlichung bestätigen.</p>
-
-      <h2>Zusammenfassung: So erstellen Sie Ihre Business-Website kostenlos mit KI</h2>
-      <ol>
-        <li>Gehen Sie zu <strong>www.lovable.dev</strong> und registrieren Sie sich.</li>
-        <li>Bereiten Sie ein kurzes PRD oder Anforderungsdokument vor (oder nutzen Sie ChatGPT) – Profi-Tipp zur Reduzierung von KI-Halluzinationen.</li>
-        <li>Erstellen Sie ein neues Projekt und beschreiben Sie Ihre Website im Chat.</li>
-        <li>Überprüfen Sie die Vorschau und iterieren Sie mit weiteren Chat-Anweisungen.</li>
-        <li>Klicken Sie auf Veröffentlichen, legen Sie Ihre URL und Metadaten fest, und Ihre Website ist live.</li>
-      </ol>
-      <p>Das ist der vollständige Weg zur <strong>kostenlosen Website-Erstellung</strong> mit KI. Sie können alles auf Lovable.dev erledigen; die Nutzung eines Dokuments und ChatGPT ist optional, aber empfohlen für bessere, konsistentere Ergebnisse.</p>
-
-      <hr />
-
-      <p><em>Benötigen Sie eine maßgeschneiderte Business-Website oder KI-gestützte Tools jenseits eines einfachen Builders? <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Buchen Sie eine Beratung</a> mit Digni Digital, um Ihr Projekt zu besprechen.</em></p>
-    `
-  },
-
-  'claude-code-ai-agents-africa-future-of-work-future-ready': {
-    title: 'Claude Code & KI-Agenten: Warum Afrika sich diese Revolution nicht entgehen lassen darf',
-    excerpt: 'KI-Coding-Agenten wie Claude Code verändern die Arbeitswelt für immer. Eine Person mit KI kann leisten, wofür früher 10 oder 100 nötig waren. Afrikas 532 Millionen Jugendliche stehen vor einer Wahl: Jetzt digitale Kompetenzen erwerben oder zusehen, wie Chancen verschwinden.',
-    category: 'Zukunft der Arbeit',
-    readTime: '14 Min. Lesezeit',
-    publishDate: '19. März 2026',
-    tags: ['Claude Code', 'KI-Agenten', 'Zukunft der Arbeit', 'Afrika', 'Digitale Kompetenzen', 'Digni Digital Literacy', 'Jugendbeschäftigung'],
-    content: `
-      <h2>Eine Warnung an jeden Afrikaner: Die Hungersnot, die Sie nicht sehen</h2>
-      
-      <p>Ich muss Ihnen etwas Dringendes sagen. Es kommt eine Hungersnot – aber sie wird nicht so aussehen wie die, die wir kennen. Es wird keine leeren Felder oder verdorrten Ernten geben. Diese Hungersnot wird sich als <strong>leere Stellenbörsen</strong>, <strong>Einstellungsstopps</strong> und <strong>Millionen junger Menschen mit Abschlüssen, aber ohne Arbeit</strong> zeigen. Und die schmerzhafte Wahrheit? Wir beobachten, wie sie sich in Zeitlupe nähert, während zu viele von uns wegschauen.</p>
-
-      <p>Afrika hat die jüngste Bevölkerung der Welt: <strong>532 Millionen Menschen im Alter von 15–35 Jahren</strong> – über 22 % der globalen Jugend. Bis 2030 werden weitere 132 Millionen hinzukommen. Keine andere Region wächst so schnell. Doch heute sind <strong>21,9 % der subsaharischen afrikanischen Jugendlichen</strong> NEET – weder in Beschäftigung, Ausbildung noch Training. Das sind 53 Millionen junge Menschen. Und fast <strong>72 % der jungen Arbeitnehmer</strong> haben unsichere, informelle Jobs. Wenn wir jetzt nicht handeln, werden diese Zahlen explodieren.</p>
-
-      <blockquote>
-        <p>„Nicht die KI wird den Menschen die Arbeitsplätze nehmen. <strong>Jemand, der KI nutzt, wird unendlich wertvoller sein als jemand, der es nicht tut.</strong> Unternehmen werden Menschen einstellen, die wissen, wie man KI bedient. Unternehmen werden Menschen einstellen, die ihre Leistung mit KI skalieren können. Deshalb sind digitale Kompetenzen keine Option mehr – sie sind Überlebensstrategie."</p>
-      </blockquote>
-
-      <h2>Was ist Claude Code? Die KI-Agenten-Revolution verstehen</h2>
-
-      <p><strong>Claude Code</strong> ist ein KI-Coding-Agent, der Anfang 2025 von Anthropic eingeführt wurde. Anders als einfache Autovervollständigungen oder Chatbots operiert er als <strong>autonomer Agent</strong> – er kann ganze Codebasen verstehen, mehrstufige Aufgaben ausführen, Tests durchführen, Bugs beheben und den Kontext über Projekte hinweg beibehalten, die über 30 Stunden dauern. Stellen Sie sich vor, ein Senior-Entwickler arbeitet rund um die Uhr an Ihrer Seite, wird nie müde, vergisst nie den Kontext und kann Ihr gesamtes Projekt in Sekunden lesen.</p>
-
-      <h3>Wie KI-Coding-Agenten funktionieren: Die agentische Schleife</h3>
-
-      <p>Claude Code und ähnliche Agenten (Cursor, GitHub Copilot und andere) folgen einer dreiphasigen Schleife:</p>
-
-      <ul>
-        <li><strong>Kontext sammeln</strong> – Der Agent liest Ihre Dateien, durchsucht Ihre Codebasis, versteht Abhängigkeiten</li>
-        <li><strong>Handeln</strong> – Er schreibt Code, führt Befehle aus, erstellt Dateien, bearbeitet vorhandenen Code</li>
-        <li><strong>Ergebnisse überprüfen</strong> – Er führt Tests durch, prüft auf Fehler, korrigiert automatisch</li>
-      </ul>
-
-      <p>Sie verketten Dutzende von Aktionen, merken sich alles und können stundenlang ohne menschliches Eingreifen arbeiten. <strong>90 % der Entwickler nutzen bereits KI-Coding-Assistenten</strong>, wobei 65 % eine starke Abhängigkeit berichten. Das ist kein Nischen-Tool – es ist die neue Normalität.</p>
-
-      <h2>Die Produktivitätsexplosion: Eine Person erledigt die Arbeit von Zehn – oder Hundert</h2>
-
-      <p>Hier ist die Rechnung, die uns erschrecken – und motivieren – sollte:</p>
-
-      <p>Ein einzelner Entwickler mit Claude Code, Cursor oder ähnlichen KI-Agenten kann jetzt:</p>
-
-      <ul>
-        <li>Standardcode in Minuten statt Stunden schreiben</li>
-        <li>Bugs in großen Codebasen debuggen und beheben, ohne jede Datei manuell zu verfolgen</li>
-        <li>Tests, Dokumentation und Deployment-Konfigurationen automatisch generieren</li>
-        <li>Mehrere Projekte gleichzeitig bearbeiten, während die KI den Kontext verwaltet</li>
-      </ul>
-
-      <p>Die <strong>Richtung ist klar</strong>: Die Produktivität pro Person explodiert. Das bedeutet, Unternehmen brauchen weniger Menschen für die gleiche Arbeit. Oder eine Person kann leisten, wofür früher zehn nötig waren.</p>
-
-      <h2>Die wahre Bedrohung: Nicht KI – sondern die Kluft zwischen denen, die sie nutzen, und denen, die es nicht tun</h2>
-
-      <p>Lassen Sie mich sehr deutlich sein: <strong>KI selbst ist nicht der Feind</strong>. Der Feind ist <strong>Untätigkeit</strong>. Der Feind ist zu denken „das geht vorüber" oder „es wird mich nicht betreffen" oder „mein Job ist sicher."</p>
-
-      <ul>
-        <li><strong>Unternehmen werden Menschen einstellen, die wissen, wie man KI bedient</strong></li>
-        <li><strong>Unternehmen werden Menschen einstellen, die ihre Leistung mit KI skalieren können</strong></li>
-        <li><strong>Unternehmen werden Menschen entlassen – oder einfach nicht einstellen – die sich weigern, sich anzupassen</strong></li>
-      </ul>
-
-      <p>Absolventen mit diesen Fähigkeiten sehen <strong>85 % Beschäftigungsquoten innerhalb von 6 Monaten</strong>. Ohne? Eher 45 % – oder schlimmer in Märkten mit hoher Jugendarbeitslosigkeit.</p>
-
-      <h2>Fallstudie: GS Laricharde, Kigali</h2>
-
-      <p>GS Laricharde in Kigali, Ruanda, stand vor einer Krise: 45 % der Absolventen waren 12 Monate nach dem Abschluss beschäftigt. Keine praktischen Fähigkeiten. Keine Portfolios. Sie implementierten das <strong>Digni Digital Literacy Programm</strong>.</p>
-
-      <p><strong>Ergebnisse nach einem Jahr:</strong></p>
-
-      <ul>
-        <li><strong>85 % Absolventenbeschäftigungsrate</strong> innerhalb von 6 Monaten (vs. 45 % zuvor)</li>
-        <li><strong>₦240k durchschnittliches Einstiegsgehalt</strong> (von ₦120k – eine 100-prozentige Steigerung)</li>
-        <li><strong>50+ Arbeitgeberpartnerschaften</strong> aufgebaut</li>
-        <li><strong>8 Monate ROI-Amortisation</strong> für die Schule</li>
-      </ul>
-
-      <h2>Ein Aufruf zum Handeln: Regierungen, Eltern, Schulen – jeder hat eine Rolle</h2>
-
-      <p><strong>An afrikanische Regierungen:</strong></p>
-      <p>Positionieren Sie sich jetzt. Investieren Sie in die Ausbildung digitaler Kompetenzen. Arbeiten Sie mit Programmen wie dem Digni Digital Literacy Programm zusammen. Machen Sie Internetkonnektivität und Computerzugang zur nationalen Priorität.</p>
-
-      <p><strong>An Eltern:</strong></p>
-      <p>Ihre Kinder wachsen in einer Welt auf, die sich grundlegend von Ihrer unterscheidet. Setzen Sie sich für Schulen ein, die KI-Tools, digitale Kompetenzen und moderne Arbeitsabläufe vermitteln.</p>
-
-      <p><strong>An Schulen:</strong></p>
-      <p>Integrieren Sie digitale Kompetenzen in Ihren Lehrplan. Die Welt hat sich weiterentwickelt. Die Bildung nicht. Schüler müssen lernen, wie die Welt, in der sie leben, tatsächlich funktioniert.</p>
-
-      <h2>Zusammenfassung: Der Einsatz könnte nicht höher sein</h2>
-
-      <p>Claude Code und KI-Agenten sind keine Science-Fiction. Sie sind hier. Sie verändern die Arbeit. Eine Person mit KI kann leisten, wofür zehn – oder hundert – früher nötig waren. Die Frage ist nicht, ob das passieren wird. Die Frage ist, ob Afrika bereit sein wird.</p>
-
-      <p>Die Zukunft gehört denen, die neue Technologie <strong>annehmen</strong>, nicht denen, die sie ignorieren. Unsere Jugend verdient jede Chance auf Erfolg. Ihnen digitale Kompetenzen zu geben, ist keine Option. Es ist Überlebensstrategie. Es ist Verantwortung. Es ist jetzt.</p>
-
-      <hr>
-
-      <p><em>Bereit, sich – oder Ihre Schüler – auf die KI-gestützte Zukunft vorzubereiten? <a href="/future-ready-graduate" target="_blank" rel="noopener noreferrer">Entdecken Sie das Digni Digital Literacy Programm</a> oder <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">buchen Sie eine Beratung</a>, um zu erfahren, wie wir mit Ihrer Einrichtung zusammenarbeiten können.</em></p>
-    `
-  },
 
   'preparing-students-future-private-high-schools-digital-skills-programs': {
     title: 'Schüler auf die Zukunft vorbereiten: Warum Privatschulen Programme für digitale Kompetenzen brauchen',
@@ -1491,47 +1327,6 @@ export const contentDe: Record<string, Partial<BlogArticle>> = {
     `
   },
 
-  'croissance-entreprise-ia-france-rdc': {
-    title: 'Unternehmenswachstum mit KI: Konkrete Strategien für Frankreich und die DR Kongo',
-    excerpt: 'Konkrete Strategien für Unternehmenswachstum mit KI in Frankreich und der DR Kongo. Lead-Generierung, Prozessoptimierung und messbarer ROI für KMU.',
-    category: 'Unternehmenswachstum',
-    readTime: '12 Min. Lesezeit',
-    publishDate: '19. März 2026',
-    tags: ['Unternehmenswachstum KI', 'Geschäftsentwicklung', 'KI KMU', 'Frankreich DR Kongo', 'Lead-Generierung', 'KI-Wachstum'],
-    content: `
-      <h2>Unternehmenswachstum mit KI: Konkrete Strategien für Frankreich und die DR Kongo</h2>
-
-      <p><strong>Unternehmenswachstum</strong> und <strong>Geschäftsentwicklung</strong> hängen 2026 zunehmend davon ab, KI dort einzusetzen, wo sie den größten Impact hat: Leads erfassen und qualifizieren, repetitive Prozesse automatisieren und Teams für wertschöpfende Arbeit freistellen.</p>
-
-      <h3>Drei Hebel für Wachstum</h3>
-
-      <h4>1. Lead-Generierung und -Qualifizierung</h4>
-      <p>KI-Mitarbeiter und <a href="/ai-receptionist">KI-Rezeptionisten</a> erfassen und qualifizieren Leads rund um die Uhr. Ergebnis: mehr Chancen, schnellere Reaktion. Unsere Kunden berichten von bis zu <strong>300 % mehr qualifizierten Leads</strong>.</p>
-
-      <h4>2. Prozessautomatisierung</h4>
-      <p>Angebote, Terminplanung, Nachverfolgungen und Kunden-FAQs automatisieren. Typischer Produktivitätsgewinn: <strong>40–50 %</strong> in betroffenen Bereichen.</p>
-
-      <h4>3. Web und SaaS</h4>
-      <p>Eine professionelle <a href="/agentic-softwares">maßgeschneiderte Web- oder SaaS</a>-Präsenz schafft Vertrauen und konvertiert Besucher zu Leads.</p>
-
-      <blockquote>
-        <p>„Wir haben Leads verloren, weil wir nicht schnell genug reagieren konnten. Jetzt erfasst die KI alles, qualifiziert auf Französisch, und unser Team spricht nur noch mit kaufbereiten Personen. Umsatz um 40 % in sechs Monaten gestiegen." — <em>Direktor, B2B-Dienstleistungen, Lyon</em></p>
-      </blockquote>
-
-      <h3>Fallstudie: Wachstum einer Beratungsfirma</h3>
-      <p><strong>Ergebnisse nach 60 Tagen:</strong></p>
-      <ul>
-        <li><strong>Kundenabsprung</strong>: 15 % → 3 %</li>
-        <li><strong>Zeit bis zum ersten Meeting</strong>: 5–7 Tage → unter 48 Stunden</li>
-        <li><strong>Eingesparte Verwaltungsstunden</strong>: 25 Stunden/Woche</li>
-        <li><strong>Umsatzauswirkung</strong>: 30 % Steigerung der Neukundengewinnung</li>
-      </ul>
-
-      <hr>
-      <p><em><a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Buchen Sie Ihr kostenloses Strategiegespräch</a>, um Ihren KI-Wachstumsplan zu definieren.</em></p>
-    `
-  },
-
   'business-development-ia-leads-24-7': {
     title: 'KI-gestützte Geschäftsentwicklung: Jeden Lead erfassen und rund um die Uhr mehr Abschlüsse erzielen',
     excerpt: 'Wie KI-gestützte Geschäftsentwicklung jeden Lead erfasst und hilft, rund um die Uhr mehr Abschlüsse zu erzielen. Lead-Generierung, Qualifizierung und Follow-up-Automatisierung.',
@@ -1581,6 +1376,11 @@ export const contentDe: Record<string, Partial<BlogArticle>> = {
 
       <p><strong>Website-Erstellung</strong> und <strong>Website-Entwicklung</strong> 2026 drehen sich nicht nur darum, gut auszusehen – sie drehen sich darum, Leads und Termine zu generieren. Eine intelligente Website verbindet klare Botschaften, starke CTAs und Integration mit <strong>KI-Mitarbeitern</strong>, die Besucher rund um die Uhr erfassen und qualifizieren.</p>
 
+      <figure class="blog-content-figure" style="margin: 2em 0;">
+        <img src="/blog/website-creation-ai-2026-guide-books-appointments.png" alt="Website mit KI: Termine und Lead-Erfassung automatisieren" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
+        <figcaption style="text-align: center; color: var(--muted); font-size: 0.9rem; margin-top: 0.5em;">Eine leadgenerierende Website verbindet jeden Besucher mit Ihrem KI-Rezeptionisten</figcaption>
+      </figure>
+
       <h3>Warum „Broschüren-Websites" 2026 scheitern</h3>
       <ul>
         <li><strong>Kein Erfassungsmechanismus</strong>: Ein Kontaktformular ohne Follow-up bedeutet, dass Leads kalt werden. KI stellt sicher, dass jede Einreichung sofort eine Antwort erhält.</li>
@@ -1608,47 +1408,6 @@ export const contentDe: Record<string, Partial<BlogArticle>> = {
 
       <hr>
       <p><em><a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Buchen Sie Ihr kostenloses Strategiegespräch</a>, um Ihre leadgenerierende Website zu gestalten.</em></p>
-    `
-  },
-
-  'developpement-application-web-saas-sur-mesure-2026': {
-    title: 'Maßgeschneiderte Web- und SaaS-Entwicklung: Warum wachsende Unternehmen 2026 auf Individuallösungen setzen',
-    excerpt: 'Warum wachsende Unternehmen in Frankreich und der DR Kongo 2026 auf maßgeschneiderte Web- und SaaS-Entwicklung setzen. Eigentum, Skalierbarkeit und perfekte Prozessanpassung.',
-    category: 'Maßgeschneiderte SaaS-Entwicklung',
-    readTime: '12 Min. Lesezeit',
-    publishDate: '19. März 2026',
-    tags: ['Webanwendungsentwicklung', 'Maßgeschneidertes SaaS', 'Frankreich DR Kongo', 'Custom SaaS', 'Webentwicklung', 'Individualsoftware'],
-    content: `
-      <h2>Maßgeschneiderte Web- und SaaS-Entwicklung: Warum wachsende Unternehmen 2026 auf Individuallösungen setzen</h2>
-
-      <p><strong>Webanwendungsentwicklung</strong> und <strong>maßgeschneidertes SaaS</strong> bieten Ihnen etwas, das Standardlösungen nicht können: vollständiges Eigentum, Workflows, die zu Ihren Prozessen passen, und Skalierbarkeit ohne Herstellerbindung.</p>
-
-      <h3>Warum „Einfach eine Vorlage nehmen" bei wachsenden Unternehmen scheitert</h3>
-      <ul>
-        <li><strong>Workflow-Starrheit</strong>: Ihr Verkaufsprozess passt nicht zur Vorlage.</li>
-        <li><strong>Integrationswände</strong>: CRM, Abrechnungssystem und Kalender müssen miteinander kommunizieren.</li>
-        <li><strong>Skalierungsdecke</strong>: Was bei 50 Nutzern funktioniert, versagt bei 500.</li>
-        <li><strong>Datenfalle</strong>: Ihre Daten leben im System eines anderen.</li>
-      </ul>
-
-      <h3>Was wir bauen</h3>
-      <ul>
-        <li><strong>Kundenportale</strong>: Sicherer Zugang für Ihre Kunden – Dokumente, Tracking, Zahlungen – auf Französisch und an Ihren Markt angepasst.</li>
-        <li><strong>Interne Tools</strong>: Dashboards, Workflows und Automatisierungen, die zu Ihrem Arbeitsstil passen.</li>
-        <li><strong>Branchenapps</strong>: Immobilien, Logistik, Beratung – Lösungen für Ihre Branche.</li>
-      </ul>
-
-      <h3>Fallstudie: Kundenportal einer Beratungsfirma</h3>
-      <p><strong>Ergebnisse:</strong></p>
-      <ul>
-        <li><strong>Kundenzufriedenheit</strong>: 35 % NPS-Steigerung</li>
-        <li><strong>Verwaltungszeit</strong>: 15 Stunden/Woche eingespart</li>
-        <li><strong>Abrechnungszyklus</strong>: Von 14 Tagen auf 5 Tage reduziert</li>
-        <li><strong>ROI</strong>: Entwicklungskosten in 5 Monaten amortisiert</li>
-      </ul>
-
-      <hr>
-      <p><em><a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Buchen Sie Ihr kostenloses Strategiegespräch</a>, um Ihr maßgeschneidertes Web- oder SaaS-Projekt zu besprechen.</em></p>
     `
   },
 
@@ -1894,152 +1653,10 @@ export const contentDe: Record<string, Partial<BlogArticle>> = {
     `
   },
 
-  'digital-border-coding-drc-act-resistance': {
-    title: 'Die digitale Grenze: Warum Programmieren in der DR Kongo ein Akt des Widerstands ist',
-    excerpt: 'In San Francisco ist Claude Code ein Produktivitäts-Tool. In Kinshasa ist es ein eingeschränktes Privileg. Für junge kongolesische Entwickler ist der Unterschied zwischen einer globalen Karriere und lokalem Stillstand oft davon abhängig, wie gut sie die Regeln umgehen können, die sie ausschließen sollen.',
-    category: 'Zukunft der Arbeit',
-    readTime: '8 Min. Lesezeit',
-    publishDate: '19. März 2026',
-    tags: ['DR Kongo', 'Digitale Barrieren', 'Entwicklerzugang', 'Lokale KI', 'Open Source', 'Kinshasa', 'Afrikanische Tech'],
-    content: `
-      <h2>Die digitale Grenze: Warum Programmieren in der DR Kongo ein Akt des Widerstands ist</h2>
-      
-      <p>In San Francisco ist Claude Code ein Produktivitäts-Tool. In Kinshasa ist es ein eingeschränktes Privileg. Für einen jungen kongolesischen Entwickler ist der Unterschied zwischen einer globalen Karriere und lokalem Stillstand oft davon abhängig, wie gut er die Regeln umgehen kann, die ihn ausschließen sollen.</p>
 
-      <h3>Der Haken: Die „Papierwand"</h3>
-      
-      <p>Stellen Sie sich eine späte Nacht in Kinshasa oder Goma vor. Ein Entwickler sieht ein bahnbrechendes neues Tool wie Claude Code, das auf X (Twitter) im Trend liegt. Er geht auf die Seite, gespannt darauf, es auszuprobieren – und sieht: <strong>„Dieser Service ist in Ihrer Region nicht verfügbar."</strong></p>
-      
-      <p>Geografie sollte kein Genie bestimmen. 2025 ist Ihre IP-Adresse eine bedeutendere Karrierebarriere als Ihr tatsächliches Können. Die gleichen Tools, mit denen Entwickler im Silicon Valley 10-mal schneller arbeiten, sind hinter Geo-Sperren, Sanktionen und Zahlungssystemen verschlossen, die ganze Länder ausschließen. Das Ergebnis? Eine Generation talentierter afrikanischer Entwickler, die zwischen Regelkonformität und Zurückbleiben wählen muss.</p>
 
-      <h3>Das „Innovation vs. Verstoß"-Dilemma</h3>
-      
-      <p>Für Jugendliche in sanktionierten oder übersehenen Ländern bedeutet „den Regeln folgen" oft „zurückbleiben." Die Nutzung von VPNs oder Drittanbieter-Konten geht nicht darum, ein „Hacker" zu sein – es ist eine Überlebensstrategie, um auf die gleiche agentische Kraft zuzugreifen, die Entwickler in San Francisco nutzen. Wenn die offizielle Tür verschlossen ist, lernt man, einen anderen Weg zu finden. Das ist kein Betrug. Das ist Resilienz.</p>
 
-      <blockquote>
-        <p>„Der beste Code wird von denen geschrieben, die ihre eigenen Türen bauen mussten, weil der Haupteingang verschlossen war."</p>
-      </blockquote>
 
-      <h3>Der Aufstieg des „Geister-Entwicklers"</h3>
-      
-      <p>Tausende talentierter afrikanischer Entwickler tragen zu globalen Projekten bei – müssen aber ihren Standort verbergen, nur um bezahlt zu werden oder Standard-APIs zu nutzen. Sie arbeiten an Open-Source-Codebasen, liefern Features für internationale Kunden und bauen Produkte, die Millionen erreichen. Doch offiziell existieren sie nicht im Ökosystem.</p>
-      
-      <p>Das schafft eine <strong>digitale Schattenwirtschaft</strong>: Die Welt profitiert von afrikanischem Talent, während sie es offiziell ausschließt.</p>
-
-      <h3>Die Kontrolle zurückgewinnen: Die Local-First-Revolution</h3>
-      
-      <p>Die Lösung ist nicht, weiter um Zugang zu bitten. Es ist, unsere eigene Infrastruktur zu bauen. <strong>Open Source und lokale KI</strong> ändern die Erzählung: Wenn sie die Cloud blockieren, betreiben wir die Modelle auf unserem eigenen Silizium.</p>
-      
-      <p>Tools wie Ollama, LocalAI und offene Modelle (Llama, Mistral, Qwen) laufen vollständig auf Ihrem Rechner. Keine Geo-Sperren. Keine API-Schlüssel, die an eine Rechnungsadresse in Kalifornien gebunden sind. Nur Code, Rechenleistung und Community – zugänglich für jeden mit einem Laptop und einer Internetverbindung.</p>
-      
-      <ul>
-        <li><strong>Ollama</strong>: Llama, Mistral und andere Modelle lokal ausführen. Ein Befehl, keine Cloud-Abhängigkeit.</li>
-        <li><strong>LocalAI</strong>: OpenAI-kompatible API auf Ihrer eigenen Hardware. Endpunkt tauschen, Workflow beibehalten.</li>
-        <li><strong>Offene Modelle</strong>: Modelle, die Sie herunterladen, feintunen und ohne Erlaubnis eines US-Unternehmens ausführen können.</li>
-      </ul>
-      
-      <p>Die Local-First-Revolution lehnt nicht die Cloud ab. Sie schafft eine Wahlmöglichkeit. Wenn der Haupteingang verschlossen ist, wartet man nicht darauf, dass jemand ihn öffnet – man baut seine eigene Tür.</p>
-
-      <h3>Aufruf zum Handeln</h3>
-      
-      <p>Wenn Sie ein Entwickler in einer „digitalen Wüste" sind – Kinshasa, Goma, Lubumbashi oder überall dort, wo die Cloud eine Grenze gezogen hat – teilen Sie Ihre Umwege. Dokumentieren Sie, was funktioniert. Bauen Sie offen. Je mehr wir teilen, desto weniger kann eine einzelne Barriere uns aufhalten.</p>
-      
-      <p>Bei Digni Digital bauen wir <a href="/agentic-softwares">Lösungen, die im frankophonen Afrika funktionieren</a> – nicht als Nachgedanke, sondern von Grund auf. Französisch zuerst. Mobile zuerst. Zugänglich. Weil die Zukunft der Technologie nicht von Ihrer Postleitzahl abhängen sollte.</p>
-
-      <hr>
-      
-      <p><em>Bereit, ohne Grenzen zu bauen? <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Buchen Sie ein kostenloses Strategiegespräch</a>, um zu besprechen, wie wir Ihre digitale Transformation unterstützen können – ob Sie Entwickler, Start-up oder Institution sind, die die nächste Generation vorbereitet.</em></p>
-    `
-  },
-  'ai-automation-scaling-business-growth': {
-    title: 'Unternehmen skalieren: Die Rolle von KI-Automatisierungsplattformen beim Wachstum',
-    excerpt: 'Skalieren Sie mit KI-Automatisierung: Erfahren Sie, wie KI-Plattformen Effizienz steigern, Kosten senken und nachhaltiges Wachstum ermöglichen.',
-    category: 'KI-Mitarbeiter-System',
-    readTime: '11 Min. Lesezeit',
-    publishDate: '19. März 2026',
-    tags: ['Geschäftsautomatisierung skalieren', 'KI-Automatisierung', 'Unternehmensskalierung', 'No-Code-Plattformen', 'Unternehmenswachstum'],
-  },
-  'vibecoding-african-youth-make-money-online-build-products': {
-    title: 'Vibecoding: Wie afrikanische Jugendliche online Geld verdienen können, indem sie Produkte bauen',
-    excerpt: 'Afrikanische Jugend: Vibecoding ermöglicht es Ihnen, digitale Produkte mit KI zu bauen und zu verkaufen—ohne Code. Lernen Sie, was Sie beherrschen müssen und wie Sie monetarisieren.',
-    category: 'Zukunft der Arbeit',
-    readTime: '18 Min. Lesezeit',
-    publishDate: '19. März 2026',
-    tags: ['Vibecoding', 'Afrikanische Jugend', 'Online Geld verdienen', 'KI-Produktentwicklung', 'Zukunft der Arbeit'],
-  },
-  'one-software-life-changing-stories-youth-millionaires-2024-2026': {
-    title: 'Eine Software, ein Leben verändert: Was junge Builder in den Medien vormachen (2024–2026)',
-    excerpt: 'Das richtige Produkt zur richtigen Zeit—mit Distribution—kann die Laufbahn eines Builders ändern. Fünf reale Muster aus der Berichterstattung 2024–2026 (Cal AI, Beem, Vidovo …) mit ehrlichen Einschränkungen.',
-    category: 'Zukunft der Arbeit',
-    readTime: '14 Min. Lesezeit',
-    publishDate: '20. März 2026',
-    tags: [
-      'Jugendgründung',
-      'Gen-Z-Gründer',
-      'KI-Apps',
-      'SaaS',
-      'Zukunft der Arbeit',
-      'Cal AI',
-      'Produktvertrieb',
-    ],
-    content: `
-      <h2>Nicht «schnell reich»—sondern «ein seriöses Produkt, ernsthaft verteilt»</h2>
-
-      <p>Schlagzeilen über Teen-Gründer sind laut. Ohne Hype bleibt eine klarere Linie: <strong>ein gut gewähltes Softwareprodukt</strong>, das eine tägliche, schmerzhafte Gewohnheit adressiert, schnell gebaut und ausgeliefert wird und der richtigen Zielgruppe gezeigt wird, kann ein Leben verändern—Kapital, Optionen und der Beweis, dass Sie es wiederholen können.</p>
-      <p>Dieses Muster taucht 2024–2026 immer wieder in seriösen Medien auf. Hier sind <strong>fünf Archetypen</strong> mit Namen und Produkten, Links zu <strong>dem, was sie gebaut haben</strong>, und zu <strong>tragfähiger Berichterstattung</strong>—nicht als Garantie, sondern als Beleg für den Mechanismus.</p>
-
-      <blockquote>
-        <p>«Survivorship Bias ist real. Für jede virale App gibt es Tausende ohne Traktion. Die Lernleistung ist nicht Glück—sondern <strong>enges Problem, schnelles Shipping, hartnäckige Distribution und Iteration</strong>.»</p>
-      </blockquote>
-
-      <h2>Warum eine Software mehr zählen kann als eine CV-Zeile</h2>
-      <ul>
-        <li><strong>Portabler Beweis</strong>—ein Link für DM oder Interview.</li>
-        <li><strong>Möglicher Cashflow</strong>—Abo oder Nutzung, wenn Akquise und Retention sitzen.</li>
-        <li><strong>Zusammengesetzte Skills</strong>—Go-to-Market, Support, Analytics, Produkturteil.</li>
-        <li><strong>Strategischer Exit</strong>—wenn die Passung zu einem etablierten Anbieter stimmt.</li>
-      </ul>
-
-      <p>KI-gestütztes Bauen und App-Stores haben das Experimentieren verbilligt—aber <strong>nicht den Bedarf an Distribution</strong> abgeschafft.</p>
-
-      <h2>Szenario 1: Erster Exit finanziert die nächste Wette</h2>
-      <p><strong>Muster:</strong> Früh liefern; kleine Liquidität; Zeit und Geld in den größeren Schwung reinvestieren.</p>
-      <p><strong>Beispiel:</strong> Profile von <strong>Zach Yadegari</strong> nennen den Verkauf von <strong>Totally Science</strong> in der Größenordnung von <strong>100.000 $ mit 16</strong>, Berichte um <strong>früh 2024</strong>.</p>
-      <p><strong>Danach gebaut:</strong> <a href="https://www.calai.app/" target="_blank" rel="noopener noreferrer">Cal AI</a>. <a href="https://apps.apple.com/us/app/cal-ai-food-calorie-tracker/id6480417616" target="_blank" rel="noopener noreferrer">App Store</a> · <a href="https://play.google.com/store/apps/details?id=com.viraldevelopment.calai" target="_blank" rel="noopener noreferrer">Google Play</a>.</p>
-      <p><strong>Medien:</strong> <a href="https://www.cnbc.com/2025/09/06/cal-ai-how-a-teenage-ceo-built-a-fast-growing-calorie-tracking-app.html" target="_blank" rel="noopener noreferrer">CNBC</a>; <a href="https://nordic.businessinsider.com/teenager-built-million-dollar-startup-how-he-did-it-2025-10" target="_blank" rel="noopener noreferrer">Business Insider Nordic</a>.</p>
-
-      <h2>Szenario 2: KI-Nützlichkeit für Alltagsgewohnheit → Consumer-Skalierung</h2>
-      <p><strong>Beispiel:</strong> <strong>Cal AI</strong>, mitgründet von <strong>Zach Yadegari</strong> und <strong>Henry Langmack</strong>, Start <strong>Mai 2024</strong>.</p>
-      <p><strong>Links:</strong> <a href="https://www.calai.app/" target="_blank" rel="noopener noreferrer">calai.app</a> · iOS/Android oben.</p>
-      <p><strong>Medien:</strong> <a href="https://techcrunch.com/2025/03/16/photo-calorie-app-cal-ai-downloaded-over-a-million-times-was-built-by-two-teenagers/" target="_blank" rel="noopener noreferrer">TechCrunch Mär 2025</a>; <a href="https://www.cnbc.com/2025/09/06/cal-ai-how-a-teenage-ceo-built-a-fast-growing-calorie-tracking-app.html" target="_blank" rel="noopener noreferrer">CNBC Sep 2025</a>.</p>
-      <p><em>Hinweis:</em> Umsatzzahlen variieren—als <strong>berichtete Momentaufnahmen</strong> lesen.</p>
-
-      <h2>Szenario 3: Ernstes Kapital vor dem Abschluss</h2>
-      <p><strong>Beispiel:</strong> <strong>Toby Brown</strong> und <strong>Beem</strong>. <em>The Times</em> berichtete ~<strong>1 Mio. $</strong> von <strong>South Park Commons</strong>, <strong>Feb. 2025</strong>.</p>
-      <p><strong>Links:</strong> <a href="https://beem.computer" target="_blank" rel="noopener noreferrer">beem.computer</a> · <a href="https://www.southparkcommons.com/companies/beem" target="_blank" rel="noopener noreferrer">South Park Commons — Beem</a>.</p>
-      <p><strong>Medium:</strong> <a href="https://www.thetimes.com/business/entrepreneurs/article/the-16-year-old-swapping-gcses-for-silicon-valley-and-his-1m-start-up-00cptjxqh" target="_blank" rel="noopener noreferrer">The Times</a>.</p>
-
-      <h2>Szenario 4: „Schlafzimmer“-Pfad—Vidovo</h2>
-      <p><strong>Beispiel:</strong> <strong>Elijah Khasabo</strong> und <strong>Vidovo</strong> (Marken und UGC-Creator). <em>Fortune</em> Nov. 2025.</p>
-      <p><strong>Link:</strong> <a href="https://www.vidovo.com" target="_blank" rel="noopener noreferrer">vidovo.com</a>.</p>
-      <p><strong>Medium:</strong> <a href="https://fortune.com/2025/11/27/gen-z-entrepreneur-elijah-khasabo-tech-startup-college-student-degree-networking/" target="_blank" rel="noopener noreferrer">Fortune</a>.</p>
-
-      <h2>Szenario 5: Strategische Übernahme</h2>
-      <p><strong>Beispiel:</strong> <strong>MyFitnessPal</strong> übernimmt <strong>Cal AI</strong>—<strong>TechCrunch</strong>, 2. März 2026.</p>
-      <p><strong>Links:</strong> <a href="https://www.myfitnesspal.com" target="_blank" rel="noopener noreferrer">MyFitnessPal</a> · <a href="https://www.calai.app/" target="_blank" rel="noopener noreferrer">Cal AI</a>.</p>
-      <p><strong>Medium:</strong> <a href="https://techcrunch.com/2026/03/02/myfitnesspal-has-acquired-cal-ai-the-viral-calorie-app-built-by-teens/" target="_blank" rel="noopener noreferrer">TechCrunch</a>.</p>
-
-      <h2>Was am alten Modell bricht</h2>
-      <p>Ein Jahr geheim bauen, ein Problem lösen, das niemand sucht, und hoffen, Merit verteilt sich von selbst. Gegensteuer: kleinerer Scope, schnellere Zyklen, klare Kanäle.</p>
-
-      <h2>Der reproducierbare Teil</h2>
-      <p>Wir haben das <a href="/future-ready-graduate">Future-Ready Graduate Program</a> für genau diese Ära gebaut: KI-gestütztes Bauen, echte Projekte, und wie Produkte gefunden und bezahlt werden—ohne zu behaupten, Ergebnisse seien einfach oder „durchschnittlich“.</p>
-
-      <hr>
-
-      <p><em>Bereit, die Skills hinter diesen Mustern zu lernen? <a href="/future-ready-graduate" target="_blank" rel="noopener noreferrer">Programm ansehen</a> oder <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Beratung buchen</a> bei Digni Digital.</em></p>
-    `,
-  },
   'modern-fractional-coo-ai-employee-business-partner': {
     title: 'Der moderne Fractional COO: Führung im Betrieb mit einer KI-Mitarbeiter-Schicht kombinieren',
     excerpt: 'Praxisleitfaden für wachsende Unternehmen: Was ein moderner Fractional COO wirklich leistet, worin er sich von Assistenz oder Buchhaltung unterscheidet und wie sich die Erwartungen an einen KI-Mitarbeiter—Geschwindigkeit, Beständigkeit, Abdeckung—in einem Partnerschaftsmodell vereinen.',
