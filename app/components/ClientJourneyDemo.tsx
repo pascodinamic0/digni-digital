@@ -102,7 +102,15 @@ type FunnelCopy = {
   leadsUnit: string
 }
 
-/** Rotating styles for channel source chips (accent / info / warning / purple / success). */
+/** Rich deep blue (midnight navy) — pushed darker again for a heavier deep-blue read. */
+const FUNNEL_ACTIVE_DEEP_RGB = '5, 22, 78'
+/** Near-black navy for edges, glow falloff, and inset depth. */
+const FUNNEL_ACTIVE_INK_RGB = '2, 9, 36'
+/** Intake band idle wash — deep blue tint (replaces bright --info / --accent mix on broken funnel). */
+const FUNNEL_INTAKE_SURFACE_RGB = '10, 34, 100'
+const FUNNEL_INTAKE_SURFACE_MID_RGB = '6, 22, 72'
+
+/** Rotating styles for channel source chips (accent / deep-blue “website” / warning / purple / success). */
 const CHANNEL_CHIP_STYLES = [
   {
     shell:
@@ -111,8 +119,8 @@ const CHANNEL_CHIP_STYLES = [
   },
   {
     shell:
-      'bg-info/10 border border-info/35 shadow-sm shadow-info/15',
-    label: 'text-info',
+      'bg-[rgba(10,34,100,0.16)] border border-[rgba(10,34,100,0.42)] shadow-sm shadow-[rgba(5,22,78,0.22)]',
+    label: 'text-[rgb(100,145,218)]',
   },
   {
     shell:
@@ -130,11 +138,6 @@ const CHANNEL_CHIP_STYLES = [
     label: 'text-success',
   },
 ] as const
-
-/** Navy blue-950 (#172554) — much deeper than brand accent; reads as rich blue, not gray. */
-const FUNNEL_ACTIVE_DEEP_RGB = '23, 37, 84'
-/** Darker edge for layered ring + inset (blue-950 / near-midnight blue). */
-const FUNNEL_ACTIVE_INK_RGB = '15, 23, 61'
 
 /** Strong focus ring + glow (stacked dark blues so the step pops). */
 const ACTIVE_STEP_SHADOW = [
@@ -291,9 +294,8 @@ function VisualFunnel({
                   style={(() => {
                     let background: string
                     if (isIntakeBand) {
-                      const base =
-                        'linear-gradient(180deg, rgba(var(--info-rgb), 0.14) 0%, rgba(var(--accent-rgb), 0.08) 100%)'
-                      const activeWash = `linear-gradient(180deg, rgba(${FUNNEL_ACTIVE_DEEP_RGB}, 0.78) 0%, rgba(${FUNNEL_ACTIVE_INK_RGB}, 0.45) 100%), `
+                      const base = `linear-gradient(180deg, rgba(${FUNNEL_INTAKE_SURFACE_RGB}, 0.26) 0%, rgba(${FUNNEL_INTAKE_SURFACE_MID_RGB}, 0.14) 100%)`
+                      const activeWash = `linear-gradient(180deg, rgba(${FUNNEL_ACTIVE_DEEP_RGB}, 0.92) 0%, rgba(${FUNNEL_ACTIVE_INK_RGB}, 0.62) 100%), `
                       background = isActive ? `${activeWash}${base}` : base
                     } else if (isLossBand) {
                       const base = isActive
@@ -313,7 +315,7 @@ function VisualFunnel({
                     if (isActive) {
                       border = `3px solid rgba(${FUNNEL_ACTIVE_DEEP_RGB}, 1)`
                     } else if (isIntakeBand) {
-                      border = '2px solid rgba(var(--info-rgb), 0.4)'
+                      border = `2px solid rgba(${FUNNEL_INTAKE_SURFACE_RGB}, 0.5)`
                     } else if (isLossBand) {
                       border = '2px solid rgba(var(--destructive-rgb), 0.45)'
                     } else {
@@ -365,12 +367,20 @@ function VisualFunnel({
                         isActive={isActive}
                         suffix=""
                         className={`text-base sm:text-sm font-mono tabular-nums font-bold ${
-                          isIntakeBand ? 'text-info' : isLossBand ? 'text-destructive' : 'text-success'
+                          isIntakeBand
+                            ? 'text-[rgb(100,145,218)]'
+                            : isLossBand
+                              ? 'text-destructive'
+                              : 'text-success'
                         }`}
                       />
                       <span
                         className={`text-[10px] sm:text-xs font-medium uppercase tracking-wide ${
-                          isIntakeBand ? 'text-info/85' : isLossBand ? 'text-destructive/80' : 'text-success/80'
+                          isIntakeBand
+                            ? 'text-[rgb(88,128,200)]'
+                            : isLossBand
+                              ? 'text-destructive/80'
+                              : 'text-success/80'
                         }`}
                       >
                         {funnelCopy.leadsUnit}
