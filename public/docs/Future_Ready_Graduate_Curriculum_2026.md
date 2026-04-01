@@ -27,7 +27,7 @@ We believe technology should serve everyone, not just those who can afford it. J
 - Founded in 2019
 - 8+ years of experience
 - 150+ businesses transformed
-- 500+ students trained annually
+- 85+ learners per flagship cohort annually
 - 85% graduate employment rate (vs 45% industry average)
 - 150% average salary increase for graduates
 - 98% client satisfaction rate
@@ -56,7 +56,7 @@ We believe technology should serve everyone, not just those who can afford it. J
 - 85% graduate employment rate within 6 months (vs 45% industry average)
 - 150% average salary increase for graduates
 - 95% employer satisfaction rating
-- 500+ students trained annually
+- 85+ learners per flagship cohort annually
 
 ### Partnership Model
 **What Schools Provide:**

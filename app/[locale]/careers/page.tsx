@@ -1,166 +1,146 @@
 'use client'
 
-import { use } from 'react'
+import { use, useState } from 'react'
 import { motion } from 'framer-motion'
 import AnimatedSection from '@/app/components/AnimatedSection'
+import CareersApplicationModal from '@/app/components/CareersApplicationModal'
 
-const openPositions = [
+type JobId = 'va' | 'designer'
+
+const openPositions: {
+  id: JobId
+  title: string
+  type: string
+  location: string
+  description: string
+  requirements: string[]
+  responsibilities: string[]
+  benefits: string[]
+}[] = [
   {
-    title: 'Executive Virtual Assistant',
+    id: 'va',
+    title: 'Virtual Assistant',
     type: 'Full-time',
-    location: 'Remote (Africa/Europe timezone)',
-    salary: '$18,000 - $28,000',
-    description: 'Support our leadership team and clients with administrative excellence. Manage calendars, communications, and operations that keep growth projects on track.',
+    location: 'Remote (Africa / Europe time zones)',
+    description:
+      'Own our admin and operations stack end to end. Support leadership and clients with scheduling, communications, CRM hygiene, data entry, and follow-through so growth work never stalls.',
     requirements: [
-      '2+ years of executive or administrative assistant experience',
-      'Proficiency in Google Workspace, Microsoft 365, and scheduling tools',
-      'Excellent written and verbal communication in English',
-      'Strong organizational and time-management skills',
-      'Experience with CRM tools (HubSpot, Salesforce, or similar)',
-      'Ability to work across Africa/Europe time zones'
+      '1+ years in VA, executive assistant, operations, or support roles',
+      'Fluent written and verbal English; clear, professional tone',
+      'Comfort with Google Workspace, Microsoft 365, spreadsheets, and CRM tools',
+      'Reliable internet, quiet workspace, and overlap with agreed collaboration hours',
+      'Self-directed, detail-oriented, and comfortable with async communication',
     ],
     responsibilities: [
-      'Manage calendars, scheduling, and meeting coordination',
-      'Handle email triage and client communications',
-      'Prepare reports, presentations, and meeting materials',
-      'Support project coordination and follow-up tasks',
-      'Maintain organized systems for documents and workflows'
+      'Manage calendars, scheduling, email triage, and meeting coordination',
+      'Maintain CRM records, light reporting, and internal documentation',
+      'Handle client and team inquiries, onboarding steps, and task handoffs',
+      'Coordinate projects, deadlines, and follow-ups across time zones',
+      'Keep files, templates, and workflows organized and up to date',
     ],
     benefits: [
-      'Competitive salary with performance bonuses',
-      'Fully remote work environment',
-      'Professional development budget',
-      'Flexible working hours',
-      'Direct exposure to growth operations',
-      'Stable, long-term engagement'
-    ]
+      'Fully remote team with structured onboarding',
+      'Professional development support',
+      'Flexible hours within core collaboration windows',
+      'Direct exposure to growth and client operations',
+      'Long-term, stable engagement for strong performers',
+    ],
   },
   {
-    title: 'Virtual Assistant — Operations & Support',
+    id: 'designer',
+    title: 'Graphic Designer',
     type: 'Full-time',
-    location: 'Remote (Africa timezone)',
-    salary: '$15,000 - $24,000',
-    description: 'Keep our client operations running smoothly. Handle customer inquiries, data entry, and support tasks that enable our growth infrastructure to scale.',
+    location: 'Remote',
+    description:
+      'Shape how we and our clients show up visually — brand systems, social assets, presentations, and campaign creatives that stay on brief and on brand.',
     requirements: [
-      '1+ years of VA, customer support, or operations experience',
-      'Strong attention to detail and accuracy',
-      'Comfort with spreadsheets, databases, and basic tools',
-      'Clear written communication in English',
-      'Reliable internet and quiet workspace',
-      'Self-motivated with minimal supervision'
+      'A portfolio showing brand, marketing, or digital design work',
+      'Proficiency in Figma and/or Adobe Creative Cloud',
+      'Strong eye for typography, layout, and visual hierarchy',
+      'Ability to take feedback and iterate quickly',
+      'Comfort with design handoff and asset preparation for web or print',
     ],
     responsibilities: [
-      'Respond to client inquiries and support tickets',
-      'Perform data entry and CRM updates',
-      'Assist with onboarding and offboarding workflows',
-      'Support internal documentation and process tracking',
-      'Coordinate with team on task handoffs and deadlines'
+      'Create and refine layouts for social, ads, decks, and landing pages',
+      'Apply and extend brand guidelines across touchpoints',
+      'Collaborate with ops and content on timelines and deliverables',
+      'Prepare export-ready files and organized source files',
+      'Stay current with design trends relevant to our markets',
     ],
     benefits: [
-      'Competitive salary with growth potential',
-      'Remote work flexibility',
-      'Structured training and onboarding',
-      'Clear career progression path',
-      'Supportive team environment',
-      'Consistent, predictable workload'
-    ]
+      'Remote-first creative collaboration',
+      'Variety across client and internal projects',
+      'Room to grow into lead or brand ownership',
+      'Learning budget for courses and tools',
+      'Portfolio-friendly work with real shipped output',
+    ],
   },
-  {
-    title: 'Virtual Assistant — Social Media & Content',
-    type: 'Contract',
-    location: 'Remote (Global)',
-    salary: '$12 - $22 per hour',
-    description: 'Support our digital presence and client campaigns. Create and schedule content, manage social accounts, and help grow audiences across platforms.',
-    requirements: [
-      '1+ years of social media or content support experience',
-      'Familiarity with Meta Business Suite, LinkedIn, and scheduling tools',
-      'Basic graphic design skills (Canva or similar)',
-      'Strong written English and attention to detail',
-      'Understanding of content calendars and posting best practices',
-      'Ability to work independently and meet deadlines'
-    ],
-    responsibilities: [
-      'Schedule and publish social media content',
-      'Draft captions and light copy for posts',
-      'Create simple graphics and visual assets',
-      'Monitor engagement and compile basic analytics',
-      'Support content calendar planning and coordination'
-    ],
-    benefits: [
-      'Flexible contract arrangements',
-      'Work on diverse client brands',
-      'Portfolio-building opportunities',
-      'Potential for long-term partnership',
-      'Creative input on content strategy',
-      'Remote-first, async-friendly workflow'
-    ]
-  }
 ]
 
 const values = [
   {
     title: 'Growth Mindset',
     description: 'We believe in continuous learning and improvement, both personally and professionally.',
-    icon: '🚀'
+    icon: '🚀',
   },
   {
     title: 'Client Success',
-    description: 'Our clients\' success is our success. We go above and beyond to deliver exceptional results.',
-    icon: '🎯'
+    description: "Our clients' success is our success. We go above and beyond to deliver exceptional results.",
+    icon: '🎯',
   },
   {
     title: 'Quality First',
     description: 'We never compromise on quality. Every project meets our high standards before delivery.',
-    icon: '⭐'
+    icon: '⭐',
   },
   {
     title: 'Remote Culture',
     description: 'We embrace remote work and have built systems that enable effective collaboration across time zones.',
-    icon: '🌍'
+    icon: '🌍',
   },
   {
     title: 'Innovation',
     description: 'We stay ahead of technology trends and encourage creative problem-solving approaches.',
-    icon: '💡'
+    icon: '💡',
   },
   {
     title: 'Work-Life Balance',
     description: 'We believe great work comes from well-rested, fulfilled team members.',
-    icon: '⚖️'
-  }
+    icon: '⚖️',
+  },
 ]
 
 const perks = [
   {
     title: 'Fully Remote',
     description: 'Work from anywhere with reliable internet. We provide the tools you need to succeed.',
-    icon: '🏠'
+    icon: '🏠',
   },
   {
     title: 'Flexible Hours',
-    description: 'Core collaboration hours with flexibility to work when you\'re most productive.',
-    icon: '⏰'
+    description: "Core collaboration hours with flexibility to work when you're most productive.",
+    icon: '⏰',
   },
   {
     title: 'Learning Budget',
     description: 'Annual budget for courses, conferences, books, and professional development.',
-    icon: '📚'
+    icon: '📚',
   },
   {
     title: 'Latest Tech',
     description: 'We provide modern equipment and access to the best tools and software.',
-    icon: '💻'
+    icon: '💻',
   },
   {
     title: 'Wellness Stipend',
     description: 'Annual stipend for wellness activities, home office setup, or tools that support your wellbeing.',
-    icon: '🌱'
+    icon: '🌱',
   },
   {
     title: 'Team Retreats',
     description: 'Annual team gatherings to connect, collaborate, and explore new destinations.',
-    icon: '✈️'
-  }
+    icon: '✈️',
+  },
 ]
 
 type CareersPageProps = {
@@ -171,8 +151,21 @@ type CareersPageProps = {
 export default function CareersPage({ params, searchParams }: CareersPageProps) {
   use(params)
   use(searchParams ?? Promise.resolve({}))
+  const [applyOpen, setApplyOpen] = useState(false)
+  const [applyPreset, setApplyPreset] = useState<JobId | undefined>(undefined)
+
+  const openApply = (preset?: JobId) => {
+    setApplyPreset(preset)
+    setApplyOpen(true)
+  }
+
   return (
     <main>
+      <CareersApplicationModal
+        isOpen={applyOpen}
+        onClose={() => setApplyOpen(false)}
+        presetRole={applyPreset}
+      />
 
       {/* Hero Section */}
       <section className="relative isolate min-h-screen flex items-center pt-16 sm:pt-20 overflow-hidden bg-gradient-mesh">
@@ -227,14 +220,10 @@ export default function CareersPage({ params, searchParams }: CareersPageProps) 
       <AnimatedSection className="py-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">
-              Why Work With Digni Digital?
-            </h2>
-            <p className="text-muted text-lg">
-              We're building something special, and we want you to be part of it
-            </p>
+            <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">Why Work With Digni Digital?</h2>
+            <p className="text-muted text-lg">We're building something special, and we want you to be part of it</p>
           </div>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {values.map((value, i) => (
               <motion.div
@@ -258,18 +247,14 @@ export default function CareersPage({ params, searchParams }: CareersPageProps) 
       <AnimatedSection className="py-24 bg-surface">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">
-              Open Positions
-            </h2>
-            <p className="text-muted text-lg">
-              Find your next career opportunity with us
-            </p>
+            <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">Open Positions</h2>
+            <p className="text-muted text-lg">Find your next career opportunity with us</p>
           </div>
-          
+
           <div className="space-y-8">
             {openPositions.map((position, i) => (
               <motion.div
-                key={i}
+                key={position.id}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -279,16 +264,13 @@ export default function CareersPage({ params, searchParams }: CareersPageProps) 
                 <div className="grid lg:grid-cols-3 gap-8">
                   <div className="lg:col-span-2">
                     <div className="flex flex-wrap items-center gap-4 mb-6">
-                      <span className="px-3 py-1 bg-accent/10 text-accent text-xs font-medium rounded-full">
-                        {position.type}
-                      </span>
+                      <span className="px-3 py-1 bg-accent/10 text-accent text-xs font-medium rounded-full">{position.type}</span>
                       <span className="text-muted text-sm">{position.location}</span>
-                      <span className="text-success font-medium text-sm">{position.salary}</span>
                     </div>
-                    
+
                     <h3 className="font-display text-3xl font-bold mb-4">{position.title}</h3>
                     <p className="text-muted text-lg mb-8 leading-relaxed">{position.description}</p>
-                    
+
                     <div className="grid md:grid-cols-2 gap-8">
                       <div>
                         <h4 className="font-semibold mb-4">Requirements</h4>
@@ -301,7 +283,7 @@ export default function CareersPage({ params, searchParams }: CareersPageProps) 
                           ))}
                         </ul>
                       </div>
-                      
+
                       <div>
                         <h4 className="font-semibold mb-4">Responsibilities</h4>
                         <ul className="space-y-2">
@@ -315,7 +297,7 @@ export default function CareersPage({ params, searchParams }: CareersPageProps) 
                       </div>
                     </div>
                   </div>
-                  
+
                   <div>
                     <div className="card p-6 bg-surface-light mb-6">
                       <h4 className="font-semibold mb-4">Benefits</h4>
@@ -328,13 +310,14 @@ export default function CareersPage({ params, searchParams }: CareersPageProps) 
                         ))}
                       </ul>
                     </div>
-                    
-                    <a
-                      href={`mailto:careers@digni-digital-llc.com?subject=Application for ${encodeURIComponent(position.title)}`}
+
+                    <button
+                      type="button"
+                      onClick={() => openApply(position.id)}
                       className="btn-primary w-full text-center"
                     >
                       Apply Now
-                    </a>
+                    </button>
                   </div>
                 </div>
               </motion.div>
@@ -347,14 +330,10 @@ export default function CareersPage({ params, searchParams }: CareersPageProps) 
       <AnimatedSection className="py-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">
-              Perks & Benefits
-            </h2>
-            <p className="text-muted text-lg">
-              We take care of our team so they can do their best work
-            </p>
+            <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">Perks & Benefits</h2>
+            <p className="text-muted text-lg">We take care of our team so they can do their best work</p>
           </div>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {perks.map((perk, i) => (
               <motion.div
@@ -378,20 +357,16 @@ export default function CareersPage({ params, searchParams }: CareersPageProps) 
       <AnimatedSection className="py-24 bg-surface">
         <div className="max-w-4xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">
-              Our Hiring Process
-            </h2>
-            <p className="text-muted text-lg">
-              A transparent, respectful process designed to find the right fit
-            </p>
+            <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">Our Hiring Process</h2>
+            <p className="text-muted text-lg">A transparent, respectful process designed to find the right fit</p>
           </div>
-          
+
           <div className="grid md:grid-cols-4 gap-8">
             {[
               { step: '01', title: 'Application', description: 'Submit your application with portfolio/resume' },
               { step: '02', title: 'Screening', description: 'Initial review and phone/video screening call' },
               { step: '03', title: 'Interview', description: 'Technical/skills assessment and culture fit interview' },
-              { step: '04', title: 'Decision', description: 'Final decision and offer (within 1 week)' }
+              { step: '04', title: 'Decision', description: 'Final decision and offer (within 1 week)' },
             ].map((step, i) => (
               <motion.div
                 key={i}
@@ -415,29 +390,20 @@ export default function CareersPage({ params, searchParams }: CareersPageProps) 
       {/* CTA Section */}
       <AnimatedSection className="py-24">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">
-            Don't See Your Role?
-          </h2>
+          <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">Don't See Your Role?</h2>
           <p className="text-muted text-lg mb-8">
             We're always looking for talented individuals. Send us your resume and tell us how you'd like to contribute to our mission.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="mailto:careers@digni-digital-llc.com"
-              className="btn-primary text-lg px-8 py-4"
-            >
+            <button type="button" onClick={() => openApply()} className="btn-primary text-lg px-8 py-4">
               Send Your Resume
-            </a>
-            <a
-              href="/contact"
-              className="btn-secondary text-lg px-8 py-4"
-            >
+            </button>
+            <a href="/contact" className="btn-secondary text-lg px-8 py-4">
               Get In Touch
             </a>
           </div>
         </div>
       </AnimatedSection>
-
     </main>
   )
 }

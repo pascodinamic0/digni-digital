@@ -260,6 +260,25 @@ footer#contact input#footer-newsletter-email:-webkit-autofill:focus {
   caret-color: var(--foreground);
 }
 
+/* Dark theme (default :root or data-theme=dark): light field + dark gray placeholder so “Enter your email” is readable */
+html:not([data-theme="light"]) footer#contact input#footer-newsletter-email {
+  background-color: rgba(255, 255, 255, 0.95);
+  color: #171717;
+  caret-color: #171717;
+  border-color: rgba(255, 255, 255, 0.35);
+}
+html:not([data-theme="light"]) footer#contact input#footer-newsletter-email::placeholder {
+  color: #404040;
+  opacity: 1;
+}
+html:not([data-theme="light"]) footer#contact input#footer-newsletter-email:-webkit-autofill,
+html:not([data-theme="light"]) footer#contact input#footer-newsletter-email:-webkit-autofill:hover,
+html:not([data-theme="light"]) footer#contact input#footer-newsletter-email:-webkit-autofill:focus {
+  -webkit-text-fill-color: #171717 !important;
+  caret-color: #171717;
+  box-shadow: 0 0 0 30px rgba(255, 255, 255, 0.95) inset !important;
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
