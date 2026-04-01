@@ -5,74 +5,19 @@ import { motion } from 'framer-motion'
 import { Link } from '@/i18n/navigation'
 import AnimatedSection from '@/app/components/AnimatedSection'
 import ScrollIndicator from '@/app/components/ScrollIndicator'
-import { getCtaButtonText, getBookingLinkProps } from '@/app/config/cta.config'
+import { getBookingLinkProps } from '@/app/config/cta.config'
 import { useLanguage } from '@/app/context/LocaleContext'
 import { translations } from '@/app/config/translations'
+import type { ServicesPageCardId } from '@/app/i18n/servicesPage'
 
-const services = [
-  {
-    id: 'ai-receptionist',
-    title: 'AI Employee Systems',
-    subtitle: 'Intelligent infrastructure for service businesses',
-    description:
-      'Most teams don’t need more software—they need infrastructure that runs without them. We map bottlenecks and deploy AI that answers, qualifies, and follows up so you keep clients longer and convert more leads.',
-    features: [
-      'Human bottleneck mapping',
-      '24/7 lead capture & qualification',
-      'Automated booking & follow-up',
-      'CRM-connected workflows',
-      'Retention-focused playbooks',
-      'Dashboards you actually use',
-    ],
-    technologies: ['AI Voice & messaging', 'Natural language processing', 'CRM integration'],
-    timeline: '2–4 weeks to go live',
-    link: '/ai-receptionist',
-    icon: '🤖',
-    color: 'accent',
-    outcomes: ['Longer client relationships', 'More qualified conversions', 'Scaling without chaos'],
-  },
-  {
-    id: 'future-ready-graduate',
-    title: 'Future-Ready Graduate Program',
-    subtitle: 'Job-Ready Graduates & Entrepreneurial Talents',
-    description: '9-month program. 85% employed. Guided learning personalized to each person\'s talents—bringing out entrepreneurial gifts. Real skills. Real jobs—or create your own.',
-    features: [
-      'AI-Powered Web Development',
-      'Digital Marketing & Analytics',
-      'Professional Portfolio Building',
-      'Guided learning personalized to each student\'s talents',
-      'Job Readiness Training—and skills to create jobs',
-      'Industry Internships',
-      'Career Placement Support'
-    ],
-    technologies: ['AI Tools', 'Web Development', 'Digital Marketing'],
-    timeline: '9 months (3 trimesters)',
-    link: '/future-ready-graduate',
-    icon: '🎓',
-    color: 'success',
-    outcomes: ['85% graduate employment rate', 'Entrepreneurial talents unlocked', 'Personalized to your gifts', 'Job creation as core value']
-  },
-  {
-    id: 'agentic-softwares',
-    title: 'Agentic Softwares Development',
-    subtitle: 'AI-Native Software That Works Autonomously',
-    description: 'Software with agentic DNA: perceives, reasons, acts. Built for autonomy.',
-    features: [
-      'AI Agent Integration',
-      'Autonomous Workflows',
-      'Intelligent Automation',
-      'Multi-agent Orchestration',
-      'LLM-Powered Features',
-      'Human-in-the-Loop Design'
-    ],
-    technologies: ['Next.js', 'LangChain', 'OpenAI', 'PostgreSQL', 'AWS'],
-    timeline: '8-16 weeks',
-    link: '/agentic-softwares',
-    icon: '⚙️',
-    color: 'info',
-    outcomes: ['Autonomous agents', 'AI-native architecture', 'Intelligent workflows']
-  },
-]
+const SERVICE_CARD_META: Record<
+  ServicesPageCardId,
+  { icon: string; color: 'accent' | 'success' | 'info' }
+> = {
+  'ai-receptionist': { icon: '🤖', color: 'accent' },
+  'future-ready-graduate': { icon: '🎓', color: 'success' },
+  'agentic-softwares': { icon: '⚙️', color: 'info' },
+}
 
 type ServicesPageProps = {
   params: Promise<{ locale: string }>
@@ -84,11 +29,10 @@ export default function ServicesPage({ params, searchParams }: ServicesPageProps
   use(searchParams ?? Promise.resolve({}))
   const language = useLanguage()
   const t = translations[language]
-  const cta = getCtaButtonText(language)
+  const sp = t.servicesPage
   const servicesLabel = t.sectionLabels?.services ?? 'Our Services'
   return (
     <main>
-      
       {/* Hero Section */}
       <section className="relative isolate min-h-screen flex items-center pt-16 sm:pt-20 overflow-hidden bg-gradient-mesh">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-20 relative z-10">
@@ -118,135 +62,143 @@ export default function ServicesPage({ params, searchParams }: ServicesPageProps
       <AnimatedSection className="py-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, i) => (
-              <motion.div
-                key={service.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.15 }}
-                className="card p-8 hover:border-accent/50 group flex flex-col h-full"
-              >
-                {/* Icon and Header */}
-                <div className="mb-6">
-                  <div className={`w-14 h-14 rounded-xl flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform ${
-                    service.color === 'accent' ? 'bg-accent/10' :
-                    service.color === 'success' ? 'bg-success/10' :
-                    'bg-info/10'
-                  }`}>
-                    {service.icon}
-                  </div>
-                  <span className={`text-xs font-semibold uppercase tracking-wider ${
-                    service.color === 'accent' ? 'text-accent' :
-                    service.color === 'success' ? 'text-success' :
-                    'text-info'
-                  }`}>
-                    {service.subtitle}
-                  </span>
-                  <Link href={service.link}>
-                    <h3 className="font-display text-2xl font-bold mt-2 mb-4 group-hover:text-accent transition-colors">
-                      {service.title}
-                    </h3>
-                  </Link>
-                </div>
-
-                {/* Description */}
-                <p className="text-muted mb-6 leading-relaxed flex-grow">
-                  {service.description}
-                </p>
-
-                {/* Key Outcomes */}
-                <div className="mb-6 space-y-2">
-                  {service.outcomes.map((outcome, j) => (
-                    <div key={j} className="flex items-center gap-2">
-                      <div className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${
-                        service.color === 'accent' ? 'bg-accent' :
-                        service.color === 'success' ? 'bg-success' :
-                        'bg-info'
-                      }`} />
-                      <span className="text-sm text-muted">{outcome}</span>
+            {sp.cards.map((service, i) => {
+              const meta = SERVICE_CARD_META[service.id]
+              const color = meta.color
+              return (
+                <motion.div
+                  key={service.id}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.15 }}
+                  className="card p-8 hover:border-accent/50 group flex flex-col h-full"
+                >
+                  <div className="mb-6">
+                    <div
+                      className={`w-14 h-14 rounded-xl flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform ${
+                        color === 'accent'
+                          ? 'bg-accent/10'
+                          : color === 'success'
+                            ? 'bg-success/10'
+                            : 'bg-info/10'
+                      }`}
+                    >
+                      {meta.icon}
                     </div>
-                  ))}
-                </div>
+                    <span
+                      className={`text-xs font-semibold uppercase tracking-wider ${
+                        color === 'accent'
+                          ? 'text-accent'
+                          : color === 'success'
+                            ? 'text-success'
+                            : 'text-info'
+                      }`}
+                    >
+                      {service.subtitle}
+                    </span>
+                    <Link href={service.link}>
+                      <h3 className="font-display text-2xl font-bold mt-2 mb-4 group-hover:text-accent transition-colors">
+                        {service.title}
+                      </h3>
+                    </Link>
+                  </div>
 
-                {/* Features Section */}
-                <div className="mb-6 pt-6 border-t border-light">
-                  <h4 className="font-semibold text-sm mb-3 uppercase tracking-wider text-muted-dark">
-                    Key Features
-                  </h4>
-                  <div className="grid grid-cols-2 gap-2">
-                    {service.features.slice(0, 4).map((feature, j) => (
-                      <div key={j} className="flex items-start gap-2">
-                        <div className={`w-1 h-1 rounded-full mt-2 flex-shrink-0 ${
-                          service.color === 'accent' ? 'bg-accent' :
-                          service.color === 'success' ? 'bg-success' :
-                          'bg-info'
-                        }`} />
-                        <span className="text-xs text-muted leading-relaxed">{feature}</span>
+                  <p className="text-muted mb-6 leading-relaxed flex-grow">{service.description}</p>
+
+                  <div className="mb-6 space-y-2">
+                    {service.outcomes.map((outcome, j) => (
+                      <div key={j} className="flex items-center gap-2">
+                        <div
+                          className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${
+                            color === 'accent'
+                              ? 'bg-accent'
+                              : color === 'success'
+                                ? 'bg-success'
+                                : 'bg-info'
+                          }`}
+                        />
+                        <span className="text-sm text-muted">{outcome}</span>
                       </div>
                     ))}
                   </div>
-                </div>
 
-                {/* Technologies */}
-                <div className="mb-6">
-                  <h4 className="font-semibold text-sm mb-3 uppercase tracking-wider text-muted-dark">
-                    Technologies
-                  </h4>
-                  <div className="flex flex-wrap gap-2">
-                    {service.technologies.map((tech, j) => (
-                      <span
-                        key={j}
-                        className="px-2 py-1 bg-surface-light rounded text-xs text-muted-dark"
-                      >
-                        {tech}
+                  <div className="mb-6 pt-6 border-t border-light">
+                    <h4 className="font-semibold text-sm mb-3 uppercase tracking-wider text-muted-dark">
+                      {sp.labels.keyFeatures}
+                    </h4>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                      {service.deliverables.map((item, j) => (
+                        <div key={j} className="flex items-start gap-2">
+                          <div
+                            className={`w-1 h-1 rounded-full mt-2 flex-shrink-0 ${
+                              color === 'accent'
+                                ? 'bg-accent'
+                                : color === 'success'
+                                  ? 'bg-success'
+                                  : 'bg-info'
+                            }`}
+                          />
+                          <span className="text-xs text-muted leading-relaxed">{item}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="mb-6">
+                    <h4 className="font-semibold text-sm mb-3 uppercase tracking-wider text-muted-dark">
+                      {sp.labels.technologies}
+                    </h4>
+                    <div className="flex flex-wrap gap-2">
+                      {service.technologies.map((tech, j) => (
+                        <span
+                          key={j}
+                          className="px-2 py-1 bg-surface-light rounded text-xs text-muted-dark"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="mb-6 pt-6 border-t border-border-light">
+                    <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
+                      <span className="text-xs uppercase tracking-wider text-muted-dark">
+                        {sp.labels.timeline}
                       </span>
-                    ))}
+                      <span className="font-semibold text-sm text-left sm:text-right">{service.timeline}</span>
+                    </div>
                   </div>
-                </div>
 
-                {/* Timeline */}
-                <div className="mb-6 pt-6 border-t border-border-light">
-                  <div className="flex items-center justify-between">
-                    <span className="text-xs uppercase tracking-wider text-muted-dark">Timeline</span>
-                    <span className="font-semibold text-sm">{service.timeline}</span>
+                  <div className="flex flex-col gap-3 mt-auto">
+                    <Link
+                      href={service.link}
+                      className={`btn-primary text-center ${
+                        color === 'accent'
+                          ? ''
+                          : color === 'success'
+                            ? 'bg-success hover:bg-success/90'
+                            : 'bg-info hover:bg-info/90'
+                      }`}
+                    >
+                      {service.primaryCta}
+                    </Link>
+                    <a {...getBookingLinkProps()} className="btn-secondary text-center">
+                      {service.secondaryCta}
+                    </a>
                   </div>
-                </div>
-
-                {/* CTA Buttons */}
-                <div className="flex flex-col gap-3 mt-auto">
-                  <Link
-                    href={service.link}
-                    className={`btn-primary text-center ${
-                      service.color === 'accent' ? '' :
-                      service.color === 'success' ? 'bg-success hover:bg-success/90' :
-                      'bg-info hover:bg-info/90'
-                    }`}
-                  >
-                    See How It Works
-                  </Link>
-                  <a
-                    {...getBookingLinkProps()}
-                    className="btn-secondary text-center"
-                  >
-                    {cta.bookConsultation}
-                  </a>
-                </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              )
+            })}
           </div>
         </div>
       </AnimatedSection>
 
-      {/* Stats Section */}
+      {/* Stats Section — aligned with home.stats */}
       <AnimatedSection className="py-24 bg-surface">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-3 gap-8">
-            {[
-              { value: '150+', label: 'Businesses Transformed', icon: '🚀' },
-              { value: '85%', label: 'Graduate Employment Rate', icon: '🎓' },
-              { value: '24/7', label: 'AI Support Available', icon: '🤖' },
-            ].map((stat, i) => (
+            {sp.stats.map((stat, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 30 }}
@@ -258,8 +210,10 @@ export default function ServicesPage({ params, searchParams }: ServicesPageProps
                 <div className="text-4xl mb-4">{stat.icon}</div>
                 <div className="font-display text-4xl md:text-5xl font-bold text-accent mb-2">
                   {stat.value}
+                  {stat.suffix}
                 </div>
-                <div className="text-muted">{stat.label}</div>
+                <p className="text-text font-semibold mb-1">{stat.label}</p>
+                <p className="text-muted text-sm">{stat.sublabel}</p>
               </motion.div>
             ))}
           </div>
@@ -269,21 +223,13 @@ export default function ServicesPage({ params, searchParams }: ServicesPageProps
       {/* CTA Section */}
       <AnimatedSection className="py-24">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">
-            Ready to Transform Your Business?
-          </h2>
-            <p className="text-muted text-lg mb-8">
-              Tell us your problem. We'll build the fix.
-            </p>
-          <a
-            {...getBookingLinkProps()}
-            className="btn-primary text-lg px-8 py-4"
-          >
-            {cta.bookConsultation}
+          <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">{sp.bottomCta.title}</h2>
+          <p className="text-muted text-lg mb-8">{sp.bottomCta.subtitle}</p>
+          <a {...getBookingLinkProps()} className="btn-primary text-lg px-8 py-4">
+            {t.cta.bookConsultation}
           </a>
         </div>
       </AnimatedSection>
-
     </main>
   )
 }

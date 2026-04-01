@@ -3,7 +3,6 @@
 import { useState } from 'react'
 import { Link } from '@/i18n/navigation'
 import { getBookingLinkProps } from '@/app/config/cta.config'
-import { downloadsConfig, getDownloadUrl } from '@/app/config/downloads.config'
 import { useLanguage } from '@/app/context/LocaleContext'
 import { translations } from '@/app/config/translations'
 import Logo from './Logo'
@@ -33,8 +32,6 @@ export default function Footer() {
       { name: t.nav.caseStudies, href: '/case-studies' },
       { name: t.nav.articles, href: '/blog' },
       { name: 'Products', href: '/products' },
-      { name: t.footer.futureReadyDemo, href: getDownloadUrl(downloadsConfig.futureReadyGraduate, language) },
-      { name: t.footer.aiEmployeeDemo, href: getDownloadUrl(downloadsConfig.aiEmployee, language) },
       { name: t.footer.ourMission, href: '/#our-mission' },
       { name: t.footer.whatWeFightFor, href: '/#what-were-fighting-for' },
       { name: t.footer.our2026Commitment, href: '/#our-2026-commitment' },
@@ -105,7 +102,7 @@ export default function Footer() {
                   placeholder={t.footer.newsletterPlaceholder}
                   required
                   disabled={newsletterStatus === 'loading' || newsletterStatus === 'success'}
-                  className="flex-1 min-w-0 px-4 py-2.5 rounded-full bg-background/80 border border-border text-sm text-foreground placeholder:text-muted caret-foreground focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent disabled:opacity-60"
+                  className="flex-1 min-w-0 px-4 py-2.5 rounded-full bg-surface-light border border-border-light text-sm text-text placeholder:text-muted-foreground placeholder:opacity-100 caret-foreground focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent disabled:opacity-60"
                 />
                 <button
                   type="submit"

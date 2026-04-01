@@ -232,7 +232,7 @@ export default function ProductsPage({ params, searchParams }: ProductsPageProps
               { metric: '10x', label: 'Faster proposal creation' },
               { metric: '85%', label: 'Average time saved' },
               { metric: '40%', label: 'Higher close rates' },
-              { metric: '500+', label: 'Proposals generated' },
+              { metric: '95+', label: 'Proposals generated' },
             ].map((stat, i) => (
               <motion.div
                 key={i}

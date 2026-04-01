@@ -85,8 +85,8 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
       detail: 'From our hiring partner network'
     },
     {
-      metric: '500+',
-      description: 'Students trained annually',
+      metric: '85+',
+      description: 'Learners per flagship cohort',
       detail: 'Across partner institutions'
     }
   ]

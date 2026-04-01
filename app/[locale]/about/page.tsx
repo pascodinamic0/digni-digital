@@ -8,6 +8,7 @@ import AnimatedSection from '@/app/components/AnimatedSection'
 import SectionBlock from '@/app/components/SectionBlock'
 import ScrollIndicator from '@/app/components/ScrollIndicator'
 import StorybookModal from '@/app/components/StorybookModal'
+import CompanyValuesGrid from '@/app/components/CompanyValuesGrid'
 import ClientLogos from '@/app/components/ClientLogos'
 import { getCtaButtonText, getBookingLinkProps } from '@/app/config/cta.config'
 import { translations } from '@/app/config/translations'
@@ -56,15 +57,14 @@ export default function AboutPage({ params, searchParams }: AboutPageProps) {
   const [storybookOpen, setStorybookOpen] = useState(false)
   const language = useLanguage()
   const t = translations[language].about
+  const mission = translations[language].home.mission
   const cta = getCtaButtonText(language)
 
   const stats = [
-    { value: 6, suffix: '+', label: t.statYears },
+    { value: 10, suffix: '+', label: t.statYears },
     { value: 500, suffix: '+', label: t.statStudents },
     { value: 10, suffix: 'k+', label: t.statLeads },
     { value: 98, suffix: '%', label: t.statSatisfaction },
-    { value: 100, suffix: '', label: t.statEmployed },
-    { value: 10000, suffix: '', label: t.statSkilled },
   ]
 
   const timeline = [
@@ -83,6 +83,13 @@ export default function AboutPage({ params, searchParams }: AboutPageProps) {
     { num: '02', title: t.provenTitle, desc: t.provenDesc },
     { num: '03', title: t.partnershipTitle, desc: t.partnershipDesc },
     { num: '04', title: t.roiFocusTitle, desc: t.roiFocusDesc },
+  ]
+
+  /** Approximate official UN SDG brand colors for Goals 1, 4, 8 (visual alignment only). */
+  const sdgAlignment = [
+    { goal: 1 as const, color: '#E5243B', title: t.sdg1Title, desc: t.sdg1Desc },
+    { goal: 4 as const, color: '#C5192D', title: t.sdg4Title, desc: t.sdg4Desc },
+    { goal: 8 as const, color: '#A21942', title: t.sdg8Title, desc: t.sdg8Desc },
   ]
 
   return (
@@ -117,12 +124,15 @@ export default function AboutPage({ params, searchParams }: AboutPageProps) {
 
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">
+            <h2 className="font-display text-4xl md:text-5xl font-bold mb-4 md:mb-5">
               {t.statsTitle}
             </h2>
+            <p className="mx-auto max-w-3xl text-base text-muted md:text-lg leading-relaxed px-1">
+              {t.statsSubtitle}
+            </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {stats.map((stat, i) => (
               <motion.div
                 key={i}
@@ -139,6 +149,95 @@ export default function AboutPage({ params, searchParams }: AboutPageProps) {
               </motion.div>
             ))}
           </div>
+        </div>
+      </AnimatedSection>
+
+      <AnimatedSection className="relative overflow-hidden border-t border-border/50 py-16 sm:py-20">
+        <div className="absolute inset-0 bg-surface/50" aria-hidden />
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6">
+          <div className="mx-auto mb-10 max-w-3xl text-center sm:mb-12">
+            <span className="section-label">{t.sdgSectionBadge}</span>
+            <h2 className="mt-3 px-1 font-display text-2xl font-bold text-text sm:text-3xl md:text-4xl">
+              {t.sdgSectionTitle}
+            </h2>
+            <p className="mt-4 text-base leading-relaxed text-muted md:text-lg">{t.sdgSectionIntro}</p>
+          </div>
+          <div className="grid gap-6 md:grid-cols-3 md:gap-8">
+            {sdgAlignment.map((sdg, i) => (
+              <motion.article
+                key={sdg.goal}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.08, duration: 0.4 }}
+                className="flex min-w-0 flex-col overflow-hidden rounded-2xl border border-border bg-background/90 shadow-sm backdrop-blur-sm transition-shadow hover:border-accent/30 hover:shadow-md"
+              >
+                <div
+                  className="flex items-center gap-3 px-4 py-3 sm:px-5"
+                  style={{ backgroundColor: sdg.color }}
+                >
+                  <span className="font-display text-3xl font-bold tabular-nums text-white drop-shadow-sm sm:text-4xl">
+                    {sdg.goal}
+                  </span>
+                </div>
+                <div className="flex flex-1 flex-col p-5 sm:p-6">
+                  <h3 className="font-display text-lg font-bold leading-snug text-text sm:text-xl">{sdg.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted sm:text-[0.9375rem]">{sdg.desc}</p>
+                </div>
+              </motion.article>
+            ))}
+          </div>
+          <p className="mx-auto mt-10 max-w-2xl text-center text-xs leading-relaxed text-muted/90">{t.sdgFootnote}</p>
+        </div>
+      </AnimatedSection>
+
+      <AnimatedSection className="relative overflow-hidden border-t border-border/50 py-16 sm:py-20">
+        <div className="absolute inset-0 bg-gradient-mesh opacity-40" aria-hidden />
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6">
+          <div className="mx-auto mb-10 max-w-3xl text-center sm:mb-12">
+            <span className="section-label">{t.freedomVisionBadge}</span>
+            <h2 className="mt-3 px-1 font-display text-2xl font-bold text-text sm:text-3xl md:text-4xl">
+              {t.freedomVisionTitle}
+            </h2>
+            <p className="mt-4 text-base leading-relaxed text-muted md:text-lg">{t.freedomVisionIntro}</p>
+          </div>
+          <div className="grid gap-6 md:grid-cols-3 md:gap-8">
+            {(
+              [
+                {
+                  emoji: '💰',
+                  title: t.freedomPillarFinancialTitle,
+                  desc: t.freedomPillarFinancialDesc,
+                },
+                {
+                  emoji: '🌍',
+                  title: t.freedomPillarLocationTitle,
+                  desc: t.freedomPillarLocationDesc,
+                },
+                {
+                  emoji: '⏰',
+                  title: t.freedomPillarTimeTitle,
+                  desc: t.freedomPillarTimeDesc,
+                },
+              ] as const
+            ).map((pillar, i) => (
+              <motion.article
+                key={pillar.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.08, duration: 0.4 }}
+                className="flex min-w-0 flex-col rounded-2xl border border-border bg-background/90 p-5 shadow-sm backdrop-blur-sm transition-shadow hover:border-accent/30 hover:shadow-md sm:p-6"
+              >
+                <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-accent/10 text-2xl sm:h-16 sm:w-16 sm:text-3xl" aria-hidden>
+                  {pillar.emoji}
+                </div>
+                <h3 className="font-display text-lg font-bold leading-snug text-text sm:text-xl">{pillar.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted sm:text-[0.9375rem]">{pillar.desc}</p>
+              </motion.article>
+            ))}
+          </div>
+          <p className="mx-auto mt-10 max-w-3xl text-center text-sm leading-relaxed text-muted md:text-base">{t.freedomVisionClosing}</p>
         </div>
       </AnimatedSection>
 
@@ -183,35 +282,52 @@ export default function AboutPage({ params, searchParams }: AboutPageProps) {
               </div>
             </motion.div>
 
-            {/* Timeline: large screens only (hidden on mobile & tablet) */}
-            <div className="hidden lg:block relative pl-10 min-w-0">
-              <div className="absolute left-[1.125rem] top-2 bottom-2 w-px bg-gradient-to-b from-accent/40 via-accent/20 to-transparent" />
-              <div className="space-y-0">
+            {/* Timeline: fixed-width year column + text in flow; line centered on badges */}
+            <div className="relative min-w-0">
+              <div
+                className="pointer-events-none absolute left-5 top-2 bottom-2 w-px -translate-x-1/2 bg-gradient-to-b from-accent/45 via-accent/25 to-transparent"
+                aria-hidden
+              />
+              <ul className="relative m-0 list-none p-0">
                 {timeline.map((item, i) => (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, x: 20 }}
+                  <motion.li
+                    key={`${item.year}-${i}`}
+                    initial={{ opacity: 0, x: 14 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
-                    transition={{ delay: i * 0.08, duration: 0.4 }}
-                    className="relative flex gap-5 pb-8 last:pb-0"
+                    transition={{ delay: i * 0.06, duration: 0.35 }}
+                    className="relative flex gap-3 sm:gap-4"
                   >
-                    <div className="absolute left-[-2.25rem] top-0.5 w-10 h-10 rounded-full bg-background border-2 border-accent/50 flex items-center justify-center flex-shrink-0 shadow-sm z-10">
-                      <span className="font-display font-bold text-accent text-sm">{item.year}</span>
+                    <div className="relative z-[1] flex w-10 shrink-0 justify-center">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-accent/50 bg-background shadow-sm">
+                        <span className="font-display text-[11px] font-bold tabular-nums text-accent sm:text-xs">
+                          {item.year}
+                        </span>
+                      </div>
                     </div>
-                    <div className="flex-1 min-w-0 pt-0.5">
-                      <h4 className="font-display font-bold text-text mb-1">{item.title}</h4>
-                      <p className="text-muted text-sm leading-relaxed">{item.description}</p>
+                    <div
+                      className={`min-w-0 flex-1 pt-0.5 pb-6 sm:pb-7 ${
+                        i < timeline.length - 1 ? 'border-b border-border/55' : ''
+                      }`}
+                    >
+                      <h4 className="font-display text-base font-bold leading-snug text-text sm:text-lg">{item.title}</h4>
+                      <p className="mt-1 text-sm leading-relaxed text-muted sm:text-[0.9375rem]">{item.description}</p>
                     </div>
-                  </motion.div>
+                  </motion.li>
                 ))}
-              </div>
+              </ul>
             </div>
           </div>
         </div>
       </AnimatedSection>
 
       <StorybookModal isOpen={storybookOpen} onClose={() => setStorybookOpen(false)} />
+
+      <AnimatedSection className="py-16 sm:py-24 bg-surface">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <CompanyValuesGrid mission={mission} />
+        </div>
+      </AnimatedSection>
 
       <ClientLogos badge={t.trustedByBadge} title={t.trustedByTitle} subtitle={t.trustedBySubtitle} />
 

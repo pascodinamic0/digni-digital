@@ -19,6 +19,8 @@ import {
   aiEmployeePageEs,
   aiEmployeePageFr,
 } from '@/app/i18n/aiEmployeePage'
+import type { ServicesPageTranslations } from '@/app/i18n/servicesPage'
+import { servicesPageEn, servicesPageFr } from '@/app/i18n/servicesPage'
 
 export type Language = 'en' | 'fr' | 'ar' | 'de' | 'es'
 
@@ -255,12 +257,31 @@ type AboutTranslations = {
   heroTitle: string
   heroSubtitle: string
   statsTitle: string
+  statsSubtitle: string
+  sdgSectionBadge: string
+  sdgSectionTitle: string
+  sdgSectionIntro: string
+  sdg1Title: string
+  sdg1Desc: string
+  sdg4Title: string
+  sdg4Desc: string
+  sdg8Title: string
+  sdg8Desc: string
+  sdgFootnote: string
+  freedomVisionBadge: string
+  freedomVisionTitle: string
+  freedomVisionIntro: string
+  freedomPillarFinancialTitle: string
+  freedomPillarFinancialDesc: string
+  freedomPillarLocationTitle: string
+  freedomPillarLocationDesc: string
+  freedomPillarTimeTitle: string
+  freedomPillarTimeDesc: string
+  freedomVisionClosing: string
   statYears: string
   statStudents: string
   statLeads: string
   statSatisfaction: string
-  statEmployed: string
-  statSkilled: string
   timeline2026Title: string
   timeline2026Description: string
   storyBadge: string
@@ -440,6 +461,7 @@ export type TranslationKeys = CommonTranslations & {
   futureReadyGraduate: FutureReadyGraduateTranslations
   aiEmployeeProductDemos: AiEmployeeProductDemosTranslations
   aiEmployeePage: AiEmployeePageTranslations
+  servicesPage: ServicesPageTranslations
 }
 
 function buildTranslations(): Record<Language, TranslationKeys> {
@@ -896,7 +918,7 @@ function buildTranslations(): Record<Language, TranslationKeys> {
       pillar2Title: '10,000 equipped with digital skills',
       pillar2Desc:
         'Ready for entrepreneurship and gig work through programs like our Future-Ready Graduate Program.',
-      proofLine: 'Already in motion: 85% employment rate among graduates, 500+ students per year.',
+      proofLine: 'Already in motion: 85% employment rate among graduates, 85+ learners per cohort across partner schools.',
       proofLink1Text: 'Future-Ready Graduate Program',
       proofLink2Text: 'Careers',
       ctaPrimary: 'Book a Strategy Call',
@@ -957,7 +979,7 @@ function buildTranslations(): Record<Language, TranslationKeys> {
       aiEmployeeCard: 'AI Employee™',
       aiEmployeeCardSub: '50+ businesses. 10,000+ leads/month.',
       futureReadyCard: 'Future-Ready Graduate Program',
-      futureReadyCardSub: '500+ students/year. 85% employed. Entrepreneurial talents unlocked through personalized learning.',
+      futureReadyCardSub: '85+ learners per cohort. 85% employed. Entrepreneurial talents unlocked through personalized learning.',
       agenticCard: 'Agentic Softwares',
       agenticCardSub: 'Custom projects. 90% faster workflows. Intelligent automation.',
     } as HomeTranslations['stats'],
@@ -1092,7 +1114,7 @@ function buildTranslations(): Record<Language, TranslationKeys> {
       pillar2Title: '10 000 formés aux compétences numériques',
       pillar2Desc:
         'Prêts pour l’entrepreneuriat et le travail à la tâche via des programmes comme le Programme Diplômé Prêt pour l’Avenir.',
-      proofLine: 'Déjà en cours : 85% d’emploi parmi les diplômés, 500+ étudiants par an.',
+      proofLine: 'Déjà en cours : 85% d’emploi parmi les diplômés, 85+ apprenants par cohorte dans les établissements partenaires.',
       proofLink1Text: 'Programme Diplômé Prêt pour l\'Avenir',
       proofLink2Text: 'Carrières',
       ctaPrimary: 'Réserver un appel stratégique',
@@ -1153,7 +1175,7 @@ function buildTranslations(): Record<Language, TranslationKeys> {
       aiEmployeeCard: 'Employé IA™',
       aiEmployeeCardSub: '50+ entreprises. 10 000+ prospects/mois.',
       futureReadyCard: 'Programme Diplômé Prêt pour l\'Avenir',
-      futureReadyCardSub: '500+ étudiants/an. 85% employés. Talents entrepreneuriaux révélés par un apprentissage personnalisé.',
+      futureReadyCardSub: '85+ apprenants par cohorte. 85% employés. Talents entrepreneuriaux révélés par un apprentissage personnalisé.',
       agenticCard: 'Agentic Softwares',
       agenticCardSub: 'Projets sur mesure. 90% plus rapide. Automatisation intelligente.',
     } as HomeTranslations['stats'],
@@ -1284,7 +1306,7 @@ function buildTranslations(): Record<Language, TranslationKeys> {
       pillar1Desc: 'أدوار في Digni أو مع شركائنا بحلول نهاية 2026—استقرار يمكنك الاعتماد عليه.',
       pillar2Title: '10,000 مؤهّلون بالمهارات الرقمية',
       pillar2Desc: 'جاهزون لريادة الأعمال والعمل الحر عبر برامج مثل Future-Ready Graduate.',
-      proofLine: 'قيد التنفيذ: 85% توظيفاً بين الخريجين، 500+ طالباً سنوياً.',
+      proofLine: 'قيد التنفيذ: 85% توظيفاً بين الخريجين، 85+ متعلماً لكل فوج في المدارس الشريكة.',
       proofLink1Text: 'برنامج Future-Ready Graduate',
       proofLink2Text: 'الوظائف',
       ctaPrimary: 'احجز مكالمة استراتيجية',
@@ -1345,7 +1367,7 @@ function buildTranslations(): Record<Language, TranslationKeys> {
       aiEmployeeCard: 'الموظف الذكي™',
       aiEmployeeCardSub: '50+ شركة. 10,000+ عميل/شهر.',
       futureReadyCard: 'Future-Ready Graduate Program',
-      futureReadyCardSub: '500+ طالب/سنة. 85% موظفون. مواهب ريادية مكشوفة عبر تعلم شخصي.',
+      futureReadyCardSub: '85+ متعلماً لكل فوج. 85% موظفون. مواهب ريادية مكشوفة عبر تعلم شخصي.',
       agenticCard: 'Agentic Softwares',
       agenticCardSub: 'مشاريع مخصصة. 90% أسرع. أتمتة ذكية.',
     } as HomeTranslations['stats'],
@@ -1478,7 +1500,7 @@ function buildTranslations(): Record<Language, TranslationKeys> {
       pillar2Title: '10.000 mit digitalen Fähigkeiten ausgestattet',
       pillar2Desc:
         'Bereit für Unternehmertum und Gig-Arbeit durch Programme wie das Future-Ready Graduate Program.',
-      proofLine: 'Bereits unterwegs: 85% Beschäftigungsrate unter Absolventen, 500+ Studierende pro Jahr.',
+      proofLine: 'Bereits unterwegs: 85% Beschäftigungsrate unter Absolventen, 85+ Lernende pro Kohorte an Partnerstandorten.',
       proofLink1Text: 'Future-Ready Graduate Program',
       proofLink2Text: 'Karriere',
       ctaPrimary: 'Strategiegespräch buchen',
@@ -1539,7 +1561,7 @@ function buildTranslations(): Record<Language, TranslationKeys> {
       aiEmployeeCard: 'KI-Mitarbeiter™',
       aiEmployeeCardSub: '50+ Unternehmen. 10.000+ Leads/Monat.',
       futureReadyCard: 'Future-Ready Graduate Program',
-      futureReadyCardSub: '500+ Studenten/Jahr. 85% beschäftigt. Unternehmerische Talente durch personalisiertes Lernen.',
+      futureReadyCardSub: '85+ Lernende pro Kohorte. 85% beschäftigt. Unternehmerische Talente durch personalisiertes Lernen.',
       agenticCard: 'Agentic Softwares',
       agenticCardSub: 'Individuelle Projekte. 90% schneller. Intelligente Automatisierung.',
     } as HomeTranslations['stats'],
@@ -1673,7 +1695,7 @@ function buildTranslations(): Record<Language, TranslationKeys> {
       pillar2Title: '10.000 capacitados en competencias digitales',
       pillar2Desc:
         'Listos para el emprendimiento y el trabajo gig mediante programas como Future-Ready Graduate.',
-      proofLine: 'Ya en marcha: 85% de empleo entre egresados, 500+ estudiantes al año.',
+      proofLine: 'Ya en marcha: 85% de empleo entre egresados, 85+ aprendices por cohorte en escuelas socias.',
       proofLink1Text: 'Future-Ready Graduate Program',
       proofLink2Text: 'Carreras',
       ctaPrimary: 'Reservar llamada estratégica',
@@ -1734,7 +1756,7 @@ function buildTranslations(): Record<Language, TranslationKeys> {
       aiEmployeeCard: 'Empleado IA™',
       aiEmployeeCardSub: '50+ empresas. 10.000+ leads/mes.',
       futureReadyCard: 'Future-Ready Graduate Program',
-      futureReadyCardSub: '500+ estudiantes/año. 85% empleados. Talentos emprendedores mediante aprendizaje personalizado.',
+      futureReadyCardSub: '85+ aprendices por cohorte. 85% empleados. Talentos emprendedores mediante aprendizaje personalizado.',
       agenticCard: 'Agentic Softwares',
       agenticCardSub: 'Proyectos a medida. 90% más rápido. Automatización inteligente.',
     } as HomeTranslations['stats'],
@@ -2489,13 +2511,43 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     badge: 'About Us',
     heroTitle: 'About Us',
     heroSubtitle: 'An American company started in Kenya by a refugee youth—driven by hunger and greatness to build a world where everyone is enabled, empowered, and connected to the technology and skills that change lives.',
-    statsTitle: 'Numbers that demonstrate our commitment to client success',
+    statsTitle: 'Committed to a better world—technology in service of humanity',
+    statsSubtitle:
+      'We build and partner on solutions to human problems—using technology to expand access, dignity, and opportunity.',
+    sdgSectionBadge: 'UN Sustainable Development Goals',
+    sdgSectionTitle: 'Committed to a better world—standing with the SDGs that match our work',
+    sdgSectionIntro:
+      'We fight poverty through opportunity, advance education that teaches employable skills, and use technology to grow decent work. These three Global Goals are where our mission and our business model meet.',
+    sdg1Title: 'Goal 1 — No poverty',
+    sdg1Desc:
+      'We build systems so businesses and communities can capture income and growth—reducing exclusion driven by lack of access to modern tools.',
+    sdg4Title: 'Goal 4 — Quality education',
+    sdg4Desc:
+      'Our graduate programs and partnerships teach skills employers actually hire for—not credentials alone—so learning converts into livelihood.',
+    sdg8Title: 'Goal 8 — Decent work & economic growth',
+    sdg8Desc:
+      'We measure employability, productivity, and fair growth: job-ready training, AI that removes drudgework, and outcomes that show up in real employment and revenue.',
+    sdgFootnote:
+      'The Sustainable Development Goals are a United Nations initiative. We align our mission with these goals; we are not affiliated with or endorsed by the UN.',
+    freedomVisionBadge: 'Our north star',
+    freedomVisionTitle: 'Financial, location, and time freedom',
+    freedomVisionIntro:
+      'All my life, one wish has stayed constant: that people—including our team, our clients, and the communities we serve—can experience financial, location, and time freedom. That urge is what built this company. Digni Digital is the outcome of that drive: systems and education that remove barriers so more people can choose how they earn, where they work, and how they spend their days.',
+    freedomPillarFinancialTitle: 'Financial freedom',
+    freedomPillarFinancialDesc:
+      'Income and opportunity that are not locked behind gatekeeping tools or credentials alone—so growth shows up in real revenue and livelihood.',
+    freedomPillarLocationTitle: 'Location freedom',
+    freedomPillarLocationDesc:
+      'Work and learning that are not tied to a single place—so talent and business can reach further without losing human connection.',
+    freedomPillarTimeTitle: 'Time freedom',
+    freedomPillarTimeDesc:
+      'Less manual grind and chaos—so people can reclaim hours for strategy, family, and the work only humans should do.',
+    freedomVisionClosing:
+      'That is the culture here: every role is shaped by the same vision—freedom, dignity, and measurable outcomes for the people we serve.',
     statYears: 'Years Experience',
     statStudents: 'Students Trained',
     statLeads: 'Leads Captured',
     statSatisfaction: 'Client Satisfaction',
-    statEmployed: 'Jobs by 2026',
-    statSkilled: 'Skilled by 2026',
     timeline2026Title: '150+ Clients',
     timeline2026Description: '100 employed, 10,000 skilled for the gig economy.',
     storyBadge: 'The Journey',
@@ -2529,7 +2581,7 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     humanFirstTitle: 'Human First',
     humanFirstDesc: 'AI helps your team. Doesn\'t replace them.',
     provenTitle: 'Proven',
-    provenDesc: '6 years. 150+ clients. 98% satisfaction.',
+    provenDesc: '10 years. 150+ clients. 98% satisfaction.',
     partnershipTitle: 'Full Partnership',
     partnershipDesc: 'Strategy. Build. Optimize. We\'re there. No handoffs.',
     roiFocusTitle: 'ROI Focus',
@@ -2562,13 +2614,43 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     badge: 'À propos',
     heroTitle: 'À propos',
     heroSubtitle: 'Une entreprise américaine née au Kenya, fondée par un jeune réfugié—animé par la faim et la grandeur pour bâtir un monde où chacun est outillé, responsabilisé et connecté aux technologies et compétences qui changent les vies.',
-    statsTitle: 'Des chiffres qui démontrent notre engagement envers le succès de nos clients',
+    statsTitle: 'Engagés pour un monde meilleur—la technologie au service de l\'humanité',
+    statsSubtitle:
+      'Nous construisons et co-créons des solutions aux problèmes humains—la technologie pour élargir l\'accès, la dignité et les opportunités.',
+    sdgSectionBadge: 'Objectifs de développement durable (ODD)',
+    sdgSectionTitle: 'Engagés pour un monde meilleur—aux côtés des ODD alignés sur notre action',
+    sdgSectionIntro:
+      'Nous luttons contre la pauvreté par l\'opportunité, faisons progresser une éducation qui enseigne des compétences employables, et utilisons la technologie pour un travail décent. Ces trois objectifs mondiaux sont le point de rencontre entre notre mission et notre modèle.',
+    sdg1Title: 'ODD 1 — Éliminer la pauvreté',
+    sdg1Desc:
+      'Nous construisons des systèmes pour que les entreprises et les communautés saisissent revenus et croissance—en réduisant l\'exclusion liée au manque d\'accès aux outils modernes.',
+    sdg4Title: 'ODD 4 — Éducation de qualité',
+    sdg4Desc:
+      'Nos programmes pour diplômés et partenariats enseignent ce que les employeurs recrutent—pas seulement des diplômes—pour que l\'apprentissage se transforme en moyens de subsistance.',
+    sdg8Title: 'ODD 8 — Travail décent et croissance économique',
+    sdg8Desc:
+      'Nous mesurons l\'employabilité, la productivité et une croissance équitable : formation vers l\'emploi, IA qui supprime les tâches pénibles, résultats visibles en emploi et revenus.',
+    sdgFootnote:
+      'Les Objectifs de développement durable sont une initiative des Nations unies. Nous alignons notre mission sur ces objectifs ; nous ne sommes ni affiliés ni approuvés par l\'ONU.',
+    freedomVisionBadge: 'Notre étoile du Nord',
+    freedomVisionTitle: 'Liberté financière, géographique et temporelle',
+    freedomVisionIntro:
+      'Toute ma vie, un souhait est resté constant : que les personnes—notre équipe, nos clients, les communautés que nous servons—puissent vivre liberté financière, géographique et temporelle. Cette motivation a fondé cette entreprise. Digni Digital en est le fruit : des systèmes et une formation qui lèvent des barrières pour que chacun puisse choisir comment il gagne, où il travaille et comment il utilise son temps.',
+    freedomPillarFinancialTitle: 'Liberté financière',
+    freedomPillarFinancialDesc:
+      'Revenus et opportunités qui ne dépendent pas seulement des privilèges ou des diplômes—pour que la croissance se traduise en revenus réels et moyens de vivre.',
+    freedomPillarLocationTitle: 'Liberté géographique',
+    freedomPillarLocationDesc:
+      'Travail et apprentissage qui ne sont pas figés à un seul lieu—pour que les talents et les entreprises rayonnent sans perdre le lien humain.',
+    freedomPillarTimeTitle: 'Liberté temporelle',
+    freedomPillarTimeDesc:
+      'Moins de charge manuelle et de chaos—pour libérer du temps pour la stratégie, la famille et ce que seuls les humains doivent faire.',
+    freedomVisionClosing:
+      'C’est notre culture : chaque rôle porte la même vision—liberté, dignité et résultats mesurables pour ceux que nous servons.',
     statYears: 'Années d\'expérience',
     statStudents: 'Étudiants formés',
     statLeads: 'Prospects capturés',
     statSatisfaction: 'Satisfaction client',
-    statEmployed: 'Emplois d\'ici 2026',
-    statSkilled: 'Formés d\'ici 2026',
     timeline2026Title: '150+ clients',
     timeline2026Description: '100 en emploi, 10 000 formés pour l\'économie des petits boulots.',
     storyBadge: 'Le parcours',
@@ -2602,7 +2684,7 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     humanFirstTitle: 'L\'humain d\'abord',
     humanFirstDesc: 'L\'IA aide votre équipe. Elle ne la remplace pas.',
     provenTitle: 'Prouvé',
-    provenDesc: '6 ans. 150+ clients. 98% de satisfaction.',
+    provenDesc: '10 ans. 150+ clients. 98% de satisfaction.',
     partnershipTitle: 'Partenariat total',
     partnershipDesc: 'Stratégie. Construction. Optimisation. Nous sommes là. Pas de transferts.',
     roiFocusTitle: 'Focus ROI',
@@ -2635,13 +2717,43 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     badge: 'من نحن',
     heroTitle: 'من نحن',
     heroSubtitle: 'شركة أمريكية بدأت في كينيا على يد شاب لاجئ—مدفوعاً بالطموح والعظمة لبناء عالم يُمكّن الجميع ويربطهم بالتقنية والمهارات التي تغيّر الحياة.',
-    statsTitle: 'أرقام تعكس التزامنا بنجاح عملائنا',
+    statsTitle: 'ملتزمون بعالم أفضل—تكنولوجيا في خدمة الإنسانية',
+    statsSubtitle:
+      'نبني ونشارك في حلول للمشكلات الإنسانية—بتقنية توسّع النفاذ والكرامة والفرص.',
+    sdgSectionBadge: 'أهداف التنمية المستدامة للأمم المتحدة',
+    sdgSectionTitle: 'ملتزمون بعالم أفضل—مع أهداف التنمية المستدامة التي تلتقي مع عملنا',
+    sdgSectionIntro:
+      'نواجه الفقر بالفرص، ونطوّر تعليماً يعلّم مهارات توظّف، ونستخدم التقنية لتعزيز العمل اللائق. هذه الأهداف الثلاثة هي حيث تلتقي رسالتنا بنموذج أعمالنا.',
+    sdg1Title: 'الهدف 1 — القضاء على الفقر',
+    sdg1Desc:
+      'نبني أنظمة تمكّن الشركات والمجتمعات من زيادة الدخل والنمو—وتقلّص الإقصاء الناتج عن ضعف الوصول إلى الأدوات الحديثة.',
+    sdg4Title: 'الهدف 4 — تعليم ذو جودة',
+    sdg4Desc:
+      'برامج الخريجين وشراكاتنا تعلّم ما يوظّفه أصحاب العمل—لا الشهادات وحدها—ليصبح التعلّم سُبُلاً للعيش.',
+    sdg8Title: 'الهدف 8 — عمل لائق ونمو اقتصادي',
+    sdg8Desc:
+      'نقيس القابلية للتوظيف والإنتاجية والنمو العادل: تدريب يفضي لوظائف، وذكاء اصطناعي يزيل العمل الرتيب، ونتائج تظهر في التوظيف والإيرادات.',
+    sdgFootnote:
+      'أهداف التنمية المستدامة مبادرة للأمم المتحدة. ننسّق رسالتنا مع هذه الأهداف؛ لسنا تابعين لها ولا معتمدين منها.',
+    freedomVisionBadge: 'بوصلةنا',
+    freedomVisionTitle: 'الحرية المالية والجغرافية والزمنية',
+    freedomVisionIntro:
+      'طوال حياتي بقي أمني واحد: أن يعيش الناس—فريقنا وعملاؤنا والمجتمعات التي نخدمها—حرية مالية وجغرافية وزمنية. هذا الدافع هو ما بنى هذه الشركة. Digni Digital ثمرة ذلك: أنظمة وتعليم يزيلان العوائق ليختار الناس كيف يكسبون وأين يعملون وكيف يستخدمون وقتهم.',
+    freedomPillarFinancialTitle: 'الحرية المالية',
+    freedomPillarFinancialDesc:
+      'دخل وفرص لا تُحتكر وراء الشهادات وحدها—لتظهر النمو في دخل حقيقي ومعيشة كريمة.',
+    freedomPillarLocationTitle: 'الحرية الجغرافية',
+    freedomPillarLocationDesc:
+      'عمل وتعلّم غير مقيّد بمكان واحد—لتصل المواهب والأعمال أبعد دون فقدان التواصل الإنساني.',
+    freedomPillarTimeTitle: 'الحرية الزمنية',
+    freedomPillarTimeDesc:
+      'أقل عبئاً يدوياً وفوضى—لاستعادة الوقت للتخطيط والعائلة والعمل الذي لا يجب إلا للبشر.',
+    freedomVisionClosing:
+      'هذه ثقافتنا: كل دور يحمل الرؤية نفسها—حرية وكرامة ونتائج قابلة للقياس لمن نخدمهم.',
     statYears: 'سنوات خبرة',
     statStudents: 'طالب تم تدريبهم',
     statLeads: 'عميل محتمل تم التقاطه',
     statSatisfaction: 'رضا العملاء',
-    statEmployed: 'وظائف بحلول 2026',
-    statSkilled: 'مؤهّلون بحلول 2026',
     timeline2026Title: '150+ عميل',
     timeline2026Description: '100 موظّف، 10,000 مؤهّلون لاقتصاد العمل الحر.',
     storyBadge: 'الرحلة',
@@ -2675,7 +2787,7 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     humanFirstTitle: 'الإنسان أولاً',
     humanFirstDesc: 'الذكاء الاصطناعي يساعد فريقك. لا يستبدله.',
     provenTitle: 'مُثبت',
-    provenDesc: '6 سنوات. 150+ عميل. 98% رضا.',
+    provenDesc: '10 سنوات. 150+ عميل. 98% رضا.',
     partnershipTitle: 'شراكة كاملة',
     partnershipDesc: 'استراتيجية. بناء. تحسين. نحن هنا. بدون تسليمات.',
     roiFocusTitle: 'تركيز على العائد',
@@ -2708,13 +2820,43 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     badge: 'Über uns',
     heroTitle: 'Über uns',
     heroSubtitle: 'Ein amerikanisches Unternehmen, gegründet in Kenia von einem jungen Geflüchteten—angetrieben von Hunger und Größe, um eine Welt zu bauen, in der jeder befähigt, ermächtigt und mit den Technologien und Fähigkeiten verbunden ist, die Leben verändern.',
-    statsTitle: 'Zahlen, die unser Engagement für den Erfolg unserer Kunden belegen',
+    statsTitle: 'Für eine bessere Welt engagiert—Technologie im Dienst der Menschheit',
+    statsSubtitle:
+      'Wir entwickeln und gestalten gemeinsam Lösungen für menschliche Herausforderungen—Technologie für Zugang, Würde und Chancen.',
+    sdgSectionBadge: 'UN-Nachhaltigkeitsziele (SDGs)',
+    sdgSectionTitle: 'Für eine bessere Welt—an der Seite der SDGs, die zu unserer Arbeit passen',
+    sdgSectionIntro:
+      'Wir bekämpfen Armut durch Chancen, stärken Bildung mit anstellbaren Kompetenzen und nutzen Technologie für menschenwürdige Arbeit. Diese drei globalen Ziele sind der Kern, wo Mission und Geschäftsmodell zusammenkommen.',
+    sdg1Title: 'Ziel 1 — Armut in allen Formen beenden',
+    sdg1Desc:
+      'Wir bauen Systeme, damit Unternehmen und Gemeinschaften Einkommen und Wachstum erschließen—und Ausschluss durch fehlenden Zugang zu modernen Werkzeugen verringern.',
+    sdg4Title: 'Ziel 4 — Hochwertige Bildung',
+    sdg4Desc:
+      'Unsere Absolventenprogramme und Partnerschaften vermitteln, was Arbeitgeber wirklich einstellen—nicht nur Zeugnisse—damit Lernen zu Lebensunterhalt wird.',
+    sdg8Title: 'Ziel 8 — Menschenwürdige Arbeit und Wirtschaftswachstum',
+    sdg8Desc:
+      'Wir messen Beschäftigungsfähigkeit, Produktivität und faires Wachstum: jobnahe Ausbildung, KI die Routine abnimmt, Ergebnisse in echten Jobs und Umsatz.',
+    sdgFootnote:
+      'Die Nachhaltigkeitsziele sind eine Initiative der Vereinten Nationen. Wir richten unsere Mission an diesen Zielen aus; wir sind nicht mit der UN verbunden oder von ihr anerkannt.',
+    freedomVisionBadge: 'Unser Nordstern',
+    freedomVisionTitle: 'Finanzielle, räumliche und zeitliche Freiheit',
+    freedomVisionIntro:
+      'Mein ganzes Leben lang war ein Wunsch konstant: dass Menschen—unser Team, unsere Kunden, die Gemeinschaften, denen wir dienen—finanzielle, räumliche und zeitliche Freiheit erfahren. Dieser Drang hat dieses Unternehmen gegründet. Digni Digital ist das Ergebnis: Systeme und Bildung, die Barrieren abbauen, damit mehr Menschen wählen können, wie sie verdienen, wo sie arbeiten und wie sie ihre Zeit nutzen.',
+    freedomPillarFinancialTitle: 'Finanzielle Freiheit',
+    freedomPillarFinancialDesc:
+      'Einkommen und Chancen, die nicht allein hinter Gatekeeping oder Zeugnissen stecken—damit Wachstum in echtem Umsatz und Lebensunterhalt sichtbar wird.',
+    freedomPillarLocationTitle: 'Räumliche Freiheit',
+    freedomPillarLocationDesc:
+      'Arbeit und Lernen, die nicht an einen einzigen Ort gebunden sind—damit Talente und Unternehmen weiter reichen, ohne menschliche Nähe zu verlieren.',
+    freedomPillarTimeTitle: 'Zeitliche Freiheit',
+    freedomPillarTimeDesc:
+      'Weniger manuelle Last und Chaos—damit Menschen Stunden für Strategie, Familie und die Arbeit zurückgewinnen, die nur Menschen tun sollten.',
+    freedomVisionClosing:
+      'Das ist unsere Kultur: jede Rolle trägt dieselbe Vision—Freiheit, Würde und messbare Ergebnisse für die Menschen, denen wir dienen.',
     statYears: 'Jahre Erfahrung',
     statStudents: 'Ausgebildete Studierende',
     statLeads: 'Erfasste Leads',
     statSatisfaction: 'Kundenzufriedenheit',
-    statEmployed: 'Jobs bis 2026',
-    statSkilled: 'Qualifiziert bis 2026',
     timeline2026Title: '150+ Kunden',
     timeline2026Description: '100 in Arbeit, 10.000 qualifiziert für die Gig-Economy.',
     storyBadge: 'Die Reise',
@@ -2748,7 +2890,7 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     humanFirstTitle: 'Mensch zuerst',
     humanFirstDesc: 'KI unterstützt Ihr Team. Ersetzt es nicht.',
     provenTitle: 'Bewährt',
-    provenDesc: '6 Jahre. 150+ Kunden. 98% Zufriedenheit.',
+    provenDesc: '10 Jahre. 150+ Kunden. 98% Zufriedenheit.',
     partnershipTitle: 'Volle Partnerschaft',
     partnershipDesc: 'Strategie. Aufbau. Optimierung. Wir sind da. Keine Übergaben.',
     roiFocusTitle: 'ROI-Fokus',
@@ -2781,13 +2923,43 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     badge: 'Sobre nosotros',
     heroTitle: 'Sobre nosotros',
     heroSubtitle: 'Una empresa estadounidense que nació en Kenia, fundada por un joven refugiado—impulsado por el hambre y la grandeza para construir un mundo donde todos estén capacitados, empoderados y conectados con la tecnología y las habilidades que cambian vidas.',
-    statsTitle: 'Cifras que demuestran nuestro compromiso con el éxito del cliente',
+    statsTitle: 'Comprometidos con un mundo mejor—tecnología al servicio de la humanidad',
+    statsSubtitle:
+      'Construimos y co-creamos soluciones a problemas humanos—tecnología para ampliar acceso, dignidad y oportunidad.',
+    sdgSectionBadge: 'Objetivos de Desarrollo Sostenible (ODS) de la ONU',
+    sdgSectionTitle: 'Comprometidos con un mundo mejor—junto a los ODS que encajan con nuestro trabajo',
+    sdgSectionIntro:
+      'Luchamos contra la pobreza con oportunidad, impulsamos educación con habilidades empleables y usamos tecnología para un trabajo decente. Estos tres objetivos globales son donde coinciden nuestra misión y nuestro modelo de negocio.',
+    sdg1Title: 'ODS 1 — Fin de la pobreza',
+    sdg1Desc:
+      'Construimos sistemas para que empresas y comunidades capturen ingresos y crecimiento—reduciendo la exclusión por falta de acceso a herramientas modernas.',
+    sdg4Title: 'ODS 4 — Educación de calidad',
+    sdg4Desc:
+      'Nuestros programas para graduados y alianzas enseñan lo que los empleadores contratan—no solo títulos—para que el aprendizaje se convierta en medios de vida.',
+    sdg8Title: 'ODS 8 — Trabajo decente y crecimiento económico',
+    sdg8Desc:
+      'Medimos empleabilidad, productividad y crecimiento justo: formación orientada al empleo, IA que quita lo repetitivo, resultados en empleo e ingresos reales.',
+    sdgFootnote:
+      'Los Objetivos de Desarrollo Sostenible son una iniciativa de las Naciones Unidas. Alineamos nuestra misión con estos objetivos; no estamos afiliados ni respaldados por la ONU.',
+    freedomVisionBadge: 'Nuestro norte',
+    freedomVisionTitle: 'Libertad financiera, geográfica y de tiempo',
+    freedomVisionIntro:
+      'Toda la vida he tenido un mismo deseo: que las personas—nuestro equipo, nuestros clientes y las comunidades que servimos—puedan vivir libertad financiera, geográfica y de tiempo. Ese impulso fundó esta empresa. Digni Digital es el resultado: sistemas y formación que quitan barreras para que más personas elijan cómo ganan, dónde trabajan y cómo usan sus días.',
+    freedomPillarFinancialTitle: 'Libertad financiera',
+    freedomPillarFinancialDesc:
+      'Ingresos y oportunidades que no dependan solo de credenciales o privilegios—para que el crecimiento se vea en ingresos reales y medios de vida.',
+    freedomPillarLocationTitle: 'Libertad geográfica',
+    freedomPillarLocationDesc:
+      'Trabajo y aprendizaje no atados a un solo lugar—para que el talento y los negocios lleguen más lejos sin perder el vínculo humano.',
+    freedomPillarTimeTitle: 'Libertad de tiempo',
+    freedomPillarTimeDesc:
+      'Menos carga manual y caos—para recuperar horas para la estrategia, la familia y el trabajo que solo deben hacer las personas.',
+    freedomVisionClosing:
+      'Esa es nuestra cultura: cada rol comparte la misma visión—libertad, dignidad y resultados medibles para quienes servimos.',
     statYears: 'Años de experiencia',
     statStudents: 'Estudiantes formados',
     statLeads: 'Leads capturados',
     statSatisfaction: 'Satisfacción del cliente',
-    statEmployed: 'Empleos para 2026',
-    statSkilled: 'Capacitados para 2026',
     timeline2026Title: '150+ clientes',
     timeline2026Description: '100 empleados, 10.000 capacitados para la economía gig.',
     storyBadge: 'El recorrido',
@@ -2821,7 +2993,7 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     humanFirstTitle: 'Personas primero',
     humanFirstDesc: 'La IA ayuda a tu equipo. No lo reemplaza.',
     provenTitle: 'Comprobado',
-    provenDesc: '6 años. 150+ clientes. 98% de satisfacción.',
+    provenDesc: '10 años. 150+ clientes. 98% de satisfacción.',
     partnershipTitle: 'Alianza total',
     partnershipDesc: 'Estrategia. Construcción. Optimización. Estamos ahí. Sin traspasos.',
     roiFocusTitle: 'Enfoque en ROI',
@@ -2851,11 +3023,11 @@ function buildTranslations(): Record<Language, TranslationKeys> {
   }
 
   return {
-    en: { ...commonEn, home: homeEn, blog: blogEn, about: aboutEn, contact: contactEn, clientJourney: clientJourneyEn, futureReadyGraduate: futureReadyGraduateEn, aiEmployeeProductDemos: aiEmployeeProductDemosEn, aiEmployeePage: aiEmployeePageEn },
-    fr: { ...commonFr, home: homeFr, blog: blogFr, about: aboutFr, contact: contactFr, clientJourney: clientJourneyFr, futureReadyGraduate: futureReadyGraduateFr, aiEmployeeProductDemos: aiEmployeeProductDemosFr, aiEmployeePage: aiEmployeePageFr },
-    ar: { ...commonAr, home: homeAr, blog: blogAr, about: aboutAr, contact: contactAr, clientJourney: clientJourneyAr, futureReadyGraduate: futureReadyGraduateEn, aiEmployeeProductDemos: aiEmployeeProductDemosAr, aiEmployeePage: aiEmployeePageAr },
-    de: { ...commonDe, home: homeDe, blog: blogDe, about: aboutDe, contact: contactDe, clientJourney: clientJourneyDe, futureReadyGraduate: futureReadyGraduateEn, aiEmployeeProductDemos: aiEmployeeProductDemosDe, aiEmployeePage: aiEmployeePageDe },
-    es: { ...commonEs, home: homeEs, blog: blogEs, about: aboutEs, contact: contactEs, clientJourney: clientJourneyEs, futureReadyGraduate: futureReadyGraduateEn, aiEmployeeProductDemos: aiEmployeeProductDemosEs, aiEmployeePage: aiEmployeePageEs },
+    en: { ...commonEn, home: homeEn, blog: blogEn, about: aboutEn, contact: contactEn, clientJourney: clientJourneyEn, futureReadyGraduate: futureReadyGraduateEn, aiEmployeeProductDemos: aiEmployeeProductDemosEn, aiEmployeePage: aiEmployeePageEn, servicesPage: servicesPageEn },
+    fr: { ...commonFr, home: homeFr, blog: blogFr, about: aboutFr, contact: contactFr, clientJourney: clientJourneyFr, futureReadyGraduate: futureReadyGraduateFr, aiEmployeeProductDemos: aiEmployeeProductDemosFr, aiEmployeePage: aiEmployeePageFr, servicesPage: servicesPageFr },
+    ar: { ...commonAr, home: homeAr, blog: blogAr, about: aboutAr, contact: contactAr, clientJourney: clientJourneyAr, futureReadyGraduate: futureReadyGraduateEn, aiEmployeeProductDemos: aiEmployeeProductDemosAr, aiEmployeePage: aiEmployeePageAr, servicesPage: servicesPageEn },
+    de: { ...commonDe, home: homeDe, blog: blogDe, about: aboutDe, contact: contactDe, clientJourney: clientJourneyDe, futureReadyGraduate: futureReadyGraduateEn, aiEmployeeProductDemos: aiEmployeeProductDemosDe, aiEmployeePage: aiEmployeePageDe, servicesPage: servicesPageEn },
+    es: { ...commonEs, home: homeEs, blog: blogEs, about: aboutEs, contact: contactEs, clientJourney: clientJourneyEs, futureReadyGraduate: futureReadyGraduateEn, aiEmployeeProductDemos: aiEmployeeProductDemosEs, aiEmployeePage: aiEmployeePageEs, servicesPage: servicesPageEn },
   }
 }
 

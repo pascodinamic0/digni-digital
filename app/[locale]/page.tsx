@@ -4,6 +4,7 @@ import { use, useState, useEffect, useRef, useMemo } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { Link } from '@/i18n/navigation'
 import AnimatedSection from '@/app/components/AnimatedSection'
+import CompanyValuesGrid from '@/app/components/CompanyValuesGrid'
 import ScrollIndicator from '@/app/components/ScrollIndicator'
 import GlobalPresenceMap from '@/app/components/GlobalPresenceMap'
 import ClientLogos from '@/app/components/ClientLogos'
@@ -189,12 +190,6 @@ function Hero() {
 function MissionValues() {
   const language = useLanguage()
   const m = translations[language].home.mission
-  const values = [
-    { title: m.humanFirst, description: m.humanFirstDesc, icon: '🤝', principle: m.humanFirstPrinciple },
-    { title: m.equalAccess, description: m.equalAccessDesc, icon: '⚖️', principle: m.equalAccessPrinciple },
-    { title: m.realResults, description: m.realResultsDesc, icon: '⚡', principle: m.realResultsPrinciple },
-    { title: m.builtToLast, description: m.builtToLastDesc, icon: '🌱', principle: m.builtToLastPrinciple },
-  ]
 
   return (
     <AnimatedSection id="our-mission" className="py-24 bg-surface">
@@ -214,42 +209,7 @@ function MissionValues() {
           </p>
         </motion.div>
 
-        <div className="text-center mb-16">
-          <span className="text-accent font-medium text-sm uppercase tracking-wider">{m.valuesTitle}</span>
-          <h3 className="font-display text-3xl md:text-4xl font-bold mt-4 mb-6">
-            {m.valuesSubtitle}
-          </h3>
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-8">
-          {values.map((value, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.15 }}
-              className="card p-8 group hover:border-accent/50"
-            >
-              <div className="flex items-start gap-6">
-                <div className="w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center text-3xl flex-shrink-0">
-                  {value.icon}
-                </div>
-                <div className="flex-1">
-                  <h4 className="font-display text-xl font-bold mb-3 group-hover:text-accent transition-colors">
-                    {value.title}
-                  </h4>
-                  <p className="text-muted mb-4 leading-relaxed">
-                    {value.description}
-                  </p>
-                  <blockquote className="text-accent italic text-sm font-medium border-l-2 border-accent/30 pl-4">
-                    "{value.principle}"
-                  </blockquote>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+        <CompanyValuesGrid mission={m} />
       </div>
     </AnimatedSection>
   )
