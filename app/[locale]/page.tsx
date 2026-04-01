@@ -9,8 +9,9 @@ import GlobalPresenceMap from '@/app/components/GlobalPresenceMap'
 import ClientLogos from '@/app/components/ClientLogos'
 import { useTheme } from '@/app/components/ThemeProvider'
 import { getBookingLinkProps } from '@/app/config/cta.config'
-import { useLanguage } from '@/app/context/LocaleContext'
+import { useLanguage, useLocale } from '@/app/context/LocaleContext'
 import { translations } from '@/app/config/translations'
+import { formatMissedLeadsUsdStat, MISSED_LEADS_USD } from '@/lib/formatMissedLeadsUsdStat'
 
 const TYPING_INTERVAL_MS = 80
 const PAUSE_WHEN_COMPLETE_MS = 1800
@@ -329,9 +330,11 @@ function Commitment2026() {
 // What We're Fighting For Section
 function WhatWereFightingFor() {
   const language = useLanguage()
+  const locale = useLocale()
   const f = translations[language].home.fighting
+  const missedLeadsStat = formatMissedLeadsUsdStat(MISSED_LEADS_USD, locale)
   const challenges = [
-    { title: f.missedLeads, problem: f.missedLeadsProblem, solution: f.missedLeadsSolution, outcome: f.missedLeadsOutcome, icon: '📞', stat: f.missedLeadsStat, statLabel: f.missedLeadsStatLabel },
+    { title: f.missedLeads, problem: f.missedLeadsProblem, solution: f.missedLeadsSolution, outcome: f.missedLeadsOutcome, icon: '📞', stat: missedLeadsStat, statLabel: f.missedLeadsStatLabel },
     { title: f.skillsGap, problem: f.skillsGapProblem, solution: f.skillsGapSolution, outcome: f.skillsGapOutcome, icon: '🎓', stat: f.skillsGapStat, statLabel: f.skillsGapStatLabel },
     { title: f.techDivide, problem: f.techDivideProblem, solution: f.techDivideSolution, outcome: f.techDivideOutcome, icon: '⚖️', stat: f.techDivideStat, statLabel: f.techDivideStatLabel },
   ]

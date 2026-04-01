@@ -6,6 +6,7 @@ import { Link } from '@/i18n/navigation'
 import AnimatedSection from '@/app/components/AnimatedSection'
 import { getCtaButtonText, getBookingLinkProps } from '@/app/config/cta.config'
 import { useLanguage } from '@/app/context/LocaleContext'
+import { formatMissedLeadsUsdStat, MISSED_LEADS_USD } from '@/lib/formatMissedLeadsUsdStat'
 
 type AffiliatePageProps = {
   params: Promise<{ locale: string }>
@@ -16,6 +17,7 @@ export default function AffiliatePage({ params, searchParams }: AffiliatePagePro
   const { locale } = use(params)
   use(searchParams ?? Promise.resolve({}))
   const language = useLanguage()
+  const missedLeadsStat = formatMissedLeadsUsdStat(MISSED_LEADS_USD, locale)
   const cta = getCtaButtonText(language)
   const [formData, setFormData] = useState({
     name: '',
@@ -341,7 +343,7 @@ export default function AffiliatePage({ params, searchParams }: AffiliatePagePro
                 icon: '📞',
                 title: 'Help Businesses Capture Every Lead',
                 description: 'Small businesses lose $62 billion annually to missed leads. Our AI Employee ensures they never miss another opportunity.',
-                stat: '$62B',
+                stat: missedLeadsStat,
                 statLabel: 'in missed leads annually'
               },
               {

@@ -1,9 +1,11 @@
 'use client'
 
 import { motion, AnimatePresence } from 'framer-motion'
-import { useState, useEffect } from 'react'
+import Image from 'next/image'
+import { useState, useEffect, useRef } from 'react'
 import { useLanguage } from '@/app/context/LocaleContext'
 import { translations } from '@/app/config/translations'
+import { calendarDemoCovers } from '@/content/blog/calendar-demo-covers'
 
 type Phase = 'idle' | 'compose' | 'scheduled' | 'publishing' | 'published'
 
@@ -49,6 +51,22 @@ const FILLER_SECOND: string[][] = [
 
 const ROW_TIME = ['9:00', '14:00', '18:00']
 
+type PlacedPost = { coverImageUrl: string; title: string }
+
+function slotKey(row: number, col: number) {
+  return `${row}-${col}`
+}
+
+function findNextEmpty(placed: Record<string, PlacedPost>): { row: number; col: number } | null {
+  for (let row = 0; row < ROWS; row++) {
+    for (let col = 0; col < COLS; col++) {
+      const key = slotKey(row, col)
+      if (!placed[key]) return { row, col }
+    }
+  }
+  return null
+}
+
 function StaticSlot({ row, col }: { row: number; col: number }) {
   const a = FILLER[row]?.[col] ?? 'Post'
   const b = FILLER_SECOND[row]?.[col] ?? '—'
@@ -64,16 +82,49 @@ function StaticSlot({ row, col }: { row: number; col: number }) {
   )
 }
 
+function PostCardFrame({
+  coverImageUrl,
+  title,
+  children,
+}: {
+  coverImageUrl: string
+  title: string
+  children: React.ReactNode
+}) {
+  const alt = title.length > 100 ? `${title.slice(0, 97)}…` : title
+  return (
+    <div className="flex flex-col flex-1 rounded-md border border-border bg-surface shadow-sm overflow-hidden text-left z-[1] min-h-0">
+      <div className="relative w-full aspect-[16/10] max-h-[48px] sm:max-h-[52px] shrink-0 overflow-hidden bg-surface/80">
+        <Image
+          src={coverImageUrl}
+          alt={alt}
+          fill
+          className="object-cover"
+          sizes="(max-width: 640px) 100px, 130px"
+        />
+      </div>
+      <div className="p-1.5 sm:p-2 flex flex-col flex-1 min-h-0">{children}</div>
+    </div>
+  )
+}
+
 export default function TaskQueueDemo() {
   const language = useLanguage()
   const t = translations[language].aiEmployeeProductDemos.tasks
   const isRtl = language === 'ar'
 
   const [phase, setPhase] = useState<Phase>('idle')
-  const [activeRow, setActiveRow] = useState(1)
-  const [activeDayIndex, setActiveDayIndex] = useState(2)
+  const [placedPosts, setPlacedPosts] = useState<Record<string, PlacedPost>>({})
+  const [activeCell, setActiveCell] = useState<{ row: number; col: number } | null>({ row: 1, col: 2 })
+  const [postIndex, setPostIndex] = useState(0)
+
+  const placedRef = useRef<Record<string, PlacedPost>>({})
+  const activeCellRef = useRef<{ row: number; col: number } | null>({ row: 1, col: 2 })
+  const postIndexRef = useRef(0)
 
   const days = t.daysShort
+
+  const activeDayIndex = activeCell?.col ?? -1
 
   useEffect(() => {
     let cancelled = false
@@ -85,19 +136,47 @@ export default function TaskQueueDemo() {
         }, ms)
       )
     }
+
     const loop = () => {
       if (cancelled) return
+      const cell = activeCellRef.current
+      if (!cell) return
+
       setPhase('compose')
       schedule(() => setPhase('scheduled'), 900)
       schedule(() => setPhase('publishing'), 2200)
       schedule(() => setPhase('published'), 3600)
       schedule(() => {
+        if (cancelled) return
         setPhase('idle')
-        setActiveRow((r) => (r + 1) % ROWS)
-        setActiveDayIndex((i) => (i + 2) % COLS)
+
+        const { row, col } = cell
+        const idx = postIndexRef.current
+        const cover = calendarDemoCovers[idx % calendarDemoCovers.length]
+        const key = slotKey(row, col)
+        const nextPlaced = {
+          ...placedRef.current,
+          [key]: { coverImageUrl: cover.coverImageUrl, title: cover.title },
+        }
+        placedRef.current = nextPlaced
+        setPlacedPosts(nextPlaced)
+
+        postIndexRef.current = idx + 1
+        setPostIndex(idx + 1)
+
+        const next = findNextEmpty(nextPlaced)
+        if (!next) {
+          activeCellRef.current = null
+          setActiveCell(null)
+          return
+        }
+
+        activeCellRef.current = next
+        setActiveCell(next)
         schedule(loop, 900)
       }, 5200)
     }
+
     schedule(loop, 400)
     return () => {
       cancelled = true
@@ -106,6 +185,8 @@ export default function TaskQueueDemo() {
   }, [])
 
   const showCard = phase !== 'idle'
+
+  const coverAt = (i: number) => calendarDemoCovers[i % calendarDemoCovers.length]
 
   return (
     <section
@@ -214,50 +295,75 @@ export default function TaskQueueDemo() {
                       {ROW_TIME[row]}
                     </div>
                     {Array.from({ length: COLS }, (_, col) => {
-                      const isLive = row === activeRow && col === activeDayIndex
+                      const key = slotKey(row, col)
+                      const placed = placedPosts[key]
+                      const isLive = activeCell !== null && row === activeCell.row && col === activeCell.col
+
+                      if (placed) {
+                        return (
+                          <div
+                            key={`${row}-${col}`}
+                            className="rounded-lg border border-success/35 min-h-[120px] sm:min-h-[128px] relative overflow-hidden p-1.5 flex flex-col bg-success/[0.04] ring-1 ring-success/10"
+                          >
+                            <PostCardFrame coverImageUrl={placed.coverImageUrl} title={placed.title}>
+                              <p className="text-[9px] sm:text-[10px] font-semibold text-text leading-snug line-clamp-3">{placed.title}</p>
+                              <p className="text-[9px] mt-1 text-success font-semibold flex items-center gap-1">
+                                <span aria-hidden>✓</span> {t.hintPublished}
+                              </p>
+                            </PostCardFrame>
+                          </div>
+                        )
+                      }
+
                       return (
                         <div
                           key={`${row}-${col}`}
-                          className={`rounded-lg border border-dashed min-h-[100px] sm:min-h-[112px] relative overflow-hidden p-1.5 flex flex-col ${
+                          className={`rounded-lg border border-dashed min-h-[120px] sm:min-h-[128px] relative overflow-hidden p-1.5 flex flex-col ${
                             isLive
                               ? 'border-success/45 bg-success/[0.06] ring-1 ring-success/15'
                               : 'border-border/50 bg-surface/25'
                           }`}
                         >
                           {isLive && showCard ? (
-                            <AnimatePresence mode="wait">
-                              <motion.div
-                                key={phase}
-                                initial={{ opacity: 0, y: 10, scale: 0.98 }}
-                                animate={{ opacity: 1, y: 0, scale: 1 }}
-                                exit={{ opacity: 0, scale: 0.96 }}
-                                className="flex flex-col flex-1 rounded-md border border-border bg-surface shadow-sm p-2 text-left z-[1]"
-                              >
-                                {phase === 'compose' && (
-                                  <p className="text-[10px] text-success font-medium animate-pulse">{t.hintComposer}</p>
-                                )}
-                                {(phase === 'scheduled' || phase === 'publishing') && (
-                                  <>
-                                    <p className="text-[10px] font-semibold text-text leading-snug line-clamp-3">{t.postSampleTitle}</p>
-                                    <p
-                                      className={`text-[9px] mt-1.5 ${
-                                        phase === 'publishing' ? 'text-success font-semibold' : 'text-muted'
-                                      }`}
-                                    >
-                                      {phase === 'publishing' ? t.autoPostBanner : t.hintScheduled}
-                                    </p>
-                                  </>
-                                )}
-                                {phase === 'published' && (
-                                  <>
-                                    <p className="text-[10px] font-semibold text-text line-clamp-2">{t.postSampleTitle}</p>
-                                    <p className="text-[9px] mt-1 text-success font-semibold flex items-center gap-1">
-                                      <span aria-hidden>✓</span> {t.hintPublished}
-                                    </p>
-                                  </>
-                                )}
-                              </motion.div>
-                            </AnimatePresence>
+                            <PostCardFrame coverImageUrl={coverAt(postIndex).coverImageUrl} title={coverAt(postIndex).title}>
+                              <AnimatePresence mode="wait">
+                                <motion.div
+                                  key={phase}
+                                  initial={{ opacity: 0, y: 8 }}
+                                  animate={{ opacity: 1, y: 0 }}
+                                  exit={{ opacity: 0, y: -4 }}
+                                  className="flex flex-col flex-1 min-h-0"
+                                >
+                                  {phase === 'compose' && (
+                                    <p className="text-[9px] sm:text-[10px] text-success font-medium animate-pulse">{t.hintComposer}</p>
+                                  )}
+                                  {(phase === 'scheduled' || phase === 'publishing') && (
+                                    <>
+                                      <p className="text-[9px] sm:text-[10px] font-semibold text-text leading-snug line-clamp-3">
+                                        {coverAt(postIndex).title}
+                                      </p>
+                                      <p
+                                        className={`text-[8px] sm:text-[9px] mt-1 ${
+                                          phase === 'publishing' ? 'text-success font-semibold' : 'text-muted'
+                                        }`}
+                                      >
+                                        {phase === 'publishing' ? t.autoPostBanner : t.hintScheduled}
+                                      </p>
+                                    </>
+                                  )}
+                                  {phase === 'published' && (
+                                    <>
+                                      <p className="text-[9px] sm:text-[10px] font-semibold text-text line-clamp-3">
+                                        {coverAt(postIndex).title}
+                                      </p>
+                                      <p className="text-[8px] sm:text-[9px] mt-1 text-success font-semibold flex items-center gap-1">
+                                        <span aria-hidden>✓</span> {t.hintPublished}
+                                      </p>
+                                    </>
+                                  )}
+                                </motion.div>
+                              </AnimatePresence>
+                            </PostCardFrame>
                           ) : (
                             <StaticSlot row={row} col={col} />
                           )}
