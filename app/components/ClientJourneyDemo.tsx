@@ -102,15 +102,15 @@ type FunnelCopy = {
   leadsUnit: string
 }
 
-/** Rich deep blue (midnight navy) — pushed darker again for a heavier deep-blue read. */
-const FUNNEL_ACTIVE_DEEP_RGB = '5, 22, 78'
-/** Near-black navy for edges, glow falloff, and inset depth. */
-const FUNNEL_ACTIVE_INK_RGB = '2, 9, 36'
-/** Intake band idle wash — deep blue tint (replaces bright --info / --accent mix on broken funnel). */
-const FUNNEL_INTAKE_SURFACE_RGB = '10, 34, 100'
-const FUNNEL_INTAKE_SURFACE_MID_RGB = '6, 22, 72'
+/** Aligned with --brand-blue-dark (#03598e) and deeper teal-navy for depth */
+const FUNNEL_ACTIVE_DEEP_RGB = '3, 89, 142'
+/** Near-black with teal cast (edges / glow falloff) */
+const FUNNEL_ACTIVE_INK_RGB = '2, 22, 44'
+/** Intake band idle wash — brand teal tint */
+const FUNNEL_INTAKE_SURFACE_RGB = '8, 55, 100'
+const FUNNEL_INTAKE_SURFACE_MID_RGB = '4, 38, 72'
 
-/** Rotating styles for channel source chips (accent / deep-blue “website” / warning / purple / success). */
+/** Rotating styles for channel source chips (accent / deep-blue “website” / warning / info / success). */
 const CHANNEL_CHIP_STYLES = [
   {
     shell:
@@ -119,8 +119,8 @@ const CHANNEL_CHIP_STYLES = [
   },
   {
     shell:
-      'bg-[rgba(10,34,100,0.16)] border border-[rgba(10,34,100,0.42)] shadow-sm shadow-[rgba(5,22,78,0.22)]',
-    label: 'text-[rgb(100,145,218)]',
+      'bg-[rgba(var(--accent-rgb),0.14)] border border-[rgba(var(--accent-rgb),0.38)] shadow-sm shadow-[rgba(var(--accent-rgb),0.18)]',
+    label: 'text-accent',
   },
   {
     shell:
@@ -129,8 +129,8 @@ const CHANNEL_CHIP_STYLES = [
   },
   {
     shell:
-      'bg-purple/10 border border-purple/35 shadow-sm shadow-purple/15',
-    label: 'text-purple',
+      'bg-info/10 border border-info/35 shadow-sm shadow-info/15',
+    label: 'text-info',
   },
   {
     shell:
@@ -368,7 +368,7 @@ function VisualFunnel({
                         suffix=""
                         className={`text-base sm:text-sm font-mono tabular-nums font-bold ${
                           isIntakeBand
-                            ? 'text-[rgb(100,145,218)]'
+                            ? 'text-accent'
                             : isLossBand
                               ? 'text-destructive'
                               : 'text-success'
@@ -377,7 +377,7 @@ function VisualFunnel({
                       <span
                         className={`text-[10px] sm:text-xs font-medium uppercase tracking-wide ${
                           isIntakeBand
-                            ? 'text-[rgb(88,128,200)]'
+                            ? 'text-accent/80'
                             : isLossBand
                               ? 'text-destructive/80'
                               : 'text-success/80'

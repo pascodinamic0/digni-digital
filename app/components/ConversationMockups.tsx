@@ -284,7 +284,7 @@ const ConversationMockups = () => {
           >
             {/* Phone Frame */}
             <div className="relative mx-auto max-w-sm">
-              <div className="absolute inset-0 bg-gradient-to-br from-accent/20 to-purple/20 rounded-[3rem] blur-2xl opacity-50" />
+              <div className="absolute inset-0 bg-gradient-to-br from-accent/20 to-success/20 rounded-[3rem] blur-2xl opacity-50" />
               <div className="relative bg-surface border border-border-light rounded-3xl p-2 shadow-2xl">
                 {/* Phone Notch */}
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-background rounded-b-2xl" />

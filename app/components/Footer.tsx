@@ -45,6 +45,15 @@ export default function Footer() {
     ],
   }
 
+  const footerNavLinkClass =
+    'block rounded-lg px-2 -mx-2 py-2.5 sm:py-2 text-sm leading-snug text-muted hover:text-accent hover:bg-surface-light/60 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/35 focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--surface)]'
+
+  const footerLinkColumns = [
+    { title: t.footer.services, items: links.services },
+    { title: t.footer.resources, items: links.resources },
+    { title: t.footer.company, items: links.company },
+  ] as const
+
   const handleNewsletterSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     if (!email.trim() || newsletterStatus === 'loading') return
@@ -70,28 +79,31 @@ export default function Footer() {
   return (
     <footer id="contact" className="bg-surface border-t border-border">
       <div className="max-w-7xl mx-auto px-6">
-        {/* Compact newsletter — inline pill */}
+        {/* Newsletter signup */}
         <section className="py-10 md:py-12">
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 md:gap-8">
-            <div>
-              <h3 className="font-display font-semibold text-lg text-text mb-1">
+          <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8 lg:gap-12">
+            <div className="max-w-xl shrink-0">
+              <h3 id="footer-newsletter-heading" className="font-display font-semibold text-lg text-text mb-1.5">
                 {t.footer.newsletterTitle}
               </h3>
-              <p className="text-muted text-sm">
+              <p className="text-muted text-sm leading-relaxed">
                 {t.footer.newsletterSubtitle}
               </p>
             </div>
             <form
               onSubmit={handleNewsletterSubmit}
-              className="flex flex-col gap-1.5 w-full md:w-auto md:flex-1 md:max-w-md"
+              className="w-full min-w-0 lg:max-w-md xl:max-w-lg lg:pt-0.5"
+              aria-labelledby="footer-newsletter-heading"
             >
               <label
                 htmlFor="footer-newsletter-email"
-                className="block text-sm font-medium text-foreground"
+                className="block text-xs font-medium uppercase tracking-wide text-muted mb-2.5"
               >
                 {t.footer.newsletterEmailLabel}
               </label>
-              <div className="flex gap-2">
+              <div
+                className="flex flex-col sm:flex-row sm:items-stretch rounded-xl border border-border bg-surface-light/90 overflow-hidden shadow-sm transition-[box-shadow] focus-within:ring-2 focus-within:ring-accent/25 focus-within:border-accent/40 focus-within:shadow-md"
+              >
                 <input
                   id="footer-newsletter-email"
                   type="email"
@@ -102,24 +114,26 @@ export default function Footer() {
                   placeholder={t.footer.newsletterPlaceholder}
                   required
                   disabled={newsletterStatus === 'loading' || newsletterStatus === 'success'}
-                  className="flex-1 min-w-0 px-4 py-2.5 rounded-full bg-surface-light border border-border-light text-sm text-text placeholder:text-muted-foreground placeholder:opacity-100 caret-foreground focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent disabled:opacity-60"
+                  className="flex-1 min-w-0 border-0 bg-transparent px-4 py-3.5 sm:py-3 text-[15px] sm:text-sm text-text placeholder:text-muted-foreground placeholder:opacity-90 caret-foreground focus:outline-none focus:ring-0 disabled:opacity-60 min-h-[48px] sm:min-h-0"
                 />
                 <button
                   type="submit"
                   disabled={newsletterStatus === 'loading' || newsletterStatus === 'success'}
-                  className="btn-primary shrink-0 px-5 py-2.5 rounded-full text-sm font-medium inline-flex items-center justify-center gap-2"
+                  className="shrink-0 border-t sm:border-t-0 sm:border-l border-border bg-accent text-background px-5 py-3.5 sm:py-3 text-sm font-semibold hover:bg-accent-light transition-colors disabled:opacity-60 disabled:cursor-not-allowed inline-flex items-center justify-center gap-2 min-h-[48px] sm:min-h-[44px] w-full sm:w-auto sm:min-w-[7.5rem]"
                 >
                   {newsletterStatus === 'loading' && (
-                    <span className="w-3.5 h-3.5 border-2 border-current border-t-transparent rounded-full animate-spin" aria-hidden />
+                    <span className="w-4 h-4 border-2 border-current border-t-transparent rounded-full animate-spin" aria-hidden />
                   )}
                   {newsletterStatus === 'success' ? t.footer.newsletterThanks : t.footer.subscribe}
                 </button>
               </div>
+              {newsletterStatus === 'error' && (
+                <p className="text-red-500 text-sm mt-2.5" role="alert">
+                  {t.footer.newsletterError}
+                </p>
+              )}
             </form>
           </div>
-          {newsletterStatus === 'error' && (
-            <p className="text-red-500 text-sm mt-2">{t.footer.newsletterError}</p>
-          )}
         </section>
 
         {/* Divider */}
@@ -163,50 +177,31 @@ export default function Footer() {
               </div>
             </div>
 
-            {/* Link columns */}
-            <div className="md:col-span-7 lg:col-span-8 grid grid-cols-2 sm:grid-cols-3 gap-8">
-              <div>
-                <h4 className="font-display font-semibold text-text text-sm uppercase tracking-wider mb-4">
-                  {t.footer.services}
-                </h4>
-                <ul className="space-y-3">
-                  {links.services.map((link) => (
-                    <li key={link.href}>
-                      <Link href={link.href} className="text-muted hover:text-accent text-sm transition-colors">
-                        {link.name}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div>
-                <h4 className="font-display font-semibold text-text text-sm uppercase tracking-wider mb-4">
-                  {t.footer.resources}
-                </h4>
-                <ul className="space-y-3">
-                  {links.resources.map((link) => (
-                    <li key={link.href}>
-                      <Link href={link.href} className="text-muted hover:text-accent text-sm transition-colors" {...(link.href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}>
-                        {link.name}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div>
-                <h4 className="font-display font-semibold text-text text-sm uppercase tracking-wider mb-4">
-                  {t.footer.company}
-                </h4>
-                <ul className="space-y-3">
-                  {links.company.map((link) => (
-                    <li key={link.href}>
-                      <Link href={link.href} className="text-muted hover:text-accent text-sm transition-colors">
-                        {link.name}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+            {/* Link columns — single column on mobile; 3-up from sm */}
+            <div className="md:col-span-7 lg:col-span-8 grid grid-cols-1 sm:grid-cols-3 gap-0 sm:gap-x-8 sm:gap-y-10">
+              {footerLinkColumns.map(({ title, items }) => (
+                <div
+                  key={title}
+                  className="border-b border-border pb-9 last:border-b-0 last:pb-0 sm:border-0 sm:pb-0"
+                >
+                  <h4 className="font-display font-semibold text-text text-xs uppercase tracking-[0.12em] mb-4 sm:mb-5">
+                    {title}
+                  </h4>
+                  <ul className="space-y-0.5 sm:space-y-1">
+                    {items.map((link) => (
+                      <li key={link.href}>
+                        <Link
+                          href={link.href}
+                          className={footerNavLinkClass}
+                          {...(link.href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                        >
+                          {link.name}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
             </div>
           </div>
         </div>

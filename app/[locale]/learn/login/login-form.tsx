@@ -66,7 +66,7 @@ export function LoginForm() {
       </form>
 
       {status === 'sent' && msg && (
-        <p className="mt-6 rounded-xl border border-emerald-500/25 bg-emerald-500/10 px-4 py-3 text-sm text-success" role="status">
+        <p className="mt-6 rounded-xl border border-success/25 bg-success/10 px-4 py-3 text-sm text-success" role="status">
           {msg}
         </p>
       )}

@@ -125,9 +125,9 @@ export type AiEmployeeProductDemosTranslations = {
 
 const pipelineColumnsEn: PipelineColumnT[] = [
   { id: 'c1', title: 'New lead', stat: '1 lead · $1.1k', borderClass: 'border-t-blue-500' },
-  { id: 'c2', title: 'Qualified', stat: '3 leads · $580–$4.9k', borderClass: 'border-t-amber-400' },
+  { id: 'c2', title: 'Qualified', stat: '3 leads · $580–$4.9k', borderClass: 'border-t-warning' },
   { id: 'c3', title: 'Demo / intent', stat: '3 leads · $1.8k–$4.2k', borderClass: 'border-t-rose-400' },
-  { id: 'c4', title: 'Won / booked', stat: '1 lead · $3.1k', borderClass: 'border-t-emerald-500' },
+  { id: 'c4', title: 'Won / booked', stat: '1 lead · $3.1k', borderClass: 'border-t-success' },
 ]
 
 const pipelineCardsEn: PipelineCardT[] = [
@@ -356,9 +356,9 @@ export const aiEmployeeProductDemosEn: AiEmployeeProductDemosTranslations = {
 
 const pipelineColumnsFr: PipelineColumnT[] = [
   { id: 'c1', title: 'Nouveau lead', stat: '1 lead · 1 150 €', borderClass: 'border-t-blue-500' },
-  { id: 'c2', title: 'Qualifié', stat: '3 leads · 580–4 900 €', borderClass: 'border-t-amber-400' },
+  { id: 'c2', title: 'Qualifié', stat: '3 leads · 580–4 900 €', borderClass: 'border-t-warning' },
   { id: 'c3', title: 'Démo / intention', stat: '3 leads · 1,8–4,2 k€', borderClass: 'border-t-rose-400' },
-  { id: 'c4', title: 'Gagné / réservé', stat: '1 lead · 3,1 k€', borderClass: 'border-t-emerald-500' },
+  { id: 'c4', title: 'Gagné / réservé', stat: '1 lead · 3,1 k€', borderClass: 'border-t-success' },
 ]
 
 const pipelineCardsFr: PipelineCardT[] = [
@@ -479,9 +479,9 @@ export const aiEmployeeProductDemosFr: AiEmployeeProductDemosTranslations = {
 
 const pipelineColumnsAr: PipelineColumnT[] = [
   { id: 'c1', title: 'عميل جديد', stat: '1 عميل · ‎$1,150', borderClass: 'border-t-blue-500' },
-  { id: 'c2', title: 'مؤهل', stat: '3 عملاء · ‎$580–$4,900', borderClass: 'border-t-amber-400' },
+  { id: 'c2', title: 'مؤهل', stat: '3 عملاء · ‎$580–$4,900', borderClass: 'border-t-warning' },
   { id: 'c3', title: 'عرض / نية', stat: '3 عملاء · ‎$1.8k–$4.2k', borderClass: 'border-t-rose-400' },
-  { id: 'c4', title: 'مكتمل / محجوز', stat: '1 عميل · ‎$3,100', borderClass: 'border-t-emerald-500' },
+  { id: 'c4', title: 'مكتمل / محجوز', stat: '1 عميل · ‎$3,100', borderClass: 'border-t-success' },
 ]
 
 const pipelineCardsAr: PipelineCardT[] = [
@@ -602,9 +602,9 @@ export const aiEmployeeProductDemosAr: AiEmployeeProductDemosTranslations = {
 
 const pipelineColumnsDe: PipelineColumnT[] = [
   { id: 'c1', title: 'Neuer Lead', stat: '1 Lead · 1.150 €', borderClass: 'border-t-blue-500' },
-  { id: 'c2', title: 'Qualifiziert', stat: '3 Leads · 580–4.900 €', borderClass: 'border-t-amber-400' },
+  { id: 'c2', title: 'Qualifiziert', stat: '3 Leads · 580–4.900 €', borderClass: 'border-t-warning' },
   { id: 'c3', title: 'Demo / Absicht', stat: '3 Leads · 1,8–4,2 k€', borderClass: 'border-t-rose-400' },
-  { id: 'c4', title: 'Gewonnen / gebucht', stat: '1 Lead · 3,1 k€', borderClass: 'border-t-emerald-500' },
+  { id: 'c4', title: 'Gewonnen / gebucht', stat: '1 Lead · 3,1 k€', borderClass: 'border-t-success' },
 ]
 
 const pipelineCardsDe: PipelineCardT[] = [
@@ -725,9 +725,9 @@ export const aiEmployeeProductDemosDe: AiEmployeeProductDemosTranslations = {
 
 const pipelineColumnsEs: PipelineColumnT[] = [
   { id: 'c1', title: 'Nuevo lead', stat: '1 lead · US$1.150', borderClass: 'border-t-blue-500' },
-  { id: 'c2', title: 'Cualificado', stat: '3 leads · US$580–4.900', borderClass: 'border-t-amber-400' },
+  { id: 'c2', title: 'Cualificado', stat: '3 leads · US$580–4.900', borderClass: 'border-t-warning' },
   { id: 'c3', title: 'Demo / intención', stat: '3 leads · US$1,8k–4,2k', borderClass: 'border-t-rose-400' },
-  { id: 'c4', title: 'Ganado / reservado', stat: '1 lead · US$3,1k', borderClass: 'border-t-emerald-500' },
+  { id: 'c4', title: 'Ganado / reservado', stat: '1 lead · US$3,1k', borderClass: 'border-t-success' },
 ]
 
 const pipelineCardsEs: PipelineCardT[] = [
