@@ -252,6 +252,14 @@ body {
   overflow-x: hidden;
 }
 
+/* Footer newsletter: WebKit autofill must match theme foreground or text disappears on dark surfaces */
+footer#contact input#footer-newsletter-email:-webkit-autofill,
+footer#contact input#footer-newsletter-email:-webkit-autofill:hover,
+footer#contact input#footer-newsletter-email:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--foreground) !important;
+  caret-color: var(--foreground);
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;

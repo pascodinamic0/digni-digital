@@ -102,6 +102,49 @@ type FunnelCopy = {
   leadsUnit: string
 }
 
+/** Rotating styles for channel source chips (accent / info / warning / purple / success). */
+const CHANNEL_CHIP_STYLES = [
+  {
+    shell:
+      'bg-accent/10 border border-accent/35 shadow-sm shadow-accent/20',
+    label: 'text-accent',
+  },
+  {
+    shell:
+      'bg-info/10 border border-info/35 shadow-sm shadow-info/15',
+    label: 'text-info',
+  },
+  {
+    shell:
+      'bg-warning/10 border border-warning/35 shadow-sm shadow-warning/15',
+    label: 'text-warning',
+  },
+  {
+    shell:
+      'bg-purple/10 border border-purple/35 shadow-sm shadow-purple/15',
+    label: 'text-purple',
+  },
+  {
+    shell:
+      'bg-success/10 border border-success/30 shadow-sm shadow-success/10',
+    label: 'text-success',
+  },
+] as const
+
+/** Navy blue-950 (#172554) — much deeper than brand accent; reads as rich blue, not gray. */
+const FUNNEL_ACTIVE_DEEP_RGB = '23, 37, 84'
+/** Darker edge for layered ring + inset (blue-950 / near-midnight blue). */
+const FUNNEL_ACTIVE_INK_RGB = '15, 23, 61'
+
+/** Strong focus ring + glow (stacked dark blues so the step pops). */
+const ACTIVE_STEP_SHADOW = [
+  `0 0 0 4px rgba(${FUNNEL_ACTIVE_DEEP_RGB}, 1)`,
+  `0 0 0 2px rgba(${FUNNEL_ACTIVE_INK_RGB}, 1)`,
+  `0 0 40px rgba(${FUNNEL_ACTIVE_DEEP_RGB}, 0.95)`,
+  `0 0 72px rgba(${FUNNEL_ACTIVE_INK_RGB}, 0.65)`,
+  `inset 0 0 40px rgba(${FUNNEL_ACTIVE_INK_RGB}, 0.5)`,
+].join(', ')
+
 function VisualFunnel({
   stages,
   counts,
@@ -122,7 +165,9 @@ function VisualFunnel({
   const isBroken = variant === 'broken'
   const totalLayers = stages.length
   const elaboration = (s: FunnelStage) => (isBroken ? s.leak : s.win)
-  const lineColor = isBroken ? 'rgba(var(--destructive-rgb), 0.5)' : 'rgba(var(--success-rgb), 0.5)'
+  const lineColor = isBroken
+    ? `rgba(${FUNNEL_ACTIVE_DEEP_RGB}, 0.9)`
+    : 'rgba(var(--success-rgb), 0.5)'
 
   return (
     <div className="w-full flex flex-col items-center relative">
@@ -132,29 +177,28 @@ function VisualFunnel({
         role="list"
         aria-label="Lead sources"
       >
-        {channels.map((ch) => (
-          <motion.div
-            key={ch.id}
-            role="listitem"
-            initial={{ opacity: 0, y: -8 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className={`flex flex-col items-center justify-center gap-1.5 rounded-2xl px-3 py-3 min-w-[5.75rem] max-w-[6.5rem] shrink-0 snap-start relative z-10 transition-all ${
-              isBroken
-                ? 'bg-destructive/[0.07] border border-destructive/20 shadow-sm shadow-destructive/5'
-                : 'bg-success/[0.08] border border-success/25 shadow-md shadow-success/5 backdrop-blur-sm'
-            }`}
-          >
-            <span className="text-[1.6rem] sm:text-[1.75rem] leading-none select-none" aria-hidden>
-              {channelIcons[ch.id] ?? ch.icon}
-            </span>
-            <span
-              className={`text-[10px] sm:text-[11px] font-semibold text-center leading-tight line-clamp-2 ${isBroken ? 'text-foreground/90' : 'text-success'}`}
+        {channels.map((ch, chipIdx) => {
+          const chip = CHANNEL_CHIP_STYLES[chipIdx % CHANNEL_CHIP_STYLES.length]
+          return (
+            <motion.div
+              key={ch.id}
+              role="listitem"
+              initial={{ opacity: 0, y: -8 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className={`flex flex-col items-center justify-center gap-1.5 rounded-2xl px-3 py-3 min-w-[5.75rem] max-w-[6.5rem] shrink-0 snap-start relative z-10 transition-all backdrop-blur-sm ${chip.shell}`}
             >
-              {ch.label}
-            </span>
-          </motion.div>
-        ))}
+              <span className="text-[1.6rem] sm:text-[1.75rem] leading-none select-none" aria-hidden>
+                {channelIcons[ch.id] ?? ch.icon}
+              </span>
+              <span
+                className={`text-[10px] sm:text-[11px] font-semibold text-center leading-tight line-clamp-2 ${chip.label}`}
+              >
+                {ch.label}
+              </span>
+            </motion.div>
+          )
+        })}
       </div>
 
       <p className="text-[11px] sm:text-xs text-center text-muted-foreground leading-snug max-w-md mx-auto mt-3 mb-px px-1">
@@ -170,7 +214,7 @@ function VisualFunnel({
               d={`M ${x} 0 Q 50 60 50 100`}
               fill="none"
               stroke={lineColor}
-              strokeWidth="0.8"
+              strokeWidth="1"
               strokeLinecap="round"
               initial={{ pathLength: 0, opacity: 0 }}
               animate={{ pathLength: 1, opacity: 0.7 }}
@@ -196,7 +240,7 @@ function VisualFunnel({
       </div>
 
       {/* Funnel: all bands same height, no gap, section breaks are thin lines only */}
-      <div className="relative w-full flex flex-col overflow-hidden" style={{ gap: 0 }}>
+      <div className="relative w-full flex flex-col overflow-visible" style={{ gap: 0 }}>
         {stages.map((stage, i) => {
           const count = counts[i] ?? 0
           const nextCount = counts[i + 1] ?? count
@@ -209,8 +253,8 @@ function VisualFunnel({
           const isLastTwoTiers = i >= totalLayers - 2
           const bandHeightClass = isLastTwoTiers ? BAND_HEIGHT_LAST_CLASS : BAND_HEIGHT_CLASS
           const isActive = i === activeStep
-          // Broken journey: only step 1 (Lead Arrives) is green — no drop yet. Red from First Contact onward (manual response delays, etc.)
-          const isGreenBand = !isBroken || i === 0
+          const isIntakeBand = isBroken && i === 0
+          const isLossBand = isBroken && i > 0
 
           return (
             <div key={stage.step} className="flex flex-col" style={{ gap: 0 }}>
@@ -240,38 +284,66 @@ function VisualFunnel({
               )}
 
               <motion.div
-                className={`relative flex flex-col sm:flex-row items-stretch gap-1.5 sm:gap-2 overflow-hidden ${!isBroken ? 'sm:rounded-xl' : ''}`}
+                className={`relative flex flex-col sm:flex-row items-stretch gap-1.5 sm:gap-2 overflow-visible ${!isBroken ? 'sm:rounded-xl' : ''}`}
               >
                 <motion.div
                   className={`relative flex-1 min-w-0 flex flex-col items-center justify-center text-center px-2 sm:px-3 py-2 sm:py-0 overflow-hidden ${bandHeightClass} ${displayDrop !== 0 ? 'order-2 sm:order-1' : ''}`}
-                  style={{
-                    clipPath: layerClip,
-                    WebkitClipPath: layerClip,
-                    background: isBroken
-                      ? (isGreenBand
-                        ? (isActive
-                          ? 'linear-gradient(180deg, rgba(var(--success-rgb), 0.26) 0%, rgba(var(--success-rgb), 0.14) 100%)'
-                          : 'linear-gradient(180deg, rgba(var(--success-rgb), 0.22) 0%, rgba(var(--success-rgb), 0.12) 100%)')
-                        : (isActive
-                          ? 'linear-gradient(180deg, rgba(var(--destructive-rgb), 0.26) 0%, rgba(var(--destructive-rgb), 0.14) 100%)'
-                          : 'linear-gradient(180deg, rgba(var(--destructive-rgb), 0.22) 0%, rgba(var(--destructive-rgb), 0.12) 100%)'))
-                      : (isActive
+                  style={(() => {
+                    let background: string
+                    if (isIntakeBand) {
+                      const base =
+                        'linear-gradient(180deg, rgba(var(--info-rgb), 0.14) 0%, rgba(var(--accent-rgb), 0.08) 100%)'
+                      const activeWash = `linear-gradient(180deg, rgba(${FUNNEL_ACTIVE_DEEP_RGB}, 0.78) 0%, rgba(${FUNNEL_ACTIVE_INK_RGB}, 0.45) 100%), `
+                      background = isActive ? `${activeWash}${base}` : base
+                    } else if (isLossBand) {
+                      const base = isActive
+                        ? 'linear-gradient(180deg, rgba(var(--destructive-rgb), 0.26) 0%, rgba(var(--destructive-rgb), 0.14) 100%)'
+                        : 'linear-gradient(180deg, rgba(var(--destructive-rgb), 0.22) 0%, rgba(var(--destructive-rgb), 0.12) 100%)'
+                      const activeWash = `linear-gradient(180deg, rgba(${FUNNEL_ACTIVE_DEEP_RGB}, 0.62) 0%, rgba(${FUNNEL_ACTIVE_INK_RGB}, 0.28) 100%), `
+                      background = isActive ? `${activeWash}${base}` : base
+                    } else {
+                      const base = isActive
                         ? 'linear-gradient(135deg, rgba(var(--success-rgb), 0.14) 0%, rgba(var(--success-rgb), 0.08) 55%, rgba(var(--success-rgb), 0.05) 100%)'
-                        : 'linear-gradient(135deg, rgba(var(--success-rgb), 0.12) 0%, rgba(var(--success-rgb), 0.06) 100%)'),
-                    border: `2px solid ${isBroken ? (isGreenBand ? (isActive ? 'rgba(var(--success-rgb), 0.52)' : 'rgba(var(--success-rgb), 0.45)') : (isActive ? 'rgba(var(--destructive-rgb), 0.52)' : 'rgba(var(--destructive-rgb), 0.45)')) : (isActive ? 'rgba(var(--success-rgb), 0.34)' : 'rgba(var(--success-rgb), 0.25)')}`,
-                    boxShadow: isActive
-                      ? (isBroken
-                        ? (isGreenBand
-                          ? 'inset 0 0 0 1px rgba(var(--success-rgb), 0.22)'
-                          : 'inset 0 0 0 1px rgba(var(--destructive-rgb), 0.22)')
-                        : 'inset 0 0 0 1px rgba(var(--success-rgb), 0.18)')
-                      : 'none',
-                  }}
+                        : 'linear-gradient(135deg, rgba(var(--success-rgb), 0.12) 0%, rgba(var(--success-rgb), 0.06) 100%)'
+                      const activeWash = `linear-gradient(135deg, rgba(${FUNNEL_ACTIVE_DEEP_RGB}, 0.68) 0%, rgba(${FUNNEL_ACTIVE_INK_RGB}, 0.3) 100%), `
+                      background = isActive ? `${activeWash}${base}` : base
+                    }
+
+                    let border: string
+                    if (isActive) {
+                      border = `3px solid rgba(${FUNNEL_ACTIVE_DEEP_RGB}, 1)`
+                    } else if (isIntakeBand) {
+                      border = '2px solid rgba(var(--info-rgb), 0.4)'
+                    } else if (isLossBand) {
+                      border = '2px solid rgba(var(--destructive-rgb), 0.45)'
+                    } else {
+                      border = '2px solid rgba(var(--success-rgb), 0.25)'
+                    }
+
+                    return {
+                      clipPath: layerClip,
+                      WebkitClipPath: layerClip,
+                      background,
+                      border,
+                      boxShadow: isActive ? ACTIVE_STEP_SHADOW : 'none',
+                      zIndex: isActive ? 3 : 1,
+                    }
+                  })()}
                 >
                   <div className="flex flex-col sm:flex-row sm:flex-wrap sm:items-center justify-center gap-1 sm:gap-1.5 w-full leading-tight">
                     <div className="flex items-center justify-center gap-1.5 flex-wrap">
                       <span
-                        className={`w-6 h-6 rounded-lg flex items-center justify-center text-xs font-bold flex-shrink-0 ${!isBroken ? (isActive ? 'bg-success/22 text-success' : 'bg-success/20 text-success/90') : 'bg-foreground/15 text-foreground'}`}
+                        className={`w-6 h-6 rounded-lg flex items-center justify-center text-xs font-bold flex-shrink-0 border ${
+                          isIntakeBand
+                            ? isActive
+                              ? 'bg-accent/20 text-accent border-accent/40'
+                              : 'bg-accent/12 text-accent border-accent/25'
+                            : !isBroken
+                              ? isActive
+                                ? 'bg-success/22 text-success border-success/30'
+                                : 'bg-success/20 text-success/90 border-success/25'
+                              : 'bg-foreground/15 text-foreground border-border/40'
+                        }`}
                         aria-hidden
                       >
                         {stage.step}
@@ -279,7 +351,11 @@ function VisualFunnel({
                       <span className="text-lg sm:text-base leading-none select-none" aria-hidden>
                         {stage.icon}
                       </span>
-                      <span className={`font-semibold text-sm sm:text-sm text-left sm:text-center ${isGreenBand ? 'text-success' : 'text-destructive'}`}>
+                      <span
+                        className={`font-semibold text-sm sm:text-sm text-left sm:text-center ${
+                          isIntakeBand ? 'text-foreground' : isLossBand ? 'text-destructive' : 'text-success'
+                        }`}
+                      >
                         {stage.title}
                       </span>
                     </div>
@@ -288,15 +364,29 @@ function VisualFunnel({
                         value={count}
                         isActive={isActive}
                         suffix=""
-                        className={`text-base sm:text-sm font-mono tabular-nums font-bold ${isGreenBand ? 'text-success' : 'text-destructive'}`}
+                        className={`text-base sm:text-sm font-mono tabular-nums font-bold ${
+                          isIntakeBand ? 'text-info' : isLossBand ? 'text-destructive' : 'text-success'
+                        }`}
                       />
-                      <span className={`text-[10px] sm:text-xs font-medium uppercase tracking-wide ${isGreenBand ? 'text-success/80' : 'text-destructive/80'}`}>
+                      <span
+                        className={`text-[10px] sm:text-xs font-medium uppercase tracking-wide ${
+                          isIntakeBand ? 'text-info/85' : isLossBand ? 'text-destructive/80' : 'text-success/80'
+                        }`}
+                      >
                         {funnelCopy.leadsUnit}
                       </span>
                     </div>
                   </div>
                   {elaboration(stage) && (
-                    <p className={`text-[11px] sm:text-xs leading-snug mt-1 max-w-full px-1 font-medium ${isGreenBand ? (isBroken ? 'text-success' : 'text-success/90') : 'text-destructive'}`}>
+                    <p
+                      className={`text-[11px] sm:text-xs leading-snug mt-1 max-w-full px-1 font-medium ${
+                        isIntakeBand
+                          ? 'text-muted-foreground'
+                          : isLossBand
+                            ? 'text-destructive'
+                            : 'text-success/90'
+                      }`}
+                    >
                       {elaboration(stage)}
                     </p>
                   )}
@@ -323,7 +413,7 @@ function VisualFunnel({
                         {funnelCopy.lostBadge}
                       </span>
                       <motion.span
-                        className={`inline-flex items-baseline gap-1 text-sm font-bold tabular-nums sm:flex sm:flex-col sm:items-end ${isGreenBand ? 'text-muted-foreground' : 'text-destructive'}`}
+                        className={`inline-flex items-baseline gap-1 text-sm font-bold tabular-nums sm:flex sm:flex-col sm:items-end ${!isLossBand ? 'text-muted-foreground' : 'text-destructive'}`}
                         animate={isActive ? { scale: [1, 1.08, 1] } : {}}
                         transition={{ duration: 0.3 }}
                       >

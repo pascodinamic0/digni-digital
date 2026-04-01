@@ -68,7 +68,6 @@ type HomeTranslations = {
     missedLeadsProblem: string
     missedLeadsSolution: string
     missedLeadsOutcome: string
-    missedLeadsStat: string
     missedLeadsStatLabel: string
     skillsGap: string
     skillsGapProblem: string
@@ -509,6 +508,7 @@ function buildTranslations(): Record<Language, TranslationKeys> {
       newsletterTitle: 'Stay Ahead of the Curve',
       newsletterSubtitle: 'Get exclusive insights, transformation tips, and industry trends delivered to your inbox monthly.',
       newsletterPlaceholder: 'Enter your email',
+      newsletterEmailLabel: 'Email address',
       subscribe: 'Subscribe',
       newsletterThanks: 'Subscribed',
       newsletterError: 'Something went wrong. Please try again.',
@@ -583,6 +583,7 @@ function buildTranslations(): Record<Language, TranslationKeys> {
       newsletterTitle: 'Restez en avance',
       newsletterSubtitle: 'Insights exclusifs, conseils de transformation et tendances du secteur, une fois par mois.',
       newsletterPlaceholder: 'Votre adresse e-mail',
+      newsletterEmailLabel: 'Adresse e-mail',
       subscribe: 'S\'abonner',
       newsletterThanks: 'Inscrit',
       newsletterError: 'Une erreur s\'est produite. Réessayez.',
@@ -657,6 +658,7 @@ function buildTranslations(): Record<Language, TranslationKeys> {
       newsletterTitle: 'Bleiben Sie auf dem Laufenden',
       newsletterSubtitle: 'Exklusive Einblicke, Tipps zur Transformation und Branchentrends monatlich.',
       newsletterPlaceholder: 'E-Mail eingeben',
+      newsletterEmailLabel: 'E-Mail-Adresse',
       subscribe: 'Abonnieren',
       newsletterThanks: 'Abonniert',
       newsletterError: 'Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut.',
@@ -730,6 +732,7 @@ function buildTranslations(): Record<Language, TranslationKeys> {
       newsletterTitle: 'Manténgase al día',
       newsletterSubtitle: 'Información exclusiva, consejos de transformación y tendencias del sector mensualmente.',
       newsletterPlaceholder: 'Introduzca su email',
+      newsletterEmailLabel: 'Correo electrónico',
       subscribe: 'Suscribirse',
       newsletterThanks: 'Suscrito',
       newsletterError: 'Algo ha fallado. Por favor, inténtelo de nuevo.',
@@ -804,6 +807,7 @@ function buildTranslations(): Record<Language, TranslationKeys> {
       newsletterTitle: 'ابقَ في الصدارة',
       newsletterSubtitle: 'رؤى حصرية ونصائح تحويلية واتجاهات القطاع إلى بريدك شهرياً.',
       newsletterPlaceholder: 'أدخل بريدك الإلكتروني',
+      newsletterEmailLabel: 'البريد الإلكتروني',
       subscribe: 'اشترك',
       newsletterThanks: 'تم الاشتراك',
       newsletterError: 'حدث خطأ. يرجى المحاولة مرة أخرى.',
@@ -861,7 +865,6 @@ function buildTranslations(): Record<Language, TranslationKeys> {
         'Billions vanish when calls, chats, and forms go unanswered—speed still wins revenue.',
       missedLeadsSolution: 'Always-on AI: answer, qualify, book—so nothing sits in the queue.',
       missedLeadsOutcome: 'Every inquiry gets a response. More booked conversations, less leakage.',
-      missedLeadsStat: '$62B',
       missedLeadsStatLabel: 'Lost annually to missed leads',
       skillsGap: 'Unequal Skills Access',
       skillsGapProblem:
@@ -1057,7 +1060,6 @@ function buildTranslations(): Record<Language, TranslationKeys> {
         'Des milliards s\'évaporent quand appels, chats et formulaires restent sans réponse—la vitesse fait encore gagner.',
       missedLeadsSolution: 'IA toujours active : répondre, qualifier, planifier—rien ne reste en file d\'attente.',
       missedLeadsOutcome: 'Chaque demande obtient une réponse. Plus de rendez-vous, moins de fuite.',
-      missedLeadsStat: '62 Mds $',
       missedLeadsStatLabel: 'Perdus annuellement en prospects manqués',
       skillsGap: 'Accès inégal aux compétences',
       skillsGapProblem:
@@ -1253,7 +1255,6 @@ function buildTranslations(): Record<Language, TranslationKeys> {
         'مليارات تضيع عندما تبقى المكالمات والمحادثات والنماذج بلا رد—السرعة ما زالت تحسم الإيراد.',
       missedLeadsSolution: 'ذكاء دائم التشغيل: الرد والتأهيل والحجز—لا شيء ينتظر في الطابور.',
       missedLeadsOutcome: 'كل استفسار ينال رداً. مواعيد أكثر، تسرّب أقل.',
-      missedLeadsStat: '62 مليار $',
       missedLeadsStatLabel: 'تضيع سنوياً في عملاء محتملين',
       skillsGap: 'تفاوت في الوصول للمهارات',
       skillsGapProblem:
@@ -1446,7 +1447,6 @@ function buildTranslations(): Record<Language, TranslationKeys> {
         'Milliarden verpuffen, wenn Anrufe, Chats und Formulare unbeantwortet bleiben—Geschwindigkeit holt Umsatz.',
       missedLeadsSolution: 'Immer verfügbare KI: antworten, qualifizieren, buchen—nichts bleibt in der Warteschlange.',
       missedLeadsOutcome: 'Jede Anfrage erhält Antwort. Mehr Termine, weniger Leckage.',
-      missedLeadsStat: '62 Mrd. $',
       missedLeadsStatLabel: 'Jährlich durch verpasste Leads verloren',
       skillsGap: 'Ungleicher Kompetenzzugang',
       skillsGapProblem:
@@ -1642,7 +1642,6 @@ function buildTranslations(): Record<Language, TranslationKeys> {
         'Miles de millones se pierden cuando llamadas, chats y formularios quedan sin respuesta—la velocidad sigue decidiendo ingresos.',
       missedLeadsSolution: 'IA siempre activa: responder, calificar, reservar—nada en cola.',
       missedLeadsOutcome: 'Cada consulta recibe respuesta. Más citas, menos pérdida.',
-      missedLeadsStat: '62.000 M$',
       missedLeadsStatLabel: 'Perdidos anualmente en leads perdidos',
       skillsGap: 'Acceso desigual a habilidades',
       skillsGapProblem:
