@@ -854,7 +854,7 @@ function CaseStudies() {
         { value: '4.8/5', label: c.study3Result3 },
       ],
       icon: '⚙️',
-      color: 'purple' as const
+      color: 'info' as const
     },
   ]
 
@@ -893,13 +893,13 @@ function CaseStudies() {
             >
               <div className="flex items-center gap-3 mb-6">
                 <div className={`w-10 h-10 rounded-lg flex items-center justify-center text-xl ${
-                  study.color === 'accent' ? 'bg-accent/10' : study.color === 'purple' ? 'bg-purple/10' : 'bg-success/10'
+                  study.color === 'accent' ? 'bg-accent/10' : study.color === 'info' ? 'bg-info/10' : 'bg-success/10'
                 }`}>
                   {study.icon}
                 </div>
                 <div>
                   <span className={`px-3 py-1 text-xs font-medium rounded-full whitespace-nowrap ${
-                    study.color === 'accent' ? 'bg-accent/10 text-accent' : study.color === 'purple' ? 'bg-purple/10 text-purple' : 'bg-success/10 text-success'
+                    study.color === 'accent' ? 'bg-accent/10 text-accent' : study.color === 'info' ? 'bg-info/10 text-info' : 'bg-success/10 text-success'
                   }`}>
                     {study.solution}
                   </span>
@@ -925,7 +925,7 @@ function CaseStudies() {
                     <div key={j} className="flex justify-between items-center gap-4">
                       <span className="text-muted text-sm flex-1 min-w-0">{result.label}</span>
                       <span className={`font-display text-xl font-bold whitespace-nowrap shrink-0 ${
-                        study.color === 'accent' ? 'text-accent' : study.color === 'purple' ? 'text-purple' : 'text-success'
+                        study.color === 'accent' ? 'text-accent' : study.color === 'info' ? 'text-info' : 'text-success'
                       }`}>{result.value}</span>
                     </div>
                   ))}
@@ -935,8 +935,8 @@ function CaseStudies() {
               <div className={`mt-4 text-sm font-medium transition-colors ${
                 study.color === 'accent' 
                   ? 'text-accent group-hover:text-accent-light' 
-                  : study.color === 'purple'
-                    ? 'text-purple group-hover:text-purple-light'
+                  : study.color === 'info'
+                    ? 'text-info group-hover:text-info-light'
                     : 'text-success group-hover:text-success/80'
               }`}>
                 {expanded === i ? c.clickCollapse : c.clickExpand}

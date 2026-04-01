@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import { useEffect, useState, ReactNode } from 'react'
 
-type ColorType = 'accent' | 'success' | 'info' | 'purple'
+type ColorType = 'accent' | 'success' | 'info'
 
 interface Step {
   id: string
@@ -73,7 +73,7 @@ const BusinessTimeline = () => {
         </svg>
       ),
       metrics: ['Real-time Sync', 'Auto Confirm'],
-      color: 'purple'
+      color: 'info'
     },
     {
       id: 'followup',
@@ -121,13 +121,6 @@ const BusinessTimeline = () => {
         gradient: 'from-success/10 to-success/5',
         glow: 'shadow-success/30'
       },
-      purple: {
-        bg: isActive ? 'bg-purple' : 'bg-purple/20',
-        text: 'text-purple',
-        border: 'border-purple/40',
-        gradient: 'from-purple/10 to-purple/5',
-        glow: 'shadow-purple/30'
-      }
     }
     return colors[color] || colors.accent
   }
@@ -173,7 +166,7 @@ const BusinessTimeline = () => {
             {/* Progress Line - Positioned with gap from cards */}
             <div className="absolute top-10 left-[10%] right-[10%] h-1 bg-surface-light rounded-full overflow-hidden">
               <motion.div
-                className="h-full bg-gradient-to-r from-info via-accent via-success to-purple rounded-full"
+                className="h-full bg-gradient-to-r from-info via-accent to-success rounded-full"
                 initial={{ width: '0%' }}
                 animate={{ width: `${((activeStep + 1) / steps.length) * 100}%` }}
                 transition={{ duration: 0.8, ease: 'easeInOut' }}

@@ -15,7 +15,7 @@ const PLATFORM_STYLES: Record<
 > = {
   google: { bar: 'from-blue-500 to-blue-600', icon: 'G', label: 'bg-white text-blue-600' },
   facebook: { bar: 'from-blue-700 to-blue-800', icon: 'f', label: 'bg-[#1877F2] text-white' },
-  instagram: { bar: 'from-pink-500 via-purple-500 to-amber-400', icon: '◎', label: 'bg-gradient-to-br from-pink-500 to-amber-400 text-white' },
+  instagram: { bar: 'from-pink-500 via-rose-500 to-amber-400', icon: '◎', label: 'bg-gradient-to-br from-pink-500 to-amber-400 text-white' },
   yelp: { bar: 'from-red-500 to-red-600', icon: 'Y', label: 'bg-[#FF1A1A] text-white' },
   whatsapp: { bar: 'from-emerald-500 to-emerald-600', icon: 'W', label: 'bg-[#25D366] text-white' },
   bing: { bar: 'from-cyan-500 to-blue-500', icon: 'b', label: 'bg-cyan-600 text-white' },
@@ -200,8 +200,8 @@ export default function PerformancePulseDemo() {
                 aria-label={t.dashboardSubtitle}
               >
                 <span className="relative flex h-2 w-2">
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400/70 opacity-60" />
-                  <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500 shadow-[0_0_0_2px_rgba(16,185,129,0.25)]" />
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-success/70 opacity-60" />
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-success shadow-[0_0_0_2px_rgba(var(--success-rgb),0.25)]" />
                 </span>
               </div>
             </div>

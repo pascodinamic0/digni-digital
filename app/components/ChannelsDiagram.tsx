@@ -35,7 +35,7 @@ const ChannelsDiagram = () => {
       id: 'instagram',
       name: 'Instagram DM',
       description: 'Instagram direct messages',
-      color: 'from-accent to-purple',
+      color: 'from-accent to-success',
       icon: '📸',
       stats: 'Smart Responses'
     },

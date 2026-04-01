@@ -106,7 +106,7 @@ export function EnrollmentsClient({ courseId, courseTitle }: { courseId: string;
         <p className="rounded-lg border border-destructive/30 bg-destructive/10 px-4 py-3 text-sm text-destructive">{msg}</p>
       )}
       {success && (
-        <p className="rounded-lg border border-emerald-500/30 bg-emerald-500/10 px-4 py-3 text-sm text-success">{success}</p>
+        <p className="rounded-lg border border-success/30 bg-success/10 px-4 py-3 text-sm text-success">{success}</p>
       )}
 
       <section className="card-glass rounded-2xl p-5 md:p-6">

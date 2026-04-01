@@ -145,7 +145,7 @@ export default function AIReceptionistPage({ params, searchParams }: AIReception
           <path d="M16 3.13C16.8604 3.35031 17.623 3.85071 18.1676 4.55232C18.7122 5.25392 19.0078 6.11683 19.0078 7.005C19.0078 7.89318 18.7122 8.75608 18.1676 9.45769C17.623 10.1593 16.8604 10.6597 16 10.88" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
       ),
-      color: 'purple',
+      color: 'accent',
     },
     {
       icon: (
@@ -178,11 +178,13 @@ export default function AIReceptionistPage({ params, searchParams }: AIReception
   const getColorClasses = (color: string) => {
     switch (color) {
       case 'accent':
+        return { bg: 'bg-accent/10', text: 'text-accent', border: 'border-accent/30', gradient: 'from-accent/20 to-accent/5' }
       case 'success':
         return { bg: 'bg-success/10', text: 'text-success', border: 'border-success/30', gradient: 'from-success/20 to-success/5' }
-      case 'info': return { bg: 'bg-info/10', text: 'text-info', border: 'border-info/30', gradient: 'from-info/20 to-info/5' }
-      case 'purple': return { bg: 'bg-purple/10', text: 'text-purple', border: 'border-purple/30', gradient: 'from-purple/20 to-purple/5' }
-      default: return { bg: 'bg-success/10', text: 'text-success', border: 'border-success/30', gradient: 'from-success/20 to-success/5' }
+      case 'info':
+        return { bg: 'bg-info/10', text: 'text-info', border: 'border-info/30', gradient: 'from-info/20 to-info/5' }
+      default:
+        return { bg: 'bg-success/10', text: 'text-success', border: 'border-success/30', gradient: 'from-success/20 to-success/5' }
     }
   }
 
@@ -467,7 +469,7 @@ export default function AIReceptionistPage({ params, searchParams }: AIReception
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.4 }}
-            className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-accent via-accent/90 to-purple p-8 md:p-12"
+            className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-accent via-accent/90 to-success p-8 md:p-12"
           >
             <div className="absolute top-0 right-0 w-64 h-64 bg-foreground/10 rounded-full blur-3xl" />
             <div className="absolute bottom-0 left-0 w-48 h-48 bg-foreground/5 rounded-full blur-2xl" />

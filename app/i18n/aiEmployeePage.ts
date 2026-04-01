@@ -13,6 +13,18 @@ export type AiEmployeePageTranslations = {
     primaryCta: string
     footnote: string
   }
+  /** Mobile app promo strip — pairs with assets in /public/images/Download */
+  mobileApp: {
+    title: string
+    bullet1: string
+    bullet2: string
+    tagline: string
+    imageAlt: string
+    appStoreHref: string
+    playStoreHref: string
+    appStoreAriaLabel: string
+    playStoreAriaLabel: string
+  }
   noMoreJust: {
     title: string
     noMoreLabel: string
@@ -113,6 +125,17 @@ export const aiEmployeePageEn: AiEmployeePageTranslations = {
     hook: 'Premium service businesses · we install and run intake, follow-up, and booking—so nothing depends on who remembered what.',
     primaryCta: 'Book Your Growth System Audit',
     footnote: 'Limited partnerships · often live in 48h',
+  },
+  mobileApp: {
+    title: 'Run your pipeline on the go with the AI Employee mobile app.',
+    bullet1: 'Get real-time notifications straight to your phone',
+    bullet2: 'Chat with your clients and leads right from the app',
+    tagline: 'Never miss another opportunity again.',
+    imageAlt: 'AI Employee mobile app on a phone showing pipeline metrics and recent activity',
+    appStoreHref: 'https://apps.apple.com/',
+    playStoreHref: 'https://play.google.com/store',
+    appStoreAriaLabel: 'Download on the App Store',
+    playStoreAriaLabel: 'Get it on Google Play',
   },
   noMoreJust: {
     title: 'What quietly drains revenue — and what replaces it',
@@ -331,6 +354,17 @@ export const aiEmployeePageFr: AiEmployeePageTranslations = {
     primaryCta: 'Réserver votre audit Growth System',
     footnote: 'Partenariats limités · souvent en ligne en 48h',
   },
+  mobileApp: {
+    title: 'Pilotez votre pipeline en déplacement avec l’app mobile AI Employee.',
+    bullet1: 'Recevez des notifications en temps réel sur votre téléphone',
+    bullet2: 'Échangez avec vos clients et leads directement depuis l’app',
+    tagline: 'Ne laissez plus passer une opportunité.',
+    imageAlt: 'Application mobile AI Employee sur téléphone avec indicateurs et activité récente',
+    appStoreHref: 'https://apps.apple.com/',
+    playStoreHref: 'https://play.google.com/store',
+    appStoreAriaLabel: 'Télécharger sur l’App Store',
+    playStoreAriaLabel: 'Disponible sur Google Play',
+  },
   noMoreJust: {
     title: 'Ce qui fait fuir le chiffre — et ce qui le remplace',
     noMoreLabel: 'Fini',
@@ -547,6 +581,17 @@ export const aiEmployeePageDe: AiEmployeePageTranslations = {
     hook: 'Premium-Dienstleister · wir implementieren und betreiben Annahme, Nachfass und Buchung — ohne „wer erinnert sich an was“.',
     primaryCta: 'Growth-System-Audit buchen',
     footnote: 'Begrenzte Partnerschaften · oft live in 48h',
+  },
+  mobileApp: {
+    title: 'Steuern Sie Ihren Pipeline unterwegs mit der AI-Employee-App.',
+    bullet1: 'Echtzeit-Benachrichtigungen direkt auf Ihr Smartphone',
+    bullet2: 'Chatten Sie mit Kunden und Leads direkt in der App',
+    tagline: 'Verpassen Sie keine Chance mehr.',
+    imageAlt: 'AI-Employee-App auf dem Smartphone mit Pipeline-Kennzahlen und Aktivität',
+    appStoreHref: 'https://apps.apple.com/',
+    playStoreHref: 'https://play.google.com/store',
+    appStoreAriaLabel: 'Im App Store laden',
+    playStoreAriaLabel: 'Bei Google Play laden',
   },
   noMoreJust: {
     title: 'Was Umsatz leise frisst — und was es ersetzt',
@@ -765,6 +810,17 @@ export const aiEmployeePageEs: AiEmployeePageTranslations = {
     primaryCta: 'Reservar su auditoría Growth System',
     footnote: 'Alianzas limitadas · en vivo en ~48h',
   },
+  mobileApp: {
+    title: 'Gestione su embudo en movimiento con la app móvil AI Employee.',
+    bullet1: 'Notificaciones en tiempo real directamente en su teléfono',
+    bullet2: 'Chatee con clientes y leads desde la app',
+    tagline: 'No vuelva a perder una oportunidad.',
+    imageAlt: 'App móvil AI Employee en el teléfono con métricas del embudo y actividad reciente',
+    appStoreHref: 'https://apps.apple.com/',
+    playStoreHref: 'https://play.google.com/store',
+    appStoreAriaLabel: 'Descargar en App Store',
+    playStoreAriaLabel: 'Disponible en Google Play',
+  },
   noMoreJust: {
     title: 'Lo que drena ingresos en silencio — y qué lo reemplaza',
     noMoreLabel: 'Se acabó',
@@ -981,6 +1037,17 @@ export const aiEmployeePageAr: AiEmployeePageTranslations = {
     hook: 'شركات خدمات راقية · نثبت ونشغّل الاستقبال والمتابعة والحجز — من دون الاعتماد على من تذكر ماذا.',
     primaryCta: 'احجز مراجعة Growth System',
     footnote: 'شراكات محدودة · غالباً جاهز خلال 48 ساعة',
+  },
+  mobileApp: {
+    title: 'شغّل مسار العملاء أثناء التنقّل مع تطبيق AI Employee.',
+    bullet1: 'إشعارات فورية مباشرة إلى هاتفك',
+    bullet2: 'دردش مع العملاء والعملاء المحتملين من التطبيق',
+    tagline: 'لا تفوّت فرصة أخرى.',
+    imageAlt: 'تطبيق AI Employee على الهاتف يعرض مؤشرات المسار والنشاط الأخير',
+    appStoreHref: 'https://apps.apple.com/',
+    playStoreHref: 'https://play.google.com/store',
+    appStoreAriaLabel: 'التنزيل من App Store',
+    playStoreAriaLabel: 'احصل عليه من Google Play',
   },
   noMoreJust: {
     title: 'ما يفرغ الإيراد بهدوء — وما يحل محله',

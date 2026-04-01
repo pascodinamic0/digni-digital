@@ -13,11 +13,11 @@ function initials(name: string) {
 }
 
 const AVATAR_PALETTES = [
-  'bg-orange-500/20 text-orange-700 dark:text-orange-300',
-  'bg-teal-500/20 text-teal-700 dark:text-teal-300',
-  'bg-pink-500/20 text-pink-700 dark:text-pink-300',
-  'bg-violet-500/20 text-violet-700 dark:text-violet-300',
-  'bg-blue-500/20 text-blue-700 dark:text-blue-300',
+  'bg-accent/20 text-accent',
+  'bg-success/20 text-success',
+  'bg-info/20 text-info',
+  'bg-warning/20 text-warning',
+  'bg-muted/25 text-muted-dark',
 ]
 
 function avatarClass(name: string) {

@@ -453,7 +453,7 @@ export default function AgenticSoftwaresPage({ params, searchParams }: AgenticSo
                       <div className="flex items-center gap-2 sm:gap-3">
                         <span className={`px-3 py-1 text-xs font-medium rounded-full ${
                           study.type === 'Internal Project' 
-                            ? 'bg-purple-400/10 text-purple-400' 
+                            ? 'bg-accent/10 text-accent' 
                             : 'bg-info/10 text-info'
                         }`}>
                           {study.type}

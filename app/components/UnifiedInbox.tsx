@@ -87,7 +87,7 @@ const UnifiedInbox = () => {
       case 'appointment-booked': return 'text-success bg-success/10 border-success/30'
       case 'in-progress': return 'text-info bg-info/10 border-info/30'
       case 'follow-up': return 'text-warning bg-warning/10 border-warning/30'
-      case 'new-lead': return 'text-purple bg-purple/10 border-purple/30'
+      case 'new-lead': return 'text-success bg-success/10 border-success/30'
       default: return 'text-muted bg-muted/10 border-muted/30'
     }
   }
@@ -399,7 +399,7 @@ const UnifiedInbox = () => {
               { value: '47', label: 'Conversations Today', card: 'from-success/10 to-success/5 border-success/20', valueClass: 'text-success' },
               { value: '23', label: 'Qualified Leads', card: 'from-success/10 to-success/5 border-success/20', valueClass: 'text-success' },
               { value: '12', label: 'Appointments Booked', card: 'from-info/10 to-info/5 border-info/20', valueClass: 'text-info' },
-              { value: '98%', label: 'Response Rate', card: 'from-purple/10 to-purple/5 border-purple/20', valueClass: 'text-purple' },
+              { value: '98%', label: 'Response Rate', card: 'from-success/10 to-success/5 border-success/20', valueClass: 'text-success' },
             ] as const
           ).map((stat, i) => (
             <motion.div

@@ -1,46 +1,42 @@
-# Logo & Website Color Specifications
+# Logo & website color specifications
 
-## Current Website Brand Colors (Updated to Match Logo)
+Source of truth for brand tokens: [`app/globals.css`](app/globals.css) (`:root`). Colors below match **sampling from** `public/Icon Logo DD.png` (opaque pixels, excluding white background). **Purple is not part of the Digni brand**; legacy `--purple` exists only for non-brand UI compatibility.
 
-**Status:** ✅ Website has been updated to match the logo's blue-purple gradient colors.
+## Primary (cyan / teal) — `--brand-blue` / `--accent` / `--info`
 
-### Primary Brand Color (Accent)
-- **Hex:** `#3B82F6`
-- **RGB:** `59, 130, 246`
-- **Description:** Vibrant blue
-- **Usage:** Primary brand color, main call-to-action buttons, highlights
+- **Hex:** `#2F9AC0`
+- **RGB:** `47, 154, 192`
+- **Usage:** Primary brand, CTAs, links, info emphasis, gradients with green
 
-### Light Accent
-- **Hex:** `#A855F7`
-- **RGB:** `168, 85, 247`
-- **Description:** Vibrant purple
-- **Usage:** Hover states, lighter accents, gradients
+## Light / highlight — `--brand-blue-light` / `--accent-light` / `--info-light`
 
-### Blue-Purple Gradient (Current Logo & Website)
-- **Primary (Blue):** `#3B82F6` (RGB: 59, 130, 246)
-- **Secondary (Purple):** `#A855F7` (RGB: 168, 85, 247)
-- **Gradient:** Smooth transition from blue to purple
-- **Effect:** Modern, vibrant, tech-forward gradient matching logo
+- **Hex:** `#6DD4E8`
+- **Usage:** Lighter accents, hover states, toggle gradients (with primary)
 
-## Logo & Website Alignment
+## Deep teal — `--brand-blue-dark`
 
-✅ **Status:** Website colors have been updated to match the logo's blue-purple gradient scheme.
+- **Hex:** `#03598E`
+- **Usage:** Dark end of blue gradients, depth (e.g. chat widget, funnel active states)
 
-### Current Logo Colors (Matching Website)
-- **Blue (Primary):** `#3B82F6` (RGB: 59, 130, 246)
-- **Purple (Secondary):** `#A855F7` (RGB: 168, 85, 247)
-- **Gradient:** Smooth transition from blue to purple
+## Primary green — `--success`
 
-### Website Color Scheme (Now Matches Logo)
-The website now uses the same blue-purple gradient:
-- **Accent (Primary):** `#3B82F6` - Vibrant blue for main brand elements
-- **Accent Light:** `#A855F7` - Vibrant purple for gradients and hover states
-- **Gradient Text:** White → Blue → Purple (automatic via CSS)
-- **Background Effects:** Blue-tinted radial gradients
+- **Hex:** `#3AAE30`
+- **RGB:** `58, 174, 48`
+- **Usage:** Success states, growth, positive metrics, green end of brand gradients
 
-## Benefits of This Color Scheme
+## Light green — `--success-light`
 
-1. ✅ **Perfect Brand Consistency** - Logo and website colors are now aligned
-2. ✅ **Modern Tech Aesthetic** - Blue-purple gradients are popular in tech/digital industries
-3. ✅ **Visual Cohesion** - Logo and website feel like a unified brand
-4. ✅ **Professional Appeal** - Blue conveys trust, purple adds innovation/creativity
+- **Hex:** `#7DD45B`
+- **Usage:** Highlights, lighter success accents
+
+## Brand pairing (design intent)
+
+- **Logo:** Bluish + greenish (no purple).
+- **UI:** Pair **accent** (cyan-teal) with **success** (green) for hero sections, mesh backgrounds, and CTAs.
+- **Tailwind:** Use semantic classes (`bg-accent`, `text-success`, `border-success/30`, etc.) mapped in [`tailwind.config.ts`](tailwind.config.ts) — avoid hardcoded Tailwind palette colors (`blue-500`, `emerald-500`, …) for Digni-owned chrome.
+
+## Exceptions (intentional non-brand colors)
+
+- **UN SDG goals** on the about page: official SDG palette.
+- **Third-party channel demos** (e.g. review platforms): may use recognizable platform colors for bars; Digni chrome still uses tokens.
+- **Blog HTML tables** in content files: neutral grays for table chrome unless refactored to shared styles.
