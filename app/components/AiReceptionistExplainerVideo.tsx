@@ -58,11 +58,14 @@ export default function AiReceptionistExplainerVideo() {
         >
           <div className="relative aspect-video">
             <video
-              className="absolute inset-0 w-full h-full object-contain bg-black"
+              className="absolute inset-0 w-full h-full object-contain bg-black select-none"
               controls
+              controlsList="nodownload"
+              disablePictureInPicture
               playsInline
               preload="metadata"
               title={copy.title}
+              onContextMenu={(e) => e.preventDefault()}
             >
               <source src={encodeURI(copy.src)} type="video/mp4" />
             </video>
