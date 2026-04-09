@@ -114,7 +114,7 @@ export default function AffiliatePage({ params, searchParams }: AffiliatePagePro
       name: 'AI Employee',
       tagline: 'Never miss a lead again',
       price: '$449/month',
-      commission: '20% recurring',
+      commission: '50% of $2,000 setup fee',
       target: 'Service businesses running paid ads',
       description: 'AI-powered system that handles calls, qualifies leads, and books appointments 24/7.',
       icon: '🤖',
@@ -125,7 +125,7 @@ export default function AffiliatePage({ params, searchParams }: AffiliatePagePro
       name: 'Future-Ready Graduate Program',
       tagline: 'Students with real income skills',
       price: '$1,000/month',
-      commission: '20% recurring',
+      commission: '50% of semester or yearly tuition',
       target: 'Schools & universities',
       description: 'Complete employability program transforming students into job-ready professionals.',
       icon: '🎓',
@@ -136,7 +136,7 @@ export default function AffiliatePage({ params, searchParams }: AffiliatePagePro
       name: 'Agentic Softwares',
       tagline: 'Your vision, built to scale',
       price: 'Custom pricing',
-      commission: '10% of project value',
+      commission: '10% of client-paid project value',
       target: 'Businesses with unique challenges',
       description: 'Agentic Softwares—AI-native software that perceives, reasons, and acts autonomously.',
       icon: '⚙️',
@@ -149,7 +149,7 @@ export default function AffiliatePage({ params, searchParams }: AffiliatePagePro
   const benefits = [
     {
       title: 'Competitive Commissions',
-      description: 'Earn 10-20% on every sale you generate. Recurring commissions on subscription products.',
+      description: 'Earn up to 50% on setup and program tuition, and 10% on Agentic Softwares project fees.',
       icon: '💰'
     },
     {
@@ -217,11 +217,12 @@ export default function AffiliatePage({ params, searchParams }: AffiliatePagePro
   const faqs = [
     {
       question: 'What are the commission rates?',
-      answer: 'You earn 20% recurring commission on AI Employee and Future-Ready Graduate Program subscriptions, and 10% on Agentic Softwares projects. Commissions are paid for as long as the customer remains active.'
+      answer: 'You earn 50% of the $2,000 AI Employee setup fee, 50% of the Future-Ready Graduate Program semester ($1,000) or yearly tuition, and 10% of the project value the client pays on Agentic Softwares engagements.'
     },
     {
       question: 'When and how do I get paid?',
-      answer: 'Payments are processed monthly, typically within the first week of each month. We support bank transfers and PayPal. There\'s no minimum payout threshold.'
+      answer:
+        'You earn commission once per qualifying sale—when your referral completes payment on an eligible offer. We pay by bank transfer or PayPal once the sale is confirmed; there\'s no minimum payout threshold.'
     },
     {
       question: 'What kind of content should I create?',
@@ -309,7 +310,7 @@ export default function AffiliatePage({ params, searchParams }: AffiliatePagePro
             className="flex flex-wrap justify-center gap-8 mt-12 sm:mt-16"
           >
             {[
-              { value: 'Up to 20%', label: 'Commission Rate' },
+              { value: 'Up to 50%', label: 'On setup & tuition' },
               { value: '90 Days', label: 'Cookie Duration' },
               { value: 'Monthly', label: 'Payouts' }
             ].map((stat, i) => (

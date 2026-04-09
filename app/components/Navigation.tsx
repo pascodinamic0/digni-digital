@@ -89,10 +89,7 @@ export default function Navigation() {
         />
       )}
       
-      <motion.nav
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
-        transition={{ duration: 0.6, ease: 'easeOut' }}
+      <nav
         className={`site-header-nav fixed top-0 left-0 right-0 z-[100] transition-all duration-300 bg-background/95 backdrop-blur-xl border-b border-border ${
           showSolidNav ? 'shadow-sm' : ''
         }`}
@@ -273,7 +270,7 @@ export default function Navigation() {
           </motion.div>
         )}
         </div>
-      </motion.nav>
+      </nav>
     </>
   )
 }
