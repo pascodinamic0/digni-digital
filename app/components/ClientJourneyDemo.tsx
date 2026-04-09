@@ -670,7 +670,7 @@ const ClientJourneyDemo = () => {
             scale-[0.72] only affects paint; layout still reserves full height. Compensate with negative margin (~28% of content height). */}
         <div className="hidden lg:block origin-top -mt-6 -mb-[200px]">
           <motion.div
-            className="grid grid-cols-2 gap-6 xl:gap-8 scale-[0.72]"
+            className="grid grid-cols-[minmax(0,1fr)_minmax(2.75rem,4.25rem)_minmax(0,1fr)] items-stretch scale-[0.72]"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -682,6 +682,9 @@ const ClientJourneyDemo = () => {
               label={t.brokenLabel}
               funnelCopy={funnelCopy}
             />
+            <div className="flex justify-center self-stretch" aria-hidden="true">
+              <div className="w-px self-stretch rounded-full bg-gradient-to-b from-destructive/30 via-border/80 to-success/30" />
+            </div>
             <AIPoweredFlowDiagram
               channels={channels}
               aiStages={aiStages}

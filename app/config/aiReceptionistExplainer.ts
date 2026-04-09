@@ -15,7 +15,7 @@ export const aiReceptionistExplainerByLanguage: Partial<
   Record<Language, AiReceptionistExplainerCopy>
 > = {
   en: {
-    src: '/Aymi Explainer Video .mp4',
+    src: '/AI Employee Explainer.mp4',
     badge: 'Why it breaks',
     title: 'Broken businesses and operations',
     description:
