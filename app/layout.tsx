@@ -115,7 +115,7 @@ export default async function RootLayout({
       data-scroll-behavior="smooth"
       className={`${fontDisplay.variable} ${fontBody.variable}`}
     >
-      <body>
+      <body suppressHydrationWarning>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

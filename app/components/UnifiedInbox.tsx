@@ -4,12 +4,13 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
 
 type ConversationStatus = 'qualified' | 'appointment-booked' | 'in-progress' | 'follow-up' | 'new-lead'
+type ConversationChannel = 'website' | 'whatsapp' | 'sms' | 'instagram' | 'facebook'
 
 interface Conversation {
   id: number
   contact: string
   channel: string
-  channelIcon: string
+  channelType: ConversationChannel
   lastMessage: string
   time: string
   unread: number
@@ -26,7 +27,7 @@ const UnifiedInbox = () => {
       id: 1,
       contact: 'Sarah Johnson',
       channel: 'Website Chat',
-      channelIcon: '🌐',
+      channelType: 'website',
       lastMessage: 'Perfect! When can we schedule the consultation?',
       time: '2 min ago',
       unread: 2,
@@ -37,7 +38,7 @@ const UnifiedInbox = () => {
       id: 2,
       contact: 'Mike Chen',
       channel: 'WhatsApp',
-      channelIcon: '📱',
+      channelType: 'whatsapp',
       lastMessage: 'Thanks for the quick response! I\'ll check my calendar.',
       time: '5 min ago',
       unread: 0,
@@ -48,7 +49,7 @@ const UnifiedInbox = () => {
       id: 3,
       contact: 'Restaurant Owner',
       channel: 'SMS',
-      channelIcon: '💬',
+      channelType: 'sms',
       lastMessage: 'AI: I\'d be happy to help you with pricing information...',
       time: '12 min ago',
       unread: 1,
@@ -59,7 +60,7 @@ const UnifiedInbox = () => {
       id: 4,
       contact: 'FitTrack Startup',
       channel: 'Instagram DM',
-      channelIcon: '📸',
+      channelType: 'instagram',
       lastMessage: 'That sounds exciting! Fitness apps typically range...',
       time: '1 hr ago',
       unread: 0,
@@ -70,7 +71,7 @@ const UnifiedInbox = () => {
       id: 5,
       contact: 'Local Business',
       channel: 'Facebook Messenger',
-      channelIcon: '💙',
+      channelType: 'facebook',
       lastMessage: 'AI: Our automation solutions can definitely help...',
       time: '2 hr ago',
       unread: 3,
@@ -106,6 +107,51 @@ const UnifiedInbox = () => {
   const handleConversationClick = (index: number) => {
     setSelectedConversation(index)
     setShowConversationDetail(true)
+  }
+
+  const getChannelIcon = (channelType: ConversationChannel) => {
+    switch (channelType) {
+      case 'website':
+        return (
+          <svg className="w-3 h-3 text-success" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="1.8" />
+            <path d="M3 12H21" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+            <path d="M12 3C14.5 5.8 16 8.8 16 12C16 15.2 14.5 18.2 12 21" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+            <path d="M12 3C9.5 5.8 8 8.8 8 12C8 15.2 9.5 18.2 12 21" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+          </svg>
+        )
+      case 'whatsapp':
+        return (
+          <svg className="w-3 h-3 text-success" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M20.5 11.8C20.5 16.5 16.7 20.3 12 20.3C10.4 20.3 8.8 19.9 7.5 19L3.5 20.3L4.8 16.5C3.8 15.1 3.3 13.5 3.3 11.8C3.3 7.2 7.1 3.4 11.8 3.4C16.5 3.4 20.5 7.2 20.5 11.8Z" />
+            <path d="M15.9 13.4C15.7 13.3 14.8 12.9 14.7 12.8C14.5 12.8 14.4 12.7 14.3 12.9C14.2 13 13.9 13.4 13.8 13.5C13.7 13.6 13.6 13.7 13.4 13.6C12.4 13.1 11.6 12.4 10.9 11.5C10.8 11.3 10.9 11.2 11 11.1C11.1 11 11.2 10.9 11.3 10.7C11.4 10.6 11.4 10.5 11.5 10.4C11.5 10.3 11.5 10.1 11.4 10L10.9 8.9C10.8 8.7 10.6 8.6 10.5 8.6H10.1C10 8.6 9.8 8.7 9.7 8.8C9.5 9 9.1 9.4 9.1 10.3C9.1 11.1 9.7 12 9.8 12.1C9.9 12.2 11.1 14.1 13 14.9C14.4 15.5 14.9 15.5 15.3 15.4C15.6 15.4 16.2 15 16.3 14.7C16.5 14.4 16.5 14 16.4 13.9C16.3 13.7 16.1 13.6 15.9 13.4Z" fill="hsl(var(--background))" />
+          </svg>
+        )
+      case 'sms':
+        return (
+          <svg className="w-3 h-3 text-success" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M4 6.5C4 5.7 4.7 5 5.5 5H18.5C19.3 5 20 5.7 20 6.5V14.5C20 15.3 19.3 16 18.5 16H9L5 19V16H5.5C4.7 16 4 15.3 4 14.5V6.5Z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" />
+            <path d="M8 10H16" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+            <path d="M8 13H13" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+          </svg>
+        )
+      case 'instagram':
+        return (
+          <svg className="w-3 h-3 text-success" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <rect x="4.5" y="4.5" width="15" height="15" rx="4" stroke="currentColor" strokeWidth="1.8" />
+            <circle cx="12" cy="12" r="3.5" stroke="currentColor" strokeWidth="1.8" />
+            <circle cx="16.6" cy="7.4" r="1" fill="currentColor" />
+          </svg>
+        )
+      case 'facebook':
+        return (
+          <svg className="w-3 h-3 text-success" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M13.4 20V12.9H15.8L16.2 10.1H13.4V8.3C13.4 7.5 13.6 6.9 14.8 6.9H16.3V4.4C16 4.4 15.2 4.3 14.2 4.3C12.1 4.3 10.7 5.6 10.7 8V10.1H8.5V12.9H10.7V20H13.4Z" />
+          </svg>
+        )
+      default:
+        return null
+    }
   }
 
   return (
@@ -229,7 +275,7 @@ const UnifiedInbox = () => {
                           {conv.avatar}
                         </div>
                         <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-surface rounded-md flex items-center justify-center text-xs shadow-sm border border-border-light">
-                          {conv.channelIcon}
+                          {getChannelIcon(conv.channelType)}
                         </div>
                       </div>
                       
@@ -289,7 +335,7 @@ const UnifiedInbox = () => {
                         {selectedConv.avatar}
                       </div>
                       <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-surface rounded-md flex items-center justify-center text-xs shadow-sm border border-border-light">
-                        {selectedConv.channelIcon}
+                        {getChannelIcon(selectedConv.channelType)}
                       </div>
                     </div>
                     <div className="flex-1 min-w-0">
