@@ -102,13 +102,13 @@ type FunnelCopy = {
   leadsUnit: string
 }
 
-/** Aligned with --brand-blue-dark (#03598e) and deeper teal-navy for depth */
-const FUNNEL_ACTIVE_DEEP_RGB = '3, 89, 142'
-/** Near-black with teal cast (edges / glow falloff) */
-const FUNNEL_ACTIVE_INK_RGB = '2, 22, 44'
-/** Intake band idle wash — brand teal tint */
-const FUNNEL_INTAKE_SURFACE_RGB = '8, 55, 100'
-const FUNNEL_INTAKE_SURFACE_MID_RGB = '4, 38, 72'
+/** Aligned with --brand-blue-dark (#065a7a) and deeper blue-navy for depth */
+const FUNNEL_ACTIVE_DEEP_RGB = '6, 90, 122'
+/** Near-black with blue-teal cast (edges / glow falloff) */
+const FUNNEL_ACTIVE_INK_RGB = '2, 20, 40'
+/** Intake band idle wash — brand blue tint */
+const FUNNEL_INTAKE_SURFACE_RGB = '8, 68, 92'
+const FUNNEL_INTAKE_SURFACE_MID_RGB = '4, 48, 66'
 
 /** Rotating styles for channel source chips (accent / deep-blue “website” / warning / info / success). */
 const CHANNEL_CHIP_STYLES = [

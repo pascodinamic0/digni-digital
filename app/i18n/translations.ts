@@ -1008,7 +1008,7 @@ function buildTranslations(): Record<Language, TranslationKeys> {
       study1Result1: 'Call capture rate',
       study1Result2: 'Lead conversion increase',
       study1Result3: 'Additional monthly revenue',
-      study2Title: 'Technical University',
+      study2Title: 'GS Laricharde',
       study2Duration: '6 months program',
       study2Problem: 'Only 45% of graduates finding employment within 12 months of graduation',
       study2Result1: 'Graduate employment rate',
@@ -1203,7 +1203,7 @@ function buildTranslations(): Record<Language, TranslationKeys> {
       study1Result1: 'Taux de capture des appels',
       study1Result2: 'Hausse de conversion',
       study1Result3: 'Revenus mensuels supplémentaires',
-      study2Title: 'Université Technique',
+      study2Title: 'GS Laricharde',
       study2Duration: 'Programme de 6 mois',
       study2Problem: 'Seuls 45% des diplômés trouvent un emploi en 12 mois',
       study2Result1: 'Taux d\'emploi des diplômés',
@@ -1395,7 +1395,7 @@ function buildTranslations(): Record<Language, TranslationKeys> {
       study1Result1: 'معدل الرد على المكالمات',
       study1Result2: 'زيادة تحويل العملاء',
       study1Result3: 'إيرادات شهرية إضافية',
-      study2Title: 'الجامعة التقنية',
+      study2Title: 'GS Laricharde',
       study2Duration: 'برنامج 6 أشهر',
       study2Problem: 'فقط 45% من الخريجين يجدون عملاً خلال 12 شهراً',
       study2Result1: 'معدل توظيف الخريجين',
@@ -1590,7 +1590,7 @@ function buildTranslations(): Record<Language, TranslationKeys> {
       study1Result1: 'Anruf-Erfassungsrate',
       study1Result2: 'Lead-Konversionssteigerung',
       study1Result3: 'Zusätzlicher monatlicher Umsatz',
-      study2Title: 'Technische Universität',
+      study2Title: 'GS Laricharde',
       study2Duration: '6 Monate Programm',
       study2Problem: 'Nur 45% der Absolventen finden innerhalb von 12 Monaten Arbeit',
       study2Result1: 'Absolventen-Beschäftigungsrate',
@@ -1785,7 +1785,7 @@ function buildTranslations(): Record<Language, TranslationKeys> {
       study1Result1: 'Tasa de captura de llamadas',
       study1Result2: 'Aumento de conversión de leads',
       study1Result3: 'Ingresos mensuales adicionales',
-      study2Title: 'Universidad Técnica',
+      study2Title: 'GS Laricharde',
       study2Duration: 'Programa de 6 meses',
       study2Problem: 'Solo 45% de graduados encuentran empleo en 12 meses',
       study2Result1: 'Tasa de empleo de graduados',
@@ -2606,7 +2606,7 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     ctaTitle: 'Ready to Work Together?',
     ctaSubtitle: 'Tell us your problem. We\'ll find the fix.',
     trustedByBadge: 'Trusted by',
-    trustedByTitle: '150+ teams that capture every lead.',
+    trustedByTitle: 'Teams that capture every lead.',
     trustedBySubtitle: '98% satisfaction. From 40% missed calls to 100% captured.',
   }
 
@@ -2709,7 +2709,7 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     ctaTitle: 'Prêt à travailler ensemble ?',
     ctaSubtitle: 'Dites-nous votre problème. Nous trouverons la solution.',
     trustedByBadge: 'Approuvé par',
-    trustedByTitle: '150+ équipes qui captent chaque prospect.',
+    trustedByTitle: 'Des équipes qui captent chaque prospect.',
     trustedBySubtitle: '98% de satisfaction. De 40% d\'appels manqués à 100% captés.',
   }
 
@@ -2812,7 +2812,7 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     ctaTitle: 'مستعد للعمل معاً؟',
     ctaSubtitle: 'أخبرنا بمشكلتك. سنجد الحل.',
     trustedByBadge: 'موثوق من',
-    trustedByTitle: 'أكثر من 150 فريقاً يلتقط كل عميل محتمل.',
+    trustedByTitle: 'فرق تلتقط كل عميل محتمل.',
     trustedBySubtitle: '98% رضا. من 40% مكالمات فائتة إلى 100% مُلتقطة.',
   }
 
@@ -2915,7 +2915,7 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     ctaTitle: 'Bereit zur Zusammenarbeit?',
     ctaSubtitle: 'Sagen Sie uns Ihr Problem. Wir finden die Lösung.',
     trustedByBadge: 'Vertraut von',
-    trustedByTitle: '150+ Teams, die jeden Lead erfassen.',
+    trustedByTitle: 'Teams, die jeden Lead erfassen.',
     trustedBySubtitle: '98% Zufriedenheit. Von 40% verpassten Anrufen zu 100% erfasst.',
   }
 
@@ -3018,7 +3018,7 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     ctaTitle: '¿Listo para trabajar juntos?',
     ctaSubtitle: 'Cuéntanos tu problema. Encontraremos la solución.',
     trustedByBadge: 'Confían en nosotros',
-    trustedByTitle: '150+ equipos que capturan cada lead.',
+    trustedByTitle: 'Equipos que capturan cada lead.',
     trustedBySubtitle: '98% satisfacción. De 40% llamadas perdidas a 100% capturadas.',
   }
 

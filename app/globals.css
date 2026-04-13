@@ -3,12 +3,11 @@
 @tailwind utilities;
 
 :root {
-  /* Brand — sampled from public/Icon Logo DD.png (opaque pixels, excluding white bg) */
-  /* Blue (B-dominant avg): #2F9AC0 | Green (G-dominant median): #3AAE30 | Deep teal: #03598E */
-  --brand-blue: #2f9ac0;
-  --brand-blue-rgb: 47, 154, 192;
-  --brand-blue-light: #6dd4e8;
-  --brand-blue-dark: #03598e;
+  /* Brand — logo primaries: blue #0D85B5, green #6FE019 (+ derived light/dark for UI states) */
+  --brand-blue: #0d85b5;
+  --brand-blue-rgb: 13, 133, 181;
+  --brand-blue-light: #4eb8e0;
+  --brand-blue-dark: #065a7a;
   
   /* Theme: Dark (Default) */
   --background: #0A0A0B;
@@ -30,9 +29,9 @@
   --on-accent: #FFFFFF;
   
   /* Semantic Colors */
-  --success: #3aae30;
-  --success-rgb: 58, 174, 48;
-  --success-light: #7dd45b;
+  --success: #6fe019;
+  --success-rgb: 111, 224, 25;
+  --success-light: #92f04a;
   
   --destructive: #EF4444;
   --destructive-rgb: 239, 68, 68;
@@ -42,9 +41,9 @@
   --warning-rgb: 245, 158, 11;
   --warning-light: #FBBF24;
   
-  --info: #2f9ac0;
-  --info-rgb: 47, 154, 192;
-  --info-light: #6dd4e8;
+  --info: #0d85b5;
+  --info-rgb: 13, 133, 181;
+  --info-light: #4eb8e0;
   
   --purple: #A855F7;
   --purple-rgb: 168, 85, 247;
@@ -89,7 +88,7 @@
   
   /* Theme Toggle Gradients */
   --toggle-gradient-light: linear-gradient(135deg, #e8f7fa 0%, #d4eef5 100%);
-  --toggle-gradient-dark: linear-gradient(135deg, #03598e 0%, #2f9ac0 100%);
+  --toggle-gradient-dark: linear-gradient(135deg, var(--brand-blue-dark) 0%, var(--brand-blue) 100%);
   
   /* Spacing (for reference, Tailwind handles this) */
   --spacing-xs: 0.25rem;
