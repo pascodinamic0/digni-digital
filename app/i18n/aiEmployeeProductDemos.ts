@@ -159,7 +159,7 @@ const pipelineCardsEn: PipelineCardT[] = [
     id: 'p4',
     name: 'James Okonkwo',
     source: 'Referral',
-    context: 'Divorce consult—referred by a former client.',
+    context: 'Divorce consult, referred by a former client.',
     valueLabel: 'Deal value',
     valueDisplay: '$1,890',
   },
@@ -203,7 +203,7 @@ export const aiEmployeeProductDemosEn: AiEmployeeProductDemosTranslations = {
     title: 'Leads move without',
     titleHighlight: 'you babysitting the board.',
     subtitle:
-      'Four stages. Every lead has a source and a story. Drag cards—or hit Play to watch one person move through the pipeline.',
+      'Four stages. Every lead has a source and a story. Drag cards, or hit Play to watch one person move through the pipeline.',
     dashboardTitle: 'Lead flow',
     dashboardSubtitle: 'AI Employee workspace',
     activeLabel: 'Sync on',
@@ -225,11 +225,11 @@ export const aiEmployeeProductDemosEn: AiEmployeeProductDemosTranslations = {
     cards: pipelineCardsEn,
     detailHint: 'AI notes',
     detailNext: 'Suggested next step',
-    dragHint: 'Drag cards between stages — the flow runs automatically; use Stop to pause.',
+    dragHint: 'Drag cards between stages, the flow runs automatically; use Stop to pause.',
     playDemoLabel: 'Play flow',
     stopDemoLabel: 'Stop',
     detailModalBody:
-      'AI logged who they are, where they came from, intent, and deal value. Your team gets notified when the lead is qualified—not on every message.',
+      'AI logged who they are, where they came from, intent, and deal value. Your team gets notified when the lead is qualified, not on every message.',
     detailModalNextExample: 'Send calendar link for a 20-minute fit call.',
     closeLabel: 'Close',
   },
@@ -238,7 +238,7 @@ export const aiEmployeeProductDemosEn: AiEmployeeProductDemosTranslations = {
     title: 'Local listings,',
     titleHighlight: 'one dashboard.',
     subtitle:
-      'Google, social, and review sites in one view—ratings and review volume climb as the AI responds and collects feedback.',
+      'Google, social, and review sites in one view, ratings and review volume climb as the AI responds and collects feedback.',
     dashboardTitle: 'Reputation pulse',
     dashboardSubtitle: 'AI Employee · local directories',
     aggregateLabel: 'Blended rating',
@@ -256,7 +256,7 @@ export const aiEmployeeProductDemosEn: AiEmployeeProductDemosTranslations = {
     title: 'Plan once.',
     titleHighlight: 'Post everywhere on time.',
     subtitle:
-      'Drop content on the calendar—the AI schedules and publishes across channels so nothing goes live by accident.',
+      'Drop content on the calendar, the AI schedules and publishes across channels so nothing goes live by accident.',
     moduleTitle: 'Social planner',
     moduleSubtitle: 'AI Employee · calendar & autopublish',
     scheduleBtn: 'Schedule',
@@ -273,7 +273,7 @@ export const aiEmployeeProductDemosEn: AiEmployeeProductDemosTranslations = {
     title: 'Every contact the AI touched,',
     titleHighlight: 'searchable and owned.',
     subtitle:
-      'One ledger for names, channels, and last touch—so marketing and sales agree on who is warm without exporting spreadsheets.',
+      'One ledger for names, channels, and last touch, so marketing and sales agree on who is warm without exporting spreadsheets.',
     allTab: 'All',
     smartList: '+ Smart segment',
     advancedFilters: 'Advanced filters',
@@ -365,7 +365,7 @@ const pipelineCardsFr: PipelineCardT[] = [
   { id: 'p1', name: 'Sarah Chen', source: 'Chat site', context: 'Créneaux ménage & tarifs pour la semaine prochaine.', valueLabel: 'Valeur', valueDisplay: '1 150 €' },
   { id: 'p2', name: 'Marcus Webb', source: 'Google Local', context: 'Devis fret week-end ; compare deux prestataires.', valueLabel: 'Valeur', valueDisplay: '2 400 €' },
   { id: 'p3', name: 'Elena Ruiz', source: 'Pub Facebook', context: 'Traiteur pour deux sites ; budget validé à l’appel.', valueLabel: 'Valeur', valueDisplay: '3 750 €' },
-  { id: 'p4', name: 'James Okonkwo', source: 'Recommandation', context: 'Consultation divorce—envoyé par un ancien client.', valueLabel: 'Valeur', valueDisplay: '1 890 €' },
+  { id: 'p4', name: 'James Okonkwo', source: 'Recommandation', context: 'Consultation divorce, envoyé par un ancien client.', valueLabel: 'Valeur', valueDisplay: '1 890 €' },
   { id: 'p5', name: 'Priya Patel', source: 'DM Instagram', context: 'Abonnement + coaching ; veut commencer ce mois-ci.', valueLabel: 'Valeur', valueDisplay: '4 950 €' },
   { id: 'p6', name: 'David Park', source: 'WhatsApp Business', context: 'Dentaire famille ; question mutuelle & 1re visite.', valueLabel: 'Valeur', valueDisplay: '580 €' },
   { id: 'p7', name: 'Lisa Morales', source: 'Bing Places', context: 'Relecture de contrat fournisseur.', valueLabel: 'Valeur', valueDisplay: '4 200 €' },
@@ -379,7 +379,7 @@ export const aiEmployeeProductDemosFr: AiEmployeeProductDemosTranslations = {
     title: 'Les leads avancent sans que',
     titleHighlight: 'vous surveilliez le tableau.',
     subtitle:
-      'Quatre étapes. Chaque lead a une source et un contexte. Glissez les cartes — ou lancez la démo pour voir une personne avancer.',
+      'Quatre étapes. Chaque lead a une source et un contexte. Glissez les cartes, ou lancez la démo pour voir une personne avancer.',
     dashboardTitle: 'Flux des leads',
     dashboardSubtitle: 'Espace Employé IA',
     activeLabel: 'Sync activée',
@@ -401,7 +401,7 @@ export const aiEmployeeProductDemosFr: AiEmployeeProductDemosTranslations = {
     cards: pipelineCardsFr,
     detailHint: 'Notes IA',
     detailNext: 'Prochaine étape suggérée',
-    dragHint: 'Glissez les cartes — le flux tourne tout seul ; Stop pour pauser.',
+    dragHint: 'Glissez les cartes, le flux tourne tout seul ; Stop pour pauser.',
     playDemoLabel: 'Lecture',
     stopDemoLabel: 'Stop',
     detailModalBody:
@@ -415,7 +415,7 @@ export const aiEmployeeProductDemosFr: AiEmployeeProductDemosTranslations = {
     title: 'Fiches locales,',
     titleHighlight: 'un tableau de bord.',
     subtitle:
-      'Google, réseaux et avis au même endroit—notes et volume montent quand l’IA répond et collecte les retours.',
+      'Google, réseaux et avis au même endroit, notes et volume montent quand l’IA répond et collecte les retours.',
     dashboardTitle: 'Pulsation réputation',
     dashboardSubtitle: 'Employé IA · annuaires locaux',
     aggregateLabel: 'Note moyenne',
@@ -434,7 +434,7 @@ export const aiEmployeeProductDemosFr: AiEmployeeProductDemosTranslations = {
     title: 'Planifiez une fois.',
     titleHighlight: 'Publiez à l’heure.',
     subtitle:
-      'Posez le contenu sur le calendrier—l’IA planifie et publie sur les canaux connectés.',
+      'Posez le contenu sur le calendrier, l’IA planifie et publie sur les canaux connectés.',
     moduleTitle: 'Planificateur social',
     moduleSubtitle: 'Employé IA · calendrier & auto-publication',
     scheduleBtn: 'Planifier',
@@ -452,7 +452,7 @@ export const aiEmployeeProductDemosFr: AiEmployeeProductDemosTranslations = {
     title: 'Chaque contact touché par l’IA,',
     titleHighlight: 'recherchable et à jour.',
     subtitle:
-      'Un registre unique pour noms, canaux et dernier contact—sans exports Excel.',
+      'Un registre unique pour noms, canaux et dernier contact, sans exports Excel.',
     allTab: 'Tous',
     smartList: '+ Segment',
     advancedFilters: 'Filtres avancés',
@@ -488,7 +488,7 @@ const pipelineCardsAr: PipelineCardT[] = [
   { id: 'p1', name: 'سارة تشين', source: 'دردشة الموقع', context: 'سألت عن مواعيد التنظيف والأسعار لأسبوع المقبل.', valueLabel: 'قيمة الصفقة', valueDisplay: '‎$1,150' },
   { id: 'p2', name: 'ماركوس ويب', source: 'جوجل المحلي', context: 'يحتاج عروض شحن لعطلة نهاية الأسبوع؛ يقارن موردين.', valueLabel: 'قيمة الصفقة', valueDisplay: '‎$2,400' },
   { id: 'p3', name: 'إيلينا رويز', source: 'إعلان فيسبوك', context: 'تموين لموقعين؛ تم تأكيد الميزانية في المكالمة.', valueLabel: 'قيمة الصفقة', valueDisplay: '‎$3,750' },
-  { id: 'p4', name: 'جيمس أوكونكوو', source: 'إحالة', context: 'استشارة طلاق—إحالة من عميل سابق.', valueLabel: 'قيمة الصفقة', valueDisplay: '‎$1,890' },
+  { id: 'p4', name: 'جيمس أوكونكوو', source: 'إحالة', context: 'استشارة طلاق, إحالة من عميل سابق.', valueLabel: 'قيمة الصفقة', valueDisplay: '‎$1,890' },
   { id: 'p5', name: 'بريا باتيل', source: 'رسائل إنستغرام', context: 'اشتراك + تدريب؛ تريد البدء هذا الشهر.', valueLabel: 'قيمة الصفقة', valueDisplay: '‎$4,950' },
   { id: 'p6', name: 'ديفيد بارك', source: 'واتساب للأعمال', context: 'أسنان عائلية؛ سؤال عن التأمين والزيارة الأولى.', valueLabel: 'قيمة الصفقة', valueDisplay: '‎$580' },
   { id: 'p7', name: 'ليزا موراليس', source: 'بينغ بليس', context: 'مراجعة عقد لمورد صغير.', valueLabel: 'قيمة الصفقة', valueDisplay: '‎$4,200' },
@@ -524,7 +524,7 @@ export const aiEmployeeProductDemosAr: AiEmployeeProductDemosTranslations = {
     cards: pipelineCardsAr,
     detailHint: 'ملاحظات الذكاء الاصطناعي',
     detailNext: 'الخطوة المقترحة التالية',
-    dragHint: 'اسحب البطاقات — أو تشغيل لعرض متحرك.',
+    dragHint: 'اسحب البطاقات, أو تشغيل لعرض متحرك.',
     playDemoLabel: 'تشغيل العرض',
     stopDemoLabel: 'إيقاف',
     detailModalBody:
@@ -538,7 +538,7 @@ export const aiEmployeeProductDemosAr: AiEmployeeProductDemosTranslations = {
     title: 'القوائم المحلية،',
     titleHighlight: 'لوحة واحدة.',
     subtitle:
-      'جوجل والشبكات والمراجعات في عرض واحد—ترتفع النقاط والمراجعات مع ردود الذكاء.',
+      'جوجل والشبكات والمراجعات في عرض واحد, ترتفع النقاط والمراجعات مع ردود الذكاء.',
     dashboardTitle: 'نبض السمعة',
     dashboardSubtitle: 'موظف ذكاء · أدلة محلية',
     aggregateLabel: 'متوسط التقييم',
@@ -557,7 +557,7 @@ export const aiEmployeeProductDemosAr: AiEmployeeProductDemosTranslations = {
     title: 'خطّط مرة.',
     titleHighlight: 'انشر في الوقت المحدد.',
     subtitle:
-      'ضع المحتوى على التقويم—الذكاء يجدول وينشر على القنوات المتصلة.',
+      'ضع المحتوى على التقويم, الذكاء يجدول وينشر على القنوات المتصلة.',
     moduleTitle: 'مخطط التواصل',
     moduleSubtitle: 'موظف ذكاء · تقويم ونشر تلقائي',
     scheduleBtn: 'جدولة',
@@ -575,7 +575,7 @@ export const aiEmployeeProductDemosAr: AiEmployeeProductDemosTranslations = {
     title: 'كل جهة لمستها الذكاء،',
     titleHighlight: 'قابلة للبحث وملكية واضحة.',
     subtitle:
-      'سجل واحد للأسماء والقنوات وآخر تفاعل—دون جداول منفصلة.',
+      'سجل واحد للأسماء والقنوات وآخر تفاعل, دون جداول منفصلة.',
     allTab: 'الكل',
     smartList: '+ شريحة',
     advancedFilters: 'مرشحات متقدمة',
@@ -611,7 +611,7 @@ const pipelineCardsDe: PipelineCardT[] = [
   { id: 'p1', name: 'Sarah Chen', source: 'Website-Chat', context: 'Nach Terminen & Preisen für Reinigung nächste Woche gefragt.', valueLabel: 'Dealwert', valueDisplay: '1.150 €' },
   { id: 'p2', name: 'Marcus Webb', source: 'Google Local', context: 'Frachtangebote fürs Wochenende; vergleicht zwei Anbieter.', valueLabel: 'Dealwert', valueDisplay: '2.400 €' },
   { id: 'p3', name: 'Elena Ruiz', source: 'Facebook Lead Ad', context: 'Catering für zwei Standorte; Budget im Call bestätigt.', valueLabel: 'Dealwert', valueDisplay: '3.750 €' },
-  { id: 'p4', name: 'James Okonkwo', source: 'Empfehlung', context: 'Scheidungsberatung—empfohlen von früherem Mandanten.', valueLabel: 'Dealwert', valueDisplay: '1.890 €' },
+  { id: 'p4', name: 'James Okonkwo', source: 'Empfehlung', context: 'Scheidungsberatung, empfohlen von früherem Mandanten.', valueLabel: 'Dealwert', valueDisplay: '1.890 €' },
   { id: 'p5', name: 'Priya Patel', source: 'Instagram DM', context: 'Mitgliedschaft + PT; Start noch diesen Monat.', valueLabel: 'Dealwert', valueDisplay: '4.950 €' },
   { id: 'p6', name: 'David Park', source: 'WhatsApp Business', context: 'Familienzahnarzt; Frage zu Kasse & Erstbesuch.', valueLabel: 'Dealwert', valueDisplay: '580 €' },
   { id: 'p7', name: 'Lisa Morales', source: 'Bing Places', context: 'Vertragsprüfung bei Lieferantenstreit.', valueLabel: 'Dealwert', valueDisplay: '4.200 €' },
@@ -625,7 +625,7 @@ export const aiEmployeeProductDemosDe: AiEmployeeProductDemosTranslations = {
     title: 'Leads laufen weiter ohne',
     titleHighlight: 'dass Sie das Board hüten.',
     subtitle:
-      'Vier Phasen. Jeder Lead hat einen Quellkanal und Kontext. Karten ziehen — oder Demo starten.',
+      'Vier Phasen. Jeder Lead hat einen Quellkanal und Kontext. Karten ziehen, oder Demo starten.',
     dashboardTitle: 'Lead-Flow',
     dashboardSubtitle: 'KI-Mitarbeiter-Arbeitsbereich',
     activeLabel: 'Sync aktiv',
@@ -647,7 +647,7 @@ export const aiEmployeeProductDemosDe: AiEmployeeProductDemosTranslations = {
     cards: pipelineCardsDe,
     detailHint: 'KI-Notizen',
     detailNext: 'Vorgeschlagener nächster Schritt',
-    dragHint: 'Karten ziehen — oder Abspielen für den Flow.',
+    dragHint: 'Karten ziehen, oder Abspielen für den Flow.',
     playDemoLabel: 'Flow abspielen',
     stopDemoLabel: 'Stop',
     detailModalBody:
@@ -661,7 +661,7 @@ export const aiEmployeeProductDemosDe: AiEmployeeProductDemosTranslations = {
     title: 'Lokale Einträge,',
     titleHighlight: 'ein Dashboard.',
     subtitle:
-      'Google, Social und Bewertungsportale auf einen Blick—Sterne und Volumen steigen mit KI-Antworten.',
+      'Google, Social und Bewertungsportale auf einen Blick, Sterne und Volumen steigen mit KI-Antworten.',
     dashboardTitle: 'Reputation-Puls',
     dashboardSubtitle: 'KI-Mitarbeiter · lokale Verzeichnisse',
     aggregateLabel: 'Durchschnittsnote',
@@ -680,7 +680,7 @@ export const aiEmployeeProductDemosDe: AiEmployeeProductDemosTranslations = {
     title: 'Einmal planen.',
     titleHighlight: 'Pünktlich posten.',
     subtitle:
-      'Inhalt auf den Kalender legen—die KI plant und veröffentlicht auf verbundenen Kanälen.',
+      'Inhalt auf den Kalender legen, die KI plant und veröffentlicht auf verbundenen Kanälen.',
     moduleTitle: 'Social-Planer',
     moduleSubtitle: 'KI-Mitarbeiter · Kalender & Auto-Post',
     scheduleBtn: 'Planen',
@@ -696,9 +696,9 @@ export const aiEmployeeProductDemosDe: AiEmployeeProductDemosTranslations = {
     ...aiEmployeeProductDemosEn.contacts,
     badge: 'Verzeichnis',
     title: 'Jeder Kontakt, den die KI',
-    titleHighlight: 'berührt hat—suchbar.',
+    titleHighlight: 'berührt hat, suchbar.',
     subtitle:
-      'Ein Register für Namen, Kanäle und letzte Berührung—ohne Excel-Exporte.',
+      'Ein Register für Namen, Kanäle und letzte Berührung, ohne Excel-Exporte.',
     allTab: 'Alle',
     smartList: '+ Segment',
     advancedFilters: 'Erweiterte Filter',
@@ -734,7 +734,7 @@ const pipelineCardsEs: PipelineCardT[] = [
   { id: 'p1', name: 'Sarah Chen', source: 'Chat web', context: 'Preguntó por huecos de limpieza y precios para la próxima semana.', valueLabel: 'Valor del deal', valueDisplay: 'US$1.150' },
   { id: 'p2', name: 'Marcus Webb', source: 'Google Local', context: 'Cotizaciones de flete fin de semana; compara dos proveedores.', valueLabel: 'Valor del deal', valueDisplay: 'US$2.400' },
   { id: 'p3', name: 'Elena Ruiz', source: 'Anuncio Facebook', context: 'Catering para dos sedes; presupuesto confirmado en la llamada.', valueLabel: 'Valor del deal', valueDisplay: 'US$3.750' },
-  { id: 'p4', name: 'James Okonkwo', source: 'Referido', context: 'Consulta de divorcio—referido por un cliente anterior.', valueLabel: 'Valor del deal', valueDisplay: 'US$1.890' },
+  { id: 'p4', name: 'James Okonkwo', source: 'Referido', context: 'Consulta de divorcio, referido por un cliente anterior.', valueLabel: 'Valor del deal', valueDisplay: 'US$1.890' },
   { id: 'p5', name: 'Priya Patel', source: 'DM Instagram', context: 'Membresía + PT; quiere empezar este mes.', valueLabel: 'Valor del deal', valueDisplay: 'US$4.950' },
   { id: 'p6', name: 'David Park', source: 'WhatsApp Business', context: 'Dental familiar; pregunta por seguro y primera visita.', valueLabel: 'Valor del deal', valueDisplay: 'US$580' },
   { id: 'p7', name: 'Lisa Morales', source: 'Bing Places', context: 'Revisión de contrato con proveedor pequeño.', valueLabel: 'Valor del deal', valueDisplay: 'US$4.200' },
@@ -748,7 +748,7 @@ export const aiEmployeeProductDemosEs: AiEmployeeProductDemosTranslations = {
     title: 'Los leads avanzan sin',
     titleHighlight: 'vigilar el tablero.',
     subtitle:
-      'Cuatro etapas. Cada lead tiene origen y contexto. Arrastra tarjetas — o reproduce el flujo.',
+      'Cuatro etapas. Cada lead tiene origen y contexto. Arrastra tarjetas, o reproduce el flujo.',
     dashboardTitle: 'Flujo de leads',
     dashboardSubtitle: 'Espacio Empleado IA',
     activeLabel: 'Sync activo',
@@ -770,7 +770,7 @@ export const aiEmployeeProductDemosEs: AiEmployeeProductDemosTranslations = {
     cards: pipelineCardsEs,
     detailHint: 'Notas IA',
     detailNext: 'Siguiente paso sugerido',
-    dragHint: 'Arrastra tarjetas — o Reproducir para animar.',
+    dragHint: 'Arrastra tarjetas, o Reproducir para animar.',
     playDemoLabel: 'Reproducir flujo',
     stopDemoLabel: 'Detener',
     detailModalBody:
@@ -784,7 +784,7 @@ export const aiEmployeeProductDemosEs: AiEmployeeProductDemosTranslations = {
     title: 'Directorios locales,',
     titleHighlight: 'un panel.',
     subtitle:
-      'Google, redes y reseñas en una vista—suben estrellas y volumen con la IA.',
+      'Google, redes y reseñas en una vista, suben estrellas y volumen con la IA.',
     dashboardTitle: 'Pulso de reputación',
     dashboardSubtitle: 'Empleado IA · directorios locales',
     aggregateLabel: 'Nota media',
@@ -803,7 +803,7 @@ export const aiEmployeeProductDemosEs: AiEmployeeProductDemosTranslations = {
     title: 'Planifica una vez.',
     titleHighlight: 'Publica a tiempo.',
     subtitle:
-      'Coloca el contenido en el calendario—la IA programa y publica en los canales.',
+      'Coloca el contenido en el calendario, la IA programa y publica en los canales.',
     moduleTitle: 'Planificador social',
     moduleSubtitle: 'Empleado IA · calendario y auto-publicación',
     scheduleBtn: 'Programar',
@@ -821,7 +821,7 @@ export const aiEmployeeProductDemosEs: AiEmployeeProductDemosTranslations = {
     title: 'Cada contacto que tocó la IA,',
     titleHighlight: 'buscable y unificado.',
     subtitle:
-      'Un registro de nombres, canales y último contacto—sin hojas sueltas.',
+      'Un registro de nombres, canales y último contacto, sin hojas sueltas.',
     allTab: 'Todos',
     smartList: '+ Segmento',
     advancedFilters: 'Filtros avanzados',

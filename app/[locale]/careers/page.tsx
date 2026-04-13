@@ -52,7 +52,7 @@ const openPositions: {
     type: 'Full-time',
     location: 'Remote',
     description:
-      'Shape how we and our clients show up visually — brand systems, social assets, presentations, and campaign creatives that stay on brief and on brand.',
+      'Shape how we and our clients show up visually, brand systems, social assets, presentations, and campaign creatives that stay on brief and on brand.',
     requirements: [
       'A portfolio showing brand, marketing, or digital design work',
       'Proficiency in Figma and/or Adobe Creative Cloud',
@@ -191,7 +191,7 @@ export default function CareersPage({ params, searchParams }: CareersPageProps) 
         </div>
       </section>
 
-      {/* Team Stats — Proof Section */}
+      {/* Team Stats, Proof Section */}
       <AnimatedSection className="py-16 bg-surface/50">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">

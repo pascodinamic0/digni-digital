@@ -32,7 +32,7 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
     { icon: '🏠', title: 'Location Freedom', description: 'Work from home, coffee shops, or anywhere with internet connection' },
     { icon: '🚀', title: 'Instant Start', description: 'Begin earning immediately - no waiting for job applications or interviews' },
     { icon: '🤖', title: 'AI Multiplier', description: 'AI tools amplify your output; compete with senior professionals from day one' },
-    { icon: '💡', title: 'Entrepreneurial Path', description: 'Create your own jobs—our guided learning brings out your entrepreneurial talents and gifts' },
+    { icon: '💡', title: 'Entrepreneurial Path', description: 'Create your own jobs, our guided learning brings out your entrepreneurial talents and gifts' },
     { icon: '📊', title: 'Portfolio Career', description: 'Build multiple income streams; never dependent on a single employer' },
     { icon: '🛡️', title: 'Future-Proof', description: 'Digital skills evolve with the economy; traditional jobs are being automated' },
     { icon: '⏰', title: 'Flexible Schedule', description: 'Work around your life - study, family, or side projects on your terms' },
@@ -128,7 +128,7 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
         'Progress tracking and reporting',
         'Student assessment and certification',
         'Ongoing program support',
-        'Job readiness training—and skills to create your own jobs',
+        'Job readiness training, and skills to create your own jobs',
         "Guided learning personalized to each student's talents and gifts",
         'Partnership success guarantee'
       ],
@@ -143,7 +143,7 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
       audience: 'everyone',
       features: [
         'Full digital skills curriculum (start from scratch)',
-        'Personalized guided learning—tailored to your unique talents and gifts',
+        'Personalized guided learning, tailored to your unique talents and gifts',
         'Learn from home, school, university, or vocational center',
         'AI-powered tools and techniques for making money online',
         'Guided learning - study on your own schedule with support',
@@ -153,7 +153,7 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
         'Lifetime access to all course materials',
         'Portfolio building and job placement resources',
         'Learn how to use AI to compete with experts',
-        'Start earning while you learn—create jobs or get hired'
+        'Start earning while you learn, create jobs or get hired'
       ],
       popular: false,
       isNew: true,
@@ -187,7 +187,7 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
       src: '/Strive Masiyiwa emphasized that entrepreneurship is a mindset focused on solving real problems, .mp4',
       title: 'Entrepreneurship as Problem-Solving',
       speaker: 'Strive Masiyiwa',
-      description: 'The fundamental challenge: entrepreneurship isn\'t about building products—it\'s a mindset focused on solving real problems.',
+      description: 'The fundamental challenge: entrepreneurship isn\'t about building products, it\'s a mindset focused on solving real problems.',
       thumbnail: null
     },
     {
@@ -201,14 +201,14 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
       src: '/The world evolved. Education didn\u2019t.Look around- cars transformed, cities transformed, communica.mp4',
       title: 'Education Must Evolve',
       speaker: 'Global Thought Leader',
-      description: 'The world has transformed in every way—except education. It\'s time for education to catch up with the digital revolution.',
+      description: 'The world has transformed in every way, except education. It\'s time for education to catch up with the digital revolution.',
       thumbnail: null
     },
     {
       src: '/Kim Kiyosaki says the school system trains students to follow instructions instead of think crea.mp4',
       title: 'School System vs Creative Thinking',
       speaker: 'Kim Kiyosaki',
-      description: 'The school system trains students to follow instructions instead of thinking creatively—a critical insight for modern education.',
+      description: 'The school system trains students to follow instructions instead of thinking creatively, a critical insight for modern education.',
       thumbnail: null
     },
     {
@@ -682,7 +682,7 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
                     skill: 'AI Data Annotation & Labeling',
                     icon: '🏷️',
                     earning: '$15-50/hour',
-                    description: 'Label and annotate data for AI training. Critical for ML models—demand surged 220%+. Work from anywhere.',
+                    description: 'Label and annotate data for AI training. Critical for ML models, demand surged 220%+. Work from anywhere.',
                     tools: ['Scale AI', 'Label Studio', 'Amazon SageMaker', 'Supervisely'],
                     demand: 'Exploding'
                   },
@@ -714,7 +714,7 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
                     skill: 'Career Coaching & Training',
                     icon: '🎯',
                     earning: '$40-150/hour',
-                    description: 'Help workers reskill and adapt to AI. Human guidance and empathy remain irreplaceable—demand +74%.',
+                    description: 'Help workers reskill and adapt to AI. Human guidance and empathy remain irreplaceable, demand +74%.',
                     tools: ['Coaching platforms', 'Notion AI', 'Loom', 'Zoom'],
                     demand: 'Very High'
                   },
@@ -867,7 +867,7 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
                     Program Investment
                   </h4>
                   <p className="text-muted text-sm leading-relaxed">
-                    Partnership fee: <span className="font-medium text">$1,000/month</span>, <span className="font-medium text">$5,000/semester</span> (5 months), or <span className="font-medium text">$12,000/year</span>—flexible to your budget and academic calendar.
+                    Partnership fee: <span className="font-medium text">$1,000/month</span>, <span className="font-medium text">$5,000/semester</span> (5 months), or <span className="font-medium text">$12,000/year</span>, flexible to your budget and academic calendar.
                   </p>
                 </div>
 
@@ -998,11 +998,11 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 text-sm">
                 <div>
                   <span className="font-semibold text block mb-2">Student Performance</span>
-                  <span className="text-muted">Their determination and commitment drive employment success—or job creation</span>
+                  <span className="text-muted">Their determination and commitment drive employment success, or job creation</span>
                 </div>
                 <div>
                   <span className="font-semibold text block mb-2">Personalized to Talents</span>
-                  <span className="text-muted">Guided learning tailored to each person&apos;s gifts—bringing out entrepreneurial talents</span>
+                  <span className="text-muted">Guided learning tailored to each person&apos;s gifts, bringing out entrepreneurial talents</span>
                 </div>
                 <div>
                   <span className="font-semibold text block mb-2">Mutual Commitment</span>

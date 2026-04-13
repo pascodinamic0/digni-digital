@@ -106,7 +106,7 @@ type FunnelCopy = {
 const FUNNEL_ACTIVE_DEEP_RGB = '6, 90, 122'
 /** Near-black with blue-teal cast (edges / glow falloff) */
 const FUNNEL_ACTIVE_INK_RGB = '2, 20, 40'
-/** Intake band idle wash — brand blue tint */
+/** Intake band idle wash, brand blue tint */
 const FUNNEL_INTAKE_SURFACE_RGB = '8, 68, 92'
 const FUNNEL_INTAKE_SURFACE_MID_RGB = '4, 48, 66'
 
@@ -227,7 +227,7 @@ function VisualFunnel({
         </svg>
       </div>
 
-      {/* Column headers: pipeline + delta (stacked on mobile; delta hides here — shown per row on small screens) */}
+      {/* Column headers: pipeline + delta (stacked on mobile; delta hides here, shown per row on small screens) */}
       <div className="w-full flex flex-col sm:flex-row sm:items-end gap-1 sm:gap-2 mb-1.5 mt-1">
         <div className="flex-1 min-w-0 pl-1">
           <span className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">{funnelCopy.pipelineLabel}</span>
@@ -248,7 +248,7 @@ function VisualFunnel({
           const count = counts[i] ?? 0
           const nextCount = counts[i + 1] ?? count
           const drop = count - nextCount
-          // Broken: no drop at step 1 — leads just arrived. AI: no drop anywhere (automation captures all).
+          // Broken: no drop at step 1, leads just arrived. AI: no drop anywhere (automation captures all).
           const displayDrop = variant === 'broken' && i === 0 ? 0 : drop
           const layerClip = funnelPolygon(i, totalLayers)
           const showSectionBreak = (FUNNEL_SECTION_AT as readonly number[]).includes(i)

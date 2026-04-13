@@ -37,7 +37,7 @@ export function WelcomeVideoClient({
       <div className="mb-8 text-center">
         <span className="section-label">Welcome</span>
         <h1 className="font-display mt-3 text-3xl font-bold tracking-tight text-text md:text-4xl">
-          Congratulations — you&apos;re in
+          Congratulations, you&apos;re in
         </h1>
         <p className="mx-auto mt-3 max-w-lg text-muted">
           {fallbackMessage}

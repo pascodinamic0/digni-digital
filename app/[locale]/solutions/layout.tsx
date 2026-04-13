@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Solutions — Industry-Specific Digital Transformation',
+  title: 'Solutions | Industry-Specific Digital Transformation',
   description: 'Industry-specific solutions that drive measurable results. From healthcare to real estate, see how Digni Digital transforms businesses with AI-powered technology.',
 }
 

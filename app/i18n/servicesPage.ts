@@ -1,5 +1,5 @@
 /**
- * Services listing page — product cards.
+ * Services listing page, product cards.
  * Keep in sync with home.whatWeDo, aiEmployeePage.capabilities, agentic-softwares tiers, and future-ready-graduate trimesters.
  */
 
@@ -17,7 +17,7 @@ export type ServicesPageCard = {
   timeline: string
   link: string
   primaryCta: string
-  /** Secondary action — uses booking link; label aligned with home.whatWeDo. */
+  /** Secondary action, uses booking link; label aligned with home.whatWeDo. */
   secondaryCta: string
 }
 
@@ -55,7 +55,7 @@ export const servicesPageEn: ServicesPageTranslations = {
       title: 'AI Employee Systems',
       subtitle: 'For Growing Businesses',
       description:
-        "Most teams don't need more software—they need infrastructure that runs without them. We build intelligent systems for service businesses that want growth without chaos.",
+        "Most teams don't need more software, they need infrastructure that runs without them. We build intelligent systems for service businesses that want growth without chaos.",
       outcomes: [
         'Keep clients longer',
         'Convert more leads',
@@ -109,7 +109,7 @@ export const servicesPageEn: ServicesPageTranslations = {
       title: 'Agentic Softwares',
       subtitle: 'For Unique Needs',
       description:
-        'AI that perceives, reasons, acts. We build AI-native software with autonomous workflows—not shelf-ware.',
+        'We build custom software with integrated AI for niche-specific problems: autonomous workflows and systems you own, not shelf-ware.',
       outcomes: ['Autonomous agents', 'AI-native architecture', 'You own it'],
       deliverables: [
         'Agent design & workflow automation',
@@ -167,7 +167,7 @@ export const servicesPageFr: ServicesPageTranslations = {
       title: 'Systèmes employé IA',
       subtitle: 'Pour les entreprises en croissance',
       description:
-        "Vous n'avez pas besoin d'un logiciel de plus—vous avez besoin d'une infrastructure qui tourne sans vous. Nous construisons des systèmes intelligents pour les entreprises de services qui veulent croître sans chaos.",
+        "Vous n'avez pas besoin d'un logiciel de plus, vous avez besoin d'une infrastructure qui tourne sans vous. Nous construisons des systèmes intelligents pour les entreprises de services qui veulent croître sans chaos.",
       outcomes: ['Clients fidélisés plus longtemps', 'Plus de prospects convertis', 'Croissance sereine'],
       deliverables: [
         'Réponse instantanée',
@@ -209,7 +209,7 @@ export const servicesPageFr: ServicesPageTranslations = {
       title: 'Agentic Softwares',
       subtitle: 'Pour les besoins uniques',
       description:
-        'Des logiciels IA natifs qui perçoivent, raisonnent et agissent—workflows autonomes, pas un logiciel en rayon.',
+        'Nous construisons des logiciels sur mesure avec IA intégrée pour des problèmes de niche : workflows autonomes et systèmes à vous, pas un logiciel en rayon.',
       outcomes: ['Agents autonomes', 'Architecture IA native', 'Vous en êtes propriétaire'],
       deliverables: [
         'Conception d’agents & automatisation des flux',

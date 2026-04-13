@@ -77,7 +77,7 @@ export async function POST(request: Request) {
     const { error } = await resend.emails.send({
       from: `Digni Digital <${FROM_EMAIL}>`,
       to: [CONTACT_EMAIL],
-      subject: `Chat message from site (email-only — add Supabase to store threads)`,
+      subject: `Chat message from site (email-only; add Supabase to store threads)`,
       html: leadEmailHtml({
         pageUrl: body.pageUrl,
         name: leadName!,
@@ -160,7 +160,7 @@ export async function POST(request: Request) {
           .send({
             from: `Digni Digital <${FROM_EMAIL}>`,
             to: [CONTACT_EMAIL],
-            subject: `Chat message (DB error — check Supabase migration)`,
+            subject: `Chat message (DB error: check Supabase migration)`,
             html:
               leadEmailHtml({
                 pageUrl: body.pageUrl,

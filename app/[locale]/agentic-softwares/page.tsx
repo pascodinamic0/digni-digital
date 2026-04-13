@@ -40,7 +40,7 @@ export default function AgenticSoftwaresPage({ params, searchParams }: AgenticSo
     {
       title: 'Kabinda Lodge',
       description:
-        'Run the hotel from anywhere—bookings, rooms, keys, and payments in one command center. Role-based access, smart door cards, and full visibility for investors and staff.',
+        'Run the hotel from anywhere, bookings, rooms, keys, and payments in one command center. Role-based access, smart door cards, and full visibility for investors and staff.',
       category: 'Hospitality',
       status: 'Live',
       link: 'https://kabinda-lodge.com/',
@@ -141,7 +141,7 @@ export default function AgenticSoftwaresPage({ params, searchParams }: AgenticSo
       type: 'Client Project',
       industry: 'Hospitality',
       challenge:
-        'Owners needed to run the property from a distance—block rooms on demand, see real performance, and stop key handoffs that bypass the front desk. Payments and restaurant service had to stay in one auditable flow.',
+        'Owners needed to run the property from a distance, block rooms on demand, see real performance, and stop key handoffs that bypass the front desk. Payments and restaurant service had to stay in one auditable flow.',
       solution:
         'A full hotel OS: online stays and conference-room booking, role-based access from super admin to restaurant lead, Stripe-backed payment methods, and smart cards issued from the dashboard so room access stays tied to the system.',
       results: [
@@ -195,7 +195,7 @@ export default function AgenticSoftwaresPage({ params, searchParams }: AgenticSo
             className="text-center mb-8 sm:mb-12 md:mb-16"
           >
             <span className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-info/10 border border-info/30 rounded-full text-info text-xs sm:text-sm font-medium mb-4 sm:mb-6">
-              Agentic Softwares — AI-Native Software
+              Agentic Softwares, AI-Native Software
             </span>
             <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-4 sm:mb-6 md:mb-8 px-2">
               Software That{' '}

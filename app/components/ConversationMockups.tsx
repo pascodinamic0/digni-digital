@@ -35,9 +35,9 @@ const ConversationMockups = () => {
       ),
       messages: [
         { sender: 'visitor', text: 'Hi, I saw your ad about teeth whitening. How much does it cost?', time: '2:34 PM' },
-        { sender: 'ai', text: 'Hi! Great question. Our professional whitening starts at $299. Quick question—are you currently a patient with us, or would this be your first visit?', time: '2:34 PM' },
+        { sender: 'ai', text: 'Hi! Great question. Our professional whitening starts at $299. Quick question, are you currently a patient with us, or would this be your first visit?', time: '2:34 PM' },
         { sender: 'visitor', text: 'First visit. Is that price for in-office or take-home?', time: '2:35 PM' },
-        { sender: 'ai', text: 'That\'s for our in-office Zoom whitening—results in one visit. For new patients, we include a free consultation. When works better for you: this week or next week?', time: '2:35 PM' },
+        { sender: 'ai', text: 'That\'s for our in-office Zoom whitening, results in one visit. For new patients, we include a free consultation. When works better for you: this week or next week?', time: '2:35 PM' },
         { sender: 'visitor', text: 'This week if possible. I have a wedding coming up.', time: '2:36 PM' },
         { sender: 'ai', text: 'Perfect timing! I have Thursday at 2pm or Friday at 10am open. Which works for you?', time: '2:36 PM' },
         { sender: 'visitor', text: 'Thursday 2pm works great', time: '2:37 PM' },
@@ -58,7 +58,7 @@ const ConversationMockups = () => {
         { sender: 'visitor', text: 'Hey my AC stopped working. It\'s 95 degrees here 😰', time: '11:22 AM' },
         { sender: 'ai', text: 'That\'s miserable! Let me help you fast. Is your AC not turning on at all, or is it running but not cooling?', time: '11:22 AM' },
         { sender: 'visitor', text: 'It\'s running but just blowing warm air', time: '11:23 AM' },
-        { sender: 'ai', text: 'Got it—likely a refrigerant or compressor issue. We can have a tech there today. Are you at a residential address?', time: '11:23 AM' },
+        { sender: 'ai', text: 'Got it, likely a refrigerant or compressor issue. We can have a tech there today. Are you at a residential address?', time: '11:23 AM' },
         { sender: 'visitor', text: 'Yes, house in Cedar Park. How much for the service call?', time: '11:24 AM' },
         { sender: 'ai', text: '$89 diagnostic fee, waived if you proceed with repair. We have a slot at 2pm or 4:30pm today. Which works?', time: '11:24 AM' },
         { sender: 'visitor', text: '2pm please! Can you text me when they\'re on the way?', time: '11:25 AM' },
@@ -81,9 +81,9 @@ const ConversationMockups = () => {
         { sender: 'visitor', text: 'Love your before/afters! 😍 How much for lip filler?', time: '4:15 PM' },
         { sender: 'ai', text: 'Thank you! 💕 Our lip filler starts at $650/syringe. Most clients need 1-2 for natural results. Have you had filler before?', time: '4:15 PM' },
         { sender: 'visitor', text: 'No first time! I want fuller but still natural looking', time: '4:16 PM' },
-        { sender: 'ai', text: 'You\'ll love it! First-timers usually do 1 syringe—subtle but noticeable. We\'re running 15% off for new clients this month. Want me to book you a free consult?', time: '4:16 PM' },
+        { sender: 'ai', text: 'You\'ll love it! First-timers usually do 1 syringe, subtle but noticeable. We\'re running 15% off for new clients this month. Want me to book you a free consult?', time: '4:16 PM' },
         { sender: 'visitor', text: 'Yes! Do you have anything Saturday?', time: '4:17 PM' },
-        { sender: 'ai', text: 'Saturday works! I have 11am or 2pm with Dr. Kim—she\'s amazing with natural lips. Which do you prefer?', time: '4:17 PM' },
+        { sender: 'ai', text: 'Saturday works! I have 11am or 2pm with Dr. Kim, she\'s amazing with natural lips. Which do you prefer?', time: '4:17 PM' },
         { sender: 'visitor', text: '2pm is perfect!', time: '4:18 PM' },
         { sender: 'ai', text: '✅ You\'re all set! Saturday 2pm with Dr. Kim. I\'ll DM you our address + parking tips. See you then! 💋', time: '4:18 PM' }
       ]
@@ -100,13 +100,13 @@ const ConversationMockups = () => {
       ),
       messages: [
         { sender: 'visitor', text: 'Hi, the storm damaged my roof. Do you do free inspections?', time: '3:20 PM' },
-        { sender: 'ai', text: 'Yes, absolutely free—no obligation. Sorry to hear about the storm damage. Is it a residential home or commercial building?', time: '3:20 PM' },
+        { sender: 'ai', text: 'Yes, absolutely free, no obligation. Sorry to hear about the storm damage. Is it a residential home or commercial building?', time: '3:20 PM' },
         { sender: 'visitor', text: 'Residential. I can see some shingles in my yard 😬', time: '3:21 PM' },
         { sender: 'ai', text: 'That needs attention fast before the next rain. We work with all major insurance companies too. What\'s your zip code? I\'ll check our availability in your area.', time: '3:21 PM' },
         { sender: 'visitor', text: '78613', time: '3:22 PM' },
         { sender: 'ai', text: 'Perfect, we cover Cedar Park! I can get an inspector out tomorrow morning or Thursday afternoon. Which works better?', time: '3:22 PM' },
         { sender: 'visitor', text: 'Tomorrow morning would be great', time: '3:23 PM' },
-        { sender: 'ai', text: '✅ Done! Jake will be there tomorrow between 9-11am. He\'ll take photos, check for hidden damage, and give you a full report—even help with your insurance claim if needed. See you then! 🏠', time: '3:23 PM' }
+        { sender: 'ai', text: '✅ Done! Jake will be there tomorrow between 9-11am. He\'ll take photos, check for hidden damage, and give you a full report, even help with your insurance claim if needed. See you then! 🏠', time: '3:23 PM' }
       ]
     },
     {
@@ -123,7 +123,7 @@ const ConversationMockups = () => {
         { sender: 'visitor', text: 'I was in a car accident last week. Do I need a lawyer?', time: '9:15 AM' },
         { sender: 'ai', text: 'I\'m sorry to hear that. Was anyone injured, including yourself?', time: '9:15 AM' },
         { sender: 'visitor', text: 'Yes my back has been hurting since. The other driver ran a red light.', time: '9:16 AM' },
-        { sender: 'ai', text: 'That\'s important—back injuries can be serious and the other driver was clearly at fault. Have you seen a doctor yet?', time: '9:16 AM' },
+        { sender: 'ai', text: 'That\'s important, back injuries can be serious and the other driver was clearly at fault. Have you seen a doctor yet?', time: '9:16 AM' },
         { sender: 'visitor', text: 'Going tomorrow. Should I wait to call you?', time: '9:17 AM' },
         { sender: 'ai', text: 'No, don\'t wait. Insurance companies move fast and what you say now matters. Our consultation is free, no obligation. We only get paid if you win. Can you talk today?', time: '9:17 AM' },
         { sender: 'visitor', text: 'Yes I can do 3pm', time: '9:18 AM' },

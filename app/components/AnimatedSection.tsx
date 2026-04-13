@@ -12,7 +12,7 @@ interface AnimatedSectionProps {
   stagger?: boolean
 }
 
-/** Scroll-linked transforms only when needed — useScroll measures layout and can contribute to forced reflows. */
+/** Scroll-linked transforms only when needed; useScroll measures layout and can contribute to forced reflows. */
 function ParallaxSection({
   children,
   className = '',

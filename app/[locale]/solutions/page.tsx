@@ -283,7 +283,7 @@ export default function SolutionsPage({ params, searchParams }: SolutionsPagePro
         </div>
       </AnimatedSection>
 
-      {/* Client Results — Proof Section */}
+      {/* Client Results, Proof Section */}
       <AnimatedSection className="py-16">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">

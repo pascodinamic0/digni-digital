@@ -19,13 +19,13 @@ export const aiReceptionistExplainerByLanguage: Partial<
     badge: 'Why it breaks',
     title: 'Broken businesses and operations',
     description:
-      'A quick walkthrough: what drives leads away, overloads your team, and blocks growth—and why the right infrastructure matters more than working harder.',
+      'A quick walkthrough: what drives leads away, overloads your team, and blocks growth, and why the right infrastructure matters more than working harder.',
   },
   fr: {
     src: '/Entreprises___Opérations_Défaillantes.mp4',
     badge: 'Pourquoi ça casse',
     title: 'Entreprises et opérations défaillantes',
     description:
-      'Vue d’ensemble : ce qui fait fuir les leads, alourdit l’équipe et empêche la croissance—et pourquoi l’infrastructure compte plus que l’effort.',
+      'Vue d’ensemble : ce qui fait fuir les leads, alourdit l’équipe et empêche la croissance, et pourquoi l’infrastructure compte plus que l’effort.',
   },
 }
