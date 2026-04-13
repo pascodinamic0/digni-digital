@@ -254,7 +254,7 @@ export default function Navigation() {
             
             <div className="flex items-center gap-4 mt-6 pt-4 border-t border-border-light">
               <div className="flex items-center gap-2">
-                <LanguageToggler variant="full" className="flex-1" />
+                <LanguageToggler variant="full" />
               </div>
               <div className="flex items-center justify-end flex-1">
                 <ThemeToggle />

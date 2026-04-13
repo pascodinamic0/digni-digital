@@ -33,7 +33,7 @@ export default function ClientLogos({
         className="flex-shrink-0 px-6 md:px-8 flex items-center justify-center"
       >
         <div
-          className="relative grayscale opacity-70 transition-opacity duration-300"
+          className="relative opacity-90 grayscale transition-[filter,opacity] duration-300 hover:opacity-100 hover:grayscale-0"
           style={{ width: w, height: h, minWidth: w, minHeight: h }}
         >
           <Image
@@ -69,12 +69,13 @@ export default function ClientLogos({
           )}
         </div>
 
-        <div className="relative rounded-2xl border border-border overflow-hidden bg-background/50 backdrop-blur-sm shadow-xl">
-          <div className="absolute inset-0 bg-gradient-to-b from-accent/5 via-transparent to-accent/5 pointer-events-none z-10" />
-          <div className="absolute left-0 top-0 bottom-0 w-20 md:w-28 bg-gradient-to-r from-background via-background/90 to-transparent z-20 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-20 md:w-28 bg-gradient-to-l from-background via-background/90 to-transparent z-20 pointer-events-none" />
+        <div className="client-logos-marquee-frame relative rounded-2xl border border-border overflow-hidden bg-background/50 backdrop-blur-sm shadow-xl">
+          <div
+            className="pointer-events-none absolute inset-0 z-0 bg-gradient-to-b from-accent/5 via-transparent to-accent/5"
+            aria-hidden
+          />
 
-          <div className="relative py-8 md:py-10">
+          <div className="relative z-10 py-8 md:py-10">
             <div
               className="flex flex-nowrap animate-scroll-left-triple items-center will-change-transform mb-6 md:mb-8"
               style={{ height: LOGO_ROW_HEIGHT }}

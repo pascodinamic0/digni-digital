@@ -65,7 +65,7 @@ export default function LanguageToggler({ variant = 'compact', className = '' }:
       {open && (
         <div
           role="menu"
-          className="absolute top-full right-0 mt-2 min-w-[10rem] py-1 bg-surface border border-border-light rounded-xl shadow-xl z-50"
+          className="absolute top-full z-50 mt-2 min-w-[10rem] max-w-[min(100vw-1.5rem,20rem)] py-1 bg-surface border border-border-light rounded-xl shadow-xl start-0 end-auto rtl:end-0 rtl:start-auto lg:end-0 lg:start-auto rtl:lg:start-0 rtl:lg:end-auto"
         >
           {localeOptions.map(({ locale, label, flag }) => (
               <button
