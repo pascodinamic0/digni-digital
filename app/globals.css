@@ -370,6 +370,24 @@ html:not([data-theme="light"]) footer#contact input#footer-newsletter-email:-web
   50% { background-position: 100% center; }
 }
 
+/* Client logos: edge fade via mask so logos aren’t covered by opaque gradient overlays */
+.client-logos-marquee-frame {
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
+}
+
 /* Gradient mesh background */
 .bg-gradient-mesh {
   background:
