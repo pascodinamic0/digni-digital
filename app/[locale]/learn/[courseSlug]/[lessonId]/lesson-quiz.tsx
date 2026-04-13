@@ -111,7 +111,7 @@ export function LessonQuiz({
 
         {result && (
           <p className={`text-sm font-medium ${result.passed ? 'text-success' : 'text-amber-400'}`}>
-            Score: {result.scorePercent}%. {result.passed ? 'Passed.' : 'Not passed — review the material and try again.'}
+            Score: {result.scorePercent}%. {result.passed ? 'Passed.' : 'Not passed, review the material and try again.'}
           </p>
         )}
 

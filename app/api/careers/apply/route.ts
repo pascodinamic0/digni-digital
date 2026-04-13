@@ -177,7 +177,7 @@ export async function POST(request: Request) {
       from: `Digni Digital <${FROM_EMAIL}>`,
       to: [TO_EMAIL],
       replyTo: email,
-      subject: `Careers application: ${roleLabel} — ${fullName}`,
+      subject: `Careers application: ${roleLabel} · ${fullName}`,
       html,
       attachments,
     })

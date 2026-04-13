@@ -138,7 +138,7 @@ export default function AffiliatePage({ params, searchParams }: AffiliatePagePro
       price: 'Custom pricing',
       commission: '10% of client-paid project value',
       target: 'Businesses with unique challenges',
-      description: 'Agentic Softwares—AI-native software that perceives, reasons, and acts autonomously.',
+      description: 'Agentic Softwares, AI-native software that perceives, reasons, and acts autonomously.',
       icon: '⚙️',
       color: 'info',
       link: '/agentic-softwares'
@@ -222,11 +222,11 @@ export default function AffiliatePage({ params, searchParams }: AffiliatePagePro
     {
       question: 'When and how do I get paid?',
       answer:
-        'You earn commission once per qualifying sale—when your referral completes payment on an eligible offer. We pay by bank transfer or PayPal once the sale is confirmed; there\'s no minimum payout threshold.'
+        'You earn commission once per qualifying sale, when your referral completes payment on an eligible offer. We pay by bank transfer or PayPal once the sale is confirmed; there\'s no minimum payout threshold.'
     },
     {
       question: 'What kind of content should I create?',
-      answer: 'Authentic UGC works best — product demos, before/after results, problem-solution stories, and honest reviews. We provide content guidelines and scripts to help you get started.'
+      answer: 'Authentic UGC works best, product demos, before/after results, problem-solution stories, and honest reviews. We provide content guidelines and scripts to help you get started.'
     },
     {
       question: 'Do I need a large following to join?',
@@ -333,7 +333,7 @@ export default function AffiliatePage({ params, searchParams }: AffiliatePagePro
             </h2>
             <p className="text-muted text-lg max-w-3xl mx-auto leading-relaxed">
               We believe technology should serve humanity. When you partner with us, 
-              you're not just earning commissions — you're helping democratize access 
+              you're not just earning commissions, you're helping democratize access 
               to opportunity for businesses and students who need it most.
             </p>
           </div>
@@ -391,7 +391,7 @@ export default function AffiliatePage({ params, searchParams }: AffiliatePagePro
               <span className="gradient-text">Start Earning</span>
             </h2>
             <p className="text-muted text-lg max-w-3xl mx-auto">
-              From application to your first commission — here's exactly how the process works.
+              From application to your first commission, here's exactly how the process works.
             </p>
           </div>
 
@@ -858,7 +858,7 @@ export default function AffiliatePage({ params, searchParams }: AffiliatePagePro
             </h2>
             <p className="text-muted text-lg mb-8 max-w-2xl mx-auto">
               Join our affiliate program and help businesses and students access the technology 
-              they need to thrive — while earning competitive commissions.
+              they need to thrive, while earning competitive commissions.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a

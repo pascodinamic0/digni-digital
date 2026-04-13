@@ -30,7 +30,7 @@ const inputBase =
 
 function welcomeMessage(name: string) {
   const first = name.trim().split(/\s+/)[0] || 'there'
-  return `Thanks, ${first}. Tell us what you need—we reply by email, usually within one business day.`
+  return `Thanks, ${first}. Tell us what you need, we reply by email, usually within one business day.`
 }
 
 function BotAvatar({ className }: { className?: string }) {
@@ -264,7 +264,7 @@ export default function LiveChatWidget() {
                     <div>
                       <p className="text-sm font-medium text-text">Start as a lead</p>
                       <p className="mt-1 text-xs leading-relaxed text-muted">
-                        Share a few details so our team can respond with context—not a generic autoresponder.
+                        Share a few details so our team can respond with context, not a generic autoresponder.
                       </p>
                     </div>
                   </div>

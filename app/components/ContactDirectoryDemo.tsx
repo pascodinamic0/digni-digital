@@ -260,7 +260,7 @@ export default function ContactDirectoryDemo() {
                       {row.tag ? (
                         <span className="text-xs px-2 py-0.5 rounded-full border border-border bg-surface/50">{row.tag}</span>
                       ) : (
-                        <span className="text-muted">—</span>
+                        <span className="text-muted">, </span>
                       )}
                     </td>
                   </motion.tr>

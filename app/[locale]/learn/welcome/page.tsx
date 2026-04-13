@@ -45,7 +45,7 @@ export default async function LearnWelcomePage({ params }: Props) {
     <WelcomeVideoClient
       locale={locale}
       embedUrl={embedUrl}
-      fallbackMessage="Watch a short welcome message, then continue to your course materials. Lessons unlock in order — complete each one to move forward."
+      fallbackMessage="Watch a short welcome message, then continue to your course materials. Lessons unlock in order, complete each one to move forward."
     />
   )
 }

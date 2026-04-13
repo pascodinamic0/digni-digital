@@ -1,6 +1,6 @@
 /**
  * Lightweight cover + title pairs for the Social planner demo only.
- * Sourced from `content/blog/en.ts` articles that define `coverImageUrl` — do not import full blog bodies into client components.
+ * Sourced from `content/blog/en.ts` articles that define `coverImageUrl`, do not import full blog bodies into client components.
  */
 export const calendarDemoCovers: { coverImageUrl: string; title: string }[] = [
   {

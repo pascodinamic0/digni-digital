@@ -336,7 +336,7 @@ export default function CareersApplicationModal({
                       onChange={(e) => setPortfolioFile(e.target.files?.[0] ?? null)}
                       className="w-full text-sm text-muted file:mr-3 file:py-2 file:px-4 file:rounded-lg file:border file:border-border file:bg-background file:text-text"
                     />
-                    <p className="text-xs text-muted mt-1">PDF, images, Word, or ZIP — max {formatMaxMb()}MB each.</p>
+                    <p className="text-xs text-muted mt-1">PDF, images, Word, or ZIP, max {formatMaxMb()}MB each.</p>
                   </div>
 
                   {status === 'error' && errorMsg && (

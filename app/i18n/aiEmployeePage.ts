@@ -1,5 +1,5 @@
 /**
- * AI Employee / ai-receptionist page — full StoryBrand + growth-operator copy.
+ * AI Employee / ai-receptionist page, full StoryBrand + growth-operator copy.
  * Customer = hero; Digni = guide. Keep locales aligned when editing English.
  */
 
@@ -13,7 +13,7 @@ export type AiEmployeePageTranslations = {
     primaryCta: string
     footnote: string
   }
-  /** Mobile app promo strip — pairs with assets in /public/images/Download */
+  /** Mobile app promo strip, pairs with assets in /public/images/Download */
   mobileApp: {
     title: string
     bullet1: string
@@ -122,7 +122,7 @@ export const aiEmployeePageEn: AiEmployeePageTranslations = {
     badge: 'AI Employee Systems',
     titleLine1: 'Stop running growth on memory.',
     titleHighlight: 'Start running it on systems.',
-    hook: 'Premium service businesses · we install and run intake, follow-up, and booking—so nothing depends on who remembered what.',
+    hook: 'Premium service businesses · we install and run intake, follow-up, and booking, so nothing depends on who remembered what.',
     primaryCta: 'Book Your Growth System Audit',
     footnote: 'Limited partnerships · often live in 48h',
   },
@@ -138,7 +138,7 @@ export const aiEmployeePageEn: AiEmployeePageTranslations = {
     playStoreAriaLabel: 'Get it on Google Play',
   },
   noMoreJust: {
-    title: 'What quietly drains revenue — and what replaces it',
+    title: 'What quietly drains revenue, and what replaces it',
     noMoreLabel: 'No more',
     noMoreItems: [
       'Unqualified leads burning your team’s time',
@@ -150,12 +150,12 @@ export const aiEmployeePageEn: AiEmployeePageTranslations = {
     ],
     justLabel: 'Just',
     justItems: [
-      'Qualified conversations — your team’s time stays on real buyers',
-      'One connected system — a single operating picture you can trust',
-      'Follow-up that runs automatically — no more “I’ll remember tomorrow”',
-      'First-response speed that keeps you in the race — and on-brand',
-      'One thread across channels — deals don’t die in the handoff',
-      'Fewer no-shows and ghosting — reminders and recovery built in',
+      'Qualified conversations, your team’s time stays on real buyers',
+      'One connected system, a single operating picture you can trust',
+      'Follow-up that runs automatically, no more “I’ll remember tomorrow”',
+      'First-response speed that keeps you in the race, and on-brand',
+      'One thread across channels, deals don’t die in the handoff',
+      'Fewer no-shows and ghosting, reminders and recovery built in',
     ],
   },
   problem: {
@@ -163,7 +163,7 @@ export const aiEmployeePageEn: AiEmployeePageTranslations = {
     title: 'Growth isn’t failing in the ad account.',
     titleHighlight: 'It’s failing after the click.',
     subtitle:
-      'When pipelines live in inboxes, sticky notes, and tribal knowledge, you get leakage — even with strong positioning. The enemy isn’t “bad leads.” It’s a system that still depends on people being available 24/7.',
+      'When pipelines live in inboxes, sticky notes, and tribal knowledge, you get leakage, even with strong positioning. The enemy isn’t “bad leads.” It’s a system that still depends on people being available 24/7.',
     stats: [
       {
         value: '40%',
@@ -173,7 +173,7 @@ export const aiEmployeePageEn: AiEmployeePageTranslations = {
       {
         value: '78%',
         label: 'buy from whoever responds first',
-        hint: 'Speed isn’t a nice-to-have — it’s the scoreboard.',
+        hint: 'Speed isn’t a nice-to-have, it’s the scoreboard.',
       },
       {
         value: '5 min',
@@ -188,7 +188,7 @@ export const aiEmployeePageEn: AiEmployeePageTranslations = {
       },
       {
         title: 'Context dies in handoffs',
-        body: 'WhatsApp here. Email there. Nobody sees the full story — so trust never compounds.',
+        body: 'WhatsApp here. Email there. Nobody sees the full story, so trust never compounds.',
       },
       {
         title: 'Follow-up that doesn’t run',
@@ -197,7 +197,7 @@ export const aiEmployeePageEn: AiEmployeePageTranslations = {
     ],
     closing: {
       title: 'The winners run systems. The rest run on hustle.',
-      subtitle: 'We install and run the layer that doesn’t forget — one partnership per market when we commit.',
+      subtitle: 'We install and run the layer that doesn’t forget, one partnership per market when we commit.',
     },
   },
   traditionalFails: {
@@ -207,11 +207,11 @@ export const aiEmployeePageEn: AiEmployeePageTranslations = {
     items: [
       {
         title: 'Humans as the routing layer',
-        body: 'One inbox. One phone. Voicemail after hours. Scale becomes headcount — and headcount becomes variance.',
+        body: 'One inbox. One phone. Voicemail after hours. Scale becomes headcount, and headcount becomes variance.',
       },
       {
         title: 'Generic answering services',
-        body: 'Messages get taken, not moved. Nothing qualifies, books, or nurtures — so pipeline stays thin.',
+        body: 'Messages get taken, not moved. Nothing qualifies, books, or nurtures, so pipeline stays thin.',
       },
       {
         title: 'Chatbots without teeth',
@@ -223,7 +223,7 @@ export const aiEmployeePageEn: AiEmployeePageTranslations = {
       },
       {
         title: 'Manual follow-up culture',
-        body: 'Every reminder is a person. When someone is sick, busy, or new — deals stall.',
+        body: 'Every reminder is a person. When someone is sick, busy, or new, deals stall.',
       },
       {
         title: 'No single growth operating system',
@@ -231,22 +231,22 @@ export const aiEmployeePageEn: AiEmployeePageTranslations = {
       },
     ],
     closing:
-      'One intelligent system — your voice, your rules — built to keep clients longer, convert more leads, and scale with confidence.',
+      'One intelligent system, your voice, your rules, built to keep clients longer, convert more leads, and scale with confidence.',
   },
   capabilities: {
     badge: 'The operating layer',
     title: 'Six capabilities.',
     titleHighlight: 'One growth system.',
     subtitle:
-      'Tailored for service businesses seeking growth without chaos — systematizing the departments that touch revenue: capture, qualify, book, follow up, and retain.',
+      'Tailored for service businesses seeking growth without chaos, systematizing the departments that touch revenue: capture, qualify, book, follow up, and retain.',
     items: [
       {
         title: 'Instant response',
-        body: 'Every lead gets a fast, on-brand reply — so you stop donating wins to silence.',
+        body: 'Every lead gets a fast, on-brand reply, so you stop donating wins to silence.',
       },
       {
         title: 'Smart qualification',
-        body: 'The right questions so only serious buyers reach your calendar — fewer tire-kickers, more conversations that close.',
+        body: 'The right questions so only serious buyers reach your calendar, fewer tire-kickers, more conversations that close.',
       },
       {
         title: 'Auto booking',
@@ -254,15 +254,15 @@ export const aiEmployeePageEn: AiEmployeePageTranslations = {
       },
       {
         title: 'Follow-up that runs',
-        body: 'Persistent, polite, consistent — until they book or opt out. No more “I forgot.”',
+        body: 'Persistent, polite, consistent, until they book or opt out. No more “I forgot.”',
       },
       {
         title: 'Multi-channel, one brain',
-        body: 'Calls, WhatsApp, email — one inbox, one truth, one next step.',
+        body: 'Calls, WhatsApp, email, one inbox, one truth, one next step.',
       },
       {
         title: 'Revenue recovery',
-        body: 'Wake cold interest, tighten no-shows, and nudge toward repeat revenue — not one-off wins.',
+        body: 'Wake cold interest, tighten no-shows, and nudge toward repeat revenue, not one-off wins.',
       },
     ],
   },
@@ -270,7 +270,7 @@ export const aiEmployeePageEn: AiEmployeePageTranslations = {
     badge: 'Time to value',
     title: 'Live in 48 hours',
     subtitle:
-      'We’re not here to hand you another tool to babysit. We implement the workflow, connect the channels, and run the system with you — so you stop relying on staff memory.',
+      'We’re not here to hand you another tool to babysit. We implement the workflow, connect the channels, and run the system with you, so you stop relying on staff memory.',
     statBig: '48h',
     statSmall: 'From decision to operational',
     cta: 'Book Your Growth System Audit',
@@ -285,43 +285,43 @@ export const aiEmployeePageEn: AiEmployeePageTranslations = {
       'You run paid acquisition (or plan to) and need intake to keep pace',
       'You sell through appointments, consults, or high-trust conversations',
       'Growth feels chaotic: tools, people, and follow-up don’t line up',
-      'You want scaling that feels calm — not louder, busier, riskier',
-      'You’re willing to partner on a system — not buy shelf-ware',
+      'You want scaling that feels calm, not louder, busier, riskier',
+      'You’re willing to partner on a system, not buy shelf-ware',
     ],
     notHeading: 'Not the right fit',
     notItems: [
       'You want ad creative strategy without fixing operations',
-      'You’re optimizing for the lowest price — not outcomes and retention',
+      'You’re optimizing for the lowest price, not outcomes and retention',
       'There’s no sales conversation or appointment in your buyer journey',
       'Response time isn’t a bottleneck for revenue',
-      'You only want a login — not implementation and partnership',
+      'You only want a login, not implementation and partnership',
       'You’re not ready to change how work flows between team and client',
     ],
   },
   caseStudy: {
     label: 'Proof',
-    title: 'From missed intake to a system that doesn’t sleep — fast.',
+    title: 'From missed intake to a system that doesn’t sleep, fast.',
     company: 'Regional Medical Center',
     industry: 'Healthcare',
     contextLabel: 'Context',
     challengeLabel: 'Challenge',
     solutionLabel: 'Solution',
-    context: '$15k/month in ads — but intake couldn’t keep up with volume or speed.',
+    context: '$15k/month in ads, but intake couldn’t keep up with volume or speed.',
     challenge: 'Roughly 40% of leads weren’t getting a timely response. Pipeline cooled. Revenue leaked.',
     solution:
-      'A done-with-you intelligent system live in 18 hours — answering, qualifying, booking, and following up with a single operating view.',
+      'A done-with-you intelligent system live in 18 hours, answering, qualifying, booking, and following up with a single operating view.',
     outcomesHeading: 'Outcomes',
     results: [
-      { metric: '100%', description: 'Every lead answered — fast — with a consistent next step.' },
+      { metric: '100%', description: 'Every lead answered, fast, with a consistent next step.' },
       { metric: 'Zero', description: 'No more “we’ll call them back” gaps in the first mile.' },
-      { metric: '18h', description: 'From decision to live — so results start immediately.' },
+      { metric: '18h', description: 'From decision to live, so results start immediately.' },
       { metric: '85%', description: 'Stronger conversion when response time matches buyer urgency.' },
     ],
   },
   pricing: {
     title: 'Transparent. Calm. No surprises.',
     subtitle:
-      'Everything included in a partnership designed to pay for itself when your acquisition is real — priced in the ballpark of winning one good client for the full system.',
+      'Everything included in a partnership designed to pay for itself when your acquisition is real, priced in the ballpark of winning one good client for the full system.',
     planName: 'Done-with-you growth system',
     limitedLabel: 'Limited partnership slots (one per market when we commit)',
     setupFee: '$2,000',
@@ -337,9 +337,9 @@ export const aiEmployeePageEn: AiEmployeePageTranslations = {
     title: 'Stop betting growth on',
     titleHighlight: 'staff memory.',
     subtitle:
-      'We have limited partnership slots left. Book your Growth System Audit — we’ll map bottlenecks, show what an intelligent system replaces first, and confirm fit before you move forward.',
+      'We have limited partnership slots left. Book your Growth System Audit, we’ll map bottlenecks, show what an intelligent system replaces first, and confirm fit before you move forward.',
     primaryCta: 'Book Your Growth System Audit',
-    bullet1: 'One clear next step — the audit',
+    bullet1: 'One clear next step, the audit',
     bullet2: 'Fast, serious conversation (about 30 minutes)',
     bullet3: 'We only partner where we can drive measurable lift',
   },
@@ -350,7 +350,7 @@ export const aiEmployeePageFr: AiEmployeePageTranslations = {
     badge: 'Systèmes employé IA',
     titleLine1: 'Ne laissez plus la croissance à la mémoire.',
     titleHighlight: 'Faites-la tourner sur des systèmes.',
-    hook: 'Entreprises de services premium · nous installons et exploitons prise en charge, relances et réservation — sans dépendre de qui se souvient de quoi.',
+    hook: 'Entreprises de services premium · nous installons et exploitons prise en charge, relances et réservation, sans dépendre de qui se souvient de quoi.',
     primaryCta: 'Réserver votre audit Growth System',
     footnote: 'Partenariats limités · souvent en ligne en 48h',
   },
@@ -366,7 +366,7 @@ export const aiEmployeePageFr: AiEmployeePageTranslations = {
     playStoreAriaLabel: 'Disponible sur Google Play',
   },
   noMoreJust: {
-    title: 'Ce qui fait fuir le chiffre — et ce qui le remplace',
+    title: 'Ce qui fait fuir le chiffre, et ce qui le remplace',
     noMoreLabel: 'Fini',
     noMoreItems: [
       'Les leads non qualifiés qui brûlent le temps de l’équipe',
@@ -378,12 +378,12 @@ export const aiEmployeePageFr: AiEmployeePageTranslations = {
     ],
     justLabel: 'À la place',
     justItems: [
-      'Des conversations qualifiées — le temps de l’équipe va aux vrais acheteurs',
-      'Un système connecté — une vue d’ensemble fiable',
-      'Des relances automatiques — fini le « je rappelle demain »',
-      'Une première réponse rapide — vous restez dans la course, à votre ton',
-      'Un fil conducteur entre canaux — les deals ne se perdent plus au passage',
-      'Moins de lapins et de silences — rappels et relance intégrés',
+      'Des conversations qualifiées, le temps de l’équipe va aux vrais acheteurs',
+      'Un système connecté, une vue d’ensemble fiable',
+      'Des relances automatiques, fini le « je rappelle demain »',
+      'Une première réponse rapide, vous restez dans la course, à votre ton',
+      'Un fil conducteur entre canaux, les deals ne se perdent plus au passage',
+      'Moins de lapins et de silences, rappels et relance intégrés',
     ],
   },
   problem: {
@@ -391,7 +391,7 @@ export const aiEmployeePageFr: AiEmployeePageTranslations = {
     title: 'La croissance ne casse pas dans la pub.',
     titleHighlight: 'Elle casse après le clic.',
     subtitle:
-      'Quand le pipeline vit dans les boîtes mail, les post-it et le savoir tribal, il y a des fuites — même avec un bon positionnement. L’ennemi n’est pas « les mauvais leads ». C’est un système qui dépend encore de la disponibilité humaine 24/7.',
+      'Quand le pipeline vit dans les boîtes mail, les post-it et le savoir tribal, il y a des fuites, même avec un bon positionnement. L’ennemi n’est pas « les mauvais leads ». C’est un système qui dépend encore de la disponibilité humaine 24/7.',
     stats: [
       {
         value: '40%',
@@ -401,7 +401,7 @@ export const aiEmployeePageFr: AiEmployeePageTranslations = {
       {
         value: '78%',
         label: 'achètent chez celui qui répond en premier',
-        hint: 'La vitesse n’est pas un bonus — c’est le classement.',
+        hint: 'La vitesse n’est pas un bonus, c’est le classement.',
       },
       {
         value: '5 min',
@@ -416,7 +416,7 @@ export const aiEmployeePageFr: AiEmployeePageTranslations = {
       },
       {
         title: 'Le contexte se perd',
-        body: 'WhatsApp ici. Mail là. Personne ne voit l’histoire complète — la confiance ne se construit pas.',
+        body: 'WhatsApp ici. Mail là. Personne ne voit l’histoire complète, la confiance ne se construit pas.',
       },
       {
         title: 'Relances qui n’existent pas',
@@ -425,7 +425,7 @@ export const aiEmployeePageFr: AiEmployeePageTranslations = {
     ],
     closing: {
       title: 'Les gagnants ont des systèmes. Les autres courent après le hustle.',
-      subtitle: 'Nous installons la couche qui n’oublie pas — un partenariat par marché quand on s’engage.',
+      subtitle: 'Nous installons la couche qui n’oublie pas, un partenariat par marché quand on s’engage.',
     },
   },
   traditionalFails: {
@@ -435,7 +435,7 @@ export const aiEmployeePageFr: AiEmployeePageTranslations = {
     items: [
       {
         title: 'L’humain comme routeur',
-        body: 'Une ligne. Un répondeur le soir. Scaler = plus de têtes — et plus de variance.',
+        body: 'Une ligne. Un répondeur le soir. Scaler = plus de têtes, et plus de variance.',
       },
       {
         title: 'Standard téléphonique générique',
@@ -451,7 +451,7 @@ export const aiEmployeePageFr: AiEmployeePageTranslations = {
       },
       {
         title: 'Culture de relance manuelle',
-        body: 'Chaque rappel est une personne. Malade, occupé, nouveau — les deals calent.',
+        body: 'Chaque rappel est une personne. Malade, occupé, nouveau, les deals calent.',
       },
       {
         title: 'Pas de système d’exploitation de la croissance',
@@ -459,18 +459,18 @@ export const aiEmployeePageFr: AiEmployeePageTranslations = {
       },
     ],
     closing:
-      'Un système intelligent — votre voix, vos règles — pour garder les clients plus longtemps, convertir plus de leads et scaler sereinement.',
+      'Un système intelligent, votre voix, vos règles, pour garder les clients plus longtemps, convertir plus de leads et scaler sereinement.',
   },
   capabilities: {
     badge: 'La couche opérationnelle',
     title: 'Six capacités.',
     titleHighlight: 'Un système de croissance.',
     subtitle:
-      'Pensé pour les services haut de gamme qui veulent croître sans chaos — en systématisant tout ce qui touche au revenu : capter, qualifier, booker, relancer, fidéliser.',
+      'Pensé pour les services haut de gamme qui veulent croître sans chaos, en systématisant tout ce qui touche au revenu : capter, qualifier, booker, relancer, fidéliser.',
     items: [
       {
         title: 'Réponse instantanée',
-        body: 'Chaque lead reçoit une réponse rapide et à votre ton — vous arrêtez de offrir la victoire au silence.',
+        body: 'Chaque lead reçoit une réponse rapide et à votre ton, vous arrêtez de offrir la victoire au silence.',
       },
       {
         title: 'Qualification intelligente',
@@ -482,15 +482,15 @@ export const aiEmployeePageFr: AiEmployeePageTranslations = {
       },
       {
         title: 'Relances qui tournent',
-        body: 'Persistantes, polies, cohérentes — jusqu’à réservation ou refus. Plus de « j’ai oublié ».',
+        body: 'Persistantes, polies, cohérentes, jusqu’à réservation ou refus. Plus de « j’ai oublié ».',
       },
       {
         title: 'Multi-canal, un cerveau',
-        body: 'Appels, WhatsApp, mail — une boîte, une vérité, une prochaine étape.',
+        body: 'Appels, WhatsApp, mail, une boîte, une vérité, une prochaine étape.',
       },
       {
         title: 'Récupération de revenu',
-        body: 'Réchauffer l’intérêt froid, réduire les lapins, pousser vers la récurrence — pas le one-shot.',
+        body: 'Réchauffer l’intérêt froid, réduire les lapins, pousser vers la récurrence, pas le one-shot.',
       },
     ],
   },
@@ -498,7 +498,7 @@ export const aiEmployeePageFr: AiEmployeePageTranslations = {
     badge: 'Délai jusqu’à la valeur',
     title: 'En ligne en 48 h',
     subtitle:
-      'Nous ne vous donnons pas un outil de plus à surveiller. Nous implémentons le flux, connectons les canaux et faisons tourner le système avec vous — pour ne plus dépendre de la mémoire de l’équipe.',
+      'Nous ne vous donnons pas un outil de plus à surveiller. Nous implémentons le flux, connectons les canaux et faisons tourner le système avec vous, pour ne plus dépendre de la mémoire de l’équipe.',
     statBig: '48 h',
     statSmall: 'De la décision à l’opérationnel',
     cta: 'Réserver votre audit Growth System',
@@ -513,43 +513,43 @@ export const aiEmployeePageFr: AiEmployeePageTranslations = {
       'Vous faites de l’acquisition payante (ou prévoyez) et l’intake doit suivre',
       'Vous vendez par rendez-vous, consults ou conversations à forte confiance',
       'La croissance est chaotique : outils, gens et relances ne s’alignent pas',
-      'Vous voulez scaler calmement — pas plus fort, plus chargé, plus risqué',
-      'Vous acceptez un partenariat sur un système — pas un logiciel en rayon',
+      'Vous voulez scaler calmement, pas plus fort, plus chargé, plus risqué',
+      'Vous acceptez un partenariat sur un système, pas un logiciel en rayon',
     ],
     notHeading: 'Moins adapté si',
     notItems: [
       'Vous voulez de la créa pub sans refondre les opérations',
-      'Vous cherchez le prix le plus bas — pas les résultats et la rétention',
+      'Vous cherchez le prix le plus bas, pas les résultats et la rétention',
       'Aucune conversation de vente ou de rendez-vous dans votre parcours',
       'Le délai de réponse n’est pas un frein au revenu',
-      'Vous voulez seulement un login — pas l’implémentation et le partenariat',
+      'Vous voulez seulement un login, pas l’implémentation et le partenariat',
       'Vous n’êtes pas prêt à changer le flux travail / client',
     ],
   },
   caseStudy: {
     label: 'Preuve',
-    title: 'D’une prise en charge ratée à un système qui ne dort pas — vite.',
+    title: 'D’une prise en charge ratée à un système qui ne dort pas, vite.',
     company: 'Centre médical régional',
     industry: 'Santé',
     contextLabel: 'Contexte',
     challengeLabel: 'Défi',
     solutionLabel: 'Solution',
-    context: '15 k$/mois de pub — mais l’intake ne suivait ni le volume ni la vitesse.',
+    context: '15 k$/mois de pub, mais l’intake ne suivait ni le volume ni la vitesse.',
     challenge: 'Environ 40 % des leads sans réponse rapide. Pipeline tiède. Revenu qui fuit.',
     solution:
-      'Système intelligent clé en main en 18 h — réponse, qualification, booking et relances avec une vue unique.',
+      'Système intelligent clé en main en 18 h, réponse, qualification, booking et relances avec une vue unique.',
     outcomesHeading: 'Résultats',
     results: [
-      { metric: '100 %', description: 'Chaque lead traité vite — avec une prochaine étape claire.' },
+      { metric: '100 %', description: 'Chaque lead traité vite, avec une prochaine étape claire.' },
       { metric: 'Zéro', description: 'Plus de trous du type « on les rappellera » au début du tunnel.' },
-      { metric: '18 h', description: 'De la décision au live — les résultats commencent tout de suite.' },
+      { metric: '18 h', description: 'De la décision au live, les résultats commencent tout de suite.' },
       { metric: '85 %', description: 'Meilleure conversion quand le délai suit l’urgence de l’acheteur.' },
     ],
   },
   pricing: {
     title: 'Transparent. Serein. Sans surprise.',
     subtitle:
-      'Tout inclus dans un partenariat fait pour se payer quand l’acquisition est réelle — un investissement du même ordre que gagner un bon client pour tout le système.',
+      'Tout inclus dans un partenariat fait pour se payer quand l’acquisition est réelle, un investissement du même ordre que gagner un bon client pour tout le système.',
     planName: 'Système de croissance clé en main',
     limitedLabel: 'Places limitées (un partenariat par marché quand on s’engage)',
     setupFee: '2 000 $',
@@ -565,9 +565,9 @@ export const aiEmployeePageFr: AiEmployeePageTranslations = {
     title: 'Arrêtez de parier la croissance sur',
     titleHighlight: 'la mémoire des équipes.',
     subtitle:
-      'Il reste peu de places de partenariat. Réservez votre audit Growth System — nous cartographions les goulots, montrons ce qu’un système intelligent remplace en premier, et validons le fit avant d’avancer.',
+      'Il reste peu de places de partenariat. Réservez votre audit Growth System, nous cartographions les goulots, montrons ce qu’un système intelligent remplace en premier, et validons le fit avant d’avancer.',
     primaryCta: 'Réserver votre audit Growth System',
-    bullet1: 'Une prochaine étape claire — l’audit',
+    bullet1: 'Une prochaine étape claire, l’audit',
     bullet2: 'Échange sérieux et rapide (environ 30 minutes)',
     bullet3: 'Nous ne partenons que là où nous pouvons un gain mesurable',
   },
@@ -578,7 +578,7 @@ export const aiEmployeePageDe: AiEmployeePageTranslations = {
     badge: 'KI-Mitarbeiter-Systeme',
     titleLine1: 'Lassen Sie Wachstum nicht von Erinnerungen abhängen.',
     titleHighlight: 'Lassen Sie es von Systemen laufen.',
-    hook: 'Premium-Dienstleister · wir implementieren und betreiben Annahme, Nachfass und Buchung — ohne „wer erinnert sich an was“.',
+    hook: 'Premium-Dienstleister · wir implementieren und betreiben Annahme, Nachfass und Buchung, ohne „wer erinnert sich an was“.',
     primaryCta: 'Growth-System-Audit buchen',
     footnote: 'Begrenzte Partnerschaften · oft live in 48h',
   },
@@ -594,7 +594,7 @@ export const aiEmployeePageDe: AiEmployeePageTranslations = {
     playStoreAriaLabel: 'Bei Google Play laden',
   },
   noMoreJust: {
-    title: 'Was Umsatz leise frisst — und was es ersetzt',
+    title: 'Was Umsatz leise frisst, und was es ersetzt',
     noMoreLabel: 'Schluss mit',
     noMoreItems: [
       'Unqualifizierten Leads, die Ihr Team Zeit kosten',
@@ -606,12 +606,12 @@ export const aiEmployeePageDe: AiEmployeePageTranslations = {
     ],
     justLabel: 'Stattdessen',
     justItems: [
-      'Qualifizierte Gespräche — die Zeit des Teams geht an echte Käufer',
-      'Ein verbundenes System — ein verlässliches Gesamtbild',
-      'Automatisches Nachfassen — Schluss mit „morgen erinnere ich mich“',
-      'Schnelle Erstantwort — Sie bleiben im Rennen, markengerecht',
-      'Ein roter Faden über Kanäle — Deals gehen nicht in der Übergabe verloren',
-      'Weniger No-Shows und Funkstille — Erinnerungen und Recovery eingebaut',
+      'Qualifizierte Gespräche, die Zeit des Teams geht an echte Käufer',
+      'Ein verbundenes System, ein verlässliches Gesamtbild',
+      'Automatisches Nachfassen, Schluss mit „morgen erinnere ich mich“',
+      'Schnelle Erstantwort, Sie bleiben im Rennen, markengerecht',
+      'Ein roter Faden über Kanäle, Deals gehen nicht in der Übergabe verloren',
+      'Weniger No-Shows und Funkstille, Erinnerungen und Recovery eingebaut',
     ],
   },
   problem: {
@@ -619,7 +619,7 @@ export const aiEmployeePageDe: AiEmployeePageTranslations = {
     title: 'Wachstum scheitert nicht am Werbekonto.',
     titleHighlight: 'Es scheitert nach dem Klick.',
     subtitle:
-      'Wenn Pipelines in Postfächern, Zetteln und Kopfwissen leben, gibt es Lecks — auch mit gutem Positioning. Der Feind sind nicht „schlechte Leads“. Es ist ein System, das noch von 24/7-Verfügbarkeit abhängt.',
+      'Wenn Pipelines in Postfächern, Zetteln und Kopfwissen leben, gibt es Lecks, auch mit gutem Positioning. Der Feind sind nicht „schlechte Leads“. Es ist ein System, das noch von 24/7-Verfügbarkeit abhängt.',
     stats: [
       {
         value: '40%',
@@ -629,7 +629,7 @@ export const aiEmployeePageDe: AiEmployeePageTranslations = {
       {
         value: '78%',
         label: 'kaufen beim Schnellsten',
-        hint: 'Geschwindigkeit ist kein Nice-to-have — sie ist die Punktzahl.',
+        hint: 'Geschwindigkeit ist kein Nice-to-have, sie ist die Punktzahl.',
       },
       {
         value: '5 Min',
@@ -644,7 +644,7 @@ export const aiEmployeePageDe: AiEmployeePageTranslations = {
       },
       {
         title: 'Kontext geht verloren',
-        body: 'WhatsApp hier. Mail da. Niemand sieht die ganze Story — Vertrauen baut sich nicht auf.',
+        body: 'WhatsApp hier. Mail da. Niemand sieht die ganze Story, Vertrauen baut sich nicht auf.',
       },
       {
         title: 'Nachfassen, das nicht läuft',
@@ -653,7 +653,7 @@ export const aiEmployeePageDe: AiEmployeePageTranslations = {
     ],
     closing: {
       title: 'Gewinner haben Systeme. Der Rest lebt von Hustle.',
-      subtitle: 'Wir installieren die Schicht, die nicht vergisst — ein Partner pro Markt, wenn wir uns committen.',
+      subtitle: 'Wir installieren die Schicht, die nicht vergisst, ein Partner pro Markt, wenn wir uns committen.',
     },
   },
   traditionalFails: {
@@ -663,7 +663,7 @@ export const aiEmployeePageDe: AiEmployeePageTranslations = {
     items: [
       {
         title: 'Menschen als Router',
-        body: 'Eine Leitung. Mailbox nach Feierabend. Skalieren = mehr Köpfe — und mehr Streuung.',
+        body: 'Eine Leitung. Mailbox nach Feierabend. Skalieren = mehr Köpfe, und mehr Streuung.',
       },
       {
         title: 'Generische Anrufdienste',
@@ -679,7 +679,7 @@ export const aiEmployeePageDe: AiEmployeePageTranslations = {
       },
       {
         title: 'Manuelle Follow-up-Kultur',
-        body: 'Jede Erinnerung ist eine Person. Krank, beschäftigt, neu — Deals stocken.',
+        body: 'Jede Erinnerung ist eine Person. Krank, beschäftigt, neu, Deals stocken.',
       },
       {
         title: 'Kein einheitliches Wachstums-OS',
@@ -687,22 +687,22 @@ export const aiEmployeePageDe: AiEmployeePageTranslations = {
       },
     ],
     closing:
-      'Ein intelligentes System — Ihre Stimme, Ihre Regeln — damit Kunden länger bleiben, mehr Leads werden und Sie sicher skalieren.',
+      'Ein intelligentes System, Ihre Stimme, Ihre Regeln, damit Kunden länger bleiben, mehr Leads werden und Sie sicher skalieren.',
   },
   capabilities: {
     badge: 'Die Betriebsschicht',
     title: 'Sechs Fähigkeiten.',
     titleHighlight: 'Ein Wachstumssystem.',
     subtitle:
-      'Für anspruchsvolle Dienstleister, die wachsen wollen ohne Chaos — systematisiert über alle Bereiche, die Umsatz berühren: Erfassen, qualifizieren, buchen, nachfassen, binden.',
+      'Für anspruchsvolle Dienstleister, die wachsen wollen ohne Chaos, systematisiert über alle Bereiche, die Umsatz berühren: Erfassen, qualifizieren, buchen, nachfassen, binden.',
     items: [
       {
         title: 'Sofortige Antwort',
-        body: 'Jeder Lead bekommt schnell eine markengerechte Antwort — Sie verschenken keine Siege an Stille.',
+        body: 'Jeder Lead bekommt schnell eine markengerechte Antwort, Sie verschenken keine Siege an Stille.',
       },
       {
         title: 'Smarte Qualifikation',
-        body: 'Die richtigen Fragen — nur ernsthafte Käufer landen in Ihrem Kalender.',
+        body: 'Die richtigen Fragen, nur ernsthafte Käufer landen in Ihrem Kalender.',
       },
       {
         title: 'Auto-Booking',
@@ -710,11 +710,11 @@ export const aiEmployeePageDe: AiEmployeePageTranslations = {
       },
       {
         title: 'Nachfassen, das läuft',
-        body: 'Beharrlich, höflich, konsistent — bis Buchung oder Opt-out. Schluss mit „hätte ich mal“.',
+        body: 'Beharrlich, höflich, konsistent, bis Buchung oder Opt-out. Schluss mit „hätte ich mal“.',
       },
       {
         title: 'Multi-Kanal, ein Gehirn',
-        body: 'Anrufe, WhatsApp, E-Mail — ein Posteingang, eine Wahrheit, ein nächster Schritt.',
+        body: 'Anrufe, WhatsApp, E-Mail, ein Posteingang, eine Wahrheit, ein nächster Schritt.',
       },
       {
         title: 'Umsatz-Rückgewinnung',
@@ -726,7 +726,7 @@ export const aiEmployeePageDe: AiEmployeePageTranslations = {
     badge: 'Zeit bis zum Nutzen',
     title: 'Live in 48 Stunden',
     subtitle:
-      'Wir geben Ihnen kein weiteres Tool zum Hüten. Wir implementieren den Flow, verbinden Kanäle und betreiben das System mit Ihnen — damit Sie nicht von Gedächtnis im Team abhängen.',
+      'Wir geben Ihnen kein weiteres Tool zum Hüten. Wir implementieren den Flow, verbinden Kanäle und betreiben das System mit Ihnen, damit Sie nicht von Gedächtnis im Team abhängen.',
     statBig: '48h',
     statSmall: 'Von Entscheidung bis Betrieb',
     cta: 'Growth-System-Audit buchen',
@@ -741,43 +741,43 @@ export const aiEmployeePageDe: AiEmployeePageTranslations = {
       'Sie fahren bezahlte Akquise (oder planen) und die Annahme muss mithalten',
       'Sie verkaufen über Termine, Beratungen oder vertrauensintensive Gespräche',
       'Wachstum fühlt sich chaotisch an: Tools, Menschen, Nachfassen passen nicht zusammen',
-      'Sie wollen ruhig skalieren — nicht lauter, busier, riskanter',
-      'Sie wollen ein System-Partnerschaft — kein Regal-Softwarekauf',
+      'Sie wollen ruhig skalieren, nicht lauter, busier, riskanter',
+      'Sie wollen ein System-Partnerschaft, kein Regal-Softwarekauf',
     ],
     notHeading: 'Weniger passend',
     notItems: [
       'Sie wollen Ad-Kreativ ohne Operations zu fixen',
-      'Sie optimieren auf den niedrigsten Preis — nicht auf Ergebnis und Retention',
+      'Sie optimieren auf den niedrigsten Preis, nicht auf Ergebnis und Retention',
       'Kein Vertriebsgespräch oder Termin in Ihrer Buyer Journey',
       'Reaktionszeit ist kein Umsatz-Engpass',
-      'Sie wollen nur Login — nicht Implementierung und Partnerschaft',
+      'Sie wollen nur Login, nicht Implementierung und Partnerschaft',
       'Sie sind nicht bereit, Arbeitsfluss zwischen Team und Kunde zu ändern',
     ],
   },
   caseStudy: {
     label: 'Beweis',
-    title: 'Von verpasster Annahme zu einem System, das nicht schläft — schnell.',
+    title: 'Von verpasster Annahme zu einem System, das nicht schläft, schnell.',
     company: 'Regionales medizinisches Zentrum',
     industry: 'Gesundheit',
     contextLabel: 'Kontext',
     challengeLabel: 'Herausforderung',
     solutionLabel: 'Lösung',
-    context: '15k$/Monat Werbung — aber die Annahme kam weder mit Volumen noch Tempo nach.',
+    context: '15k$/Monat Werbung, aber die Annahme kam weder mit Volumen noch Tempo nach.',
     challenge: 'Etwa 40 % der Leads ohne zeitnahe Antwort. Pipeline kühlte. Umsatz floss ab.',
     solution:
-      'Intelligentes System in 18 Stunden live — antworten, qualifizieren, buchen, nachfassen mit einer Betriebsansicht.',
+      'Intelligentes System in 18 Stunden live, antworten, qualifizieren, buchen, nachfassen mit einer Betriebsansicht.',
     outcomesHeading: 'Ergebnisse',
     results: [
-      { metric: '100%', description: 'Jeder Lead schnell bedient — mit klarem nächsten Schritt.' },
+      { metric: '100%', description: 'Jeder Lead schnell bedient, mit klarem nächsten Schritt.' },
       { metric: 'Null', description: 'Keine „rufen wir zurück“-Lücken mehr am Anfang.' },
-      { metric: '18h', description: 'Von Entscheidung zu live — Ergebnisse starten sofort.' },
+      { metric: '18h', description: 'Von Entscheidung zu live, Ergebnisse starten sofort.' },
       { metric: '85%', description: 'Bessere Conversion, wenn das Tempo zur Dringlichkeit passt.' },
     ],
   },
   pricing: {
     title: 'Transparent. Ruhig. Keine Überraschungen.',
     subtitle:
-      'Alles in einer Partnerschaft, die sich rechnet, wenn Akquise echt ist — in der Größenordnung eines gewonnenen guten Kunden für das ganze System.',
+      'Alles in einer Partnerschaft, die sich rechnet, wenn Akquise echt ist, in der Größenordnung eines gewonnenen guten Kunden für das ganze System.',
     planName: 'Done-with-you Wachstumssystem',
     limitedLabel: 'Begrenzte Partnerschaft (einer pro Markt bei Commitment)',
     setupFee: '2.000 $',
@@ -793,9 +793,9 @@ export const aiEmployeePageDe: AiEmployeePageTranslations = {
     title: 'Hören Sie auf, Wachstum auf',
     titleHighlight: 'Teamgedächtnis zu setzen.',
     subtitle:
-      'Es sind nur noch wenige Partnerschaftsplätze frei. Buchen Sie Ihr Growth-System-Audit — wir kartieren Engpässe, zeigen, was ein intelligentes System zuerst ersetzt, und prüfen den Fit, bevor Sie weitermachen.',
+      'Es sind nur noch wenige Partnerschaftsplätze frei. Buchen Sie Ihr Growth-System-Audit, wir kartieren Engpässe, zeigen, was ein intelligentes System zuerst ersetzt, und prüfen den Fit, bevor Sie weitermachen.',
     primaryCta: 'Growth-System-Audit buchen',
-    bullet1: 'Ein klarer nächster Schritt — das Audit',
+    bullet1: 'Ein klarer nächster Schritt, das Audit',
     bullet2: 'Ernstes, kurzes Gespräch (ca. 30 Minuten)',
     bullet3: 'Wir partnern nur, wo messbarer Hebel möglich ist',
   },
@@ -806,7 +806,7 @@ export const aiEmployeePageEs: AiEmployeePageTranslations = {
     badge: 'Sistemas de empleado IA',
     titleLine1: 'Deje de sostener el crecimiento con la memoria.',
     titleHighlight: 'Hágalo correr sobre sistemas.',
-    hook: 'Negocios de servicios premium · instalamos y operamos captación, seguimiento y reserva — sin depender de quién recordó qué.',
+    hook: 'Negocios de servicios premium · instalamos y operamos captación, seguimiento y reserva, sin depender de quién recordó qué.',
     primaryCta: 'Reservar su auditoría Growth System',
     footnote: 'Alianzas limitadas · en vivo en ~48h',
   },
@@ -822,7 +822,7 @@ export const aiEmployeePageEs: AiEmployeePageTranslations = {
     playStoreAriaLabel: 'Disponible en Google Play',
   },
   noMoreJust: {
-    title: 'Lo que drena ingresos en silencio — y qué lo reemplaza',
+    title: 'Lo que drena ingresos en silencio, y qué lo reemplaza',
     noMoreLabel: 'Se acabó',
     noMoreItems: [
       'Leads no calificados que queman el tiempo del equipo',
@@ -834,12 +834,12 @@ export const aiEmployeePageEs: AiEmployeePageTranslations = {
     ],
     justLabel: 'En su lugar',
     justItems: [
-      'Conversaciones calificadas — el tiempo del equipo va a compradores reales',
-      'Un sistema conectado — una foto operativa en la que puede confiar',
-      'Seguimiento automático — se acabó el «me acuerdo mañana»',
-      'Primera respuesta rápida — sigue en la carrera, con su tono',
-      'Un hilo entre canales — los tratos no mueren en el traspaso',
-      'Menos incomparecencias y silencios — recordatorios y recuperación incluidos',
+      'Conversaciones calificadas, el tiempo del equipo va a compradores reales',
+      'Un sistema conectado, una foto operativa en la que puede confiar',
+      'Seguimiento automático, se acabó el «me acuerdo mañana»',
+      'Primera respuesta rápida, sigue en la carrera, con su tono',
+      'Un hilo entre canales, los tratos no mueren en el traspaso',
+      'Menos incomparecencias y silencios, recordatorios y recuperación incluidos',
     ],
   },
   problem: {
@@ -847,7 +847,7 @@ export const aiEmployeePageEs: AiEmployeePageTranslations = {
     title: 'El crecimiento no falla en los anuncios.',
     titleHighlight: 'Falla después del clic.',
     subtitle:
-      'Cuando el embudo vive en bandejas, notas y conocimiento tribal, hay fugas — incluso con buen posicionamiento. El enemigo no son “malos leads”. Es un sistema que aún depende de que haya gente disponible 24/7.',
+      'Cuando el embudo vive en bandejas, notas y conocimiento tribal, hay fugas, incluso con buen posicionamiento. El enemigo no son “malos leads”. Es un sistema que aún depende de que haya gente disponible 24/7.',
     stats: [
       {
         value: '40%',
@@ -857,7 +857,7 @@ export const aiEmployeePageEs: AiEmployeePageTranslations = {
       {
         value: '78%',
         label: 'compra quien responde primero',
-        hint: 'La velocidad no es un extra — es la tabla de posiciones.',
+        hint: 'La velocidad no es un extra, es la tabla de posiciones.',
       },
       {
         value: '5 min',
@@ -872,7 +872,7 @@ export const aiEmployeePageEs: AiEmployeePageTranslations = {
       },
       {
         title: 'Se pierde el contexto',
-        body: 'WhatsApp aquí. Correo allí. Nadie ve la historia — la confianza no se construye.',
+        body: 'WhatsApp aquí. Correo allí. Nadie ve la historia, la confianza no se construye.',
       },
       {
         title: 'Seguimiento que no existe',
@@ -881,7 +881,7 @@ export const aiEmployeePageEs: AiEmployeePageTranslations = {
     ],
     closing: {
       title: 'Los que ganan tienen sistemas. El resto vive de esfuerzo bruto.',
-      subtitle: 'Instalamos la capa que no olvida — una alianza por mercado cuando nos comprometemos.',
+      subtitle: 'Instalamos la capa que no olvida, una alianza por mercado cuando nos comprometemos.',
     },
   },
   traditionalFails: {
@@ -891,7 +891,7 @@ export const aiEmployeePageEs: AiEmployeePageTranslations = {
     items: [
       {
         title: 'Humanos como enrutador',
-        body: 'Una línea. Buzón fuera de horario. Escalar = más gente — y más varianza.',
+        body: 'Una línea. Buzón fuera de horario. Escalar = más gente, y más varianza.',
       },
       {
         title: 'Contestadores genéricos',
@@ -907,7 +907,7 @@ export const aiEmployeePageEs: AiEmployeePageTranslations = {
       },
       {
         title: 'Cultura de seguimiento manual',
-        body: 'Cada recordatorio es una persona. Enfermo, ocupado, nuevo — los tratos se frenan.',
+        body: 'Cada recordatorio es una persona. Enfermo, ocupado, nuevo, los tratos se frenan.',
       },
       {
         title: 'Sin sistema operativo de crecimiento',
@@ -915,18 +915,18 @@ export const aiEmployeePageEs: AiEmployeePageTranslations = {
       },
     ],
     closing:
-      'Un sistema inteligente — su voz, sus reglas — para retener más clientes, convertir más leads y escalar con confianza.',
+      'Un sistema inteligente, su voz, sus reglas, para retener más clientes, convertir más leads y escalar con confianza.',
   },
   capabilities: {
     badge: 'La capa operativa',
     title: 'Seis capacidades.',
     titleHighlight: 'Un sistema de crecimiento.',
     subtitle:
-      'Para negocios de servicios que buscan crecer sin caos — sistematizando todo lo que toca ingresos: captar, calificar, agendar, seguir y retener.',
+      'Para negocios de servicios que buscan crecer sin caos, sistematizando todo lo que toca ingresos: captar, calificar, agendar, seguir y retener.',
     items: [
       {
         title: 'Respuesta instantánea',
-        body: 'Cada lead recibe respuesta rápida y con su tono — deja de regalar victorias al silencio.',
+        body: 'Cada lead recibe respuesta rápida y con su tono, deja de regalar victorias al silencio.',
       },
       {
         title: 'Calificación inteligente',
@@ -938,15 +938,15 @@ export const aiEmployeePageEs: AiEmployeePageTranslations = {
       },
       {
         title: 'Seguimiento que corre',
-        body: 'Persistente, educado, consistente — hasta cita o baja. Se acabó el “se me olvidó”.',
+        body: 'Persistente, educado, consistente, hasta cita o baja. Se acabó el “se me olvidó”.',
       },
       {
         title: 'Multicanal, un cerebro',
-        body: 'Llamadas, WhatsApp, correo — una bandeja, una verdad, un siguiente paso.',
+        body: 'Llamadas, WhatsApp, correo, una bandeja, una verdad, un siguiente paso.',
       },
       {
         title: 'Recuperación de ingresos',
-        body: 'Reactivar interés frío, reducir incomparecencias, empujar ingresos recurrentes — no ventas sueltas.',
+        body: 'Reactivar interés frío, reducir incomparecencias, empujar ingresos recurrentes, no ventas sueltas.',
       },
     ],
   },
@@ -954,7 +954,7 @@ export const aiEmployeePageEs: AiEmployeePageTranslations = {
     badge: 'Tiempo hasta el valor',
     title: 'En vivo en 48 horas',
     subtitle:
-      'No le damos otra herramienta que vigilar. Implementamos el flujo, conectamos canales y operamos el sistema con usted — para no depender de la memoria del equipo.',
+      'No le damos otra herramienta que vigilar. Implementamos el flujo, conectamos canales y operamos el sistema con usted, para no depender de la memoria del equipo.',
     statBig: '48h',
     statSmall: 'De la decisión a operativo',
     cta: 'Reservar su auditoría Growth System',
@@ -969,43 +969,43 @@ export const aiEmployeePageEs: AiEmployeePageTranslations = {
       'Hace adquisición de pago (o planea) y la captación debe seguir el ritmo',
       'Vende con citas, consultas o conversaciones de alta confianza',
       'El crecimiento se siente caótico: herramientas, gente y seguimiento no alinean',
-      'Quiere escalar con calma — no más ruido, más carga, más riesgo',
-      'Está dispuesto a asociarse en un sistema — no a comprar software de estantería',
+      'Quiere escalar con calma, no más ruido, más carga, más riesgo',
+      'Está dispuesto a asociarse en un sistema, no a comprar software de estantería',
     ],
     notHeading: 'Menos encaje si',
     notItems: [
       'Quiere creatividad de anuncios sin arreglar operaciones',
-      'Optimiza por el menor precio — no por resultados y retención',
+      'Optimiza por el menor precio, no por resultados y retención',
       'No hay conversación de venta o cita en su recorrido',
       'El tiempo de respuesta no es un cuello de ingresos',
-      'Solo quiere un login — no implementación ni alianza',
+      'Solo quiere un login, no implementación ni alianza',
       'No está listo a cambiar cómo fluye el trabajo con el cliente',
     ],
   },
   caseStudy: {
     label: 'Prueba',
-    title: 'De captación fallida a un sistema que no duerme — rápido.',
+    title: 'De captación fallida a un sistema que no duerme, rápido.',
     company: 'Centro médico regional',
     industry: 'Salud',
     contextLabel: 'Contexto',
     challengeLabel: 'Reto',
     solutionLabel: 'Solución',
-    context: '15k$/mes en anuncios — pero la captación no seguía volumen ni velocidad.',
+    context: '15k$/mes en anuncios, pero la captación no seguía volumen ni velocidad.',
     challenge: 'Cerca del 40 % de leads sin respuesta a tiempo. Embudo tibio. Ingreso fugado.',
     solution:
-      'Sistema inteligente en 18 h en vivo — responde, califica, agenda y hace seguimiento con una sola vista.',
+      'Sistema inteligente en 18 h en vivo, responde, califica, agenda y hace seguimiento con una sola vista.',
     outcomesHeading: 'Resultados',
     results: [
-      { metric: '100%', description: 'Cada lead atendido rápido — con siguiente paso claro.' },
+      { metric: '100%', description: 'Cada lead atendido rápido, con siguiente paso claro.' },
       { metric: 'Cero', description: 'Sin huecos de “los llamamos luego” al inicio.' },
-      { metric: '18h', description: 'De decisión a en vivo — el impacto empieza ya.' },
+      { metric: '18h', description: 'De decisión a en vivo, el impacto empieza ya.' },
       { metric: '85%', description: 'Mejor conversión cuando el tiempo sigue la urgencia del comprador.' },
     ],
   },
   pricing: {
     title: 'Transparente. Tranquilo. Sin sorpresas.',
     subtitle:
-      'Todo incluido en una alianza pensada para pagarse cuando la adquisición es real — del orden de ganar un buen cliente por todo el sistema.',
+      'Todo incluido en una alianza pensada para pagarse cuando la adquisición es real, del orden de ganar un buen cliente por todo el sistema.',
     planName: 'Sistema de crecimiento hecho con usted',
     limitedLabel: 'Cupos limitados (una alianza por mercado cuando nos comprometemos)',
     setupFee: '2.000 $',
@@ -1021,9 +1021,9 @@ export const aiEmployeePageEs: AiEmployeePageTranslations = {
     title: 'Deje de apostar el crecimiento a',
     titleHighlight: 'la memoria del equipo.',
     subtitle:
-      'Quedan pocos cupos de alianza. Reserve su auditoría Growth System — mapeamos cuellos, mostramos qué reemplaza primero un sistema inteligente y confirmamos encaje antes de avanzar.',
+      'Quedan pocos cupos de alianza. Reserve su auditoría Growth System, mapeamos cuellos, mostramos qué reemplaza primero un sistema inteligente y confirmamos encaje antes de avanzar.',
     primaryCta: 'Reservar su auditoría Growth System',
-    bullet1: 'Un siguiente paso claro — la auditoría',
+    bullet1: 'Un siguiente paso claro, la auditoría',
     bullet2: 'Conversación seria y breve (unos 30 minutos)',
     bullet3: 'Solo nos asociamos donde hay margen medible',
   },
@@ -1034,7 +1034,7 @@ export const aiEmployeePageAr: AiEmployeePageTranslations = {
     badge: 'أنظمة الموظف الذكي',
     titleLine1: 'توقفوا عن رهان النمو على الذاكرة.',
     titleHighlight: 'شغّلوه على أنظمة.',
-    hook: 'شركات خدمات راقية · نثبت ونشغّل الاستقبال والمتابعة والحجز — من دون الاعتماد على من تذكر ماذا.',
+    hook: 'شركات خدمات راقية · نثبت ونشغّل الاستقبال والمتابعة والحجز, من دون الاعتماد على من تذكر ماذا.',
     primaryCta: 'احجز مراجعة Growth System',
     footnote: 'شراكات محدودة · غالباً جاهز خلال 48 ساعة',
   },
@@ -1050,7 +1050,7 @@ export const aiEmployeePageAr: AiEmployeePageTranslations = {
     playStoreAriaLabel: 'احصل عليه من Google Play',
   },
   noMoreJust: {
-    title: 'ما يفرغ الإيراد بهدوء — وما يحل محله',
+    title: 'ما يفرغ الإيراد بهدوء, وما يحل محله',
     noMoreLabel: 'لا مزيد من',
     noMoreItems: [
       'عملاء محتملين غير مؤهلين يستهلكون وقت الفريق',
@@ -1062,12 +1062,12 @@ export const aiEmployeePageAr: AiEmployeePageTranslations = {
     ],
     justLabel: 'بل',
     justItems: [
-      'محادثات مؤهلة — وقت الفريق للمشترين الجادين فقط',
-      'نظام متصل — صورة تشغيلية واحدة يمكن الاعتماد عليها',
-      'متابعة تلقائية — لا مزيد من «سأتذكر غداً»',
-      'رد أول سريع — تبقى في السباق وبأسلوبك',
-      'خيط واحد عبر القنوات — الصفقات لا تضيع عند التسليم',
-      'غياب أقل وصمت أقل — تذكيرات واستعادة مدمجة',
+      'محادثات مؤهلة, وقت الفريق للمشترين الجادين فقط',
+      'نظام متصل, صورة تشغيلية واحدة يمكن الاعتماد عليها',
+      'متابعة تلقائية, لا مزيد من «سأتذكر غداً»',
+      'رد أول سريع, تبقى في السباق وبأسلوبك',
+      'خيط واحد عبر القنوات, الصفقات لا تضيع عند التسليم',
+      'غياب أقل وصمت أقل, تذكيرات واستعادة مدمجة',
     ],
   },
   problem: {
@@ -1075,7 +1075,7 @@ export const aiEmployeePageAr: AiEmployeePageTranslations = {
     title: 'النمو لا يتعثر في الإعلان.',
     titleHighlight: 'يتعثر بعد النقرة.',
     subtitle:
-      'عندما يعيش مسار العمل في صناديق البريد والملاحظات والمعرفة الشفهية، تحدث تسرّبات — حتى مع تموضع قوي. العدو ليس «عملاء سيئون». بل نظام ما زال يعتمد على توافر بشري على مدار الساعة.',
+      'عندما يعيش مسار العمل في صناديق البريد والملاحظات والمعرفة الشفهية، تحدث تسرّبات, حتى مع تموضع قوي. العدو ليس «عملاء سيئون». بل نظام ما زال يعتمد على توافر بشري على مدار الساعة.',
     stats: [
       {
         value: '40٪',
@@ -1085,7 +1085,7 @@ export const aiEmployeePageAr: AiEmployeePageTranslations = {
       {
         value: '78٪',
         label: 'يشتري من يرد أولاً',
-        hint: 'السرعة ليست رفاهية — إنها الميزان.',
+        hint: 'السرعة ليست رفاهية, إنها الميزان.',
       },
       {
         value: '5 د',
@@ -1100,7 +1100,7 @@ export const aiEmployeePageAr: AiEmployeePageTranslations = {
       },
       {
         title: 'ضياع السياق',
-        body: 'واتساب هنا وبريد هناك. لا أحد يرى القصة كاملة — الثقة لا تتراكم.',
+        body: 'واتساب هنا وبريد هناك. لا أحد يرى القصة كاملة, الثقة لا تتراكم.',
       },
       {
         title: 'متابعة لا تعمل',
@@ -1109,7 +1109,7 @@ export const aiEmployeePageAr: AiEmployeePageTranslations = {
     ],
     closing: {
       title: 'الفائزون يملكون أنظمة. الباقون يعتمدون على الجهد المتواصل فقط.',
-      subtitle: 'نثبّت الطبقة التي لا تنسى — شراكة واحدة لكل سوق عند الالتزام.',
+      subtitle: 'نثبّت الطبقة التي لا تنسى, شراكة واحدة لكل سوق عند الالتزام.',
     },
   },
   traditionalFails: {
@@ -1135,7 +1135,7 @@ export const aiEmployeePageAr: AiEmployeePageTranslations = {
       },
       {
         title: 'ثقافة متابعة يدوية',
-        body: 'كل تذكير يعتمد على شخص. مرض أو انشغال — تتعثر الصفقات.',
+        body: 'كل تذكير يعتمد على شخص. مرض أو انشغال, تتعثر الصفقات.',
       },
       {
         title: 'لا نظام تشغيل للنمو',
@@ -1143,18 +1143,18 @@ export const aiEmployeePageAr: AiEmployeePageTranslations = {
       },
     ],
     closing:
-      'نظام ذكي واحد — صوتك وقواعدك — لإبقاء العملاء أطول وتحويل المزيد من العملاء المحتملين والتوسع بثقة.',
+      'نظام ذكي واحد, صوتك وقواعدك, لإبقاء العملاء أطول وتحويل المزيد من العملاء المحتملين والتوسع بثقة.',
   },
   capabilities: {
     badge: 'طبقة التشغيل',
     title: 'ست قدرات.',
     titleHighlight: 'نظام نمو واحد.',
     subtitle:
-      'لمقدمي الخدمات الساعين للنمو من دون فوضى — تنظيم كل ما يمس الإيراد: الجذب والتأهيل والحجز والمتابعة والاحتفاظ.',
+      'لمقدمي الخدمات الساعين للنمو من دون فوضى, تنظيم كل ما يمس الإيراد: الجذب والتأهيل والحجز والمتابعة والاحتفاظ.',
     items: [
       {
         title: 'رد فوري',
-        body: 'كل عميل محتمل يردّ بسرعة وبأسلوبك — تتوقف عن إهدار الفرص للصمت.',
+        body: 'كل عميل محتمل يردّ بسرعة وبأسلوبك, تتوقف عن إهدار الفرص للصمت.',
       },
       {
         title: 'تأهيل ذكي',
@@ -1166,11 +1166,11 @@ export const aiEmployeePageAr: AiEmployeePageTranslations = {
       },
       {
         title: 'متابعة تعمل',
-        body: 'ثابتة ومهذبة — حتى الحجز أو الانسحاب. لا «نسيت».',
+        body: 'ثابتة ومهذبة, حتى الحجز أو الانسحاب. لا «نسيت».',
       },
       {
         title: 'قنوات متعددة، عقل واحد',
-        body: 'مكالمات وواتساب وبريد — صندوق واحد، حقيقة واحدة، خطوة تالية.',
+        body: 'مكالمات وواتساب وبريد, صندوق واحد، حقيقة واحدة، خطوة تالية.',
       },
       {
         title: 'استعادة الإيراد',
@@ -1182,7 +1182,7 @@ export const aiEmployeePageAr: AiEmployeePageTranslations = {
     badge: 'الوقت حتى القيمة',
     title: 'جاهز خلال 48 ساعة',
     subtitle:
-      'لسنا هنا لنسلّم أداة أخرى تراقبونها. ننفّذ المسار ونوصل القنوات ونشغّل النظام معكم — لتقل الاعتماد على ذاكرة الفريق.',
+      'لسنا هنا لنسلّم أداة أخرى تراقبونها. ننفّذ المسار ونوصل القنوات ونشغّل النظام معكم, لتقل الاعتماد على ذاكرة الفريق.',
     statBig: '48س',
     statSmall: 'من القرار إلى التشغيل',
     cta: 'احجز مراجعة Growth System',
@@ -1197,8 +1197,8 @@ export const aiEmployeePageAr: AiEmployeePageTranslations = {
       'تستثمر في اكتساب مدفوع (أو تخطط) وتحتاج أن يواكب الاستقبال',
       'تبيع عبر مواعيد أو استشارات أو حوارات عالية الثقة',
       'النمو يشعر بالفوضى: أدوات وناس ومتابعة غير متوافقة',
-      'تريد توسعاً هادئاً — ليس أعلى صوتاً وأعباء وأخطاراً',
-      'مستعد لشراكة نظام — لا شراء برمجية جاهزة',
+      'تريد توسعاً هادئاً, ليس أعلى صوتاً وأعباء وأخطاراً',
+      'مستعد لشراكة نظام, لا شراء برمجية جاهزة',
     ],
     notHeading: 'أقل ملاءمة إن',
     notItems: [
@@ -1206,34 +1206,34 @@ export const aiEmployeePageAr: AiEmployeePageTranslations = {
       'تحسّن للسعر الأدنى لا للنتائج والاحتفاظ',
       'لا يوجد بيع أو موعد في رحلة المشتري',
       'سرعة الرد ليست عنق زجاجة للإيراد',
-      'تريد تسجيل دخول فقط — لا تنفيذ ولا شراكة',
+      'تريد تسجيل دخول فقط, لا تنفيذ ولا شراكة',
       'غير مستعد لتغيير تدفق العمل بين الفريق والعميل',
     ],
   },
   caseStudy: {
     label: 'دليل',
-    title: 'من استقبال مفقود إلى نظام لا ينام — بسرعة.',
+    title: 'من استقبال مفقود إلى نظام لا ينام, بسرعة.',
     company: 'مركز طبي إقليمي',
     industry: 'رعاية صحية',
     contextLabel: 'السياق',
     challengeLabel: 'التحدي',
     solutionLabel: 'الحل',
-    context: '15 ألف دولار شهرياً إعلانات — لكن الاستقبال لم يواكب الحجم ولا السرعة.',
+    context: '15 ألف دولار شهرياً إعلانات, لكن الاستقبال لم يواكب الحجم ولا السرعة.',
     challenge: 'نحو 40٪ من العملاء المحتملين دون رد آنٍ. مسار بارد. إيراد يتسرّب.',
     solution:
-      'نظام ذكي جاهز خلال 18 ساعة — رد وتأهيل وحجز ومتابعة بمنظر تشغيلي واحد.',
+      'نظام ذكي جاهز خلال 18 ساعة, رد وتأهيل وحجز ومتابعة بمنظر تشغيلي واحد.',
     outcomesHeading: 'النتائج',
     results: [
-      { metric: '100٪', description: 'كل عميل محتمل يُخدم بسرعة — بخطوة تالية واضحة.' },
+      { metric: '100٪', description: 'كل عميل محتمل يُخدم بسرعة, بخطوة تالية واضحة.' },
       { metric: 'صفر', description: 'لا فجوات «سنعاود الاتصال» في البداية.' },
-      { metric: '18س', description: 'من القرار إلى التشغيل — تبدأ النتائج فوراً.' },
+      { metric: '18س', description: 'من القرار إلى التشغيل, تبدأ النتائج فوراً.' },
       { metric: '85٪', description: 'تحويل أفضل عندما يواكب التوقيت إلحاح المشتري.' },
     ],
   },
   pricing: {
     title: 'شفاف. هادئ. بلا مفاجآت.',
     subtitle:
-      'كل شيء ضمن شراكة تُقاس على أنها تستحق عندما يكون الاستثمار في الطلب حقيقياً — بمستوى استحواذ عميل جيد للنظام بأكمله.',
+      'كل شيء ضمن شراكة تُقاس على أنها تستحق عندما يكون الاستثمار في الطلب حقيقياً, بمستوى استحواذ عميل جيد للنظام بأكمله.',
     planName: 'نظام نمو منفّذ معك',
     limitedLabel: 'شراكات محدودة (واحدة لكل سوق عند الالتزام)',
     setupFee: '2,000 $',
@@ -1249,9 +1249,9 @@ export const aiEmployeePageAr: AiEmployeePageTranslations = {
     title: 'توقف عن رهان النمو على',
     titleHighlight: 'ذاكرة الموظفين.',
     subtitle:
-      'تبقى مقاعد شراكة محدودة. احجز مراجعة Growth System — نرسم الاختناقات ونوضح ما يستبدله النظام الذكي أولاً ونؤكد الملاءمة قبل المضي.',
+      'تبقى مقاعد شراكة محدودة. احجز مراجعة Growth System, نرسم الاختناقات ونوضح ما يستبدله النظام الذكي أولاً ونؤكد الملاءمة قبل المضي.',
     primaryCta: 'احجز مراجعة Growth System',
-    bullet1: 'خطوة تالية واضحة — المراجعة',
+    bullet1: 'خطوة تالية واضحة, المراجعة',
     bullet2: 'حوار جاد وسريع (نحو 30 دقيقة)',
     bullet3: 'نشارك فقط حيث يمكن قياس الأثر',
   },

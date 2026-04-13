@@ -194,7 +194,7 @@ export default function ServicesPage({ params, searchParams }: ServicesPageProps
         </div>
       </AnimatedSection>
 
-      {/* Stats Section — aligned with home.stats */}
+      {/* Stats Section, aligned with home.stats */}
       <AnimatedSection className="py-24 bg-surface">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-3 gap-8">

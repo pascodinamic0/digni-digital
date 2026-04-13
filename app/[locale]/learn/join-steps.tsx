@@ -19,7 +19,7 @@ export function LearnJoinSteps({ variant = 'login' }: Props) {
             1
           </span>
           <span>
-            <strong className="text-text">Complete payment</strong> — Finish checkout for your program and send any proof we asked for (e.g. WhatsApp screenshot).
+            <strong className="text-text">Complete payment</strong>, Finish checkout for your program and send any proof we asked for (e.g. WhatsApp screenshot).
           </span>
         </li>
         <li className="flex gap-3">
@@ -27,7 +27,7 @@ export function LearnJoinSteps({ variant = 'login' }: Props) {
             2
           </span>
           <span>
-            <strong className="text-text">We add you in the system</strong> — Our team enrolls your email in the program. New accounts receive a{' '}
+            <strong className="text-text">We add you in the system</strong>, Our team enrolls your email in the program. New accounts receive a{' '}
             <strong className="text-text">secure invite email</strong> to set a password. If you already have an account, you’re enrolled without a duplicate invite.
           </span>
         </li>
@@ -36,7 +36,7 @@ export function LearnJoinSteps({ variant = 'login' }: Props) {
             3
           </span>
           <span>
-            <strong className="text-text">Sign in with the same email</strong> — Use the email we have on file. Request a magic link below, or sign in with the password you set from the invite.
+            <strong className="text-text">Sign in with the same email</strong>, Use the email we have on file. Request a magic link below, or sign in with the password you set from the invite.
           </span>
         </li>
         <li className="flex gap-3">
@@ -44,7 +44,7 @@ export function LearnJoinSteps({ variant = 'login' }: Props) {
             4
           </span>
           <span>
-            <strong className="text-text">Open your training</strong> — After sign-in you’ll see your syllabus, lessons, videos, and assignments.
+            <strong className="text-text">Open your training</strong>, After sign-in you’ll see your syllabus, lessons, videos, and assignments.
           </span>
         </li>
       </ol>

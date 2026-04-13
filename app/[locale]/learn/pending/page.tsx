@@ -22,7 +22,7 @@ export default async function LearnPendingPage({ params }: Props) {
           <li className="flex gap-2">
             <span className="text-accent">→</span>
             <span>
-              If you <strong className="text-text">just paid</strong>, send your proof (e.g. WhatsApp screenshot) and wait—we&apos;ll enroll you and you&apos;ll get the invite flow described above.
+              If you <strong className="text-text">just paid</strong>, send your proof (e.g. WhatsApp screenshot) and wait, we&apos;ll enroll you and you&apos;ll get the invite flow described above.
             </span>
           </li>
           <li className="flex gap-2">

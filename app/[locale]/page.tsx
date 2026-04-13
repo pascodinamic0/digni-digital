@@ -17,7 +17,7 @@ import { formatMissedLeadsUsdStat, MISSED_LEADS_USD } from '@/lib/formatMissedLe
 const TYPING_INTERVAL_MS = 80
 const PAUSE_WHEN_COMPLETE_MS = 1800
 
-// Hero Section — keyed by language so it remounts and shows correct translations when locale changes
+// Hero Section, keyed by language so it remounts and shows correct translations when locale changes
 function Hero() {
   const language = useLanguage()
   const t = translations[language].home.hero
@@ -481,10 +481,10 @@ function WhatWeDo() {
                 </h3>
               </div>
 
-              {/* Description */}
-              <p className="text-muted mb-6 leading-relaxed flex-grow">
+              {/* Description (whitespace-pre-line for multi-paragraph copy) */}
+              <div className="text-muted mb-6 leading-relaxed flex-grow whitespace-pre-line">
                 {service.description}
-              </p>
+              </div>
 
               {/* Key Outcomes */}
               <div className="mb-6 space-y-2">
@@ -1024,16 +1024,6 @@ function CTASection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.4 }}
-                className="text-muted text-lg md:text-xl max-w-2xl mx-auto mb-6 leading-relaxed"
-              >
-                {cta.subtitle}
-              </motion.p>
-
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.42 }}
                 className="text-text/90 text-base md:text-lg max-w-xl mx-auto mb-10 font-medium"
               >
                 {cta.mechanism}

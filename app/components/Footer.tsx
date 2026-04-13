@@ -139,10 +139,10 @@ export default function Footer() {
         {/* Divider */}
         <div className="h-px bg-border" />
 
-        {/* Main footer — bento-style grid */}
+        {/* Main footer: bento-style grid */}
         <div className="py-12 md:py-14">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-8">
-            {/* Brand — spans full width on mobile */}
+            {/* Brand: spans full width on mobile */}
             <div className="md:col-span-5 lg:col-span-4">
               <Logo href="/" label="Digni Digital LLC" className="mb-4" />
               <p className="text-muted text-sm max-w-xs mb-5">
@@ -177,7 +177,7 @@ export default function Footer() {
               </div>
             </div>
 
-            {/* Link columns — single column on mobile; 3-up from sm */}
+            {/* Link columns: single column on mobile; 3-up from sm */}
             <div className="md:col-span-7 lg:col-span-8 grid grid-cols-1 sm:grid-cols-3 gap-0 sm:gap-x-8 sm:gap-y-10">
               {footerLinkColumns.map(({ title, items }) => (
                 <div

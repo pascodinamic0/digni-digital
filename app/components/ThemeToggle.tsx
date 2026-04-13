@@ -7,7 +7,7 @@ import { motion } from 'framer-motion'
 const toggleButtonClass =
   'relative w-10 h-10 rounded-lg bg-surface-light/50 border border-border-light hover:border-accent/30 focus:outline-none focus:ring-2 focus:ring-2 focus:ring-ring transition-all duration-300 flex items-center justify-center group'
 
-/** Same visuals as motion icons, without animation — avoids SSR/client style drift before mount. */
+/** Same visuals as motion icons, without animation; avoids SSR/client style drift before mount. */
 function StaticThemeIcons({ isDark }: { isDark: boolean }) {
   return (
     <>

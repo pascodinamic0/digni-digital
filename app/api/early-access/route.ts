@@ -82,7 +82,7 @@ export async function POST(request: Request) {
     if (RESEND_API_KEY) {
       const resend = new Resend(RESEND_API_KEY)
       const html = `
-      <h2>Early Access — Self-Learning Program</h2>
+      <h2>Early Access: Self-Learning Program</h2>
       <p><strong>First name:</strong> ${escapeHtml(firstName)}</p>
       <p><strong>Last name:</strong> ${escapeHtml(lastName)}</p>
       <p><strong>Email:</strong> ${escapeHtml(emailNorm)}</p>

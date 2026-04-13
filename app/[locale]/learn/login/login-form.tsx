@@ -40,7 +40,7 @@ export function LoginForm() {
         Learning <span className="gradient-text">portal</span>
       </h1>
       <p className="mt-3 text-sm leading-relaxed text-muted">
-        Use the <strong className="font-medium text-text">exact email</strong> we used to enroll you. We’ll email you a one-time link—no password required for this option.
+        Use the <strong className="font-medium text-text">exact email</strong> we used to enroll you. We’ll email you a one-time link, no password required for this option.
       </p>
 
       <form onSubmit={sendLink} className="mt-8 space-y-5">
