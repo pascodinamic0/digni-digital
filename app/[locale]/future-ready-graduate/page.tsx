@@ -4,11 +4,14 @@ import { use, useState, useRef, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Link } from '@/i18n/navigation'
 import AnimatedSection from '@/app/components/AnimatedSection'
+import PremiumHeroBackdrop from '@/app/components/PremiumHeroBackdrop'
+import PremiumHeroParallax from '@/app/components/PremiumHeroParallax'
 import ScrollIndicator from '@/app/components/ScrollIndicator'
 import VideoModal from '@/app/components/VideoModal'
 import VideoThumbnail from '@/app/components/VideoThumbnail'
 import DemoPresentationDownload from '@/app/components/DemoPresentationDownload'
 import EarlyAccessFormModal from '@/app/components/EarlyAccessFormModal'
+import StripeCheckoutButton from '@/app/components/StripeCheckoutButton'
 import { ctaConfig, getBookingLinkProps } from '@/app/config/cta.config'
 import { useLanguage } from '@/app/context/LocaleContext'
 import { translations } from '@/app/config/translations'
@@ -231,7 +234,8 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
     <main>
       {/* Hero Section */}
       <section className="relative isolate min-h-screen flex items-center pt-16 sm:pt-20 overflow-hidden bg-gradient-mesh">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-20 relative z-10">
+        <PremiumHeroBackdrop />
+        <PremiumHeroParallax className="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-20 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -249,7 +253,25 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
             <p className="text-base sm:text-lg md:text-xl text-muted max-w-3xl mx-auto leading-relaxed mb-6 sm:mb-8 md:mb-10 px-2">
               {pageT.heroDescription}
             </p>
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-2">
+            <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 px-2 mt-8">
+              <motion.div
+                initial={{ opacity: 0, y: 14 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="rounded-full border border-border/80 bg-background/75 dark:bg-surface/70 px-4 py-2 text-xs sm:text-sm text-muted backdrop-blur-sm shadow-sm"
+              >
+                <span className="font-semibold text">10+ years</span> building growth systems
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 14 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                className="rounded-full border border-border/80 bg-background/75 dark:bg-surface/70 px-4 py-2 text-xs sm:text-sm text-muted backdrop-blur-sm shadow-sm"
+              >
+                <span className="font-semibold text">98%</span> client satisfaction
+              </motion.div>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-2 mt-4 sm:mt-6">
               <a
                 {...getBookingLinkProps()}
                 className="btn-primary text-sm sm:text-base md:text-lg px-6 sm:px-8 py-3 sm:py-4 w-full sm:w-auto text-center"
@@ -259,7 +281,7 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
               <DemoPresentationDownload service="futureReadyGraduate" variant="hero" />
             </div>
           </motion.div>
-        </div>
+        </PremiumHeroParallax>
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
           <ScrollIndicator direction="down" />
         </div>
@@ -1194,24 +1216,84 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
 
                   {/* CTA */}
                   {'spotsAvailable' in plan && plan.spotsAvailable ? (
-                    <button
-                      type="button"
-                      onClick={() => setEarlyAccessOpen(true)}
-                      className="btn-primary w-full text-center py-3 block"
-                    >
-                      {ctaT.bookYourSpot}
-                    </button>
+                    <div className="space-y-3 w-full">
+                      <button
+                        type="button"
+                        onClick={() => setEarlyAccessOpen(true)}
+                        className="btn-primary w-full text-center py-3 block"
+                      >
+                        {ctaT.bookYourSpot}
+                      </button>
+                      <StripeCheckoutButton
+                        plan="frg_guided"
+                        className="btn-secondary w-full text-center py-3"
+                        redirectingLabel={ctaT.checkoutRedirecting}
+                      >
+                        {ctaT.frgPayGuided}
+                      </StripeCheckoutButton>
+                    </div>
+                  ) : plan.audience === 'schools' && 'priceOptions' in plan && plan.priceOptions ? (
+                    <div className="space-y-3 w-full">
+                      <StripeCheckoutButton
+                        plan="frg_school_monthly"
+                        className="btn-primary w-full text-center py-3"
+                        redirectingLabel={ctaT.checkoutRedirecting}
+                      >
+                        {ctaT.frgPaySchoolMonthly}
+                      </StripeCheckoutButton>
+                      <StripeCheckoutButton
+                        plan="frg_school_semester"
+                        className="btn-primary w-full text-center py-3"
+                        redirectingLabel={ctaT.checkoutRedirecting}
+                      >
+                        {ctaT.frgPaySchoolSemester}
+                      </StripeCheckoutButton>
+                      <StripeCheckoutButton
+                        plan="frg_school_yearly"
+                        className="btn-primary w-full text-center py-3"
+                        redirectingLabel={ctaT.checkoutRedirecting}
+                      >
+                        {ctaT.frgPaySchoolYearly}
+                      </StripeCheckoutButton>
+                      <a
+                        {...getBookingLinkProps()}
+                        className="btn-secondary w-full text-center py-3 rounded-lg font-semibold transition-all block"
+                      >
+                        {ctaT.orBookConsultationFirst}
+                      </a>
+                    </div>
+                  ) : plan.audience === 'professional' ? (
+                    <div className="space-y-3 w-full">
+                      <StripeCheckoutButton
+                        plan="frg_professional_monthly"
+                        className="btn-primary w-full text-center py-3"
+                        redirectingLabel={ctaT.checkoutRedirecting}
+                      >
+                        {ctaT.frgPayProfessionalMonthly}
+                      </StripeCheckoutButton>
+                      <a
+                        {...getBookingLinkProps()}
+                        className="btn-secondary w-full text-center py-3 rounded-lg font-semibold transition-all block"
+                      >
+                        {ctaT.scheduleConsultation}
+                      </a>
+                    </div>
                   ) : (
-                    <a
-                      {...getBookingLinkProps()}
-                      className={`w-full text-center py-3 rounded-lg font-semibold transition-all ${
-                        plan.audience === 'schools' || plan.audience === 'professional'
-                          ? 'btn-primary'
-                          : 'btn-secondary hover:border-accent hover:text-accent'
-                      }`}
-                    >
-                      {plan.audience === 'schools' || plan.audience === 'professional' ? ctaT.startPartnership : ctaT.getStarted}
-                    </a>
+                    <div className="space-y-3 w-full">
+                      <StripeCheckoutButton
+                        plan="frg_guided"
+                        className="btn-primary w-full text-center py-3"
+                        redirectingLabel={ctaT.checkoutRedirecting}
+                      >
+                        {ctaT.frgPayGuided}
+                      </StripeCheckoutButton>
+                      <a
+                        {...getBookingLinkProps()}
+                        className="btn-secondary w-full text-center py-3 rounded-lg font-semibold transition-all block hover:border-accent hover:text-accent"
+                      >
+                        {ctaT.getStarted}
+                      </a>
+                    </div>
                   )}
                 </motion.div>
               ))}

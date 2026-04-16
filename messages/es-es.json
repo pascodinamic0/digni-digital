@@ -81,5 +81,13 @@
     "featuredArticles": "Artículos destacados",
     "allArticles": "Todos los artículos",
     "featured": "destacado"
+  },
+  "Checkout": {
+    "successTitle": "Gracias por su pago",
+    "successAmount": "Total pagado: {amount}",
+    "successBody": "El pago se completó correctamente. Debería recibir un correo de confirmación de Stripe en breve.",
+    "canceledTitle": "Pago cancelado",
+    "canceledBody": "No se realizó ningún cargo. Puede volver cuando quiera para completar el pago.",
+    "backHome": "Volver al inicio"
   }
 }

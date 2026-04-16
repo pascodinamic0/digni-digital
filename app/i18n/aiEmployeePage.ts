@@ -160,10 +160,10 @@ export const aiEmployeePageEn: AiEmployeePageTranslations = {
   },
   problem: {
     badge: 'The pattern we see on repeat',
-    title: 'Growth isn’t failing in the ad account.',
-    titleHighlight: 'It’s failing after the click.',
+    title: 'Your ads might not be the problem.',
+    titleHighlight: 'What happens after they click might be.',
     subtitle:
-      'When pipelines live in inboxes, sticky notes, and tribal knowledge, you get leakage, even with strong positioning. The enemy isn’t “bad leads.” It’s a system that still depends on people being available 24/7.',
+      'Research shows that responding to an ad lead within 5 minutes makes you 21x more likely to qualify them. Wait just one hour, and your chances of a sale drop by 60%.',
     stats: [
       {
         value: '40%',
@@ -388,10 +388,10 @@ export const aiEmployeePageFr: AiEmployeePageTranslations = {
   },
   problem: {
     badge: 'Le schéma qu’on voit en boucle',
-    title: 'La croissance ne casse pas dans la pub.',
-    titleHighlight: 'Elle casse après le clic.',
+    title: 'Le problème ne vient peut-être pas de vos publicités,',
+    titleHighlight: "mais de ce qui se passe après qu'un internaute ait cliqué dessus.",
     subtitle:
-      'Quand le pipeline vit dans les boîtes mail, les post-it et le savoir tribal, il y a des fuites, même avec un bon positionnement. L’ennemi n’est pas « les mauvais leads ». C’est un système qui dépend encore de la disponibilité humaine 24/7.',
+      'Des études montrent que répondre à un prospect généré par une publicité dans les 5 minutes multiplie par 21 vos chances de le qualifier. Attendez une heure seulement, et vos chances de conclure une vente chutent de 60 %.',
     stats: [
       {
         value: '40%',

@@ -21,7 +21,7 @@ const BusinessTimeline = () => {
     {
       id: 'lead',
       title: 'Lead Arrives',
-      description: 'Customer reaches out via any channel',
+      description: 'A new prospect reaches out on any channel.',
       icon: (
         <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M16 21V19C16 17.9391 15.5786 16.9217 14.8284 16.1716C14.0783 15.4214 13.0609 15 12 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -29,25 +29,26 @@ const BusinessTimeline = () => {
           <path d="M20 8V14L17 11L20 8Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
       ),
-      metrics: ['Website', 'SMS', 'Social', 'Phone'],
+      // Keep these in sync with the channels showcased in `ChannelsDiagram.tsx`.
+      metrics: ['Website', 'SMS', 'Facebook', 'Instagram', 'WhatsApp', 'Phone'],
       color: 'info'
     },
     {
       id: 'response',
       title: 'Instant AI Reply',
-      description: 'AI responds within 2 seconds with personalized message',
+      description: 'AI replies within 2 seconds with a personalized message.',
       icon: (
         <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
       ),
-      metrics: ['<2s Response', '24/7 Available'],
+      metrics: ['<2s Response', '24/7 Live', 'WhatsApp', 'Phone'],
       color: 'accent'
     },
     {
       id: 'qualification',
       title: 'Contact Saved',
-      description: 'AI captures and stores contact info to your CRM',
+      description: 'AI captures contact details and saves them to your CRM.',
       icon: (
         <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z" stroke="currentColor" strokeWidth="2"/>
@@ -56,13 +57,13 @@ const BusinessTimeline = () => {
           <path d="M17 9H21" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
         </svg>
       ),
-      metrics: ['Auto Capture', 'CRM Sync'],
+      metrics: ['Auto Capture', 'CRM Sync', 'WhatsApp Leads', 'Phone Leads'],
       color: 'success'
     },
     {
       id: 'appointment',
       title: 'Appointment Booked',
-      description: 'AI schedules meeting directly into your calendar',
+      description: 'AI books the right meeting into your calendar—no back-and-forth.',
       icon: (
         <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect x="3" y="4" width="18" height="18" rx="2" ry="2" stroke="currentColor" strokeWidth="2"/>
@@ -72,21 +73,42 @@ const BusinessTimeline = () => {
           <path d="M8 14H16M8 18H12" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
         </svg>
       ),
-      metrics: ['Real-time Sync', 'Auto Confirm'],
+      metrics: ['Calendar Sync', 'Auto Confirm', 'WhatsApp Scheduling', 'Phone Scheduling'],
       color: 'info'
     },
     {
       id: 'followup',
       title: 'Smart Follow-Up',
-      description: 'Automated nurture keeps leads warm until meeting',
+      description: 'Automated follow-up nudges buyers until they are ready.',
       icon: (
         <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentColor" strokeWidth="2"/>
           <polyline points="22,6 12,13 2,6" stroke="currentColor" strokeWidth="2"/>
         </svg>
       ),
-      metrics: ['Email Sequences', 'SMS Reminders'],
+      metrics: ['Email Nudges', 'SMS Reminders', 'WhatsApp Nudges', 'Phone Nudges'],
       color: 'accent'
+    },
+    {
+      id: 'post_sale',
+      title: 'Post-Sale Growth',
+      description: 'After the sale, AI drives reviews, offers, retargeting, and referrals.',
+      icon: (
+        <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 7L21 8L10 19L3 19L3 12L14 1L15 2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M14 1L20 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M3 19L10 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      ),
+      metrics: [
+        'Review Requests',
+        'Upsell Offers',
+        'Retargeting Ads',
+        'Referral Program',
+        'WhatsApp Outreach',
+        'Phone Outreach'
+      ],
+      color: 'success'
     }
   ]
 
@@ -146,7 +168,7 @@ const BusinessTimeline = () => {
             className="font-display text-4xl md:text-5xl font-bold mt-4 mb-6"
           >
             From First Contact<br />
-            <span className="gradient-text">To Closed Deal</span>
+            <span className="gradient-text">To Closed Deal and Beyond</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -174,7 +196,7 @@ const BusinessTimeline = () => {
             </div>
 
             {/* Timeline Steps */}
-            <div className="grid grid-cols-5 gap-6">
+            <div className="grid grid-cols-6 gap-6">
               {steps.map((step, index) => {
                 const isActive = index <= activeStep
                 const isCurrent = index === activeStep
@@ -214,19 +236,19 @@ const BusinessTimeline = () => {
 
                     {/* Step Card */}
                     <motion.div
-                      className={`mt-8 p-5 rounded-2xl border backdrop-blur-sm transition-all duration-500 ${
+                      className={`mt-8 h-full p-4 rounded-2xl border backdrop-blur-sm transition-all duration-500 ${
                         isCurrent 
                           ? `bg-gradient-to-br ${colorClasses.gradient} ${colorClasses.border} shadow-lg`
                           : 'bg-surface/50 border-border hover:border-border-light'
                       }`}
                       animate={isCurrent ? { y: -4 } : { y: 0 }}
                     >
-                      <h3 className={`font-display text-lg font-bold mb-2 transition-colors duration-300 ${
+                      <h3 className={`font-display text-base xl:text-lg font-bold mb-2 transition-colors duration-300 ${
                         isActive ? colorClasses.text : 'text-muted-dark'
                       }`}>
                         {step.title}
                       </h3>
-                      <p className="text-muted text-sm mb-4 leading-relaxed min-h-[40px]">
+                      <p className="text-muted text-xs xl:text-sm mb-4 leading-relaxed min-h-[56px]">
                         {step.description}
                       </p>
 
