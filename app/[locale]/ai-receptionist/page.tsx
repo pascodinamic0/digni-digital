@@ -6,6 +6,8 @@ import { useLanguage } from '@/app/context/LocaleContext'
 import { getBookingLinkProps } from '@/app/config/cta.config'
 import { translations } from '@/app/config/translations'
 import AnimatedSection from '@/app/components/AnimatedSection'
+import PremiumHeroBackdrop from '@/app/components/PremiumHeroBackdrop'
+import PremiumHeroParallax from '@/app/components/PremiumHeroParallax'
 import ScrollIndicator from '@/app/components/ScrollIndicator'
 import ClientJourneyDemo from '@/app/components/ClientJourneyDemo'
 import ConversationMockups from '@/app/components/ConversationMockups'
@@ -17,6 +19,7 @@ import ContactDirectoryDemo from '@/app/components/ContactDirectoryDemo'
 import AiReceptionistExplainerVideo from '@/app/components/AiReceptionistExplainerVideo'
 import BusinessTimeline from '@/app/components/BusinessTimeline'
 import DemoPresentationDownload from '@/app/components/DemoPresentationDownload'
+import StripeCheckoutButton from '@/app/components/StripeCheckoutButton'
 import { Check, Minus } from 'lucide-react'
 
 type AIReceptionistPageProps = {
@@ -106,6 +109,7 @@ export default function AIReceptionistPage({ params, searchParams }: AIReception
   use(searchParams ?? Promise.resolve({}))
   const language = useLanguage()
   const t = translations[language].aiEmployeePage
+  const ctaT = translations[language].cta
 
   const capabilityMeta: { icon: ReactElement; color: string }[] = [
     {
@@ -209,7 +213,8 @@ export default function AIReceptionistPage({ params, searchParams }: AIReception
     <main>
       {/* Hero Section */}
       <section className="relative isolate min-h-screen flex items-center pt-16 sm:pt-20 overflow-hidden bg-gradient-mesh-brand">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-20 relative z-10">
+        <PremiumHeroBackdrop />
+        <PremiumHeroParallax className="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-20 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -229,7 +234,25 @@ export default function AIReceptionistPage({ params, searchParams }: AIReception
             <p className="text-sm sm:text-base text-muted max-w-xl mx-auto leading-relaxed mb-7 sm:mb-8 px-2">
               {t.hero.hook}
             </p>
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-2">
+            <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 px-2 mt-2">
+              <motion.div
+                initial={{ opacity: 0, y: 14 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="rounded-full border border-border/80 bg-background/75 dark:bg-surface/70 px-4 py-2 text-xs sm:text-sm text-muted backdrop-blur-sm shadow-sm"
+              >
+                <span className="font-semibold text">10+ years</span> building growth systems
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 14 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                className="rounded-full border border-border/80 bg-background/75 dark:bg-surface/70 px-4 py-2 text-xs sm:text-sm text-muted backdrop-blur-sm shadow-sm"
+              >
+                <span className="font-semibold text">98%</span> client satisfaction
+              </motion.div>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-2 mt-4 sm:mt-6">
               <a
                 {...getBookingLinkProps()}
                 className="btn-primary text-sm sm:text-base md:text-lg px-6 sm:px-8 py-3 sm:py-4 w-full sm:w-auto text-center"
@@ -240,7 +263,7 @@ export default function AIReceptionistPage({ params, searchParams }: AIReception
             </div>
             <p className="text-muted/60 text-sm mt-4">{t.hero.footnote}</p>
           </motion.div>
-        </div>
+        </PremiumHeroParallax>
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
           <ScrollIndicator direction="down" />
         </div>
@@ -706,12 +729,21 @@ export default function AIReceptionistPage({ params, searchParams }: AIReception
                   {t.pricing.note}
                 </p>
 
-                <a
-                  {...getBookingLinkProps()}
-                  className="btn-primary w-full text-center text-lg py-4"
-                >
-                  {t.pricing.cta}
-                </a>
+                <div className="space-y-3">
+                  <StripeCheckoutButton
+                    plan="ai_employee"
+                    className="btn-primary w-full text-center text-lg py-4"
+                    redirectingLabel={ctaT.checkoutRedirecting}
+                  >
+                    {ctaT.continueToSecureCheckout}
+                  </StripeCheckoutButton>
+                  <a
+                    {...getBookingLinkProps()}
+                    className="btn-secondary w-full text-center text-lg py-4 block"
+                  >
+                    {t.pricing.cta}
+                  </a>
+                </div>
               </motion.div>
             </div>
           </div>

@@ -81,5 +81,13 @@
     "featuredArticles": "Articles à la une",
     "allArticles": "Tous les articles",
     "featured": "à la une"
+  },
+  "Checkout": {
+    "successTitle": "Merci pour votre paiement",
+    "successAmount": "Total payé : {amount}",
+    "successBody": "Votre paiement a bien été enregistré. Vous devriez recevoir un e-mail de confirmation de Stripe sous peu.",
+    "canceledTitle": "Paiement annulé",
+    "canceledBody": "Aucun débit n'a été effectué. Vous pouvez revenir quand vous voulez pour finaliser le paiement.",
+    "backHome": "Retour à l'accueil"
   }
 }

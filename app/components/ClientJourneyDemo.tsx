@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { useState, useEffect } from 'react'
 import { useLanguage } from '@/app/context/LocaleContext'
 import { translations } from '@/app/config/translations'
+import SocialPlatformIcon from './SocialPlatformIcon'
 
 // Animate number from 0 to value when step is active (for drop/count display)
 function AnimatedCount({ value, isActive, suffix = '', className = '' }: { value: number; isActive: boolean; suffix?: string; className?: string }) {
@@ -33,11 +34,11 @@ function AnimatedCount({ value, isActive, suffix = '', className = '' }: { value
   return <span className={className}>{display.toLocaleString()}{suffix}</span>
 }
 
-const CHANNEL_ICONS: Record<string, string> = {
+const CHANNEL_ICONS: Record<string, React.ReactNode> = {
   ads: '📢',
   website: '🌐',
-  instagram: '📸',
-  whatsapp: '💬',
+  instagram: <SocialPlatformIcon platform="instagram" className="w-6 h-6 text-current" />,
+  whatsapp: <SocialPlatformIcon platform="whatsapp" className="w-6 h-6 text-current" />,
   phone: '📞',
 }
 const BROKEN_STAGE_ICONS = ['📢', '📵', '❓', '📅', '📬', '❌', '🔄']
@@ -48,7 +49,7 @@ const BROKEN_FUNNEL = [100, 38, 12, 5, 2, 1, 0] // 62 lost first contact, 26 qua
 // AI: bulletproof automation, zero drop, higher conversion, referrals add to loop
 const AI_FUNNEL = [100, 100, 100, 100, 100, 95, 118] // no drop → 95 close → +23 referrals
 
-type ChannelItem = { id: string; label: string; icon: string }
+type ChannelItem = { id: string; label: string; icon: React.ReactNode }
 type BrokenStageItem = { step: number; title: string; icon: string; description: string; leak: string }
 type AIStageItem = { step: number; title: string; icon: string; description: string; win: string }
 
@@ -160,7 +161,7 @@ function VisualFunnel({
   stages: FunnelStage[]
   counts: number[]
   channels: ChannelItem[]
-  channelIcons: Record<string, string>
+  channelIcons: Record<string, React.ReactNode>
   variant: 'broken' | 'ai'
   activeStep?: number
   funnelCopy: FunnelCopy
@@ -191,7 +192,7 @@ function VisualFunnel({
               viewport={{ once: true }}
               className={`flex flex-col items-center justify-center gap-1.5 rounded-2xl px-3 py-3 min-w-[5.75rem] max-w-[6.5rem] shrink-0 snap-start relative z-10 transition-all backdrop-blur-sm ${chip.shell}`}
             >
-              <span className="text-[1.6rem] sm:text-[1.75rem] leading-none select-none" aria-hidden>
+              <span className="text-[1.6rem] sm:text-[1.75rem] leading-none select-none inline-flex items-center justify-center min-h-7" aria-hidden>
                 {channelIcons[ch.id] ?? ch.icon}
               </span>
               <span

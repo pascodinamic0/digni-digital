@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { useState } from 'react'
+import SocialPlatformIcon from './SocialPlatformIcon'
 
 const ChannelsDiagram = () => {
   const [activeChannel, setActiveChannel] = useState<string | null>(null)
@@ -28,7 +29,7 @@ const ChannelsDiagram = () => {
       name: 'Facebook Messenger',
       description: 'Facebook page messaging',
       color: 'from-info to-info',
-      icon: '📘',
+      icon: <SocialPlatformIcon platform="facebook" className="w-7 h-7 text-white" />,
       stats: 'Auto-Reply'
     },
     {
@@ -36,7 +37,7 @@ const ChannelsDiagram = () => {
       name: 'Instagram DM',
       description: 'Instagram direct messages',
       color: 'from-accent to-success',
-      icon: '📸',
+      icon: <SocialPlatformIcon platform="instagram" className="w-7 h-7 text-white" />,
       stats: 'Smart Responses'
     },
     {
@@ -44,7 +45,7 @@ const ChannelsDiagram = () => {
       name: 'WhatsApp',
       description: 'WhatsApp Business messaging',
       color: 'from-success to-success',
-      icon: '📱',
+      icon: <SocialPlatformIcon platform="whatsapp" className="w-7 h-7 text-white" />,
       stats: 'Global Reach'
     },
     {

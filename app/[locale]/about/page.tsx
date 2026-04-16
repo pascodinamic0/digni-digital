@@ -1,13 +1,12 @@
 'use client'
 
 import { use, useState, useEffect, useRef } from 'react'
-import { motion, useInView } from 'framer-motion'
+import { motion, useInView, useReducedMotion, useScroll, useTransform } from 'framer-motion'
 import { Link } from '@/i18n/navigation'
 import Image from 'next/image'
 import AnimatedSection from '@/app/components/AnimatedSection'
 import SectionBlock from '@/app/components/SectionBlock'
 import ScrollIndicator from '@/app/components/ScrollIndicator'
-import StorybookModal from '@/app/components/StorybookModal'
 import CompanyValuesGrid from '@/app/components/CompanyValuesGrid'
 import ClientLogos from '@/app/components/ClientLogos'
 import { getCtaButtonText, getBookingLinkProps } from '@/app/config/cta.config'
@@ -54,16 +53,26 @@ type AboutPageProps = {
 export default function AboutPage({ params, searchParams }: AboutPageProps) {
   use(params)
   use(searchParams ?? Promise.resolve({}))
-  const [storybookOpen, setStorybookOpen] = useState(false)
   const language = useLanguage()
   const t = translations[language].about
+  const w = translations[language].home.whatWeDo
+  const ctaT = translations[language].cta
   const mission = translations[language].home.mission
   const cta = getCtaButtonText(language)
+  const shouldReduceMotion = useReducedMotion()
+  const heroRef = useRef<HTMLElement>(null)
+  const { scrollYProgress } = useScroll({
+    target: heroRef,
+    offset: ['start start', 'end start'],
+  })
+  const heroContentY = useTransform(scrollYProgress, [0, 1], [0, -36])
+  const heroGlowY = useTransform(scrollYProgress, [0, 1], [0, 56])
+  const heroGlowOpacity = useTransform(scrollYProgress, [0, 0.9], [0.85, 0.25])
 
   const stats = [
     { value: 10, suffix: '+', label: t.statYears },
-    { value: 500, suffix: '+', label: t.statStudents },
-    { value: 10, suffix: 'k+', label: t.statLeads },
+    { value: 500, suffix: '+', label: `Projected ${t.statStudents}` },
+    { value: 10, suffix: 'k+', label: `Projected ${t.statLeads}` },
     { value: 98, suffix: '%', label: t.statSatisfaction },
   ]
 
@@ -87,32 +96,105 @@ export default function AboutPage({ params, searchParams }: AboutPageProps) {
 
   /** Approximate official UN SDG brand colors for Goals 1, 4, 8 (visual alignment only). */
   const sdgAlignment = [
-    { goal: 1 as const, color: '#E5243B', title: t.sdg1Title, desc: t.sdg1Desc },
-    { goal: 4 as const, color: '#C5192D', title: t.sdg4Title, desc: t.sdg4Desc },
-    { goal: 8 as const, color: '#A21942', title: t.sdg8Title, desc: t.sdg8Desc },
+    {
+      goal: 1 as const,
+      color: '#E5243B',
+      title: t.sdg1Title,
+      desc: t.sdg1Desc,
+      imageSrc: '/Sustainable_Development_Goal_1.png',
+      imageAlt: 'UN Sustainable Development Goal 1 icon',
+      learnMoreUrl: 'https://sdgs.un.org/goals/goal1',
+    },
+    {
+      goal: 4 as const,
+      color: '#C5192D',
+      title: t.sdg4Title,
+      desc: t.sdg4Desc,
+      imageSrc: '/E_SDG-goals_icons-individual-rgb-04.png',
+      imageAlt: 'UN Sustainable Development Goal 4 icon',
+      learnMoreUrl: 'https://sdgs.un.org/goals/goal4',
+    },
+    {
+      goal: 8 as const,
+      color: '#A21942',
+      title: t.sdg8Title,
+      desc: t.sdg8Desc,
+      imageSrc: '/Sustainable_Development_Goal_8.png',
+      imageAlt: 'UN Sustainable Development Goal 8 icon',
+      learnMoreUrl: 'https://sdgs.un.org/goals/goal8',
+    },
   ]
 
   return (
     <main>
-      <section className="relative isolate min-h-screen flex items-center pt-16 sm:pt-20 overflow-hidden bg-gradient-mesh">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-20 relative z-10">
+      <section
+        ref={heroRef}
+        className="relative isolate min-h-screen flex items-center pt-16 sm:pt-20 overflow-hidden bg-gradient-mesh"
+      >
+        <motion.div
+          aria-hidden
+          style={shouldReduceMotion ? undefined : { y: heroGlowY, opacity: heroGlowOpacity }}
+          className="pointer-events-none absolute -left-24 top-20 h-72 w-72 rounded-full bg-accent/20 dark:bg-accent/25 blur-3xl"
+          animate={shouldReduceMotion ? { opacity: 0.6 } : { x: [0, 25, -10, 0], y: [0, -20, 15, 0], scale: [1, 1.08, 0.95, 1] }}
+          transition={shouldReduceMotion ? { duration: 0.2 } : { duration: 16, repeat: Infinity, ease: 'easeInOut' }}
+        />
+        <motion.div
+          aria-hidden
+          style={shouldReduceMotion ? undefined : { y: heroGlowY, opacity: heroGlowOpacity }}
+          className="pointer-events-none absolute -right-20 bottom-12 h-80 w-80 rounded-full bg-success/20 dark:bg-success/25 blur-3xl"
+          animate={shouldReduceMotion ? { opacity: 0.6 } : { x: [0, -30, 12, 0], y: [0, 20, -12, 0], scale: [1, 0.94, 1.06, 1] }}
+          transition={shouldReduceMotion ? { duration: 0.2 } : { duration: 18, repeat: Infinity, ease: 'easeInOut' }}
+        />
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.22),transparent_55%)] dark:bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),transparent_55%)]" />
+
+        <motion.div
+          style={shouldReduceMotion ? undefined : { y: heroContentY }}
+          className="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-20 relative z-10"
+        >
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 0.9, delay: 0.15 }}
             className="text-center mb-8 sm:mb-12 md:mb-16"
           >
-            <span className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-accent/10 border border-accent/30 rounded-full text-accent text-xs sm:text-sm font-medium mb-4 sm:mb-6">
-              {t.badge}
-            </span>
+            <motion.div
+              initial={{ opacity: 0, y: -14 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="mb-4 sm:mb-6"
+            >
+              <span className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 dark:bg-accent/20 px-4 py-2 text-xs font-medium text-accent sm:text-sm backdrop-blur-sm">
+                <span className="inline-block h-2 w-2 rounded-full bg-accent" />
+                Mission-Driven, Outcome-Focused
+              </span>
+            </motion.div>
             <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-4 sm:mb-6 md:mb-8 px-2">
               <span className="gradient-text">{t.heroTitle}</span>
             </h1>
-            <p className="text-base sm:text-lg md:text-xl text-muted max-w-3xl mx-auto leading-relaxed px-2">
+            <p className="text-base sm:text-lg md:text-xl text-muted max-w-3xl mx-auto leading-relaxed px-2 mb-8">
               {t.heroSubtitle}
             </p>
+
+            <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 px-2">
+              <motion.div
+                initial={{ opacity: 0, y: 14 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="rounded-full border border-border/80 bg-background/75 dark:bg-surface/70 px-4 py-2 text-xs sm:text-sm text-muted backdrop-blur-sm shadow-sm"
+              >
+                <span className="font-semibold text">10+ years</span> building growth systems
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 14 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                className="rounded-full border border-border/80 bg-background/75 dark:bg-surface/70 px-4 py-2 text-xs sm:text-sm text-muted backdrop-blur-sm shadow-sm"
+              >
+                <span className="font-semibold text">98%</span> client satisfaction
+              </motion.div>
+            </div>
           </motion.div>
-        </div>
+        </motion.div>
         
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
           <ScrollIndicator direction="down" />
@@ -181,63 +263,29 @@ export default function AboutPage({ params, searchParams }: AboutPageProps) {
                   </span>
                 </div>
                 <div className="flex flex-1 flex-col p-5 sm:p-6">
+                  <div className="relative mb-4 h-20 w-20 overflow-hidden rounded-md border border-border/60 bg-surface/70">
+                    <Image
+                      src={sdg.imageSrc}
+                      alt={sdg.imageAlt}
+                      fill
+                      className="object-cover"
+                      sizes="80px"
+                    />
+                  </div>
                   <h3 className="font-display text-lg font-bold leading-snug text-text sm:text-xl">{sdg.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-muted sm:text-[0.9375rem]">{sdg.desc}</p>
+                  <a
+                    href={sdg.learnMoreUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-5 inline-flex w-fit items-center rounded-full border border-accent/35 px-4 py-2 text-sm font-medium text-accent transition-colors hover:border-accent hover:bg-accent/10"
+                  >
+                    Learn more
+                  </a>
                 </div>
               </motion.article>
             ))}
           </div>
-          <p className="mx-auto mt-10 max-w-2xl text-center text-xs leading-relaxed text-muted/90">{t.sdgFootnote}</p>
-        </div>
-      </AnimatedSection>
-
-      <AnimatedSection className="relative overflow-hidden border-t border-border/50 py-16 sm:py-20">
-        <div className="absolute inset-0 bg-gradient-mesh opacity-40" aria-hidden />
-        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6">
-          <div className="mx-auto mb-10 max-w-3xl text-center sm:mb-12">
-            <span className="section-label">{t.freedomVisionBadge}</span>
-            <h2 className="mt-3 px-1 font-display text-2xl font-bold text-text sm:text-3xl md:text-4xl">
-              {t.freedomVisionTitle}
-            </h2>
-            <p className="mt-4 text-base leading-relaxed text-muted md:text-lg">{t.freedomVisionIntro}</p>
-          </div>
-          <div className="grid gap-6 md:grid-cols-3 md:gap-8">
-            {(
-              [
-                {
-                  emoji: '💰',
-                  title: t.freedomPillarFinancialTitle,
-                  desc: t.freedomPillarFinancialDesc,
-                },
-                {
-                  emoji: '🌍',
-                  title: t.freedomPillarLocationTitle,
-                  desc: t.freedomPillarLocationDesc,
-                },
-                {
-                  emoji: '⏰',
-                  title: t.freedomPillarTimeTitle,
-                  desc: t.freedomPillarTimeDesc,
-                },
-              ] as const
-            ).map((pillar, i) => (
-              <motion.article
-                key={pillar.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.08, duration: 0.4 }}
-                className="flex min-w-0 flex-col rounded-2xl border border-border bg-background/90 p-5 shadow-sm backdrop-blur-sm transition-shadow hover:border-accent/30 hover:shadow-md sm:p-6"
-              >
-                <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-accent/10 text-2xl sm:h-16 sm:w-16 sm:text-3xl" aria-hidden>
-                  {pillar.emoji}
-                </div>
-                <h3 className="font-display text-lg font-bold leading-snug text-text sm:text-xl">{pillar.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted sm:text-[0.9375rem]">{pillar.desc}</p>
-              </motion.article>
-            ))}
-          </div>
-          <p className="mx-auto mt-10 max-w-3xl text-center text-sm leading-relaxed text-muted md:text-base">{t.freedomVisionClosing}</p>
         </div>
       </AnimatedSection>
 
@@ -269,16 +317,6 @@ export default function AboutPage({ params, searchParams }: AboutPageProps) {
                 <p className="text-muted leading-relaxed text-sm sm:text-base">
                   {t.storyP3}
                 </p>
-                <button
-                  type="button"
-                  onClick={() => setStorybookOpen(true)}
-                  className="mt-4 sm:mt-6 btn-primary w-full sm:w-auto justify-center sm:justify-start inline-flex items-center gap-2 group"
-                >
-                  <span>{t.takeTheJourney}</span>
-                  <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                  </svg>
-                </button>
               </div>
             </motion.div>
 
@@ -320,8 +358,6 @@ export default function AboutPage({ params, searchParams }: AboutPageProps) {
           </div>
         </div>
       </AnimatedSection>
-
-      <StorybookModal isOpen={storybookOpen} onClose={() => setStorybookOpen(false)} />
 
       <AnimatedSection className="py-16 sm:py-24 bg-surface">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
@@ -540,19 +576,139 @@ export default function AboutPage({ params, searchParams }: AboutPageProps) {
       </AnimatedSection>
 
       <AnimatedSection className="py-24">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">
-            {t.ctaTitle}
-          </h2>
-            <p className="text-muted text-lg mb-8">
-              {t.ctaSubtitle}
-            </p>
-          <a
-            {...getBookingLinkProps()}
-            className="btn-primary text-lg px-8 py-4"
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 30, scale: 0.95 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center"
           >
-            {cta.bookConsultation}
-          </a>
+            <div className="relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-accent/20 via-accent/10 to-success/20 rounded-3xl blur-2xl opacity-50" />
+              <div className="absolute inset-0 bg-gradient-to-br from-accent/15 to-success/15 rounded-3xl" />
+
+              <div className="relative p-12 md:p-16 bg-gradient-to-br from-accent/10 via-surface to-success/10 border-2 border-transparent hover:border-border-foreground transition-all duration-300 rounded-3xl">
+                <div className="relative z-10">
+                  <motion.div
+                    initial={{ scale: 0, rotate: -180 }}
+                    whileInView={{ scale: 1, rotate: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.2, type: 'spring', stiffness: 200 }}
+                    className="inline-block mb-6 relative"
+                  >
+                    <motion.div
+                      animate={{
+                        scale: [1, 1.3, 1],
+                        opacity: [0.4, 0.7, 0.4],
+                      }}
+                      transition={{
+                        duration: 2,
+                        repeat: Infinity,
+                        ease: 'easeInOut',
+                      }}
+                      className="absolute inset-0 bg-accent/30 rounded-2xl blur-xl"
+                    />
+
+                    <motion.div
+                      animate={{
+                        rotate: [0, 360],
+                      }}
+                      transition={{
+                        duration: 8,
+                        repeat: Infinity,
+                        ease: 'linear',
+                      }}
+                      className="absolute inset-0 border-2 border-accent/40 rounded-2xl"
+                      style={{
+                        clipPath: 'polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)',
+                      }}
+                    />
+
+                    <motion.div
+                      animate={{
+                        scale: [1, 1.05, 1],
+                        rotate: [0, 5, -5, 0],
+                      }}
+                      transition={{
+                        duration: 3,
+                        repeat: Infinity,
+                        ease: 'easeInOut',
+                      }}
+                      className="relative w-20 h-20 md:w-24 md:h-24 bg-gradient-to-br from-accent/30 to-accent/10 rounded-2xl flex items-center justify-center backdrop-blur-sm border border-accent/40"
+                    >
+                      <motion.div
+                        animate={{
+                          filter: ['brightness(1)', 'brightness(1.5)', 'brightness(1)'],
+                          scale: [1, 1.1, 1],
+                        }}
+                        transition={{
+                          duration: 1.5,
+                          repeat: Infinity,
+                          ease: 'easeInOut',
+                        }}
+                        className="text-4xl md:text-5xl"
+                      >
+                        💡
+                      </motion.div>
+
+                      {[...Array(6)].map((_, i) => (
+                        <motion.div
+                          key={i}
+                          className="absolute w-1 h-1 bg-accent rounded-full"
+                          animate={{
+                            x: [
+                              Math.cos((i * 60) * Math.PI / 180) * 0,
+                              Math.cos((i * 60) * Math.PI / 180) * 30,
+                              Math.cos((i * 60) * Math.PI / 180) * 0,
+                            ],
+                            y: [
+                              Math.sin((i * 60) * Math.PI / 180) * 0,
+                              Math.sin((i * 60) * Math.PI / 180) * 30,
+                              Math.sin((i * 60) * Math.PI / 180) * 0,
+                            ],
+                            opacity: [0, 1, 0],
+                            scale: [0, 1.5, 0],
+                          }}
+                          transition={{
+                            duration: 2,
+                            repeat: Infinity,
+                            delay: i * 0.2,
+                            ease: 'easeInOut',
+                          }}
+                          style={{
+                            left: '50%',
+                            top: '50%',
+                          }}
+                        />
+                      ))}
+                    </motion.div>
+                  </motion.div>
+
+                  <h3 className="font-display text-3xl md:text-4xl font-bold mb-4 text-text">
+                    {w.notSureTitle}
+                  </h3>
+                  <p className="text-lg md:text-xl text-muted mb-8 max-w-2xl mx-auto leading-relaxed">
+                    {w.notSureSubtitle}
+                  </p>
+                  <a
+                    {...getBookingLinkProps()}
+                    className="group inline-flex items-center gap-3 bg-accent hover:bg-accent-light text-background font-semibold px-8 py-4 rounded-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl text-lg"
+                  >
+                    <span>{ctaT.bookStrategy}</span>
+                    <svg
+                      className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </AnimatedSection>
     </main>

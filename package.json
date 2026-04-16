@@ -8,6 +8,7 @@
     "build": "next build --webpack",
     "start": "next start",
     "lint": "tsc --noEmit",
+    "check-stripe": "node scripts/check-stripe-env.mjs",
     "generate-blog-locale-fills": "bun scripts/generate-blog-locale-fills.ts",
     "bootstrap-admin": "bun scripts/bootstrap-admin-user.ts"
   },
@@ -27,7 +28,9 @@
     "next-intl": "^4.8.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "resend": "^6.9.2"
+    "resend": "^6.9.2",
+    "simple-icons": "^16.16.0",
+    "stripe": "^19.3.0"
   },
   "devDependencies": {
     "@types/node": "^22.0.0",

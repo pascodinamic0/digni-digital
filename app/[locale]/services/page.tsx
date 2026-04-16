@@ -4,6 +4,8 @@ import { use } from 'react'
 import { motion } from 'framer-motion'
 import { Link } from '@/i18n/navigation'
 import AnimatedSection from '@/app/components/AnimatedSection'
+import PremiumHeroBackdrop from '@/app/components/PremiumHeroBackdrop'
+import PremiumHeroParallax from '@/app/components/PremiumHeroParallax'
 import ScrollIndicator from '@/app/components/ScrollIndicator'
 import { getBookingLinkProps } from '@/app/config/cta.config'
 import { useLanguage } from '@/app/context/LocaleContext'
@@ -35,7 +37,8 @@ export default function ServicesPage({ params, searchParams }: ServicesPageProps
     <main>
       {/* Hero Section */}
       <section className="relative isolate min-h-screen flex items-center pt-16 sm:pt-20 overflow-hidden bg-gradient-mesh">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-20 relative z-10">
+        <PremiumHeroBackdrop />
+        <PremiumHeroParallax className="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-20 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -51,8 +54,26 @@ export default function ServicesPage({ params, searchParams }: ServicesPageProps
             <p className="text-base sm:text-lg md:text-xl text-muted max-w-3xl mx-auto leading-relaxed px-2">
               AI systems. Graduate programs. Agentic Softwares. Results from day one.
             </p>
+            <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 px-2 mt-8">
+              <motion.div
+                initial={{ opacity: 0, y: 14 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="rounded-full border border-border/80 bg-background/75 dark:bg-surface/70 px-4 py-2 text-xs sm:text-sm text-muted backdrop-blur-sm shadow-sm"
+              >
+                <span className="font-semibold text">10+ years</span> building growth systems
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 14 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                className="rounded-full border border-border/80 bg-background/75 dark:bg-surface/70 px-4 py-2 text-xs sm:text-sm text-muted backdrop-blur-sm shadow-sm"
+              >
+                <span className="font-semibold text">98%</span> client satisfaction
+              </motion.div>
+            </div>
           </motion.div>
-        </div>
+        </PremiumHeroParallax>
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
           <ScrollIndicator direction="down" />
         </div>

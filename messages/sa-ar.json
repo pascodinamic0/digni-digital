@@ -81,5 +81,13 @@
     "featuredArticles": "المقالات المميزة",
     "allArticles": "جميع المقالات",
     "featured": "مميز"
+  },
+  "Checkout": {
+    "successTitle": "شكرًا لإتمام الدفع",
+    "successAmount": "إجمالي المدفوع: {amount}",
+    "successBody": "اكتملت عملية الدفع بنجاح. ستصلك رسالة تأكيد من Stripe قريبًا.",
+    "canceledTitle": "تم إلغاء الدفع",
+    "canceledBody": "لم يتم خصم أي مبلغ. يمكنك العودة في أي وقت لإكمال الدفع.",
+    "backHome": "العودة إلى الرئيسية"
   }
 }

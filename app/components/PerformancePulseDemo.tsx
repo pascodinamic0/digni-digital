@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { useState, useEffect, useMemo, useCallback } from 'react'
 import { useLanguage } from '@/app/context/LocaleContext'
 import { translations } from '@/app/config/translations'
+import SocialPlatformIcon from './SocialPlatformIcon'
 
 type PlatformKey = 'google' | 'facebook' | 'instagram' | 'yelp' | 'whatsapp' | 'bing'
 
@@ -11,14 +12,14 @@ const PLATFORM_ORDER: PlatformKey[] = ['google', 'facebook', 'instagram', 'yelp'
 
 const PLATFORM_STYLES: Record<
   PlatformKey,
-  { bar: string; icon: string; label: string }
+  { bar: string; label: string }
 > = {
-  google: { bar: 'from-blue-500 to-blue-600', icon: 'G', label: 'bg-white text-blue-600' },
-  facebook: { bar: 'from-blue-700 to-blue-800', icon: 'f', label: 'bg-[#1877F2] text-white' },
-  instagram: { bar: 'from-pink-500 via-rose-500 to-amber-400', icon: '◎', label: 'bg-gradient-to-br from-pink-500 to-amber-400 text-white' },
-  yelp: { bar: 'from-red-500 to-red-600', icon: 'Y', label: 'bg-[#FF1A1A] text-white' },
-  whatsapp: { bar: 'from-emerald-500 to-emerald-600', icon: 'W', label: 'bg-[#25D366] text-white' },
-  bing: { bar: 'from-cyan-500 to-blue-500', icon: 'b', label: 'bg-cyan-600 text-white' },
+  google: { bar: 'from-blue-500 to-blue-600', label: 'bg-white text-[#4285F4]' },
+  facebook: { bar: 'from-blue-700 to-blue-800', label: 'bg-[#1877F2] text-white' },
+  instagram: { bar: 'from-pink-500 via-rose-500 to-amber-400', label: 'bg-gradient-to-br from-pink-500 to-amber-400 text-white' },
+  yelp: { bar: 'from-red-500 to-red-600', label: 'bg-[#FF1A1A] text-white' },
+  whatsapp: { bar: 'from-emerald-500 to-emerald-600', label: 'bg-[#25D366] text-white' },
+  bing: { bar: 'from-cyan-500 to-blue-500', label: 'bg-[#008373] text-white' },
 }
 
 const RING_SIZE = 132
@@ -238,9 +239,9 @@ export default function PerformancePulseDemo() {
                   >
                     <div className="flex items-center gap-3">
                       <div
-                        className={`w-9 h-9 rounded-xl flex items-center justify-center text-[11px] font-bold shrink-0 shadow-sm ring-1 ring-black/5 ${st.label}`}
+                        className={`w-9 h-9 rounded-xl flex items-center justify-center shrink-0 shadow-sm ring-1 ring-black/5 ${st.label}`}
                       >
-                        {st.icon}
+                        <SocialPlatformIcon platform={p.id} className="w-4 h-4" />
                       </div>
                       <div className="min-w-0 flex-1 space-y-2">
                         <div className="flex items-baseline justify-between gap-2">

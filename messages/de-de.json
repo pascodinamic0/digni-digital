@@ -81,5 +81,13 @@
     "featuredArticles": "Empfohlene Artikel",
     "allArticles": "Alle Artikel",
     "featured": "empfohlen"
+  },
+  "Checkout": {
+    "successTitle": "Vielen Dank für Ihre Zahlung",
+    "successAmount": "Gezahlter Betrag: {amount}",
+    "successBody": "Die Zahlung war erfolgreich. Sie erhalten in Kürze eine Bestätigungs-E-Mail von Stripe.",
+    "canceledTitle": "Zahlung abgebrochen",
+    "canceledBody": "Es wurde nichts belastet. Sie können jederzeit zurückkehren, um die Zahlung abzuschließen.",
+    "backHome": "Zur Startseite"
   }
 }

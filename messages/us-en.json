@@ -81,5 +81,13 @@
     "featuredArticles": "Featured Articles",
     "allArticles": "All Articles",
     "featured": "featured"
+  },
+  "Checkout": {
+    "successTitle": "Thank you for your payment",
+    "successAmount": "Total paid: {amount}",
+    "successBody": "Your checkout completed successfully. You should receive a confirmation email from Stripe shortly.",
+    "canceledTitle": "Checkout canceled",
+    "canceledBody": "No charge was made. You can return anytime to complete payment.",
+    "backHome": "Back to home"
   }
 }

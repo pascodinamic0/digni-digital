@@ -2,6 +2,7 @@
 
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
+import SocialPlatformIcon from './SocialPlatformIcon'
 
 type ConversationStatus = 'qualified' | 'appointment-booked' | 'in-progress' | 'follow-up' | 'new-lead'
 type ConversationChannel = 'website' | 'whatsapp' | 'sms' | 'instagram' | 'facebook'
@@ -122,10 +123,7 @@ const UnifiedInbox = () => {
         )
       case 'whatsapp':
         return (
-          <svg className="w-3 h-3 text-success" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M20.5 11.8C20.5 16.5 16.7 20.3 12 20.3C10.4 20.3 8.8 19.9 7.5 19L3.5 20.3L4.8 16.5C3.8 15.1 3.3 13.5 3.3 11.8C3.3 7.2 7.1 3.4 11.8 3.4C16.5 3.4 20.5 7.2 20.5 11.8Z" />
-            <path d="M15.9 13.4C15.7 13.3 14.8 12.9 14.7 12.8C14.5 12.8 14.4 12.7 14.3 12.9C14.2 13 13.9 13.4 13.8 13.5C13.7 13.6 13.6 13.7 13.4 13.6C12.4 13.1 11.6 12.4 10.9 11.5C10.8 11.3 10.9 11.2 11 11.1C11.1 11 11.2 10.9 11.3 10.7C11.4 10.6 11.4 10.5 11.5 10.4C11.5 10.3 11.5 10.1 11.4 10L10.9 8.9C10.8 8.7 10.6 8.6 10.5 8.6H10.1C10 8.6 9.8 8.7 9.7 8.8C9.5 9 9.1 9.4 9.1 10.3C9.1 11.1 9.7 12 9.8 12.1C9.9 12.2 11.1 14.1 13 14.9C14.4 15.5 14.9 15.5 15.3 15.4C15.6 15.4 16.2 15 16.3 14.7C16.5 14.4 16.5 14 16.4 13.9C16.3 13.7 16.1 13.6 15.9 13.4Z" fill="hsl(var(--background))" />
-          </svg>
+          <SocialPlatformIcon platform="whatsapp" className="w-3 h-3 text-success" />
         )
       case 'sms':
         return (
@@ -137,17 +135,11 @@ const UnifiedInbox = () => {
         )
       case 'instagram':
         return (
-          <svg className="w-3 h-3 text-success" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <rect x="4.5" y="4.5" width="15" height="15" rx="4" stroke="currentColor" strokeWidth="1.8" />
-            <circle cx="12" cy="12" r="3.5" stroke="currentColor" strokeWidth="1.8" />
-            <circle cx="16.6" cy="7.4" r="1" fill="currentColor" />
-          </svg>
+          <SocialPlatformIcon platform="instagram" className="w-3 h-3 text-success" />
         )
       case 'facebook':
         return (
-          <svg className="w-3 h-3 text-success" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M13.4 20V12.9H15.8L16.2 10.1H13.4V8.3C13.4 7.5 13.6 6.9 14.8 6.9H16.3V4.4C16 4.4 15.2 4.3 14.2 4.3C12.1 4.3 10.7 5.6 10.7 8V10.1H8.5V12.9H10.7V20H13.4Z" />
-          </svg>
+          <SocialPlatformIcon platform="facebook" className="w-3 h-3 text-success" />
         )
       default:
         return null
