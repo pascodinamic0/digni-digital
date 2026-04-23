@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Script from 'next/script'
 import { NextIntlClientProvider } from 'next-intl'
 import { getMessages, setRequestLocale } from 'next-intl/server'
 import { notFound } from 'next/navigation'
@@ -8,7 +9,6 @@ import { LocaleProvider } from '../context/LocaleContext'
 import LocaleKeyedContent from '@/app/components/LocaleKeyedContent'
 import Navigation from '@/app/components/Navigation'
 import Footer from '@/app/components/Footer'
-import LiveChatWidget from '@/app/components/LiveChatWidget'
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://digni-digital-llc.com'
 
@@ -66,7 +66,13 @@ export default async function LocaleLayout({ children, params }: Props) {
         <Navigation />
         <LocaleKeyedContent locale={locale}>{children}</LocaleKeyedContent>
         <Footer />
-        <LiveChatWidget />
+        <Script
+          id="ghl-chat-widget-loader"
+          src="https://widgets.leadconnectorhq.com/loader.js"
+          strategy="afterInteractive"
+          data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
+          data-widget-id="691c374633e992e56f750115"
+        />
       </NextIntlClientProvider>
     </LocaleProvider>
   )
