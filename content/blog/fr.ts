@@ -64,10 +64,10 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
       </ol>
 
       <h3>ROI et prochaines étapes</h3>
-      <p>Les systèmes d'employés IA se rentabilisent généralement en quelques mois grâce à une meilleure conversion des leads et un coût par contact plus bas. Pour un plan sur mesure et une discussion ROI, <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">réservez votre stratégie call gratuite</a> avec notre équipe.</p>
+      <p>Les systèmes d'employés IA se rentabilisent généralement en quelques mois grâce à une meilleure conversion des leads et un coût par contact plus bas. Pour un plan sur mesure et une discussion ROI, <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">réservez votre appel stratégique gratuit</a> avec notre équipe.</p>
 
       <hr>
-      <p><em>Prêt à automatiser le service client et multiplier vos leads ? <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Réservez votre stratégie call gratuite</a> avec Digni Digital.</em></p>
+      <p><em>Prêt à automatiser le service client et multiplier vos leads ? <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Réservez votre appel stratégique gratuit</a> avec Digni Digital.</em></p>
     `,
   },
   'agents-ia-vs-automatisation-traditionnelle-pme': {
@@ -90,18 +90,18 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
       <p>L'automatisation traditionnelle repose sur des règles fixes, des scripts et des déclencheurs. Elle convient aux processus répétitifs et prévisibles, mais peine face aux questions variées, aux langues ou aux cas limites. Les centres d'appels qui n'utilisent que SVI et scripts frustrent souvent les clients et manquent des leads quand le script ne colle pas.</p>
 
       <h3>Agents IA : contexte et flexibilité</h3>
-      <p>Les <strong>agents IA</strong> utilisent la compréhension et la génération du langage naturel. Ils peuvent qualifier les leads en conversation, adapter les réponses au contexte et transférer aux humains avec l'historique complet. Cas d'usage idéaux : <strong>qualification d'appels</strong>, <strong>génération de propositions</strong> (ex. outils voix-vers-proposition), et support de premier niveau 24h/24. Notre approche human-first chez Digni Digital, renforcer les équipes plutôt que les remplacer, résonne en Europe comme en Afrique, où la confiance et la clarté comptent.</p>
+      <p>Les <strong>agents IA</strong> utilisent la compréhension et la génération du langage naturel. Ils peuvent qualifier les leads en conversation, adapter les réponses au contexte et transférer aux humains avec l'historique complet. Cas d'usage idéaux : <strong>qualification d'appels</strong>, <strong>génération de propositions</strong> (ex. outils voix-vers-proposition), et support de premier niveau 24h/24. Notre approche human-first chez Digni Digital, qui consiste à renforcer les équipes plutôt qu'à les remplacer, résonne en Europe comme en Afrique, où la confiance et la clarté comptent.</p>
 
       <h3>Quand passer aux agents IA</h3>
       <ul>
-        <li>Vous perdez des leads après les heures ou sur des canaux que vous ne pouvez pas staffer.</li>
+        <li>Vous perdez des leads après les heures ou sur des canaux que votre équipe ne peut pas couvrir.</li>
         <li>Votre équipe passe l'essentiel de son temps sur des questions répétitives (horaires, tarifs, RDV).</li>
         <li>Vous avez besoin de cohérence multilingue (ex. français en France et en RDC).</li>
       </ul>
       <p>Découvrez nos solutions de <a href="/ai-receptionist">réceptionniste IA</a> et d'agents pour voir comment nous concevons le handoff et un ROI mesurable.</p>
 
       <hr>
-      <p><em><a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Réservez votre stratégie call gratuite</a> pour comparer agents IA et automatisation traditionnelle pour votre entreprise.</em></p>
+      <p><em><a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Réservez votre appel stratégique gratuit</a> pour comparer agents IA et automatisation traditionnelle pour votre entreprise.</em></p>
     `,
   },
   'automatisation-processus-rdc-kinshasa-productivite-2026': {
@@ -134,7 +134,7 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
       <p>Interfaces en français, design mobile-first, partenaire local, WhatsApp et SMS. Digni Digital, fondée à Kinshasa en 2019, apporte exactement cela. Étude de cas : entreprise de logistique à Kinshasa, réponse aux leads en moins de 2 minutes, 25 h/semaine économisées, +45 % de productivité en 90 jours.</p>
 
       <hr>
-      <p><em><a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Réservez votre stratégie call gratuite</a> pour parler d'automatisation pour votre entreprise à Kinshasa ou en RDC.</em></p>
+      <p><em><a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Réservez votre appel stratégique gratuit</a> pour parler d'automatisation pour votre entreprise à Kinshasa ou en RDC.</em></p>
     `,
   },
   'business-development-ia-leads-24-7': {
@@ -163,7 +163,7 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
       <p>Première réponse en minutes. Qualification automatique (budget, délai, besoin). Prise de rendez-vous intégrée. Suivi automatisé. Nos solutions de <a href="/ai-receptionist">réceptionniste IA et qualification de leads</a> gèrent tout. Étude de cas : agence immobilière à Kinshasa, +3,2x leads qualifiés, +40 % de chiffre d'affaires en 90 jours. Combinez avec une présence web solide (<a href="/agentic-softwares">sites et SaaS sur mesure</a>) pour un impact maximum. Implémentation : 2–4 semaines.</p>
 
       <hr>
-      <p><em><a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Réservez votre stratégie call gratuite</a> pour booster votre business development avec l'IA.</em></p>
+      <p><em><a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Réservez votre appel stratégique gratuit</a> pour booster votre business development avec l'IA.</em></p>
     `,
   },
   'creation-site-web-ia-guide-2026': {
@@ -193,10 +193,10 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
 
       <h3>L'avantage de l'intégration IA</h3>
 
-      <p>Nous construisons des <a href="/agentic-softwares">sites et applications web sur mesure</a> qui s'intègrent à notre <a href="/ai-receptionist">réceptionniste IA</a>. Chaque visite peut devenir un lead qualifié ou un rendez-vous réservé, 24h/24, en français. <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Réservez un call stratégie gratuit</a> pour concevoir votre site générateur de leads.</p>
+      <p>Nous construisons des <a href="/agentic-softwares">sites et applications web sur mesure</a> qui s'intègrent à notre <a href="/ai-receptionist">réceptionniste IA</a>. Chaque visite peut devenir un lead qualifié ou un rendez-vous réservé, 24h/24, en français. <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Réservez un appel stratégique gratuit</a> pour concevoir votre site générateur de leads.</p>
 
       <hr>
-      <p><em><a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Réservez votre stratégie call gratuite</a> pour concevoir votre site générateur de leads.</em></p>
+      <p><em><a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Réservez votre appel stratégique gratuit</a> pour concevoir votre site générateur de leads.</em></p>
     `,
   },
   'saas-personnalise-vs-pret-a-l-emploi-pme': {
@@ -242,10 +242,10 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
 
       <h3>Cadre de décision : 5 questions</h3>
 
-      <p>Adéquation processus, avantage concurrentiel, profondeur d'intégration, budget et délai, horizon de croissance. <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Réservez un call stratégie gratuit</a>, nous auditons vos processus et vous donnons une recommandation claire. Quand le sur mesure l'emporte, nous livrons des <a href="/agentic-softwares">solutions scalables dont vous êtes pleinement propriétaire</a>.</p>
+      <p>Adéquation processus, avantage concurrentiel, profondeur d'intégration, budget et délai, horizon de croissance. <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Réservez un appel stratégique gratuit</a>, nous auditons vos processus et vous donnons une recommandation claire. Quand le sur mesure l'emporte, nous livrons des <a href="/agentic-softwares">solutions évolutives dont vous êtes pleinement propriétaire</a>.</p>
 
       <hr>
-      <p><em><a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Réservez votre stratégie call gratuite</a> pour comparer sur mesure et prêt-à-l'emploi pour votre cas.</em></p>
+      <p><em><a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Réservez votre appel stratégique gratuit</a> pour comparer sur mesure et prêt-à-l'emploi pour votre cas.</em></p>
     `,
   },
   'transformation-digitale-rdc-2026-ia': {
@@ -283,10 +283,10 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
 
       <h3>Pour aller plus loin</h3>
 
-      <p>Employés IA 2026, automatisation processus RDC, croissance avec l'IA, SaaS sur mesure vs prêt-à-l'emploi, IA pour les PME françaises. Tous les chemins mènent à un call stratégie gratuit.</p>
+      <p>Employés IA 2026, automatisation processus RDC, croissance avec l'IA, SaaS sur mesure vs prêt-à-l'emploi, IA pour les PME françaises. Tous les chemins mènent à un appel stratégique gratuit.</p>
 
       <hr>
-      <p><em><a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Réservez votre stratégie call gratuite</a> pour définir votre feuille de route de transformation digitale.</em></p>
+      <p><em><a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Réservez votre appel stratégique gratuit</a> pour définir votre feuille de route de transformation digitale.</em></p>
     `,
   },
   'ia-pme-francaises-agents-sans-budget': {
@@ -319,14 +319,14 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
 
       <h3>Objections courantes, et la réalité</h3>
 
-      <p>« L'IA est trop chère » : notre réceptionniste coûte moins qu'un employé à temps partiel et travaille 24h/24. « Pas d'équipe IT » : nous gérons la configuration et le support. « Et le AI Act ? » : nous construisons avec transparence dès le départ. « Nos clients préfèrent les humains » : nous aussi. L'IA gère le routine ; les humains le complexe.</p>
+      <p>« L'IA est trop chère » : notre réceptionniste coûte moins qu'un employé à temps partiel et travaille 24h/24. « Pas d'équipe IT » : nous gérons la configuration et le support. « Et le AI Act ? » : nous construisons avec transparence dès le départ. « Nos clients préfèrent les humains » : nous aussi. L'IA gère la routine ; les humains gèrent le complexe.</p>
 
       <h3>Implémentation : 4 semaines pour être en ligne</h3>
 
-      <p>Semaine 1 : audit. Semaine 2 : connexion. Semaine 3 : pilote. Semaine 4 : mise en production. Idéal pour l'<strong>automatisation PME</strong> et la <strong>transformation numérique France</strong>. <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Réservez un call stratégie gratuit</a>, nous auditons vos opérations et montrons comment l'IA peut s'intégrer à votre PME française.</p>
+      <p>Semaine 1 : audit. Semaine 2 : connexion. Semaine 3 : pilote. Semaine 4 : mise en production. Idéal pour l'<strong>automatisation PME</strong> et la <strong>transformation numérique France</strong>. <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Réservez un appel stratégique gratuit</a>, nous auditons vos opérations et montrons comment l'IA peut s'intégrer à votre PME française.</p>
 
       <hr>
-      <p><em><a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Réservez votre stratégie call gratuite</a> pour voir comment l'IA peut s'intégrer à votre PME française.</em></p>
+      <p><em><a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Réservez votre appel stratégique gratuit</a> pour voir comment l'IA peut s'intégrer à votre PME française.</em></p>
     `,
   },
   'claude-grok-agents-ia-afrique-francophone': {
@@ -351,10 +351,10 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
 
       <h3>À quoi ressemble une IA accessible pour l'Afrique francophone</h3>
 
-      <p><a href="/ai-receptionist">Réceptionnistes IA</a> 24h/24 en français. <a href="/agentic-softwares">Web et SaaS sur mesure</a> pour vos workflows. Services de croissance. Mobile-first. Digni Digital, fondée à Kinshasa en 2019, apporte : IA human-first, accompagnement local, ROI mesurable, français par défaut. Pour les institutions : programme <a href="/future-ready-graduate">Digni Digital Literacy</a>, 85 % d'emploi dans les 6 mois.</p>
+      <p><a href="/ai-receptionist">Réceptionnistes IA</a> 24h/24 en français. <a href="/agentic-softwares">Web et SaaS sur mesure</a> pour vos workflows. Services de croissance. Mobile-first. Digni Digital, fondée à Kinshasa en 2019, apporte : IA human-first, accompagnement local, ROI mesurable, français par défaut. Pour les institutions : programme <a href="/future-ready-graduate">Digni Digital Literacy</a>, 85 % en emploi dans les 6 mois.</p>
 
       <hr>
-      <p><em><a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Réservez votre stratégie call gratuite</a> pour parler de l'adoption de l'IA pour votre organisation.</em></p>
+      <p><em><a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Réservez votre appel stratégique gratuit</a> pour parler de l'adoption de l'IA pour votre organisation.</em></p>
     `,
   },
 
@@ -489,7 +489,7 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
         <li><strong>Temps de réponse aux leads</strong> : réduit de plus de 4 heures à moins de 2 minutes</li>
         <li><strong>Leads qualifiés</strong> : augmentés de 3,2x (l'IA filtrait les curieux)</li>
         <li><strong>Productivité de l'équipe commerciale</strong> : 70 % du temps redirigé vers les conversations à forte valeur</li>
-        <li><strong>Impact sur le chiffre d'affaires</strong> : augmentation de 40 % des clôtures mensuelles</li>
+        <li><strong>Impact sur le chiffre d'affaires</strong> : augmentation de 40 % des ventes conclues chaque mois</li>
         <li><strong>Coût</strong> : moins qu'un salaire d'employé à temps partiel</li>
       </ul>
 

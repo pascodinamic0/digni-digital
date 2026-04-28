@@ -75,7 +75,7 @@ const FORM_TRANSLATIONS: Record<Language, {
     spotFullyBookedNote: 'Your spot is fully booked only after you send the payment screenshot to the WhatsApp above.',
   },
   fr: {
-    title: 'Réservez votre place. Plus que 25 places',
+    title: 'Réservez votre place. Il ne reste que 25 places.',
     firstName: 'Prénom',
     lastName: 'Nom',
     email: 'E-mail',
@@ -85,7 +85,7 @@ const FORM_TRANSLATIONS: Record<Language, {
     commitReady: 'Êtes-vous prêt à vous engager 3 jours/semaine pendant 1 mois ?',
     commitReadyYes: 'Oui',
     commitReadyNo: 'Non',
-    paidProgram: 'Je comprends et accepte qu\'il s\'agit d\'un programme payant (25 $/mois après la fin) pour rester dans la communauté et accéder aux infos plus rapidement que quiconque.',
+    paidProgram: 'Je comprends et accepte qu\'il s\'agit d\'un programme payant (49 $/mois après la fin) pour rester dans la communauté et accéder aux infos plus rapidement que quiconque.',
     paidProgramYes: 'Oui, j\'accepte',
     paidProgramNo: 'Non',
     submit: 'Envoyer',
@@ -102,7 +102,7 @@ const FORM_TRANSLATIONS: Record<Language, {
     step3: 'Cliquez sur le bouton ci-dessous pour ouvrir WhatsApp et nous envoyer la capture',
     step4: 'Nous vous ajouterons au groupe communautaire immédiatement',
     sendToWhatsApp: 'Envoyer la capture sur WhatsApp',
-    whatsappMessage: 'Bonjour ! J\'ai complété le formulaire Early Access Guided Learning. J\'ai envoyé 25 $. Veuillez trouver ma capture d\'écran du paiement en pièce jointe. Je suis prêt à rejoindre la communauté !',
+    whatsappMessage: 'Bonjour ! J\'ai complété le formulaire Early Access Guided Learning. J\'ai envoyé 49 $. Veuillez trouver ma capture d\'écran du paiement en pièce jointe. Je suis prêt à rejoindre la communauté !',
     spotFullyBookedNote: 'Votre place n\'est définitivement réservée qu\'après avoir envoyé la capture du paiement au WhatsApp ci-dessus.',
   },
   ar: {

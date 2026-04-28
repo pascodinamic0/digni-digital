@@ -362,7 +362,7 @@ const pipelineColumnsFr: PipelineColumnT[] = [
 ]
 
 const pipelineCardsFr: PipelineCardT[] = [
-  { id: 'p1', name: 'Sarah Chen', source: 'Chat site', context: 'Créneaux ménage & tarifs pour la semaine prochaine.', valueLabel: 'Valeur', valueDisplay: '1 150 €' },
+  { id: 'p1', name: 'Sarah Chen', source: 'Chat site', context: 'Créneaux de ménage et tarifs pour la semaine prochaine.', valueLabel: 'Valeur', valueDisplay: '1 150 €' },
   { id: 'p2', name: 'Marcus Webb', source: 'Google Local', context: 'Devis fret week-end ; compare deux prestataires.', valueLabel: 'Valeur', valueDisplay: '2 400 €' },
   { id: 'p3', name: 'Elena Ruiz', source: 'Pub Facebook', context: 'Traiteur pour deux sites ; budget validé à l’appel.', valueLabel: 'Valeur', valueDisplay: '3 750 €' },
   { id: 'p4', name: 'James Okonkwo', source: 'Recommandation', context: 'Consultation divorce, envoyé par un ancien client.', valueLabel: 'Valeur', valueDisplay: '1 890 €' },
@@ -405,7 +405,7 @@ export const aiEmployeeProductDemosFr: AiEmployeeProductDemosTranslations = {
     playDemoLabel: 'Lecture',
     stopDemoLabel: 'Stop',
     detailModalBody:
-      'L’IA a enregistré qui ils sont, la source, l’intention et la valeur. Votre équipe n’est notifiée qu’à la qualification.',
+      'L’IA a enregistré leur profil, la source, l’intention et la valeur. Votre équipe n’est notifiée qu’à la qualification.',
     detailModalNextExample: 'Envoyer le lien calendrier pour un appel de 20 minutes.',
     closeLabel: 'Fermer',
   },

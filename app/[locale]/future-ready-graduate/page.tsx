@@ -115,10 +115,9 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
   const pricing = [
     {
       name: 'School Partnership Program',
-      price: '$1,000',
-      period: '/month',
+      price: '$5,000',
+      period: '/semester',
       priceOptions: [
-        { amount: '$1,000', period: '/month' },
         { amount: '$5,000', period: '/semester (5 months)' },
         { amount: '$12,000', period: '/year' }
       ],
@@ -166,9 +165,9 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
     },
     {
       name: 'Professional Institutes',
-      price: '$1,500',
-      period: '/month',
-      description: 'For vocational centers, training academies, and professional institutes.',
+      price: '$1,000',
+      period: '/vocational center',
+      description: 'For each vocational center, training academy, or professional institute.',
       audience: 'professional',
       features: [
         'Full professional curriculum for adult learners',
@@ -895,7 +894,7 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
                     Program Investment
                   </h4>
                   <p className="text-muted text-sm leading-relaxed">
-                    Partnership fee: <span className="font-medium text">$1,000/month</span>, <span className="font-medium text">$5,000/semester</span> (5 months), or <span className="font-medium text">$12,000/year</span>, flexible to your budget and academic calendar.
+                    Partnership fee: <span className="font-medium text">$5,000/semester</span> (5 months) or <span className="font-medium text">$12,000/year</span>, flexible to your budget and academic calendar.
                   </p>
                 </div>
 
@@ -1178,11 +1177,6 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
                         {pageT.newLabel}
                       </span>
                     )}
-                    {'spotsAvailable' in plan && plan.spotsAvailable && (
-                      <span className="shrink-0 px-3 py-1 bg-surface-light border border-border text-muted text-xs font-medium rounded-full">
-                        {pageT.onlySpotsAvailable.replace('{count}', String(plan.spotsAvailable))}
-                      </span>
-                    )}
                   </div>
 
                   {/* Content */}
@@ -1240,13 +1234,6 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
                     </div>
                   ) : plan.audience === 'schools' && 'priceOptions' in plan && plan.priceOptions ? (
                     <div className="space-y-3 w-full">
-                      <StripeCheckoutButton
-                        plan="frg_school_monthly"
-                        className="btn-primary w-full text-center py-3"
-                        redirectingLabel={ctaT.checkoutRedirecting}
-                      >
-                        {ctaT.frgPaySchoolMonthly}
-                      </StripeCheckoutButton>
                       <StripeCheckoutButton
                         plan="frg_school_semester"
                         className="btn-primary w-full text-center py-3"
