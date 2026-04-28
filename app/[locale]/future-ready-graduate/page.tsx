@@ -609,26 +609,26 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
       </AnimatedSection>
 
       {/* Digital Economy Skills */}
-      <AnimatedSection id="curriculum" className="py-24">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">
+      <AnimatedSection id="curriculum" className="py-16 sm:py-20 lg:py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-10 sm:mb-16">
+            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-4 sm:mb-6">
               {pageT.highDemandSkills}<br />
               <span className="gradient-text">{pageT.highDemandSkillsHighlight}</span>
             </h2>
-            <p className="text-muted text-lg max-w-3xl mx-auto">
+            <p className="text-muted text-base sm:text-lg leading-relaxed max-w-3xl mx-auto">
               {pageT.highDemandSkillsSubtitle}
             </p>
           </div>
 
-          <div className="relative overflow-hidden mb-16">
-            <div className="absolute left-0 top-0 bottom-0 w-16 md:w-24 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
-            <div className="absolute right-0 top-0 bottom-0 w-16 md:w-24 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
+          <div className="relative -mx-4 overflow-hidden px-4 sm:mx-0 sm:px-0 mb-10 sm:mb-16">
+            <div className="hidden sm:block absolute left-0 top-0 bottom-0 w-16 md:w-24 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
+            <div className="hidden sm:block absolute right-0 top-0 bottom-0 w-16 md:w-24 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
 
             <button
               type="button"
               onClick={() => skillsScrollRef.current?.scrollBy({ left: -344, behavior: 'smooth' })}
-              className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-background/90 border border-border shadow-lg flex items-center justify-center hover:bg-surface hover:border-success/50 transition-colors"
+              className="hidden sm:flex absolute left-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-background/90 border border-border shadow-lg items-center justify-center hover:bg-surface hover:border-success/50 transition-colors"
               aria-label="Scroll left"
             >
               <svg className="w-5 h-5 text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -638,7 +638,7 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
             <button
               type="button"
               onClick={() => skillsScrollRef.current?.scrollBy({ left: 344, behavior: 'smooth' })}
-              className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-background/90 border border-border shadow-lg flex items-center justify-center hover:bg-surface hover:border-success/50 transition-colors"
+              className="hidden sm:flex absolute right-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-background/90 border border-border shadow-lg items-center justify-center hover:bg-surface hover:border-success/50 transition-colors"
               aria-label="Scroll right"
             >
               <svg className="w-5 h-5 text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -648,7 +648,7 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
 
             <div
               ref={skillsScrollRef}
-              className="flex gap-6 pb-4 overflow-x-auto overflow-y-hidden scroll-smooth scrollbar-hide snap-x snap-mandatory"
+              className="flex gap-3 sm:gap-6 pb-4 overflow-x-auto overflow-y-hidden scroll-smooth scrollbar-hide snap-x snap-mandatory scroll-px-4 sm:scroll-px-0"
             >
               {(() => {
                 const skills = [
@@ -772,22 +772,22 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
                 const scrollColumns = [...columns, ...columns]
 
                 const SkillCard = ({ item }: { item: typeof skills[0] }) => (
-                  <div className="card p-6 hover:border-success/50 group w-[320px] min-h-[300px] flex flex-col">
-                    <div className="text-center mb-4">
-                      <div className="w-14 h-14 bg-success/10 rounded-2xl mx-auto mb-2 flex items-center justify-center text-2xl">
+                  <div className="card p-4 sm:p-6 hover:border-success/50 group w-[min(18rem,calc(100vw-2rem))] sm:w-[320px] min-h-[260px] sm:min-h-[300px] flex flex-col">
+                    <div className="text-center mb-3 sm:mb-4">
+                      <div className="w-12 h-12 sm:w-14 sm:h-14 bg-success/10 rounded-2xl mx-auto mb-2 flex items-center justify-center text-xl sm:text-2xl">
                         {item.icon}
                       </div>
-                      <h3 className="font-display text-base font-bold group-hover:text-success transition-colors mb-2">
+                      <h3 className="font-display text-sm sm:text-base font-bold leading-snug group-hover:text-success transition-colors mb-2">
                         {item.skill}
                       </h3>
-                      <div className="flex items-center justify-center gap-2 mb-2">
-                        <span className="text-success font-bold">{item.earning}</span>
+                      <div className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 mb-2">
+                        <span className="text-success text-sm sm:text-base font-bold">{item.earning}</span>
                         <span className="px-2 py-0.5 bg-success/10 text-success text-xs rounded-full">
                           {item.demand}
                         </span>
                       </div>
                     </div>
-                    <p className="text-muted text-xs leading-relaxed mb-3 flex-1 line-clamp-3">{item.description}</p>
+                    <p className="text-muted text-xs leading-relaxed mb-3 flex-1 line-clamp-3 sm:line-clamp-none">{item.description}</p>
                     <div>
                       <span className="text-xs uppercase tracking-wider text-muted-dark block mb-1">Key Tools</span>
                       <div className="flex flex-wrap gap-1">
@@ -802,7 +802,7 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
                 )
 
                 return scrollColumns.map(([top, bottom], i) => (
-                  <div key={i} className="flex flex-col gap-4 flex-shrink-0 snap-start">
+                  <div key={i} className="flex flex-col gap-3 sm:gap-4 flex-shrink-0 snap-start">
                     <SkillCard item={top} />
                     {bottom && <SkillCard item={bottom} />}
                   </div>
@@ -816,31 +816,31 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="card p-8 bg-gradient-to-br from-success/5 to-success/10 border-success/20 border-l-4 border-l-success"
+            className="card p-5 sm:p-8 bg-gradient-to-br from-success/5 to-success/10 border-success/20 sm:border-l-4 sm:border-l-success"
           >
             <div className="text-center">
-              <h3 className="font-display text-2xl font-bold mb-4">
+              <h3 className="font-display text-xl sm:text-2xl font-bold mb-3 sm:mb-4">
                 <span className="gradient-text">{pageT.aiAdvantage}</span>
               </h3>
-              <p className="text-muted text-lg mb-8 max-w-3xl mx-auto">
+              <p className="text-muted text-base sm:text-lg leading-relaxed mb-6 sm:mb-8 max-w-3xl mx-auto">
                 {pageT.aiAdvantageDesc}
               </p>
-              <div className="grid md:grid-cols-3 gap-6 text-sm">
-                <div className="flex flex-col items-center gap-3 p-5 rounded-xl bg-success/5 border border-success/10 text-center">
+              <div className="grid md:grid-cols-3 gap-3 sm:gap-6 text-sm">
+                <div className="flex flex-col items-center gap-2 sm:gap-3 p-4 sm:p-5 rounded-xl bg-success/5 border border-success/10 text-center">
                   <div className="w-12 h-12 bg-success/20 rounded-xl flex items-center justify-center border border-success/30">
                     <span className="font-display text-xl font-bold text-success">1</span>
                   </div>
                   <span className="font-semibold text block">Expert-Level Output</span>
                   <span className="text-muted">AI tools like Cursor and Lovable.dev enable beginners to build professional-grade projects</span>
                 </div>
-                <div className="flex flex-col items-center gap-3 p-5 rounded-xl bg-success/5 border border-success/10 text-center">
+                <div className="flex flex-col items-center gap-2 sm:gap-3 p-4 sm:p-5 rounded-xl bg-success/5 border border-success/10 text-center">
                   <div className="w-12 h-12 bg-success/20 rounded-xl flex items-center justify-center border border-success/30">
                     <span className="font-display text-xl font-bold text-success">2</span>
                   </div>
                   <span className="font-semibold text block">Future-Proof Skills</span>
                   <span className="text-muted">Master the AI tools that define 2026 and beyond, not outdated methods</span>
                 </div>
-                <div className="flex flex-col items-center gap-3 p-5 rounded-xl bg-success/5 border border-success/10 text-center">
+                <div className="flex flex-col items-center gap-2 sm:gap-3 p-4 sm:p-5 rounded-xl bg-success/5 border border-success/10 text-center">
                   <div className="w-12 h-12 bg-success/20 rounded-xl flex items-center justify-center border border-success/30">
                     <span className="font-display text-xl font-bold text-success">3</span>
                   </div>
