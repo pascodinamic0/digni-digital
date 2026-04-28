@@ -3,7 +3,6 @@ import { stripePriceEnv } from '@/lib/stripe/price-env'
 
 export const CHECKOUT_PLAN_KEYS = [
   'ai_employee',
-  'frg_school_monthly',
   'frg_school_semester',
   'frg_school_yearly',
   'frg_guided',
@@ -21,10 +20,6 @@ export const CHECKOUT_PLANS: Record<CheckoutPlanKey, PlanDefinition> = {
   ai_employee: {
     mode: 'subscription',
     envKeys: ['STRIPE_PRICE_AI_EMPLOYEE_MONTHLY', 'STRIPE_PRICE_AI_EMPLOYEE_SETUP'],
-  },
-  frg_school_monthly: {
-    mode: 'subscription',
-    envKeys: ['STRIPE_PRICE_FRG_SCHOOL_MONTHLY'],
   },
   frg_school_semester: {
     mode: 'payment',

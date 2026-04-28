@@ -424,7 +424,7 @@ export const aiEmployeePageFr: AiEmployeePageTranslations = {
       },
     ],
     closing: {
-      title: 'Les gagnants ont des systèmes. Les autres courent après le hustle.',
+      title: 'Les gagnants ont des systèmes. Les autres courent après l’urgence.',
       subtitle: 'Nous installons la couche qui n’oublie pas, un partenariat par marché quand on s’engage.',
     },
   },
@@ -459,18 +459,18 @@ export const aiEmployeePageFr: AiEmployeePageTranslations = {
       },
     ],
     closing:
-      'Un système intelligent, votre voix, vos règles, pour garder les clients plus longtemps, convertir plus de leads et scaler sereinement.',
+      'Un système intelligent, votre voix, vos règles, pour garder les clients plus longtemps, convertir plus de leads et grandir sereinement.',
   },
   capabilities: {
     badge: 'La couche opérationnelle',
     title: 'Six capacités.',
     titleHighlight: 'Un système de croissance.',
     subtitle:
-      'Pensé pour les services haut de gamme qui veulent croître sans chaos, en systématisant tout ce qui touche au revenu : capter, qualifier, booker, relancer, fidéliser.',
+      'Pensé pour les services haut de gamme qui veulent croître sans chaos, en systématisant tout ce qui touche au revenu : capter, qualifier, réserver, relancer, fidéliser.',
     items: [
       {
         title: 'Réponse instantanée',
-        body: 'Chaque lead reçoit une réponse rapide et à votre ton, vous arrêtez de offrir la victoire au silence.',
+        body: 'Chaque lead reçoit une réponse rapide et à votre ton, vous arrêtez d’offrir la victoire au silence.',
       },
       {
         title: 'Qualification intelligente',
@@ -513,7 +513,7 @@ export const aiEmployeePageFr: AiEmployeePageTranslations = {
       'Vous faites de l’acquisition payante (ou prévoyez) et l’intake doit suivre',
       'Vous vendez par rendez-vous, consults ou conversations à forte confiance',
       'La croissance est chaotique : outils, gens et relances ne s’alignent pas',
-      'Vous voulez scaler calmement, pas plus fort, plus chargé, plus risqué',
+      'Vous voulez grandir calmement, pas plus fort, plus chargé, plus risqué',
       'Vous acceptez un partenariat sur un système, pas un logiciel en rayon',
     ],
     notHeading: 'Moins adapté si',
@@ -569,7 +569,7 @@ export const aiEmployeePageFr: AiEmployeePageTranslations = {
     primaryCta: 'Réserver votre audit Growth System',
     bullet1: 'Une prochaine étape claire, l’audit',
     bullet2: 'Échange sérieux et rapide (environ 30 minutes)',
-    bullet3: 'Nous ne partenons que là où nous pouvons un gain mesurable',
+    bullet3: 'Nous ne partons que là où nous pouvons générer un gain mesurable',
   },
 }
 

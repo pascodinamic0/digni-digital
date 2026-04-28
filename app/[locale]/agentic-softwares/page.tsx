@@ -237,7 +237,7 @@ export default function AgenticSoftwaresPage({ params, searchParams }: AgenticSo
               initial={{ opacity: 0, y: 14 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="flex justify-center px-2"
+              className="flex justify-center px-2 mt-4 sm:mt-6"
             >
               <a
                 {...getBookingLinkProps()}

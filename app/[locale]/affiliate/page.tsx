@@ -126,7 +126,7 @@ export default function AffiliatePage({ params, searchParams }: AffiliatePagePro
     {
       name: 'Future-Ready Graduate Program',
       tagline: 'Students with real income skills',
-      price: '$1,000/month',
+      price: '$5,000/semester or $12,000/year',
       commission: '50% of semester or yearly tuition',
       target: 'Schools & universities',
       description: 'Complete employability program transforming students into job-ready professionals.',

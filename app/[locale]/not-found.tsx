@@ -1,6 +1,11 @@
+'use client'
+
 import Link from 'next/link'
+import { useLanguage } from '@/app/context/LocaleContext'
 
 export default function NotFound() {
+  const isFrench = useLanguage() === 'fr'
+
   return (
     <main className="min-h-screen flex items-center justify-center bg-background px-6">
       <div className="text-center max-w-lg">
@@ -11,17 +16,20 @@ export default function NotFound() {
           </div>
         </div>
         <h1 className="font-display text-6xl font-bold text-text mb-4">404</h1>
-        <h2 className="font-display text-2xl font-semibold text-text mb-4">Page Not Found</h2>
+        <h2 className="font-display text-2xl font-semibold text-text mb-4">
+          {isFrench ? 'Page introuvable' : 'Page Not Found'}
+        </h2>
         <p className="text-muted mb-8 leading-relaxed">
-          The page you&apos;re looking for doesn&apos;t exist or has been moved.
-          Let&apos;s get you back on track.
+          {isFrench
+            ? 'La page que vous cherchez n’existe pas ou a été déplacée. Revenons au bon endroit.'
+            : 'The page you’re looking for doesn’t exist or has been moved. Let’s get you back on track.'}
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link href="/" className="btn-primary px-6 py-3 text-center">
-            Back to Home
+            {isFrench ? 'Retour à l’accueil' : 'Back to Home'}
           </Link>
           <Link href="/contact" className="btn-secondary px-6 py-3 text-center">
-            Contact Us
+            {isFrench ? 'Nous contacter' : 'Contact Us'}
           </Link>
         </div>
       </div>
