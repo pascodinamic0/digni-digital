@@ -90,7 +90,7 @@ export default function BlogPostContent({ articleByLang }: BlogPostContentProps)
         <figure className="mb-10 overflow-hidden rounded-2xl border border-border-light/60 shadow-sm">
           <img
             src={article.coverImageUrl}
-            alt=""
+            alt={article.title}
             className="max-h-[min(420px,50vh)] w-full object-cover"
             width={1200}
             height={630}

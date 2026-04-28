@@ -15,6 +15,7 @@ import StripeCheckoutButton from '@/app/components/StripeCheckoutButton'
 import { ctaConfig, getBookingLinkProps } from '@/app/config/cta.config'
 import { useLanguage } from '@/app/context/LocaleContext'
 import { translations } from '@/app/config/translations'
+import { getFutureReadyGraduateJsonLd, jsonLdScriptProps } from '@/lib/agent-readiness'
 
 type FutureReadyGraduatePageProps = {
   params: Promise<{ locale: string }>
@@ -22,12 +23,13 @@ type FutureReadyGraduatePageProps = {
 }
 
 export default function FutureReadyGraduatePage({ params, searchParams }: FutureReadyGraduatePageProps) {
-  use(params)
+  const { locale } = use(params)
   use(searchParams ?? Promise.resolve({}))
   const [selectedVideo, setSelectedVideo] = useState<{ src: string; title: string; speaker: string; description: string } | null>(null)
   const [earlyAccessOpen, setEarlyAccessOpen] = useState(false)
   const skillsScrollRef = useRef<HTMLDivElement>(null)
   const language = useLanguage()
+  const pageJsonLd = getFutureReadyGraduateJsonLd(locale)
 
   const digitalSkillsReasons = [
     { icon: '🌍', title: 'Global Access', description: 'Work with clients from anywhere in the world, not limited by local job market' },
@@ -232,6 +234,10 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
 
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={jsonLdScriptProps(pageJsonLd)}
+      />
       {/* Hero Section */}
       <section className="relative isolate min-h-screen flex items-center pt-16 sm:pt-20 overflow-hidden bg-gradient-mesh">
         <PremiumHeroBackdrop />
