@@ -7,6 +7,7 @@ import { mergeArticleBundleWithOverrides, fetchPublishedBlogOverrides } from '@/
 import { routing } from '@/i18n/routing'
 import { BRAND_LOGO_PATH } from '@/lib/site-assets'
 import type { Language } from '@/app/i18n/translations'
+import { AGENT_DATA_LAST_UPDATED, jsonLdScriptProps } from '@/lib/agent-readiness'
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://digni-digital-llc.com'
 
@@ -82,8 +83,10 @@ export default async function BlogPostPage({ params }: Props) {
     headline: article.title,
     description: article.excerpt,
     url: canonicalUrl,
+    mainEntityOfPage: canonicalUrl,
+    inLanguage: locale,
     datePublished,
-    dateModified: datePublished,
+    dateModified: AGENT_DATA_LAST_UPDATED,
     author: { '@type': 'Person', name: article.author },
     ...(article.coverImageUrl
       ? { image: article.coverImageUrl }
@@ -99,7 +102,7 @@ export default async function BlogPostPage({ params }: Props) {
     <main className="min-h-screen bg-background">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostingJsonLd) }}
+        dangerouslySetInnerHTML={jsonLdScriptProps(blogPostingJsonLd)}
       />
       <article className="pt-24 pb-16">
         <div className="max-w-4xl mx-auto px-6 pt-20">

@@ -4,7 +4,7 @@ import { headers } from 'next/headers'
 import './globals.css'
 import { ThemeProvider } from './components/ThemeProvider'
 import { routing } from '@/i18n/routing'
-import { BRAND_LOGO_PATH } from '@/lib/site-assets'
+import { getOrganizationJsonLd, getWebsiteJsonLd, jsonLdScriptProps } from '@/lib/agent-readiness'
 
 const fontDisplay = Space_Grotesk({
   subsets: ['latin'],
@@ -68,44 +68,7 @@ export default async function RootLayout({
   const lang = localeSegment.split('-')[1] || 'en'
   const dir = lang === 'ar' ? 'rtl' : 'ltr'
 
-  const jsonLd = [
-    {
-      '@context': 'https://schema.org',
-      '@type': 'Organization',
-      name: 'Digni Digital LLC',
-      url: SITE_URL,
-      logo: `${SITE_URL}${BRAND_LOGO_PATH}`,
-      description:
-        'Digital transformation agency building AI Employee systems, employability programs, and custom software that creates real impact.',
-      foundingDate: '2019',
-      founder: {
-        '@type': 'Person',
-        name: 'Pascal Digny Djohodo',
-        jobTitle: 'Founder & CEO',
-      },
-      sameAs: [
-        'https://www.linkedin.com/company/digni-digital-llc',
-      ],
-      contactPoint: {
-        '@type': 'ContactPoint',
-        email: 'support@digni-digital-llc.com',
-        contactType: 'customer service',
-      },
-      areaServed: ['US', 'KE', 'RW', 'UG', 'CD', 'GH', 'NG', 'ZA'],
-      knowsAbout: ['AI Employee Systems', 'Digital Literacy', 'Agentic Software', 'Web Development', 'Digital Transformation'],
-    },
-    {
-      '@context': 'https://schema.org',
-      '@type': 'WebSite',
-      name: 'Digni Digital',
-      url: SITE_URL,
-      potentialAction: {
-        '@type': 'SearchAction',
-        target: `${SITE_URL}/us-en/blog?q={search_term_string}`,
-        'query-input': 'required name=search_term_string',
-      },
-    },
-  ]
+  const jsonLd = [getOrganizationJsonLd(), getWebsiteJsonLd(localeSegment)]
 
   return (
     <html
@@ -118,7 +81,7 @@ export default async function RootLayout({
       <body suppressHydrationWarning>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={jsonLdScriptProps(jsonLd)}
         />
         <ThemeProvider>
           {children}

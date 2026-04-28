@@ -7,6 +7,7 @@ import PremiumHeroBackdrop from '@/app/components/PremiumHeroBackdrop'
 import PremiumHeroParallax from '@/app/components/PremiumHeroParallax'
 import { getCtaButtonText, getBookingLinkProps } from '@/app/config/cta.config'
 import { useLanguage } from '@/app/context/LocaleContext'
+import { getProductsPageJsonLd, jsonLdScriptProps } from '@/lib/agent-readiness'
 
 const featuredProduct = {
   id: 'proposal-agent',
@@ -43,7 +44,7 @@ const comingSoonProducts = [
     name: 'CRM Lite',
     description: 'CRM for small biz. Contacts. Deals. Simple.',
     features: ['Contact Management', 'Deal Pipeline', 'Email Integration', 'Reporting'],
-    launchDate: 'Q2 2024'
+    launchDate: 'Planned roadmap'
   },
   {
     id: 'invoice-ai',
@@ -51,7 +52,7 @@ const comingSoonProducts = [
     name: 'Invoice AI',
     description: 'Auto invoices. Payment tracking. Smart reminders.',
     features: ['Auto Invoice Generation', 'Payment Tracking', 'Smart Reminders', 'Tax Compliance'],
-    launchDate: 'Q3 2024'
+    launchDate: 'Planned roadmap'
   },
   {
     id: 'social-assistant',
@@ -59,7 +60,7 @@ const comingSoonProducts = [
     name: 'Social Assistant',
     description: 'AI content. Scheduling. Analytics. Done.',
     features: ['Content Generation', 'Scheduling', 'Analytics', 'Multi-platform'],
-    launchDate: 'Q4 2024'
+    launchDate: 'Planned roadmap'
   },
 ]
 
@@ -69,12 +70,17 @@ type ProductsPageProps = {
 }
 
 export default function ProductsPage({ params, searchParams }: ProductsPageProps) {
-  use(params)
+  const { locale } = use(params)
   use(searchParams ?? Promise.resolve({}))
   const language = useLanguage()
   const cta = getCtaButtonText(language)
+  const pageJsonLd = getProductsPageJsonLd(locale)
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={jsonLdScriptProps(pageJsonLd)}
+      />
       {/* Hero Section */}
       <section className="relative isolate min-h-screen flex items-center pt-16 sm:pt-20 overflow-hidden bg-gradient-mesh">
         <PremiumHeroBackdrop />

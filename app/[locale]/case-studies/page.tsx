@@ -7,6 +7,7 @@ import PremiumHeroBackdrop from '@/app/components/PremiumHeroBackdrop'
 import PremiumHeroParallax from '@/app/components/PremiumHeroParallax'
 import { getCtaButtonText, getBookingLinkProps } from '@/app/config/cta.config'
 import { useLanguage } from '@/app/context/LocaleContext'
+import { getCaseStudiesPageJsonLd, jsonLdScriptProps } from '@/lib/agent-readiness'
 
 const caseStudies = [
   {
@@ -103,10 +104,11 @@ type CaseStudiesPageProps = {
 }
 
 export default function CaseStudiesPage({ params, searchParams }: CaseStudiesPageProps) {
-  use(params)
+  const { locale } = use(params)
   use(searchParams ?? Promise.resolve({}))
   const language = useLanguage()
   const cta = getCtaButtonText(language)
+  const pageJsonLd = getCaseStudiesPageJsonLd(locale)
   const [selectedIndustry, setSelectedIndustry] = useState('All')
   const [expandedStudy, setExpandedStudy] = useState<string | null>(null)
 
@@ -128,6 +130,10 @@ export default function CaseStudiesPage({ params, searchParams }: CaseStudiesPag
 
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={jsonLdScriptProps(pageJsonLd)}
+      />
       
       {/* Hero Section */}
       <section className="relative isolate min-h-screen flex items-center pt-16 sm:pt-20 overflow-hidden bg-gradient-mesh">

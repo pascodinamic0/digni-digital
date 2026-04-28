@@ -10,6 +10,7 @@ import ScrollIndicator from '@/app/components/ScrollIndicator'
 import StripeCheckoutButton from '@/app/components/StripeCheckoutButton'
 import { getCtaButtonText, getBookingLinkProps } from '@/app/config/cta.config'
 import { useLanguage } from '@/app/context/LocaleContext'
+import { getServicePageJsonLd, jsonLdScriptProps } from '@/lib/agent-readiness'
 
 type AgenticSoftwaresPageProps = {
   params: Promise<{ locale: string }>
@@ -17,10 +18,11 @@ type AgenticSoftwaresPageProps = {
 }
 
 export default function AgenticSoftwaresPage({ params, searchParams }: AgenticSoftwaresPageProps) {
-  use(params)
+  const { locale } = use(params)
   use(searchParams ?? Promise.resolve({}))
   const language = useLanguage()
   const cta = getCtaButtonText(language)
+  const pageJsonLd = getServicePageJsonLd('agentic-softwares', locale)
   const ourApps = [
     {
       title: 'Proposal Agent',
@@ -188,6 +190,10 @@ export default function AgenticSoftwaresPage({ params, searchParams }: AgenticSo
 
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={jsonLdScriptProps(pageJsonLd)}
+      />
       {/* Hero Section */}
       <section className="relative isolate min-h-screen flex items-center pt-16 sm:pt-20 overflow-hidden bg-gradient-mesh">
         <PremiumHeroBackdrop />

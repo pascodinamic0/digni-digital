@@ -21,6 +21,7 @@ import BusinessTimeline from '@/app/components/BusinessTimeline'
 import DemoPresentationDownload from '@/app/components/DemoPresentationDownload'
 import StripeCheckoutButton from '@/app/components/StripeCheckoutButton'
 import { Check, Minus } from 'lucide-react'
+import { getServicePageJsonLd, jsonLdScriptProps } from '@/lib/agent-readiness'
 
 type AIReceptionistPageProps = {
   params: Promise<{ locale: string }>
@@ -105,11 +106,12 @@ function AIEmployeeCTASection() {
 }
 
 export default function AIReceptionistPage({ params, searchParams }: AIReceptionistPageProps) {
-  use(params)
+  const { locale } = use(params)
   use(searchParams ?? Promise.resolve({}))
   const language = useLanguage()
   const t = translations[language].aiEmployeePage
   const ctaT = translations[language].cta
+  const pageJsonLd = getServicePageJsonLd('ai-employee-systems', locale)
 
   const capabilityMeta: { icon: ReactElement; color: string }[] = [
     {
@@ -211,6 +213,10 @@ export default function AIReceptionistPage({ params, searchParams }: AIReception
 
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={jsonLdScriptProps(pageJsonLd)}
+      />
       {/* Hero Section */}
       <section className="relative isolate min-h-screen flex items-center pt-16 sm:pt-20 overflow-hidden bg-gradient-mesh-brand">
         <PremiumHeroBackdrop />
