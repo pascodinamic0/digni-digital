@@ -76,8 +76,8 @@ export const servicesPageEn: ServicesPageTranslations = {
       ],
       timeline: 'Often live in 48h (from decision to operational)',
       link: '/ai-receptionist',
-      primaryCta: 'Book Your Growth System Audit',
-      secondaryCta: 'See How It Works',
+      primaryCta: 'View AI Employee Systems',
+      secondaryCta: 'Book Growth System Audit',
     },
     {
       id: 'future-ready-graduate',
@@ -102,7 +102,7 @@ export const servicesPageEn: ServicesPageTranslations = {
       timeline: '9 months · 3 trimesters',
       link: '/future-ready-graduate',
       primaryCta: 'View Program Details',
-      secondaryCta: 'Schedule Consultation',
+      secondaryCta: 'Book School Consultation',
     },
     {
       id: 'agentic-softwares',
@@ -122,8 +122,8 @@ export const servicesPageEn: ServicesPageTranslations = {
       technologies: ['LangChain', 'OpenAI API', 'Next.js', 'Supabase', 'PostgreSQL'],
       timeline: '7 days–3 months (MVP to full platform, by scope)',
       link: '/agentic-softwares',
-      primaryCta: 'Explore Process',
-      secondaryCta: 'Discuss Your Project',
+      primaryCta: 'View Agentic Systems',
+      secondaryCta: 'Book Project Consultation',
     },
   ],
   stats: [
@@ -180,8 +180,8 @@ export const servicesPageFr: ServicesPageTranslations = {
       technologies: ['IA voix & messagerie', 'Boîte unifiée', 'CRM & agendas connectés'],
       timeline: 'Souvent en ligne en 48 h (de la décision à l’opérationnel)',
       link: '/ai-receptionist',
-      primaryCta: 'Réserver votre audit Growth System',
-      secondaryCta: 'Voir comment ça marche',
+      primaryCta: 'Voir les systèmes employé IA',
+      secondaryCta: 'Réserver un audit Growth System',
     },
     {
       id: 'future-ready-graduate',
@@ -202,7 +202,7 @@ export const servicesPageFr: ServicesPageTranslations = {
       timeline: '9 mois · 3 trimestres',
       link: '/future-ready-graduate',
       primaryCta: 'Détails du programme',
-      secondaryCta: 'Planifier une consultation',
+      secondaryCta: 'Réserver une consultation école',
     },
     {
       id: 'agentic-softwares',
@@ -222,8 +222,8 @@ export const servicesPageFr: ServicesPageTranslations = {
       technologies: ['LangChain', 'OpenAI API', 'Next.js', 'Supabase', 'PostgreSQL'],
       timeline: '7 jours à 3 mois (MVP à plateforme complète, selon le périmètre)',
       link: '/agentic-softwares',
-      primaryCta: 'Explorer le processus',
-      secondaryCta: 'Discuter de votre projet',
+      primaryCta: 'Voir les systèmes agentiques',
+      secondaryCta: 'Réserver une consultation projet',
     },
   ],
   stats: [
