@@ -15,14 +15,14 @@ export const aiReceptionistExplainerByLanguage: Partial<
   Record<Language, AiReceptionistExplainerCopy>
 > = {
   en: {
-    src: '/AI Employee Explainer.mp4',
+    src: '/ai-employee-explainer.mp4',
     badge: 'Why it breaks',
     title: 'Broken businesses and operations',
     description:
       'A quick walkthrough: what drives leads away, overloads your team, and blocks growth, and why the right infrastructure matters more than working harder.',
   },
   fr: {
-    src: '/Entreprises___Opérations_Défaillantes.mp4',
+    src: '/ai-employee-explainer.mp4',
     badge: 'Pourquoi ça casse',
     title: 'Entreprises et opérations défaillantes',
     description:

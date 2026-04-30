@@ -1,6 +1,6 @@
 'use client'
 
-import { use, useState, useRef, useEffect } from 'react'
+import { use, useState, useRef, useEffect, useMemo } from 'react'
 import { motion } from 'framer-motion'
 import { Link } from '@/i18n/navigation'
 import AnimatedSection from '@/app/components/AnimatedSection'
@@ -36,48 +36,29 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
   const pageJsonLd = getFutureReadyGraduateJsonLd(locale)
 
   const digitalSkillsReasons = [
-    { icon: '🌍', title: 'Global Access', description: 'Work with clients from anywhere in the world, not limited by local job market' },
-    { icon: '💰', title: 'Higher Earning', description: 'Digital skills command premium rates - often 2-5x local salaries' },
-    { icon: '🏠', title: 'Location Freedom', description: 'Work from home, coffee shops, or anywhere with internet connection' },
-    { icon: '🚀', title: 'Instant Start', description: 'Begin earning immediately - no waiting for job applications or interviews' },
-    { icon: '🤖', title: 'AI Multiplier', description: 'AI tools amplify your output; compete with senior professionals from day one' },
-    { icon: '💡', title: 'Entrepreneurial Path', description: 'Create your own jobs, our guided learning brings out your entrepreneurial talents and gifts' },
-    { icon: '📊', title: 'Portfolio Career', description: 'Build multiple income streams; never dependent on a single employer' },
-    { icon: '🛡️', title: 'Future-Proof', description: 'Digital skills evolve with the economy; traditional jobs are being automated' },
-    { icon: '⏰', title: 'Flexible Schedule', description: 'Work around your life - study, family, or side projects on your terms' },
+    { icon: '💰', label: 'Freedom trifecta', title: 'Income Freedom', description: 'Build skills that can turn into paid projects, better jobs, and multiple income streams.' },
+    { icon: '🌍', label: 'Freedom trifecta', title: 'Location Freedom', description: 'Work with clients, teams, or employers beyond your city, country, or local job market.' },
+    { icon: '⏰', label: 'Freedom trifecta', title: 'Time Freedom', description: 'Learn flexible digital work systems you can shape around school, family, or a job.' },
+    { icon: '🤖', label: 'AI advantage', title: 'AI-Powered Leverage', description: 'Use modern AI tools to produce faster, compete sooner, and avoid being left behind.' },
+    { icon: '🎓', label: 'Proof', title: 'Future-Ready Certification', description: 'Leave with a clear signal that shows you understand practical digital and AI-ready work.' },
+    { icon: '🚀', label: 'Pathway', title: 'From Learning to Earning', description: 'Turn lessons into a portfolio, service offers, job readiness, and entrepreneurial action.' },
   ]
 
   const ctaT = translations[language].cta
   const pageT = translations[language].futureReadyGraduate
   const [pricing, setPricing] = useState<FutureReadyOffering[]>(visibleDefaultFutureReadyOfferings())
+  const heroTitles = useMemo(
+    () => [
+      `${pageT.heroTitleLine1} ${pageT.heroTitleHighlight}`,
+      pageT.heroAlternateTitle,
+    ],
+    [pageT.heroAlternateTitle, pageT.heroTitleHighlight, pageT.heroTitleLine1]
+  )
+  const [heroTitleIndex, setHeroTitleIndex] = useState(0)
+  const [heroCharCount, setHeroCharCount] = useState(heroTitles[0].length)
+  const [heroDeleting, setHeroDeleting] = useState(false)
+  const typedHeroTitle = heroTitles[heroTitleIndex].slice(0, heroCharCount)
   const pathsHeading = pricing.length === 3 ? pageT.threePaths : pageT.threePaths.replace(/^(Three|Trois)\s+/i, '')
-
-  const trimesterPlan = [
-    {
-      trimester: 'First Trimester',
-      period: 'September - December',
-      focus: 'Digital Foundation & Web Development',
-      modules: ['Digital Foundation Skills', 'Web Development Basics'],
-      weeks: '16 weeks (before Christmas break)',
-      number: 1
-    },
-    {
-      trimester: 'Second Trimester', 
-      period: 'January - April',
-      focus: 'Marketing & Professional Branding',
-      modules: ['Digital Marketing & Analytics', 'Professional Portfolio'],
-      weeks: '14 weeks (before Easter break)',
-      number: 2
-    },
-    {
-      trimester: 'Third Trimester',
-      period: 'April - July',
-      focus: 'Job Readiness & Industry Placement',
-      modules: ['Job Readiness & Placement', 'Industry Internships'],
-      weeks: '12 weeks (graduation preparation)',
-      number: 3
-    }
-  ]
 
   const outcomes = [
     {
@@ -119,6 +100,36 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
   }
 
   useEffect(() => {
+    setHeroTitleIndex(0)
+    setHeroCharCount(heroTitles[0].length)
+    setHeroDeleting(false)
+  }, [heroTitles])
+
+  useEffect(() => {
+    const currentTitle = heroTitles[heroTitleIndex]
+    const isAtEnd = heroCharCount === currentTitle.length
+    const isAtStart = heroCharCount === 0
+    const delay = isAtEnd && !heroDeleting ? 2400 : heroDeleting ? 35 : 65
+
+    const timer = window.setTimeout(() => {
+      if (isAtEnd && !heroDeleting) {
+        setHeroDeleting(true)
+        return
+      }
+
+      if (isAtStart && heroDeleting) {
+        setHeroDeleting(false)
+        setHeroTitleIndex((current) => (current + 1) % heroTitles.length)
+        return
+      }
+
+      setHeroCharCount((current) => current + (heroDeleting ? -1 : 1))
+    }, delay)
+
+    return () => window.clearTimeout(timer)
+  }, [heroCharCount, heroDeleting, heroTitleIndex, heroTitles])
+
+  useEffect(() => {
     let cancelled = false
 
     async function loadOfferings() {
@@ -138,6 +149,29 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
     return () => {
       cancelled = true
     }
+  }, [])
+
+  useEffect(() => {
+    const timer = window.setInterval(() => {
+      const carousel = skillsScrollRef.current
+      const firstCard = carousel?.firstElementChild as HTMLElement | null
+
+      if (!carousel || !firstCard) {
+        return
+      }
+
+      const gap = Number.parseFloat(window.getComputedStyle(carousel).columnGap || '0')
+      const step = firstCard.getBoundingClientRect().width + gap
+      const loopWidth = carousel.scrollWidth / 2
+      const nextLeft = carousel.scrollLeft + step
+
+      carousel.scrollTo({
+        left: nextLeft >= loopWidth ? nextLeft - loopWidth : nextLeft,
+        behavior: nextLeft >= loopWidth ? 'auto' : 'smooth',
+      })
+    }, 3200)
+
+    return () => window.clearInterval(timer)
   }, [])
 
   const featuredVideos = [
@@ -204,10 +238,11 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
             <span className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-success/10 border border-success/30 rounded-full text-success text-xs sm:text-sm font-medium mb-4 sm:mb-6">
               {pageT.heroBadge}
             </span>
-            <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight sm:leading-tight mb-4 sm:mb-6 md:mb-8 px-2">
-              {pageT.heroTitleLine1}{' '}
-              <br className="hidden sm:block" />
-              <span className="gradient-text">{pageT.heroTitleHighlight}</span>
+            <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight sm:leading-tight mb-4 sm:mb-6 md:mb-8 px-2 min-h-[3.1em] sm:min-h-[2.7em]">
+              <span className="gradient-text">{typedHeroTitle}</span>
+              <span className="ml-1 inline-block animate-pulse text-success" aria-hidden>
+                |
+              </span>
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-muted max-w-3xl mx-auto leading-relaxed mb-6 sm:mb-8 md:mb-10 px-2">
               {pageT.heroDescription}
@@ -246,148 +281,6 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
         </div>
       </section>
 
-      {/* Academic Calendar Integration */}
-      <AnimatedSection className="py-24 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-success/5 via-transparent to-success/10" />
-        
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">
-              {pageT.calendarTitle}<br />
-              <span className="gradient-text">{pageT.calendarTitleHighlight}</span>
-            </h2>
-            <p className="text-muted text-lg max-w-3xl mx-auto">
-              {pageT.calendarSubtitle}
-            </p>
-          </div>
-
-          {/* Calendar Overview */}
-          <div className="grid md:grid-cols-3 gap-6 mb-16">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="card p-6 text-center hover:border-success/40 transition-all duration-300"
-            >
-              <div className="w-16 h-16 bg-success/10 rounded-2xl mx-auto mb-4 flex items-center justify-center text-3xl">
-                📅
-              </div>
-              <h3 className="font-display text-xl font-bold mb-2">{pageT.fullSchoolYear}</h3>
-              <p className="text-muted text-sm">{pageT.fullSchoolYearDesc}</p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="card p-6 text-center hover:border-success/40 transition-all duration-300"
-            >
-              <div className="w-16 h-16 bg-success/10 rounded-2xl mx-auto mb-4 flex items-center justify-center text-3xl">
-                🔄
-              </div>
-              <h3 className="font-display text-xl font-bold mb-2">{pageT.threeTrimesters}</h3>
-              <p className="text-muted text-sm">{pageT.threeTrimestersDesc}</p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="card p-6 text-center hover:border-success/40 transition-all duration-300"
-            >
-              <div className="w-16 h-16 bg-success/10 rounded-2xl mx-auto mb-4 flex items-center justify-center text-3xl">
-                🎯
-              </div>
-              <h3 className="font-display text-xl font-bold mb-2">{pageT.seamlessIntegration}</h3>
-              <p className="text-muted text-sm">{pageT.seamlessIntegrationDesc}</p>
-            </motion.div>
-          </div>
-
-          {/* Key Dates Callout */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mb-16 card p-8 bg-gradient-to-br from-success/5 to-success/10 border-success/20 border-l-4 border-l-success"
-          >
-            <div className="text-center">
-              <h3 className="font-display text-2xl font-bold mb-6 text-success">
-                {pageT.academicYearIntegration}
-              </h3>
-              <div className="grid md:grid-cols-3 gap-8 text-sm">
-                <div className="flex flex-col items-center gap-2 p-4 rounded-xl bg-success/5 border border-success/10">
-                  <span className="font-display text-lg font-bold text-success">1</span>
-                  <span className="font-semibold text block">{pageT.programStart}</span>
-                  <span className="text-muted text-center">{pageT.programStartDate}</span>
-                </div>
-                <div className="flex flex-col items-center gap-2 p-4 rounded-xl bg-success/5 border border-success/10">
-                  <span className="font-display text-lg font-bold text-success">2</span>
-                  <span className="font-semibold text block">{pageT.respectsBreaks}</span>
-                  <span className="text-muted text-center">{pageT.respectsBreaksDates}</span>
-                </div>
-                <div className="flex flex-col items-center gap-2 p-4 rounded-xl bg-success/5 border border-success/10">
-                  <span className="font-display text-lg font-bold text-success">3</span>
-                  <span className="font-semibold text block">{pageT.graduationReady}</span>
-                  <span className="text-muted text-center">{pageT.graduationReadyDate}</span>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Trimester Breakdown */}
-          <div className="space-y-8">
-            {trimesterPlan.map((trimester, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, x: i % 2 === 0 ? -30 : 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="card p-8 hover:border-success/50 group transition-all duration-300 hover:shadow-lg"
-              >
-                <div className="grid lg:grid-cols-4 gap-6 items-center">
-                  <div className="flex items-center gap-4">
-                    <div className="w-16 h-16 bg-success/20 rounded-2xl flex items-center justify-center border border-success/30">
-                      <span className="font-display text-2xl font-bold text-success">{trimester.number}</span>
-                    </div>
-                    <div>
-                      <h3 className="font-display text-xl font-bold group-hover:text-success transition-colors">
-                        {trimester.number === 1 ? pageT.firstTrimester : trimester.number === 2 ? pageT.secondTrimester : pageT.thirdTrimester}
-                      </h3>
-                      <span className="text-success text-sm font-medium">{trimester.period}</span>
-                    </div>
-                  </div>
-                  
-                  <div>
-                    <span className="text-xs uppercase tracking-wider text-muted-dark block mb-2">{pageT.focusArea}</span>
-                    <p className="text font-semibold">{trimester.focus}</p>
-                  </div>
-
-                  <div>
-                    <span className="text-xs uppercase tracking-wider text-muted-dark block mb-2">{pageT.duration}</span>
-                    <p className="text-muted">{trimester.weeks}</p>
-                  </div>
-
-                  <div>
-                    <span className="text-xs uppercase tracking-wider text-muted-dark block mb-2">{pageT.coreModules}</span>
-                    <div className="space-y-1">
-                      {trimester.modules.map((module, j) => (
-                        <div key={j} className="flex items-center gap-2">
-                          <div className="w-1.5 h-1.5 bg-success rounded-full" />
-                          <span className="text-sm text-muted">{module}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </AnimatedSection>
-
       {/* Problem vs Opportunity */}
       <AnimatedSection className="py-24 bg-surface relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-destructive/5 to-success/5" />
@@ -395,8 +288,16 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           {/* Header */}
           <div className="text-center mb-20">
-            <h2 className="font-display text-3xl md:text-4xl font-bold mb-6 leading-tight">
-              {pageT.educationPrefix}<span className="text-destructive">{pageT.educationFails}</span>{pageT.digitalEconomyPrefix}<span className="text-success">{pageT.digitalThrives}</span>
+            <span className="section-label mb-4 inline-block">Problem vs Opportunity</span>
+            <h2 className="font-display text-4xl md:text-5xl font-bold mb-6 leading-tight">
+              <span className="block">
+                {pageT.educationPrefix}
+                <span className="text-destructive">{pageT.educationFails}</span>
+              </span>
+              <span className="mt-3 block gradient-text">
+                {pageT.digitalEconomyPrefix}
+                {pageT.digitalThrives}
+              </span>
             </h2>
             <p className="text-muted text-lg max-w-2xl mx-auto leading-relaxed">
               {pageT.educationFailsSubtitle}
@@ -481,16 +382,18 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
             </motion.div>
           </div>
 
-          {/* Why Digital Skills Are the Future */}
+          {/* Future-ready certification advantages */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="card p-12 md:p-14 bg-gradient-to-br from-success/10 via-success/5 to-transparent border-success/30"
+            className="relative mt-20 md:mt-28"
           >
-            <div className="text-center mb-12">
-              <h3 className="font-display text-3xl md:text-4xl font-bold mb-4">
+            <div className="pointer-events-none absolute inset-x-8 top-16 h-48 rounded-full bg-success/10 blur-3xl" aria-hidden />
+            <div className="relative text-center mb-12">
+              <span className="section-label mb-4 inline-block">Future-ready advantage</span>
+              <h3 className="font-display text-3xl md:text-5xl font-bold mb-4">
                 <span className="gradient-text">{pageT.whyDigitalSkills}</span>
               </h3>
               <p className="text-muted text-lg max-w-2xl mx-auto leading-relaxed">
@@ -498,21 +401,118 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
               </p>
             </div>
 
-            <div className="grid grid-cols-3 gap-6">
+            <div className="relative grid gap-5 md:grid-cols-2 lg:grid-cols-3">
               {digitalSkillsReasons.map((reason, i) => (
                 <div
-                  key={i}
-                  className="min-w-0 text-center p-6 md:p-8 bg-surface-light/50 rounded-xl border border-border hover:border-success/30 transition-colors"
+                  key={reason.title}
+                  className={`group relative min-w-0 overflow-hidden rounded-3xl border p-6 backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:shadow-xl ${
+                    i < 3
+                      ? 'border-success/35 bg-background/85 hover:border-success/60 hover:shadow-success/10'
+                      : 'border-border-light bg-surface/75 hover:border-accent/45 hover:shadow-accent/10'
+                  }`}
                 >
-                    <div className="w-20 h-20 bg-success/10 rounded-2xl mx-auto mb-5 flex items-center justify-center text-4xl">
+                  <div className={`absolute inset-x-5 top-0 h-px bg-gradient-to-r ${i < 3 ? 'from-transparent via-success to-transparent' : 'from-transparent via-accent to-transparent'}`} />
+                  <div className="mb-6 flex items-start justify-between gap-4">
+                    <div className={`flex h-14 w-14 items-center justify-center rounded-2xl border text-3xl shadow-sm ${
+                      i < 3 ? 'border-success/25 bg-success/10' : 'border-accent/20 bg-accent/10'
+                    }`}>
                       {reason.icon}
                     </div>
-                    <h4 className="font-semibold text mb-3 text-base">{reason.title}</h4>
-                    <p className="text-muted text-sm leading-relaxed">{reason.description}</p>
+                    <span className={`rounded-full border px-3 py-1 text-[10px] font-bold uppercase tracking-[0.16em] ${
+                      i < 3 ? 'border-success/25 bg-success/10 text-success' : 'border-accent/20 bg-accent/10 text-accent'
+                    }`}>
+                      {reason.label}
+                    </span>
+                  </div>
+                  <h4 className="font-display text-xl font-bold text mb-3">{reason.title}</h4>
+                  <p className="text-muted text-sm leading-relaxed">{reason.description}</p>
                 </div>
               ))}
             </div>
           </motion.div>
+        </div>
+      </AnimatedSection>
+
+      {/* Results */}
+      <AnimatedSection className="py-24">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">
+              {pageT.provenResults}<br />
+              <span className="gradient-text">{pageT.provenResultsHighlight}</span>
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+            {outcomes.map((outcome, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="text-center"
+              >
+                <div className="font-display text-4xl md:text-5xl font-bold text-success mb-2">
+                  {outcome.metric}
+                </div>
+                <p className="text font-semibold mb-1">{outcome.description}</p>
+                <p className="text-muted text-sm">{outcome.detail}</p>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Case Study */}
+          <div className="card p-8 md:p-12">
+            <div className="grid lg:grid-cols-3 gap-8">
+              <div className="lg:col-span-2">
+                <div className="flex items-center gap-4 mb-6">
+                  <span className="px-3 py-1 bg-success/10 text-success text-xs font-medium rounded-full">
+                    Program in Progress
+                  </span>
+                  <h3 className="font-display text-2xl font-bold">{caseStudy.school}</h3>
+                  <span className="text-muted text-sm">{caseStudy.location}</span>
+                </div>
+
+                <div className="space-y-6">
+                  <div>
+                    <span className="text-xs uppercase tracking-wider text-muted-dark">Challenge</span>
+                    <p className="text-muted mt-2 leading-relaxed">{caseStudy.challenge}</p>
+                  </div>
+
+                  <div>
+                    <span className="text-xs uppercase tracking-wider text-muted-dark">Implementation</span>
+                    <p className="text mt-2 leading-relaxed">{caseStudy.implementation}</p>
+                  </div>
+
+                  <div>
+                    <span className="text-xs uppercase tracking-wider text-muted-dark">Timeline</span>
+                    <p className="text-success font-medium mt-2">{caseStudy.timeline}</p>
+                  </div>
+
+                  <div className="card p-6 bg-success/5 border border-success/20">
+                    <blockquote className="text italic leading-relaxed">
+                      {caseStudy.testimonial}
+                    </blockquote>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h4 className="font-display text-xl font-bold mb-6">Projections</h4>
+                <div className="space-y-6">
+                  {caseStudy.projections.map((result, i) => (
+                    <div key={i} className="text-center">
+                      <div className="font-display text-3xl font-bold text-success mb-2">
+                        {result.metric}
+                      </div>
+                      <p className="text-muted text-sm">{result.description}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </AnimatedSection>
 
@@ -568,7 +568,7 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
       </AnimatedSection>
 
       {/* Digital Economy Skills */}
-      <AnimatedSection id="curriculum" className="py-16 sm:py-20 lg:py-24">
+      <section id="curriculum" className="py-16 sm:py-20 lg:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-10 sm:mb-16">
             <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-4 sm:mb-6">
@@ -580,31 +580,7 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
             </p>
           </div>
 
-          <div className="relative -mx-4 overflow-hidden px-4 sm:mx-0 sm:px-0 mb-10 sm:mb-16">
-            <div className="hidden sm:block absolute left-0 top-0 bottom-0 w-16 md:w-24 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
-            <div className="hidden sm:block absolute right-0 top-0 bottom-0 w-16 md:w-24 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
-
-            <button
-              type="button"
-              onClick={() => skillsScrollRef.current?.scrollBy({ left: -344, behavior: 'smooth' })}
-              className="hidden sm:flex absolute left-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-background/90 border border-border shadow-lg items-center justify-center hover:bg-surface hover:border-success/50 transition-colors"
-              aria-label="Scroll left"
-            >
-              <svg className="w-5 h-5 text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-              </svg>
-            </button>
-            <button
-              type="button"
-              onClick={() => skillsScrollRef.current?.scrollBy({ left: 344, behavior: 'smooth' })}
-              className="hidden sm:flex absolute right-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-background/90 border border-border shadow-lg items-center justify-center hover:bg-surface hover:border-success/50 transition-colors"
-              aria-label="Scroll right"
-            >
-              <svg className="w-5 h-5 text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </button>
-
+          <div className="relative -mx-4 overflow-hidden px-4 sm:mx-auto sm:max-w-[1008px] sm:px-0 mb-10 sm:mb-16">
             <div
               ref={skillsScrollRef}
               className="flex gap-3 sm:gap-6 pb-4 overflow-x-auto overflow-y-hidden scroll-smooth scrollbar-hide snap-x snap-mandatory scroll-px-4 sm:scroll-px-0"
@@ -724,17 +700,17 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
                     demand: 'Very High'
                   }
                 ]
-                const half = Math.ceil(skills.length / 2)
-                const topRow = skills.slice(0, half)
-                const bottomRow = skills.slice(half)
-                const columns = topRow.map((item, i) => [item, bottomRow[i] ?? null])
-                const scrollColumns = [...columns, ...columns]
+                const scrollCards = [...skills, ...skills]
 
                 const SkillCard = ({ item }: { item: typeof skills[0] }) => (
-                  <div className="card p-4 sm:p-6 hover:border-success/50 group w-[min(18rem,calc(100vw-2rem))] sm:w-[320px] min-h-[260px] sm:min-h-[300px] flex flex-col">
+                  <div className="card p-4 sm:p-6 hover:border-success/50 group w-[min(18rem,calc(100vw-2rem))] sm:w-[320px] min-h-[260px] sm:min-h-[300px] flex flex-col flex-shrink-0 snap-start">
                     <div className="text-center mb-3 sm:mb-4">
-                      <div className="w-12 h-12 sm:w-14 sm:h-14 bg-success/10 rounded-2xl mx-auto mb-2 flex items-center justify-center text-xl sm:text-2xl">
-                        {item.icon}
+                      <div className="relative w-14 h-14 sm:w-16 sm:h-16 mx-auto mb-3 rounded-[1.35rem] border border-success/25 bg-gradient-to-br from-success/20 via-success/10 to-background shadow-lg shadow-success/10 overflow-visible transition-transform duration-300 group-hover:-translate-y-1 group-hover:rotate-3">
+                        <div className="absolute inset-1 rounded-[1.05rem] bg-background/75 backdrop-blur-sm" />
+                        <div className="absolute -right-1 -top-1 h-5 w-5 rounded-full bg-success/20 blur-[2px]" aria-hidden />
+                        <span className="relative z-10 flex h-full w-full items-center justify-center text-2xl sm:text-3xl leading-none drop-shadow-sm">
+                          {item.icon}
+                        </span>
                       </div>
                       <h3 className="font-display text-sm sm:text-base font-bold leading-snug group-hover:text-success transition-colors mb-2">
                         {item.skill}
@@ -760,57 +736,15 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
                   </div>
                 )
 
-                return scrollColumns.map(([top, bottom], i) => (
-                  <div key={i} className="flex flex-col gap-3 sm:gap-4 flex-shrink-0 snap-start">
-                    <SkillCard item={top} />
-                    {bottom && <SkillCard item={bottom} />}
-                  </div>
+                return scrollCards.map((item, i) => (
+                  <SkillCard key={`${item.skill}-${i}`} item={item} />
                 ))
               })()}
             </div>
           </div>
 
-          {/* AI Advantage Callout */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="card p-5 sm:p-8 bg-gradient-to-br from-success/5 to-success/10 border-success/20 sm:border-l-4 sm:border-l-success"
-          >
-            <div className="text-center">
-              <h3 className="font-display text-xl sm:text-2xl font-bold mb-3 sm:mb-4">
-                <span className="gradient-text">{pageT.aiAdvantage}</span>
-              </h3>
-              <p className="text-muted text-base sm:text-lg leading-relaxed mb-6 sm:mb-8 max-w-3xl mx-auto">
-                {pageT.aiAdvantageDesc}
-              </p>
-              <div className="grid md:grid-cols-3 gap-3 sm:gap-6 text-sm">
-                <div className="flex flex-col items-center gap-2 sm:gap-3 p-4 sm:p-5 rounded-xl bg-success/5 border border-success/10 text-center">
-                  <div className="w-12 h-12 bg-success/20 rounded-xl flex items-center justify-center border border-success/30">
-                    <span className="font-display text-xl font-bold text-success">1</span>
-                  </div>
-                  <span className="font-semibold text block">Expert-Level Output</span>
-                  <span className="text-muted">AI tools like Cursor and Lovable.dev enable beginners to build professional-grade projects</span>
-                </div>
-                <div className="flex flex-col items-center gap-2 sm:gap-3 p-4 sm:p-5 rounded-xl bg-success/5 border border-success/10 text-center">
-                  <div className="w-12 h-12 bg-success/20 rounded-xl flex items-center justify-center border border-success/30">
-                    <span className="font-display text-xl font-bold text-success">2</span>
-                  </div>
-                  <span className="font-semibold text block">Future-Proof Skills</span>
-                  <span className="text-muted">Master the AI tools that define 2026 and beyond, not outdated methods</span>
-                </div>
-                <div className="flex flex-col items-center gap-2 sm:gap-3 p-4 sm:p-5 rounded-xl bg-success/5 border border-success/10 text-center">
-                  <div className="w-12 h-12 bg-success/20 rounded-xl flex items-center justify-center border border-success/30">
-                    <span className="font-display text-xl font-bold text-success">3</span>
-                  </div>
-                  <span className="font-semibold text block">Immediate Income</span>
-                  <span className="text-muted">Start earning with real projects while learning, not after graduation</span>
-                </div>
-              </div>
-            </div>
-          </motion.div>
         </div>
-      </AnimatedSection>
+      </section>
 
       {/* Partnership Requirements */}
       <AnimatedSection className="py-24 bg-surface">
@@ -996,89 +930,6 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
               </div>
             </div>
           </motion.div>
-        </div>
-      </AnimatedSection>
-
-      {/* Results */}
-      <AnimatedSection className="py-24">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">
-              {pageT.provenResults}<br />
-              <span className="gradient-text">{pageT.provenResultsHighlight}</span>
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-            {outcomes.map((outcome, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="text-center"
-              >
-                <div className="font-display text-4xl md:text-5xl font-bold text-success mb-2">
-                  {outcome.metric}
-                </div>
-                <p className="text font-semibold mb-1">{outcome.description}</p>
-                <p className="text-muted text-sm">{outcome.detail}</p>
-              </motion.div>
-            ))}
-          </div>
-
-          {/* Case Study */}
-          <div className="card p-8 md:p-12">
-            <div className="grid lg:grid-cols-3 gap-8">
-              <div className="lg:col-span-2">
-                <div className="flex items-center gap-4 mb-6">
-                  <span className="px-3 py-1 bg-success/10 text-success text-xs font-medium rounded-full">
-                    Program in Progress
-                  </span>
-                  <h3 className="font-display text-2xl font-bold">{caseStudy.school}</h3>
-                  <span className="text-muted text-sm">{caseStudy.location}</span>
-                </div>
-
-                <div className="space-y-6">
-                  <div>
-                    <span className="text-xs uppercase tracking-wider text-muted-dark">Challenge</span>
-                    <p className="text-muted mt-2 leading-relaxed">{caseStudy.challenge}</p>
-                  </div>
-
-                  <div>
-                    <span className="text-xs uppercase tracking-wider text-muted-dark">Implementation</span>
-                    <p className="text mt-2 leading-relaxed">{caseStudy.implementation}</p>
-                  </div>
-
-                  <div>
-                    <span className="text-xs uppercase tracking-wider text-muted-dark">Timeline</span>
-                    <p className="text-success font-medium mt-2">{caseStudy.timeline}</p>
-                  </div>
-
-                  <div className="card p-6 bg-success/5 border border-success/20">
-                    <blockquote className="text italic leading-relaxed">
-                      {caseStudy.testimonial}
-                    </blockquote>
-                  </div>
-                </div>
-              </div>
-
-              <div>
-                <h4 className="font-display text-xl font-bold mb-6">Projections</h4>
-                <div className="space-y-6">
-                  {caseStudy.projections.map((result, i) => (
-                    <div key={i} className="text-center">
-                      <div className="font-display text-3xl font-bold text-success mb-2">
-                        {result.metric}
-                      </div>
-                      <p className="text-muted text-sm">{result.description}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </AnimatedSection>
 

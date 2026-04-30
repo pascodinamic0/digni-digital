@@ -1,5 +1,6 @@
 'use client'
 
+import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { useLanguage } from '@/app/context/LocaleContext'
 import {
@@ -12,6 +13,11 @@ export default function AiReceptionistExplainerVideo() {
   const language = useLanguage()
   const copy: AiReceptionistExplainerCopy | undefined =
     aiReceptionistExplainerByLanguage[language]
+  const [hasVideoError, setHasVideoError] = useState(false)
+
+  useEffect(() => {
+    setHasVideoError(false)
+  }, [copy?.src])
 
   if (!copy) {
     return null
@@ -57,18 +63,37 @@ export default function AiReceptionistExplainerVideo() {
           className="relative rounded-2xl overflow-hidden border border-border-light bg-black shadow-2xl shadow-black/20"
         >
           <div className="relative aspect-video">
-            <video
-              className="absolute inset-0 w-full h-full object-contain bg-black select-none"
-              controls
-              controlsList="nodownload"
-              disablePictureInPicture
-              playsInline
-              preload="metadata"
-              title={copy.title}
-              onContextMenu={(e) => e.preventDefault()}
-            >
-              <source src={encodeURI(copy.src)} type="video/mp4" />
-            </video>
+            {hasVideoError ? (
+              <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 bg-black px-6 text-center">
+                <p className="text-sm text-white/80">
+                  The video could not load in this browser.
+                </p>
+                <a
+                  href={copy.src}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-secondary border-white/30 bg-white/10 text-white hover:bg-white/20"
+                >
+                  Open video directly
+                </a>
+              </div>
+            ) : (
+              <video
+                key={copy.src}
+                className="absolute inset-0 w-full h-full object-contain bg-black select-none"
+                controls
+                controlsList="nodownload"
+                disablePictureInPicture
+                playsInline
+                preload="auto"
+                title={copy.title}
+                onContextMenu={(e) => e.preventDefault()}
+                onError={() => setHasVideoError(true)}
+              >
+                <source src={copy.src} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            )}
           </div>
         </motion.div>
       </div>
