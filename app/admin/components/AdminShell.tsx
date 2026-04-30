@@ -32,6 +32,7 @@ const WORKSPACE_NAV: { href: string; label: string; Icon: LucideIcon }[] = [
 ]
 
 const OPS_NAV: { href: string; label: string; Icon: LucideIcon }[] = [
+  { href: '/admin/offerings', label: 'Offerings', Icon: ClipboardList },
   { href: '/admin/applications', label: 'Applications', Icon: ClipboardList },
   { href: '/admin/affiliates', label: 'Affiliates', Icon: Handshake },
   { href: '/admin/chat', label: 'Live chat', Icon: MessageSquare },
