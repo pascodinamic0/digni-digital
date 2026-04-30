@@ -16,6 +16,10 @@ import { ctaConfig, getBookingLinkProps } from '@/app/config/cta.config'
 import { useLanguage } from '@/app/context/LocaleContext'
 import { translations } from '@/app/config/translations'
 import { getFutureReadyGraduateJsonLd, jsonLdScriptProps } from '@/lib/agent-readiness'
+import {
+  type FutureReadyOffering,
+  visibleDefaultFutureReadyOfferings,
+} from '@/lib/future-ready-offerings'
 
 type FutureReadyGraduatePageProps = {
   params: Promise<{ locale: string }>
@@ -45,6 +49,8 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
 
   const ctaT = translations[language].cta
   const pageT = translations[language].futureReadyGraduate
+  const [pricing, setPricing] = useState<FutureReadyOffering[]>(visibleDefaultFutureReadyOfferings())
+  const pathsHeading = pricing.length === 3 ? pageT.threePaths : pageT.threePaths.replace(/^(Three|Trois)\s+/i, '')
 
   const trimesterPlan = [
     {
@@ -112,79 +118,27 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
     testimonial: '"The program timing was perfect. Students learned during school hours, and the breaks gave them time to practice. By graduation, they were genuinely job ready." - GS Laricharde Administration'
   }
 
-  const pricing = [
-    {
-      name: 'School Partnership Program',
-      price: '$5,000',
-      period: '/semester',
-      priceOptions: [
-        { amount: '$5,000', period: '/semester (5 months)' },
-        { amount: '$12,000', period: '/year' }
-      ],
-      description: 'Full program. Schools and institutions.',
-      audience: 'schools',
-      features: [
-        'Full academic year curriculum (42 weeks)',
-        'On-site facilitator and support',
-        'Internet connectivity included',
-        'Premium AI tools & subscriptions',
-        'All learning materials provided',
-        'Progress tracking and reporting',
-        'Student assessment and certification',
-        'Ongoing program support',
-        'Job readiness training, and skills to create your own jobs',
-        "Guided learning personalized to each student's talents and gifts",
-        'Partnership success guarantee'
-      ],
-      popular: true,
-      comingSoon: false
-    },
-    {
-      name: 'Guided Learning',
-      price: '$49',
-      period: ' one-time',
-      description: 'Digital skills. Personalized to your talents. Learn anywhere. Earn online.',
-      audience: 'everyone',
-      features: [
-        'Full digital skills curriculum (start from scratch)',
-        'Personalized guided learning, tailored to your unique talents and gifts',
-        'Learn from home, school, university, or vocational center',
-        'AI-powered tools and techniques for making money online',
-        'Guided learning - study on your own schedule with support',
-        'Skills that bring out your entrepreneurial potential',
-        'Community support and peer learning forums',
-        'Digital certificates upon completion',
-        'Lifetime access to all course materials',
-        'Portfolio building and job placement resources',
-        'Learn how to use AI to compete with experts',
-        'Start earning while you learn, create jobs or get hired'
-      ],
-      popular: false,
-      isNew: true,
-      spotsAvailable: 25
-    },
-    {
-      name: 'Professional Institutes',
-      price: '$1,000',
-      period: '/vocational center',
-      description: 'For each vocational center, training academy, or professional institute.',
-      audience: 'professional',
-      features: [
-        'Full professional curriculum for adult learners',
-        'Flexible schedule for working professionals',
-        'Dedicated facilitator and cohort support',
-        'Premium AI tools & subscriptions',
-        'All learning materials provided',
-        'Progress tracking and certification',
-        'Job placement and industry partnerships',
-        'Customizable program length',
-        'On-site or hybrid delivery options',
-        'Partnership success guarantee'
-      ],
-      popular: false,
-      comingSoon: false
+  useEffect(() => {
+    let cancelled = false
+
+    async function loadOfferings() {
+      try {
+        const res = await fetch('/api/future-ready-offerings')
+        const data = await res.json()
+        if (!cancelled && res.ok && Array.isArray(data.offerings)) {
+          setPricing(data.offerings)
+        }
+      } catch {
+        // Keep the static fallback if the CMS table/API is not available yet.
+      }
     }
-  ]
+
+    void loadOfferings()
+
+    return () => {
+      cancelled = true
+    }
+  }, [])
 
   const featuredVideos = [
     {
@@ -1133,7 +1087,7 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="font-display text-4xl md:text-5xl font-bold mb-4">
-              {pageT.threePaths}<br />
+              {pathsHeading}<br />
               <span className="gradient-text">{pageT.threePathsHighlight}</span>
             </h2>
             <p className="text-muted text-lg max-w-2xl mx-auto">
@@ -1143,10 +1097,18 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
 
           {/* Three Tiers Visual Layout */}
           <div className="relative">
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <div
+              className={`grid gap-8 mx-auto ${
+                pricing.length === 1
+                  ? 'max-w-xl'
+                  : pricing.length === 2
+                    ? 'max-w-4xl md:grid-cols-2'
+                    : 'max-w-6xl md:grid-cols-2 lg:grid-cols-3'
+              }`}
+            >
               {pricing.map((plan, i) => (
                 <motion.div
-                  key={i}
+                  key={plan.slug}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -1154,7 +1116,7 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
                   className={`relative card p-8 pt-10 h-full flex flex-col ${
                     plan.popular 
                       ? 'border-success/50 glow-accent' 
-                      : 'spotsAvailable' in plan && plan.spotsAvailable
+                      : plan.spotsAvailable
                         ? 'border-accent/30'
                         : 'border-success/30'
                   }`}
@@ -1183,9 +1145,9 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
                   <div className="mb-6">
                     <h3 className="font-display text-2xl font-bold mb-3 text-center">{plan.name}</h3>
                     <div className="text-center mb-4">
-                      {'priceOptions' in plan && plan.priceOptions ? (
+                      {plan.priceOptions ? (
                         <div className="space-y-2 mb-2">
-                          {plan.priceOptions.map((opt: { amount: string; period: string }, j: number) => (
+                          {plan.priceOptions.map((opt, j) => (
                             <div key={j} className="font-display text-lg font-bold text-success">
                               {opt.amount}
                               <span className="text-base text-muted font-normal ml-1">{opt.period}</span>
@@ -1215,7 +1177,7 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
                   </ul>
 
                   {/* CTA */}
-                  {'spotsAvailable' in plan && plan.spotsAvailable ? (
+                  {plan.ctaMode === 'guided' && plan.spotsAvailable ? (
                     <div className="space-y-3 w-full">
                       <button
                         type="button"
@@ -1232,7 +1194,7 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
                         {ctaT.frgPayGuided}
                       </StripeCheckoutButton>
                     </div>
-                  ) : plan.audience === 'schools' && 'priceOptions' in plan && plan.priceOptions ? (
+                  ) : plan.ctaMode === 'school' ? (
                     <div className="space-y-3 w-full">
                       <StripeCheckoutButton
                         plan="frg_school_semester"
@@ -1255,7 +1217,7 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
                         {ctaT.orBookConsultationFirst}
                       </a>
                     </div>
-                  ) : plan.audience === 'professional' ? (
+                  ) : plan.ctaMode === 'professional' ? (
                     <div className="space-y-3 w-full">
                       <StripeCheckoutButton
                         plan="frg_professional_monthly"
@@ -1271,7 +1233,7 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
                         {ctaT.scheduleConsultation}
                       </a>
                     </div>
-                  ) : (
+                  ) : plan.ctaMode === 'guided' ? (
                     <div className="space-y-3 w-full">
                       <StripeCheckoutButton
                         plan="frg_guided"
@@ -1287,6 +1249,13 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
                         {ctaT.getStarted}
                       </a>
                     </div>
+                  ) : (
+                    <a
+                      {...getBookingLinkProps()}
+                      className="btn-primary w-full text-center py-3 rounded-lg font-semibold transition-all block"
+                    >
+                      {ctaT.scheduleConsultation}
+                    </a>
                   )}
                 </motion.div>
               ))}

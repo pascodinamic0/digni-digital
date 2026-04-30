@@ -3,6 +3,21 @@ import { requireAdminWithServiceDb } from '@/lib/auth/admin-data'
 
 const TILES = [
   {
+    href: '/admin/offerings',
+    title: 'Offerings',
+    blurb: 'Manage Future Ready pricing cards, visibility, CTAs, and features.',
+    icon: (
+      <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden>
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M9.568 3H5.25A2.25 2.25 0 003 5.25v4.318c0 .597.237 1.169.659 1.591l9.182 9.182a2.25 2.25 0 003.182 0l4.318-4.318a2.25 2.25 0 000-3.182L11.16 3.659A2.25 2.25 0 009.568 3z"
+        />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M6 6h.008v.008H6V6z" />
+      </svg>
+    ),
+  },
+  {
     href: '/admin/courses',
     title: 'Learning portal',
     blurb: 'Your one program: structure, lessons, videos, assignments, invites, and learner progress.',
@@ -104,7 +119,7 @@ const TILES = [
 
 export default async function AdminHomePage() {
   const db = await requireAdminWithServiceDb()
-  const [appsRes, affRes, dealsRes, contactsRes, chatRes, postsRes, coursesRes, enrollRes] = await Promise.all([
+  const [appsRes, affRes, dealsRes, contactsRes, chatRes, postsRes, coursesRes, enrollRes, offeringsRes] = await Promise.all([
     db.from('program_applications').select('id', { count: 'exact', head: true }),
     db.from('affiliate_applications').select('id', { count: 'exact', head: true }),
     db.from('deals').select('id', { count: 'exact', head: true }),
@@ -113,6 +128,7 @@ export default async function AdminHomePage() {
     db.from('blog_posts').select('id', { count: 'exact', head: true }),
     db.from('courses').select('id', { count: 'exact', head: true }),
     db.from('enrollments').select('id', { count: 'exact', head: true }),
+    db.from('program_offerings').select('id', { count: 'exact', head: true }),
   ])
 
   const nApps = appsRes.count ?? 0
@@ -123,9 +139,11 @@ export default async function AdminHomePage() {
   const nPosts = postsRes.count ?? 0
   const nCourses = coursesRes.count ?? 0
   const nEnroll = enrollRes.count ?? 0
+  const nOfferings = offeringsRes.error ? 0 : (offeringsRes.count ?? 0)
 
   const stats = [
     { label: 'Applications', value: nApps, href: '/admin/applications' },
+    { label: 'Offerings', value: nOfferings, href: '/admin/offerings' },
     { label: 'Affiliates', value: nAffiliates, href: '/admin/affiliates' },
     { label: 'Course', value: nCourses, href: '/admin/courses' },
     { label: 'Learners', value: nEnroll, href: '/admin/students' },
