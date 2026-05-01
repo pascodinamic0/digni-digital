@@ -9,6 +9,7 @@ import { LocaleProvider } from '../context/LocaleContext'
 import LocaleKeyedContent from '@/app/components/LocaleKeyedContent'
 import Navigation from '@/app/components/Navigation'
 import Footer from '@/app/components/Footer'
+import ScrollCompanion from '@/app/components/ScrollCompanion'
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://digni-digital-llc.com'
 
@@ -65,6 +66,7 @@ export default async function LocaleLayout({ children, params }: Props) {
         <div className="grain-overlay" />
         <Navigation />
         <LocaleKeyedContent locale={locale}>{children}</LocaleKeyedContent>
+        <ScrollCompanion />
         <Footer />
         <Script
           id="ghl-chat-widget-loader"

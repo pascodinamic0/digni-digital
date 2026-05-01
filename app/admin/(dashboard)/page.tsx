@@ -1,5 +1,7 @@
 import Link from 'next/link'
-import { requireAdminWithServiceDb } from '@/lib/auth/admin-data'
+import type { SupabaseClient } from '@supabase/supabase-js'
+import { requireAdmin } from '@/lib/auth/require-admin'
+import { createAdminClient, isSupabaseServiceConfigured } from '@/lib/supabase/admin'
 
 const TILES = [
   {
@@ -117,29 +119,87 @@ const TILES = [
   },
 ] as const
 
+async function getTableCount(db: SupabaseClient, table: string) {
+  try {
+    const { count, error } = await db.from(table).select('id', { count: 'exact', head: true })
+    if (error) {
+      return { count: 0, error: `${table}: ${error.message}` }
+    }
+    return { count: count ?? 0, error: null }
+  } catch (error) {
+    const message = error instanceof Error ? error.message : 'Unknown error'
+    return { count: 0, error: `${table}: ${message}` }
+  }
+}
+
+function AdminSetupNotice() {
+  return (
+    <div className="card-glass rounded-3xl p-6 md:p-8">
+      <span className="section-label">Configuration needed</span>
+      <h1 className="font-display mt-2 text-3xl font-bold tracking-tight md:text-4xl">
+        Admin data access is not configured yet.
+      </h1>
+      <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted md:text-base">
+        The dashboard loaded your admin session, but server-side Supabase access is missing. Add
+        {' '}
+        <code className="rounded bg-surface-light px-1.5 py-0.5 text-accent">SUPABASE_SERVICE_ROLE_KEY</code>
+        {' '}
+        in the production environment, then redeploy so the dashboard can read CRM, course, and application data.
+      </p>
+      <p className="mt-4 text-xs leading-relaxed text-muted">
+        Keep this key server-only. Do not prefix it with <code>NEXT_PUBLIC_</code>.
+      </p>
+    </div>
+  )
+}
+
 export default async function AdminHomePage() {
-  const db = await requireAdminWithServiceDb()
+  await requireAdmin()
+
+  if (!isSupabaseServiceConfigured()) {
+    return <AdminSetupNotice />
+  }
+
+  let db: SupabaseClient
+  try {
+    db = createAdminClient()
+  } catch {
+    return <AdminSetupNotice />
+  }
+
   const [appsRes, affRes, dealsRes, contactsRes, chatRes, postsRes, coursesRes, enrollRes, offeringsRes] = await Promise.all([
-    db.from('program_applications').select('id', { count: 'exact', head: true }),
-    db.from('affiliate_applications').select('id', { count: 'exact', head: true }),
-    db.from('deals').select('id', { count: 'exact', head: true }),
-    db.from('contacts').select('id', { count: 'exact', head: true }),
-    db.from('chat_conversations').select('id', { count: 'exact', head: true }),
-    db.from('blog_posts').select('id', { count: 'exact', head: true }),
-    db.from('courses').select('id', { count: 'exact', head: true }),
-    db.from('enrollments').select('id', { count: 'exact', head: true }),
-    db.from('program_offerings').select('id', { count: 'exact', head: true }),
+    getTableCount(db, 'program_applications'),
+    getTableCount(db, 'affiliate_applications'),
+    getTableCount(db, 'deals'),
+    getTableCount(db, 'contacts'),
+    getTableCount(db, 'chat_conversations'),
+    getTableCount(db, 'blog_posts'),
+    getTableCount(db, 'courses'),
+    getTableCount(db, 'enrollments'),
+    getTableCount(db, 'program_offerings'),
   ])
 
-  const nApps = appsRes.count ?? 0
-  const nAffiliates = affRes.error ? 0 : (affRes.count ?? 0)
-  const nDeals = dealsRes.count ?? 0
-  const nContacts = contactsRes.count ?? 0
-  const nChat = chatRes.count ?? 0
-  const nPosts = postsRes.count ?? 0
-  const nCourses = coursesRes.count ?? 0
-  const nEnroll = enrollRes.count ?? 0
-  const nOfferings = offeringsRes.error ? 0 : (offeringsRes.count ?? 0)
+  const countErrors = [
+    appsRes.error,
+    affRes.error,
+    dealsRes.error,
+    contactsRes.error,
+    chatRes.error,
+    postsRes.error,
+    coursesRes.error,
+    enrollRes.error,
+    offeringsRes.error,
+  ].filter(Boolean)
+
+  const nApps = appsRes.count
+  const nAffiliates = affRes.count
+  const nDeals = dealsRes.count
+  const nContacts = contactsRes.count
+  const nChat = chatRes.count
+  const nPosts = postsRes.count
+  const nCourses = coursesRes.count
+  const nEnroll = enrollRes.count
+  const nOfferings = offeringsRes.count
 
   const stats = [
     { label: 'Applications', value: nApps, href: '/admin/applications' },
@@ -164,6 +224,13 @@ export default async function AdminHomePage() {
           Snapshot of applications, your learning portal, pipeline, conversations, and content—same system as the live site.
         </p>
       </header>
+
+      {countErrors.length > 0 && (
+        <div className="mb-6 rounded-2xl border border-destructive/30 bg-destructive/10 px-4 py-3 text-sm leading-relaxed text-destructive">
+          Some dashboard counts could not be loaded. The dashboard is still available, but check the server logs for Supabase
+          connectivity or schema errors.
+        </div>
+      )}
 
       <ul className="mb-10 grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-4">
         {stats.map((s) => (
