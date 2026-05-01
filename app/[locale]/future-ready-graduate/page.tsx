@@ -55,9 +55,6 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
     [pageT.heroAlternateTitle, pageT.heroTitleHighlight, pageT.heroTitleLine1]
   )
   const [heroTitleIndex, setHeroTitleIndex] = useState(0)
-  const [heroCharCount, setHeroCharCount] = useState(heroTitles[0].length)
-  const [heroDeleting, setHeroDeleting] = useState(false)
-  const typedHeroTitle = heroTitles[heroTitleIndex].slice(0, heroCharCount)
   const pathsHeading = pricing.length === 3 ? pageT.threePaths : pageT.threePaths.replace(/^(Three|Trois)\s+/i, '')
 
   const outcomes = [
@@ -101,33 +98,15 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
 
   useEffect(() => {
     setHeroTitleIndex(0)
-    setHeroCharCount(heroTitles[0].length)
-    setHeroDeleting(false)
   }, [heroTitles])
 
   useEffect(() => {
-    const currentTitle = heroTitles[heroTitleIndex]
-    const isAtEnd = heroCharCount === currentTitle.length
-    const isAtStart = heroCharCount === 0
-    const delay = isAtEnd && !heroDeleting ? 2400 : heroDeleting ? 35 : 65
+    const timer = window.setInterval(() => {
+      setHeroTitleIndex((current) => (current + 1) % heroTitles.length)
+    }, 4200)
 
-    const timer = window.setTimeout(() => {
-      if (isAtEnd && !heroDeleting) {
-        setHeroDeleting(true)
-        return
-      }
-
-      if (isAtStart && heroDeleting) {
-        setHeroDeleting(false)
-        setHeroTitleIndex((current) => (current + 1) % heroTitles.length)
-        return
-      }
-
-      setHeroCharCount((current) => current + (heroDeleting ? -1 : 1))
-    }, delay)
-
-    return () => window.clearTimeout(timer)
-  }, [heroCharCount, heroDeleting, heroTitleIndex, heroTitles])
+    return () => window.clearInterval(timer)
+  }, [heroTitles.length])
 
   useEffect(() => {
     let cancelled = false
@@ -239,10 +218,15 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
               {pageT.heroBadge}
             </span>
             <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight sm:leading-tight mb-4 sm:mb-6 md:mb-8 px-2 min-h-[3.1em] sm:min-h-[2.7em]">
-              <span className="gradient-text">{typedHeroTitle}</span>
-              <span className="ml-1 inline-block animate-pulse text-success" aria-hidden>
-                |
-              </span>
+              <motion.span
+                key={heroTitles[heroTitleIndex]}
+                initial={{ opacity: 0, y: 14, filter: 'blur(4px)' }}
+                animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                transition={{ duration: 0.55, ease: 'easeOut' }}
+                className="block gradient-text"
+              >
+                {heroTitles[heroTitleIndex]}
+              </motion.span>
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-muted max-w-3xl mx-auto leading-relaxed mb-6 sm:mb-8 md:mb-10 px-2">
               {pageT.heroDescription}

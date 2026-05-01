@@ -1,6 +1,6 @@
 'use client'
 
-import { use, useState, useEffect, useRef, useMemo } from 'react'
+import { use, useState, useEffect, useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { Link } from '@/i18n/navigation'
 import AnimatedSection from '@/app/components/AnimatedSection'
@@ -14,58 +14,12 @@ import { useLanguage, useLocale } from '@/app/context/LocaleContext'
 import { translations } from '@/app/config/translations'
 import { formatMissedLeadsUsdStat, MISSED_LEADS_USD } from '@/lib/formatMissedLeadsUsdStat'
 
-const TYPING_INTERVAL_MS = 80
-const PAUSE_WHEN_COMPLETE_MS = 1800
-
 // Hero Section, keyed by language so it remounts and shows correct translations when locale changes
 function Hero() {
   const language = useLanguage()
   const t = translations[language].home.hero
-  const badgeOptions = useMemo(() => [t.badge1, t.badge2, t.badge3], [t.badge1, t.badge2, t.badge3])
   const videoRef = useRef<HTMLVideoElement>(null)
   const [videoReady, setVideoReady] = useState(false)
-  const [targetPhrase, setTargetPhrase] = useState<string>(t.badge1)
-  const [displayedText, setDisplayedText] = useState<string>('')
-  const [isTyping, setIsTyping] = useState(true)
-  const indexRef = useRef(0)
-  const targetRef = useRef(t.badge1)
-  const phraseIndexRef = useRef(0)
-  const pauseTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
-
-  // Typewriter: when target phrase changes, clear and type it out character by character
-  useEffect(() => {
-    targetRef.current = targetPhrase
-    setDisplayedText('')
-    indexRef.current = 0
-    setIsTyping(true)
-
-    const id = setInterval(() => {
-      const currentTarget = targetRef.current
-      const i = indexRef.current
-      if (i >= currentTarget.length) {
-        clearInterval(id)
-        setIsTyping(false)
-        pauseTimeoutRef.current = setTimeout(() => {
-          setDisplayedText('')
-          const next = (phraseIndexRef.current + 1) % badgeOptions.length
-          phraseIndexRef.current = next
-          setTargetPhrase(badgeOptions[next])
-          pauseTimeoutRef.current = null
-        }, PAUSE_WHEN_COMPLETE_MS)
-        return
-      }
-      indexRef.current = i + 1
-      setDisplayedText(currentTarget.slice(0, i + 1))
-    }, TYPING_INTERVAL_MS)
-
-    return () => {
-      clearInterval(id)
-      if (pauseTimeoutRef.current) {
-        clearTimeout(pauseTimeoutRef.current)
-        pauseTimeoutRef.current = null
-      }
-    }
-  }, [targetPhrase, badgeOptions])
 
   useEffect(() => {
     const video = videoRef.current
@@ -114,20 +68,6 @@ function Hero() {
       <div className="absolute inset-0 bg-[image:var(--overlay-scrim-soft)] bg-cover" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-20 relative z-10 w-full">
-        <motion.div
-          initial={{ opacity: 1, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-          className="mb-4 sm:mb-6"
-        >
-          <span className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-accent/10 border border-accent/30 rounded-full text-accent text-xs sm:text-sm font-medium">
-            {displayedText}
-            {isTyping && (
-              <span className="inline-block w-0.5 h-4 sm:h-[1.1em] bg-accent ml-0.5 align-middle animate-pulse" aria-hidden />
-            )}
-          </span>
-        </motion.div>
-
         {/* Plain h1 for LCP: motion.* with opacity:0 deferred paint until hydration + animation */}
         <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-4 sm:mb-6 md:mb-8 max-w-4xl px-2 text-text">
           {t.title}
@@ -964,19 +904,26 @@ function CaseStudies() {
 // CTA Section - Book Consultation
 function CTASection() {
   const { theme } = useTheme()
+  const ctaSectionRef = useRef(null)
+  const isCtaSectionInView = useInView(ctaSectionRef, { margin: '-25% 0px -25% 0px' })
   const language = useLanguage()
   const cta = translations[language].home.ctaSection
   const ctaT = translations[language].cta
+  const shouldUseLightSection = theme === 'dark' && isCtaSectionInView
   return (
-    <AnimatedSection className="py-32 relative overflow-hidden">
+    <AnimatedSection className={`py-32 relative overflow-hidden transition-colors duration-500 ${
+      shouldUseLightSection ? 'md:bg-white' : ''
+    }`}>
       {/* Background elements */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-transparent to-accent/10" />
+        <div className={`absolute inset-0 transition-colors duration-500 ${
+          shouldUseLightSection ? 'md:bg-white' : 'bg-gradient-to-br from-accent/5 via-transparent to-accent/10'
+        }`} />
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
         <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-accent/10 rounded-full blur-3xl" />
       </div>
 
-      <div className="max-w-5xl mx-auto px-6 relative z-10">
+      <div ref={ctaSectionRef} className="max-w-5xl mx-auto px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
