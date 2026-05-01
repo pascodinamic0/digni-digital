@@ -885,17 +885,17 @@ function buildTranslations(): Record<Language, TranslationKeys> {
       badge1: 'Systems That Convert',
       badge2: 'Growth & Skills',
       badge3: 'AI for Real Businesses',
-      title: 'We Close the Gaps. ',
-      titleHighlight: 'You Get the Results.',
+      title: 'We Fix the Gaps. ',
+      titleHighlight: 'You Get Results or Access.',
       subtitle:
-        'Lost leads, untapped talent, ideas stuck on the shelf, we help you turn them into growth. Digital systems, skills, and AI that fit your budget, not a Fortune 500 invoice.',
+        'Losing clients, holding unused degrees because opportunities are missing, or sitting on great ideas because hiring an engineer feels out of reach? We build digital systems, skills pathways, and AI solutions that turn those gaps into growth.',
       stat1Value: '150+',
       stat1Label: 'Businesses Transformed',
       stat2Value: 'Since 2019',
       stat3Value: 'Africa & Beyond',
       stat3Label: '',
       ourStory: 'Our Story',
-      whatWeDo: 'What We Do',
+      whatWeDo: 'Our Services',
     },
     mission: {
       title: 'Our Mission',
@@ -972,7 +972,7 @@ function buildTranslations(): Record<Language, TranslationKeys> {
       forUniqueNeeds: 'For Organizations',
       aiEmployeeTitle: 'AI Employee Systems',
       aiEmployeeDesc:
-        'Most teams lose leads in the follow-up — not in the ad click.\n\nWe install an AI Employee that captures, qualifies, and books 24/7, plus a strategist to sharpen campaigns and grow your pipeline — a conversion system, not a chatbot.',
+        'Most brand and enterprise teams lose potential clients in the follow-up, not because their ads failed to perform.\n\nWe install an AI Employee that captures, qualifies, and books 24/7, plus a strategist to sharpen campaigns and grow your pipeline.',
       aiEmployeeApproach:
         'Full conversion system: AI captures and books around the clock, with human experts optimizing campaigns and pipeline growth.',
       aiEmployeeOutcome1: 'Turn more ad clicks into real clients',
@@ -2430,7 +2430,7 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     heroBadge: 'Future-Ready Graduate Program',
     heroTitleLine1: 'Turn Your Graduates Into',
     heroTitleHighlight: 'Industry-Ready Professionals',
-    heroAlternateTitle: 'Equip professionals and youth with the skills to thrive in a post-AI world',
+    heroAlternateTitle: 'Equip professionals and youth with the skills to thrive as AI transforms how the world works',
     heroDescription: '85% employed. Job creation is in our DNA, we teach skills that bring out entrepreneurial gifts through guided learning personalized to each person.',
     calendarTitle: 'Designed for the',
     calendarTitleHighlight: 'National Academic Calendar',
@@ -2499,7 +2499,7 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     heroBadge: 'Programme Diplômé Prêt pour l\'Avenir',
     heroTitleLine1: 'Transformez vos diplômés en',
     heroTitleHighlight: 'Professionnels prêts pour l\'industrie',
-    heroAlternateTitle: 'Équipez les professionnels et les jeunes avec les compétences pour réussir dans un monde post-IA',
+    heroAlternateTitle: 'Équipez les professionnels et les jeunes des compétences nécessaires pour réussir alors que l’IA transforme le monde du travail',
     heroDescription: '85 % employés. La création d\'emplois est dans notre ADN, nous enseignons des compétences qui révèlent les dons entrepreneuriaux grâce à un apprentissage guidé personnalisé pour chaque personne.',
     calendarTitle: 'Conçu pour le',
     calendarTitleHighlight: 'Calendrier académique national',
@@ -2663,8 +2663,8 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     ctaTitle: 'Ready to Work Together?',
     ctaSubtitle: 'Tell us your problem. We\'ll find the fix.',
     trustedByBadge: 'Trusted by',
-    trustedByTitle: 'Teams that capture every lead.',
-    trustedBySubtitle: '98% satisfaction. From 40% missed calls to 100% captured.',
+    trustedByTitle: 'Enterprises that believe in our mission.',
+    trustedBySubtitle: 'Building human-first systems that capture opportunity and expand access.',
   }
 
   const aboutFr: AboutTranslations = {
@@ -2766,8 +2766,8 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     ctaTitle: 'Prêt à travailler ensemble ?',
     ctaSubtitle: 'Dites-nous votre problème. Nous trouverons la solution.',
     trustedByBadge: 'Approuvé par',
-    trustedByTitle: 'Des équipes qui captent chaque prospect.',
-    trustedBySubtitle: '98% de satisfaction. De 40% d\'appels manqués à 100% captés.',
+    trustedByTitle: 'Des entreprises qui croient en notre mission.',
+    trustedBySubtitle: 'Des systèmes humains d\'abord qui captent les opportunités et élargissent l\'accès.',
   }
 
   const aboutAr: AboutTranslations = {
@@ -2869,8 +2869,8 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     ctaTitle: 'مستعد للعمل معاً؟',
     ctaSubtitle: 'أخبرنا بمشكلتك. سنجد الحل.',
     trustedByBadge: 'موثوق من',
-    trustedByTitle: 'فرق تلتقط كل عميل محتمل.',
-    trustedBySubtitle: '98% رضا. من 40% مكالمات فائتة إلى 100% مُلتقطة.',
+    trustedByTitle: 'مؤسسات تؤمن برسالتنا.',
+    trustedBySubtitle: 'نبني أنظمة تضع الإنسان أولاً, تلتقط الفرص وتوسّع الوصول.',
   }
 
   const aboutDe: AboutTranslations = {
@@ -2972,8 +2972,8 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     ctaTitle: 'Bereit zur Zusammenarbeit?',
     ctaSubtitle: 'Sagen Sie uns Ihr Problem. Wir finden die Lösung.',
     trustedByBadge: 'Vertraut von',
-    trustedByTitle: 'Teams, die jeden Lead erfassen.',
-    trustedBySubtitle: '98% Zufriedenheit. Von 40% verpassten Anrufen zu 100% erfasst.',
+    trustedByTitle: 'Unternehmen, die an unsere Mission glauben.',
+    trustedBySubtitle: 'Menschliche Systeme, die Chancen erfassen und Zugang erweitern.',
   }
 
   const aboutEs: AboutTranslations = {
@@ -3075,8 +3075,8 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     ctaTitle: '¿Listo para trabajar juntos?',
     ctaSubtitle: 'Cuéntanos tu problema. Encontraremos la solución.',
     trustedByBadge: 'Confían en nosotros',
-    trustedByTitle: 'Equipos que capturan cada lead.',
-    trustedBySubtitle: '98% satisfacción. De 40% llamadas perdidas a 100% capturadas.',
+    trustedByTitle: 'Empresas que creen en nuestra misión.',
+    trustedBySubtitle: 'Sistemas humanos que capturan oportunidades y amplían el acceso.',
   }
 
   return {
