@@ -145,7 +145,7 @@ export default function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-8">
             {/* Brand: spans full width on mobile */}
             <div className="md:col-span-5 lg:col-span-4">
-              <Logo href="/" label="Digni Digital LLC" className="mb-4" />
+              <Logo href="/" label="Digni Digital LLC" className="mb-4" heightClass="h-[76px]" />
               <p className="text-muted text-sm max-w-xs mb-5">
                 {t.footer.tagline}
               </p>
