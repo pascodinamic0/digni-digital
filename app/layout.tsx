@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Script from 'next/script'
 import { Space_Grotesk, Inter } from 'next/font/google'
 import { headers } from 'next/headers'
 import './globals.css'
@@ -76,9 +77,24 @@ export default async function RootLayout({
       dir={dir}
       suppressHydrationWarning
       data-scroll-behavior="smooth"
+      data-theme="dark"
       className={`${fontDisplay.variable} ${fontBody.variable}`}
     >
       <body suppressHydrationWarning>
+        <Script id="theme-default" strategy="beforeInteractive">{`
+(function () {
+  try {
+    var t = localStorage.getItem('theme');
+    if (t === 'light' || t === 'dark') {
+      document.documentElement.setAttribute('data-theme', t);
+    } else {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    }
+  } catch (e) {
+    document.documentElement.setAttribute('data-theme', 'dark');
+  }
+})(); 
+        `}</Script>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={jsonLdScriptProps(jsonLd)}
