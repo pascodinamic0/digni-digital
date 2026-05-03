@@ -22,6 +22,44 @@ const SERVICE_CARD_META: Record<
   'agentic-softwares': { icon: '⚙️', color: 'info' },
 }
 
+const servicesHeroCopy = {
+  en: {
+    titlePrefix: 'Solutions That',
+    titleHighlight: 'Drive Real Impact',
+    subtitle: 'AI systems. Graduate programs. Agentic Softwares. Results from day one.',
+    years: 'building growth systems',
+    satisfaction: 'client satisfaction',
+  },
+  fr: {
+    titlePrefix: 'Des solutions qui',
+    titleHighlight: 'créent un impact réel',
+    subtitle: 'Systèmes IA. Programmes diplômants. Agentic Softwares. Des résultats dès le premier jour.',
+    years: 'à construire des systèmes de croissance',
+    satisfaction: 'de satisfaction client',
+  },
+  ar: {
+    titlePrefix: 'حلول',
+    titleHighlight: 'تصنع أثراً حقيقياً',
+    subtitle: 'أنظمة ذكاء اصطناعي. برامج خريجين. Agentic Softwares. نتائج من اليوم الأول.',
+    years: 'في بناء أنظمة النمو',
+    satisfaction: 'رضا العملاء',
+  },
+  de: {
+    titlePrefix: 'Lösungen, die',
+    titleHighlight: 'echte Wirkung erzielen',
+    subtitle: 'KI-Systeme. Absolventenprogramme. Agentic Softwares. Ergebnisse ab Tag eins.',
+    years: 'im Aufbau von Wachstumssystemen',
+    satisfaction: 'Kundenzufriedenheit',
+  },
+  es: {
+    titlePrefix: 'Soluciones que',
+    titleHighlight: 'generan impacto real',
+    subtitle: 'Sistemas IA. Programas para graduados. Agentic Softwares. Resultados desde el primer día.',
+    years: 'construyendo sistemas de crecimiento',
+    satisfaction: 'satisfacción del cliente',
+  },
+}
+
 type ServicesPageProps = {
   params: Promise<{ locale: string }>
   searchParams?: Promise<{ [key: string]: string | string[] | undefined }>
@@ -33,6 +71,7 @@ export default function ServicesPage({ params, searchParams }: ServicesPageProps
   const language = useLanguage()
   const t = translations[language]
   const sp = t.servicesPage
+  const heroCopy = servicesHeroCopy[language]
   const servicesLabel = t.sectionLabels?.services ?? 'Our Services'
   const pageJsonLd = getServicesPageJsonLd(locale)
   return (
@@ -53,12 +92,12 @@ export default function ServicesPage({ params, searchParams }: ServicesPageProps
           >
             <span className="section-label block mb-4 sm:mb-6">{servicesLabel}</span>
             <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-4 sm:mb-6 md:mb-8 px-2">
-              Solutions That{' '}
+              {heroCopy.titlePrefix}{' '}
               <br className="hidden sm:block" />
-              <span className="gradient-text">Drive Real Impact</span>
+              <span className="gradient-text">{heroCopy.titleHighlight}</span>
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-muted max-w-3xl mx-auto leading-relaxed px-2">
-              AI systems. Graduate programs. Agentic Softwares. Results from day one.
+              {heroCopy.subtitle}
             </p>
             <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 px-2 mt-8">
               <motion.div
@@ -67,7 +106,7 @@ export default function ServicesPage({ params, searchParams }: ServicesPageProps
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="rounded-full border border-border/80 bg-background/75 dark:bg-surface/70 px-4 py-2 text-xs sm:text-sm text-muted backdrop-blur-sm shadow-sm"
               >
-                <span className="font-semibold text">10+ years</span> building growth systems
+                <span className="font-semibold text">10+ years</span> {heroCopy.years}
               </motion.div>
               <motion.div
                 initial={{ opacity: 0, y: 14 }}
@@ -75,7 +114,7 @@ export default function ServicesPage({ params, searchParams }: ServicesPageProps
                 transition={{ duration: 0.6, delay: 0.3 }}
                 className="rounded-full border border-border/80 bg-background/75 dark:bg-surface/70 px-4 py-2 text-xs sm:text-sm text-muted backdrop-blur-sm shadow-sm"
               >
-                <span className="font-semibold text">98%</span> client satisfaction
+                <span className="font-semibold text">98%</span> {heroCopy.satisfaction}
               </motion.div>
             </div>
           </motion.div>

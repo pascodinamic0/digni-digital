@@ -13,6 +13,14 @@ import { getCtaButtonText, getBookingLinkProps } from '@/app/config/cta.config'
 import { translations } from '@/app/config/translations'
 import { useLanguage } from '@/app/context/LocaleContext'
 
+const aboutHeroCopy = {
+  en: { badge: 'Mission-Driven, Outcome-Focused', years: 'building growth systems', satisfaction: 'client satisfaction' },
+  fr: { badge: 'Guidés par la mission, orientés résultats', years: 'à construire des systèmes de croissance', satisfaction: 'de satisfaction client' },
+  ar: { badge: 'رسالة واضحة ونتائج ملموسة', years: 'في بناء أنظمة النمو', satisfaction: 'رضا العملاء' },
+  de: { badge: 'Missionsgetrieben, ergebnisorientiert', years: 'im Aufbau von Wachstumssystemen', satisfaction: 'Kundenzufriedenheit' },
+  es: { badge: 'Impulsados por la misión, enfocados en resultados', years: 'construyendo sistemas de crecimiento', satisfaction: 'satisfacción del cliente' },
+}
+
 function Counter({ end, suffix = '' }: { end: number; suffix?: string }) {
   const [count, setCount] = useState(0)
   const ref = useRef(null)
@@ -55,6 +63,7 @@ export default function AboutPage({ params, searchParams }: AboutPageProps) {
   use(searchParams ?? Promise.resolve({}))
   const language = useLanguage()
   const t = translations[language].about
+  const heroCopy = aboutHeroCopy[language]
   const w = translations[language].home.whatWeDo
   const ctaT = translations[language].cta
   const mission = translations[language].home.mission
@@ -165,7 +174,7 @@ export default function AboutPage({ params, searchParams }: AboutPageProps) {
             >
               <span className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 dark:bg-accent/20 px-4 py-2 text-xs font-medium text-accent sm:text-sm backdrop-blur-sm">
                 <span className="inline-block h-2 w-2 rounded-full bg-accent" />
-                Mission-Driven, Outcome-Focused
+                {heroCopy.badge}
               </span>
             </motion.div>
             <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-4 sm:mb-6 md:mb-8 px-2">
@@ -182,7 +191,7 @@ export default function AboutPage({ params, searchParams }: AboutPageProps) {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="rounded-full border border-border/80 bg-background/75 dark:bg-surface/70 px-4 py-2 text-xs sm:text-sm text-muted backdrop-blur-sm shadow-sm"
               >
-                <span className="font-semibold text">10+ years</span> building growth systems
+                <span className="font-semibold text">10+ years</span> {heroCopy.years}
               </motion.div>
               <motion.div
                 initial={{ opacity: 0, y: 14 }}
@@ -190,7 +199,7 @@ export default function AboutPage({ params, searchParams }: AboutPageProps) {
                 transition={{ duration: 0.6, delay: 0.3 }}
                 className="rounded-full border border-border/80 bg-background/75 dark:bg-surface/70 px-4 py-2 text-xs sm:text-sm text-muted backdrop-blur-sm shadow-sm"
               >
-                <span className="font-semibold text">98%</span> client satisfaction
+                <span className="font-semibold text">98%</span> {heroCopy.satisfaction}
               </motion.div>
             </div>
           </motion.div>

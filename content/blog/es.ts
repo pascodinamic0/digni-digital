@@ -31,23 +31,23 @@ const contentEs: Record<string, Partial<BlogArticle>> = {
       <ul>
         <li><strong>Negocios globales</strong> - Atendiendo clientes en múltiples zonas horarias</li>
         <li><strong>Plataformas de comercio electrónico</strong> - Manejando pedidos y consultas a cualquier hora</li>
-        <li><strong>Empresas de servicios</strong> - Capturando leads incluso cuando las oficinas están cerradas</li>
+        <li><strong>Empresas de servicios</strong> - Capturando clientes potenciales incluso cuando las oficinas están cerradas</li>
         <li><strong>Servicios de emergencia</strong> - Proporcionando respuestas inmediatas a consultas urgentes</li>
       </ul>
 
-      <p>Las empresas que implementan sistemas de empleados IA reportan un <strong>aumento del 40% en la captura de leads fuera de horario</strong> y tasas de satisfacción del cliente del 85% por la disponibilidad 24/7.</p>
+      <p>Las empresas que implementan sistemas de empleados IA reportan un <strong>aumento del 40% en la captura de clientes potenciales fuera de horario</strong> y tasas de satisfacción del cliente del 85% por la disponibilidad 24/7.</p>
 
       <h4>2. Calificación y Enrutamiento Inteligente de Leads</h4>
-      <p>Los sistemas de empleados IA no solo contestan llamadas, califican leads de manera inteligente, recopilan información esencial y dirigen las consultas al departamento o miembro del equipo adecuado. Esta capacidad transforma el servicio al cliente de un centro de costos a un generador de ingresos:</p>
+      <p>Los sistemas de empleados IA no solo contestan llamadas, califican clientes potenciales de manera inteligente, recopilan información esencial y dirigen las consultas al departamento o miembro del equipo adecuado. Esta capacidad transforma el servicio al cliente de un centro de costos a un generador de ingresos:</p>
 
       <ul>
-        <li><strong>Puntuación automática de leads</strong> - La IA evalúa la calidad y el valor potencial de la consulta</li>
+        <li><strong>Puntuación automática de clientes potenciales</strong> - La IA evalúa la calidad y el valor potencial de la consulta</li>
         <li><strong>Enrutamiento inteligente</strong> - Dirige las consultas al miembro del equipo más calificado</li>
         <li><strong>Recopilación de contexto</strong> - Reúne toda la información relevante antes de la transferencia humana</li>
         <li><strong>Programación de citas</strong> - Agenda reuniones directamente en los calendarios</li>
       </ul>
 
-      <p>Las empresas que utilizan sistemas de empleados IA para la calificación de leads reportan <strong>tasas de conversión un 35% más altas</strong> y una reducción del 50% en el tiempo hasta el primer contacto.</p>
+      <p>Las empresas que utilizan sistemas de empleados IA para la calificación de clientes potenciales reportan <strong>tasas de conversión un 35% más altas</strong> y una reducción del 50% en el tiempo hasta el primer contacto.</p>
 
       <h4>3. Dominio de la Comunicación Multicanal</h4>
       <p>Los clientes modernos esperan contactar a las empresas a través de su canal preferido, teléfono, correo electrónico, chat, redes sociales o aplicaciones de mensajería. Los sistemas de empleados IA gestionan todos estos canales sin problemas, proporcionando una calidad de servicio consistente independientemente del método de comunicación.</p>
@@ -63,10 +63,10 @@ const contentEs: Record<string, Partial<BlogArticle>> = {
         <li><strong>Reducción de Costos</strong>: Disminución del 60% en costos operativos de servicio al cliente</li>
         <li><strong>Escalabilidad</strong>: Manejó 10x más consultas sin aumento proporcional de personal</li>
         <li><strong>Satisfacción del Cliente</strong>: Aumentó de 72% a 94% en puntajes de satisfacción</li>
-        <li><strong>Conversión de Leads</strong>: Mejora del 28% en tasas de conversión de leads calificados</li>
+        <li><strong>Conversión de Leads</strong>: Mejora del 28% en tasas de conversión de clientes potenciales calificados</li>
       </ul>
 
-      <p><strong>Análisis de ROI</strong>: El sistema de empleados IA se pagó solo en 3 meses a través de ahorros en costos y mayores ingresos por mejor manejo de leads.</p>
+      <p><strong>Análisis de ROI</strong>: El sistema de empleados IA se pagó solo en 3 meses a través de ahorros en costos y mayores ingresos por mejor manejo de clientes potenciales.</p>
 
       <h3>El Impacto Empresarial: Más Allá del Ahorro de Costos</h3>
 
@@ -74,7 +74,7 @@ const contentEs: Record<string, Partial<BlogArticle>> = {
 
       <ul>
         <li><strong>Eficiencia Operativa</strong>: Reducción del 60-70% en costos de servicio al cliente manteniendo o mejorando la calidad del servicio</li>
-        <li><strong>Crecimiento de Ingresos</strong>: Aumento del 25-40% en conversión de leads a través de mejor calificación y tiempos de respuesta más rápidos</li>
+        <li><strong>Crecimiento de Ingresos</strong>: Aumento del 25-40% en conversión de clientes potenciales a través de mejor calificación y tiempos de respuesta más rápidos</li>
         <li><strong>Experiencia del Cliente</strong>: Servicio consistente y profesional disponible 24/7, mejorando los puntajes de satisfacción del cliente</li>
         <li><strong>Productividad del Equipo</strong>: El personal humano se enfoca en actividades de alto valor como resolución de problemas complejos y construcción de relaciones</li>
         <li><strong>Inteligencia de Negocios</strong>: Los sistemas IA capturan y analizan cada interacción, proporcionando información sobre las necesidades y comportamiento de los clientes</li>
@@ -163,11 +163,11 @@ const contentEs: Record<string, Partial<BlogArticle>> = {
       <p>Entender el verdadero costo del servicio al cliente requiere mirar más allá de las cifras salariales. Los modelos tradicionales de servicio al cliente incluyen:</p>
 
       <ul>
-        <li><strong>Salarios Base</strong>: $30,000-$50,000 por empleado anualmente</li>
+        <li><strong>Salarios Base</strong>: $30,000-$50,000 por empcliente potencialo anualmente</li>
         <li><strong>Beneficios y Gastos Generales</strong>: 30-40% de costos adicionales (seguro médico, jubilación, espacio de oficina)</li>
-        <li><strong>Costos de Capacitación</strong>: $2,000-$5,000 por nuevo empleado</li>
+        <li><strong>Costos de Capacitación</strong>: $2,000-$5,000 por nuevo empcliente potencialo</li>
         <li><strong>Gestión y Supervisión</strong>: 20-30% adicional de gastos generales para líderes de equipo y gerentes</li>
-        <li><strong>Costos de Rotación</strong>: $10,000-$20,000 por empleado que se va (reclutamiento, capacitación, pérdida de productividad)</li>
+        <li><strong>Costos de Rotación</strong>: $10,000-$20,000 por empcliente potencialo que se va (reclutamiento, capacitación, pérdida de productividad)</li>
         <li><strong>Horas Extra y Horario Extendido</strong>: 1.5-2x las tarifas de pago por cobertura extendida</li>
       </ul>
 
@@ -211,7 +211,7 @@ const contentEs: Record<string, Partial<BlogArticle>> = {
       <p><strong>Cálculo de ROI:</strong></p>
       <ul>
         <li>Ahorro anual de costos: $372,000</li>
-        <li>Ingresos adicionales por mejor manejo de leads: $85,000</li>
+        <li>Ingresos adicionales por mejor manejo de clientes potenciales: $85,000</li>
         <li>Valor total del primer año: $457,000</li>
         <li>Inversión: $23,000 (primer año incluyendo configuración)</li>
         <li><strong>ROI: 1,887%</strong></li>
@@ -237,9 +237,9 @@ const contentEs: Record<string, Partial<BlogArticle>> = {
       <h4>1. Crecimiento de Ingresos a Través de Mejor Manejo de Leads</h4>
       <p>Los sistemas de empleados IA no solo ahorran costos, generan ingresos al:</p>
       <ul>
-        <li><strong>Tiempos de Respuesta Más Rápidos</strong>: Los leads contactados en minutos convierten 3x mejor que los contactados después de horas</li>
+        <li><strong>Tiempos de Respuesta Más Rápidos</strong>: Los clientes potenciales contactados en minutos convierten 3x mejor que los contactados después de horas</li>
         <li><strong>Mejor Calificación</strong>: La IA hace las preguntas correctas para identificar prospectos de alto valor</li>
-        <li><strong>Disponibilidad 24/7</strong>: Captura leads que de otro modo se perderían fuera del horario comercial</li>
+        <li><strong>Disponibilidad 24/7</strong>: Captura clientes potenciales que de otro modo se perderían fuera del horario comercial</li>
         <li><strong>Seguimiento Consistente</strong>: Nunca pierde un seguimiento ni olvida programar citas</li>
       </ul>
 
@@ -328,8 +328,8 @@ const contentEs: Record<string, Partial<BlogArticle>> = {
       <p>Más allá del ahorro de costos, los sistemas de empleados IA impulsan el crecimiento de ingresos:</p>
 
       <ul>
-        <li><strong>Captura de Leads Fuera de Horario</strong>: El 30-40% de los leads llegan fuera del horario comercial. La IA los captura, aumentando el total de leads en un 30-40%</li>
-        <li><strong>Respuesta Más Rápida = Mayor Conversión</strong>: Los leads contactados dentro de 5 minutos convierten 3x mejor que los contactados después de 1 hora</li>
+        <li><strong>Captura de Leads Fuera de Horario</strong>: El 30-40% de los clientes potenciales llegan fuera del horario comercial. La IA los captura, aumentando el total de clientes potenciales en un 30-40%</li>
+        <li><strong>Respuesta Más Rápida = Mayor Conversión</strong>: Los clientes potenciales contactados dentro de 5 minutos convierten 3x mejor que los contactados después de 1 hora</li>
         <li><strong>Mejor Calificación</strong>: La IA hace mejores preguntas de calificación, mejorando las tasas de conversión en un 20-30%</li>
         <li><strong>Sin Oportunidades Perdidas</strong>: La IA nunca olvida hacer seguimiento ni pierde una cita</li>
       </ul>
@@ -340,7 +340,7 @@ const contentEs: Record<string, Partial<BlogArticle>> = {
         <li>Tasa de conversión actual: 12% = 60 clientes/mes</li>
         <li>Valor promedio del cliente: $2,000</li>
         <li>Ingresos mensuales actuales: $120,000</li>
-        <li>Con IA: 40% más leads (700), 18% de conversión (126 clientes)</li>
+        <li>Con IA: 40% más clientes potenciales (700), 18% de conversión (126 clientes)</li>
         <li>Nuevos ingresos mensuales: $252,000</li>
         <li><strong>Ingresos mensuales adicionales: $132,000</strong></li>
         <li><strong>Aumento anual de ingresos: $1,584,000</strong></li>
@@ -376,7 +376,7 @@ const contentEs: Record<string, Partial<BlogArticle>> = {
         <li><strong>Audite los Costos Actuales</strong>: Calcule los costos anuales totales de servicio al cliente incluyendo salarios, beneficios, gastos generales, capacitación y software</li>
         <li><strong>Mida el Rendimiento Actual</strong>: Rastree tiempos de respuesta, tasas de conversión y puntajes de satisfacción del cliente</li>
         <li><strong>Estime los Costos del Sistema IA</strong>: Obtenga cotizaciones para sistemas de empleados IA que se ajusten a sus necesidades</li>
-        <li><strong>Proyecte el Impacto en Ingresos</strong>: Estime ingresos adicionales por mejor manejo de leads y respuestas más rápidas</li>
+        <li><strong>Proyecte el Impacto en Ingresos</strong>: Estime ingresos adicionales por mejor manejo de clientes potenciales y respuestas más rápidas</li>
         <li><strong>Calcule el ROI</strong>: Compare el valor total (ahorros + ingresos) con la inversión</li>
         <li><strong>Comience con un Piloto</strong>: Pruebe el sistema con un caso de uso específico para validar las proyecciones de ROI</li>
         <li><strong>Escale Basándose en Resultados</strong>: Expanda el sistema basándose en el ROI comprobado</li>
@@ -432,7 +432,7 @@ const contentEs: Record<string, Partial<BlogArticle>> = {
       <ul>
         <li><strong>Tiempo de Respuesta</strong>: Tiempo de respuesta objetivo (ej., menos de 2 minutos)</li>
         <li><strong>Reducción de Costos</strong>: Porcentaje de reducción en costos de servicio al cliente</li>
-        <li><strong>Conversión de Leads</strong>: Mejora en tasas de conversión de lead a cliente</li>
+        <li><strong>Conversión de Leads</strong>: Mejora en tasas de conversión de cliente potencial a cliente</li>
         <li><strong>Satisfacción del Cliente</strong>: Puntajes objetivo de satisfacción</li>
         <li><strong>Disponibilidad</strong>: Porcentaje de consultas manejadas 24/7</li>
       </ul>
@@ -512,7 +512,7 @@ const contentEs: Record<string, Partial<BlogArticle>> = {
       <ul>
         <li>Construyó base de conocimientos con más de 50 respuestas a preguntas comunes</li>
         <li>Integró con sistema de calendario existente para reserva de citas</li>
-        <li>Configuró flujos de trabajo para calificación y enrutamiento de leads</li>
+        <li>Configuró flujos de trabajo para calificación y enrutamiento de clientes potenciales</li>
       </ul>
 
       <p><strong>Semana 5: Pruebas</strong></p>
@@ -615,16 +615,16 @@ const contentEs: Record<string, Partial<BlogArticle>> = {
 
 
   'modern-fractional-coo-ai-employee-business-partner': {
-    title: 'El COO fraccional moderno: combinar liderazgo operativo con una capa de «empleado IA»',
-    excerpt: 'Guía práctica para empresas en crecimiento: qué hace realmente un COO fraccional moderno, en qué se diferencia de un asistente o un contable, y cómo encajan en un solo modelo de alianza los beneficios que la gente espera de un empleado IA: velocidad, constancia y cobertura.',
+    title: 'El COO fraccional moderno: combinar liderazgo operativo con una capa de «empcliente potencialo IA»',
+    excerpt: 'Guía práctica para empresas en crecimiento: qué hace realmente un COO fraccional moderno, en qué se diferencia de un asistente o un contable, y cómo encajan en un solo modelo de alianza los beneficios que la gente espera de un empcliente potencialo IA: velocidad, constancia y cobertura.',
     category: 'Operaciones',
     readTime: '12 min de lectura',
     publishDate: '27 de marzo de 2026',
-    tags: ['COO fraccional', 'empleado IA', 'operaciones', 'liderazgo', 'escala', 'Digni Digital'],
+    tags: ['COO fraccional', 'empcliente potencialo IA', 'operaciones', 'liderazgo', 'escala', 'Digni Digital'],
     content: `
-      <h2>Por qué «COO fraccional» y «empleado IA» van en la misma frase</h2>
+      <h2>Por qué «COO fraccional» y «empcliente potencialo IA» van en la misma frase</h2>
 
-      <p>Las empresas en crecimiento rara vez fracasan por falta de ambición. Fracasan porque <strong>claridad, cadencia y ejecución</strong> no escalan al mismo ritmo que la demanda. Un <strong>COO fraccional moderno</strong> aporta a tiempo parcial la propiedad ejecutiva de cómo funciona y crece el negocio: prioridades, métricas, traspasos y responsabilidad. Una <strong>capa de empleado IA</strong>, recepción inteligente, triaje, documentación, seguimiento, ofrece el <strong>volumen y la constancia de ejecución</strong> que los líderes esperan de la automatización, sin pretender que el software sustituya el criterio.</p>
+      <p>Las empresas en crecimiento rara vez fracasan por falta de ambición. Fracasan porque <strong>claridad, cadencia y ejecución</strong> no escalan al mismo ritmo que la demanda. Un <strong>COO fraccional moderno</strong> aporta a tiempo parcial la propiedad ejecutiva de cómo funciona y crece el negocio: prioridades, métricas, traspasos y responsabilidad. Una <strong>capa de empcliente potencialo IA</strong>, recepción inteligente, triaje, documentación, seguimiento, ofrece el <strong>volumen y la constancia de ejecución</strong> que los líderes esperan de la automatización, sin pretender que el software sustituya el criterio.</p>
 
       <p>En Digni Digital nos posicionamos como <strong>socio</strong>, no como vendedor de folleto: ayudamos a diseñar el modelo operativo y luego integrar la capa de IA para que cumpla sus estándares. Este artículo explica qué significa en la práctica.</p>
 
@@ -647,9 +647,9 @@ const contentEs: Record<string, Partial<BlogArticle>> = {
         <li><strong>Experiencia del cliente</strong>, ¿respuestas, escaladas y reputación reflejan su marca?</li>
       </ul>
 
-      <h2>Qué quieren los líderes de un «empleado IA», y qué sigue necesitando un arquitecto humano</h2>
+      <h2>Qué quieren los líderes de un «empcliente potencialo IA», y qué sigue necesitando un arquitecto humano</h2>
 
-      <p>Cuando los líderes dicen que quieren un empleado IA, suelen referirse a:</p>
+      <p>Cuando los líderes dicen que quieren un empcliente potencialo IA, suelen referirse a:</p>
 
       <ul>
         <li><strong>Velocidad</strong>, primera respuesta en minutos, no en horas.</li>
@@ -690,9 +690,9 @@ const contentEs: Record<string, Partial<BlogArticle>> = {
 
       <h2>Rol de Digni Digital: socio, no herramienta puntual</h2>
 
-      <p>Combinamos <strong>apoyo estratégico a operaciones</strong> con <strong>implementación de sistemas de IA</strong>, por ejemplo cobertura inteligente de primera línea alineada con cómo vende y sirve. Puede incluir un <a href="/ai-receptionist">recepcionista IA</a> que califica leads y enruta llamadas, integrado en su forma real de trabajar, no una demo aislada.</p>
+      <p>Combinamos <strong>apoyo estratégico a operaciones</strong> con <strong>implementación de sistemas de IA</strong>, por ejemplo cobertura inteligente de primera línea alineada con cómo vende y sirve. Puede incluir un <a href="/ai-receptionist">recepcionista IA</a> que califica clientes potenciales y enruta llamadas, integrado en su forma real de trabajar, no una demo aislada.</p>
 
-      <p>Si evalúa un COO fraccional o una iniciativa de empleado IA, la pregunta honesta es la misma: <strong>¿esto hace más simple y medible cómo dirigimos el negocio?</strong> Si sí, está en la conversación correcta.</p>
+      <p>Si evalúa un COO fraccional o una iniciativa de empcliente potencialo IA, la pregunta honesta es la misma: <strong>¿esto hace más simple y medible cómo dirigimos el negocio?</strong> Si sí, está en la conversación correcta.</p>
 
       <h2>Lista de verificación: ¿encaja este modelo?</h2>
 

@@ -32,7 +32,7 @@ export default function Footer() {
     resources: [
       { name: t.nav.caseStudies, href: '/case-studies' },
       { name: t.nav.articles, href: '/blog' },
-      { name: 'Products', href: '/products' },
+      { name: t.footer.products, href: '/products' },
       { name: t.footer.ourMission, href: '/#our-mission' },
       { name: t.footer.whatWeFightFor, href: '/#what-were-fighting-for' },
       { name: t.footer.our2026Commitment, href: '/#our-2026-commitment' },
