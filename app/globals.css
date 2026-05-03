@@ -194,6 +194,11 @@
   border-bottom-color: var(--border-light);
 }
 
+/* Wordmark PNG is light-on-transparent for dark UI; on pale chrome it disappears */
+[data-theme="light"] .brand-wordmark {
+  filter: brightness(0);
+}
+
 /* Hero headline highlight: gradient with subtle glow for video-background readability */
 .home-hero .hero-highlight {
   display: inline-block;
