@@ -89,5 +89,60 @@
     "canceledTitle": "Checkout canceled",
     "canceledBody": "No charge was made. You can return anytime to complete payment.",
     "backHome": "Back to home"
+  },
+  "Legal": {
+    "common": {
+      "lastUpdated": "Last updated: {date}"
+    },
+    "privacy": {
+      "title": "Privacy Policy",
+      "intro": "Digni Digital LLC (\"we\", \"our\") respects your privacy. This policy describes how we collect, use, and protect your information when you use our website and services.",
+      "informationTitle": "Information we collect",
+      "informationBody": "We may collect information you provide directly (e.g. name, email, company when you contact us or subscribe to our newsletter), usage data (e.g. pages visited, referring site), and technical data (e.g. IP address, browser type) for security and analytics.",
+      "useTitle": "How we use it",
+      "useBody": "We use your information to respond to inquiries, send requested content or newsletters, improve our site and services, and comply with legal obligations.",
+      "sharingTitle": "Sharing and security",
+      "sharingBody": "We do not sell your personal data. We may share data with service providers (e.g. email delivery, analytics) under strict agreements. We take reasonable measures to protect your data.",
+      "rightsTitle": "Your rights",
+      "rightsBody": "Depending on your location, you may have rights to access, correct, delete, or restrict processing of your data, or to opt out of marketing. Contact us to exercise these rights.",
+      "contactTitle": "Contact",
+      "contactPrefix": "For privacy-related questions:",
+      "contactDetailsPrefix": "Our full contact details are on the",
+      "contactLink": "Contact",
+      "contactDetailsSuffix": " page."
+    },
+    "terms": {
+      "title": "Terms of Service",
+      "intro": "By using the Digni Digital LLC website and services, you agree to these terms. If you do not agree, please do not use our site or services.",
+      "useTitle": "Use of the site",
+      "useBody": "You may use our website for lawful purposes only. You may not attempt to gain unauthorized access to our systems, scrape or misuse content, or use the site in any way that could harm us or third parties.",
+      "servicesTitle": "Services and agreements",
+      "servicesBody": "Specific services (e.g. AI Employee, Future-Ready Graduate Program, Agentic Softwares) are subject to separate agreements, statements of work, or terms presented at the time of engagement.",
+      "ipTitle": "Intellectual property",
+      "ipBody": "Content on this site (text, graphics, logos, software) is owned by Digni Digital LLC or its licensors and is protected by copyright and other laws. You may not copy, modify, or distribute it without our written permission.",
+      "liabilityTitle": "Limitation of liability",
+      "liabilityBody": "To the extent permitted by law, we are not liable for indirect, incidental, or consequential damages arising from your use of the site or our services. Our liability is limited to the amount you paid us in the twelve months before the claim.",
+      "changesTitle": "Changes and contact",
+      "changesBody": "We may update these terms from time to time; the \"Last updated\" date will change. Continued use after changes constitutes acceptance.",
+      "questionsPrefix": "Questions:",
+      "or": "or",
+      "contactLink": "Contact"
+    },
+    "cookies": {
+      "title": "Cookie Policy",
+      "intro": "This cookie policy explains how Digni Digital LLC uses cookies and similar technologies on our website.",
+      "whatTitle": "What are cookies",
+      "whatBody": "Cookies are small text files stored on your device when you visit a website. They help the site remember your preferences, keep you signed in, and understand how the site is used.",
+      "useTitle": "Cookies we use",
+      "useBody": "We use essential cookies (e.g. for language preference and session management) so the site works correctly. We may use analytics cookies to understand traffic and improve the site. We do not use advertising cookies.",
+      "manageTitle": "Managing cookies",
+      "manageBody": "You can control or delete cookies via your browser settings. Disabling essential cookies may affect how the site works (e.g. language selection may not persist).",
+      "moreTitle": "More information",
+      "morePrefix": "For more on how we handle your data, see our",
+      "privacyLink": "Privacy Policy",
+      "questionsPrefix": "Questions:",
+      "or": "or",
+      "contactLink": "Contact"
+    }
   }
 }

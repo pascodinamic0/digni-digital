@@ -89,5 +89,60 @@
     "canceledTitle": "Pago cancelado",
     "canceledBody": "No se realizó ningún cargo. Puede volver cuando quiera para completar el pago.",
     "backHome": "Volver al inicio"
+  },
+  "Legal": {
+    "common": {
+      "lastUpdated": "Última actualización: {date}"
+    },
+    "privacy": {
+      "title": "Política de privacidad",
+      "intro": "Digni Digital LLC (\"nosotros\", \"nuestro\") respeta su privacidad. Esta política describe cómo recopilamos, usamos y protegemos su información cuando utiliza nuestro sitio web y nuestros servicios.",
+      "informationTitle": "Información que recopilamos",
+      "informationBody": "Podemos recopilar información que usted proporciona directamente (por ejemplo, nombre, correo electrónico, empresa cuando se pone en contacto con nosotros o se suscribe a nuestro boletín), datos de uso (por ejemplo, páginas visitadas, sitio de referencia) y datos técnicos (por ejemplo, dirección IP, tipo de navegador) con fines de seguridad y análisis.",
+      "useTitle": "Cómo la usamos",
+      "useBody": "Usamos su información para responder a consultas, enviar contenido solicitado o boletines, mejorar nuestro sitio y servicios, y cumplir con obligaciones legales.",
+      "sharingTitle": "Compartición y seguridad",
+      "sharingBody": "No vendemos sus datos personales. Podemos compartir datos con proveedores de servicios (por ejemplo, entrega de correo electrónico, análisis) bajo acuerdos estrictos. Adoptamos medidas razonables para proteger sus datos.",
+      "rightsTitle": "Sus derechos",
+      "rightsBody": "Según su ubicación, puede tener derecho a acceder, corregir, eliminar o restringir el tratamiento de sus datos, o a optar por no recibir comunicaciones de marketing. Póngase en contacto con nosotros para ejercer estos derechos.",
+      "contactTitle": "Contacto",
+      "contactPrefix": "Para preguntas relacionadas con la privacidad:",
+      "contactDetailsPrefix": "Nuestros datos de contacto completos están en la página",
+      "contactLink": "Contacto",
+      "contactDetailsSuffix": "."
+    },
+    "terms": {
+      "title": "Términos de servicio",
+      "intro": "Al utilizar el sitio web y los servicios de Digni Digital LLC, acepta estos términos. Si no está de acuerdo, no utilice nuestro sitio ni nuestros servicios.",
+      "useTitle": "Uso del sitio",
+      "useBody": "Puede utilizar nuestro sitio web solo para fines lícitos. No puede intentar obtener acceso no autorizado a nuestros sistemas, extraer o hacer un uso indebido del contenido, ni utilizar el sitio de forma que pueda perjudicarnos a nosotros o a terceros.",
+      "servicesTitle": "Servicios y acuerdos",
+      "servicesBody": "Los servicios específicos (por ejemplo, AI Employee, Future-Ready Graduate Program, Agentic Softwares) están sujetos a acuerdos separados, declaraciones de trabajo o términos presentados en el momento de la contratación.",
+      "ipTitle": "Propiedad intelectual",
+      "ipBody": "El contenido de este sitio (textos, gráficos, logotipos, software) es propiedad de Digni Digital LLC o de sus licenciantes y está protegido por derechos de autor y otras leyes. No puede copiarlo, modificarlo ni distribuirlo sin nuestro permiso por escrito.",
+      "liabilityTitle": "Limitación de responsabilidad",
+      "liabilityBody": "En la medida permitida por la ley, no somos responsables de daños indirectos, incidentales o consecuentes derivados de su uso del sitio o de nuestros servicios. Nuestra responsabilidad se limita al importe que nos haya pagado en los doce meses anteriores a la reclamación.",
+      "changesTitle": "Cambios y contacto",
+      "changesBody": "Podemos actualizar estos términos ocasionalmente; cambiará la fecha de \"Última actualización\". El uso continuado después de los cambios constituye aceptación.",
+      "questionsPrefix": "Preguntas:",
+      "or": "o",
+      "contactLink": "Contacto"
+    },
+    "cookies": {
+      "title": "Política de cookies",
+      "intro": "Esta política de cookies explica cómo Digni Digital LLC utiliza cookies y tecnologías similares en nuestro sitio web.",
+      "whatTitle": "Qué son las cookies",
+      "whatBody": "Las cookies son pequeños archivos de texto almacenados en su dispositivo cuando visita un sitio web. Ayudan al sitio a recordar sus preferencias, mantener su sesión iniciada y comprender cómo se utiliza el sitio.",
+      "useTitle": "Cookies que utilizamos",
+      "useBody": "Utilizamos cookies esenciales (por ejemplo, para la preferencia de idioma y la gestión de sesiones) para que el sitio funcione correctamente. Podemos utilizar cookies de análisis para comprender el tráfico y mejorar el sitio. No utilizamos cookies publicitarias.",
+      "manageTitle": "Gestión de cookies",
+      "manageBody": "Puede controlar o eliminar cookies desde la configuración de su navegador. Desactivar las cookies esenciales puede afectar al funcionamiento del sitio (por ejemplo, es posible que la selección de idioma no se conserve).",
+      "moreTitle": "Más información",
+      "morePrefix": "Para más información sobre cómo tratamos sus datos, consulte nuestra",
+      "privacyLink": "Política de privacidad",
+      "questionsPrefix": "Preguntas:",
+      "or": "o",
+      "contactLink": "Contacto"
+    }
   }
 }

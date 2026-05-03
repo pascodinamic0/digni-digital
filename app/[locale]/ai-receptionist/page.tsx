@@ -28,6 +28,14 @@ type AIReceptionistPageProps = {
   searchParams?: Promise<{ [key: string]: string | string[] | undefined }>
 }
 
+const aiEmployeeHeroCopy = {
+  en: { years: 'building growth systems', satisfaction: 'client satisfaction' },
+  fr: { years: 'à construire des systèmes de croissance', satisfaction: 'de satisfaction client' },
+  ar: { years: 'في بناء أنظمة النمو', satisfaction: 'رضا العملاء' },
+  de: { years: 'im Aufbau von Wachstumssystemen', satisfaction: 'Kundenzufriedenheit' },
+  es: { years: 'construyendo sistemas de crecimiento', satisfaction: 'satisfacción del cliente' },
+}
+
 function AIEmployeeCTASection() {
   const language = useLanguage()
   const f = translations[language].aiEmployeePage.finalCta
@@ -110,6 +118,7 @@ export default function AIReceptionistPage({ params, searchParams }: AIReception
   use(searchParams ?? Promise.resolve({}))
   const language = useLanguage()
   const t = translations[language].aiEmployeePage
+  const heroCopy = aiEmployeeHeroCopy[language]
   const ctaT = translations[language].cta
   const pageJsonLd = getServicePageJsonLd('ai-employee-systems', locale)
 
@@ -247,7 +256,7 @@ export default function AIReceptionistPage({ params, searchParams }: AIReception
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="rounded-full border border-border/80 bg-background/75 dark:bg-surface/70 px-4 py-2 text-xs sm:text-sm text-muted backdrop-blur-sm shadow-sm"
               >
-                <span className="font-semibold text">10+ years</span> building growth systems
+                <span className="font-semibold text">10+ years</span> {heroCopy.years}
               </motion.div>
               <motion.div
                 initial={{ opacity: 0, y: 14 }}
@@ -255,7 +264,7 @@ export default function AIReceptionistPage({ params, searchParams }: AIReception
                 transition={{ duration: 0.6, delay: 0.3 }}
                 className="rounded-full border border-border/80 bg-background/75 dark:bg-surface/70 px-4 py-2 text-xs sm:text-sm text-muted backdrop-blur-sm shadow-sm"
               >
-                <span className="font-semibold text">98%</span> client satisfaction
+                <span className="font-semibold text">98%</span> {heroCopy.satisfaction}
               </motion.div>
             </div>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-2 mt-4 sm:mt-6">

@@ -49,6 +49,16 @@ function Hero() {
     }
   }, [])
 
+  const [heroProblem, ...heroSolutionParts] = t.subtitle.split(/(?<=[?.!؟])\s+/)
+  const heroSolution = heroSolutionParts.join(' ')
+  const heroCaptionLabel = {
+    en: 'English',
+    fr: 'Français',
+    ar: 'العربية',
+    de: 'Deutsch',
+    es: 'Español',
+  }[language]
+
   return (
     <section key={language} className="home-hero relative isolate min-h-screen flex items-center pt-16 sm:pt-20 overflow-hidden bg-background">
       {/* Video Background */}
@@ -62,7 +72,7 @@ function Hero() {
         src="/hero-bg.mp4"
         className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[2000ms] ${videoReady ? 'opacity-70' : 'opacity-30'}`}
       >
-        <track kind="captions" srcLang="en" label="English" src="/hero-bg-captions.vtt" />
+        <track kind="captions" srcLang={language} label={heroCaptionLabel} src="/hero-bg-captions.vtt" />
       </video>
       {/* Simple semi-transparent overlay for text readability */}
       <div className="absolute inset-0 bg-[image:var(--overlay-scrim-soft)] bg-cover" />
@@ -81,7 +91,12 @@ function Hero() {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="text-base sm:text-lg md:text-xl text-muted max-w-3xl mb-6 sm:mb-8 md:mb-10 leading-relaxed px-2"
         >
-          {t.subtitle}
+          {heroProblem}
+          {heroSolution && (
+            <span className="gradient-text hero-highlight mt-3 block font-semibold">
+              {heroSolution}
+            </span>
+          )}
         </motion.p>
 
         <motion.div

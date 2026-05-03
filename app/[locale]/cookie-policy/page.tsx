@@ -1,44 +1,57 @@
-'use client'
-
-import { use } from 'react'
 import { Link } from '@/i18n/navigation'
+import { getLanguageFromLocale } from '@/i18n/routing'
+import { getTranslations } from 'next-intl/server'
+
 type CookiePolicyPageProps = {
   params: Promise<{ locale: string }>
-  searchParams?: Promise<{ [key: string]: string | string[] | undefined }>
 }
 
-export default function CookiePolicyPage({ params, searchParams }: CookiePolicyPageProps) {
-  use(params)
-  use(searchParams ?? Promise.resolve({}))
+function getLocaleTag(locale: string) {
+  const lang = getLanguageFromLocale(locale)
+  return lang === 'fr' ? 'fr-FR' : lang === 'es' ? 'es-ES' : lang === 'ar' ? 'ar-SA' : lang === 'de' ? 'de-DE' : 'en-US'
+}
+
+export default async function CookiePolicyPage({ params }: CookiePolicyPageProps) {
+  const { locale } = await params
+  const t = await getTranslations({ locale, namespace: 'Legal.cookies' })
+  const common = await getTranslations({ locale, namespace: 'Legal.common' })
+  const lastUpdated = new Intl.DateTimeFormat(getLocaleTag(locale)).format(new Date())
+
   return (
     <>
       <main className="min-h-screen pt-24 pb-16">
         <div className="max-w-3xl mx-auto px-6">
           <h1 className="font-display text-3xl md:text-4xl font-bold text-text mb-2">
-            Cookie Policy
+            {t('title')}
           </h1>
           <p className="text-muted text-sm mb-10">
-            Last updated: {new Date().toLocaleDateString('en-US')}
+            {common('lastUpdated', { date: lastUpdated })}
           </p>
           <div className="prose prose-invert prose-sm max-w-none text-muted space-y-6">
             <p>
-              This cookie policy explains how Digni Digital LLC uses cookies and similar technologies on our website.
+              {t('intro')}
             </p>
-            <h2 className="font-display font-semibold text-text text-lg mt-8">What are cookies</h2>
+            <h2 className="font-display font-semibold text-text text-lg mt-8">{t('whatTitle')}</h2>
             <p>
-              Cookies are small text files stored on your device when you visit a website. They help the site remember your preferences, keep you signed in, and understand how the site is used.
+              {t('whatBody')}
             </p>
-            <h2 className="font-display font-semibold text-text text-lg mt-8">Cookies we use</h2>
+            <h2 className="font-display font-semibold text-text text-lg mt-8">{t('useTitle')}</h2>
             <p>
-              We use essential cookies (e.g. for language preference and session management) so the site works correctly. We may use analytics cookies to understand traffic and improve the site. We do not use advertising cookies.
+              {t('useBody')}
             </p>
-            <h2 className="font-display font-semibold text-text text-lg mt-8">Managing cookies</h2>
+            <h2 className="font-display font-semibold text-text text-lg mt-8">{t('manageTitle')}</h2>
             <p>
-              You can control or delete cookies via your browser settings. Disabling essential cookies may affect how the site works (e.g. language selection may not persist).
+              {t('manageBody')}
             </p>
-            <h2 className="font-display font-semibold text-text text-lg mt-8">More information</h2>
+            <h2 className="font-display font-semibold text-text text-lg mt-8">{t('moreTitle')}</h2>
             <p>
-              For more on how we handle your data, see our <Link href="/privacy" className="text-accent hover:underline">Privacy Policy</Link>. Questions: <a href="mailto:hq@digni-digital-llc.com" className="text-accent hover:underline">hq@digni-digital-llc.com</a> or <Link href="/contact" className="text-accent hover:underline">Contact</Link>.
+              {t('morePrefix')}{' '}
+              <Link href="/privacy" className="text-accent hover:underline">{t('privacyLink')}</Link>.
+              {' '}
+              {t('questionsPrefix')}{' '}
+              <a href="mailto:hq@digni-digital-llc.com" className="text-accent hover:underline">hq@digni-digital-llc.com</a>{' '}
+              {t('or')}{' '}
+              <Link href="/contact" className="text-accent hover:underline">{t('contactLink')}</Link>.
             </p>
           </div>
         </div>

@@ -89,5 +89,60 @@
     "canceledTitle": "Paiement annulé",
     "canceledBody": "Aucun débit n'a été effectué. Vous pouvez revenir quand vous voulez pour finaliser le paiement.",
     "backHome": "Retour à l'accueil"
+  },
+  "Legal": {
+    "common": {
+      "lastUpdated": "Dernière mise à jour : {date}"
+    },
+    "privacy": {
+      "title": "Politique de confidentialité",
+      "intro": "Digni Digital LLC (« nous », « notre ») respecte votre vie privée. Cette politique décrit la manière dont nous collectons, utilisons et protégeons vos informations lorsque vous utilisez notre site web et nos services.",
+      "informationTitle": "Informations que nous collectons",
+      "informationBody": "Nous pouvons collecter les informations que vous nous fournissez directement (par exemple, nom, e-mail, entreprise lorsque vous nous contactez ou vous abonnez à notre newsletter), des données d'utilisation (par exemple, pages consultées, site référent) et des données techniques (par exemple, adresse IP, type de navigateur) à des fins de sécurité et d'analyse.",
+      "useTitle": "Comment nous les utilisons",
+      "useBody": "Nous utilisons vos informations pour répondre aux demandes, envoyer le contenu demandé ou des newsletters, améliorer notre site et nos services, et respecter nos obligations légales.",
+      "sharingTitle": "Partage et sécurité",
+      "sharingBody": "Nous ne vendons pas vos données personnelles. Nous pouvons partager des données avec des prestataires de services (par exemple, livraison d'e-mails, analyses) dans le cadre d'accords stricts. Nous prenons des mesures raisonnables pour protéger vos données.",
+      "rightsTitle": "Vos droits",
+      "rightsBody": "Selon votre lieu de résidence, vous pouvez disposer de droits d'accès, de rectification, de suppression ou de limitation du traitement de vos données, ou du droit de vous opposer au marketing. Contactez-nous pour exercer ces droits.",
+      "contactTitle": "Contact",
+      "contactPrefix": "Pour toute question relative à la confidentialité :",
+      "contactDetailsPrefix": "Nos coordonnées complètes se trouvent sur la page",
+      "contactLink": "Contact",
+      "contactDetailsSuffix": "."
+    },
+    "terms": {
+      "title": "Conditions d'utilisation",
+      "intro": "En utilisant le site web et les services de Digni Digital LLC, vous acceptez les présentes conditions. Si vous ne les acceptez pas, veuillez ne pas utiliser notre site ni nos services.",
+      "useTitle": "Utilisation du site",
+      "useBody": "Vous pouvez utiliser notre site web uniquement à des fins légales. Vous ne pouvez pas tenter d'obtenir un accès non autorisé à nos systèmes, extraire ou utiliser abusivement du contenu, ni utiliser le site d'une manière susceptible de nous nuire ou de nuire à des tiers.",
+      "servicesTitle": "Services et accords",
+      "servicesBody": "Les services spécifiques (par exemple, AI Employee, Future-Ready Graduate Program, Agentic Softwares) sont soumis à des accords distincts, à des cahiers des charges ou aux conditions présentées au moment de l'engagement.",
+      "ipTitle": "Propriété intellectuelle",
+      "ipBody": "Le contenu de ce site (textes, graphiques, logos, logiciels) appartient à Digni Digital LLC ou à ses concédants de licence et est protégé par le droit d'auteur et d'autres lois. Vous ne pouvez pas le copier, le modifier ou le distribuer sans notre autorisation écrite.",
+      "liabilityTitle": "Limitation de responsabilité",
+      "liabilityBody": "Dans la mesure permise par la loi, nous ne sommes pas responsables des dommages indirects, accessoires ou consécutifs découlant de votre utilisation du site ou de nos services. Notre responsabilité est limitée au montant que vous nous avez payé au cours des douze mois précédant la réclamation.",
+      "changesTitle": "Modifications et contact",
+      "changesBody": "Nous pouvons mettre à jour ces conditions de temps à autre ; la date de « Dernière mise à jour » changera. La poursuite de l'utilisation après les modifications vaut acceptation.",
+      "questionsPrefix": "Questions :",
+      "or": "ou",
+      "contactLink": "Contact"
+    },
+    "cookies": {
+      "title": "Politique des cookies",
+      "intro": "Cette politique relative aux cookies explique comment Digni Digital LLC utilise les cookies et technologies similaires sur notre site web.",
+      "whatTitle": "Que sont les cookies",
+      "whatBody": "Les cookies sont de petits fichiers texte stockés sur votre appareil lorsque vous visitez un site web. Ils aident le site à mémoriser vos préférences, à maintenir votre connexion et à comprendre comment le site est utilisé.",
+      "useTitle": "Cookies que nous utilisons",
+      "useBody": "Nous utilisons des cookies essentiels (par exemple, pour la préférence de langue et la gestion des sessions) afin que le site fonctionne correctement. Nous pouvons utiliser des cookies d'analyse pour comprendre le trafic et améliorer le site. Nous n'utilisons pas de cookies publicitaires.",
+      "manageTitle": "Gestion des cookies",
+      "manageBody": "Vous pouvez contrôler ou supprimer les cookies via les paramètres de votre navigateur. La désactivation des cookies essentiels peut affecter le fonctionnement du site (par exemple, la sélection de la langue peut ne pas être conservée).",
+      "moreTitle": "Informations complémentaires",
+      "morePrefix": "Pour en savoir plus sur la manière dont nous traitons vos données, consultez notre",
+      "privacyLink": "Politique de confidentialité",
+      "questionsPrefix": "Questions :",
+      "or": "ou",
+      "contactLink": "Contact"
+    }
   }
 }
