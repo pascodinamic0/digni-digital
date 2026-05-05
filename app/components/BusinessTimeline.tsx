@@ -3,12 +3,41 @@
 import { motion } from 'framer-motion'
 import { useEffect, useState, ReactNode } from 'react'
 
-type ColorType = 'accent' | 'success' | 'info'
+type ColorType = 'accent' | 'success' | 'info' | 'warning'
+
+const impactHighlightTones: Record<
+  ColorType,
+  { gradient: string; border: string; valueClass: string }
+> = {
+  accent: {
+    gradient: 'from-accent/10 to-accent/5',
+    border: 'border-accent/20',
+    valueClass: 'text-accent',
+  },
+  success: {
+    gradient: 'from-success/10 to-success/5',
+    border: 'border-success/20',
+    valueClass: 'text-success',
+  },
+  info: {
+    gradient: 'from-info/10 to-info/5',
+    border: 'border-info/20',
+    valueClass: 'text-info',
+  },
+  warning: {
+    gradient: 'from-warning/10 to-warning/5',
+    border: 'border-warning/20',
+    valueClass: 'text-warning',
+  },
+}
 
 interface Step {
   id: string
   title: string
   description: string
+  /** Visitor-facing headline: what they get after this stage. */
+  outcomeTitle: string
+  outcomeLine: string
   icon: ReactNode
   metrics: string[]
   color: ColorType
@@ -22,6 +51,9 @@ const BusinessTimeline = () => {
       id: 'lead',
       title: 'Lead Arrives',
       description: 'A new prospect reaches out on any channel.',
+      outcomeTitle: 'Nothing slips through',
+      outcomeLine:
+        'Web, social, SMS, and phone funnel into one system—every first touch is captured.',
       icon: (
         <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M16 21V19C16 17.9391 15.5786 16.9217 14.8284 16.1716C14.0783 15.4214 13.0609 15 12 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -37,6 +69,9 @@ const BusinessTimeline = () => {
       id: 'response',
       title: 'Instant AI Reply',
       description: 'AI replies within 2 seconds with a personalized message.',
+      outcomeTitle: 'Speed that wins the moment',
+      outcomeLine:
+        "Personal replies in seconds, around the clock—before curiosity turns into a competitor's win.",
       icon: (
         <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -49,6 +84,9 @@ const BusinessTimeline = () => {
       id: 'qualification',
       title: 'Contact Saved',
       description: 'AI captures contact details and saves them to your CRM.',
+      outcomeTitle: 'An audience you actually own',
+      outcomeLine:
+        'Every identity lands in CRM with context—built-in list growth, ready for nurture and campaigns.',
       icon: (
         <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z" stroke="currentColor" strokeWidth="2"/>
@@ -64,6 +102,9 @@ const BusinessTimeline = () => {
       id: 'appointment',
       title: 'Appointment Booked',
       description: 'AI books the right meeting into your calendar—no back-and-forth.',
+      outcomeTitle: 'Sales time on booked calls',
+      outcomeLine:
+        'The right prospects lock a slot themselves—fewer flakes, zero scheduling volleyball.',
       icon: (
         <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect x="3" y="4" width="18" height="18" rx="2" ry="2" stroke="currentColor" strokeWidth="2"/>
@@ -80,6 +121,9 @@ const BusinessTimeline = () => {
       id: 'followup',
       title: 'Smart Follow-Up',
       description: 'Automated follow-up nudges buyers until they are ready.',
+      outcomeTitle: "Deals that don't freeze",
+      outcomeLine:
+        'Email, SMS, WhatsApp, and phone nudges keep momentum—in control, on your rules.',
       icon: (
         <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentColor" strokeWidth="2"/>
@@ -93,6 +137,9 @@ const BusinessTimeline = () => {
       id: 'post_sale',
       title: 'Post-Sale Growth',
       description: 'After the sale, AI drives reviews, offers, retargeting, and referrals.',
+      outcomeTitle: 'Reputation and repeat revenue',
+      outcomeLine:
+        'Reviews go out, referrals and upsells follow, and retention marketing runs without adding headcount.',
       icon: (
         <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M20 7L21 8L10 19L3 19L3 12L14 1L15 2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -142,6 +189,13 @@ const BusinessTimeline = () => {
         border: 'border-success/40',
         gradient: 'from-success/10 to-success/5',
         glow: 'shadow-success/30'
+      },
+      warning: {
+        bg: isActive ? 'bg-warning' : 'bg-warning/20',
+        text: 'text-warning',
+        border: 'border-warning/40',
+        gradient: 'from-warning/10 to-warning/5',
+        glow: 'shadow-warning/30'
       },
     }
     return colors[color] || colors.accent
@@ -387,27 +441,60 @@ const BusinessTimeline = () => {
           </div>
         </div>
 
-        {/* Results Summary */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.5 }}
-          className="grid md:grid-cols-3 gap-6 mt-16"
+        {/* Outcomes: mirrors the six steps above (first touch → post-sale). */}
+        <div
+          className="mt-20 border-t border-border pt-16"
+          id="timeline-outcomes"
+          aria-labelledby="timeline-outcomes-heading"
         >
-          <div className="text-center p-8 bg-gradient-to-br from-accent/10 to-accent/5 rounded-2xl border border-accent/20 backdrop-blur-sm">
-            <div className="text-4xl font-display font-bold text-accent mb-2">3x</div>
-            <p className="text-muted text-sm">Faster Lead Response</p>
+          <div className="text-center max-w-2xl mx-auto mb-10 md:mb-12">
+            <p className="text-accent font-medium text-sm uppercase tracking-wider mb-2">
+              Outcome at every stage
+            </p>
+            <h3 id="timeline-outcomes-heading" className="font-display text-2xl md:text-3xl font-bold text-text">
+              What the full sequence delivers
+            </h3>
+            <p className="text-muted text-base mt-3 leading-relaxed">
+              Six steps above, six results below—same order, from first visit to after the close.
+            </p>
           </div>
-          <div className="text-center p-8 bg-gradient-to-br from-success/10 to-success/5 rounded-2xl border border-success/20 backdrop-blur-sm">
-            <div className="text-4xl font-display font-bold text-success mb-2">85%</div>
-            <p className="text-muted text-sm">Lead-to-Appointment Rate</p>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {steps.map((step, i) => {
+              const tone = impactHighlightTones[step.color]
+              const colorClasses = getColorClasses(step.color, true)
+              return (
+                <motion.article
+                  key={step.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.06 * i + 0.2 }}
+                  className={`group relative flex flex-col gap-3 rounded-2xl border ${tone.border} bg-gradient-to-br ${tone.gradient} p-5 sm:p-6 text-left backdrop-blur-sm shadow-sm transition-shadow duration-300 hover:shadow-md`}
+                >
+                  <div className="flex items-center justify-between gap-3">
+                    <span
+                      className={`inline-flex h-9 min-w-[2.25rem] items-center justify-center rounded-lg text-sm font-bold tabular-nums ${colorClasses.bg} text-text`}
+                      aria-hidden
+                    >
+                      {String(i + 1).padStart(2, '0')}
+                    </span>
+                    <span
+                      className={`h-1 w-10 shrink-0 rounded-full ${colorClasses.bg} opacity-80`}
+                      aria-hidden
+                    />
+                  </div>
+                  <p className="text-xs font-semibold uppercase tracking-wide text-muted">
+                    {step.title}
+                  </p>
+                  <h4 className={`font-display text-lg sm:text-xl font-bold leading-snug ${tone.valueClass}`}>
+                    {step.outcomeTitle}
+                  </h4>
+                  <p className="text-sm text-muted leading-relaxed">{step.outcomeLine}</p>
+                </motion.article>
+              )
+            })}
           </div>
-          <div className="text-center p-8 bg-gradient-to-br from-info/10 to-info/5 rounded-2xl border border-info/20 backdrop-blur-sm">
-            <div className="text-4xl font-display font-bold text-info mb-2">24/7</div>
-            <p className="text-muted text-sm">Never Miss Another Lead</p>
-          </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   )

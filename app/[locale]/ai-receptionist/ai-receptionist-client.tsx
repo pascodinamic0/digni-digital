@@ -319,8 +319,6 @@ export function AIReceptionistClient({ params, searchParams, showTaskQueueDemo }
         </div>
       </AnimatedSection>
 
-      <AiReceptionistExplainerVideo />
-
       <ClientJourneyDemo />
       <ConversationMockups />
       <UnifiedInbox />
@@ -328,6 +326,7 @@ export function AIReceptionistClient({ params, searchParams, showTaskQueueDemo }
       <PerformancePulseDemo />
       {showTaskQueueDemo ? <TaskQueueDemo /> : null}
       <ContactDirectoryDemo />
+      <AiReceptionistExplainerVideo />
       <BusinessTimeline />
 
       <AnimatedSection id="features" className="py-24">
