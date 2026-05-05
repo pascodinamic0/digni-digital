@@ -25,28 +25,12 @@ export type AiEmployeePageTranslations = {
     appStoreAriaLabel: string
     playStoreAriaLabel: string
   }
-  noMoreJust: {
-    title: string
-    noMoreLabel: string
-    noMoreItems: [string, string, string, string, string, string]
-    justLabel: string
-    justItems: [string, string, string, string, string, string]
-  }
   problem: {
     badge: string
     title: string
     titleHighlight: string
     subtitle: string
     stats: [StatTriple, StatTriple, StatTriple]
-    painCards: [PainCard, PainCard, PainCard]
-    closing: { title: string; subtitle: string }
-  }
-  traditionalFails: {
-    badge: string
-    title: string
-    titleHighlight: string
-    items: [FailCard, FailCard, FailCard, FailCard, FailCard, FailCard]
-    closing: string
   }
   capabilities: {
     badge: string
@@ -92,7 +76,11 @@ export type AiEmployeePageTranslations = {
     planName: string
     limitedLabel: string
     setupFee: string
+    /** Shown as the current amount while `setupFee` is struck through (e.g. promo period). */
+    setupFeeWaivedDisplay: string
     setupLabel: string
+    /** Short promo line (e.g. limited-time fee removal). */
+    setupFeePromo: string
     monthlyLabel: string
     price: string
     period: string
@@ -112,8 +100,6 @@ export type AiEmployeePageTranslations = {
 }
 
 type StatTriple = { value: string; label: string; hint: string }
-type PainCard = { title: string; body: string }
-type FailCard = { title: string; body: string }
 type CapItem = { title: string; body: string }
 type ResultLine = { metric: string; description: string }
 
@@ -136,27 +122,6 @@ export const aiEmployeePageEn: AiEmployeePageTranslations = {
     playStoreHref: 'https://play.google.com/store',
     appStoreAriaLabel: 'Download on the App Store',
     playStoreAriaLabel: 'Get it on Google Play',
-  },
-  noMoreJust: {
-    title: 'What quietly drains revenue, and what replaces it',
-    noMoreLabel: 'No more',
-    noMoreItems: [
-      'Unqualified leads burning your team’s time',
-      'Scattered tools and no single operating picture',
-      'Manual follow-up that depends on memory',
-      'Delayed responses that hand wins to faster competitors',
-      'Lost deals stuck between channels',
-      'No-shows and ghosting after the first touch',
-    ],
-    justLabel: 'Just',
-    justItems: [
-      'Qualified conversations, your team’s time stays on real buyers',
-      'One connected system, a single operating picture you can trust',
-      'Follow-up that runs automatically, no more “I’ll remember tomorrow”',
-      'First-response speed that keeps you in the race, and on-brand',
-      'One thread across channels, deals don’t die in the handoff',
-      'Fewer no-shows and ghosting, reminders and recovery built in',
-    ],
   },
   problem: {
     badge: 'The pattern we see on repeat',
@@ -181,57 +146,6 @@ export const aiEmployeePageEn: AiEmployeePageTranslations = {
         hint: 'Wait too long and the “hot lead” is already talking to someone else.',
       },
     ],
-    painCards: [
-      {
-        title: 'Slow response',
-        body: 'Lead at 2pm. Your team replies at 6pm. They already booked elsewhere.',
-      },
-      {
-        title: 'Context dies in handoffs',
-        body: 'WhatsApp here. Email there. Nobody sees the full story, so trust never compounds.',
-      },
-      {
-        title: 'Follow-up that doesn’t run',
-        body: '“I’ll circle back tomorrow.” Tomorrow becomes never. Revenue walks out.',
-      },
-    ],
-    closing: {
-      title: 'The winners run systems. The rest run on hustle.',
-      subtitle: 'We install and run the layer that doesn’t forget, one partnership per market when we commit.',
-    },
-  },
-  traditionalFails: {
-    badge: 'Why “more software” isn’t the answer',
-    title: 'Another login doesn’t fix',
-    titleHighlight: 'broken operations.',
-    items: [
-      {
-        title: 'Humans as the routing layer',
-        body: 'One inbox. One phone. Voicemail after hours. Scale becomes headcount, and headcount becomes variance.',
-      },
-      {
-        title: 'Generic answering services',
-        body: 'Messages get taken, not moved. Nothing qualifies, books, or nurtures, so pipeline stays thin.',
-      },
-      {
-        title: 'Chatbots without teeth',
-        body: 'They answer FAQs. They don’t own outcomes. Calls and high-intent threads still fall through.',
-      },
-      {
-        title: 'Tool sprawl',
-        body: 'Five tabs, zero truth. Nobody knows which lead is real, warm, or ready to pay.',
-      },
-      {
-        title: 'Manual follow-up culture',
-        body: 'Every reminder is a person. When someone is sick, busy, or new, deals stall.',
-      },
-      {
-        title: 'No single growth operating system',
-        body: 'Marketing promises. Operations can’t keep the promise at the speed buyers expect.',
-      },
-    ],
-    closing:
-      'One intelligent system, your voice, your rules, built to keep clients longer, convert more leads, and scale with confidence.',
   },
   capabilities: {
     badge: 'The operating layer',
@@ -325,7 +239,9 @@ export const aiEmployeePageEn: AiEmployeePageTranslations = {
     planName: 'Done-with-you growth system',
     limitedLabel: 'Limited partnership slots (one per market when we commit)',
     setupFee: '$2,000',
+    setupFeeWaivedDisplay: '$0',
     setupLabel: 'one-time setup',
+    setupFeePromo: 'During May, this setup fee is removed.',
     monthlyLabel: 'Monthly',
     price: '$500',
     period: '/month',
@@ -365,27 +281,6 @@ export const aiEmployeePageFr: AiEmployeePageTranslations = {
     appStoreAriaLabel: 'Télécharger sur l’App Store',
     playStoreAriaLabel: 'Disponible sur Google Play',
   },
-  noMoreJust: {
-    title: 'Ce qui fait fuir le chiffre, et ce qui le remplace',
-    noMoreLabel: 'Fini',
-    noMoreItems: [
-      'Les leads non qualifiés qui brûlent le temps de l’équipe',
-      'Les outils éparpillés et aucune vue d’ensemble',
-      'Les relances manuelles qui dépendent de la mémoire',
-      'Les réponses tardives qui offrent la victoire au plus rapide',
-      'Les deals perdus entre les canaux',
-      'Les lapins et les silences après le premier contact',
-    ],
-    justLabel: 'À la place',
-    justItems: [
-      'Des conversations qualifiées, le temps de l’équipe va aux vrais acheteurs',
-      'Un système connecté, une vue d’ensemble fiable',
-      'Des relances automatiques, fini le « je rappelle demain »',
-      'Une première réponse rapide, vous restez dans la course, à votre ton',
-      'Un fil conducteur entre canaux, les deals ne se perdent plus au passage',
-      'Moins de lapins et de silences, rappels et relance intégrés',
-    ],
-  },
   problem: {
     badge: 'Le schéma qu’on voit en boucle',
     title: 'Le problème ne vient peut-être pas de vos publicités,',
@@ -409,57 +304,6 @@ export const aiEmployeePageFr: AiEmployeePageTranslations = {
         hint: 'Trop tard et le lead brûlant parle déjà à un concurrent.',
       },
     ],
-    painCards: [
-      {
-        title: 'Réponse lente',
-        body: 'Lead à 14h. Réponse à 18h. Ils ont déjà réservé ailleurs.',
-      },
-      {
-        title: 'Le contexte se perd',
-        body: 'WhatsApp ici. Mail là. Personne ne voit l’histoire complète, la confiance ne se construit pas.',
-      },
-      {
-        title: 'Relances qui n’existent pas',
-        body: '« Je rappelle demain. » Demain n’arrive jamais. Le chiffre part.',
-      },
-    ],
-    closing: {
-      title: 'Les gagnants ont des systèmes. Les autres courent après l’urgence.',
-      subtitle: 'Nous installons la couche qui n’oublie pas, un partenariat par marché quand on s’engage.',
-    },
-  },
-  traditionalFails: {
-    badge: 'Pourquoi « plus de logiciel » ne suffit pas',
-    title: 'Un login de plus ne répare pas',
-    titleHighlight: 'des opérations cassées.',
-    items: [
-      {
-        title: 'L’humain comme routeur',
-        body: 'Une ligne. Un répondeur le soir. Scaler = plus de têtes, et plus de variance.',
-      },
-      {
-        title: 'Standard téléphonique générique',
-        body: 'On prend des messages, pas des rendez-vous. Rien ne qualifie ni ne nourrit le pipeline.',
-      },
-      {
-        title: 'Chatbots sans mordant',
-        body: 'Ils répondent aux FAQ. Ils ne portent pas le résultat. Les fils à fort intent passent encore à la trappe.',
-      },
-      {
-        title: 'Éparpillement d’outils',
-        body: 'Cinq onglets, zéro vérité. Personne ne sait quel lead est chaud et prêt à payer.',
-      },
-      {
-        title: 'Culture de relance manuelle',
-        body: 'Chaque rappel est une personne. Malade, occupé, nouveau, les deals calent.',
-      },
-      {
-        title: 'Pas de système d’exploitation de la croissance',
-        body: 'Le marketing promet. Les opérations ne tiennent pas la promesse à la vitesse attendue.',
-      },
-    ],
-    closing:
-      'Un système intelligent, votre voix, vos règles, pour garder les clients plus longtemps, convertir plus de leads et grandir sereinement.',
   },
   capabilities: {
     badge: 'La couche opérationnelle',
@@ -553,7 +397,9 @@ export const aiEmployeePageFr: AiEmployeePageTranslations = {
     planName: 'Système de croissance clé en main',
     limitedLabel: 'Places limitées (un partenariat par marché quand on s’engage)',
     setupFee: '2 000 $',
+    setupFeeWaivedDisplay: '0 $',
     setupLabel: 'mise en place unique',
+    setupFeePromo: 'En mai, les frais de mise en place sont offerts.',
     monthlyLabel: 'Mensuel',
     price: '500 $',
     period: '/mois',
@@ -593,27 +439,6 @@ export const aiEmployeePageDe: AiEmployeePageTranslations = {
     appStoreAriaLabel: 'Im App Store laden',
     playStoreAriaLabel: 'Bei Google Play laden',
   },
-  noMoreJust: {
-    title: 'Was Umsatz leise frisst, und was es ersetzt',
-    noMoreLabel: 'Schluss mit',
-    noMoreItems: [
-      'Unqualifizierten Leads, die Ihr Team Zeit kosten',
-      'Zerstreuten Tools ohne einheitliches Bild',
-      'Manuellem Nachfassen, das von Erinnerung lebt',
-      'Verzögerten Antworten, die schnellere Konkurrenten gewinnen lassen',
-      'Verlorenen Deals zwischen Kanälen',
-      'Nichterscheinen und Funkstille nach dem ersten Kontakt',
-    ],
-    justLabel: 'Stattdessen',
-    justItems: [
-      'Qualifizierte Gespräche, die Zeit des Teams geht an echte Käufer',
-      'Ein verbundenes System, ein verlässliches Gesamtbild',
-      'Automatisches Nachfassen, Schluss mit „morgen erinnere ich mich“',
-      'Schnelle Erstantwort, Sie bleiben im Rennen, markengerecht',
-      'Ein roter Faden über Kanäle, Deals gehen nicht in der Übergabe verloren',
-      'Weniger No-Shows und Funkstille, Erinnerungen und Recovery eingebaut',
-    ],
-  },
   problem: {
     badge: 'Das Muster, das wir immer wieder sehen',
     title: 'Wachstum scheitert nicht am Werbekonto.',
@@ -637,57 +462,6 @@ export const aiEmployeePageDe: AiEmployeePageTranslations = {
         hint: 'Zu spät und der heiße Lead spricht schon woanders.',
       },
     ],
-    painCards: [
-      {
-        title: 'Langsame Antwort',
-        body: 'Lead um 14 Uhr. Antwort um 18 Uhr. Termin ist woanders.',
-      },
-      {
-        title: 'Kontext geht verloren',
-        body: 'WhatsApp hier. Mail da. Niemand sieht die ganze Story, Vertrauen baut sich nicht auf.',
-      },
-      {
-        title: 'Nachfassen, das nicht läuft',
-        body: '„Morgen melde ich mich.“ Morgen wird nie. Umsatz geht.',
-      },
-    ],
-    closing: {
-      title: 'Gewinner haben Systeme. Der Rest lebt von Hustle.',
-      subtitle: 'Wir installieren die Schicht, die nicht vergisst, ein Partner pro Markt, wenn wir uns committen.',
-    },
-  },
-  traditionalFails: {
-    badge: 'Warum „mehr Software“ nicht reicht',
-    title: 'Ein weiteres Login repariert keine',
-    titleHighlight: 'kaputten Abläufe.',
-    items: [
-      {
-        title: 'Menschen als Router',
-        body: 'Eine Leitung. Mailbox nach Feierabend. Skalieren = mehr Köpfe, und mehr Streuung.',
-      },
-      {
-        title: 'Generische Anrufdienste',
-        body: 'Nachrichten werden notiert, nicht vorangetrieben. Keine Qualifikation, kein Booking.',
-      },
-      {
-        title: 'Chatbots ohne Biss',
-        body: 'Sie beantworten FAQs. Sie tragen kein Ergebnis. Hohe Absicht verliert sich trotzdem.',
-      },
-      {
-        title: 'Tool-Wildwuchs',
-        body: 'Fünf Tabs, keine Wahrheit. Niemand weiß, welcher Lead wirklich zahlt.',
-      },
-      {
-        title: 'Manuelle Follow-up-Kultur',
-        body: 'Jede Erinnerung ist eine Person. Krank, beschäftigt, neu, Deals stocken.',
-      },
-      {
-        title: 'Kein einheitliches Wachstums-OS',
-        body: 'Marketing verspricht. Operations halten das Tempo der Käufer nicht.',
-      },
-    ],
-    closing:
-      'Ein intelligentes System, Ihre Stimme, Ihre Regeln, damit Kunden länger bleiben, mehr Leads werden und Sie sicher skalieren.',
   },
   capabilities: {
     badge: 'Die Betriebsschicht',
@@ -781,7 +555,9 @@ export const aiEmployeePageDe: AiEmployeePageTranslations = {
     planName: 'Done-with-you Wachstumssystem',
     limitedLabel: 'Begrenzte Partnerschaft (einer pro Markt bei Commitment)',
     setupFee: '2.000 $',
+    setupFeeWaivedDisplay: '0 $',
     setupLabel: 'einmalige Einrichtung',
+    setupFeePromo: 'Im Mai entfällt die einmalige Einrichtungsgebühr.',
     monthlyLabel: 'Monatlich',
     price: '500 $',
     period: '/Monat',
@@ -821,27 +597,6 @@ export const aiEmployeePageEs: AiEmployeePageTranslations = {
     appStoreAriaLabel: 'Descargar en App Store',
     playStoreAriaLabel: 'Disponible en Google Play',
   },
-  noMoreJust: {
-    title: 'Lo que drena ingresos en silencio, y qué lo reemplaza',
-    noMoreLabel: 'Se acabó',
-    noMoreItems: [
-      'Leads no calificados que queman el tiempo del equipo',
-      'Herramientas dispersas y ninguna foto única',
-      'Seguimiento manual que depende de la memoria',
-      'Respuestas tardías que regalan el triunfo al más rápido',
-      'Tratos perdidos entre canales',
-      'Incomparecencias y silencio tras el primer contacto',
-    ],
-    justLabel: 'En su lugar',
-    justItems: [
-      'Conversaciones calificadas, el tiempo del equipo va a compradores reales',
-      'Un sistema conectado, una foto operativa en la que puede confiar',
-      'Seguimiento automático, se acabó el «me acuerdo mañana»',
-      'Primera respuesta rápida, sigue en la carrera, con su tono',
-      'Un hilo entre canales, los tratos no mueren en el traspaso',
-      'Menos incomparecencias y silencios, recordatorios y recuperación incluidos',
-    ],
-  },
   problem: {
     badge: 'El patrón que vemos una y otra vez',
     title: 'El crecimiento no falla en los anuncios.',
@@ -865,57 +620,6 @@ export const aiEmployeePageEs: AiEmployeePageTranslations = {
         hint: 'Tarde y el lead caliente ya habla con otro.',
       },
     ],
-    painCards: [
-      {
-        title: 'Respuesta lenta',
-        body: 'Lead a las 14h. Respuesta a las 18h. Ya reservaron en otro lado.',
-      },
-      {
-        title: 'Se pierde el contexto',
-        body: 'WhatsApp aquí. Correo allí. Nadie ve la historia, la confianza no se construye.',
-      },
-      {
-        title: 'Seguimiento que no existe',
-        body: '“Mañana les escribo.” Mañana nunca llega. Se va el ingreso.',
-      },
-    ],
-    closing: {
-      title: 'Los que ganan tienen sistemas. El resto vive de esfuerzo bruto.',
-      subtitle: 'Instalamos la capa que no olvida, una alianza por mercado cuando nos comprometemos.',
-    },
-  },
-  traditionalFails: {
-    badge: 'Por qué “más software” no basta',
-    title: 'Otro inicio de sesión no arregla',
-    titleHighlight: 'operaciones rotas.',
-    items: [
-      {
-        title: 'Humanos como enrutador',
-        body: 'Una línea. Buzón fuera de horario. Escalar = más gente, y más varianza.',
-      },
-      {
-        title: 'Contestadores genéricos',
-        body: 'Se toman mensajes, no se avanza. Nada califica ni nutre el embudo.',
-      },
-      {
-        title: 'Chatbots sin mordida',
-        body: 'Responden FAQs. No llevan resultado. La intención alta sigue cayéndose.',
-      },
-      {
-        title: 'Herramientas dispersas',
-        body: 'Cinco pestañas, cero verdad. Nadie sabe qué lead paga de verdad.',
-      },
-      {
-        title: 'Cultura de seguimiento manual',
-        body: 'Cada recordatorio es una persona. Enfermo, ocupado, nuevo, los tratos se frenan.',
-      },
-      {
-        title: 'Sin sistema operativo de crecimiento',
-        body: 'Marketing promete. Operaciones no mantienen el ritmo que espera el comprador.',
-      },
-    ],
-    closing:
-      'Un sistema inteligente, su voz, sus reglas, para retener más clientes, convertir más leads y escalar con confianza.',
   },
   capabilities: {
     badge: 'La capa operativa',
@@ -1009,7 +713,9 @@ export const aiEmployeePageEs: AiEmployeePageTranslations = {
     planName: 'Sistema de crecimiento hecho con usted',
     limitedLabel: 'Cupos limitados (una alianza por mercado cuando nos comprometemos)',
     setupFee: '2.000 $',
+    setupFeeWaivedDisplay: '0 $',
     setupLabel: 'configuración única',
+    setupFeePromo: 'En mayo, se elimina el cargo único de configuración.',
     monthlyLabel: 'Mensual',
     price: '500 $',
     period: '/mes',
@@ -1049,27 +755,6 @@ export const aiEmployeePageAr: AiEmployeePageTranslations = {
     appStoreAriaLabel: 'التنزيل من App Store',
     playStoreAriaLabel: 'احصل عليه من Google Play',
   },
-  noMoreJust: {
-    title: 'ما يفرغ الإيراد بهدوء, وما يحل محله',
-    noMoreLabel: 'لا مزيد من',
-    noMoreItems: [
-      'عملاء محتملين غير مؤهلين يستهلكون وقت الفريق',
-      'أدوات مبعثرة بلا صورة تشغيلية واحدة',
-      'متابعات يدوية تعتمد على الذاكرة',
-      'ردود متأخرة تمنح الفوز لمن يسرع',
-      'صفقات ضائعة بين القنوات',
-      'تخلف عن المواعيد وصمت بعد أول لمسة',
-    ],
-    justLabel: 'بل',
-    justItems: [
-      'محادثات مؤهلة, وقت الفريق للمشترين الجادين فقط',
-      'نظام متصل, صورة تشغيلية واحدة يمكن الاعتماد عليها',
-      'متابعة تلقائية, لا مزيد من «سأتذكر غداً»',
-      'رد أول سريع, تبقى في السباق وبأسلوبك',
-      'خيط واحد عبر القنوات, الصفقات لا تضيع عند التسليم',
-      'غياب أقل وصمت أقل, تذكيرات واستعادة مدمجة',
-    ],
-  },
   problem: {
     badge: 'النمط الذي نراه يتكرر',
     title: 'النمو لا يتعثر في الإعلان.',
@@ -1093,57 +778,6 @@ export const aiEmployeePageAr: AiEmployeePageTranslations = {
         hint: 'التأخير يعني أن العميل الساخن يتحدث لمنافس.',
       },
     ],
-    painCards: [
-      {
-        title: 'رد بطيء',
-        body: 'عميل محتمل ظهراً. ردّتم مساءً. حجزوا عند غيركم.',
-      },
-      {
-        title: 'ضياع السياق',
-        body: 'واتساب هنا وبريد هناك. لا أحد يرى القصة كاملة, الثقة لا تتراكم.',
-      },
-      {
-        title: 'متابعة لا تعمل',
-        body: '«سأعود غداً». الغد لا يأتي. يذهب الإيراد.',
-      },
-    ],
-    closing: {
-      title: 'الفائزون يملكون أنظمة. الباقون يعتمدون على الجهد المتواصل فقط.',
-      subtitle: 'نثبّت الطبقة التي لا تنسى, شراكة واحدة لكل سوق عند الالتزام.',
-    },
-  },
-  traditionalFails: {
-    badge: 'لماذا «المزيد من البرمجيات» لا يكفي',
-    title: 'تسجيل دخول آخر لا يصلح',
-    titleHighlight: 'عمليات معطلة.',
-    items: [
-      {
-        title: 'البشر كموزّعين',
-        body: 'خط واحد. بريد صوتي بعد الدوام. التوسع = مزيد من التكلفة والتفاوت.',
-      },
-      {
-        title: 'خدمات الرد العامة',
-        body: 'تُسجَّل الرسائل ولا تُدفع للنتيجة. لا تأهيل ولا حجز.',
-      },
-      {
-        title: 'روبوتات بلا نتيجة',
-        body: 'تجيب عن الأسئلة الشائعة. لا تملك المسار. النية العالية تضيع.',
-      },
-      {
-        title: 'انتشار الأدوات',
-        body: 'خمس تبويبات ولا حقيقة واحدة. لا أحد يعرف أي عميل جاهز للدفع.',
-      },
-      {
-        title: 'ثقافة متابعة يدوية',
-        body: 'كل تذكير يعتمد على شخص. مرض أو انشغال, تتعثر الصفقات.',
-      },
-      {
-        title: 'لا نظام تشغيل للنمو',
-        body: 'التسويق يعد. العمليات لا تحافظ على سرعة المشتري.',
-      },
-    ],
-    closing:
-      'نظام ذكي واحد, صوتك وقواعدك, لإبقاء العملاء أطول وتحويل المزيد من العملاء المحتملين والتوسع بثقة.',
   },
   capabilities: {
     badge: 'طبقة التشغيل',
@@ -1237,7 +871,9 @@ export const aiEmployeePageAr: AiEmployeePageTranslations = {
     planName: 'نظام نمو منفّذ معك',
     limitedLabel: 'شراكات محدودة (واحدة لكل سوق عند الالتزام)',
     setupFee: '2,000 $',
+    setupFeeWaivedDisplay: '0 $',
     setupLabel: 'إعداد لمرة واحدة',
+    setupFeePromo: 'خلال شهر مايو، يُزال رسم الإعداد.',
     monthlyLabel: 'شهري',
     price: '500 $',
     period: '/شهر',
