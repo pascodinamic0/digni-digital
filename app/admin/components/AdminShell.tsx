@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react'
 import type { LucideIcon } from 'lucide-react'
 import {
   LayoutDashboard,
+  LayoutGrid,
   ClipboardList,
   Kanban,
   MessageSquare,
@@ -32,6 +33,7 @@ const WORKSPACE_NAV: { href: string; label: string; Icon: LucideIcon }[] = [
 ]
 
 const OPS_NAV: { href: string; label: string; Icon: LucideIcon }[] = [
+  { href: '/admin/marketing', label: 'Marketing', Icon: LayoutGrid },
   { href: '/admin/offerings', label: 'Offerings', Icon: ClipboardList },
   { href: '/admin/applications', label: 'Applications', Icon: ClipboardList },
   { href: '/admin/affiliates', label: 'Affiliates', Icon: Handshake },

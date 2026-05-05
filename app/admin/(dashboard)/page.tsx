@@ -20,6 +20,20 @@ const TILES = [
     ),
   },
   {
+    href: '/admin/marketing',
+    title: 'Marketing',
+    blurb: 'Turn homepage sections on or off — e.g. the Social planner demo on the AI Employee page.',
+    icon: (
+      <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden>
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75A2.25 2.25 0 0115.75 13.5H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25A2.25 2.25 0 0113.5 8.25V6zM3.75 15.75a2.25 2.25 0 012.25-2.25H8.25c.621 0 1.125.504 1.125 1.125v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25v-2.25z"
+        />
+      </svg>
+    ),
+  },
+  {
     href: '/admin/courses',
     title: 'Learning portal',
     blurb: 'Your one program: structure, lessons, videos, assignments, invites, and learner progress.',
