@@ -1,7 +1,7 @@
 'use client'
 
-import { motion } from 'framer-motion'
-import { useState, useMemo } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { useState, useMemo, useEffect } from 'react'
 import { useLanguage } from '@/app/context/LocaleContext'
 import { translations } from '@/app/config/translations'
 import type { ContactRowT } from '@/app/i18n/aiEmployeeProductDemos'
@@ -38,6 +38,7 @@ export default function ContactDirectoryDemo() {
   const [sortKey, setSortKey] = useState<SortKey>(null)
   const [sortDir, setSortDir] = useState<SortDir>('asc')
   const [page, setPage] = useState(1)
+  const [incomingTick, setIncomingTick] = useState(0)
   const pageSize = 5
 
   const rows = t.rows
@@ -90,6 +91,15 @@ export default function ContactDirectoryDemo() {
   }
 
   const pageLabel = t.pageOf.replace('{page}', String(pageSafe)).replace('{total}', String(totalPages))
+  const highlightedRowId = slice[0]?.id
+
+  useEffect(() => {
+    const incomingInterval = setInterval(() => {
+      setIncomingTick((prev) => prev + 1)
+    }, 3400)
+
+    return () => clearInterval(incomingInterval)
+  }, [])
 
   return (
     <section className="py-24 bg-surface" aria-labelledby="contact-directory-title" dir={isRtl ? 'rtl' : 'ltr'}>
@@ -134,6 +144,22 @@ export default function ContactDirectoryDemo() {
           <div className="absolute inset-0 bg-gradient-to-br from-success/5 via-transparent to-success/[0.08] pointer-events-none" />
 
           <div className="relative bg-surface-light/50 backdrop-blur-sm border-b border-border p-4 md:p-6 space-y-4">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={incomingTick}
+                initial={{ opacity: 0, y: -12, scale: 0.92 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0, y: 10, scale: 0.94 }}
+                transition={{ duration: 0.32 }}
+                className="absolute top-4 right-4 flex items-center gap-2.5 rounded-full border border-success/40 bg-gradient-to-r from-success/20 to-success/10 px-3.5 py-1.5 text-[10px] font-bold uppercase tracking-wide text-success shadow-lg shadow-success/10"
+              >
+                <span className="relative flex h-2.5 w-2.5">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-success/70 opacity-75" />
+                  <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-success" />
+                </span>
+                +1 new
+              </motion.div>
+            </AnimatePresence>
             <div className="flex flex-wrap items-center gap-2">
               <span className="text-xs px-3 py-1.5 rounded-full bg-success/10 text-success border border-success/20 font-medium">
                 {t.allTab}
@@ -220,7 +246,15 @@ export default function ContactDirectoryDemo() {
                   <motion.tr
                     key={row.id}
                     initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
+                    animate={{
+                      opacity: 1,
+                      x: row.id === highlightedRowId && incomingTick % 2 === 1 ? [0, 8, 0] : 0,
+                      backgroundColor:
+                        row.id === highlightedRowId && incomingTick % 2 === 1
+                          ? 'rgba(45, 212, 191, 0.14)'
+                          : 'rgba(0, 0, 0, 0)',
+                    }}
+                    transition={{ duration: 0.45 }}
                     className="border-b border-border/70 hover:bg-success/[0.04] transition-colors"
                   >
                     <td className="py-3 px-4">
@@ -233,7 +267,15 @@ export default function ContactDirectoryDemo() {
                         >
                           {initials(row.name)}
                         </div>
-                        <span className="font-medium text-text">{row.name}</span>
+                        <span className="font-medium text-text inline-flex items-center gap-2">
+                          {row.name}
+                          {row.id === highlightedRowId && incomingTick % 2 === 1 ? (
+                            <span className="inline-flex items-center gap-1.5 rounded-full border border-success/40 bg-success/15 px-2 py-0.5 text-[10px] font-semibold text-success">
+                              <span className="inline-flex h-2 w-2 rounded-full bg-success animate-pulse" aria-hidden />
+                              Live
+                            </span>
+                          ) : null}
+                        </span>
                       </div>
                     </td>
                     <td className="py-3 px-4 text-muted whitespace-nowrap">
