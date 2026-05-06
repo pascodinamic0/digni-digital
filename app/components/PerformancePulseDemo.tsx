@@ -98,14 +98,16 @@ export default function PerformancePulseDemo() {
   )
   const [toast, setToast] = useState<string | null>(null)
   const [started, setStarted] = useState(false)
+  const [lastUpdatedPlatform, setLastUpdatedPlatform] = useState<PlatformKey | null>(null)
+  const [lastReviewDelta, setLastReviewDelta] = useState(0)
 
   const tick = useCallback(() => {
     const idx = Math.floor(Math.random() * PLATFORM_ORDER.length)
     const key = PLATFORM_ORDER[idx]
+    const addReviews = 1 + (Math.random() > 0.85 ? 1 : 0)
     setLive((prev) =>
       prev.map((p) => {
         if (p.id !== key) return p
-        const addReviews = 1 + (Math.random() > 0.85 ? 1 : 0)
         const nextR = Math.min(5, p.rating + 0.02 + Math.random() * 0.03)
         return {
           ...p,
@@ -114,6 +116,8 @@ export default function PerformancePulseDemo() {
         }
       })
     )
+    setLastUpdatedPlatform(key)
+    setLastReviewDelta(addReviews)
     setToast(t.newReviewToast)
     window.setTimeout(() => setToast(null), 2200)
   }, [t.newReviewToast])
@@ -127,6 +131,7 @@ export default function PerformancePulseDemo() {
   const blended =
     live.reduce((s, p) => s + p.rating, 0) / live.length
   const totalReviews = live.reduce((s, p) => s + p.reviews, 0)
+  const latestPlatformLabel = lastUpdatedPlatform ? nameByKey[lastUpdatedPlatform] : null
 
   return (
     <section
@@ -206,19 +211,47 @@ export default function PerformancePulseDemo() {
                 </span>
               </div>
             </div>
+            <AnimatePresence mode="wait">
+              {latestPlatformLabel && (
+                <motion.div
+                  key={`${lastUpdatedPlatform}-${totalReviews}`}
+                  initial={{ opacity: 0, y: -10, scale: 0.96 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0, y: 6, scale: 0.98 }}
+                  transition={{ duration: 0.28 }}
+                  className="mt-4 w-full rounded-xl border border-success/35 bg-gradient-to-r from-success/20 to-success/10 px-3 py-2.5 text-success shadow-md shadow-success/10"
+                >
+                  <div className="flex items-center justify-between gap-2 text-xs sm:text-sm">
+                    <span className="inline-flex items-center gap-2 font-semibold">
+                      <span className="inline-flex h-2 w-2 rounded-full bg-success animate-pulse" aria-hidden />
+                      New review detected
+                    </span>
+                    <span className="font-bold tabular-nums">+{lastReviewDelta}</span>
+                  </div>
+                  <p className="mt-1 text-[11px] sm:text-xs text-success/90 truncate">{latestPlatformLabel}</p>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
 
           <div className="relative grid md:grid-cols-[minmax(0,220px)_1fr] md:divide-x md:divide-border/80">
             <div className="flex flex-col items-center justify-center gap-5 px-5 py-8 md:py-10 bg-gradient-to-b from-surface-light/35 to-transparent">
-              <BlendedRing value={blended} />
+              <motion.div
+                animate={lastUpdatedPlatform ? { scale: [1, 1.045, 1] } : { scale: 1 }}
+                transition={{ duration: 0.45 }}
+                className="rounded-full"
+              >
+                <BlendedRing value={blended} />
+              </motion.div>
               <div className="text-center space-y-1">
                 <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-muted">
                   {t.aggregateLabel}
                 </p>
                 <motion.p
                   key={totalReviews}
-                  initial={{ scale: 1.04 }}
-                  animate={{ scale: 1 }}
+                  initial={{ scale: 1.12, y: -3 }}
+                  animate={{ scale: 1, y: 0 }}
+                  transition={{ duration: 0.35 }}
                   className="text-sm text-text"
                 >
                   <span className="font-display text-xl font-bold tabular-nums text-text">{totalReviews}</span>
@@ -231,10 +264,21 @@ export default function PerformancePulseDemo() {
               {live.map((p) => {
                 const st = PLATFORM_STYLES[p.id]
                 const fillPct = Math.min(100, (p.rating / 5) * 100)
+                const isRecentlyUpdated = p.id === lastUpdatedPlatform
                 return (
                   <motion.div
                     key={p.id}
                     layout
+                    animate={
+                      isRecentlyUpdated
+                        ? {
+                            scale: [1, 1.02, 1],
+                            x: [0, 10, 0],
+                            boxShadow: ['0 0 0 rgba(0,0,0,0)', '0 0 0 2px rgba(16,185,129,0.42)', '0 0 0 rgba(0,0,0,0)'],
+                          }
+                        : { scale: 1, boxShadow: '0 0 0 rgba(0,0,0,0)' }
+                    }
+                    transition={{ duration: 0.55 }}
                     className="group rounded-xl border border-border/70 bg-surface/55 px-3 py-2.5 md:px-4 md:py-3 transition-colors hover:bg-surface/75 hover:border-border"
                   >
                     <div className="flex items-center gap-3">
@@ -246,9 +290,21 @@ export default function PerformancePulseDemo() {
                       <div className="min-w-0 flex-1 space-y-2">
                         <div className="flex items-baseline justify-between gap-2">
                           <p className="font-semibold text-sm text-text truncate">{nameByKey[p.id]}</p>
-                          <span className="text-sm font-semibold text-text tabular-nums shrink-0">
-                            {p.rating.toFixed(2)}
-                          </span>
+                          <div className="flex items-center gap-2 shrink-0">
+                            {isRecentlyUpdated && (
+                              <motion.span
+                                initial={{ opacity: 0, y: 4, scale: 0.9 }}
+                                animate={{ opacity: 1, y: 0, scale: 1 }}
+                                className="inline-flex items-center gap-1 rounded-full border border-success/30 bg-success/10 px-2 py-0.5 text-[10px] font-semibold text-success"
+                              >
+                                <span className="inline-flex h-1.5 w-1.5 rounded-full bg-success animate-pulse" aria-hidden />
+                                +{lastReviewDelta}
+                              </motion.span>
+                            )}
+                            <span className="text-sm font-semibold text-text tabular-nums">
+                              {p.rating.toFixed(2)}
+                            </span>
+                          </div>
                         </div>
                         <div className="h-2 rounded-full bg-border/60 overflow-hidden">
                           <motion.div
