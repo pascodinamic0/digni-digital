@@ -2,6 +2,8 @@
 
 import { motion } from 'framer-motion'
 import { useState, useEffect } from 'react'
+import { useLanguage } from '@/app/context/LocaleContext'
+import { translations } from '@/app/config/translations'
 import SocialPlatformIcon from './SocialPlatformIcon'
 
 interface Message {
@@ -20,6 +22,8 @@ interface Conversation {
 }
 
 const ConversationMockups = () => {
+  const language = useLanguage()
+  const t = translations[language].aiEmployeeProductDemos.conversations
   const [activeDemo, setActiveDemo] = useState(0)
   const [messageIndex, setMessageIndex] = useState(0)
 
@@ -235,7 +239,7 @@ const ConversationMockups = () => {
             viewport={{ once: true }}
             className="inline-block px-4 py-2 bg-accent/10 border border-accent/20 rounded-full text-accent text-xs font-semibold uppercase tracking-wide mb-4"
           >
-            See It In Action
+            {t.badge}
           </motion.span>
           <motion.h2
             id="conversations-title"
@@ -245,8 +249,8 @@ const ConversationMockups = () => {
             transition={{ delay: 0.1 }}
             className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
           >
-            Real Conversations.<br />
-            <span className="gradient-text">Real Bookings.</span>
+            {t.title}<br />
+            <span className="gradient-text">{t.titleHighlight}</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -255,8 +259,7 @@ const ConversationMockups = () => {
             transition={{ delay: 0.2 }}
             className="text-muted text-lg md:text-xl max-w-3xl mx-auto"
           >
-            Watch how leads go from "just browsing" to booked appointments in under 4 minutes. 
-            Every channel. Every time. No human required.
+            {t.subtitle}
           </motion.p>
         </div>
 
@@ -291,7 +294,7 @@ const ConversationMockups = () => {
                       </div>
                       <div className="flex items-center gap-1.5">
                         <div className="w-2 h-2 rounded-full bg-success animate-pulse" />
-                        <span className="text-[10px] text-success font-medium">Live</span>
+                        <span className="text-[10px] text-success font-medium">{t.liveLabel}</span>
                       </div>
                     </div>
                   </div>
@@ -330,7 +333,7 @@ const ConversationMockups = () => {
                   {/* Input Bar */}
                   <div className="p-3 border-t border-border bg-surface/50">
                     <div className="flex items-center gap-2 bg-surface-light rounded-full px-4 py-2">
-                      <span className="text-muted text-sm flex-1">Type a message...</span>
+                      <span className="text-muted text-sm flex-1">{t.inputPlaceholder}</span>
                       <div className="w-8 h-8 bg-accent rounded-full flex items-center justify-center">
                         <svg className="w-4 h-4 text-background" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                           <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
@@ -346,7 +349,7 @@ const ConversationMockups = () => {
           {/* Channel Selector */}
           <div className="flex flex-col justify-center">
             <h3 className="font-display text-2xl font-bold mb-6 text-center lg:text-left">
-              Works on Every Channel
+              {t.channelSelectorTitle}
             </h3>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
               {conversations.map((conv, index) => (
@@ -400,12 +403,7 @@ const ConversationMockups = () => {
           viewport={{ once: true }}
           className="grid grid-cols-2 md:grid-cols-4 gap-4"
         >
-          {[
-            { value: '<2s', label: 'Response Time', icon: '⚡' },
-            { value: '24/7', label: 'Always On', icon: '🌙' },
-            { value: '100%', label: 'Lead Capture', icon: '🎯' },
-            { value: '6+', label: 'Channels', icon: '📱' },
-          ].map((stat, i) => (
+          {t.stats.map((stat, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 20 }}

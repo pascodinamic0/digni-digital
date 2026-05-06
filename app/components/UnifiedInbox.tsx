@@ -2,6 +2,8 @@
 
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
+import { useLanguage } from '@/app/context/LocaleContext'
+import { translations } from '@/app/config/translations'
 import SocialPlatformIcon from './SocialPlatformIcon'
 
 type ConversationStatus = 'qualified' | 'appointment-booked' | 'in-progress' | 'follow-up' | 'new-lead'
@@ -20,66 +22,12 @@ interface Conversation {
 }
 
 const UnifiedInbox = () => {
+  const language = useLanguage()
+  const t = translations[language].aiEmployeeProductDemos.inbox
   const [selectedConversation, setSelectedConversation] = useState(0)
   const [showConversationDetail, setShowConversationDetail] = useState(false)
 
-  const conversations: Conversation[] = [
-    {
-      id: 1,
-      contact: 'Sarah Johnson',
-      channel: 'Website Chat',
-      channelType: 'website',
-      lastMessage: 'Perfect! When can we schedule the consultation?',
-      time: '2 min ago',
-      unread: 2,
-      status: 'qualified',
-      avatar: 'SJ'
-    },
-    {
-      id: 2,
-      contact: 'Mike Chen',
-      channel: 'WhatsApp',
-      channelType: 'whatsapp',
-      lastMessage: 'Thanks for the quick response! I\'ll check my calendar.',
-      time: '5 min ago',
-      unread: 0,
-      status: 'appointment-booked',
-      avatar: 'MC'
-    },
-    {
-      id: 3,
-      contact: 'Restaurant Owner',
-      channel: 'SMS',
-      channelType: 'sms',
-      lastMessage: 'AI: I\'d be happy to help you with pricing information...',
-      time: '12 min ago',
-      unread: 1,
-      status: 'in-progress',
-      avatar: 'RO'
-    },
-    {
-      id: 4,
-      contact: 'FitTrack Startup',
-      channel: 'Instagram DM',
-      channelType: 'instagram',
-      lastMessage: 'That sounds exciting! Fitness apps typically range...',
-      time: '1 hr ago',
-      unread: 0,
-      status: 'follow-up',
-      avatar: 'FT'
-    },
-    {
-      id: 5,
-      contact: 'Local Business',
-      channel: 'Facebook Messenger',
-      channelType: 'facebook',
-      lastMessage: 'AI: Our automation solutions can definitely help...',
-      time: '2 hr ago',
-      unread: 3,
-      status: 'new-lead',
-      avatar: 'LB'
-    }
-  ]
+  const conversations: Conversation[] = t.conversations
 
   const selectedConv = conversations[selectedConversation]
 
@@ -96,11 +44,11 @@ const UnifiedInbox = () => {
 
   const getStatusText = (status: ConversationStatus) => {
     switch (status) {
-      case 'qualified': return 'Qualified'
-      case 'appointment-booked': return 'Booked'
-      case 'in-progress': return 'Active'
-      case 'follow-up': return 'Follow-up'
-      case 'new-lead': return 'New Lead'
+      case 'qualified': return t.statuses.qualified
+      case 'appointment-booked': return t.statuses['appointment-booked']
+      case 'in-progress': return t.statuses['in-progress']
+      case 'follow-up': return t.statuses['follow-up']
+      case 'new-lead': return t.statuses['new-lead']
       default: return 'Unknown'
     }
   }
@@ -156,7 +104,7 @@ const UnifiedInbox = () => {
             viewport={{ once: true }}
             className="inline-block px-4 py-2 bg-success/10 border border-success/20 rounded-full text-success text-xs font-semibold uppercase tracking-wide mb-4"
           >
-            Command Center
+            {t.badge}
           </motion.span>
           <motion.h2
             id="inbox-title"
@@ -166,8 +114,8 @@ const UnifiedInbox = () => {
             transition={{ delay: 0.1 }}
             className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mt-4 mb-6"
           >
-            Every Lead. Every Channel.<br />
-            <span className="gradient-text-brand">One Dashboard.</span>
+            {t.title}<br />
+            <span className="gradient-text-brand">{t.titleHighlight}</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -176,8 +124,7 @@ const UnifiedInbox = () => {
             transition={{ delay: 0.2 }}
             className="text-muted text-base sm:text-lg max-w-3xl mx-auto"
           >
-            Monitor AI performance, track lead status, and manage conversations across 
-            all channels from one powerful interface. Never lose a lead again.
+            {t.subtitle}
           </motion.p>
         </div>
 
@@ -201,8 +148,8 @@ const UnifiedInbox = () => {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="font-display text-lg md:text-xl font-bold">Conversations</h3>
-                  <p className="text-muted text-xs md:text-sm">AI Employee Dashboard</p>
+                  <h3 className="font-display text-lg md:text-xl font-bold">{t.dashboardTitle}</h3>
+                  <p className="text-muted text-xs md:text-sm">{t.dashboardSubtitle}</p>
                 </div>
               </div>
               <div className="flex items-center gap-3 md:gap-6">
@@ -211,10 +158,10 @@ const UnifiedInbox = () => {
                     <div className="w-2.5 h-2.5 bg-success rounded-full animate-pulse" />
                     <div className="absolute inset-0 w-2.5 h-2.5 bg-success rounded-full animate-ping opacity-75" />
                   </div>
-                  <span className="text-success text-xs md:text-sm font-medium">AI Active</span>
+                  <span className="text-success text-xs md:text-sm font-medium">{t.activeStatus}</span>
                 </div>
                 <div className="hidden sm:block text-xs md:text-sm text-muted px-3 py-1.5 bg-surface/50 rounded-full border border-border">
-                  5 active conversations
+                  {t.activeCount}
                 </div>
               </div>
             </div>
@@ -233,15 +180,15 @@ const UnifiedInbox = () => {
                   </svg>
                   <input
                     type="text"
-                    placeholder="Search conversations..."
+                    placeholder={t.searchPlaceholder}
                     className="bg-transparent border-none outline-none flex-1 text-text placeholder-muted text-sm"
-                    aria-label="Search conversations"
+                    aria-label={t.searchAriaLabel}
                   />
                 </div>
               </div>
 
               {/* Conversation Items */}
-              <div className="flex-1 overflow-y-auto space-y-1 p-2" role="listbox" aria-label="Conversations">
+              <div className="flex-1 overflow-y-auto space-y-1 p-2" role="listbox" aria-label={t.listAriaLabel}>
                 {conversations.map((conv, index) => (
                   <motion.button
                     key={conv.id}
@@ -352,9 +299,9 @@ const UnifiedInbox = () => {
                       </div>
                       <div>
                         <div className="bg-gradient-to-br from-success/15 to-success/5 border border-success/20 px-4 py-3 rounded-2xl rounded-bl-md backdrop-blur-sm">
-                          <p className="text-sm text-text leading-relaxed">Hello! I'd be happy to help you with pricing information. What type of service are you most interested in?</p>
+                          <p className="text-sm text-text leading-relaxed">{t.detailMessages.aiIntro}</p>
                         </div>
-                        <p className="text-[10px] text-muted mt-1.5 ml-1">AI • 2:34 PM</p>
+                        <p className="text-[10px] text-muted mt-1.5 ml-1">{t.detailMessages.aiIntroMeta}</p>
                       </div>
                     </div>
                   </div>
@@ -363,9 +310,9 @@ const UnifiedInbox = () => {
                   <div className="flex justify-end">
                     <div className="max-w-[85%]">
                       <div className="bg-gradient-to-br from-success to-success-light text-background px-4 py-3 rounded-2xl rounded-br-md shadow-lg shadow-demo-icon">
-                        <p className="text-sm leading-relaxed">Agentic Softwares development for my restaurant</p>
+                        <p className="text-sm leading-relaxed">{t.detailMessages.userRequest}</p>
                       </div>
-                      <p className="text-[10px] text-muted mt-1.5 text-right mr-1">2:35 PM</p>
+                      <p className="text-[10px] text-muted mt-1.5 text-right mr-1">{t.detailMessages.userRequestTime}</p>
                     </div>
                   </div>
 
@@ -379,9 +326,9 @@ const UnifiedInbox = () => {
                       </div>
                       <div>
                         <div className="bg-gradient-to-br from-success/15 to-success/5 border border-success/20 px-4 py-3 rounded-2xl rounded-bl-md backdrop-blur-sm">
-                          <p className="text-sm text-text leading-relaxed">Perfect! For restaurant software solutions, our packages start at $2,997. Would you like me to schedule a consultation to discuss your specific needs?</p>
+                          <p className="text-sm text-text leading-relaxed">{t.detailMessages.aiFollowUp}</p>
                         </div>
-                        <p className="text-[10px] text-muted mt-1.5 ml-1">AI • 2:35 PM</p>
+                        <p className="text-[10px] text-muted mt-1.5 ml-1">{t.detailMessages.aiFollowUpMeta}</p>
                       </div>
                     </div>
                   </div>
@@ -405,17 +352,17 @@ const UnifiedInbox = () => {
                         <path d="M13 3L4 14h7v7l9-11h-7V3z"/>
                       </svg>
                     </div>
-                    <span>AI Suggested Actions</span>
+                    <span>{t.suggestedActionsLabel}</span>
                   </div>
                   <div className="flex flex-wrap gap-2">
                     <button className="px-3 py-1.5 bg-success/10 text-success text-xs rounded-lg border border-success/20 hover:bg-success/20 hover:border-success/40 transition-all duration-200 font-medium">
-                      Schedule Consultation
+                      {t.actionSchedule}
                     </button>
                     <button className="px-3 py-1.5 bg-success/10 text-success text-xs rounded-lg border border-success/20 hover:bg-success/20 hover:border-success/40 transition-all duration-200 font-medium">
-                      Send Pricing Details
+                      {t.actionPricing}
                     </button>
                     <button className="px-3 py-1.5 bg-info/10 text-info text-xs rounded-lg border border-info/20 hover:bg-info/20 hover:border-info/40 transition-all duration-200 font-medium">
-                      Add to CRM
+                      {t.actionCrm}
                     </button>
                   </div>
                 </div>
@@ -433,12 +380,7 @@ const UnifiedInbox = () => {
           className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6 mt-8 md:mt-12"
         >
           {(
-            [
-              { value: '47', label: 'Conversations Today', card: 'from-success/10 to-success/5 border-success/20', valueClass: 'text-success' },
-              { value: '23', label: 'Qualified Leads', card: 'from-success/10 to-success/5 border-success/20', valueClass: 'text-success' },
-              { value: '12', label: 'Appointments Booked', card: 'from-info/10 to-info/5 border-info/20', valueClass: 'text-info' },
-              { value: '98%', label: 'Response Rate', card: 'from-success/10 to-success/5 border-success/20', valueClass: 'text-success' },
-            ] as const
+            t.stats
           ).map((stat, i) => (
             <motion.div
               key={i}

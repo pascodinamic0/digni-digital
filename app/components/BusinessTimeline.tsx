@@ -2,6 +2,8 @@
 
 import { motion } from 'framer-motion'
 import { useEffect, useState, ReactNode } from 'react'
+import { useLanguage } from '@/app/context/LocaleContext'
+import { translations } from '@/app/config/translations'
 
 type ColorType = 'accent' | 'success' | 'info' | 'warning'
 
@@ -44,16 +46,17 @@ interface Step {
 }
 
 const BusinessTimeline = () => {
+  const language = useLanguage()
+  const t = translations[language].aiEmployeeProductDemos.timeline
   const [activeStep, setActiveStep] = useState(0)
 
   const steps: Step[] = [
     {
       id: 'lead',
-      title: 'Lead Arrives',
-      description: 'A new prospect reaches out on any channel.',
-      outcomeTitle: 'Nothing slips through',
-      outcomeLine:
-        'Web, social, SMS, and phone funnel into one system—every first touch is captured.',
+      title: t.steps[0].title,
+      description: t.steps[0].description,
+      outcomeTitle: t.steps[0].outcomeTitle,
+      outcomeLine: t.steps[0].outcomeLine,
       icon: (
         <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M16 21V19C16 17.9391 15.5786 16.9217 14.8284 16.1716C14.0783 15.4214 13.0609 15 12 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -62,31 +65,29 @@ const BusinessTimeline = () => {
         </svg>
       ),
       // Keep these in sync with the channels showcased in `ChannelsDiagram.tsx`.
-      metrics: ['Website', 'SMS', 'Facebook', 'Instagram', 'WhatsApp', 'Phone'],
+      metrics: t.steps[0].metrics,
       color: 'info'
     },
     {
       id: 'response',
-      title: 'Instant AI Reply',
-      description: 'AI replies within 2 seconds with a personalized message.',
-      outcomeTitle: 'Speed that wins the moment',
-      outcomeLine:
-        "Personal replies in seconds, around the clock—before curiosity turns into a competitor's win.",
+      title: t.steps[1].title,
+      description: t.steps[1].description,
+      outcomeTitle: t.steps[1].outcomeTitle,
+      outcomeLine: t.steps[1].outcomeLine,
       icon: (
         <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
       ),
-      metrics: ['<2s Response', '24/7 Live', 'WhatsApp', 'Phone'],
+      metrics: t.steps[1].metrics,
       color: 'accent'
     },
     {
       id: 'qualification',
-      title: 'Contact Saved',
-      description: 'AI captures contact details and saves them to your CRM.',
-      outcomeTitle: 'An audience you actually own',
-      outcomeLine:
-        'Every identity lands in CRM with context—built-in list growth, ready for nurture and campaigns.',
+      title: t.steps[2].title,
+      description: t.steps[2].description,
+      outcomeTitle: t.steps[2].outcomeTitle,
+      outcomeLine: t.steps[2].outcomeLine,
       icon: (
         <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z" stroke="currentColor" strokeWidth="2"/>
@@ -95,16 +96,15 @@ const BusinessTimeline = () => {
           <path d="M17 9H21" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
         </svg>
       ),
-      metrics: ['Auto Capture', 'CRM Sync', 'WhatsApp Leads', 'Phone Leads'],
+      metrics: t.steps[2].metrics,
       color: 'success'
     },
     {
       id: 'appointment',
-      title: 'Appointment Booked',
-      description: 'AI books the right meeting into your calendar—no back-and-forth.',
-      outcomeTitle: 'Sales time on booked calls',
-      outcomeLine:
-        'The right prospects lock a slot themselves—fewer flakes, zero scheduling volleyball.',
+      title: t.steps[3].title,
+      description: t.steps[3].description,
+      outcomeTitle: t.steps[3].outcomeTitle,
+      outcomeLine: t.steps[3].outcomeLine,
       icon: (
         <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect x="3" y="4" width="18" height="18" rx="2" ry="2" stroke="currentColor" strokeWidth="2"/>
@@ -114,32 +114,30 @@ const BusinessTimeline = () => {
           <path d="M8 14H16M8 18H12" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
         </svg>
       ),
-      metrics: ['Calendar Sync', 'Auto Confirm', 'WhatsApp Scheduling', 'Phone Scheduling'],
+      metrics: t.steps[3].metrics,
       color: 'info'
     },
     {
       id: 'followup',
-      title: 'Smart Follow-Up',
-      description: 'Automated follow-up nudges buyers until they are ready.',
-      outcomeTitle: "Deals that don't freeze",
-      outcomeLine:
-        'Email, SMS, WhatsApp, and phone nudges keep momentum—in control, on your rules.',
+      title: t.steps[4].title,
+      description: t.steps[4].description,
+      outcomeTitle: t.steps[4].outcomeTitle,
+      outcomeLine: t.steps[4].outcomeLine,
       icon: (
         <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentColor" strokeWidth="2"/>
           <polyline points="22,6 12,13 2,6" stroke="currentColor" strokeWidth="2"/>
         </svg>
       ),
-      metrics: ['Email Nudges', 'SMS Reminders', 'WhatsApp Nudges', 'Phone Nudges'],
+      metrics: t.steps[4].metrics,
       color: 'accent'
     },
     {
       id: 'post_sale',
-      title: 'Post-Sale Growth',
-      description: 'After the sale, AI drives reviews, offers, retargeting, and referrals.',
-      outcomeTitle: 'Reputation and repeat revenue',
-      outcomeLine:
-        'Reviews go out, referrals and upsells follow, and retention marketing runs without adding headcount.',
+      title: t.steps[5].title,
+      description: t.steps[5].description,
+      outcomeTitle: t.steps[5].outcomeTitle,
+      outcomeLine: t.steps[5].outcomeLine,
       icon: (
         <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M20 7L21 8L10 19L3 19L3 12L14 1L15 2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -147,14 +145,7 @@ const BusinessTimeline = () => {
           <path d="M3 19L10 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
       ),
-      metrics: [
-        'Review Requests',
-        'Upsell Offers',
-        'Retargeting Ads',
-        'Referral Program',
-        'WhatsApp Outreach',
-        'Phone Outreach'
-      ],
+      metrics: t.steps[5].metrics,
       color: 'success'
     }
   ]
@@ -211,7 +202,7 @@ const BusinessTimeline = () => {
             viewport={{ once: true }}
             className="text-accent font-medium text-sm uppercase tracking-wider"
           >
-            Business Impact
+            {t.badge}
           </motion.span>
           <motion.h2
             id="timeline-title"
@@ -221,8 +212,8 @@ const BusinessTimeline = () => {
             transition={{ delay: 0.1 }}
             className="font-display text-4xl md:text-5xl font-bold mt-4 mb-6"
           >
-            From First Contact<br />
-            <span className="gradient-text">To Closed Deal and Beyond</span>
+            {t.title}<br />
+            <span className="gradient-text">{t.titleHighlight}</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -231,8 +222,7 @@ const BusinessTimeline = () => {
             transition={{ delay: 0.2 }}
             className="text-muted text-lg max-w-3xl mx-auto"
           >
-            Watch how our AI transforms every lead into a structured sales opportunity, 
-            automatically moving prospects through your funnel.
+            {t.subtitle}
           </motion.p>
         </div>
 
@@ -434,7 +424,7 @@ const BusinessTimeline = () => {
                       ? `w-8 ${colorClasses.bg}` 
                       : 'w-2 bg-surface-light hover:bg-foreground/20'
                   }`}
-                  aria-label={`View step ${index + 1}: ${step.title}`}
+                  aria-label={`${t.viewStepLabel} ${index + 1}: ${step.title}`}
                 />
               )
             })}
@@ -449,13 +439,13 @@ const BusinessTimeline = () => {
         >
           <div className="text-center max-w-2xl mx-auto mb-10 md:mb-12">
             <p className="text-accent font-medium text-sm uppercase tracking-wider mb-2">
-              Outcome at every stage
+              {t.outcomesBadge}
             </p>
             <h3 id="timeline-outcomes-heading" className="font-display text-2xl md:text-3xl font-bold text-text">
-              What the full sequence delivers
+              {t.outcomesTitle}
             </h3>
             <p className="text-muted text-base mt-3 leading-relaxed">
-              Six steps above, six results below—same order, from first visit to after the close.
+              {t.outcomesSubtitle}
             </p>
           </div>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
