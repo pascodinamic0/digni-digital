@@ -430,10 +430,13 @@ html:not([data-theme="light"]) footer#contact input#footer-newsletter-email:-web
   backdrop-filter: blur(8px);
 }
 
-.card:hover {
-  border-color: var(--border-accent);
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-card);
+/* Real hover only: avoids sticky :hover on touch (lifted cards stacking over content above). */
+@media (hover: hover) and (pointer: fine) {
+  .card:hover {
+    border-color: var(--border-accent);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-card);
+  }
 }
 
 /* Glass Card variant */
@@ -445,10 +448,27 @@ html:not([data-theme="light"]) footer#contact input#footer-newsletter-email:-web
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.card-glass:hover {
-  border-color: var(--border-accent);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-lg);
+@media (hover: hover) and (pointer: fine) {
+  .card-glass:hover {
+    border-color: var(--border-accent);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+  }
+}
+
+/* Future Ready curriculum carousel: hover accents only on real pointers (see .card:hover note). */
+@media (hover: hover) and (pointer: fine) {
+  .future-ready-skill-card:hover {
+    border-color: rgba(var(--success-rgb), 0.5);
+  }
+
+  .future-ready-skill-card:hover .future-ready-skill-icon {
+    transform: translateY(-0.25rem) rotate(3deg);
+  }
+
+  .future-ready-skill-card:hover .future-ready-skill-heading {
+    color: var(--success);
+  }
 }
 
 /* Premium gradient border */
