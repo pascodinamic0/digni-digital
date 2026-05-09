@@ -1278,23 +1278,23 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
           <div className="relative -mx-4 overflow-hidden px-4 sm:mx-auto sm:max-w-[1008px] sm:px-0 mb-10 sm:mb-16">
             <div
               ref={skillsScrollRef}
-              className="flex gap-3 sm:gap-6 pb-4 overflow-x-auto overflow-y-hidden scroll-smooth scrollbar-hide snap-x snap-mandatory scroll-px-4 sm:scroll-px-0"
+              className="flex gap-3 sm:gap-6 pt-4 sm:pt-5 pb-4 overflow-x-auto overflow-y-hidden scroll-smooth scrollbar-hide snap-x snap-mandatory scroll-px-4 sm:scroll-px-0"
             >
               {(() => {
                 const skills = localCopy.skills
                 const scrollCards = [...skills, ...skills]
 
                 const SkillCard = ({ item }: { item: typeof skills[0] }) => (
-                  <div className="card p-4 sm:p-6 hover:border-success/50 group w-[min(18rem,calc(100vw-2rem))] sm:w-[320px] min-h-[260px] sm:min-h-[300px] flex flex-col flex-shrink-0 snap-start">
+                  <div className="future-ready-skill-card card p-4 sm:p-6 w-[min(18rem,calc(100vw-2rem))] sm:w-[320px] min-h-[260px] sm:min-h-[300px] flex flex-col flex-shrink-0 snap-start">
                     <div className="text-center mb-3 sm:mb-4">
-                      <div className="relative w-14 h-14 sm:w-16 sm:h-16 mx-auto mb-3 rounded-[1.35rem] border border-success/25 bg-gradient-to-br from-success/20 via-success/10 to-background shadow-lg shadow-success/10 overflow-visible transition-transform duration-300 group-hover:-translate-y-1 group-hover:rotate-3">
+                      <div className="future-ready-skill-icon relative w-14 h-14 sm:w-16 sm:h-16 mx-auto mb-3 rounded-[1.35rem] border border-success/25 bg-gradient-to-br from-success/20 via-success/10 to-background shadow-lg shadow-success/10 overflow-visible transition-transform duration-300">
                         <div className="absolute inset-1 rounded-[1.05rem] bg-background/75 backdrop-blur-sm" />
                         <div className="absolute -right-1 -top-1 h-5 w-5 rounded-full bg-success/20 blur-[2px]" aria-hidden />
                         <span className="relative z-10 flex h-full w-full items-center justify-center text-2xl sm:text-3xl leading-none drop-shadow-sm">
                           {item.icon}
                         </span>
                       </div>
-                      <h3 className="font-display text-sm sm:text-base font-bold leading-snug group-hover:text-success transition-colors mb-2">
+                      <h3 className="future-ready-skill-heading font-display text-sm sm:text-base font-bold leading-snug transition-colors mb-2">
                         {item.skill}
                       </h3>
                       <div className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 mb-2">
