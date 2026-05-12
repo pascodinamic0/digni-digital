@@ -7,6 +7,20 @@ import { updateSession } from './lib/supabase/middleware'
 
 const CANONICAL_HOST = 'digni-digital-llc.com'
 
+/** Paths that must refresh the Supabase session (auth cookie + getUser). Marketing pages skip this to avoid a network round-trip on every navigation. */
+function shouldRefreshSupabaseSession(pathname: string): boolean {
+  if (
+    pathname.startsWith('/admin') ||
+    pathname.startsWith('/auth') ||
+    pathname.startsWith('/api/admin') ||
+    pathname.startsWith('/api/learn')
+  ) {
+    return true
+  }
+  // LMS lives under /[locale]/learn/...
+  return pathname.split('/').some((segment) => segment === 'learn')
+}
+
 export default async function proxy(request: NextRequest) {
   const host = request.headers.get('host') ?? ''
   const normalizedHost = host.toLowerCase().replace(/:\d+$/, '')
@@ -23,7 +37,7 @@ export default async function proxy(request: NextRequest) {
   }
 
   const pathname = request.nextUrl.pathname
-  // Session refresh must run for LMS/admin API routes too (matcher previously skipped all /api).
+  // Non-localized admin/auth/API: session refresh for protected surfaces.
   if (
     pathname.startsWith('/admin') ||
     pathname.startsWith('/auth') ||
@@ -45,10 +59,15 @@ export default async function proxy(request: NextRequest) {
   })
 
   const response = handleI18nRouting(request)
-  if (response && request.nextUrl.pathname) {
-    response.headers.set('x-pathname', request.nextUrl.pathname)
+  const resolvedPath = request.nextUrl.pathname
+  if (response && resolvedPath) {
+    response.headers.set('x-pathname', resolvedPath)
   }
-  return response ? updateSession(request, response) : updateSession(request, NextResponse.next({ request }))
+  const next = response ?? NextResponse.next({ request })
+  if (shouldRefreshSupabaseSession(resolvedPath)) {
+    return updateSession(request, next)
+  }
+  return next
 }
 
 export const config = {

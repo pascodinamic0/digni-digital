@@ -2,7 +2,8 @@
 
 import { useState, useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
-import { Link, usePathname } from '@/i18n/navigation'
+import { usePathname } from '@/i18n/navigation'
+import HeaderNavLink from '@/app/components/HeaderNavLink'
 import { getBookingLinkProps } from '@/app/config/cta.config'
 import { useLanguage } from '@/app/context/LocaleContext'
 import { translations } from '@/app/config/translations'
@@ -100,24 +101,24 @@ export default function Navigation() {
 
           <div className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
-              <Link
+              <HeaderNavLink
                 key={link.href}
                 href={link.href}
                 className="hover:text-accent transition-colors duration-300 text-sm font-medium text-text"
               >
                 {link.name}
-              </Link>
+              </HeaderNavLink>
             ))}
             
             {/* Solutions: link to overview + chevron opens submenu */}
             <div className="relative flex items-center gap-0.5" ref={dropdownRef}>
-              <Link
+              <HeaderNavLink
                 href="/services"
                 onClick={() => setSolutionsOpen(false)}
                 className="hover:text-accent transition-colors duration-300 text-sm font-medium text-text"
               >
                 {t.nav.solutions}
-              </Link>
+              </HeaderNavLink>
               <button
                 type="button"
                 onClick={() => setSolutionsOpen(!solutionsOpen)}
@@ -142,7 +143,7 @@ export default function Navigation() {
                 >
                   <div className="p-2">
                     {solutionLinks.map((solution) => (
-                      <Link
+                      <HeaderNavLink
                         key={solution.href}
                         href={solution.href}
                         onClick={() => setSolutionsOpen(false)}
@@ -154,7 +155,7 @@ export default function Navigation() {
                         <div className="text-sm text-muted mt-1">
                           {solution.description}
                         </div>
-                      </Link>
+                      </HeaderNavLink>
                     ))}
                   </div>
                 </motion.div>
@@ -163,13 +164,13 @@ export default function Navigation() {
 
             {/* Right Navigation Links (Blog) */}
             {rightNavLinks.map((link) => (
-              <Link
+              <HeaderNavLink
                 key={link.href}
                 href={link.href}
                 className="hover:text-accent transition-colors duration-300 text-sm font-medium text-text"
               >
                 {link.name}
-              </Link>
+              </HeaderNavLink>
             ))}
           </div>
 
@@ -209,47 +210,47 @@ export default function Navigation() {
             className="site-header-nav-mobile lg:hidden mt-4 pb-4 relative z-50 bg-background"
           >
             {navLinks.map((link) => (
-              <Link
+              <HeaderNavLink
                 key={link.href}
                 href={link.href}
                 className="block py-3 text-text hover:text-accent transition-colors font-medium"
                 onClick={() => setMobileOpen(false)}
               >
                 {link.name}
-              </Link>
+              </HeaderNavLink>
             ))}
             
             {/* Mobile Solutions Section */}
             <div className="py-3">
-              <Link
+              <HeaderNavLink
                 href="/services"
                 className="block text-text font-semibold mb-2 hover:text-accent transition-colors"
                 onClick={() => setMobileOpen(false)}
               >
                 {t.nav.solutions}
-              </Link>
+              </HeaderNavLink>
               {solutionLinks.map((solution) => (
-                <Link
+                <HeaderNavLink
                   key={solution.href}
                   href={solution.href}
                   className="block py-2 pl-4 text-sm text-text hover:text-accent transition-colors"
                   onClick={() => setMobileOpen(false)}
                 >
                   {solution.name}
-                </Link>
+                </HeaderNavLink>
               ))}
             </div>
 
             {/* Right Navigation Links in Mobile */}
             {rightNavLinks.map((link) => (
-              <Link
+              <HeaderNavLink
                 key={link.href}
                 href={link.href}
                 className="block py-3 text-text hover:text-accent transition-colors font-medium"
                 onClick={() => setMobileOpen(false)}
               >
                 {link.name}
-              </Link>
+              </HeaderNavLink>
             ))}
             
             <div className="flex items-center gap-4 mt-6 pt-4 border-t border-border-light">
