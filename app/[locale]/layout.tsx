@@ -71,7 +71,7 @@ export default async function LocaleLayout({ children, params }: Props) {
         <Script
           id="ghl-chat-widget-loader"
           src="https://widgets.leadconnectorhq.com/loader.js"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
           data-widget-id="691c374633e992e56f750115"
         />
