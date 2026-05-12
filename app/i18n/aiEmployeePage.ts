@@ -81,6 +81,8 @@ export type AiEmployeePageTranslations = {
     setupLabel: string
     /** Short promo line (e.g. limited-time fee removal). */
     setupFeePromo: string
+    /** Line above the live countdown during the promo. */
+    setupPromoCountdownLead: string
     monthlyLabel: string
     price: string
     period: string
@@ -242,6 +244,7 @@ export const aiEmployeePageEn: AiEmployeePageTranslations = {
     setupFeeWaivedDisplay: '$0',
     setupLabel: 'one-time setup',
     setupFeePromo: 'During May, this setup fee is removed.',
+    setupPromoCountdownLead: 'Offer ends in',
     monthlyLabel: 'Monthly',
     price: '$500',
     period: '/month',
@@ -400,6 +403,7 @@ export const aiEmployeePageFr: AiEmployeePageTranslations = {
     setupFeeWaivedDisplay: '0 $',
     setupLabel: 'mise en place unique',
     setupFeePromo: 'En mai, les frais de mise en place sont offerts.',
+    setupPromoCountdownLead: "Fin de l'offre dans",
     monthlyLabel: 'Mensuel',
     price: '500 $',
     period: '/mois',
@@ -558,6 +562,7 @@ export const aiEmployeePageDe: AiEmployeePageTranslations = {
     setupFeeWaivedDisplay: '0 $',
     setupLabel: 'einmalige Einrichtung',
     setupFeePromo: 'Im Mai entfällt die einmalige Einrichtungsgebühr.',
+    setupPromoCountdownLead: 'Angebot endet in',
     monthlyLabel: 'Monatlich',
     price: '500 $',
     period: '/Monat',
@@ -716,6 +721,7 @@ export const aiEmployeePageEs: AiEmployeePageTranslations = {
     setupFeeWaivedDisplay: '0 $',
     setupLabel: 'configuración única',
     setupFeePromo: 'En mayo, se elimina el cargo único de configuración.',
+    setupPromoCountdownLead: 'La oferta termina en',
     monthlyLabel: 'Mensual',
     price: '500 $',
     period: '/mes',
@@ -874,6 +880,7 @@ export const aiEmployeePageAr: AiEmployeePageTranslations = {
     setupFeeWaivedDisplay: '0 $',
     setupLabel: 'إعداد لمرة واحدة',
     setupFeePromo: 'خلال شهر مايو، يُزال رسم الإعداد.',
+    setupPromoCountdownLead: 'تنتهي العرض خلال',
     monthlyLabel: 'شهري',
     price: '500 $',
     period: '/شهر',

@@ -1,6 +1,6 @@
 'use client'
 
-import { use, type ReactElement } from 'react'
+import { use, useState, useEffect, type ReactElement } from 'react'
 import { motion } from 'framer-motion'
 import { useLanguage } from '@/app/context/LocaleContext'
 import { getBookingLinkProps } from '@/app/config/cta.config'
@@ -21,6 +21,8 @@ import BusinessTimeline from '@/app/components/BusinessTimeline'
 import DemoPresentationDownload from '@/app/components/DemoPresentationDownload'
 import StripeCheckoutButton from '@/app/components/StripeCheckoutButton'
 import { getServicePageJsonLd, jsonLdScriptProps } from '@/lib/agent-readiness'
+import { AI_EMPLOYEE_SETUP_PROMO_END_MS, isAiEmployeeSetupPromoActive } from '@/lib/ai-employee-setup-promo'
+import type { AiEmployeePageTranslations } from '@/app/i18n/aiEmployeePage'
 
 type AIReceptionistClientProps = {
   params: Promise<{ locale: string }>
@@ -34,6 +36,116 @@ const aiEmployeeHeroCopy = {
   ar: { years: 'في بناء أنظمة النمو', satisfaction: 'رضا العملاء' },
   de: { years: 'im Aufbau von Wachstumssystemen', satisfaction: 'Kundenzufriedenheit' },
   es: { years: 'construyendo sistemas de crecimiento', satisfaction: 'satisfacción del cliente' },
+}
+
+function padCountdownUnit(n: number) {
+  return String(n).padStart(2, '0')
+}
+
+function AiEmployeePricingSpotlight({
+  pricing: p,
+  checkoutRedirectingLabel,
+  continueToSecureCheckoutLabel,
+  bookingLinkProps,
+}: {
+  pricing: AiEmployeePageTranslations['pricing']
+  checkoutRedirectingLabel: string
+  continueToSecureCheckoutLabel: string
+  bookingLinkProps: ReturnType<typeof getBookingLinkProps>
+}) {
+  const [nowTick, setNowTick] = useState<number | null>(null)
+
+  useEffect(() => {
+    setNowTick(Date.now())
+    const id = window.setInterval(() => setNowTick(Date.now()), 1000)
+    return () => window.clearInterval(id)
+  }, [])
+
+  const at = nowTick ?? Date.now()
+  const promoActive = isAiEmployeeSetupPromoActive(at)
+  const remainMs = Math.max(0, AI_EMPLOYEE_SETUP_PROMO_END_MS - at)
+  const totalSec = Math.floor(remainMs / 1000)
+  const days = Math.floor(totalSec / 86400)
+  const hours = Math.floor((totalSec % 86400) / 3600)
+  const minutes = Math.floor((totalSec % 3600) / 60)
+  const seconds = totalSec % 60
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay: 0.2 }}
+      className={
+        promoActive
+          ? 'card p-8 border-success/50 glow-success hover:border-success/60'
+          : 'card p-8 border-border hover:border-accent/35'
+      }
+    >
+      <div className="text-center mb-6">
+        {promoActive && (
+          <span className="inline-block px-3 py-1.5 bg-destructive/20 text-destructive text-xs font-semibold rounded-full border border-destructive/30 mb-4">
+            {p.limitedLabel}
+          </span>
+        )}
+        <h3 className="font-display text-2xl font-bold text-text">{p.planName}</h3>
+      </div>
+
+      <div className="flex flex-col sm:flex-row items-stretch justify-center gap-4 mb-8">
+        <div className="flex-1 min-w-0 rounded-xl bg-surface/80 border border-border/50 px-5 py-4 flex flex-col justify-center text-center">
+          <div className="text-muted text-[11px] uppercase tracking-wider font-medium mb-2">{p.setupLabel}</div>
+          {promoActive ? (
+            <>
+              <div className="font-display text-base font-semibold text-muted line-through decoration-destructive/45 mb-1">
+                {p.setupFee}
+              </div>
+              <div className="font-display text-xl font-bold text-success">{p.setupFeeWaivedDisplay}</div>
+              <p className="text-[11px] leading-snug text-success/85 mt-2">{p.setupFeePromo}</p>
+              <p className="text-[10px] font-medium uppercase tracking-wider text-success/75 mt-3">{p.setupPromoCountdownLead}</p>
+              <div className="font-display text-sm font-semibold tabular-nums text-success mt-1.5 tracking-tight" aria-live="polite">
+                {days > 0 && (
+                  <span className="whitespace-nowrap">
+                    {days}d<span className="mx-1 text-success/55">·</span>
+                  </span>
+                )}
+                <span className="whitespace-nowrap">
+                  {padCountdownUnit(hours)}h<span className="mx-1 text-success/55">·</span>
+                  {padCountdownUnit(minutes)}m<span className="mx-1 text-success/55">·</span>
+                  {padCountdownUnit(seconds)}s
+                </span>
+              </div>
+            </>
+          ) : (
+            <div className="font-display text-xl font-bold text-text">{p.setupFee}</div>
+          )}
+        </div>
+        <div className="flex-1 min-w-0 rounded-xl bg-success/10 border border-success/20 px-5 py-5 flex flex-col justify-center text-center">
+          <div className="text-muted text-[11px] uppercase tracking-wider font-medium mb-1">{p.monthlyLabel}</div>
+          <div className="flex items-baseline justify-center gap-2 flex-wrap">
+            <span className="font-display text-3xl font-bold text-success">
+              {p.price}
+              <span className="text-base font-normal text-muted">{p.period}</span>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <p className="text-muted text-xs text-center mb-6 leading-relaxed">{p.note}</p>
+
+      <div className="space-y-3">
+        <StripeCheckoutButton
+          plan="ai_employee"
+          className="btn-primary w-full text-center text-lg py-4"
+          redirectingLabel={checkoutRedirectingLabel}
+        >
+          {continueToSecureCheckoutLabel}
+        </StripeCheckoutButton>
+        <a {...bookingLinkProps} className="btn-secondary w-full text-center text-lg py-4 block">
+          {p.cta}
+        </a>
+      </div>
+    </motion.div>
+  )
 }
 
 function AIEmployeeCTASection() {
@@ -599,62 +711,12 @@ export function AIReceptionistClient({ params, searchParams, showTaskQueueDemo }
 
           <div className="flex justify-center mb-8">
             <div className="max-w-md w-full">
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.2 }}
-                className="card p-8 border-success/50 glow-success hover:border-success/60"
-              >
-                <div className="text-center mb-6">
-                  <span className="inline-block px-3 py-1.5 bg-destructive/20 text-destructive text-xs font-semibold rounded-full border border-destructive/30 mb-4">
-                    {t.pricing.limitedLabel}
-                  </span>
-                  <h3 className="font-display text-2xl font-bold text-text">{t.pricing.planName}</h3>
-                </div>
-
-                <div className="flex flex-col sm:flex-row items-stretch justify-center gap-4 mb-8">
-                  <div className="flex-1 min-w-0 rounded-xl bg-surface/80 border border-border/50 px-5 py-4 flex flex-col justify-center text-center">
-                    <div className="text-muted text-[11px] uppercase tracking-wider font-medium mb-2">
-                      {t.pricing.setupLabel}
-                    </div>
-                    <div className="font-display text-base font-semibold text-muted line-through decoration-destructive/45 mb-1">
-                      {t.pricing.setupFee}
-                    </div>
-                    <div className="font-display text-xl font-bold text-success">{t.pricing.setupFeeWaivedDisplay}</div>
-                    <p className="text-[11px] leading-snug text-success/85 mt-2">{t.pricing.setupFeePromo}</p>
-                  </div>
-                  <div className="flex-1 min-w-0 rounded-xl bg-success/10 border border-success/20 px-5 py-5 flex flex-col justify-center text-center">
-                    <div className="text-muted text-[11px] uppercase tracking-wider font-medium mb-1">{t.pricing.monthlyLabel}</div>
-                    <div className="flex items-baseline justify-center gap-2 flex-wrap">
-                      <span className="font-display text-3xl font-bold text-success">
-                        {t.pricing.price}
-                        <span className="text-base font-normal text-muted">{t.pricing.period}</span>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-
-                <p className="text-muted text-xs text-center mb-6 leading-relaxed">
-                  {t.pricing.note}
-                </p>
-
-                <div className="space-y-3">
-                  <StripeCheckoutButton
-                    plan="ai_employee"
-                    className="btn-primary w-full text-center text-lg py-4"
-                    redirectingLabel={ctaT.checkoutRedirecting}
-                  >
-                    {ctaT.continueToSecureCheckout}
-                  </StripeCheckoutButton>
-                  <a
-                    {...getBookingLinkProps()}
-                    className="btn-secondary w-full text-center text-lg py-4 block"
-                  >
-                    {t.pricing.cta}
-                  </a>
-                </div>
-              </motion.div>
+              <AiEmployeePricingSpotlight
+                pricing={t.pricing}
+                checkoutRedirectingLabel={ctaT.checkoutRedirecting}
+                continueToSecureCheckoutLabel={ctaT.continueToSecureCheckout}
+                bookingLinkProps={getBookingLinkProps()}
+              />
             </div>
           </div>
         </div>
