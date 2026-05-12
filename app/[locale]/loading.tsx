@@ -1,9 +1,12 @@
 import { BRAND_ROUTE_LOADING_GIF_PATH } from '@/lib/site-assets'
 
+/** Clears fixed nav (~py-4 + 58px logo + border); stays below `.site-header-nav` z-[100]. */
+const BELOW_HEADER_TOP_CLASS = 'top-[5.625rem]'
+
 export default function Loading() {
   return (
     <main
-      className="flex min-h-[min(100dvh,56rem)] flex-col items-center justify-center bg-background px-6 pb-16 pt-[clamp(5.5rem,18vh,10rem)]"
+      className={`fixed inset-x-0 bottom-0 ${BELOW_HEADER_TOP_CLASS} z-[90] flex items-center justify-center bg-background px-6`}
       aria-busy="true"
     >
       <p className="sr-only">Loading page</p>
