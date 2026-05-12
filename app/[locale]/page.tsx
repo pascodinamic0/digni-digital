@@ -1,18 +1,27 @@
 'use client'
 
 import { use, useState, useEffect, useRef } from 'react'
+import dynamic from 'next/dynamic'
 import { motion, useInView } from 'framer-motion'
 import { Link } from '@/i18n/navigation'
 import AnimatedSection from '@/app/components/AnimatedSection'
 import CompanyValuesGrid from '@/app/components/CompanyValuesGrid'
 import ScrollIndicator from '@/app/components/ScrollIndicator'
-import GlobalPresenceMap from '@/app/components/GlobalPresenceMap'
 import ClientLogos from '@/app/components/ClientLogos'
 import { useTheme } from '@/app/components/ThemeProvider'
 import { getBookingLinkProps } from '@/app/config/cta.config'
 import { useLanguage, useLocale } from '@/app/context/LocaleContext'
 import { translations } from '@/app/config/translations'
 import { formatMissedLeadsUsdStat, MISSED_LEADS_USD } from '@/lib/formatMissedLeadsUsdStat'
+
+const GlobalPresenceMap = dynamic(() => import('@/app/components/GlobalPresenceMap'), {
+  loading: () => (
+    <div
+      className="w-full min-h-[200px] md:min-h-[240px] rounded-2xl bg-surface-light/30 animate-pulse"
+      aria-hidden
+    />
+  ),
+})
 
 // Hero Section, keyed by language so it remounts and shows correct translations when locale changes
 function Hero() {
@@ -68,7 +77,7 @@ function Hero() {
         muted
         loop
         playsInline
-        preload="metadata"
+        preload="none"
         src="/hero-bg.mp4"
         className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[2000ms] ${videoReady ? 'opacity-70' : 'opacity-30'}`}
       >

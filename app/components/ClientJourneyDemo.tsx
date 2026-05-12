@@ -87,6 +87,8 @@ function funnelSectionLabel(
 // Band heights: extra room on small screens so stacked copy fits
 const BAND_HEIGHT_CLASS = 'min-h-[5.5rem] sm:min-h-[4.75rem]'
 const BAND_HEIGHT_LAST_CLASS = 'min-h-[6.75rem] sm:min-h-[6.25rem]'
+const BAND_HEIGHT_COMPACT = 'min-h-[4.25rem] sm:min-h-[4rem]'
+const BAND_HEIGHT_LAST_COMPACT = 'min-h-[5.25rem] sm:min-h-[5rem]'
 
 type FunnelStage = { step: number; title: string; icon: string; description?: string; leak?: string; win?: string }
 
@@ -157,6 +159,7 @@ function VisualFunnel({
   variant,
   activeStep = 0,
   funnelCopy,
+  compact = false,
 }: {
   stages: FunnelStage[]
   counts: number[]
@@ -165,10 +168,14 @@ function VisualFunnel({
   variant: 'broken' | 'ai'
   activeStep?: number
   funnelCopy: FunnelCopy
+  /** Tighter vertical rhythm (mobile card only; desktop uses scaled layout) */
+  compact?: boolean
 }) {
   const isBroken = variant === 'broken'
   const totalLayers = stages.length
   const elaboration = (s: FunnelStage) => (isBroken ? s.leak : s.win)
+  const bandBase = compact ? BAND_HEIGHT_COMPACT : BAND_HEIGHT_CLASS
+  const bandLast = compact ? BAND_HEIGHT_LAST_COMPACT : BAND_HEIGHT_LAST_CLASS
   const lineColor = isBroken
     ? `rgba(${FUNNEL_ACTIVE_DEEP_RGB}, 0.9)`
     : 'rgba(var(--success-rgb), 0.5)'
@@ -177,7 +184,7 @@ function VisualFunnel({
     <div className="w-full flex flex-col items-center relative">
       {/* Channel sources: horizontal scroll on narrow screens so icons never compress */}
       <div
-        className={`w-full flex flex-nowrap sm:flex-wrap justify-start sm:justify-center gap-3 overflow-x-auto overflow-y-visible pb-0.5 pt-1 -mx-1 px-1 scroll-smooth [scrollbar-width:thin] relative ${!isBroken ? 'mb-1' : ''}`}
+        className={`w-full flex flex-nowrap sm:flex-wrap justify-start sm:justify-center ${compact ? 'gap-2' : 'gap-3'} overflow-x-auto overflow-y-visible pb-0.5 ${compact ? 'pt-0.5' : 'pt-1'} -mx-1 px-1 scroll-smooth [scrollbar-width:thin] relative ${!isBroken ? 'mb-1' : ''}`}
         role="list"
         aria-label="Lead sources"
       >
@@ -190,9 +197,12 @@ function VisualFunnel({
               initial={{ opacity: 0, y: -8 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className={`flex flex-col items-center justify-center gap-1.5 rounded-2xl px-3 py-3 min-w-[5.75rem] max-w-[6.5rem] shrink-0 snap-start relative z-10 transition-all backdrop-blur-sm ${chip.shell}`}
+              className={`flex flex-col items-center justify-center ${compact ? 'gap-1 rounded-xl px-2.5 py-2 min-w-[5rem] max-w-[5.75rem]' : 'gap-1.5 rounded-2xl px-3 py-3 min-w-[5.75rem] max-w-[6.5rem]'} shrink-0 snap-start relative z-10 transition-all backdrop-blur-sm ${chip.shell}`}
             >
-              <span className="text-[1.6rem] sm:text-[1.75rem] leading-none select-none inline-flex items-center justify-center min-h-7" aria-hidden>
+              <span
+                className={`${compact ? 'text-[1.35rem] sm:text-[1.5rem] min-h-6' : 'text-[1.6rem] sm:text-[1.75rem] min-h-7'} leading-none select-none inline-flex items-center justify-center`}
+                aria-hidden
+              >
                 {channelIcons[ch.id] ?? ch.icon}
               </span>
               <span
@@ -205,12 +215,14 @@ function VisualFunnel({
         })}
       </div>
 
-      <p className="text-[11px] sm:text-xs text-center text-muted-foreground leading-snug max-w-md mx-auto mt-3 mb-px px-1">
+      <p
+        className={`${compact ? 'text-[10px] sm:text-[11px] mt-2' : 'text-[11px] sm:text-xs mt-3'} text-center text-muted-foreground leading-snug max-w-md mx-auto mb-px px-1`}
+      >
         {funnelCopy.legend}
       </p>
 
       {/* Animated lines: channels flow into Intake */}
-      <div className="w-full h-8 relative flex justify-center pointer-events-none mt-1" aria-hidden>
+      <div className={`w-full ${compact ? 'h-6' : 'h-8'} relative flex justify-center pointer-events-none mt-0.5`} aria-hidden>
         <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
           {[10, 30, 50, 70, 90].map((x, i) => (
             <motion.path
@@ -229,7 +241,7 @@ function VisualFunnel({
       </div>
 
       {/* Column headers: pipeline + delta (stacked on mobile; delta hides here, shown per row on small screens) */}
-      <div className="w-full flex flex-col sm:flex-row sm:items-end gap-1 sm:gap-2 mb-1.5 mt-1">
+      <div className={`w-full flex flex-col sm:flex-row sm:items-end gap-1 sm:gap-2 mb-1 ${compact ? 'mt-0.5' : 'mt-1'}`}>
         <div className="flex-1 min-w-0 pl-1">
           <span className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">{funnelCopy.pipelineLabel}</span>
         </div>
@@ -255,7 +267,7 @@ function VisualFunnel({
           const showSectionBreak = (FUNNEL_SECTION_AT as readonly number[]).includes(i)
           const sectionLabel = showSectionBreak ? funnelSectionLabel(i, funnelCopy) : null
           const isLastTwoTiers = i >= totalLayers - 2
-          const bandHeightClass = isLastTwoTiers ? BAND_HEIGHT_LAST_CLASS : BAND_HEIGHT_CLASS
+          const bandHeightClass = isLastTwoTiers ? bandLast : bandBase
           const isActive = i === activeStep
           const isIntakeBand = isBroken && i === 0
           const isLossBand = isBroken && i > 0
@@ -264,15 +276,15 @@ function VisualFunnel({
             <div key={stage.step} className="flex flex-col" style={{ gap: 0 }}>
               {showSectionBreak && sectionLabel && (
                 <div
-                  className="grid grid-cols-[1fr_auto_1fr] items-center gap-3 w-full py-1.5"
-                  style={{ minHeight: 28 }}
+                  className={`grid grid-cols-[1fr_auto_1fr] items-center w-full ${compact ? 'gap-2 py-1' : 'gap-3 py-1.5'}`}
+                  style={{ minHeight: compact ? 22 : 28 }}
                 >
                   <div
                     className={`h-px w-full ${!isBroken ? 'bg-success/30' : ''}`}
                     style={isBroken ? { background: 'rgba(var(--destructive-rgb), 0.4)' } : {}}
                   />
                   <span
-                    className={`text-xs font-bold uppercase tracking-wider whitespace-nowrap px-3 py-1 rounded-lg border ${
+                    className={`${compact ? 'text-[10px] px-2 py-0.5' : 'text-xs px-3 py-1'} font-bold uppercase tracking-wider whitespace-nowrap rounded-lg border ${
                       isBroken
                         ? 'text-destructive bg-destructive/10 border-destructive/20'
                         : 'text-success bg-success/10 border-success/20'
@@ -288,10 +300,10 @@ function VisualFunnel({
               )}
 
               <motion.div
-                className={`relative flex flex-col sm:flex-row items-stretch gap-1.5 sm:gap-2 overflow-visible ${!isBroken ? 'sm:rounded-xl' : ''}`}
+                className={`relative flex flex-col sm:flex-row items-stretch ${compact ? 'gap-1 sm:gap-1.5' : 'gap-1.5 sm:gap-2'} overflow-visible ${!isBroken ? 'sm:rounded-xl' : ''}`}
               >
                 <motion.div
-                  className={`relative flex-1 min-w-0 flex flex-col items-center justify-center text-center px-2 sm:px-3 py-2 sm:py-0 overflow-hidden ${bandHeightClass} ${displayDrop !== 0 ? 'order-2 sm:order-1' : ''}`}
+                  className={`relative flex-1 min-w-0 flex flex-col items-center justify-center text-center ${compact ? 'px-1.5 sm:px-2 py-1.5 sm:py-0' : 'px-2 sm:px-3 py-2 sm:py-0'} overflow-hidden ${bandHeightClass} ${displayDrop !== 0 ? 'order-2 sm:order-1' : ''}`}
                   style={(() => {
                     let background: string
                     if (isIntakeBand) {
@@ -333,10 +345,12 @@ function VisualFunnel({
                     }
                   })()}
                 >
-                  <div className="flex flex-col sm:flex-row sm:flex-wrap sm:items-center justify-center gap-1 sm:gap-1.5 w-full leading-tight">
-                    <div className="flex items-center justify-center gap-1.5 flex-wrap">
+                  <div
+                    className={`flex flex-col sm:flex-row sm:flex-wrap sm:items-center justify-center w-full leading-tight ${compact ? 'gap-0.5 sm:gap-1' : 'gap-1 sm:gap-1.5'}`}
+                  >
+                    <div className={`flex items-center justify-center flex-wrap ${compact ? 'gap-1' : 'gap-1.5'}`}>
                       <span
-                        className={`w-6 h-6 rounded-lg flex items-center justify-center text-xs font-bold flex-shrink-0 border ${
+                        className={`${compact ? 'w-5 h-5 rounded-md text-[10px]' : 'w-6 h-6 rounded-lg text-xs'} flex items-center justify-center font-bold flex-shrink-0 border ${
                           isIntakeBand
                             ? isActive
                               ? 'bg-accent/20 text-accent border-accent/40'
@@ -351,11 +365,11 @@ function VisualFunnel({
                       >
                         {stage.step}
                       </span>
-                      <span className="text-lg sm:text-base leading-none select-none" aria-hidden>
+                      <span className={`${compact ? 'text-base sm:text-sm' : 'text-lg sm:text-base'} leading-none select-none`} aria-hidden>
                         {stage.icon}
                       </span>
                       <span
-                        className={`font-semibold text-sm sm:text-sm text-left sm:text-center ${
+                        className={`font-semibold ${compact ? 'text-xs sm:text-xs' : 'text-sm sm:text-sm'} text-left sm:text-center ${
                           isIntakeBand ? 'text-foreground' : isLossBand ? 'text-destructive' : 'text-success'
                         }`}
                       >
@@ -367,7 +381,7 @@ function VisualFunnel({
                         value={count}
                         isActive={isActive}
                         suffix=""
-                        className={`text-base sm:text-sm font-mono tabular-nums font-bold ${
+                        className={`${compact ? 'text-sm sm:text-xs' : 'text-base sm:text-sm'} font-mono tabular-nums font-bold ${
                           isIntakeBand
                             ? 'text-accent'
                             : isLossBand
@@ -390,7 +404,7 @@ function VisualFunnel({
                   </div>
                   {elaboration(stage) && (
                     <p
-                      className={`text-[11px] sm:text-xs leading-snug mt-1 max-w-full px-1 font-medium ${
+                      className={`${compact ? 'text-[10px] sm:text-[11px] mt-0.5' : 'text-[11px] sm:text-xs mt-1'} leading-snug max-w-full px-1 font-medium ${
                         isIntakeBand
                           ? 'text-muted-foreground'
                           : isLossBand
@@ -634,7 +648,7 @@ const ClientJourneyDemo = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
-            className="flex justify-center my-8 lg:my-10 lg:hidden"
+            className="flex justify-center my-6 lg:my-10 lg:hidden"
           >
             <div
               role="group"
@@ -707,12 +721,12 @@ const ClientJourneyDemo = () => {
                 transition={{ duration: 0.4 }}
                 className="relative"
               >
-                <div className="relative rounded-2xl sm:rounded-3xl border-2 border-destructive/35 bg-gradient-to-b from-destructive/10 via-surface/95 to-destructive/5 p-4 sm:p-6 overflow-visible shadow-lg shadow-destructive/10 ring-1 ring-destructive/10">
-                  <div className="flex flex-col sm:flex-row sm:relative items-center sm:block mb-4">
-                    <div className="text-center sm:text-center mb-2 sm:mb-0">
+                <div className="relative rounded-2xl sm:rounded-3xl border-2 border-destructive/35 bg-gradient-to-b from-destructive/10 via-surface/95 to-destructive/5 p-3 sm:p-5 overflow-visible shadow-lg shadow-destructive/10 ring-1 ring-destructive/10">
+                  <div className="flex flex-col sm:flex-row sm:relative items-center sm:block mb-3">
+                    <div className="text-center sm:text-center mb-1.5 sm:mb-0">
                       <span className="text-destructive text-sm font-bold">❌ {t.brokenLabel}</span>
                     </div>
-                    <div className="sm:absolute sm:top-4 sm:right-4 px-2.5 py-1 bg-destructive/20 text-destructive text-[10px] font-bold rounded-full border border-destructive/30">
+                    <div className="sm:absolute sm:top-3 sm:right-3 px-2 py-0.5 sm:px-2.5 sm:py-1 bg-destructive/20 text-destructive text-[10px] font-bold rounded-full border border-destructive/30">
                       99 OF 100 LOST
                     </div>
                   </div>
@@ -724,9 +738,10 @@ const ClientJourneyDemo = () => {
                     variant="broken"
                     activeStep={activeFunnelStep}
                     funnelCopy={funnelCopy}
+                    compact
                   />
-                  <div className="mt-4 flex items-center justify-center gap-2 py-3 px-3 sm:px-4 rounded-xl bg-destructive/5 border border-dashed border-destructive/40">
-                    <span className="text-destructive text-xl sm:text-2xl">↻</span>
+                  <div className="mt-3 flex items-center justify-center gap-2 py-2.5 px-3 sm:px-4 rounded-xl bg-destructive/5 border border-dashed border-destructive/40">
+                    <span className="text-destructive text-lg sm:text-xl">↻</span>
                     <span className="text-destructive/80 text-[11px] sm:text-xs font-medium text-center">Cycle breaks. No referrals.</span>
                   </div>
                 </div>
@@ -740,21 +755,21 @@ const ClientJourneyDemo = () => {
                 transition={{ duration: 0.4 }}
                 className="relative"
               >
-                <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl p-4 sm:p-6 shadow-xl shadow-success/5 border border-success/25 bg-gradient-to-b from-success/[0.09] via-surface to-success/[0.03] ring-1 ring-success/10">
+                <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl p-3 sm:p-5 shadow-xl shadow-success/5 border border-success/25 bg-gradient-to-b from-success/[0.09] via-surface to-success/[0.03] ring-1 ring-success/10">
                   {/* Header */}
-                  <div className="relative flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-6">
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-success/30 to-success/10 flex items-center justify-center text-lg shadow-lg shadow-success/20">
+                  <div className="relative flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-4">
+                    <div className="flex items-center gap-2.5">
+                      <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-success/30 to-success/10 flex items-center justify-center text-base shadow-lg shadow-success/20">
                         ✅
                       </div>
                       <div>
-                        <h3 className="font-display text-lg font-bold text-foreground">{t.aiFlowLabel}</h3>
-                        <p className="text-[11px] text-success font-medium tracking-wide">Zero drop</p>
+                        <h3 className="font-display text-base sm:text-lg font-bold text-foreground">{t.aiFlowLabel}</h3>
+                        <p className="text-[10px] sm:text-[11px] text-success font-medium tracking-wide">Zero drop</p>
                       </div>
                     </div>
-                    <div className="flex items-center gap-2 px-3 py-2 rounded-xl bg-success/15 border border-success/25 shadow-inner">
+                    <div className="flex items-center gap-2 px-2.5 py-1.5 sm:px-3 sm:py-2 rounded-xl bg-success/15 border border-success/25 shadow-inner">
                       <span className="w-2 h-2 rounded-full bg-success animate-pulse shadow-lg shadow-success/50" />
-                      <span className="text-xs font-bold text-success tracking-tight">0 DROP · 95 CLOSED</span>
+                      <span className="text-[11px] sm:text-xs font-bold text-success tracking-tight">0 DROP · 95 CLOSED</span>
                     </div>
                   </div>
                   <VisualFunnel
@@ -765,13 +780,14 @@ const ClientJourneyDemo = () => {
                     variant="ai"
                     activeStep={activeFunnelStep}
                     funnelCopy={funnelCopy}
+                    compact
                   />
                   {/* Footer - Referral loop */}
-                  <div className="mt-6 flex items-center justify-center gap-3 py-4 px-4 rounded-2xl bg-gradient-to-r from-success/15 via-success/10 to-success/15 border border-success/20 shadow-inner">
-                    <div className="w-10 h-10 rounded-xl bg-success/20 flex items-center justify-center">
-                      <span className="text-success text-xl animate-pulse">↻</span>
+                  <div className="mt-4 flex items-center justify-center gap-2.5 py-3 px-3 sm:px-4 rounded-2xl bg-gradient-to-r from-success/15 via-success/10 to-success/15 border border-success/20 shadow-inner">
+                    <div className="w-9 h-9 rounded-xl bg-success/20 flex items-center justify-center">
+                      <span className="text-success text-lg animate-pulse">↻</span>
                     </div>
-                    <span className="text-sm font-semibold text-foreground">Referrals → Leads → Loop.</span>
+                    <span className="text-xs sm:text-sm font-semibold text-foreground">Referrals → Leads → Loop.</span>
                   </div>
                 </div>
               </motion.div>

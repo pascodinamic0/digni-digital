@@ -22,7 +22,7 @@ export const aiReceptionistExplainerByLanguage: Partial<
       'A quick walkthrough: what drives leads away, overloads your team, and blocks growth, and why the right infrastructure matters more than working harder.',
   },
   fr: {
-    src: '/ai-employee-explainer.mp4',
+    src: '/Entreprises___Opérations_Défaillantes.mp4',
     badge: 'Pourquoi ça casse',
     title: 'Entreprises et opérations défaillantes',
     description:
