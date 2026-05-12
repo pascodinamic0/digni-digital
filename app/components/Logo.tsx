@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import { Link } from '@/i18n/navigation'
+import HeaderNavLink from '@/app/components/HeaderNavLink'
 import { BRAND_WORDMARK_PATH } from '@/lib/site-assets'
 
 const WORDMARK_WIDTH = 920
@@ -35,12 +35,12 @@ export default function Logo({
   )
 
   return (
-    <Link
+    <HeaderNavLink
       href={href}
       className={`flex items-center gap-3 group transition-colors duration-300 ${className}`}
       aria-label={label}
     >
       {content}
-    </Link>
+    </HeaderNavLink>
   )
 }
