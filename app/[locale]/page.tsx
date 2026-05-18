@@ -12,6 +12,7 @@ import { useTheme } from '@/app/components/ThemeProvider'
 import { getBookingLinkProps } from '@/app/config/cta.config'
 import { useLanguage, useLocale } from '@/app/context/LocaleContext'
 import { translations } from '@/app/config/translations'
+import { localeToHreflang, type Locale } from '@/i18n/routing'
 import { formatMissedLeadsUsdStat, MISSED_LEADS_USD } from '@/lib/formatMissedLeadsUsdStat'
 
 const GlobalPresenceMap = dynamic(() => import('@/app/components/GlobalPresenceMap'), {
@@ -182,7 +183,10 @@ function MissionValues() {
 // Our 2026 Commitment Section
 function Commitment2026() {
   const language = useLanguage()
+  const locale = useLocale()
   const c = translations[language].home.commitment2026
+  const intlLocale = locale in localeToHreflang ? localeToHreflang[locale as Locale] : 'en-US'
+  const formatCommitmentStat = (n: number) => new Intl.NumberFormat(intlLocale).format(n)
 
   return (
     <AnimatedSection id="our-2026-commitment" className="py-24 md:py-28 relative overflow-hidden">
@@ -216,7 +220,9 @@ function Commitment2026() {
                 💼
               </div>
               <div className="flex-1">
-                <div className="font-display text-5xl md:text-6xl font-bold text-accent mb-1">100</div>
+                <div className="font-display text-5xl md:text-6xl font-bold text-accent mb-1">
+                  {formatCommitmentStat(10)}
+                </div>
                 <h3 className="font-display text-lg font-bold text-text mb-2">
                   {c.pillar1Title}
                 </h3>
@@ -237,7 +243,9 @@ function Commitment2026() {
                 🎓
               </div>
               <div className="flex-1">
-                <div className="font-display text-5xl md:text-6xl font-bold text-success mb-1">10,000</div>
+                <div className="font-display text-5xl md:text-6xl font-bold text-success mb-1">
+                  {formatCommitmentStat(100)}
+                </div>
                 <h3 className="font-display text-lg font-bold text-text mb-2">
                   {c.pillar2Title}
                 </h3>
