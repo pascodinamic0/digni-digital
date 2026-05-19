@@ -702,19 +702,17 @@ html:not([data-theme="light"]) footer#contact input#footer-newsletter-email:-web
 .btn-primary::before, .btn-secondary::before, .btn-outline::before {
   content: '';
   position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0;
-  height: 0;
+  inset: 0;
   background: rgba(255, 255, 255, 0.1);
-  border-radius: var(--radius-full);
-  transform: translate(-50%, -50%);
-  transition: width 0.6s ease, height 0.6s ease;
+  border-radius: inherit;
+  transform: scale(0);
+  transform-origin: center;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
 }
 
 .btn-primary:hover::before, .btn-secondary:hover::before, .btn-outline:hover::before {
-  width: 300px;
-  height: 300px;
+  transform: scale(1);
 }
 
 /* Smooth scroll behavior */

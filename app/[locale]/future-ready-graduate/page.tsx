@@ -10,6 +10,7 @@ import ScrollIndicator from '@/app/components/ScrollIndicator'
 import VideoModal from '@/app/components/VideoModal'
 import VideoThumbnail from '@/app/components/VideoThumbnail'
 import DemoPresentationDownload from '@/app/components/DemoPresentationDownload'
+import ServiceAssessmentLink from '@/app/components/ServiceAssessmentLink'
 import EarlyAccessFormModal from '@/app/components/EarlyAccessFormModal'
 import StripeCheckoutButton from '@/app/components/StripeCheckoutButton'
 import { getBookingLinkProps } from '@/app/config/cta.config'
@@ -969,6 +970,7 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
               </a>
               <DemoPresentationDownload service="futureReadyGraduate" variant="hero" />
             </div>
+            <ServiceAssessmentLink serviceId="future-ready" />
           </motion.div>
         </PremiumHeroParallax>
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">

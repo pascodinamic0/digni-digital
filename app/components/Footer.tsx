@@ -26,8 +26,11 @@ export default function Footer() {
   const links = {
     services: [
       { name: t.nav.aiEmployee, href: '/ai-receptionist' },
+      { name: t.footer.aiEmployeeFitCheck, href: '/ai-receptionist/assessment', sub: true },
       { name: t.nav.futureReadyGraduate, href: '/future-ready-graduate' },
+      { name: t.footer.futureReadyFitCheck, href: '/future-ready-graduate/assessment', sub: true },
       { name: t.nav.agenticSoftwares, href: '/agentic-softwares' },
+      { name: t.footer.agenticFitCheck, href: '/agentic-softwares/assessment', sub: true },
     ],
     resources: [
       { name: t.nav.caseStudies, href: '/case-studies' },
@@ -180,10 +183,14 @@ export default function Footer() {
                   </h4>
                   <ul className="space-y-0.5 sm:space-y-1">
                     {items.map((link) => (
-                      <li key={link.href}>
+                      <li key={`${link.href}-${link.name}`}>
                         <Link
                           href={link.href}
-                          className={footerNavLinkClass}
+                          className={`${footerNavLinkClass}${
+                            'sub' in link && link.sub
+                              ? ' text-xs text-muted/85 pl-4 sm:pl-5 py-2 sm:py-1.5'
+                              : ''
+                          }`}
                           {...(link.href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                         >
                           {link.name}

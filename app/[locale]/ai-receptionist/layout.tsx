@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import AiEmployeeMobileAppBanner from '@/app/components/AiEmployeeMobileAppBanner'
+import { AIReceptionistChrome } from './ai-receptionist-chrome'
 
 type MetadataLanguage = 'en' | 'fr' | 'es' | 'de' | 'ar'
 
@@ -49,10 +49,5 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
  * of the AI Employee page (last content block before the site footer).
  */
 export default function AIReceptionistLayout({ children }: { children: React.ReactNode }) {
-  return (
-    <>
-      {children}
-      <AiEmployeeMobileAppBanner />
-    </>
-  )
+  return <AIReceptionistChrome>{children}</AIReceptionistChrome>
 }
