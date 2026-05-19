@@ -14,8 +14,11 @@ export default function AIReceptionistFooter() {
   const links = {
     services: [
       { name: t.nav.aiEmployee, href: '/ai-receptionist' },
+      { name: t.footer.aiEmployeeFitCheck, href: '/ai-receptionist/assessment', sub: true },
       { name: t.nav.futureReadyGraduate, href: '/future-ready-graduate' },
+      { name: t.footer.futureReadyFitCheck, href: '/future-ready-graduate/assessment', sub: true },
       { name: t.nav.agenticSoftwares, href: '/agentic-softwares' },
+      { name: t.footer.agenticFitCheck, href: '/agentic-softwares/assessment', sub: true },
     ],
     resources: [
       { name: t.nav.caseStudies, href: '/case-studies' },
@@ -63,8 +66,13 @@ export default function AIReceptionistFooter() {
               <h4 className="font-display font-semibold mb-4">{t.footer.services}</h4>
               <ul className="space-y-3">
                 {links.services.map((link) => (
-                  <li key={link.name}>
-                    <Link href={link.href} className="text-muted hover:text-accent transition-colors text-sm">
+                  <li key={`${link.href}-${link.name}`}>
+                    <Link
+                      href={link.href}
+                      className={`text-muted hover:text-accent transition-colors ${
+                        'sub' in link && link.sub ? 'text-xs text-muted/85 pl-3' : 'text-sm'
+                      }`}
+                    >
                       {link.name}
                     </Link>
                   </li>

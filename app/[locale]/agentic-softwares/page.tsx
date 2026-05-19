@@ -7,6 +7,7 @@ import AnimatedSection from '@/app/components/AnimatedSection'
 import PremiumHeroBackdrop from '@/app/components/PremiumHeroBackdrop'
 import PremiumHeroParallax from '@/app/components/PremiumHeroParallax'
 import ScrollIndicator from '@/app/components/ScrollIndicator'
+import ServiceAssessmentLink from '@/app/components/ServiceAssessmentLink'
 import StripeCheckoutButton from '@/app/components/StripeCheckoutButton'
 import { getCtaButtonText, getBookingLinkProps } from '@/app/config/cta.config'
 import { useLanguage } from '@/app/context/LocaleContext'
@@ -1097,6 +1098,7 @@ export default function AgenticSoftwaresPage({ params, searchParams }: AgenticSo
                 {copy.heroCta}
               </a>
             </motion.div>
+            <ServiceAssessmentLink serviceId="agentic-softwares" />
           </motion.div>
         </PremiumHeroParallax>
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">

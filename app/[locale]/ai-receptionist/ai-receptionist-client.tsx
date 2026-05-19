@@ -19,6 +19,7 @@ import ContactDirectoryDemo from '@/app/components/ContactDirectoryDemo'
 import AiReceptionistExplainerVideo from '@/app/components/AiReceptionistExplainerVideo'
 import BusinessTimeline from '@/app/components/BusinessTimeline'
 import DemoPresentationDownload from '@/app/components/DemoPresentationDownload'
+import ServiceAssessmentLink from '@/app/components/ServiceAssessmentLink'
 import StripeCheckoutButton from '@/app/components/StripeCheckoutButton'
 import { getServicePageJsonLd, jsonLdScriptProps } from '@/lib/agent-readiness'
 import { AI_EMPLOYEE_SETUP_PROMO_END_MS, isAiEmployeeSetupPromoActive } from '@/lib/ai-employee-setup-promo'
@@ -389,6 +390,7 @@ export function AIReceptionistClient({ params, searchParams, showTaskQueueDemo }
               <DemoPresentationDownload service="aiEmployee" variant="hero" />
             </div>
             <p className="text-muted/60 text-sm mt-4">{t.hero.footnote}</p>
+            <ServiceAssessmentLink serviceId="ai-employee" className="mt-1" />
           </motion.div>
         </PremiumHeroParallax>
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">

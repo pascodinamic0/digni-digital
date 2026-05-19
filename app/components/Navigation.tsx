@@ -10,6 +10,8 @@ import { translations } from '@/app/config/translations'
 import ThemeToggle from './ThemeToggle'
 import LanguageToggler from './LanguageToggler'
 import Logo from './Logo'
+import ServiceAssessmentLink from './ServiceAssessmentLink'
+import type { AssessmentServiceId } from '@/lib/assessments/types'
 
 export default function Navigation() {
   const pathname = usePathname()
@@ -71,10 +73,30 @@ export default function Navigation() {
     { name: t.nav.contact, href: '/contact' },
   ]
 
-  const solutionLinks = [
-    { name: t.nav.aiEmployee, href: '/ai-receptionist', description: t.nav.aiEmployeeDesc },
-    { name: t.nav.futureReadyGraduate, href: '/future-ready-graduate', description: t.nav.futureReadyGraduateDesc },
-    { name: t.nav.agenticSoftwares, href: '/agentic-softwares', description: t.nav.agenticSoftwaresDesc },
+  const solutionLinks: {
+    name: string
+    href: string
+    description: string
+    serviceId: AssessmentServiceId
+  }[] = [
+    {
+      name: t.nav.aiEmployee,
+      href: '/ai-receptionist',
+      description: t.nav.aiEmployeeDesc,
+      serviceId: 'ai-employee',
+    },
+    {
+      name: t.nav.futureReadyGraduate,
+      href: '/future-ready-graduate',
+      description: t.nav.futureReadyGraduateDesc,
+      serviceId: 'future-ready',
+    },
+    {
+      name: t.nav.agenticSoftwares,
+      href: '/agentic-softwares',
+      description: t.nav.agenticSoftwaresDesc,
+      serviceId: 'agentic-softwares',
+    },
   ]
 
   return (
@@ -143,19 +165,30 @@ export default function Navigation() {
                 >
                   <div className="p-2">
                     {solutionLinks.map((solution) => (
-                      <HeaderNavLink
+                      <div
                         key={solution.href}
-                        href={solution.href}
-                        onClick={() => setSolutionsOpen(false)}
-                        className="block p-4 rounded-lg hover:bg-foreground/5 transition-colors group"
+                        className="rounded-lg hover:bg-foreground/5 transition-colors group"
                       >
-                        <div className="font-medium text-text group-hover:text-accent transition-colors">
-                          {solution.name}
+                        <HeaderNavLink
+                          href={solution.href}
+                          onClick={() => setSolutionsOpen(false)}
+                          className="block p-4 pb-2 rounded-lg"
+                        >
+                          <div className="font-medium text-text group-hover:text-accent transition-colors">
+                            {solution.name}
+                          </div>
+                          <div className="text-sm text-muted mt-1">
+                            {solution.description}
+                          </div>
+                        </HeaderNavLink>
+                        <div className="px-4 pb-3 -mt-1">
+                          <ServiceAssessmentLink
+                            serviceId={solution.serviceId}
+                            variant="compact"
+                            onClick={() => setSolutionsOpen(false)}
+                          />
                         </div>
-                        <div className="text-sm text-muted mt-1">
-                          {solution.description}
-                        </div>
-                      </HeaderNavLink>
+                      </div>
                     ))}
                   </div>
                 </motion.div>
@@ -230,14 +263,22 @@ export default function Navigation() {
                 {t.nav.solutions}
               </HeaderNavLink>
               {solutionLinks.map((solution) => (
-                <HeaderNavLink
-                  key={solution.href}
-                  href={solution.href}
-                  className="block py-2 pl-4 text-sm text-text hover:text-accent transition-colors"
-                  onClick={() => setMobileOpen(false)}
-                >
-                  {solution.name}
-                </HeaderNavLink>
+                <div key={solution.href} className="pl-4">
+                  <HeaderNavLink
+                    href={solution.href}
+                    className="block py-2 text-sm text-text hover:text-accent transition-colors"
+                    onClick={() => setMobileOpen(false)}
+                  >
+                    {solution.name}
+                  </HeaderNavLink>
+                  <div className="pb-2 pl-3">
+                    <ServiceAssessmentLink
+                      serviceId={solution.serviceId}
+                      variant="compact"
+                      onClick={() => setMobileOpen(false)}
+                    />
+                  </div>
+                </div>
               ))}
             </div>
 

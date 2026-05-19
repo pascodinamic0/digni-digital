@@ -480,6 +480,8 @@ function buildTranslations(): Record<Language, TranslationKeys> {
       futureReadyGraduateDesc: 'Transform students into job-ready professionals. Personalized guided learning that brings out entrepreneurial talents.',
       agenticSoftwares: 'Agentic Softwares',
       agenticSoftwaresDesc: 'Custom software with integrated AI for niche-specific problems',
+      fitCheck: '2-min fit check',
+      assessmentPrompt: 'Not sure yet? Take the 2-minute fit check',
     },
     cta: {
       getStarted: 'Get Started',
@@ -546,6 +548,9 @@ function buildTranslations(): Record<Language, TranslationKeys> {
       privacyPolicy: 'Privacy Policy',
       termsOfService: 'Terms of Service',
       cookiePolicy: 'Cookie Policy',
+      aiEmployeeFitCheck: 'AI Employee fit check',
+      futureReadyFitCheck: 'Future-Ready fit check',
+      agenticFitCheck: 'Agentic Softwares fit check',
     },
   }
 
@@ -564,6 +569,8 @@ function buildTranslations(): Record<Language, TranslationKeys> {
       futureReadyGraduateDesc: 'Transformez les étudiants en professionnels prêts pour l\'emploi. Apprentissage guidé personnalisé qui révèle les talents entrepreneuriaux.',
       agenticSoftwares: 'Agentic Softwares',
       agenticSoftwaresDesc: 'Logiciels sur mesure avec IA intégrée pour des besoins de niche',
+      fitCheck: 'Test de compatibilité (2 min)',
+      assessmentPrompt: 'Pas encore sûr ? Faites le test de compatibilité en 2 minutes',
     },
     cta: {
       getStarted: 'Commencer',
@@ -630,6 +637,9 @@ function buildTranslations(): Record<Language, TranslationKeys> {
       privacyPolicy: 'Politique de confidentialité',
       termsOfService: 'Conditions d\'utilisation',
       cookiePolicy: 'Politique des cookies',
+      aiEmployeeFitCheck: 'Test Employé IA',
+      futureReadyFitCheck: 'Test Future-Ready',
+      agenticFitCheck: 'Test Agentic Softwares',
     },
   }
 
@@ -648,6 +658,8 @@ function buildTranslations(): Record<Language, TranslationKeys> {
       futureReadyGraduateDesc: 'Machen Sie Studenten zu arbeitsbereiten Fachleuten. Personalisiertes geführtes Lernen, das unternehmerische Talente fördert.',
       agenticSoftwares: 'Agentic Softwares',
       agenticSoftwaresDesc: 'Maßgeschneiderte KI-Software für Nischenprobleme',
+      fitCheck: '2-Min.-Passungstest',
+      assessmentPrompt: 'Noch unsicher? Machen Sie den 2-Minuten-Passungstest',
     },
     cta: {
       getStarted: 'Loslegen',
@@ -714,6 +726,9 @@ function buildTranslations(): Record<Language, TranslationKeys> {
       privacyPolicy: 'Datenschutz',
       termsOfService: 'Nutzungsbedingungen',
       cookiePolicy: 'Cookie-Richtlinie',
+      aiEmployeeFitCheck: 'KI-Mitarbeiter Passungstest',
+      futureReadyFitCheck: 'Future-Ready Passungstest',
+      agenticFitCheck: 'Agentic Softwares Passungstest',
     },
   }
 
@@ -732,6 +747,8 @@ function buildTranslations(): Record<Language, TranslationKeys> {
       futureReadyGraduateDesc: 'Transforme estudiantes en profesionales listos para el empleo. Aprendizaje guiado personalizado que desarrolla talentos emprendedores.',
       agenticSoftwares: 'Agentic Softwares',
       agenticSoftwaresDesc: 'Software a medida con IA integrada para problemas de nicho',
+      fitCheck: 'Test de compatibilidad (2 min)',
+      assessmentPrompt: '¿Aún no está seguro? Haga el test de compatibilidad de 2 minutos',
     },
     cta: {
       getStarted: 'Empezar',
@@ -797,6 +814,9 @@ function buildTranslations(): Record<Language, TranslationKeys> {
       privacyPolicy: 'Política de privacidad',
       termsOfService: 'Términos de servicio',
       cookiePolicy: 'Política de cookies',
+      aiEmployeeFitCheck: 'Test Empleado IA',
+      futureReadyFitCheck: 'Test Future-Ready',
+      agenticFitCheck: 'Test Agentic Softwares',
     },
   }
 
@@ -815,6 +835,8 @@ function buildTranslations(): Record<Language, TranslationKeys> {
       futureReadyGraduateDesc: 'حول الطلاب إلى محترفين جاهزين للعمل. تعلم موجّه شخصي يكشف المواهب الريادية.',
       agenticSoftwares: 'Agentic Softwares',
       agenticSoftwaresDesc: 'برمجيات مخصّصة بذكاء اصطناعي مدمج للمشكلات المتخصصة',
+      fitCheck: 'اختبار ملاءمة (دقيقتان)',
+      assessmentPrompt: 'لست متأكداً بعد؟ جرّب اختبار الملاءمة في دقيقتين',
     },
     cta: {
       getStarted: 'ابدأ الآن',
@@ -881,6 +903,9 @@ function buildTranslations(): Record<Language, TranslationKeys> {
       privacyPolicy: 'سياسة الخصوصية',
       termsOfService: 'شروط الخدمة',
       cookiePolicy: 'سياسة ملفات تعريف الارتباط',
+      aiEmployeeFitCheck: 'اختبار ملاءمة الموظف الذكي',
+      futureReadyFitCheck: 'اختبار ملاءمة Future-Ready',
+      agenticFitCheck: 'اختبار ملاءمة Agentic Softwares',
     },
   }
 
