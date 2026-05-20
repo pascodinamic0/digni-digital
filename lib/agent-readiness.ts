@@ -255,6 +255,7 @@ export const agentServices: AgentService[] = [
       },
     ],
     proof: [
+      { metric: '76+', description: 'School workflows in one platform for AMS (Academic Management System)' },
       { metric: '90%', description: 'Faster proposal creation reported for Proposal Agent' },
       { metric: '360 degrees', description: 'Operations, bookings, and access in one dashboard for Kabinda Lodge' },
       { metric: 'Live', description: 'Production systems shipped for listed internal and client projects' },
@@ -264,6 +265,31 @@ export const agentServices: AgentService[] = [
 ]
 
 export const agentProducts = [
+  {
+    id: 'ams',
+    name: 'AMS (Academic Management System)',
+    url: 'https://ams-xi-two.vercel.app/',
+    applicationCategory: 'EducationalApplication',
+    operatingSystem: 'Web',
+    status: 'Live',
+    description:
+      'School management system for African schools — academics, fees, invoices, payments, payroll, attendance, parent and student portals, analytics, and branded school websites in one platform.',
+    features: [
+      'Student and class management',
+      'Fee structure, invoices, and payments',
+      'Attendance, gradebook, and report cards',
+      'Parent and student portals',
+      'Library, transport, events, and staff HR',
+      'Analytics dashboards and school websites',
+    ],
+    offers: [],
+    proof: [
+      { metric: '8', description: 'User roles from platform admin to parents and students' },
+      { metric: '76+', description: 'Integrated pages and workflows' },
+      { metric: '1', description: 'Unified platform for academics, finance, and operations' },
+    ],
+    lastUpdated: AGENT_DATA_LAST_UPDATED,
+  },
   {
     id: 'proposal-agent',
     name: 'ProposalAgent',
@@ -371,6 +397,26 @@ export const agentCaseStudies = [
     ],
     testimonial:
       'Our agents can now create professional proposals in minutes instead of hours. This has been a game-changer for our competitive advantage.',
+    lastUpdated: AGENT_DATA_LAST_UPDATED,
+  },
+  {
+    id: 'ams',
+    name: 'AMS (Academic Management System)',
+    client: 'AMS',
+    industry: 'Education',
+    location: 'Africa',
+    url: 'https://ams-xi-two.vercel.app/',
+    challenge:
+      'Schools needed one system to manage academics, fees, payments, staff, and parent communication instead of spreadsheets and disconnected tools.',
+    solution:
+      'A full school operating system with 8 role-based portals, finance and payroll, attendance and grading, real-time messaging, analytics, and branded school websites with online admissions.',
+    results: [
+      { metric: '8', description: 'Stakeholder roles from administrators to parents and students' },
+      { metric: '76+', description: 'Pages and flows in a unified platform' },
+      { metric: 'Live', description: 'Production school management system' },
+    ],
+    testimonial:
+      'The operating system for schools — manage, track, and automate the entire educational ecosystem from one dashboard.',
     lastUpdated: AGENT_DATA_LAST_UPDATED,
   },
   {
