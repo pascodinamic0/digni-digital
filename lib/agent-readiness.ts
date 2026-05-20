@@ -271,7 +271,7 @@ export const agentProducts = [
     url: 'https://ams-xi-two.vercel.app/',
     applicationCategory: 'EducationalApplication',
     operatingSystem: 'Web',
-    status: 'Live',
+    status: 'Beta',
     description:
       'School management system for African schools — academics, fees, invoices, payments, payroll, attendance, parent and student portals, analytics, and branded school websites in one platform.',
     features: [
@@ -296,7 +296,7 @@ export const agentProducts = [
     url: localizedUrl(DEFAULT_LOCALE, '/products#proposal-agent'),
     applicationCategory: 'BusinessApplication',
     operatingSystem: 'Web',
-    status: 'Live',
+    status: 'Beta',
     description: 'Voice-to-proposal software that structures spoken project notes into professional proposals.',
     features: [
       'Voice-to-text conversion',
