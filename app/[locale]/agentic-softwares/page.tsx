@@ -256,6 +256,9 @@ const agenticInlineCopy = {
     'AI creates proposals. Minutes, not hours.': 'L IA cree des propositions. En minutes, pas en heures.',
     'Business Automation': 'Automatisation business',
     'Live': 'Live',
+    'Run your entire school from one platform — academics, fees, invoices, payments, attendance, grades, parent and student portals, and branded school websites. Built for African schools with 8 roles and 76+ workflows.':
+      'Pilotez toute votre ecole depuis une seule plateforme : scolarite, frais, factures, paiements, presences, notes, portails parents et eleves, et sites web de l ecole. Concu pour les ecoles africaines avec 8 roles et 76+ parcours.',
+    'Education': 'Éducation',
     'Project management. AI insights. Team collaboration.': 'Gestion de projet. Insights IA. Collaboration equipe.',
     'Productivity': 'Productivite',
     'Beta': 'Beta',
@@ -428,6 +431,12 @@ const localizeAgentic = (language: string, text: string) => {
 const agenticSoftwaresCollections = {
   en: {
     apps: [
+      {
+        description:
+          'Run your entire school from one platform — academics, fees, invoices, payments, attendance, grades, parent and student portals, and branded school websites. Built for African schools with 8 roles and 76+ workflows.',
+        category: 'Education',
+        status: 'Live',
+      },
       { description: 'AI creates proposals. Minutes, not hours.', category: 'Business Automation', status: 'Live' },
       { description: 'Project management. AI insights. Team collaboration.', category: 'Productivity', status: 'Beta' },
       {
@@ -516,6 +525,12 @@ const agenticSoftwaresCollections = {
   },
   fr: {
     apps: [
+      {
+        description:
+          'Pilotez toute votre école depuis une seule plateforme — scolarité, frais, factures, paiements, présences, notes, portails parents et élèves, et sites web de l’école. Conçu pour les écoles africaines avec 8 rôles et 76+ parcours.',
+        category: 'Éducation',
+        status: 'En ligne',
+      },
       { description: 'L’IA crée des propositions. En minutes, pas en heures.', category: 'Automatisation business', status: 'En ligne' },
       { description: 'Gestion de projet. Insights IA. Collaboration d’équipe.', category: 'Productivité', status: 'Beta' },
       {
@@ -604,6 +619,12 @@ const agenticSoftwaresCollections = {
   },
   es: {
     apps: [
+      {
+        description:
+          'Gestiona toda tu escuela desde una sola plataforma: académico, cuotas, facturas, pagos, asistencia, calificaciones, portales para padres y estudiantes, y sitios web de la escuela. Diseñado para escuelas africanas con 8 roles y más de 76 flujos.',
+        category: 'Educación',
+        status: 'En vivo',
+      },
       { description: 'La IA crea propuestas. En minutos, no horas.', category: 'Automatización empresarial', status: 'En vivo' },
       { description: 'Gestión de proyectos. Insights de IA. Colaboración de equipo.', category: 'Productividad', status: 'Beta' },
       {
@@ -692,6 +713,12 @@ const agenticSoftwaresCollections = {
   },
   de: {
     apps: [
+      {
+        description:
+          'Führen Sie Ihre gesamte Schule von einer Plattform aus — Unterricht, Gebühren, Rechnungen, Zahlungen, Anwesenheit, Noten, Eltern- und Schülerportale sowie gebrandete Schulwebsites. Entwickelt für afrikanische Schulen mit 8 Rollen und 76+ Workflows.',
+        category: 'Bildung',
+        status: 'Live',
+      },
       { description: 'KI erstellt Angebote. In Minuten, nicht Stunden.', category: 'Geschäftsautomatisierung', status: 'Live' },
       { description: 'Projektmanagement. KI-Insights. Teamzusammenarbeit.', category: 'Produktivität', status: 'Beta' },
       {
@@ -780,6 +807,12 @@ const agenticSoftwaresCollections = {
   },
   ar: {
     apps: [
+      {
+        description:
+          'أدر مدرستك بالكامل من منصة واحدة — أكاديمي، الرسوم، الفواتير، المدفوعات، الحضور، الدرجات، بوابات أولياء الأمور والطلاب، ومواقع المدرسة. مبني للمدارس الأفريقية مع 8 أدوار وأكثر من 76 مسار عمل.',
+        category: 'التعليم',
+        status: 'مباشر',
+      },
       { description: 'الذكاء الاصطناعي ينشئ العروض. في دقائق، لا ساعات.', category: 'أتمتة الأعمال', status: 'مباشر' },
       { description: 'إدارة مشاريع. رؤى ذكاء اصطناعي. تعاون الفريق.', category: 'الإنتاجية', status: 'Beta' },
       {
@@ -876,6 +909,18 @@ export default function AgenticSoftwaresPage({ params, searchParams }: AgenticSo
   const cta = getCtaButtonText(language)
   const pageJsonLd = getServicePageJsonLd('agentic-softwares', locale)
   const ourApps = [
+    {
+      title: 'AMS',
+      description: localizeAgentic(
+        language,
+        'Run your entire school from one platform — academics, fees, invoices, payments, attendance, grades, parent and student portals, and branded school websites. Built for African schools with 8 roles and 76+ workflows.'
+      ),
+      category: localizeAgentic(language, 'Education'),
+      status: localizeAgentic(language, 'Live'),
+      link: 'https://ams-xi-two.vercel.app/',
+      tech: ['Next.js', 'Supabase', 'Stripe', 'Real-time messaging'],
+      icon: '🏫',
+    },
     {
       title: 'Proposal Agent',
       description: localizeAgentic(language, 'AI creates proposals. Minutes, not hours.'),
