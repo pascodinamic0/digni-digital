@@ -2238,7 +2238,9 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     title: '100 Leads In.',
     subtitle: 'Then 99 Leak—or 95 Close.',
     subtext:
-      'Two funnels track one batch from Paid Ads, Website, Instagram, WhatsApp, and Phone. Each step’s big number is how many are still in your pipeline; red is who you lost right there. Watch it play step-by-step, or switch The Leak vs The Loop.',
+      'Two funnels track one batch from Paid Ads, Website, Instagram, WhatsApp, and Phone. Each step’s big number is how many are still in your pipeline; red is who you lost right there.',
+    readGuide:
+      'Watch it animate step-by-step below, or switch The Leak (left) vs The Loop (right). Same 100 leads throughout—nothing new is added mid-funnel.',
     brokenLabel: 'The Leak',
     aiFlowLabel: 'The Loop',
     funnelLegend: 'Same 100-lead batch throughout · big number = still in pipeline after this step',
@@ -2283,7 +2285,9 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     title: '100 leads entrent.',
     subtitle: 'Puis 99 perdus—ou 95 conclus.',
     subtext:
-      'Deux embudos suivent un même lot (annonces, site, Instagram, WhatsApp, téléphone). À chaque étape, le grand chiffre = combien sont encore dans votre pipeline ; le rouge = ce que vous perdez sur l’étape. Suivez l’animation ou basculez La fuite / La boucle.',
+      'Deux embudos suivent un même lot (annonces, site, Instagram, WhatsApp, téléphone). À chaque étape, le grand chiffre = combien sont encore dans votre pipeline ; le rouge = ce que vous perdez sur l’étape.',
+    readGuide:
+      'L’animation défile étape par étape ci-dessous, ou basculez La fuite (gauche) / La boucle (droite). Les mêmes 100 leads du début à la fin.',
     brokenLabel: 'La fuite',
     aiFlowLabel: 'La boucle',
     funnelLegend: 'Même lot de 100 leads · grand chiffre = encore dans le pipeline après cette étape',
@@ -2326,9 +2330,11 @@ function buildTranslations(): Record<Language, TranslationKeys> {
   const clientJourneyAr: ClientJourneyTranslations = {
     badge: 'مسار تفاعلي · نفس 100 عميل محتمل',
     title: '100 يدخلون.',
-    subtitle: 'ثم 99 يضيعون—or 95 يُغلقون.',
+    subtitle: 'ثم 99 يضيعون أو 95 يُغلقون.',
     subtext:
-      'مساران يتتبعان دفعة واحدة (إعلانات، موقع، إنستغرام، واتساب، هاتف). في كل خطوة، الرقم الكبير = من ما زال في مسارك؛ الأحمر = من فُقد في تلك الخطوة. شاهد التشغيل التلقائي أو قارن التسرب مقابل الحلقة.',
+      'مساران يتتبعان دفعة واحدة (إعلانات، موقع، إنستغرام، واتساب، هاتف). في كل خطوة، الرقم الكبير = من ما زال في مسارك؛ الأحمر = من فُقد في تلك الخطوة.',
+    readGuide:
+      'شاهد الحركة خطوة بخطوة أدناه، أو قارن التسرب (يسار) والحلقة (يمين). نفس الـ100 من البداية للنهاية.',
     brokenLabel: 'التسرب',
     aiFlowLabel: 'الحلقة',
     funnelLegend: 'نفس الدفعة من 100 · الرقم الكبير = ما زال في المسار بعد هذه الخطوة',
@@ -2373,7 +2379,9 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     title: '100 Leads kommen rein.',
     subtitle: 'Dann 99 verloren—oder 95 Abschluss.',
     subtext:
-      'Zwei Trichter verfolgen eine Charge (Anzeigen, Website, Instagram, WhatsApp, Telefon). Pro Stufe zeigt die große Zahl, wie viele noch in der Pipeline sind; Rot = Verlust in genau diesem Schritt. Animation abspielen oder Leak vs. Schleife umschalten.',
+      'Zwei Trichter verfolgen eine Charge (Anzeigen, Website, Instagram, WhatsApp, Telefon). Pro Stufe zeigt die große Zahl, wie viele noch in der Pipeline sind; Rot = Verlust in genau diesem Schritt.',
+    readGuide:
+      'Unten läuft die Animation Schritt für Schritt, oder Leak (links) vs. Schleife (rechts) umschalten. Dieselben 100 Leads von Anfang bis Ende.',
     brokenLabel: 'Der Verlust',
     aiFlowLabel: 'Die Schleife',
     funnelLegend: 'Dieselbe 100er-Charge · große Zahl = noch in der Pipeline nach dieser Stufe',
@@ -2418,7 +2426,9 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     title: 'Entran 100 leads.',
     subtitle: 'Luego 99 se pierden—o 95 cierran.',
     subtext:
-      'Dos embudos siguen un mismo lote (anuncios, web, Instagram, WhatsApp, teléfono). En cada paso, el número grande = cuántos siguen en tu pipeline; lo rojo = lo que perdiste ahí. Mira la animación o cambia La fuga / El bucle.',
+      'Dos embudos siguen un mismo lote (anuncios, web, Instagram, WhatsApp, teléfono). En cada paso, el número grande = cuántos siguen en tu pipeline; lo rojo = lo que perdiste ahí.',
+    readGuide:
+      'Mira la animación paso a paso abajo, o cambia La fuga (izquierda) / El bucle (derecha). Los mismos 100 leads de principio a fin.',
     brokenLabel: 'La fuga',
     aiFlowLabel: 'El bucle',
     funnelLegend: 'Mismo lote de 100 · número grande = aún en pipeline tras este paso',

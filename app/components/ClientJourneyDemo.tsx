@@ -641,6 +641,15 @@ const ClientJourneyDemo = () => {
           >
             {t.subtext}
           </motion.p>
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.25 }}
+            className="mt-4 text-sm text-text/85 leading-relaxed rounded-xl border border-border/70 bg-surface/60 px-4 py-3"
+          >
+            {t.readGuide}
+          </motion.p>
 
           {/* Toggle - Mobile/Tablet (switch between Broken / AI Flow) */}
           <motion.div
