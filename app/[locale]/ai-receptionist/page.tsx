@@ -1,8 +1,8 @@
 import { AIReceptionistClient } from './ai-receptionist-client'
 import { getSiteFeatureFlagEnabled, SITE_FEATURE_FLAG_KEYS } from '@/lib/site-feature-flags'
 
-/** Always read latest feature flags (admin toggles) instead of a cached static render. */
-export const dynamic = 'force-dynamic'
+/** Revalidate feature flags from Supabase without blocking every request (see site-feature-flags cache). */
+export const revalidate = 60
 
 type AIReceptionistPageProps = {
   params: Promise<{ locale: string }>

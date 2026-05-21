@@ -111,7 +111,7 @@ export const aiEmployeePageEn: AiEmployeePageTranslations = {
     titleLine1: 'Stop running growth on memory.',
     titleHighlight: 'Start running it on systems.',
     hook: 'Premium service businesses · we install and run intake, follow-up, and booking, so nothing depends on who remembered what.',
-    primaryCta: 'Book Your Growth System Audit',
+    primaryCta: 'Take the 2-Minute Fit Check',
     footnote: 'Limited partnerships · often live in 48h',
   },
   mobileApp: {
@@ -267,10 +267,10 @@ export const aiEmployeePageEn: AiEmployeePageTranslations = {
 export const aiEmployeePageFr: AiEmployeePageTranslations = {
   hero: {
     badge: 'Systèmes employé IA',
-    titleLine1: 'Ne laissez plus la croissance à la mémoire.',
-    titleHighlight: 'Faites-la tourner sur des systèmes.',
+    titleLine1: 'Croissance hors de la mémoire.',
+    titleHighlight: 'Pilotez-la en systèmes.',
     hook: 'Entreprises de services premium · nous installons et exploitons prise en charge, relances et réservation, sans dépendre de qui se souvient de quoi.',
-    primaryCta: 'Réserver votre audit Growth System',
+    primaryCta: 'Faire le test de compatibilité (2 min)',
     footnote: 'Partenariats limités · souvent en ligne en 48h',
   },
   mobileApp: {
@@ -426,10 +426,10 @@ export const aiEmployeePageFr: AiEmployeePageTranslations = {
 export const aiEmployeePageDe: AiEmployeePageTranslations = {
   hero: {
     badge: 'KI-Mitarbeiter-Systeme',
-    titleLine1: 'Lassen Sie Wachstum nicht von Erinnerungen abhängen.',
-    titleHighlight: 'Lassen Sie es von Systemen laufen.',
+    titleLine1: 'Wachstum nicht aus dem Kopf.',
+    titleHighlight: 'Laufen lassen per System.',
     hook: 'Premium-Dienstleister · wir implementieren und betreiben Annahme, Nachfass und Buchung, ohne „wer erinnert sich an was“.',
-    primaryCta: 'Growth-System-Audit buchen',
+    primaryCta: '2-Minuten-Passungstest starten',
     footnote: 'Begrenzte Partnerschaften · oft live in 48h',
   },
   mobileApp: {
@@ -585,10 +585,10 @@ export const aiEmployeePageDe: AiEmployeePageTranslations = {
 export const aiEmployeePageEs: AiEmployeePageTranslations = {
   hero: {
     badge: 'Sistemas de empleado IA',
-    titleLine1: 'Deje de sostener el crecimiento con la memoria.',
-    titleHighlight: 'Hágalo correr sobre sistemas.',
+    titleLine1: 'Sin crecimiento en la memoria.',
+    titleHighlight: 'Con crecimiento en sistemas.',
     hook: 'Negocios de servicios premium · instalamos y operamos captación, seguimiento y reserva, sin depender de quién recordó qué.',
-    primaryCta: 'Reservar su auditoría Growth System',
+    primaryCta: 'Hacer el test de compatibilidad (2 min)',
     footnote: 'Alianzas limitadas · en vivo en ~48h',
   },
   mobileApp: {
@@ -744,10 +744,10 @@ export const aiEmployeePageEs: AiEmployeePageTranslations = {
 export const aiEmployeePageAr: AiEmployeePageTranslations = {
   hero: {
     badge: 'أنظمة الموظف الذكي',
-    titleLine1: 'توقفوا عن رهان النمو على الذاكرة.',
+    titleLine1: 'لا تعتمدوا النمو على الذاكرة.',
     titleHighlight: 'شغّلوه على أنظمة.',
     hook: 'شركات خدمات راقية · نثبت ونشغّل الاستقبال والمتابعة والحجز, من دون الاعتماد على من تذكر ماذا.',
-    primaryCta: 'احجز مراجعة Growth System',
+    primaryCta: 'ابدأ اختبار الملاءمة (دقيقتان)',
     footnote: 'شراكات محدودة · غالباً جاهز خلال 48 ساعة',
   },
   mobileApp: {

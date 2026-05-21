@@ -612,7 +612,7 @@ const ClientJourneyDemo = () => {
   return (
     <section className="py-16 sm:py-24 overflow-hidden bg-gradient-to-b from-surface to-background" aria-labelledby="journey-demo-title">
       <div className="max-w-[88rem] mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-0">
+        <div className="text-center mb-8 lg:mb-10 max-w-3xl mx-auto">
           <motion.span
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -627,17 +627,17 @@ const ClientJourneyDemo = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
+            className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-3 leading-[1.1] tracking-tight"
           >
-            {t.title}<br />
-            <span className="gradient-text">{t.subtitle}</span>
+            {t.title}{' '}
+            <span className="gradient-text block sm:inline mt-1 sm:mt-0">{t.subtitle}</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-muted text-lg max-w-2xl mx-auto"
+            className="text-muted text-base sm:text-lg leading-relaxed"
           >
             {t.subtext}
           </motion.p>

@@ -365,6 +365,8 @@ type ClientJourneyTranslations = {
   title: string
   subtitle: string
   subtext: string
+  /** How to read the animated funnel — shown above the demo */
+  readGuide: string
   brokenLabel: string
   aiFlowLabel: string
   /** Explains that counts are one 100-lead batch, per-stage pipeline size */
@@ -2232,14 +2234,14 @@ function buildTranslations(): Record<Language, TranslationKeys> {
   }
 
   const clientJourneyEn: ClientJourneyTranslations = {
-    badge: 'Same 100 Leads. Two Outcomes.',
-    title: '99 Leak.',
-    subtitle: '95 Close. Referrals Compound.',
-    subtext: 'One path bleeds. One compounds. The playbook is simple. The execution isn\'t.',
+    badge: 'Interactive pipeline · same 100 leads',
+    title: '100 Leads In.',
+    subtitle: 'Then 99 Leak—or 95 Close.',
+    subtext:
+      'Two funnels track one batch from Paid Ads, Website, Instagram, WhatsApp, and Phone. Each step’s big number is how many are still in your pipeline; red is who you lost right there. Watch it play step-by-step, or switch The Leak vs The Loop.',
     brokenLabel: 'The Leak',
     aiFlowLabel: 'The Loop',
-    funnelLegend:
-      'Scenario: 100 new leads enter. Each big number = how many from that same batch are still in your pipeline after the step.',
+    funnelLegend: 'Same 100-lead batch throughout · big number = still in pipeline after this step',
     funnelSectionIntake: 'Intake',
     funnelSectionConversion: 'Conversion',
     funnelSectionOutcome: 'Outcome & loop',
@@ -2277,14 +2279,14 @@ function buildTranslations(): Record<Language, TranslationKeys> {
   }
 
   const clientJourneyFr: ClientJourneyTranslations = {
-    badge: 'Mêmes 100 leads. Deux résultats.',
-    title: '99 perdus.',
-    subtitle: 'Ou 95 convertis + 23 parrainages.',
-    subtext: 'L’un fuit. L’autre convertit. L’IA répond en 2 sec, qualifie, réserve. Les parrainages alimentent la boucle.',
+    badge: 'Pipeline interactif · les mêmes 100 leads',
+    title: '100 leads entrent.',
+    subtitle: 'Puis 99 perdus—ou 95 conclus.',
+    subtext:
+      'Deux embudos suivent un même lot (annonces, site, Instagram, WhatsApp, téléphone). À chaque étape, le grand chiffre = combien sont encore dans votre pipeline ; le rouge = ce que vous perdez sur l’étape. Suivez l’animation ou basculez La fuite / La boucle.',
     brokenLabel: 'La fuite',
     aiFlowLabel: 'La boucle',
-    funnelLegend:
-      'Scénario : 100 nouveaux leads entrent. Chaque gros chiffre = combien du même lot sont encore dans le pipeline après l’étape.',
+    funnelLegend: 'Même lot de 100 leads · grand chiffre = encore dans le pipeline après cette étape',
     funnelSectionIntake: 'Entrée',
     funnelSectionConversion: 'Conversion',
     funnelSectionOutcome: 'Résultat & boucle',
@@ -2322,14 +2324,14 @@ function buildTranslations(): Record<Language, TranslationKeys> {
   }
 
   const clientJourneyAr: ClientJourneyTranslations = {
-    badge: 'نفس المائة. نتيجتان.',
-    title: '99 ضائعون.',
-    subtitle: 'أو 95 محولين + 23 إحالة.',
-    subtext: 'واحد ينسرب. الآخر يحول. الذكاء يرد في ثانيتين، يصنف، يحجز. الإحالات تغذي الحلقة.',
+    badge: 'مسار تفاعلي · نفس 100 عميل محتمل',
+    title: '100 يدخلون.',
+    subtitle: 'ثم 99 يضيعون—or 95 يُغلقون.',
+    subtext:
+      'مساران يتتبعان دفعة واحدة (إعلانات، موقع، إنستغرام، واتساب، هاتف). في كل خطوة، الرقم الكبير = من ما زال في مسارك؛ الأحمر = من فُقد في تلك الخطوة. شاهد التشغيل التلقائي أو قارن التسرب مقابل الحلقة.',
     brokenLabel: 'التسرب',
     aiFlowLabel: 'الحلقة',
-    funnelLegend:
-      'سيناريو: يدخل 100 عميل محتمل جديد. كل رقم كبير = كم بقي من نفس الدفعة في مسارك بعد الخطوة.',
+    funnelLegend: 'نفس الدفعة من 100 · الرقم الكبير = ما زال في المسار بعد هذه الخطوة',
     funnelSectionIntake: 'الاستقبال',
     funnelSectionConversion: 'التحويل',
     funnelSectionOutcome: 'النتيجة والحلقة',
@@ -2367,14 +2369,14 @@ function buildTranslations(): Record<Language, TranslationKeys> {
   }
 
   const clientJourneyDe: ClientJourneyTranslations = {
-    badge: 'Gleiche 100 Leads. Zwei Ergebnisse.',
-    title: '99 verloren.',
-    subtitle: '95 abschließen. Empfehlungen vervielfachen.',
-    subtext: 'Ein Weg blutet. Einer vervielfacht. Das Playbook ist einfach. Die Ausführung nicht.',
+    badge: 'Interaktive Pipeline · dieselben 100 Leads',
+    title: '100 Leads kommen rein.',
+    subtitle: 'Dann 99 verloren—oder 95 Abschluss.',
+    subtext:
+      'Zwei Trichter verfolgen eine Charge (Anzeigen, Website, Instagram, WhatsApp, Telefon). Pro Stufe zeigt die große Zahl, wie viele noch in der Pipeline sind; Rot = Verlust in genau diesem Schritt. Animation abspielen oder Leak vs. Schleife umschalten.',
     brokenLabel: 'Der Verlust',
     aiFlowLabel: 'Die Schleife',
-    funnelLegend:
-      'Szenario: 100 neue Leads starten. Jede große Zahl = wie viele aus derselben Charge nach der Stufe noch in der Pipeline sind.',
+    funnelLegend: 'Dieselbe 100er-Charge · große Zahl = noch in der Pipeline nach dieser Stufe',
     funnelSectionIntake: 'Eingang',
     funnelSectionConversion: 'Conversion',
     funnelSectionOutcome: 'Ergebnis & Schleife',
@@ -2412,14 +2414,14 @@ function buildTranslations(): Record<Language, TranslationKeys> {
   }
 
   const clientJourneyEs: ClientJourneyTranslations = {
-    badge: 'Mismos 100 leads. Dos resultados.',
-    title: '99 se pierden.',
-    subtitle: '95 cierran. Las referencias se multiplican.',
-    subtext: 'Un camino sangra. Otro se multiplica. El manual es simple. La ejecución no.',
+    badge: 'Embudo interactivo · los mismos 100 leads',
+    title: 'Entran 100 leads.',
+    subtitle: 'Luego 99 se pierden—o 95 cierran.',
+    subtext:
+      'Dos embudos siguen un mismo lote (anuncios, web, Instagram, WhatsApp, teléfono). En cada paso, el número grande = cuántos siguen en tu pipeline; lo rojo = lo que perdiste ahí. Mira la animación o cambia La fuga / El bucle.',
     brokenLabel: 'La fuga',
     aiFlowLabel: 'El bucle',
-    funnelLegend:
-      'Escenario: entran 100 leads nuevos. Cada número grande = cuántos del mismo lote siguen en tu embudo tras el paso.',
+    funnelLegend: 'Mismo lote de 100 · número grande = aún en pipeline tras este paso',
     funnelSectionIntake: 'Entrada',
     funnelSectionConversion: 'Conversión',
     funnelSectionOutcome: 'Resultado y bucle',
