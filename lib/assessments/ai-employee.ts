@@ -139,6 +139,36 @@ const questions = [
       },
     ],
   },
+  {
+    id: 'urgency',
+    prompt: 'How soon do you need leads captured and qualified without manual work?',
+    choices: [
+      { id: 'asap', label: 'Within 30 days—we are losing deals now', points: 10 },
+      { id: 'quarter', label: 'This quarter', points: 9 },
+      { id: 'explore', label: 'Exploring for the next 6 months', points: 5 },
+      { id: 'no-rush', label: 'No timeline / just curious', points: 3 },
+    ],
+  },
+  {
+    id: 'after-hours',
+    prompt: 'How many leads arrive outside business hours (evenings, weekends)?',
+    choices: [
+      { id: 'many', label: 'A significant share—we miss many', points: 10 },
+      { id: 'some', label: 'Some, but we catch up next day', points: 8 },
+      { id: 'few', label: 'Few—most come during office hours', points: 5 },
+      { id: 'unknown', label: 'We do not track this', points: 7 },
+    ],
+  },
+  {
+    id: 'tried-before',
+    prompt: 'What have you already tried to fix lead response and booking?',
+    choices: [
+      { id: 'nothing', label: 'Nothing structured yet', points: 10 },
+      { id: 'chatbot', label: 'Chatbot or basic auto-reply—did not convert', points: 9 },
+      { id: 'va', label: 'Virtual assistant or part-time hire', points: 7 },
+      { id: 'working', label: 'Current setup works well enough', points: 3 },
+    ],
+  },
 ]
 
 export const aiEmployeeAssessmentEn: ServiceAssessmentConfig = {
@@ -149,13 +179,13 @@ export const aiEmployeeAssessmentEn: ServiceAssessmentConfig = {
   copy: {
     metaTitle: 'AI Employee Fit Assessment | Digni Digital',
     metaDescription:
-      'Answer 7 quick questions to see how well AI Employee Systems match your lead flow, value per lead, and growth goals.',
+      'Answer 10 quick questions to see how well AI Employee Systems match your lead flow, urgency, value per lead, and growth goals.',
     eyebrow: '2-minute fit check',
     introTitle: 'Is an AI Employee System right for you?',
     introSubtitle:
       'No signup required. Honest answers help us estimate fit—not to sell you something that will not work.',
     introBullets: [
-      '7 questions about leads, lead value, response time, and channels',
+      '10 questions on leads, urgency, after-hours gaps, and what you have tried',
       'Instant match score for AI Employee Systems',
       'Clear next step only if the fit is strong',
     ],

@@ -107,6 +107,36 @@ const questions = [
       },
     ],
   },
+  {
+    id: 'stakeholders',
+    prompt: 'Who needs to approve launching a new employability program?',
+    choices: [
+      { id: 'aligned', label: 'Leadership already aligned—ready to scope', points: 10 },
+      { id: 'one', label: 'One decision-maker, minor internal buy-in left', points: 9 },
+      { id: 'multiple', label: 'Several departments—still building consensus', points: 6 },
+      { id: 'early', label: 'Early exploration—no sponsor yet', points: 4 },
+    ],
+  },
+  {
+    id: 'employers',
+    prompt: 'How connected are you to employers or industry partners for placements?',
+    choices: [
+      { id: 'strong', label: 'Active partnerships—we can place interns and jobs', points: 10 },
+      { id: 'building', label: 'Building relationships—want more placements', points: 9 },
+      { id: 'weak', label: 'Weak ties—employability is a gap', points: 8 },
+      { id: 'none', label: 'No employer network yet', points: 7 },
+    ],
+  },
+  {
+    id: 'funding',
+    prompt: 'Is budget allocated (or likely) for a full-year student outcomes program?',
+    choices: [
+      { id: 'yes', label: 'Yes—budget confirmed or in this year\'s plan', points: 10 },
+      { id: 'likely', label: 'Likely—pending final approval', points: 9 },
+      { id: 'grant', label: 'Depends on grants or donor funding', points: 7 },
+      { id: 'none', label: 'No budget identified yet', points: 4 },
+    ],
+  },
 ]
 
 export const futureReadyAssessmentEn: ServiceAssessmentConfig = {
@@ -117,13 +147,13 @@ export const futureReadyAssessmentEn: ServiceAssessmentConfig = {
   copy: {
     metaTitle: 'Future-Ready Graduate Fit Assessment | Digni Digital',
     metaDescription:
-      'Seven questions for schools and universities to see how well the Future-Ready Graduate Program matches your outcomes, student value, and timeline.',
+      'Ten questions for schools and universities to see how well the Future-Ready Graduate Program matches your outcomes, stakeholders, funding, and timeline.',
     eyebrow: '2-minute fit check',
     introTitle: 'Is the Future-Ready Graduate Program right for your school?',
     introSubtitle:
       'Built for institutions that care about employability—not just certificates. Get a clear match score before booking a consultation.',
     introBullets: [
-      '7 questions on institution type, student value, cohort size, and goals',
+      '10 questions on institution fit, stakeholders, employer ties, and budget',
       'Match score for the full 9-month program model',
       'Honest guidance if another path fits better',
     ],

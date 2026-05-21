@@ -1,25 +1,32 @@
 'use client'
 
+import dynamic from 'next/dynamic'
 import { use, useState, useEffect, type ReactElement } from 'react'
 import { motion } from 'framer-motion'
 import { useLanguage } from '@/app/context/LocaleContext'
+import { Link } from '@/i18n/navigation'
 import { getBookingLinkProps } from '@/app/config/cta.config'
+import { getAssessmentPath } from '@/lib/assessments/paths'
 import { translations } from '@/app/config/translations'
 import AnimatedSection from '@/app/components/AnimatedSection'
+import InboundLeadFlowSection from '@/app/components/InboundLeadFlowSection'
 import PremiumHeroBackdrop from '@/app/components/PremiumHeroBackdrop'
 import PremiumHeroParallax from '@/app/components/PremiumHeroParallax'
 import ScrollIndicator from '@/app/components/ScrollIndicator'
-import ClientJourneyDemo from '@/app/components/ClientJourneyDemo'
-import ConversationMockups from '@/app/components/ConversationMockups'
-import UnifiedInbox from '@/app/components/UnifiedInbox'
-import LeadPipelineDemo from '@/app/components/LeadPipelineDemo'
-import PerformancePulseDemo from '@/app/components/PerformancePulseDemo'
-import TaskQueueDemo from '@/app/components/TaskQueueDemo'
-import ContactDirectoryDemo from '@/app/components/ContactDirectoryDemo'
-import AiReceptionistExplainerVideo from '@/app/components/AiReceptionistExplainerVideo'
-import BusinessTimeline from '@/app/components/BusinessTimeline'
 import DemoPresentationDownload from '@/app/components/DemoPresentationDownload'
-import ServiceAssessmentLink from '@/app/components/ServiceAssessmentLink'
+
+const AIReceptionistProductDemos = dynamic(
+  () => import('./ai-receptionist-product-demos'),
+  {
+    ssr: false,
+    loading: () => (
+      <div
+        className="w-full min-h-[480px] bg-surface/40 animate-pulse"
+        aria-hidden
+      />
+    ),
+  },
+)
 import StripeCheckoutButton from '@/app/components/StripeCheckoutButton'
 import { getServicePageJsonLd, jsonLdScriptProps } from '@/lib/agent-readiness'
 import { AI_EMPLOYEE_SETUP_PROMO_END_MS, isAiEmployeeSetupPromoActive } from '@/lib/ai-employee-setup-promo'
@@ -29,14 +36,6 @@ type AIReceptionistClientProps = {
   params: Promise<{ locale: string }>
   searchParams?: Promise<{ [key: string]: string | string[] | undefined }>
   showTaskQueueDemo: boolean
-}
-
-const aiEmployeeHeroCopy = {
-  en: { years: 'building growth systems', satisfaction: 'client satisfaction' },
-  fr: { years: 'à construire des systèmes de croissance', satisfaction: 'de satisfaction client' },
-  ar: { years: 'في بناء أنظمة النمو', satisfaction: 'رضا العملاء' },
-  de: { years: 'im Aufbau von Wachstumssystemen', satisfaction: 'Kundenzufriedenheit' },
-  es: { years: 'construyendo sistemas de crecimiento', satisfaction: 'satisfacción del cliente' },
 }
 
 function padCountdownUnit(n: number) {
@@ -231,7 +230,6 @@ export function AIReceptionistClient({ params, searchParams, showTaskQueueDemo }
   use(searchParams ?? Promise.resolve({}))
   const language = useLanguage()
   const t = translations[language].aiEmployeePage
-  const heroCopy = aiEmployeeHeroCopy[language]
   const ctaT = translations[language].cta
   const pageJsonLd = getServicePageJsonLd('ai-employee-systems', locale)
 
@@ -362,35 +360,16 @@ export function AIReceptionistClient({ params, searchParams, showTaskQueueDemo }
             <p className="text-sm sm:text-base text-muted max-w-xl mx-auto leading-relaxed mb-7 sm:mb-8 px-2">
               {t.hero.hook}
             </p>
-            <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 px-2 mt-2">
-              <motion.div
-                initial={{ opacity: 0, y: 14 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="rounded-full border border-border/80 bg-background/75 dark:bg-surface/70 px-4 py-2 text-xs sm:text-sm text-muted backdrop-blur-sm shadow-sm"
-              >
-                <span className="font-semibold text">10+ years</span> {heroCopy.years}
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, y: 14 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                className="rounded-full border border-border/80 bg-background/75 dark:bg-surface/70 px-4 py-2 text-xs sm:text-sm text-muted backdrop-blur-sm shadow-sm"
-              >
-                <span className="font-semibold text">98%</span> {heroCopy.satisfaction}
-              </motion.div>
-            </div>
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-2 mt-4 sm:mt-6">
-              <a
-                {...getBookingLinkProps()}
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-2">
+              <Link
+                href={getAssessmentPath('ai-employee')}
                 className="btn-primary text-sm sm:text-base md:text-lg px-6 sm:px-8 py-3 sm:py-4 w-full sm:w-auto text-center"
               >
                 {t.hero.primaryCta}
-              </a>
+              </Link>
               <DemoPresentationDownload service="aiEmployee" variant="hero" />
             </div>
             <p className="text-muted/60 text-sm mt-4">{t.hero.footnote}</p>
-            <ServiceAssessmentLink serviceId="ai-employee" className="mt-1" />
           </motion.div>
         </PremiumHeroParallax>
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
@@ -398,50 +377,9 @@ export function AIReceptionistClient({ params, searchParams, showTaskQueueDemo }
         </div>
       </section>
 
-      {/* Problem Statement */}
-      <AnimatedSection className="py-24 bg-surface">
-        <div className="max-w-5xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <span className="inline-block px-4 py-2 bg-destructive/10 border border-destructive/20 rounded-full text-destructive text-xs font-semibold mb-6 uppercase tracking-wide">
-              {t.problem.badge}
-            </span>
-            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-              {t.problem.title}<br />
-              <span className="text-destructive">{t.problem.titleHighlight}</span>
-            </h2>
-            <p className="text-muted text-lg max-w-2xl mx-auto">
-              {t.problem.subtitle}
-            </p>
-          </div>
+      <InboundLeadFlowSection />
 
-          <div className="grid md:grid-cols-3 gap-6 mb-12">
-            {t.problem.stats.map((stat, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.1 * (i + 1) }}
-                className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-destructive/20 to-destructive/5 border border-destructive/20 p-8 text-center"
-              >
-                <div className="font-display text-5xl md:text-6xl font-bold text-destructive mb-3">{stat.value}</div>
-                <p className="text-text font-medium mb-2">{stat.label}</p>
-                <p className="text-muted text-sm">{stat.hint}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </AnimatedSection>
-
-      <ClientJourneyDemo />
-      <ConversationMockups />
-      <UnifiedInbox />
-      <LeadPipelineDemo />
-      <PerformancePulseDemo />
-      {showTaskQueueDemo ? <TaskQueueDemo /> : null}
-      <ContactDirectoryDemo />
-      <AiReceptionistExplainerVideo />
-      <BusinessTimeline />
+      <AIReceptionistProductDemos showTaskQueueDemo={showTaskQueueDemo} />
 
       <AnimatedSection id="features" className="py-24">
         <div className="max-w-7xl mx-auto px-6">

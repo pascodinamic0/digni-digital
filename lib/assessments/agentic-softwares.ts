@@ -107,6 +107,36 @@ const questions = [
       },
     ],
   },
+  {
+    id: 'success-criteria',
+    prompt: 'What would “success” look like 90 days after launch?',
+    choices: [
+      { id: 'revenue', label: 'Measurable revenue or cost savings', points: 10 },
+      { id: 'workflow', label: 'A core workflow runs without manual steps', points: 10 },
+      { id: 'users', label: 'Internal users adopted it daily', points: 8 },
+      { id: 'unclear', label: 'Not defined yet', points: 4 },
+    ],
+  },
+  {
+    id: 'integrations',
+    prompt: 'How many existing tools must the solution connect to?',
+    choices: [
+      { id: 'many', label: '4+ systems (CRM, ERP, comms, etc.)', points: 10 },
+      { id: 'some', label: '2–3 key integrations', points: 9 },
+      { id: 'one', label: 'One main platform', points: 7 },
+      { id: 'greenfield', label: 'Standalone—minimal integrations', points: 6 },
+    ],
+  },
+  {
+    id: 'investment',
+    prompt: 'What investment range feels realistic for solving this problem?',
+    choices: [
+      { id: 'enterprise', label: '$50k+ for the right outcome', points: 10 },
+      { id: 'mid', label: '$15k – $50k', points: 9 },
+      { id: 'mvp', label: 'Under $15k MVP to prove value first', points: 8 },
+      { id: 'unsure', label: 'Not sure yet / need ROI case first', points: 5 },
+    ],
+  },
 ]
 
 export const agenticSoftwaresAssessmentEn: ServiceAssessmentConfig = {
@@ -117,13 +147,13 @@ export const agenticSoftwaresAssessmentEn: ServiceAssessmentConfig = {
   copy: {
     metaTitle: 'Agentic Softwares Fit Assessment | Digni Digital',
     metaDescription:
-      'Seven questions to see if custom agentic software fits your workflow, problem value, and AI needs.',
+      'Ten questions to see if custom agentic software fits your workflow, success criteria, integrations, and investment readiness.',
     eyebrow: '2-minute fit check',
     introTitle: 'Is Agentic Softwares the right build for you?',
     introSubtitle:
       'For teams that need software that runs their process—not the other way around. Get a match score before scoping a project.',
     introBullets: [
-      '7 questions on problem fit, business value, AI needs, and timeline',
+      '10 questions on problem fit, success criteria, integrations, and budget',
       'Match score for custom agentic development',
       'Clear call booking only when the fit is real',
     ],

@@ -1,6 +1,9 @@
+import { unstable_cache } from 'next/cache'
 import { createClient } from '@/lib/supabase/server'
 import { createAdminClient, isSupabaseServiceConfigured } from '@/lib/supabase/admin'
 import { SITE_FEATURE_FLAG_KEYS } from './site-feature-flags-constants'
+
+const FEATURE_FLAG_REVALIDATE_SECONDS = 60
 
 export type { SiteFeatureFlagKey } from './site-feature-flags-constants'
 export { SITE_FEATURE_FLAG_KEYS, SITE_FEATURE_FLAG_META } from './site-feature-flags-constants'
@@ -25,6 +28,17 @@ export async function getSiteFeatureFlagEnabled(
     }
   }
 
+  return unstable_cache(
+    () => fetchSiteFeatureFlagEnabled(flagKey, defaultEnabled),
+    ['site-feature-flag', flagKey],
+    { revalidate: FEATURE_FLAG_REVALIDATE_SECONDS },
+  )()
+}
+
+async function fetchSiteFeatureFlagEnabled(
+  flagKey: string,
+  defaultEnabled: boolean,
+): Promise<boolean> {
   try {
     const supabase = isSupabaseServiceConfigured()
       ? createAdminClient()

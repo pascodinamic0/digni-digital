@@ -4,6 +4,8 @@ import { motion } from 'framer-motion'
 import { useState, useEffect } from 'react'
 import { useLanguage } from '@/app/context/LocaleContext'
 import { translations } from '@/app/config/translations'
+import { getJourneyPhaseTitle } from '@/lib/ai-receptionist-flow'
+import JourneyDemoHeader from '@/app/components/JourneyDemoHeader'
 import SocialPlatformIcon from './SocialPlatformIcon'
 
 interface Message {
@@ -232,36 +234,18 @@ const ConversationMockups = () => {
   return (
     <section className="py-24 bg-gradient-to-b from-background to-surface" aria-labelledby="conversations-title">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <motion.span
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="inline-block px-4 py-2 bg-accent/10 border border-accent/20 rounded-full text-accent text-xs font-semibold uppercase tracking-wide mb-4"
-          >
-            {t.badge}
-          </motion.span>
-          <motion.h2
-            id="conversations-title"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
-          >
-            {t.title}<br />
-            <span className="gradient-text">{t.titleHighlight}</span>
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="text-muted text-lg md:text-xl max-w-3xl mx-auto"
-          >
-            {t.subtitle}
-          </motion.p>
-        </div>
+        <JourneyDemoHeader
+          step={2}
+          journeyPhase={getJourneyPhaseTitle(language, 2)}
+          badge={t.badge}
+          title={t.title}
+          titleHighlight={t.titleHighlight}
+          subtitle={t.subtitle}
+          titleId="conversations-title"
+          badgeTone="accent"
+          titleLayout="inline"
+          className="mb-16"
+        />
 
         {/* Main Demo Area */}
         <div className="grid lg:grid-cols-2 gap-8 mb-12">

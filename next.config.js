@@ -7,7 +7,7 @@ const minimalNextPolyfill = require.resolve('./lib/next-polyfill-minimal.js')
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Next 16’s default `next build` uses Turbopack, which does not apply this replacement; `package.json` uses `next build --webpack`.
+  // Next 16 defaults to Turbopack (breaks next/font/google in dev); `package.json` uses `--webpack` for dev and build.
   webpack: (config, { isServer, webpack }) => {
     if (!isServer) {
       config.plugins.push(

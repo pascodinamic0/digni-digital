@@ -3,6 +3,9 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState, useCallback, useEffect } from 'react'
 import { useLanguage } from '@/app/context/LocaleContext'
+import { getJourneyPhaseTitle } from '@/lib/ai-receptionist-flow'
+import JourneyDemoHeader from '@/app/components/JourneyDemoHeader'
+import JourneyStepMarker from '@/app/components/JourneyStepMarker'
 import { translations } from '@/app/config/translations'
 import type { PipelineCardT } from '@/app/i18n/aiEmployeeProductDemos'
 
@@ -73,35 +76,21 @@ export default function LeadPipelineDemo() {
       dir={isRtl ? 'rtl' : 'ltr'}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="text-center mb-12 md:mb-16">
-          <motion.span
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="inline-block px-4 py-2 bg-success/10 border border-success/20 rounded-full text-success text-xs font-semibold uppercase tracking-wide mb-4"
-          >
-            {t.badge}
-          </motion.span>
-          <motion.h2
-            id="lead-pipeline-title"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mt-4 mb-4"
-          >
-            {t.title} <span className="gradient-text-brand">{t.titleHighlight}</span>
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="text-muted text-base sm:text-lg max-w-3xl mx-auto"
-          >
-            {t.subtitle}
-          </motion.p>
-        </div>
+        <JourneyDemoHeader
+          step={4}
+          journeyPhase={getJourneyPhaseTitle(language, 4)}
+          badge={t.badge}
+          title={t.title}
+          titleHighlight={t.titleHighlight}
+          subtitle={t.subtitle}
+          titleId="lead-pipeline-title"
+          titleLayout="inline"
+          className="mb-8 md:mb-10"
+        />
+        <JourneyStepMarker
+          step={5}
+          description={translations[language].aiEmployeeProductDemos.timeline.steps[4]?.description}
+        />
 
         <motion.div
           initial={{ opacity: 0, y: 30 }}
