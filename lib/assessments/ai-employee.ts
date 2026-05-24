@@ -5,19 +5,19 @@ const bands = [
     minPercent: 85,
     label: 'Excellent fit',
     description:
-      'Your lead flow, channels, and growth goals align strongly with an AI Employee System. You are likely to see fast ROI from 24/7 intake and automated booking.',
+      'Your answers show real revenue at risk from slow follow-up, leaked leads, and systems that stop when you step away. An AI Employee System is built to close those gaps fast.',
   },
   {
     minPercent: 70,
     label: 'Strong fit',
     description:
-      'Most of your answers point to high leverage from AI reception and follow-up. A short strategy call can confirm scope and integrations.',
+      'You are losing measurable value in response time, follow-up, or owner-dependent growth. A short strategy call can map where 24/7 intake and automation recover it first.',
   },
   {
     minPercent: 50,
     label: 'Moderate fit',
     description:
-      'You may benefit, but some gaps (volume, channels, or process) suggest starting with a focused pilot or audit before full deployment.',
+      'Some gaps are clear; others may need a tighter baseline (tracking, channels, or volume) before full deployment. A focused audit can prioritize the highest-leak fixes.',
   },
   {
     minPercent: 0,
@@ -29,144 +29,134 @@ const bands = [
 
 const questions = [
   {
-    id: 'lead-volume',
-    prompt: 'How many new inbound leads or inquiries do you get per week?',
+    id: 'lifetime-value',
+    prompt: 'What is your average client or patient lifetime value?',
     choices: [
-      { id: 'low', label: 'Fewer than 10', points: 4 },
-      { id: 'mid', label: '10–50', points: 7 },
-      { id: 'high', label: '50–200', points: 9 },
-      { id: 'very-high', label: '200+', points: 10 },
-    ],
-  },
-  {
-    id: 'response-time',
-    prompt: 'What is your typical first response time to a new lead?',
-    choices: [
-      { id: 'instant', label: 'Under 5 minutes', points: 6 },
-      { id: 'same-day', label: 'Same business day', points: 7 },
-      { id: 'next-day', label: 'Next business day or later', points: 9 },
-      { id: 'inconsistent', label: 'Often missed or inconsistent', points: 10 },
-    ],
-  },
-  {
-    id: 'booking',
-    prompt: 'How do you book sales calls or appointments today?',
-    choices: [
-      { id: 'manual', label: 'Mostly manual back-and-forth', points: 10 },
-      { id: 'mixed', label: 'Mix of manual and online booking', points: 8 },
-      { id: 'online', label: 'Online scheduler, little follow-up', points: 7 },
-      { id: 'none', label: 'We rarely book structured calls', points: 3 },
-    ],
-  },
-  {
-    id: 'channels',
-    prompt: 'Which channels matter most for your business?',
-    choices: [
-      { id: 'phone-wa', label: 'Phone + WhatsApp / SMS', points: 10 },
-      { id: 'web-chat', label: 'Website chat + email', points: 8 },
-      { id: 'social', label: 'Social DMs (Instagram, Facebook, etc.)', points: 9 },
-      { id: 'email-only', label: 'Email only', points: 5 },
-    ],
-  },
-  {
-    id: 'team-load',
-    prompt: 'Who handles inbound leads today?',
-    choices: [
-      { id: 'owner', label: 'Owner or a small team wearing many hats', points: 10 },
-      { id: 'reception', label: 'Dedicated reception / front desk', points: 8 },
-      { id: 'sales', label: 'Sales team with some gaps after hours', points: 9 },
-      { id: 'outsourced', label: 'Fully outsourced call center', points: 5 },
-    ],
-  },
-  {
-    id: 'pain',
-    prompt: 'What is your biggest growth bottleneck right now?',
-    choices: [
-      { id: 'missed', label: 'Missed calls and slow replies', points: 10 },
-      { id: 'qualify', label: 'Too many unqualified conversations', points: 9 },
-      { id: 'follow-up', label: 'Leads go cold after first contact', points: 10 },
-      { id: 'other', label: 'Something else is the main blocker', points: 4 },
-    ],
-  },
-  {
-    id: 'lead-value',
-    prompt: 'What is a typical lead worth when they become a paying customer?',
-    choices: [
+      { id: 'under-1k', label: 'Under $1,000', points: 5 },
       {
-        id: 'unknown',
-        label: 'Not sure yet',
-        points: 5,
-        insight: {
-          title: 'Clarify lead value to size ROI',
-          why: 'Once you know what a converted lead is worth, you can compare the cost of missed inquiries against an AI Employee System—most teams find the math obvious above $1,000 per customer.',
-        },
-      },
-      {
-        id: 'low',
-        label: 'Under $500',
-        points: 4,
-        insight: {
-          title: 'Volume matters more at lower ticket sizes',
-          why: 'With smaller deal sizes, AI Employee Systems pay off when you have enough inbound volume to convert consistently—not from a single whale lead.',
-        },
-      },
-      {
-        id: 'mid',
-        label: '$500 – $2,500',
+        id: '1k-3k',
+        label: '$1,000 - $3,000',
         points: 7,
         insight: {
-          title: 'Solid unit economics for automation',
-          why: 'Leads in this range often justify 24/7 intake: one extra booked call per week can cover the system when follow-up is automatic.',
+          title: 'Every slipped lead has a real dollar tag',
+          why: 'At this lifetime value, one forgotten follow-up or after-hours miss can cost more than a month of automation—especially when referrals and rebooks stack over time.',
         },
       },
       {
-        id: 'high',
-        label: '$2,500 – $10,000',
+        id: '3k-5k',
+        label: '$3,000 - $5,000',
         points: 9,
         insight: {
-          title: 'Every qualified lead is worth protecting',
-          why: 'At this value, slow replies and after-hours gaps routinely cost thousands. AI qualification and booking recover revenue you are already paying to acquire.',
+          title: 'High enough that leakage hurts immediately',
+          why: 'Teams at this LTV rarely afford “we’ll call them tomorrow.” Speed, referral asks, and consistent follow-up directly protect margin you already paid to acquire.',
         },
       },
       {
-        id: 'very-high',
-        label: '$10,000+',
+        id: '5k-plus',
+        label: '$5,000+',
         points: 10,
         insight: {
-          title: 'High-value leads need instant capture',
-          why: 'When one closed deal is worth five figures, a single missed call or slow reply can cost more than months of AI Employee coverage. Speed and follow-up directly protect revenue.',
+          title: 'One lost client pays for the system many times over',
+          why: 'When a single patient or client is worth five figures over their lifetime, a missed Instagram DM or slow callback isn’t a small mistake—it’s an expensive one.',
         },
       },
     ],
   },
   {
-    id: 'urgency',
-    prompt: 'How soon do you need leads captured and qualified without manual work?',
+    id: 'after-hours-response',
+    prompt:
+      'When a hot prospect messages your Instagram or calls after 5:00 PM, what is the exact average response time?',
     choices: [
-      { id: 'asap', label: 'Within 30 days—we are losing deals now', points: 10 },
-      { id: 'quarter', label: 'This quarter', points: 9 },
-      { id: 'explore', label: 'Exploring for the next 6 months', points: 5 },
-      { id: 'no-rush', label: 'No timeline / just curious', points: 3 },
+      { id: 'instant', label: 'Instantly (under 2 mins)', points: 3 },
+      { id: 'within-hour', label: 'Within 1 hour', points: 6 },
+      {
+        id: 'next-morning',
+        label: 'Next morning',
+        points: 8,
+        insight: {
+          title: 'Hot intent cools overnight',
+          why: 'Prospects who reach out after hours often book with whoever answers first. Waiting until morning routinely hands ready buyers to a faster competitor.',
+        },
+      },
+      {
+        id: 'missed',
+        label: 'Sometimes they get missed entirely',
+        points: 10,
+        insight: {
+          title: 'Invisible leads are invisible losses',
+          why: 'If hot DMs and calls slip through, you are not just slow—you are funding ads and content for people who never get a real conversation.',
+        },
+      },
     ],
   },
   {
-    id: 'after-hours',
-    prompt: 'How many leads arrive outside business hours (evenings, weekends)?',
+    id: 'leaked-leads',
+    prompt:
+      'Honestly evaluate your front desk or team. How many leads slipped through the cracks last month because someone forgot to follow up, text back, or ask for a referral?',
     choices: [
-      { id: 'many', label: 'A significant share—we miss many', points: 10 },
-      { id: 'some', label: 'Some, but we catch up next day', points: 8 },
-      { id: 'few', label: 'Few—most come during office hours', points: 5 },
-      { id: 'unknown', label: 'We do not track this', points: 7 },
+      { id: 'zero', label: 'Zero (Unlikely)', points: 2 },
+      {
+        id: '1-5',
+        label: '1 to 5 leads',
+        points: 7,
+        insight: {
+          title: 'Small leaks add up at scale',
+          why: 'Even a handful of forgotten follow-ups per month compounds into thousands in lost LTV—especially when each lead was already warm.',
+        },
+      },
+      {
+        id: '5-15',
+        label: '5 to 15 leads',
+        points: 9,
+        insight: {
+          title: 'Your pipeline has a silent tax',
+          why: 'Double-digit leaks mean revenue you already paid to generate is walking out because process lives in people’s memory, not a system.',
+        },
+      },
+      {
+        id: 'no-tracking',
+        label: 'Honestly, we have no tracking system to know',
+        points: 10,
+        insight: {
+          title: 'You cannot fix what you cannot see',
+          why: 'Without tracking, leaks feel random—but they are constant. Automation creates a paper trail for every inquiry, follow-up, and referral ask.',
+        },
+      },
     ],
   },
   {
-    id: 'tried-before',
-    prompt: 'What have you already tried to fix lead response and booking?',
+    id: 'content-distraction',
+    prompt:
+      'How much content creation and ad management is currently eating up your personal time or your team’s focus, distracting you from actually serving clients?',
     choices: [
-      { id: 'nothing', label: 'Nothing structured yet', points: 10 },
-      { id: 'chatbot', label: 'Chatbot or basic auto-reply—did not convert', points: 9 },
-      { id: 'va', label: 'Virtual assistant or part-time hire', points: 7 },
-      { id: 'working', label: 'Current setup works well enough', points: 3 },
+      { id: 'automated', label: "None, it's automated", points: 2 },
+      { id: 'few-hours', label: 'A few hours a week', points: 6 },
+      {
+        id: 'second-job',
+        label: 'It is a constant, stressful second job',
+        points: 10,
+        insight: {
+          title: 'You are paying twice for growth',
+          why: 'When posting and ads pull owners away from delivery, you trade high-value client time for low-leverage busywork—while leads still need instant capture and follow-up.',
+        },
+      },
+    ],
+  },
+  {
+    id: 'fourteen-day-test',
+    prompt:
+      'If you stepped away from your business completely for 14 days with your phone turned off, would your lead generation, booking, and review collection keep growing, or would the revenue completely freeze?',
+    choices: [
+      { id: 'keep-growing', label: 'It would keep growing seamlessly', points: 2 },
+      {
+        id: 'freeze',
+        label: 'It would completely freeze and decline',
+        points: 10,
+        insight: {
+          title: 'Your business is you—and that is the risk',
+          why: 'When revenue stops the moment you unplug, growth is not a system—it is heroics. AI intake, booking, and follow-up are how teams decouple income from owner availability.',
+        },
+      },
     ],
   },
 ]
@@ -179,31 +169,40 @@ export const aiEmployeeAssessmentEn: ServiceAssessmentConfig = {
   copy: {
     metaTitle: 'AI Employee Fit Assessment | Digni Digital',
     metaDescription:
-      'Answer 10 quick questions to see how well AI Employee Systems match your lead flow, urgency, value per lead, and growth goals.',
+      'Five honest questions on client lifetime value, after-hours response, leaked leads, and what happens if you step away for two weeks—see your AI Employee fit score.',
     eyebrow: '2-minute fit check',
-    introTitle: 'Is an AI Employee System right for you?',
+    introTitle: 'How exposed is your revenue when you are not in the room?',
     introSubtitle:
-      'No signup required. Honest answers help us estimate fit—not to sell you something that will not work.',
+      'No signup required. Five direct questions—honest answers show where leads, bookings, and referrals leak when the team is busy or you are offline.',
     introBullets: [
-      '10 questions on leads, urgency, after-hours gaps, and what you have tried',
+      'Lifetime value, after-hours response, and leads that slipped last month',
       'Instant match score for AI Employee Systems',
-      'Clear next step only if the fit is strong',
+      'Clear next step only when the gaps are real',
     ],
     startCta: 'Start assessment',
     progressLabel: 'Question',
     back: 'Back',
     next: 'Next',
-    finish: 'See my match score',
+    finish: 'See my results',
     answerAll: 'Select an answer to continue.',
-    resultEyebrow: 'Your result',
+    resultEyebrow: 'Assessment Complete',
     resultTitle: 'match for AI Employee Systems',
     matchLabel: 'Service match',
     bands: [...bands],
     nextStepsTitle: 'Recommended next step',
-    primaryCta: 'Book AI Employee strategy call',
+    primaryCta: 'Book 15-minute System Blueprint session',
     secondaryCta: 'View AI Employee Systems',
     backToService: 'Back to service page',
     retake: 'Retake assessment',
   },
   questions,
+  customResult: {
+    headline: 'Your inputs indicate your business has a High-Risk Leak Profile.',
+    body: 'You are likely losing between $3,000 and $12,000 per month in uncaptured inbound interest and unautomated referrals.',
+    ctaIntro:
+      'Book a live 15-minute System Blueprint session below. We will visually map out your automated infrastructure.',
+    primaryCta: 'Book 15-minute System Blueprint session',
+    warning:
+      'Do not book if you are comfortable losing leads to faster competitors.',
+  },
 }
