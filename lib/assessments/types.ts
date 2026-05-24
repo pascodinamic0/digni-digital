@@ -40,6 +40,15 @@ export type ChoiceInsight = {
 
 export type ChoiceInsightMap = Record<string, Record<string, ChoiceInsight>>
 
+/** Fixed results screen with optional match score + custom copy. */
+export type AssessmentCustomResult = {
+  headline: string
+  body: string
+  ctaIntro: string
+  primaryCta: string
+  warning: string
+}
+
 export type AssessmentCopy = {
   metaTitle: string
   metaDescription: string
@@ -86,6 +95,8 @@ export type ServiceAssessmentConfig = {
   copy: AssessmentCopy
   questions: AssessmentQuestion[]
   choiceInsights?: ChoiceInsightMap
+  /** When set, results show this copy instead of match % and band labels. */
+  customResult?: AssessmentCustomResult
 }
 
 export type PersonalizedInsight = {

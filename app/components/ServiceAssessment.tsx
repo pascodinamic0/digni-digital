@@ -102,7 +102,7 @@ function MatchRing({ percent, accent }: { percent: number; accent: AssessmentAcc
 }
 
 export function ServiceAssessment({ config }: { config: ServiceAssessmentConfig }) {
-  const { copy, questions, accent, servicePath, serviceName } = config
+  const { copy, questions, accent, servicePath, serviceName, customResult } = config
   const styles = accentClasses[accent]
   const booking = getBookingLinkProps()
 
@@ -124,6 +124,9 @@ export function ServiceAssessment({ config }: { config: ServiceAssessmentConfig 
     () => (step === 'result' ? getResultBand(copy.bands, matchPercent) : null),
     [step, copy.bands, matchPercent],
   )
+
+  const badgeLabel =
+    step === 'result' && customResult ? copy.resultEyebrow : copy.eyebrow
 
   const selectChoice = (questionId: string, choiceId: string) => {
     setAnswers((prev) => ({ ...prev, [questionId]: choiceId }))
@@ -187,7 +190,7 @@ export function ServiceAssessment({ config }: { config: ServiceAssessmentConfig 
           <span
             className={`inline-flex w-fit items-center rounded-full border px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] ${styles.badge}`}
           >
-            {copy.eyebrow}
+            {badgeLabel}
           </span>
 
           <AnimatePresence mode="wait">
@@ -299,52 +302,105 @@ export function ServiceAssessment({ config }: { config: ServiceAssessmentConfig 
               </motion.div>
             )}
 
-            {step === 'result' && resultBand && (
+            {step === 'result' && (customResult || resultBand) && (
               <motion.div
                 key="result"
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 className="mt-6"
               >
-                <p className="text-sm font-semibold uppercase tracking-wide text-text/70">
-                  {copy.resultEyebrow}
-                </p>
-                <h2 className="font-display mt-2 text-xl font-bold leading-snug text-text sm:text-2xl">
-                  <span className="gradient-text">{matchPercent}%</span> {copy.resultTitle}
-                </h2>
+                {customResult && resultBand ? (
+                  <>
+                    <h2 className="font-display mt-3 text-xl font-bold leading-snug text-text sm:text-2xl">
+                      {customResult.headline}
+                    </h2>
+                    <p className="mt-4 text-base leading-relaxed text-text/90 sm:text-lg">
+                      {customResult.body}
+                    </p>
 
-                <div
-                  className={`mt-8 rounded-xl border-2 border-border-light bg-background/60 p-6 text-center sm:p-8 ${styles.glow}`}
-                >
-                  <p className="text-xs font-semibold uppercase tracking-wider text-text/70">
-                    {copy.matchLabel}
-                  </p>
-                  <MatchRing percent={matchPercent} accent={accent} />
-                  <p className="mt-4 text-lg font-semibold text-text">{resultBand.label}</p>
-                  <p className="mt-3 text-sm leading-relaxed text-text/85 sm:text-base">
-                    {resultBand.description}
-                  </p>
-                </div>
+                    <p className="mt-6 text-sm font-semibold uppercase tracking-wide text-text/70">
+                      <span className="gradient-text">{matchPercent}%</span> {copy.resultTitle}
+                    </p>
 
-                <div className="mt-8 rounded-xl border border-border bg-surface-light/50 p-5 sm:p-6">
-                  <p className="text-sm font-semibold text-text">{copy.nextStepsTitle}</p>
-                  <p className="mt-1 text-sm text-text/80">
-                    {serviceName} — based on your answers, here is what we recommend.
-                  </p>
-                  <motion.div
-                    className="mt-5 flex flex-col gap-3"
-                    initial={{ opacity: 0, y: 8 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.5 }}
-                  >
-                    <a {...booking} className="btn-primary w-full py-3 text-center">
-                      {copy.primaryCta}
-                    </a>
-                    <Link href={servicePath} className="btn-secondary w-full py-3 text-center">
-                      {copy.secondaryCta}
-                    </Link>
-                  </motion.div>
-                </div>
+                    <div
+                      className={`mt-4 rounded-xl border-2 border-border-light bg-background/60 p-6 text-center sm:p-8 ${styles.glow}`}
+                    >
+                      <p className="text-xs font-semibold uppercase tracking-wider text-text/70">
+                        {copy.matchLabel}
+                      </p>
+                      <MatchRing percent={matchPercent} accent={accent} />
+                      <p className="mt-4 text-lg font-semibold text-text">{resultBand.label}</p>
+                      <p className="mt-3 text-sm leading-relaxed text-text/85 sm:text-base">
+                        {resultBand.description}
+                      </p>
+                    </div>
+
+                    <div
+                      className={`mt-8 rounded-xl border-2 border-border-light bg-background/60 p-5 sm:p-6 ${styles.glow}`}
+                    >
+                      <p className="text-sm leading-relaxed text-text/85 sm:text-base">
+                        {customResult.ctaIntro}
+                      </p>
+                      <motion.div
+                        className="mt-5"
+                        initial={{ opacity: 0, y: 8 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.35 }}
+                      >
+                        <a {...booking} className="btn-primary w-full py-3 text-center">
+                          {customResult.primaryCta}
+                        </a>
+                      </motion.div>
+                      <p className="mt-5 rounded-lg border border-destructive/25 bg-background/50 px-3 py-2.5 text-sm font-medium leading-relaxed text-destructive">
+                        <span className="font-semibold">Warning:</span> {customResult.warning}
+                      </p>
+                    </div>
+                  </>
+                ) : (
+                  resultBand && (
+                    <>
+                      <p className="text-sm font-semibold uppercase tracking-wide text-text/70">
+                        {copy.resultEyebrow}
+                      </p>
+                      <h2 className="font-display mt-2 text-xl font-bold leading-snug text-text sm:text-2xl">
+                        <span className="gradient-text">{matchPercent}%</span> {copy.resultTitle}
+                      </h2>
+
+                      <div
+                        className={`mt-8 rounded-xl border-2 border-border-light bg-background/60 p-6 text-center sm:p-8 ${styles.glow}`}
+                      >
+                        <p className="text-xs font-semibold uppercase tracking-wider text-text/70">
+                          {copy.matchLabel}
+                        </p>
+                        <MatchRing percent={matchPercent} accent={accent} />
+                        <p className="mt-4 text-lg font-semibold text-text">{resultBand.label}</p>
+                        <p className="mt-3 text-sm leading-relaxed text-text/85 sm:text-base">
+                          {resultBand.description}
+                        </p>
+                      </div>
+
+                      <div className="mt-8 rounded-xl border border-border bg-surface-light/50 p-5 sm:p-6">
+                        <p className="text-sm font-semibold text-text">{copy.nextStepsTitle}</p>
+                        <p className="mt-1 text-sm text-text/80">
+                          {serviceName} — based on your answers, here is what we recommend.
+                        </p>
+                        <motion.div
+                          className="mt-5 flex flex-col gap-3"
+                          initial={{ opacity: 0, y: 8 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ delay: 0.5 }}
+                        >
+                          <a {...booking} className="btn-primary w-full py-3 text-center">
+                            {copy.primaryCta}
+                          </a>
+                          <Link href={servicePath} className="btn-secondary w-full py-3 text-center">
+                            {copy.secondaryCta}
+                          </Link>
+                        </motion.div>
+                      </div>
+                    </>
+                  )
+                )}
 
                 <div className="mt-8 flex flex-wrap gap-4 text-sm">
                   <button
