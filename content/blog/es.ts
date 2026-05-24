@@ -712,6 +712,15 @@ const contentEs: Record<string, Partial<BlogArticle>> = {
       <p><em>¿Preguntas sobre escalar sin más contrataciones a tiempo completo? <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Agende con Digni Digital</a> o explore nuestras capacidades de <a href="/ai-receptionist">recepcionista IA</a> para cobertura continua.</em></p>
     `,
   },
+  'dispatchflow-unified-logistics-procurement-platform': {
+    title: 'DispatchFlow: una plataforma para compras, despacho e inventario (en vivo)',
+    excerpt:
+      'Conozca DispatchFlow — nuestra plataforma operativa en vivo para empresas africanas. Compras, seguimiento de envíos e inventario en un panel claro para equipos multi-sede.',
+    category: 'Agentic Softwares',
+    readTime: '9 min de lectura',
+    publishDate: '24 de mayo de 2026',
+    tags: ['DispatchFlow', 'software logístico', 'compras', 'despacho', 'inventario', 'África', 'software agéntico'],
+  },
 }
 
 export const articlesEs: BlogArticle[] = articlesEn.map((article) => {

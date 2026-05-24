@@ -258,6 +258,7 @@ export const agentServices: AgentService[] = [
       { metric: '76+', description: 'School workflows in one platform for AMS (Academic Management System)' },
       { metric: '90%', description: 'Faster proposal creation reported for Proposal Agent' },
       { metric: '360 degrees', description: 'Operations, bookings, and access in one dashboard for Kabinda Lodge' },
+      { metric: '3-in-1', description: 'Procurement, dispatch, and inventory unified in DispatchFlow' },
       { metric: 'Live', description: 'Production systems shipped for listed internal and client projects' },
     ],
     lastUpdated: AGENT_DATA_LAST_UPDATED,
@@ -287,6 +288,31 @@ export const agentProducts = [
       { metric: '8', description: 'User roles from platform admin to parents and students' },
       { metric: '76+', description: 'Integrated pages and workflows' },
       { metric: '1', description: 'Unified platform for academics, finance, and operations' },
+    ],
+    lastUpdated: AGENT_DATA_LAST_UPDATED,
+  },
+  {
+    id: 'dispatchflow',
+    name: 'DispatchFlow',
+    url: 'https://dispatch-flow-one.vercel.app/',
+    applicationCategory: 'BusinessApplication',
+    operatingSystem: 'Web',
+    status: 'Live',
+    description:
+      'Internal logistics and procurement platform — procurement requests, dispatch tracking, and inventory for multi-branch enterprise operations across African markets.',
+    features: [
+      'Procurement requests with priority and approvals',
+      'Dispatch control with driver assignments and in-transit status',
+      'Inventory levels, movements, and low-stock alerts',
+      'Operations dashboard with KPIs and activity feed',
+      'Role-based access with Supabase Row Level Security',
+      'Mobile-friendly UI for field status updates',
+    ],
+    offers: [],
+    proof: [
+      { metric: '3', description: 'Core modules: procurement, dispatch, inventory' },
+      { metric: '5', description: 'Role types from admin to requester' },
+      { metric: 'RLS', description: 'Organization-scoped data isolation at the database layer' },
     ],
     lastUpdated: AGENT_DATA_LAST_UPDATED,
   },
@@ -417,6 +443,26 @@ export const agentCaseStudies = [
     ],
     testimonial:
       'The operating system for schools — manage, track, and automate the entire educational ecosystem from one dashboard.',
+    lastUpdated: AGENT_DATA_LAST_UPDATED,
+  },
+  {
+    id: 'dispatchflow',
+    name: 'DispatchFlow',
+    client: 'DispatchFlow',
+    industry: 'Logistics & Operations',
+    location: 'Africa',
+    url: 'https://dispatch-flow-one.vercel.app/',
+    challenge:
+      'Operations teams ran procurement in email, dispatch in WhatsApp, and inventory in spreadsheets — no trusted system of record across branches.',
+    solution:
+      'DispatchFlow: unified procurement, shipment tracking, and inventory with role-based dashboards, mobile status updates, and Postgres RLS per organization.',
+    results: [
+      { metric: '3', description: 'Modules in one platform' },
+      { metric: '5', description: 'Role-based workflows' },
+      { metric: 'Live', description: 'Production ops platform on Vercel + Supabase' },
+    ],
+    testimonial:
+      'Request. Track. Deliver. — one calm dashboard your operators actually use every morning.',
     lastUpdated: AGENT_DATA_LAST_UPDATED,
   },
   {

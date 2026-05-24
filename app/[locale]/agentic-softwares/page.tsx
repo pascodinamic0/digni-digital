@@ -313,6 +313,12 @@ const agenticInlineCopy = {
     'Role levels from owner to front desk & restaurant': 'Niveaux de roles du proprietaire a la reception et au restaurant',
     'Operations, bookings, and access in one dashboard': 'Operations, reservations et acces dans un dashboard',
     'Production guest booking & smart access': 'Reservation client et smart access en production',
+    'Logistics & Operations': 'Logistique et operations',
+    'Request. Track. Deliver. Procurement, dispatch, and inventory in one calm platform for multi-branch enterprise operations — especially across African markets.':
+      'Demandez. Suivez. Livrez. Achats, expeditions et stocks dans une plateforme claire pour les operations multi-sites — surtout en Afrique.',
+    '3 core modules in one system of record': '3 modules coeur dans un seul referentiel',
+    '5 role-based views with Postgres RLS': '5 vues par role avec RLS Postgres',
+    'Mobile-ready dispatch status updates': 'Mises a jour mobile pour les expeditions',
     '2 months': '2 mois',
     'Discovery': 'Decouverte',
     '1 day': '1 jour',
@@ -445,6 +451,12 @@ const agenticSoftwaresCollections = {
         category: 'Hospitality',
         status: 'Live',
       },
+      {
+        description:
+          'Request. Track. Deliver. Procurement, dispatch, and inventory in one calm platform for multi-branch enterprise operations — especially across African markets.',
+        category: 'Logistics & Operations',
+        status: 'Live',
+      },
       { description: 'AI writes your marketing. Fast.', category: 'Marketing', status: 'Beta' },
     ],
     services: [
@@ -537,6 +549,12 @@ const agenticSoftwaresCollections = {
         description:
           'Pilotez l’hôtel à distance : réservations, chambres, clés et paiements dans un seul centre de commande. Accès par rôle, cartes de porte intelligentes et visibilité complète pour les investisseurs et l’équipe.',
         category: 'Hôtellerie',
+        status: 'En ligne',
+      },
+      {
+        description:
+          'Demandez. Suivez. Livrez. Achats, expéditions et stocks dans une plateforme claire pour les opérations multi-sites — surtout en Afrique.',
+        category: 'Logistique et opérations',
         status: 'En ligne',
       },
       { description: 'L’IA rédige votre marketing. Vite.', category: 'Marketing', status: 'Beta' },
@@ -633,6 +651,12 @@ const agenticSoftwaresCollections = {
         category: 'Hospitalidad',
         status: 'En vivo',
       },
+      {
+        description:
+          'Solicita. Rastrea. Entrega. Compras, despachos e inventario en una plataforma clara para operaciones multi-sede — especialmente en África.',
+        category: 'Logística y operaciones',
+        status: 'En vivo',
+      },
       { description: 'La IA escribe tu marketing. Rápido.', category: 'Marketing', status: 'Beta' },
     ],
     services: [
@@ -727,6 +751,12 @@ const agenticSoftwaresCollections = {
         category: 'Hospitality',
         status: 'Live',
       },
+      {
+        description:
+          'Anfordern. Verfolgen. Liefern. Beschaffung, Versand und Lager in einer klaren Plattform für Multi-Standort-Betriebe — besonders in Afrika.',
+        category: 'Logistik und Betrieb',
+        status: 'Live',
+      },
       { description: 'KI schreibt Ihr Marketing. Schnell.', category: 'Marketing', status: 'Beta' },
     ],
     services: [
@@ -819,6 +849,12 @@ const agenticSoftwaresCollections = {
         description:
           'أدر الفندق من أي مكان: الحجوزات، الغرف، المفاتيح، والمدفوعات في مركز تحكم واحد. وصول قائم على الأدوار، بطاقات أبواب ذكية، ورؤية كاملة للمستثمرين والفريق.',
         category: 'الضيافة',
+        status: 'مباشر',
+      },
+      {
+        description:
+          'اطلب. تتبّع. سلّم. المشتريات والشحن والمخزون في منصة واحدة للعمليات متعددة الفروع — خاصة في أفريقيا.',
+        category: 'اللوجستيات والعمليات',
         status: 'مباشر',
       },
       { description: 'الذكاء الاصطناعي يكتب تسويقك. بسرعة.', category: 'التسويق', status: 'Beta' },
@@ -950,6 +986,18 @@ export default function AgenticSoftwaresPage({ params, searchParams }: AgenticSo
       icon: '🏨'
     },
     {
+      title: 'DispatchFlow',
+      description: localizeAgentic(
+        language,
+        'Request. Track. Deliver. Procurement, dispatch, and inventory in one calm platform for multi-branch enterprise operations — especially across African markets.',
+      ),
+      category: localizeAgentic(language, 'Logistics & Operations'),
+      status: localizeAgentic(language, 'Live'),
+      link: 'https://dispatch-flow-one.vercel.app/',
+      tech: ['Next.js 15', 'Supabase', 'Postgres RLS', 'Recharts'],
+      icon: '🚛',
+    },
+    {
       title: 'ContentCraft AI',
       description: localizeAgentic(language, 'AI writes your marketing. Fast.'),
       category: localizeAgentic(language, 'Marketing'),
@@ -1055,7 +1103,25 @@ export default function AgenticSoftwaresPage({ params, searchParams }: AgenticSo
       timeline: localizeAgentic(language, '2 months'),
       status: localizeAgentic(language, 'Live'),
       link: 'https://kabinda-lodge.com/'
-    }
+    },
+    {
+      title: 'DispatchFlow',
+      type: localizeAgentic(language, 'Internal Project'),
+      industry: localizeAgentic(language, 'Logistics & Operations'),
+      challenge:
+        localizeAgentic(language, 'Multi-branch teams lost requests in email, dispatch status in WhatsApp, and inventory in spreadsheets — leadership had no single morning view of what was in transit.'),
+      solution:
+        localizeAgentic(language, 'A unified ops platform: procurement requests with approvals, dispatch control with driver assignments, inventory tied to deliveries, role-based dashboards, and Postgres RLS per organization.'),
+      results: [
+        { metric: '3', description: localizeAgentic(language, '3 core modules in one system of record') },
+        { metric: '5', description: localizeAgentic(language, '5 role-based views with Postgres RLS') },
+        { metric: localizeAgentic(language, 'Live'), description: localizeAgentic(language, 'Mobile-ready dispatch status updates') },
+      ],
+      tech: ['Next.js 15', 'Supabase', 'PostgreSQL RLS', 'Recharts'],
+      timeline: localizeAgentic(language, '2 months'),
+      status: localizeAgentic(language, 'Live'),
+      link: 'https://dispatch-flow-one.vercel.app/',
+    },
   ]
 
   const process = [

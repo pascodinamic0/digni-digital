@@ -1755,6 +1755,15 @@ export const contentDe: Record<string, Partial<BlogArticle>> = {
       <p><em>Fragen zu Skalierung ohne zusätzliche Vollzeitstellen? <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Termin mit Digni Digital</a> oder unsere <a href="/ai-receptionist">KI-Rezeptionist</a>-Lösungen für durchgehende Erreichbarkeit.</em></p>
     `,
   },
+  'dispatchflow-unified-logistics-procurement-platform': {
+    title: 'DispatchFlow: Eine Plattform für Beschaffung, Versand und Lager (Live)',
+    excerpt:
+      'DispatchFlow — unsere Live-Operations-Plattform für Unternehmen in Afrika. Beschaffung, Sendungsverfolgung und Inventar in einem ruhigen Dashboard für Multi-Standort-Teams.',
+    category: 'Agentic Softwares',
+    readTime: '9 Min. Lesezeit',
+    publishDate: '24. Mai 2026',
+    tags: ['DispatchFlow', 'Logistiksoftware', 'Beschaffung', 'Versand', 'Inventar', 'Afrika', 'agentische Software'],
+  },
 }
 
 export const articlesDe: BlogArticle[] = articlesEn.map((article) => {
