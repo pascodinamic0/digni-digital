@@ -3747,7 +3747,108 @@ const remainingArticles: BlogArticle[] = [
 
       <p><em>Questions about scaling operations without adding headcount? <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Schedule time with Digni Digital</a> or explore our <a href="/ai-receptionist">AI receptionist</a> capabilities for always-on front-office coverage.</em></p>
     `
-  }
+  },
+  {
+    id: 102,
+    title: 'DispatchFlow: One Platform for Procurement, Dispatch & Inventory (Live)',
+    slug: 'dispatchflow-unified-logistics-procurement-platform',
+    excerpt:
+      'Meet DispatchFlow — our live operations platform for African enterprises. See how procurement requests, shipment tracking, and inventory work in one calm dashboard built for multi-branch teams.',
+    category: 'Agentic Softwares',
+    readTime: '9 min read',
+    publishDate: 'May 24, 2026',
+    author: 'Pascal Digny',
+    tags: [
+      'DispatchFlow',
+      'logistics software',
+      'procurement',
+      'dispatch tracking',
+      'inventory management',
+      'African enterprise',
+      'agentic software',
+    ],
+    featured: true,
+    coverImageUrl: '/blog/dispatchflow/hero-dashboard.png',
+    content: `
+      <h2>Request. Track. Deliver. — Built for operations teams, not tourists</h2>
+
+      <p>If your organization runs on <strong>email for procurement</strong>, <strong>WhatsApp for dispatch</strong>, and <strong>spreadsheets for inventory</strong>, you already know the cost: missed deliveries, stockouts, and leadership reports that are always a day late. <strong><a href="https://dispatch-flow-one.vercel.app/" target="_blank" rel="noopener noreferrer">DispatchFlow</a></strong> is our answer — a <strong>live</strong> internal logistics platform we built for multi-branch enterprises, especially across African markets.</p>
+
+      <p>It is not a consumer marketplace. It is your team's <strong>system of record</strong>: one calm, dashboard-first UI for operators who need clarity under pressure.</p>
+
+      <figure style="margin: 2rem 0;">
+        <img src="/blog/dispatchflow/hero-dashboard.png" alt="DispatchFlow operations dashboard with KPI cards, shipment overview, and recent activity" width="1200" height="750" style="width:100%;height:auto;border-radius:12px;border:1px solid rgba(148,163,184,0.35);" loading="lazy" />
+        <figcaption style="margin-top:0.75rem;font-size:0.875rem;color:#64748b;text-align:center;">Operations dashboard — KPIs, status, and recent activity in one morning view.</figcaption>
+      </figure>
+
+      <h3>Who DispatchFlow is for</h3>
+
+      <ul>
+        <li><strong>Operations & supply chain leads</strong> who need one view of requests in flight, trucks on the road, and stock by branch</li>
+        <li><strong>Procurement teams</strong> who need approvals, priority levels, and audit trails — not inbox archaeology</li>
+        <li><strong>Dispatchers</strong> who assign loads and update in-transit status from the field on mobile</li>
+        <li><strong>Branch managers & leadership</strong> who want dashboards they trust before the day runs them</li>
+      </ul>
+
+      <p>Industries we designed for: FMCG distribution, pharma/medical supply, construction materials, NGO logistics, retail chains, and manufacturing with internal transfers.</p>
+
+      <h3>Three modules, one platform</h3>
+
+      <h4>1. Procurement requests</h4>
+      <p>Teams submit needs with <strong>priority, destination, and deadlines</strong>. Approvers see full context. Status moves from draft → approved → fulfilled — with history your finance team can defend.</p>
+
+      <figure style="margin: 2rem 0;">
+        <img src="/blog/dispatchflow/procurement-requests.png" alt="DispatchFlow procurement requests table with priority badges and status pills" width="1200" height="800" style="width:100%;height:auto;border-radius:12px;border:1px solid rgba(148,163,184,0.35);" loading="lazy" />
+        <figcaption style="margin-top:0.75rem;font-size:0.875rem;color:#64748b;text-align:center;">Procurement — priority, destination, and status pills from draft through delivered.</figcaption>
+      </figure>
+
+      <h4>2. Dispatch & shipments</h4>
+      <p>Assign drivers, monitor <strong>in-transit</strong> loads, and close deliveries with confidence. WhatsApp stays for quick pings — the platform stays the source of truth.</p>
+
+      <figure style="margin: 2rem 0;">
+        <img src="/blog/dispatchflow/dispatch-tracking.png" alt="DispatchFlow shipment tracking timeline and delivery progress" width="1200" height="800" style="width:100%;height:auto;border-radius:12px;border:1px solid rgba(148,163,184,0.35);" loading="lazy" />
+        <figcaption style="margin-top:0.75rem;font-size:0.875rem;color:#64748b;text-align:center;">Dispatch control — assignments, timelines, and in-transit visibility.</figcaption>
+      </figure>
+
+      <h4>3. Inventory sync</h4>
+      <p>Stock levels, movements, and <strong>low-stock alerts</strong> tied to what actually shipped. Fewer “we thought we had it” moments across branches.</p>
+
+      <figure style="margin: 2rem 0;">
+        <img src="/blog/dispatchflow/analytics-dashboard.png" alt="DispatchFlow analytics and executive visibility with charts and KPIs" width="1200" height="750" style="width:100%;height:auto;border-radius:12px;border:1px solid rgba(148,163,184,0.35);" loading="lazy" />
+        <figcaption style="margin-top:0.75rem;font-size:0.875rem;color:#64748b;text-align:center;">Executive visibility — KPI cards and activity feeds leadership uses every morning.</figcaption>
+      </figure>
+
+      <h3>Why teams switch from spreadsheets</h3>
+
+      <ul>
+        <li><strong>One source of truth</strong> instead of three tools duct-taped together</li>
+        <li><strong>Role-based access</strong> — admin, procurement, dispatcher, requester, branch manager, ops lead</li>
+        <li><strong>Postgres Row Level Security</strong> — organization-scoped data at the database layer</li>
+        <li><strong>Mobile-ready</strong> — 44px+ tap targets and bottom navigation for field updates</li>
+        <li><strong>Calm UX</strong> — navy sidebar, clear status pills, ~150ms transitions (Stripe/Linear discipline, not ERP clutter)</li>
+      </ul>
+
+      <blockquote>
+        <p><strong>Request → Track → Deliver.</strong> That is the loop. Procurement submits, dispatchers move loads, inventory updates when deliveries close — all visible on one dashboard.</p>
+      </blockquote>
+
+      <h3>Live today — explore the product</h3>
+
+      <p>DispatchFlow is <strong>production-ready</strong> on <a href="https://dispatch-flow-one.vercel.app/" target="_blank" rel="noopener noreferrer">dispatch-flow-one.vercel.app</a>. Create a workspace, invite your team, configure branches, and replace scattered spreadsheets with a platform built for how African enterprise operations actually run.</p>
+
+      <p>We ship it as part of our <a href="/agentic-softwares">Agentic Softwares</a> practice — the same team behind <a href="https://kabinda-lodge.com/" target="_blank" rel="noopener noreferrer">Kabinda Lodge</a> (hospitality OS) and <a href="https://ams-xi-two.vercel.app/" target="_blank" rel="noopener noreferrer">AMS</a> (school management). When off-the-shelf tools fail adoption, we build systems operators trust.</p>
+
+      <h3>Next step</h3>
+
+      <p><strong>Try the live app:</strong> <a href="https://dispatch-flow-one.vercel.app/signup" target="_blank" rel="noopener noreferrer">Create your free workspace</a>.</p>
+
+      <p><strong>Need a custom ops platform for your organization?</strong> <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Book a strategy call</a> with Digni Digital — we'll map your procurement, dispatch, and inventory flows and show whether DispatchFlow fits or a tailored build makes sense.</p>
+
+      <hr>
+
+      <p><em>See DispatchFlow on our <a href="/agentic-softwares">Agentic Softwares</a> page alongside Kabinda Lodge, AMS, and other live products we build for growth-focused teams.</em></p>
+    `,
+  },
 ]
 
 export const articlesEn: BlogArticle[] = [...blogArticles, ...remainingArticles]

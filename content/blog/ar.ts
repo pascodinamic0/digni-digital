@@ -2395,6 +2395,15 @@ export const contentAr: Record<string, Partial<BlogArticle>> = {
       <p><em>أسئلة عن التوسع دون توظيف إضافي؟ <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">جدولة مع Digni Digital</a> أو اطّلع على <a href="/ai-receptionist">موظف الاستقبال الذكي</a> للتغطية المستمرة.</em></p>
     `,
   },
+  'dispatchflow-unified-logistics-procurement-platform': {
+    title: 'DispatchFlow: منصة واحدة للمشتريات والشحن والمخزون (مباشر)',
+    excerpt:
+      'تعرّف على DispatchFlow — منصتنا التشغيلية المباشرة للمؤسسات الأفريقية. المشتريات وتتبع الشحنات والمخزون في لوحة تحكم واحدة للفرق متعددة الفروع.',
+    category: 'Agentic Softwares',
+    readTime: '9 دقائق قراءة',
+    publishDate: '24 مايو 2026',
+    tags: ['DispatchFlow', 'برمجيات لوجستية', 'مشتريات', 'شحن', 'مخزون', 'أفريقيا', 'برمجيات وكيلة'],
+  },
 }
 
 export const articlesAr: BlogArticle[] = articlesEn.map((article) => {

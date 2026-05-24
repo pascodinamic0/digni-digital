@@ -674,6 +674,98 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
       <p><em>Questions sur la montée en charge sans embaucher à tout va ? <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Prenez rendez-vous avec Digni Digital</a> ou découvrez notre <a href="/ai-receptionist">réceptionniste IA</a> pour un accueil disponible en continu.</em></p>
     `,
   },
+  'dispatchflow-unified-logistics-procurement-platform': {
+    id: 102,
+    title: 'DispatchFlow : une plateforme pour achats, expéditions et stocks (en ligne)',
+    slug: 'dispatchflow-unified-logistics-procurement-platform',
+    excerpt:
+      'Découvrez DispatchFlow — notre plateforme opérationnelle en ligne pour les entreprises africaines. Achats, suivi des expéditions et inventaire dans un tableau de bord clair, pensé pour les équipes multi-sites.',
+    category: 'Agentic Softwares',
+    readTime: '9 min de lecture',
+    publishDate: '24 mai 2026',
+    author: 'Pascal Digny',
+    tags: [
+      'DispatchFlow',
+      'logiciel logistique',
+      'achats',
+      'suivi expéditions',
+      'gestion stocks',
+      'entreprise africaine',
+      'logiciel agentique',
+    ],
+    featured: true,
+    coverImageUrl: '/blog/dispatchflow/hero-dashboard.png',
+    content: `
+      <h2>Demandez. Suivez. Livrez. — Pour les équipes opérationnelles</h2>
+
+      <p>Si votre organisation fonctionne avec l'<strong>e-mail pour les achats</strong>, <strong>WhatsApp pour les expéditions</strong> et des <strong>tableurs pour les stocks</strong>, vous connaissez le coût : livraisons manquées, ruptures et rapports direction toujours en retard. <strong><a href="https://dispatch-flow-one.vercel.app/" target="_blank" rel="noopener noreferrer">DispatchFlow</a></strong> est notre réponse — une plateforme logistique interne <strong>en ligne</strong> pour les entreprises multi-sites, surtout en Afrique.</p>
+
+      <p>Ce n'est pas une marketplace grand public. C'est le <strong>système de référence</strong> de votre équipe : une interface calme, centrée tableau de bord, pour les opérateurs sous pression.</p>
+
+      <figure style="margin: 2rem 0;">
+        <img src="/blog/dispatchflow/hero-dashboard.png" alt="Tableau de bord DispatchFlow avec KPI et activité récente" width="1200" height="750" style="width:100%;height:auto;border-radius:12px;border:1px solid rgba(148,163,184,0.35);" loading="lazy" />
+        <figcaption style="margin-top:0.75rem;font-size:0.875rem;color:#64748b;text-align:center;">Tableau de bord opérations — KPI, statuts et activité du matin.</figcaption>
+      </figure>
+
+      <h3>Pour qui est DispatchFlow</h3>
+
+      <ul>
+        <li><strong>Responsables supply chain</strong> — une vue sur demandes, camions et stocks par site</li>
+        <li><strong>Achats</strong> — validations, priorités et pistes d'audit</li>
+        <li><strong>Expéditeurs</strong> — affectations et statut en transit depuis le mobile</li>
+        <li><strong>Direction et managers de site</strong> — tableaux de bord fiables chaque matin</li>
+      </ul>
+
+      <h3>Trois modules, une plateforme</h3>
+
+      <h4>1. Demandes d'achat</h4>
+      <p>Priorité, destination, délais — du brouillon à la livraison avec historique défendable.</p>
+
+      <figure style="margin: 2rem 0;">
+        <img src="/blog/dispatchflow/procurement-requests.png" alt="Table des demandes d'achat DispatchFlow" width="1200" height="800" style="width:100%;height:auto;border-radius:12px;border:1px solid rgba(148,163,184,0.35);" loading="lazy" />
+        <figcaption style="margin-top:0.75rem;font-size:0.875rem;color:#64748b;text-align:center;">Achats — priorités et statuts de bout en bout.</figcaption>
+      </figure>
+
+      <h4>2. Expéditions</h4>
+      <p>Affectation chauffeurs, suivi en transit, clôture livraison. WhatsApp pour le rapide ; la plateforme pour la vérité.</p>
+
+      <figure style="margin: 2rem 0;">
+        <img src="/blog/dispatchflow/dispatch-tracking.png" alt="Suivi des expéditions DispatchFlow" width="1200" height="800" style="width:100%;height:auto;border-radius:12px;border:1px solid rgba(148,163,184,0.35);" loading="lazy" />
+        <figcaption style="margin-top:0.75rem;font-size:0.875rem;color:#64748b;text-align:center;">Contrôle expéditions — affectations et visibilité en transit.</figcaption>
+      </figure>
+
+      <h4>3. Inventaire</h4>
+      <p>Niveaux, mouvements et alertes stock bas liés aux livraisons réelles.</p>
+
+      <figure style="margin: 2rem 0;">
+        <img src="/blog/dispatchflow/analytics-dashboard.png" alt="Analytique et visibilité direction DispatchFlow" width="1200" height="750" style="width:100%;height:auto;border-radius:12px;border:1px solid rgba(148,163,184,0.35);" loading="lazy" />
+        <figcaption style="margin-top:0.75rem;font-size:0.875rem;color:#64748b;text-align:center;">Visibilité direction — KPI et flux d'activité.</figcaption>
+      </figure>
+
+      <h3>Pourquoi quitter les tableurs</h3>
+
+      <ul>
+        <li><strong>Une source de vérité</strong> au lieu de trois outils bricolés</li>
+        <li><strong>Accès par rôle</strong> — admin, achats, expéditeur, demandeur, manager, ops</li>
+        <li><strong>Row Level Security Postgres</strong> — isolation par organisation</li>
+        <li><strong>Mobile</strong> — mises à jour terrain avec cibles tactiles 44px+</li>
+      </ul>
+
+      <h3>En ligne aujourd'hui</h3>
+
+      <p>DispatchFlow est <strong>en production</strong> sur <a href="https://dispatch-flow-one.vercel.app/" target="_blank" rel="noopener noreferrer">dispatch-flow-one.vercel.app</a>. Créez un espace, invitez l'équipe, configurez les sites.</p>
+
+      <p>Nous le livrons dans notre pratique <a href="/agentic-softwares">Agentic Softwares</a> — comme <a href="https://kabinda-lodge.com/" target="_blank" rel="noopener noreferrer">Kabinda Lodge</a> et <a href="https://ams-xi-two.vercel.app/" target="_blank" rel="noopener noreferrer">AMS</a>.</p>
+
+      <p><strong>Essayer :</strong> <a href="https://dispatch-flow-one.vercel.app/signup" target="_blank" rel="noopener noreferrer">Créer un espace gratuit</a>.</p>
+
+      <p><strong>Projet sur mesure ?</strong> <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Réserver un appel stratégique</a> avec Digni Digital.</p>
+
+      <hr>
+
+      <p><em>Voir DispatchFlow sur notre page <a href="/agentic-softwares">Agentic Softwares</a>.</em></p>
+    `,
+  },
 }
 
 export const articlesFr: BlogArticle[] = articlesEn.map((article) => {
