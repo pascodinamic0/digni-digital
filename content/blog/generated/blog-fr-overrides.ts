@@ -10,7 +10,7 @@ export const blogFrOverrides = {
     excerpt: "Découvrez comment les systèmes d'employés IA révolutionnent le service client, réduisent les coûts de 60 % et assurent une disponibilité 24h/24 pour les entreprises en croissance.",
     category: "Système d'employés IA",
     readTime: "10 min de lecture",
-    publishDate: "19 mars 2026",
+    publishDate: "25 mai 2026",
     tags: ["système d'employés IA", "service client", "automatisation d'entreprise", "réceptionniste IA", "croissance d'entreprise"],
     content: `
       <h2>La révolution du service client : des employés IA qui ne dorment jamais</h2>
@@ -111,7 +111,7 @@ export const blogFrOverrides = {
     excerpt: "Découvrez comment les systèmes d'employés IA génèrent un ROI mesurable grâce à la réduction des coûts, aux gains d'efficacité et à la croissance du chiffre d'affaires.",
     category: "Système d'employés IA",
     readTime: "9 min de lecture",
-    publishDate: "19 mars 2026",
+    publishDate: "25 mai 2026",
     tags: ["système d'employés IA", "ROI", "réduction des coûts", "efficacité opérationnelle", "croissance d'entreprise"],
     content: `
       <h2>Calculer le vrai ROI des systèmes d'employés IA</h2>
@@ -277,7 +277,7 @@ export const blogFrOverrides = {
     excerpt: "Guide étape par étape pour déployer des réceptionnistes IA dans votre entreprise, de la planification à la mesure du succès.",
     category: "Système d'employés IA",
     readTime: "11 min de lecture",
-    publishDate: "19 mars 2026",
+    publishDate: "25 mai 2026",
     tags: ["réceptionniste IA", "implémentation", "système d'employés IA", "automatisation d'entreprise", "service client"],
     content: `
       <h2>Guide complet pour déployer un réceptionniste IA</h2>
@@ -462,7 +462,7 @@ export const blogFrOverrides = {
     excerpt: "Pourquoi les lycées privés doivent intégrer les compétences numériques pour préparer les élèves aux carrières modernes et renforcer leurs résultats.",
     category: "Digni Digital Literacy",
     readTime: "10 min de lecture",
-    publishDate: "19 mars 2026",
+    publishDate: "25 mai 2026",
     tags: ["Digni Digital Literacy", "compétences numériques", "lycées privés", "préparation carrière", "éducation"],
     content: `
       <h2>Le besoin critique : préparer les élèves aux carrières modernes</h2>
@@ -581,7 +581,7 @@ export const blogFrOverrides = {
     excerpt: "Comment un programme orienté carrière relie compétences numériques, projets concrets et accompagnement pour améliorer les résultats des élèves.",
     category: "Digni Digital Literacy",
     readTime: "10 min de lecture",
-    publishDate: "19 mars 2026",
+    publishDate: "25 mai 2026",
     tags: ["Future-Ready Graduate", "compétences numériques", "réussite carrière", "éducation privée", "préparation emploi"],
     content: `
       <h2>Transformer l'éducation avec le programme Digni Digital Literacy</h2>
@@ -667,7 +667,7 @@ export const blogFrOverrides = {
     excerpt: "Guide complet pour aider les administrateurs d'écoles privées à planifier, lancer et mesurer un programme de compétences numériques.",
     category: "Digni Digital Literacy",
     readTime: "11 min de lecture",
-    publishDate: "19 mars 2026",
+    publishDate: "25 mai 2026",
     tags: ["Digni Digital Literacy", "administration scolaire", "implémentation programme", "écoles privées", "leadership éducatif"],
     content: `
       <h2>Guide complet d'implémentation : programme Digni Digital Literacy</h2>
@@ -786,7 +786,7 @@ export const blogFrOverrides = {
     excerpt: "Découvrez quand les solutions prêtes à l'emploi limitent votre croissance et pourquoi un SaaS sur mesure peut créer un avantage opérationnel durable.",
     category: "Développement SaaS sur mesure",
     readTime: "8 min de lecture",
-    publishDate: "19 mars 2026",
+    publishDate: "25 mai 2026",
     tags: ["SaaS sur mesure", "développement SaaS", "logiciel métier", "solutions personnalisées", "développement logiciel"],
     content: `
       <h2>Pourquoi le SaaS sur mesure dépasse les solutions prêtes à l'emploi</h2>
@@ -866,7 +866,7 @@ export const blogFrOverrides = {
     excerpt: "Les modèles d'architecture et bonnes pratiques pour créer des produits SaaS qui passent de la startup à l'entreprise sans réécriture majeure.",
     category: "Développement SaaS sur mesure",
     readTime: "9 min de lecture",
-    publishDate: "19 mars 2026",
+    publishDate: "25 mai 2026",
     tags: ["développement SaaS", "architecture logicielle", "scalabilité", "bonnes pratiques", "design SaaS"],
     content: `
       <h2>Construire un SaaS évolutif : une architecture qui grandit avec vous</h2>
@@ -961,7 +961,7 @@ export const blogFrOverrides = {
     excerpt: "Un guide de bout en bout pour transformer une idée SaaS en produit lancé, de la stratégie à l'architecture, au développement et à la commercialisation.",
     category: "Développement SaaS sur mesure",
     readTime: "12 min de lecture",
-    publishDate: "19 mars 2026",
+    publishDate: "25 mai 2026",
     tags: ["développement SaaS", "SaaS sur mesure", "lancement produit", "développement logiciel", "startup SaaS"],
     content: `
       <h2>Guide complet : développer un SaaS sur mesure de l'idée au lancement</h2>
@@ -1079,7 +1079,7 @@ export const blogFrOverrides = {
     excerpt: "Études de cas montrant comment des solutions SaaS personnalisées résolvent des problèmes opérationnels et créent une croissance mesurable.",
     category: "Développement SaaS sur mesure",
     readTime: "9 min de lecture",
-    publishDate: "19 mars 2026",
+    publishDate: "25 mai 2026",
     tags: ["réussites SaaS", "SaaS sur mesure", "études de cas", "croissance", "transformation digitale"],
     content: `
       <h2>Réussites SaaS : des résultats concrets grâce aux solutions sur mesure</h2>
@@ -1165,7 +1165,7 @@ export const blogFrOverrides = {
     excerpt: "Cadre de décision pour savoir quand utiliser des employés IA, quand recruter et comment combiner automatisation et expertise humaine.",
     category: "Système d'employés IA",
     readTime: "10 min de lecture",
-    publishDate: "19 mars 2026",
+    publishDate: "25 mai 2026",
     tags: ["employés IA", "personnel traditionnel", "automatisation", "décision opérationnelle", "croissance"],
     content: `
       <h2>Systèmes d'employés IA vs personnel traditionnel : trouver le bon équilibre</h2>
@@ -1283,7 +1283,7 @@ export const blogFrOverrides = {
     excerpt: "Comment l'automatisation IA aide les entreprises à traiter plus de demandes, réduire les tâches manuelles et croître sans complexité proportionnelle.",
     category: "Système d'employés IA",
     readTime: "9 min de lecture",
-    publishDate: "19 mars 2026",
+    publishDate: "25 mai 2026",
     tags: ["automatisation IA", "opérations", "scalabilité", "productivité", "croissance entreprise"],
     content: `
       <h2>Scaler les opérations avec l'automatisation propulsée par l'IA</h2>
@@ -1395,7 +1395,7 @@ export const blogFrOverrides = {
     excerpt: "Un cadre pratique pour comparer SaaS sur mesure et solutions standard selon vos processus, votre budget, vos intégrations et vos objectifs de croissance.",
     category: "Développement SaaS sur mesure",
     readTime: "8 min de lecture",
-    publishDate: "19 mars 2026",
+    publishDate: "25 mai 2026",
     tags: ["SaaS sur mesure", "solutions prêtes à l'emploi", "cadre de décision", "logiciel métier", "PME"],
     content: `
       <h2>Cadre de décision : SaaS sur mesure ou solution prête à l'emploi</h2>
@@ -1502,7 +1502,7 @@ export const blogFrOverrides = {
     excerpt: "Stratégies concrètes pour développer votre entreprise avec l'IA en France et en RDC : génération de leads, optimisation des processus et ROI mesurable pour les PME.",
     category: "Croissance d'entreprise",
     readTime: "12 min de lecture",
-    publishDate: "19 mars 2026",
+    publishDate: "25 mai 2026",
     tags: ["croissance entreprise IA", "développement des affaires", "IA PME", "France RDC", "génération de leads", "croissance IA"],
     content: `
       <h2>Croissance d'entreprise avec l'IA : stratégies concrètes pour la France et la RDC</h2>

@@ -10,7 +10,7 @@ export const blogEsOverrides = {
     excerpt: 'Por qué los colegios privados deben integrar habilidades digitales para preparar a los estudiantes para carreras modernas y mejorar sus resultados.',
     category: 'Digni Digital Literacy',
     readTime: '10 min de lectura',
-    publishDate: '19 de marzo de 2026',
+    publishDate: '25 de mayo de 2026',
     tags: ['Digni Digital Literacy', 'habilidades digitales', 'colegios privados', 'preparación profesional', 'educación'],
     content: `
       <h2>La necesidad crítica: preparar a los estudiantes para carreras modernas</h2>
@@ -44,7 +44,7 @@ export const blogEsOverrides = {
     excerpt: 'Cómo un programa orientado a la carrera conecta habilidades digitales, proyectos reales y acompañamiento para mejorar los resultados de los estudiantes.',
     category: 'Digni Digital Literacy',
     readTime: '10 min de lectura',
-    publishDate: '19 de marzo de 2026',
+    publishDate: '25 de mayo de 2026',
     tags: ['Future-Ready Graduate', 'habilidades digitales', 'éxito profesional', 'educación privada', 'empleabilidad'],
     content: `
       <h2>Transformar la educación en éxito profesional</h2>
@@ -83,7 +83,7 @@ export const blogEsOverrides = {
     excerpt: 'Guía completa para que los administradores de colegios privados planifiquen, lancen y midan un programa de habilidades digitales.',
     category: 'Digni Digital Literacy',
     readTime: '11 min de lectura',
-    publishDate: '19 de marzo de 2026',
+    publishDate: '25 de mayo de 2026',
     tags: ['Digni Digital Literacy', 'administración escolar', 'implementación de programas', 'colegios privados', 'liderazgo educativo'],
     content: `
       <h2>Guía completa de implementación: Digni Digital Literacy</h2>
@@ -130,7 +130,7 @@ export const blogEsOverrides = {
     excerpt: 'Cuándo las soluciones estándar limitan el crecimiento y por qué un SaaS a medida puede crear una ventaja operativa duradera.',
     category: 'Desarrollo SaaS a medida',
     readTime: '8 min de lectura',
-    publishDate: '19 de marzo de 2026',
+    publishDate: '25 de mayo de 2026',
     tags: ['SaaS a medida', 'desarrollo SaaS', 'software empresarial', 'soluciones personalizadas', 'desarrollo de software'],
     content: `
       <h2>Por qué el SaaS a medida supera a las soluciones estándar</h2>
@@ -171,7 +171,7 @@ export const blogEsOverrides = {
     excerpt: 'Patrones de arquitectura y buenas prácticas para crear productos SaaS que escalen de empresa emergente a empresa sin grandes reescrituras.',
     category: 'Desarrollo SaaS a medida',
     readTime: '9 min de lectura',
-    publishDate: '19 de marzo de 2026',
+    publishDate: '25 de mayo de 2026',
     tags: ['desarrollo SaaS', 'arquitectura de software', 'escalabilidad', 'buenas prácticas', 'diseño SaaS'],
     content: `
       <h2>Construir SaaS escalable: arquitectura que crece con usted</h2>
@@ -215,7 +215,7 @@ export const blogEsOverrides = {
     excerpt: 'Guía de extremo a extremo para convertir una idea SaaS en un producto lanzado, desde estrategia y arquitectura hasta desarrollo y salida al mercado.',
     category: 'Desarrollo SaaS a medida',
     readTime: '12 min de lectura',
-    publishDate: '19 de marzo de 2026',
+    publishDate: '25 de mayo de 2026',
     tags: ['desarrollo SaaS', 'SaaS a medida', 'lanzamiento de producto', 'desarrollo de software', 'empresa emergente SaaS'],
     content: `
       <h2>Guía completa: desarrollo SaaS a medida de la idea al lanzamiento</h2>
@@ -257,7 +257,7 @@ export const blogEsOverrides = {
     excerpt: 'Casos de estudio que muestran cómo soluciones SaaS personalizadas resuelven problemas operativos y generan crecimiento medible.',
     category: 'Desarrollo SaaS a medida',
     readTime: '9 min de lectura',
-    publishDate: '19 de marzo de 2026',
+    publishDate: '25 de mayo de 2026',
     tags: ['éxitos SaaS', 'SaaS a medida', 'casos de estudio', 'crecimiento', 'transformación digital'],
     content: `
       <h2>Historias de éxito SaaS: resultados reales con soluciones a medida</h2>
@@ -302,7 +302,7 @@ export const blogEsOverrides = {
     excerpt: 'Marco de decisión para saber cuándo usar empleados IA, cuándo contratar y cómo combinar automatización con experiencia humana.',
     category: 'Sistema de Empleados IA',
     readTime: '10 min de lectura',
-    publishDate: '19 de marzo de 2026',
+    publishDate: '25 de mayo de 2026',
     tags: ['empleados IA', 'personal tradicional', 'automatización', 'decisión operativa', 'crecimiento'],
     content: `
       <h2>Sistemas de empleados IA vs personal tradicional: encontrar el equilibrio correcto</h2>
@@ -341,7 +341,7 @@ export const blogEsOverrides = {
     excerpt: 'Cómo la automatización IA ayuda a las empresas a gestionar más demanda, reducir tareas manuales y crecer sin complejidad proporcional.',
     category: 'Sistema de Empleados IA',
     readTime: '9 min de lectura',
-    publishDate: '19 de marzo de 2026',
+    publishDate: '25 de mayo de 2026',
     tags: ['automatización IA', 'operaciones', 'escalabilidad', 'productividad', 'crecimiento empresarial'],
     content: `
       <h2>Escalar operaciones con automatización impulsada por IA</h2>
@@ -383,7 +383,7 @@ export const blogEsOverrides = {
     excerpt: 'Un marco práctico para comparar SaaS a medida y soluciones estándar según procesos, presupuesto, integraciones y objetivos de crecimiento.',
     category: 'Desarrollo SaaS a medida',
     readTime: '8 min de lectura',
-    publishDate: '19 de marzo de 2026',
+    publishDate: '25 de mayo de 2026',
     tags: ['SaaS a medida', 'soluciones listas para usar', 'marco de decisión', 'software empresarial', 'pymes'],
     content: `
       <h2>Marco de decisión: SaaS a medida vs soluciones listas para usar</h2>
@@ -432,7 +432,7 @@ export const blogEsOverrides = {
     excerpt: 'Aprenda cómo los empleados IA automatizan el servicio al cliente y triplican los clientes potenciales sin contratar. Estadísticas reales, casos de estudio e implementación paso a paso para pymes.',
     category: 'Sistema de Empleados IA',
     readTime: '11 min de lectura',
-    publishDate: '19 de marzo de 2026',
+    publishDate: '25 de mayo de 2026',
     tags: ['empleados IA', 'agentes IA de servicio al cliente', 'automatización de clientes potenciales', 'IA agéntica 2026', 'automatización de servicio al cliente'],
     content: `
       <h2>Empleados IA 2026: automatice el servicio al cliente y triplique sus clientes potenciales sin contratar</h2>
@@ -469,7 +469,7 @@ export const blogEsOverrides = {
     excerpt: 'Tendencias de Deloitte y PwC sobre IA agéntica. Cuándo elegir agentes IA frente a automatización tradicional, con ejemplos concretos de calificación de llamadas y generación de propuestas.',
     category: 'Sistema de Empleados IA',
     readTime: '10 min de lectura',
-    publishDate: '19 de marzo de 2026',
+    publishDate: '25 de mayo de 2026',
     tags: ['agentes IA', 'IA agéntica 2026', 'Francia RDC', 'automatización pymes', 'servicio al cliente IA'],
     content: `
       <h2>Agentes IA vs automatización tradicional: la nueva era para pymes francesas y congoleñas</h2>
@@ -502,7 +502,7 @@ export const blogEsOverrides = {
     excerpt: 'Cómo las empresas de Kinshasa y la RDC usan la automatización de procesos para ganar hasta 50 % de productividad. Transformación digital y acompañamiento local para pymes congoleñas.',
     category: 'Sistema de Empleados IA',
     readTime: '11 min de lectura',
-    publishDate: '19 de marzo de 2026',
+    publishDate: '25 de mayo de 2026',
     tags: ['automatización de procesos RDC', 'transformación digital Kinshasa', 'pymes Congo', 'productividad 2026', 'empleados IA', 'Código Digital'],
     content: `
       <h2>Automatización de procesos en la RDC: cómo las empresas de Kinshasa ganan 50 % de productividad en 2026</h2>
@@ -542,7 +542,7 @@ export const blogEsOverrides = {
     excerpt: 'Estrategias concretas para hacer crecer su empresa con IA en Francia y la RDC: generación de clientes potenciales, optimización de procesos y ROI medible para pymes.',
     category: 'Crecimiento Empresarial',
     readTime: '12 min de lectura',
-    publishDate: '19 de marzo de 2026',
+    publishDate: '25 de mayo de 2026',
     tags: ['crecimiento empresarial IA', 'desarrollo de negocios', 'IA pymes', 'Francia RDC', 'generación de clientes potenciales', 'crecimiento con IA'],
     content: `
       <h2>Crecimiento empresarial con IA: estrategias concretas para Francia y la RDC</h2>
@@ -597,7 +597,7 @@ export const blogEsOverrides = {
     excerpt: 'Cómo el desarrollo de negocios con IA captura cada cliente potencial y ayuda a cerrar más ventas 24/7 mediante generación, calificación y seguimiento automatizado.',
     category: 'Crecimiento Empresarial',
     readTime: '11 min de lectura',
-    publishDate: '19 de marzo de 2026',
+    publishDate: '25 de mayo de 2026',
     tags: ['desarrollo de negocios IA', 'generación de clientes potenciales', 'automatización de clientes potenciales', '24/7', 'recepcionista IA', 'calificación de clientes potenciales'],
     content: `
       <h2>Desarrollo de negocios impulsado por IA: capture cada cliente potencial y cierre más ventas 24/7</h2>
@@ -631,7 +631,7 @@ export const blogEsOverrides = {
     excerpt: 'Guía 2026 para crear un sitio empresarial con IA que genera clientes potenciales y agenda citas automáticamente. Sitios inteligentes y generadores de clientes potenciales para pymes.',
     category: 'Desarrollo web',
     readTime: '12 min de lectura',
-    publishDate: '19 de marzo de 2026',
+    publishDate: '25 de mayo de 2026',
     tags: ['creación de sitio web IA', 'desarrollo web', 'sitio web inteligente', 'clientes potenciales', 'sitio web IA', 'generación de clientes potenciales'],
     content: `
       <h2>Creación de sitios web con IA: guía 2026 para un sitio que agenda citas automáticamente</h2>
@@ -668,7 +668,7 @@ export const blogEsOverrides = {
     excerpt: 'SaaS a medida vs soluciones listas para usar para pymes africanas y francesas. Cuándo construir, cuándo comprar y cómo decidir para su empresa.',
     category: 'Desarrollo SaaS a medida',
     readTime: '11 min de lectura',
-    publishDate: '19 de marzo de 2026',
+    publishDate: '25 de mayo de 2026',
     tags: ['SaaS a medida', 'listo para usar', 'pymes África Francia', 'construir o comprar', 'software a medida', 'decisión de software'],
     content: `
       <h2>SaaS a medida vs soluciones listas para usar: la decisión que marca la diferencia para pymes africanas y francesas</h2>
@@ -716,7 +716,7 @@ export const blogEsOverrides = {
     excerpt: 'Artículo pilar: por qué la transformación digital y la IA son la elección decisiva para la RDC en 2026. Enlaces a todos los polos de servicio de Digni Digital.',
     category: 'Transformación digital',
     readTime: '14 min de lectura',
-    publishDate: '19 de marzo de 2026',
+    publishDate: '25 de mayo de 2026',
     tags: ['transformación digital RDC', 'IA empresas Congo 2026', 'Kinshasa', 'pymes', 'transformación digital', 'Código Digital'],
     content: `
       <h2>Transformación digital en la RDC 2026: por qué la IA es la elección decisiva para no quedar fuera del mercado</h2>
@@ -758,7 +758,7 @@ export const blogEsOverrides = {
     excerpt: 'Cómo las pymes francesas pueden adoptar agentes IA y automatización inteligente sin presupuesto de Valle del Silicio. Soluciones accesibles y centrada en personas.',
     category: 'Sistema de Empleados IA',
     readTime: '11 min de lectura',
-    publishDate: '19 de marzo de 2026',
+    publishDate: '25 de mayo de 2026',
     tags: ['IA pymes Francia', 'agentes IA accesibles', 'automatización pymes', 'Francia', 'recepcionista IA', 'transformación digital'],
     content: `
       <h2>IA para pymes francesas: cómo adoptar agentes inteligentes sin presupuesto de Valle del Silicio</h2>
@@ -803,7 +803,7 @@ export const blogEsOverrides = {
     excerpt: 'Por qué África francófona no puede permitirse esperar ante Claude, Grok y los agentes IA, con foco en la RDC y soluciones Digni Digital.',
     category: 'Futuro del trabajo',
     readTime: '12 min de lectura',
-    publishDate: '19 de marzo de 2026',
+    publishDate: '25 de mayo de 2026',
     tags: ['Claude', 'Grok', 'agentes IA', 'África francófona', 'RDC', 'Digni Digital', 'adopción IA'],
     content: `
       <h2>Claude, Grok y agentes IA: por qué África francófona ya no puede esperar</h2>
@@ -844,7 +844,7 @@ export const blogEsOverrides = {
     excerpt: 'Tendencias IA 2026 para el crecimiento de empresas francófonas: Francia, RDC y África. IA agéntica, automatización responsable, casos de estudio y plan de acción.',
     category: 'Sistema de Empleados IA',
     readTime: '14 min de lectura',
-    publishDate: '19 de marzo de 2026',
+    publishDate: '25 de mayo de 2026',
     tags: ['tendencias IA 2026', 'IA Francia RDC', 'empresas francófonas', 'IA agéntica', 'automatización IA África', 'transformación digital pymes'],
     content: `
       <h2>Guía completa 2026: tendencias IA para el crecimiento de empresas francófonas</h2>
