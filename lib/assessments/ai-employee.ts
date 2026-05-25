@@ -3,27 +3,27 @@ import type { ServiceAssessmentConfig } from './types'
 const bands = [
   {
     minPercent: 85,
-    label: 'Excellent fit',
+    label: 'Critical AGE fit',
     description:
-      'Your answers show real revenue at risk from slow follow-up, leaked leads, and systems that stop when you step away. An AI Employee System is built to close those gaps fast.',
+      'Your answers show serious revenue risk from slow response, poor visibility, manual admin, and inconsistent follow-up. AGE is built to close those gaps before ready buyers drift away.',
   },
   {
-    minPercent: 70,
-    label: 'Strong fit',
+    minPercent: 68,
+    label: 'High-risk leak profile',
     description:
-      'You are losing measurable value in response time, follow-up, or owner-dependent growth. A short strategy call can map where 24/7 intake and automation recover it first.',
+      'Multiple parts of your pipeline depend on memory, staff timing, or manual effort. A System Blueprint session can map where instant intake, follow-up, and automation recover value first.',
   },
   {
-    minPercent: 50,
-    label: 'Moderate fit',
+    minPercent: 45,
+    label: 'Moderate automation gap',
     description:
-      'Some gaps are clear; others may need a tighter baseline (tracking, channels, or volume) before full deployment. A focused audit can prioritize the highest-leak fixes.',
+      'You have some protection in place, but there are still visible gaps in speed, tracking, accountability, or repetitive admin. A focused audit can prioritize the highest-leak fixes.',
   },
   {
     minPercent: 0,
-    label: 'Explore alternatives',
+    label: 'Lower immediate fit',
     description:
-      'Based on your answers, another Digni offer—or a lighter automation step—may fit better right now. Book a call and we will point you the right way.',
+      'Your answers suggest your current systems already cover many AGE use cases. If you still want more leverage, we can point you toward a lighter automation step or another Digni offer.',
   },
 ] as const
 
@@ -159,24 +159,154 @@ const questions = [
       },
     ],
   },
+  {
+    id: 'pipeline-visibility',
+    prompt:
+      "If I asked you right now for the exact number of leads who showed interest last month but didn't buy, do you have a system that can show me their names and phone numbers in under 60 seconds?",
+    choices: [
+      { id: 'fully-mapped', label: 'Yes, our pipeline is fully mapped', points: 2 },
+      {
+        id: 'scattered',
+        label: 'No, they are scattered across spreadsheets, DMs, and paper notes',
+        points: 8,
+        insight: {
+          title: 'Warm leads are living in too many places',
+          why: 'When interested prospects are scattered across inboxes, sheets, and notes, follow-up becomes luck. AGE centralizes the trail so every warm lead can be recovered quickly.',
+        },
+      },
+      {
+        id: 'not-tracked',
+        label: "Honestly, we don't track them at all.",
+        points: 10,
+        insight: {
+          title: 'Unknown pipeline means unknown revenue loss',
+          why: 'If you cannot list last month’s non-buyers, you cannot follow up with them. AGE turns invisible interest into a tracked pipeline with names, numbers, and next steps.',
+        },
+      },
+    ],
+  },
+  {
+    id: 'staff-accountability',
+    prompt:
+      'When your staff or front desk handles an incoming inquiry, how do you verify that they used the exact psychology and follow-up sequence required to close the deal?',
+    choices: [
+      { id: 'review-regularly', label: 'I review recorded calls and texts regularly', points: 3 },
+      {
+        id: 'trusting',
+        label: 'I just trust they are doing their best',
+        points: 8,
+        insight: {
+          title: 'Good intentions are not a sales system',
+          why: 'Trust matters, but it does not prove the right words, timing, and next steps happened. AGE gives every inquiry a consistent follow-up sequence instead of relying on memory.',
+        },
+      },
+      {
+        id: 'no-monitoring',
+        label: 'I have no physical way to monitor every interaction.',
+        points: 10,
+        insight: {
+          title: 'Unmonitored interactions create silent leakage',
+          why: 'When you cannot see every call, DM, and text, you cannot know where bookings are lost. AGE creates visibility and consistency across the front line.',
+        },
+      },
+    ],
+  },
+  {
+    id: 'manual-task-hours',
+    prompt:
+      'How many hours per week do you or your key staff spend doing manual, repetitive tasks like sending appointment reminders, asking for reviews, or typing out basic business info?',
+    choices: [
+      { id: 'mostly-automated', label: '0–2 hours (Mostly automated)', points: 2 },
+      {
+        id: 'three-to-ten',
+        label: '3–10 hours',
+        points: 7,
+        insight: {
+          title: 'Admin work is quietly taxing growth',
+          why: 'A few hours every week becomes a recurring operational drag. AGE can take over reminders, review asks, FAQs, and other repetitive touches so staff stay focused on revenue work.',
+        },
+      },
+      {
+        id: 'ten-plus',
+        label: '10+ hours (It feels like a full-time administrative job).',
+        points: 10,
+        insight: {
+          title: 'Manual admin has become its own job',
+          why: 'When repetitive tasks consume double-digit hours, your team is paying a hidden salary in attention. AGE is designed to automate the routine work that keeps pulling people away.',
+        },
+      },
+    ],
+  },
+  {
+    id: 'organic-dm-follow-up',
+    prompt:
+      'When you put effort into creating organic content or running promotions, what percentage of the people who comment or view actually get a direct message offering them an easy way to book?',
+    choices: [
+      { id: 'all-automatic', label: '100% (We instantly DM everyone automatically)', points: 2 },
+      {
+        id: 'maybe-half',
+        label: 'Maybe half, if we catch the notification in time',
+        points: 7,
+        insight: {
+          title: 'Marketing attention is not being fully converted',
+          why: 'If only some commenters get a booking path, organic effort leaks at the exact moment interest appears. AGE can trigger direct follow-up while attention is still warm.',
+        },
+      },
+      {
+        id: 'few-addressed',
+        label: 'Very few, most comments are left unaddressed.',
+        points: 10,
+        insight: {
+          title: 'Engagement is being left without a next step',
+          why: 'Comments, views, and reactions are buying signals. When most receive no direct path to book, your content creates interest that never enters the pipeline.',
+        },
+      },
+    ],
+  },
+  {
+    id: 'competitor-speed',
+    prompt:
+      'If a hot prospect messages both you and your closest competitor at the exact same time, who is realistically going to deliver a helpful response and secure the booking first?',
+    choices: [
+      { id: 'we-will', label: 'We will, because we have instant systems', points: 2 },
+      {
+        id: 'competitor',
+        label: 'The competitor will likely beat us to it',
+        points: 10,
+        insight: {
+          title: 'Speed-to-lead is handing bookings away',
+          why: 'Ready buyers often choose the first helpful response. If competitors answer faster, AGE can protect the booking window with instant, useful replies.',
+        },
+      },
+      {
+        id: 'gamble',
+        label: 'It is a total gamble based on how busy we are.',
+        points: 8,
+        insight: {
+          title: 'Response speed should not depend on the day',
+          why: 'If winning the lead depends on whether someone is free, revenue is exposed. AGE gives hot prospects a consistent response even when the team is busy.',
+        },
+      },
+    ],
+  },
 ]
 
 export const aiEmployeeAssessmentEn: ServiceAssessmentConfig = {
   serviceId: 'ai-employee',
-  serviceName: 'AI Employee Systems',
+  serviceName: 'AGE Systems',
   servicePath: '/ai-receptionist',
   accent: 'accent',
   copy: {
-    metaTitle: 'AI Employee Fit Assessment | Digni Digital',
+    metaTitle: 'AGE Fit Assessment | Digni Digital',
     metaDescription:
-      'Five honest questions on client lifetime value, after-hours response, leaked leads, and what happens if you step away for two weeks—see your AI Employee fit score.',
+      'Ten honest questions on pipeline visibility, response speed, staff accountability, manual tasks, and lead leakage—see your AGE fit score.',
     eyebrow: '2-minute fit check',
     introTitle: 'How exposed is your revenue when you are not in the room?',
     introSubtitle:
-      'No signup required. Five direct questions—honest answers show where leads, bookings, and referrals leak when the team is busy or you are offline.',
+      'No signup required. Ten direct questions show where leads, bookings, reviews, and follow-up leak when the team is busy or you are offline.',
     introBullets: [
-      'Lifetime value, after-hours response, and leads that slipped last month',
-      'Instant match score for AI Employee Systems',
+      'Pipeline visibility, staff accountability, response speed, and manual-task load',
+      'Instant match score for AGE Systems',
       'Clear next step only when the gaps are real',
     ],
     startCta: 'Start assessment',
@@ -186,19 +316,19 @@ export const aiEmployeeAssessmentEn: ServiceAssessmentConfig = {
     finish: 'See my results',
     answerAll: 'Select an answer to continue.',
     resultEyebrow: 'Assessment Complete',
-    resultTitle: 'match for AI Employee Systems',
+    resultTitle: 'match for AGE Systems',
     matchLabel: 'Service match',
     bands: [...bands],
     nextStepsTitle: 'Recommended next step',
     primaryCta: 'Book 15-minute System Blueprint session',
-    secondaryCta: 'View AI Employee Systems',
+    secondaryCta: 'View AGE Systems',
     backToService: 'Back to service page',
     retake: 'Retake assessment',
   },
   questions,
   customResult: {
-    headline: 'Your inputs indicate your business has a High-Risk Leak Profile.',
-    body: 'You are likely losing between $3,000 and $12,000 per month in uncaptured inbound interest and unautomated referrals.',
+    headline: 'Your AGE leak score is ready.',
+    body: 'Your score weighs pipeline visibility, staff accountability, manual task load, speed-to-lead, and the cost of missed follow-up across all 10 answers.',
     ctaIntro:
       'Book a live 15-minute System Blueprint session below. We will visually map out your automated infrastructure.',
     primaryCta: 'Book 15-minute System Blueprint session',
