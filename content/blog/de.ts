@@ -1784,6 +1784,10 @@ export const contentDe: Record<string, Partial<BlogArticle>> = {
         <p><strong>Einfacher Rahmen:</strong> Authentizität zieht Aufmerksamkeit an, Beweise schaffen Vertrauen, und Systeme machen den Vorteil skalierbar.</p>
       </blockquote>
 
+      <figure class="blog-content-figure" style="margin: 2em 0;">
+        <img src="/blog/illustrations/productize-yourself-system.svg" alt="Productize Yourself System: Gründer-Edge, klares Angebot, Beweisschicht und KI-Systeme" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
+      </figure>
+
       <h3>Warum traditionelles Positioning scheitert</h3>
 
       <p>Das kaputte Modell lautet: Wettbewerber ansehen, dieselbe Kategoriesprache kopieren, ein paar Funktionen hinzufügen und hoffen, dass Käufer den Unterschied bemerken. Das erzeugt drei Probleme:</p>
@@ -1874,6 +1878,10 @@ export const contentDe: Record<string, Partial<BlogArticle>> = {
       <p>Ein kurzer Reel verwies auf fünf starke Karriere-Lektüren: Paul Grahams <em>How to Do What You Love</em>, Derek Sivers' <em>Hell Yeah or No</em>, Tim Urbans <em>How to Pick a Career That Actually Fits You</em>, Arthur Brooks' <em>Make Your Work Your Calling</em> und Marc Andreessens Guide zur Karriereplanung. Die Liste trifft einen Nerv, weil viele ehrgeizige Menschen nicht faul sind. Sie sind überlastet von Optionen, Vergleichsdruck und fehlender Klarheit.</p>
 
       <p>Im KI-Zeitalter wird diese Unklarheit teurer. Menschen, die schneller lernen, schneller Prototypen bauen und KI als Multiplikator nutzen, schaffen sichtbare Ergebnisse früher. Die Lösung ist nicht, den Weg anderer zu kopieren. Die Lösung ist ein <strong>System für Karriereklarheit</strong>: lesen, reflektieren, testen, digitale Beweise schaffen und dann nachjustieren.</p>
+
+      <figure class="blog-content-figure" style="margin: 2em 0;">
+        <img src="/blog/illustrations/career-clarity-loop.svg" alt="Karriereklarheit-Schleife: Signale, Experiment, Beweis, Marktreaktion und bessere nächste Entscheidung" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
+      </figure>
 
       <h3>Warum klassische Karriereplanung scheitert</h3>
 
