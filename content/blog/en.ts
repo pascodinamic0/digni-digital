@@ -8,7 +8,7 @@ const blogArticles: BlogArticle[] = [
     excerpt: "Discover how AI employee systems revolutionize customer service operations, reduce costs by 60%, and enable 24/7 availability for growing businesses.",
     category: "AI Employee System",
     readTime: "10 min read",
-    publishDate: "March 19, 2026",
+    publishDate: "May 25, 2026",
     author: "Pascal Digny",
     tags: ["AI Employee System", "Customer Service", "Business Automation", "AI Receptionist", "Business Growth"],
     featured: true,
@@ -156,7 +156,7 @@ const blogArticles: BlogArticle[] = [
     excerpt: "Learn how AI employee systems deliver measurable ROI through cost reduction, efficiency gains, and revenue growth for growing businesses.",
     category: "AI Employee System",
     readTime: "9 min read",
-    publishDate: "March 19, 2026",
+    publishDate: "May 25, 2026",
     author: "Pascal Digny",
     tags: ["AI Employee System", "ROI", "Cost Reduction", "Business Efficiency", "Business Growth"],
     featured: true,
@@ -404,7 +404,7 @@ const blogArticles: BlogArticle[] = [
     excerpt: "Step-by-step guide to implementing AI receptionist systems in your business, from planning and setup to training your team and measuring success.",
     category: "AI Employee System",
     readTime: "11 min read",
-    publishDate: "March 19, 2026",
+    publishDate: "May 25, 2026",
     author: "Pascal Digny",
     tags: ["AI Receptionist", "Business Implementation", "AI Employee System", "Business Automation", "Customer Service"],
     featured: false,
@@ -895,7 +895,7 @@ const remainingArticles: BlogArticle[] = [
     excerpt: "Discover why private high schools must integrate digital skills programs to prepare students for modern careers and ensure graduate success.",
     category: "Digni Digital Literacy",
     readTime: "10 min read",
-    publishDate: "March 19, 2026",
+    publishDate: "May 25, 2026",
     author: "Pascal Digny",
     tags: ["Digni Digital Literacy", "Private High Schools", "Digital Skills", "Student Success", "Career Readiness"],
     featured: true,
@@ -1080,7 +1080,7 @@ const remainingArticles: BlogArticle[] = [
     excerpt: "Learn how the Digni Digital Literacy Program equips students with job-ready digital skills, ensuring 85% employment rates within 6 months of graduation.",
     category: "Digni Digital Literacy",
     readTime: "9 min read",
-    publishDate: "March 19, 2026",
+    publishDate: "May 25, 2026",
     author: "Pascal Digny",
     tags: ["Digni Digital Literacy", "Education Transformation", "Career Success", "Student Outcomes", "Private Schools"],
     featured: false,
@@ -1234,7 +1234,7 @@ const remainingArticles: BlogArticle[] = [
     excerpt: "A comprehensive guide for private school administrators on implementing the Digni Digital Literacy Program, from planning to execution.",
     category: "Digni Digital Literacy",
     readTime: "11 min read",
-    publishDate: "March 19, 2026",
+    publishDate: "May 25, 2026",
     author: "Pascal Digny",
     tags: ["Digni Digital Literacy", "School Administration", "Program Implementation", "Private Schools", "Education Leadership"],
     featured: false,
@@ -1455,7 +1455,7 @@ const remainingArticles: BlogArticle[] = [
     excerpt: "Discover why custom SaaS solutions often outperform generic software, providing tailored functionality that drives real business results.",
     category: "Custom SaaS Development",
     readTime: "10 min read",
-    publishDate: "March 19, 2026",
+    publishDate: "May 25, 2026",
     author: "Pascal Digny",
     tags: ["Custom SaaS", "SaaS Development", "Business Software", "Custom Solutions", "Software Development"],
     featured: true,
@@ -1605,7 +1605,7 @@ const remainingArticles: BlogArticle[] = [
     excerpt: "Learn the architecture patterns and best practices for building SaaS products that scale from startup to enterprise without major rewrites.",
     category: "Custom SaaS Development",
     readTime: "9 min read",
-    publishDate: "March 19, 2026",
+    publishDate: "May 25, 2026",
     author: "Pascal Digny",
     tags: ["SaaS Development", "Software Architecture", "Scalability", "Best Practices", "SaaS Design"],
     featured: false,
@@ -1781,7 +1781,7 @@ const remainingArticles: BlogArticle[] = [
     excerpt: "A comprehensive guide covering every stage of custom SaaS development, from initial concept through design, development, and successful launch.",
     category: "Custom SaaS Development",
     readTime: "12 min read",
-    publishDate: "March 19, 2026",
+    publishDate: "May 25, 2026",
     author: "Pascal Digny",
     tags: ["Custom SaaS", "SaaS Development", "Software Development Process", "Product Development", "SaaS Launch"],
     featured: false,
@@ -2006,7 +2006,7 @@ const remainingArticles: BlogArticle[] = [
     excerpt: "Explore real-world case studies of businesses that achieved significant growth through custom SaaS solutions tailored to their unique needs.",
     category: "Custom SaaS Development",
     readTime: "8 min read",
-    publishDate: "March 19, 2026",
+    publishDate: "May 25, 2026",
     author: "Pascal Digny",
     tags: ["Custom SaaS", "Business Growth", "Case Studies", "SaaS Success", "Business Transformation"],
     featured: false,
@@ -2171,7 +2171,7 @@ const remainingArticles: BlogArticle[] = [
     excerpt: "Learn when to use AI employee systems versus human staff, and how to create the optimal blend of automation and human touch for your business.",
     category: "AI Employee System",
     readTime: "8 min read",
-    publishDate: "March 19, 2026",
+    publishDate: "May 25, 2026",
     author: "Pascal Digny",
     tags: ["AI Employee System", "Business Automation", "Customer Service Strategy", "AI vs Human", "Business Growth"],
     featured: false,
@@ -2372,7 +2372,7 @@ const remainingArticles: BlogArticle[] = [
     excerpt: "Discover how AI employee systems enable businesses to scale operations without proportional cost increases, handling growth seamlessly.",
     category: "AI Employee System",
     readTime: "9 min read",
-    publishDate: "March 19, 2026",
+    publishDate: "May 25, 2026",
     author: "Pascal Digny",
     tags: ["AI Employee System", "Business Scaling", "Automation", "Business Growth", "Operational Efficiency"],
     featured: false,
@@ -2554,7 +2554,7 @@ const remainingArticles: BlogArticle[] = [
     excerpt: "A practical framework to help you decide when to build custom SaaS versus using off-the-shelf solutions, with clear criteria and examples.",
     category: "Custom SaaS Development",
     readTime: "9 min read",
-    publishDate: "March 19, 2026",
+    publishDate: "May 25, 2026",
     author: "Pascal Digny",
     tags: ["Custom SaaS", "Software Decision Making", "Build vs Buy", "SaaS Strategy", "Technology Choices"],
     featured: false,
@@ -2741,7 +2741,7 @@ const remainingArticles: BlogArticle[] = [
     excerpt: "Learn how AI employees automate customer service and multiply leads by 3 without recruiting. Real stats, case studies, and step-by-step implementation for SMBs in France and DRC.",
     category: "AI Employee System",
     readTime: "11 min read",
-    publishDate: "March 19, 2026",
+    publishDate: "May 25, 2026",
     author: "Pascal Digny",
     tags: ["AI employees", "AI agents customer service", "lead automation SMB", "agentic AI 2026", "customer service automation"],
     featured: true,
@@ -2808,7 +2808,7 @@ const remainingArticles: BlogArticle[] = [
     excerpt: "Deloitte and PwC trends on agentic AI. When to choose AI agents over traditional automation, with concrete examples for call qualification and proposal generation.",
     category: "AI Employee System",
     readTime: "10 min read",
-    publishDate: "March 19, 2026",
+    publishDate: "May 25, 2026",
     author: "Pascal Digny",
     tags: ["AI agents", "agentic AI 2026", "France RDC", "automation SMB", "customer service AI"],
     featured: false,
@@ -2843,7 +2843,7 @@ const remainingArticles: BlogArticle[] = [
     excerpt: "How businesses in Kinshasa and the DRC are using process automation to gain up to 50% productivity. Digital transformation and local support for Congolese SMBs.",
     category: "AI Employee System",
     readTime: "11 min read",
-    publishDate: "March 19, 2026",
+    publishDate: "May 25, 2026",
     author: "Pascal Digny",
     tags: ["automatisation processus RDC", "transformation digitale Kinshasa", "PME Congo", "productivité 2026", "AI employees", "Code Numérique"],
     featured: false,
@@ -2928,7 +2928,7 @@ const remainingArticles: BlogArticle[] = [
     excerpt: "Concrete strategies to grow your business with AI in France and the DRC. Lead generation, process optimization, and measurable ROI for SMBs.",
     category: "Business Growth",
     readTime: "12 min read",
-    publishDate: "March 19, 2026",
+    publishDate: "May 25, 2026",
     author: "Pascal Digny",
     tags: ["croissance entreprise IA", "développement des affaires", "IA PME", "France RDC", "lead generation", "AI growth"],
     featured: true,
@@ -3004,7 +3004,7 @@ const remainingArticles: BlogArticle[] = [
     excerpt: "How AI-powered business development captures every lead and helps close more deals 24/7. Lead generation, qualification, and follow-up automation.",
     category: "Business Growth",
     readTime: "11 min read",
-    publishDate: "March 19, 2026",
+    publishDate: "May 25, 2026",
     author: "Pascal Digny",
     tags: ["business development IA", "lead generation", "automatisation leads", "24/7", "AI receptionist", "lead qualification"],
     featured: false,
@@ -3070,7 +3070,7 @@ const remainingArticles: BlogArticle[] = [
     excerpt: "The 2026 guide to creating a business website with AI that generates and books appointments automatically. Smart, lead-generating sites for SMBs.",
     category: "Web Development",
     readTime: "12 min read",
-    publishDate: "March 19, 2026",
+    publishDate: "May 25, 2026",
     author: "Pascal Digny",
     tags: ["création site web IA", "développement site web", "site web intelligent", "leads", "AI website", "lead generation"],
     featured: true,
@@ -3140,7 +3140,7 @@ const remainingArticles: BlogArticle[] = [
     excerpt: "Custom SaaS vs off-the-shelf solutions for African and French SMBs. When to build, when to buy, and how to decide for your business.",
     category: "Custom SaaS Development",
     readTime: "11 min read",
-    publishDate: "March 19, 2026",
+    publishDate: "May 25, 2026",
     author: "Pascal Digny",
     tags: ["SaaS sur mesure", "off-the-shelf", "PME Afrique France", "build vs buy", "custom software", "software decision"],
     featured: false,
@@ -3232,7 +3232,7 @@ const remainingArticles: BlogArticle[] = [
     excerpt: "Pillar article: why digital transformation and AI are the decisive choice for the DRC in 2026. Links to all Digni Digital service clusters.",
     category: "Digital Transformation",
     readTime: "14 min read",
-    publishDate: "March 19, 2026",
+    publishDate: "May 25, 2026",
     author: "Pascal Digny",
     tags: ["transformation digitale RDC", "IA entreprises Congo 2026", "Kinshasa", "PME", "digital transformation", "Code Numérique"],
     featured: true,
@@ -3307,7 +3307,7 @@ const remainingArticles: BlogArticle[] = [
     excerpt: "How French SMBs can adopt AI agents and intelligent automation without a Silicon Valley budget. Accessible, human-first solutions for PME.",
     category: "AI Employee System",
     readTime: "11 min read",
-    publishDate: "March 19, 2026",
+    publishDate: "May 25, 2026",
     author: "Pascal Digny",
     tags: ["IA PME France", "agents IA accessible", "automatisation PME", "France", "AI receptionist", "transformation numérique"],
     featured: false,
@@ -3375,7 +3375,7 @@ const remainingArticles: BlogArticle[] = [
     excerpt: "Why francophone Africa cannot afford to wait on Claude, Grok, and AI agents. French version of our Africa-focused AI post, with DRC focus and Digni Digital solutions.",
     category: "Future of Work",
     readTime: "12 min read",
-    publishDate: "March 19, 2026",
+    publishDate: "May 25, 2026",
     author: "Pascal Digny",
     tags: ["Claude", "Grok", "agents IA", "Afrique francophone", "RDC", "Digni Digital", "AI adoption"],
     featured: true,
@@ -3442,7 +3442,7 @@ const remainingArticles: BlogArticle[] = [
     excerpt: "2026 AI trends for francophone business growth: France, DRC, and Africa. Agentic AI, responsible automation, and practical next steps for SMBs.",
     category: "AI Employee System",
     readTime: "14 min read",
-    publishDate: "March 19, 2026",
+    publishDate: "May 25, 2026",
     author: "Pascal Digny",
     tags: ["tendances IA 2026", "IA France RDC", "entreprises francophones", "agentic AI", "AI automation Africa", "PME transformation numérique"],
     featured: true,
@@ -3653,7 +3653,7 @@ const remainingArticles: BlogArticle[] = [
     excerpt: "A practical guide for growing businesses: what a modern fractional COO actually does, how it differs from a VA or bookkeeper, and how the same benefits people expect from an AI employee, speed, consistency, coverage, fit into one partnership model.",
     category: "Business Operations",
     readTime: "12 min read",
-    publishDate: "March 27, 2026",
+    publishDate: "May 25, 2026",
     author: "Pascal Digny",
     tags: ["Fractional COO", "AI Employee", "Business Operations", "Leadership", "Scaling", "Digni Digital"],
     featured: true,
@@ -3756,7 +3756,7 @@ const remainingArticles: BlogArticle[] = [
       'Meet DispatchFlow — our live operations platform for African enterprises. See how procurement requests, shipment tracking, and inventory work in one calm dashboard built for multi-branch teams.',
     category: 'Agentic Softwares',
     readTime: '9 min read',
-    publishDate: 'May 24, 2026',
+    publishDate: 'May 25, 2026',
     author: 'Pascal Digny',
     tags: [
       'DispatchFlow',
@@ -3851,6 +3851,7 @@ const remainingArticles: BlogArticle[] = [
   },
   {
     id: 103,
+
     title: 'Productize Yourself: How Founders Escape Competition by Turning Authentic Strengths Into Systems',
     slug: 'productize-yourself-founder-authenticity-ai-systems',
     excerpt:
@@ -3860,6 +3861,7 @@ const remainingArticles: BlogArticle[] = [
     publishDate: 'May 25, 2026',
     author: 'Pascal Digny',
     tags: [
+
       'Productize Yourself',
       'Founder Strategy',
       'Business Growth',
@@ -3969,6 +3971,114 @@ const remainingArticles: BlogArticle[] = [
       <hr>
 
       <p><em>Inspired by Naval Ravikant's "productize yourself" principle: lean into what comes naturally, prove the value, then build the systems that let the market experience it consistently.</em></p>
+    `,
+  },
+  {
+    id: 104,
+
+    title: 'Career Clarity in the AI Era: 5 Essays to Read Before You Pivot',
+    slug: 'career-clarity-ai-era-five-essays-before-pivot',
+    excerpt:
+      'Inspired by five classic career essays, this practical guide helps ambitious professionals stop spiraling, choose better experiments, and build AI-era career leverage.',
+    category: 'Future of Work',
+    readTime: '10 min read',
+    publishDate: 'May 25, 2026',
+    author: 'Pascal Digny',
+    tags: [
+
+      'career clarity',
+      'career pivot',
+      'AI era',
+      'digital skills',
+      'future of work',
+      'Digni Digital',
+    ],
+    featured: false,
+    content: `
+      <h2>Stop asking, "What should I do with my life?" Start building a decision system.</h2>
+
+      <p>A short reel recently pointed people toward five classic career reads: Paul Graham's <em>How to Do What You Love</em>, Derek Sivers' <em>Hell Yeah or No</em>, Tim Urban's <em>How to Pick a Career That Actually Fits You</em>, Arthur Brooks' <em>Make Your Work Your Calling</em>, and Marc Andreessen's career planning guide. The list resonates because many ambitious people are not lazy. They are overloaded. They have options, pressure, comparison, and no clean way to choose.</p>
+
+      <p>In the AI era, the problem gets sharper. A vague career path is now competing against people who can learn faster, ship faster, and use AI to multiply their output. The answer is not to panic or copy someone else's path. The answer is to build a <strong>career clarity operating system</strong>: a simple loop that turns reading, reflection, experiments, and digital proof into better decisions.</p>
+
+      <h3>Why traditional career planning fails</h3>
+
+      <p>The broken system tells people to pick a title, polish a CV, and wait for permission. That model was already fragile. Now it is dangerous, because roles change faster than school programs, job descriptions lag behind real work, and AI is automating the routine parts of many entry-level paths.</p>
+
+      <ul>
+        <li><strong>It starts with labels</strong>, such as banker, marketer, developer, or consultant, instead of the problems you want to solve.</li>
+        <li><strong>It treats passion like a lightning strike</strong>, when most people discover energy through repeated contact with real work.</li>
+        <li><strong>It hides the market</strong>, so people choose what sounds impressive instead of what creates value.</li>
+        <li><strong>It ignores leverage</strong>, especially digital systems, AI tools, audiences, portfolios, and networks.</li>
+      </ul>
+
+      <p>A better model gives you outcome, mechanism, proof, and risk removal before any big leap. You do not bet your future on a motivational quote. You run small, clear experiments until the next step becomes obvious.</p>
+
+      <h3>The five-essay filter: what to take from each idea</h3>
+
+      <h4>1. Paul Graham: follow real energy, then test it by making things</h4>
+      <p>The useful idea is not "do whatever feels fun." It is this: pay attention to the work you keep returning to, even when nobody is grading you. In practice, that means building a small project, publishing an analysis, helping a real person, or learning a tool deeply enough to produce something visible.</p>
+
+      <h4>2. Derek Sivers: protect your attention with a sharper yes</h4>
+      <p>If every opportunity is a yes, your calendar becomes a junk drawer. "Hell yeah or no" is powerful for career clarity because compounding requires focus. Choose fewer experiments, but make them real enough to teach you something.</p>
+
+      <h4>3. Tim Urban: match your work to your traits, not your fantasy identity</h4>
+      <p>Many people choose careers based on the movie trailer version of the role. The better question is: what daily problems, people, rhythms, and trade-offs fit you? If you hate ambiguity, do not romanticize founder life. If you need autonomy, be careful with paths that reward compliance more than initiative.</p>
+
+      <h4>4. Arthur Brooks: make work meaningful through service and mastery</h4>
+      <p>Calling is not only a dream job. It is often the intersection of usefulness, excellence, and contribution. Ask: who gets better because I got better? That question turns career planning from self-obsession into service.</p>
+
+      <h4>5. Marc Andreessen: think like an investor in your own leverage</h4>
+      <p>Career decisions are not only about preference. They are about markets. Where is demand growing? Which skills compound? Who can you learn from? Which environment exposes you to stronger problems? In 2026, AI fluency, automation thinking, and digital product judgment are leverage multipliers.</p>
+
+      <h3>The Digni clarity loop: four steps before a pivot</h3>
+
+      <p>Here is the practical mechanism we recommend for students, young professionals, founders, and operators who feel stuck.</p>
+
+      <ol>
+        <li><strong>Inventory your signals</strong>: list the work that gives energy, the work that drains you, the problems people already ask you to solve, and the skills that could become commercially useful.</li>
+        <li><strong>Choose one 14-day experiment</strong>: build a landing page, automate a workflow, interview five people in a field, publish three essays, or prototype a small AI assistant. Keep it small enough to finish.</li>
+        <li><strong>Create digital proof</strong>: turn the experiment into a portfolio artifact. A public case study beats a private intention.</li>
+        <li><strong>Review the market response</strong>: did anyone care, pay, share, ask for help, invite you deeper, or give useful criticism? Use the signal to choose the next experiment.</li>
+      </ol>
+
+      <blockquote>
+        <p><strong>Simple rule:</strong> do not make a life decision from a mood. Make it from a pattern of evidence.</p>
+      </blockquote>
+
+      <h3>Where AI changes the game</h3>
+
+      <p>AI does not remove the need for judgment. It raises the value of judgment. A professional who can combine clear thinking with AI tools can research faster, prototype faster, write faster, automate routine work, and show proof sooner. That matters whether you want a job, a promotion, a client, or a business.</p>
+
+      <ul>
+        <li><strong>For students</strong>: use AI to build portfolio projects that show initiative before your first job.</li>
+        <li><strong>For career changers</strong>: use AI to compress the learning curve, then validate with real-world output.</li>
+        <li><strong>For founders</strong>: use AI agents and automations to test offers, capture leads, and serve customers before hiring a larger team.</li>
+        <li><strong>For institutions</strong>: teach AI as a capability layer, not a shortcut, so graduates can create value responsibly.</li>
+      </ul>
+
+      <h3>Proof: clarity becomes employability when it turns into visible work</h3>
+
+      <p>Digni Digital has served 150+ clients across four continents and built practical digital systems for businesses that need measurable outcomes, not theory. The same principle shapes our <a href="/future-ready-graduate">Digni Digital Literacy</a> work: students and professionals need skills that turn into visible capability. Our future-ready graduate approach is built around practical digital confidence, portfolio proof, and employment outcomes, including an 85% employment rate within 6 months of graduation.</p>
+
+      <p>The lesson is simple: career clarity is not found only by thinking harder. It is earned by building, testing, reflecting, and showing evidence.</p>
+
+      <h3>A 30-minute exercise you can do today</h3>
+
+      <ol>
+        <li>Write down three problems you enjoy solving for other people.</li>
+        <li>Write down three skills that AI makes easier for you to practice or amplify.</li>
+        <li>Pick one audience you understand better than most people.</li>
+        <li>Design one tiny offer, project, or case study for that audience.</li>
+        <li>Ship the first version within 14 days.</li>
+      </ol>
+
+      <p>If the experiment creates energy and signal, continue. If it creates only anxiety and no market response, adjust. Either way, you are no longer spiraling at 11pm. You are learning in public with a system.</p>
+
+      <hr>
+
+      <p><strong>Ready to turn career uncertainty into a practical digital plan?</strong></p>
+      <p><a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Book a free strategy call</a> with Digni Digital. We will help you identify the strongest next experiment, the digital skills to build, and where AI can create leverage without replacing your judgment.</p>
     `,
   },
 ]
