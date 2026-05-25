@@ -3870,6 +3870,7 @@ const remainingArticles: BlogArticle[] = [
       'Competitive Advantage',
     ],
     featured: true,
+    coverImageUrl: '/blog/illustrations/productize-yourself-system.svg',
     content: `
       <h2>The fastest way out of competition is not louder marketing. It is specificity.</h2>
 
@@ -3880,6 +3881,10 @@ const remainingArticles: BlogArticle[] = [
       <blockquote>
         <p><strong>Simple frame:</strong> authenticity attracts attention, proof creates trust, and systems make the advantage scale.</p>
       </blockquote>
+
+      <figure class="blog-content-figure" style="margin: 2em 0;">
+        <img src="/blog/illustrations/productize-yourself-system.svg" alt="Productize Yourself operating system: founder edge, clear offer, proof layer, and AI systems" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
+      </figure>
 
       <h3>Why traditional positioning fails</h3>
 
@@ -3994,12 +3999,17 @@ const remainingArticles: BlogArticle[] = [
       'Digni Digital',
     ],
     featured: false,
+    coverImageUrl: '/blog/illustrations/career-clarity-loop.svg',
     content: `
       <h2>Stop asking, "What should I do with my life?" Start building a decision system.</h2>
 
       <p>A short reel recently pointed people toward five classic career reads: Paul Graham's <em>How to Do What You Love</em>, Derek Sivers' <em>Hell Yeah or No</em>, Tim Urban's <em>How to Pick a Career That Actually Fits You</em>, Arthur Brooks' <em>Make Your Work Your Calling</em>, and Marc Andreessen's career planning guide. The list resonates because many ambitious people are not lazy. They are overloaded. They have options, pressure, comparison, and no clean way to choose.</p>
 
       <p>In the AI era, the problem gets sharper. A vague career path is now competing against people who can learn faster, ship faster, and use AI to multiply their output. The answer is not to panic or copy someone else's path. The answer is to build a <strong>career clarity operating system</strong>: a simple loop that turns reading, reflection, experiments, and digital proof into better decisions.</p>
+
+      <figure class="blog-content-figure" style="margin: 2em 0;">
+        <img src="/blog/illustrations/career-clarity-loop.svg" alt="Career clarity loop: signals, experiment, proof, market response, and a better next decision" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
+      </figure>
 
       <h3>Why traditional career planning fails</h3>
 

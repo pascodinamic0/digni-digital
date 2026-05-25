@@ -790,6 +790,10 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
         <p><strong>Cadre simple :</strong> l'authenticité attire l'attention, la preuve crée la confiance, et les systèmes rendent l'avantage scalable.</p>
       </blockquote>
 
+      <figure class="blog-content-figure" style="margin: 2em 0;">
+        <img src="/blog/illustrations/productize-yourself-system.svg" alt="Système Productize Yourself : avantage fondateur, offre claire, preuve et systèmes IA" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
+      </figure>
+
       <h3>Pourquoi le positionnement traditionnel échoue</h3>
 
       <p>Le modèle cassé consiste à regarder les concurrents, reprendre le même langage, ajouter quelques fonctionnalités et espérer que le marché remarque la différence. Résultat :</p>
@@ -884,6 +888,10 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
       <p>Un reel récent recommandait cinq lectures puissantes : <em>How to Do What You Love</em> de Paul Graham, <em>Hell Yeah or No</em> de Derek Sivers, <em>How to Pick a Career That Actually Fits You</em> de Tim Urban, <em>Make Your Work Your Calling</em> d'Arthur Brooks et le guide de planification de carrière de Marc Andreessen. La liste touche juste parce que beaucoup de personnes ambitieuses ne manquent pas de motivation. Elles manquent d'un mécanisme clair pour choisir.</p>
 
       <p>À l'ère de l'IA, l'indécision coûte plus cher. Les personnes qui apprennent vite, prototypent vite et utilisent l'IA pour multiplier leur production prennent de l'avance. La réponse n'est pas de copier le parcours de quelqu'un d'autre. C'est de créer un <strong>système de clarté de carrière</strong> : lire, réfléchir, tester, publier une preuve, puis ajuster.</p>
+
+      <figure class="blog-content-figure" style="margin: 2em 0;">
+        <img src="/blog/illustrations/career-clarity-loop.svg" alt="Boucle de clarté de carrière : signaux, expérience, preuve, réponse du marché et meilleure décision" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
+      </figure>
 
       <h3>Pourquoi la planification de carrière traditionnelle échoue</h3>
 

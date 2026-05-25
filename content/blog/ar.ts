@@ -2424,6 +2424,10 @@ export const contentAr: Record<string, Partial<BlogArticle>> = {
         <p><strong>إطار بسيط:</strong> الأصالة تجذب الانتباه، والإثبات يصنع الثقة، والأنظمة تجعل الميزة قابلة للتوسع.</p>
       </blockquote>
 
+      <figure class="blog-content-figure" style="margin: 2em 0;">
+        <img src="/blog/illustrations/productize-yourself-system.svg" alt="نظام Productize Yourself: ميزة المؤسس، عرض واضح، طبقة إثبات، وأنظمة ذكاء اصطناعي" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
+      </figure>
+
       <h3>لماذا يفشل التموضع التقليدي</h3>
 
       <p>النموذج المكسور يقول: انظر إلى ما يبيعه المنافسون، انسخ لغة الفئة، أضف بعض الميزات، وانتظر أن يلاحظ المشترون الفرق. هذا يخلق ثلاث مشكلات:</p>
@@ -2514,6 +2518,10 @@ export const contentAr: Record<string, Partial<BlogArticle>> = {
       <p>أشار ريل قصير إلى خمس قراءات قوية في التخطيط المهني: <em>How to Do What You Love</em> لبول غراهام، <em>Hell Yeah or No</em> لديريك سيفرز، <em>How to Pick a Career That Actually Fits You</em> لتيم أوربان، <em>Make Your Work Your Calling</em> لآرثر بروكس، ودليل مارك أندريسن للتخطيط المهني. هذه القائمة تلامس واقعاً مهماً: كثير من الطموحين ليسوا كسالى، بل غارقون في الخيارات والضغط والمقارنة ولا يملكون طريقة واضحة للاختيار.</p>
 
       <p>في عصر الذكاء الاصطناعي تصبح الحيرة أغلى ثمناً. من يتعلم بسرعة، ويبني نماذج أولية بسرعة، ويستخدم الذكاء الاصطناعي لمضاعفة الإنتاج، يسبق من ينتظر الوضوح الكامل. الحل ليس نسخ مسار شخص آخر. الحل هو بناء <strong>نظام لوضوح المسار المهني</strong>: قراءة، تفكير، تجربة، إثبات رقمي، ثم تعديل.</p>
+
+      <figure class="blog-content-figure" style="margin: 2em 0;">
+        <img src="/blog/illustrations/career-clarity-loop.svg" alt="حلقة وضوح المسار المهني: إشارات، تجربة، إثبات، استجابة السوق، وقرار أفضل" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
+      </figure>
 
       <h3>لماذا يفشل التخطيط المهني التقليدي</h3>
 

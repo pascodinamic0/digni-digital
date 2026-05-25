@@ -741,6 +741,10 @@ const contentEs: Record<string, Partial<BlogArticle>> = {
         <p><strong>Marco simple:</strong> la autenticidad atrae atención, la prueba crea confianza y los sistemas hacen que la ventaja escale.</p>
       </blockquote>
 
+      <figure class="blog-content-figure" style="margin: 2em 0;">
+        <img src="/blog/illustrations/productize-yourself-system.svg" alt="Sistema Productize Yourself: ventaja del fundador, oferta clara, prueba y sistemas de IA" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
+      </figure>
+
       <h3>Por qué falla el posicionamiento tradicional</h3>
 
       <p>El modelo roto dice: observe lo que venden los competidores, copie el lenguaje de la categoría, agregue algunas funciones y espere que los compradores noten la diferencia. Eso crea tres problemas:</p>
@@ -831,6 +835,10 @@ const contentEs: Record<string, Partial<BlogArticle>> = {
       <p>Un reel reciente recomendaba cinco lecturas potentes: <em>How to Do What You Love</em> de Paul Graham, <em>Hell Yeah or No</em> de Derek Sivers, <em>How to Pick a Career That Actually Fits You</em> de Tim Urban, <em>Make Your Work Your Calling</em> de Arthur Brooks y la guía de planificación profesional de Marc Andreessen. La lista conecta porque muchas personas ambiciosas no son perezosas. Están saturadas de opciones, presión y comparación, sin una forma clara de elegir.</p>
 
       <p>En la era de la IA, esa indecisión cuesta más. Quien aprende rápido, prototipa rápido y usa IA para multiplicar su producción muestra resultados antes. La respuesta no es copiar el camino de otra persona. La respuesta es crear un <strong>sistema de claridad profesional</strong>: leer, reflexionar, probar, crear prueba digital y ajustar.</p>
+
+      <figure class="blog-content-figure" style="margin: 2em 0;">
+        <img src="/blog/illustrations/career-clarity-loop.svg" alt="Bucle de claridad profesional: señales, experimento, prueba, respuesta del mercado y mejor decisión siguiente" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
+      </figure>
 
       <h3>Por qué falla la planificación profesional tradicional</h3>
 
