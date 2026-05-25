@@ -10,7 +10,7 @@ export const blogDeBodyOverrides = {
     excerpt: 'Konkrete Strategien, um Ihr Unternehmen mit KI in Frankreich und der DR Kongo wachsen zu lassen: Interessentengewinnung, Prozessoptimierung und messbarer ROI für KMU.',
     category: 'Unternehmenswachstum',
     readTime: '12 Min. Lesezeit',
-    publishDate: '19. März 2026',
+    publishDate: '25. Mai 2026',
     tags: ['Unternehmenswachstum KI', 'Geschäftsentwicklung', 'KI KMU', 'Frankreich DR Kongo', 'Interessentengewinnung', 'KI-Wachstum'],
     content: `
       <h2>Unternehmenswachstum mit KI: konkrete Strategien für Frankreich und die DR Kongo</h2>
