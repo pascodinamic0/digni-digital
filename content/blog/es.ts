@@ -721,6 +721,100 @@ const contentEs: Record<string, Partial<BlogArticle>> = {
     publishDate: '24 de mayo de 2026',
     tags: ['DispatchFlow', 'software logístico', 'compras', 'despacho', 'inventario', 'África', 'software agéntico'],
   },
+  'productize-yourself-founder-authenticity-ai-systems': {
+    title: 'Productize Yourself: cómo los fundadores escapan de la competencia convirtiendo fortalezas auténticas en sistemas',
+    excerpt:
+      'Inspirado en Naval Ravikant, esta guía muestra cómo convertir lo que se le da naturalmente en una oferta clara, prueba de cliente y sistemas con IA.',
+    category: 'Crecimiento Empresarial',
+    readTime: '10 min de lectura',
+    publishDate: '25 de mayo de 2026',
+    tags: ['Productize Yourself', 'estrategia de fundador', 'crecimiento empresarial', 'sistemas IA', 'autenticidad', 'ventaja competitiva'],
+    content: `
+      <h2>La forma más rápida de salir de la competencia no es hacer más ruido. Es ser más específico.</h2>
+
+      <p>El consejo de Naval Ravikant, <strong>"productize yourself"</strong>, funciona porque nombra una verdad que muchos fundadores sienten: cuando copia al mercado, compite por precio, velocidad y volumen. Cuando construye alrededor de sus fortalezas naturales, el mercado tiene más dificultad para compararlo con una alternativa más barata.</p>
+
+      <p>Para los dueños de negocio, esto no es contenido motivacional. Es una estrategia operativa: convertir su criterio, gusto, experiencia y forma de resolver problemas en una oferta repetible, y luego usar sistemas e IA para entregarla de forma consistente sin que el fundador se convierta en el cuello de botella.</p>
+
+      <blockquote>
+        <p><strong>Marco simple:</strong> la autenticidad atrae atención, la prueba crea confianza y los sistemas hacen que la ventaja escale.</p>
+      </blockquote>
+
+      <h3>Por qué falla el posicionamiento tradicional</h3>
+
+      <p>El modelo roto dice: observe lo que venden los competidores, copie el lenguaje de la categoría, agregue algunas funciones y espere que los compradores noten la diferencia. Eso crea tres problemas:</p>
+
+      <ul>
+        <li><strong>Se vuelve intercambiable</strong>, por lo que los prospectos comparan principalmente precio.</li>
+        <li><strong>Su equipo repite guiones genéricos</strong>, así que el cliente no siente sus estándares.</li>
+        <li><strong>Su mejor pensamiento queda en su cabeza</strong>, por lo que la entrega depende de heroicidad del fundador.</li>
+      </ul>
+
+      <p>El mejor modelo empieza con una pregunta más precisa: <strong>¿qué nota, resuelve o cuida naturalmente que su mercado ya valora?</strong> Ahí comienza la diferenciación.</p>
+
+      <h3>El mecanismo para productizarse</h3>
+
+      <ol>
+        <li><strong>Extraer la ventaja del fundador</strong>: identificar decisiones, estándares, gusto y patrones que hacen diferente su trabajo.</li>
+        <li><strong>Empaquetar el resultado</strong>: convertir esa ventaja en una promesa clara y medible para el cliente.</li>
+        <li><strong>Construir el sistema operativo</strong>: documentar intake, calificación, transferencias, entrega y seguimiento.</li>
+        <li><strong>Agregar una capa de ejecución con IA</strong>: recepción, triage, resúmenes, seguimientos y herramientas internas disponibles 24/7.</li>
+      </ol>
+
+      <p>Así el fundador deja de ser la única persona capaz de comunicar el valor. El negocio mantiene sus estándares, pero el sistema absorbe más repetición.</p>
+
+      <h3>Explorar antes de comprometerse</h3>
+
+      <p>El reel también advierte contra el compromiso prematuro. Antes de fijar un nicho, pruebe la intersección de tres elementos:</p>
+
+      <ul>
+        <li><strong>Energía</strong>: el trabajo genera suficiente interés para sostener la consistencia.</li>
+        <li><strong>Evidencia</strong>: los clientes ya pagan por el resultado o sienten el dolor con urgencia.</li>
+        <li><strong>Ventaja</strong>: usted tiene una forma creíble de resolverlo mejor o diferente.</li>
+      </ul>
+
+      <p>Si falta uno, siga explorando. La meta no es vagar para siempre; es evitar pasar años trabajando dentro de un juego que no estaba diseñado para usted.</p>
+
+      <h3>Prueba: de dependencia del fundador a front office repetible</h3>
+
+      <p>Una empresa de servicios llegó con un problema común: el fundador convertía prospectos muy bien, pero solo cuando participaba personalmente. Las llamadas fuera de horario se perdían, las consultas no se calificaban de manera consistente y el equipo no siempre sabía qué leads requerían atención inmediata.</p>
+
+      <p>Mapeamos sus mejores preguntas, estándares de calificación y ritmo de seguimiento en un <a href="/ai-receptionist">recepcionista IA con sistema de calificación de leads</a>. No fue un chatbot genérico, sino una capa de front office entrenada alrededor de señales reales de compra.</p>
+
+      <ul>
+        <li><strong>Cobertura</strong>: consultas fuera de horario capturadas en lugar de esperar hasta la mañana.</li>
+        <li><strong>Consistencia</strong>: cada lead recibió la misma calidad base.</li>
+        <li><strong>Velocidad</strong>: prospectos de alta intención enviados más rápido a la persona correcta.</li>
+        <li><strong>Enfoque</strong>: el fundador repitió menos preguntas de intake y dedicó más tiempo a cerrar oportunidades calificadas.</li>
+      </ul>
+
+      <h3>Cómo ayuda la IA sin aplanar su originalidad</h3>
+
+      <p>La IA es peligrosa cuando hace que todos los negocios suenen igual. Es valiosa cuando protege lo que lo hace distinto: lenguaje aprobado, reglas de escalamiento, resúmenes de conversaciones, notas CRM, seguimientos y métricas sobre tiempo de respuesta, conversión y oportunidades perdidas.</p>
+
+      <h3>Una auditoría simple para su negocio</h3>
+
+      <ol>
+        <li>¿Por qué ya le agradecen los clientes que sus competidores tratan como ordinario?</li>
+        <li>¿Qué decisiones del fundador ocurren repetidamente pero no están documentadas?</li>
+        <li>¿Dónde esperan leads o clientes porque solo una persona sabe qué sigue?</li>
+        <li>¿Qué prueba puede mostrar: tiempo de respuesta, aumento de ingresos, horas ahorradas o mejora de conversión?</li>
+        <li>¿Qué paso repetitivo podría manejar la IA sin reducir la confianza?</li>
+      </ol>
+
+      <h3>Eliminar riesgo: empiece con un sistema estrecho</h3>
+
+      <p>No necesita reconstruir toda la empresa. Comience con un piloto: una audiencia, una oferta, un flujo de intake y un resultado medible. Para muchos equipos, eso empieza con captura de leads, agenda de citas o triage de clientes, porque el costo de responder tarde se ve rápido.</p>
+
+      <h3>Siguiente paso</h3>
+
+      <p>Si desea productizar su ventaja como fundador sin convertirse en cuello de botella, <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">reserve una llamada estratégica</a> con Digni Digital. Mapearemos su oferta, identificaremos el workflow de mayor valor para sistematizar y mostraremos dónde la IA puede apoyar el crecimiento sin diluir lo que hace diferente a su negocio.</p>
+
+      <hr>
+
+      <p><em>Inspirado en el principio "productize yourself" de Naval Ravikant: apoyarse en lo que se le da naturalmente, probar el valor y construir sistemas para que el mercado lo experimente de forma consistente.</em></p>
+    `,
+  },
 }
 
 export const articlesEs: BlogArticle[] = articlesEn.map((article) => {
