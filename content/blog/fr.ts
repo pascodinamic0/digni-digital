@@ -766,6 +766,87 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
       <p><em>Voir DispatchFlow sur notre page <a href="/agentic-softwares">Agentic Softwares</a>.</em></p>
     `,
   },
+  'career-clarity-ai-era-five-essays-before-pivot': {
+    id: 103,
+    title: "Clarté de carrière à l'ère de l'IA : 5 essais à lire avant de pivoter",
+    slug: 'career-clarity-ai-era-five-essays-before-pivot',
+    excerpt:
+      "Inspiré par cinq essais classiques sur la carrière, ce guide aide les professionnels ambitieux à arrêter de tourner en rond, tester de meilleurs choix et construire un levier de carrière avec l'IA.",
+    category: 'Futur du travail',
+    readTime: '10 min de lecture',
+    publishDate: '25 mai 2026',
+    author: 'Pascal Digny',
+    tags: ['clarté de carrière', 'pivot professionnel', 'ère de l IA', 'compétences digitales', 'futur du travail', 'Digni Digital'],
+    featured: false,
+    content: `
+      <h2>Arrêtez de demander « que faire de ma vie ? ». Construisez un système de décision.</h2>
+
+      <p>Un reel récent recommandait cinq lectures puissantes : <em>How to Do What You Love</em> de Paul Graham, <em>Hell Yeah or No</em> de Derek Sivers, <em>How to Pick a Career That Actually Fits You</em> de Tim Urban, <em>Make Your Work Your Calling</em> d'Arthur Brooks et le guide de planification de carrière de Marc Andreessen. La liste touche juste parce que beaucoup de personnes ambitieuses ne manquent pas de motivation. Elles manquent d'un mécanisme clair pour choisir.</p>
+
+      <p>À l'ère de l'IA, l'indécision coûte plus cher. Les personnes qui apprennent vite, prototypent vite et utilisent l'IA pour multiplier leur production prennent de l'avance. La réponse n'est pas de copier le parcours de quelqu'un d'autre. C'est de créer un <strong>système de clarté de carrière</strong> : lire, réfléchir, tester, publier une preuve, puis ajuster.</p>
+
+      <h3>Pourquoi la planification de carrière traditionnelle échoue</h3>
+
+      <p>L'ancien modèle commence par un titre : banquier, consultant, développeur, marketeur. Il demande ensuite de préparer un CV et d'attendre la permission. Ce modèle ne suffit plus, car les métiers changent plus vite que les programmes, et l'IA automatise déjà les tâches routinières de nombreux postes juniors.</p>
+
+      <ul>
+        <li><strong>Il privilégie les étiquettes</strong> au lieu des problèmes que vous voulez résoudre.</li>
+        <li><strong>Il romantise la passion</strong> au lieu de l'observer dans le travail réel.</li>
+        <li><strong>Il cache le marché</strong>, donc on choisit ce qui impressionne plutôt que ce qui crée de la valeur.</li>
+        <li><strong>Il ignore le levier</strong> : outils IA, portfolio, audience, réseau, systèmes digitaux.</li>
+      </ul>
+
+      <h3>Le filtre des cinq essais</h3>
+
+      <h4>1. Paul Graham : suivre l'énergie réelle</h4>
+      <p>Ne faites pas seulement ce qui paraît amusant. Regardez le travail auquel vous revenez même quand personne ne vous note. Transformez cette énergie en projet visible : prototype, analyse, service rendu, automatisation, étude de cas.</p>
+
+      <h4>2. Derek Sivers : protéger votre oui</h4>
+      <p>Dire oui à tout détruit la concentration. Un bon pivot exige peu d'expériences, mais assez sérieuses pour produire un signal.</p>
+
+      <h4>3. Tim Urban : choisir selon votre réalité quotidienne</h4>
+      <p>Ne choisissez pas la bande-annonce d'un métier. Choisissez les problèmes, les rythmes et les compromis que vous pouvez tenir dans la vraie vie.</p>
+
+      <h4>4. Arthur Brooks : trouver du sens par l'utilité</h4>
+      <p>Une vocation n'est pas seulement un rêve. C'est souvent la rencontre entre maîtrise, contribution et service : qui progresse parce que vous progressez ?</p>
+
+      <h4>5. Marc Andreessen : investir dans votre levier</h4>
+      <p>Où la demande grandit-elle ? Quelles compétences se composent avec le temps ? Quels environnements vous exposent à de meilleurs problèmes ? En 2026, la maîtrise de l'IA, l'automatisation et le jugement produit sont des multiplicateurs.</p>
+
+      <h3>La boucle Digni : 4 étapes avant de pivoter</h3>
+
+      <ol>
+        <li><strong>Inventorier vos signaux</strong> : ce qui donne de l'énergie, ce qui épuise, les problèmes qu'on vous demande déjà de résoudre.</li>
+        <li><strong>Choisir une expérience de 14 jours</strong> : page d'offre, mini-prototype IA, interviews terrain, publication de trois analyses.</li>
+        <li><strong>Créer une preuve digitale</strong> : un cas public vaut mieux qu'une intention privée.</li>
+        <li><strong>Lire la réponse du marché</strong> : quelqu'un a-t-il demandé, partagé, payé, critiqué utilement ou invité à aller plus loin ?</li>
+      </ol>
+
+      <blockquote>
+        <p><strong>Règle simple :</strong> ne prenez pas une décision de vie depuis une humeur. Prenez-la depuis un ensemble de preuves.</p>
+      </blockquote>
+
+      <h3>Pourquoi l'IA change la donne</h3>
+
+      <p>L'IA ne remplace pas le jugement. Elle augmente la valeur du jugement. Un professionnel capable de penser clairement avec les outils IA recherche plus vite, prototype plus vite, automatise les tâches répétitives et montre une preuve plus tôt.</p>
+
+      <p>Digni Digital a servi plus de 150 clients sur quatre continents. La même logique guide notre programme <a href="/future-ready-graduate">Digni Digital Literacy</a> : les compétences doivent produire une preuve visible et des résultats d'employabilité, dont un taux d'emploi de 85 % dans les 6 mois après la graduation.</p>
+
+      <h3>Exercice de 30 minutes</h3>
+      <ol>
+        <li>Notez trois problèmes que vous aimez résoudre pour les autres.</li>
+        <li>Notez trois compétences que l'IA peut vous aider à pratiquer ou amplifier.</li>
+        <li>Choisissez une audience que vous comprenez bien.</li>
+        <li>Créez une petite offre, un projet ou une étude de cas pour elle.</li>
+        <li>Publiez une première version en 14 jours.</li>
+      </ol>
+
+      <hr>
+
+      <p><strong>Prêt à transformer l'incertitude en plan digital concret ?</strong></p>
+      <p><a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Réservez un appel stratégique gratuit</a> avec Digni Digital. Nous vous aidons à identifier la meilleure expérience, les compétences digitales à construire et le levier IA à utiliser sans remplacer votre jugement.</p>
+    `,
+  },
 }
 
 export const articlesFr: BlogArticle[] = articlesEn.map((article) => {
