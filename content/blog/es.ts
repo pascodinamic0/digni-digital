@@ -721,6 +721,83 @@ const contentEs: Record<string, Partial<BlogArticle>> = {
     publishDate: '24 de mayo de 2026',
     tags: ['DispatchFlow', 'software logístico', 'compras', 'despacho', 'inventario', 'África', 'software agéntico'],
   },
+  'career-clarity-ai-era-five-essays-before-pivot': {
+    title: 'Claridad profesional en la era de la IA: 5 ensayos antes de cambiar de rumbo',
+    excerpt:
+      'Inspirado en cinco ensayos clásicos sobre carrera, esta guía ayuda a profesionales ambiciosos a dejar de dar vueltas, elegir mejores experimentos y construir ventaja profesional con IA.',
+    category: 'Futuro del Trabajo',
+    readTime: '10 min de lectura',
+    publishDate: '25 de mayo de 2026',
+    tags: ['claridad profesional', 'cambio de carrera', 'era de la IA', 'habilidades digitales', 'futuro del trabajo', 'Digni Digital'],
+    content: `
+      <h2>Deje de preguntar: "¿qué hago con mi vida?". Construya un sistema de decisión.</h2>
+
+      <p>Un reel reciente recomendaba cinco lecturas potentes: <em>How to Do What You Love</em> de Paul Graham, <em>Hell Yeah or No</em> de Derek Sivers, <em>How to Pick a Career That Actually Fits You</em> de Tim Urban, <em>Make Your Work Your Calling</em> de Arthur Brooks y la guía de planificación profesional de Marc Andreessen. La lista conecta porque muchas personas ambiciosas no son perezosas. Están saturadas de opciones, presión y comparación, sin una forma clara de elegir.</p>
+
+      <p>En la era de la IA, esa indecisión cuesta más. Quien aprende rápido, prototipa rápido y usa IA para multiplicar su producción muestra resultados antes. La respuesta no es copiar el camino de otra persona. La respuesta es crear un <strong>sistema de claridad profesional</strong>: leer, reflexionar, probar, crear prueba digital y ajustar.</p>
+
+      <h3>Por qué falla la planificación profesional tradicional</h3>
+
+      <p>El sistema antiguo empieza con una etiqueta: banquero, consultor, desarrollador, marketer. Luego pide pulir el CV y esperar permiso. Ese modelo ya no alcanza, porque los roles cambian más rápido que los programas académicos y la IA automatiza muchas tareas rutinarias de entrada.</p>
+
+      <ul>
+        <li><strong>Empieza con etiquetas</strong> en lugar de los problemas que quiere resolver.</li>
+        <li><strong>Romantiza la pasión</strong> en vez de observarla en el trabajo real.</li>
+        <li><strong>Oculta el mercado</strong>, así la gente elige lo que suena prestigioso, no lo que crea valor.</li>
+        <li><strong>Ignora la palanca</strong>: herramientas de IA, portafolio, audiencia, red y sistemas digitales.</li>
+      </ul>
+
+      <h3>El filtro de los cinco ensayos</h3>
+
+      <h4>1. Paul Graham: pruebe la energía real construyendo</h4>
+      <p>Observe el trabajo al que vuelve incluso cuando nadie lo evalúa. Convierta esa energía en algo visible: proyecto, análisis, prototipo, automatización o caso de estudio.</p>
+
+      <h4>2. Derek Sivers: proteja su sí</h4>
+      <p>Si toda oportunidad es un sí, su agenda se vuelve ruido. Un buen cambio de rumbo necesita menos experimentos, pero suficientemente reales para enseñar algo.</p>
+
+      <h4>3. Tim Urban: elija la realidad diaria, no la fantasía</h4>
+      <p>No elija el tráiler cinematográfico de una profesión. Elija los problemas, personas, ritmos y concesiones que encajan con su vida real.</p>
+
+      <h4>4. Arthur Brooks: el significado nace del servicio y la maestría</h4>
+      <p>La vocación no es solo un trabajo ideal. Suele aparecer en la intersección entre utilidad, excelencia y contribución: ¿quién mejora porque usted mejora?</p>
+
+      <h4>5. Marc Andreessen: invierta en su propia palanca</h4>
+      <p>¿Dónde crece la demanda? ¿Qué habilidades se componen con el tiempo? ¿Qué entorno lo expone a mejores problemas? En 2026, la fluidez con IA, el pensamiento de automatización y el criterio de producto multiplican opciones.</p>
+
+      <h3>El ciclo Digni: 4 pasos antes de pivotar</h3>
+
+      <ol>
+        <li><strong>Inventarie sus señales</strong>: qué le da energía, qué lo drena y qué problemas ya le piden resolver.</li>
+        <li><strong>Elija un experimento de 14 días</strong>: landing page, mini prototipo IA, cinco entrevistas, tres publicaciones o un flujo automatizado.</li>
+        <li><strong>Cree prueba digital</strong>: un caso público vale más que una intención privada.</li>
+        <li><strong>Lea la respuesta del mercado</strong>: ¿alguien preguntó, compartió, pagó, criticó con precisión o lo invitó a profundizar?</li>
+      </ol>
+
+      <blockquote>
+        <p><strong>Regla simple:</strong> no tome una decisión de vida desde un estado de ánimo. Tómela desde un patrón de evidencia.</p>
+      </blockquote>
+
+      <h3>Dónde cambia el juego la IA</h3>
+
+      <p>La IA no reemplaza el juicio. Aumenta el valor del juicio. Un profesional que combina pensamiento claro con herramientas de IA investiga más rápido, prototipa más rápido, automatiza trabajo repetitivo y muestra prueba antes.</p>
+
+      <p>Digni Digital ha servido a más de 150 clientes en cuatro continentes. La misma lógica guía nuestro programa <a href="/future-ready-graduate">Digni Digital Literacy</a>: las habilidades deben convertirse en prueba visible y empleabilidad, incluyendo una tasa de empleo del 85% dentro de los 6 meses posteriores a la graduación.</p>
+
+      <h3>Ejercicio de 30 minutos</h3>
+      <ol>
+        <li>Escriba tres problemas que disfruta resolver para otras personas.</li>
+        <li>Escriba tres habilidades que la IA puede ayudarle a practicar o amplificar.</li>
+        <li>Elija una audiencia que entiende mejor que la mayoría.</li>
+        <li>Diseñe una pequeña oferta, proyecto o caso para esa audiencia.</li>
+        <li>Publique la primera versión en 14 días.</li>
+      </ol>
+
+      <hr>
+
+      <p><strong>¿Listo para convertir la incertidumbre profesional en un plan digital práctico?</strong></p>
+      <p><a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Reserve una llamada estratégica gratuita</a> con Digni Digital. Le ayudaremos a identificar el siguiente experimento, las habilidades digitales y la palanca de IA correcta sin reemplazar su juicio.</p>
+    `,
+  },
 }
 
 export const articlesEs: BlogArticle[] = articlesEn.map((article) => {

@@ -3849,6 +3849,112 @@ const remainingArticles: BlogArticle[] = [
       <p><em>See DispatchFlow on our <a href="/agentic-softwares">Agentic Softwares</a> page alongside Kabinda Lodge, AMS, and other live products we build for growth-focused teams.</em></p>
     `,
   },
+  {
+    id: 103,
+    title: 'Career Clarity in the AI Era: 5 Essays to Read Before You Pivot',
+    slug: 'career-clarity-ai-era-five-essays-before-pivot',
+    excerpt:
+      'Inspired by five classic career essays, this practical guide helps ambitious professionals stop spiraling, choose better experiments, and build AI-era career leverage.',
+    category: 'Future of Work',
+    readTime: '10 min read',
+    publishDate: 'May 25, 2026',
+    author: 'Pascal Digny',
+    tags: [
+      'career clarity',
+      'career pivot',
+      'AI era',
+      'digital skills',
+      'future of work',
+      'Digni Digital',
+    ],
+    featured: false,
+    content: `
+      <h2>Stop asking, "What should I do with my life?" Start building a decision system.</h2>
+
+      <p>A short reel recently pointed people toward five classic career reads: Paul Graham's <em>How to Do What You Love</em>, Derek Sivers' <em>Hell Yeah or No</em>, Tim Urban's <em>How to Pick a Career That Actually Fits You</em>, Arthur Brooks' <em>Make Your Work Your Calling</em>, and Marc Andreessen's career planning guide. The list resonates because many ambitious people are not lazy. They are overloaded. They have options, pressure, comparison, and no clean way to choose.</p>
+
+      <p>In the AI era, the problem gets sharper. A vague career path is now competing against people who can learn faster, ship faster, and use AI to multiply their output. The answer is not to panic or copy someone else's path. The answer is to build a <strong>career clarity operating system</strong>: a simple loop that turns reading, reflection, experiments, and digital proof into better decisions.</p>
+
+      <h3>Why traditional career planning fails</h3>
+
+      <p>The broken system tells people to pick a title, polish a CV, and wait for permission. That model was already fragile. Now it is dangerous, because roles change faster than school programs, job descriptions lag behind real work, and AI is automating the routine parts of many entry-level paths.</p>
+
+      <ul>
+        <li><strong>It starts with labels</strong>, such as banker, marketer, developer, or consultant, instead of the problems you want to solve.</li>
+        <li><strong>It treats passion like a lightning strike</strong>, when most people discover energy through repeated contact with real work.</li>
+        <li><strong>It hides the market</strong>, so people choose what sounds impressive instead of what creates value.</li>
+        <li><strong>It ignores leverage</strong>, especially digital systems, AI tools, audiences, portfolios, and networks.</li>
+      </ul>
+
+      <p>A better model gives you outcome, mechanism, proof, and risk removal before any big leap. You do not bet your future on a motivational quote. You run small, clear experiments until the next step becomes obvious.</p>
+
+      <h3>The five-essay filter: what to take from each idea</h3>
+
+      <h4>1. Paul Graham: follow real energy, then test it by making things</h4>
+      <p>The useful idea is not "do whatever feels fun." It is this: pay attention to the work you keep returning to, even when nobody is grading you. In practice, that means building a small project, publishing an analysis, helping a real person, or learning a tool deeply enough to produce something visible.</p>
+
+      <h4>2. Derek Sivers: protect your attention with a sharper yes</h4>
+      <p>If every opportunity is a yes, your calendar becomes a junk drawer. "Hell yeah or no" is powerful for career clarity because compounding requires focus. Choose fewer experiments, but make them real enough to teach you something.</p>
+
+      <h4>3. Tim Urban: match your work to your traits, not your fantasy identity</h4>
+      <p>Many people choose careers based on the movie trailer version of the role. The better question is: what daily problems, people, rhythms, and trade-offs fit you? If you hate ambiguity, do not romanticize founder life. If you need autonomy, be careful with paths that reward compliance more than initiative.</p>
+
+      <h4>4. Arthur Brooks: make work meaningful through service and mastery</h4>
+      <p>Calling is not only a dream job. It is often the intersection of usefulness, excellence, and contribution. Ask: who gets better because I got better? That question turns career planning from self-obsession into service.</p>
+
+      <h4>5. Marc Andreessen: think like an investor in your own leverage</h4>
+      <p>Career decisions are not only about preference. They are about markets. Where is demand growing? Which skills compound? Who can you learn from? Which environment exposes you to stronger problems? In 2026, AI fluency, automation thinking, and digital product judgment are leverage multipliers.</p>
+
+      <h3>The Digni clarity loop: four steps before a pivot</h3>
+
+      <p>Here is the practical mechanism we recommend for students, young professionals, founders, and operators who feel stuck.</p>
+
+      <ol>
+        <li><strong>Inventory your signals</strong>: list the work that gives energy, the work that drains you, the problems people already ask you to solve, and the skills that could become commercially useful.</li>
+        <li><strong>Choose one 14-day experiment</strong>: build a landing page, automate a workflow, interview five people in a field, publish three essays, or prototype a small AI assistant. Keep it small enough to finish.</li>
+        <li><strong>Create digital proof</strong>: turn the experiment into a portfolio artifact. A public case study beats a private intention.</li>
+        <li><strong>Review the market response</strong>: did anyone care, pay, share, ask for help, invite you deeper, or give useful criticism? Use the signal to choose the next experiment.</li>
+      </ol>
+
+      <blockquote>
+        <p><strong>Simple rule:</strong> do not make a life decision from a mood. Make it from a pattern of evidence.</p>
+      </blockquote>
+
+      <h3>Where AI changes the game</h3>
+
+      <p>AI does not remove the need for judgment. It raises the value of judgment. A professional who can combine clear thinking with AI tools can research faster, prototype faster, write faster, automate routine work, and show proof sooner. That matters whether you want a job, a promotion, a client, or a business.</p>
+
+      <ul>
+        <li><strong>For students</strong>: use AI to build portfolio projects that show initiative before your first job.</li>
+        <li><strong>For career changers</strong>: use AI to compress the learning curve, then validate with real-world output.</li>
+        <li><strong>For founders</strong>: use AI agents and automations to test offers, capture leads, and serve customers before hiring a larger team.</li>
+        <li><strong>For institutions</strong>: teach AI as a capability layer, not a shortcut, so graduates can create value responsibly.</li>
+      </ul>
+
+      <h3>Proof: clarity becomes employability when it turns into visible work</h3>
+
+      <p>Digni Digital has served 150+ clients across four continents and built practical digital systems for businesses that need measurable outcomes, not theory. The same principle shapes our <a href="/future-ready-graduate">Digni Digital Literacy</a> work: students and professionals need skills that turn into visible capability. Our future-ready graduate approach is built around practical digital confidence, portfolio proof, and employment outcomes, including an 85% employment rate within 6 months of graduation.</p>
+
+      <p>The lesson is simple: career clarity is not found only by thinking harder. It is earned by building, testing, reflecting, and showing evidence.</p>
+
+      <h3>A 30-minute exercise you can do today</h3>
+
+      <ol>
+        <li>Write down three problems you enjoy solving for other people.</li>
+        <li>Write down three skills that AI makes easier for you to practice or amplify.</li>
+        <li>Pick one audience you understand better than most people.</li>
+        <li>Design one tiny offer, project, or case study for that audience.</li>
+        <li>Ship the first version within 14 days.</li>
+      </ol>
+
+      <p>If the experiment creates energy and signal, continue. If it creates only anxiety and no market response, adjust. Either way, you are no longer spiraling at 11pm. You are learning in public with a system.</p>
+
+      <hr>
+
+      <p><strong>Ready to turn career uncertainty into a practical digital plan?</strong></p>
+      <p><a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Book a free strategy call</a> with Digni Digital. We will help you identify the strongest next experiment, the digital skills to build, and where AI can create leverage without replacing your judgment.</p>
+    `,
+  },
 ]
 
 export const articlesEn: BlogArticle[] = [...blogArticles, ...remainingArticles]

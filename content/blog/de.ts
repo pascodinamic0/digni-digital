@@ -1764,6 +1764,83 @@ export const contentDe: Record<string, Partial<BlogArticle>> = {
     publishDate: '24. Mai 2026',
     tags: ['DispatchFlow', 'Logistiksoftware', 'Beschaffung', 'Versand', 'Inventar', 'Afrika', 'agentische Software'],
   },
+  'career-clarity-ai-era-five-essays-before-pivot': {
+    title: 'Karriereklarheit im KI-Zeitalter: 5 Essays vor dem nächsten Pivot',
+    excerpt:
+      'Inspiriert von fünf klassischen Karriere-Essays: ein praktischer Leitfaden, um nicht länger zu grübeln, bessere Experimente zu wählen und Karrierehebel mit KI aufzubauen.',
+    category: 'Zukunft der Arbeit',
+    readTime: '10 Min. Lesezeit',
+    publishDate: '25. Mai 2026',
+    tags: ['Karriereklarheit', 'Karrierewechsel', 'KI-Zeitalter', 'digitale Kompetenzen', 'Zukunft der Arbeit', 'Digni Digital'],
+    content: `
+      <h2>Fragen Sie nicht länger: „Was soll ich mit meinem Leben machen?“ Bauen Sie ein Entscheidungssystem.</h2>
+
+      <p>Ein kurzer Reel verwies auf fünf starke Karriere-Lektüren: Paul Grahams <em>How to Do What You Love</em>, Derek Sivers' <em>Hell Yeah or No</em>, Tim Urbans <em>How to Pick a Career That Actually Fits You</em>, Arthur Brooks' <em>Make Your Work Your Calling</em> und Marc Andreessens Guide zur Karriereplanung. Die Liste trifft einen Nerv, weil viele ehrgeizige Menschen nicht faul sind. Sie sind überlastet von Optionen, Vergleichsdruck und fehlender Klarheit.</p>
+
+      <p>Im KI-Zeitalter wird diese Unklarheit teurer. Menschen, die schneller lernen, schneller Prototypen bauen und KI als Multiplikator nutzen, schaffen sichtbare Ergebnisse früher. Die Lösung ist nicht, den Weg anderer zu kopieren. Die Lösung ist ein <strong>System für Karriereklarheit</strong>: lesen, reflektieren, testen, digitale Beweise schaffen und dann nachjustieren.</p>
+
+      <h3>Warum klassische Karriereplanung scheitert</h3>
+
+      <p>Das alte Modell beginnt mit einer Berufsbezeichnung: Banker, Berater, Entwickler, Marketer. Danach kommt der Lebenslauf und das Warten auf Erlaubnis. Dieses Modell reicht nicht mehr aus, weil Rollen schneller entstehen als Studiengänge, und weil KI viele routinemäßige Einstiegsaufgaben automatisiert.</p>
+
+      <ul>
+        <li><strong>Es startet mit Etiketten</strong> statt mit den Problemen, die Sie lösen wollen.</li>
+        <li><strong>Es behandelt Leidenschaft wie einen Blitz</strong>, obwohl Energie meist durch echte Arbeit sichtbar wird.</li>
+        <li><strong>Es blendet den Markt aus</strong>, sodass Menschen wählen, was prestigeträchtig klingt, nicht was Wert schafft.</li>
+        <li><strong>Es ignoriert Hebel</strong>: KI-Tools, Portfolio, Publikum, Netzwerk und digitale Systeme.</li>
+      </ul>
+
+      <h3>Der Filter der fünf Essays</h3>
+
+      <h4>1. Paul Graham: echte Energie durch Machen testen</h4>
+      <p>Achten Sie auf die Arbeit, zu der Sie zurückkehren, auch wenn niemand bewertet. Verwandeln Sie diese Energie in etwas Sichtbares: Projekt, Analyse, Prototyp, Automatisierung oder Fallstudie.</p>
+
+      <h4>2. Derek Sivers: Ihr Ja schützen</h4>
+      <p>Wenn jede Gelegenheit ein Ja ist, wird Ihr Kalender beliebig. Ein guter Pivot braucht weniger Experimente, aber diese müssen ernst genug sein, um ein Signal zu erzeugen.</p>
+
+      <h4>3. Tim Urban: zur tatsächlichen Arbeitsrealität passen</h4>
+      <p>Wählen Sie nicht den Filmtrailer eines Jobs. Wählen Sie die täglichen Probleme, Menschen, Rhythmen und Kompromisse, die wirklich zu Ihnen passen.</p>
+
+      <h4>4. Arthur Brooks: Sinn durch Dienst und Meisterschaft</h4>
+      <p>Berufung ist nicht nur ein Traumjob. Sie entsteht oft dort, wo Können, Beitrag und Nutzen zusammenkommen: Wer wird besser, weil Sie besser werden?</p>
+
+      <h4>5. Marc Andreessen: in Ihren eigenen Hebel investieren</h4>
+      <p>Wo wächst Nachfrage? Welche Fähigkeiten verstärken sich über Zeit? Welche Umgebung bringt Sie an bessere Probleme? 2026 sind KI-Kompetenz, Automatisierungsdenken und Produkturteil echte Multiplikatoren.</p>
+
+      <h3>Die Digni-Schleife: 4 Schritte vor einem Pivot</h3>
+
+      <ol>
+        <li><strong>Signale inventarisieren</strong>: Was gibt Energie, was zieht Energie, welche Probleme bitten andere Sie schon heute zu lösen?</li>
+        <li><strong>Ein 14-Tage-Experiment wählen</strong>: Landingpage, KI-Mini-Prototyp, fünf Interviews, drei veröffentlichte Analysen oder ein automatisierter Workflow.</li>
+        <li><strong>Digitalen Beweis schaffen</strong>: Eine öffentliche Fallstudie ist stärker als eine private Absicht.</li>
+        <li><strong>Marktreaktion lesen</strong>: Fragt jemand nach, teilt, zahlt, kritisiert hilfreich oder lädt Sie tiefer ein?</li>
+      </ol>
+
+      <blockquote>
+        <p><strong>Einfache Regel:</strong> Treffen Sie keine Lebensentscheidung aus einer Stimmung heraus. Treffen Sie sie aus einem Muster von Beweisen.</p>
+      </blockquote>
+
+      <h3>Warum KI das Spielfeld verändert</h3>
+
+      <p>KI ersetzt Urteilsvermögen nicht. Sie erhöht den Wert von Urteilsvermögen. Wer klar denken und KI-Werkzeuge nutzen kann, recherchiert schneller, prototypisiert schneller, automatisiert Routinearbeit und zeigt früher belastbare Ergebnisse.</p>
+
+      <p>Digni Digital hat über 150 Kunden auf vier Kontinenten betreut. Dieselbe Logik prägt unser Programm <a href="/future-ready-graduate">Digni Digital Literacy</a>: Kompetenzen müssen sichtbare Beweise und Beschäftigungsfähigkeit erzeugen, inklusive einer Beschäftigungsquote von 85 % innerhalb von 6 Monaten nach Abschluss.</p>
+
+      <h3>Eine 30-Minuten-Übung</h3>
+      <ol>
+        <li>Schreiben Sie drei Probleme auf, die Sie gern für andere lösen.</li>
+        <li>Schreiben Sie drei Fähigkeiten auf, die KI Ihnen beim Üben oder Verstärken erleichtert.</li>
+        <li>Wählen Sie eine Zielgruppe, die Sie besonders gut verstehen.</li>
+        <li>Entwerfen Sie ein kleines Angebot, Projekt oder eine Fallstudie für diese Zielgruppe.</li>
+        <li>Veröffentlichen Sie die erste Version innerhalb von 14 Tagen.</li>
+      </ol>
+
+      <hr>
+
+      <p><strong>Bereit, Unsicherheit in einen praktischen digitalen Plan zu verwandeln?</strong></p>
+      <p><a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Buchen Sie ein kostenloses Strategiegespräch</a> mit Digni Digital. Wir helfen, das stärkste nächste Experiment, die digitalen Kompetenzen und den passenden KI-Hebel zu identifizieren.</p>
+    `,
+  },
 }
 
 export const articlesDe: BlogArticle[] = articlesEn.map((article) => {
