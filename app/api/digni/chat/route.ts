@@ -1,4 +1,10 @@
 import { buildDigniSystemPrompt } from '@/lib/digni/system-prompt'
+import {
+  getOpenRouterConfig,
+  openRouterChatCompletion,
+  openRouterErrorMessage,
+  type ChatCompletionMessage,
+} from '@/lib/digni/openrouter'
 
 export const runtime = 'nodejs'
 export const maxDuration = 60
@@ -30,37 +36,32 @@ export async function POST(request: Request) {
   }
 
   const locale = body.locale ?? 'us-en'
-  const key = process.env.OPENAI_API_KEY
-  const model = process.env.OPENAI_MODEL ?? 'gpt-4o-mini'
+  const openRouter = getOpenRouterConfig()
 
-  if (!key) {
+  if (!openRouter) {
     return Response.json(
       {
         error:
           'Chat is temporarily unavailable. Email support@digni-digital-llc.com or use our contact page.',
-        code: 'no_openai',
+        code: 'no_openrouter',
       },
       { status: 503 }
     )
   }
 
-  const openAiMessages = [
-    { role: 'system' as const, content: buildDigniSystemPrompt(locale) },
+  const chatMessages: ChatCompletionMessage[] = [
+    { role: 'system', content: buildDigniSystemPrompt(locale) },
     ...messages.slice(-24).map((m) => ({ role: m.role, content: m.content.trim() })),
   ]
 
   const useStream = request.headers.get('accept')?.includes('text/event-stream')
 
   if (!useStream) {
-    const res = await fetch('https://api.openai.com/v1/chat/completions', {
-      method: 'POST',
-      headers: { Authorization: `Bearer ${key}`, 'Content-Type': 'application/json' },
-      body: JSON.stringify({ model, temperature: 0.65, max_tokens: 1200, messages: openAiMessages }),
-    })
+    const res = await openRouterChatCompletion(openRouter, chatMessages, { stream: false })
     const raw = await res.json()
     if (!res.ok) {
       return Response.json(
-        { error: raw.error?.message ?? 'AI request failed', code: 'openai_error' },
+        { error: openRouterErrorMessage(raw), code: 'openrouter_error' },
         { status: 502 }
       )
     }
@@ -71,18 +72,11 @@ export async function POST(request: Request) {
     return Response.json({ message: text })
   }
 
-  const res = await fetch('https://api.openai.com/v1/chat/completions', {
-    method: 'POST',
-    headers: { Authorization: `Bearer ${key}`, 'Content-Type': 'application/json' },
-    body: JSON.stringify({ model, temperature: 0.65, max_tokens: 1200, stream: true, messages: openAiMessages }),
-  })
+  const res = await openRouterChatCompletion(openRouter, chatMessages, { stream: true })
 
   if (!res.ok) {
     const raw = await res.json().catch(() => ({}))
-    return Response.json(
-      { error: (raw as { error?: { message?: string } }).error?.message ?? 'AI request failed' },
-      { status: 502 }
-    )
+    return Response.json({ error: openRouterErrorMessage(raw) }, { status: 502 })
   }
 
   const encoder = new TextEncoder()
@@ -109,11 +103,13 @@ export async function POST(request: Request) {
               continue
             }
             try {
-              const parsed = JSON.parse(payload) as { choices?: Array<{ delta?: { content?: string } }> }
+              const parsed = JSON.parse(payload) as {
+                choices?: Array<{ delta?: { content?: string } }>
+              }
               const delta = parsed.choices?.[0]?.delta?.content
               if (delta) controller.enqueue(encoder.encode(sseLine({ type: 'delta', content: delta })))
             } catch {
-              /* skip */
+              /* skip malformed chunks */
             }
           }
         }
