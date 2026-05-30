@@ -958,6 +958,30 @@ export default function AgenticSoftwaresPage({ params, searchParams }: AgenticSo
       icon: '🏫',
     },
     {
+      title: 'DigniGuide',
+      description: localizeAgentic(
+        language,
+        'The intelligent business guide — chat by voice or text to explore AI Employee, Agentic Softwares, training programs, and book your onboarding demo when you are ready.',
+      ),
+      category: localizeAgentic(language, 'AI Guide & Sales'),
+      status: localizeAgentic(language, 'Live'),
+      link: '/digni',
+      tech: ['Next.js', 'OpenRouter', 'Web Speech', 'Streaming chat'],
+      icon: '✦',
+    },
+    {
+      title: 'SwiftDrop',
+      description: localizeAgentic(
+        language,
+        'Local food and grocery delivery — connect customers to restaurants, groceries, and pharmacies. Prepay items, pay delivery in cash on arrival, and track every order from kitchen to door.',
+      ),
+      category: localizeAgentic(language, 'Marketplace & Delivery'),
+      status: localizeAgentic(language, 'Live'),
+      link: 'https://swift-drop-chi.vercel.app/',
+      tech: ['Next.js', 'Vercel', 'Payments', 'Live order tracking'],
+      icon: '🛵',
+    },
+    {
       title: 'Proposal Agent',
       description: localizeAgentic(language, 'AI creates proposals. Minutes, not hours.'),
       category: localizeAgentic(language, 'Business Automation'),
