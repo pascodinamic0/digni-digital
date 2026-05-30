@@ -613,11 +613,11 @@ function WhatWeDo() {
                 <p className="text-lg md:text-xl text-muted mb-8 max-w-2xl mx-auto leading-relaxed">
                   {w.notSureSubtitle}
                 </p>
-                <a
-                  {...getBookingLinkProps()}
+                <Link
+                  href={ctaConfig.digniPath}
                   className="group inline-flex items-center gap-3 bg-accent hover:bg-accent-light text-background font-semibold px-8 py-4 rounded-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl text-lg"
                 >
-                  <span>{ctaT.bookStrategy}</span>
+                  <span>{ctaT.talkToDigniGuide ?? ctaT.getStarted}</span>
                   <svg
                     className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"
                     fill="none"
@@ -626,7 +626,7 @@ function WhatWeDo() {
                   >
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -919,13 +919,10 @@ function CaseStudies() {
 
         <div className="text-center mt-12">
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link href={ctaConfig.digniPath} className="btn-primary">
+              {translations[language].cta.talkToDigniGuide ?? translations[language].cta.getStarted}
+            </Link>
             <Link href="/case-studies" className="btn-secondary">{c.viewAll}</Link>
-            <a
-              {...getBookingLinkProps()}
-              className="btn-primary"
-            >
-              {translations[language].cta.getSimilarResults}
-            </a>
           </div>
         </div>
       </div>
