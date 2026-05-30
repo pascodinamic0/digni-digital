@@ -157,6 +157,12 @@ export function BlogHubClient() {
             {label}
           </button>
         ))}
+        <Link
+          href="/admin/blog/topics"
+          className="rounded-t-lg px-4 py-2.5 text-sm font-semibold text-muted hover:bg-surface-light/60 hover:text-text"
+        >
+          Topic queue →
+        </Link>
       </div>
 
       {tab === 'marketing' && (
