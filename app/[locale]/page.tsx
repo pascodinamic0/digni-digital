@@ -1015,11 +1015,11 @@ function CTASection() {
                 transition={{ delay: 0.5 }}
                 className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-10"
               >
-                <a
-                  {...getBookingLinkProps()}
+                <Link
+                  href={ctaConfig.digniPath}
                   className="group relative inline-flex items-center gap-3 bg-accent hover:bg-accent-light text-background font-semibold px-8 py-4 rounded-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
                 >
-                  <span className="text-lg">{ctaT.bookConsultation}</span>
+                  <span className="text-lg">{ctaT.talkToDigniGuide ?? ctaT.getStarted}</span>
                   <svg
                     className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"
                     fill="none"
@@ -1028,6 +1028,9 @@ function CTASection() {
                   >
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
+                </Link>
+                <a {...getBookingLinkProps()} className="btn-secondary text-lg px-8 py-4">
+                  {ctaT.bookDemo}
                 </a>
               </motion.div>
 
