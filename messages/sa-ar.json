@@ -14,11 +14,11 @@
     "agenticSoftwaresDesc": "برمجيات مخصّصة بذكاء اصطناعي مدمج للمشكلات المتخصصة"
   },
   "cta": {
-    "getStarted": "ابدأ الآن",
+    "getStarted": "تحدث مع DigniGuide",
     "bookStrategy": "احجز مكالمة استراتيجية",
     "bookConsultation": "احجز استشارتك المجانية",
     "scheduleConsultation": "جدولة استشارة",
-    "bookDemo": "احجز عرضاً توضيحياً",
+    "bookDemo": "احجز عرض onboarding",
     "getSimilarResults": "احصل على نتائج مماثلة",
     "bookStrategicConsultation": "احجز استشارة استراتيجية",
     "bookAConsultation": "احجز استشارة",
@@ -144,5 +144,9 @@
       "or": "أو",
       "contactLink": "اتصل بنا"
     }
+  },
+  "digni": {
+    "metaTitle": "DigniGuide | دليل الأعمال الذكي",
+    "metaDescription": "تحدث مع DigniGuide — دليل Digni Digital للخدمات وتقييم الملاءمة وحجز عرض onboarding."
   }
 }

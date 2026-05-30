@@ -1279,26 +1279,36 @@ export default function AgenticSoftwaresPage({ params, searchParams }: AgenticSo
                     </div>
                   </div>
 
-                  {app.status === localizeAgentic(language, 'Live') && (
-                    <a
-                      href={app.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn-primary w-full"
-                    >
-                      {copy.viewApplication}
-                    </a>
-                  )}
-                  {app.status === localizeAgentic(language, 'Beta') && (
-                    <a
-                      href={app.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn-secondary w-full"
-                    >
-                      {copy.requestBeta}
-                    </a>
-                  )}
+                  {app.status === localizeAgentic(language, 'Live') &&
+                    (app.link.startsWith('/') ? (
+                      <Link href={app.link} className="btn-primary w-full block text-center">
+                        {copy.viewApplication}
+                      </Link>
+                    ) : (
+                      <a
+                        href={app.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="btn-primary w-full"
+                      >
+                        {copy.viewApplication}
+                      </a>
+                    ))}
+                  {app.status === localizeAgentic(language, 'Beta') &&
+                    (app.link.startsWith('/') ? (
+                      <Link href={app.link} className="btn-secondary w-full block text-center">
+                        {copy.requestBeta}
+                      </Link>
+                    ) : (
+                      <a
+                        href={app.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="btn-secondary w-full"
+                      >
+                        {copy.requestBeta}
+                      </a>
+                    ))}
                   {app.status === 'Coming Soon' && (
                     <button className="btn-outline w-full cursor-not-allowed" disabled>
                       {copy.comingSoon}

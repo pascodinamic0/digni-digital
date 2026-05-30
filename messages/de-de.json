@@ -14,11 +14,11 @@
     "agenticSoftwaresDesc": "Maßgeschneiderte KI-Software für Nischenprobleme"
   },
   "cta": {
-    "getStarted": "Loslegen",
+    "getStarted": "DigniGuide sprechen",
     "bookStrategy": "Strategiegespräch buchen",
     "bookConsultation": "Kostenlose Beratung buchen",
     "scheduleConsultation": "Beratung planen",
-    "bookDemo": "Demo buchen",
+    "bookDemo": "Onboarding-Demo buchen",
     "getSimilarResults": "Ähnliche Ergebnisse erzielen",
     "bookStrategicConsultation": "Strategische Beratung buchen",
     "bookAConsultation": "Beratung buchen",
@@ -144,5 +144,9 @@
       "or": "oder",
       "contactLink": "Kontakt"
     }
+  },
+  "digni": {
+    "metaTitle": "DigniGuide | Intelligenter Business-Guide",
+    "metaDescription": "Chatten Sie mit DigniGuide — dem KI-Guide von Digni Digital für Services, Fit-Check und Onboarding-Demo."
   }
 }

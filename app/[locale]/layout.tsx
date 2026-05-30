@@ -59,22 +59,26 @@ export default async function LocaleLayout({ children, params }: Props) {
 
   setRequestLocale(locale)
   const messages = await getMessages()
+  const pathname = (await headers()).get('x-pathname') || ''
+  const isDigniChat = pathname.includes('/digni')
 
   return (
     <LocaleProvider locale={locale}>
       <NextIntlClientProvider messages={messages} locale={locale}>
         <div className="grain-overlay" />
-        <Navigation />
+        {!isDigniChat && <Navigation />}
         <LocaleKeyedContent locale={locale}>{children}</LocaleKeyedContent>
-        <ScrollCompanion />
-        <Footer />
-        <Script
-          id="ghl-chat-widget-loader"
-          src="https://widgets.leadconnectorhq.com/loader.js"
-          strategy="lazyOnload"
-          data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
-          data-widget-id="691c374633e992e56f750115"
-        />
+        {!isDigniChat && <ScrollCompanion />}
+        {!isDigniChat && <Footer />}
+        {!isDigniChat && (
+          <Script
+            id="ghl-chat-widget-loader"
+            src="https://widgets.leadconnectorhq.com/loader.js"
+            strategy="lazyOnload"
+            data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
+            data-widget-id="691c374633e992e56f750115"
+          />
+        )}
       </NextIntlClientProvider>
     </LocaleProvider>
   )

@@ -21,52 +21,47 @@ export function getSecondaryCtaText(language: Language) {
 }
 
 export const ctaConfig = {
-  // ============================================
-  // PRIMARY BOOKING LINK
-  // Update this URL to change all booking buttons
-  // ============================================
+  /** Primary site CTA — DigniGuide intelligent chat */
+  digniPath: '/digni',
+
+  /** Secondary — book demo / onboarding / sales call (after chat qualification) */
   bookingUrl: 'https://calendar.app.google/xP2APV1Zqbke8JKu6',
 
-  // ============================================
-  // BUTTON TEXT VARIANTS
-  // Use different text for different contexts
-  // ============================================
   buttonText: {
-    // Navigation & Header (primary CTA - use site-wide)
-    getStarted: 'Get Started',
-
-    // Primary CTAs
+    getStarted: 'Talk to DigniGuide',
+    talkToDigniGuide: 'Talk to DigniGuide',
     bookStrategy: 'Book a Strategy Call',
     bookConsultation: 'Book Your Free Consultation',
     scheduleConsultation: 'Schedule Consultation',
-    
-    // Secondary CTAs
-    bookDemo: 'Book a Demo',
+    bookDemo: 'Book Onboarding Demo',
     getSimilarResults: 'Get Similar Results',
-    
-    // Blog & Content CTAs
     bookStrategicConsultation: 'Book a strategic consultation',
     bookAConsultation: 'Book a consultation',
-    
-    // Generic
     exploreProducts: 'Explore Our Products',
     startProject: 'Start Your Project',
     discussProject: 'Discuss Your Project',
   },
 
-  // ============================================
-  // LINK BEHAVIOR
-  // ============================================
   target: '_blank' as const,
   rel: 'noopener noreferrer',
 }
 
-// Helper function to get the booking URL
+export const getDigniPath = () => ctaConfig.digniPath
+
 export const getBookingUrl = () => ctaConfig.bookingUrl
 
-// Helper function to get booking link props
 export const getBookingLinkProps = () => ({
   href: ctaConfig.bookingUrl,
   target: ctaConfig.target,
   rel: ctaConfig.rel,
 })
+
+export type CtaDestination = 'digni' | 'booking'
+
+export const getPrimaryCtaHref = (destination: CtaDestination = 'digni') =>
+  destination === 'booking' ? ctaConfig.bookingUrl : ctaConfig.digniPath
+
+export const getPrimaryCtaLinkProps = (destination: CtaDestination = 'digni') => {
+  if (destination === 'booking') return getBookingLinkProps()
+  return { href: ctaConfig.digniPath } as const
+}

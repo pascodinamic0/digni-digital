@@ -12,6 +12,7 @@ const staticPaths: { path: string; changeFrequency: 'weekly' | 'monthly' | 'year
   { path: '/services', changeFrequency: 'monthly', priority: 0.8, lastModified: '2026-02-15' },
   { path: '/case-studies', changeFrequency: 'monthly', priority: 0.8, lastModified: '2026-03-01' },
   { path: '/blog', changeFrequency: 'weekly', priority: 0.7, lastModified: '2026-03-05' },
+  { path: '/digni', changeFrequency: 'weekly', priority: 0.95, lastModified: '2026-05-30' },
   { path: '/contact', changeFrequency: 'monthly', priority: 0.7, lastModified: '2026-01-15' },
   { path: '/affiliate', changeFrequency: 'monthly', priority: 0.5, lastModified: '2026-01-15' },
   { path: '/ai-receptionist', changeFrequency: 'monthly', priority: 0.9, lastModified: '2026-03-01' },

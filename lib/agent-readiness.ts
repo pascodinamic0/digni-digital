@@ -267,6 +267,52 @@ export const agentServices: AgentService[] = [
 
 export const agentProducts = [
   {
+    id: 'digniguide',
+    name: 'DigniGuide',
+    alternateName: 'Intelligent Business Guide',
+    url: localizedUrl(DEFAULT_LOCALE, '/digni'),
+    applicationCategory: 'BusinessApplication',
+    operatingSystem: 'Web',
+    status: 'Live',
+    description:
+      'AI business guide for Digni Digital — voice and text chat for service fit, professional discovery, and booking an onboarding demo when ready.',
+    features: [
+      'Voice and text conversation',
+      'Service fit and assessment-style discovery',
+      'Knowledge of AI Employee, Agentic Softwares, and training programs',
+      'Books onboarding demo after qualification',
+    ],
+    offers: [],
+    proof: [
+      { metric: '24/7', description: 'Always-on guide on digni-digital-llc.com' },
+      { metric: '3', description: 'Core service lines covered in one conversation' },
+    ],
+    lastUpdated: AGENT_DATA_LAST_UPDATED,
+  },
+  {
+    id: 'swiftdrop',
+    name: 'SwiftDrop',
+    alternateName: 'Local Food & Grocery Delivery Platform',
+    url: 'https://swift-drop-chi.vercel.app/',
+    applicationCategory: 'BusinessApplication',
+    operatingSystem: 'Web',
+    status: 'Live',
+    description:
+      'Food and grocery delivery for local restaurants, groceries, and pharmacies — prepay items, cash on delivery, live order tracking.',
+    features: [
+      'Browse local restaurants, groceries, and pharmacies',
+      'Prepay items; delivery fee in cash on arrival',
+      'Live order tracking from kitchen to door',
+      'Driver and merchant onboarding flows',
+    ],
+    offers: [],
+    proof: [
+      { metric: 'Live', description: 'Production deployment on Vercel' },
+      { metric: '3', description: 'Store types: restaurants, groceries, pharmacies' },
+    ],
+    lastUpdated: AGENT_DATA_LAST_UPDATED,
+  },
+  {
     id: 'ams',
     name: 'AMS (Academic Management System)',
     url: 'https://ams-xi-two.vercel.app/',
