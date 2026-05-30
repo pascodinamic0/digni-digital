@@ -20,9 +20,19 @@ const articlesByLanguage: Record<string, BlogArticle[]> = {
   es: articlesEs,
 }
 
+function sortArticlesNewestFirst(articles: BlogArticle[]): BlogArticle[] {
+  return [...articles].sort((a, b) => {
+    const da = Date.parse(a.publishDate)
+    const db = Date.parse(b.publishDate)
+    if (!Number.isNaN(da) && !Number.isNaN(db) && da !== db) return db - da
+    return b.id - a.id
+  })
+}
+
 export function getArticlesForLocale(locale: Locale | string): BlogArticle[] {
   const lang = locale.split('-')[1]?.toLowerCase() || 'en'
-  return articlesByLanguage[lang] ?? articlesEn
+  const list = articlesByLanguage[lang] ?? articlesEn
+  return sortArticlesNewestFirst(list)
 }
 
 /** File articles merged with agent-published DB posts (server-only). */
@@ -38,12 +48,7 @@ export async function getArticlesForLocaleWithDb(
     const supabase = await createClient()
     const extras = await fetchDbOnlyBlogArticles(supabase, dbLocale, slugs)
     if (!extras.length) return fileArticles
-    return [...extras, ...fileArticles].sort((a, b) => {
-      const da = Date.parse(a.publishDate)
-      const db = Date.parse(b.publishDate)
-      if (!Number.isNaN(da) && !Number.isNaN(db)) return db - da
-      return b.id - a.id
-    })
+    return sortArticlesNewestFirst([...extras, ...fileArticles])
   } catch {
     return fileArticles
   }

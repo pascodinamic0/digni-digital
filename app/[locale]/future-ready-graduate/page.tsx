@@ -22,6 +22,7 @@ import {
   visibleDefaultFutureReadyOfferings,
 } from '@/lib/future-ready-offerings'
 import { getAiCareerFutureReadySkills } from '@/lib/ai-career-jobs'
+import { AiCareerPathsGrid } from '@/app/components/AiCareerPathsGrid'
 
 type FutureReadyGraduatePageProps = {
   params: Promise<{ locale: string }>
@@ -1344,6 +1345,11 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
             </div>
           </div>
 
+          <AiCareerPathsGrid
+            title={pageT.aiCareerPathsTitle}
+            subtitle={pageT.aiCareerPathsSubtitle}
+            guideLabel={pageT.aiCareerGuideLabel}
+          />
         </div>
       </section>
 
