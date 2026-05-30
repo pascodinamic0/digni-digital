@@ -1,4 +1,5 @@
 import type { BlogArticle } from './types'
+import { aiCareerGuideArticles } from './ai-career-guides'
 
 const blogArticles: BlogArticle[] = [
   {
@@ -4093,4 +4094,8 @@ const remainingArticles: BlogArticle[] = [
   },
 ]
 
-export const articlesEn: BlogArticle[] = [...blogArticles, ...remainingArticles]
+export const articlesEn: BlogArticle[] = [
+  ...blogArticles,
+  ...remainingArticles,
+  ...aiCareerGuideArticles,
+]
