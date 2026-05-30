@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import { Link } from '@/i18n/navigation'
 import ThemeToggle from './ThemeToggle'
 import Logo from './Logo'
-import { getCtaButtonText, getBookingLinkProps } from '@/app/config/cta.config'
+import { getCtaButtonText, getBookingLinkProps, ctaConfig } from '@/app/config/cta.config'
 import { useLanguage } from '@/app/context/LocaleContext'
 
 export default function SimpleNavigation() {

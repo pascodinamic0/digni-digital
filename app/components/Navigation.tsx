@@ -2,9 +2,9 @@
 
 import { useState, useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
-import { usePathname } from '@/i18n/navigation'
+import { Link, usePathname } from '@/i18n/navigation'
 import HeaderNavLink from '@/app/components/HeaderNavLink'
-import { getBookingLinkProps } from '@/app/config/cta.config'
+import { getBookingLinkProps, ctaConfig } from '@/app/config/cta.config'
 import { useLanguage } from '@/app/context/LocaleContext'
 import { translations } from '@/app/config/translations'
 import ThemeToggle from './ThemeToggle'

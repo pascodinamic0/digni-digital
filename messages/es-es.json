@@ -14,11 +14,11 @@
     "agenticSoftwaresDesc": "Software a medida con IA integrada para problemas de nicho"
   },
   "cta": {
-    "getStarted": "Empezar",
+    "getStarted": "Hablar con DigniGuide",
     "bookStrategy": "Reservar llamada estratégica",
     "bookConsultation": "Reservar consulta gratuita",
     "scheduleConsultation": "Programar consulta",
-    "bookDemo": "Reservar demo",
+    "bookDemo": "Reservar demo de onboarding",
     "getSimilarResults": "Obtener resultados similares",
     "bookStrategicConsultation": "Reservar consulta estratégica",
     "bookAConsultation": "Reservar consulta",
@@ -144,5 +144,9 @@
       "or": "o",
       "contactLink": "Contacto"
     }
+  },
+  "digni": {
+    "metaTitle": "DigniGuide | Guía inteligente de negocios",
+    "metaDescription": "Chatea con DigniGuide — guía IA de Digni Digital para servicios, encaje y demo de onboarding."
   }
 }

@@ -13,12 +13,16 @@
     "agenticSoftwares": "Agentic Softwares",
     "agenticSoftwaresDesc": "Custom software with integrated AI for niche-specific problems"
   },
+  "digni": {
+    "metaTitle": "DigniGuide | Intelligent Business Guide",
+    "metaDescription": "Chat with DigniGuide — Digni Digital's AI guide for services, fit assessment, and booking your onboarding demo when you're ready."
+  },
   "cta": {
-    "getStarted": "Get Started",
+    "getStarted": "Talk to DigniGuide",
     "bookStrategy": "Book a Strategy Call",
     "bookConsultation": "Book Your Free Consultation",
     "scheduleConsultation": "Schedule Consultation",
-    "bookDemo": "Book a Demo",
+    "bookDemo": "Book Onboarding Demo",
     "getSimilarResults": "Get Similar Results",
     "bookStrategicConsultation": "Book a strategic consultation",
     "bookAConsultation": "Book a consultation",
