@@ -1,7 +1,7 @@
 import { Suspense } from 'react'
 import { Metadata } from 'next'
 import BlogContent from '@/app/blog/BlogContent'
-import { getArticlesForLocale } from '@/lib/blog'
+import { getArticlesForLocaleWithDb } from '@/lib/blog'
 import { AGENT_DATA_LAST_UPDATED, jsonLdScriptProps } from '@/lib/agent-readiness'
 
 const blogMetaByLang: Record<string, { title: string; description: string; keywords: string[]; jsonLdName: string; jsonLdDescription: string }> = {
@@ -66,13 +66,13 @@ export default async function BlogPage({ params }: Props) {
   const { locale } = await params
   const lang = locale.includes('fr') ? 'fr' : locale.includes('es') ? 'es' : locale.includes('ar') ? 'ar' : locale.includes('de') ? 'de' : 'en'
   const meta = blogMetaByLang[lang] ?? blogMetaByLang.en
-  const articles = getArticlesForLocale(locale)
+  const articles = await getArticlesForLocaleWithDb(locale)
   const articlesByLang = {
-    en: getArticlesForLocale('us-en'),
-    fr: getArticlesForLocale('fr-fr'),
-    ar: getArticlesForLocale('sa-ar'),
-    es: getArticlesForLocale('es-es'),
-    de: getArticlesForLocale('de-de'),
+    en: await getArticlesForLocaleWithDb('us-en'),
+    fr: await getArticlesForLocaleWithDb('fr-fr'),
+    ar: await getArticlesForLocaleWithDb('sa-ar'),
+    es: await getArticlesForLocaleWithDb('es-es'),
+    de: await getArticlesForLocaleWithDb('de-de'),
   }
 
   const blogListJsonLd = {

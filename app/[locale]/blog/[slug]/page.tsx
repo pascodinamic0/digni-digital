@@ -1,9 +1,10 @@
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import BlogPostContent from '@/app/blog/BlogPostContent'
-import { getArticleBySlugForLocale } from '@/lib/blog'
-import { allArticlesEn } from '@/lib/blog'
+import { getArticleBySlugForLocale, allArticlesEn } from '@/lib/blog'
+import { fetchDbArticleBySlug } from '@/lib/blog/db-article-by-slug'
 import { mergeArticleBundleWithOverrides, fetchPublishedBlogOverrides } from '@/lib/blog-merge'
+import { createClient } from '@/lib/supabase/server'
 import { routing } from '@/i18n/routing'
 import { BRAND_LOGO_PATH } from '@/lib/site-assets'
 import type { Language } from '@/app/i18n/translations'
@@ -22,9 +23,12 @@ type Props = {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, slug } = await params
-  const data = getArticleBySlugForLocale(locale, slug)
+  let data = getArticleBySlugForLocale(locale, slug)
   if (!data) {
-    return { title: 'Article Not Found | Digni Digital Blog' }
+    const supabase = await createClient()
+    const dbArticle = await fetchDbArticleBySlug(supabase, locale, slug)
+    if (!dbArticle) return { title: 'Article Not Found | Digni Digital Blog' }
+    data = { en: dbArticle, fr: dbArticle, ar: dbArticle, de: dbArticle, es: dbArticle }
   }
   const overrides = await fetchPublishedBlogOverrides(slug)
   const merged = mergeArticleBundleWithOverrides(data, overrides)
@@ -56,10 +60,13 @@ export async function generateStaticParams() {
 
 export default async function BlogPostPage({ params }: Props) {
   const { locale, slug } = await params
-  const data = getArticleBySlugForLocale(locale, slug)
+  let data = getArticleBySlugForLocale(locale, slug)
 
   if (!data) {
-    notFound()
+    const supabase = await createClient()
+    const dbArticle = await fetchDbArticleBySlug(supabase, locale, slug)
+    if (!dbArticle) notFound()
+    data = { en: dbArticle, fr: dbArticle, ar: dbArticle, de: dbArticle, es: dbArticle }
   }
 
   const overrides = await fetchPublishedBlogOverrides(slug)
