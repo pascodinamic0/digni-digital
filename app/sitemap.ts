@@ -1,5 +1,5 @@
 import { MetadataRoute } from 'next'
-import { getArticlesForLocale } from '@/lib/blog'
+import { getArticlesForLocaleWithDb } from '@/lib/blog'
 import { locales } from '@/i18n/routing'
 
 const baseUrl = 'https://digni-digital-llc.com'
@@ -24,7 +24,7 @@ const staticPaths: { path: string; changeFrequency: 'weekly' | 'monthly' | 'year
   { path: '/cookie-policy', changeFrequency: 'yearly', priority: 0.3, lastModified: '2025-06-01' },
 ]
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const entries: MetadataRoute.Sitemap = []
 
   for (const locale of locales) {
@@ -37,7 +37,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       })
     }
 
-    const articles = getArticlesForLocale(locale)
+    const articles = await getArticlesForLocaleWithDb(locale)
     for (const article of articles) {
       const parsed = new Date(article.publishDate)
       const lastMod = isNaN(parsed.getTime()) ? new Date('2025-01-15') : parsed

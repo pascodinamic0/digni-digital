@@ -1,0 +1,66 @@
+/**
+ * Generates branded SVG cover illustrations for AI career guide blogs.
+ * bun scripts/generate-ai-career-cover-svgs.ts
+ */
+import { mkdirSync, writeFileSync } from 'fs'
+import { join } from 'path'
+import { AI_CAREER_JOBS } from '../lib/ai-career-jobs/catalog'
+
+const OUT = join(process.cwd(), 'public/blog/illustrations/ai-careers')
+mkdirSync(OUT, { recursive: true })
+
+function escapeXml(s: string): string {
+  return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
+}
+
+function svgForJob(id: string, fancyTitle: string, plainTitle: string, icon: string): string {
+  const title = escapeXml(fancyTitle)
+  const sub = escapeXml(plainTitle)
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">${title} — AI career guide</title>
+  <desc id="desc">Visual guide for ${sub} using accessible AI tools in 2026.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#020617"/>
+      <stop offset="58%" stop-color="#111827"/>
+      <stop offset="100%" stop-color="#1e1b4b"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#34d399"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#000000" flood-opacity="0.28"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1000" cy="120" r="200" fill="#38bdf8" opacity="0.08"/>
+  <circle cx="180" cy="520" r="200" fill="#34d399" opacity="0.08"/>
+  <rect x="48" y="48" width="1104" height="534" rx="28" fill="none" stroke="#94a3b8" stroke-opacity="0.16"/>
+  <text x="96" y="108" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="700" fill="#38bdf8">FUTURE READY · AI CAREER GUIDE</text>
+  <text x="96" y="168" font-family="Inter, system-ui, sans-serif" font-size="48" font-weight="800" fill="#f8fafc">${title.length > 42 ? title.slice(0, 40) + '…' : title}</text>
+  <text x="96" y="218" font-family="Inter, system-ui, sans-serif" font-size="22" fill="#cbd5e1">${sub}</text>
+  <g transform="translate(96 280)" filter="url(#shadow)">
+    <rect width="320" height="88" rx="16" fill="#0f172a" stroke="#38bdf8" stroke-opacity="0.35"/>
+    <text x="24" y="36" font-family="Inter, system-ui, sans-serif" font-size="16" fill="#94a3b8">Typical tools</text>
+    <text x="24" y="64" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="700" fill="#f8fafc">ChatGPT · Claude · Gemini</text>
+  </g>
+  <g transform="translate(440 280)" filter="url(#shadow)">
+    <rect width="280" height="88" rx="16" fill="#0f172a" stroke="#34d399" stroke-opacity="0.35"/>
+    <text x="24" y="36" font-family="Inter, system-ui, sans-serif" font-size="16" fill="#94a3b8">Proof ladder</text>
+    <text x="24" y="64" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="700" fill="#f8fafc">Ship → Test → Get paid</text>
+  </g>
+  <text x="96" y="420" font-family="Inter, system-ui, sans-serif" font-size="20" fill="#94a3b8">Copy-paste prompts · Client value · 30-day start path</text>
+  <circle cx="1020" cy="400" r="72" fill="#0f172a" stroke="url(#accent)" stroke-width="2" filter="url(#shadow)"/>
+  <text x="1020" y="412" font-family="Inter, system-ui, sans-serif" font-size="44" text-anchor="middle">${icon}</text>
+  <text x="96" y="548" font-family="Inter, system-ui, sans-serif" font-size="15" fill="#64748b">Digni Digital · dignidigital.com</text>
+</svg>`
+}
+
+for (const job of AI_CAREER_JOBS) {
+  const path = join(OUT, `${job.id}.svg`)
+  writeFileSync(path, svgForJob(job.id, job.fancyTitle, job.plainTitle, job.icon))
+  console.log('wrote', path)
+}
+
+console.log(`Done: ${AI_CAREER_JOBS.length} covers`)

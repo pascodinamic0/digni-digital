@@ -430,6 +430,9 @@ type FutureReadyGraduateTranslations = {
     highDemandSkills: string
     highDemandSkillsHighlight: string
     highDemandSkillsSubtitle: string
+    aiCareerPathsTitle: string
+    aiCareerPathsSubtitle: string
+    aiCareerGuideLabel: string
   aiAdvantage: string
   aiAdvantageDesc: string
     partnershipRequirements: string
@@ -2518,6 +2521,9 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     highDemandSkills: 'High-Demand Digital Skills',
     highDemandSkillsHighlight: 'That Actually Pay',
     highDemandSkillsSubtitle: 'The digital economy is exploding with opportunities. With 2026 AI tools like Lovable.dev, Cursor, and advanced AI platforms, beginners can now compete with expert-level professionals in these lucrative fields, if they master the right AI-powered skills.',
+    aiCareerPathsTitle: 'Untold AI careers you can start now',
+    aiCareerPathsSubtitle: 'Not trending on LinkedIn yet—but clients already hire for these roles. Each path includes a free career guide with prompts, tools, and a 30-day start plan.',
+    aiCareerGuideLabel: 'Read guide',
     aiAdvantage: 'The 2026 AI Advantage',
     aiAdvantageDesc: 'With cutting-edge 2026 AI tools like Lovable.dev and Cursor, your students can compete with expert-level professionals from day one and start earning immediately.',
     partnershipRequirements: 'Partnership',
@@ -2587,6 +2593,9 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     highDemandSkills: 'Compétences numériques très demandées',
     highDemandSkillsHighlight: 'qui paient vraiment',
     highDemandSkillsSubtitle: 'L\'économie numérique explose d\'opportunités. Avec les outils IA 2026 comme Lovable.dev, Cursor et les plateformes IA avancées, les débutants peuvent désormais rivaliser avec des professionnels de niveau expert dans ces domaines lucratifs, s\'ils maîtrisent les bonnes compétences propulsées par l\'IA.',
+    aiCareerPathsTitle: 'Métiers IA méconnus que vous pouvez lancer maintenant',
+    aiCareerPathsSubtitle: 'Pas encore tendance sur LinkedIn—mais les clients embauchent déjà. Chaque parcours inclut un guide gratuit avec prompts, outils et plan sur 30 jours.',
+    aiCareerGuideLabel: 'Lire le guide',
     aiAdvantage: 'L\'avantage IA 2026',
     aiAdvantageDesc: 'Avec les outils IA 2026 de pointe comme Lovable.dev et Cursor, vos étudiants peuvent rivaliser avec des professionnels de niveau expert dès le premier jour et commencer à gagner immédiatement.',
     partnershipRequirements: 'Exigences',
@@ -2656,6 +2665,9 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     highDemandSkills: 'Habilidades digitales de alta demanda',
     highDemandSkillsHighlight: 'que realmente pagan',
     highDemandSkillsSubtitle: 'La economía digital está explotando en oportunidades. Con herramientas de IA 2026 como Lovable.dev, Cursor y plataformas avanzadas, los principiantes ya pueden competir con profesionales expertos si dominan las habilidades correctas impulsadas por IA.',
+    aiCareerPathsTitle: 'Carreras con IA poco conocidas que puedes empezar ya',
+    aiCareerPathsSubtitle: 'Aún no son tendencia en LinkedIn, pero ya contratan. Cada ruta incluye una guía gratuita con prompts, herramientas y plan de 30 días.',
+    aiCareerGuideLabel: 'Leer guía',
     aiAdvantage: 'La ventaja IA de 2026',
     aiAdvantageDesc: 'Con herramientas de IA de vanguardia como Lovable.dev y Cursor, tus estudiantes pueden competir con profesionales expertos desde el primer día y empezar a generar ingresos de inmediato.',
     partnershipRequirements: 'Requisitos',
@@ -2725,6 +2737,9 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     highDemandSkills: 'Gefragte digitale Kompetenzen',
     highDemandSkillsHighlight: 'die wirklich bezahlt werden',
     highDemandSkillsSubtitle: 'Die digitale Wirtschaft explodiert vor Chancen. Mit KI-Tools 2026 wie Lovable.dev, Cursor und fortschrittlichen Plattformen können Anfänger mit Experten konkurrieren, wenn sie die richtigen KI-gestützten Fähigkeiten beherrschen.',
+    aiCareerPathsTitle: 'Unbekannte KI-Karrieren, die Sie jetzt starten können',
+    aiCareerPathsSubtitle: 'Noch kein LinkedIn-Trend—aber Kunden stellen bereits ein. Jeder Pfad hat einen kostenlosen Leitfaden mit Prompts, Tools und 30-Tage-Plan.',
+    aiCareerGuideLabel: 'Leitfaden lesen',
     aiAdvantage: 'Der KI-Vorteil 2026',
     aiAdvantageDesc: 'Mit modernsten KI-Tools wie Lovable.dev und Cursor können Ihre Studierenden ab Tag eins mit Fachleuten auf Expertenniveau konkurrieren und sofort beginnen, Einkommen zu erzielen.',
     partnershipRequirements: 'Anforderungen',
@@ -2794,6 +2809,9 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     highDemandSkills: 'مهارات رقمية عالية الطلب',
     highDemandSkillsHighlight: 'تدر دخلاً حقيقياً',
     highDemandSkillsSubtitle: 'الاقتصاد الرقمي مليء بالفرص. مع أدوات الذكاء الاصطناعي لعام 2026 مثل Lovable.dev وCursor والمنصات المتقدمة، يستطيع المبتدئون منافسة المحترفين إذا أتقنوا المهارات الصحيحة المدعومة بالذكاء الاصطناعي.',
+    aiCareerPathsTitle: 'مسارات مهنية بالذكاء الاصطناعي يمكنك البدء بها الآن',
+    aiCareerPathsSubtitle: 'لم تنتشر بعد على LinkedIn—لكن العملاء يوظّفون بالفعل. كل مسار يتضمن دليلاً مجانياً مع prompts وأدوات وخطة 30 يوماً.',
+    aiCareerGuideLabel: 'اقرأ الدليل',
     aiAdvantage: 'ميزة الذكاء الاصطناعي في 2026',
     aiAdvantageDesc: 'باستخدام أدوات ذكاء اصطناعي متقدمة مثل Lovable.dev وCursor، يمكن لطلابك منافسة المحترفين من اليوم الأول والبدء في تحقيق الدخل فوراً.',
     partnershipRequirements: 'متطلبات',

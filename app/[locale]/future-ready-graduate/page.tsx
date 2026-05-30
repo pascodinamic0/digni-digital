@@ -21,6 +21,8 @@ import {
   type FutureReadyOffering,
   visibleDefaultFutureReadyOfferings,
 } from '@/lib/future-ready-offerings'
+import { getAiCareerFutureReadySkills } from '@/lib/ai-career-jobs'
+import { AiCareerPathsGrid } from '@/app/components/AiCareerPathsGrid'
 
 type FutureReadyGraduatePageProps = {
   params: Promise<{ locale: string }>
@@ -1283,10 +1285,17 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
               className="flex gap-3 sm:gap-6 pt-4 sm:pt-5 pb-4 overflow-x-auto overflow-y-hidden scroll-smooth scrollbar-hide snap-x snap-mandatory scroll-px-4 sm:scroll-px-0"
             >
               {(() => {
-                const skills = localCopy.skills
+                const skills = [
+                  ...localCopy.skills,
+                  ...getAiCareerFutureReadySkills(),
+                ]
                 const scrollCards = [...skills, ...skills]
 
-                const SkillCard = ({ item }: { item: typeof skills[0] }) => (
+                const SkillCard = ({
+                  item,
+                }: {
+                  item: (typeof skills)[0] & { blogSlug?: string }
+                }) => (
                   <div className="future-ready-skill-card card p-4 sm:p-6 w-[min(18rem,calc(100vw-2rem))] sm:w-[320px] min-h-[260px] sm:min-h-[300px] flex flex-col flex-shrink-0 snap-start">
                     <div className="text-center mb-3 sm:mb-4">
                       <div className="future-ready-skill-icon relative w-14 h-14 sm:w-16 sm:h-16 mx-auto mb-3 rounded-[1.35rem] border border-success/25 bg-gradient-to-br from-success/20 via-success/10 to-background shadow-lg shadow-success/10 overflow-visible transition-transform duration-300">
@@ -1297,7 +1306,16 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
                         </span>
                       </div>
                       <h3 className="future-ready-skill-heading font-display text-sm sm:text-base font-bold leading-snug transition-colors mb-2">
-                        {item.skill}
+                        {'blogSlug' in item && item.blogSlug ? (
+                          <Link
+                            href={`/blog/${item.blogSlug}`}
+                            className="hover:text-success transition-colors"
+                          >
+                            {item.skill}
+                          </Link>
+                        ) : (
+                          item.skill
+                        )}
                       </h3>
                       <div className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 mb-2">
                         <span className="text-success text-sm sm:text-base font-bold">{item.earning}</span>
@@ -1327,6 +1345,11 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
             </div>
           </div>
 
+          <AiCareerPathsGrid
+            title={pageT.aiCareerPathsTitle}
+            subtitle={pageT.aiCareerPathsSubtitle}
+            guideLabel={pageT.aiCareerGuideLabel}
+          />
         </div>
       </section>
 
