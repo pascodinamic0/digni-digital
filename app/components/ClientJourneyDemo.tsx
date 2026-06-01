@@ -581,7 +581,12 @@ function AIPoweredFlowDiagram({
 
 const FUNNEL_STEP_INTERVAL_MS = 2800
 
-const ClientJourneyDemo = () => {
+type ClientJourneyDemoProps = {
+  /** Larger section + funnel for primary offer comparison (Leak vs Loop). */
+  prominent?: boolean
+}
+
+const ClientJourneyDemo = ({ prominent = false }: ClientJourneyDemoProps) => {
   const [activeView, setActiveView] = useState<'before' | 'after'>('before')
   const [activeFunnelStep, setActiveFunnelStep] = useState(0)
   const language = useLanguage()
@@ -610,7 +615,15 @@ const ClientJourneyDemo = () => {
   }, [])
 
   return (
-    <section className="py-16 sm:py-24 overflow-hidden bg-gradient-to-b from-surface to-background" aria-labelledby="journey-demo-title">
+    <section
+      id="leak-vs-loop"
+      className={
+        prominent
+          ? 'py-20 sm:py-28 md:py-36 overflow-hidden bg-gradient-to-b from-surface via-background to-surface border-y border-border-light'
+          : 'py-16 sm:py-24 overflow-hidden bg-gradient-to-b from-surface to-background'
+      }
+      aria-labelledby="journey-demo-title"
+    >
       <div className="max-w-[88rem] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-8 lg:mb-10 max-w-3xl mx-auto">
           <motion.span
@@ -692,9 +705,9 @@ const ClientJourneyDemo = () => {
 
         {/* Desktop: Side-by-side, scaled down so the block is smaller without affecting inner sections.
             scale-[0.72] only affects paint; layout still reserves full height. Compensate with negative margin (~28% of content height). */}
-        <div className="hidden lg:block origin-top -mt-6 -mb-[200px]">
+        <div className={`hidden lg:block origin-top -mt-6 ${prominent ? '-mb-[120px]' : '-mb-[200px]'}`}>
           <motion.div
-            className="grid grid-cols-[minmax(0,1fr)_clamp(4rem,8vw,7rem)_minmax(0,1fr)] items-stretch scale-[0.72]"
+            className={`grid grid-cols-[minmax(0,1fr)_clamp(4rem,8vw,7rem)_minmax(0,1fr)] items-stretch ${prominent ? 'scale-[0.88]' : 'scale-[0.72]'}`}
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}

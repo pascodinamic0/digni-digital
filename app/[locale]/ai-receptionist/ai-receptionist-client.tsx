@@ -1,7 +1,7 @@
 'use client'
 
 import dynamic from 'next/dynamic'
-import { use, useState, useEffect, type ReactElement } from 'react'
+import { use, type ReactElement } from 'react'
 import { motion } from 'framer-motion'
 import { useLanguage } from '@/app/context/LocaleContext'
 import { Link } from '@/i18n/navigation'
@@ -9,28 +9,39 @@ import { getBookingLinkProps } from '@/app/config/cta.config'
 import { getAssessmentPath } from '@/lib/assessments/paths'
 import { translations } from '@/app/config/translations'
 import AnimatedSection from '@/app/components/AnimatedSection'
-import InboundLeadFlowSection from '@/app/components/InboundLeadFlowSection'
 import PremiumHeroBackdrop from '@/app/components/PremiumHeroBackdrop'
 import PremiumHeroParallax from '@/app/components/PremiumHeroParallax'
 import ScrollIndicator from '@/app/components/ScrollIndicator'
 import DemoPresentationDownload from '@/app/components/DemoPresentationDownload'
+import AiEmployeeValueBadges from '@/app/components/AiEmployeeValueBadges'
+import AiEmployeeBonusStackSection from '@/app/components/AiEmployeeBonusStackSection'
+import AiEmployeeGuaranteeSection from '@/app/components/AiEmployeeGuaranteeSection'
+import AiEmployeeScarcityBanner from '@/app/components/AiEmployeeScarcityBanner'
+import AiEmployeeMobileAppBanner from '@/app/components/AiEmployeeMobileAppBanner'
+import AiEmployeeDreamOutcomeSection from '@/app/components/AiEmployeeDreamOutcomeSection'
+import AiEmployeeDenominatorSection from '@/app/components/AiEmployeeDenominatorSection'
+import AiEmployeePricingPanel from '@/app/components/AiEmployeePricingPanel'
 
-const AIReceptionistProductDemos = dynamic(
-  () => import('./ai-receptionist-product-demos'),
+const AIReceptionistPainDreamDemos = dynamic(
+  () => import('./ai-receptionist-product-demos').then((m) => m.AIReceptionistPainDreamDemos),
   {
     ssr: false,
     loading: () => (
-      <div
-        className="w-full min-h-[480px] bg-surface/40 animate-pulse"
-        aria-hidden
-      />
+      <div className="w-full min-h-[520px] bg-surface/40 animate-pulse" aria-hidden />
     ),
   },
 )
-import StripeCheckoutButton from '@/app/components/StripeCheckoutButton'
+
+const AIReceptionistHowItWorksDemos = dynamic(
+  () => import('./ai-receptionist-product-demos').then((m) => m.AIReceptionistHowItWorksDemos),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="w-full min-h-[480px] bg-surface/40 animate-pulse" aria-hidden />
+    ),
+  },
+)
 import { getServicePageJsonLd, jsonLdScriptProps } from '@/lib/agent-readiness'
-import { AI_EMPLOYEE_SETUP_PROMO_END_MS, isAiEmployeeSetupPromoActive } from '@/lib/ai-employee-setup-promo'
-import type { AiEmployeePageTranslations } from '@/app/i18n/aiEmployeePage'
 
 type AIReceptionistClientProps = {
   params: Promise<{ locale: string }>
@@ -38,121 +49,11 @@ type AIReceptionistClientProps = {
   showTaskQueueDemo: boolean
 }
 
-function padCountdownUnit(n: number) {
-  return String(n).padStart(2, '0')
-}
-
-function AiEmployeePricingSpotlight({
-  pricing: p,
-  checkoutRedirectingLabel,
-  continueToSecureCheckoutLabel,
-  bookingLinkProps,
-}: {
-  pricing: AiEmployeePageTranslations['pricing']
-  checkoutRedirectingLabel: string
-  continueToSecureCheckoutLabel: string
-  bookingLinkProps: ReturnType<typeof getBookingLinkProps>
-}) {
-  const [nowTick, setNowTick] = useState<number | null>(null)
-
-  useEffect(() => {
-    setNowTick(Date.now())
-    const id = window.setInterval(() => setNowTick(Date.now()), 1000)
-    return () => window.clearInterval(id)
-  }, [])
-
-  const at = nowTick ?? Date.now()
-  const promoActive = isAiEmployeeSetupPromoActive(at)
-  const remainMs = Math.max(0, AI_EMPLOYEE_SETUP_PROMO_END_MS - at)
-  const totalSec = Math.floor(remainMs / 1000)
-  const days = Math.floor(totalSec / 86400)
-  const hours = Math.floor((totalSec % 86400) / 3600)
-  const minutes = Math.floor((totalSec % 3600) / 60)
-  const seconds = totalSec % 60
-
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ delay: 0.2 }}
-      className={
-        promoActive
-          ? 'card p-8 border-success/50 glow-success hover:border-success/60'
-          : 'card p-8 border-border hover:border-accent/35'
-      }
-    >
-      <div className="text-center mb-6">
-        {promoActive && (
-          <span className="inline-block px-3 py-1.5 bg-destructive/20 text-destructive text-xs font-semibold rounded-full border border-destructive/30 mb-4">
-            {p.limitedLabel}
-          </span>
-        )}
-        <h3 className="font-display text-2xl font-bold text-text">{p.planName}</h3>
-      </div>
-
-      <div className="flex flex-col sm:flex-row items-stretch justify-center gap-4 mb-8">
-        <div className="flex-1 min-w-0 rounded-xl bg-surface/80 border border-border/50 px-5 py-4 flex flex-col justify-center text-center">
-          <div className="text-muted text-[11px] uppercase tracking-wider font-medium mb-2">{p.setupLabel}</div>
-          {promoActive ? (
-            <>
-              <div className="font-display text-base font-semibold text-muted line-through decoration-destructive/45 mb-1">
-                {p.setupFee}
-              </div>
-              <div className="font-display text-xl font-bold text-success">{p.setupFeeWaivedDisplay}</div>
-              <p className="text-[11px] leading-snug text-success/85 mt-2">{p.setupFeePromo}</p>
-              <p className="text-[10px] font-medium uppercase tracking-wider text-success/75 mt-3">{p.setupPromoCountdownLead}</p>
-              <div className="font-display text-sm font-semibold tabular-nums text-success mt-1.5 tracking-tight" aria-live="polite">
-                {days > 0 && (
-                  <span className="whitespace-nowrap">
-                    {days}d<span className="mx-1 text-success/55">·</span>
-                  </span>
-                )}
-                <span className="whitespace-nowrap">
-                  {padCountdownUnit(hours)}h<span className="mx-1 text-success/55">·</span>
-                  {padCountdownUnit(minutes)}m<span className="mx-1 text-success/55">·</span>
-                  {padCountdownUnit(seconds)}s
-                </span>
-              </div>
-            </>
-          ) : (
-            <div className="font-display text-xl font-bold text-text">{p.setupFee}</div>
-          )}
-        </div>
-        <div className="flex-1 min-w-0 rounded-xl bg-success/10 border border-success/20 px-5 py-5 flex flex-col justify-center text-center">
-          <div className="text-muted text-[11px] uppercase tracking-wider font-medium mb-1">{p.monthlyLabel}</div>
-          <div className="flex items-baseline justify-center gap-2 flex-wrap">
-            <span className="font-display text-3xl font-bold text-success">
-              {p.price}
-              <span className="text-base font-normal text-muted">{p.period}</span>
-            </span>
-          </div>
-        </div>
-      </div>
-
-      <p className="text-muted text-xs text-center mb-6 leading-relaxed">{p.note}</p>
-
-      <div className="space-y-3">
-        <StripeCheckoutButton
-          plan="ai_employee"
-          className="btn-primary w-full text-center text-lg py-4"
-          redirectingLabel={checkoutRedirectingLabel}
-        >
-          {continueToSecureCheckoutLabel}
-        </StripeCheckoutButton>
-        <a {...bookingLinkProps} className="btn-secondary w-full text-center text-lg py-4 block">
-          {p.cta}
-        </a>
-      </div>
-    </motion.div>
-  )
-}
-
 function AIEmployeeCTASection() {
   const language = useLanguage()
   const f = translations[language].aiEmployeePage.finalCta
   return (
-    <div className="relative bg-surface rounded-3xl p-12 md:p-16 lg:p-20 overflow-hidden">
+    <div className="relative bg-surface rounded-3xl p-12 md:p-16 lg:p-20 overflow-hidden space-y-8">
       <div className={`absolute top-0 left-0 w-20 h-20 border-l-2 border-t-2 rounded-tl-3xl ${'border-border-foreground'}`} />
       <div className={`absolute bottom-0 right-0 w-20 h-20 border-r-2 border-b-2 rounded-br-3xl ${'border-border-foreground'}`} />
       <div className="text-center">
@@ -179,17 +80,27 @@ function AIEmployeeCTASection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.35 }}
-          className="text-muted text-lg max-w-2xl mx-auto mb-10"
+          className="text-muted text-lg max-w-2xl mx-auto mb-6"
         >
           {f.subtitle}
         </motion.p>
         <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.4 }}
+          className="max-w-xl mx-auto mb-8"
+        >
+          <AiEmployeeScarcityBanner />
+        </motion.div>
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.5 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8"
+          transition={{ delay: 0.45 }}
+          className="flex flex-col items-center gap-4 mb-8"
         >
+          <AiEmployeeValueBadges />
           <a
             {...getBookingLinkProps()}
             className="group relative inline-flex items-center justify-center gap-3 bg-accent hover:bg-accent-light text-background font-bold px-10 py-5 rounded-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl text-lg shadow-lg shadow-accent/25"
@@ -314,23 +225,6 @@ export function AIReceptionistClient({ params, searchParams, showTaskQueueDemo }
     }
   }
 
-  const forYouItems: [string, string][] = [
-    ['📱', t.qualification.forItems[0]],
-    ['💰', t.qualification.forItems[1]],
-    ['📅', t.qualification.forItems[2]],
-    ['⏱️', t.qualification.forItems[3]],
-    ['💵', t.qualification.forItems[4]],
-    ['🎯', t.qualification.forItems[5]],
-  ]
-  const notForItems: [string, string][] = [
-    ['🚫', t.qualification.notItems[0]],
-    ['📦', t.qualification.notItems[1]],
-    ['❌', t.qualification.notItems[2]],
-    ['✅', t.qualification.notItems[3]],
-    ['📊', t.qualification.notItems[4]],
-    ['🔧', t.qualification.notItems[5]],
-  ]
-
   return (
     <main>
       <script
@@ -353,13 +247,20 @@ export function AIReceptionistClient({ params, searchParams, showTaskQueueDemo }
               </span>
             ) : null}
             <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.1] mb-4 sm:mb-5 md:mb-6 px-2">
-              {t.hero.titleLine1}
-              <br className="hidden sm:block" />
-              <span className="gradient-text-brand">{t.hero.titleHighlight}</span>
+              {t.hero.titleHighlight ? (
+                <>
+                  {t.hero.titleLine1}
+                  <br className="hidden sm:block" />
+                  <span className="gradient-text-brand">{t.hero.titleHighlight}</span>
+                </>
+              ) : (
+                <span className="gradient-text-brand">{t.hero.titleLine1}</span>
+              )}
             </h1>
             <p className="text-sm sm:text-base text-muted max-w-xl mx-auto leading-relaxed mb-7 sm:mb-8 px-2">
               {t.hero.hook}
             </p>
+            <AiEmployeeValueBadges className="mb-6" />
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-2">
               <Link
                 href={getAssessmentPath('ai-employee')}
@@ -370,6 +271,9 @@ export function AIReceptionistClient({ params, searchParams, showTaskQueueDemo }
               <DemoPresentationDownload service="aiEmployee" variant="hero" />
             </div>
             <p className="text-muted/60 text-sm mt-4">{t.hero.footnote}</p>
+            <div className="mt-6 max-w-lg mx-auto">
+              <AiEmployeeScarcityBanner variant="inline" />
+            </div>
           </motion.div>
         </PremiumHeroParallax>
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
@@ -377,11 +281,72 @@ export function AIReceptionistClient({ params, searchParams, showTaskQueueDemo }
         </div>
       </section>
 
-      <InboundLeadFlowSection />
+      <AIReceptionistPainDreamDemos />
 
-      <AIReceptionistProductDemos showTaskQueueDemo={showTaskQueueDemo} />
+      <AiEmployeeDreamOutcomeSection />
 
-      <AnimatedSection id="features" className="py-24">
+      <AnimatedSection id="proof" className="py-24">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <span className="text-accent font-medium text-sm uppercase tracking-wider">{t.caseStudy.label}</span>
+            <h2 className="font-display text-4xl md:text-5xl font-bold mt-4 mb-6">
+              {t.caseStudy.title}
+            </h2>
+          </div>
+
+          <div className="card p-8 md:p-12">
+            <div className="grid lg:grid-cols-3 gap-8">
+              <div className="lg:col-span-2">
+                <div className="flex items-center gap-4 mb-6">
+                  <span className="px-3 py-1 bg-accent/10 text-accent text-xs font-medium rounded-full">
+                    {t.caseStudy.industry}
+                  </span>
+                  <h3 className="font-display text-2xl font-bold">{t.caseStudy.company}</h3>
+                </div>
+
+                <div className="space-y-6">
+                  <div>
+                    <span className="text-xs uppercase tracking-wider text-muted-dark">{t.caseStudy.contextLabel}</span>
+                    <p className="text-muted mt-2 leading-relaxed">{t.caseStudy.context}</p>
+                  </div>
+
+                  <div>
+                    <span className="text-xs uppercase tracking-wider text-muted-dark">{t.caseStudy.challengeLabel}</span>
+                    <p className="text-muted mt-2 leading-relaxed">{t.caseStudy.challenge}</p>
+                  </div>
+
+                  <div>
+                    <span className="text-xs uppercase tracking-wider text-muted-dark">{t.caseStudy.solutionLabel}</span>
+                    <p className="text-text mt-2 leading-relaxed">{t.caseStudy.solution}</p>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h4 className="font-display text-xl font-bold mb-6">{t.caseStudy.outcomesHeading}</h4>
+                <div className="space-y-6">
+                  {t.caseStudy.results.map((result, i) => (
+                    <div key={i} className="text-center">
+                      <div className="font-display text-3xl font-bold text-accent mb-2">
+                        {result.metric}
+                      </div>
+                      <p className="text-muted text-sm leading-relaxed">{result.description}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </AnimatedSection>
+
+      <AiEmployeeDenominatorSection />
+
+      <AIReceptionistHowItWorksDemos showTaskQueueDemo={showTaskQueueDemo} />
+
+      <AiEmployeeMobileAppBanner />
+
+      <AnimatedSection id="how-it-works" className="py-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <motion.span
@@ -472,6 +437,7 @@ export function AIReceptionistClient({ params, searchParams, showTaskQueueDemo }
                   <div className="font-display text-6xl md:text-7xl font-bold text-text mb-2">{t.timeToValue.statBig}</div>
                   <p className="text-foreground/60 text-sm">{t.timeToValue.statSmall}</p>
                 </div>
+                <AiEmployeeValueBadges size="sm" />
                 <a
                   {...getBookingLinkProps()}
                   className="inline-flex items-center gap-2 bg-on-accent text-accent font-semibold px-6 py-3 rounded-xl hover:opacity-90 transition-opacity shadow-lg"
@@ -487,180 +453,28 @@ export function AIReceptionistClient({ params, searchParams, showTaskQueueDemo }
         </div>
       </AnimatedSection>
 
-      <AnimatedSection className="py-24 bg-surface">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <motion.span
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="inline-block px-4 py-2 bg-accent/10 border border-accent/20 rounded-full text-accent text-xs font-semibold uppercase tracking-wide mb-4"
-            >
-              {t.qualification.badge}
-            </motion.span>
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="font-display text-4xl md:text-5xl font-bold mb-6"
-            >
-              {t.qualification.title} <span className="gradient-text">{t.qualification.titleHighlight}</span>
-            </motion.h2>
-          </div>
+      <AiEmployeeBonusStackSection />
 
-          <div className="grid md:grid-cols-2 gap-6 md:gap-8 place-items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="relative overflow-hidden rounded-3xl backdrop-blur-xl bg-gradient-to-br from-success/10 via-success/5 to-transparent border border-success/20 p-8 w-full max-w-xl text-center"
-            >
-              <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent pointer-events-none" />
-              <div className="relative z-10 flex flex-col items-center">
-                <div className="flex items-center justify-center gap-3 mb-6">
-                  <div className="w-12 h-12 bg-success/20 rounded-xl flex items-center justify-center">
-                    <svg className="w-6 h-6 text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                  </div>
-                  <h3 className="font-display text-2xl font-bold text-success">{t.qualification.forHeading}</h3>
-                </div>
-                <ul className="space-y-3 w-full flex flex-col items-center">
-                  {forYouItems.map(([emoji, item], i) => (
-                    <motion.li
-                      key={i}
-                      initial={{ opacity: 0, x: -10 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: 0.3 + i * 0.05 }}
-                      className="flex items-center justify-center gap-3 w-full max-w-sm rounded-xl bg-success/5 border border-success/10 px-4 py-3 text-left"
-                    >
-                      <span className="text-xl flex-shrink-0">{emoji}</span>
-                      <span className="text-muted text-sm leading-relaxed">{item}</span>
-                    </motion.li>
-                  ))}
-                </ul>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3 }}
-              className="relative overflow-hidden rounded-3xl backdrop-blur-xl bg-gradient-to-br from-destructive/10 via-destructive/5 to-transparent border border-destructive/20 p-8 w-full max-w-xl text-center"
-            >
-              <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent pointer-events-none" />
-              <div className="relative z-10 flex flex-col items-center">
-                <div className="flex items-center justify-center gap-3 mb-6">
-                  <div className="w-12 h-12 bg-destructive/20 rounded-xl flex items-center justify-center">
-                    <svg className="w-6 h-6 text-destructive" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                  </div>
-                  <h3 className="font-display text-2xl font-bold text-destructive">{t.qualification.notHeading}</h3>
-                </div>
-                <ul className="space-y-3 w-full flex flex-col items-center">
-                  {notForItems.map(([emoji, item], i) => (
-                    <motion.li
-                      key={i}
-                      initial={{ opacity: 0, x: 10 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: 0.4 + i * 0.05 }}
-                      className="flex items-center justify-center gap-3 w-full max-w-sm rounded-xl bg-destructive/5 border border-destructive/10 px-4 py-3 text-left"
-                    >
-                      <span className="text-xl flex-shrink-0">{emoji}</span>
-                      <span className="text-muted text-sm leading-relaxed">{item}</span>
-                    </motion.li>
-                  ))}
-                </ul>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </AnimatedSection>
-
-      <AnimatedSection className="py-24">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <span className="text-accent font-medium text-sm uppercase tracking-wider">{t.caseStudy.label}</span>
-            <h2 className="font-display text-4xl md:text-5xl font-bold mt-4 mb-6">
-              {t.caseStudy.title}
-            </h2>
-          </div>
-
-          <div className="card p-8 md:p-12">
-            <div className="grid lg:grid-cols-3 gap-8">
-              <div className="lg:col-span-2">
-                <div className="flex items-center gap-4 mb-6">
-                  <span className="px-3 py-1 bg-accent/10 text-accent text-xs font-medium rounded-full">
-                    {t.caseStudy.industry}
-                  </span>
-                  <h3 className="font-display text-2xl font-bold">{t.caseStudy.company}</h3>
-                </div>
-
-                <div className="space-y-6">
-                  <div>
-                    <span className="text-xs uppercase tracking-wider text-muted-dark">{t.caseStudy.contextLabel}</span>
-                    <p className="text-muted mt-2 leading-relaxed">{t.caseStudy.context}</p>
-                  </div>
-
-                  <div>
-                    <span className="text-xs uppercase tracking-wider text-muted-dark">{t.caseStudy.challengeLabel}</span>
-                    <p className="text-muted mt-2 leading-relaxed">{t.caseStudy.challenge}</p>
-                  </div>
-
-                  <div>
-                    <span className="text-xs uppercase tracking-wider text-muted-dark">{t.caseStudy.solutionLabel}</span>
-                    <p className="text-text mt-2 leading-relaxed">{t.caseStudy.solution}</p>
-                  </div>
-                </div>
-              </div>
-
-              <div>
-                <h4 className="font-display text-xl font-bold mb-6">{t.caseStudy.outcomesHeading}</h4>
-                <div className="space-y-6">
-                  {t.caseStudy.results.map((result, i) => (
-                    <div key={i} className="text-center">
-                      <div className="font-display text-3xl font-bold text-accent mb-2">
-                        {result.metric}
-                      </div>
-                      <p className="text-muted text-sm leading-relaxed">{result.description}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </AnimatedSection>
-
-      <AnimatedSection className="py-24 bg-surface">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">
+      <AnimatedSection id="pricing" className="py-16 md:py-20 bg-surface">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-6 sm:mb-8">
+            <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold mb-2 sm:mb-3">
               {t.pricing.title}
             </h2>
-            <p className="text-muted max-w-2xl mx-auto leading-relaxed">
+            <p className="text-muted text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
               {t.pricing.subtitle}
             </p>
           </div>
 
-          <div className="flex justify-center mb-8">
-            <div className="max-w-md w-full">
-              <AiEmployeePricingSpotlight
-                pricing={t.pricing}
-                checkoutRedirectingLabel={ctaT.checkoutRedirecting}
-                continueToSecureCheckoutLabel={ctaT.continueToSecureCheckout}
-                bookingLinkProps={getBookingLinkProps()}
-              />
-            </div>
-          </div>
+          <AiEmployeePricingPanel
+            pricing={t.pricing}
+            checkoutRedirectingLabel={ctaT.checkoutRedirecting}
+            continueToSecureCheckoutLabel={ctaT.continueToSecureCheckout}
+          />
         </div>
       </AnimatedSection>
+
+      <AiEmployeeGuaranteeSection />
 
       <AnimatedSection className="py-32 relative overflow-hidden">
         <div className="absolute inset-0">

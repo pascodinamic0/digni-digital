@@ -16,11 +16,18 @@ type Props = {
   showTaskQueueDemo: boolean
 }
 
-/**
- * Client journey demos (steps 1–6) — headers use each section’s badge/title + timeline phase.
- * Problem stats sit after the journey, before contrast sections.
- */
-export default function AIReceptionistProductDemos({ showTaskQueueDemo }: Props) {
+/** Starving crowd: Leak vs Loop first, then 60% pain stats. */
+export function AIReceptionistPainDreamDemos() {
+  return (
+    <>
+      <ClientJourneyDemo prominent />
+      <AiEmployeeProblemStatsSection />
+    </>
+  )
+}
+
+/** Speed & effort minimization: product demos after proof. */
+export function AIReceptionistHowItWorksDemos({ showTaskQueueDemo }: Props) {
   return (
     <>
       <JourneyDemosIntro />
@@ -29,13 +36,19 @@ export default function AIReceptionistProductDemos({ showTaskQueueDemo }: Props)
       <ContactDirectoryDemo />
       <LeadPipelineDemo />
       <PerformancePulseDemo />
-
-      <AiEmployeeProblemStatsSection />
-
       {showTaskQueueDemo ? <TaskQueueDemo /> : null}
-      <ClientJourneyDemo />
       <AiReceptionistExplainerVideo />
       <BusinessTimeline />
+    </>
+  )
+}
+
+/** @deprecated Use AIReceptionistPainDreamDemos + AIReceptionistHowItWorksDemos */
+export default function AIReceptionistProductDemos({ showTaskQueueDemo }: Props) {
+  return (
+    <>
+      <AIReceptionistPainDreamDemos />
+      <AIReceptionistHowItWorksDemos showTaskQueueDemo={showTaskQueueDemo} />
     </>
   )
 }
