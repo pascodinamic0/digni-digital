@@ -5,9 +5,9 @@ type MetadataLanguage = 'en' | 'fr' | 'es' | 'de' | 'ar'
 
 const metadataByLanguage = {
   en: {
-    title: 'AI Employee | Capture, Qualify & Book Leads 24/7',
+    title: '48-Hour AI Booking Loop | Capture, Qualify & Schedule 24/7',
     description:
-      'Install an AI Employee that answers calls and chats, qualifies every lead, books appointments, and keeps your pipeline moving day and night.',
+      'The 48-Hour AI Booking Loop for premium service businesses: capture, qualify, and schedule leads 24/7. $2,000 setup + $500/mo with a 15-appointment guarantee.',
   },
   fr: {
     title: 'AI Employee | Captez, qualifiez et réservez des clients potentiels 24/7',

@@ -62,16 +62,23 @@ export default function Navigation() {
     }
   }, [mobileOpen])
 
-  const navLinks = [
-    { name: t.nav.ourMission, href: '/#our-mission' },
-    { name: t.nav.aboutUs, href: '/about' },
-    { name: t.nav.caseStudies, href: '/case-studies' },
-  ]
+  const isAiEmployeeOfferPage =
+    (pathname?.includes('/ai-receptionist') ?? false) && !pathname?.includes('/assessment')
 
-  const rightNavLinks = [
-    { name: t.nav.articles, href: '/blog' },
-    { name: t.nav.contact, href: '/contact' },
-  ]
+  const navLinks = isAiEmployeeOfferPage
+    ? [{ name: t.nav.caseStudies, href: '/case-studies' }]
+    : [
+        { name: t.nav.ourMission, href: '/#our-mission' },
+        { name: t.nav.aboutUs, href: '/about' },
+        { name: t.nav.caseStudies, href: '/case-studies' },
+      ]
+
+  const rightNavLinks = isAiEmployeeOfferPage
+    ? [{ name: t.nav.contact, href: '/contact' }]
+    : [
+        { name: t.nav.articles, href: '/blog' },
+        { name: t.nav.contact, href: '/contact' },
+      ]
 
   const solutionLinks: {
     name: string
