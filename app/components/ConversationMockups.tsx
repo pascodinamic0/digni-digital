@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react'
 import { useLanguage } from '@/app/context/LocaleContext'
 import { translations } from '@/app/config/translations'
 import { getJourneyPhaseTitle } from '@/lib/ai-receptionist-flow'
-import JourneyDemoHeader from '@/app/components/JourneyDemoHeader'
+import SoftwareDemoSection from '@/app/components/software/SoftwareDemoSection'
 import SocialPlatformIcon from './SocialPlatformIcon'
 
 interface Message {
@@ -231,24 +231,23 @@ const ConversationMockups = () => {
     </div>
   )
 
-  return (
-    <section className="py-24 bg-gradient-to-b from-background to-surface" aria-labelledby="conversations-title">
-      <div className="max-w-7xl mx-auto px-6">
-        <JourneyDemoHeader
-          step={2}
-          journeyPhase={getJourneyPhaseTitle(language, 2)}
-          badge={t.badge}
-          title={t.title}
-          titleHighlight={t.titleHighlight}
-          subtitle={t.subtitle}
-          titleId="conversations-title"
-          badgeTone="accent"
-          titleLayout="inline"
-          className="mb-16"
-        />
+  const sw =
+    translations[language].aiEmployeeSoftware ?? translations.en.aiEmployeeSoftware
 
-        {/* Main Demo Area */}
-        <div className="grid lg:grid-cols-2 gap-8 mb-12">
+  return (
+    <SoftwareDemoSection
+      step={2}
+      journeyPhase={getJourneyPhaseTitle(language, 2)}
+      badge={t.badge}
+      title={t.title}
+      titleHighlight={t.titleHighlight}
+      subtitle={t.subtitle}
+      titleId="conversations-title"
+      titleLayout="inline"
+      activeNav="conversations"
+      moduleTitle={sw.nav.conversations}
+    >
+        <div className="grid gap-6 p-4 lg:grid-cols-2 lg:gap-8 lg:p-5">
           {/* Active Conversation */}
           <motion.div
             key={activeDemo}
@@ -385,7 +384,7 @@ const ConversationMockups = () => {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-4"
+          className="grid grid-cols-2 gap-2 border-t border-[var(--software-border)] p-3 md:grid-cols-4 md:gap-3 md:p-4"
         >
           {t.stats.map((stat, i) => (
             <motion.div
@@ -394,16 +393,15 @@ const ConversationMockups = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="text-center p-6 rounded-2xl bg-surface border border-border"
+              className="rounded-lg border border-[var(--software-border)] bg-[var(--software-sidebar)] p-4 text-center"
             >
-              <div className="text-2xl mb-2">{stat.icon}</div>
-              <div className="font-display text-3xl font-bold text-accent mb-1">{stat.value}</div>
-              <p className="text-muted text-sm">{stat.label}</p>
+              <div className="mb-1 text-xl">{stat.icon}</div>
+              <div className="font-display text-2xl font-bold text-accent mb-0.5">{stat.value}</div>
+              <p className="text-xs text-[var(--software-text-muted)]">{stat.label}</p>
             </motion.div>
           ))}
         </motion.div>
-      </div>
-    </section>
+    </SoftwareDemoSection>
   )
 }
 

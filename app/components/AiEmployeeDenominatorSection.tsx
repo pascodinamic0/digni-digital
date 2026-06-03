@@ -17,7 +17,7 @@ export default function AiEmployeeDenominatorSection() {
   ]
 
   return (
-    <AnimatedSection id="speed-effort" className="py-20 md:py-24 bg-background">
+    <AnimatedSection id="speed-effort" className="border-b border-[var(--software-border)] py-16 md:py-20">
       <div className="max-w-4xl mx-auto px-6 text-center">
         <p className="text-xs font-bold uppercase tracking-[0.2em] text-accent mb-4">{d.badge}</p>
         <h2 className="font-display text-3xl md:text-4xl font-bold text-text mb-4">{d.title}</h2>

@@ -1691,3 +1691,237 @@ nextjs-portal {
     animation: none !important;
   }
 }
+
+/* ── AI Employee product page: SaaS / workspace UI (GHL-style density) ── */
+.software-product-page {
+  --software-canvas: #0c0c0e;
+  --software-sidebar: #131316;
+  --software-panel: #18181c;
+  --software-content: #141418;
+  --software-chrome-bar: #1a1a1f;
+  --software-border: rgba(255, 255, 255, 0.08);
+  --software-text: #f4f4f5;
+  --software-text-muted: #a1a1aa;
+  --software-nav-hover: rgba(255, 255, 255, 0.04);
+  --software-nav-active: rgba(var(--accent-rgb), 0.14);
+  --software-frame-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(255, 255, 255, 0.04);
+  background: var(--software-canvas);
+  color: var(--software-text);
+}
+
+[data-theme='light'] .software-product-page {
+  --software-canvas: #e8ecf1;
+  --software-sidebar: #f3f4f6;
+  --software-panel: #ffffff;
+  --software-content: #fafbfc;
+  --software-chrome-bar: #f0f1f3;
+  --software-border: rgba(15, 23, 42, 0.1);
+  --software-text: #0f172a;
+  --software-text-muted: #64748b;
+  --software-nav-hover: rgba(15, 23, 42, 0.04);
+  --software-nav-active: rgba(var(--accent-rgb), 0.1);
+  --software-frame-shadow: 0 20px 40px -16px rgba(15, 23, 42, 0.18), 0 0 0 1px rgba(15, 23, 42, 0.06);
+}
+
+.software-product-page .software-hero {
+  background:
+    radial-gradient(ellipse 90% 70% at 0% 0%, rgba(var(--accent-rgb), 0.1) 0%, transparent 58%),
+    var(--software-panel);
+  border-color: var(--software-border);
+}
+
+.software-product-page .software-hero-headline {
+  font-size: clamp(2.125rem, 4.2vw + 0.65rem, 3.5rem);
+  line-height: 1.04;
+  letter-spacing: -0.035em;
+}
+
+.software-product-page .software-hero-line {
+  display: block;
+}
+
+.software-product-page .software-hero-highlight {
+  display: block;
+  margin-top: 0.3em;
+  letter-spacing: -0.03em;
+  background: linear-gradient(
+    125deg,
+    var(--software-text) 0%,
+    var(--accent) 38%,
+    var(--accent-light) 92%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.software-product-page .software-hero-subhead {
+  max-width: 36rem;
+}
+
+.software-product-page .software-marketing-panel {
+  background: var(--software-canvas);
+}
+
+.software-product-page .card,
+.software-product-page .bg-surface {
+  background: var(--software-panel);
+  border-color: var(--software-border);
+}
+
+.software-product-page .text-text {
+  color: var(--software-text);
+}
+
+.software-product-page .text-muted {
+  color: var(--software-text-muted);
+}
+
+.software-product-page .border-border,
+.software-product-page .border-border-light {
+  border-color: var(--software-border);
+}
+
+.software-workspace-content .border-border,
+.software-workspace-content .border-border-light {
+  border-color: var(--software-border);
+}
+
+.software-workspace-content .bg-surface,
+.software-workspace-content .bg-surface-light\/30,
+.software-workspace-content .bg-surface-light\/50,
+.software-workspace-content .bg-surface\/50 {
+  background: var(--software-content);
+}
+
+.software-workspace-content .text-text {
+  color: var(--software-text);
+}
+
+.software-workspace-content .text-muted {
+  color: var(--software-text-muted);
+}
+
+/* Product demos: app-first layout — copy beside full workspace, not a caption over a snippet */
+.software-demo-section {
+  background: var(--software-canvas);
+}
+
+.software-demo-layout {
+  align-items: stretch;
+}
+
+.software-demo-stage {
+  position: relative;
+  min-height: 520px;
+}
+
+@media (min-width: 1024px) {
+  .software-demo-stage {
+    min-height: 640px;
+  }
+}
+
+.software-demo-stage::before {
+  content: '';
+  position: absolute;
+  inset: -1rem -0.5rem;
+  border-radius: 1.5rem;
+  background: radial-gradient(
+    ellipse 90% 70% at 60% 30%,
+    rgba(var(--accent-rgb), 0.14),
+    transparent 72%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.software-demo-stage .software-workspace-frame,
+.software-demo-stage .software-demo-frame {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+.software-demo-frame.software-workspace-frame {
+  border-radius: 1rem;
+  box-shadow:
+    var(--software-frame-shadow),
+    0 0 0 1px rgba(255, 255, 255, 0.03) inset;
+}
+
+@media (min-width: 768px) {
+  .software-demo-frame.software-workspace-frame {
+    border-radius: 1.125rem;
+  }
+}
+
+.software-product-page .software-demo-stage .software-workspace-content {
+  background: var(--software-content);
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.software-inbox-app {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.software-inbox-panes {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .software-inbox-panes {
+    flex-direction: row;
+  }
+}
+
+.software-inbox-list {
+  background: var(--software-sidebar);
+}
+
+.software-inbox-thread {
+  background: var(--software-content);
+}
+
+.software-inbox-rail {
+  background: var(--software-panel);
+  border-color: var(--software-border);
+}
+
+.software-conversation-row {
+  border: 1px solid transparent;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.software-conversation-row:hover {
+  background: var(--software-nav-hover);
+}
+
+.software-conversation-row[data-active='true'] {
+  background: var(--software-nav-active);
+  border-color: rgba(var(--accent-rgb), 0.22);
+}
+
+.software-demo-title-highlight {
+  background: linear-gradient(
+    125deg,
+    var(--software-text) 0%,
+    var(--accent) 45%,
+    var(--accent-light) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.software-sidebar-nav-item:focus-visible {
+  outline: none;
+}

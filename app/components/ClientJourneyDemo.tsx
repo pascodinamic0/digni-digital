@@ -1,7 +1,7 @@
 'use client'
 
 import { motion, AnimatePresence } from 'framer-motion'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef, useCallback } from 'react'
 import { useLanguage } from '@/app/context/LocaleContext'
 import { translations } from '@/app/config/translations'
 import SocialPlatformIcon from './SocialPlatformIcon'
@@ -151,6 +151,40 @@ const ACTIVE_STEP_SHADOW = [
   `inset 0 0 40px rgba(${FUNNEL_ACTIVE_INK_RGB}, 0.5)`,
 ].join(', ')
 
+function LeadSourceRow({
+  channels,
+  channelIcons,
+  compact,
+}: {
+  channels: ChannelItem[]
+  channelIcons: Record<string, React.ReactNode>
+  compact: boolean
+}) {
+  return (
+    <div
+      className={`w-full flex flex-nowrap justify-center ${compact ? 'gap-1.5' : 'gap-3'} overflow-x-auto pb-0.5 -mx-1 px-1 scroll-smooth [scrollbar-width:thin]`}
+      role="list"
+      aria-label="Lead sources"
+    >
+      {channels.map((ch, chipIdx) => {
+        const chip = CHANNEL_CHIP_STYLES[chipIdx % CHANNEL_CHIP_STYLES.length]
+        return (
+          <div
+            key={ch.id}
+            role="listitem"
+            className={`flex flex-col items-center justify-center ${compact ? 'gap-0.5 rounded-lg px-2 py-1.5 min-w-[3.5rem]' : 'gap-1 rounded-xl px-2.5 py-2 min-w-[5rem]'} shrink-0 snap-start backdrop-blur-sm ${chip.shell}`}
+          >
+            <span className={`${compact ? 'text-base min-h-5' : 'text-[1.35rem] min-h-6'} leading-none inline-flex items-center justify-center`} aria-hidden>
+              {channelIcons[ch.id] ?? ch.icon}
+            </span>
+            <span className={`text-[9px] sm:text-[10px] font-semibold text-center leading-tight line-clamp-1 ${chip.label}`}>{ch.label}</span>
+          </div>
+        )
+      })}
+    </div>
+  )
+}
+
 function VisualFunnel({
   stages,
   counts,
@@ -160,6 +194,10 @@ function VisualFunnel({
   activeStep = 0,
   funnelCopy,
   compact = false,
+  hideChannels = false,
+  hideElaboration = false,
+  hideLegend = false,
+  hideSectionBreaks = false,
 }: {
   stages: FunnelStage[]
   counts: number[]
@@ -168,8 +206,11 @@ function VisualFunnel({
   variant: 'broken' | 'ai'
   activeStep?: number
   funnelCopy: FunnelCopy
-  /** Tighter vertical rhythm (mobile card only; desktop uses scaled layout) */
   compact?: boolean
+  hideChannels?: boolean
+  hideElaboration?: boolean
+  hideLegend?: boolean
+  hideSectionBreaks?: boolean
 }) {
   const isBroken = variant === 'broken'
   const totalLayers = stages.length
@@ -182,63 +223,35 @@ function VisualFunnel({
 
   return (
     <div className="w-full flex flex-col items-center relative">
-      {/* Channel sources: horizontal scroll on narrow screens so icons never compress */}
-      <div
-        className={`w-full flex flex-nowrap sm:flex-wrap justify-start sm:justify-center ${compact ? 'gap-2' : 'gap-3'} overflow-x-auto overflow-y-visible pb-0.5 ${compact ? 'pt-0.5' : 'pt-1'} -mx-1 px-1 scroll-smooth [scrollbar-width:thin] relative ${!isBroken ? 'mb-1' : ''}`}
-        role="list"
-        aria-label="Lead sources"
-      >
-        {channels.map((ch, chipIdx) => {
-          const chip = CHANNEL_CHIP_STYLES[chipIdx % CHANNEL_CHIP_STYLES.length]
-          return (
-            <motion.div
-              key={ch.id}
-              role="listitem"
-              initial={{ opacity: 0, y: -8 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className={`flex flex-col items-center justify-center ${compact ? 'gap-1 rounded-xl px-2.5 py-2 min-w-[5rem] max-w-[5.75rem]' : 'gap-1.5 rounded-2xl px-3 py-3 min-w-[5.75rem] max-w-[6.5rem]'} shrink-0 snap-start relative z-10 transition-all backdrop-blur-sm ${chip.shell}`}
+      {!hideChannels ? (
+        <>
+          <LeadSourceRow channels={channels} channelIcons={channelIcons} compact={compact} />
+          {!hideLegend ? (
+            <p
+              className={`${compact ? 'text-[10px] mt-1' : 'text-[11px] sm:text-xs mt-3'} text-center text-muted-foreground leading-snug max-w-md mx-auto mb-px px-1`}
             >
-              <span
-                className={`${compact ? 'text-[1.35rem] sm:text-[1.5rem] min-h-6' : 'text-[1.6rem] sm:text-[1.75rem] min-h-7'} leading-none select-none inline-flex items-center justify-center`}
-                aria-hidden
-              >
-                {channelIcons[ch.id] ?? ch.icon}
-              </span>
-              <span
-                className={`text-[10px] sm:text-[11px] font-semibold text-center leading-tight line-clamp-2 ${chip.label}`}
-              >
-                {ch.label}
-              </span>
-            </motion.div>
-          )
-        })}
-      </div>
-
-      <p
-        className={`${compact ? 'text-[10px] sm:text-[11px] mt-2' : 'text-[11px] sm:text-xs mt-3'} text-center text-muted-foreground leading-snug max-w-md mx-auto mb-px px-1`}
-      >
-        {funnelCopy.legend}
-      </p>
-
-      {/* Animated lines: channels flow into Intake */}
-      <div className={`w-full ${compact ? 'h-6' : 'h-8'} relative flex justify-center pointer-events-none mt-0.5`} aria-hidden>
-        <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-          {[10, 30, 50, 70, 90].map((x, i) => (
-            <motion.path
-              key={i}
-              d={`M ${x} 0 Q 50 60 50 100`}
-              fill="none"
-              stroke={lineColor}
-              strokeWidth="1"
-              strokeLinecap="round"
-              initial={{ pathLength: 0, opacity: 0 }}
-              animate={{ pathLength: 1, opacity: 0.7 }}
-              transition={{ duration: 1.2, delay: i * 0.08 }}
-            />
-          ))}
-        </svg>
-      </div>
+              {funnelCopy.legend}
+            </p>
+          ) : null}
+          <div className={`w-full ${compact ? 'h-4' : 'h-8'} relative flex justify-center pointer-events-none mt-0.5`} aria-hidden>
+            <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+              {[10, 30, 50, 70, 90].map((x, i) => (
+                <motion.path
+                  key={i}
+                  d={`M ${x} 0 Q 50 60 50 100`}
+                  fill="none"
+                  stroke={lineColor}
+                  strokeWidth="1"
+                  strokeLinecap="round"
+                  initial={{ pathLength: 0, opacity: 0 }}
+                  animate={{ pathLength: 1, opacity: 0.7 }}
+                  transition={{ duration: 1.2, delay: i * 0.08 }}
+                />
+              ))}
+            </svg>
+          </div>
+        </>
+      ) : null}
 
       {/* Column headers: pipeline + delta (stacked on mobile; delta hides here, shown per row on small screens) */}
       <div className={`w-full flex flex-col sm:flex-row sm:items-end gap-1 sm:gap-2 mb-1 ${compact ? 'mt-0.5' : 'mt-1'}`}>
@@ -264,7 +277,8 @@ function VisualFunnel({
           // Broken: no drop at step 1, leads just arrived. AI: no drop anywhere (automation captures all).
           const displayDrop = variant === 'broken' && i === 0 ? 0 : drop
           const layerClip = funnelPolygon(i, totalLayers)
-          const showSectionBreak = (FUNNEL_SECTION_AT as readonly number[]).includes(i)
+          const showSectionBreak =
+            !hideSectionBreaks && (FUNNEL_SECTION_AT as readonly number[]).includes(i)
           const sectionLabel = showSectionBreak ? funnelSectionLabel(i, funnelCopy) : null
           const isLastTwoTiers = i >= totalLayers - 2
           const bandHeightClass = isLastTwoTiers ? bandLast : bandBase
@@ -402,7 +416,7 @@ function VisualFunnel({
                       </span>
                     </div>
                   </div>
-                  {elaboration(stage) && (
+                  {!hideElaboration && elaboration(stage) && (
                     <p
                       className={`${compact ? 'text-[10px] sm:text-[11px] mt-0.5' : 'text-[11px] sm:text-xs mt-1'} leading-snug max-w-full px-1 font-medium ${
                         isIntakeBand
@@ -482,12 +496,16 @@ function BrokenFlowDiagram({
   activeStep,
   label,
   funnelCopy,
+  compact = false,
+  hideChannels = false,
 }: {
   channels: ChannelItem[]
   brokenStages: BrokenStageItem[]
   activeStep: number
   label: string
   funnelCopy: FunnelCopy
+  compact?: boolean
+  hideChannels?: boolean
 }) {
   const funnelStages: FunnelStage[] = brokenStages.map((s, i) => ({
     step: s.step,
@@ -497,17 +515,21 @@ function BrokenFlowDiagram({
   }))
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 12 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      className="relative rounded-3xl border-2 border-destructive/35 bg-gradient-to-b from-destructive/10 via-surface/90 to-destructive/5 p-5 xl:p-6 overflow-hidden flex flex-col min-h-0 shadow-xl shadow-destructive/5 ring-1 ring-destructive/10"
+      className={`relative overflow-hidden flex flex-col min-h-0 ${
+        compact
+          ? 'rounded-xl border border-destructive/30 bg-destructive/[0.06] p-3'
+          : 'rounded-3xl border-2 border-destructive/35 bg-gradient-to-b from-destructive/10 via-surface/90 to-destructive/5 p-5 xl:p-6 shadow-xl shadow-destructive/5 ring-1 ring-destructive/10'
+      }`}
+      id="the-leak"
+      aria-labelledby="the-leak-title"
     >
-      <div className="absolute top-3 right-3 px-2.5 py-1 bg-destructive/20 text-destructive text-[10px] font-bold rounded-full border border-destructive/30">
-        LEAKS EVERYWHERE
-      </div>
-      <div className="text-center mb-4 min-h-[1.5rem] flex items-center justify-center">
-        <span className="text-destructive text-sm font-bold">❌ {label}</span>
-      </div>
+      <h3 id="the-leak-title" className={`text-center font-bold text-destructive ${compact ? 'text-xs mb-2' : 'text-sm mb-4 min-h-[1.5rem]'}`}>
+        <span aria-hidden>❌ </span>
+        {label}
+      </h3>
       <VisualFunnel
         stages={funnelStages}
         counts={BROKEN_FUNNEL}
@@ -516,11 +538,12 @@ function BrokenFlowDiagram({
         variant="broken"
         activeStep={activeStep}
         funnelCopy={funnelCopy}
+        compact={compact}
+        hideChannels={hideChannels}
+        hideElaboration={compact}
+        hideLegend={compact}
+        hideSectionBreaks={compact}
       />
-      <div className="mt-4 flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-destructive/5 border border-dashed border-destructive/40">
-        <span className="text-destructive text-2xl">↻</span>
-        <span className="text-destructive/80 text-xs font-medium">Cycle breaks. No referrals.</span>
-      </div>
     </motion.div>
   )
 }
@@ -531,12 +554,16 @@ function AIPoweredFlowDiagram({
   activeStep,
   label,
   funnelCopy,
+  compact = false,
+  hideChannels = false,
 }: {
   channels: ChannelItem[]
   aiStages: AIStageItem[]
   activeStep: number
   label: string
   funnelCopy: FunnelCopy
+  compact?: boolean
+  hideChannels?: boolean
 }) {
   const funnelStages: FunnelStage[] = aiStages.map((s, i) => ({
     step: s.step,
@@ -546,19 +573,22 @@ function AIPoweredFlowDiagram({
   }))
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 12 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ delay: 0.1 }}
-      className="relative rounded-3xl border-2 border-success/35 bg-gradient-to-b from-success/10 via-surface/90 to-success/5 p-5 xl:p-6 overflow-hidden flex flex-col min-h-0 shadow-xl shadow-success/10 ring-1 ring-success/15"
+      transition={{ delay: 0.05 }}
+      className={`relative overflow-hidden flex flex-col min-h-0 ${
+        compact
+          ? 'rounded-xl border border-success/30 bg-success/[0.06] p-3'
+          : 'rounded-3xl border-2 border-success/35 bg-gradient-to-b from-success/10 via-surface/90 to-success/5 p-5 xl:p-6 shadow-xl shadow-success/10 ring-1 ring-success/15'
+      }`}
+      id="the-loop"
+      aria-labelledby="the-loop-title"
     >
-      <div className="absolute top-3 right-3 px-2.5 py-1 bg-success/20 text-success text-[10px] font-bold rounded-full border border-success/30 flex items-center gap-1">
-        <span className="w-1.5 h-1.5 rounded-full bg-success animate-pulse" />
-        AI HANDLES ALL
-      </div>
-      <div className="text-center mb-4 min-h-[1.5rem] flex items-center justify-center">
-        <span className="text-success text-sm font-bold">✅ {label}</span>
-      </div>
+      <h3 id="the-loop-title" className={`text-center font-bold text-success ${compact ? 'text-xs mb-2' : 'text-sm mb-4 min-h-[1.5rem]'}`}>
+        <span aria-hidden>✅ </span>
+        {label}
+      </h3>
       <VisualFunnel
         stages={funnelStages}
         counts={AI_FUNNEL}
@@ -567,19 +597,241 @@ function AIPoweredFlowDiagram({
         variant="ai"
         activeStep={activeStep}
         funnelCopy={funnelCopy}
+        compact={compact}
+        hideChannels={hideChannels}
+        hideElaboration={compact}
+        hideLegend={compact}
+        hideSectionBreaks={compact}
       />
-      <div className="mt-4 flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-success/5 border-2 border-success/30">
-        <span className="text-success text-2xl animate-pulse">↻</span>
-        <span className="text-success/90 text-xs font-semibold">Referrals → New leads → Loop repeats.</span>
-        <svg className="w-4 h-4 text-success flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-        </svg>
-      </div>
     </motion.div>
   )
 }
 
 const FUNNEL_STEP_INTERVAL_MS = 2800
+const CAROUSEL_CARD_WIDTH = 420
+
+const PIPELINE_SECTION_SPANS: ReadonlyArray<{
+  labelKey: 'sectionIntake' | 'sectionConversion' | 'sectionOutcome'
+  colSpan: 2 | 3
+}> = [
+  { labelKey: 'sectionIntake', colSpan: 2 },
+  { labelKey: 'sectionConversion', colSpan: 3 },
+  { labelKey: 'sectionOutcome', colSpan: 2 },
+]
+
+/** Compact chip labels so seven pipeline columns fit inside carousel cards. */
+function pipelineSectionChipLabel(key: (typeof PIPELINE_SECTION_SPANS)[number]['labelKey'], full: string): string {
+  const short: Record<(typeof PIPELINE_SECTION_SPANS)[number]['labelKey'], string> = {
+    sectionIntake: 'Intake',
+    sectionConversion: 'Convert',
+    sectionOutcome: 'Close',
+  }
+  const chip = short[key]
+  if (full.length <= chip.length + 2) return full
+  return chip
+}
+
+function pipelineSectionLabel(step: number, copy: FunnelCopy): string {
+  if (step <= 1) return copy.sectionIntake
+  if (step <= 4) return copy.sectionConversion
+  return copy.sectionOutcome
+}
+
+function pipelineDropAtStep(counts: number[], index: number): number {
+  if (index >= counts.length - 1) return 0
+  if (index === 0) return 0
+  return Math.max(0, (counts[index] ?? 0) - (counts[index + 1] ?? 0))
+}
+
+function PipelineMiniChart({
+  counts,
+  variant,
+  activeStep,
+  stageTitles,
+  funnelCopy,
+}: {
+  counts: number[]
+  variant: 'broken' | 'ai'
+  activeStep: number
+  stageTitles: string[]
+  funnelCopy: FunnelCopy
+}) {
+  const max = Math.max(...counts, 1)
+  const isBroken = variant === 'broken'
+  const activeDrop = isBroken ? pipelineDropAtStep(counts, activeStep) : 0
+  const referralGain =
+    !isBroken && activeStep === counts.length - 1 && counts.length >= 2
+      ? Math.max(0, (counts[counts.length - 1] ?? 0) - (counts[counts.length - 2] ?? 0))
+      : 0
+
+  return (
+    <div className="mt-5 min-w-0 overflow-hidden" aria-hidden>
+      <div className="mb-1.5 grid grid-cols-7 gap-0.5">
+        {PIPELINE_SECTION_SPANS.map(({ labelKey, colSpan }) => (
+          <div
+            key={labelKey}
+            className={`flex min-w-0 items-center justify-center rounded border border-[var(--software-border)]/80 bg-[var(--software-content)]/50 px-0.5 py-0.5 ${
+              colSpan === 2 ? 'col-span-2' : 'col-span-3'
+            }`}
+          >
+            <span className="block w-full truncate text-center text-[8px] font-bold uppercase tracking-wide text-[var(--software-text-muted)]">
+              {pipelineSectionChipLabel(labelKey, funnelCopy[labelKey])}
+            </span>
+          </div>
+        ))}
+      </div>
+
+      <div className="grid grid-cols-7 gap-0.5 items-end h-[4.5rem] border-b border-[var(--software-border)]/60 pb-1">
+        {counts.map((n, i) => {
+          const h = Math.max(8, Math.round((n / max) * 48))
+          const active = i === activeStep
+          return (
+            <div
+              key={i}
+              className="flex min-w-0 flex-col items-center justify-end gap-0.5"
+              title={stageTitles[i]}
+            >
+              <motion.div
+                className={`w-[85%] max-w-[1.35rem] rounded-t-sm transition-colors ${
+                  isBroken
+                    ? active
+                      ? 'bg-destructive shadow-sm shadow-destructive/30'
+                      : 'bg-destructive/28'
+                    : active
+                      ? 'bg-success shadow-sm shadow-success/30'
+                      : 'bg-success/25'
+                }`}
+                style={{ height: h }}
+                layout
+                transition={{ duration: 0.35 }}
+              />
+              <span
+                className={`text-[9px] font-mono tabular-nums leading-none ${
+                  active ? (isBroken ? 'text-destructive font-bold' : 'text-success font-bold') : 'text-[var(--software-text-muted)]'
+                }`}
+              >
+                {n}
+              </span>
+              <span
+                className={`text-[8px] font-semibold leading-none tabular-nums ${
+                  active ? (isBroken ? 'text-destructive' : 'text-success') : 'text-[var(--software-text-muted)]/70'
+                }`}
+              >
+                {i + 1}
+              </span>
+            </div>
+          )
+        })}
+      </div>
+
+      {(isBroken && activeDrop > 0) || (!isBroken && referralGain > 0 && activeStep >= 5) ? (
+        <p
+          className={`mt-2 text-center text-[10px] font-semibold tabular-nums leading-none ${
+            isBroken ? 'text-destructive' : 'text-success'
+          }`}
+        >
+          {isBroken && activeDrop > 0 ? (
+            <>
+              −{activeDrop} {funnelCopy.lostBadge}
+            </>
+          ) : (
+            <>
+              +{referralGain} {funnelCopy.referralBadge}
+            </>
+          )}
+        </p>
+      ) : null}
+    </div>
+  )
+}
+
+type JourneyCarouselCardProps = {
+  variant: 'broken' | 'ai'
+  sectionBadge: string
+  label: string
+  tagline: string
+  closedLabel: string
+  counts: number[]
+  activeStep: number
+  stages: { title: string }[]
+  stageLine: string
+  stageSection: string
+  funnelCopy: FunnelCopy
+  isActive: boolean
+  onSelect: () => void
+}
+
+function JourneyCarouselCard({
+  variant,
+  sectionBadge,
+  label,
+  tagline,
+  closedLabel,
+  counts,
+  activeStep,
+  stages,
+  stageLine,
+  stageSection,
+  funnelCopy,
+  isActive,
+  onSelect,
+}: JourneyCarouselCardProps) {
+  const isBroken = variant === 'broken'
+  const stageTitles = stages.map((s) => s.title)
+
+  return (
+    <button
+      type="button"
+      onClick={onSelect}
+      className={`snap-center shrink-0 min-w-0 overflow-hidden text-left rounded-2xl border p-6 sm:p-7 transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent ${
+        isActive
+          ? isBroken
+            ? 'border-destructive/40 bg-[var(--software-panel)] shadow-lg shadow-destructive/10 ring-1 ring-destructive/20'
+            : 'border-success/40 bg-[var(--software-panel)] shadow-lg shadow-success/10 ring-1 ring-success/20'
+          : 'border-[var(--software-border)] bg-[var(--software-panel)]/60 opacity-90 hover:border-[var(--software-border)] hover:opacity-100'
+      }`}
+      style={{ width: `min(92vw, ${CAROUSEL_CARD_WIDTH}px)` }}
+      aria-pressed={isActive}
+    >
+      <div className="flex items-center justify-between gap-2 mb-3">
+        <span
+          className={`text-[10px] font-bold uppercase tracking-[0.18em] ${
+            isBroken ? 'text-destructive' : 'text-success'
+          }`}
+        >
+          {sectionBadge}
+        </span>
+        <span className="text-lg leading-none" aria-hidden>
+          {isBroken ? '❌' : '✅'}
+        </span>
+      </div>
+      <h3 className={`font-display text-xl sm:text-2xl font-bold ${isBroken ? 'text-destructive' : 'text-success'}`}>
+        {label}
+      </h3>
+      <p className="mt-1.5 line-clamp-2 text-sm text-[var(--software-text-muted)] leading-snug">{tagline}</p>
+      <p className={`mt-4 font-display text-3xl font-bold tabular-nums ${isBroken ? 'text-destructive' : 'text-success'}`}>
+        {closedLabel}
+      </p>
+      <PipelineMiniChart
+        counts={counts}
+        variant={variant}
+        activeStep={activeStep}
+        stageTitles={stageTitles}
+        funnelCopy={funnelCopy}
+      />
+      <p className="mt-4 min-h-[3.25rem] border-t border-[var(--software-border)] pt-4 leading-snug">
+        <span
+          className={`text-[10px] font-bold uppercase tracking-wider ${
+            isBroken ? 'text-destructive' : 'text-success'
+          }`}
+        >
+          {stageSection}
+        </span>
+        <span className="mt-1 block line-clamp-2 text-sm text-[var(--software-text)]">{stageLine}</span>
+      </p>
+    </button>
+  )
+}
 
 type ClientJourneyDemoProps = {
   /** Larger section + funnel for primary offer comparison (Leak vs Loop). */
@@ -587,10 +839,15 @@ type ClientJourneyDemoProps = {
 }
 
 const ClientJourneyDemo = ({ prominent = false }: ClientJourneyDemoProps) => {
-  const [activeView, setActiveView] = useState<'before' | 'after'>('before')
   const [activeFunnelStep, setActiveFunnelStep] = useState(0)
   const language = useLanguage()
   const t = translations[language].clientJourney
+  const problem = translations[language].aiEmployeePage.problem
+  const dream = translations[language].aiEmployeePage.dreamOutcome
+  const compact = prominent
+  const [pipelineExpanded, setPipelineExpanded] = useState(false)
+  const [activeCard, setActiveCard] = useState<'broken' | 'ai'>('broken')
+  const carouselRef = useRef<HTMLDivElement>(null)
   const funnelCopy: FunnelCopy = {
     legend: t.funnelLegend,
     sectionIntake: t.funnelSectionIntake,
@@ -614,209 +871,227 @@ const ClientJourneyDemo = ({ prominent = false }: ClientJourneyDemoProps) => {
     return () => clearInterval(interval)
   }, [])
 
+  const scrollToCard = useCallback((variant: 'broken' | 'ai') => {
+    setActiveCard(variant)
+    const el = carouselRef.current
+    if (!el) return
+    const index = variant === 'broken' ? 0 : 1
+    const card = el.children[index] as HTMLElement | undefined
+    card?.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' })
+  }, [])
+
+  if (!compact) {
+    return (
+      <>
+        <section
+          id="leak-vs-loop"
+          className="overflow-hidden bg-gradient-to-b from-surface via-background to-surface border-b border-border-light py-14 sm:py-20"
+          aria-labelledby="journey-demo-title"
+        >
+          <div className="max-w-[88rem] mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center max-w-3xl mx-auto">
+              <span className="inline-block px-4 py-2 bg-accent/10 border border-accent/20 rounded-full text-accent text-xs font-semibold uppercase tracking-wide mb-4">
+                {t.badge}
+              </span>
+              <h2 id="journey-demo-title" className="font-display text-3xl sm:text-4xl font-bold mb-3 leading-[1.1]">
+                {t.title} <span className="gradient-text">{t.subtitle}</span>
+              </h2>
+              <p className="text-muted text-base sm:text-lg">{t.subtext}</p>
+            </div>
+          </div>
+        </section>
+        <section className="overflow-hidden border-b border-border-light py-14 sm:py-20">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6">
+            <BrokenFlowDiagram channels={channels} brokenStages={brokenStages} activeStep={activeFunnelStep} label={t.brokenLabel} funnelCopy={funnelCopy} />
+          </div>
+        </section>
+        <section className="overflow-hidden border-b border-border-light py-14 sm:py-20">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6">
+            <AIPoweredFlowDiagram channels={channels} aiStages={aiStages} activeStep={activeFunnelStep} label={t.aiFlowLabel} funnelCopy={funnelCopy} />
+          </div>
+        </section>
+      </>
+    )
+  }
+
+  const leakClosedLabel = `→ ${BROKEN_FUNNEL[5]} closed`
+  const loopClosedLabel = `→ ${AI_FUNNEL[5]} close`
+
   return (
     <section
       id="leak-vs-loop"
-      className={
-        prominent
-          ? 'py-20 sm:py-28 md:py-36 overflow-hidden bg-gradient-to-b from-surface via-background to-surface border-y border-border-light'
-          : 'py-16 sm:py-24 overflow-hidden bg-gradient-to-b from-surface to-background'
-      }
+      className="overflow-hidden border-b border-[var(--software-border)] py-16 md:py-20"
       aria-labelledby="journey-demo-title"
     >
-      <div className="max-w-[88rem] mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-8 lg:mb-10 max-w-3xl mx-auto">
-          <motion.span
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="inline-block px-4 py-2 bg-accent/10 border border-accent/20 rounded-full text-accent text-xs font-semibold uppercase tracking-wide mb-4"
-          >
-            {t.badge}
-          </motion.span>
-          <motion.h2
-            id="journey-demo-title"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-3 leading-[1.1] tracking-tight"
-          >
-            {t.title}{' '}
-            <span className="gradient-text block sm:inline mt-1 sm:mt-0">{t.subtitle}</span>
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="text-muted text-base sm:text-lg leading-relaxed"
-          >
-            {t.subtext}
-          </motion.p>
-          <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.25 }}
-            className="mt-4 text-sm text-text/85 leading-relaxed rounded-xl border border-border/70 bg-surface/60 px-4 py-3"
-          >
-            {t.readGuide}
-          </motion.p>
+      <div className="mx-auto max-w-3xl px-4 sm:px-6 text-center">
+        <motion.p
+          initial={{ opacity: 0, y: 8 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-[11px] font-semibold uppercase tracking-[0.22em] text-accent mb-3"
+        >
+          {t.badge}
+        </motion.p>
+        <motion.h2
+          id="journey-demo-title"
+          initial={{ opacity: 0, y: 8 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.05 }}
+          className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-[var(--software-text)] leading-[1.12]"
+        >
+          {t.title}{' '}
+          <span className="block sm:inline mt-1 sm:mt-0 bg-gradient-to-r from-accent to-success bg-clip-text text-transparent">
+            {t.subtitle}
+          </span>
+        </motion.h2>
 
-          {/* Toggle - Mobile/Tablet (switch between Broken / AI Flow) */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.3 }}
-            className="flex justify-center my-6 lg:my-10 lg:hidden"
-          >
-            <div
-              role="group"
-              aria-label="Toggle journey view"
-              className="inline-flex p-2 rounded-2xl bg-surface border-2 border-border shadow-lg shadow-foreground/5 lg:shadow-xl"
+        <motion.div
+          initial={{ opacity: 0, y: 8 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.1 }}
+          id="dream-outcome"
+          className="mt-6 inline-flex flex-wrap items-center justify-center gap-3 rounded-full border border-[var(--software-border)] bg-[var(--software-panel)] px-4 py-2.5 shadow-sm"
+        >
+          <span className="font-display text-sm font-bold text-destructive tabular-nums">{dream.beforeMetric}</span>
+          <span className="text-[var(--software-text-muted)] text-xs" aria-hidden>
+            →
+          </span>
+          <span className="font-display text-sm font-bold text-success tabular-nums">{dream.afterMetric}</span>
+          <span className="w-full sm:w-auto text-[10px] text-[var(--software-text-muted)]">{dream.referralLine}</span>
+        </motion.div>
+
+        <div className="mt-5 flex flex-wrap justify-center gap-2" role="list" aria-label={problem.badge}>
+          {problem.stats.map((stat, i) => (
+            <span
+              key={i}
+              role="listitem"
+              className="inline-flex items-center gap-1.5 rounded-full border border-destructive/25 bg-destructive/5 px-3 py-1.5 text-[11px]"
             >
-              <button
-                onClick={() => setActiveView('before')}
-                className={`px-6 py-3.5 sm:px-8 sm:py-4 rounded-xl font-bold text-base sm:text-lg transition-all duration-300 touch-manipulation ${
-                  activeView === 'before'
-                    ? 'bg-destructive/25 text-destructive border-2 border-destructive shadow-md'
-                    : 'text-muted hover:text-text hover:bg-foreground/5'
-                }`}
-                aria-pressed={activeView === 'before'}
-              >
-                ❌ {t.brokenLabel}
-              </button>
-              <button
-                onClick={() => setActiveView('after')}
-                className={`px-6 py-3.5 sm:px-8 sm:py-4 rounded-xl font-bold text-base sm:text-lg transition-all duration-300 touch-manipulation ${
-                  activeView === 'after'
-                    ? 'bg-success/25 text-success border-2 border-success shadow-md'
-                    : 'text-muted hover:text-text hover:bg-foreground/5'
-                }`}
-                aria-pressed={activeView === 'after'}
-              >
-                ✅ {t.aiFlowLabel}
-              </button>
-            </div>
-          </motion.div>
-        </div>
-
-        {/* Desktop: Side-by-side, scaled down so the block is smaller without affecting inner sections.
-            scale-[0.72] only affects paint; layout still reserves full height. Compensate with negative margin (~28% of content height). */}
-        <div className={`hidden lg:block origin-top -mt-6 ${prominent ? '-mb-[120px]' : '-mb-[200px]'}`}>
-          <motion.div
-            className={`grid grid-cols-[minmax(0,1fr)_clamp(4rem,8vw,7rem)_minmax(0,1fr)] items-stretch ${prominent ? 'scale-[0.88]' : 'scale-[0.72]'}`}
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-          >
-            <BrokenFlowDiagram
-              channels={channels}
-              brokenStages={brokenStages}
-              activeStep={activeFunnelStep}
-              label={t.brokenLabel}
-              funnelCopy={funnelCopy}
-            />
-            <div className="flex justify-center self-stretch px-1" aria-hidden="true">
-              <div className="w-[2px] self-stretch rounded-full bg-gradient-to-b from-destructive/40 via-border to-success/40" />
-            </div>
-            <AIPoweredFlowDiagram
-              channels={channels}
-              aiStages={aiStages}
-              activeStep={activeFunnelStep}
-              label={t.aiFlowLabel}
-              funnelCopy={funnelCopy}
-            />
-          </motion.div>
-        </div>
-
-        <div className="lg:hidden px-0 sm:px-2">
-          <AnimatePresence mode="wait">
-            {activeView === 'before' ? (
-              <motion.div
-                key="before"
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: 20 }}
-                transition={{ duration: 0.4 }}
-                className="relative"
-              >
-                <div className="relative rounded-2xl sm:rounded-3xl border-2 border-destructive/35 bg-gradient-to-b from-destructive/10 via-surface/95 to-destructive/5 p-3 sm:p-5 overflow-visible shadow-lg shadow-destructive/10 ring-1 ring-destructive/10">
-                  <div className="flex flex-col sm:flex-row sm:relative items-center sm:block mb-3">
-                    <div className="text-center sm:text-center mb-1.5 sm:mb-0">
-                      <span className="text-destructive text-sm font-bold">❌ {t.brokenLabel}</span>
-                    </div>
-                    <div className="sm:absolute sm:top-3 sm:right-3 px-2 py-0.5 sm:px-2.5 sm:py-1 bg-destructive/20 text-destructive text-[10px] font-bold rounded-full border border-destructive/30">
-                      99 OF 100 LOST
-                    </div>
-                  </div>
-                  <VisualFunnel
-                    stages={brokenStages.map((s, i) => ({ step: s.step, title: s.title, icon: BROKEN_STAGE_ICONS[i], leak: s.leak }))}
-                    counts={BROKEN_FUNNEL}
-                    channels={channels}
-                    channelIcons={CHANNEL_ICONS}
-                    variant="broken"
-                    activeStep={activeFunnelStep}
-                    funnelCopy={funnelCopy}
-                    compact
-                  />
-                  <div className="mt-3 flex items-center justify-center gap-2 py-2.5 px-3 sm:px-4 rounded-xl bg-destructive/5 border border-dashed border-destructive/40">
-                    <span className="text-destructive text-lg sm:text-xl">↻</span>
-                    <span className="text-destructive/80 text-[11px] sm:text-xs font-medium text-center">Cycle breaks. No referrals.</span>
-                  </div>
-                </div>
-              </motion.div>
-            ) : (
-              <motion.div
-                key="after"
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -20 }}
-                transition={{ duration: 0.4 }}
-                className="relative"
-              >
-                <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl p-3 sm:p-5 shadow-xl shadow-success/5 border border-success/25 bg-gradient-to-b from-success/[0.09] via-surface to-success/[0.03] ring-1 ring-success/10">
-                  {/* Header */}
-                  <div className="relative flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-4">
-                    <div className="flex items-center gap-2.5">
-                      <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-success/30 to-success/10 flex items-center justify-center text-base shadow-lg shadow-success/20">
-                        ✅
-                      </div>
-                      <div>
-                        <h3 className="font-display text-base sm:text-lg font-bold text-foreground">{t.aiFlowLabel}</h3>
-                        <p className="text-[10px] sm:text-[11px] text-success font-medium tracking-wide">Zero drop</p>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-2 px-2.5 py-1.5 sm:px-3 sm:py-2 rounded-xl bg-success/15 border border-success/25 shadow-inner">
-                      <span className="w-2 h-2 rounded-full bg-success animate-pulse shadow-lg shadow-success/50" />
-                      <span className="text-[11px] sm:text-xs font-bold text-success tracking-tight">0 DROP · 95 CLOSED</span>
-                    </div>
-                  </div>
-                  <VisualFunnel
-                    stages={aiStages.map((s, i) => ({ step: s.step, title: s.title, icon: AI_STAGE_ICONS[i], win: s.win }))}
-                    counts={AI_FUNNEL}
-                    channels={channels}
-                    channelIcons={CHANNEL_ICONS}
-                    variant="ai"
-                    activeStep={activeFunnelStep}
-                    funnelCopy={funnelCopy}
-                    compact
-                  />
-                  {/* Footer - Referral loop */}
-                  <div className="mt-4 flex items-center justify-center gap-2.5 py-3 px-3 sm:px-4 rounded-2xl bg-gradient-to-r from-success/15 via-success/10 to-success/15 border border-success/20 shadow-inner">
-                    <div className="w-9 h-9 rounded-xl bg-success/20 flex items-center justify-center">
-                      <span className="text-success text-lg animate-pulse">↻</span>
-                    </div>
-                    <span className="text-xs sm:text-sm font-semibold text-foreground">Referrals → Leads → Loop.</span>
-                  </div>
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
+              <span className="font-display font-bold text-destructive tabular-nums">{stat.value}</span>
+              <span className="text-[var(--software-text-muted)]">{stat.label}</span>
+            </span>
+          ))}
         </div>
       </div>
+
+      <div className="relative mx-auto mt-10 max-w-6xl">
+        <div
+          className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-gradient-to-r from-[var(--software-canvas)] to-transparent sm:w-16"
+          aria-hidden
+        />
+        <div
+          className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-gradient-to-l from-[var(--software-canvas)] to-transparent sm:w-16"
+          aria-hidden
+        />
+
+        <div
+          ref={carouselRef}
+          className="flex gap-5 sm:gap-6 overflow-x-auto overscroll-x-contain scroll-smooth snap-x snap-mandatory px-4 sm:px-6 pb-3 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+          style={{
+            paddingLeft: `max(1rem, calc(50% - ${CAROUSEL_CARD_WIDTH / 2}px))`,
+            paddingRight: `max(1rem, calc(50% - ${CAROUSEL_CARD_WIDTH / 2}px))`,
+          }}
+        >
+          <JourneyCarouselCard
+            variant="broken"
+            sectionBadge={t.beforeSectionBadge}
+            label={t.brokenLabel}
+            tagline={t.beforeSectionSubtext}
+            closedLabel={leakClosedLabel}
+            counts={BROKEN_FUNNEL}
+            activeStep={activeFunnelStep}
+            stages={brokenStages}
+            stageLine={brokenStages[activeFunnelStep]?.leak ?? ''}
+            stageSection={pipelineSectionLabel(activeFunnelStep, funnelCopy)}
+            funnelCopy={funnelCopy}
+            isActive={activeCard === 'broken'}
+            onSelect={() => scrollToCard('broken')}
+          />
+          <JourneyCarouselCard
+            variant="ai"
+            sectionBadge={t.afterSectionBadge}
+            label={t.aiFlowLabel}
+            tagline={t.afterSectionSubtext}
+            closedLabel={loopClosedLabel}
+            counts={AI_FUNNEL}
+            activeStep={activeFunnelStep}
+            stages={aiStages}
+            stageLine={aiStages[activeFunnelStep]?.win ?? ''}
+            stageSection={pipelineSectionLabel(activeFunnelStep, funnelCopy)}
+            funnelCopy={funnelCopy}
+            isActive={activeCard === 'ai'}
+            onSelect={() => scrollToCard('ai')}
+          />
+        </div>
+
+        <div className="mt-6 flex justify-center gap-2">
+          {(['broken', 'ai'] as const).map((v) => (
+            <button
+              key={v}
+              type="button"
+              onClick={() => scrollToCard(v)}
+              className={`h-1.5 rounded-full transition-all duration-300 ${
+                activeCard === v ? `w-7 ${v === 'broken' ? 'bg-destructive' : 'bg-success'}` : 'w-2 bg-[var(--software-border)]'
+              }`}
+              aria-label={v === 'broken' ? t.brokenLabel : t.aiFlowLabel}
+            />
+          ))}
+        </div>
+      </div>
+
+      <div className="mx-auto mt-8 max-w-3xl px-4 sm:px-6 text-center">
+        <button
+          type="button"
+          onClick={() => setPipelineExpanded((open) => !open)}
+          className="inline-flex items-center gap-2 rounded-full border border-[var(--software-border)] bg-[var(--software-panel)] px-5 py-2.5 text-sm font-medium text-[var(--software-text)] transition-colors hover:border-accent/40 hover:text-accent"
+          aria-expanded={pipelineExpanded}
+        >
+          {pipelineExpanded ? t.hidePipeline : t.viewPipeline}
+          <motion.span animate={{ rotate: pipelineExpanded ? 180 : 0 }} className="text-accent" aria-hidden>
+            ▾
+          </motion.span>
+        </button>
+      </div>
+
+      <AnimatePresence initial={false}>
+        {pipelineExpanded ? (
+          <motion.div
+            key="pipeline-detail"
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+            className="overflow-hidden"
+          >
+            <div className="mx-auto mt-8 max-w-4xl px-4 sm:px-6 pb-4">
+              <LeadSourceRow channels={channels} channelIcons={CHANNEL_ICONS} compact />
+              <p className="mt-2 mb-6 text-center text-[10px] text-[var(--software-text-muted)]">{t.funnelLegend}</p>
+              <div className="grid gap-5 lg:grid-cols-2">
+                <BrokenFlowDiagram
+                  channels={channels}
+                  brokenStages={brokenStages}
+                  activeStep={activeFunnelStep}
+                  label={t.brokenLabel}
+                  funnelCopy={funnelCopy}
+                  compact
+                  hideChannels
+                />
+                <AIPoweredFlowDiagram
+                  channels={channels}
+                  aiStages={aiStages}
+                  activeStep={activeFunnelStep}
+                  label={t.aiFlowLabel}
+                  funnelCopy={funnelCopy}
+                  compact
+                  hideChannels
+                />
+              </div>
+            </div>
+          </motion.div>
+        ) : null}
+      </AnimatePresence>
     </section>
   )
 }

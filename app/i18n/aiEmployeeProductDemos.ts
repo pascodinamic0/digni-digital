@@ -14,6 +14,28 @@ export type PipelineCardT = {
   valueDisplay: string
 }
 
+export type AdsCampaignRowT = {
+  id: string
+  name: string
+  platform: 'meta' | 'google' | 'instagram' | 'linkedin' | 'tiktok'
+  status: 'active' | 'paused' | 'learning'
+  spend: string
+  roas: string
+  leads: number
+  audience: string
+}
+
+export type CalendarBookingChannel = 'whatsapp' | 'website' | 'sms' | 'phone' | 'instagram'
+
+export type CalendarBookingEventT = {
+  id: string
+  title: string
+  contact: string
+  channel: CalendarBookingChannel
+  dayIndex: number
+  slotIndex: number
+}
+
 export type ContactRowT = {
   id: string
   name: string
@@ -103,9 +125,6 @@ export type AiEmployeeProductDemosTranslations = {
     subtitle: string
     steps: TimelineStepT[]
     viewStepLabel: string
-    outcomesBadge: string
-    outcomesTitle: string
-    outcomesSubtitle: string
   }
   pipeline: {
     badge: string
@@ -140,6 +159,22 @@ export type AiEmployeeProductDemosTranslations = {
     detailModalNextExample: string
     closeLabel: string
   }
+  calendarBooking: {
+    badge: string
+    title: string
+    titleHighlight: string
+    subtitle: string
+    dashboardSubtitle: string
+    weekLabel: string
+    daysShort: [string, string, string, string, string]
+    timeSlots: string[]
+    bookingToast: string
+    bookingPulse: string
+    confirmedLabel: string
+    channels: Record<CalendarBookingChannel, string>
+    seed: CalendarBookingEventT[]
+    queue: CalendarBookingEventT[]
+  }
   performance: {
     badge: string
     title: string
@@ -156,6 +191,32 @@ export type AiEmployeeProductDemosTranslations = {
     platformYelp: string
     platformWhatsapp: string
     platformBing: string
+  }
+  adsManager: {
+    badge: string
+    title: string
+    titleHighlight: string
+    subtitle: string
+    dashboardSubtitle: string
+    allTab: string
+    activeTab: string
+    pausedTab: string
+    searchPlaceholder: string
+    createBtn: string
+    syncLabel: string
+    headers: {
+      campaign: string
+      platform: string
+      status: string
+      spend: string
+      roas: string
+      leads: string
+      audience: string
+    }
+    statuses: Record<AdsCampaignRowT['status'], string>
+    platforms: Record<AdsCampaignRowT['platform'], string>
+    optimizeToast: string
+    campaigns: AdsCampaignRowT[]
   }
   tasks: {
     badge: string
@@ -491,15 +552,13 @@ export const aiEmployeeProductDemosEn: AiEmployeeProductDemosTranslations = {
     ],
   },
   timeline: {
-    badge: 'Business Impact',
-    title: 'From First Contact',
-    titleHighlight: 'To Closed Deal and Beyond',
-    subtitle: 'Watch how our AI transforms every lead into a structured sales opportunity, automatically moving prospects through your funnel.',
+    badge: 'Full client journey',
+    title: 'One automation system',
+    titleHighlight: 'from first touch to post-sale',
+    subtitle:
+      'Six connected stages—capture, reply, CRM, booking, follow-up, and growth—running as a single loop your team does not have to babysit.',
     steps: timelineStepsEn,
     viewStepLabel: 'View step',
-    outcomesBadge: 'Outcome at every stage',
-    outcomesTitle: 'What the full sequence delivers',
-    outcomesSubtitle: 'Six steps above, six results below, same order, from first visit to after the close.',
   },
   pipeline: {
     badge: 'Pipeline',
@@ -536,6 +595,87 @@ export const aiEmployeeProductDemosEn: AiEmployeeProductDemosTranslations = {
     detailModalNextExample: 'Send calendar link for a 20-minute fit call.',
     closeLabel: 'Close',
   },
+  calendarBooking: {
+    badge: 'Scheduling',
+    title: 'Your week fills',
+    titleHighlight: 'while you sell.',
+    subtitle:
+      'Qualified leads pick a slot from chat, SMS, or phone. The AI blocks time, sends confirmations, and keeps the calendar dense without back-and-forth.',
+    dashboardSubtitle: 'AI Employee · live booking',
+    weekLabel: 'This week',
+    daysShort: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
+    timeSlots: ['9:00 AM', '10:00 AM', '11:00 AM', '1:00 PM', '2:00 PM', '3:00 PM'],
+    bookingToast: 'New meeting booked',
+    bookingPulse: 'Booking…',
+    confirmedLabel: 'Confirmed',
+    channels: {
+      whatsapp: 'WhatsApp',
+      website: 'Website chat',
+      sms: 'SMS',
+      phone: 'Phone',
+      instagram: 'Instagram DM',
+    },
+    seed: [
+      {
+        id: 'c0',
+        title: 'Strategy call',
+        contact: 'Sarah J.',
+        channel: 'website',
+        dayIndex: 0,
+        slotIndex: 1,
+      },
+      {
+        id: 'c1',
+        title: 'Demo · growth plan',
+        contact: 'Mike C.',
+        channel: 'whatsapp',
+        dayIndex: 1,
+        slotIndex: 3,
+      },
+      {
+        id: 'c2',
+        title: 'On-site estimate',
+        contact: 'Lena R.',
+        channel: 'sms',
+        dayIndex: 2,
+        slotIndex: 0,
+      },
+    ],
+    queue: [
+      {
+        id: 'c3',
+        title: 'Fit call · 20 min',
+        contact: 'James W.',
+        channel: 'instagram',
+        dayIndex: 0,
+        slotIndex: 4,
+      },
+      {
+        id: 'c4',
+        title: 'Consultation',
+        contact: 'Priya N.',
+        channel: 'phone',
+        dayIndex: 3,
+        slotIndex: 2,
+      },
+      {
+        id: 'c5',
+        title: 'Proposal review',
+        contact: 'Alex T.',
+        channel: 'whatsapp',
+        dayIndex: 4,
+        slotIndex: 1,
+      },
+      {
+        id: 'c6',
+        title: 'Discovery call',
+        contact: 'Nina K.',
+        channel: 'website',
+        dayIndex: 2,
+        slotIndex: 5,
+      },
+    ],
+  },
   performance: {
     badge: 'Reputation',
     title: 'Local listings,',
@@ -553,6 +693,104 @@ export const aiEmployeeProductDemosEn: AiEmployeeProductDemosTranslations = {
     platformYelp: 'Yelp',
     platformWhatsapp: 'WhatsApp Business',
     platformBing: 'Bing Places',
+  },
+  adsManager: {
+    badge: 'Paid growth',
+    title: 'Every ad account,',
+    titleHighlight: 'one command center.',
+    subtitle:
+      'Launch, pause, and tune Meta, Google, and social campaigns from the same workspace, with spend and ROAS tied to leads the AI already captured.',
+    dashboardSubtitle: 'AI Employee · ads & retargeting',
+    allTab: 'All campaigns',
+    activeTab: 'Active',
+    pausedTab: 'Paused',
+    searchPlaceholder: 'Search campaigns…',
+    createBtn: 'New campaign',
+    syncLabel: 'Syncing ad accounts',
+    headers: {
+      campaign: 'Campaign',
+      platform: 'Platform',
+      status: 'Status',
+      spend: 'Spend (7d)',
+      roas: 'ROAS',
+      leads: 'Leads',
+      audience: 'Audience',
+    },
+    statuses: {
+      active: 'Active',
+      paused: 'Paused',
+      learning: 'Learning',
+    },
+    platforms: {
+      meta: 'Meta Ads',
+      google: 'Google Ads',
+      instagram: 'Instagram',
+      linkedin: 'LinkedIn',
+      tiktok: 'TikTok',
+    },
+    optimizeToast: 'Budget shifted to top-performing retargeting set',
+    campaigns: [
+      {
+        id: 'a1',
+        name: 'Booked-call retargeting',
+        platform: 'meta',
+        status: 'active',
+        spend: '$842',
+        roas: '4.2×',
+        leads: 19,
+        audience: 'Website visitors · 14d',
+      },
+      {
+        id: 'a2',
+        name: 'High-intent local search',
+        platform: 'google',
+        status: 'active',
+        spend: '$1,240',
+        roas: '3.8×',
+        leads: 24,
+        audience: 'Service + city keywords',
+      },
+      {
+        id: 'a3',
+        name: 'Spring promo · stories',
+        platform: 'instagram',
+        status: 'learning',
+        spend: '$318',
+        roas: '2.1×',
+        leads: 8,
+        audience: 'Engaged followers',
+      },
+      {
+        id: 'a4',
+        name: 'Closed-lost nurture',
+        platform: 'meta',
+        status: 'paused',
+        spend: '$96',
+        roas: '1.4×',
+        leads: 3,
+        audience: 'Pipeline · no reply 30d',
+      },
+      {
+        id: 'a5',
+        name: 'B2B decision-makers',
+        platform: 'linkedin',
+        status: 'active',
+        spend: '$560',
+        roas: '5.1×',
+        leads: 11,
+        audience: 'Job title + industry',
+      },
+      {
+        id: 'a6',
+        name: 'UGC offer · TikTok',
+        platform: 'tiktok',
+        status: 'active',
+        spend: '$410',
+        roas: '3.3×',
+        leads: 14,
+        audience: 'Lookalike · purchasers',
+      },
+    ],
   },
   tasks: {
     badge: 'Social',
@@ -849,15 +1087,13 @@ export const aiEmployeeProductDemosFr: AiEmployeeProductDemosTranslations = {
     ],
   },
   timeline: {
-    badge: 'Impact business',
-    title: 'Du premier contact',
-    titleHighlight: 'au deal signé, et après',
-    subtitle: 'Voyez comment notre IA transforme chaque lead en opportunité commerciale structurée et fait avancer les prospects dans votre funnel.',
+    badge: 'Parcours client complet',
+    title: 'Un système d’automation',
+    titleHighlight: 'du premier contact à l’après-vente',
+    subtitle:
+      'Six étapes reliées—capture, réponse, CRM, réservation, relance et croissance—dans une seule boucle que votre équipe n’a pas à surveiller.',
     steps: timelineStepsFr,
     viewStepLabel: 'Voir l’étape',
-    outcomesBadge: 'Résultat à chaque étape',
-    outcomesTitle: 'Ce que toute la séquence livre',
-    outcomesSubtitle: 'Six étapes au-dessus, six résultats ci-dessous, dans le même ordre, de la première visite à l’après-vente.',
   },
   pipeline: {
     badge: 'Pipeline',
@@ -894,6 +1130,88 @@ export const aiEmployeeProductDemosFr: AiEmployeeProductDemosTranslations = {
     detailModalNextExample: 'Envoyer le lien calendrier pour un appel de 20 minutes.',
     closeLabel: 'Fermer',
   },
+  calendarBooking: {
+    ...aiEmployeeProductDemosEn.calendarBooking,
+    badge: 'Planification',
+    title: 'Votre semaine se remplit',
+    titleHighlight: 'pendant que vous vendez.',
+    subtitle:
+      'Les leads qualifiés choisissent un créneau par chat, SMS ou téléphone. L’IA bloque l’horaire, envoie la confirmation, sans ping-pong.',
+    dashboardSubtitle: 'Employé IA · réservation en direct',
+    weekLabel: 'Cette semaine',
+    daysShort: ['Lun', 'Mar', 'Mer', 'Jeu', 'Ven'],
+    timeSlots: ['9h00', '10h00', '11h00', '13h00', '14h00', '15h00'],
+    bookingToast: 'Nouveau rendez-vous réservé',
+    bookingPulse: 'Réservation…',
+    confirmedLabel: 'Confirmé',
+    channels: {
+      whatsapp: 'WhatsApp',
+      website: 'Chat site',
+      sms: 'SMS',
+      phone: 'Téléphone',
+      instagram: 'DM Instagram',
+    },
+    seed: [
+      {
+        id: 'c0',
+        title: 'Appel stratégie',
+        contact: 'Sarah J.',
+        channel: 'website',
+        dayIndex: 0,
+        slotIndex: 1,
+      },
+      {
+        id: 'c1',
+        title: 'Démo · plan croissance',
+        contact: 'Mike C.',
+        channel: 'whatsapp',
+        dayIndex: 1,
+        slotIndex: 3,
+      },
+      {
+        id: 'c2',
+        title: 'Devis sur site',
+        contact: 'Lena R.',
+        channel: 'sms',
+        dayIndex: 2,
+        slotIndex: 0,
+      },
+    ],
+    queue: [
+      {
+        id: 'c3',
+        title: 'Appel fit · 20 min',
+        contact: 'James W.',
+        channel: 'instagram',
+        dayIndex: 0,
+        slotIndex: 4,
+      },
+      {
+        id: 'c4',
+        title: 'Consultation',
+        contact: 'Priya N.',
+        channel: 'phone',
+        dayIndex: 3,
+        slotIndex: 2,
+      },
+      {
+        id: 'c5',
+        title: 'Revue proposition',
+        contact: 'Alex T.',
+        channel: 'whatsapp',
+        dayIndex: 4,
+        slotIndex: 1,
+      },
+      {
+        id: 'c6',
+        title: 'Appel découverte',
+        contact: 'Nina K.',
+        channel: 'website',
+        dayIndex: 2,
+        slotIndex: 5,
+      },
+    ],
+  },
   performance: {
     ...aiEmployeeProductDemosEn.performance,
     badge: 'Réputation',
@@ -912,6 +1230,101 @@ export const aiEmployeeProductDemosFr: AiEmployeeProductDemosTranslations = {
     platformYelp: 'Yelp',
     platformWhatsapp: 'WhatsApp Business',
     platformBing: 'Bing Places',
+  },
+  adsManager: {
+    ...aiEmployeeProductDemosEn.adsManager,
+    badge: 'Croissance payante',
+    title: 'Tous vos comptes pub,',
+    titleHighlight: 'un seul poste de pilotage.',
+    subtitle:
+      'Lancez, mettez en pause et optimisez Meta, Google et les réseaux depuis le même espace, avec dépenses et ROAS reliés aux leads déjà capturés par l’IA.',
+    dashboardSubtitle: 'Employé IA · pubs & retargeting',
+    allTab: 'Toutes les campagnes',
+    activeTab: 'Actives',
+    pausedTab: 'En pause',
+    searchPlaceholder: 'Rechercher une campagne…',
+    createBtn: 'Nouvelle campagne',
+    syncLabel: 'Synchronisation des comptes pub',
+    headers: {
+      campaign: 'Campagne',
+      platform: 'Plateforme',
+      status: 'Statut',
+      spend: 'Dépenses (7j)',
+      roas: 'ROAS',
+      leads: 'Leads',
+      audience: 'Audience',
+    },
+    statuses: { active: 'Active', paused: 'En pause', learning: 'Apprentissage' },
+    platforms: {
+      meta: 'Meta Ads',
+      google: 'Google Ads',
+      instagram: 'Instagram',
+      linkedin: 'LinkedIn',
+      tiktok: 'TikTok',
+    },
+    optimizeToast: 'Budget réalloué vers le retargeting le plus performant',
+    campaigns: [
+      {
+        id: 'a1',
+        name: 'Retargeting RDV réservés',
+        platform: 'meta',
+        status: 'active',
+        spend: '842 €',
+        roas: '4,2×',
+        leads: 19,
+        audience: 'Visiteurs site · 14j',
+      },
+      {
+        id: 'a2',
+        name: 'Recherche locale haute intention',
+        platform: 'google',
+        status: 'active',
+        spend: '1 240 €',
+        roas: '3,8×',
+        leads: 24,
+        audience: 'Mots-clés service + ville',
+      },
+      {
+        id: 'a3',
+        name: 'Promo printemps · stories',
+        platform: 'instagram',
+        status: 'learning',
+        spend: '318 €',
+        roas: '2,1×',
+        leads: 8,
+        audience: 'Abonnés engagés',
+      },
+      {
+        id: 'a4',
+        name: 'Relance deals perdus',
+        platform: 'meta',
+        status: 'paused',
+        spend: '96 €',
+        roas: '1,4×',
+        leads: 3,
+        audience: 'Pipeline · sans réponse 30j',
+      },
+      {
+        id: 'a5',
+        name: 'Décideurs B2B',
+        platform: 'linkedin',
+        status: 'active',
+        spend: '560 €',
+        roas: '5,1×',
+        leads: 11,
+        audience: 'Poste + secteur',
+      },
+      {
+        id: 'a6',
+        name: 'Offre UGC · TikTok',
+        platform: 'tiktok',
+        status: 'active',
+        spend: '410 €',
+        roas: '3,3×',
+        leads: 14,
+        audience: 'Lookalike · acheteurs',
+      },
+    ],
   },
   tasks: {
     ...aiEmployeeProductDemosEn.tasks,

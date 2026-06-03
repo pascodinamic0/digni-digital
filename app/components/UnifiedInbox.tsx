@@ -5,7 +5,8 @@ import { useState } from 'react'
 import { useLanguage } from '@/app/context/LocaleContext'
 import { translations } from '@/app/config/translations'
 import { getJourneyPhaseTitle } from '@/lib/ai-receptionist-flow'
-import JourneyDemoHeader from '@/app/components/JourneyDemoHeader'
+import SoftwareDemoSection from '@/app/components/software/SoftwareDemoSection'
+import SoftwareModuleToolbar from '@/app/components/software/SoftwareModuleToolbar'
 import SocialPlatformIcon from './SocialPlatformIcon'
 
 type ConversationStatus = 'qualified' | 'appointment-booked' | 'in-progress' | 'follow-up' | 'new-lead'
@@ -96,288 +97,282 @@ const UnifiedInbox = () => {
     }
   }
 
+  const sw =
+    translations[language].aiEmployeeSoftware ?? translations.en.aiEmployeeSoftware
+  const hp = sw.heroPreview
+
+  const filterChips = [
+    t.statuses['new-lead'],
+    t.statuses.qualified,
+    t.statuses['appointment-booked'],
+  ]
+
   return (
-    <section className="py-24 bg-surface" aria-labelledby="inbox-title">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <JourneyDemoHeader
-          step={1}
-          journeyPhase={getJourneyPhaseTitle(language, 1)}
-          badge={t.badge}
-          title={t.title}
-          titleHighlight={t.titleHighlight}
-          subtitle={t.subtitle}
-          titleId="inbox-title"
+    <SoftwareDemoSection
+      step={1}
+      journeyPhase={getJourneyPhaseTitle(language, 1)}
+      badge={t.badge}
+      title={t.title}
+      titleHighlight={t.titleHighlight}
+      subtitle={t.subtitle}
+      titleId="inbox-title"
+      activeNav="conversations"
+      moduleTitle={sw.nav.conversations}
+    >
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        className="software-inbox-app"
+      >
+        <SoftwareModuleToolbar
+          title={t.dashboardTitle}
+          subtitle={t.activeCount}
+          statusLabel={t.activeStatus}
+          tabs={[
+            { id: 'inbox', label: hp.inboxTab, active: true },
+            { id: 'pipeline', label: hp.pipelineTab },
+          ]}
+          trailing={
+            <div className="hidden flex-wrap gap-1.5 sm:flex">
+              {filterChips.map((chip, i) => (
+                <span
+                  key={chip}
+                  className={`rounded-md px-2 py-1 text-[10px] font-medium md:text-[11px] ${
+                    i === 0
+                      ? 'bg-[var(--software-nav-active)] text-accent'
+                      : 'border border-[var(--software-border)] text-[var(--software-text-muted)]'
+                  }`}
+                >
+                  {chip}
+                </span>
+              ))}
+            </div>
+          }
         />
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.3 }}
-          className="relative overflow-hidden rounded-2xl md:rounded-3xl border border-border-light backdrop-blur-xl bg-gradient-to-br from-surface-light/80 via-surface/90 to-surface-light/80 shadow-demo-card max-w-6xl mx-auto"
-        >
-          {/* Gradient overlay for premium feel */}
-          <div className="absolute inset-0 bg-gradient-to-br from-success/5 via-transparent to-success/[0.08] pointer-events-none" />
-          
-          {/* Dashboard Header */}
-          <div className="relative bg-surface-light/50 backdrop-blur-sm border-b border-border p-4 md:p-6">
-            <div className="flex items-center justify-between flex-wrap gap-4">
-              <div className="flex items-center gap-3 md:gap-4">
-                <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-success to-success-light rounded-xl flex items-center justify-center shadow-lg shadow-demo-icon">
-                  <svg className="w-5 h-5 md:w-6 md:h-6 text-background" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M21 15C21 15.5304 20.7893 16.0391 20.4142 16.4142C20.0391 16.7893 19.5304 17 19 17H7L3 21V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H19C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V15Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </div>
-                <div>
-                  <h3 className="font-display text-lg md:text-xl font-bold">{t.dashboardTitle}</h3>
-                  <p className="text-muted text-xs md:text-sm">{t.dashboardSubtitle}</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-3 md:gap-6">
-                <div className="flex items-center gap-2">
-                  <div className="relative">
-                    <div className="w-2.5 h-2.5 bg-success rounded-full animate-pulse" />
-                    <div className="absolute inset-0 w-2.5 h-2.5 bg-success rounded-full animate-ping opacity-75" />
-                  </div>
-                  <span className="text-success text-xs md:text-sm font-medium">{t.activeStatus}</span>
-                </div>
-                <div className="hidden sm:block text-xs md:text-sm text-muted px-3 py-1.5 bg-surface/50 rounded-full border border-border">
-                  {t.activeCount}
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Main Content Area */}
-          <div className="relative flex flex-col md:flex-row min-h-[500px] md:h-[500px]">
-            {/* Conversations List */}
-            <div className={`${showConversationDetail ? 'hidden md:block' : 'block'} w-full md:w-2/5 lg:w-1/3 border-r border-border overflow-hidden flex flex-col`}>
-              {/* Search */}
-              <div className="p-3 md:p-4 border-b border-border">
-                <div className="flex items-center gap-2 text-sm text-muted bg-surface/50 rounded-xl px-4 py-2.5 border border-border focus-within:border-success/30 transition-colors">
-                  <svg className="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="11" cy="11" r="8" stroke="currentColor" strokeWidth="2"/>
-                    <path d="M21 21L16.65 16.65" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                  <input
-                    type="text"
-                    placeholder={t.searchPlaceholder}
-                    className="bg-transparent border-none outline-none flex-1 text-text placeholder-muted text-sm"
-                    aria-label={t.searchAriaLabel}
-                  />
-                </div>
-              </div>
-
-              {/* Conversation Items */}
-              <div className="flex-1 overflow-y-auto space-y-1 p-2" role="listbox" aria-label={t.listAriaLabel}>
-                {conversations.map((conv, index) => (
-                  <motion.button
-                    key={conv.id}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.05 }}
-                    onClick={() => handleConversationClick(index)}
-                    className={`w-full p-3 md:p-4 rounded-xl text-left transition-all duration-200 ${
-                      selectedConversation === index
-                        ? 'bg-gradient-to-r from-success/15 to-success/5 border border-success/30 shadow-lg shadow-demo-icon'
-                        : 'hover:bg-surface-light/50 border border-transparent'
-                    }`}
-                  >
-                    <div className="flex items-start gap-3">
-                      {/* Avatar with channel icon */}
-                      <div className="relative flex-shrink-0">
-                        <div className={`w-11 h-11 rounded-xl flex items-center justify-center font-semibold text-sm ${
-                          selectedConversation === index 
-                            ? 'bg-success/30 text-success' 
-                            : 'bg-success/10 text-success'
-                        }`}>
-                          {conv.avatar}
-                        </div>
-                        <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-surface rounded-md flex items-center justify-center text-xs shadow-sm border border-border-light">
-                          {getChannelIcon(conv.channelType)}
-                        </div>
-                      </div>
-                      
-                      <div className="flex-1 min-w-0">
-                        <div className="flex items-center justify-between mb-1 gap-2">
-                          <h4 className="font-semibold text-text text-sm truncate">{conv.contact}</h4>
-                          <span className="text-[10px] md:text-xs text-muted flex-shrink-0">{conv.time}</span>
-                        </div>
-                        
-                        <div className="flex items-center gap-2 mb-2">
-                          <span className={`text-[10px] px-2 py-0.5 rounded-full border ${getStatusColor(conv.status)}`}>
-                            {getStatusText(conv.status)}
-                          </span>
-                        </div>
-                        
-                        <p className="text-xs text-muted truncate">{conv.lastMessage}</p>
-                        
-                        {conv.unread > 0 && (
-                          <div className="flex justify-end mt-2">
-                            <span className="bg-success text-background text-[10px] w-5 h-5 rounded-full font-bold flex items-center justify-center shadow-lg shadow-demo-icon">
-                              {conv.unread}
-                            </span>
-                          </div>
-                        )}
-                      </div>
-                    </div>
-                  </motion.button>
-                ))}
+        <div className="software-inbox-panes min-h-0 flex-1">
+          <div
+            className={`software-inbox-list flex min-h-[280px] flex-col border-[var(--software-border)] md:min-h-0 md:w-[34%] md:max-w-[320px] md:border-r ${
+              showConversationDetail ? 'hidden md:flex' : 'flex w-full'
+            }`}
+          >
+            <div className="border-b border-[var(--software-border)] p-3">
+              <div className="flex items-center gap-2 rounded-lg border border-[var(--software-border)] bg-[var(--software-content)] px-3 py-2 text-sm text-[var(--software-text-muted)] focus-within:border-accent/40">
+                <svg className="h-4 w-4 shrink-0 opacity-60" viewBox="0 0 24 24" fill="none" aria-hidden>
+                  <circle cx="11" cy="11" r="8" stroke="currentColor" strokeWidth="2" />
+                  <path d="M21 21L16.65 16.65" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                </svg>
+                <input
+                  type="text"
+                  placeholder={t.searchPlaceholder}
+                  className="min-w-0 flex-1 border-none bg-transparent text-sm text-[var(--software-text)] outline-none placeholder:text-[var(--software-text-muted)]"
+                  aria-label={t.searchAriaLabel}
+                />
               </div>
             </div>
 
-            {/* Conversation Detail */}
-            <AnimatePresence mode="wait">
-              <motion.div 
-                key={selectedConversation}
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -20 }}
-                transition={{ duration: 0.2 }}
-                className={`${showConversationDetail ? 'block' : 'hidden md:block'} w-full md:w-3/5 lg:w-2/3 flex flex-col`}
-              >
-                {/* Conversation Header */}
-                <div className="p-3 md:p-4 border-b border-border bg-surface-light/30 backdrop-blur-sm">
-                  <div className="flex items-center gap-3">
-                    {/* Back button for mobile */}
-                    <button 
-                      onClick={() => setShowConversationDetail(false)}
-                      className="md:hidden w-9 h-9 rounded-lg bg-surface/50 border border-border-light flex items-center justify-center text-muted hover:text-text transition-colors"
-                    >
-                      <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                        <path d="M15 18l-6-6 6-6" />
-                      </svg>
-                    </button>
-                    
-                    <div className="relative">
-                      <div className="w-10 h-10 md:w-11 md:h-11 bg-success/20 rounded-xl flex items-center justify-center text-success font-semibold text-sm">
-                        {selectedConv.avatar}
+            <div className="flex-1 space-y-0.5 overflow-y-auto p-2" role="listbox" aria-label={t.listAriaLabel}>
+              {conversations.map((conv, index) => (
+                <motion.button
+                  key={conv.id}
+                  type="button"
+                  initial={{ opacity: 0, x: -12 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.04 }}
+                  onClick={() => handleConversationClick(index)}
+                  data-active={selectedConversation === index}
+                  className="software-conversation-row w-full rounded-lg p-2.5 text-left md:p-3"
+                >
+                  <div className="flex items-start gap-2.5">
+                    <div className="relative shrink-0">
+                      <div
+                        className={`flex h-10 w-10 items-center justify-center rounded-lg text-xs font-bold ${
+                          selectedConversation === index
+                            ? 'bg-accent/20 text-accent'
+                            : 'bg-[var(--software-content)] text-accent'
+                        }`}
+                      >
+                        {conv.avatar}
                       </div>
-                      <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-surface rounded-md flex items-center justify-center text-xs shadow-sm border border-border-light">
-                        {getChannelIcon(selectedConv.channelType)}
+                      <div className="absolute -bottom-0.5 -right-0.5 flex h-4 w-4 items-center justify-center rounded border border-[var(--software-border)] bg-[var(--software-panel)]">
+                        {getChannelIcon(conv.channelType)}
                       </div>
                     </div>
-                    <div className="flex-1 min-w-0">
-                      <h4 className="font-semibold text-text text-sm md:text-base truncate">{selectedConv.contact}</h4>
-                      <p className="text-xs text-muted">{selectedConv.channel}</p>
-                    </div>
-                    <span className={`px-3 py-1 rounded-full text-xs border ${getStatusColor(selectedConv.status)}`}>
-                      {getStatusText(selectedConv.status)}
-                    </span>
-                  </div>
-                </div>
-
-                {/* Messages Area */}
-                <div className="flex-1 p-4 space-y-4 overflow-y-auto bg-gradient-to-b from-transparent to-surface/30">
-                  {/* AI Message */}
-                  <div className="flex justify-start">
-                    <div className="flex items-start gap-2 max-w-[85%]">
-                      <div className="w-7 h-7 bg-gradient-to-br from-success to-success-light rounded-lg flex items-center justify-center mt-1 flex-shrink-0 shadow-lg shadow-demo-icon">
-                        <svg className="w-3.5 h-3.5 text-background" viewBox="0 0 24 24" fill="currentColor">
-                          <path d="M13 3L4 14h7v7l9-11h-7V3z"/>
-                        </svg>
+                    <div className="min-w-0 flex-1">
+                      <div className="mb-0.5 flex items-center justify-between gap-2">
+                        <h4 className="truncate text-xs font-semibold text-[var(--software-text)] md:text-[13px]">
+                          {conv.contact}
+                        </h4>
+                        <span className="shrink-0 text-[10px] text-[var(--software-text-muted)]">{conv.time}</span>
                       </div>
-                      <div>
-                        <div className="bg-gradient-to-br from-success/15 to-success/5 border border-success/20 px-4 py-3 rounded-2xl rounded-bl-md backdrop-blur-sm">
-                          <p className="text-sm text-text leading-relaxed">{t.detailMessages.aiIntro}</p>
-                        </div>
-                        <p className="text-[10px] text-muted mt-1.5 ml-1">{t.detailMessages.aiIntroMeta}</p>
-                      </div>
+                      <span
+                        className={`mb-1 inline-block rounded px-1.5 py-0.5 text-[9px] font-medium border ${getStatusColor(conv.status)}`}
+                      >
+                        {getStatusText(conv.status)}
+                      </span>
+                      <p className="truncate text-[11px] text-[var(--software-text-muted)]">{conv.lastMessage}</p>
                     </div>
+                    {conv.unread > 0 ? (
+                      <span className="flex h-5 min-w-5 shrink-0 items-center justify-center rounded-full bg-accent text-[10px] font-bold text-on-accent">
+                        {conv.unread}
+                      </span>
+                    ) : null}
                   </div>
-
-                  {/* User Message */}
-                  <div className="flex justify-end">
-                    <div className="max-w-[85%]">
-                      <div className="bg-gradient-to-br from-success to-success-light text-background px-4 py-3 rounded-2xl rounded-br-md shadow-lg shadow-demo-icon">
-                        <p className="text-sm leading-relaxed">{t.detailMessages.userRequest}</p>
-                      </div>
-                      <p className="text-[10px] text-muted mt-1.5 text-right mr-1">{t.detailMessages.userRequestTime}</p>
-                    </div>
-                  </div>
-
-                  {/* AI Message */}
-                  <div className="flex justify-start">
-                    <div className="flex items-start gap-2 max-w-[85%]">
-                      <div className="w-7 h-7 bg-gradient-to-br from-success to-success-light rounded-lg flex items-center justify-center mt-1 flex-shrink-0 shadow-lg shadow-demo-icon">
-                        <svg className="w-3.5 h-3.5 text-background" viewBox="0 0 24 24" fill="currentColor">
-                          <path d="M13 3L4 14h7v7l9-11h-7V3z"/>
-                        </svg>
-                      </div>
-                      <div>
-                        <div className="bg-gradient-to-br from-success/15 to-success/5 border border-success/20 px-4 py-3 rounded-2xl rounded-bl-md backdrop-blur-sm">
-                          <p className="text-sm text-text leading-relaxed">{t.detailMessages.aiFollowUp}</p>
-                        </div>
-                        <p className="text-[10px] text-muted mt-1.5 ml-1">{t.detailMessages.aiFollowUpMeta}</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* User Message */}
-                  <div className="flex justify-end">
-                    <div className="max-w-[85%]">
-                      <div className="bg-gradient-to-br from-success to-success-light text-background px-4 py-3 rounded-2xl rounded-br-md shadow-lg shadow-demo-icon">
-                        <p className="text-sm leading-relaxed">{selectedConv.lastMessage}</p>
-                      </div>
-                      <p className="text-[10px] text-muted mt-1.5 text-right mr-1">{selectedConv.time}</p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* AI Actions */}
-                <div className="p-3 md:p-4 border-t border-border bg-surface-light/30 backdrop-blur-sm">
-                  <div className="flex items-center gap-2 text-xs text-muted mb-3">
-                    <div className="w-5 h-5 bg-success/10 rounded-md flex items-center justify-center">
-                      <svg className="w-3 h-3 text-success" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M13 3L4 14h7v7l9-11h-7V3z"/>
-                      </svg>
-                    </div>
-                    <span>{t.suggestedActionsLabel}</span>
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <button className="px-3 py-1.5 bg-success/10 text-success text-xs rounded-lg border border-success/20 hover:bg-success/20 hover:border-success/40 transition-all duration-200 font-medium">
-                      {t.actionSchedule}
-                    </button>
-                    <button className="px-3 py-1.5 bg-success/10 text-success text-xs rounded-lg border border-success/20 hover:bg-success/20 hover:border-success/40 transition-all duration-200 font-medium">
-                      {t.actionPricing}
-                    </button>
-                    <button className="px-3 py-1.5 bg-info/10 text-info text-xs rounded-lg border border-info/20 hover:bg-info/20 hover:border-info/40 transition-all duration-200 font-medium">
-                      {t.actionCrm}
-                    </button>
-                  </div>
-                </div>
-              </motion.div>
-            </AnimatePresence>
+                </motion.button>
+              ))}
+            </div>
           </div>
-        </motion.div>
 
-        {/* Dashboard Stats */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.5 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6 mt-8 md:mt-12"
-        >
-          {(
-            t.stats
-          ).map((stat, i) => (
+          <AnimatePresence mode="wait">
             <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.6 + i * 0.1 }}
-              className={`text-center p-4 md:p-6 bg-gradient-to-br ${stat.card} rounded-xl md:rounded-2xl border backdrop-blur-sm`}
+              key={selectedConversation}
+              initial={{ opacity: 0, x: 16 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -12 }}
+              transition={{ duration: 0.2 }}
+              className={`software-inbox-thread flex min-h-[320px] min-w-0 flex-1 flex-col md:min-h-0 ${
+                showConversationDetail ? 'flex w-full' : 'hidden md:flex'
+              }`}
             >
-              <div className={`text-2xl md:text-3xl font-display font-bold ${stat.valueClass} mb-1 md:mb-2`}>{stat.value}</div>
-              <p className="text-muted text-xs md:text-sm">{stat.label}</p>
+              <div className="flex shrink-0 items-center gap-3 border-b border-[var(--software-border)] bg-[var(--software-panel)] px-3 py-3 md:px-4">
+                <button
+                  type="button"
+                  onClick={() => setShowConversationDetail(false)}
+                  className="flex h-8 w-8 items-center justify-center rounded-lg border border-[var(--software-border)] text-[var(--software-text-muted)] md:hidden"
+                  aria-label="Back to conversations"
+                >
+                  <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M15 18l-6-6 6-6" />
+                  </svg>
+                </button>
+                <div className="relative shrink-0">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-accent/15 text-sm font-bold text-accent">
+                    {selectedConv.avatar}
+                  </div>
+                  <div className="absolute -bottom-0.5 -right-0.5 flex h-4 w-4 items-center justify-center rounded border border-[var(--software-border)] bg-[var(--software-panel)]">
+                    {getChannelIcon(selectedConv.channelType)}
+                  </div>
+                </div>
+                <div className="min-w-0 flex-1">
+                  <h4 className="truncate text-sm font-semibold text-[var(--software-text)]">{selectedConv.contact}</h4>
+                  <p className="truncate text-[11px] text-[var(--software-text-muted)]">{selectedConv.channel}</p>
+                </div>
+                <span className={`shrink-0 rounded-full border px-2.5 py-1 text-[10px] font-medium ${getStatusColor(selectedConv.status)}`}>
+                  {getStatusText(selectedConv.status)}
+                </span>
+              </div>
+
+              <div className="flex-1 space-y-3 overflow-y-auto p-3 md:p-4">
+                <div className="flex justify-start">
+                  <div className="flex max-w-[88%] items-start gap-2">
+                    <div className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-md bg-accent/15 text-accent">
+                      <svg className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+                        <path d="M13 3L4 14h7v7l9-11h-7V3z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <div className="rounded-2xl rounded-bl-md border border-[var(--software-border)] bg-[var(--software-panel)] px-3.5 py-2.5">
+                        <p className="text-sm leading-relaxed text-[var(--software-text)]">{t.detailMessages.aiIntro}</p>
+                      </div>
+                      <p className="mt-1 ml-1 text-[10px] text-[var(--software-text-muted)]">{t.detailMessages.aiIntroMeta}</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="flex justify-end">
+                  <div className="max-w-[88%]">
+                    <div className="rounded-2xl rounded-br-md bg-accent px-3.5 py-2.5 text-on-accent">
+                      <p className="text-sm leading-relaxed">{t.detailMessages.userRequest}</p>
+                    </div>
+                    <p className="mt-1 mr-1 text-right text-[10px] text-[var(--software-text-muted)]">
+                      {t.detailMessages.userRequestTime}
+                    </p>
+                  </div>
+                </div>
+                <div className="flex justify-start">
+                  <div className="flex max-w-[88%] items-start gap-2">
+                    <div className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-md bg-accent/15 text-accent">
+                      <svg className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+                        <path d="M13 3L4 14h7v7l9-11h-7V3z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <div className="rounded-2xl rounded-bl-md border border-[var(--software-border)] bg-[var(--software-panel)] px-3.5 py-2.5">
+                        <p className="text-sm leading-relaxed text-[var(--software-text)]">{t.detailMessages.aiFollowUp}</p>
+                      </div>
+                      <p className="mt-1 ml-1 text-[10px] text-[var(--software-text-muted)]">{t.detailMessages.aiFollowUpMeta}</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="flex justify-end">
+                  <div className="max-w-[88%]">
+                    <div className="rounded-2xl rounded-br-md bg-accent px-3.5 py-2.5 text-on-accent">
+                      <p className="text-sm leading-relaxed">{selectedConv.lastMessage}</p>
+                    </div>
+                    <p className="mt-1 mr-1 text-right text-[10px] text-[var(--software-text-muted)]">{selectedConv.time}</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="shrink-0 border-t border-[var(--software-border)] bg-[var(--software-panel)] p-3 md:p-4">
+                <p className="mb-2 flex items-center gap-2 text-[11px] font-medium text-[var(--software-text-muted)]">
+                  <span className="flex h-5 w-5 items-center justify-center rounded bg-accent/10 text-accent">
+                    <svg className="h-3 w-3" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+                      <path d="M13 3L4 14h7v7l9-11h-7V3z" />
+                    </svg>
+                  </span>
+                  {t.suggestedActionsLabel}
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  <button
+                    type="button"
+                    className="rounded-lg border border-accent/25 bg-accent/10 px-3 py-1.5 text-[11px] font-semibold text-accent"
+                  >
+                    {t.actionSchedule}
+                  </button>
+                  <button
+                    type="button"
+                    className="rounded-lg border border-[var(--software-border)] bg-[var(--software-sidebar)] px-3 py-1.5 text-[11px] font-medium text-[var(--software-text)]"
+                  >
+                    {t.actionPricing}
+                  </button>
+                  <button
+                    type="button"
+                    className="rounded-lg border border-[var(--software-border)] bg-[var(--software-sidebar)] px-3 py-1.5 text-[11px] font-medium text-[var(--software-text)]"
+                  >
+                    {t.actionCrm}
+                  </button>
+                </div>
+              </div>
             </motion.div>
-          ))}
-        </motion.div>
-      </div>
-    </section>
+          </AnimatePresence>
+
+          <aside className="software-inbox-rail hidden min-h-0 w-[220px] shrink-0 flex-col border-l xl:flex">
+            <div className="border-b border-[var(--software-border)] px-4 py-3">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.12em] text-[var(--software-text-muted)]">
+                {t.dashboardSubtitle}
+              </p>
+            </div>
+            <div className="flex-1 space-y-3 overflow-y-auto p-3">
+              {t.stats.slice(0, 3).map((stat) => (
+                <div
+                  key={stat.label}
+                  className="rounded-lg border border-[var(--software-border)] bg-[var(--software-sidebar)] p-3"
+                >
+                  <p className={`font-display text-lg font-bold tabular-nums ${stat.valueClass}`}>{stat.value}</p>
+                  <p className="mt-0.5 text-[10px] text-[var(--software-text-muted)]">{stat.label}</p>
+                </div>
+              ))}
+              <div className="rounded-lg border border-accent/25 bg-accent/10 p-3">
+                <p className="text-[10px] font-semibold uppercase tracking-wide text-accent">{t.activeStatus}</p>
+                <p className="mt-1 text-xs leading-relaxed text-[var(--software-text-muted)]">{t.activeCount}</p>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </motion.div>
+    </SoftwareDemoSection>
   )
 }
 

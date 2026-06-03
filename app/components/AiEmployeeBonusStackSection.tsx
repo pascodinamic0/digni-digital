@@ -10,7 +10,7 @@ export default function AiEmployeeBonusStackSection() {
   const t = translations[language].aiEmployeePage.bonusStack
 
   return (
-    <AnimatedSection id="bonus-stack" className="py-24 bg-background">
+    <AnimatedSection id="bonus-stack" className="border-b border-[var(--software-border)] py-16 md:py-20">
       <div className="max-w-4xl mx-auto px-6">
         <div className="text-center mb-12">
           <span className="inline-block px-4 py-2 bg-success/10 border border-success/25 rounded-full text-success text-xs font-semibold uppercase tracking-wide mb-4">

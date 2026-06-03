@@ -69,19 +69,16 @@ export type AiEmployeePageTranslations = {
     solution: string
     outcomesHeading: string
     results: [ResultLine, ResultLine, ResultLine, ResultLine]
+    expandStory: string
+    collapseStory: string
   }
   pricing: {
     title: string
     subtitle: string
-    valueAnchor: {
-      heading: string
-      lineItems: [{ label: string; value: string }, { label: string; value: string }, { label: string; value: string }, { label: string; value: string }]
-      totalLabel: string
-      totalValue: string
-      investmentLabel: string
-      investmentDetail: string
-      investmentNote: string
-    }
+    /** Shown on the product page before assessment (no dollar amounts). */
+    assessmentNote: string
+    assessmentCta: string
+    investmentNote: string
     planName: string
     limitedLabel: string
     setupFee: string
@@ -90,12 +87,9 @@ export type AiEmployeePageTranslations = {
     setupLabel: string
     /** Short promo line (e.g. limited-time fee removal). */
     setupFeePromo: string
-    /** Line above the live countdown during the promo. */
-    setupPromoCountdownLead: string
     monthlyLabel: string
     price: string
     period: string
-    note: string
     cta: string
   }
   valueBadges: {
@@ -145,16 +139,14 @@ export type AiEmployeePageTranslations = {
     prefix: string
     currentlyLabel: string
     spotsSuffix: string
+    /** Hero/pricing one-liner after the count, e.g. "slots left in {month} · max 5/month" */
+    inlineSuffix: string
   }
   finalCta: {
-    badge: string
     title: string
     titleHighlight: string
     subtitle: string
     primaryCta: string
-    bullet1: string
-    bullet2: string
-    bullet3: string
   }
 }
 
@@ -166,13 +158,13 @@ type ResultLine = { metric: string; description: string }
 
 export const aiEmployeePageEn: AiEmployeePageTranslations = {
   hero: {
-    badge: '48-Hour AI Booking Loop',
-    titleLine1:
-      'The 48-Hour AI Booking Loop: Capture, Qualify, and Schedule 24/7 for Premium Service Businesses—Automatically',
-    titleHighlight: '',
-    hook: 'For premium service businesses. We install and run the loop so every paid lead gets answered, qualified, and booked—without manual follow-up.',
+    badge: 'Service growth infrastructure',
+    titleLine1: 'Install once—then never',
+    titleHighlight: 'answer DMs, send booking links, or chase follow-ups again.',
+    hook:
+      'The only done-for-you loop that captures, qualifies, books, upsells, and follows up on every paid lead—while you run the service. Turn on ads: same spend, a pipeline that does not leak.',
     primaryCta: 'Take the 2-Minute Fit Check',
-    footnote: '5 partner slots/month · <2s response · 48-hour live deployment',
+    footnote: '15 qualified appointments in 30 days—or we work free until you hit it. We take the risk.',
   },
   valueBadges: {
     ariaLabel: 'Speed, deployment, and effort guarantees',
@@ -226,17 +218,17 @@ export const aiEmployeePageEn: AiEmployeePageTranslations = {
     stats: [
       {
         value: '40%',
-        label: 'of inbound touches go unanswered',
+        label: 'inbound touches unanswered',
         hint: 'Paid attention evaporates when nobody picks up the thread.',
       },
       {
         value: '78%',
-        label: 'buy from whoever responds first',
+        label: 'buy from first responder',
         hint: 'Speed isn’t a nice-to-have, it’s the scoreboard.',
       },
       {
         value: '5 min',
-        label: 'is the window that matters',
+        label: 'response window',
         hint: 'Wait too long and the “hot lead” is already talking to someone else.',
       },
     ],
@@ -325,6 +317,8 @@ export const aiEmployeePageEn: AiEmployeePageTranslations = {
       { metric: '18h', description: 'From decision to live, so results start immediately.' },
       { metric: '85%', description: 'Stronger conversion when response time matches buyer urgency.' },
     ],
+    expandStory: 'Read full case study',
+    collapseStory: 'Show less',
   },
   bonusStack: {
     badge: 'Included free',
@@ -354,67 +348,50 @@ export const aiEmployeePageEn: AiEmployeePageTranslations = {
   guarantee: {
     badge: 'Conditional service guarantee',
     title: 'We take the risk—not you.',
-    body: 'If you do not book at least 15 qualified appointments in your first 30 days of ads, we will work for free until you do. No questions asked.',
+    body: '15 qualified appointments in 30 days—or we work free until you hit it.',
   },
   scarcity: {
-    prefix:
-      'We only accept 5 new premium partners per month to maintain 18-hour deployment speeds.',
+    prefix: 'Limited to 5 premium partners per month.',
     currentlyLabel: 'Currently:',
     spotsSuffix: 'spots remaining for',
+    inlineSuffix: 'premium slots left in {month} · max 5/month',
   },
   pricing: {
-    title: 'Premium partnership investment',
-    subtitle:
-      'Protect the revenue you already paid to create. One strong client often covers the full first-month investment.',
-    valueAnchor: {
-      heading: 'Total value before your investment',
-      lineItems: [
-        { label: 'AI Booking Loop System (done-with-you)', value: '$2,353' },
-        { label: "The 'No-Show' Recovery System", value: '$1,500' },
-        { label: 'The 5-Star Reputation Engine', value: '$997' },
-        { label: 'The CRM Integration Vault', value: '$500' },
-      ],
-      totalLabel: 'Total value',
-      totalValue: '$5,350+',
-      investmentLabel: 'Your investment',
-      investmentDetail: '$2,000 setup + $500/mo',
-      investmentNote: 'First month ≈ $2,500 · protects paid demand you already fund',
-    },
-    planName: 'AI Booking Loop · Done-with-you',
-    limitedLabel: 'Limited partnership slots (one per market when we commit)',
+    title: 'Ready when the numbers make sense',
+    subtitle: 'We install one loop—setup plus monthly—only after your fit assessment shows the leak, the upside, and what the system costs.',
+    assessmentNote:
+      'Your personalized report spells out what slow follow-up is costing you, what recovery looks like with the loop live, and the all-in investment—before you pay.',
+    assessmentCta: 'Run the fit assessment',
+    investmentNote: 'Dollar amounts unlock in your results—not on this page.',
+    planName: 'AI Booking Loop',
+    limitedLabel: 'Limited partner slots',
     setupFee: '$2,000',
     setupFeeWaivedDisplay: '$0',
-    setupLabel: 'one-time setup',
-    setupFeePromo: 'During May, this setup fee is removed.',
-    setupPromoCountdownLead: 'Offer ends in',
+    setupLabel: 'Setup',
+    setupFeePromo: 'Setup waived — ends in',
     monthlyLabel: 'Monthly',
     price: '$500',
-    period: '/month',
-    note: 'If you invest in demand, the math is simple: protect the revenue you already pay to create.',
-    cta: 'Book Your Growth System Audit',
+    period: '/mo',
+    cta: 'Book a fit call',
   },
   finalCta: {
-    badge: 'The decision',
-    title: 'Every day without the loop',
-    titleHighlight: 'donates leads to silence.',
-    subtitle:
-      'Book your Growth System Audit. We map the leak, show the 48-hour install plan, and confirm fit before you commit.',
-    primaryCta: 'Claim Your Partner Spot',
-    bullet1: 'One audit, one clear yes/no on fit',
-    bullet2: 'About 30 minutes, no pitch deck marathon',
-    bullet3: 'We only take partners we can get to 15+ qualified bookings',
+    title: 'Stop losing leads',
+    titleHighlight: 'to silence.',
+    subtitle: 'Book a 30-minute fit call. We map the leak and confirm the loop is right for you.',
+    primaryCta: 'Book a fit call',
   },
 }
 
 export const aiEmployeePageFr: AiEmployeePageTranslations = {
   hero: {
-    badge: 'Boucle de réservation IA · 48 h',
-    titleLine1:
-      'La boucle de réservation IA en 48 h : capter, qualifier et planifier 24/7 pour les entreprises de services premium—automatiquement',
-    titleHighlight: '',
-    hook: 'Pour les entreprises de services premium. Nous installons et exploitons la boucle pour que chaque lead payant soit traité, qualifié et réservé—sans relances manuelles.',
+    badge: 'Infrastructure de croissance pour services',
+    titleLine1: 'Une fois installée—plus jamais',
+    titleHighlight: 'de répondre aux DM, envoyer un lien, ni relancer à la main.',
+    hook:
+      'La seule boucle clé en main qui capte, qualifie, réserve, relance et fait monter le panier sur chaque lead payant—pendant que vous livrez le service. Ajoutez la pub : même budget, zéro fuite.',
     primaryCta: 'Faire le test de compatibilité (2 min)',
-    footnote: '5 partenaires/mois · réponse <2 s · déploiement en 48 h',
+    footnote:
+      '15 RDV qualifiés en 30 jours—sinon on travaille gratuitement jusqu’au seuil. Le risque est pour nous.',
   },
   valueBadges: {
     ariaLabel: 'Garanties de vitesse et de déploiement',
@@ -565,6 +542,8 @@ export const aiEmployeePageFr: AiEmployeePageTranslations = {
       { metric: '18 h', description: 'De la décision au live, les résultats commencent tout de suite.' },
       { metric: '85 %', description: 'Meilleure conversion quand le délai suit l’urgence de l’acheteur.' },
     ],
+    expandStory: 'Lire l’étude complète',
+    collapseStory: 'Réduire',
   },
   bonusStack: {
     badge: 'Inclus gratuitement',
@@ -594,67 +573,51 @@ export const aiEmployeePageFr: AiEmployeePageTranslations = {
   guarantee: {
     badge: 'Garantie de service conditionnelle',
     title: 'Nous prenons le risque—not vous.',
-    body: 'Si vous n’obtenez pas au moins 15 rendez-vous qualifiés dans les 30 premiers jours de publicité, nous travaillons gratuitement jusqu’à ce que ce soit le cas. Sans condition cachée.',
+    body: '15 RDV qualifiés en 30 jours—sinon nous travaillons gratuitement jusqu’à atteindre ce seuil.',
   },
   scarcity: {
-    prefix:
-      'Nous n’acceptons que 5 nouveaux partenaires premium par mois pour maintenir des déploiements en 18 heures.',
+    prefix: 'Limité à 5 partenaires premium par mois.',
     currentlyLabel: 'Actuellement :',
     spotsSuffix: 'places restantes pour',
+    inlineSuffix: 'places premium en {month} · max 5/mois',
   },
   pricing: {
-    title: 'Investissement partenariat premium',
+    title: 'Prêt quand les chiffres sont clairs',
     subtitle:
-      'Protégez le revenu que vous payez déjà pour créer. Un bon client couvre souvent le premier mois.',
-    valueAnchor: {
-      heading: 'Valeur totale avant votre investissement',
-      lineItems: [
-        { label: 'Système boucle de réservation IA (clé en main)', value: '2 353 $' },
-        { label: 'Système anti « no-show »', value: '1 500 $' },
-        { label: 'Moteur de réputation 5 étoiles', value: '997 $' },
-        { label: 'Coffre d’intégrations CRM', value: '500 $' },
-      ],
-      totalLabel: 'Valeur totale',
-      totalValue: '5 350 $+',
-      investmentLabel: 'Votre investissement',
-      investmentDetail: '2 000 $ mise en place + 500 $/mois',
-      investmentNote: 'Premier mois ≈ 2 500 $ · protège la demande payante que vous financez',
-    },
-    planName: 'Boucle de réservation IA · clé en main',
-    limitedLabel: 'Places limitées (un partenariat par marché quand on s’engage)',
+      'Une seule boucle—mise en place et mensuel—après que l’évaluation fit montre la fuite, le potentiel et le coût du système.',
+    assessmentNote:
+      'Votre rapport détaille ce que les lenteurs vous coûtent, ce que la reprise avec la boucle peut rapporter, et l’investissement global—avant tout paiement.',
+    assessmentCta: 'Lancer l’évaluation fit',
+    investmentNote: 'Les montants s’affichent dans vos résultats—pas sur cette page.',
+    planName: 'Boucle de réservation IA',
+    limitedLabel: 'Places partenaires limitées',
     setupFee: '2 000 $',
     setupFeeWaivedDisplay: '0 $',
-    setupLabel: 'mise en place unique',
-    setupFeePromo: 'En mai, les frais de mise en place sont offerts.',
-    setupPromoCountdownLead: "Fin de l'offre dans",
+    setupLabel: 'Mise en place',
+    setupFeePromo: 'Mise en place offerte — fin dans',
     monthlyLabel: 'Mensuel',
     price: '500 $',
     period: '/mois',
-    note: 'Si vous investissez dans la demande, le calcul est simple : protégez le revenu que vous payez déjà pour créer.',
-    cta: 'Réserver votre audit Growth System',
+    cta: 'Réserver un appel fit',
   },
   finalCta: {
-    badge: 'La décision',
-    title: 'Chaque jour sans la boucle',
-    titleHighlight: 'offre des leads au silence.',
-    subtitle:
-      'Réservez votre audit Growth System. Nous cartographions la fuite, le plan d’installation 48 h, et validons le fit avant engagement.',
-    primaryCta: 'Réserver votre place partenaire',
-    bullet1: 'Un audit, un oui/non clair sur le fit',
-    bullet2: 'Environ 30 minutes, sans marathon de slides',
-    bullet3: 'Nous ne prenons que des partenaires capables d’atteindre 15+ RDV qualifiés',
+    title: 'Arrêtez de perdre des leads',
+    titleHighlight: 'dans le silence.',
+    subtitle: 'Réservez un appel fit de 30 min. Nous cartographions la fuite et validons que la boucle vous convient.',
+    primaryCta: 'Réserver un appel fit',
   },
 }
 
 export const aiEmployeePageDe: AiEmployeePageTranslations = {
   hero: {
-    badge: 'KI-Buchungs-Loop · 48 Std.',
-    titleLine1:
-      'Der 48-Stunden-KI-Buchungs-Loop: Erfassen, qualifizieren und planen 24/7 für Premium-Dienstleister—automatisch',
-    titleHighlight: '',
-    hook: 'Für Premium-Dienstleister. Wir installieren und betreiben den Loop, damit jeder bezahlte Lead beantwortet, qualifiziert und gebucht wird—ohne manuelles Nachfassen.',
+    badge: 'Wachstums-Infrastruktur für Services',
+    titleLine1: 'Einmal installiert—nie wieder',
+    titleHighlight: 'DMs beantworten, Buchungslinks schicken oder nachfassen.',
+    hook:
+      'Der einzige Done-for-you-Loop, der jeden bezahlten Lead erfasst, qualifiziert, bucht, nachfasst und Upsell fährt—während Sie den Service liefern. Ads dazu: gleiches Budget, keine Lecks.',
     primaryCta: '2-Minuten-Passungstest starten',
-    footnote: '5 Partner/Monat · <2s Antwort · Live in 48 Stunden',
+    footnote:
+      '15 qualifizierte Termine in 30 Tagen—oder wir arbeiten gratis, bis Sie sie haben. Das Risiko tragen wir.',
   },
   valueBadges: {
     ariaLabel: 'Geschwindigkeits- und Setup-Garantien',
@@ -805,6 +768,8 @@ export const aiEmployeePageDe: AiEmployeePageTranslations = {
       { metric: '18h', description: 'Von Entscheidung zu live, Ergebnisse starten sofort.' },
       { metric: '85%', description: 'Bessere Conversion, wenn das Tempo zur Dringlichkeit passt.' },
     ],
+    expandStory: 'Vollständige Fallstudie lesen',
+    collapseStory: 'Weniger anzeigen',
   },
   bonusStack: {
     badge: 'Kostenlos inklusive',
@@ -834,66 +799,51 @@ export const aiEmployeePageDe: AiEmployeePageTranslations = {
   guarantee: {
     badge: 'Bedingte Service-Garantie',
     title: 'Wir tragen das Risiko—nicht Sie.',
-    body: 'Wenn Sie in den ersten 30 Tagen Werbung nicht mindestens 15 qualifizierte Termine buchen, arbeiten wir kostenlos weiter, bis Sie es tun. Ohne Wenn und Aber.',
+    body: '15 qualifizierte Termine in 30 Tagen—sonst arbeiten wir kostenlos, bis Sie es schaffen.',
   },
   scarcity: {
-    prefix:
-      'Wir nehmen nur 5 neue Premium-Partner pro Monat an, um 18-Stunden-Deployments aufrechtzuerhalten.',
+    prefix: 'Max. 5 Premium-Partner pro Monat.',
     currentlyLabel: 'Aktuell:',
     spotsSuffix: 'Plätze frei für',
+    inlineSuffix: 'Premium-Plätze in {month} · max. 5/Monat',
   },
   pricing: {
-    title: 'Premium-Partnerschaftsinvestition',
-    subtitle: 'Schützen Sie den Umsatz, den Sie schon bezahlen, um Nachfrage zu erzeugen.',
-    valueAnchor: {
-      heading: 'Gesamtwert vor Ihrer Investition',
-      lineItems: [
-        { label: 'KI-Buchungs-Loop-System (Done-with-you)', value: '$2,353' },
-        { label: 'No-Show-Wiederherstellung', value: '$1,500' },
-        { label: '5-Sterne-Reputation Engine', value: '$997' },
-        { label: 'CRM-Integrations-Vault', value: '$500' },
-      ],
-      totalLabel: 'Gesamtwert',
-      totalValue: '$5,350+',
-      investmentLabel: 'Ihre Investition',
-      investmentDetail: '$2,000 Setup + $500/Monat',
-      investmentNote: 'Erster Monat ≈ $2,500 · schützt bezahlte Nachfrage',
-    },
-    planName: 'KI-Buchungs-Loop · Done-with-you',
-    limitedLabel: 'Begrenzte Partnerschaft (einer pro Markt bei Commitment)',
+    title: 'Bereit, wenn die Zahlen passen',
+    subtitle:
+      'Ein Loop—Einrichtung plus monatlich—erst nach dem Fit-Assessment mit Leck, Potenzial und Systemkosten.',
+    assessmentNote:
+      'Ihr Report zeigt, was langsames Follow-up kostet, was mit aktivem Loop möglich ist und die Gesamtinvestition—vor der Zahlung.',
+    assessmentCta: 'Fit-Assessment starten',
+    investmentNote: 'Beträge sehen Sie in den Ergebnissen—nicht hier.',
+    planName: 'KI-Buchungs-Loop',
+    limitedLabel: 'Begrenzte Partnerplätze',
     setupFee: '2.000 $',
     setupFeeWaivedDisplay: '0 $',
-    setupLabel: 'einmalige Einrichtung',
-    setupFeePromo: 'Im Mai entfällt die einmalige Einrichtungsgebühr.',
-    setupPromoCountdownLead: 'Angebot endet in',
+    setupLabel: 'Einrichtung',
+    setupFeePromo: 'Einrichtung entfällt — endet in',
     monthlyLabel: 'Monatlich',
     price: '500 $',
     period: '/Monat',
-    note: 'Wenn Sie in Nachfrage investieren, ist die Rechnung einfach: schützen Sie den Umsatz, den Sie schon bezahlen, um zu erzeugen.',
-    cta: 'Growth-System-Audit buchen',
+    cta: 'Fit-Call buchen',
   },
   finalCta: {
-    badge: 'Die Entscheidung',
-    title: 'Jeder Tag ohne Loop',
-    titleHighlight: 'verschenkt Leads an Stille.',
-    subtitle:
-      'Buchen Sie Ihr Growth-System-Audit. Wir kartieren das Leck, den 48h-Plan, und prüfen den Fit vor dem Commit.',
-    primaryCta: 'Partnerplatz sichern',
-    bullet1: 'Ein Audit, ein klares Ja/Nein zum Fit',
-    bullet2: 'Ca. 30 Minuten, kein Pitch-Marathon',
-    bullet3: 'Nur Partner, bei denen 15+ qualifizierte Termine realistisch sind',
+    title: 'Keine Leads mehr',
+    titleHighlight: 'im Stille-Modus.',
+    subtitle: 'Buchen Sie einen 30-Minuten-Fit-Call. Wir kartieren das Leck und prüfen, ob der Loop passt.',
+    primaryCta: 'Fit-Call buchen',
   },
 }
 
 export const aiEmployeePageEs: AiEmployeePageTranslations = {
   hero: {
-    badge: 'Loop de reservas IA · 48h',
-    titleLine1:
-      'El loop de reservas IA en 48 horas: capturar, calificar y agendar 24/7 para negocios de servicios premium—automáticamente',
-    titleHighlight: '',
-    hook: 'Para negocios de servicios premium. Instalamos y operamos el loop para que cada lead pagado sea atendido, calificado y agendado—sin seguimiento manual.',
+    badge: 'Infraestructura de crecimiento para servicios',
+    titleLine1: 'Instálalo una vez—y nunca más',
+    titleHighlight: 'contestar DMs, mandar enlaces de reserva ni perseguir seguimientos.',
+    hook:
+      'El único loop llave en mano que captura, califica, agenda, hace upsell y da seguimiento a cada lead pagado—mientras tú entregas el servicio. Activa anuncios: mismo gasto, pipeline sin fugas.',
     primaryCta: 'Hacer el test de compatibilidad (2 min)',
-    footnote: '5 socios/mes · respuesta <2s · despliegue en 48 horas',
+    footnote:
+      '15 citas calificadas en 30 días—o trabajamos gratis hasta lograrlas. El riesgo es nuestro.',
   },
   valueBadges: {
     ariaLabel: 'Garantías de velocidad y configuración',
@@ -1044,6 +994,8 @@ export const aiEmployeePageEs: AiEmployeePageTranslations = {
       { metric: '18h', description: 'De decisión a en vivo, el impacto empieza ya.' },
       { metric: '85%', description: 'Mejor conversión cuando el tiempo sigue la urgencia del comprador.' },
     ],
+    expandStory: 'Leer caso completo',
+    collapseStory: 'Mostrar menos',
   },
   bonusStack: {
     badge: 'Incluido gratis',
@@ -1073,66 +1025,50 @@ export const aiEmployeePageEs: AiEmployeePageTranslations = {
   guarantee: {
     badge: 'Garantía de servicio condicional',
     title: 'Nosotros asumimos el riesgo—no usted.',
-    body: 'Si no agenda al menos 15 citas calificadas en sus primeros 30 días de anuncios, trabajamos gratis hasta lograrlo. Sin letra pequeña.',
+    body: '15 citas calificadas en 30 días—o trabajamos gratis hasta lograrlo.',
   },
   scarcity: {
-    prefix:
-      'Solo aceptamos 5 nuevos socios premium al mes para mantener despliegues en 18 horas.',
+    prefix: 'Máximo 5 socios premium al mes.',
     currentlyLabel: 'Actualmente:',
     spotsSuffix: 'plazas restantes para',
+    inlineSuffix: 'plazas premium en {month} · máx. 5/mes',
   },
   pricing: {
-    title: 'Inversión en alianza premium',
-    subtitle: 'Proteja el ingreso que ya paga por crear. Un buen cliente suele cubrir el primer mes.',
-    valueAnchor: {
-      heading: 'Valor total antes de su inversión',
-      lineItems: [
-        { label: 'Sistema loop de reservas IA (hecho con usted)', value: '$2,353' },
-        { label: "Sistema de recuperación 'No-Show'", value: '$1,500' },
-        { label: 'Motor de reputación 5 estrellas', value: '$997' },
-        { label: 'Bóveda de integración CRM', value: '$500' },
-      ],
-      totalLabel: 'Valor total',
-      totalValue: '$5,350+',
-      investmentLabel: 'Su inversión',
-      investmentDetail: '$2,000 setup + $500/mes',
-      investmentNote: 'Primer mes ≈ $2,500 · protege la demanda pagada',
-    },
-    planName: 'Loop de reservas IA · hecho con usted',
-    limitedLabel: 'Cupos limitados (una alianza por mercado cuando nos comprometemos)',
+    title: 'Listo cuando los números cuadran',
+    subtitle:
+      'Un solo loop—configuración y mensual—después de que la evaluación fit muestre la fuga, el potencial y el costo del sistema.',
+    assessmentNote:
+      'Su informe detalla lo que cuesta el seguimiento lento, lo que recupera con el loop activo y la inversión total—antes de pagar.',
+    assessmentCta: 'Hacer la evaluación fit',
+    investmentNote: 'Los montos aparecen en sus resultados—no en esta página.',
+    planName: 'Loop de reservas IA',
+    limitedLabel: 'Cupos de socio limitados',
     setupFee: '2.000 $',
     setupFeeWaivedDisplay: '0 $',
-    setupLabel: 'configuración única',
-    setupFeePromo: 'En mayo, se elimina el cargo único de configuración.',
-    setupPromoCountdownLead: 'La oferta termina en',
+    setupLabel: 'Configuración',
+    setupFeePromo: 'Configuración sin cargo — termina en',
     monthlyLabel: 'Mensual',
     price: '500 $',
     period: '/mes',
-    note: 'Si invierte en demanda, la cuenta es simple: proteja el ingreso que ya paga por crear.',
-    cta: 'Reservar su auditoría Growth System',
+    cta: 'Reservar llamada de fit',
   },
   finalCta: {
-    badge: 'La decisión',
-    title: 'كل يوم بلا الحلقة',
-    titleHighlight: 'يهدي العملاء للصمت.',
-    subtitle:
-      'احجز مراجعة Growth System. نرسم التسرّب وخطة 48 ساعة ونؤكد الملاءمة قبل الالتزام.',
-    primaryCta: 'احجز مقعد الشريك',
-    bullet1: 'مراجعة واحدة ونعم/لا واضح للملاءمة',
-    bullet2: 'نحو 30 دقيقة، بلا عرض طويل',
-    bullet3: 'نشارك فقط حيث 15+ موعداً مؤهلاً ممكن',
+    title: 'Deje de perder leads',
+    titleHighlight: 'en el silencio.',
+    subtitle: 'Reserve una llamada fit de 30 min. Mapeamos la fuga y confirmamos si el loop encaja.',
+    primaryCta: 'Reservar llamada fit',
   },
 }
 
 export const aiEmployeePageAr: AiEmployeePageTranslations = {
   hero: {
-    badge: 'حلقة الحجز بالذكاء · 48 ساعة',
-    titleLine1:
-      'حلقة الحجز بالذكاء الاصطناعي في 48 ساعة: التقاط وتأهيل وجدولة 24/7 لشركات الخدمات الراقية—تلقائياً',
-    titleHighlight: '',
-    hook: 'لشركات الخدمات الراقية. نثبت ونشغّل الحلقة حتى يُجاب كل عميل مدفوع ويُؤهل ويُحجز—من دون متابعة يدوية.',
+    badge: 'بنية نمو لأعمال الخدمات',
+    titleLine1: 'ثبّتها مرة—ولن',
+    titleHighlight: 'ترد على الرسائل أو ترسل روابط حجز أو تلاحق متابعة يدوياً.',
+    hook:
+      'الحلقة الوحيدة الجاهزة التي تلتقط وتؤهل وتحجز وترفع القيمة وتتابع كل عميل مدفوع—وأنت تقدّم الخدمة. أضف الإعلانات: نفس الإنفاق، خط بلا تسرّب.',
     primaryCta: 'ابدأ اختبار الملاءمة (دقيقتان)',
-    footnote: '5 شركاء/شهر · رد <2ث · نشر خلال 48 ساعة',
+    footnote: '15 موعداً مؤهلاً خلال 30 يوماً—أو نعمل مجاناً حتى تحققها. المخاطرة علينا.',
   },
   valueBadges: {
     ariaLabel: 'ضمانات السرعة والإعداد',
@@ -1283,6 +1219,8 @@ export const aiEmployeePageAr: AiEmployeePageTranslations = {
       { metric: '18س', description: 'من القرار إلى التشغيل, تبدأ النتائج فوراً.' },
       { metric: '85٪', description: 'تحويل أفضل عندما يواكب التوقيت إلحاح المشتري.' },
     ],
+    expandStory: 'اقرأ دراسة الحالة كاملة',
+    collapseStory: 'إظهار أقل',
   },
   bonusStack: {
     badge: 'مضمّن مجاناً',
@@ -1312,52 +1250,37 @@ export const aiEmployeePageAr: AiEmployeePageTranslations = {
   guarantee: {
     badge: 'ضمان خدمة مشروط',
     title: 'نحن نتحمل المخاطر—ليس أنت.',
-    body: 'إن لم تحجز 15 موعداً مؤهلاً على الأقل في أول 30 يوماً من الإعلانات، نعمل مجاناً حتى تحقق ذلك. بلا أسئلة.',
+    body: '15 موعداً مؤهلاً في 30 يوماً—أو نعمل مجاناً حتى تحقق ذلك.',
   },
   scarcity: {
-    prefix: 'نقبل 5 شركاء راقيين جدد شهرياً فقط للحفاظ على نشر خلال 18 ساعة.',
+    prefix: 'حد أقصى 5 شركاء راقيين شهرياً.',
     currentlyLabel: 'حالياً:',
     spotsSuffix: 'مقاعد متبقية لـ',
+    inlineSuffix: 'مقاعد متبقية في {month} · حد 5/شهر',
   },
   pricing: {
-    title: 'استثمار الشراكة الراقية',
-    subtitle: 'احمِ الإيراد الذي تدفع أصلاً لخلقه. عميل قوي يغطي غالباً الشهر الأول.',
-    valueAnchor: {
-      heading: 'إجمالي القيمة قبل استثمارك',
-      lineItems: [
-        { label: 'نظام حلقة الحجز بالذكاء (منفّذ معك)', value: '$2,353' },
-        { label: 'نظام استعادة عدم الحضور', value: '$1,500' },
-        { label: 'محرك السمعة 5 نجوم', value: '$997' },
-        { label: 'خزنة تكامل CRM', value: '$500' },
-      ],
-      totalLabel: 'إجمالي القيمة',
-      totalValue: '$5,350+',
-      investmentLabel: 'استثمارك',
-      investmentDetail: '$2,000 إعداد + $500/شهر',
-      investmentNote: 'الشهر الأول ≈ $2,500 · يحمي الطلب المدفوع',
-    },
-    planName: 'حلقة الحجز بالذكاء · منفّذ معك',
-    limitedLabel: 'شراكات محدودة (واحدة لكل سوق عند الالتزام)',
+    title: 'جاهزون عندما تتضح الأرقام',
+    subtitle:
+      'حلقة واحدة—إعداد وشهري—بعد أن يوضح تقييم الملاءمة التسرّب والفرصة وتكلفة النظام.',
+    assessmentNote:
+      'تقريرك يوضح تكلفة البطء في المتابعة، وما يمكن استرداده مع الحلقة، والاستثمار الكامل—قبل الدفع.',
+    assessmentCta: 'ابدأ تقييم الملاءمة',
+    investmentNote: 'المبالغ تظهر في نتائجك—وليس هنا.',
+    planName: 'حلقة الحجز بالذكاء',
+    limitedLabel: 'مقاعد شركاء محدودة',
     setupFee: '2,000 $',
     setupFeeWaivedDisplay: '0 $',
-    setupLabel: 'إعداد لمرة واحدة',
-    setupFeePromo: 'خلال شهر مايو، يُزال رسم الإعداد.',
-    setupPromoCountdownLead: 'تنتهي العرض خلال',
+    setupLabel: 'الإعداد',
+    setupFeePromo: 'الإعداد مجاني — ينتهي خلال',
     monthlyLabel: 'شهري',
     price: '500 $',
     period: '/شهر',
-    note: 'إذا استثمرت في الطلب، الحساب بسيط: احمِ الإيراد الذي تدفع أصلاً لخلقه.',
-    cta: 'احجز مراجعة Growth System',
+    cta: 'احجز مكالمة ملاءمة',
   },
   finalCta: {
-    badge: 'القرار',
-    title: 'كل يوم بلا الحلقة',
-    titleHighlight: 'يهدي العملاء للصمت.',
-    subtitle:
-      'احجز مراجعة Growth System. نرسم التسرّب وخطة 48 ساعة ونؤكد الملاءمة قبل الالتزام.',
-    primaryCta: 'احجز مقعد الشريك',
-    bullet1: 'مراجعة واحدة ونعم/لا واضح للملاءمة',
-    bullet2: 'نحو 30 دقيقة، بلا عرض طويل',
-    bullet3: 'نشارك فقط حيث 15+ موعداً مؤهلاً ممكن',
+    title: 'توقّف عن فقدان العملاء',
+    titleHighlight: 'في الصمت.',
+    subtitle: 'احجز مكالمة ملاءمة 30 دقيقة. نرسم التسرّب ونؤكد أن الحلقة مناسبة لك.',
+    primaryCta: 'احجز مكالمة ملاءمة',
   },
 }

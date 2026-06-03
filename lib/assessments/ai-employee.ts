@@ -92,34 +92,38 @@ const questions = [
   {
     id: 'leaked-leads',
     prompt:
-      'Honestly evaluate your front desk or team. How many leads slipped through the cracks last month because someone forgot to follow up, text back, or ask for a referral?',
+      'When someone shows real interest (call, DM, or form) but doesn’t book right away, what usually happens in the next 7 days?',
     choices: [
-      { id: 'zero', label: 'Zero (Unlikely)', points: 2 },
+      {
+        id: 'sequence',
+        label: 'Every lead gets a clear follow-up sequence until they book or opt out',
+        points: 2,
+      },
       {
         id: '1-5',
-        label: '1 to 5 leads',
+        label: 'We follow up most of the time, but a few still slip through',
         points: 7,
         insight: {
-          title: 'Small leaks add up at scale',
-          why: 'Even a handful of forgotten follow-ups per month compounds into thousands in lost LTV—especially when each lead was already warm.',
+          title: 'A few gaps still cost real LTV',
+          why: 'Even warm leads you already paid to acquire need a defined next step—not “we’ll get to it when things calm down.”',
         },
       },
       {
         id: '5-15',
-        label: '5 to 15 leads',
+        label: 'Follow-up is hit-or-miss—it depends who’s working that day',
         points: 9,
         insight: {
-          title: 'Your pipeline has a silent tax',
-          why: 'Double-digit leaks mean revenue you already paid to generate is walking out because process lives in people’s memory, not a system.',
+          title: 'Revenue shouldn’t depend on who’s on shift',
+          why: 'When follow-up lives in memory instead of a system, busy days become silent leak days—and ready buyers go cold.',
         },
       },
       {
         id: 'no-tracking',
-        label: 'Honestly, we have no tracking system to know',
+        label: 'We don’t have a consistent way to track who still needs follow-up',
         points: 10,
         insight: {
-          title: 'You cannot fix what you cannot see',
-          why: 'Without tracking, leaks feel random—but they are constant. Automation creates a paper trail for every inquiry, follow-up, and referral ask.',
+          title: 'You can’t recover leads you can’t see',
+          why: 'Without a trail for every inquiry, interested people disappear before anyone asks for the booking or referral. Automation creates that paper trail.',
         },
       },
     ],

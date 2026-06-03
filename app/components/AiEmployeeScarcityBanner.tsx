@@ -19,10 +19,27 @@ export default function AiEmployeeScarcityBanner({ className = '', variant = 'ca
     setSnapshot(getPartnerScarcity())
   }, [])
 
-  const spotsLine =
-    snapshot != null
-      ? `${snapshot.remaining}/${snapshot.total} ${s.spotsSuffix} ${snapshot.month}.`
-      : `2/5 ${s.spotsSuffix} ${new Date().toLocaleString(language === 'ar' ? 'ar' : language, { month: 'long' })}.`
+  const monthName =
+    snapshot?.month ??
+    new Date().toLocaleString(language === 'ar' ? 'ar' : language, { month: 'long' })
+  const remaining = snapshot?.remaining ?? 2
+  const total = snapshot?.total ?? 5
+
+  const spotsLine = `${remaining}/${total} ${s.spotsSuffix} ${monthName}.`
+
+  if (variant === 'inline') {
+    return (
+      <p
+        className={`text-xs sm:text-sm text-muted/75 leading-snug ${className}`}
+        aria-live="polite"
+      >
+        <span className="font-semibold text-warning">
+          {remaining}/{total}
+        </span>{' '}
+        {s.inlineSuffix.replace('{month}', monthName)}
+      </p>
+    )
+  }
 
   if (variant === 'compact') {
     return (
@@ -37,16 +54,12 @@ export default function AiEmployeeScarcityBanner({ className = '', variant = 'ca
 
   const content = (
     <>
-      <p className="text-sm md:text-base text-muted leading-relaxed">{s.prefix}</p>
-      <p className="mt-2 text-base md:text-lg font-semibold text-warning">
+      <p className="text-sm text-muted leading-snug">{s.prefix}</p>
+      <p className="mt-1.5 text-sm font-semibold text-warning">
         <span className="text-text">{s.currentlyLabel}</span> {spotsLine}
       </p>
     </>
   )
-
-  if (variant === 'inline') {
-    return <div className={className}>{content}</div>
-  }
 
   return (
     <div

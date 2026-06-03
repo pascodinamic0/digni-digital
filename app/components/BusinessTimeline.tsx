@@ -7,32 +7,6 @@ import { translations } from '@/app/config/translations'
 
 type ColorType = 'accent' | 'success' | 'info' | 'warning'
 
-const impactHighlightTones: Record<
-  ColorType,
-  { gradient: string; border: string; valueClass: string }
-> = {
-  accent: {
-    gradient: 'from-accent/10 to-accent/5',
-    border: 'border-accent/20',
-    valueClass: 'text-accent',
-  },
-  success: {
-    gradient: 'from-success/10 to-success/5',
-    border: 'border-success/20',
-    valueClass: 'text-success',
-  },
-  info: {
-    gradient: 'from-info/10 to-info/5',
-    border: 'border-info/20',
-    valueClass: 'text-info',
-  },
-  warning: {
-    gradient: 'from-warning/10 to-warning/5',
-    border: 'border-warning/20',
-    valueClass: 'text-warning',
-  },
-}
-
 interface Step {
   id: string
   title: string
@@ -192,6 +166,27 @@ const BusinessTimeline = () => {
     return colors[color] || colors.accent
   }
 
+  const renderStepOutcome = (
+    step: Step,
+    isCurrent: boolean,
+    colorClasses: ReturnType<typeof getColorClasses>,
+  ) => (
+    <div
+      className={`mt-3 border-t pt-3 ${
+        isCurrent ? colorClasses.border : 'border-border/60'
+      }`}
+    >
+      <p
+        className={`mb-1 text-[10px] font-bold uppercase tracking-wide leading-snug ${
+          isCurrent ? colorClasses.text : 'text-muted'
+        }`}
+      >
+        {step.outcomeTitle}
+      </p>
+      <p className="text-[11px] leading-snug text-muted xl:text-xs">{step.outcomeLine}</p>
+    </div>
+  )
+
   return (
     <section className="py-24" aria-labelledby="timeline-title">
       <div className="max-w-7xl mx-auto px-6">
@@ -292,12 +287,11 @@ const BusinessTimeline = () => {
                       }`}>
                         {step.title}
                       </h3>
-                      <p className="text-muted text-xs xl:text-sm mb-4 leading-relaxed min-h-[56px]">
+                      <p className="mb-3 text-muted text-xs leading-relaxed xl:text-sm">
                         {step.description}
                       </p>
 
-                      {/* Metrics */}
-                      <div className="flex flex-wrap gap-2">
+                      <div className="flex flex-wrap gap-1.5">
                         {step.metrics.map((metric, metricIndex) => (
                           <motion.span
                             key={metricIndex}
@@ -314,6 +308,8 @@ const BusinessTimeline = () => {
                           </motion.span>
                         ))}
                       </div>
+
+                      {renderStepOutcome(step, isCurrent, colorClasses)}
                     </motion.div>
                   </motion.div>
                 )
@@ -382,12 +378,11 @@ const BusinessTimeline = () => {
                     </h3>
                   </div>
                   
-                  <p className="text-muted text-sm mb-4 leading-relaxed">
+                  <p className="mb-3 text-muted text-sm leading-relaxed">
                     {step.description}
                   </p>
 
-                  {/* Metrics */}
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-1.5">
                     {step.metrics.map((metric, metricIndex) => (
                       <motion.span
                         key={metricIndex}
@@ -404,6 +399,8 @@ const BusinessTimeline = () => {
                       </motion.span>
                     ))}
                   </div>
+
+                  {renderStepOutcome(step, isCurrent, colorClasses)}
                 </motion.div>
               </motion.div>
             )
@@ -426,61 +423,6 @@ const BusinessTimeline = () => {
                   }`}
                   aria-label={`${t.viewStepLabel} ${index + 1}: ${step.title}`}
                 />
-              )
-            })}
-          </div>
-        </div>
-
-        {/* Outcomes: mirrors the six steps above (first touch → post-sale). */}
-        <div
-          className="mt-20 border-t border-border pt-16"
-          id="timeline-outcomes"
-          aria-labelledby="timeline-outcomes-heading"
-        >
-          <div className="text-center max-w-2xl mx-auto mb-10 md:mb-12">
-            <p className="text-accent font-medium text-sm uppercase tracking-wider mb-2">
-              {t.outcomesBadge}
-            </p>
-            <h3 id="timeline-outcomes-heading" className="font-display text-2xl md:text-3xl font-bold text-text">
-              {t.outcomesTitle}
-            </h3>
-            <p className="text-muted text-base mt-3 leading-relaxed">
-              {t.outcomesSubtitle}
-            </p>
-          </div>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {steps.map((step, i) => {
-              const tone = impactHighlightTones[step.color]
-              const colorClasses = getColorClasses(step.color, true)
-              return (
-                <motion.article
-                  key={step.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.06 * i + 0.2 }}
-                  className={`group relative flex flex-col gap-3 rounded-2xl border ${tone.border} bg-gradient-to-br ${tone.gradient} p-5 sm:p-6 text-left backdrop-blur-sm shadow-sm transition-shadow duration-300 hover:shadow-md`}
-                >
-                  <div className="flex items-center justify-between gap-3">
-                    <span
-                      className={`inline-flex h-9 min-w-[2.25rem] items-center justify-center rounded-lg text-sm font-bold tabular-nums ${colorClasses.bg} text-text`}
-                      aria-hidden
-                    >
-                      {String(i + 1).padStart(2, '0')}
-                    </span>
-                    <span
-                      className={`h-1 w-10 shrink-0 rounded-full ${colorClasses.bg} opacity-80`}
-                      aria-hidden
-                    />
-                  </div>
-                  <p className="text-xs font-semibold uppercase tracking-wide text-muted">
-                    {step.title}
-                  </p>
-                  <h4 className={`font-display text-lg sm:text-xl font-bold leading-snug ${tone.valueClass}`}>
-                    {step.outcomeTitle}
-                  </h4>
-                  <p className="text-sm text-muted leading-relaxed">{step.outcomeLine}</p>
-                </motion.article>
               )
             })}
           </div>

@@ -19,6 +19,14 @@ import {
   aiEmployeePageEs,
   aiEmployeePageFr,
 } from '@/app/i18n/aiEmployeePage'
+import type { AiEmployeeSoftwareTranslations } from '@/app/i18n/aiEmployeeSoftware'
+import {
+  aiEmployeeSoftwareAr,
+  aiEmployeeSoftwareDe,
+  aiEmployeeSoftwareEn,
+  aiEmployeeSoftwareEs,
+  aiEmployeeSoftwareFr,
+} from '@/app/i18n/aiEmployeeSoftware'
 import type { ServicesPageTranslations } from '@/app/i18n/servicesPage'
 import { servicesPageAr, servicesPageDe, servicesPageEn, servicesPageEs, servicesPageFr } from '@/app/i18n/servicesPage'
 
@@ -365,8 +373,10 @@ type ClientJourneyTranslations = {
   title: string
   subtitle: string
   subtext: string
-  /** How to read the animated funnel — shown above the demo */
-  readGuide: string
+  beforeSectionBadge: string
+  beforeSectionSubtext: string
+  afterSectionBadge: string
+  afterSectionSubtext: string
   brokenLabel: string
   aiFlowLabel: string
   /** Explains that counts are one 100-lead batch, per-stage pipeline size */
@@ -380,6 +390,8 @@ type ClientJourneyTranslations = {
   funnelLostBadge: string
   funnelReferralBadge: string
   funnelLeadsUnit: string
+  viewPipeline: string
+  hidePipeline: string
   channels: Array<{ id: string; label: string }>
   brokenStages: Array<{ step: number; title: string; description: string; leak: string }>
   aiStages: Array<{ step: number; title: string; description: string; win: string }>
@@ -466,6 +478,7 @@ export type TranslationKeys = CommonTranslations & {
   futureReadyGraduate: FutureReadyGraduateTranslations
   aiEmployeeProductDemos: AiEmployeeProductDemosTranslations
   aiEmployeePage: AiEmployeePageTranslations
+  aiEmployeeSoftware: AiEmployeeSoftwareTranslations
   servicesPage: ServicesPageTranslations
 }
 
@@ -2242,16 +2255,18 @@ function buildTranslations(): Record<Language, TranslationKeys> {
   }
 
   const clientJourneyEn: ClientJourneyTranslations = {
-    badge: 'Interactive pipeline · same 100 leads',
-    title: '100 Leads In.',
-    subtitle: 'Then 99 Leak—or 95 Close.',
+    badge: 'Same 100 leads',
+    title: '100 in.',
+    subtitle: '99 leak—or 95 close.',
     subtext:
       'Two funnels track one batch from Paid Ads, Website, Instagram, WhatsApp, and Phone. Each step’s big number is how many are still in your pipeline; red is who you lost right there.',
-    readGuide:
-      'Watch it animate step-by-step below, or switch The Leak (left) vs The Loop (right). Same 100 leads throughout—nothing new is added mid-funnel.',
+    beforeSectionBadge: 'Before',
+    beforeSectionSubtext: 'Manual intake, slow response, and handoffs—same 100 leads, most never make it through.',
+    afterSectionBadge: 'After',
+    afterSectionSubtext: 'One system captures, qualifies, books, and follows up—then referrals feed the loop.',
     brokenLabel: 'The Leak',
     aiFlowLabel: 'The Loop',
-    funnelLegend: 'Same 100-lead batch throughout · big number = still in pipeline after this step',
+    funnelLegend: 'One batch · big # = still in pipeline',
     funnelSectionIntake: 'Intake',
     funnelSectionConversion: 'Conversion',
     funnelSectionOutcome: 'Outcome & loop',
@@ -2261,6 +2276,8 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     funnelLostBadge: 'lost',
     funnelReferralBadge: 'referral',
     funnelLeadsUnit: 'leads',
+    viewPipeline: 'View interactive pipeline',
+    hidePipeline: 'Hide pipeline',
     channels: [
       { id: 'ads', label: 'Paid Ads' },
       { id: 'website', label: 'Website' },
@@ -2294,8 +2311,11 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     subtitle: 'Puis 99 perdus—ou 95 conclus.',
     subtext:
       'Deux embudos suivent un même lot (annonces, site, Instagram, WhatsApp, téléphone). À chaque étape, le grand chiffre = combien sont encore dans votre pipeline ; le rouge = ce que vous perdez sur l’étape.',
-    readGuide:
-      'L’animation défile étape par étape ci-dessous, ou basculez La fuite (gauche) / La boucle (droite). Les mêmes 100 leads du début à la fin.',
+    beforeSectionBadge: 'Avant',
+    beforeSectionSubtext:
+      'Réception manuelle, réponses lentes, transferts—les mêmes 100 leads, la plupart ne passent pas.',
+    afterSectionBadge: 'Après',
+    afterSectionSubtext: 'Un système capture, qualifie, réserve et relance—puis les parrainages alimentent la boucle.',
     brokenLabel: 'La fuite',
     aiFlowLabel: 'La boucle',
     funnelLegend: 'Même lot de 100 leads · grand chiffre = encore dans le pipeline après cette étape',
@@ -2308,6 +2328,8 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     funnelLostBadge: 'perdus',
     funnelReferralBadge: 'parrainage',
     funnelLeadsUnit: 'leads',
+    viewPipeline: 'Voir le pipeline interactif',
+    hidePipeline: 'Masquer le pipeline',
     channels: [
       { id: 'ads', label: 'Annonces payantes' },
       { id: 'website', label: 'Site web' },
@@ -2341,8 +2363,10 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     subtitle: 'ثم 99 يضيعون أو 95 يُغلقون.',
     subtext:
       'مساران يتتبعان دفعة واحدة (إعلانات، موقع، إنستغرام، واتساب، هاتف). في كل خطوة، الرقم الكبير = من ما زال في مسارك؛ الأحمر = من فُقد في تلك الخطوة.',
-    readGuide:
-      'شاهد الحركة خطوة بخطوة أدناه، أو قارن التسرب (يسار) والحلقة (يمين). نفس الـ100 من البداية للنهاية.',
+    beforeSectionBadge: 'قبل',
+    beforeSectionSubtext: 'استقبال يدوي، ردود بطيئة، وتسليمات—نفس الـ100، معظمهم لا يكملون.',
+    afterSectionBadge: 'بعد',
+    afterSectionSubtext: 'نظام واحد يلتقط ويؤهل ويحجز ويتابع—ثم الإحالات تغذي الحلقة.',
     brokenLabel: 'التسرب',
     aiFlowLabel: 'الحلقة',
     funnelLegend: 'نفس الدفعة من 100 · الرقم الكبير = ما زال في المسار بعد هذه الخطوة',
@@ -2355,6 +2379,8 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     funnelLostBadge: 'ضائع',
     funnelReferralBadge: 'إحالة',
     funnelLeadsUnit: 'leads',
+    viewPipeline: 'عرض المسار التفاعلي',
+    hidePipeline: 'إخفاء المسار',
     channels: [
       { id: 'ads', label: 'إعلانات مدفوعة' },
       { id: 'website', label: 'الموقع' },
@@ -2388,8 +2414,12 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     subtitle: 'Dann 99 verloren—oder 95 Abschluss.',
     subtext:
       'Zwei Trichter verfolgen eine Charge (Anzeigen, Website, Instagram, WhatsApp, Telefon). Pro Stufe zeigt die große Zahl, wie viele noch in der Pipeline sind; Rot = Verlust in genau diesem Schritt.',
-    readGuide:
-      'Unten läuft die Animation Schritt für Schritt, oder Leak (links) vs. Schleife (rechts) umschalten. Dieselben 100 Leads von Anfang bis Ende.',
+    beforeSectionBadge: 'Vorher',
+    beforeSectionSubtext:
+      'Manueller Eingang, langsame Antwort, Übergaben—dieselben 100 Leads, die meisten kommen nicht durch.',
+    afterSectionBadge: 'Nachher',
+    afterSectionSubtext:
+      'Ein System erfasst, qualifiziert, bucht und folgt nach—Empfehlungen speisen die Schleife.',
     brokenLabel: 'Der Verlust',
     aiFlowLabel: 'Die Schleife',
     funnelLegend: 'Dieselbe 100er-Charge · große Zahl = noch in der Pipeline nach dieser Stufe',
@@ -2402,6 +2432,8 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     funnelLostBadge: 'verloren',
     funnelReferralBadge: 'Empfehlung',
     funnelLeadsUnit: 'Leads',
+    viewPipeline: 'Interaktive Pipeline anzeigen',
+    hidePipeline: 'Pipeline ausblenden',
     channels: [
       { id: 'ads', label: 'Bezahlte Anzeigen' },
       { id: 'website', label: 'Website' },
@@ -2435,8 +2467,11 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     subtitle: 'Luego 99 se pierden—o 95 cierran.',
     subtext:
       'Dos embudos siguen un mismo lote (anuncios, web, Instagram, WhatsApp, teléfono). En cada paso, el número grande = cuántos siguen en tu pipeline; lo rojo = lo que perdiste ahí.',
-    readGuide:
-      'Mira la animación paso a paso abajo, o cambia La fuga (izquierda) / El bucle (derecha). Los mismos 100 leads de principio a fin.',
+    beforeSectionBadge: 'Antes',
+    beforeSectionSubtext:
+      'Entrada manual, respuesta lenta, traspasos—los mismos 100 leads, la mayoría no llega al final.',
+    afterSectionBadge: 'Después',
+    afterSectionSubtext: 'Un sistema captura, califica, reserva y hace seguimiento—las referencias alimentan el bucle.',
     brokenLabel: 'La fuga',
     aiFlowLabel: 'El bucle',
     funnelLegend: 'Mismo lote de 100 · número grande = aún en pipeline tras este paso',
@@ -2449,6 +2484,8 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     funnelLostBadge: 'perdidos',
     funnelReferralBadge: 'referido',
     funnelLeadsUnit: 'leads',
+    viewPipeline: 'Ver embudo interactivo',
+    hidePipeline: 'Ocultar embudo',
     channels: [
       { id: 'ads', label: 'Anuncios pagados' },
       { id: 'website', label: 'Sitio web' },
@@ -3352,11 +3389,11 @@ function buildTranslations(): Record<Language, TranslationKeys> {
   }
 
   return {
-    en: { ...commonEn, home: homeEn, blog: blogEn, about: aboutEn, contact: contactEn, clientJourney: clientJourneyEn, futureReadyGraduate: futureReadyGraduateEn, aiEmployeeProductDemos: aiEmployeeProductDemosEn, aiEmployeePage: aiEmployeePageEn, servicesPage: servicesPageEn },
-    fr: { ...commonFr, home: homeFr, blog: blogFr, about: aboutFr, contact: contactFr, clientJourney: clientJourneyFr, futureReadyGraduate: futureReadyGraduateFr, aiEmployeeProductDemos: aiEmployeeProductDemosFr, aiEmployeePage: aiEmployeePageFr, servicesPage: servicesPageFr },
-    ar: { ...commonAr, home: homeAr, blog: blogAr, about: aboutAr, contact: contactAr, clientJourney: clientJourneyAr, futureReadyGraduate: futureReadyGraduateAr, aiEmployeeProductDemos: aiEmployeeProductDemosAr, aiEmployeePage: aiEmployeePageAr, servicesPage: servicesPageAr },
-    de: { ...commonDe, home: homeDe, blog: blogDe, about: aboutDe, contact: contactDe, clientJourney: clientJourneyDe, futureReadyGraduate: futureReadyGraduateDe, aiEmployeeProductDemos: aiEmployeeProductDemosDe, aiEmployeePage: aiEmployeePageDe, servicesPage: servicesPageDe },
-    es: { ...commonEs, home: homeEs, blog: blogEs, about: aboutEs, contact: contactEs, clientJourney: clientJourneyEs, futureReadyGraduate: futureReadyGraduateEs, aiEmployeeProductDemos: aiEmployeeProductDemosEs, aiEmployeePage: aiEmployeePageEs, servicesPage: servicesPageEs },
+    en: { ...commonEn, home: homeEn, blog: blogEn, about: aboutEn, contact: contactEn, clientJourney: clientJourneyEn, futureReadyGraduate: futureReadyGraduateEn, aiEmployeeProductDemos: aiEmployeeProductDemosEn, aiEmployeePage: aiEmployeePageEn, aiEmployeeSoftware: aiEmployeeSoftwareEn, servicesPage: servicesPageEn },
+    fr: { ...commonFr, home: homeFr, blog: blogFr, about: aboutFr, contact: contactFr, clientJourney: clientJourneyFr, futureReadyGraduate: futureReadyGraduateFr, aiEmployeeProductDemos: aiEmployeeProductDemosFr, aiEmployeePage: aiEmployeePageFr, aiEmployeeSoftware: aiEmployeeSoftwareFr, servicesPage: servicesPageFr },
+    ar: { ...commonAr, home: homeAr, blog: blogAr, about: aboutAr, contact: contactAr, clientJourney: clientJourneyAr, futureReadyGraduate: futureReadyGraduateAr, aiEmployeeProductDemos: aiEmployeeProductDemosAr, aiEmployeePage: aiEmployeePageAr, aiEmployeeSoftware: aiEmployeeSoftwareAr, servicesPage: servicesPageAr },
+    de: { ...commonDe, home: homeDe, blog: blogDe, about: aboutDe, contact: contactDe, clientJourney: clientJourneyDe, futureReadyGraduate: futureReadyGraduateDe, aiEmployeeProductDemos: aiEmployeeProductDemosDe, aiEmployeePage: aiEmployeePageDe, aiEmployeeSoftware: aiEmployeeSoftwareDe, servicesPage: servicesPageDe },
+    es: { ...commonEs, home: homeEs, blog: blogEs, about: aboutEs, contact: contactEs, clientJourney: clientJourneyEs, futureReadyGraduate: futureReadyGraduateEs, aiEmployeeProductDemos: aiEmployeeProductDemosEs, aiEmployeePage: aiEmployeePageEs, aiEmployeeSoftware: aiEmployeeSoftwareEs, servicesPage: servicesPageEs },
   }
 }
 
