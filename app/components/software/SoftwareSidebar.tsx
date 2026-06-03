@@ -7,6 +7,7 @@ import {
   type SoftwareNavId,
   navLabel,
 } from './software-nav'
+import SoftwareBrandMark from './SoftwareBrandMark'
 
 type Props = {
   activeNav: SoftwareNavId
@@ -48,18 +49,19 @@ export default function SoftwareSidebar({
           compact ? 'flex justify-center px-2 py-3' : 'px-3 py-4 md:px-4 md:py-5'
         }`}
       >
-        <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-accent/15 font-display text-[10px] font-bold leading-none tracking-tight text-accent md:hidden">
-          <span className="text-center">
-            D<span className="text-[8px] opacity-80">D</span>
-          </span>
+        <div className="flex justify-center md:hidden">
+          <SoftwareBrandMark size="sidebarCompact" />
         </div>
-        <div className="hidden flex-col items-center text-center md:flex">
-          <p className="font-display text-[15px] font-bold leading-[1.15] tracking-tight text-[var(--software-text)]">
-            {brandName}
-          </p>
-          <p className="mt-1 text-[10px] font-medium uppercase tracking-[0.14em] text-[var(--software-text-muted)]">
-            AI Employee
-          </p>
+        <div className="hidden flex-col items-center gap-2.5 text-center md:flex">
+          <SoftwareBrandMark size="sidebarWide" />
+          <div>
+            <p className="font-display text-[15px] font-bold leading-[1.15] tracking-tight text-[var(--software-text)]">
+              {brandName}
+            </p>
+            <p className="mt-1 text-[10px] font-medium uppercase tracking-[0.14em] text-[var(--software-text-muted)]">
+              AI Employee
+            </p>
+          </div>
         </div>
       </div>
 
