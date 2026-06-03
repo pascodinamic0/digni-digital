@@ -3851,6 +3851,269 @@ const remainingArticles: BlogArticle[] = [
     `,
   },
   {
+    id: 105,
+    title: 'Kabinda Lodge: Run Your Hotel From One Command Center (Live)',
+    slug: 'kabinda-lodge-hospitality-operations-platform-live',
+    excerpt:
+      'Meet Kabinda Lodge — our live hospitality OS for hotels and lodges. Bookings, rooms, staff roles, smart keys, and payments in one calm command center built for African hospitality teams.',
+    category: 'Agentic Softwares',
+    readTime: '8 min read',
+    publishDate: 'June 3, 2026',
+    author: 'Pascal Digny',
+    tags: [
+      'Kabinda Lodge',
+      'hospitality software',
+      'hotel management',
+      'bookings',
+      'African hospitality',
+      'agentic software',
+    ],
+    featured: true,
+    coverImageUrl: '/blog/kabinda-lodge/hero-dashboard.png',
+    content: `
+      <h2>Run the lodge from anywhere — bookings, rooms, keys, and payments in one place</h2>
+
+      <p>If your property still runs on <strong>WhatsApp for bookings</strong>, <strong>paper for keys</strong>, and <strong>spreadsheets for investor reports</strong>, you already feel the drag: double bookings, unclear occupancy, and staff working from memory. <strong><a href="https://kabinda-lodge.com/" target="_blank" rel="noopener noreferrer">Kabinda Lodge</a></strong> is our answer — a <strong>live</strong> hospitality operating system we built so owners, managers, and front desk teams share one source of truth.</p>
+
+      <p>It is not a generic booking widget. It is your property's <strong>command center</strong>: public guest experience, staff workflows, and leadership visibility in one product family.</p>
+
+      <figure style="margin: 2rem 0;">
+        <img src="/blog/kabinda-lodge/hero-dashboard.png" alt="Kabinda Lodge public site — premium hospitality hero with booking and guest login" width="1200" height="750" style="width:100%;height:auto;border-radius:12px;border:1px solid rgba(148,163,184,0.35);" loading="lazy" />
+        <figcaption style="margin-top:0.75rem;font-size:0.875rem;color:#64748b;text-align:center;">Guest-facing experience — explore rooms, reserve, and sign in without leaving your brand.</figcaption>
+      </figure>
+
+      <h3>Who Kabinda Lodge is for</h3>
+
+      <ul>
+        <li><strong>Hotel & lodge owners</strong> who need occupancy, revenue, and staff accountability without chasing updates</li>
+        <li><strong>Front desk & concierge</strong> who manage bookings, check-ins, and guest requests in one flow</li>
+        <li><strong>Investors & leadership</strong> who want dashboards they trust before the weekend rush</li>
+        <li><strong>Properties upgrading from manual ops</strong> — smart door cards, role-based access, Stripe-ready payments</li>
+      </ul>
+
+      <h3>Three layers, one hospitality OS</h3>
+
+      <h4>1. Rooms & suites</h4>
+      <p>Publish room types, nightly rates, capacity, and availability. Guests browse in French or English and book with confidence — no more “is Chambre 03 free?” threads in chat.</p>
+
+      <figure style="margin: 2rem 0;">
+        <img src="/blog/kabinda-lodge/bookings-rooms.png" alt="Kabinda Lodge rooms listing with rates and capacity" width="1200" height="800" style="width:100%;height:auto;border-radius:12px;border:1px solid rgba(148,163,184,0.35);" loading="lazy" />
+        <figcaption style="margin-top:0.75rem;font-size:0.875rem;color:#64748b;text-align:center;">Rooms catalog — rates, capacity, and descriptions your team controls.</figcaption>
+      </figure>
+
+      <h4>2. Restaurant & on-property services</h4>
+      <p>Extend the guest journey beyond the room: restaurant, conference, and contact flows stay on-brand so every touchpoint feels premium, not patched together.</p>
+
+      <figure style="margin: 2rem 0;">
+        <img src="/blog/kabinda-lodge/operations-overview.png" alt="Kabinda Lodge restaurant and on-property services page" width="1200" height="800" style="width:100%;height:auto;border-radius:12px;border:1px solid rgba(148,163,184,0.35);" loading="lazy" />
+        <figcaption style="margin-top:0.75rem;font-size:0.875rem;color:#64748b;text-align:center;">On-property services — restaurant and events under the same lodge brand.</figcaption>
+      </figure>
+
+      <h4>3. Staff command center (behind the login)</h4>
+      <p>Role-based access for admin, front desk, and leadership. Smart door cards, payments, and operational workflows stay in the system — not in someone's notebook.</p>
+
+      <h3>Why properties switch from scattered tools</h3>
+
+      <ul>
+        <li><strong>One brand, one stack</strong> — guest site + staff ops instead of five disconnected logins</li>
+        <li><strong>Role-based access</strong> — each team sees only what they need</li>
+        <li><strong>Built for African hospitality</strong> — bilingual UX, mobile-friendly flows, calm visual design</li>
+        <li><strong>Agentic-ready</strong> — OpenAI integrations where AI helps staff, not replaces judgment</li>
+      </ul>
+
+      <blockquote>
+        <p><strong>Book → Host → Report.</strong> Guests reserve online, staff run the floor from one system, leadership sees occupancy and revenue without end-of-week surprises.</p>
+      </blockquote>
+
+      <h3>Live today — explore the product</h3>
+
+      <p>Kabinda Lodge is <strong>in production</strong> at <a href="https://kabinda-lodge.com/" target="_blank" rel="noopener noreferrer">kabinda-lodge.com</a>. Browse rooms, test the guest journey, and see how a lodge can feel like a modern product — not a folder of PDFs.</p>
+
+      <p>We ship it as part of our <a href="/agentic-softwares">Agentic Softwares</a> practice — alongside <a href="https://dispatch-flow-one.vercel.app/" target="_blank" rel="noopener noreferrer">DispatchFlow</a> (operations) and <a href="https://swift-drop-chi.vercel.app/" target="_blank" rel="noopener noreferrer">SwiftDrop</a> (delivery).</p>
+
+      <h3>Next step</h3>
+
+      <p><strong>See the live property site:</strong> <a href="https://kabinda-lodge.com/" target="_blank" rel="noopener noreferrer">Visit Kabinda Lodge</a>.</p>
+
+      <p><strong>Need a hospitality OS for your hotel or lodge group?</strong> <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Book a strategy call</a> with Digni Digital — we'll map bookings, staff roles, and payments and show whether Kabinda Lodge fits or a tailored build makes sense.</p>
+
+      <hr>
+
+      <p><em>See Kabinda Lodge on our <a href="/agentic-softwares">Agentic Softwares</a> page with DispatchFlow, SwiftDrop, DigniGuide, and other products we build for operators who need adoption, not shelfware.</em></p>
+    `,
+  },
+  {
+    id: 106,
+    title: 'SwiftDrop: Local Food & Grocery Delivery With Clear Pricing (Live)',
+    slug: 'swiftdrop-local-delivery-marketplace-live',
+    excerpt:
+      'Meet SwiftDrop — our live delivery marketplace for restaurants, groceries, and pharmacies. Prepay items, pay delivery in cash on arrival, and track every order from kitchen to door.',
+    category: 'Agentic Softwares',
+    readTime: '8 min read',
+    publishDate: 'June 3, 2026',
+    author: 'Pascal Digny',
+    tags: [
+      'SwiftDrop',
+      'food delivery',
+      'grocery delivery',
+      'marketplace',
+      'last-mile logistics',
+      'agentic software',
+    ],
+    featured: true,
+    coverImageUrl: '/blog/swiftdrop/hero-home.png',
+    content: `
+      <h2>Hot meals. Fresh groceries. At your door — with pricing people actually trust</h2>
+
+      <p>Local delivery fails when <strong>fees surprise customers</strong>, <strong>stores never know order status</strong>, and <strong>riders chase updates on WhatsApp</strong>. <strong><a href="https://swift-drop-chi.vercel.app/" target="_blank" rel="noopener noreferrer">SwiftDrop</a></strong> is our answer — a <strong>live</strong> marketplace that connects neighborhoods to restaurants, groceries, pharmacies, and more, with upfront totals and live tracking from kitchen to door.</p>
+
+      <p>It is built for markets where <strong>prepay items + cash delivery</strong> is normal — so customers know exactly what they pay before and at the door.</p>
+
+      <figure style="margin: 2rem 0;">
+        <img src="/blog/swiftdrop/hero-home.png" alt="SwiftDrop homepage — hot meals and fresh groceries delivered locally" width="1200" height="750" style="width:100%;height:auto;border-radius:12px;border:1px solid rgba(148,163,184,0.35);" loading="lazy" />
+        <figcaption style="margin-top:0.75rem;font-size:0.875rem;color:#64748b;text-align:center;">Customer home — browse local shops, become a rider, or sell on SwiftDrop.</figcaption>
+      </figure>
+
+      <h3>Who SwiftDrop is for</h3>
+
+      <ul>
+        <li><strong>Neighborhood customers</strong> who want clear pricing and live order status</li>
+        <li><strong>Restaurants, groceries & pharmacies</strong> who need orders without building their own app</li>
+        <li><strong>Delivery partners</strong> who want structured assignments instead of chaotic group chats</li>
+        <li><strong>Operators launching local marketplaces</strong> in francophone cities</li>
+      </ul>
+
+      <h3>Three promises, one platform</h3>
+
+      <h4>1. Local shops in one browse experience</h4>
+      <p>Search by name, address, or category. Filter meals, cafés, pharmacies, corner stores, and gifts — see delivery fees and ETA before checkout.</p>
+
+      <figure style="margin: 2rem 0;">
+        <img src="/blog/swiftdrop/browse-stores.png" alt="SwiftDrop local shops grid with categories and delivery fees" width="1200" height="800" style="width:100%;height:auto;border-radius:12px;border:1px solid rgba(148,163,184,0.35);" loading="lazy" />
+        <figcaption style="margin-top:0.75rem;font-size:0.875rem;color:#64748b;text-align:center;">Shop discovery — categories, fees, and ETAs before the customer commits.</figcaption>
+      </figure>
+
+      <h4>2. Smart payment split</h4>
+      <p>Items prepaid online; delivery paid in cash on arrival. No surprise totals — customers and riders align on what is digital vs cash.</p>
+
+      <h4>3. Live tracking end to end</h4>
+      <p>Confirmation → preparation → pickup → en route. Everyone sees the same timeline — stores, riders, and customers.</p>
+
+      <figure style="margin: 2rem 0;">
+        <img src="/blog/swiftdrop/order-tracking.png" alt="SwiftDrop why-us page explaining tracking and transparent fees" width="1200" height="800" style="width:100%;height:auto;border-radius:12px;border:1px solid rgba(148,163,184,0.35);" loading="lazy" />
+        <figcaption style="margin-top:0.75rem;font-size:0.875rem;color:#64748b;text-align:center;">Why SwiftDrop — local choice, clear fees, humans on both sides, step-by-step tracking.</figcaption>
+      </figure>
+
+      <h3>Why operators choose SwiftDrop over ad-hoc groups</h3>
+
+      <ul>
+        <li><strong>Transparent fees</strong> shown before payment</li>
+        <li><strong>Multi-category marketplace</strong> — food, health, gifts, corner stores</li>
+        <li><strong>Rider & merchant onboarding</strong> built into the product</li>
+        <li><strong>Modern UX</strong> — fast, mobile-first, francophone-first copy</li>
+      </ul>
+
+      <blockquote>
+        <p><strong>Browse → Pay → Track → Deliver.</strong> Customers choose local commerce with clarity; stores and riders share one timeline instead of fifty chat threads.</p>
+      </blockquote>
+
+      <h3>Live today — explore the product</h3>
+
+      <p>SwiftDrop is <strong>in production</strong> at <a href="https://swift-drop-chi.vercel.app/" target="_blank" rel="noopener noreferrer">swift-drop-chi.vercel.app</a>. Browse boutiques, test the customer journey, or explore rider and merchant paths.</p>
+
+      <p>Part of our <a href="/agentic-softwares">Agentic Softwares</a> portfolio — built by the same team as <a href="https://kabinda-lodge.com/" target="_blank" rel="noopener noreferrer">Kabinda Lodge</a> and <a href="https://dispatch-flow-one.vercel.app/" target="_blank" rel="noopener noreferrer">DispatchFlow</a>.</p>
+
+      <h3>Next step</h3>
+
+      <p><strong>Try the live marketplace:</strong> <a href="https://swift-drop-chi.vercel.app/" target="_blank" rel="noopener noreferrer">Open SwiftDrop</a>.</p>
+
+      <p><strong>Launching delivery in your city?</strong> <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Book a strategy call</a> with Digni Digital.</p>
+
+      <hr>
+
+      <p><em>See SwiftDrop on our <a href="/agentic-softwares">Agentic Softwares</a> page.</em></p>
+    `,
+  },
+  {
+    id: 107,
+    title: 'DigniGuide: Your AI Guide to Digni Digital Services (Live)',
+    slug: 'digniguide-ai-business-guide-live',
+    excerpt:
+      'Meet DigniGuide — our live intelligent guide. Chat by voice or text to explore AI Employee, Agentic Softwares, training programs, and book your onboarding demo when you are ready.',
+    category: 'Agentic Softwares',
+    readTime: '7 min read',
+    publishDate: 'June 3, 2026',
+    author: 'Pascal Digny',
+    tags: [
+      'DigniGuide',
+      'AI guide',
+      'conversational AI',
+      'sales enablement',
+      'agentic software',
+    ],
+    featured: true,
+    coverImageUrl: '/blog/digniguide/hero-chat.png',
+    content: `
+      <h2>Ask first. Book when you are ready — an intelligent guide, not a chatbot brochure</h2>
+
+      <p>Most service sites push you to a calendar before you understand the fit. <strong><a href="/digni">DigniGuide</a></strong> flips that: a <strong>live</strong> assistant on Digni Digital that helps visitors explore <strong>AI Employee</strong>, <strong>Agentic Softwares</strong>, and <strong>training programs</strong> by conversation — voice or text — then routes to a demo only when it makes sense.</p>
+
+      <p>It is our <strong>agentic front door</strong>: streaming answers, suggested questions, and human-first positioning so prospects feel guided, not sold.</p>
+
+      <figure style="margin: 2rem 0;">
+        <img src="/blog/digniguide/hero-chat.png" alt="DigniGuide chat interface with suggested questions and voice input" width="1200" height="750" style="width:100%;height:auto;border-radius:12px;border:1px solid rgba(148,163,184,0.35);" loading="lazy" />
+        <figcaption style="margin-top:0.75rem;font-size:0.875rem;color:#64748b;text-align:center;">DigniGuide home — ask in plain language, try suggestions, book a demo when ready.</figcaption>
+      </figure>
+
+      <h3>Who DigniGuide is for</h3>
+
+      <ul>
+        <li><strong>Founders & operators</strong> comparing AI reception, custom software, or education programs</li>
+        <li><strong>School administrators</strong> exploring Future-Ready Graduate offerings</li>
+        <li><strong>Prospects who want clarity before a call</strong> — mechanism, proof, fit</li>
+        <li><strong>Our team</strong> — fewer unqualified bookings, richer context when someone does book</li>
+      </ul>
+
+      <h3>What you can ask</h3>
+
+      <p>DigniGuide is trained on how we actually work — not generic AI hype. Try prompts like:</p>
+
+      <ul>
+        <li>Can an AI Employee answer calls after hours?</li>
+        <li>Do you build custom software when off-the-shelf fails?</li>
+        <li>What is the Future-Ready Graduate Program?</li>
+        <li>How fast can you launch an AI receptionist?</li>
+      </ul>
+
+      <h3>How it works (the mechanism)</h3>
+
+      <ul>
+        <li><strong>Streaming chat</strong> powered by OpenRouter — fast, contextual replies</li>
+        <li><strong>Voice in, voice out</strong> — Web Speech for hands-free exploration</li>
+        <li><strong>Rotating suggestions</strong> — micro open loops so visitors discover services they did not know to ask for</li>
+        <li><strong>Clear CTAs</strong> — Agentic Softwares, AI Employee, and book onboarding demo when proof is enough</li>
+      </ul>
+
+      <blockquote>
+        <p><strong>Clarity → Fit → Calendar.</strong> Belief before monetization: outcome, mechanism, proof — then the booking link.</p>
+      </blockquote>
+
+      <h3>Live on Digni Digital</h3>
+
+      <p>Open <strong><a href="/digni">DigniGuide</a></strong> from any page footer or our <a href="/agentic-softwares">Agentic Softwares</a> showcase. It is the same guide we use to explain live products like <a href="https://dispatch-flow-one.vercel.app/" target="_blank" rel="noopener noreferrer">DispatchFlow</a>, <a href="https://kabinda-lodge.com/" target="_blank" rel="noopener noreferrer">Kabinda Lodge</a>, and <a href="https://swift-drop-chi.vercel.app/" target="_blank" rel="noopener noreferrer">SwiftDrop</a>.</p>
+
+      <h3>Next step</h3>
+
+      <p><strong>Talk to the guide:</strong> <a href="/digni">Open DigniGuide</a>.</p>
+
+      <p><strong>Already know your project?</strong> <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Book onboarding demo</a> directly.</p>
+
+      <hr>
+
+      <p><em>DigniGuide is listed on our <a href="/agentic-softwares">Agentic Softwares</a> page as a live product — proof that we ship agentic experiences, not only slides.</em></p>
+    `,
+  },
+  {
     id: 103,
 
     title: 'Productize Yourself: How Founders Escape Competition by Turning Authentic Strengths Into Systems',

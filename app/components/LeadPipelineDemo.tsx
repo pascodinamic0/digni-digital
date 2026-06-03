@@ -4,8 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { useState, useCallback, useEffect } from 'react'
 import { useLanguage } from '@/app/context/LocaleContext'
 import { getJourneyPhaseTitle } from '@/lib/ai-receptionist-flow'
-import JourneyDemoHeader from '@/app/components/JourneyDemoHeader'
-import JourneyStepMarker from '@/app/components/JourneyStepMarker'
+import SoftwareDemoSection from '@/app/components/software/SoftwareDemoSection'
 import { translations } from '@/app/config/translations'
 import type { PipelineCardT } from '@/app/i18n/aiEmployeeProductDemos'
 
@@ -69,51 +68,31 @@ export default function LeadPipelineDemo() {
   const cardById = (id: string): PipelineCardT | undefined => t.cards.find((c) => c.id === id)
   const selected = selectedId ? cardById(selectedId) : null
 
-  return (
-    <section
-      className="py-24 bg-gradient-to-b from-surface to-background"
-      aria-labelledby="lead-pipeline-title"
-      dir={isRtl ? 'rtl' : 'ltr'}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <JourneyDemoHeader
-          step={4}
-          journeyPhase={getJourneyPhaseTitle(language, 4)}
-          badge={t.badge}
-          title={t.title}
-          titleHighlight={t.titleHighlight}
-          subtitle={t.subtitle}
-          titleId="lead-pipeline-title"
-          titleLayout="inline"
-          className="mb-8 md:mb-10"
-        />
-        <JourneyStepMarker
-          step={5}
-          description={translations[language].aiEmployeeProductDemos.timeline.steps[4]?.description}
-        />
+  const sw =
+    translations[language].aiEmployeeSoftware ?? translations.en.aiEmployeeSoftware
 
+  return (
+    <SoftwareDemoSection
+      step={4}
+      journeyPhase={getJourneyPhaseTitle(language, 4)}
+      badge={t.badge}
+      title={t.title}
+      titleHighlight={t.titleHighlight}
+      subtitle={t.subtitle}
+      titleId="lead-pipeline-title"
+      titleLayout="inline"
+      activeNav="opportunities"
+      moduleTitle={sw.nav.opportunities}
+      className={isRtl ? '[direction:rtl]' : ''}
+    >
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.2 }}
-          className="relative overflow-hidden rounded-2xl md:rounded-3xl border border-border-light backdrop-blur-xl bg-gradient-to-br from-surface-light/80 via-surface/90 to-surface-light/80 shadow-demo-card max-w-6xl mx-auto"
+          transition={{ delay: 0.15 }}
+          className="border-b border-[var(--software-border)]"
         >
-          <div className="absolute inset-0 bg-gradient-to-br from-success/5 via-transparent to-success/[0.08] pointer-events-none" />
-
-          <div className="relative bg-surface-light/50 backdrop-blur-sm border-b border-border p-4 md:p-6">
-            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 md:w-11 md:h-11 bg-gradient-to-br from-success to-success-light rounded-xl flex items-center justify-center shadow-lg shadow-demo-icon">
-                  <svg className="w-5 h-5 md:w-6 md:h-6 text-background" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                    <path d="M4 5h16M4 9h16M4 13h10M4 17h10" strokeWidth="2" strokeLinecap="round" />
-                  </svg>
-                </div>
-                <div>
-                  <h3 className="font-display text-base md:text-lg font-bold">{t.dashboardTitle}</h3>
-                  <p className="text-muted text-xs">{t.dashboardSubtitle}</p>
-                </div>
-              </div>
+          <div className="flex flex-col gap-3 border-b border-[var(--software-border)] p-3 md:flex-row md:items-center md:justify-between md:p-4">
               <div className="flex flex-wrap items-center gap-2">
                 <span className="text-[11px] px-2.5 py-1 rounded-full bg-success/10 border border-success/20 text-success font-medium">
                   {t.pipelineName}
@@ -143,7 +122,6 @@ export default function LeadPipelineDemo() {
                   {t.addDeal}
                 </button>
               </div>
-            </div>
             <div className="mt-3 flex flex-wrap items-center gap-1.5 text-[11px] text-muted">
               <span className="px-2 py-0.5 rounded-md bg-surface/60 border border-border">{t.allTab}</span>
               <span className="px-2 py-0.5 rounded-md border border-border border-dashed">{t.newViewTab}</span>
@@ -158,7 +136,7 @@ export default function LeadPipelineDemo() {
             </div>
           </div>
 
-          <div className="relative flex flex-col min-h-[500px] md:h-[500px] p-3 md:p-4 bg-surface-light/20">
+          <div className="relative flex min-h-[500px] flex-col p-3 md:h-[500px] md:p-4">
             <p className="text-[10px] text-muted text-center mb-2 shrink-0">{t.dragHint}</p>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 md:gap-3 flex-1 min-h-0 auto-rows-[minmax(0,1fr)]">
               {t.columns.map((col, columnIndex) => (
@@ -215,7 +193,6 @@ export default function LeadPipelineDemo() {
             </div>
           </div>
         </motion.div>
-      </div>
 
       <AnimatePresence>
         {selected && (
@@ -264,6 +241,6 @@ export default function LeadPipelineDemo() {
           </motion.div>
         )}
       </AnimatePresence>
-    </section>
+    </SoftwareDemoSection>
   )
 }

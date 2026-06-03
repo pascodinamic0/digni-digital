@@ -9,12 +9,12 @@ export default function JourneyDemosIntro() {
   const copy = getJourneyDemosIntro(language)
 
   return (
-    <div className="max-w-4xl mx-auto px-4 sm:px-6 pt-8 pb-4 text-center">
+    <div className="mx-auto max-w-3xl px-4 pb-2 pt-10 text-center sm:px-6">
       <motion.h2
         initial={{ opacity: 0, y: 16 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="font-display text-2xl md:text-3xl font-bold text-text mb-3"
+        className="font-display text-xl font-bold text-[var(--software-text)] md:text-2xl"
       >
         {copy.title}
       </motion.h2>
@@ -23,7 +23,7 @@ export default function JourneyDemosIntro() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ delay: 0.05 }}
-        className="text-muted text-sm md:text-base max-w-2xl mx-auto"
+        className="mx-auto mt-2 max-w-2xl text-sm text-[var(--software-text-muted)] md:text-base"
       >
         {copy.subtitle}
       </motion.p>

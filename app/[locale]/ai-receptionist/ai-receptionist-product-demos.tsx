@@ -4,26 +4,30 @@ import ClientJourneyDemo from '@/app/components/ClientJourneyDemo'
 import ConversationMockups from '@/app/components/ConversationMockups'
 import UnifiedInbox from '@/app/components/UnifiedInbox'
 import LeadPipelineDemo from '@/app/components/LeadPipelineDemo'
+import CalendarBookingDemo from '@/app/components/CalendarBookingDemo'
+import AdsManagerDemo from '@/app/components/AdsManagerDemo'
 import PerformancePulseDemo from '@/app/components/PerformancePulseDemo'
 import TaskQueueDemo from '@/app/components/TaskQueueDemo'
 import ContactDirectoryDemo from '@/app/components/ContactDirectoryDemo'
-import AiReceptionistExplainerVideo from '@/app/components/AiReceptionistExplainerVideo'
 import BusinessTimeline from '@/app/components/BusinessTimeline'
 import JourneyDemosIntro from '@/app/components/JourneyDemosIntro'
-import AiEmployeeProblemStatsSection from '@/app/components/AiEmployeeProblemStatsSection'
+import AiEmployeeTimeToValueSection from '@/app/components/AiEmployeeTimeToValueSection'
 
 type Props = {
   showTaskQueueDemo: boolean
 }
 
-/** Starving crowd: Leak vs Loop first, then 60% pain stats. */
-export function AIReceptionistPainDreamDemos() {
-  return (
-    <>
-      <ClientJourneyDemo prominent />
-      <AiEmployeeProblemStatsSection />
-    </>
-  )
+type PainDreamProps = {
+  /** When false, only time-to-value (hero follow-up). When true, only leak-vs-loop (after proof). */
+  showLeakVsLoop?: boolean
+}
+
+/** Time-to-value before proof; leak-vs-loop after proof when showLeakVsLoop. */
+export function AIReceptionistPainDreamDemos({ showLeakVsLoop = true }: PainDreamProps) {
+  if (showLeakVsLoop) {
+    return <ClientJourneyDemo prominent />
+  }
+  return <AiEmployeeTimeToValueSection />
 }
 
 /** Speed & effort minimization: product demos after proof. */
@@ -35,9 +39,10 @@ export function AIReceptionistHowItWorksDemos({ showTaskQueueDemo }: Props) {
       <ConversationMockups />
       <ContactDirectoryDemo />
       <LeadPipelineDemo />
-      <PerformancePulseDemo />
+      <CalendarBookingDemo />
       {showTaskQueueDemo ? <TaskQueueDemo /> : null}
-      <AiReceptionistExplainerVideo />
+      <AdsManagerDemo />
+      <PerformancePulseDemo />
       <BusinessTimeline />
     </>
   )
@@ -47,7 +52,8 @@ export function AIReceptionistHowItWorksDemos({ showTaskQueueDemo }: Props) {
 export default function AIReceptionistProductDemos({ showTaskQueueDemo }: Props) {
   return (
     <>
-      <AIReceptionistPainDreamDemos />
+      <AIReceptionistPainDreamDemos showLeakVsLoop={false} />
+      <AIReceptionistPainDreamDemos showLeakVsLoop />
       <AIReceptionistHowItWorksDemos showTaskQueueDemo={showTaskQueueDemo} />
     </>
   )

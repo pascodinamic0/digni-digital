@@ -5,6 +5,8 @@ import Image from 'next/image'
 import { useState, useEffect, useRef } from 'react'
 import { useLanguage } from '@/app/context/LocaleContext'
 import { translations } from '@/app/config/translations'
+import SoftwareDemoSection from '@/app/components/software/SoftwareDemoSection'
+import { FLOW_STEP_SOCIAL_PLANNER, getJourneyPhaseTitle } from '@/lib/ai-receptionist-flow'
 import { calendarDemoCovers } from '@/content/blog/calendar-demo-covers'
 
 type Phase = 'idle' | 'compose' | 'scheduled' | 'publishing' | 'published'
@@ -188,65 +190,33 @@ export default function TaskQueueDemo() {
 
   const coverAt = (i: number) => calendarDemoCovers[i % calendarDemoCovers.length]
 
-  return (
-    <section
-      className="py-20 md:py-24 bg-gradient-to-b from-background to-surface"
-      aria-labelledby="social-planner-title"
-      dir={isRtl ? 'rtl' : 'ltr'}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="text-center mb-8 md:mb-10">
-          <motion.span
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="inline-block px-4 py-2 bg-success/10 border border-success/20 rounded-full text-success text-xs font-semibold uppercase tracking-wide mb-4"
-          >
-            {t.badge}
-          </motion.span>
-          <motion.h2
-            id="social-planner-title"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mt-4 mb-4"
-          >
-            {t.title} <span className="gradient-text-brand">{t.titleHighlight}</span>
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="text-muted text-base sm:text-lg max-w-3xl mx-auto"
-          >
-            {t.subtitle}
-          </motion.p>
-        </div>
+  const sw =
+    translations[language].aiEmployeeSoftware ?? translations.en.aiEmployeeSoftware
 
+  return (
+    <SoftwareDemoSection
+      step={5}
+      anchorId={FLOW_STEP_SOCIAL_PLANNER}
+      journeyPhase={getJourneyPhaseTitle(language, 5)}
+      badge={t.badge}
+      title={t.title}
+      titleHighlight={t.titleHighlight}
+      subtitle={t.subtitle}
+      titleId="social-planner-title"
+      titleLayout="stacked"
+      activeNav="calendar"
+      moduleTitle={sw.nav.calendar}
+      className={isRtl ? '[direction:rtl]' : ''}
+    >
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.15 }}
-          className="relative overflow-hidden rounded-2xl md:rounded-3xl border border-border-light backdrop-blur-xl bg-gradient-to-br from-surface-light/80 via-surface/90 to-surface-light/80 shadow-demo-card max-w-5xl mx-auto"
+          className="relative"
         >
-          <div className="absolute inset-0 bg-gradient-to-br from-success/5 via-transparent to-success/[0.08] pointer-events-none" />
-
-          <div className="relative bg-surface-light/50 backdrop-blur-sm border-b border-border p-4 md:p-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-            <div className="flex items-start gap-3 min-w-0">
-              <div className="w-10 h-10 md:w-11 md:h-11 flex-shrink-0 bg-gradient-to-br from-success to-success-light rounded-xl flex items-center justify-center shadow-lg shadow-demo-icon">
-                <svg className="w-5 h-5 md:w-6 md:h-6 text-background" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                  <rect x="3" y="4" width="18" height="18" rx="2" strokeWidth="2" />
-                  <path d="M16 2v4M8 2v4M3 10h18" strokeWidth="2" strokeLinecap="round" />
-                </svg>
-              </div>
-              <div className="min-w-0">
-                <h3 className="font-display text-base md:text-lg font-bold text-text">{t.moduleTitle}</h3>
-                <p className="text-muted text-xs md:text-sm mt-0.5">{t.moduleSubtitle}</p>
-              </div>
-            </div>
+          <div className="flex flex-col gap-3 border-b border-[var(--software-border)] p-4 sm:flex-row sm:items-center sm:justify-between md:p-5">
+            <p className="text-xs text-[var(--software-text-muted)]">{t.moduleSubtitle}</p>
             <div className="flex flex-wrap gap-2">
               <button
                 type="button"
@@ -385,7 +355,6 @@ export default function TaskQueueDemo() {
             </div>
           </div>
         </motion.div>
-      </div>
-    </section>
+    </SoftwareDemoSection>
   )
 }

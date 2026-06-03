@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { useState, useEffect, useMemo, useCallback } from 'react'
 import { useLanguage } from '@/app/context/LocaleContext'
 import { getJourneyPhaseTitle } from '@/lib/ai-receptionist-flow'
-import JourneyDemoHeader from '@/app/components/JourneyDemoHeader'
+import SoftwareDemoSection from '@/app/components/software/SoftwareDemoSection'
 import { translations } from '@/app/config/translations'
 import SocialPlatformIcon from './SocialPlatformIcon'
 
@@ -135,65 +135,37 @@ export default function PerformancePulseDemo() {
   const totalReviews = live.reduce((s, p) => s + p.reviews, 0)
   const latestPlatformLabel = lastUpdatedPlatform ? nameByKey[lastUpdatedPlatform] : null
 
-  return (
-    <section
-      className="py-20 md:py-24 bg-gradient-to-b from-surface to-background"
-      aria-labelledby="performance-pulse-title"
-      dir={isRtl ? 'rtl' : 'ltr'}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <JourneyDemoHeader
-          step={6}
-          journeyPhase={getJourneyPhaseTitle(language, 6)}
-          badge={t.badge}
-          title={t.title}
-          titleHighlight={t.titleHighlight}
-          subtitle={t.subtitle}
-          titleId="performance-pulse-title"
-          titleLayout="inline"
-          className="mb-8 md:mb-10"
-        />
+  const sw =
+    translations[language].aiEmployeeSoftware ?? translations.en.aiEmployeeSoftware
 
+  return (
+    <SoftwareDemoSection
+      step={6}
+      journeyPhase={getJourneyPhaseTitle(language, 6)}
+      badge={t.badge}
+      title={t.title}
+      titleHighlight={t.titleHighlight}
+      subtitle={t.subtitle}
+      titleId="performance-pulse-title"
+      titleLayout="inline"
+      activeNav="reputationManager"
+      moduleTitle={sw.nav.reputationManager}
+      className={isRtl ? '[direction:rtl]' : ''}
+    >
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.25 }}
           onViewportEnter={() => setStarted(true)}
-          className="relative overflow-hidden rounded-2xl md:rounded-3xl border border-border-light backdrop-blur-xl bg-gradient-to-br from-surface-light/85 via-surface/92 to-surface-light/85 shadow-demo-card max-w-5xl mx-auto ring-1 ring-border/40"
+          className="relative"
         >
-          <div className="absolute inset-0 bg-gradient-to-br from-success/[0.06] via-transparent to-transparent pointer-events-none" />
-
-          <div className="relative border-b border-border bg-surface-light/40 backdrop-blur-sm px-4 py-4 md:px-6 md:py-5">
-            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-              <div className="flex items-center gap-3 min-w-0">
-                <div className="w-10 h-10 md:w-11 md:h-11 shrink-0 rounded-xl bg-gradient-to-br from-success to-success-light flex items-center justify-center shadow-lg shadow-demo-icon">
-                  <svg
-                    className="w-5 h-5 md:w-6 md:h-6 text-background"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    aria-hidden
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3v18h18" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 14l4-4 3 3 5-6" />
-                    <path strokeLinecap="round" strokeWidth={2} d="M18 8h-4V4" />
-                  </svg>
-                </div>
-                <div className="min-w-0">
-                  <h3 className="font-display text-base md:text-lg font-bold text-text">{t.dashboardTitle}</h3>
-                  <p className="text-muted text-xs">{t.dashboardSubtitle}</p>
-                </div>
-              </div>
-              <div
-                className="flex items-center gap-2 sm:shrink-0"
-                title={t.dashboardSubtitle}
-                aria-label={t.dashboardSubtitle}
-              >
+          <div className="relative border-b border-[var(--software-border)] px-4 py-4 md:px-5 md:py-4">
+            <div className="flex items-center justify-end gap-2" title={t.dashboardSubtitle} aria-label={t.dashboardSubtitle}>
+                <span className="text-xs text-[var(--software-text-muted)]">{t.dashboardSubtitle}</span>
                 <span className="relative flex h-2 w-2">
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-success/70 opacity-60" />
-                  <span className="relative inline-flex h-2 w-2 rounded-full bg-success shadow-[0_0_0_2px_rgba(var(--success-rgb),0.25)]" />
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-success" />
                 </span>
-              </div>
             </div>
             <AnimatePresence mode="wait">
               {latestPlatformLabel && (
@@ -322,7 +294,6 @@ export default function PerformancePulseDemo() {
             )}
           </AnimatePresence>
         </motion.div>
-      </div>
-    </section>
+    </SoftwareDemoSection>
   )
 }

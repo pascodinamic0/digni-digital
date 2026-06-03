@@ -1,3 +1,3 @@
 export function AIReceptionistChrome({ children }: { children: React.ReactNode }) {
-  return <>{children}</>
+  return <div className="software-product-page">{children}</div>
 }

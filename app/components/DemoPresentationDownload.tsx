@@ -8,7 +8,7 @@ type Service = 'futureReadyGraduate' | 'aiEmployee'
 
 interface DemoPresentationDownloadProps {
   service: Service
-  variant?: 'hero' | 'inline'
+  variant?: 'hero' | 'inline' | 'text'
   label?: string
 }
 
@@ -30,6 +30,21 @@ export default function DemoPresentationDownload({
         target="_blank"
         rel="noopener noreferrer"
         className="btn-secondary text-sm sm:text-base md:text-lg px-6 sm:px-8 py-3 sm:py-4 w-full sm:w-auto text-center inline-flex items-center justify-center gap-2"
+        aria-label="Download demo presentation"
+      >
+        {displayLabel}
+      </a>
+    )
+  }
+
+  if (variant === 'text') {
+    return (
+      <a
+        href={href}
+        download
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-xs text-muted underline-offset-4 transition-colors hover:text-text hover:underline sm:text-sm"
         aria-label="Download demo presentation"
       >
         {displayLabel}

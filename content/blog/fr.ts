@@ -767,6 +767,127 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
     `,
   },
 
+  'kabinda-lodge-hospitality-operations-platform-live': {
+    id: 105,
+    title: 'Kabinda Lodge : pilotez votre hôtel depuis un centre de commande (en ligne)',
+    slug: 'kabinda-lodge-hospitality-operations-platform-live',
+    excerpt:
+      'Découvrez Kabinda Lodge — notre OS hôtelier en ligne. Réservations, chambres, rôles staff, cartes d\'accès et paiements dans une interface calme pour l\'hospitalité africaine.',
+    category: 'Agentic Softwares',
+    readTime: '8 min de lecture',
+    publishDate: '3 juin 2026',
+    author: 'Pascal Digny',
+    tags: ['Kabinda Lodge', 'logiciel hôtelier', 'réservations', 'hospitalité africaine', 'logiciel agentique'],
+    featured: true,
+    coverImageUrl: '/blog/kabinda-lodge/hero-dashboard.png',
+    content: `
+      <h2>Gérez le lodge partout — réservations, chambres, clés et paiements</h2>
+
+      <p>WhatsApp pour réserver, papier pour les clés, tableurs pour la direction : <strong><a href="https://kabinda-lodge.com/" target="_blank" rel="noopener noreferrer">Kabinda Lodge</a></strong> centralise tout dans un <strong>système en ligne</strong> — expérience client, équipes et visibilité direction.</p>
+
+      <figure style="margin: 2rem 0;">
+        <img src="/blog/kabinda-lodge/hero-dashboard.png" alt="Site Kabinda Lodge — accueil premium et réservation" width="1200" height="750" style="width:100%;height:auto;border-radius:12px;border:1px solid rgba(148,163,184,0.35);" loading="lazy" />
+        <figcaption style="margin-top:0.75rem;font-size:0.875rem;color:#64748b;text-align:center;">Face client — explorer les chambres et réserver sous votre marque.</figcaption>
+      </figure>
+
+      <h3>Chambres & suites</h3>
+      <p>Tarifs, capacité et descriptions que votre équipe contrôle — fini les « Chambre 03 est libre ? » dans le chat.</p>
+
+      <figure style="margin: 2rem 0;">
+        <img src="/blog/kabinda-lodge/bookings-rooms.png" alt="Catalogue chambres Kabinda Lodge" width="1200" height="800" style="width:100%;height:auto;border-radius:12px;border:1px solid rgba(148,163,184,0.35);" loading="lazy" />
+        <figcaption style="margin-top:0.75rem;font-size:0.875rem;color:#64748b;text-align:center;">Catalogue chambres — tarifs et capacité.</figcaption>
+      </figure>
+
+      <h3>Restaurant & services sur place</h3>
+
+      <figure style="margin: 2rem 0;">
+        <img src="/blog/kabinda-lodge/operations-overview.png" alt="Restaurant Kabinda Lodge" width="1200" height="800" style="width:100%;height:auto;border-radius:12px;border:1px solid rgba(148,163,184,0.35);" loading="lazy" />
+        <figcaption style="margin-top:0.75rem;font-size:0.875rem;color:#64748b;text-align:center;">Services sur place — même marque lodge.</figcaption>
+      </figure>
+
+      <h3>En ligne aujourd'hui</h3>
+      <p><strong><a href="https://kabinda-lodge.com/" target="_blank" rel="noopener noreferrer">kabinda-lodge.com</a></strong> — voir notre page <a href="/agentic-softwares">Agentic Softwares</a>.</p>
+      <p><strong>Projet hôtelier ?</strong> <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Réserver un appel</a> avec Digni Digital.</p>
+    `,
+  },
+
+  'swiftdrop-local-delivery-marketplace-live': {
+    id: 106,
+    title: 'SwiftDrop : livraison locale avec tarifs clairs (en ligne)',
+    slug: 'swiftdrop-local-delivery-marketplace-live',
+    excerpt:
+      'SwiftDrop connecte restaurants, épiceries et pharmacies. Articles prépayés, livraison en espèces à l\'arrivée, suivi de la cuisine à votre porte.',
+    category: 'Agentic Softwares',
+    readTime: '8 min de lecture',
+    publishDate: '3 juin 2026',
+    author: 'Pascal Digny',
+    tags: ['SwiftDrop', 'livraison', 'marketplace', 'logistique dernier kilomètre', 'logiciel agentique'],
+    featured: true,
+    coverImageUrl: '/blog/swiftdrop/hero-home.png',
+    content: `
+      <h2>Repas chauds. Courses fraîches. À votre porte — sans mauvaises surprises</h2>
+
+      <p><strong><a href="https://swift-drop-chi.vercel.app/" target="_blank" rel="noopener noreferrer">SwiftDrop</a></strong> est notre marketplace <strong>en ligne</strong> : frais affichés, suivi en direct, paiement articles en ligne et livraison en espèces.</p>
+
+      <figure style="margin: 2rem 0;">
+        <img src="/blog/swiftdrop/hero-home.png" alt="Accueil SwiftDrop" width="1200" height="750" style="width:100%;height:auto;border-radius:12px;border:1px solid rgba(148,163,184,0.35);" loading="lazy" />
+        <figcaption style="margin-top:0.75rem;font-size:0.875rem;color:#64748b;text-align:center;">Accueil client — parcourir les boutiques locales.</figcaption>
+      </figure>
+
+      <h3>Commerces locaux</h3>
+
+      <figure style="margin: 2rem 0;">
+        <img src="/blog/swiftdrop/browse-stores.png" alt="Grille boutiques SwiftDrop" width="1200" height="800" style="width:100%;height:auto;border-radius:12px;border:1px solid rgba(148,163,184,0.35);" loading="lazy" />
+        <figcaption style="margin-top:0.75rem;font-size:0.875rem;color:#64748b;text-align:center;">Découverte — catégories, frais et délais avant commande.</figcaption>
+      </figure>
+
+      <h3>Pourquoi SwiftDrop</h3>
+
+      <figure style="margin: 2rem 0;">
+        <img src="/blog/swiftdrop/order-tracking.png" alt="Page Pourquoi nous SwiftDrop" width="1200" height="800" style="width:100%;height:auto;border-radius:12px;border:1px solid rgba(148,163,184,0.35);" loading="lazy" />
+        <figcaption style="margin-top:0.75rem;font-size:0.875rem;color:#64748b;text-align:center;">Tarifs clairs et suivi étape par étape.</figcaption>
+      </figure>
+
+      <p><strong>Essayer :</strong> <a href="https://swift-drop-chi.vercel.app/" target="_blank" rel="noopener noreferrer">Ouvrir SwiftDrop</a> — <a href="/agentic-softwares">Agentic Softwares</a>.</p>
+    `,
+  },
+
+  'digniguide-ai-business-guide-live': {
+    id: 107,
+    title: 'DigniGuide : votre guide IA des services Digni Digital (en ligne)',
+    slug: 'digniguide-ai-business-guide-live',
+    excerpt:
+      'DigniGuide vous guide par chat ou voix vers AI Employee, Agentic Softwares et nos programmes — réservez une démo quand vous êtes prêt.',
+    category: 'Agentic Softwares',
+    readTime: '7 min de lecture',
+    publishDate: '3 juin 2026',
+    author: 'Pascal Digny',
+    tags: ['DigniGuide', 'guide IA', 'IA conversationnelle', 'logiciel agentique'],
+    featured: true,
+    coverImageUrl: '/blog/digniguide/hero-chat.png',
+    content: `
+      <h2>Demandez d'abord. Réservez quand c'est clair</h2>
+
+      <p><strong><a href="/digni">DigniGuide</a></strong> est notre assistant <strong>en ligne</strong> : explorez nos services par conversation (texte ou voix), puis prenez rendez-vous seulement si le fit est là.</p>
+
+      <figure style="margin: 2rem 0;">
+        <img src="/blog/digniguide/hero-chat.png" alt="Interface DigniGuide avec suggestions" width="1200" height="750" style="width:100%;height:auto;border-radius:12px;border:1px solid rgba(148,163,184,0.35);" loading="lazy" />
+        <figcaption style="margin-top:0.75rem;font-size:0.875rem;color:#64748b;text-align:center;">DigniGuide — questions suggérées et démo à la demande.</figcaption>
+      </figure>
+
+      <h3>Ce que vous pouvez demander</h3>
+      <ul>
+        <li>Employé IA après les heures de bureau ?</li>
+        <li>Logiciel sur mesure quand le prêt-à-l'emploi échoue ?</li>
+        <li>Programme Future-Ready Graduate ?</li>
+        <li>Délai pour un réceptionniste IA ?</li>
+      </ul>
+
+      <p><strong>Ouvrir le guide :</strong> <a href="/digni">DigniGuide</a> — <a href="/agentic-softwares">Agentic Softwares</a>.</p>
+      <p><strong>Prêt pour un appel ?</strong> <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Réserver une démo</a>.</p>
+    `,
+  },
+
   'productize-yourself-founder-authenticity-ai-systems': {
     id: 103,
     title: "Productize yourself : comment les fondateurs échappent à la concurrence en transformant leurs forces authentiques en systèmes",

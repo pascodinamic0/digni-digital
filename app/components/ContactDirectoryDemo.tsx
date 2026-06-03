@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { useState, useMemo, useEffect } from 'react'
 import { useLanguage } from '@/app/context/LocaleContext'
 import { getJourneyPhaseTitle } from '@/lib/ai-receptionist-flow'
-import JourneyDemoHeader from '@/app/components/JourneyDemoHeader'
+import SoftwareDemoSection from '@/app/components/software/SoftwareDemoSection'
 import { translations } from '@/app/config/translations'
 import type { ContactRowT } from '@/app/i18n/aiEmployeeProductDemos'
 
@@ -103,30 +103,31 @@ export default function ContactDirectoryDemo() {
     return () => clearInterval(incomingInterval)
   }, [])
 
-  return (
-    <section className="py-24 bg-surface" aria-labelledby="contact-directory-title" dir={isRtl ? 'rtl' : 'ltr'}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <JourneyDemoHeader
-          step={3}
-          journeyPhase={getJourneyPhaseTitle(language, 3)}
-          badge={t.badge}
-          title={t.title}
-          titleHighlight={t.titleHighlight}
-          subtitle={t.subtitle}
-          titleId="contact-directory-title"
-          titleLayout="inline"
-        />
+  const sw =
+    translations[language].aiEmployeeSoftware ?? translations.en.aiEmployeeSoftware
 
+  return (
+    <SoftwareDemoSection
+      step={3}
+      journeyPhase={getJourneyPhaseTitle(language, 3)}
+      badge={t.badge}
+      title={t.title}
+      titleHighlight={t.titleHighlight}
+      subtitle={t.subtitle}
+      titleId="contact-directory-title"
+      titleLayout="inline"
+      activeNav="contacts"
+      moduleTitle={sw.nav.contacts}
+      className={isRtl ? '[direction:rtl]' : ''}
+    >
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.2 }}
-          className="relative overflow-hidden rounded-2xl md:rounded-3xl border border-border-light backdrop-blur-xl bg-gradient-to-br from-surface-light/80 via-surface/90 to-surface-light/80 shadow-demo-card max-w-6xl mx-auto"
+          transition={{ delay: 0.15 }}
+          className="relative"
         >
-          <div className="absolute inset-0 bg-gradient-to-br from-success/5 via-transparent to-success/[0.08] pointer-events-none" />
-
-          <div className="relative bg-surface-light/50 backdrop-blur-sm border-b border-border p-4 md:p-6 space-y-4">
+          <div className="relative space-y-4 border-b border-[var(--software-border)] p-4 md:p-5">
             <AnimatePresence mode="wait">
               <motion.div
                 key={incomingTick}
@@ -330,8 +331,7 @@ export default function ContactDirectoryDemo() {
             </div>
           </div>
         </motion.div>
-      </div>
-    </section>
+    </SoftwareDemoSection>
   )
 }
 
