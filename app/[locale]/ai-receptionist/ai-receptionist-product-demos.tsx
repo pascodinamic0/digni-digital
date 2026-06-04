@@ -11,23 +11,13 @@ import TaskQueueDemo from '@/app/components/TaskQueueDemo'
 import ContactDirectoryDemo from '@/app/components/ContactDirectoryDemo'
 import BusinessTimeline from '@/app/components/BusinessTimeline'
 import JourneyDemosIntro from '@/app/components/JourneyDemosIntro'
-import AiEmployeeTimeToValueSection from '@/app/components/AiEmployeeTimeToValueSection'
-
 type Props = {
   showTaskQueueDemo: boolean
 }
 
-type PainDreamProps = {
-  /** When false, only time-to-value (hero follow-up). When true, only leak-vs-loop (after proof). */
-  showLeakVsLoop?: boolean
-}
-
-/** Time-to-value before proof; leak-vs-loop after proof when showLeakVsLoop. */
-export function AIReceptionistPainDreamDemos({ showLeakVsLoop = true }: PainDreamProps) {
-  if (showLeakVsLoop) {
-    return <ClientJourneyDemo prominent />
-  }
-  return <AiEmployeeTimeToValueSection />
+/** Leaky bucket vs growth loop contrast (after product demos). */
+export function AIReceptionistPainDreamDemos() {
+  return <ClientJourneyDemo prominent />
 }
 
 /** Speed & effort minimization: product demos after proof. */
@@ -52,8 +42,7 @@ export function AIReceptionistHowItWorksDemos({ showTaskQueueDemo }: Props) {
 export default function AIReceptionistProductDemos({ showTaskQueueDemo }: Props) {
   return (
     <>
-      <AIReceptionistPainDreamDemos showLeakVsLoop={false} />
-      <AIReceptionistPainDreamDemos showLeakVsLoop />
+      <AIReceptionistPainDreamDemos />
       <AIReceptionistHowItWorksDemos showTaskQueueDemo={showTaskQueueDemo} />
     </>
   )

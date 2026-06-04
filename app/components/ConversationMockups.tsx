@@ -6,6 +6,9 @@ import { useLanguage } from '@/app/context/LocaleContext'
 import { translations } from '@/app/config/translations'
 import { getJourneyPhaseTitle } from '@/lib/ai-receptionist-flow'
 import SoftwareDemoSection from '@/app/components/software/SoftwareDemoSection'
+import DemoPersonAvatar from '@/app/components/DemoPersonAvatar'
+import ChatChannelIconBadge from '@/app/components/ChatChannelIconBadge'
+import { getConversationDemoVisitor } from '@/lib/demo-contact-avatars'
 import SocialPlatformIcon from './SocialPlatformIcon'
 
 interface Message {
@@ -203,8 +206,23 @@ const ConversationMockups = () => {
     }
   }, [messageIndex, activeDemo, conversations, conversationComplete])
 
+  const activeConv = conversations[activeDemo]
+  const activeVisitor = getConversationDemoVisitor(activeConv.id)
+
   const ChatBubble = ({ message, isAI }: { message: Message; isAI: boolean }) => (
     <div className={`flex ${isAI ? 'justify-start' : 'justify-end'} mb-3`}>
+      {isAI ? (
+        <ChatChannelIconBadge className="order-1 mr-2 mt-1 shrink-0">
+          {activeConv.icon}
+        </ChatChannelIconBadge>
+      ) : activeVisitor ? (
+        <DemoPersonAvatar
+          name={activeVisitor.name}
+          src={activeVisitor.avatarSrc}
+          size="xs"
+          className="order-3 ml-2 mt-1"
+        />
+      ) : null}
       <div className={`max-w-[85%] ${isAI ? 'order-2' : 'order-1'}`}>
         <div
           className={`px-4 py-2.5 rounded-2xl text-sm leading-relaxed ${
@@ -219,15 +237,6 @@ const ConversationMockups = () => {
           {message.time}
         </div>
       </div>
-      {isAI && (
-        <div className="order-1 mr-2 mt-1 flex-shrink-0">
-          <div className="w-7 h-7 bg-gradient-to-br from-accent to-accent-light rounded-full flex items-center justify-center">
-            <svg className="w-3.5 h-3.5 text-background" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M13 3L4 14h7v7l9-11h-7V3z"/>
-            </svg>
-          </div>
-        </div>
-      )}
     </div>
   )
 
@@ -268,12 +277,22 @@ const ConversationMockups = () => {
                   {/* Header */}
                   <div className="bg-surface/80 backdrop-blur-xl px-4 py-3 border-b border-border">
                     <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 bg-accent/10 rounded-full flex items-center justify-center text-accent">
-                        {conversations[activeDemo].icon}
-                      </div>
-                      <div className="flex-1">
-                        <h3 className="font-display font-semibold text-sm text-text">{conversations[activeDemo].title}</h3>
-                        <p className="text-xs text-muted">{conversations[activeDemo].industry}</p>
+                      {activeVisitor ? (
+                        <DemoPersonAvatar
+                          name={activeVisitor.name}
+                          src={activeVisitor.avatarSrc}
+                          size="md"
+                        />
+                      ) : (
+                        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-accent/10 text-accent">
+                          {activeConv.icon}
+                        </div>
+                      )}
+                      <div className="flex-1 min-w-0">
+                        <h3 className="font-display font-semibold text-sm text-text truncate">
+                          {activeVisitor?.name ?? activeConv.title}
+                        </h3>
+                        <p className="text-xs text-muted truncate">{activeConv.industry}</p>
                       </div>
                       <div className="flex items-center gap-1.5">
                         <div className="w-2 h-2 rounded-full bg-success animate-pulse" />
@@ -296,11 +315,7 @@ const ConversationMockups = () => {
                     {isTyping && (
                       <div className="flex justify-start mb-3">
                         <div className="flex items-center gap-2">
-                          <div className="w-7 h-7 bg-gradient-to-br from-accent to-accent-light rounded-full flex items-center justify-center">
-                            <svg className="w-3.5 h-3.5 text-background" viewBox="0 0 24 24" fill="currentColor">
-                              <path d="M13 3L4 14h7v7l9-11h-7V3z"/>
-                            </svg>
-                          </div>
+                          <ChatChannelIconBadge>{activeConv.icon}</ChatChannelIconBadge>
                           <div className="bg-surface-light border border-border-light px-5 py-3.5 rounded-2xl rounded-tl-sm">
                             <div className="flex items-center gap-1">
                               <span className="w-2.5 h-2.5 bg-accent rounded-full animate-[typing_1.4s_ease-in-out_infinite]" style={{ animationDelay: '0ms' }} />
