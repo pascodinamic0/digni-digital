@@ -17,6 +17,16 @@ import AiEmployeeMobileAppBanner from '@/app/components/AiEmployeeMobileAppBanne
 import AiEmployeePricingPanel from '@/app/components/AiEmployeePricingPanel'
 import AiEmployeeScarcityBanner from '@/app/components/AiEmployeeScarcityBanner'
 import AiEmployeeProofCarousel from '@/app/components/AiEmployeeProofCarousel'
+import {
+  ProblemStatsSection,
+  TimeToValueSection,
+  CapabilitiesSection,
+  DreamOutcomeSection,
+  DenominatorSection,
+  QualificationSection,
+  GuaranteeSection,
+  FinalCtaSection,
+} from '@/app/components/ai-employee'
 
 const AIReceptionistPainDreamDemos = dynamic(
   () => import('./ai-receptionist-product-demos').then((m) => m.AIReceptionistPainDreamDemos),
@@ -59,7 +69,7 @@ export function AIReceptionistClient({ params, searchParams, showTaskQueueDemo }
         type="application/ld+json"
         dangerouslySetInnerHTML={jsonLdScriptProps(pageJsonLd)}
       />
-      {/* Hero Section */}
+      {/* H1 — Promise */}
       <section className="relative isolate min-h-screen flex items-center pt-16 sm:pt-20 overflow-hidden bg-gradient-mesh-brand">
         <PremiumHeroBackdrop />
         <PremiumHeroParallax className="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-20 relative z-10">
@@ -70,11 +80,11 @@ export function AIReceptionistClient({ params, searchParams, showTaskQueueDemo }
             className="text-center mb-8 sm:mb-12 md:mb-16"
           >
             {t.hero.badge.trim() ? (
-              <span className="mb-4 inline-block rounded-full border border-border-light px-3 py-1 text-xs font-medium tracking-wide text-muted">
+              <span className="mb-4 inline-block rounded-full border border-border-light px-3 py-1 type-caption font-medium tracking-wide text-muted">
                 {t.hero.badge}
               </span>
             ) : null}
-            <h1 className="font-display mx-auto mb-4 max-w-4xl px-2 text-2xl font-bold leading-tight tracking-tight text-text sm:text-3xl md:text-4xl md:leading-[1.15]">
+            <h1 className="type-h1 font-display mx-auto mb-4 max-w-4xl px-2 font-bold leading-tight tracking-tight text-text">
               {t.hero.titleLine1}
               {t.hero.titleHighlight ? (
                 <>
@@ -84,12 +94,12 @@ export function AIReceptionistClient({ params, searchParams, showTaskQueueDemo }
               ) : null}
             </h1>
             <p
-              className={`mx-auto max-w-2xl px-2 text-sm leading-relaxed text-muted sm:text-base ${t.hero.footnote.trim() ? 'mb-6' : 'mb-8'}`}
+              className={`type-body mx-auto max-w-2xl px-2 leading-relaxed text-muted ${t.hero.footnote.trim() ? 'mb-6' : 'mb-8'}`}
             >
               {t.hero.hook}
             </p>
             {t.hero.footnote.trim() ? (
-              <p className="mx-auto mb-8 max-w-xl px-2 text-xs font-medium leading-relaxed text-text/90 sm:text-sm">
+              <p className="type-small mx-auto mb-8 max-w-xl px-2 font-medium leading-relaxed text-text/90">
                 {t.hero.footnote}
               </p>
             ) : null}
@@ -112,13 +122,20 @@ export function AIReceptionistClient({ params, searchParams, showTaskQueueDemo }
         </div>
       </section>
 
-      <AIReceptionistPainDreamDemos showLeakVsLoop={false} />
+      {/* Problem */}
+      <ProblemStatsSection />
 
+      {/* Solution — speed + capabilities */}
+      <TimeToValueSection />
+      <CapabilitiesSection />
+      <DreamOutcomeSection />
+
+      {/* Proof */}
       <AnimatedSection id="proof" className="py-16 md:py-20">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-8 md:mb-10">
-            <span className="text-accent font-medium text-sm uppercase tracking-wider">{t.caseStudy.label}</span>
-            <h2 className="font-display text-3xl md:text-4xl font-bold mt-3 mb-2 max-w-2xl mx-auto">
+            <span className="section-label">{t.caseStudy.label}</span>
+            <h2 className="type-h2 font-display font-bold mt-3 mb-2 max-w-2xl mx-auto">
               {t.caseStudy.title}
             </h2>
           </div>
@@ -127,23 +144,27 @@ export function AIReceptionistClient({ params, searchParams, showTaskQueueDemo }
         </div>
       </AnimatedSection>
 
-      <AIReceptionistPainDreamDemos showLeakVsLoop />
-
+      {/* Process — product demos */}
       <AIReceptionistHowItWorksDemos showTaskQueueDemo={showTaskQueueDemo} />
 
+      {/* Contrast — leaky bucket vs loop */}
+      <AIReceptionistPainDreamDemos />
+
+      <DenominatorSection />
+
+      {/* Fit + offer */}
+      <QualificationSection />
       <AiEmployeeBonusStackSection />
+      <GuaranteeSection />
 
       <AiEmployeeMobileAppBanner />
 
+      {/* Pricing */}
       <AnimatedSection id="pricing" className="border-b border-[var(--software-border)] py-16 md:py-20">
         <div className="max-w-3xl mx-auto px-4 sm:px-6">
           <div className="mb-6 text-center sm:mb-7">
-            <h2 className="font-display text-2xl font-bold sm:text-3xl mb-2">
-              {t.pricing.title}
-            </h2>
-            <p className="mx-auto max-w-md text-sm text-muted leading-relaxed">
-              {t.pricing.subtitle}
-            </p>
+            <h2 className="type-h2 font-display font-bold mb-2">{t.pricing.title}</h2>
+            <p className="type-body mx-auto max-w-md text-muted leading-relaxed">{t.pricing.subtitle}</p>
           </div>
 
           <AiEmployeePricingPanel
@@ -153,6 +174,9 @@ export function AIReceptionistClient({ params, searchParams, showTaskQueueDemo }
           />
         </div>
       </AnimatedSection>
+
+      {/* CTA */}
+      <FinalCtaSection />
     </main>
   )
 }
