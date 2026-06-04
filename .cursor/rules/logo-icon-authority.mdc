@@ -1,0 +1,62 @@
+---
+description: Logo and icon sourcing — never AI-generate company logos; official SVG first; approved icon libraries only
+globs: app/**/*.{tsx,ts},public/**/*,content/**/*
+alwaysApply: true
+---
+
+# Logo and Icon Authority
+
+**Never generate company logos with AI or custom illustration.**
+
+If a third-party or partner logo is required, use official vector assets only. Digni-owned brand marks live in `public/` and `LOGO_COLOR_SPECIFICATIONS.md` — do not redraw or approximate them.
+
+---
+
+## Third-party logo sourcing (priority order)
+
+1. **Official SVG** from the brand’s press kit or developer assets
+2. **[Simple Icons](https://simpleicons.org/)** (`simple-icons` npm package — already in project)
+3. **[SVGL](https://svgl.app/)** when Simple Icons has no match
+4. **Official brand kit** (download from vendor; extract SVG)
+5. **Vector format only** — inline SVG, `*.svg` files, or SVG path data
+
+**PNG logos are prohibited** unless no SVG exists anywhere after the steps above. If forced to PNG, document why in the PR and prefer upgrading to SVG later.
+
+---
+
+## UI icons (non-brand)
+
+Use only these libraries unless the user explicitly approves a custom icon:
+
+| Library | Package / usage |
+|---------|-----------------|
+| Lucide | `lucide-react` (primary in this repo) |
+| Heroicons | `@heroicons/react` |
+| Tabler | `@tabler/icons-react` |
+| Material Symbols | `@mui/icons-material` or official Material Symbols font |
+
+**Do not:**
+
+- Create bespoke SVG icons for routine UI (arrows, menus, checks) without approval
+- Recreate company logos by hand-tracing, approximating paths, or AI image generation
+- Use random icon CDNs or scraped raster logos
+
+**Official assets always take precedence** over approximations, emoji stand-ins, or generated art.
+
+---
+
+## Digni brand logo
+
+- Source: `public/` brand files (e.g. `Icon Logo DD.png` for color reference; prefer SVG exports when available)
+- Colors: `LOGO_COLOR_SPECIFICATIONS.md` and `app/globals.css` tokens
+- Component: `app/components/Logo.tsx` — extend there; do not duplicate logo markup elsewhere
+
+---
+
+## Conflict resolution
+
+When logo/icon guidance conflicts with a page or component prompt:
+
+1. **Global Design Authority** (colors, typography, no decorative purple)
+2. **Logo and Icon Authority** (this file)
+3. Page / component instructions

@@ -14,6 +14,8 @@ import { useLanguage, useLocale } from '@/app/context/LocaleContext'
 import { translations } from '@/app/config/translations'
 import { localeToHreflang, type Locale } from '@/i18n/routing'
 import { formatMissedLeadsUsdStat, MISSED_LEADS_USD } from '@/lib/formatMissedLeadsUsdStat'
+import EcosystemStrip from '@/app/components/EcosystemStrip'
+import { ecosystemFromHomeWhatWeDo } from '@/lib/positioning/map-home-ecosystem'
 
 const GlobalPresenceMap = dynamic(() => import('@/app/components/GlobalPresenceMap'), {
   loading: () => (
@@ -361,6 +363,18 @@ function WhatWereFightingFor() {
         <ScrollIndicator direction="down" />
       </div>
     </AnimatedSection>
+  )
+}
+
+function HomeEcosystemStrip() {
+  const language = useLanguage()
+  const w = translations[language].home.whatWeDo
+  return (
+    <EcosystemStrip
+      id="grow-learn-scale"
+      className="py-20 bg-background border-y border-border/60"
+      ecosystem={ecosystemFromHomeWhatWeDo(w)}
+    />
   )
 }
 
@@ -1081,6 +1095,7 @@ export default function Home({ params, searchParams }: HomePageProps) {
       <WhatWereFightingFor />
       <Stats />
       <CaseStudies />
+      <HomeEcosystemStrip />
       <WhatWeDo />
       <GlobalPresence />
       <CTASection />

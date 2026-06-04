@@ -8,6 +8,9 @@ import { getJourneyPhaseTitle } from '@/lib/ai-receptionist-flow'
 import SoftwareDemoSection from '@/app/components/software/SoftwareDemoSection'
 import SoftwareModuleToolbar from '@/app/components/software/SoftwareModuleToolbar'
 import SocialPlatformIcon from './SocialPlatformIcon'
+import DemoPersonAvatar from '@/app/components/DemoPersonAvatar'
+import ChatChannelIconBadge from '@/app/components/ChatChannelIconBadge'
+import { getInboxConversationAvatarSrc } from '@/lib/demo-contact-avatars'
 
 type ConversationStatus = 'qualified' | 'appointment-booked' | 'in-progress' | 'follow-up' | 'new-lead'
 type ConversationChannel = 'website' | 'whatsapp' | 'sms' | 'instagram' | 'facebook'
@@ -187,15 +190,17 @@ const UnifiedInbox = () => {
                 >
                   <div className="flex items-start gap-2.5">
                     <div className="relative shrink-0">
-                      <div
-                        className={`flex h-10 w-10 items-center justify-center rounded-lg text-xs font-bold ${
+                      <DemoPersonAvatar
+                        name={conv.contact}
+                        src={getInboxConversationAvatarSrc(conv.id)}
+                        size="md"
+                        shape="lg"
+                        className={
                           selectedConversation === index
-                            ? 'bg-accent/20 text-accent'
-                            : 'bg-[var(--software-content)] text-accent'
-                        }`}
-                      >
-                        {conv.avatar}
-                      </div>
+                            ? 'ring-2 ring-accent/40'
+                            : ''
+                        }
+                      />
                       <div className="absolute -bottom-0.5 -right-0.5 flex h-4 w-4 items-center justify-center rounded border border-[var(--software-border)] bg-[var(--software-panel)]">
                         {getChannelIcon(conv.channelType)}
                       </div>
@@ -248,9 +253,12 @@ const UnifiedInbox = () => {
                   </svg>
                 </button>
                 <div className="relative shrink-0">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-accent/15 text-sm font-bold text-accent">
-                    {selectedConv.avatar}
-                  </div>
+                  <DemoPersonAvatar
+                    name={selectedConv.contact}
+                    src={getInboxConversationAvatarSrc(selectedConv.id)}
+                    size="md"
+                    shape="lg"
+                  />
                   <div className="absolute -bottom-0.5 -right-0.5 flex h-4 w-4 items-center justify-center rounded border border-[var(--software-border)] bg-[var(--software-panel)]">
                     {getChannelIcon(selectedConv.channelType)}
                   </div>
@@ -267,11 +275,9 @@ const UnifiedInbox = () => {
               <div className="flex-1 space-y-3 overflow-y-auto p-3 md:p-4">
                 <div className="flex justify-start">
                   <div className="flex max-w-[88%] items-start gap-2">
-                    <div className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-md bg-accent/15 text-accent">
-                      <svg className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
-                        <path d="M13 3L4 14h7v7l9-11h-7V3z" />
-                      </svg>
-                    </div>
+                    <ChatChannelIconBadge className="mt-0.5">
+                      {getChannelIcon(selectedConv.channelType)}
+                    </ChatChannelIconBadge>
                     <div>
                       <div className="rounded-2xl rounded-bl-md border border-[var(--software-border)] bg-[var(--software-panel)] px-3.5 py-2.5">
                         <p className="text-sm leading-relaxed text-[var(--software-text)]">{t.detailMessages.aiIntro}</p>
@@ -292,11 +298,9 @@ const UnifiedInbox = () => {
                 </div>
                 <div className="flex justify-start">
                   <div className="flex max-w-[88%] items-start gap-2">
-                    <div className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-md bg-accent/15 text-accent">
-                      <svg className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
-                        <path d="M13 3L4 14h7v7l9-11h-7V3z" />
-                      </svg>
-                    </div>
+                    <ChatChannelIconBadge className="mt-0.5">
+                      {getChannelIcon(selectedConv.channelType)}
+                    </ChatChannelIconBadge>
                     <div>
                       <div className="rounded-2xl rounded-bl-md border border-[var(--software-border)] bg-[var(--software-panel)] px-3.5 py-2.5">
                         <p className="text-sm leading-relaxed text-[var(--software-text)]">{t.detailMessages.aiFollowUp}</p>
