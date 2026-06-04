@@ -1,230 +1,158 @@
 'use client'
 
-import { useCallback, useRef, useState } from 'react'
+import { useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
+import {
+  AlertTriangle,
+  Building2,
+  CheckCircle2,
+  CircleOff,
+  Clock,
+  Sparkles,
+  TrendingUp,
+  type LucideIcon,
+} from 'lucide-react'
 import type { AiEmployeePageTranslations } from '@/app/i18n/aiEmployeePage'
-
-const CARD_WIDTH = 260
 
 type CaseStudy = AiEmployeePageTranslations['caseStudy']
 
-type Slide =
-  | { id: 'overview'; badge: string; title: string; metric: string; hint: string }
-  | { id: 'context' | 'challenge' | 'solution'; label: string; body: string }
-  | { id: 'outcomes'; label: string; results: CaseStudy['results'] }
+type StoryTabId = 'context' | 'challenge' | 'solution'
 
-function buildSlides(cs: CaseStudy): Slide[] {
-  return [
-    {
-      id: 'overview',
-      badge: cs.industry,
-      title: cs.company,
-      metric: cs.results[0].metric,
-      hint: cs.results[0].description,
-    },
-    { id: 'context', label: cs.contextLabel, body: cs.context },
-    { id: 'challenge', label: cs.challengeLabel, body: cs.challenge },
-    { id: 'solution', label: cs.solutionLabel, body: cs.solution },
-    { id: 'outcomes', label: cs.outcomesHeading, results: cs.results },
-  ]
-}
+const STORY_TABS: { id: StoryTabId; icon: LucideIcon }[] = [
+  { id: 'context', icon: Building2 },
+  { id: 'challenge', icon: AlertTriangle },
+  { id: 'solution', icon: Sparkles },
+]
 
-type ProofSlideCardProps = {
-  slide: Slide
-  isActive: boolean
-  onSelect: () => void
-}
-
-function ProofSlideCard({ slide, isActive, onSelect }: ProofSlideCardProps) {
-  return (
-    <button
-      type="button"
-      onClick={onSelect}
-      className={`snap-center shrink-0 rounded-xl border p-4 text-left transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent ${
-        isActive
-          ? 'border-accent/40 bg-[var(--software-panel)] shadow-md shadow-accent/10 ring-1 ring-accent/25'
-          : 'border-[var(--software-border)] bg-[var(--software-panel)]/70 opacity-90 hover:border-accent/25 hover:opacity-100'
-      }`}
-      style={{ width: `min(78vw, ${CARD_WIDTH}px)` }}
-      aria-pressed={isActive}
-    >
-      {slide.id === 'overview' ? (
-        <>
-          <span className="inline-block rounded-full bg-accent/10 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-accent">
-            {slide.badge}
-          </span>
-          <h3 className="font-display mt-2 text-base font-bold leading-snug text-[var(--software-text)]">
-            {slide.title}
-          </h3>
-          <p className="mt-3 font-display text-2xl font-bold tabular-nums text-accent">{slide.metric}</p>
-          <p className="mt-1.5 text-[11px] leading-snug text-[var(--software-text-muted)] line-clamp-2">
-            {slide.hint}
-          </p>
-        </>
-      ) : slide.id === 'outcomes' ? (
-        <>
-          <span className="text-[10px] font-bold uppercase tracking-[0.16em] text-accent">{slide.label}</span>
-          <div className="mt-3 grid grid-cols-2 gap-2">
-            {slide.results.map((r, i) => (
-              <div
-                key={i}
-                className="rounded-lg border border-[var(--software-border)] bg-[var(--software-canvas)]/50 px-2 py-1.5 text-center"
-              >
-                <span className="font-display text-sm font-bold tabular-nums text-accent">{r.metric}</span>
-              </div>
-            ))}
-          </div>
-          <p className="mt-2 text-[10px] text-[var(--software-text-muted)] line-clamp-1">
-            {slide.results[0].description}
-          </p>
-        </>
-      ) : (
-        <>
-          <span className="text-[10px] font-bold uppercase tracking-[0.16em] text-[var(--software-text-muted)]">
-            {slide.label}
-          </span>
-          <p className="mt-2 text-xs leading-snug text-[var(--software-text)] line-clamp-4">{slide.body}</p>
-        </>
-      )}
-    </button>
-  )
-}
+const RESULT_ICONS = [CheckCircle2, CircleOff, Clock, TrendingUp] as const
 
 type Props = {
   caseStudy: CaseStudy
 }
 
 export default function AiEmployeeProofCarousel({ caseStudy }: Props) {
-  const slides = buildSlides(caseStudy)
-  const [activeIndex, setActiveIndex] = useState(0)
-  const [expanded, setExpanded] = useState(false)
-  const carouselRef = useRef<HTMLDivElement>(null)
+  const [activeTab, setActiveTab] = useState<StoryTabId>('context')
+  const primary = caseStudy.results[0]
 
-  const scrollToIndex = useCallback((index: number) => {
-    setActiveIndex(index)
-    const el = carouselRef.current
-    if (!el) return
-    const card = el.children[index] as HTMLElement | undefined
-    card?.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' })
-  }, [])
+  const tabCopy: Record<StoryTabId, { label: string; body: string }> = {
+    context: { label: caseStudy.contextLabel, body: caseStudy.context },
+    challenge: { label: caseStudy.challengeLabel, body: caseStudy.challenge },
+    solution: { label: caseStudy.solutionLabel, body: caseStudy.solution },
+  }
 
   return (
-    <div className="mx-auto max-w-3xl">
-      <div className="relative">
-        <div
-          className="pointer-events-none absolute inset-y-0 left-0 z-10 w-10 bg-gradient-to-r from-[var(--software-canvas)] to-transparent sm:w-14"
-          aria-hidden
-        />
-        <div
-          className="pointer-events-none absolute inset-y-0 right-0 z-10 w-10 bg-gradient-to-l from-[var(--software-canvas)] to-transparent sm:w-14"
-          aria-hidden
-        />
-
-        <div
-          ref={carouselRef}
-          className="flex gap-3 overflow-x-auto overscroll-x-contain scroll-smooth snap-x snap-mandatory px-4 pb-1 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
-          style={{
-            paddingLeft: 'max(1rem, calc(50% - 8.5rem))',
-            paddingRight: 'max(1rem, calc(50% - 8.5rem))',
-          }}
+    <div className="space-y-10 md:space-y-12">
+      <div className="grid gap-6 lg:grid-cols-12 lg:items-stretch lg:gap-8">
+        <motion.article
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.25 }}
+          transition={{ duration: 0.45 }}
+          className="relative overflow-hidden rounded-2xl border border-accent/30 bg-[var(--software-panel)] p-6 shadow-[var(--software-frame-shadow)] md:p-8 lg:col-span-5"
         >
-          {slides.map((slide, i) => (
-            <ProofSlideCard
-              key={slide.id}
-              slide={slide}
-              isActive={activeIndex === i}
-              onSelect={() => scrollToIndex(i)}
-            />
-          ))}
-        </div>
-      </div>
+          <div className="pointer-events-none absolute -right-20 -top-20 h-56 w-56 rounded-full bg-accent/12 blur-3xl" aria-hidden />
+          <div className="pointer-events-none absolute -bottom-16 -left-16 h-48 w-48 rounded-full bg-success/10 blur-3xl" aria-hidden />
 
-      <div className="mt-4 flex justify-center gap-1.5">
-        {slides.map((slide, i) => (
-          <button
-            key={slide.id}
-            type="button"
-            onClick={() => scrollToIndex(i)}
-            className={`h-1.5 rounded-full transition-all duration-300 ${
-              activeIndex === i ? 'w-6 bg-accent' : 'w-1.5 bg-[var(--software-border)]'
-            }`}
-            aria-label={
-              slide.id === 'overview' ? slide.title : slide.id === 'outcomes' ? slide.label : slide.label
-            }
-          />
-        ))}
-      </div>
+          <div className="relative z-10 flex h-full flex-col">
+            <span className="inline-flex rounded-full border border-accent/25 bg-accent/10 px-3 py-1 type-caption font-semibold uppercase tracking-wider text-accent">
+              {caseStudy.industry}
+            </span>
 
-      <div className="mt-5 flex justify-center">
-        <button
-          type="button"
-          onClick={() => setExpanded((open) => !open)}
-          className="inline-flex items-center gap-2 rounded-full border border-[var(--software-border)] bg-[var(--software-panel)] px-4 py-2 text-xs font-medium text-[var(--software-text)] transition-colors hover:border-accent/40 hover:text-accent sm:text-sm"
-          aria-expanded={expanded}
-        >
-          {expanded ? caseStudy.collapseStory : caseStudy.expandStory}
-          <motion.span animate={{ rotate: expanded ? 180 : 0 }} className="text-accent" aria-hidden>
-            ▾
-          </motion.span>
-        </button>
-      </div>
+            <h3 className="type-h3 mt-4 font-display font-bold text-[var(--software-text)]">{caseStudy.company}</h3>
 
-      <AnimatePresence initial={false}>
-        {expanded ? (
-          <motion.div
-            key="proof-detail"
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: 'auto', opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
-            className="overflow-hidden"
-          >
-            <div className="mt-5 rounded-xl border border-[var(--software-border)] bg-[var(--software-panel)] p-5 sm:p-6">
-              <div className="mb-4 text-center">
-                <span className="inline-block rounded-full bg-accent/10 px-2.5 py-0.5 text-[10px] font-medium text-accent">
-                  {caseStudy.industry}
-                </span>
-                <h3 className="font-display mt-2 text-lg font-bold">{caseStudy.company}</h3>
-              </div>
-
-              <div className="space-y-4 text-sm">
-                <div>
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-[var(--software-text-muted)]">
-                    {caseStudy.contextLabel}
-                  </span>
-                  <p className="mt-1 leading-relaxed text-[var(--software-text-muted)]">{caseStudy.context}</p>
-                </div>
-                <div>
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-[var(--software-text-muted)]">
-                    {caseStudy.challengeLabel}
-                  </span>
-                  <p className="mt-1 leading-relaxed text-[var(--software-text-muted)]">{caseStudy.challenge}</p>
-                </div>
-                <div>
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-[var(--software-text-muted)]">
-                    {caseStudy.solutionLabel}
-                  </span>
-                  <p className="mt-1 leading-relaxed text-[var(--software-text)]">{caseStudy.solution}</p>
-                </div>
-              </div>
-
-              <div className="mt-6 border-t border-[var(--software-border)] pt-5">
-                <h4 className="font-display mb-4 text-center text-sm font-bold">{caseStudy.outcomesHeading}</h4>
-                <div className="grid gap-4 sm:grid-cols-2">
-                  {caseStudy.results.map((result, i) => (
-                    <div key={i} className="rounded-lg border border-[var(--software-border)] bg-[var(--software-canvas)]/40 px-3 py-2.5 text-center">
-                      <div className="font-display text-xl font-bold tabular-nums text-accent">{result.metric}</div>
-                      <p className="mt-1 text-[11px] leading-snug text-[var(--software-text-muted)]">
-                        {result.description}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              </div>
+            <div className="mt-6 border-t border-[var(--software-border)] pt-6">
+              <p className="type-h1 font-display font-bold tabular-nums text-accent">{primary.metric}</p>
+              <p className="type-body-lg mt-3 font-medium leading-snug text-[var(--software-text)]">
+                {primary.description}
+              </p>
             </div>
-          </motion.div>
-        ) : null}
-      </AnimatePresence>
+          </div>
+        </motion.article>
+
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.25 }}
+          transition={{ duration: 0.45, delay: 0.08 }}
+          className="flex flex-col rounded-2xl border border-[var(--software-border)] bg-[var(--software-panel)]/90 lg:col-span-7"
+        >
+          <div
+            className="flex flex-wrap gap-1 border-b border-[var(--software-border)] p-2 sm:p-3"
+            role="tablist"
+            aria-label={caseStudy.company}
+          >
+            {STORY_TABS.map(({ id, icon: Icon }) => {
+              const selected = activeTab === id
+              return (
+                <button
+                  key={id}
+                  type="button"
+                  role="tab"
+                  aria-selected={selected}
+                  onClick={() => setActiveTab(id)}
+                  className={`inline-flex flex-1 min-w-[7.5rem] items-center justify-center gap-2 rounded-xl px-3 py-2.5 type-small font-semibold transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent ${
+                    selected
+                      ? 'bg-accent text-on-accent shadow-sm'
+                      : 'text-[var(--software-text-muted)] hover:bg-[var(--software-sidebar)] hover:text-[var(--software-text)]'
+                  }`}
+                >
+                  <Icon className="h-4 w-4 shrink-0" strokeWidth={2} aria-hidden />
+                  {tabCopy[id].label}
+                </button>
+              )
+            })}
+          </div>
+
+          <div className="relative flex flex-1 flex-col p-5 sm:p-7 md:p-8" role="tabpanel">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeTab}
+                initial={{ opacity: 0, x: 8 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -8 }}
+                transition={{ duration: 0.22 }}
+                className="flex flex-1 flex-col"
+              >
+                <p className="type-caption font-bold uppercase tracking-wider text-accent">{tabCopy[activeTab].label}</p>
+                <p className="type-body-lg mt-4 flex-1 leading-relaxed text-[var(--software-text)]">
+                  {tabCopy[activeTab].body}
+                </p>
+              </motion.div>
+            </AnimatePresence>
+          </div>
+        </motion.div>
+      </div>
+
+      <div>
+        <h4 className="type-h4 mb-6 text-center font-display font-bold text-[var(--software-text)] md:mb-8">
+          {caseStudy.outcomesHeading}
+        </h4>
+        <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 lg:gap-5">
+          {caseStudy.results.map((result, i) => {
+            const Icon = RESULT_ICONS[i] ?? CheckCircle2
+            return (
+              <motion.li
+                key={result.description}
+                initial={{ opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ delay: i * 0.06, duration: 0.4 }}
+                className="list-none"
+              >
+                <article className="flex h-full flex-col rounded-2xl border border-[var(--software-border)] bg-[var(--software-panel)] p-5 transition-shadow duration-300 hover:shadow-md md:p-6">
+                  <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl border border-accent/25 bg-accent/10">
+                    <Icon className="h-5 w-5 text-accent" strokeWidth={1.75} aria-hidden />
+                  </div>
+                  <p className="type-h3 font-display font-bold tabular-nums text-accent">{result.metric}</p>
+                  <p className="type-small mt-2 flex-1 leading-relaxed text-[var(--software-text-muted)]">
+                    {result.description}
+                  </p>
+                </article>
+              </motion.li>
+            )
+          })}
+        </ul>
+      </div>
     </div>
   )
 }

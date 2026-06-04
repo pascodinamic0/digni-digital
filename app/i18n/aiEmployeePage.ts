@@ -169,17 +169,17 @@ type ResultLine = { metric: string; description: string }
 export const aiEmployeePageEn: AiEmployeePageTranslations = {
   hero: {
     badge: 'Service growth infrastructure',
-    titleLine1: 'Install once—then never',
-    titleHighlight: 'answer DMs, send booking links, or chase follow-ups again.',
+    titleLine1: 'Install once.',
+    titleHighlight: 'Never chase DMs, booking links, or follow ups again.',
     hook:
-      'The only done-for-you loop that captures, qualifies, books, upsells, and follows up on every paid lead—while you run the service. Turn on ads: same spend, a pipeline that does not leak.',
-    primaryCta: 'Take the 2-Minute Fit Check',
-    footnote: '15 qualified appointments in 30 days—or we work free until you hit it. We take the risk.',
+      'One done for you system captures, qualifies, books, upsells, and follows up on every paid lead while you run the service. Same ad spend. A pipeline that does not leak.',
+    primaryCta: 'Take the 2 Minute Fit Check',
+    footnote: '15 qualified appointments in 30 days, or we work free until you hit it. We take the risk.',
   },
   valueBadges: {
     ariaLabel: 'Speed, deployment, and effort guarantees',
     responseTime: '<2s Response Time',
-    setupSpeed: '48-Hour Live Deployment',
+    setupSpeed: '48 Hour Live Deployment',
     zeroEffort: 'Zero Manual Entry',
   },
   dreamOutcome: {
@@ -433,13 +433,13 @@ export const aiEmployeePageEn: AiEmployeePageTranslations = {
 export const aiEmployeePageFr: AiEmployeePageTranslations = {
   hero: {
     badge: 'Infrastructure de croissance pour services',
-    titleLine1: 'Une fois installée—plus jamais',
-    titleHighlight: 'de répondre aux DM, envoyer un lien, ni relancer à la main.',
+    titleLine1: 'Une fois installée.',
+    titleHighlight: 'Plus jamais de répondre aux DM, envoyer un lien, ni relancer à la main.',
     hook:
-      'La seule boucle clé en main qui capte, qualifie, réserve, relance et fait monter le panier sur chaque lead payant—pendant que vous livrez le service. Ajoutez la pub : même budget, zéro fuite.',
+      'La seule boucle clé en main qui capte, qualifie, réserve, relance et fait monter le panier sur chaque lead payant pendant que vous livrez le service. Même budget pub, zéro fuite.',
     primaryCta: 'Faire le test de compatibilité (2 min)',
     footnote:
-      '15 RDV qualifiés en 30 jours—sinon on travaille gratuitement jusqu’au seuil. Le risque est pour nous.',
+      '15 RDV qualifiés en 30 jours, sinon on travaille gratuitement jusqu’au seuil. Le risque est pour nous.',
   },
   valueBadges: {
     ariaLabel: 'Garanties de vitesse et de déploiement',
@@ -697,13 +697,13 @@ export const aiEmployeePageFr: AiEmployeePageTranslations = {
 export const aiEmployeePageDe: AiEmployeePageTranslations = {
   hero: {
     badge: 'Wachstums-Infrastruktur für Services',
-    titleLine1: 'Einmal installiert—nie wieder',
-    titleHighlight: 'DMs beantworten, Buchungslinks schicken oder nachfassen.',
+    titleLine1: 'Einmal installiert.',
+    titleHighlight: 'Nie wieder DMs beantworten, Buchungslinks schicken oder nachfassen.',
     hook:
-      'Der einzige Done-for-you-Loop, der jeden bezahlten Lead erfasst, qualifiziert, bucht, nachfasst und Upsell fährt—während Sie den Service liefern. Ads dazu: gleiches Budget, keine Lecks.',
-    primaryCta: '2-Minuten-Passungstest starten',
+      'Der einzige Done for you Loop, der jeden bezahlten Lead erfasst, qualifiziert, bucht, nachfasst und Upsell fährt, während Sie den Service liefern. Gleiches Werbebudget, keine Lecks.',
+    primaryCta: '2 Minuten Passungstest starten',
     footnote:
-      '15 qualifizierte Termine in 30 Tagen—oder wir arbeiten gratis, bis Sie sie haben. Das Risiko tragen wir.',
+      '15 qualifizierte Termine in 30 Tagen, oder wir arbeiten gratis, bis Sie sie haben. Das Risiko tragen wir.',
   },
   valueBadges: {
     ariaLabel: 'Geschwindigkeits- und Setup-Garantien',
@@ -961,13 +961,13 @@ export const aiEmployeePageDe: AiEmployeePageTranslations = {
 export const aiEmployeePageEs: AiEmployeePageTranslations = {
   hero: {
     badge: 'Infraestructura de crecimiento para servicios',
-    titleLine1: 'Instálalo una vez—y nunca más',
-    titleHighlight: 'contestar DMs, mandar enlaces de reserva ni perseguir seguimientos.',
+    titleLine1: 'Instálalo una vez.',
+    titleHighlight: 'Nunca más contestar DMs, mandar enlaces de reserva ni perseguir seguimientos.',
     hook:
-      'El único loop llave en mano que captura, califica, agenda, hace upsell y da seguimiento a cada lead pagado—mientras tú entregas el servicio. Activa anuncios: mismo gasto, pipeline sin fugas.',
+      'El único loop llave en mano que captura, califica, agenda, hace upsell y da seguimiento a cada lead pagado mientras tú entregas el servicio. Mismo gasto en anuncios, pipeline sin fugas.',
     primaryCta: 'Hacer el test de compatibilidad (2 min)',
     footnote:
-      '15 citas calificadas en 30 días—o trabajamos gratis hasta lograrlas. El riesgo es nuestro.',
+      '15 citas calificadas en 30 días, o trabajamos gratis hasta lograrlas. El riesgo es nuestro.',
   },
   valueBadges: {
     ariaLabel: 'Garantías de velocidad y configuración',
@@ -1225,12 +1225,12 @@ export const aiEmployeePageEs: AiEmployeePageTranslations = {
 export const aiEmployeePageAr: AiEmployeePageTranslations = {
   hero: {
     badge: 'بنية نمو لأعمال الخدمات',
-    titleLine1: 'ثبّتها مرة—ولن',
-    titleHighlight: 'ترد على الرسائل أو ترسل روابط حجز أو تلاحق متابعة يدوياً.',
+    titleLine1: 'ثبّتها مرة.',
+    titleHighlight: 'ولن ترد على الرسائل أو ترسل روابط حجز أو تلاحق متابعة يدوياً.',
     hook:
-      'الحلقة الوحيدة الجاهزة التي تلتقط وتؤهل وتحجز وترفع القيمة وتتابع كل عميل مدفوع—وأنت تقدّم الخدمة. أضف الإعلانات: نفس الإنفاق، خط بلا تسرّب.',
+      'الحلقة الوحيدة الجاهزة التي تلتقط وتؤهل وتحجز وترفع القيمة وتتابع كل عميل مدفوع وأنت تقدّم الخدمة. نفس الإنفاق على الإعلانات، خط بلا تسرّب.',
     primaryCta: 'ابدأ اختبار الملاءمة (دقيقتان)',
-    footnote: '15 موعداً مؤهلاً خلال 30 يوماً—أو نعمل مجاناً حتى تحققها. المخاطرة علينا.',
+    footnote: '15 موعداً مؤهلاً خلال 30 يوماً، أو نعمل مجاناً حتى تحققها. المخاطرة علينا.',
   },
   valueBadges: {
     ariaLabel: 'ضمانات السرعة والإعداد',

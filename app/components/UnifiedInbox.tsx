@@ -286,7 +286,7 @@ const UnifiedInbox = () => {
                     </div>
                   </div>
                 </div>
-                <div className="flex justify-end">
+                <div className="flex items-start justify-end gap-2">
                   <div className="max-w-[88%]">
                     <div className="rounded-2xl rounded-br-md bg-accent px-3.5 py-2.5 text-on-accent">
                       <p className="text-sm leading-relaxed">{t.detailMessages.userRequest}</p>
@@ -295,6 +295,12 @@ const UnifiedInbox = () => {
                       {t.detailMessages.userRequestTime}
                     </p>
                   </div>
+                  <DemoPersonAvatar
+                    name={selectedConv.contact}
+                    src={getInboxConversationAvatarSrc(selectedConv.id)}
+                    size="xs"
+                    className="mt-0.5 shrink-0 ring-1 ring-[var(--software-border)]"
+                  />
                 </div>
                 <div className="flex justify-start">
                   <div className="flex max-w-[88%] items-start gap-2">
@@ -309,13 +315,19 @@ const UnifiedInbox = () => {
                     </div>
                   </div>
                 </div>
-                <div className="flex justify-end">
+                <div className="flex items-start justify-end gap-2">
                   <div className="max-w-[88%]">
                     <div className="rounded-2xl rounded-br-md bg-accent px-3.5 py-2.5 text-on-accent">
                       <p className="text-sm leading-relaxed">{selectedConv.lastMessage}</p>
                     </div>
                     <p className="mt-1 mr-1 text-right text-[10px] text-[var(--software-text-muted)]">{selectedConv.time}</p>
                   </div>
+                  <DemoPersonAvatar
+                    name={selectedConv.contact}
+                    src={getInboxConversationAvatarSrc(selectedConv.id)}
+                    size="xs"
+                    className="mt-0.5 shrink-0 ring-1 ring-[var(--software-border)]"
+                  />
                 </div>
               </div>
 
@@ -351,29 +363,6 @@ const UnifiedInbox = () => {
               </div>
             </motion.div>
           </AnimatePresence>
-
-          <aside className="software-inbox-rail hidden min-h-0 w-[220px] shrink-0 flex-col border-l xl:flex">
-            <div className="border-b border-[var(--software-border)] px-4 py-3">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.12em] text-[var(--software-text-muted)]">
-                {t.dashboardSubtitle}
-              </p>
-            </div>
-            <div className="flex-1 space-y-3 overflow-y-auto p-3">
-              {t.stats.slice(0, 3).map((stat) => (
-                <div
-                  key={stat.label}
-                  className="rounded-lg border border-[var(--software-border)] bg-[var(--software-sidebar)] p-3"
-                >
-                  <p className={`font-display text-lg font-bold tabular-nums ${stat.valueClass}`}>{stat.value}</p>
-                  <p className="mt-0.5 text-[10px] text-[var(--software-text-muted)]">{stat.label}</p>
-                </div>
-              ))}
-              <div className="rounded-lg border border-accent/25 bg-accent/10 p-3">
-                <p className="text-[10px] font-semibold uppercase tracking-wide text-accent">{t.activeStatus}</p>
-                <p className="mt-1 text-xs leading-relaxed text-[var(--software-text-muted)]">{t.activeCount}</p>
-              </div>
-            </div>
-          </aside>
         </div>
       </motion.div>
     </SoftwareDemoSection>

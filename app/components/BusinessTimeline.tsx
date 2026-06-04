@@ -11,9 +11,6 @@ interface Step {
   id: string
   title: string
   description: string
-  /** Visitor-facing headline: what they get after this stage. */
-  outcomeTitle: string
-  outcomeLine: string
   icon: ReactNode
   metrics: string[]
   color: ColorType
@@ -29,8 +26,6 @@ const BusinessTimeline = () => {
       id: 'lead',
       title: t.steps[0].title,
       description: t.steps[0].description,
-      outcomeTitle: t.steps[0].outcomeTitle,
-      outcomeLine: t.steps[0].outcomeLine,
       icon: (
         <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M16 21V19C16 17.9391 15.5786 16.9217 14.8284 16.1716C14.0783 15.4214 13.0609 15 12 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -46,8 +41,6 @@ const BusinessTimeline = () => {
       id: 'response',
       title: t.steps[1].title,
       description: t.steps[1].description,
-      outcomeTitle: t.steps[1].outcomeTitle,
-      outcomeLine: t.steps[1].outcomeLine,
       icon: (
         <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -60,8 +53,6 @@ const BusinessTimeline = () => {
       id: 'qualification',
       title: t.steps[2].title,
       description: t.steps[2].description,
-      outcomeTitle: t.steps[2].outcomeTitle,
-      outcomeLine: t.steps[2].outcomeLine,
       icon: (
         <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z" stroke="currentColor" strokeWidth="2"/>
@@ -77,8 +68,6 @@ const BusinessTimeline = () => {
       id: 'appointment',
       title: t.steps[3].title,
       description: t.steps[3].description,
-      outcomeTitle: t.steps[3].outcomeTitle,
-      outcomeLine: t.steps[3].outcomeLine,
       icon: (
         <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect x="3" y="4" width="18" height="18" rx="2" ry="2" stroke="currentColor" strokeWidth="2"/>
@@ -95,8 +84,6 @@ const BusinessTimeline = () => {
       id: 'followup',
       title: t.steps[4].title,
       description: t.steps[4].description,
-      outcomeTitle: t.steps[4].outcomeTitle,
-      outcomeLine: t.steps[4].outcomeLine,
       icon: (
         <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentColor" strokeWidth="2"/>
@@ -110,8 +97,6 @@ const BusinessTimeline = () => {
       id: 'post_sale',
       title: t.steps[5].title,
       description: t.steps[5].description,
-      outcomeTitle: t.steps[5].outcomeTitle,
-      outcomeLine: t.steps[5].outcomeLine,
       icon: (
         <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M20 7L21 8L10 19L3 19L3 12L14 1L15 2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -165,27 +150,6 @@ const BusinessTimeline = () => {
     }
     return colors[color] || colors.accent
   }
-
-  const renderStepOutcome = (
-    step: Step,
-    isCurrent: boolean,
-    colorClasses: ReturnType<typeof getColorClasses>,
-  ) => (
-    <div
-      className={`mt-3 border-t pt-3 ${
-        isCurrent ? colorClasses.border : 'border-border/60'
-      }`}
-    >
-      <p
-        className={`mb-1 text-[10px] font-bold uppercase tracking-wide leading-snug ${
-          isCurrent ? colorClasses.text : 'text-muted'
-        }`}
-      >
-        {step.outcomeTitle}
-      </p>
-      <p className="text-[11px] leading-snug text-muted xl:text-xs">{step.outcomeLine}</p>
-    </div>
-  )
 
   return (
     <section className="py-24" aria-labelledby="timeline-title">
@@ -308,8 +272,6 @@ const BusinessTimeline = () => {
                           </motion.span>
                         ))}
                       </div>
-
-                      {renderStepOutcome(step, isCurrent, colorClasses)}
                     </motion.div>
                   </motion.div>
                 )
@@ -399,8 +361,6 @@ const BusinessTimeline = () => {
                       </motion.span>
                     ))}
                   </div>
-
-                  {renderStepOutcome(step, isCurrent, colorClasses)}
                 </motion.div>
               </motion.div>
             )

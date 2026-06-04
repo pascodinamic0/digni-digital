@@ -63,7 +63,7 @@ export default function Navigation() {
   }, [mobileOpen])
 
   const navLinks = [
-    { name: t.nav.ourMission, href: '/#our-mission' },
+    { name: t.nav.home, href: '/' },
     { name: t.nav.aboutUs, href: '/about' },
     { name: t.nav.caseStudies, href: '/case-studies' },
   ]
