@@ -12,19 +12,20 @@ import PremiumHeroBackdrop from '@/app/components/PremiumHeroBackdrop'
 import PremiumHeroParallax from '@/app/components/PremiumHeroParallax'
 import ScrollIndicator from '@/app/components/ScrollIndicator'
 import DemoPresentationDownload from '@/app/components/DemoPresentationDownload'
-import AiEmployeeBonusStackSection from '@/app/components/AiEmployeeBonusStackSection'
-import AiEmployeeMobileAppBanner from '@/app/components/AiEmployeeMobileAppBanner'
-import AiEmployeePricingPanel from '@/app/components/AiEmployeePricingPanel'
 import AiEmployeeScarcityBanner from '@/app/components/AiEmployeeScarcityBanner'
-import AiEmployeeProofCarousel from '@/app/components/AiEmployeeProofCarousel'
 import {
   ProblemStatsSection,
   TimeToValueSection,
   CapabilitiesSection,
   DreamOutcomeSection,
+  ProofSection,
   DenominatorSection,
   QualificationSection,
+  ClientOutcomesSection,
+  BonusStackSection,
   GuaranteeSection,
+  MobileAppBannerSection,
+  PricingSection,
   FinalCtaSection,
 } from '@/app/components/ai-employee'
 
@@ -130,22 +131,11 @@ export function AIReceptionistClient({ params, searchParams, showTaskQueueDemo }
       <CapabilitiesSection />
       <DreamOutcomeSection />
 
-      {/* Proof */}
-      <AnimatedSection id="proof" className="py-16 md:py-20">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-8 md:mb-10">
-            <span className="section-label">{t.caseStudy.label}</span>
-            <h2 className="type-h2 font-display font-bold mt-3 mb-2 max-w-2xl mx-auto">
-              {t.caseStudy.title}
-            </h2>
-          </div>
-
-          <AiEmployeeProofCarousel caseStudy={t.caseStudy} />
-        </div>
-      </AnimatedSection>
+      <ProofSection />
 
       {/* Process — product demos */}
       <AIReceptionistHowItWorksDemos showTaskQueueDemo={showTaskQueueDemo} />
+      <ClientOutcomesSection />
 
       {/* Contrast — leaky bucket vs loop */}
       <AIReceptionistPainDreamDemos />
@@ -154,26 +144,13 @@ export function AIReceptionistClient({ params, searchParams, showTaskQueueDemo }
 
       {/* Fit + offer */}
       <QualificationSection />
-      <AiEmployeeBonusStackSection />
+      <BonusStackSection />
       <GuaranteeSection />
-
-      <AiEmployeeMobileAppBanner />
-
-      {/* Pricing */}
-      <AnimatedSection id="pricing" className="border-b border-[var(--software-border)] py-16 md:py-20">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6">
-          <div className="mb-6 text-center sm:mb-7">
-            <h2 className="type-h2 font-display font-bold mb-2">{t.pricing.title}</h2>
-            <p className="type-body mx-auto max-w-md text-muted leading-relaxed">{t.pricing.subtitle}</p>
-          </div>
-
-          <AiEmployeePricingPanel
-            pricing={t.pricing}
-            checkoutRedirectingLabel={ctaT.checkoutRedirecting}
-            continueToSecureCheckoutLabel={ctaT.continueToSecureCheckout}
-          />
-        </div>
-      </AnimatedSection>
+      <MobileAppBannerSection />
+      <PricingSection
+        checkoutRedirectingLabel={ctaT.checkoutRedirecting}
+        continueToSecureCheckoutLabel={ctaT.continueToSecureCheckout}
+      />
 
       {/* CTA */}
       <FinalCtaSection />

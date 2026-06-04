@@ -4,6 +4,8 @@ type SectionHeadingProps = {
   label?: string
   title: string
   titleHighlight?: string
+  /** Class for the highlighted line (default: gradient-text-brand). */
+  highlightClassName?: string
   supporting?: string
   align?: 'left' | 'center'
   className?: string
@@ -14,6 +16,7 @@ export default function SectionHeading({
   label,
   title,
   titleHighlight,
+  highlightClassName = 'gradient-text-brand',
   supporting,
   align = 'left',
   className = '',
@@ -29,7 +32,7 @@ export default function SectionHeading({
         {titleHighlight ? (
           <>
             <br />
-            <span className="gradient-text-brand">{titleHighlight}</span>
+            <span className={highlightClassName}>{titleHighlight}</span>
           </>
         ) : null}
       </h2>

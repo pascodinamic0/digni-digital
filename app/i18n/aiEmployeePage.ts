@@ -56,6 +56,15 @@ export type AiEmployeePageTranslations = {
     notHeading: string
     notItems: [string, string, string, string, string, string]
   }
+  clientOutcomes: {
+    badge: string
+    title: string
+    titleHighlight: string
+    subtitle: string
+    expandTechnical: string
+    collapseTechnical: string
+    steps: [OutcomeStep, OutcomeStep, OutcomeStep]
+  }
   caseStudy: {
     label: string
     title: string
@@ -151,6 +160,7 @@ export type AiEmployeePageTranslations = {
 }
 
 type BonusItem = { name: string; description: string; value: string }
+type OutcomeStep = { title: string; body: string; technical: [string, string, string] }
 
 type StatTriple = { value: string; label: string; hint: string }
 type CapItem = { title: string; body: string }
@@ -296,6 +306,44 @@ export const aiEmployeePageEn: AiEmployeePageTranslations = {
       'Response time isn’t a bottleneck for revenue',
       'You only want a login, not implementation and partnership',
       'You’re not ready to change how work flows between team and client',
+    ],
+  },
+  clientOutcomes: {
+    badge: 'How it works',
+    title: 'Three outcomes.',
+    titleHighlight: 'One system.',
+    subtitle:
+      'Capture every inquiry. Convert qualified demand into appointments. Grow with reviews and follow-up.',
+    expandTechnical: 'Tap a step to see how it works under the hood',
+    collapseTechnical: 'Tap again to collapse details',
+    steps: [
+      {
+        title: 'Capture',
+        body: 'Every inquiry receives a response.',
+        technical: [
+          'Instant reply on web, SMS, WhatsApp, Instagram, and phone',
+          'One inbox—no scattered threads or voicemail lottery',
+          'Leads logged automatically with source and intent',
+        ],
+      },
+      {
+        title: 'Convert',
+        body: 'Qualified prospects become appointments.',
+        technical: [
+          'Smart qualification before your team gets involved',
+          'Self-serve booking into your live calendar',
+          'Confirmations and reminders that cut no-shows',
+        ],
+      },
+      {
+        title: 'Grow',
+        body: 'Reviews, referrals, and follow-up create more revenue.',
+        technical: [
+          'Persistent follow-up until they book or opt out',
+          'Review requests after every completed visit',
+          'Referral prompts that compound the same lead batch',
+        ],
+      },
     ],
   },
   caseStudy: {
@@ -521,6 +569,44 @@ export const aiEmployeePageFr: AiEmployeePageTranslations = {
       'Le délai de réponse n’est pas un frein au revenu',
       'Vous voulez seulement un login, pas l’implémentation et le partenariat',
       'Vous n’êtes pas prêt à changer le flux travail / client',
+    ],
+  },
+  clientOutcomes: {
+    badge: 'Comment ça marche',
+    title: 'Trois résultats.',
+    titleHighlight: 'Un système.',
+    subtitle:
+      'Capturer chaque demande. Convertir la demande qualifiée en rendez-vous. Grandir avec avis et relances.',
+    expandTechnical: 'Touchez une étape pour voir le fonctionnement',
+    collapseTechnical: 'Touchez à nouveau pour réduire',
+    steps: [
+      {
+        title: 'Capturer',
+        body: 'Chaque demande reçoit une réponse.',
+        technical: [
+          'Réponse instantanée web, SMS, WhatsApp, Instagram et téléphone',
+          'Une boîte—pas de fils éparpillés ni de loterie vocale',
+          'Leads enregistrés automatiquement avec source et intention',
+        ],
+      },
+      {
+        title: 'Convertir',
+        body: 'Les prospects qualifiés deviennent des rendez-vous.',
+        technical: [
+          'Qualification intelligente avant l’équipe',
+          'Prise de rendez-vous en libre-service sur votre calendrier',
+          'Confirmations et rappels qui réduisent les lapins',
+        ],
+      },
+      {
+        title: 'Grandir',
+        body: 'Avis, parrainages et relances génèrent plus de revenu.',
+        technical: [
+          'Relance persistante jusqu’à réservation ou refus',
+          'Demandes d’avis après chaque visite',
+          'Invitations parrainage qui composent le même lot de leads',
+        ],
+      },
     ],
   },
   caseStudy: {
@@ -749,6 +835,44 @@ export const aiEmployeePageDe: AiEmployeePageTranslations = {
       'Sie sind nicht bereit, Arbeitsfluss zwischen Team und Kunde zu ändern',
     ],
   },
+  clientOutcomes: {
+    badge: 'So funktioniert es',
+    title: 'Drei Ergebnisse.',
+    titleHighlight: 'Ein System.',
+    subtitle:
+      'Jede Anfrage erfassen. Qualifizierte Nachfrage in Termine verwandeln. Mit Bewertungen und Nachfassen wachsen.',
+    expandTechnical: 'Schritt antippen für technische Details',
+    collapseTechnical: 'Erneut antippen zum Einklappen',
+    steps: [
+      {
+        title: 'Erfassen',
+        body: 'Jede Anfrage erhält eine Antwort.',
+        technical: [
+          'Sofortantwort auf Web, SMS, WhatsApp, Instagram und Telefon',
+          'Ein Posteingang—keine verstreuten Threads oder Mailbox-Lotterie',
+          'Leads automatisch mit Quelle und Absicht protokolliert',
+        ],
+      },
+      {
+        title: 'Konvertieren',
+        body: 'Qualifizierte Interessenten werden zu Terminen.',
+        technical: [
+          'Intelligente Qualifizierung vor Ihrem Team',
+          'Self-Service-Buchung in Ihren Live-Kalender',
+          'Bestätigungen und Erinnerungen gegen No-Shows',
+        ],
+      },
+      {
+        title: 'Wachsen',
+        body: 'Bewertungen, Empfehlungen und Nachfassen schaffen mehr Umsatz.',
+        technical: [
+          'Beharrliches Nachfassen bis Buchung oder Opt-out',
+          'Bewertungsanfragen nach jedem Besuch',
+          'Empfehlungsimpulse, die denselben Lead-Stapel vervielfachen',
+        ],
+      },
+    ],
+  },
   caseStudy: {
     label: 'Beweis',
     title: 'Von verpasster Annahme zu einem System, das nicht schläft, schnell.',
@@ -975,6 +1099,44 @@ export const aiEmployeePageEs: AiEmployeePageTranslations = {
       'No está listo a cambiar cómo fluye el trabajo con el cliente',
     ],
   },
+  clientOutcomes: {
+    badge: 'Cómo funciona',
+    title: 'Tres resultados.',
+    titleHighlight: 'Un sistema.',
+    subtitle:
+      'Captar cada consulta. Convertir demanda calificada en citas. Crecer con reseñas y seguimiento.',
+    expandTechnical: 'Toque un paso para ver cómo funciona por dentro',
+    collapseTechnical: 'Toque de nuevo para contraer',
+    steps: [
+      {
+        title: 'Captar',
+        body: 'Cada consulta recibe respuesta.',
+        technical: [
+          'Respuesta instantánea en web, SMS, WhatsApp, Instagram y teléfono',
+          'Una bandeja—sin hilos dispersos ni lotería de buzón',
+          'Leads registrados automáticamente con fuente e intención',
+        ],
+      },
+      {
+        title: 'Convertir',
+        body: 'Los prospectos calificados se convierten en citas.',
+        technical: [
+          'Calificación inteligente antes de su equipo',
+          'Reserva autoservicio en su calendario en vivo',
+          'Confirmaciones y recordatorios que reducen ausencias',
+        ],
+      },
+      {
+        title: 'Crecer',
+        body: 'Reseñas, referidos y seguimiento generan más ingresos.',
+        technical: [
+          'Seguimiento persistente hasta reserva o baja',
+          'Solicitudes de reseña tras cada visita',
+          'Invitaciones de referido que multiplican el mismo lote de leads',
+        ],
+      },
+    ],
+  },
   caseStudy: {
     label: 'Prueba',
     title: 'De captación fallida a un sistema que no duerme, rápido.',
@@ -1198,6 +1360,44 @@ export const aiEmployeePageAr: AiEmployeePageTranslations = {
       'سرعة الرد ليست عنق زجاجة للإيراد',
       'تريد تسجيل دخول فقط, لا تنفيذ ولا شراكة',
       'غير مستعد لتغيير تدفق العمل بين الفريق والعميل',
+    ],
+  },
+  clientOutcomes: {
+    badge: 'كيف يعمل',
+    title: 'ثلاث نتائج.',
+    titleHighlight: 'نظام واحد.',
+    subtitle:
+      'التقاط كل استفسار. تحويل الطلب المؤهل إلى مواعيد. النمو بالمراجعات والمتابعة.',
+    expandTechnical: 'اضغط خطوة لرؤية التفاصيل التقنية',
+    collapseTechnical: 'اضغط مرة أخرى للطي',
+    steps: [
+      {
+        title: 'التقاط',
+        body: 'كل استفسار يحصل على رد.',
+        technical: [
+          'رد فوري على الويب والرسائل وواتساب وإنستغرام والهاتف',
+          'صندوق واحد—لا خيوط مبعثرة ولا يانصيب بريد صوتي',
+          'تسجيل العملاء المحتملين تلقائياً بالمصدر والنية',
+        ],
+      },
+      {
+        title: 'التحويل',
+        body: 'العملاء المؤهلون يصبحون مواعيد.',
+        technical: [
+          'تأهيل ذكي قبل تدخل فريقك',
+          'حجز ذاتي في تقويمك المباشر',
+          'تأكيدات وتذكيرات تقلل الغياب',
+        ],
+      },
+      {
+        title: 'النمو',
+        body: 'المراجعات والإحالات والمتابعة تزيد الإيراد.',
+        technical: [
+          'متابعة مستمرة حتى الحجز أو الانسحاب',
+          'طلبات مراجعة بعد كل زيارة',
+          'دعوات إحالة تضاعف نفس دفعة العملاء',
+        ],
+      },
     ],
   },
   caseStudy: {
