@@ -103,6 +103,18 @@ type FunnelCopy = {
   lostBadge: string
   referralBadge: string
   leadsUnit: string
+  atStage: string
+  closed: string
+  noDropThisStep: string
+}
+
+type FunnelLiveMetricKind = 'drop' | 'gain' | 'closed' | 'remaining'
+
+type FunnelLiveMetric = {
+  kind: FunnelLiveMetricKind
+  value: number
+  stageTitle: string
+  inPipeline: number
 }
 
 /** Aligned with --brand-blue-dark (#065a7a) and deeper blue-navy for depth */
@@ -610,37 +622,95 @@ function AIPoweredFlowDiagram({
 const FUNNEL_STEP_INTERVAL_MS = 2800
 const CAROUSEL_CARD_WIDTH = 420
 
-const PIPELINE_SECTION_SPANS: ReadonlyArray<{
-  labelKey: 'sectionIntake' | 'sectionConversion' | 'sectionOutcome'
-  colSpan: 2 | 3
-}> = [
-  { labelKey: 'sectionIntake', colSpan: 2 },
-  { labelKey: 'sectionConversion', colSpan: 3 },
-  { labelKey: 'sectionOutcome', colSpan: 2 },
-]
-
-/** Compact chip labels so seven pipeline columns fit inside carousel cards. */
-function pipelineSectionChipLabel(key: (typeof PIPELINE_SECTION_SPANS)[number]['labelKey'], full: string): string {
-  const short: Record<(typeof PIPELINE_SECTION_SPANS)[number]['labelKey'], string> = {
-    sectionIntake: 'Intake',
-    sectionConversion: 'Convert',
-    sectionOutcome: 'Close',
-  }
-  const chip = short[key]
-  if (full.length <= chip.length + 2) return full
-  return chip
-}
-
-function pipelineSectionLabel(step: number, copy: FunnelCopy): string {
-  if (step <= 1) return copy.sectionIntake
-  if (step <= 4) return copy.sectionConversion
-  return copy.sectionOutcome
-}
-
 function pipelineDropAtStep(counts: number[], index: number): number {
   if (index >= counts.length - 1) return 0
-  if (index === 0) return 0
   return Math.max(0, (counts[index] ?? 0) - (counts[index + 1] ?? 0))
+}
+
+function getFunnelLiveMetric(
+  variant: 'broken' | 'ai',
+  counts: number[],
+  activeStep: number,
+  stageTitle: string
+): FunnelLiveMetric {
+  const inPipeline = counts[activeStep] ?? 0
+  const dropLeaving = pipelineDropAtStep(counts, activeStep)
+  const isLast = activeStep === counts.length - 1
+  const referralGain =
+    variant === 'ai' && isLast && activeStep > 0
+      ? Math.max(0, inPipeline - (counts[activeStep - 1] ?? 0))
+      : 0
+
+  if (variant === 'ai' && activeStep === 5) {
+    return { kind: 'closed', value: inPipeline, stageTitle, inPipeline }
+  }
+  if (variant === 'ai' && isLast && referralGain > 0) {
+    return { kind: 'gain', value: referralGain, stageTitle, inPipeline }
+  }
+  if (dropLeaving > 0) {
+    return { kind: 'drop', value: dropLeaving, stageTitle, inPipeline }
+  }
+  return { kind: 'remaining', value: inPipeline, stageTitle, inPipeline }
+}
+
+function FunnelLiveMetricBlock({
+  metric,
+  variant,
+  funnelCopy,
+  animate,
+}: {
+  metric: FunnelLiveMetric
+  variant: 'broken' | 'ai'
+  funnelCopy: FunnelCopy
+  animate: boolean
+}) {
+  const isBroken = variant === 'broken'
+  const tone =
+    metric.kind === 'drop'
+      ? 'text-destructive'
+      : metric.kind === 'gain' || metric.kind === 'closed'
+        ? 'text-success'
+        : isBroken
+          ? 'text-destructive'
+          : 'text-success'
+
+  const suffix =
+    metric.kind === 'drop'
+      ? funnelCopy.lostBadge
+      : metric.kind === 'gain'
+        ? funnelCopy.referralBadge
+        : metric.kind === 'closed'
+          ? funnelCopy.closed
+          : funnelCopy.pipelineLabel
+
+  const prefix = metric.kind === 'drop' ? '−' : metric.kind === 'gain' ? '+' : ''
+
+  const subline =
+    metric.kind === 'drop' || metric.kind === 'gain'
+      ? `${funnelCopy.atStage} ${metric.stageTitle} · ${metric.inPipeline.toLocaleString()} ${funnelCopy.pipelineLabel}`
+      : metric.kind === 'closed'
+        ? `${funnelCopy.atStage} ${metric.stageTitle}`
+        : `${funnelCopy.atStage} ${metric.stageTitle} · ${funnelCopy.noDropThisStep}`
+
+  return (
+    <AnimatePresence mode="wait">
+      <motion.div
+        key={`${metric.kind}-${metric.value}-${metric.stageTitle}`}
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -8 }}
+        transition={{ duration: 0.28 }}
+        className="mt-4"
+      >
+        <p className={`font-display text-3xl font-bold tabular-nums ${tone}`}>
+          {prefix}
+          <AnimatedCount value={metric.value} isActive={animate} />
+          <span className="ml-2 text-lg font-semibold">{suffix}</span>
+        </p>
+        <p className="mt-1.5 text-sm text-[var(--software-text-muted)] leading-snug">{subline}</p>
+      </motion.div>
+    </AnimatePresence>
+  )
 }
 
 function PipelineMiniChart({
@@ -658,24 +728,20 @@ function PipelineMiniChart({
 }) {
   const max = Math.max(...counts, 1)
   const isBroken = variant === 'broken'
-  const activeDrop = isBroken ? pipelineDropAtStep(counts, activeStep) : 0
-  const referralGain =
-    !isBroken && activeStep === counts.length - 1 && counts.length >= 2
-      ? Math.max(0, (counts[counts.length - 1] ?? 0) - (counts[counts.length - 2] ?? 0))
-      : 0
+  const live = getFunnelLiveMetric(variant, counts, activeStep, stageTitles[activeStep] ?? '')
+  const stageName = stageTitles[activeStep] ?? ''
 
   return (
-    <div className="mt-5 min-w-0 overflow-hidden" aria-hidden>
-      <div className="mb-1.5 grid grid-cols-7 gap-0.5">
-        {PIPELINE_SECTION_SPANS.map(({ labelKey, colSpan }) => (
+    <div className="mt-5 min-w-0 overflow-hidden">
+      <div className="mb-2 grid grid-cols-7 gap-1">
+        {stageTitles.map((title, i) => (
           <div
-            key={labelKey}
-            className={`flex min-w-0 items-center justify-center rounded border border-[var(--software-border)]/80 bg-[var(--software-content)]/50 px-0.5 py-0.5 ${
-              colSpan === 2 ? 'col-span-2' : 'col-span-3'
-            }`}
+            key={`${title}-${i}`}
+            className="flex min-h-[2.25rem] min-w-0 items-center justify-center rounded border border-[var(--software-border)]/80 bg-[var(--software-content)]/50 px-0.5 py-1"
+            title={title}
           >
-            <span className="block w-full truncate text-center text-[8px] font-bold uppercase tracking-wide text-[var(--software-text-muted)]">
-              {pipelineSectionChipLabel(labelKey, funnelCopy[labelKey])}
+            <span className="line-clamp-2 w-full text-center text-[7px] font-semibold leading-[1.15] text-[var(--software-text)] sm:text-[8px]">
+              {title}
             </span>
           </div>
         ))}
@@ -683,8 +749,30 @@ function PipelineMiniChart({
 
       <div className="grid grid-cols-7 gap-0.5 items-end h-[4.5rem] border-b border-[var(--software-border)]/60 pb-1">
         {counts.map((n, i) => {
-          const h = Math.max(8, Math.round((n / max) * 48))
+          const h = Math.max(10, Math.round((n / max) * 48))
           const active = i === activeStep
+          const barTone = isBroken
+            ? active
+              ? 'bg-destructive shadow-sm shadow-destructive/35 ring-1 ring-destructive/50'
+              : 'bg-destructive/65'
+            : active
+              ? 'bg-success shadow-sm shadow-success/35 ring-1 ring-success/50'
+              : 'bg-success/60'
+          const valueTone = isBroken
+            ? active
+              ? 'text-destructive font-bold'
+              : 'text-destructive/90 font-semibold'
+            : active
+              ? 'text-success font-bold'
+              : 'text-success/90 font-semibold'
+          const stepTone = isBroken
+            ? active
+              ? 'text-destructive font-bold'
+              : 'text-destructive/75'
+            : active
+              ? 'text-success font-bold'
+              : 'text-success/75'
+
           return (
             <div
               key={i}
@@ -692,55 +780,47 @@ function PipelineMiniChart({
               title={stageTitles[i]}
             >
               <motion.div
-                className={`w-[85%] max-w-[1.35rem] rounded-t-sm transition-colors ${
-                  isBroken
-                    ? active
-                      ? 'bg-destructive shadow-sm shadow-destructive/30'
-                      : 'bg-destructive/28'
-                    : active
-                      ? 'bg-success shadow-sm shadow-success/30'
-                      : 'bg-success/25'
-                }`}
+                className={`w-[88%] max-w-[1.35rem] rounded-t-sm transition-[box-shadow,ring-color] duration-300 ${barTone}`}
                 style={{ height: h }}
-                layout
+                layout="position"
                 transition={{ duration: 0.35 }}
               />
-              <span
-                className={`text-[9px] font-mono tabular-nums leading-none ${
-                  active ? (isBroken ? 'text-destructive font-bold' : 'text-success font-bold') : 'text-[var(--software-text-muted)]'
-                }`}
-              >
-                {n}
-              </span>
-              <span
-                className={`text-[8px] font-semibold leading-none tabular-nums ${
-                  active ? (isBroken ? 'text-destructive' : 'text-success') : 'text-[var(--software-text-muted)]/70'
-                }`}
-              >
-                {i + 1}
-              </span>
+              <span className={`text-[9px] font-mono tabular-nums leading-none ${valueTone}`}>{n}</span>
+              <span className={`text-[8px] font-semibold leading-none tabular-nums ${stepTone}`}>{i + 1}</span>
             </div>
           )
         })}
       </div>
 
-      {(isBroken && activeDrop > 0) || (!isBroken && referralGain > 0 && activeStep >= 5) ? (
-        <p
-          className={`mt-2 text-center text-[10px] font-semibold tabular-nums leading-none ${
-            isBroken ? 'text-destructive' : 'text-success'
+      <AnimatePresence mode="wait">
+        <motion.p
+          key={`${live.kind}-${activeStep}-${live.value}`}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className={`mt-2 text-center text-[10px] font-semibold tabular-nums leading-snug ${
+            live.kind === 'drop' ? 'text-destructive' : live.kind === 'gain' || live.kind === 'closed' ? 'text-success' : 'text-[var(--software-text-muted)]'
           }`}
         >
-          {isBroken && activeDrop > 0 ? (
+          {live.kind === 'drop' ? (
             <>
-              −{activeDrop} {funnelCopy.lostBadge}
+              −{live.value} {funnelCopy.lostBadge} · {stageName}
+            </>
+          ) : live.kind === 'gain' ? (
+            <>
+              +{live.value} {funnelCopy.referralBadge} · {stageName}
+            </>
+          ) : live.kind === 'closed' ? (
+            <>
+              {live.value} {funnelCopy.closed} · {stageName}
             </>
           ) : (
             <>
-              +{referralGain} {funnelCopy.referralBadge}
+              {live.inPipeline.toLocaleString()} {funnelCopy.pipelineLabel} · {stageName}
             </>
           )}
-        </p>
-      ) : null}
+        </motion.p>
+      </AnimatePresence>
     </div>
   )
 }
@@ -750,7 +830,6 @@ type JourneyCarouselCardProps = {
   sectionBadge: string
   label: string
   tagline: string
-  closedLabel: string
   counts: number[]
   activeStep: number
   stages: { title: string }[]
@@ -766,7 +845,6 @@ function JourneyCarouselCard({
   sectionBadge,
   label,
   tagline,
-  closedLabel,
   counts,
   activeStep,
   stages,
@@ -778,6 +856,7 @@ function JourneyCarouselCard({
 }: JourneyCarouselCardProps) {
   const isBroken = variant === 'broken'
   const stageTitles = stages.map((s) => s.title)
+  const liveMetric = getFunnelLiveMetric(variant, counts, activeStep, stageTitles[activeStep] ?? '')
 
   return (
     <button
@@ -788,7 +867,7 @@ function JourneyCarouselCard({
           ? isBroken
             ? 'border-destructive/40 bg-[var(--software-panel)] shadow-lg shadow-destructive/10 ring-1 ring-destructive/20'
             : 'border-success/40 bg-[var(--software-panel)] shadow-lg shadow-success/10 ring-1 ring-success/20'
-          : 'border-[var(--software-border)] bg-[var(--software-panel)]/60 opacity-90 hover:border-[var(--software-border)] hover:opacity-100'
+          : 'border-[var(--software-border)] bg-[var(--software-panel)]/80 hover:border-[var(--software-border)]'
       }`}
       style={{ width: `min(92vw, ${CAROUSEL_CARD_WIDTH}px)` }}
       aria-pressed={isActive}
@@ -809,9 +888,7 @@ function JourneyCarouselCard({
         {label}
       </h3>
       <p className="mt-1.5 line-clamp-2 text-sm text-[var(--software-text-muted)] leading-snug">{tagline}</p>
-      <p className={`mt-4 font-display text-3xl font-bold tabular-nums ${isBroken ? 'text-destructive' : 'text-success'}`}>
-        {closedLabel}
-      </p>
+      <FunnelLiveMetricBlock metric={liveMetric} variant={variant} funnelCopy={funnelCopy} animate />
       <PipelineMiniChart
         counts={counts}
         variant={variant}
@@ -842,7 +919,6 @@ const ClientJourneyDemo = ({ prominent = false }: ClientJourneyDemoProps) => {
   const [activeFunnelStep, setActiveFunnelStep] = useState(0)
   const language = useLanguage()
   const t = translations[language].clientJourney
-  const problem = translations[language].aiEmployeePage.problem
   const dream = translations[language].aiEmployeePage.dreamOutcome
   const compact = prominent
   const [pipelineExpanded, setPipelineExpanded] = useState(false)
@@ -859,6 +935,9 @@ const ClientJourneyDemo = ({ prominent = false }: ClientJourneyDemoProps) => {
     lostBadge: t.funnelLostBadge,
     referralBadge: t.funnelReferralBadge,
     leadsUnit: t.funnelLeadsUnit,
+    atStage: t.funnelAtStage,
+    closed: t.funnelClosed,
+    noDropThisStep: t.funnelNoDropThisStep,
   }
   const channels: ChannelItem[] = t.channels.map((c) => ({ ...c, icon: CHANNEL_ICONS[c.id] ?? '📩' }))
   const brokenStages: BrokenStageItem[] = t.brokenStages.map((s, i) => ({ ...s, icon: BROKEN_STAGE_ICONS[i] }))
@@ -914,9 +993,6 @@ const ClientJourneyDemo = ({ prominent = false }: ClientJourneyDemoProps) => {
     )
   }
 
-  const leakClosedLabel = `→ ${BROKEN_FUNNEL[5]} closed`
-  const loopClosedLabel = `→ ${AI_FUNNEL[5]} close`
-
   return (
     <section
       id="leak-vs-loop"
@@ -961,19 +1037,6 @@ const ClientJourneyDemo = ({ prominent = false }: ClientJourneyDemoProps) => {
           <span className="font-display text-sm font-bold text-success tabular-nums">{dream.afterMetric}</span>
           <span className="w-full sm:w-auto text-[10px] text-[var(--software-text-muted)]">{dream.referralLine}</span>
         </motion.div>
-
-        <div className="mt-5 flex flex-wrap justify-center gap-2" role="list" aria-label={problem.badge}>
-          {problem.stats.map((stat, i) => (
-            <span
-              key={i}
-              role="listitem"
-              className="inline-flex items-center gap-1.5 rounded-full border border-destructive/25 bg-destructive/5 px-3 py-1.5 text-[11px]"
-            >
-              <span className="font-display font-bold text-destructive tabular-nums">{stat.value}</span>
-              <span className="text-[var(--software-text-muted)]">{stat.label}</span>
-            </span>
-          ))}
-        </div>
       </div>
 
       <div className="relative mx-auto mt-10 max-w-6xl">
@@ -999,12 +1062,11 @@ const ClientJourneyDemo = ({ prominent = false }: ClientJourneyDemoProps) => {
             sectionBadge={t.beforeSectionBadge}
             label={t.brokenLabel}
             tagline={t.beforeSectionSubtext}
-            closedLabel={leakClosedLabel}
             counts={BROKEN_FUNNEL}
             activeStep={activeFunnelStep}
             stages={brokenStages}
             stageLine={brokenStages[activeFunnelStep]?.leak ?? ''}
-            stageSection={pipelineSectionLabel(activeFunnelStep, funnelCopy)}
+            stageSection={brokenStages[activeFunnelStep]?.title ?? ''}
             funnelCopy={funnelCopy}
             isActive={activeCard === 'broken'}
             onSelect={() => scrollToCard('broken')}
@@ -1014,12 +1076,11 @@ const ClientJourneyDemo = ({ prominent = false }: ClientJourneyDemoProps) => {
             sectionBadge={t.afterSectionBadge}
             label={t.aiFlowLabel}
             tagline={t.afterSectionSubtext}
-            closedLabel={loopClosedLabel}
             counts={AI_FUNNEL}
             activeStep={activeFunnelStep}
             stages={aiStages}
             stageLine={aiStages[activeFunnelStep]?.win ?? ''}
-            stageSection={pipelineSectionLabel(activeFunnelStep, funnelCopy)}
+            stageSection={aiStages[activeFunnelStep]?.title ?? ''}
             funnelCopy={funnelCopy}
             isActive={activeCard === 'ai'}
             onSelect={() => scrollToCard('ai')}

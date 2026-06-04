@@ -390,6 +390,9 @@ type ClientJourneyTranslations = {
   funnelLostBadge: string
   funnelReferralBadge: string
   funnelLeadsUnit: string
+  funnelAtStage: string
+  funnelClosed: string
+  funnelNoDropThisStep: string
   viewPipeline: string
   hidePipeline: string
   channels: Array<{ id: string; label: string }>
@@ -485,6 +488,7 @@ export type TranslationKeys = CommonTranslations & {
 function buildTranslations(): Record<Language, TranslationKeys> {
   const commonEn = {
     nav: {
+      home: 'Home',
       ourMission: 'Our Mission',
       aboutUs: 'About Us',
       caseStudies: 'Case Studies',
@@ -575,6 +579,7 @@ function buildTranslations(): Record<Language, TranslationKeys> {
 
   const commonFr = {
     nav: {
+      home: 'Accueil',
       ourMission: 'Notre Mission',
       aboutUs: 'À propos',
       caseStudies: 'Études de cas',
@@ -665,6 +670,7 @@ function buildTranslations(): Record<Language, TranslationKeys> {
 
   const commonDe = {
     nav: {
+      home: 'Startseite',
       ourMission: 'Unsere Mission',
       aboutUs: 'Über uns',
       caseStudies: 'Fallstudien',
@@ -755,6 +761,7 @@ function buildTranslations(): Record<Language, TranslationKeys> {
 
   const commonEs = {
     nav: {
+      home: 'Inicio',
       ourMission: 'Nuestra Misión',
       aboutUs: 'Nosotros',
       caseStudies: 'Casos de éxito',
@@ -844,6 +851,7 @@ function buildTranslations(): Record<Language, TranslationKeys> {
 
   const commonAr = {
     nav: {
+      home: 'الرئيسية',
       ourMission: 'مهمتنا',
       aboutUs: 'من نحن',
       caseStudies: 'دراسات الحالة',
@@ -2274,8 +2282,11 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     funnelColumnLost: 'Leak',
     funnelColumnNet: 'Net',
     funnelLostBadge: 'lost',
-    funnelReferralBadge: 'referral',
+    funnelReferralBadge: 'referrals',
     funnelLeadsUnit: 'leads',
+    funnelAtStage: 'at',
+    funnelClosed: 'closed',
+    funnelNoDropThisStep: 'No drop this step',
     viewPipeline: 'View interactive pipeline',
     hidePipeline: 'Hide pipeline',
     channels: [
@@ -2326,8 +2337,11 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     funnelColumnLost: 'Fuite',
     funnelColumnNet: 'Restant',
     funnelLostBadge: 'perdus',
-    funnelReferralBadge: 'parrainage',
+    funnelReferralBadge: 'parrainages',
     funnelLeadsUnit: 'leads',
+    funnelAtStage: 'à',
+    funnelClosed: 'conclus',
+    funnelNoDropThisStep: 'Aucune perte à cette étape',
     viewPipeline: 'Voir le pipeline interactif',
     hidePipeline: 'Masquer le pipeline',
     channels: [
@@ -2377,8 +2391,11 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     funnelColumnLost: 'تسرب',
     funnelColumnNet: 'صافي',
     funnelLostBadge: 'ضائع',
-    funnelReferralBadge: 'إحالة',
+    funnelReferralBadge: 'إحالات',
     funnelLeadsUnit: 'leads',
+    funnelAtStage: 'عند',
+    funnelClosed: 'مغلقة',
+    funnelNoDropThisStep: 'لا خسارة في هذه الخطوة',
     viewPipeline: 'عرض المسار التفاعلي',
     hidePipeline: 'إخفاء المسار',
     channels: [
@@ -2430,8 +2447,11 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     funnelColumnLost: 'Verlust',
     funnelColumnNet: 'Netto',
     funnelLostBadge: 'verloren',
-    funnelReferralBadge: 'Empfehlung',
+    funnelReferralBadge: 'Empfehlungen',
     funnelLeadsUnit: 'Leads',
+    funnelAtStage: 'bei',
+    funnelClosed: 'abgeschlossen',
+    funnelNoDropThisStep: 'Kein Verlust in diesem Schritt',
     viewPipeline: 'Interaktive Pipeline anzeigen',
     hidePipeline: 'Pipeline ausblenden',
     channels: [
@@ -2482,8 +2502,11 @@ function buildTranslations(): Record<Language, TranslationKeys> {
     funnelColumnLost: 'Fuga',
     funnelColumnNet: 'Neto',
     funnelLostBadge: 'perdidos',
-    funnelReferralBadge: 'referido',
+    funnelReferralBadge: 'referidos',
     funnelLeadsUnit: 'leads',
+    funnelAtStage: 'en',
+    funnelClosed: 'cerrados',
+    funnelNoDropThisStep: 'Sin pérdida en este paso',
     viewPipeline: 'Ver embudo interactivo',
     hidePipeline: 'Ocultar embudo',
     channels: [

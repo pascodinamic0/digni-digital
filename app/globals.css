@@ -1942,11 +1942,6 @@ nextjs-portal {
   background: var(--software-content);
 }
 
-.software-inbox-rail {
-  background: var(--software-panel);
-  border-color: var(--software-border);
-}
-
 .software-conversation-row {
   border: 1px solid transparent;
   transition: background 0.15s ease, border-color 0.15s ease;

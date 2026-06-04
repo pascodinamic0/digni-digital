@@ -6,8 +6,8 @@ import { useLanguage } from '@/app/context/LocaleContext'
 import { translations } from '@/app/config/translations'
 import { getJourneyPhaseTitle } from '@/lib/ai-receptionist-flow'
 import SoftwareDemoSection from '@/app/components/software/SoftwareDemoSection'
-import DemoPersonAvatar from '@/app/components/DemoPersonAvatar'
 import ChatChannelIconBadge from '@/app/components/ChatChannelIconBadge'
+import DemoPersonAvatar from '@/app/components/DemoPersonAvatar'
 import { getConversationDemoVisitor } from '@/lib/demo-contact-avatars'
 import SocialPlatformIcon from './SocialPlatformIcon'
 
@@ -207,23 +207,16 @@ const ConversationMockups = () => {
   }, [messageIndex, activeDemo, conversations, conversationComplete])
 
   const activeConv = conversations[activeDemo]
-  const activeVisitor = getConversationDemoVisitor(activeConv.id)
+  const visitor = getConversationDemoVisitor(activeConv.id)
 
   const ChatBubble = ({ message, isAI }: { message: Message; isAI: boolean }) => (
-    <div className={`flex ${isAI ? 'justify-start' : 'justify-end'} mb-3`}>
+    <div className={`flex items-start ${isAI ? 'justify-start' : 'justify-end'} mb-3`}>
       {isAI ? (
-        <ChatChannelIconBadge className="order-1 mr-2 mt-1 shrink-0">
+        <ChatChannelIconBadge className="mr-2 mt-1 shrink-0">
           {activeConv.icon}
         </ChatChannelIconBadge>
-      ) : activeVisitor ? (
-        <DemoPersonAvatar
-          name={activeVisitor.name}
-          src={activeVisitor.avatarSrc}
-          size="xs"
-          className="order-3 ml-2 mt-1"
-        />
       ) : null}
-      <div className={`max-w-[85%] ${isAI ? 'order-2' : 'order-1'}`}>
+      <div className="max-w-[85%] min-w-0">
         <div
           className={`px-4 py-2.5 rounded-2xl text-sm leading-relaxed ${
             isAI
@@ -237,6 +230,14 @@ const ConversationMockups = () => {
           {message.time}
         </div>
       </div>
+      {!isAI && visitor ? (
+        <DemoPersonAvatar
+          name={visitor.name}
+          src={visitor.avatarSrc}
+          size="xs"
+          className="ml-2 mt-1 shrink-0 ring-1 ring-border-light"
+        />
+      ) : null}
     </div>
   )
 
@@ -277,22 +278,25 @@ const ConversationMockups = () => {
                   {/* Header */}
                   <div className="bg-surface/80 backdrop-blur-xl px-4 py-3 border-b border-border">
                     <div className="flex items-center gap-3">
-                      {activeVisitor ? (
+                      {visitor ? (
                         <DemoPersonAvatar
-                          name={activeVisitor.name}
-                          src={activeVisitor.avatarSrc}
+                          name={visitor.name}
+                          src={visitor.avatarSrc}
                           size="md"
+                          className="ring-1 ring-border-light"
                         />
                       ) : (
-                        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-accent/10 text-accent">
+                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-accent/10 text-accent">
                           {activeConv.icon}
                         </div>
                       )}
                       <div className="flex-1 min-w-0">
                         <h3 className="font-display font-semibold text-sm text-text truncate">
-                          {activeVisitor?.name ?? activeConv.title}
+                          {visitor?.name ?? activeConv.title}
                         </h3>
-                        <p className="text-xs text-muted truncate">{activeConv.industry}</p>
+                        <p className="text-xs text-muted truncate">
+                          {activeConv.platform} · {activeConv.industry}
+                        </p>
                       </div>
                       <div className="flex items-center gap-1.5">
                         <div className="w-2 h-2 rounded-full bg-success animate-pulse" />

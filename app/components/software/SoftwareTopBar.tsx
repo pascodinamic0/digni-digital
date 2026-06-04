@@ -53,12 +53,6 @@ export default function SoftwareTopBar({ copy, moduleTitle, className = '' }: Pr
           <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-success" aria-hidden />
           {copy.liveStatus}
         </span>
-        <div
-          className="flex h-7 w-7 items-center justify-center rounded-full bg-accent/15 text-[11px] font-bold text-accent"
-          aria-hidden
-        >
-          PD
-        </div>
       </div>
     </header>
   )
