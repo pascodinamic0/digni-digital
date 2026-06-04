@@ -7,26 +7,8 @@ import { getJourneyPhaseTitle } from '@/lib/ai-receptionist-flow'
 import SoftwareDemoSection from '@/app/components/software/SoftwareDemoSection'
 import { translations } from '@/app/config/translations'
 import type { ContactRowT } from '@/app/i18n/aiEmployeeProductDemos'
-
-function initials(name: string) {
-  const p = name.split(/\s+/).filter(Boolean)
-  if (p.length >= 2) return (p[0][0] + p[1][0]).toUpperCase()
-  return name.slice(0, 2).toUpperCase()
-}
-
-const AVATAR_PALETTES = [
-  'bg-accent/20 text-accent',
-  'bg-success/20 text-success',
-  'bg-info/20 text-info',
-  'bg-warning/20 text-warning',
-  'bg-muted/25 text-muted-dark',
-]
-
-function avatarClass(name: string) {
-  let h = 0
-  for (let i = 0; i < name.length; i++) h = name.charCodeAt(i) + ((h << 5) - h)
-  return AVATAR_PALETTES[Math.abs(h) % AVATAR_PALETTES.length]
-}
+import DemoPersonAvatar from '@/app/components/DemoPersonAvatar'
+import { getContactRowAvatarSrc } from '@/lib/demo-contact-avatars'
 
 type SortKey = 'name' | 'created' | null
 type SortDir = 'asc' | 'desc'
@@ -246,11 +228,11 @@ export default function ContactDirectoryDemo() {
                     </td>
                     <td className="py-3 px-4">
                       <div className="flex items-center gap-3">
-                        <div
-                          className={`w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold ${avatarClass(row.name)}`}
-                        >
-                          {initials(row.name)}
-                        </div>
+                        <DemoPersonAvatar
+                          name={row.name}
+                          src={getContactRowAvatarSrc(row.id)}
+                          size="sm"
+                        />
                         <span className="font-medium text-text inline-flex items-center gap-2">
                           {row.name}
                           {row.id === highlightedRowId && incomingTick % 2 === 1 ? (

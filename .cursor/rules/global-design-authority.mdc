@@ -1,0 +1,137 @@
+---
+description: Digni Global Design Authority — typography, color, hierarchy, messaging; overrides page and component prompts when they conflict
+globs: app/**/*.{tsx,ts,css},app/i18n/*.ts,content/**/*,lib/**/*.{ts,tsx},public/**/*
+alwaysApply: true
+---
+
+# DIGNI GLOBAL DESIGN AUTHORITY
+
+**This document overrides all page-level instructions.**
+
+If a page instruction conflicts with this document, this document wins.
+
+---
+
+## RULE 1 — One Brand
+
+One Brand. One Voice. One Design Language.
+
+The website must feel like it was designed by one team on one day — not accumulated over time.
+
+---
+
+## RULE 2 — Global Typography System
+
+Only these sizes may exist:
+
+| Token | Size |
+|-------|------|
+| H1 | 64px |
+| H2 | 48px |
+| H3 | 32px |
+| H4 | 24px |
+| Body Large | 20px |
+| Body | 18px |
+| Small | 16px |
+| Caption | 14px |
+
+**No additional font sizes allowed.** Use `var(--type-*)` / `.type-*` utilities from `app/globals.css`. Tokens use fluid `clamp()` so type auto-resizes between the authority min (mobile) and max (desktop) as the viewport changes — do not add Bootstrap or page-scoped scales. Do not use arbitrary `text-[Npx]` on marketing copy.
+
+---
+
+## RULE 3 — Section Hierarchy
+
+Every page follows:
+
+1. **H1** — Primary page promise
+2. **H2** — Problem
+3. **H2** — Solution
+4. **H2** — Proof
+5. **H2** — Process
+6. **H2** — Offer
+7. **H2** — CTA
+
+Never create additional competing hierarchy systems.
+
+---
+
+## RULE 4 — One Color System
+
+- **Primary:** Brand Blue (`--brand-blue`)
+- **Secondary:** Brand Green (`--success`)
+- **Neutral:** White, Gray (theme text/surface tokens)
+
+Only **status indicators** may use red, yellow, or green (semantic destructive/warning/success).
+
+**No decorative colors** (e.g. purple accents, rainbow gradients for ornament).
+
+---
+
+## RULE 5 — One Messaging System
+
+All pages must reinforce:
+
+**Technology Creates Opportunity.**
+
+All services are expressions of this mission. No competing narratives. No alternate taglines.
+
+Reference: `lib/ai-employee-page.ts` (`AI_EMPLOYEE_BRAND_LINE`), site copy in `app/i18n/translations.ts`.
+
+---
+
+## RULE 6 — Outcome Before Features
+
+Always explain **outcome** before **feature**.
+
+- Bad: "Conversations Dashboard"
+- Good: "Never Miss A Lead" — feature explanation follows
+
+---
+
+## RULE 7 — AI Retrieval Optimization
+
+Every page must answer:
+
+1. What is it?
+2. Who is it for?
+3. How does it work?
+4. Why does it matter?
+5. What outcome does it create?
+6. What should the visitor do next?
+
+---
+
+## RULE 8 — Page Components Inherit Global Styles
+
+No page may define:
+
+- custom font scales
+- custom colors
+- custom spacing systems
+- custom heading structures
+
+All components inherit from global design tokens in `app/globals.css` and Tailwind theme extensions.
+
+---
+
+## RULE 9 — Content Priority
+
+1. Outcome
+2. Proof
+3. Process
+4. Features
+5. Technical Details
+
+---
+
+## RULE 10 — Conflict Resolution
+
+If homepage prompt, service page prompt, blog prompt, component prompt, design prompt, **growth-operator**, or **logo-icon** rules ever conflict, follow this order:
+
+1. **Global Design Authority** (this file)
+2. **Logo and Icon Authority** (`.cursor/rules/logo-icon-authority.mdc`)
+3. **Service Architecture** (`lib/positioning/`, ecosystem docs)
+4. **Page Instructions**
+5. **Component Instructions**
+
+**Global always wins.**

@@ -11,6 +11,16 @@ export default {
         display: ['var(--font-display)', 'sans-serif'],
         body: ['var(--font-body)', 'sans-serif'],
       },
+      fontSize: {
+        h1: ['var(--type-h1)', { lineHeight: '1.08', letterSpacing: '-0.03em' }],
+        h2: ['var(--type-h2)', { lineHeight: '1.12', letterSpacing: '-0.025em' }],
+        h3: ['var(--type-h3)', { lineHeight: '1.2', letterSpacing: '-0.02em' }],
+        h4: ['var(--type-h4)', { lineHeight: '1.25', letterSpacing: '-0.015em' }],
+        'body-lg': ['var(--type-body-lg)', { lineHeight: '1.5' }],
+        body: ['var(--type-body)', { lineHeight: '1.55' }],
+        small: ['var(--type-small)', { lineHeight: '1.5' }],
+        caption: ['var(--type-caption)', { lineHeight: '1.45' }],
+      },
       colors: {
         background: 'var(--background)',
         surface: 'var(--surface)',

@@ -1,0 +1,25 @@
+---
+description: SEO, AI retrieval, and educational quality gate for blog and Future Ready career content (90+ score required)
+globs: content/blog/**,lib/ai-career-jobs/**,lib/blog/**
+alwaysApply: false
+---
+
+# Blog Resource Audit (90+ Gate)
+
+When creating or editing blog posts or AI career guides, follow the **blog-resource-audit** skill (`.cursor/skills/blog-resource-audit/SKILL.md`).
+
+## Non-negotiables
+
+- **Do not approve** articles scoring below **90/100**.
+- Use **searchable plain job titles** in titles/H1 (not invented titles alone).
+- Every career guide must include: definition, key takeaways, 6+ FAQs, future/AI block, checklist, natural Digni bridge.
+- AI career guides (#1–26): use `audit-configs.ts` helpers; batch updates OK when auditing the full library.
+- Flagship posts in `content/blog/en.ts`: process one slug at a time; update `content/blog/ARTICLE-AUDIT-QUEUE.md` after each.
+
+## Career guide implementation
+
+Reuse helpers in `lib/ai-career-jobs/custom-articles/shared-sections.ts`. Title/meta defaults: `lib/blog/article-intent.ts` + `displayJobTitle()`. Site positioning: `lib/positioning/clarity-framework.ts` (Grow → Learn → Scale). Wire new sections in `bodies-part1.ts` / `bodies-part2.ts` and `meta.ts` when titles need search-demand fixes.
+
+## Publishing
+
+Respect `blog-publishing.mdc` for dates and locale parity when touching `content/blog/*.ts`.
