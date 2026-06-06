@@ -105,12 +105,34 @@ export default async function BlogPostPage({ params }: Props) {
     },
   }
 
+  const faqJsonLd =
+    article.faqs && article.faqs.length > 0
+      ? {
+          '@context': 'https://schema.org',
+          '@type': 'FAQPage',
+          mainEntity: article.faqs.map((faq) => ({
+            '@type': 'Question',
+            name: faq.question,
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: faq.answer,
+            },
+          })),
+        }
+      : null
+
   return (
     <main className="min-h-screen bg-background">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={jsonLdScriptProps(blogPostingJsonLd)}
       />
+      {faqJsonLd ? (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={jsonLdScriptProps(faqJsonLd)}
+        />
+      ) : null}
       <article className="pt-24 pb-16">
         <div className="max-w-4xl mx-auto px-6 pt-20">
           <BlogPostContent articleByLang={articleByLang} />

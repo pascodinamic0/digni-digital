@@ -1954,6 +1954,44 @@ export const contentDe: Record<string, Partial<BlogArticle>> = {
     readTime: '14 Min. Lesezeit',
     publishDate: '6. Juni 2026',
     tags: ['Aufmerksamkeitsökonomie', 'Unternehmenswachstum', 'Content-Strategie', 'Gründer-Marketing', 'Vertrauen', 'Medienunternehmen'],
+    faqSubtitle: 'Kurze Antworten für Unternehmer in der Aufmerksamkeitsökonomie.',
+    faqs: [
+      {
+        question: 'Was ist die Aufmerksamkeitsökonomie in einfachen Worten?',
+        answer:
+          'Eine Ökonomie, in der Kundenaufmerksamkeit — nicht Fabriken oder Rohinformation — die knappste Ressource ist. Wer Aufmerksamkeit verdient, konvertiert effizienter, weil Vertrauen vor dem Verkaufsgespräch entsteht.',
+      },
+      {
+        question: 'Warum ist Content wichtiger als Werbung?',
+        answer:
+          'Werbung mietet Aufmerksamkeit für einen Moment. Content baut ein Asset, das weiterarbeitet — Käufer bildet, Einwände beantwortet und langfristig Interesse erzeugt.',
+      },
+      {
+        question: 'Was ist die 80/20-Content-Regel?',
+        answer:
+          'Geben Sie etwa 80 % Ihres Wissens kostenlos durch Lehren. Verkaufen Sie die 20 %, die schnellere Umsetzung, Done-for-you oder Verantwortung wollen.',
+      },
+      {
+        question: 'Wie konkurrieren KMU mit großen Marken?',
+        answer:
+          'Große Marken zeigen selten authentisches Gründer-Denken. Kleine Anbieter gewinnen durch Spezifität, dokumentierte Arbeit und großzügigeres Lehren.',
+      },
+      {
+        question: 'Mit welcher Plattform starten?',
+        answer:
+          'Dort, wo Ihre Käufer bereits Antworten suchen — LinkedIn oder YouTube im B2B, Instagram oder Kurzvideo lokal. Eine Plattform, 90 Tage konsequent, dann erweitern.',
+      },
+      {
+        question: 'Operationen vernachlässigen?',
+        answer:
+          'Nein. Operationen halten das Versprechen. Aufmerksamkeit öffnet die Tür. Sichtbarkeit und Vertrauen sind Kern-Infrastruktur für Wachstum.',
+      },
+      {
+        question: 'Wie hilft KI ohne generischen Content?',
+        answer:
+          'KI zum Repurposen, Strukturieren und Follow-up — nicht zum Ersetzen Ihrer Expertise. Urteil, Beweise und Stimme bleiben Ihr Vorteil.',
+      },
+    ],
     content: `
       <h2>Hören Sie auf, Ihr Unternehmen wie 1985 zu führen. Aufmerksamkeit ist die Währung, die heute zählt.</h2>
 
@@ -2022,13 +2060,7 @@ export const contentDe: Record<string, Partial<BlogArticle>> = {
         <li>Automatisieren Sie Erfassung und Follow-up mit KI-Systemen.</li>
       </ol>
 
-      <h3>FAQ</h3>
-      <p><strong>Was ist die Aufmerksamkeitsökonomie?</strong> Eine Ökonomie, in der Kundenaufmerksamkeit die knappste Ressource ist.</p>
-      <p><strong>Warum schlägt Content Werbung?</strong> Werbung mietet Aufmerksamkeit; Content baut ein dauerhaftes Asset.</p>
-      <p><strong>80/20-Regel?</strong> 80 % kostenlos lehren; 20 % für schnelle oder Done-for-you-Umsetzung verkaufen.</p>
-      <p><strong>Welche Plattform zuerst?</strong> Wo Ihre Käufer bereits Antworten suchen.</p>
-      <p><strong>Rolle der KI?</strong> Verstärken und verteilen — nicht Ihre Expertise ersetzen.</p>
-      <p><strong>Operationen vernachlässigen?</strong> Nein. Aufmerksamkeit öffnet die Tür; Operationen halten das Versprechen.</p>
+      <!--BLOG_FAQ-->
 
       <p><strong>Bereit für ein System?</strong> <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Strategiegespräch buchen</a> mit Digni Digital.</p>
       <hr>

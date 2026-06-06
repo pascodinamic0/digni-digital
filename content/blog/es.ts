@@ -911,6 +911,44 @@ const contentEs: Record<string, Partial<BlogArticle>> = {
     readTime: '14 min de lectura',
     publishDate: '6 de junio de 2026',
     tags: ['economía de la atención', 'crecimiento empresarial', 'estrategia de contenido', 'marketing de fundador', 'confianza', 'empresa mediática'],
+    faqSubtitle: 'Respuestas rápidas para empresarios que navegan la economía de la atención.',
+    faqs: [
+      {
+        question: '¿Qué es la economía de la atención en términos simples?',
+        answer:
+          'Es una economía donde la atención del cliente — no las fábricas ni la información bruta — es el recurso más escaso. Quienes ganan atención convierten mejor porque la confianza se construye antes de la venta.',
+      },
+      {
+        question: '¿Por qué el contenido es más importante que los anuncios?',
+        answer:
+          'Los anuncios alquilan la atención un momento. El contenido construye un activo que sigue trabajando: educa, responde objeciones y genera interés entrante mucho después de publicarse.',
+      },
+      {
+        question: '¿Qué es la regla 80/20 del contenido?',
+        answer:
+          'Regale aproximadamente el 80 % de su conocimiento enseñando gratis. Venda al 20 % que quiere implementación más rápida, llave en mano o responsabilidad.',
+      },
+      {
+        question: '¿Cómo compiten las pymes con las grandes marcas?',
+        answer:
+          'Las grandes marcas luchan por mostrar pensamiento auténtico de fundador. Los operadores pequeños ganan siendo específicos, documentando trabajo real y enseñando con más generosidad.',
+      },
+      {
+        question: '¿Con qué plataforma empezar?',
+        answer:
+          'Donde sus compradores ya buscan respuestas — LinkedIn o YouTube en B2B, Instagram o video corto en local. Elija una, publique 90 días, luego expanda.',
+      },
+      {
+        question: '¿Debo dejar de enfocarme en operaciones?',
+        answer:
+          'No. Las operaciones cumplen la promesa. La atención abre la puerta. Visibilidad y confianza son infraestructura central de crecimiento.',
+      },
+      {
+        question: '¿Cómo ayuda la IA sin volver el contenido genérico?',
+        answer:
+          'Use IA para reutilizar, estructurar y automatizar seguimiento — no para reemplazar su expertise. Su criterio, pruebas y voz son irreemplazables.',
+      },
+    ],
     content: `
       <h2>Deje de hacer crecer su negocio como si fuera 1985. La atención es la moneda que importa hoy.</h2>
 
@@ -979,13 +1017,7 @@ const contentEs: Record<string, Partial<BlogArticle>> = {
         <li>Automatice captura y seguimiento con sistemas de IA.</li>
       </ol>
 
-      <h3>Preguntas frecuentes</h3>
-      <p><strong>¿Qué es la economía de la atención?</strong> Una economía donde la atención del cliente es el recurso más escaso.</p>
-      <p><strong>¿Por qué el contenido supera a los anuncios?</strong> Los anuncios alquilan atención; el contenido construye un activo duradero.</p>
-      <p><strong>¿Regla 80/20?</strong> 80 % enseñado gratis; 20 % vendido como implementación rápida o llave en mano.</p>
-      <p><strong>¿Qué plataforma primero?</strong> Donde sus compradores ya buscan respuestas.</p>
-      <p><strong>¿Papel de la IA?</strong> Amplificar y distribuir — no reemplazar su expertise.</p>
-      <p><strong>¿Ignorar operaciones?</strong> No. La atención abre la puerta; las operaciones cumplen la promesa.</p>
+      <!--BLOG_FAQ-->
 
       <p><strong>¿Listo para sistematizar?</strong> <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Reserve una llamada estratégica</a> con Digni Digital.</p>
       <hr>

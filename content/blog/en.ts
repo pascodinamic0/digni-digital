@@ -4375,6 +4375,44 @@ const remainingArticles: BlogArticle[] = [
     ],
     featured: true,
     coverImageUrl: '/blog/attention-economy/attention-economy-cover.png',
+    faqSubtitle: 'Quick answers for business owners navigating the attention economy.',
+    faqs: [
+      {
+        question: 'What is the attention economy in simple terms?',
+        answer:
+          'It is an economy where customer attention — not factories or raw information — is the scarcest resource. Businesses that earn and hold attention convert more efficiently because trust is built before the sales conversation starts.',
+      },
+      {
+        question: 'Why is content more important than ads for business owners?',
+        answer:
+          'Ads rent attention for a moment. Content builds an asset that keeps working — educating buyers, answering objections, and generating inbound interest long after publication. In the attention economy, owned content compounds; rented ads reset every month.',
+      },
+      {
+        question: 'What is the 80/20 content rule?',
+        answer:
+          'Give away roughly 80% of your knowledge for free through teaching and documentation. Charge the 20% of buyers who want faster implementation, done-for-you delivery, accountability, or guaranteed outcomes.',
+      },
+      {
+        question: 'How do small businesses compete with big brands for attention?',
+        answer:
+          'Big brands struggle to show authentic founder-level thinking. Small operators win by being specific, documenting real work, and teaching their market more generously than incumbents can.',
+      },
+      {
+        question: 'Which platform should a business owner start with?',
+        answer:
+          'Start where your buyers already look for answers. B2B operators often win on LinkedIn or YouTube. Local services often win on Instagram or short-form video. Pick one, publish consistently for 90 days, then expand.',
+      },
+      {
+        question: 'Does the attention economy mean I should stop focusing on operations?',
+        answer:
+          'No. Operations deliver the promise. Attention gets people in the door. The shift is that visibility and trust are no longer optional extras — they are core growth infrastructure.',
+      },
+      {
+        question: 'How does AI help without making content feel generic?',
+        answer:
+          'Use AI to repurpose, draft outlines, and automate follow-up — not to replace your real expertise. Your judgment, proof, and voice are the differentiators AI cannot fake at scale.',
+      },
+    ],
     content: `
       <h2>Stop growing your business like it is 1985. Attention is the currency that matters now.</h2>
 
@@ -4614,28 +4652,7 @@ const remainingArticles: BlogArticle[] = [
 
       <p>Winning the attention economy still requires systems behind the scenes — lead capture, follow-up, scheduling, and delivery cannot break while you build visibility. That is where <strong>AI Employee systems</strong> and <strong>agentic software</strong> earn their place: they handle the operational volume so you can stay focused on the content and relationships that compound attention into revenue.</p>
 
-      <h3>Frequently asked questions</h3>
-
-      <p><strong>What is the attention economy in simple terms?</strong></p>
-      <p>It is an economy where customer attention — not factories or raw information — is the scarcest resource. Businesses that earn and hold attention convert more efficiently because trust is built before the sales conversation starts.</p>
-
-      <p><strong>Why is content more important than ads for business owners?</strong></p>
-      <p>Ads rent attention for a moment. Content builds an asset that keeps working — educating buyers, answering objections, and generating inbound interest long after publication. In the attention economy, owned content compounds; rented ads reset every month.</p>
-
-      <p><strong>What is the 80/20 content rule?</strong></p>
-      <p>Give away roughly 80% of your knowledge for free through teaching and documentation. Charge the 20% of buyers who want faster implementation, done-for-you delivery, accountability, or guaranteed outcomes.</p>
-
-      <p><strong>How do small businesses compete with big brands for attention?</strong></p>
-      <p>Big brands struggle to show authentic founder-level thinking. Small operators win by being specific, documenting real work, and teaching their market more generously than incumbents can.</p>
-
-      <p><strong>Which platform should a business owner start with?</strong></p>
-      <p>Start where your buyers already look for answers. B2B operators often win on LinkedIn or YouTube. Local services often win on Instagram or short-form video. Pick one, publish consistently for 90 days, then expand.</p>
-
-      <p><strong>Does the attention economy mean I should stop focusing on operations?</strong></p>
-      <p>No. Operations deliver the promise. Attention gets people in the door. The shift is that visibility and trust are no longer optional extras — they are core growth infrastructure.</p>
-
-      <p><strong>How does AI help without making content feel generic?</strong></p>
-      <p>Use AI to repurpose, draft outlines, and automate follow-up — not to replace your real expertise. Your judgment, proof, and voice are the differentiators AI cannot fake at scale.</p>
+      <!--BLOG_FAQ-->
 
       <h3>Next step</h3>
 
