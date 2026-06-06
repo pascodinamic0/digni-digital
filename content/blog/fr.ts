@@ -1090,6 +1090,44 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
     tags: ['Économie de l\'attention', 'croissance', 'stratégie de contenu', 'marketing fondateur', 'confiance', 'entreprise média'],
     featured: true,
     coverImageUrl: '/blog/attention-economy/attention-economy-cover.png',
+    faqSubtitle: 'Réponses rapides pour les dirigeants qui naviguent dans l\'économie de l\'attention.',
+    faqs: [
+      {
+        question: "Qu'est-ce que l'économie de l'attention en termes simples ?",
+        answer:
+          "C'est une économie où l'attention client — pas les usines ni l'information brute — est la ressource la plus rare. Les entreprises qui gagnent et retiennent l'attention convertissent plus efficacement car la confiance se construit avant la vente.",
+      },
+      {
+        question: 'Pourquoi le contenu est-il plus important que la publicité ?',
+        answer:
+          "La publicité loue l'attention un instant. Le contenu construit un actif qui continue de travailler — éduquer, lever les objections et générer de l'intérêt entrant longtemps après publication.",
+      },
+      {
+        question: 'Quelle est la règle 80/20 du contenu ?',
+        answer:
+          "Donnez environ 80 % de votre savoir gratuitement par l'enseignement. Facturez les 20 % qui veulent une implémentation plus rapide, du clé en main ou de la responsabilité.",
+      },
+      {
+        question: 'Comment les PME rivalisent-elles avec les grandes marques ?',
+        answer:
+          "Les grandes marques peinent à montrer une pensée authentique de fondateur. Les petits opérateurs gagnent en étant spécifiques, en documentant le travail réel et en enseignant plus généreusement.",
+      },
+      {
+        question: 'Par quelle plateforme commencer ?',
+        answer:
+          "Commencez là où vos acheteurs cherchent déjà des réponses — LinkedIn ou YouTube en B2B, Instagram ou vidéo courte en local. Choisissez une plateforme, publiez 90 jours, puis élargissez.",
+      },
+      {
+        question: "Faut-il négliger les opérations ?",
+        answer:
+          "Non. Les opérations tiennent la promesse. L'attention ouvre la porte. La visibilité et la confiance sont désormais une infrastructure de croissance essentielle.",
+      },
+      {
+        question: "Comment l'IA aide-t-elle sans rendre le contenu générique ?",
+        answer:
+          "Utilisez l'IA pour repurposer, structurer et automatiser le suivi — pas pour remplacer votre expertise. Votre jugement, vos preuves et votre voix restent irremplaçables.",
+      },
+    ],
     content: `
       <h2>Arrêtez de développer votre entreprise comme en 1985. L'attention est la monnaie qui compte aujourd'hui.</h2>
 
@@ -1158,13 +1196,7 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
         <li>Automatisez capture et suivi avec des systèmes IA.</li>
       </ol>
 
-      <h3>FAQ</h3>
-      <p><strong>Qu'est-ce que l'économie de l'attention ?</strong> Une économie où l'attention client est la ressource la plus rare ; la confiance se construit avant la vente.</p>
-      <p><strong>Pourquoi le contenu bat la pub ?</strong> La pub loue l'attention ; le contenu construit un actif durable.</p>
-      <p><strong>Règle 80/20 ?</strong> 80 % enseigné gratuitement ; 20 % vendu en implémentation rapide ou clé en main.</p>
-      <p><strong>Plateforme de départ ?</strong> Là où vos acheteurs cherchent déjà des réponses.</p>
-      <p><strong>Rôle de l'IA ?</strong> Amplifier et distribuer — pas remplacer votre expertise.</p>
-      <p><strong>Faut-il négliger les opérations ?</strong> Non. L'attention ouvre la porte ; les opérations tiennent la promesse.</p>
+      <!--BLOG_FAQ-->
 
       <p><strong>Prêt à systématiser ?</strong> <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Réservez un appel stratégique</a> avec Digni Digital.</p>
       <hr>

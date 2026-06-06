@@ -10,8 +10,18 @@ import { AUTHOR_HEADSHOT_PATH } from '@/lib/site-assets'
 import type { Language } from '@/app/i18n/translations'
 import type { BlogArticle } from '@/content/blog'
 import { BLOG_LISTING_RETURN_SEARCH_KEY } from '@/lib/blog-listing-storage'
+import BlogFaqAccordion from '@/app/blog/BlogFaqAccordion'
 
 const HEADSHOT_AUTHOR = 'Pascal Digny'
+const BLOG_FAQ_MARKER = '<!--BLOG_FAQ-->'
+
+const FAQ_SECTION_TITLE: Record<Language, string> = {
+  en: 'Frequently Asked Questions',
+  fr: 'Questions fréquentes',
+  ar: 'الأسئلة الشائعة',
+  de: 'Häufig gestellte Fragen',
+  es: 'Preguntas frecuentes',
+}
 
 interface BlogPostContentProps {
   articleByLang: Record<Language, BlogArticle>
@@ -21,6 +31,10 @@ export default function BlogPostContent({ articleByLang }: BlogPostContentProps)
   const language = useLanguage()
   const article = articleByLang[language] ?? articleByLang.en
   const bodyHtml = article.content ?? ''
+  const faqs = article.faqs ?? []
+  const hasFaqMarker = bodyHtml.includes(BLOG_FAQ_MARKER)
+  const [contentBeforeFaq, contentAfterFaq] =
+    faqs.length && hasFaqMarker ? bodyHtml.split(BLOG_FAQ_MARKER) : [bodyHtml, '']
   const tags = article.tags ?? []
   const t = translations[language].blog
   const cta = translations[language].cta
@@ -100,11 +114,27 @@ export default function BlogPostContent({ articleByLang }: BlogPostContentProps)
         </figure>
       ) : null}
 
-      <div 
+      <div
         className="blog-content max-w-none"
-        dangerouslySetInnerHTML={{ __html: bodyHtml }}
+        dangerouslySetInnerHTML={{ __html: contentBeforeFaq }}
         aria-label="Article content"
       />
+
+      {faqs.length > 0 ? (
+        <BlogFaqAccordion
+          title={FAQ_SECTION_TITLE[language]}
+          subtitle={article.faqSubtitle}
+          faqs={faqs}
+        />
+      ) : null}
+
+      {contentAfterFaq ? (
+        <div
+          className="blog-content max-w-none"
+          dangerouslySetInnerHTML={{ __html: contentAfterFaq }}
+          aria-label="Article continuation"
+        />
+      ) : null}
 
       <div className="mt-12 pt-8 border-t border-border-light">
         <h3 className="font-display text-lg font-bold mb-4">{t.tags}</h3>
