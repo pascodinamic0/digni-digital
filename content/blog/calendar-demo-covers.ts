@@ -67,4 +67,8 @@ export const calendarDemoCovers: { coverImageUrl: string; title: string }[] = [
     coverImageUrl: '/blog/automatisation-processus-rdc-kinshasa-productivite-2026.png',
     title: 'Business Process Automation in the DRC: How Kinshasa Companies Gain 50% Productivity in 2026',
   },
+  {
+    coverImageUrl: '/blog/attention-economy/attention-economy-cover.png',
+    title: 'Attention Economy: The Business Owner\'s Guide to Winning When Attention Is the New Currency',
+  },
 ]

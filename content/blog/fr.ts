@@ -1076,6 +1076,101 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
       <p><a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Réservez un appel stratégique gratuit</a> avec Digni Digital. Nous vous aidons à identifier la meilleure expérience, les compétences digitales à construire et le levier IA à utiliser sans remplacer votre jugement.</p>
     `,
   },
+
+  'attention-economy-business-growth-guide': {
+    id: 108,
+    title: "Économie de l'attention : le guide du dirigeant pour gagner quand l'attention est la nouvelle monnaie",
+    slug: 'attention-economy-business-growth-guide',
+    excerpt:
+      "La plupart des dirigeants grandissent encore comme à l'ère industrielle. Ce guide explique l'économie de l'attention, pourquoi le contenu est votre travail le plus rentable, la règle 80/20 et comment devenir la voix la plus fiable de votre marché.",
+    category: "Croissance d'entreprise",
+    readTime: '14 min de lecture',
+    publishDate: '6 juin 2026',
+    author: 'Pascal Digny',
+    tags: ['Économie de l\'attention', 'croissance', 'stratégie de contenu', 'marketing fondateur', 'confiance', 'entreprise média'],
+    featured: true,
+    coverImageUrl: '/blog/attention-economy/attention-economy-cover.png',
+    content: `
+      <h2>Arrêtez de développer votre entreprise comme en 1985. L'attention est la monnaie qui compte aujourd'hui.</h2>
+
+      <p>La plupart des dirigeants tentent encore de croître comme à l'ère industrielle. <strong>Ce n'est plus le cas.</strong> Nous vivons l'<strong>économie de l'attention</strong> — et les entreprises qui gagnent captent le plus d'attention. Là où va l'attention, l'argent suit.</p>
+
+      <figure class="blog-content-figure" style="margin: 2em 0;">
+        <img src="/blog/attention-economy/attention-economy-cover.png" alt="Dirigeant analysant les performances de contenu" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
+      </figure>
+
+      <h3>Qu'est-ce que l'économie de l'attention ?</h3>
+      <p><strong>L'économie de l'attention</strong> place l'attention humaine — pas les usines — comme ressource la plus rare. Herbert A. Simon : <em>« Une abondance d'information crée une pauvreté d'attention. »</em></p>
+
+      <figure class="blog-content-figure" style="margin: 2em 0;">
+        <img src="/blog/attention-economy/attention-scarcity.png" alt="Smartphone saturé de notifications" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
+      </figure>
+
+      <h3>Points clés</h3>
+      <ul>
+        <li><strong>L'attention est une monnaie</strong> — revenus, recommandations, positionnement.</li>
+        <li><strong>Le contenu n'est pas du marketing</strong> — vente, confiance, recrutement 24h/24.</li>
+        <li><strong>Donnez 80 %, vendez 20 %</strong> — enseignez ; facturez vitesse et exécution.</li>
+        <li><strong>Chaque entreprise est média</strong> — vous rivalisez avec YouTube, LinkedIn, TikTok.</li>
+      </ul>
+
+      <h3>Trois économies, trois moteurs de richesse</h3>
+      <table style="width: 100%; border-collapse: collapse; margin: 1.5em 0;">
+        <thead><tr><th style="text-align:left;padding:0.75rem;border-bottom:2px solid #e2e8f0;">Économie</th><th style="text-align:left;padding:0.75rem;border-bottom:2px solid #e2e8f0;">Richesse</th><th style="text-align:left;padding:0.75rem;border-bottom:2px solid #e2e8f0;">Activité clé</th></tr></thead>
+        <tbody>
+          <tr><td style="padding:0.75rem;border-bottom:1px solid #e2e8f0;"><strong>Industrielle</strong></td><td style="padding:0.75rem;border-bottom:1px solid #e2e8f0;">Usines</td><td style="padding:0.75rem;border-bottom:1px solid #e2e8f0;">Opérations</td></tr>
+          <tr><td style="padding:0.75rem;border-bottom:1px solid #e2e8f0;"><strong>Information</strong></td><td style="padding:0.75rem;border-bottom:1px solid #e2e8f0;">Données</td><td style="padding:0.75rem;border-bottom:1px solid #e2e8f0;">Protéger l'info</td></tr>
+          <tr><td style="padding:0.75rem;border-bottom:1px solid #e2e8f0;"><strong>Attention</strong></td><td style="padding:0.75rem;border-bottom:1px solid #e2e8f0;">Confiance</td><td style="padding:0.75rem;border-bottom:1px solid #e2e8f0;">Voix la plus fiable du marché</td></tr>
+        </tbody>
+      </table>
+
+      <figure class="blog-content-figure" style="margin: 2em 0;">
+        <img src="/blog/attention-economy/economy-shift.png" alt="Usine industrielle versus studio de contenu" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
+      </figure>
+
+      <h3>Le contenu est votre travail le plus important</h3>
+      <p>Contenu = vente, marque, confiance, leads, recrutement, éducation. <strong>Chaque contenu travaille 24h/24 pour vous.</strong></p>
+
+      <figure class="blog-content-figure" style="margin: 2em 0;">
+        <img src="/blog/attention-economy/content-is-the-job.png" alt="Dirigeant enregistrant une vidéo éducative" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
+      </figure>
+
+      <h3>La règle 80/20</h3>
+      <p>Donnez <strong>80 % du savoir gratuitement</strong>. Vendez l'implémentation aux 20 % qui veulent des résultats plus rapides. On paie pour la vitesse, l'exécution, la responsabilité — pas l'information.</p>
+
+      <figure class="blog-content-figure" style="margin: 2em 0;">
+        <img src="/blog/attention-economy/eighty-twenty-teaching.png" alt="Atelier animé par un dirigeant" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
+      </figure>
+
+      <h3>Chaque entreprise est une entreprise média</h3>
+      <p>Vos concurrents : YouTube, LinkedIn, TikTok, podcasts, newsletters — pas seulement vos pairs locaux.</p>
+
+      <figure class="blog-content-figure" style="margin: 2em 0;">
+        <img src="/blog/attention-economy/media-company.png" alt="Studio média avec micro et caméra" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
+      </figure>
+
+      <h3>Checklist 30 jours</h3>
+      <ol>
+        <li>Choisissez une plateforme où vos acheteurs sont attentifs.</li>
+        <li>Listez 20 questions pré-achat.</li>
+        <li>Publiez une pièce par semaine avec preuve réelle.</li>
+        <li>Définissez votre offre payante 20 %.</li>
+        <li>Automatisez capture et suivi avec des systèmes IA.</li>
+      </ol>
+
+      <h3>FAQ</h3>
+      <p><strong>Qu'est-ce que l'économie de l'attention ?</strong> Une économie où l'attention client est la ressource la plus rare ; la confiance se construit avant la vente.</p>
+      <p><strong>Pourquoi le contenu bat la pub ?</strong> La pub loue l'attention ; le contenu construit un actif durable.</p>
+      <p><strong>Règle 80/20 ?</strong> 80 % enseigné gratuitement ; 20 % vendu en implémentation rapide ou clé en main.</p>
+      <p><strong>Plateforme de départ ?</strong> Là où vos acheteurs cherchent déjà des réponses.</p>
+      <p><strong>Rôle de l'IA ?</strong> Amplifier et distribuer — pas remplacer votre expertise.</p>
+      <p><strong>Faut-il négliger les opérations ?</strong> Non. L'attention ouvre la porte ; les opérations tiennent la promesse.</p>
+
+      <p><strong>Prêt à systématiser ?</strong> <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Réservez un appel stratégique</a> avec Digni Digital.</p>
+      <hr>
+      <p><em>Technology Creates Opportunity.</em></p>
+    `,
+  },
 }
 
 export const articlesFr: BlogArticle[] = articlesEn.map((article) => {
