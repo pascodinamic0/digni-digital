@@ -63,19 +63,19 @@ export default function BlogPostContent({ articleByLang }: BlogPostContentProps)
         {t.backToBlog}
       </Link>
 
-      <header className="mb-12">
-        <div className="flex items-center gap-3 mb-6">
+      <header className="mb-8 sm:mb-10 md:mb-12 text-left">
+        <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
           <span className="px-3 py-1 bg-accent/10 text-accent text-sm font-medium rounded-full">
             {article.category ?? ''}
           </span>
           <span className="text-muted text-sm">{article.readTime}</span>
         </div>
         
-        <h1 className="font-display text-4xl md:text-5xl font-bold mb-6 leading-tight">
+        <h1 className="font-display type-h2 font-bold mb-4 sm:mb-6 leading-snug text-left max-w-4xl">
           {article.title}
         </h1>
         
-        <div className="flex items-center gap-4 text-muted">
+        <div className="flex flex-wrap items-center gap-x-3 gap-y-2 text-muted text-sm sm:text-base text-left">
           <div className="flex items-center gap-2">
             {article.author === HEADSHOT_AUTHOR ? (
               <div className="relative h-10 w-10 shrink-0 overflow-hidden rounded-full ring-1 ring-border-light/60">
@@ -95,7 +95,7 @@ export default function BlogPostContent({ articleByLang }: BlogPostContentProps)
             )}
             <span>{t.by} {article.author}</span>
           </div>
-          <span>•</span>
+          <span className="hidden sm:inline" aria-hidden="true">•</span>
           <span>{article.publishDate}</span>
         </div>
       </header>
@@ -147,10 +147,10 @@ export default function BlogPostContent({ articleByLang }: BlogPostContentProps)
         </div>
       </div>
 
-      <div className="mt-12 p-8 bg-surface rounded-lg text-center">
+      <div className="mt-10 sm:mt-12 p-5 sm:p-8 bg-surface rounded-lg text-left sm:text-center">
         {['Future of Work', 'Future-Ready Graduate Program'].includes(article.category ?? '') ? (
           <>
-            <h3 className="font-display text-2xl font-bold mb-4">
+            <h3 className="font-display type-h4 font-bold mb-4">
               {t.readyFutureReady}
             </h3>
             <p className="text-muted mb-6">
@@ -173,7 +173,7 @@ export default function BlogPostContent({ articleByLang }: BlogPostContentProps)
           </>
         ) : (
           <>
-            <h3 className="font-display text-2xl font-bold mb-4">
+            <h3 className="font-display type-h4 font-bold mb-4">
               {t.readyTransform}
             </h3>
             <p className="text-muted mb-6">
