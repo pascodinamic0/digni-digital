@@ -11,9 +11,9 @@ import type { Language } from '@/app/i18n/translations'
 import type { BlogArticle } from '@/content/blog'
 import { BLOG_LISTING_RETURN_SEARCH_KEY } from '@/lib/blog-listing-storage'
 import BlogFaqAccordion from '@/app/blog/BlogFaqAccordion'
+import { resolveBlogFaqContent } from '@/lib/blog/faq-content'
 
 const HEADSHOT_AUTHOR = 'Pascal Digny'
-const BLOG_FAQ_MARKER = '<!--BLOG_FAQ-->'
 
 const FAQ_SECTION_TITLE: Record<Language, string> = {
   en: 'Frequently Asked Questions',
@@ -31,10 +31,10 @@ export default function BlogPostContent({ articleByLang }: BlogPostContentProps)
   const language = useLanguage()
   const article = articleByLang[language] ?? articleByLang.en
   const bodyHtml = article.content ?? ''
-  const faqs = article.faqs ?? []
-  const hasFaqMarker = bodyHtml.includes(BLOG_FAQ_MARKER)
-  const [contentBeforeFaq, contentAfterFaq] =
-    faqs.length && hasFaqMarker ? bodyHtml.split(BLOG_FAQ_MARKER) : [bodyHtml, '']
+  const { contentBeforeFaq, contentAfterFaq, faqs } = resolveBlogFaqContent(
+    bodyHtml,
+    article.faqs
+  )
   const tags = article.tags ?? []
   const t = translations[language].blog
   const cta = translations[language].cta

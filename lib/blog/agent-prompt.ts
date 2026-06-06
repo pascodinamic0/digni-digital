@@ -27,9 +27,15 @@ ${focus}
 ## Task
 ${instruction.trim()}
 
+## Blog body conventions (match live flagship posts)
+- Left-aligned readable paragraphs; use design-token typography (no arbitrary font sizes).
+- Section images: photorealistic when used; figcaptions left-aligned without inline center styles.
+- FAQs: use structured \`faqs\` array plus \`<!--BLOG_FAQ-->\` marker in HTML where the accordion should appear (not paragraph-style FAQ blocks).
+- Place \`<!--BLOG_FAQ-->\` after the main teaching content and before the closing CTA paragraph.
+
 ## Output format
 Respond with valid JSON only, no markdown fences:
-{"title":"...","slug":"kebab-case-slug","excerpt":"one paragraph","bodyMd":"full markdown body for the post"}
+{"title":"...","slug":"kebab-case-slug","excerpt":"one paragraph","bodyMd":"full markdown body for the post","faqs":[{"question":"...","answer":"..."}]}
 `
 }
 
