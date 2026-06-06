@@ -1945,6 +1945,96 @@ export const contentDe: Record<string, Partial<BlogArticle>> = {
       <p><a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Buchen Sie ein kostenloses Strategiegespräch</a> mit Digni Digital. Wir helfen, das stärkste nächste Experiment, die digitalen Kompetenzen und den passenden KI-Hebel zu identifizieren.</p>
     `,
   },
+
+  'attention-economy-business-growth-guide': {
+    title: 'Aufmerksamkeitsökonomie: Der Leitfaden für Unternehmer, wenn Aufmerksamkeit die neue Währung ist',
+    excerpt:
+      'Die meisten Unternehmer wachsen noch wie im Industriezeitalter. Dieser Leitfaden erklärt die Aufmerksamkeitsökonomie, warum Content Ihre wichtigste Aufgabe ist, die 80/20-Regel und wie Sie zur vertrauenswürdigsten Stimme Ihres Marktes werden.',
+    category: 'Unternehmenswachstum',
+    readTime: '14 Min. Lesezeit',
+    publishDate: '6. Juni 2026',
+    tags: ['Aufmerksamkeitsökonomie', 'Unternehmenswachstum', 'Content-Strategie', 'Gründer-Marketing', 'Vertrauen', 'Medienunternehmen'],
+    content: `
+      <h2>Hören Sie auf, Ihr Unternehmen wie 1985 zu führen. Aufmerksamkeit ist die Währung, die heute zählt.</h2>
+
+      <p>Die meisten Unternehmer wachsen noch, als lebten wir im Industriezeitalter. <strong>Das tun wir nicht.</strong> Wir leben in der <strong>Aufmerksamkeitsökonomie</strong> — und gewinnen die Unternehmen, die <strong>am meisten Aufmerksamkeit</strong> erhalten. Wo Aufmerksamkeit fließt, folgt Geld.</p>
+
+      <figure class="blog-content-figure" style="margin: 2em 0;">
+        <img src="/blog/attention-economy/attention-economy-cover.png" alt="Unternehmer analysiert Content-Performance auf mehreren Bildschirmen" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
+      </figure>
+
+      <h3>Was ist die Aufmerksamkeitsökonomie?</h3>
+      <p><strong>Die Aufmerksamkeitsökonomie</strong> macht menschliche Aufmerksamkeit — nicht Fabriken — zur knappsten Ressource. Herbert A. Simon: <em>„Ein Reichtum an Information erzeugt eine Armut an Aufmerksamkeit.“</em></p>
+
+      <figure class="blog-content-figure" style="margin: 2em 0;">
+        <img src="/blog/attention-economy/attention-scarcity.png" alt="Smartphone mit vielen Benachrichtigungen" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
+      </figure>
+
+      <h3>Wichtigste Erkenntnisse</h3>
+      <ul>
+        <li><strong>Aufmerksamkeit ist Währung</strong> — Umsatz, Empfehlungen, Positionierung.</li>
+        <li><strong>Content ist nicht nur Marketing</strong> — Verkauf, Vertrauen, Recruiting rund um die Uhr.</li>
+        <li><strong>80 % geben, 20 % verkaufen</strong> — lehren; für Geschwindigkeit und Umsetzung kassieren.</li>
+        <li><strong>Jedes Unternehmen ist Medienunternehmen</strong> — Konkurrenz mit YouTube, LinkedIn, TikTok.</li>
+      </ul>
+
+      <h3>Drei Ökonomien</h3>
+      <table style="width: 100%; border-collapse: collapse; margin: 1.5em 0;">
+        <thead><tr><th style="text-align:left;padding:0.75rem;border-bottom:2px solid #e2e8f0;">Ökonomie</th><th style="text-align:left;padding:0.75rem;border-bottom:2px solid #e2e8f0;">Reichtum</th><th style="text-align:left;padding:0.75rem;border-bottom:2px solid #e2e8f0;">Kernaufgabe</th></tr></thead>
+        <tbody>
+          <tr><td style="padding:0.75rem;border-bottom:1px solid #e2e8f0;"><strong>Industriell</strong></td><td style="padding:0.75rem;border-bottom:1px solid #e2e8f0;">Fabriken</td><td style="padding:0.75rem;border-bottom:1px solid #e2e8f0;">Betrieb</td></tr>
+          <tr><td style="padding:0.75rem;border-bottom:1px solid #e2e8f0;"><strong>Information</strong></td><td style="padding:0.75rem;border-bottom:1px solid #e2e8f0;">Daten</td><td style="padding:0.75rem;border-bottom:1px solid #e2e8f0;">Information schützen</td></tr>
+          <tr><td style="padding:0.75rem;border-bottom:1px solid #e2e8f0;"><strong>Aufmerksamkeit</strong></td><td style="padding:0.75rem;border-bottom:1px solid #e2e8f0;">Vertrauen</td><td style="padding:0.75rem;border-bottom:1px solid #e2e8f0;">Vertrauenswürdigste Marktstimme werden</td></tr>
+        </tbody>
+      </table>
+
+      <figure class="blog-content-figure" style="margin: 2em 0;">
+        <img src="/blog/attention-economy/economy-shift.png" alt="Fabrik versus modernes Content-Studio" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
+      </figure>
+
+      <h3>Content ist Ihre wichtigste Aufgabe</h3>
+      <p>Content ist Verkauf, Marke, Vertrauen, Leads, Recruiting, Bildung. <strong>Jeder Inhalt arbeitet 24/7 für Sie.</strong></p>
+
+      <figure class="blog-content-figure" style="margin: 2em 0;">
+        <img src="/blog/attention-economy/content-is-the-job.png" alt="Unternehmer nimmt Bildungsvideo auf" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
+      </figure>
+
+      <h3>Die 80/20-Regel</h3>
+      <p>Geben Sie <strong>80 % des Wissens kostenlos</strong>. Verkaufen Sie Umsetzung an die 20 %, die schnellere Ergebnisse wollen. Bezahlt wird für Geschwindigkeit, Ausführung, Verantwortung — nicht für Information.</p>
+
+      <figure class="blog-content-figure" style="margin: 2em 0;">
+        <img src="/blog/attention-economy/eighty-twenty-teaching.png" alt="Workshop mit engagiertem Publikum" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
+      </figure>
+
+      <h3>Jedes Unternehmen ist ein Medienunternehmen</h3>
+      <p>Ihre Konkurrenz: YouTube, LinkedIn, TikTok, Podcasts — nicht nur lokale Anbieter.</p>
+
+      <figure class="blog-content-figure" style="margin: 2em 0;">
+        <img src="/blog/attention-economy/media-company.png" alt="Medienstudio mit Mikrofon und Kamera" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
+      </figure>
+
+      <h3>30-Tage-Checkliste</h3>
+      <ol>
+        <li>Wählen Sie eine Plattform, auf der Ihre Käufer bereits aktiv sind.</li>
+        <li>Listen Sie 20 Fragen vor dem Kauf.</li>
+        <li>Veröffentlichen Sie wöchentlich mit echtem Beweis.</li>
+        <li>Definieren Sie Ihr bezahltes 20 %-Angebot.</li>
+        <li>Automatisieren Sie Erfassung und Follow-up mit KI-Systemen.</li>
+      </ol>
+
+      <h3>FAQ</h3>
+      <p><strong>Was ist die Aufmerksamkeitsökonomie?</strong> Eine Ökonomie, in der Kundenaufmerksamkeit die knappste Ressource ist.</p>
+      <p><strong>Warum schlägt Content Werbung?</strong> Werbung mietet Aufmerksamkeit; Content baut ein dauerhaftes Asset.</p>
+      <p><strong>80/20-Regel?</strong> 80 % kostenlos lehren; 20 % für schnelle oder Done-for-you-Umsetzung verkaufen.</p>
+      <p><strong>Welche Plattform zuerst?</strong> Wo Ihre Käufer bereits Antworten suchen.</p>
+      <p><strong>Rolle der KI?</strong> Verstärken und verteilen — nicht Ihre Expertise ersetzen.</p>
+      <p><strong>Operationen vernachlässigen?</strong> Nein. Aufmerksamkeit öffnet die Tür; Operationen halten das Versprechen.</p>
+
+      <p><strong>Bereit für ein System?</strong> <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Strategiegespräch buchen</a> mit Digni Digital.</p>
+      <hr>
+      <p><em>Technology Creates Opportunity.</em></p>
+    `,
+  },
 }
 
 export const articlesDe: BlogArticle[] = articlesEn.map((article) => {

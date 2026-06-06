@@ -902,6 +902,96 @@ const contentEs: Record<string, Partial<BlogArticle>> = {
       <p><a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Reserve una llamada estratégica gratuita</a> con Digni Digital. Le ayudaremos a identificar el siguiente experimento, las habilidades digitales y la palanca de IA correcta sin reemplazar su juicio.</p>
     `,
   },
+
+  'attention-economy-business-growth-guide': {
+    title: 'Economía de la atención: guía del empresario para ganar cuando la atención es la nueva moneda',
+    excerpt:
+      'La mayoría de empresarios aún crecen como en la era industrial. Esta guía explica la economía de la atención, por qué el contenido es su trabajo más valioso, la regla 80/20 y cómo convertirse en la voz más confiable de su mercado.',
+    category: 'Crecimiento Empresarial',
+    readTime: '14 min de lectura',
+    publishDate: '6 de junio de 2026',
+    tags: ['economía de la atención', 'crecimiento empresarial', 'estrategia de contenido', 'marketing de fundador', 'confianza', 'empresa mediática'],
+    content: `
+      <h2>Deje de hacer crecer su negocio como si fuera 1985. La atención es la moneda que importa hoy.</h2>
+
+      <p>La mayoría de empresarios intentan crecer como en la era industrial. <strong>Ya no estamos ahí.</strong> Vivimos la <strong>economía de la atención</strong> — y ganan quienes <strong>captan más atención</strong>. Donde fluye la atención, sigue el dinero.</p>
+
+      <figure class="blog-content-figure" style="margin: 2em 0;">
+        <img src="/blog/attention-economy/attention-economy-cover.png" alt="Empresario revisando analíticas de contenido en varias pantallas" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
+      </figure>
+
+      <h3>¿Qué es la economía de la atención?</h3>
+      <p><strong>La economía de la atención</strong> hace de la atención humana — no de las fábricas — el recurso más escaso. Herbert A. Simon: <em>«Una riqueza de información crea una pobreza de atención.»</em></p>
+
+      <figure class="blog-content-figure" style="margin: 2em 0;">
+        <img src="/blog/attention-economy/attention-scarcity.png" alt="Smartphone saturado de notificaciones" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
+      </figure>
+
+      <h3>Puntos clave</h3>
+      <ul>
+        <li><strong>La atención es moneda</strong> — ingresos, referencias, posicionamiento.</li>
+        <li><strong>El contenido no es solo marketing</strong> — ventas, confianza, reclutamiento 24/7.</li>
+        <li><strong>Regala 80 %, vende 20 %</strong> — enseña; cobra por velocidad y ejecución.</li>
+        <li><strong>Cada negocio es empresa mediática</strong> — compite con YouTube, LinkedIn, TikTok.</li>
+      </ul>
+
+      <h3>Tres economías</h3>
+      <table style="width: 100%; border-collapse: collapse; margin: 1.5em 0;">
+        <thead><tr><th style="text-align:left;padding:0.75rem;border-bottom:2px solid #e2e8f0;">Economía</th><th style="text-align:left;padding:0.75rem;border-bottom:2px solid #e2e8f0;">Riqueza</th><th style="text-align:left;padding:0.75rem;border-bottom:2px solid #e2e8f0;">Actividad clave</th></tr></thead>
+        <tbody>
+          <tr><td style="padding:0.75rem;border-bottom:1px solid #e2e8f0;"><strong>Industrial</strong></td><td style="padding:0.75rem;border-bottom:1px solid #e2e8f0;">Fábricas</td><td style="padding:0.75rem;border-bottom:1px solid #e2e8f0;">Operaciones</td></tr>
+          <tr><td style="padding:0.75rem;border-bottom:1px solid #e2e8f0;"><strong>Información</strong></td><td style="padding:0.75rem;border-bottom:1px solid #e2e8f0;">Datos</td><td style="padding:0.75rem;border-bottom:1px solid #e2e8f0;">Proteger información</td></tr>
+          <tr><td style="padding:0.75rem;border-bottom:1px solid #e2e8f0;"><strong>Atención</strong></td><td style="padding:0.75rem;border-bottom:1px solid #e2e8f0;">Confianza</td><td style="padding:0.75rem;border-bottom:1px solid #e2e8f0;">Ser la voz más confiable del mercado</td></tr>
+        </tbody>
+      </table>
+
+      <figure class="blog-content-figure" style="margin: 2em 0;">
+        <img src="/blog/attention-economy/economy-shift.png" alt="Fábrica industrial frente a estudio de contenido moderno" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
+      </figure>
+
+      <h3>El contenido es su trabajo más importante</h3>
+      <p>Contenido = ventas, marca, confianza, leads, reclutamiento, educación. <strong>Cada pieza trabaja 24/7 para usted.</strong></p>
+
+      <figure class="blog-content-figure" style="margin: 2em 0;">
+        <img src="/blog/attention-economy/content-is-the-job.png" alt="Empresario grabando video educativo" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
+      </figure>
+
+      <h3>La regla 80/20</h3>
+      <p>Regale <strong>80 % del conocimiento</strong>. Venda implementación al 20 % que quiere resultados más rápidos. Se paga por velocidad, ejecución y responsabilidad — no por información.</p>
+
+      <figure class="blog-content-figure" style="margin: 2em 0;">
+        <img src="/blog/attention-economy/eighty-twenty-teaching.png" alt="Taller impartido por un empresario" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
+      </figure>
+
+      <h3>Cada negocio es una empresa mediática</h3>
+      <p>Sus competidores: YouTube, LinkedIn, TikTok, podcasts — no solo otros negocios locales.</p>
+
+      <figure class="blog-content-figure" style="margin: 2em 0;">
+        <img src="/blog/attention-economy/media-company.png" alt="Estudio con micrófono y cámara" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
+      </figure>
+
+      <h3>Checklist de 30 días</h3>
+      <ol>
+        <li>Elija una plataforma donde sus compradores ya prestan atención.</li>
+        <li>Liste 20 preguntas previas a la compra.</li>
+        <li>Publique una pieza semanal con prueba real.</li>
+        <li>Defina su oferta pagada del 20 %.</li>
+        <li>Automatice captura y seguimiento con sistemas de IA.</li>
+      </ol>
+
+      <h3>Preguntas frecuentes</h3>
+      <p><strong>¿Qué es la economía de la atención?</strong> Una economía donde la atención del cliente es el recurso más escaso.</p>
+      <p><strong>¿Por qué el contenido supera a los anuncios?</strong> Los anuncios alquilan atención; el contenido construye un activo duradero.</p>
+      <p><strong>¿Regla 80/20?</strong> 80 % enseñado gratis; 20 % vendido como implementación rápida o llave en mano.</p>
+      <p><strong>¿Qué plataforma primero?</strong> Donde sus compradores ya buscan respuestas.</p>
+      <p><strong>¿Papel de la IA?</strong> Amplificar y distribuir — no reemplazar su expertise.</p>
+      <p><strong>¿Ignorar operaciones?</strong> No. La atención abre la puerta; las operaciones cumplen la promesa.</p>
+
+      <p><strong>¿Listo para sistematizar?</strong> <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Reserve una llamada estratégica</a> con Digni Digital.</p>
+      <hr>
+      <p><em>Technology Creates Opportunity.</em></p>
+    `,
+  },
 }
 
 export const articlesEs: BlogArticle[] = articlesEn.map((article) => {

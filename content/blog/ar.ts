@@ -2585,6 +2585,96 @@ export const contentAr: Record<string, Partial<BlogArticle>> = {
       <p><a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">احجز مكالمة استراتيجية مجانية</a> مع Digni Digital. سنساعدك على تحديد أقوى تجربة تالية، والمهارات الرقمية التي تبنيها، وأين يستخدم الذكاء الاصطناعي كرافعة دون أن يستبدل حكمك.</p>
     `,
   },
+
+  'attention-economy-business-growth-guide': {
+    title: 'اقتصاد الانتباه: دليل أصحاب الأعمال للفوز عندما يصبح الانتباه العملة الجديدة',
+    excerpt:
+      'معظم أصحاب الأعمال ما زالوا ينمون كما في العصر الصناعي. يشرح هذا الدليل اقتصاد الانتباه، ولماذا المحتوى هو أهم وظيفة لديك، وقاعدة 80/20، وكيف تصبح الصوت الأكثر ثقة في سوقك.',
+    category: 'نمو الأعمال',
+    readTime: '14 دقيقة قراءة',
+    publishDate: '6 يونيو 2026',
+    tags: ['اقتصاد الانتباه', 'نمو الأعمال', 'استراتيجية المحتوى', 'تسويق المؤسس', 'بناء الثقة', 'شركة إعلامية'],
+    content: `
+      <h2>توقف عن تنمية عملك كما لو كنا في 1985. الانتباه هو العملة التي تهم اليوم.</h2>
+
+      <p>يحاول معظم أصحاب الأعمال النمو كما في العصر الصناعي. <strong>لم نعد كذلك.</strong> نحن في <strong>اقتصاد الانتباه</strong> — والشركات الفائزة هي التي <strong>تجذب أكبر قدر من الانتباه</strong>. وحيث يتدفق الانتباه، يتبعه المال.</p>
+
+      <figure class="blog-content-figure" style="margin: 2em 0;">
+        <img src="/blog/attention-economy/attention-economy-cover.png" alt="صاحب عمل يراجع أداء المحتوى على شاشات متعددة" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
+      </figure>
+
+      <h3>ما هو اقتصاد الانتباه؟</h3>
+      <p><strong>اقتصاد الانتباه</strong> يجعل انتباه الإنسان — لا المصانع — أندر مورد. قال هربرت سيمون: <em>«وفرة المعلومات تخلق فقر الانتباه.»</em></p>
+
+      <figure class="blog-content-figure" style="margin: 2em 0;">
+        <img src="/blog/attention-economy/attention-scarcity.png" alt="هاتف ذكي مزدحم بالإشعارات" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
+      </figure>
+
+      <h3>أهم النقاط</h3>
+      <ul>
+        <li><strong>الانتباه عملة</strong> — إيرادات، إحالات، مكانة في السوق.</li>
+        <li><strong>المحتوى ليس تسويقاً فقط</strong> — مبيعات، ثقة، توظيف على مدار الساعة.</li>
+        <li><strong>امنح 80% وبيع 20%</strong> — علّم علناً؛ بع السرعة والتنفيذ.</li>
+        <li><strong>كل شركة أصبحت شركة إعلامية</strong> — تنافس YouTube وLinkedIn وTikTok.</li>
+      </ul>
+
+      <h3>ثلاثة اقتصادات</h3>
+      <table style="width: 100%; border-collapse: collapse; margin: 1.5em 0;">
+        <thead><tr><th style="text-align:left;padding:0.75rem;border-bottom:2px solid #e2e8f0;">الاقتصاد</th><th style="text-align:left;padding:0.75rem;border-bottom:2px solid #e2e8f0;">مصدر الثروة</th><th style="text-align:left;padding:0.75rem;border-bottom:2px solid #e2e8f0;">النشاط الأهم</th></tr></thead>
+        <tbody>
+          <tr><td style="padding:0.75rem;border-bottom:1px solid #e2e8f0;"><strong>صناعي</strong></td><td style="padding:0.75rem;border-bottom:1px solid #e2e8f0;">المصانع</td><td style="padding:0.75rem;border-bottom:1px solid #e2e8f0;">إدارة العمليات</td></tr>
+          <tr><td style="padding:0.75rem;border-bottom:1px solid #e2e8f0;"><strong>معلومات</strong></td><td style="padding:0.75rem;border-bottom:1px solid #e2e8f0;">البيانات</td><td style="padding:0.75rem;border-bottom:1px solid #e2e8f0;">حماية المعلومات</td></tr>
+          <tr><td style="padding:0.75rem;border-bottom:1px solid #e2e8f0;"><strong>انتباه</strong></td><td style="padding:0.75rem;border-bottom:1px solid #e2e8f0;">الثقة والظهور</td><td style="padding:0.75rem;border-bottom:1px solid #e2e8f0;">أن تصبح الصوت الأكثر ثقة</td></tr>
+        </tbody>
+      </table>
+
+      <figure class="blog-content-figure" style="margin: 2em 0;">
+        <img src="/blog/attention-economy/economy-shift.png" alt="مصنع صناعي مقابل استوديو محتوى حديث" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
+      </figure>
+
+      <h3>لماذا المحتوى أهم وظيفة في عملك</h3>
+      <p>المحتوى = مبيعات، علامة، ثقة، عملاء محتملون، توظيف، تعليم. <strong>كل قطعة تعمل 24/7 لصالحك.</strong></p>
+
+      <figure class="blog-content-figure" style="margin: 2em 0;">
+        <img src="/blog/attention-economy/content-is-the-job.png" alt="صاحب عمل يسجل فيديو تعليمياً" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
+      </figure>
+
+      <h3>قاعدة 80/20</h3>
+      <p>امنح <strong>80% من المعرفة مجاناً</strong>. بع التنفيذ لمن يريد نتائج أسرع. يدفع الناس للسرعة والتنفيذ والمساءلة — لا للمعلومات.</p>
+
+      <figure class="blog-content-figure" style="margin: 2em 0;">
+        <img src="/blog/attention-economy/eighty-twenty-teaching.png" alt="ورشة عمل يقدمها صاحب عمل" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
+      </figure>
+
+      <h3>كل شركة أصبحت شركة إعلامية</h3>
+      <p>منافسوك: YouTube وLinkedIn وTikTok والبودكاست — لا المنافسون المحليون فقط.</p>
+
+      <figure class="blog-content-figure" style="margin: 2em 0;">
+        <img src="/blog/attention-economy/media-company.png" alt="استوديو إعلامي بميكروفون وكاميرا" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
+      </figure>
+
+      <h3>قائمة 30 يوماً</h3>
+      <ol>
+        <li>اختر منصة حيث يوجد مشتريك بالفعل.</li>
+        <li>اكتب 20 سؤالاً قبل الشراء.</li>
+        <li>انشر أسبوعياً بإثبات حقيقي.</li>
+        <li>حدد عرضك المدفوع 20%.</li>
+        <li>أتمت الاستقبال والمتابعة بأنظمة ذكاء اصطناعي.</li>
+      </ol>
+
+      <h3>أسئلة شائعة</h3>
+      <p><strong>ما اقتصاد الانتباه ببساطة؟</strong> اقتصاد يكون فيه انتباه العميل أندر مورد.</p>
+      <p><strong>لماذا يتفوق المحتوى على الإعلانات؟</strong> الإعلان يستأجر الانتباه؛ المحتوى يبني أصلاً دائماً.</p>
+      <p><strong>قاعدة 80/20؟</strong> 80% تعليم مجاني؛ 20% تنفيذ سريع أو جاهز.</p>
+      <p><strong>أي منصة أولاً؟</strong> حيث يبحث مشتريك عن إجابات.</p>
+      <p><strong>دور الذكاء الاصطناعي؟</strong> التوسيع والتوزيع — لا استبدال خبرتك.</p>
+      <p><strong>هل نهمل العمليات؟</strong> لا. الانتباه يفتح الباب؛ العمليات تحقق الوعد.</p>
+
+      <p><strong>مستعد لبناء نظام؟</strong> <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">احجز مكالمة استراتيجية</a> مع Digni Digital.</p>
+      <hr>
+      <p><em>Technology Creates Opportunity.</em></p>
+    `,
+  },
 }
 
 export const articlesAr: BlogArticle[] = articlesEn.map((article) => {

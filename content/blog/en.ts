@@ -4355,6 +4355,297 @@ const remainingArticles: BlogArticle[] = [
       <p><a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Book a free strategy call</a> with Digni Digital. We will help you identify the strongest next experiment, the digital skills to build, and where AI can create leverage without replacing your judgment.</p>
     `,
   },
+  {
+    id: 108,
+    title: 'Attention Economy: The Business Owner\'s Guide to Winning When Attention Is the New Currency',
+    slug: 'attention-economy-business-growth-guide',
+    excerpt:
+      'Most business owners still grow like it is the industrial age. This guide explains the attention economy, why content is your highest-value job, the 80/20 growth rule, and how to become the most trusted voice in your market.',
+    category: 'Business Growth',
+    readTime: '14 min read',
+    publishDate: 'June 6, 2026',
+    author: 'Pascal Digny',
+    tags: [
+      'Attention Economy',
+      'Business Growth',
+      'Content Strategy',
+      'Founder Marketing',
+      'Trust Building',
+      'Media Company',
+    ],
+    featured: true,
+    coverImageUrl: '/blog/attention-economy/attention-economy-cover.png',
+    content: `
+      <h2>Stop growing your business like it is 1985. Attention is the currency that matters now.</h2>
+
+      <p>Most business owners are still trying to grow their businesses as if we were living in the industrial age. <strong>We are not.</strong> We are living in the <strong>Attention Economy</strong> — and the businesses winning today are not always the smartest, oldest, or even the best. They are simply the businesses that <strong>command the most attention</strong>. And wherever attention flows, money follows.</p>
+
+      <p>This guide is for consultants, clinic owners, contractors, real estate agents, lawyers, coaches, SaaS founders, and any operator who knows their work is excellent but feels invisible next to louder competitors. You will learn what the attention economy actually means, why content is no longer "just marketing," the 80/20 rule dominating modern growth, and a practical path to becoming the most trusted voice in your market.</p>
+
+      <figure class="blog-content-figure" style="margin: 2em 0;">
+        <img src="/blog/attention-economy/attention-economy-cover.png" alt="Business owner reviewing social media analytics and content performance across multiple screens" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
+        <figcaption style="margin-top: 0.75rem; font-size: 0.875rem; color: #64748b; text-align: center;">In the attention economy, visibility and trust compound — operations alone no longer guarantee growth.</figcaption>
+      </figure>
+
+      <h3>What is the attention economy?</h3>
+
+      <p><strong>The attention economy</strong> is an economic model where human attention — not factories, land, or even raw information — is the scarcest and most valuable resource. Decades ago, economist Herbert A. Simon predicted: <em>"A wealth of information creates a poverty of attention."</em> Today, that prediction is reality.</p>
+
+      <p>Your customers wake up every day bombarded with thousands of messages, videos, emails, advertisements, posts, and notifications. <strong>Information is abundant. Attention is scarce.</strong> Businesses that earn sustained attention build trust faster, convert more efficiently, and attract better partners, talent, and opportunities.</p>
+
+      <figure class="blog-content-figure" style="margin: 2em 0;">
+        <img src="/blog/attention-economy/attention-scarcity.png" alt="Smartphone flooded with notifications representing information overload and scarce attention" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
+        <figcaption style="margin-top: 0.75rem; font-size: 0.875rem; color: #64748b; text-align: center;">Every notification competes for the same limited resource: your customer's attention.</figcaption>
+      </figure>
+
+      <h3>Key takeaways</h3>
+
+      <ul>
+        <li><strong>Attention is currency</strong> — businesses that command attention command revenue, referrals, and market position.</li>
+        <li><strong>Content is not marketing</strong> — it is sales, trust, recruitment, education, and distribution working 24/7.</li>
+        <li><strong>Give away 80%, sell 20%</strong> — teach publicly; charge for speed, execution, and accountability.</li>
+        <li><strong>Every business is a media company</strong> — you compete with YouTube, LinkedIn, TikTok, and podcasts for the same eyeballs.</li>
+        <li><strong>Your highest-value job</strong> is becoming the most trusted and visible voice in your market — not managing every operational detail yourself.</li>
+      </ul>
+
+      <h3>Why traditional business growth fails today</h3>
+
+      <p>The broken model says: build a better product, open an office, run ads, wait for referrals, and hope word of mouth scales. That worked when distribution was expensive and attention was easier to capture. Today it creates three predictable failures:</p>
+
+      <ul>
+        <li><strong>Invisibility</strong> — excellent operators lose to louder creators with weaker offers.</li>
+        <li><strong>Commodity comparison</strong> — buyers compare you on price because they never saw your thinking.</li>
+        <li><strong>Founder bottleneck</strong> — you stay trapped in operations because no content system works while you sleep.</li>
+      </ul>
+
+      <blockquote>
+        <p><strong>The enemy is not your competitor's product.</strong> It is the 10,000 other things fighting for your customer's attention before they ever hear your name.</p>
+      </blockquote>
+
+      <h3>The new business reality: three economies, three wealth engines</h3>
+
+      <table style="width: 100%; border-collapse: collapse; margin: 1.5em 0;">
+        <thead>
+          <tr>
+            <th style="text-align: left; padding: 0.75rem; border-bottom: 2px solid #e2e8f0;">Economy</th>
+            <th style="text-align: left; padding: 0.75rem; border-bottom: 2px solid #e2e8f0;">Wealth came from</th>
+            <th style="text-align: left; padding: 0.75rem; border-bottom: 2px solid #e2e8f0;">Owner's highest-value activity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;"><strong>Industrial</strong></td>
+            <td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">Owning factories and production</td>
+            <td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">Managing operations and output</td>
+          </tr>
+          <tr>
+            <td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;"><strong>Information</strong></td>
+            <td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">Owning proprietary data and systems</td>
+            <td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">Building and protecting information assets</td>
+          </tr>
+          <tr>
+            <td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;"><strong>Attention</strong></td>
+            <td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">Owning audience trust and visibility</td>
+            <td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">Becoming the most trusted voice in your market</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <figure class="blog-content-figure" style="margin: 2em 0;">
+        <img src="/blog/attention-economy/economy-shift.png" alt="Visual contrast between industrial factory production and modern content creation studio" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
+        <figcaption style="margin-top: 0.75rem; font-size: 0.875rem; color: #64748b; text-align: center;">Wealth creation shifted from factories to information — and now to attention.</figcaption>
+      </figure>
+
+      <p>This does not mean operations do not matter. It means <strong>attention is the front door</strong>. Without it, your expertise never gets a chance to convert.</p>
+
+      <h3>Why content is the most important job in your business</h3>
+
+      <p>Most business owners believe content is marketing. <strong>That is a mistake.</strong> Content is:</p>
+
+      <ul>
+        <li><strong>Sales</strong> — answering objections before the first call</li>
+        <li><strong>Branding</strong> — showing how you think, not just what you sell</li>
+        <li><strong>Trust building</strong> — proof that you understand real problems</li>
+        <li><strong>Lead generation</strong> — attracting people already looking for answers</li>
+        <li><strong>Recruitment</strong> — talent finds you because they respect your perspective</li>
+        <li><strong>Customer education</strong> — reducing support load and buyer confusion</li>
+        <li><strong>Market positioning</strong> — defining the category on your terms</li>
+        <li><strong>Distribution</strong> — reaching people who will never see your ad</li>
+      </ul>
+
+      <p><strong>Every piece of content is an employee working for your business 24 hours a day.</strong> One video, article, or case study can generate leads, partnerships, referrals, sales, authority, and opportunities for years after it is published.</p>
+
+      <figure class="blog-content-figure" style="margin: 2em 0;">
+        <img src="/blog/attention-economy/content-is-the-job.png" alt="Business owner recording educational video content in a professional office setup" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
+        <figcaption style="margin-top: 0.75rem; font-size: 0.875rem; color: #64748b; text-align: center;">Content creation is not a side task — it is the highest-leverage growth activity for most owners.</figcaption>
+      </figure>
+
+      <h3>Case proof: what one piece of content can do</h3>
+
+      <p>Consider a regional contractor who documents one project from quote to completion — the mistakes, the material choices, the timeline, the final result. That single video series can:</p>
+
+      <ul>
+        <li>Rank for local search queries prospects already type</li>
+        <li>Pre-qualify buyers who trust the process before calling</li>
+        <li>Generate inbound referrals from viewers who share it</li>
+        <li>Reduce price objections because expertise is visible</li>
+        <li>Attract skilled subcontractors who want to work with transparent operators</li>
+      </ul>
+
+      <p>The operator did not get busier because they worked more hours. They got busier because <strong>attention compounded</strong>.</p>
+
+      <h3>The 80/20 rule of modern growth</h3>
+
+      <p>Here is where most businesses get it wrong. They hide their expertise. They fear giving away too much. The businesses dominating today do the opposite:</p>
+
+      <ul>
+        <li>They give away <strong>80% of the knowledge</strong> for free</li>
+        <li>They teach, educate, explain, document, and show their process</li>
+        <li>They reveal their thinking and solve problems publicly</li>
+        <li>Then they sell implementation to the <strong>20% who want results faster</strong></li>
+      </ul>
+
+      <p>Because people do not pay for information anymore. Information is everywhere. People pay for:</p>
+
+      <ul>
+        <li><strong>Speed</strong> — faster results without trial and error</li>
+        <li><strong>Execution</strong> — someone else doing the work correctly</li>
+        <li><strong>Convenience</strong> — fewer decisions and less friction</li>
+        <li><strong>Accountability</strong> — structure that keeps them on track</li>
+        <li><strong>Expertise</strong> — judgment that prevents expensive mistakes</li>
+        <li><strong>Implementation</strong> — done-for-you or done-with-you delivery</li>
+      </ul>
+
+      <figure class="blog-content-figure" style="margin: 2em 0;">
+        <img src="/blog/attention-economy/eighty-twenty-teaching.png" alt="Business owner teaching a workshop to an engaged audience with laptops" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
+        <figcaption style="margin-top: 0.75rem; font-size: 0.875rem; color: #64748b; text-align: center;">Teach the 80% publicly. Sell the 20% who want speed, execution, and guaranteed outcomes.</figcaption>
+      </figure>
+
+      <h3>The new formula: what to give away vs. what to charge for</h3>
+
+      <table style="width: 100%; border-collapse: collapse; margin: 1.5em 0;">
+        <thead>
+          <tr>
+            <th style="text-align: left; padding: 0.75rem; border-bottom: 2px solid #e2e8f0;">Give away publicly</th>
+            <th style="text-align: left; padding: 0.75rem; border-bottom: 2px solid #e2e8f0;">Charge for</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">The <strong>What</strong> — what the solution is</td>
+            <td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;"><strong>Done-for-you</strong> implementation</td>
+          </tr>
+          <tr>
+            <td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">The <strong>Why</strong> — why the problem exists</td>
+            <td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;"><strong>Done-with-you</strong> coaching and accountability</td>
+          </tr>
+          <tr>
+            <td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">Most of the <strong>How</strong> — frameworks, steps, examples</td>
+            <td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;"><strong>Faster</strong> implementation with proven systems</td>
+          </tr>
+          <tr>
+            <td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">Proof, case studies, and lessons learned</td>
+            <td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;"><strong>Guaranteed outcomes</strong> and risk reversal</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p><strong>The more value you share publicly, the more trust you build privately.</strong> And trust converts better than any sales script ever will.</p>
+
+      <h3>Every business is now a media company</h3>
+
+      <p>Here is the reality many business owners still have not accepted: <strong>every business is a media company</strong>. Whether you are a consultant, real estate agent, clinic owner, lawyer, contractor, coach, or SaaS founder — your competitors are no longer just other businesses. They are competing against YouTube, LinkedIn, TikTok, Instagram, podcasts, newsletters, and every other source fighting for your customer's attention.</p>
+
+      <figure class="blog-content-figure" style="margin: 2em 0;">
+        <img src="/blog/attention-economy/media-company.png" alt="Entrepreneur in a home media studio with podcast microphone and video camera setup" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
+        <figcaption style="margin-top: 0.75rem; font-size: 0.875rem; color: #64748b; text-align: center;">Your competitor is not just the business down the street — it is every creator on every platform.</figcaption>
+      </figure>
+
+      <p>The businesses that win will be the ones that create so much value, education, proof, and insight that <strong>becoming the market leader becomes inevitable</strong>.</p>
+
+      <h3>How AI changes the attention economy (without replacing your voice)</h3>
+
+      <p>AI does not remove the need for attention. It raises the bar for <strong>authenticity and proof</strong>. Generic AI slop is everywhere — which means operators who combine real expertise with consistent content will stand out faster.</p>
+
+      <ul>
+        <li><strong>AI handles volume</strong> — repurposing one insight into posts, emails, and scripts</li>
+        <li><strong>You handle judgment</strong> — what to say, what proof to show, what promise to make</li>
+        <li><strong>Systems handle distribution</strong> — scheduling, follow-up, and lead capture while you execute</li>
+      </ul>
+
+      <p>The goal is not to automate your personality. The goal is to <strong>amplify your best thinking</strong> so attention compounds without burning you out.</p>
+
+      <h3>Who should adopt this approach first</h3>
+
+      <ul>
+        <li><strong>Expert-led service businesses</strong> where trust drives the sale</li>
+        <li><strong>Founders with deep domain knowledge</strong> but weak visibility</li>
+        <li><strong>Local operators</strong> losing to louder competitors with weaker delivery</li>
+        <li><strong>B2B consultants and agencies</strong> stuck on referrals and feast-or-famine cycles</li>
+        <li><strong>Clinic, legal, and professional practices</strong> where education builds authority</li>
+      </ul>
+
+      <h3>Implementation checklist: your first 30 days</h3>
+
+      <ol>
+        <li><strong>Pick one platform</strong> where your buyers already spend attention (LinkedIn, YouTube, Instagram, or a newsletter).</li>
+        <li><strong>List 20 questions</strong> your market asks before they buy — these are your content topics.</li>
+        <li><strong>Publish one piece per week</strong> that answers one question with a real example or framework.</li>
+        <li><strong>Document one process</strong> you already do well — show the before, the thinking, and the after.</li>
+        <li><strong>Add one proof element</strong> to every piece: a metric, testimonial, screenshot, or case outcome.</li>
+        <li><strong>Define your paid 20%</strong> — what you charge for when buyers want speed or done-for-you help.</li>
+        <li><strong>Capture leads</strong> — one clear CTA per piece (call, download, or strategy session).</li>
+        <li><strong>Repurpose</strong> — turn each long-form piece into 3–5 shorter posts or clips.</li>
+        <li><strong>Review monthly</strong> — which topics earned attention, inquiries, and trust? Double down there.</li>
+        <li><strong>Automate operations</strong> — use AI systems for intake, follow-up, and scheduling so you can keep creating.</li>
+      </ol>
+
+      <h3>Common mistakes to avoid</h3>
+
+      <ul>
+        <li><strong>Hoarding expertise</strong> — secrecy does not create demand; visibility does.</li>
+        <li><strong>Posting without proof</strong> — opinions are cheap; documented results are rare.</li>
+        <li><strong>Chasing every platform</strong> — depth on one channel beats shallow presence on five.</li>
+        <li><strong>Treating content as an intern task</strong> — the founder's perspective is the asset.</li>
+        <li><strong>Selling before teaching</strong> — belief must come before the calendar link.</li>
+      </ul>
+
+      <h3>How Digni Digital fits (without the hard sell)</h3>
+
+      <p>Winning the attention economy still requires systems behind the scenes — lead capture, follow-up, scheduling, and delivery cannot break while you build visibility. That is where <strong>AI Employee systems</strong> and <strong>agentic software</strong> earn their place: they handle the operational volume so you can stay focused on the content and relationships that compound attention into revenue.</p>
+
+      <h3>Frequently asked questions</h3>
+
+      <p><strong>What is the attention economy in simple terms?</strong></p>
+      <p>It is an economy where customer attention — not factories or raw information — is the scarcest resource. Businesses that earn and hold attention convert more efficiently because trust is built before the sales conversation starts.</p>
+
+      <p><strong>Why is content more important than ads for business owners?</strong></p>
+      <p>Ads rent attention for a moment. Content builds an asset that keeps working — educating buyers, answering objections, and generating inbound interest long after publication. In the attention economy, owned content compounds; rented ads reset every month.</p>
+
+      <p><strong>What is the 80/20 content rule?</strong></p>
+      <p>Give away roughly 80% of your knowledge for free through teaching and documentation. Charge the 20% of buyers who want faster implementation, done-for-you delivery, accountability, or guaranteed outcomes.</p>
+
+      <p><strong>How do small businesses compete with big brands for attention?</strong></p>
+      <p>Big brands struggle to show authentic founder-level thinking. Small operators win by being specific, documenting real work, and teaching their market more generously than incumbents can.</p>
+
+      <p><strong>Which platform should a business owner start with?</strong></p>
+      <p>Start where your buyers already look for answers. B2B operators often win on LinkedIn or YouTube. Local services often win on Instagram or short-form video. Pick one, publish consistently for 90 days, then expand.</p>
+
+      <p><strong>Does the attention economy mean I should stop focusing on operations?</strong></p>
+      <p>No. Operations deliver the promise. Attention gets people in the door. The shift is that visibility and trust are no longer optional extras — they are core growth infrastructure.</p>
+
+      <p><strong>How does AI help without making content feel generic?</strong></p>
+      <p>Use AI to repurpose, draft outlines, and automate follow-up — not to replace your real expertise. Your judgment, proof, and voice are the differentiators AI cannot fake at scale.</p>
+
+      <h3>Next step</h3>
+
+      <p><strong>Ready to turn attention into a growth system?</strong> <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Book a strategy call</a> with Digni Digital. We will help you define your content angle, the systems to capture leads from it, and where AI can handle volume so you stay the trusted voice in your market.</p>
+
+      <hr>
+
+      <p><em>Technology Creates Opportunity. In the attention economy, the operators who teach generously and systemize delivery will own their markets.</em></p>
+    `,
+  },
 ]
 
 export const articlesEn: BlogArticle[] = [
