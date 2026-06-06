@@ -9,6 +9,7 @@ import { routing } from '@/i18n/routing'
 import { BRAND_LOGO_PATH } from '@/lib/site-assets'
 import type { Language } from '@/app/i18n/translations'
 import { AGENT_DATA_LAST_UPDATED, jsonLdScriptProps } from '@/lib/agent-readiness'
+import { resolveBlogFaqContent } from '@/lib/blog/faq-content'
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://digni-digital-llc.com'
 
@@ -105,12 +106,13 @@ export default async function BlogPostPage({ params }: Props) {
     },
   }
 
+  const { faqs: resolvedFaqs } = resolveBlogFaqContent(article.content ?? '', article.faqs)
   const faqJsonLd =
-    article.faqs && article.faqs.length > 0
+    resolvedFaqs.length > 0
       ? {
           '@context': 'https://schema.org',
           '@type': 'FAQPage',
-          mainEntity: article.faqs.map((faq) => ({
+          mainEntity: resolvedFaqs.map((faq) => ({
             '@type': 'Question',
             name: faq.question,
             acceptedAnswer: {

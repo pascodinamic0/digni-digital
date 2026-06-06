@@ -85,6 +85,7 @@ export function mistakesSection(items: string[]): string {
     `
 }
 
+/** Inline FAQ HTML — BlogPostContent auto-converts this block to the site-wide accordion. */
 export function faqSection(faqs: { q: string; a: string }[]): string {
   return `
       <h3>FAQ</h3>
