@@ -2599,7 +2599,7 @@ export const contentAr: Record<string, Partial<BlogArticle>> = {
       {
         question: 'ما اقتصاد الانتباه ببساطة؟',
         answer:
-          'اقتصاد تكون فيه انتباه العميل — لا المصانع ولا المعلومات الخام — أندر مورد. من يكسب الانتباه يحوّل بكفاءة أكبر لأن الثقة تُبنى قبل البيع.',
+          'اقتصاد تكون فيه انتباه العميل (لا المصانع ولا المعلومات الخام) أندر مورد. من يكسب الانتباه يحوّل بكفاءة أكبر لأن الثقة تُبنى قبل البيع.',
       },
       {
         question: 'لماذا المحتوى أهم من الإعلانات؟',
@@ -2619,7 +2619,7 @@ export const contentAr: Record<string, Partial<BlogArticle>> = {
       {
         question: 'أي منصة أبدأ بها؟',
         answer:
-          'حيث يبحث مشتريك عن إجابات — LinkedIn أو YouTube في B2B، Instagram أو فيديو قصير محلياً. اختر واحدة، انشر 90 يوماً، ثم وسّع.',
+          'حيث يبحث مشتريك عن إجابات. LinkedIn أو YouTube في B2B، Instagram أو فيديو قصير محلياً. اختر واحدة، انشر 90 يوماً، ثم وسّع.',
       },
       {
         question: 'هل أهمل العمليات؟',
@@ -2629,20 +2629,20 @@ export const contentAr: Record<string, Partial<BlogArticle>> = {
       {
         question: 'كيف يساعد الذكاء الاصطناعي دون جعل المحتوى عاماً؟',
         answer:
-          'استخدم الذكاء الاصطناعي لإعادة الاستخدام والهيكلة والمتابعة — لا لاستبدال خبرتك. حكمك وإثباتك وصوتك لا يُستبدلان.',
+          'استخدم الذكاء الاصطناعي لإعادة الاستخدام والهيكلة والمتابعة، لا لاستبدال خبرتك. حكمك وإثباتك وصوتك لا يُستبدلان.',
       },
     ],
     content: `
       <h2>توقف عن تنمية عملك كما لو كنا في 1985. الانتباه هو العملة التي تهم اليوم.</h2>
 
-      <p>يحاول معظم أصحاب الأعمال النمو كما في العصر الصناعي. <strong>لم نعد كذلك.</strong> نحن في <strong>اقتصاد الانتباه</strong> — والشركات الفائزة هي التي <strong>تجذب أكبر قدر من الانتباه</strong>. وحيث يتدفق الانتباه، يتبعه المال.</p>
+      <p>يحاول معظم أصحاب الأعمال النمو كما في العصر الصناعي. <strong>لم نعد كذلك.</strong> نحن في <strong>اقتصاد الانتباه</strong>: والشركات الفائزة هي التي <strong>تجذب أكبر قدر من الانتباه</strong>. وحيث يتدفق الانتباه، يتبعه المال.</p>
 
       <figure class="blog-content-figure" style="margin: 2em 0;">
         <img src="/blog/attention-economy/attention-economy-cover.png" alt="صاحب عمل يراجع أداء المحتوى على شاشات متعددة" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
       </figure>
 
       <h3>ما هو اقتصاد الانتباه؟</h3>
-      <p><strong>اقتصاد الانتباه</strong> يجعل انتباه الإنسان — لا المصانع — أندر مورد. قال هربرت سيمون: <em>«وفرة المعلومات تخلق فقر الانتباه.»</em></p>
+      <p><strong>اقتصاد الانتباه</strong> يجعل انتباه الإنسان (لا المصانع) أندر مورد. قال هربرت سيمون: <em>«وفرة المعلومات تخلق فقر الانتباه.»</em></p>
 
       <figure class="blog-content-figure" style="margin: 2em 0;">
         <img src="/blog/attention-economy/attention-scarcity.png" alt="هاتف ذكي مزدحم بالإشعارات" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
@@ -2650,10 +2650,10 @@ export const contentAr: Record<string, Partial<BlogArticle>> = {
 
       <h3>أهم النقاط</h3>
       <ul>
-        <li><strong>الانتباه عملة</strong> — إيرادات، إحالات، مكانة في السوق.</li>
-        <li><strong>المحتوى ليس تسويقاً فقط</strong> — مبيعات، ثقة، توظيف على مدار الساعة.</li>
-        <li><strong>امنح 80% وبيع 20%</strong> — علّم علناً؛ بع السرعة والتنفيذ.</li>
-        <li><strong>كل شركة أصبحت شركة إعلامية</strong> — تنافس YouTube وLinkedIn وTikTok.</li>
+        <li><strong>الانتباه عملة</strong>: إيرادات، إحالات، مكانة في السوق.</li>
+        <li><strong>المحتوى ليس تسويقاً فقط</strong>: مبيعات، ثقة، توظيف على مدار الساعة.</li>
+        <li><strong>امنح 80% وبيع 20%</strong>: علّم علناً؛ بع السرعة والتنفيذ.</li>
+        <li><strong>كل شركة أصبحت شركة إعلامية</strong>: تنافس YouTube وLinkedIn وTikTok.</li>
       </ul>
 
       <h3>ثلاثة اقتصادات</h3>
@@ -2678,14 +2678,14 @@ export const contentAr: Record<string, Partial<BlogArticle>> = {
       </figure>
 
       <h3>قاعدة 80/20</h3>
-      <p>امنح <strong>80% من المعرفة مجاناً</strong>. بع التنفيذ لمن يريد نتائج أسرع. يدفع الناس للسرعة والتنفيذ والمساءلة — لا للمعلومات.</p>
+      <p>امنح <strong>80% من المعرفة مجاناً</strong>. بع التنفيذ لمن يريد نتائج أسرع. يدفع الناس للسرعة والتنفيذ والمساءلة، لا للمعلومات.</p>
 
       <figure class="blog-content-figure" style="margin: 2em 0;">
         <img src="/blog/attention-economy/eighty-twenty-teaching.png" alt="ورشة عمل يقدمها صاحب عمل" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
       </figure>
 
       <h3>كل شركة أصبحت شركة إعلامية</h3>
-      <p>منافسوك: YouTube وLinkedIn وTikTok والبودكاست — لا المنافسون المحليون فقط.</p>
+      <p>منافسوك: YouTube وLinkedIn وTikTok والبودكاست، لا المنافسون المحليون فقط.</p>
 
       <figure class="blog-content-figure" style="margin: 2em 0;">
         <img src="/blog/attention-economy/media-company.png" alt="استوديو إعلامي بميكروفون وكاميرا" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />

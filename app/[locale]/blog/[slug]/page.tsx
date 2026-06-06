@@ -134,7 +134,7 @@ export default async function BlogPostPage({ params }: Props) {
         />
       ) : null}
       <article className="pt-24 pb-16">
-        <div className="max-w-4xl mx-auto px-6 pt-20">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 pt-12 sm:pt-16 md:pt-20">
           <BlogPostContent articleByLang={articleByLang} />
         </div>
       </article>

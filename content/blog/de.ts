@@ -1959,17 +1959,17 @@ export const contentDe: Record<string, Partial<BlogArticle>> = {
       {
         question: 'Was ist die Aufmerksamkeitsökonomie in einfachen Worten?',
         answer:
-          'Eine Ökonomie, in der Kundenaufmerksamkeit — nicht Fabriken oder Rohinformation — die knappste Ressource ist. Wer Aufmerksamkeit verdient, konvertiert effizienter, weil Vertrauen vor dem Verkaufsgespräch entsteht.',
+          'Eine Ökonomie, in der Kundenaufmerksamkeit (nicht Fabriken oder Rohinformation) die knappste Ressource ist. Wer Aufmerksamkeit verdient, konvertiert effizienter, weil Vertrauen vor dem Verkaufsgespräch entsteht.',
       },
       {
         question: 'Warum ist Content wichtiger als Werbung?',
         answer:
-          'Werbung mietet Aufmerksamkeit für einen Moment. Content baut ein Asset, das weiterarbeitet — Käufer bildet, Einwände beantwortet und langfristig Interesse erzeugt.',
+          'Werbung mietet Aufmerksamkeit für einen Moment. Content baut ein Asset, das weiterarbeitet: Käufer bildet, Einwände beantwortet und langfristig Interesse erzeugt.',
       },
       {
         question: 'Was ist die 80/20-Content-Regel?',
         answer:
-          'Geben Sie etwa 80 % Ihres Wissens kostenlos durch Lehren. Verkaufen Sie die 20 %, die schnellere Umsetzung, Done-for-you oder Verantwortung wollen.',
+          'Geben Sie etwa 80 % Ihres Wissens kostenlos durch Lehren. Verkaufen Sie die 20 %, die schnellere Umsetzung, done for you oder Verantwortung wollen.',
       },
       {
         question: 'Wie konkurrieren KMU mit großen Marken?',
@@ -1979,7 +1979,7 @@ export const contentDe: Record<string, Partial<BlogArticle>> = {
       {
         question: 'Mit welcher Plattform starten?',
         answer:
-          'Dort, wo Ihre Käufer bereits Antworten suchen — LinkedIn oder YouTube im B2B, Instagram oder Kurzvideo lokal. Eine Plattform, 90 Tage konsequent, dann erweitern.',
+          'Dort, wo Ihre Käufer bereits Antworten suchen. LinkedIn oder YouTube im B2B, Instagram oder Kurzvideo lokal. Eine Plattform, 90 Tage konsequent, dann erweitern.',
       },
       {
         question: 'Operationen vernachlässigen?',
@@ -1989,20 +1989,20 @@ export const contentDe: Record<string, Partial<BlogArticle>> = {
       {
         question: 'Wie hilft KI ohne generischen Content?',
         answer:
-          'KI zum Repurposen, Strukturieren und Follow-up — nicht zum Ersetzen Ihrer Expertise. Urteil, Beweise und Stimme bleiben Ihr Vorteil.',
+          'KI zum Repurposen, Strukturieren und Follow-up. nicht zum Ersetzen Ihrer Expertise. Urteil, Beweise und Stimme bleiben Ihr Vorteil.',
       },
     ],
     content: `
       <h2>Hören Sie auf, Ihr Unternehmen wie 1985 zu führen. Aufmerksamkeit ist die Währung, die heute zählt.</h2>
 
-      <p>Die meisten Unternehmer wachsen noch, als lebten wir im Industriezeitalter. <strong>Das tun wir nicht.</strong> Wir leben in der <strong>Aufmerksamkeitsökonomie</strong> — und gewinnen die Unternehmen, die <strong>am meisten Aufmerksamkeit</strong> erhalten. Wo Aufmerksamkeit fließt, folgt Geld.</p>
+      <p>Die meisten Unternehmer wachsen noch, als lebten wir im Industriezeitalter. <strong>Das tun wir nicht.</strong> Wir leben in der <strong>Aufmerksamkeitsökonomie</strong>: und gewinnen die Unternehmen, die <strong>am meisten Aufmerksamkeit</strong> erhalten. Wo Aufmerksamkeit fließt, folgt Geld.</p>
 
       <figure class="blog-content-figure" style="margin: 2em 0;">
         <img src="/blog/attention-economy/attention-economy-cover.png" alt="Unternehmer analysiert Content-Performance auf mehreren Bildschirmen" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
       </figure>
 
       <h3>Was ist die Aufmerksamkeitsökonomie?</h3>
-      <p><strong>Die Aufmerksamkeitsökonomie</strong> macht menschliche Aufmerksamkeit — nicht Fabriken — zur knappsten Ressource. Herbert A. Simon: <em>„Ein Reichtum an Information erzeugt eine Armut an Aufmerksamkeit.“</em></p>
+      <p><strong>Die Aufmerksamkeitsökonomie</strong> macht menschliche Aufmerksamkeit (nicht Fabriken) zur knappsten Ressource. Herbert A. Simon: <em>„Ein Reichtum an Information erzeugt eine Armut an Aufmerksamkeit.“</em></p>
 
       <figure class="blog-content-figure" style="margin: 2em 0;">
         <img src="/blog/attention-economy/attention-scarcity.png" alt="Smartphone mit vielen Benachrichtigungen" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
@@ -2010,10 +2010,10 @@ export const contentDe: Record<string, Partial<BlogArticle>> = {
 
       <h3>Wichtigste Erkenntnisse</h3>
       <ul>
-        <li><strong>Aufmerksamkeit ist Währung</strong> — Umsatz, Empfehlungen, Positionierung.</li>
-        <li><strong>Content ist nicht nur Marketing</strong> — Verkauf, Vertrauen, Recruiting rund um die Uhr.</li>
-        <li><strong>80 % geben, 20 % verkaufen</strong> — lehren; für Geschwindigkeit und Umsetzung kassieren.</li>
-        <li><strong>Jedes Unternehmen ist Medienunternehmen</strong> — Konkurrenz mit YouTube, LinkedIn, TikTok.</li>
+        <li><strong>Aufmerksamkeit ist Währung</strong>: Umsatz, Empfehlungen, Positionierung.</li>
+        <li><strong>Content ist nicht nur Marketing</strong>: Verkauf, Vertrauen, Recruiting rund um die Uhr.</li>
+        <li><strong>80 % geben, 20 % verkaufen</strong>: lehren; für Geschwindigkeit und Umsetzung kassieren.</li>
+        <li><strong>Jedes Unternehmen ist Medienunternehmen</strong>: Konkurrenz mit YouTube, LinkedIn, TikTok.</li>
       </ul>
 
       <h3>Drei Ökonomien</h3>
@@ -2038,14 +2038,14 @@ export const contentDe: Record<string, Partial<BlogArticle>> = {
       </figure>
 
       <h3>Die 80/20-Regel</h3>
-      <p>Geben Sie <strong>80 % des Wissens kostenlos</strong>. Verkaufen Sie Umsetzung an die 20 %, die schnellere Ergebnisse wollen. Bezahlt wird für Geschwindigkeit, Ausführung, Verantwortung — nicht für Information.</p>
+      <p>Geben Sie <strong>80 % des Wissens kostenlos</strong>. Verkaufen Sie Umsetzung an die 20 %, die schnellere Ergebnisse wollen. Bezahlt wird für Geschwindigkeit, Ausführung und Verantwortung, nicht für Information.</p>
 
       <figure class="blog-content-figure" style="margin: 2em 0;">
         <img src="/blog/attention-economy/eighty-twenty-teaching.png" alt="Workshop mit engagiertem Publikum" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
       </figure>
 
       <h3>Jedes Unternehmen ist ein Medienunternehmen</h3>
-      <p>Ihre Konkurrenz: YouTube, LinkedIn, TikTok, Podcasts — nicht nur lokale Anbieter.</p>
+      <p>Ihre Konkurrenz: YouTube, LinkedIn, TikTok, Podcasts, nicht nur lokale Anbieter.</p>
 
       <figure class="blog-content-figure" style="margin: 2em 0;">
         <img src="/blog/attention-economy/media-company.png" alt="Medienstudio mit Mikrofon und Kamera" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />

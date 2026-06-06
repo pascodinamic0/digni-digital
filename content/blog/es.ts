@@ -916,7 +916,7 @@ const contentEs: Record<string, Partial<BlogArticle>> = {
       {
         question: '¿Qué es la economía de la atención en términos simples?',
         answer:
-          'Es una economía donde la atención del cliente — no las fábricas ni la información bruta — es el recurso más escaso. Quienes ganan atención convierten mejor porque la confianza se construye antes de la venta.',
+          'Es una economía donde la atención del cliente (no las fábricas ni la información bruta) es el recurso más escaso. Quienes ganan atención convierten mejor porque la confianza se construye antes de la venta.',
       },
       {
         question: '¿Por qué el contenido es más importante que los anuncios?',
@@ -936,7 +936,7 @@ const contentEs: Record<string, Partial<BlogArticle>> = {
       {
         question: '¿Con qué plataforma empezar?',
         answer:
-          'Donde sus compradores ya buscan respuestas — LinkedIn o YouTube en B2B, Instagram o video corto en local. Elija una, publique 90 días, luego expanda.',
+          'Donde sus compradores ya buscan respuestas. LinkedIn o YouTube en B2B, Instagram o video corto en local. Elija una, publique 90 días, luego expanda.',
       },
       {
         question: '¿Debo dejar de enfocarme en operaciones?',
@@ -946,20 +946,20 @@ const contentEs: Record<string, Partial<BlogArticle>> = {
       {
         question: '¿Cómo ayuda la IA sin volver el contenido genérico?',
         answer:
-          'Use IA para reutilizar, estructurar y automatizar seguimiento — no para reemplazar su expertise. Su criterio, pruebas y voz son irreemplazables.',
+          'Use IA para reutilizar, estructurar y automatizar seguimiento, no para reemplazar su expertise. Su criterio, pruebas y voz son irreemplazables.',
       },
     ],
     content: `
       <h2>Deje de hacer crecer su negocio como si fuera 1985. La atención es la moneda que importa hoy.</h2>
 
-      <p>La mayoría de empresarios intentan crecer como en la era industrial. <strong>Ya no estamos ahí.</strong> Vivimos la <strong>economía de la atención</strong> — y ganan quienes <strong>captan más atención</strong>. Donde fluye la atención, sigue el dinero.</p>
+      <p>La mayoría de empresarios intentan crecer como en la era industrial. <strong>Ya no estamos ahí.</strong> Vivimos la <strong>economía de la atención</strong>: y ganan quienes <strong>captan más atención</strong>. Donde fluye la atención, sigue el dinero.</p>
 
       <figure class="blog-content-figure" style="margin: 2em 0;">
         <img src="/blog/attention-economy/attention-economy-cover.png" alt="Empresario revisando analíticas de contenido en varias pantallas" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
       </figure>
 
       <h3>¿Qué es la economía de la atención?</h3>
-      <p><strong>La economía de la atención</strong> hace de la atención humana — no de las fábricas — el recurso más escaso. Herbert A. Simon: <em>«Una riqueza de información crea una pobreza de atención.»</em></p>
+      <p><strong>La economía de la atención</strong> hace de la atención humana (no de las fábricas) el recurso más escaso. Herbert A. Simon: <em>«Una riqueza de información crea una pobreza de atención.»</em></p>
 
       <figure class="blog-content-figure" style="margin: 2em 0;">
         <img src="/blog/attention-economy/attention-scarcity.png" alt="Smartphone saturado de notificaciones" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
@@ -967,10 +967,10 @@ const contentEs: Record<string, Partial<BlogArticle>> = {
 
       <h3>Puntos clave</h3>
       <ul>
-        <li><strong>La atención es moneda</strong> — ingresos, referencias, posicionamiento.</li>
-        <li><strong>El contenido no es solo marketing</strong> — ventas, confianza, reclutamiento 24/7.</li>
-        <li><strong>Regala 80 %, vende 20 %</strong> — enseña; cobra por velocidad y ejecución.</li>
-        <li><strong>Cada negocio es empresa mediática</strong> — compite con YouTube, LinkedIn, TikTok.</li>
+        <li><strong>La atención es moneda</strong>: ingresos, referencias, posicionamiento.</li>
+        <li><strong>El contenido no es solo marketing</strong>: ventas, confianza, reclutamiento 24/7.</li>
+        <li><strong>Regala 80 %, vende 20 %</strong>: enseña; cobra por velocidad y ejecución.</li>
+        <li><strong>Cada negocio es empresa mediática</strong>: compite con YouTube, LinkedIn, TikTok.</li>
       </ul>
 
       <h3>Tres economías</h3>
@@ -995,14 +995,14 @@ const contentEs: Record<string, Partial<BlogArticle>> = {
       </figure>
 
       <h3>La regla 80/20</h3>
-      <p>Regale <strong>80 % del conocimiento</strong>. Venda implementación al 20 % que quiere resultados más rápidos. Se paga por velocidad, ejecución y responsabilidad — no por información.</p>
+      <p>Regale <strong>80 % del conocimiento</strong>. Venda implementación al 20 % que quiere resultados más rápidos. Se paga por velocidad, ejecución y responsabilidad, no por información.</p>
 
       <figure class="blog-content-figure" style="margin: 2em 0;">
         <img src="/blog/attention-economy/eighty-twenty-teaching.png" alt="Taller impartido por un empresario" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
       </figure>
 
       <h3>Cada negocio es una empresa mediática</h3>
-      <p>Sus competidores: YouTube, LinkedIn, TikTok, podcasts — no solo otros negocios locales.</p>
+      <p>Sus competidores: YouTube, LinkedIn, TikTok, podcasts, no solo otros negocios locales.</p>
 
       <figure class="blog-content-figure" style="margin: 2em 0;">
         <img src="/blog/attention-economy/media-company.png" alt="Estudio con micrófono y cámara" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />

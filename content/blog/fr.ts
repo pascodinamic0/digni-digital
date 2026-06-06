@@ -1095,12 +1095,12 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
       {
         question: "Qu'est-ce que l'économie de l'attention en termes simples ?",
         answer:
-          "C'est une économie où l'attention client — pas les usines ni l'information brute — est la ressource la plus rare. Les entreprises qui gagnent et retiennent l'attention convertissent plus efficacement car la confiance se construit avant la vente.",
+          "C'est une économie où l'attention client (pas les usines ni l'information brute) est la ressource la plus rare. Les entreprises qui gagnent et retiennent l'attention convertissent plus efficacement car la confiance se construit avant la vente.",
       },
       {
         question: 'Pourquoi le contenu est-il plus important que la publicité ?',
         answer:
-          "La publicité loue l'attention un instant. Le contenu construit un actif qui continue de travailler — éduquer, lever les objections et générer de l'intérêt entrant longtemps après publication.",
+          "La publicité loue l'attention un instant. Le contenu construit un actif qui continue de travailler : éduquer, lever les objections et générer de l'intérêt entrant longtemps après publication.",
       },
       {
         question: 'Quelle est la règle 80/20 du contenu ?',
@@ -1115,7 +1115,7 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
       {
         question: 'Par quelle plateforme commencer ?',
         answer:
-          "Commencez là où vos acheteurs cherchent déjà des réponses — LinkedIn ou YouTube en B2B, Instagram ou vidéo courte en local. Choisissez une plateforme, publiez 90 jours, puis élargissez.",
+          "Commencez là où vos acheteurs cherchent déjà des réponses. LinkedIn ou YouTube en B2B, Instagram ou vidéo courte en local. Choisissez une plateforme, publiez 90 jours, puis élargissez.",
       },
       {
         question: "Faut-il négliger les opérations ?",
@@ -1125,20 +1125,20 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
       {
         question: "Comment l'IA aide-t-elle sans rendre le contenu générique ?",
         answer:
-          "Utilisez l'IA pour repurposer, structurer et automatiser le suivi — pas pour remplacer votre expertise. Votre jugement, vos preuves et votre voix restent irremplaçables.",
+          "Utilisez l'IA pour repurposer, structurer et automatiser le suivi, pas pour remplacer votre expertise. Votre jugement, vos preuves et votre voix restent irremplaçables.",
       },
     ],
     content: `
       <h2>Arrêtez de développer votre entreprise comme en 1985. L'attention est la monnaie qui compte aujourd'hui.</h2>
 
-      <p>La plupart des dirigeants tentent encore de croître comme à l'ère industrielle. <strong>Ce n'est plus le cas.</strong> Nous vivons l'<strong>économie de l'attention</strong> — et les entreprises qui gagnent captent le plus d'attention. Là où va l'attention, l'argent suit.</p>
+      <p>La plupart des dirigeants tentent encore de croître comme à l'ère industrielle. <strong>Ce n'est plus le cas.</strong> Nous vivons l'<strong>économie de l'attention</strong>. Les entreprises qui gagnent captent le plus d'attention. Là où va l'attention, l'argent suit.</p>
 
       <figure class="blog-content-figure" style="margin: 2em 0;">
         <img src="/blog/attention-economy/attention-economy-cover.png" alt="Dirigeant analysant les performances de contenu" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
       </figure>
 
       <h3>Qu'est-ce que l'économie de l'attention ?</h3>
-      <p><strong>L'économie de l'attention</strong> place l'attention humaine — pas les usines — comme ressource la plus rare. Herbert A. Simon : <em>« Une abondance d'information crée une pauvreté d'attention. »</em></p>
+      <p><strong>L'économie de l'attention</strong> place l'attention humaine (pas les usines) comme ressource la plus rare. Herbert A. Simon : <em>« Une abondance d'information crée une pauvreté d'attention. »</em></p>
 
       <figure class="blog-content-figure" style="margin: 2em 0;">
         <img src="/blog/attention-economy/attention-scarcity.png" alt="Smartphone saturé de notifications" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
@@ -1146,10 +1146,10 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
 
       <h3>Points clés</h3>
       <ul>
-        <li><strong>L'attention est une monnaie</strong> — revenus, recommandations, positionnement.</li>
-        <li><strong>Le contenu n'est pas du marketing</strong> — vente, confiance, recrutement 24h/24.</li>
-        <li><strong>Donnez 80 %, vendez 20 %</strong> — enseignez ; facturez vitesse et exécution.</li>
-        <li><strong>Chaque entreprise est média</strong> — vous rivalisez avec YouTube, LinkedIn, TikTok.</li>
+        <li><strong>L'attention est une monnaie</strong>: revenus, recommandations, positionnement.</li>
+        <li><strong>Le contenu n'est pas du marketing</strong>: vente, confiance, recrutement 24h/24.</li>
+        <li><strong>Donnez 80 %, vendez 20 %</strong>: enseignez ; facturez vitesse et exécution.</li>
+        <li><strong>Chaque entreprise est média</strong>: vous rivalisez avec YouTube, LinkedIn, TikTok.</li>
       </ul>
 
       <h3>Trois économies, trois moteurs de richesse</h3>
@@ -1174,14 +1174,14 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
       </figure>
 
       <h3>La règle 80/20</h3>
-      <p>Donnez <strong>80 % du savoir gratuitement</strong>. Vendez l'implémentation aux 20 % qui veulent des résultats plus rapides. On paie pour la vitesse, l'exécution, la responsabilité — pas l'information.</p>
+      <p>Donnez <strong>80 % du savoir gratuitement</strong>. Vendez l'implémentation aux 20 % qui veulent des résultats plus rapides. On paie pour la vitesse, l'exécution, la responsabilité, pas pour l'information.</p>
 
       <figure class="blog-content-figure" style="margin: 2em 0;">
         <img src="/blog/attention-economy/eighty-twenty-teaching.png" alt="Atelier animé par un dirigeant" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
       </figure>
 
       <h3>Chaque entreprise est une entreprise média</h3>
-      <p>Vos concurrents : YouTube, LinkedIn, TikTok, podcasts, newsletters — pas seulement vos pairs locaux.</p>
+      <p>Vos concurrents : YouTube, LinkedIn, TikTok, podcasts, newsletters, pas seulement vos pairs locaux.</p>
 
       <figure class="blog-content-figure" style="margin: 2em 0;">
         <img src="/blog/attention-economy/media-company.png" alt="Studio média avec micro et caméra" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />

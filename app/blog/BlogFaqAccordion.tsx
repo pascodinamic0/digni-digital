@@ -20,12 +20,12 @@ export default function BlogFaqAccordion({ title, subtitle, faqs }: BlogFaqAccor
   if (!faqs.length) return null
 
   return (
-    <section className="blog-faq-section mt-12" aria-labelledby="blog-faq-heading">
-      <div className="text-center mb-10">
-        <h2 id="blog-faq-heading" className="font-display text-3xl md:text-4xl font-bold mb-4">
+    <section className="blog-faq-section mt-10 sm:mt-12 text-left" aria-labelledby="blog-faq-heading">
+      <div className="mb-6 sm:mb-8">
+        <h2 id="blog-faq-heading" className="font-display type-h3 font-bold mb-3 text-left">
           {title}
         </h2>
-        {subtitle ? <p className="text-muted text-lg">{subtitle}</p> : null}
+        {subtitle ? <p className="text-muted type-body max-w-3xl">{subtitle}</p> : null}
       </div>
 
       <div className="space-y-4">
@@ -38,7 +38,7 @@ export default function BlogFaqAccordion({ title, subtitle, faqs }: BlogFaqAccor
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.05 }}
-              className="card p-6 cursor-pointer"
+              className="card p-4 sm:p-6 cursor-pointer"
               onClick={() => setExpandedFaq(isOpen ? null : i)}
               role="button"
               tabIndex={0}
@@ -52,7 +52,7 @@ export default function BlogFaqAccordion({ title, subtitle, faqs }: BlogFaqAccor
               }}
             >
               <div className="flex justify-between items-center gap-4">
-                <h3 className="font-display font-semibold text-lg pr-4 text-left">{faq.question}</h3>
+                <h3 className="font-display font-semibold type-body-lg pr-4 text-left leading-snug">{faq.question}</h3>
                 <span className="text-accent text-xl flex-shrink-0" aria-hidden="true">
                   {isOpen ? '−' : '+'}
                 </span>
