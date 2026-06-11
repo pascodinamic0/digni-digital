@@ -952,7 +952,7 @@ export default function AgenticSoftwaresPage({ params, searchParams }: AgenticSo
         'Run your entire school from one platform — academics, fees, invoices, payments, attendance, grades, parent and student portals, and branded school websites. Built for African schools with 8 roles and 76+ workflows.'
       ),
       category: localizeAgentic(language, 'Education'),
-      status: localizeAgentic(language, 'Beta'),
+      status: localizeAgentic(language, 'Live'),
       link: 'https://ams-xi-two.vercel.app/',
       tech: ['Next.js', 'Supabase', 'Stripe', 'Real-time messaging'],
       icon: '🏫',

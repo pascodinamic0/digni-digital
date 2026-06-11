@@ -888,6 +888,105 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
     `,
   },
 
+  'ams-academic-management-system-free-live': {
+    id: 108,
+    title: 'AMS : pilotez toute votre école depuis une seule plateforme (gratuit et en ligne)',
+    slug: 'ams-academic-management-system-free-live',
+    excerpt:
+      'Découvrez AMS — notre système de gestion scolaire gratuit et en ligne pour les écoles africaines. Pédagogie, finance, portails parents et élèves, messagerie et sites web de l\'école dans une plateforme calme. Inscrivez-vous dès aujourd\'hui.',
+    category: 'Agentic Softwares',
+    readTime: '9 min de lecture',
+    publishDate: '11 juin 2026',
+    author: 'Pascal Digny',
+    tags: ['AMS', 'logiciel scolaire', 'gestion académique', 'EdTech', 'écoles africaines', 'logiciel agentique'],
+    featured: true,
+    coverImageUrl: '/blog/ams/hero-home.png',
+    content: `
+      <h2>Gérez chaque aspect de votre école — pédagogie, frais, parents et équipes en un seul endroit</h2>
+
+      <p>Cahiers papier pour les présences, <strong>WhatsApp pour les parents</strong>, <strong>tableurs pour les frais</strong> : la direction travaille de mémoire et les bulletins arrivent en retard. <strong><a href="https://ams-xi-two.vercel.app/" target="_blank" rel="noopener noreferrer">AMS (Academic Management System)</a></strong> centralise tout — un système <strong>gratuit et en ligne</strong> pour que directeurs, enseignants, parents et élèves partagent la même source de vérité.</p>
+
+      <p>Ce n'est pas un LMS générique. C'est le <strong>système de référence</strong> de votre école : 8 rôles, 76+ flux, six modules intégrés — conçus pour le fonctionnement réel des écoles africaines.</p>
+
+      <figure style="margin: 2rem 0;">
+        <img src="/blog/ams/hero-home.png" alt="Page d'accueil AMS — le système d'exploitation pour les écoles" width="1200" height="750" style="width:100%;height:auto;border-radius:12px;border:1px solid rgba(148,163,184,0.35);" loading="lazy" />
+        <figcaption style="margin-top:0.75rem;font-size:0.875rem;color:#64748b;text-align:center;">Accueil AMS — une plateforme pour administrateurs, enseignants, parents et élèves.</figcaption>
+      </figure>
+
+      <h3>Pour qui est AMS</h3>
+
+      <ul>
+        <li><strong>Administrateurs & directeurs</strong> — finances, présences, performances et personnel dans un tableau de bord</li>
+        <li><strong>Enseignants</strong> — présences, notes, devoirs et bulletins sans surcharge admin</li>
+        <li><strong>Parents</strong> — notes, frais, emploi du temps et messages en temps réel</li>
+        <li><strong>Élèves</strong> — devoirs, notes et messagerie sans courir après le papier</li>
+        <li><strong>Écoles privées et groupes multi-sites</strong> qui quittent les outils manuels</li>
+      </ul>
+
+      <h3>Six modules, une plateforme</h3>
+
+      <h4>1. Pédagogie</h4>
+      <p>Élèves, tuteurs, admissions, classes, emploi du temps, présences, notes, examens et bulletins — saisis une fois, visibles partout.</p>
+
+      <h4>2. Finance</h4>
+      <p>Barèmes de frais, factures, paiements, paie, dépenses et rapports. Les parents voient ce qu'ils doivent ; la compta voit ce qui est encaissé.</p>
+
+      <h4>3. Opérations</h4>
+      <p>Bibliothèque, transport, événements et RH — le back-office quitte les carnets séparés.</p>
+
+      <h4>4. Portails parents & élèves</h4>
+      <p>Suivi des performances, frais, emploi du temps et messages — toujours synchronisé avec ce que les enseignants enregistrent.</p>
+
+      <figure style="margin: 2rem 0;">
+        <img src="/blog/ams/features-modules.png" alt="Page fonctionnalités AMS — tous les modules listés" width="1200" height="800" style="width:100%;height:auto;border-radius:12px;border:1px solid rgba(148,163,184,0.35);" loading="lazy" />
+        <figcaption style="margin-top:0.75rem;font-size:0.875rem;color:#64748b;text-align:center;">Chaque module cartographié — pédagogie, finance, opérations, analytique, sites web et messagerie.</figcaption>
+      </figure>
+
+      <h4>5. Analytique</h4>
+      <p>Tableaux de bord, comparaison de sites, rapports de présence et financiers — des chiffres fiables avant la réunion de direction.</p>
+
+      <h4>6. Sites web & messagerie</h4>
+      <p>Sites publics de l'école avec admissions en ligne (templates Modern, Classic, Minimal) et messagerie temps réel pour tous.</p>
+
+      <h3>Pourquoi les écoles quittent les tableurs</h3>
+
+      <ul>
+        <li><strong>Gratuit pour démarrer</strong> — pas de frais d'installation ni de contrat long</li>
+        <li><strong>8 rôles utilisateurs</strong> — chaque acteur a son tableau de bord</li>
+        <li><strong>76+ pages et flux</strong> — de l'inscription au bulletin sans bricolage</li>
+        <li><strong>Onboarding guidé</strong> — inscription, assistant en 4 étapes, invitation d'équipe, mise en ligne</li>
+        <li><strong>Conçu pour l'Afrique</strong> — tableaux de bord temps réel, mobile, design calme</li>
+      </ul>
+
+      <blockquote>
+        <p><strong>Inscrire → Enseigner → Rapporter → Connecter.</strong> Admissions, présences, frais et messages parents — une seule plateforme.</p>
+      </blockquote>
+
+      <figure style="margin: 2rem 0;">
+        <img src="/blog/ams/get-access-signup.png" alt="Page d'accès AMS — inscription gratuite pour les écoles" width="1200" height="800" style="width:100%;height:auto;border-radius:12px;border:1px solid rgba(148,163,184,0.35);" loading="lazy" />
+        <figcaption style="margin-top:0.75rem;font-size:0.875rem;color:#64748b;text-align:center;">Accès — inscrivez votre école en quelques minutes.</figcaption>
+      </figure>
+
+      <h3>En ligne aujourd'hui — gratuit pour les écoles</h3>
+
+      <p>AMS est <strong>en production</strong> sur <a href="https://ams-xi-two.vercel.app/" target="_blank" rel="noopener noreferrer">ams-xi-two.vercel.app</a>. Inscrivez-vous gratuitement, complétez l'onboarding, invitez votre équipe et gérez votre école dès aujourd'hui.</p>
+
+      <p>Nous le livrons dans notre pratique <a href="/agentic-softwares">Agentic Softwares</a> — avec <a href="https://dispatch-flow-one.vercel.app/" target="_blank" rel="noopener noreferrer">DispatchFlow</a>, <a href="https://kabinda-lodge.com/" target="_blank" rel="noopener noreferrer">Kabinda Lodge</a> et notre <a href="/future-ready-graduate">programme Future-Ready Graduate</a>.</p>
+
+      <h3>Prochaine étape</h3>
+
+      <p><strong>Démarrer gratuitement :</strong> <a href="https://ams-xi-two.vercel.app/get-access" target="_blank" rel="noopener noreferrer">Créer le compte de votre école</a>.</p>
+
+      <p><strong>Déjà un compte ?</strong> <a href="https://ams-xi-two.vercel.app/login" target="_blank" rel="noopener noreferrer">Se connecter à AMS</a>.</p>
+
+      <p><strong>Plateforme sur mesure ou déploiement multi-campus ?</strong> <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Réserver un appel</a> avec Digni Digital.</p>
+
+      <hr>
+
+      <p><em>Voir AMS sur notre page <a href="/agentic-softwares">Agentic Softwares</a> avec DispatchFlow, Kabinda Lodge, SwiftDrop et DigniGuide.</em></p>
+    `,
+  },
+
   'productize-yourself-founder-authenticity-ai-systems': {
     id: 103,
     title: "Productize yourself : comment les fondateurs échappent à la concurrence en transformant leurs forces authentiques en systèmes",
