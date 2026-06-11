@@ -2405,6 +2405,53 @@ export const contentAr: Record<string, Partial<BlogArticle>> = {
     tags: ['DispatchFlow', 'برمجيات لوجستية', 'مشتريات', 'شحن', 'مخزون', 'أفريقيا', 'برمجيات وكيلة'],
   },
 
+  'ams-academic-management-system-free-live': {
+    title: 'AMS: أدِر مدرستك بالكامل من منصة واحدة (مجاني ومباشر)',
+    excerpt:
+      'تعرّف على AMS — نظام إدارة أكاديمية مجاني ومباشر للمدارس الأفريقية. الشؤون الأكاديمية والمالية وبوابات أولياء الأمور والطلاب والرسائل ومواقع المدارس في منصة واحدة هادئة.',
+    category: 'Agentic Softwares',
+    readTime: '9 دقائق قراءة',
+    publishDate: '11 يونيو 2026',
+    tags: ['AMS', 'برمجيات إدارة المدارس', 'نظام إدارة أكاديمية', 'تقنية التعليم', 'مدارس أفريقية', 'برمجيات وكيلة'],
+    content: `
+      <h2>أدِر كل جزء من مدرستك — أكاديمياً ورسوماً وأولياء أمور وطاقماً في مكان واحد</h2>
+
+      <p>سجلات ورقية للحضور، <strong>واتساب لأولياء الأمور</strong>، <strong>جداول للرسوم</strong>: الإدارة تعمل من الذاكرة والتقارير تتأخر. <strong><a href="https://ams-xi-two.vercel.app/" target="_blank" rel="noopener noreferrer">AMS (نظام الإدارة الأكاديمية)</a></strong> يجمع كل شيء — نظام <strong>مجاني ومباشر</strong> ليشارك المديرون والمعلمون وأولياء الأمور والطلاب مصدراً واحداً للحقيقة.</p>
+
+      <figure style="margin: 2rem 0;">
+        <img src="/blog/ams/hero-home.png" alt="الصفحة الرئيسية لـ AMS — نظام التشغيل للمدارس" width="1200" height="750" style="width:100%;height:auto;border-radius:12px;border:1px solid rgba(148,163,184,0.35);" loading="lazy" />
+      </figure>
+
+      <h3>لمن صُمم AMS</h3>
+      <ul>
+        <li><strong>الإداريون والمديرون</strong> — المالية والحضور والأداء والطاقم في لوحة واحدة</li>
+        <li><strong>المعلمون</strong> — الحضور والدرجات والواجبات والتقارير دون عبء إداري زائد</li>
+        <li><strong>أولياء الأمور والطلاب</strong> — الدرجات والرسوم والجداول والرسائل في الوقت الفعلي</li>
+      </ul>
+
+      <h3>ست وحدات، منصة واحدة</h3>
+      <p>أكاديمي، مالية، عمليات، تحليلات، مواقع مدارس مع قبول إلكتروني ورسائل فورية — 8 أدوار وأكثر من 76 سير عمل.</p>
+
+      <figure style="margin: 2rem 0;">
+        <img src="/blog/ams/features-modules.png" alt="صفحة ميزات AMS بكل الوحدات" width="1200" height="800" style="width:100%;height:auto;border-radius:12px;border:1px solid rgba(148,163,184,0.35);" loading="lazy" />
+      </figure>
+
+      <blockquote>
+        <p><strong>تسجيل ← تدريس ← تقارير ← تواصل.</strong> القبول والحضور والرسوم ورسائل أولياء الأمور — منصة واحدة.</p>
+      </blockquote>
+
+      <figure style="margin: 2rem 0;">
+        <img src="/blog/ams/get-access-signup.png" alt="صفحة الوصول إلى AMS — تسجيل مجاني للمدارس" width="1200" height="800" style="width:100%;height:auto;border-radius:12px;border:1px solid rgba(148,163,184,0.35);" loading="lazy" />
+      </figure>
+
+      <h3>مباشر اليوم — مجاني للمدارس</h3>
+      <p>AMS <strong>في الإنتاج</strong> على <a href="https://ams-xi-two.vercel.app/" target="_blank" rel="noopener noreferrer">ams-xi-two.vercel.app</a>. جزء من ممارستنا <a href="/agentic-softwares">Agentic Softwares</a>.</p>
+
+      <p><strong>ابدأ مجاناً:</strong> <a href="https://ams-xi-two.vercel.app/get-access" target="_blank" rel="noopener noreferrer">إنشاء حساب المدرسة</a> — <a href="https://ams-xi-two.vercel.app/login" target="_blank" rel="noopener noreferrer">تسجيل الدخول</a>.</p>
+      <p><strong>منصة مخصصة؟</strong> <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">احجز مكالمة استراتيجية</a>.</p>
+    `,
+  },
+
   'productize-yourself-founder-authenticity-ai-systems': {
     title: 'Productize Yourself: كيف يخرج المؤسسون من المنافسة بتحويل نقاط قوتهم الأصيلة إلى أنظمة',
     excerpt:

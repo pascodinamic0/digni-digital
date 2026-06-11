@@ -4114,6 +4114,112 @@ const remainingArticles: BlogArticle[] = [
     `,
   },
   {
+    id: 108,
+    title: 'AMS: Run Your Entire School From One Platform (Free & Live)',
+    slug: 'ams-academic-management-system-free-live',
+    excerpt:
+      'Meet AMS — our free, live Academic Management System for African schools. Academics, finance, parent and student portals, messaging, and branded school websites in one calm platform. Sign up today.',
+    category: 'Agentic Softwares',
+    readTime: '9 min read',
+    publishDate: 'June 11, 2026',
+    author: 'Pascal Digny',
+    tags: [
+      'AMS',
+      'school management software',
+      'academic management system',
+      'education technology',
+      'African schools',
+      'agentic software',
+    ],
+    featured: true,
+    coverImageUrl: '/blog/ams/hero-home.png',
+    content: `
+      <h2>Manage every part of your school — academics, fees, parents, and staff in one place</h2>
+
+      <p>If your school still runs on <strong>paper registers for attendance</strong>, <strong>WhatsApp for parent updates</strong>, and <strong>spreadsheets for fees</strong>, you already know the drag: lost records, late report cards, fee disputes, and administrators working from memory. <strong><a href="https://ams-xi-two.vercel.app/" target="_blank" rel="noopener noreferrer">AMS (Academic Management System)</a></strong> is our answer — a <strong>live, free</strong> operating system for schools we built so directors, teachers, parents, and students share one source of truth.</p>
+
+      <p>It is not a generic LMS bolt-on. It is your school's <strong>system of record</strong>: 8 role-based experiences, 76+ workflows, and six integrated modules — designed for how African schools actually run.</p>
+
+      <figure style="margin: 2rem 0;">
+        <img src="/blog/ams/hero-home.png" alt="AMS homepage — the operating system for schools with hero, stats, and stakeholder sections" width="1200" height="750" style="width:100%;height:auto;border-radius:12px;border:1px solid rgba(148,163,184,0.35);" loading="lazy" />
+        <figcaption style="margin-top:0.75rem;font-size:0.875rem;color:#64748b;text-align:center;">AMS home — one platform for administrators, teachers, parents, and students.</figcaption>
+      </figure>
+
+      <h3>Who AMS is for</h3>
+
+      <ul>
+        <li><strong>School administrators & directors</strong> who need finances, attendance, performance, and staff in one dashboard</li>
+        <li><strong>Teachers & educators</strong> who want attendance, grades, assignments, and report cards without admin overload</li>
+        <li><strong>Parents</strong> who track grades, fees, timetables, and messages in real time — from any device</li>
+        <li><strong>Students</strong> who submit work, view schedules, and message teachers without chasing paper</li>
+        <li><strong>Private schools, academies, and multi-branch groups</strong> upgrading from manual ops to a calm digital stack</li>
+      </ul>
+
+      <h3>Six modules, one platform</h3>
+
+      <h4>1. Academic</h4>
+      <p>Students, guardians, admissions, classes, sections, timetable, curriculum, attendance, gradebook, assignments, exams, and report cards — connected so teachers enter data once and leadership sees the full picture.</p>
+
+      <h4>2. Finance</h4>
+      <p>Fee structures, invoices, payments, payroll, expenses, and financial reports. Parents see what they owe; finance officers see what was collected — no more fee arguments buried in chat threads.</p>
+
+      <h4>3. Operations</h4>
+      <p>Library, transport, events, and staff/HR in the same system. The back office stops living in separate notebooks.</p>
+
+      <h4>4. Parent & student portals</h4>
+      <p>Parents track child performance, fees, timetables, and messages. Students access assignments, grades, library, and events — always in sync with what teachers recorded.</p>
+
+      <figure style="margin: 2rem 0;">
+        <img src="/blog/ams/features-modules.png" alt="AMS features page showing platform admin, academic, teacher, finance, operations, parent portal, student portal, analytics, and school websites modules" width="1200" height="800" style="width:100%;height:auto;border-radius:12px;border:1px solid rgba(148,163,184,0.35);" loading="lazy" />
+        <figcaption style="margin-top:0.75rem;font-size:0.875rem;color:#64748b;text-align:center;">Every module mapped — academic, finance, operations, analytics, websites, and messaging.</figcaption>
+      </figure>
+
+      <h4>5. Analytics & reporting</h4>
+      <p>Dashboards, branch comparison, student analytics, attendance reports, and financial reports — so leadership trusts the numbers before assembly day, not after.</p>
+
+      <h4>6. School websites & messaging</h4>
+      <p>Branded public sites with online admissions (Modern, Classic, or Minimal templates) plus real-time messaging for everyone. Your school looks professional online and stays connected in one product family.</p>
+
+      <h3>Why schools switch from spreadsheets</h3>
+
+      <ul>
+        <li><strong>Free to start</strong> — no setup fees, no long contracts; create a school account and go live</li>
+        <li><strong>8 user roles</strong> — each stakeholder gets a dashboard built for their job</li>
+        <li><strong>76+ pages and flows</strong> — enrollment to report cards without duct-taping tools</li>
+        <li><strong>Guided onboarding</strong> — register, complete a 4-step wizard, invite your team, launch</li>
+        <li><strong>Built for African schools</strong> — real-time dashboards, mobile-friendly flows, calm visual design</li>
+        <li><strong>Role-based access & audit logs</strong> — organization-scoped data principals can defend</li>
+      </ul>
+
+      <blockquote>
+        <p><strong>Enroll → Teach → Report → Connect.</strong> Admissions move into classes, teachers record attendance and grades, finance tracks fees, parents see updates instantly — all on one platform.</p>
+      </blockquote>
+
+      <figure style="margin: 2rem 0;">
+        <img src="/blog/ams/get-access-signup.png" alt="AMS get access page — launch your school with free signup and guided onboarding" width="1200" height="800" style="width:100%;height:auto;border-radius:12px;border:1px solid rgba(148,163,184,0.35);" loading="lazy" />
+        <figcaption style="margin-top:0.75rem;font-size:0.875rem;color:#64748b;text-align:center;">Get access — register your school in minutes, onboard your team, go live today.</figcaption>
+      </figure>
+
+      <h3>Live today — free for schools</h3>
+
+      <p>AMS is <strong>in production</strong> at <a href="https://ams-xi-two.vercel.app/" target="_blank" rel="noopener noreferrer">ams-xi-two.vercel.app</a>. Schools can sign up for free, create an account, complete onboarding, invite teachers and finance staff, and start managing operations today. We keep shipping features — your feedback shapes what comes next.</p>
+
+      <p>We built AMS as part of our <a href="/agentic-softwares">Agentic Softwares</a> practice — alongside <a href="https://dispatch-flow-one.vercel.app/" target="_blank" rel="noopener noreferrer">DispatchFlow</a> (operations), <a href="https://kabinda-lodge.com/" target="_blank" rel="noopener noreferrer">Kabinda Lodge</a> (hospitality), and our <a href="/future-ready-graduate">Future-Ready Graduate Program</a> for schools that also want employability outcomes for students.</p>
+
+      <h3>Next step</h3>
+
+      <p><strong>Start free as a school:</strong> <a href="https://ams-xi-two.vercel.app/get-access" target="_blank" rel="noopener noreferrer">Create your school account</a>.</p>
+
+      <p><strong>Already have an account?</strong> <a href="https://ams-xi-two.vercel.app/login" target="_blank" rel="noopener noreferrer">Log in to AMS</a>.</p>
+
+      <p><strong>Need a custom school platform or multi-campus rollout?</strong> <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Book a strategy call</a> with Digni Digital — we'll map your academic, finance, and parent-communication flows and show whether AMS fits or a tailored build makes sense.</p>
+
+      <hr>
+
+      <p><em>See AMS on our <a href="/agentic-softwares">Agentic Softwares</a> page with DispatchFlow, Kabinda Lodge, SwiftDrop, DigniGuide, and other live products we build for operators who need adoption, not shelfware.</em></p>
+    `,
+  },
+  {
     id: 103,
 
     title: 'Productize Yourself: How Founders Escape Competition by Turning Authentic Strengths Into Systems',

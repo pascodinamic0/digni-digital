@@ -1765,6 +1765,53 @@ export const contentDe: Record<string, Partial<BlogArticle>> = {
     tags: ['DispatchFlow', 'Logistiksoftware', 'Beschaffung', 'Versand', 'Inventar', 'Afrika', 'agentische Software'],
   },
 
+  'ams-academic-management-system-free-live': {
+    title: 'AMS: Ihre gesamte Schule von einer Plattform aus steuern (kostenlos & live)',
+    excerpt:
+      'AMS — unser kostenloses, live Academic Management System für afrikanische Schulen. Unterricht, Finanzen, Eltern- und Schülerportale, Messaging und Schulwebsites in einer ruhigen Plattform.',
+    category: 'Agentic Softwares',
+    readTime: '9 Min. Lesezeit',
+    publishDate: '11. Juni 2026',
+    tags: ['AMS', 'Schulverwaltungssoftware', 'Akademisches Managementsystem', 'Bildungstechnologie', 'afrikanische Schulen', 'agentische Software'],
+    content: `
+      <h2>Jeden Teil Ihrer Schule verwalten — Unterricht, Gebühren, Eltern und Personal an einem Ort</h2>
+
+      <p>Papierlisten für Anwesenheit, <strong>WhatsApp für Eltern</strong>, <strong>Tabellen für Gebühren</strong>: Die Verwaltung arbeitet aus dem Gedächtnis und Zeugnisse kommen zu spät. <strong><a href="https://ams-xi-two.vercel.app/" target="_blank" rel="noopener noreferrer">AMS (Academic Management System)</a></strong> bündelt alles — ein <strong>kostenloses, live</strong> Betriebssystem, damit Leitung, Lehrkräfte, Eltern und Schüler dieselbe Quelle der Wahrheit teilen.</p>
+
+      <figure style="margin: 2rem 0;">
+        <img src="/blog/ams/hero-home.png" alt="AMS Startseite — Betriebssystem für Schulen" width="1200" height="750" style="width:100%;height:auto;border-radius:12px;border:1px solid rgba(148,163,184,0.35);" loading="lazy" />
+      </figure>
+
+      <h3>Für wen ist AMS</h3>
+      <ul>
+        <li><strong>Schulleitung & Administratoren</strong> — Finanzen, Anwesenheit, Leistung und Personal in einem Dashboard</li>
+        <li><strong>Lehrkräfte</strong> — Anwesenheit, Noten, Aufgaben und Zeugnisse ohne Admin-Überlast</li>
+        <li><strong>Eltern & Schüler</strong> — Noten, Gebühren, Stundenplan und Nachrichten in Echtzeit</li>
+      </ul>
+
+      <h3>Sechs Module, eine Plattform</h3>
+      <p>Akademik, Finanzen, Betrieb, Analytik, Schulwebsites mit Online-Zulassung und Echtzeit-Messaging — 8 Rollen, 76+ Workflows.</p>
+
+      <figure style="margin: 2rem 0;">
+        <img src="/blog/ams/features-modules.png" alt="AMS Funktionsübersicht aller Module" width="1200" height="800" style="width:100%;height:auto;border-radius:12px;border:1px solid rgba(148,163,184,0.35);" loading="lazy" />
+      </figure>
+
+      <blockquote>
+        <p><strong>Einschreiben → Unterrichten → Berichten → Verbinden.</strong> Zulassung, Anwesenheit, Gebühren und Elternkommunikation — eine Plattform.</p>
+      </blockquote>
+
+      <figure style="margin: 2rem 0;">
+        <img src="/blog/ams/get-access-signup.png" alt="AMS Zugang — kostenlose Schulregistrierung" width="1200" height="800" style="width:100%;height:auto;border-radius:12px;border:1px solid rgba(148,163,184,0.35);" loading="lazy" />
+      </figure>
+
+      <h3>Heute live — kostenlos für Schulen</h3>
+      <p>AMS ist <strong>in Produktion</strong> unter <a href="https://ams-xi-two.vercel.app/" target="_blank" rel="noopener noreferrer">ams-xi-two.vercel.app</a>. Teil unserer <a href="/agentic-softwares">Agentic Softwares</a>-Praxis.</p>
+
+      <p><strong>Kostenlos starten:</strong> <a href="https://ams-xi-two.vercel.app/get-access" target="_blank" rel="noopener noreferrer">Schulkonto erstellen</a> — <a href="https://ams-xi-two.vercel.app/login" target="_blank" rel="noopener noreferrer">Anmelden</a>.</p>
+      <p><strong>Individuelle Schulplattform?</strong> <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Strategiegespräch buchen</a>.</p>
+    `,
+  },
+
   'productize-yourself-founder-authenticity-ai-systems': {
     title: 'Productize Yourself: Wie Gründer durch authentische Stärken dem Wettbewerb entkommen',
     excerpt:

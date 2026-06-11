@@ -722,6 +722,53 @@ const contentEs: Record<string, Partial<BlogArticle>> = {
     tags: ['DispatchFlow', 'software logístico', 'compras', 'despacho', 'inventario', 'África', 'software agéntico'],
   },
 
+  'ams-academic-management-system-free-live': {
+    title: 'AMS: gestione toda su escuela desde una sola plataforma (gratis y en vivo)',
+    excerpt:
+      'Conozca AMS — nuestro sistema de gestión académica gratuito y en vivo para escuelas africanas. Académico, finanzas, portales de padres y alumnos, mensajería y sitios web escolares en una plataforma clara.',
+    category: 'Agentic Softwares',
+    readTime: '9 min de lectura',
+    publishDate: '11 de junio de 2026',
+    tags: ['AMS', 'software escolar', 'gestión académica', 'EdTech', 'escuelas africanas', 'software agéntico'],
+    content: `
+      <h2>Gestione cada parte de su escuela — académico, cuotas, padres y personal en un solo lugar</h2>
+
+      <p>Registros en papel, <strong>WhatsApp para padres</strong> y <strong>hojas de cálculo para cuotas</strong>: la dirección trabaja de memoria y los boletines llegan tarde. <strong><a href="https://ams-xi-two.vercel.app/" target="_blank" rel="noopener noreferrer">AMS (Academic Management System)</a></strong> lo centraliza todo — un sistema <strong>gratuito y en vivo</strong> para que directores, docentes, padres y alumnos compartan una sola fuente de verdad.</p>
+
+      <figure style="margin: 2rem 0;">
+        <img src="/blog/ams/hero-home.png" alt="Página de inicio AMS — sistema operativo para escuelas" width="1200" height="750" style="width:100%;height:auto;border-radius:12px;border:1px solid rgba(148,163,184,0.35);" loading="lazy" />
+      </figure>
+
+      <h3>Para quién es AMS</h3>
+      <ul>
+        <li><strong>Administradores y directores</strong> — finanzas, asistencia, rendimiento y personal en un panel</li>
+        <li><strong>Docentes</strong> — asistencia, calificaciones, tareas y boletines sin sobrecarga administrativa</li>
+        <li><strong>Padres y alumnos</strong> — notas, cuotas, horarios y mensajes en tiempo real</li>
+      </ul>
+
+      <h3>Seis módulos, una plataforma</h3>
+      <p>Académico, finanzas, operaciones, analítica, sitios web escolares con admisiones en línea y mensajería en tiempo real — 8 roles, más de 76 flujos.</p>
+
+      <figure style="margin: 2rem 0;">
+        <img src="/blog/ams/features-modules.png" alt="Página de funciones AMS con todos los módulos" width="1200" height="800" style="width:100%;height:auto;border-radius:12px;border:1px solid rgba(148,163,184,0.35);" loading="lazy" />
+      </figure>
+
+      <blockquote>
+        <p><strong>Inscribir → Enseñar → Informar → Conectar.</strong> Admisiones, asistencia, cuotas y comunicación con padres — una sola plataforma.</p>
+      </blockquote>
+
+      <figure style="margin: 2rem 0;">
+        <img src="/blog/ams/get-access-signup.png" alt="Página de acceso AMS — registro gratuito para escuelas" width="1200" height="800" style="width:100%;height:auto;border-radius:12px;border:1px solid rgba(148,163,184,0.35);" loading="lazy" />
+      </figure>
+
+      <h3>En vivo hoy — gratis para escuelas</h3>
+      <p>AMS está <strong>en producción</strong> en <a href="https://ams-xi-two.vercel.app/" target="_blank" rel="noopener noreferrer">ams-xi-two.vercel.app</a>. Parte de nuestra práctica <a href="/agentic-softwares">Agentic Softwares</a>.</p>
+
+      <p><strong>Empezar gratis:</strong> <a href="https://ams-xi-two.vercel.app/get-access" target="_blank" rel="noopener noreferrer">Crear cuenta escolar</a> — <a href="https://ams-xi-two.vercel.app/login" target="_blank" rel="noopener noreferrer">Iniciar sesión</a>.</p>
+      <p><strong>¿Plataforma personalizada?</strong> <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Reservar llamada estratégica</a>.</p>
+    `,
+  },
+
   'productize-yourself-founder-authenticity-ai-systems': {
     title: 'Productize Yourself: cómo los fundadores escapan de la competencia convirtiendo fortalezas auténticas en sistemas',
     excerpt:
