@@ -1997,6 +1997,10 @@ nextjs-portal {
   min-height: 0;
 }
 
+.ai-employee-hero {
+  background: var(--software-canvas);
+}
+
 .software-inbox-app {
   flex: 1;
   min-height: 0;

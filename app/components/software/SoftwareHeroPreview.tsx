@@ -11,21 +11,24 @@ const PREVIEW_THREADS = [
   { name: 'Elena R.', channel: 'Instagram', preview: 'Appointment confirmed ✓', time: '14m', unread: 0, status: 'booked' as const },
 ]
 
-export default function SoftwareHeroPreview() {
+export default function SoftwareHeroPreview({ compact = false }: { compact?: boolean }) {
   const language = useLanguage()
   const sw =
     translations[language].aiEmployeeSoftware ?? translations.en.aiEmployeeSoftware
   const hp = sw.heroPreview
+  const heightClass = compact
+    ? 'h-[min(340px,72vw)] min-h-[260px] sm:h-[360px] lg:h-[400px]'
+    : 'h-[min(420px,58vw)] min-h-[280px] sm:h-[380px] md:h-[420px]'
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 24 }}
+      initial={{ opacity: 0, y: 28 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.7, delay: 0.35 }}
-      className="relative w-full"
+      transition={{ duration: 0.65, delay: 0.15 }}
+      className="relative mx-auto w-full max-w-lg lg:max-w-none"
     >
       <div
-        className="pointer-events-none absolute -inset-4 rounded-3xl bg-accent/10 blur-3xl"
+        className="pointer-events-none absolute -inset-6 rounded-3xl bg-accent/8 blur-3xl"
         aria-hidden
       />
       <ProductWorkspaceFrame
@@ -34,7 +37,7 @@ export default function SoftwareHeroPreview() {
         showWindowChrome
         className="relative"
       >
-        <div className="flex h-[min(420px,58vw)] min-h-[280px] flex-col sm:h-[380px] md:h-[420px]">
+        <div className={`flex flex-col ${heightClass}`}>
           <div className="flex border-b border-[var(--software-border)] px-2 pt-1">
             {[hp.inboxTab, hp.pipelineTab].map((tab, i) => (
               <span
