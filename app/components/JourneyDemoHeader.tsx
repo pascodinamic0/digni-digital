@@ -1,10 +1,8 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { useLanguage } from '@/app/context/LocaleContext'
 import { ChevronRight } from 'lucide-react'
 import {
-  getFlowStepPrefix,
   flowStepAnchor,
   scrollToFlowTargets,
   type AiReceptionistScrollAnchor,
@@ -19,7 +17,6 @@ const BADGE_CLASS: Record<BadgeTone, string> = {
 
 type Props = {
   step: 1 | 2 | 3 | 4 | 5 | 6
-  /** Small line tying this demo to the client-journey phase (from BusinessTimeline). */
   journeyPhase: string
   badge: string
   title: string
@@ -27,22 +24,15 @@ type Props = {
   subtitle: string
   titleId: string
   badgeTone?: BadgeTone
-  /** `inbox` uses line break between title parts; others inline or line break via prop */
   titleLayout?: 'stacked' | 'inline'
-  /** Product-page layout: denser type (SaaS feature sections). */
   variant?: 'marketing' | 'software'
-  /** Software sections on the product page use centered copy for scanability. */
   align?: 'center' | 'left'
-  /** Override scroll anchor (e.g. Ads Manager between journey steps). */
   anchorId?: AiReceptionistScrollAnchor
-  /** Scroll-to-next demo CTA (software product page). */
   nextCta?: { label: string; targets: readonly string[] }
   className?: string
 }
 
-/**
- * Shared header for product demos: journey step number + phase, then the demo’s own headline.
- */
+/** Product demo copy block — feature headline only; journey steps live in the intro + timeline. */
 export default function JourneyDemoHeader({
   step,
   journeyPhase,
@@ -59,69 +49,45 @@ export default function JourneyDemoHeader({
   nextCta,
   className = 'mb-12 md:mb-16',
 }: Props) {
-  const language = useLanguage()
-  const prefix = getFlowStepPrefix(language)
+  void journeyPhase
+
   const isSoftware = variant === 'software'
   const isCentered = align === 'center' || (!isSoftware && align !== 'left')
 
   return (
     <div
-      id={anchorId ?? flowStepAnchor(step)}
-      className={`scroll-mt-28 ${isCentered ? 'mx-auto max-w-3xl text-center' : 'max-w-3xl text-left'} ${className}`}
+      id={isSoftware ? undefined : anchorId ?? flowStepAnchor(step)}
+      className={`${isSoftware ? '' : 'scroll-mt-28'} ${isCentered ? 'mx-auto max-w-3xl text-center' : 'max-w-3xl text-left'} ${className}`}
     >
-      <motion.div
-        initial={{ opacity: 0, y: 12 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className={`mb-5 flex gap-3 sm:gap-4 ${
-          isCentered
-            ? 'flex-col items-center justify-center sm:flex-row'
-            : isSoftware
-              ? 'flex-row items-center'
-              : 'flex-col items-center justify-center sm:flex-row'
-        }`}
-      >
-        <span
-          className={`flex shrink-0 items-center justify-center rounded-lg font-display font-bold ${
-            isSoftware
-              ? 'h-9 w-9 bg-[var(--software-nav-active)] text-accent text-sm'
-              : 'h-11 w-11 rounded-xl bg-accent text-on-accent text-lg shadow-md shadow-accent/25'
-          }`}
-          aria-hidden
+      {!isSoftware ? (
+        <motion.span
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className={`inline-block border px-4 py-2 rounded-full mb-4 text-xs font-semibold uppercase tracking-wide ${BADGE_CLASS[badgeTone]}`}
         >
-          {step}
-        </span>
-        <p
-          className={`font-bold uppercase tracking-widest text-[var(--software-text-muted)] ${
-            isSoftware ? 'text-[10px] sm:text-[11px]' : 'text-[11px] sm:text-xs text-muted text-center sm:text-left'
-          }`}
+          {badge}
+        </motion.span>
+      ) : (
+        <motion.span
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="section-label mb-3 inline-block"
         >
-          {prefix} {step} · {journeyPhase}
-        </p>
-      </motion.div>
-
-      <motion.span
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className={`inline-block border text-xs font-semibold uppercase tracking-wide mb-3 ${
-          isSoftware
-            ? 'rounded-md px-2.5 py-1 bg-accent/10 border-accent/25 text-accent'
-            : `px-4 py-2 rounded-full mb-4 ${BADGE_CLASS[badgeTone]}`
-        }`}
-      >
-        {badge}
-      </motion.span>
+          {badge}
+        </motion.span>
+      )}
       <motion.h2
         id={titleId}
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ delay: 0.1 }}
-        className={`font-display font-bold mb-3 text-[var(--software-text)] ${
+        className={`font-display font-bold mb-3 ${
           isSoftware
-            ? 'text-2xl sm:text-3xl md:text-4xl leading-tight'
-            : `mt-4 mb-6 ${
+            ? 'type-h3 leading-tight text-[var(--software-text)]'
+            : `mt-4 mb-6 text-text ${
                 titleLayout === 'stacked'
                   ? 'text-3xl sm:text-4xl md:text-5xl'
                   : 'text-4xl md:text-5xl lg:text-6xl'
@@ -132,12 +98,16 @@ export default function JourneyDemoHeader({
           <>
             {title}
             <br />
-            <span className={isSoftware ? 'software-demo-title-highlight' : 'gradient-text-brand'}>{titleHighlight}</span>
+            <span className={isSoftware ? 'software-demo-title-highlight' : 'gradient-text-brand'}>
+              {titleHighlight}
+            </span>
           </>
         ) : (
           <>
             {title}{' '}
-            <span className={isSoftware ? 'software-demo-title-highlight' : 'gradient-text-brand'}>{titleHighlight}</span>
+            <span className={isSoftware ? 'software-demo-title-highlight' : 'gradient-text-brand'}>
+              {titleHighlight}
+            </span>
           </>
         )}
       </motion.h2>
@@ -148,7 +118,7 @@ export default function JourneyDemoHeader({
         transition={{ delay: 0.2 }}
         className={`leading-relaxed ${
           isSoftware
-            ? `text-sm sm:text-base text-[var(--software-text-muted)] max-w-2xl ${isCentered ? 'mx-auto' : ''}`
+            ? `type-body text-[var(--software-text-muted)] max-w-2xl ${isCentered ? 'mx-auto' : ''}`
             : 'text-muted mx-auto max-w-3xl text-base sm:text-lg'
         }`}
       >

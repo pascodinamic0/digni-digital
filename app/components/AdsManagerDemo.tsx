@@ -160,7 +160,7 @@ export default function AdsManagerDemo() {
         </div>
 
         <div className="overflow-x-auto">
-          <table className="w-full min-w-[640px] text-left text-[11px] sm:text-xs">
+          <table className="w-full min-w-[560px] text-left text-[11px] sm:min-w-[640px] sm:text-xs">
             <thead>
               <tr className="border-b border-[var(--software-border)] bg-surface/30 text-[10px] font-semibold uppercase tracking-wider text-muted">
                 <th className="px-4 py-2.5 md:px-5">{t.headers.campaign}</th>

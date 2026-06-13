@@ -8,6 +8,8 @@ export const DEFAULT_LOCALE = 'us-en'
 
 type JsonLd = Record<string, unknown>
 
+const JSON_LD_CONTEXT = 'https://schema.org'
+
 export function absoluteUrl(path = '') {
   if (path.startsWith('http')) return path
   return `${SITE_URL}${path.startsWith('/') ? path : `/${path}`}`
@@ -19,8 +21,15 @@ export function localizedUrl(locale: string, path = '') {
 }
 
 export function jsonLdScriptProps(data: JsonLd | JsonLd[]) {
+  // Safari throws when ld+json is a root-level array (it expects @graph + single @context).
+  const payload: JsonLd = Array.isArray(data)
+    ? data.length === 1
+      ? data[0]
+      : { '@context': JSON_LD_CONTEXT, '@graph': data }
+    : data
+
   return {
-    __html: JSON.stringify(data).replace(/</g, '\\u003c'),
+    __html: JSON.stringify(payload).replace(/</g, '\\u003c'),
   }
 }
 
@@ -633,6 +642,7 @@ function offerToJsonLd(offer: AgentOffer): JsonLd {
 
 function serviceToJsonLd(service: AgentService, locale: string): JsonLd {
   return {
+    '@context': JSON_LD_CONTEXT,
     '@type': 'Service',
     '@id': `${service.url}#service`,
     name: service.name,

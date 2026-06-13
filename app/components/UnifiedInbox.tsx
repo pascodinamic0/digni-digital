@@ -156,7 +156,7 @@ const UnifiedInbox = () => {
 
         <div className="software-inbox-panes min-h-0 flex-1">
           <div
-            className={`software-inbox-list flex min-h-[280px] flex-col border-[var(--software-border)] md:min-h-0 md:w-[34%] md:max-w-[320px] md:border-r ${
+            className={`software-inbox-list flex min-h-[280px] flex-col border-[var(--software-border)] md:min-h-0 md:w-[min(32%,280px)] md:min-w-[220px] md:max-w-[300px] md:border-r ${
               showConversationDetail ? 'hidden md:flex' : 'flex w-full'
             }`}
           >

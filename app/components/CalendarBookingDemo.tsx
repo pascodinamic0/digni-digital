@@ -155,8 +155,8 @@ export default function CalendarBookingDemo() {
 
         <div className="overflow-x-auto p-4 md:p-5">
           <div
-            className="grid min-w-[560px] gap-1 sm:min-w-0 sm:gap-1.5"
-            style={{ gridTemplateColumns: `4.5rem repeat(${COLS}, minmax(0, 1fr))` }}
+            className="grid w-full min-w-[640px] gap-1 sm:gap-1.5"
+            style={{ gridTemplateColumns: `4.5rem repeat(${COLS}, minmax(108px, 1fr))` }}
           >
             <div aria-hidden />
             {t.daysShort.map((day, i) => (
@@ -185,7 +185,7 @@ export default function CalendarBookingDemo() {
                   return (
                     <div
                       key={key}
-                      className={`min-h-[80px] rounded-lg border p-1 transition-colors ${
+                      className={`min-h-[88px] rounded-lg border p-1 transition-colors ${
                         isPending
                           ? 'border-dashed border-success/45 bg-success/[0.06]'
                           : event

@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { ArrowRight } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { Link } from '@/i18n/navigation'
 import { getBookingLinkProps } from '@/app/config/cta.config'
@@ -46,6 +47,39 @@ export default function AiEmployeePricingPanel({
   const minutes = Math.floor((totalSec % 3600) / 60)
   const seconds = totalSec % 60
 
+  if (!showAmounts) {
+    return (
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.45 }}
+        className="relative overflow-hidden rounded-xl border border-accent/30 bg-[var(--software-panel)] p-8 md:p-10"
+      >
+        <div className="relative z-10 flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
+          <div className="mx-auto max-w-xl text-center md:mx-0 md:text-left">
+            <p className="type-body-lg leading-relaxed text-foreground/85">{p.assessmentNote}</p>
+            <p className="type-caption mt-4 text-success/90">{p.investmentNote}</p>
+          </div>
+
+          <div className="flex w-full shrink-0 flex-col items-stretch gap-3 md:w-auto md:min-w-[17.5rem]">
+            <Link
+              href={getAssessmentPath('ai-employee')}
+              className="btn-primary inline-flex items-center justify-center gap-2 px-6 py-3.5 text-center"
+            >
+              {p.assessmentCta}
+              <ArrowRight className="h-4 w-4" aria-hidden />
+            </Link>
+            <a {...bookingLinkProps} className="btn-secondary px-6 py-3.5 text-center">
+              {p.cta}
+            </a>
+            <AiEmployeeScarcityBanner variant="inline" className="mt-1 text-center md:text-left" />
+          </div>
+        </div>
+      </motion.div>
+    )
+  }
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -54,84 +88,61 @@ export default function AiEmployeePricingPanel({
       transition={{ duration: 0.45 }}
       className={
         promoActive
-          ? 'rounded-2xl border border-success/40 bg-surface shadow-lg shadow-success/5 overflow-hidden'
-          : 'rounded-2xl border border-border bg-surface shadow-lg overflow-hidden'
+          ? 'overflow-hidden rounded-xl border border-success/35 bg-[var(--software-panel)] shadow-[var(--shadow-success-glow)]'
+          : 'overflow-hidden rounded-xl border border-accent/30 bg-[var(--software-panel)]'
       }
     >
-      <div className="p-6 sm:p-8 text-center">
-        {promoActive && (
-          <span className="inline-block px-2.5 py-0.5 bg-destructive/15 text-destructive text-[10px] font-semibold rounded-full border border-destructive/25 mb-3">
+      <div className="p-8 text-center md:p-10">
+        {promoActive ? (
+          <span className="type-caption mb-4 inline-flex rounded-full border border-destructive/25 bg-destructive/15 px-3 py-1 font-semibold text-destructive">
             {p.limitedLabel}
           </span>
-        )}
+        ) : null}
 
-        <h3 className="font-display text-xl sm:text-2xl font-bold text-text mb-4">{p.planName}</h3>
-
-        {!showAmounts ? (
-          <div className="mx-auto max-w-md space-y-4 mb-6 text-left sm:text-center">
-            <p className="text-sm text-muted leading-relaxed">{p.assessmentNote}</p>
-            <p className="text-xs text-success/90 leading-relaxed">{p.investmentNote}</p>
-            <Link
-              href={getAssessmentPath('ai-employee')}
-              className="btn-primary w-full text-center text-sm sm:text-base py-3 inline-flex items-center justify-center"
-            >
-              {p.assessmentCta}
-            </Link>
-          </div>
-        ) : (
-          <>
-            <div className="mx-auto grid max-w-xs grid-cols-2 gap-3 mb-6">
-              <div className="rounded-lg border border-border/60 bg-background/80 px-3 py-3">
-                <div className="text-[10px] font-semibold uppercase tracking-wider text-muted mb-1">{p.setupLabel}</div>
-                {promoActive ? (
-                  <>
-                    <div className="text-xs text-muted line-through decoration-destructive/40">{p.setupFee}</div>
-                    <div className="font-display text-lg font-bold text-success">{p.setupFeeWaivedDisplay}</div>
-                  </>
-                ) : (
-                  <div className="font-display text-lg font-bold text-text">{p.setupFee}</div>
-                )}
-              </div>
-              <div className="rounded-lg border border-success/20 bg-success/10 px-3 py-3">
-                <div className="text-[10px] font-semibold uppercase tracking-wider text-muted mb-1">{p.monthlyLabel}</div>
-                <div className="font-display text-lg font-bold text-success leading-none">
-                  {p.price}
-                  <span className="text-xs font-normal text-muted">{p.period}</span>
-                </div>
-              </div>
-            </div>
-
-            {promoActive && (
-              <p className="text-xs text-success/90 mb-5 leading-snug">
-                {p.setupFeePromo}{' '}
-                <span className="font-semibold tabular-nums" aria-live="polite">
-                  {days > 0 && `${days}d · `}
-                  {padCountdownUnit(hours)}h · {padCountdownUnit(minutes)}m · {padCountdownUnit(seconds)}s
-                </span>
-              </p>
+        <div className="mx-auto mb-8 grid max-w-md grid-cols-2 gap-4">
+          <div className="rounded-lg border border-border/60 bg-background/80 px-4 py-4">
+            <div className="type-caption mb-2 font-semibold uppercase tracking-wider text-muted">{p.setupLabel}</div>
+            {promoActive ? (
+              <>
+                <div className="type-small text-muted line-through decoration-destructive/40">{p.setupFee}</div>
+                <div className="type-h4 font-display font-bold text-success">{p.setupFeeWaivedDisplay}</div>
+              </>
+            ) : (
+              <div className="type-h4 font-display font-bold text-text">{p.setupFee}</div>
             )}
-          </>
-        )}
+          </div>
+          <div className="rounded-lg border border-success/25 bg-success/10 px-4 py-4">
+            <div className="type-caption mb-2 font-semibold uppercase tracking-wider text-muted">{p.monthlyLabel}</div>
+            <div className="type-h4 font-display font-bold leading-none text-success">
+              {p.price}
+              <span className="type-small font-normal text-muted">{p.period}</span>
+            </div>
+          </div>
+        </div>
 
-        <div className="mx-auto max-w-sm space-y-2">
+        {promoActive ? (
+          <p className="type-small mb-6 text-success/90 leading-snug">
+            {p.setupFeePromo}{' '}
+            <span className="font-semibold tabular-nums" aria-live="polite">
+              {days > 0 && `${days}d · `}
+              {padCountdownUnit(hours)}h · {padCountdownUnit(minutes)}m · {padCountdownUnit(seconds)}s
+            </span>
+          </p>
+        ) : null}
+
+        <div className="mx-auto flex max-w-md flex-col gap-3">
           <StripeCheckoutButton
             plan="ai_employee"
-            className="btn-primary w-full text-center text-sm sm:text-base py-3"
+            className="btn-primary w-full px-6 py-3.5 text-center"
             redirectingLabel={checkoutRedirectingLabel}
           >
             {continueToSecureCheckoutLabel}
           </StripeCheckoutButton>
-          <a
-            {...bookingLinkProps}
-            className="btn-secondary w-full text-center text-sm sm:text-base py-3 block"
-          >
+          <a {...bookingLinkProps} className="btn-secondary w-full px-6 py-3.5 text-center">
             {p.cta}
           </a>
+          <AiEmployeeScarcityBanner variant="inline" className="mt-1" />
         </div>
-      </div>
-
-      <div className="border-t border-warning/20 bg-warning/5 px-4 py-2.5 text-center">
-        <AiEmployeeScarcityBanner variant="compact" />
       </div>
     </motion.div>
   )

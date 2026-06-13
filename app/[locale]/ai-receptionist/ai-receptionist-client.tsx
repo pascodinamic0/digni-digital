@@ -12,10 +12,8 @@ import {
   QualificationSection,
   ClientOutcomesSection,
   BonusStackSection,
-  GuaranteeSection,
   MobileAppBannerSection,
   PricingSection,
-  FinalCtaSection,
 } from '@/app/components/ai-employee'
 
 const AIReceptionistPainDreamDemos = dynamic(
@@ -76,16 +74,12 @@ export function AIReceptionistClient({ params, searchParams, showTaskQueueDemo }
       {/* Fit + offer */}
       <QualificationSection />
       <BonusStackSection />
-      <GuaranteeSection />
       <MobileAppBannerSection />
       <TimeToValueSection />
       <PricingSection
         checkoutRedirectingLabel={ctaT.checkoutRedirecting}
         continueToSecureCheckoutLabel={ctaT.continueToSecureCheckout}
       />
-
-      {/* CTA */}
-      <FinalCtaSection />
     </main>
   )
 }

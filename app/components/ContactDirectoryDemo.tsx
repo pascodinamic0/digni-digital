@@ -172,7 +172,7 @@ export default function ContactDirectoryDemo() {
           </div>
 
           <div className="relative overflow-x-auto">
-            <table className="w-full text-sm text-left min-w-[880px]">
+            <table className="w-full min-w-[680px] text-left text-sm">
               <thead>
                 <tr className="border-b border-border bg-surface-light/30 text-xs text-muted uppercase tracking-wide">
                   <th className="py-3 px-4 w-10">
@@ -203,8 +203,8 @@ export default function ContactDirectoryDemo() {
                       <SortArrows active={sortKey === 'created'} dir={sortDir} />
                     </button>
                   </th>
-                  <th className="py-3 px-4 font-semibold">{t.headers.activity}</th>
-                  <th className="py-3 px-4 font-semibold">{t.headers.tags}</th>
+                  <th className="hidden px-4 py-3 font-semibold lg:table-cell">{t.headers.activity}</th>
+                  <th className="hidden px-4 py-3 font-semibold xl:table-cell">{t.headers.tags}</th>
                 </tr>
               </thead>
               <tbody>
@@ -262,13 +262,15 @@ export default function ContactDirectoryDemo() {
                         {row.source}
                       </span>
                     </td>
-                    <td className="py-3 px-4 text-muted whitespace-nowrap text-xs">{row.created}</td>
-                    <td className="py-3 px-4 text-muted text-xs">{row.lastActivity}</td>
-                    <td className="py-3 px-4">
+                    <td className="whitespace-nowrap px-4 py-3 text-xs text-muted">{row.created}</td>
+                    <td className="hidden px-4 py-3 text-xs text-muted lg:table-cell">{row.lastActivity}</td>
+                    <td className="hidden px-4 py-3 xl:table-cell">
                       {row.tag ? (
                         <span className="text-xs px-2 py-0.5 rounded-full border border-border bg-surface/50">{row.tag}</span>
                       ) : (
-                        <span className="text-muted">, </span>
+                        <span className="text-muted/40" aria-hidden>
+                          ·
+                        </span>
                       )}
                     </td>
                   </motion.tr>

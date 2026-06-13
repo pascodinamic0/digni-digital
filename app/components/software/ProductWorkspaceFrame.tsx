@@ -4,7 +4,6 @@ import type { ReactNode } from 'react'
 import { useLanguage } from '@/app/context/LocaleContext'
 import { translations } from '@/app/config/translations'
 import SoftwareSidebar from './SoftwareSidebar'
-import SoftwareTopBar from './SoftwareTopBar'
 import type { SoftwareNavId } from './software-nav'
 
 type Props = {
@@ -15,7 +14,7 @@ type Props = {
   /** Hide outer window chrome (traffic lights) when nested inside hero */
   showWindowChrome?: boolean
   /**
-   * `demo` — marketing sections: offer-scoped sidebar + top bar.
+   * `demo` — marketing sections: offer-scoped sidebar.
    * `app` — hero preview (same chrome, full-width content area).
    */
   presentation?: 'app' | 'demo'
@@ -54,9 +53,8 @@ export default function ProductWorkspaceFrame({
       ) : null}
 
       <div
-        className={`flex min-h-0 flex-col ${isDemo ? 'min-h-[520px] md:min-h-[600px] lg:min-h-[640px]' : 'md:min-h-[420px]'}`}
+        className={`flex min-h-0 flex-col ${isDemo ? 'min-h-[clamp(460px,54vh,780px)]' : 'md:min-h-[420px]'}`}
       >
-        <SoftwareTopBar copy={sw} moduleTitle={moduleTitle} />
         <div className="flex min-h-0 flex-1">
           <SoftwareSidebar
             activeNav={activeNav}
@@ -65,8 +63,14 @@ export default function ProductWorkspaceFrame({
             navScope="offer"
             enableScrollNav={isDemo}
           />
-          <div className="software-workspace-content min-w-0 flex-1 overflow-hidden bg-[var(--software-content)]">
-            {children}
+          <div
+            className={`software-workspace-content flex min-w-0 flex-1 flex-col bg-[var(--software-content)] ${
+              isDemo ? 'min-h-0 overflow-auto' : 'overflow-hidden'
+            }`}
+          >
+            <div className={isDemo ? 'software-demo-module flex min-h-0 flex-1 flex-col' : 'min-h-0'}>
+              {children}
+            </div>
           </div>
         </div>
       </div>

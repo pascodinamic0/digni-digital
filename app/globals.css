@@ -1398,10 +1398,16 @@ img {
   animation-play-state: paused;
 }
 
-/* Next.js DevTools portal: override injected left/top positioning */
+/* Next.js DevTools portal: remove from document/flex flow (vercel/next.js#70675) */
 nextjs-portal {
-  left: unset;
-  top: unset;
+  position: absolute;
+  left: auto;
+  top: auto;
+  width: 0;
+  height: 0;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
 }
 
 /* Route transition hint — thin indeterminate bar (replaces heavy loading UI) */
@@ -1947,13 +1953,7 @@ nextjs-portal {
 
 .software-demo-stage {
   position: relative;
-  min-height: 520px;
-}
-
-@media (min-width: 1024px) {
-  .software-demo-stage {
-    min-height: 640px;
-  }
+  min-height: 0;
 }
 
 .software-demo-stage::before {
@@ -1992,9 +1992,22 @@ nextjs-portal {
 
 .software-product-page .software-demo-stage .software-workspace-content {
   background: var(--software-content);
-  display: flex;
-  flex-direction: column;
-  min-height: 0;
+}
+
+.software-product-page .software-demo-stage .software-demo-module {
+  flex: 1 1 auto;
+  min-height: clamp(380px, 48vh, 680px);
+}
+
+.software-product-page .software-demo-stage .software-demo-module > .software-inbox-app,
+.software-product-page .software-demo-stage .software-demo-module > .relative {
+  flex: 1 1 auto;
+  min-height: inherit;
+}
+
+.software-product-page .software-demo-module .overflow-x-auto {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(var(--accent-rgb), 0.35) transparent;
 }
 
 .software-inbox-app {
