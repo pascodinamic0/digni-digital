@@ -162,27 +162,50 @@ export function scrollToFlowTargets(targets: readonly string[]): void {
   }
 }
 
-export function getJourneyDemosIntro(locale: Language): { title: string; subtitle: string } {
-  const map: Record<Language, { title: string; subtitle: string }> = {
+export function getJourneyDemosIntro(locale: Language): {
+  badge: string
+  title: string
+  titleHighlight: string
+  subtitle: string
+} {
+  const map: Record<
+    Language,
+    { badge: string; title: string; titleHighlight: string; subtitle: string }
+  > = {
     en: {
-      title: 'The client journey, live',
-      subtitle: 'Six steps from first touch to post-sale — each block below is the product at that stage.',
+      badge: 'Process',
+      title: 'See how every lead gets handled',
+      titleHighlight: 'from first message to booked call.',
+      subtitle:
+        'Six steps: capture, reply, qualify, book, follow up, and grow. Each demo below shows the live product at that stage.',
     },
     fr: {
-      title: 'Le parcours client, en direct',
-      subtitle: 'Six étapes du premier contact à l’après-vente — chaque bloc ci-dessous montre le produit à ce stade.',
+      badge: 'Processus',
+      title: 'Voyez comment chaque lead est traité',
+      titleHighlight: 'du premier message au rendez-vous réservé.',
+      subtitle:
+        'Six étapes : capturer, répondre, qualifier, réserver, relancer et faire grandir. Chaque démo montre le produit en direct à cette étape.',
     },
     ar: {
-      title: 'رحلة العميل، مباشرة',
-      subtitle: 'ست خطوات من أول تواصل إلى ما بعد البيع — كل قسم يعرض المنتج في تلك المرحلة.',
+      badge: 'العملية',
+      title: 'شاهد كيف يُدار كل عميل محتمل',
+      titleHighlight: 'من أول رسالة إلى موعد محجوز.',
+      subtitle:
+        'ست خطوات: جذب, رد, تأهيل, حجز, متابعة, ونمو. كل عرض أدناه يُظهر المنتج مباشرة في تلك المرحلة.',
     },
     de: {
-      title: 'Die Client Journey, live',
-      subtitle: 'Sechs Schritte vom Erstkontakt bis After-Sales — jeder Block zeigt das Produkt in dieser Phase.',
+      badge: 'Prozess',
+      title: 'So wird jeder Lead bearbeitet',
+      titleHighlight: 'vom ersten Kontakt bis zur Buchung.',
+      subtitle:
+        'Sechs Schritte: erfassen, antworten, qualifizieren, buchen, nachfassen und wachsen. Jede Demo zeigt das Produkt live in dieser Phase.',
     },
     es: {
-      title: 'El recorrido del cliente, en vivo',
-      subtitle: 'Seis pasos del primer contacto al postventa — cada bloque muestra el producto en esa etapa.',
+      badge: 'Proceso',
+      title: 'Así se atiende cada lead',
+      titleHighlight: 'del primer mensaje a la cita agendada.',
+      subtitle:
+        'Seis pasos: captar, responder, calificar, agendar, dar seguimiento y crecer. Cada demo muestra el producto en vivo en esa fase.',
     },
   }
   return map[locale] ?? map.en

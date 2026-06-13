@@ -68,14 +68,22 @@ export type AiEmployeePageTranslations = {
   caseStudy: {
     label: string
     title: string
+    titleHighlight: string
+    subtitle: string
     company: string
     industry: string
+    timeline: string
+    before: { label: string; metric: string; description: string }
+    after: { label: string; metric: string; description: string }
     contextLabel: string
     challengeLabel: string
     solutionLabel: string
     context: string
     challenge: string
     solution: string
+    testimonial: string
+    testimonialAuthor: string
+    testimonialRole: string
     outcomesHeading: string
     results: [ResultLine, ResultLine, ResultLine, ResultLine]
     expandStory: string
@@ -172,7 +180,7 @@ export const aiEmployeePageEn: AiEmployeePageTranslations = {
     titleLine1: 'Install once.',
     titleHighlight: 'Never chase DMs, booking links, or follow ups again.',
     hook:
-      'One done for you system captures, qualifies, books, upsells, and follows up on every paid lead while you run the service. Same ad spend. A pipeline that does not leak.',
+      'One done for you system captures, qualifies, books, upsells, and follows up on every paid lead while you run the service.',
     primaryCta: 'Take the 2 Minute Fit Check',
     footnote: '15 qualified appointments in 30 days, or we work free until you hit it. We take the risk.',
   },
@@ -220,26 +228,26 @@ export const aiEmployeePageEn: AiEmployeePageTranslations = {
     playStoreAriaLabel: 'Get it on Google Play',
   },
   problem: {
-    badge: 'The starving crowd',
-    title: 'The leaky bucket is bleeding your ad spend.',
-    titleHighlight: 'Wait 1 hour and your close chance drops 60%.',
+    badge: 'The problem',
+    title: 'You pay for leads.',
+    titleHighlight: 'Then most never get a reply on time.',
     subtitle:
-      'Research shows that responding to an ad lead within 5 minutes makes you 21x more likely to qualify them. Wait just one hour, and your chances of a sale drop by 60%.',
+      'Inquiries arrive from ads, website chat, SMS, social DMs, and calls—often while your team is busy delivering the work. Without one system to reply, qualify, and book in seconds, messages pile up across scattered inboxes and voicemails. Follow-ups slip. Ad spend keeps running while revenue leaks before anyone on your team sees the lead.',
     stats: [
       {
         value: '40%',
-        label: 'inbound touches unanswered',
-        hint: 'Paid attention evaporates when nobody picks up the thread.',
-      },
-      {
-        value: '78%',
-        label: 'buy from first responder',
-        hint: 'Speed isn’t a nice-to-have, it’s the scoreboard.',
+        label: 'of inbound leads never get a timely reply',
+        hint: 'Typical when intake runs on staff memory instead of one connected system.',
       },
       {
         value: '5 min',
-        label: 'response window',
-        hint: 'Wait too long and the “hot lead” is already talking to someone else.',
+        label: 'is when buyer intent peaks',
+        hint: 'Reply inside this window or qualification odds drop fast (HBR lead-response research).',
+      },
+      {
+        value: '78%',
+        label: 'choose whoever answers first',
+        hint: 'The competitor wins the conversation while your team is still on the job.',
       },
     ],
   },
@@ -348,17 +356,35 @@ export const aiEmployeePageEn: AiEmployeePageTranslations = {
   },
   caseStudy: {
     label: 'Proof',
-    title: 'From missed intake to a system that doesn’t sleep, fast.',
+    title: 'A regional clinic stopped leaking',
+    titleHighlight: '$15k in ad spend every month.',
+    subtitle:
+      'Real numbers from a healthcare partner—what broke in intake, what changed in 18 hours, and what stayed fixed after go-live.',
     company: 'Regional Medical Center',
     industry: 'Healthcare',
+    timeline: 'Live in 18 hours',
+    before: {
+      label: 'Before',
+      metric: '40%',
+      description: 'Of leads got no timely response. Ad spend kept burning while the pipeline cooled.',
+    },
+    after: {
+      label: 'After',
+      metric: '100%',
+      description: 'Every inquiry answered fast—with a clear next step, around the clock.',
+    },
     contextLabel: 'Context',
     challengeLabel: 'Challenge',
     solutionLabel: 'Solution',
     context: '$15k/month in ads, but intake couldn’t keep up with volume or speed.',
     challenge: 'Roughly 40% of leads weren’t getting a timely response. Pipeline cooled. Revenue leaked.',
     solution:
-      'A done-with-you intelligent system live in 18 hours, answering, qualifying, booking, and following up with a single operating view.',
-    outcomesHeading: 'Outcomes',
+      'A done-with-you intelligent system live in 18 hours—answering, qualifying, booking, and following up from one operating view.',
+    testimonial:
+      'We were spending $15k a month on ads and still losing people in the first mile. Now every lead gets answered immediately—and our team finally sees one pipeline.',
+    testimonialAuthor: 'Operations Director',
+    testimonialRole: 'Regional Medical Center',
+    outcomesHeading: 'Measured outcomes',
     results: [
       { metric: '100%', description: 'Every lead answered, fast, with a consistent next step.' },
       { metric: 'Zero', description: 'No more “we’ll call them back” gaps in the first mile.' },
@@ -436,7 +462,7 @@ export const aiEmployeePageFr: AiEmployeePageTranslations = {
     titleLine1: 'Une fois installée.',
     titleHighlight: 'Plus jamais de répondre aux DM, envoyer un lien, ni relancer à la main.',
     hook:
-      'La seule boucle clé en main qui capte, qualifie, réserve, relance et fait monter le panier sur chaque lead payant pendant que vous livrez le service. Même budget pub, zéro fuite.',
+      'La seule boucle clé en main qui capte, qualifie, réserve, relance et fait monter le panier sur chaque lead payant pendant que vous livrez le service.',
     primaryCta: 'Faire le test de compatibilité (2 min)',
     footnote:
       '15 RDV qualifiés en 30 jours, sinon on travaille gratuitement jusqu’au seuil. Le risque est pour nous.',
@@ -483,26 +509,26 @@ export const aiEmployeePageFr: AiEmployeePageTranslations = {
     playStoreAriaLabel: 'Disponible sur Google Play',
   },
   problem: {
-    badge: 'La foule affamée',
-    title: 'La fuite fait saigner votre budget pub.',
-    titleHighlight: 'Attendez 1 h et vos chances de vente chutent de 60 %.',
+    badge: 'Le problème',
+    title: 'Vous payez pour des leads.',
+    titleHighlight: 'Puis la plupart n’obtiennent pas de réponse à temps.',
     subtitle:
-      'Répondre en 5 minutes multiplie par 21 vos chances de qualifier. Attendez une heure, et vos chances de conclure chutent de 60 %.',
+      'Les demandes arrivent des pubs, du chat web, des SMS, des DM et des appels—souvent pendant que l’équipe livre le service. Sans un système unique pour répondre, qualifier et réserver en quelques secondes, les messages s’empilent dans des boîtes dispersées. Les relances glissent. Le budget pub tourne pendant que le revenu fuit avant qu’un lead soit vu.',
     stats: [
       {
-        value: '40%',
-        label: 'des entrées ne reçoivent pas de réponse',
-        hint: 'L’attention payée s’évapore si personne ne prend le fil.',
-      },
-      {
-        value: '78%',
-        label: 'achètent chez celui qui répond en premier',
-        hint: 'La vitesse n’est pas un bonus, c’est le classement.',
+        value: '40 %',
+        label: 'des leads sans réponse à temps',
+        hint: 'Typique quand l’intake repose sur la mémoire de l’équipe, pas sur un système connecté.',
       },
       {
         value: '5 min',
-        label: 'c’est la fenêtre qui compte',
-        hint: 'Trop tard et le lead brûlant parle déjà à un concurrent.',
+        label: 'c’est le pic d’intention d’achat',
+        hint: 'Répondez dans cette fenêtre ou les chances de qualifier chutent (étude HBR).',
+      },
+      {
+        value: '78 %',
+        label: 'choisissent celui qui répond en premier',
+        hint: 'Le concurrent gagne le fil pendant que votre équipe est encore en prestation.',
       },
     ],
   },
@@ -611,17 +637,35 @@ export const aiEmployeePageFr: AiEmployeePageTranslations = {
   },
   caseStudy: {
     label: 'Preuve',
-    title: 'D’une prise en charge ratée à un système qui ne dort pas, vite.',
+    title: 'Une clinique régionale a stoppé la fuite de',
+    titleHighlight: '15 k$/mois de budget pub.',
+    subtitle:
+      'Chiffres réels d’un partenaire santé—ce qui bloquait à l’intake, ce qui a changé en 18 h, et ce qui tient après la mise en ligne.',
     company: 'Centre médical régional',
     industry: 'Santé',
+    timeline: 'En ligne en 18 h',
+    before: {
+      label: 'Avant',
+      metric: '40 %',
+      description: 'Des leads sans réponse rapide. La pub tournait pendant que le pipeline refroidissait.',
+    },
+    after: {
+      label: 'Après',
+      metric: '100 %',
+      description: 'Chaque demande traitée vite—avec une prochaine étape claire, 24 h/24.',
+    },
     contextLabel: 'Contexte',
     challengeLabel: 'Défi',
     solutionLabel: 'Solution',
     context: '15 k$/mois de pub, mais l’intake ne suivait ni le volume ni la vitesse.',
     challenge: 'Environ 40 % des leads sans réponse rapide. Pipeline tiède. Revenu qui fuit.',
     solution:
-      'Système intelligent clé en main en 18 h, réponse, qualification, booking et relances avec une vue unique.',
-    outcomesHeading: 'Résultats',
+      'Système intelligent clé en main en 18 h—réponse, qualification, booking et relances depuis une vue unique.',
+    testimonial:
+      'On dépensait 15 k$/mois en pub et on perdait encore des gens dès la première étape. Maintenant chaque lead est traité tout de suite—et l’équipe voit enfin un seul pipeline.',
+    testimonialAuthor: 'Directeur des opérations',
+    testimonialRole: 'Centre médical régional',
+    outcomesHeading: 'Résultats mesurés',
     results: [
       { metric: '100 %', description: 'Chaque lead traité vite, avec une prochaine étape claire.' },
       { metric: 'Zéro', description: 'Plus de trous du type « on les rappellera » au début du tunnel.' },
@@ -700,7 +744,7 @@ export const aiEmployeePageDe: AiEmployeePageTranslations = {
     titleLine1: 'Einmal installiert.',
     titleHighlight: 'Nie wieder DMs beantworten, Buchungslinks schicken oder nachfassen.',
     hook:
-      'Der einzige Done for you Loop, der jeden bezahlten Lead erfasst, qualifiziert, bucht, nachfasst und Upsell fährt, während Sie den Service liefern. Gleiches Werbebudget, keine Lecks.',
+      'Der einzige Done for you Loop, der jeden bezahlten Lead erfasst, qualifiziert, bucht, nachfasst und Upsell fährt, während Sie den Service liefern.',
     primaryCta: '2 Minuten Passungstest starten',
     footnote:
       '15 qualifizierte Termine in 30 Tagen, oder wir arbeiten gratis, bis Sie sie haben. Das Risiko tragen wir.',
@@ -747,26 +791,26 @@ export const aiEmployeePageDe: AiEmployeePageTranslations = {
     playStoreAriaLabel: 'Bei Google Play laden',
   },
   problem: {
-    badge: 'Das Muster, das wir immer wieder sehen',
-    title: 'Wachstum scheitert nicht am Werbekonto.',
-    titleHighlight: 'Es scheitert nach dem Klick.',
+    badge: 'Das Problem',
+    title: 'Sie zahlen für Leads.',
+    titleHighlight: 'Und die meisten erhalten keine rechtzeitige Antwort.',
     subtitle:
-      'Wenn Pipelines in Postfächern, Zetteln und Kopfwissen leben, gibt es Lecks, auch mit gutem Positioning. Der Feind sind nicht „schlechte Leads“. Es ist ein System, das noch von 24/7-Verfügbarkeit abhängt.',
+      'Anfragen kommen aus Anzeigen, Chat, SMS, DMs und Anrufen—oft während Ihr Team den Service liefert. Ohne ein System, das in Sekunden antwortet, qualifiziert und bucht, stapeln sich Nachrichten in verstreuten Postfächern. Follow-ups rutschen durch. Werbebudget läuft weiter, während Umsatz verloren geht, bevor jemand den Lead sieht.',
     stats: [
       {
         value: '40%',
-        label: 'der Eingänge unbeantwortet',
-        hint: 'Bezahlte Aufmerksamkeit verpufft, wenn niemand den Faden aufnimmt.',
-      },
-      {
-        value: '78%',
-        label: 'kaufen beim Schnellsten',
-        hint: 'Geschwindigkeit ist kein Nice-to-have, sie ist die Punktzahl.',
+        label: 'der Leads ohne zeitnahe Antwort',
+        hint: 'Typisch, wenn Intake im Kopf der Mitarbeiter statt in einem System lebt.',
       },
       {
         value: '5 Min',
-        label: 'ist das relevante Fenster',
-        hint: 'Zu spät und der heiße Lead spricht schon woanders.',
+        label: 'ist das Fenster höchster Kaufabsicht',
+        hint: 'Antworten Sie darin, sonst sinken Qualifizierungs-Chancen stark (HBR-Studie).',
+      },
+      {
+        value: '78%',
+        label: 'wählen, wer zuerst antwortet',
+        hint: 'Der Wettbewerber gewinnt das Gespräch, während Ihr Team noch im Einsatz ist.',
       },
     ],
   },
@@ -875,17 +919,35 @@ export const aiEmployeePageDe: AiEmployeePageTranslations = {
   },
   caseStudy: {
     label: 'Beweis',
-    title: 'Von verpasster Annahme zu einem System, das nicht schläft, schnell.',
+    title: 'Eine regionale Klinik stoppte das Leck von',
+    titleHighlight: '15k$/Monat Werbebudget.',
+    subtitle:
+      'Echte Zahlen eines Gesundheitspartners—was in der Annahme brach, was sich in 18 Stunden änderte und nach Go-live hält.',
     company: 'Regionales medizinisches Zentrum',
     industry: 'Gesundheit',
+    timeline: 'In 18 Stunden live',
+    before: {
+      label: 'Vorher',
+      metric: '40%',
+      description: 'Der Leads ohne zeitnahe Antwort. Werbung lief, während die Pipeline abkühlte.',
+    },
+    after: {
+      label: 'Nachher',
+      metric: '100%',
+      description: 'Jede Anfrage schnell beantwortet—mit klarem nächsten Schritt, rund um die Uhr.',
+    },
     contextLabel: 'Kontext',
     challengeLabel: 'Herausforderung',
     solutionLabel: 'Lösung',
     context: '15k$/Monat Werbung, aber die Annahme kam weder mit Volumen noch Tempo nach.',
     challenge: 'Etwa 40 % der Leads ohne zeitnahe Antwort. Pipeline kühlte. Umsatz floss ab.',
     solution:
-      'Intelligentes System in 18 Stunden live, antworten, qualifizieren, buchen, nachfassen mit einer Betriebsansicht.',
-    outcomesHeading: 'Ergebnisse',
+      'Intelligentes System in 18 Stunden live—antworten, qualifizieren, buchen und nachfassen aus einer Betriebsansicht.',
+    testimonial:
+      'Wir gaben 15k$/Monat für Werbung aus und verloren trotzdem Leute in der ersten Meile. Jetzt wird jeder Lead sofort beantwortet—und das Team sieht endlich eine Pipeline.',
+    testimonialAuthor: 'Betriebsleiter',
+    testimonialRole: 'Regionales medizinisches Zentrum',
+    outcomesHeading: 'Gemessene Ergebnisse',
     results: [
       { metric: '100%', description: 'Jeder Lead schnell bedient, mit klarem nächsten Schritt.' },
       { metric: 'Null', description: 'Keine „rufen wir zurück“-Lücken mehr am Anfang.' },
@@ -964,7 +1026,7 @@ export const aiEmployeePageEs: AiEmployeePageTranslations = {
     titleLine1: 'Instálalo una vez.',
     titleHighlight: 'Nunca más contestar DMs, mandar enlaces de reserva ni perseguir seguimientos.',
     hook:
-      'El único loop llave en mano que captura, califica, agenda, hace upsell y da seguimiento a cada lead pagado mientras tú entregas el servicio. Mismo gasto en anuncios, pipeline sin fugas.',
+      'El único loop llave en mano que captura, califica, agenda, hace upsell y da seguimiento a cada lead pagado mientras tú entregas el servicio.',
     primaryCta: 'Hacer el test de compatibilidad (2 min)',
     footnote:
       '15 citas calificadas en 30 días, o trabajamos gratis hasta lograrlas. El riesgo es nuestro.',
@@ -1011,26 +1073,26 @@ export const aiEmployeePageEs: AiEmployeePageTranslations = {
     playStoreAriaLabel: 'Disponible en Google Play',
   },
   problem: {
-    badge: 'El patrón que vemos una y otra vez',
-    title: 'El crecimiento no falla en los anuncios.',
-    titleHighlight: 'Falla después del clic.',
+    badge: 'El problema',
+    title: 'Pagas por leads.',
+    titleHighlight: 'Y casi nadie recibe respuesta a tiempo.',
     subtitle:
-      'Cuando el embudo vive en bandejas, notas y conocimiento tribal, hay fugas, incluso con buen posicionamiento. El enemigo no son “malos leads”. Es un sistema que aún depende de que haya gente disponible 24/7.',
+      'Las consultas llegan de anuncios, chat web, SMS, DMs y llamadas—a menudo mientras tu equipo entrega el servicio. Sin un sistema que responda, califique y agende en segundos, los mensajes se acumulan en bandejas dispersas. Los seguimientos se pierden. El gasto en anuncios sigue mientras el ingreso se fuga antes de que alguien vea el lead.',
     stats: [
       {
         value: '40%',
-        label: 'de entradas sin respuesta',
-        hint: 'La atención pagada se evapora si nadie recoge el hilo.',
-      },
-      {
-        value: '78%',
-        label: 'compra quien responde primero',
-        hint: 'La velocidad no es un extra, es la tabla de posiciones.',
+        label: 'de leads sin respuesta a tiempo',
+        hint: 'Típico cuando la captación depende de la memoria del equipo, no de un sistema conectado.',
       },
       {
         value: '5 min',
-        label: 'es la ventana que importa',
-        hint: 'Tarde y el lead caliente ya habla con otro.',
+        label: 'es cuando la intención de compra es máxima',
+        hint: 'Responde en esa ventana o caen las probabilidades de calificar (estudio HBR).',
+      },
+      {
+        value: '78%',
+        label: 'eligen a quien responde primero',
+        hint: 'El competidor gana la conversación mientras tu equipo sigue en el trabajo.',
       },
     ],
   },
@@ -1139,17 +1201,35 @@ export const aiEmployeePageEs: AiEmployeePageTranslations = {
   },
   caseStudy: {
     label: 'Prueba',
-    title: 'De captación fallida a un sistema que no duerme, rápido.',
+    title: 'Una clínica regional dejó de perder',
+    titleHighlight: '$15k/mes en inversión publicitaria.',
+    subtitle:
+      'Cifras reales de un socio sanitario—qué falló en captación, qué cambió en 18 h y qué se mantuvo tras el lanzamiento.',
     company: 'Centro médico regional',
     industry: 'Salud',
+    timeline: 'En vivo en 18 h',
+    before: {
+      label: 'Antes',
+      metric: '40%',
+      description: 'De leads sin respuesta a tiempo. Los anuncios seguían mientras el embudo se enfriaba.',
+    },
+    after: {
+      label: 'Después',
+      metric: '100%',
+      description: 'Cada consulta atendida rápido—con un siguiente paso claro, las 24 horas.',
+    },
     contextLabel: 'Contexto',
     challengeLabel: 'Reto',
     solutionLabel: 'Solución',
     context: '15k$/mes en anuncios, pero la captación no seguía volumen ni velocidad.',
     challenge: 'Cerca del 40 % de leads sin respuesta a tiempo. Embudo tibio. Ingreso fugado.',
     solution:
-      'Sistema inteligente en 18 h en vivo, responde, califica, agenda y hace seguimiento con una sola vista.',
-    outcomesHeading: 'Resultados',
+      'Sistema inteligente en 18 h en vivo—responde, califica, agenda y hace seguimiento desde una sola vista.',
+    testimonial:
+      'Gastábamos 15k$/mes en anuncios y aún perdíamos gente en la primera milla. Ahora cada lead recibe respuesta al instante—y el equipo ve por fin un solo embudo.',
+    testimonialAuthor: 'Director de operaciones',
+    testimonialRole: 'Centro médico regional',
+    outcomesHeading: 'Resultados medidos',
     results: [
       { metric: '100%', description: 'Cada lead atendido rápido, con siguiente paso claro.' },
       { metric: 'Cero', description: 'Sin huecos de “los llamamos luego” al inicio.' },
@@ -1228,7 +1308,7 @@ export const aiEmployeePageAr: AiEmployeePageTranslations = {
     titleLine1: 'ثبّتها مرة.',
     titleHighlight: 'ولن ترد على الرسائل أو ترسل روابط حجز أو تلاحق متابعة يدوياً.',
     hook:
-      'الحلقة الوحيدة الجاهزة التي تلتقط وتؤهل وتحجز وترفع القيمة وتتابع كل عميل مدفوع وأنت تقدّم الخدمة. نفس الإنفاق على الإعلانات، خط بلا تسرّب.',
+      'الحلقة الوحيدة الجاهزة التي تلتقط وتؤهل وتحجز وترفع القيمة وتتابع كل عميل مدفوع وأنت تقدّم الخدمة.',
     primaryCta: 'ابدأ اختبار الملاءمة (دقيقتان)',
     footnote: '15 موعداً مؤهلاً خلال 30 يوماً، أو نعمل مجاناً حتى تحققها. المخاطرة علينا.',
   },
@@ -1274,26 +1354,26 @@ export const aiEmployeePageAr: AiEmployeePageTranslations = {
     playStoreAriaLabel: 'احصل عليه من Google Play',
   },
   problem: {
-    badge: 'النمط الذي نراه يتكرر',
-    title: 'النمو لا يتعثر في الإعلان.',
-    titleHighlight: 'يتعثر بعد النقرة.',
+    badge: 'المشكلة',
+    title: 'أنت تدفع مقابل العملاء.',
+    titleHighlight: 'ومعظمهم لا يحصلون على رد في الوقت المناسب.',
     subtitle:
-      'عندما يعيش مسار العمل في صناديق البريد والملاحظات والمعرفة الشفهية، تحدث تسرّبات, حتى مع تموضع قوي. العدو ليس «عملاء سيئون». بل نظام ما زال يعتمد على توافر بشري على مدار الساعة.',
+      'تصل الاستفسارات من الإعلانات والدردشة والرسائل النصية والرسائل الخاصة والمكالمات—غالباً بينما فريقك يقدّم الخدمة. بدون نظام واحد يرد ويؤهل ويحجز خلال ثوانٍ, تتراكم الرسائل في صناديق متفرقة. تتسرّب المتابعات. يستمر إنفاق الإعلانات بينما يضيع الإيراد قبل أن يرى أحد العميل المحتمل.',
     stats: [
       {
         value: '40٪',
-        label: 'من الاتصالات دون رد',
-        hint: 'الاهتمام المدفوع يضيع إذا لم يلتقط أحد الخيط.',
-      },
-      {
-        value: '78٪',
-        label: 'يشتري من يرد أولاً',
-        hint: 'السرعة ليست رفاهية, إنها الميزان.',
+        label: 'من العملاء المحتملين دون رد في الوقت المناسب',
+        hint: 'شائع عندما يعتمد الاستقبال على ذاكرة الفريق لا على نظام متصل.',
       },
       {
         value: '5 د',
-        label: 'هذه النافذة الحاسمة',
-        hint: 'التأخير يعني أن العميل الساخن يتحدث لمنافس.',
+        label: 'ذروة نية الشراء',
+        hint: 'رد خلال هذه النافذة وإلا تتراجع فرص التأهيل (دراسة HBR).',
+      },
+      {
+        value: '78٪',
+        label: 'يختارون من يرد أولاً',
+        hint: 'المنافس يفوز بالمحادثة بينما فريقك ما زال في الميدان.',
       },
     ],
   },
@@ -1402,17 +1482,35 @@ export const aiEmployeePageAr: AiEmployeePageTranslations = {
   },
   caseStudy: {
     label: 'دليل',
-    title: 'من استقبال مفقود إلى نظام لا ينام, بسرعة.',
+    title: 'عيادة إقليمية أوقفت تسرّب',
+    titleHighlight: '15 ألف دولار شهرياً من ميزانية الإعلانات.',
+    subtitle:
+      'أرقام حقيقية من شريك رعاية صحية—ما تعطّل في الاستقبال, وما تغيّر خلال 18 ساعة, وما بقي ثابتاً بعد التشغيل.',
     company: 'مركز طبي إقليمي',
     industry: 'رعاية صحية',
+    timeline: 'تشغيل خلال 18 ساعة',
+    before: {
+      label: 'قبل',
+      metric: '40٪',
+      description: 'من العملاء المحتملين دون رد آنٍ. الإعلانات استمرت بينما برد المسار.',
+    },
+    after: {
+      label: 'بعد',
+      metric: '100٪',
+      description: 'كل استفسار يُجاب بسرعة—بخطوة تالية واضحة, على مدار الساعة.',
+    },
     contextLabel: 'السياق',
     challengeLabel: 'التحدي',
     solutionLabel: 'الحل',
     context: '15 ألف دولار شهرياً إعلانات, لكن الاستقبال لم يواكب الحجم ولا السرعة.',
     challenge: 'نحو 40٪ من العملاء المحتملين دون رد آنٍ. مسار بارد. إيراد يتسرّب.',
     solution:
-      'نظام ذكي جاهز خلال 18 ساعة, رد وتأهيل وحجز ومتابعة بمنظر تشغيلي واحد.',
-    outcomesHeading: 'النتائج',
+      'نظام ذكي جاهز خلال 18 ساعة—رد وتأهيل وحجز ومتابعة من منظر تشغيلي واحد.',
+    testimonial:
+      'كنا ننفق 15 ألف دولار شهرياً على الإعلانات وما زلنا نخسر الناس في الميل الأول. الآن يُجاب كل عميل محتمل فوراً—والفريق يرى أخيراً مساراً واحداً.',
+    testimonialAuthor: 'مدير العمليات',
+    testimonialRole: 'مركز طبي إقليمي',
+    outcomesHeading: 'نتائج مُقاسة',
     results: [
       { metric: '100٪', description: 'كل عميل محتمل يُخدم بسرعة, بخطوة تالية واضحة.' },
       { metric: 'صفر', description: 'لا فجوات «سنعاود الاتصال» في البداية.' },

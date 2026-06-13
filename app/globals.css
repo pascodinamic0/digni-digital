@@ -1865,9 +1865,9 @@ nextjs-portal {
 }
 
 .software-product-page .software-hero-headline {
-  font-size: clamp(2.125rem, 4.2vw + 0.65rem, 3.5rem);
-  line-height: 1.04;
-  letter-spacing: -0.035em;
+  font-size: clamp(1.625rem, 1rem + 2vw, 2.375rem);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
 }
 
 .software-product-page .software-hero-line {
@@ -1876,8 +1876,8 @@ nextjs-portal {
 
 .software-product-page .software-hero-highlight {
   display: block;
-  margin-top: 0.3em;
-  letter-spacing: -0.03em;
+  margin-top: 0.2em;
+  letter-spacing: -0.025em;
   background: linear-gradient(
     125deg,
     var(--software-text) 0%,
@@ -1995,10 +1995,6 @@ nextjs-portal {
   display: flex;
   flex-direction: column;
   min-height: 0;
-}
-
-.ai-employee-hero {
-  background: var(--software-canvas);
 }
 
 .software-inbox-app {

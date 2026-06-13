@@ -8,6 +8,8 @@ type SectionHeadingProps = {
   highlightClassName?: string
   supporting?: string
   align?: 'left' | 'center'
+  /** `stacked` breaks before highlight; `inline` keeps highlight on the same line flow. */
+  titleLayout?: 'stacked' | 'inline'
   className?: string
   id?: string
 }
@@ -19,6 +21,7 @@ export default function SectionHeading({
   highlightClassName = 'gradient-text-brand',
   supporting,
   align = 'left',
+  titleLayout = 'stacked',
   className = '',
   id,
 }: SectionHeadingProps) {
@@ -30,10 +33,17 @@ export default function SectionHeading({
       <h2 className="type-h2 font-display font-bold text-text">
         {title}
         {titleHighlight ? (
-          <>
-            <br />
-            <span className={highlightClassName}>{titleHighlight}</span>
-          </>
+          titleLayout === 'inline' ? (
+            <>
+              {' '}
+              <span className={highlightClassName}>{titleHighlight}</span>
+            </>
+          ) : (
+            <>
+              <br />
+              <span className={highlightClassName}>{titleHighlight}</span>
+            </>
+          )
         ) : null}
       </h2>
       {supporting ? (

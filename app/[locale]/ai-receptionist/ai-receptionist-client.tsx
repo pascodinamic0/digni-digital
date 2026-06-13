@@ -8,8 +8,6 @@ import {
   AiEmployeeHeroSection,
   ProblemStatsSection,
   TimeToValueSection,
-  CapabilitiesSection,
-  DreamOutcomeSection,
   ProofSection,
   QualificationSection,
   ClientOutcomesSection,
@@ -65,11 +63,7 @@ export function AIReceptionistClient({ params, searchParams, showTaskQueueDemo }
       {/* Problem */}
       <ProblemStatsSection />
 
-      {/* Solution — speed + capabilities */}
-      <TimeToValueSection />
-      <CapabilitiesSection />
-      <DreamOutcomeSection />
-
+      {/* Proof */}
       <ProofSection />
 
       {/* Process — product demos */}
@@ -84,6 +78,7 @@ export function AIReceptionistClient({ params, searchParams, showTaskQueueDemo }
       <BonusStackSection />
       <GuaranteeSection />
       <MobileAppBannerSection />
+      <TimeToValueSection />
       <PricingSection
         checkoutRedirectingLabel={ctaT.checkoutRedirecting}
         continueToSecureCheckoutLabel={ctaT.continueToSecureCheckout}
