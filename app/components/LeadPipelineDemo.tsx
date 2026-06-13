@@ -136,13 +136,14 @@ export default function LeadPipelineDemo() {
             </div>
           </div>
 
-          <div className="relative flex min-h-[500px] flex-col p-3 md:h-[500px] md:p-4">
-            <p className="text-[10px] text-muted text-center mb-2 shrink-0">{t.dragHint}</p>
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 md:gap-3 flex-1 min-h-0 auto-rows-[minmax(0,1fr)]">
+          <div className="relative flex min-h-[420px] flex-col p-3 md:min-h-[460px] md:p-4">
+            <p className="mb-2 shrink-0 text-center text-[10px] text-muted">{t.dragHint}</p>
+            <div className="min-h-0 flex-1 overflow-x-auto overflow-y-hidden pb-1">
+              <div className="flex h-full min-h-[360px] min-w-max gap-2 md:gap-3">
               {t.columns.map((col, columnIndex) => (
                 <div
                   key={col.id}
-                  className="min-w-0 min-h-0 flex flex-col h-full"
+                  className="flex h-full w-[188px] shrink-0 flex-col sm:w-[204px] md:w-[220px]"
                   onDragOver={onDragOver}
                   onDrop={(e) => onDrop(e, columnIndex)}
                 >
@@ -190,6 +191,7 @@ export default function LeadPipelineDemo() {
                   </div>
                 </div>
               ))}
+              </div>
             </div>
           </div>
         </motion.div>

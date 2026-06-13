@@ -45,7 +45,6 @@ export type AiEmployeePageTranslations = {
     subtitle: string
     statBig: string
     statSmall: string
-    cta: string
   }
   qualification: {
     badge: string
@@ -91,6 +90,7 @@ export type AiEmployeePageTranslations = {
   }
   pricing: {
     title: string
+    titleHighlight: string
     subtitle: string
     /** Shown on the product page before assessment (no dollar amounts). */
     assessmentNote: string
@@ -194,31 +194,31 @@ export const aiEmployeePageEn: AiEmployeePageTranslations = {
     badge: 'The dream outcome',
     title: 'Same 100 leads. A different scoreboard.',
     subtitle:
-      'The leaky bucket closes ~1 in 100. The loop closes 95—with referrals compounding the batch.',
+      'The leaky bucket closes ~1 in 100. The loop closes 95, with referrals compounding the batch.',
     beforeLabel: 'The leaky bucket',
     beforeMetric: '~1 / 100',
-    beforeHint: 'Closed after manual chaos, voicemail, and slow follow-up.',
+    beforeHint: 'Closed after manual chaos, voicemail, and slow follow up.',
     arrowLabel: 'With the loop',
     afterLabel: 'The loop',
     afterMetric: '95 / 100',
     referralLine: '+23 referrals from the same batch',
-    afterHint: 'Captured, qualified, booked, and followed up—24/7.',
+    afterHint: 'Captured, qualified, booked, and followed up, 24/7.',
   },
   denominator: {
     badge: 'Value equation · denominator',
-    title: 'Instant speed. Near-zero effort.',
+    title: 'Instant speed. Near zero effort.',
     subtitle:
-      'We shrink time delay and effort sacrifice—so the system runs while you run the business.',
+      'We shrink time delay and effort sacrifice, so the system runs while you run the business.',
     pillarSpeed: 'Instant response',
     pillarSpeedHint: 'Under 2 seconds on every inbound touch. No voicemail lottery.',
-    pillarDeploy: '48-hour live deployment',
-    pillarDeployHint: 'We implement, connect channels, and go live—not another tool to babysit.',
+    pillarDeploy: '48 hour live deployment',
+    pillarDeployHint: 'We implement, connect channels, and go live, not another tool to babysit.',
     pillarEffort: 'Frictionless control',
     pillarEffortHint: 'Mobile app + automations. You approve; the loop executes.',
   },
   mobileApp: {
     title: 'Run your pipeline on the go with the AI Employee mobile app.',
-    bullet1: 'Get real-time notifications straight to your phone',
+    bullet1: 'Get real time notifications straight to your phone',
     bullet2: 'Chat with your clients and leads right from the app',
     tagline: 'Never miss another opportunity again.',
     imageAlt: 'AI Employee mobile app on a phone showing pipeline metrics and recent activity',
@@ -232,7 +232,7 @@ export const aiEmployeePageEn: AiEmployeePageTranslations = {
     title: 'You pay for leads.',
     titleHighlight: 'Then most never get a reply on time.',
     subtitle:
-      'Inquiries arrive from ads, website chat, SMS, social DMs, and calls—often while your team is busy delivering the work. Without one system to reply, qualify, and book in seconds, messages pile up across scattered inboxes and voicemails. Follow-ups slip. Ad spend keeps running while revenue leaks before anyone on your team sees the lead.',
+      'People reach out through your ads, website, texts, and phone, while your team is busy on the job. Nobody answers fast enough. The lead moves on. You keep paying for clicks, but the booking goes to whoever replied first.',
     stats: [
       {
         value: '40%',
@@ -242,7 +242,7 @@ export const aiEmployeePageEn: AiEmployeePageTranslations = {
       {
         value: '5 min',
         label: 'is when buyer intent peaks',
-        hint: 'Reply inside this window or qualification odds drop fast (HBR lead-response research).',
+        hint: 'Reply inside this window or qualification odds drop fast (HBR lead response research).',
       },
       {
         value: '78%',
@@ -260,27 +260,27 @@ export const aiEmployeePageEn: AiEmployeePageTranslations = {
     items: [
       {
         title: 'Instant response',
-        body: 'Every lead gets a fast, on-brand reply, so you stop donating wins to silence.',
+        body: 'Every lead gets a fast, on brand reply, so you stop donating wins to silence.',
       },
       {
         title: 'Smart qualification',
-        body: 'The right questions so only serious buyers reach your calendar, fewer tire-kickers, more conversations that close.',
+        body: 'The right questions so only serious buyers reach your calendar, fewer tire kickers, more conversations that close.',
       },
       {
         title: 'Auto booking',
         body: 'They pick a time. Your calendar fills. No “who owns this thread?” handoffs.',
       },
       {
-        title: 'Follow-up that runs',
+        title: 'Follow up that runs',
         body: 'Persistent, polite, consistent, until they book or opt out. No more “I forgot.”',
       },
       {
-        title: 'Multi-channel, one brain',
+        title: 'Multi channel, one brain',
         body: 'Calls, WhatsApp, email, one inbox, one truth, one next step.',
       },
       {
         title: 'Revenue recovery',
-        body: 'Wake cold interest, tighten no-shows, and nudge toward repeat revenue, not one-off wins.',
+        body: 'Wake cold interest, tighten no shows, and nudge toward repeat revenue, not one off wins.',
       },
     ],
   },
@@ -288,23 +288,22 @@ export const aiEmployeePageEn: AiEmployeePageTranslations = {
     badge: 'Time to value',
     title: 'Live in 48 hours',
     subtitle:
-      'We’re not here to hand you another tool to babysit. We implement the workflow, connect the channels, and run the system with you, so you stop relying on staff memory.',
+      'Done for you, not DIY. We connect your channels and run capture, qualify, book, and follow up on every paid lead.',
     statBig: '48h',
     statSmall: 'From decision to operational',
-    cta: 'Book Your Growth System Audit',
   },
   qualification: {
     badge: 'Fit matters',
     title: 'Built for',
-    titleHighlight: 'high-end service businesses',
+    titleHighlight: 'high end service businesses',
     forHeading: 'Who this is for',
     forItems: [
       'You sell a premium service and care about retention, not just leads',
       'You run paid acquisition (or plan to) and need intake to keep pace',
-      'You sell through appointments, consults, or high-trust conversations',
-      'Growth feels chaotic: tools, people, and follow-up don’t line up',
+      'You sell through appointments, consults, or high trust conversations',
+      'Growth feels chaotic: tools, people, and follow up don’t line up',
       'You want scaling that feels calm, not louder, busier, riskier',
-      'You’re willing to partner on a system, not buy shelf-ware',
+      'You’re willing to partner on a system, not buy shelf ware',
     ],
     notHeading: 'Not the right fit',
     notItems: [
@@ -317,11 +316,11 @@ export const aiEmployeePageEn: AiEmployeePageTranslations = {
     ],
   },
   clientOutcomes: {
-    badge: 'How it works',
+    badge: 'Outcomes',
     title: 'Three outcomes.',
     titleHighlight: 'One system.',
     subtitle:
-      'Capture every inquiry. Convert qualified demand into appointments. Grow with reviews and follow-up.',
+      'Capture every inquiry. Convert qualified demand into appointments. Grow with reviews and follow up.',
     expandTechnical: 'Tap a step to see how it works under the hood',
     collapseTechnical: 'Tap again to collapse details',
     steps: [
@@ -330,7 +329,7 @@ export const aiEmployeePageEn: AiEmployeePageTranslations = {
         body: 'Every inquiry receives a response.',
         technical: [
           'Instant reply on web, SMS, WhatsApp, Instagram, and phone',
-          'One inbox—no scattered threads or voicemail lottery',
+          'One inbox, no scattered threads or voicemail lottery',
           'Leads logged automatically with source and intent',
         ],
       },
@@ -339,15 +338,15 @@ export const aiEmployeePageEn: AiEmployeePageTranslations = {
         body: 'Qualified prospects become appointments.',
         technical: [
           'Smart qualification before your team gets involved',
-          'Self-serve booking into your live calendar',
-          'Confirmations and reminders that cut no-shows',
+          'Self serve booking into your live calendar',
+          'Confirmations and reminders that cut no shows',
         ],
       },
       {
         title: 'Grow',
-        body: 'Reviews, referrals, and follow-up create more revenue.',
+        body: 'Reviews, referrals, and follow up create more revenue.',
         technical: [
-          'Persistent follow-up until they book or opt out',
+          'Persistent follow up until they book or opt out',
           'Review requests after every completed visit',
           'Referral prompts that compound the same lead batch',
         ],
@@ -359,7 +358,7 @@ export const aiEmployeePageEn: AiEmployeePageTranslations = {
     title: 'A regional clinic stopped leaking',
     titleHighlight: '$15k in ad spend every month.',
     subtitle:
-      'Real numbers from a healthcare partner—what broke in intake, what changed in 18 hours, and what stayed fixed after go-live.',
+      'Real numbers from a healthcare partner, what broke in intake, what changed in 18 hours, and what stayed fixed after go live.',
     company: 'Regional Medical Center',
     industry: 'Healthcare',
     timeline: 'Live in 18 hours',
@@ -371,7 +370,7 @@ export const aiEmployeePageEn: AiEmployeePageTranslations = {
     after: {
       label: 'After',
       metric: '100%',
-      description: 'Every inquiry answered fast—with a clear next step, around the clock.',
+      description: 'Every inquiry answered fast, with a clear next step, around the clock.',
     },
     contextLabel: 'Context',
     challengeLabel: 'Challenge',
@@ -379,9 +378,9 @@ export const aiEmployeePageEn: AiEmployeePageTranslations = {
     context: '$15k/month in ads, but intake couldn’t keep up with volume or speed.',
     challenge: 'Roughly 40% of leads weren’t getting a timely response. Pipeline cooled. Revenue leaked.',
     solution:
-      'A done-with-you intelligent system live in 18 hours—answering, qualifying, booking, and following up from one operating view.',
+      'A done with you intelligent system live in 18 hours, answering, qualifying, booking, and following up from one operating view.',
     testimonial:
-      'We were spending $15k a month on ads and still losing people in the first mile. Now every lead gets answered immediately—and our team finally sees one pipeline.',
+      'We were spending $15k a month on ads and still losing people in the first mile. Now every lead gets answered immediately, and our team finally sees one pipeline.',
     testimonialAuthor: 'Operations Director',
     testimonialRole: 'Regional Medical Center',
     outcomesHeading: 'Measured outcomes',
@@ -398,31 +397,31 @@ export const aiEmployeePageEn: AiEmployeePageTranslations = {
     badge: 'Included free',
     title: 'The Growth Accelerator Bundle (Included for free)',
     subtitle:
-      'Solves the next problems you would hit after install—no-show recovery, reputation, and CRM sync—at no extra cost.',
+      'Solves the next problems you would hit after install, no show recovery, reputation, and CRM sync, at no extra cost.',
     includedLabel: 'Included',
     totalValue: '$2,997 in bonuses',
     items: [
       {
-        name: "The 'No-Show' Recovery System",
+        name: "The 'No Show' Recovery System",
         description: 'Automated SMS and email reminder sequences when calls go unanswered or appointments slip.',
         value: '$1,500 Value',
       },
       {
-        name: 'The 5-Star Reputation Engine',
+        name: 'The 5 Star Reputation Engine',
         description: 'Automated Google and Facebook review collection after successful appointments.',
         value: '$997 Value',
       },
       {
         name: 'The CRM Integration Vault',
-        description: '5,000+ app connectors for zero-manual-entry data sync across your stack.',
+        description: '5,000+ app connectors for zero manual entry data sync across your stack.',
         value: '$500 Value',
       },
     ],
   },
   guarantee: {
     badge: 'Conditional service guarantee',
-    title: 'We take the risk—not you.',
-    body: '15 qualified appointments in 30 days—or we work free until you hit it.',
+    title: 'We take the risk, not you.',
+    body: '15 qualified appointments in 30 days, or we work free until you hit it.',
   },
   scarcity: {
     prefix: 'Limited to 5 premium partners per month.',
@@ -431,18 +430,19 @@ export const aiEmployeePageEn: AiEmployeePageTranslations = {
     inlineSuffix: 'premium slots left in {month} · max 5/month',
   },
   pricing: {
-    title: 'Ready when the numbers make sense',
-    subtitle: 'We install one loop—setup plus monthly—only after your fit assessment shows the leak, the upside, and what the system costs.',
+    title: 'See the leak',
+    titleHighlight: 'before you spend a dollar.',
+    subtitle: 'Two minute fit check. One report with the leak, the upside, and all in cost, then you decide.',
     assessmentNote:
-      'Your personalized report spells out what slow follow-up is costing you, what recovery looks like with the loop live, and the all-in investment—before you pay.',
+      'Your personalized report spells out what slow follow up is costing you, what recovery looks like with the loop live, and the all in investment, before you pay.',
     assessmentCta: 'Run the fit assessment',
-    investmentNote: 'Dollar amounts unlock in your results—not on this page.',
+    investmentNote: 'Dollar amounts unlock in your results, not on this page.',
     planName: 'AI Booking Loop',
     limitedLabel: 'Limited partner slots',
     setupFee: '$2,000',
     setupFeeWaivedDisplay: '$0',
     setupLabel: 'Setup',
-    setupFeePromo: 'Setup waived — ends in',
+    setupFeePromo: 'Setup waived, ends in',
     monthlyLabel: 'Monthly',
     price: '$500',
     period: '/mo',
@@ -451,7 +451,7 @@ export const aiEmployeePageEn: AiEmployeePageTranslations = {
   finalCta: {
     title: 'Stop losing leads',
     titleHighlight: 'to silence.',
-    subtitle: 'Book a 30-minute fit call. We map the leak and confirm the loop is right for you.',
+    subtitle: 'Book a 30 minute fit call. We map the leak and confirm the loop is right for you.',
     primaryCta: 'Book a fit call',
   },
 }
@@ -476,7 +476,7 @@ export const aiEmployeePageFr: AiEmployeePageTranslations = {
   dreamOutcome: {
     badge: 'Le résultat rêvé',
     title: 'Les mêmes 100 leads. Un autre tableau.',
-    subtitle: 'La fuite conclut ~1 sur 100. La boucle en conclut 95—avec des parrainages qui composent.',
+    subtitle: 'La fuite conclut ~1 sur 100. La boucle en conclut 95, avec des parrainages qui composent.',
     beforeLabel: 'La fuite',
     beforeMetric: '~1 / 100',
     beforeHint: 'Conclusion après chaos manuel, messagerie vocale et lenteur.',
@@ -484,16 +484,16 @@ export const aiEmployeePageFr: AiEmployeePageTranslations = {
     afterLabel: 'La boucle',
     afterMetric: '95 / 100',
     referralLine: '+23 parrainages sur le même lot',
-    afterHint: 'Capté, qualifié, réservé et relancé—24/7.',
+    afterHint: 'Capté, qualifié, réservé et relancé, 24/7.',
   },
   denominator: {
     badge: 'Équation de valeur · dénominateur',
     title: 'Vitesse instantanée. Effort quasi nul.',
-    subtitle: 'Nous réduisons le délai et l’effort—le système tourne pendant que vous gérez l’entreprise.',
+    subtitle: 'Nous réduisons le délai et l’effort, le système tourne pendant que vous gérez l’entreprise.',
     pillarSpeed: 'Réponse instantanée',
     pillarSpeedHint: 'Moins de 2 secondes sur chaque entrée. Fini la loterie de la messagerie vocale.',
     pillarDeploy: 'Déploiement en 48 h',
-    pillarDeployHint: 'Nous implémentons et mettons en ligne—pas un outil de plus à surveiller.',
+    pillarDeployHint: 'Nous implémentons et mettons en ligne, pas un outil de plus à surveiller.',
     pillarEffort: 'Pilotage sans friction',
     pillarEffortHint: 'App mobile + automatisations. Vous validez ; la boucle exécute.',
   },
@@ -513,7 +513,7 @@ export const aiEmployeePageFr: AiEmployeePageTranslations = {
     title: 'Vous payez pour des leads.',
     titleHighlight: 'Puis la plupart n’obtiennent pas de réponse à temps.',
     subtitle:
-      'Les demandes arrivent des pubs, du chat web, des SMS, des DM et des appels—souvent pendant que l’équipe livre le service. Sans un système unique pour répondre, qualifier et réserver en quelques secondes, les messages s’empilent dans des boîtes dispersées. Les relances glissent. Le budget pub tourne pendant que le revenu fuit avant qu’un lead soit vu.',
+      'Les prospects vous contactent via vos pubs, votre site, vos SMS et votre téléphone, pendant que l’équipe est sur le terrain. Personne ne répond assez vite. Le prospect passe à un concurrent. Vous continuez à payer la pub, mais le contrat part à celui qui a répondu en premier.',
     stats: [
       {
         value: '40 %',
@@ -548,7 +548,7 @@ export const aiEmployeePageFr: AiEmployeePageTranslations = {
         body: 'Les bonnes questions pour que seuls les acheteurs sérieux arrivent sur votre agenda.',
       },
       {
-        title: 'Prise de rendez-vous auto',
+        title: 'Prise de rendez vous auto',
         body: 'Ils choisissent un créneau. Votre agenda se remplit. Fini les transferts flous.',
       },
       {
@@ -556,12 +556,12 @@ export const aiEmployeePageFr: AiEmployeePageTranslations = {
         body: 'Persistantes, polies, cohérentes, jusqu’à réservation ou refus. Plus de « j’ai oublié ».',
       },
       {
-        title: 'Multi-canal, un cerveau',
+        title: 'Multi canal, un cerveau',
         body: 'Appels, WhatsApp, mail, une boîte, une vérité, une prochaine étape.',
       },
       {
         title: 'Récupération de revenu',
-        body: 'Réchauffer l’intérêt froid, réduire les lapins, pousser vers la récurrence, pas le one-shot.',
+        body: 'Réchauffer l’intérêt froid, réduire les lapins, pousser vers la récurrence, pas le one shot.',
       },
     ],
   },
@@ -569,10 +569,9 @@ export const aiEmployeePageFr: AiEmployeePageTranslations = {
     badge: 'Délai jusqu’à la valeur',
     title: 'En ligne en 48 h',
     subtitle:
-      'Nous ne vous donnons pas un outil de plus à surveiller. Nous implémentons le flux, connectons les canaux et faisons tourner le système avec vous, pour ne plus dépendre de la mémoire de l’équipe.',
+      'Clé en main, pas du bricolage. Nous connectons vos canaux et gérons capture, qualification, réservation et relance sur chaque lead payant.',
     statBig: '48 h',
     statSmall: 'De la décision à l’opérationnel',
-    cta: 'Réserver votre audit Growth System',
   },
   qualification: {
     badge: 'Le fit compte',
@@ -582,7 +581,7 @@ export const aiEmployeePageFr: AiEmployeePageTranslations = {
     forItems: [
       'Vous vendez un service premium et la rétention compte autant que les leads',
       'Vous faites de l’acquisition payante (ou prévoyez) et l’intake doit suivre',
-      'Vous vendez par rendez-vous, consults ou conversations à forte confiance',
+      'Vous vendez par rendez vous, consults ou conversations à forte confiance',
       'La croissance est chaotique : outils, gens et relances ne s’alignent pas',
       'Vous voulez grandir calmement, pas plus fort, plus chargé, plus risqué',
       'Vous acceptez un partenariat sur un système, pas un logiciel en rayon',
@@ -591,18 +590,18 @@ export const aiEmployeePageFr: AiEmployeePageTranslations = {
     notItems: [
       'Vous voulez de la créa pub sans refondre les opérations',
       'Vous cherchez le prix le plus bas, pas les résultats et la rétention',
-      'Aucune conversation de vente ou de rendez-vous dans votre parcours',
+      'Aucune conversation de vente ou de rendez vous dans votre parcours',
       'Le délai de réponse n’est pas un frein au revenu',
       'Vous voulez seulement un login, pas l’implémentation et le partenariat',
       'Vous n’êtes pas prêt à changer le flux travail / client',
     ],
   },
   clientOutcomes: {
-    badge: 'Comment ça marche',
+    badge: 'Résultats',
     title: 'Trois résultats.',
     titleHighlight: 'Un système.',
     subtitle:
-      'Capturer chaque demande. Convertir la demande qualifiée en rendez-vous. Grandir avec avis et relances.',
+      'Capturer chaque demande. Convertir la demande qualifiée en rendez vous. Grandir avec avis et relances.',
     expandTechnical: 'Touchez une étape pour voir le fonctionnement',
     collapseTechnical: 'Touchez à nouveau pour réduire',
     steps: [
@@ -611,16 +610,16 @@ export const aiEmployeePageFr: AiEmployeePageTranslations = {
         body: 'Chaque demande reçoit une réponse.',
         technical: [
           'Réponse instantanée web, SMS, WhatsApp, Instagram et téléphone',
-          'Une boîte—pas de fils éparpillés ni de loterie vocale',
+          'Une boîte, pas de fils éparpillés ni de loterie vocale',
           'Leads enregistrés automatiquement avec source et intention',
         ],
       },
       {
         title: 'Convertir',
-        body: 'Les prospects qualifiés deviennent des rendez-vous.',
+        body: 'Les prospects qualifiés deviennent des rendez vous.',
         technical: [
           'Qualification intelligente avant l’équipe',
-          'Prise de rendez-vous en libre-service sur votre calendrier',
+          'Prise de rendez vous en libre service sur votre calendrier',
           'Confirmations et rappels qui réduisent les lapins',
         ],
       },
@@ -640,7 +639,7 @@ export const aiEmployeePageFr: AiEmployeePageTranslations = {
     title: 'Une clinique régionale a stoppé la fuite de',
     titleHighlight: '15 k$/mois de budget pub.',
     subtitle:
-      'Chiffres réels d’un partenaire santé—ce qui bloquait à l’intake, ce qui a changé en 18 h, et ce qui tient après la mise en ligne.',
+      'Chiffres réels d’un partenaire santé, ce qui bloquait à l’intake, ce qui a changé en 18 h, et ce qui tient après la mise en ligne.',
     company: 'Centre médical régional',
     industry: 'Santé',
     timeline: 'En ligne en 18 h',
@@ -652,7 +651,7 @@ export const aiEmployeePageFr: AiEmployeePageTranslations = {
     after: {
       label: 'Après',
       metric: '100 %',
-      description: 'Chaque demande traitée vite—avec une prochaine étape claire, 24 h/24.',
+      description: 'Chaque demande traitée vite, avec une prochaine étape claire, 24 h/24.',
     },
     contextLabel: 'Contexte',
     challengeLabel: 'Défi',
@@ -660,9 +659,9 @@ export const aiEmployeePageFr: AiEmployeePageTranslations = {
     context: '15 k$/mois de pub, mais l’intake ne suivait ni le volume ni la vitesse.',
     challenge: 'Environ 40 % des leads sans réponse rapide. Pipeline tiède. Revenu qui fuit.',
     solution:
-      'Système intelligent clé en main en 18 h—réponse, qualification, booking et relances depuis une vue unique.',
+      'Système intelligent clé en main en 18 h, réponse, qualification, booking et relances depuis une vue unique.',
     testimonial:
-      'On dépensait 15 k$/mois en pub et on perdait encore des gens dès la première étape. Maintenant chaque lead est traité tout de suite—et l’équipe voit enfin un seul pipeline.',
+      'On dépensait 15 k$/mois en pub et on perdait encore des gens dès la première étape. Maintenant chaque lead est traité tout de suite, et l’équipe voit enfin un seul pipeline.',
     testimonialAuthor: 'Directeur des opérations',
     testimonialRole: 'Centre médical régional',
     outcomesHeading: 'Résultats mesurés',
@@ -684,7 +683,7 @@ export const aiEmployeePageFr: AiEmployeePageTranslations = {
     totalValue: '2 997 $ de bonus',
     items: [
       {
-        name: 'Système anti « no-show »',
+        name: 'Système anti no show',
         description: 'Séquences SMS et email automatiques quand les appels ou RDV passent à la trappe.',
         value: 'Valeur 1 500 $',
       },
@@ -702,8 +701,8 @@ export const aiEmployeePageFr: AiEmployeePageTranslations = {
   },
   guarantee: {
     badge: 'Garantie de service conditionnelle',
-    title: 'Nous prenons le risque—not vous.',
-    body: '15 RDV qualifiés en 30 jours—sinon nous travaillons gratuitement jusqu’à atteindre ce seuil.',
+    title: 'Nous prenons le risque, pas vous.',
+    body: '15 RDV qualifiés en 30 jours, sinon nous travaillons gratuitement jusqu’à atteindre ce seuil.',
   },
   scarcity: {
     prefix: 'Limité à 5 partenaires premium par mois.',
@@ -712,19 +711,20 @@ export const aiEmployeePageFr: AiEmployeePageTranslations = {
     inlineSuffix: 'places premium en {month} · max 5/mois',
   },
   pricing: {
-    title: 'Prêt quand les chiffres sont clairs',
+    title: 'Voyez la fuite',
+    titleHighlight: 'avant de dépenser un dollar.',
     subtitle:
-      'Une seule boucle—mise en place et mensuel—après que l’évaluation fit montre la fuite, le potentiel et le coût du système.',
+      'Évaluation fit en deux minutes. Un rapport : fuite, potentiel, coût total, puis vous décidez.',
     assessmentNote:
-      'Votre rapport détaille ce que les lenteurs vous coûtent, ce que la reprise avec la boucle peut rapporter, et l’investissement global—avant tout paiement.',
+      'Votre rapport détaille ce que les lenteurs vous coûtent, ce que la reprise avec la boucle peut rapporter, et l’investissement global, avant tout paiement.',
     assessmentCta: 'Lancer l’évaluation fit',
-    investmentNote: 'Les montants s’affichent dans vos résultats—pas sur cette page.',
+    investmentNote: 'Les montants s’affichent dans vos résultats, pas sur cette page.',
     planName: 'Boucle de réservation IA',
     limitedLabel: 'Places partenaires limitées',
     setupFee: '2 000 $',
     setupFeeWaivedDisplay: '0 $',
     setupLabel: 'Mise en place',
-    setupFeePromo: 'Mise en place offerte — fin dans',
+    setupFeePromo: 'Mise en place offerte, fin dans',
     monthlyLabel: 'Mensuel',
     price: '500 $',
     period: '/mois',
@@ -740,7 +740,7 @@ export const aiEmployeePageFr: AiEmployeePageTranslations = {
 
 export const aiEmployeePageDe: AiEmployeePageTranslations = {
   hero: {
-    badge: 'Wachstums-Infrastruktur für Services',
+    badge: 'Wachstums Infrastruktur für Services',
     titleLine1: 'Einmal installiert.',
     titleHighlight: 'Nie wieder DMs beantworten, Buchungslinks schicken oder nachfassen.',
     hook:
@@ -750,7 +750,7 @@ export const aiEmployeePageDe: AiEmployeePageTranslations = {
       '15 qualifizierte Termine in 30 Tagen, oder wir arbeiten gratis, bis Sie sie haben. Das Risiko tragen wir.',
   },
   valueBadges: {
-    ariaLabel: 'Geschwindigkeits- und Setup-Garantien',
+    ariaLabel: 'Geschwindigkeits und Setup Garantien',
     responseTime: '<2s Antwortzeit',
     setupSpeed: 'Live in 48 Stunden',
     zeroEffort: 'Keine manuelle Eingabe',
@@ -758,7 +758,7 @@ export const aiEmployeePageDe: AiEmployeePageTranslations = {
   dreamOutcome: {
     badge: 'Das Traumergebnis',
     title: 'Dieselben 100 Leads. Andere Anzeigetafel.',
-    subtitle: 'Das Leck schließt ~1 von 100. Der Loop schließt 95—mit Empfehlungen obendrauf.',
+    subtitle: 'Das Leck schließt ~1 von 100. Der Loop schließt 95, mit Empfehlungen obendrauf.',
     beforeLabel: 'Das Leck',
     beforeMetric: '~1 / 100',
     beforeHint: 'Abschluss nach manuellem Chaos, Mailbox und langsamen Nachfassen.',
@@ -766,25 +766,25 @@ export const aiEmployeePageDe: AiEmployeePageTranslations = {
     afterLabel: 'Der Loop',
     afterMetric: '95 / 100',
     referralLine: '+23 Empfehlungen aus derselben Charge',
-    afterHint: 'Erfasst, qualifiziert, gebucht und nachverfolgt—24/7.',
+    afterHint: 'Erfasst, qualifiziert, gebucht und nachverfolgt, 24/7.',
   },
   denominator: {
     badge: 'Wertgleichung · Nenner',
     title: 'Sofortige Geschwindigkeit. Fast null Aufwand.',
-    subtitle: 'Wir verkürzen Verzögerung und Aufwand—das System läuft, während Sie das Geschäft führen.',
+    subtitle: 'Wir verkürzen Verzögerung und Aufwand, das System läuft, während Sie das Geschäft führen.',
     pillarSpeed: 'Sofortige Antwort',
-    pillarSpeedHint: 'Unter 2 Sekunden auf jeden Eingang. Kein Mailbox-Glücksspiel.',
+    pillarSpeedHint: 'Unter 2 Sekunden auf jeden Eingang. Kein Mailbox Glücksspiel.',
     pillarDeploy: 'Live in 48 Stunden',
-    pillarDeployHint: 'Wir implementieren und schalten live—kein weiteres Tool zum Hüten.',
+    pillarDeployHint: 'Wir implementieren und schalten live, kein weiteres Tool zum Hüten.',
     pillarEffort: 'Reibungslose Steuerung',
     pillarEffortHint: 'Mobile App + Automationen. Sie freigeben; der Loop arbeitet.',
   },
   mobileApp: {
-    title: 'Steuern Sie Ihren Pipeline unterwegs mit der AI-Employee-App.',
-    bullet1: 'Echtzeit-Benachrichtigungen direkt auf Ihr Smartphone',
+    title: 'Steuern Sie Ihren Pipeline unterwegs mit der AI Employee App.',
+    bullet1: 'Echtzeit Benachrichtigungen direkt auf Ihr Smartphone',
     bullet2: 'Chatten Sie mit Kunden und Leads direkt in der App',
     tagline: 'Verpassen Sie keine Chance mehr.',
-    imageAlt: 'AI-Employee-App auf dem Smartphone mit Pipeline-Kennzahlen und Aktivität',
+    imageAlt: 'AI Employee App auf dem Smartphone mit Pipeline Kennzahlen und Aktivität',
     appStoreHref: 'https://apps.apple.com/',
     playStoreHref: 'https://play.google.com/store',
     appStoreAriaLabel: 'Im App Store laden',
@@ -795,7 +795,7 @@ export const aiEmployeePageDe: AiEmployeePageTranslations = {
     title: 'Sie zahlen für Leads.',
     titleHighlight: 'Und die meisten erhalten keine rechtzeitige Antwort.',
     subtitle:
-      'Anfragen kommen aus Anzeigen, Chat, SMS, DMs und Anrufen—oft während Ihr Team den Service liefert. Ohne ein System, das in Sekunden antwortet, qualifiziert und bucht, stapeln sich Nachrichten in verstreuten Postfächern. Follow-ups rutschen durch. Werbebudget läuft weiter, während Umsatz verloren geht, bevor jemand den Lead sieht.',
+      'Interessenten melden sich über Anzeigen, Website, SMS und Telefon, während Ihr Team auf dem Auftrag ist. Niemand antwortet schnell genug. Der Lead geht zum Wettbewerber. Sie zahlen weiter für Klicks, aber der Auftrag geht an den, der zuerst geantwortet hat.',
     stats: [
       {
         value: '40%',
@@ -805,7 +805,7 @@ export const aiEmployeePageDe: AiEmployeePageTranslations = {
       {
         value: '5 Min',
         label: 'ist das Fenster höchster Kaufabsicht',
-        hint: 'Antworten Sie darin, sonst sinken Qualifizierungs-Chancen stark (HBR-Studie).',
+        hint: 'Antworten Sie darin, sonst sinken Qualifizierungs Chancen stark (HBR Studie).',
       },
       {
         value: '78%',
@@ -830,20 +830,20 @@ export const aiEmployeePageDe: AiEmployeePageTranslations = {
         body: 'Die richtigen Fragen, nur ernsthafte Käufer landen in Ihrem Kalender.',
       },
       {
-        title: 'Auto-Booking',
+        title: 'Auto Booking',
         body: 'Sie wählen einen Slot. Der Kalender füllt sich. Keine unklaren Übergaben.',
       },
       {
         title: 'Nachfassen, das läuft',
-        body: 'Beharrlich, höflich, konsistent, bis Buchung oder Opt-out. Schluss mit „hätte ich mal“.',
+        body: 'Beharrlich, höflich, konsistent, bis Buchung oder Opt out. Schluss mit „hätte ich mal“.',
       },
       {
-        title: 'Multi-Kanal, ein Gehirn',
-        body: 'Anrufe, WhatsApp, E-Mail, ein Posteingang, eine Wahrheit, ein nächster Schritt.',
+        title: 'Multi Kanal, ein Gehirn',
+        body: 'Anrufe, WhatsApp, Email, ein Posteingang, eine Wahrheit, ein nächster Schritt.',
       },
       {
-        title: 'Umsatz-Rückgewinnung',
-        body: 'Kalte Interessen reaktivieren, No-Shows straffen, Wiederholungsumsatz statt Einmalverkauf.',
+        title: 'Umsatz Rückgewinnung',
+        body: 'Kalte Interessen reaktivieren, No Shows straffen, Wiederholungsumsatz statt Einmalverkauf.',
       },
     ],
   },
@@ -851,36 +851,35 @@ export const aiEmployeePageDe: AiEmployeePageTranslations = {
     badge: 'Zeit bis zum Nutzen',
     title: 'Live in 48 Stunden',
     subtitle:
-      'Wir geben Ihnen kein weiteres Tool zum Hüten. Wir implementieren den Flow, verbinden Kanäle und betreiben das System mit Ihnen, damit Sie nicht von Gedächtnis im Team abhängen.',
+      'Done for you, kein DIY. Wir verbinden Ihre Kanäle und übernehmen Erfassung, Qualifizierung, Buchung und Follow up für jeden bezahlten Lead.',
     statBig: '48h',
     statSmall: 'Von Entscheidung bis Betrieb',
-    cta: 'Growth-System-Audit buchen',
   },
   qualification: {
     badge: 'Fit ist wichtig',
     title: 'Gebaut für',
-    titleHighlight: 'Premium-Dienstleister',
+    titleHighlight: 'Premium Dienstleister',
     forHeading: 'Für wen das gedacht ist',
     forItems: [
-      'Sie verkaufen ein Premium-Angebot und denken an Bindung, nicht nur Leads',
+      'Sie verkaufen ein Premium Angebot und denken an Bindung, nicht nur Leads',
       'Sie fahren bezahlte Akquise (oder planen) und die Annahme muss mithalten',
       'Sie verkaufen über Termine, Beratungen oder vertrauensintensive Gespräche',
       'Wachstum fühlt sich chaotisch an: Tools, Menschen, Nachfassen passen nicht zusammen',
       'Sie wollen ruhig skalieren, nicht lauter, busier, riskanter',
-      'Sie wollen ein System-Partnerschaft, kein Regal-Softwarekauf',
+      'Sie wollen ein System Partnerschaft, kein Regal Softwarekauf',
     ],
     notHeading: 'Weniger passend',
     notItems: [
-      'Sie wollen Ad-Kreativ ohne Operations zu fixen',
+      'Sie wollen Ad Kreativ ohne Operations zu fixen',
       'Sie optimieren auf den niedrigsten Preis, nicht auf Ergebnis und Retention',
       'Kein Vertriebsgespräch oder Termin in Ihrer Buyer Journey',
-      'Reaktionszeit ist kein Umsatz-Engpass',
+      'Reaktionszeit ist kein Umsatz Engpass',
       'Sie wollen nur Login, nicht Implementierung und Partnerschaft',
       'Sie sind nicht bereit, Arbeitsfluss zwischen Team und Kunde zu ändern',
     ],
   },
   clientOutcomes: {
-    badge: 'So funktioniert es',
+    badge: 'Ergebnisse',
     title: 'Drei Ergebnisse.',
     titleHighlight: 'Ein System.',
     subtitle:
@@ -893,7 +892,7 @@ export const aiEmployeePageDe: AiEmployeePageTranslations = {
         body: 'Jede Anfrage erhält eine Antwort.',
         technical: [
           'Sofortantwort auf Web, SMS, WhatsApp, Instagram und Telefon',
-          'Ein Posteingang—keine verstreuten Threads oder Mailbox-Lotterie',
+          'Ein Posteingang, keine verstreuten Threads oder Mailbox Lotterie',
           'Leads automatisch mit Quelle und Absicht protokolliert',
         ],
       },
@@ -902,17 +901,17 @@ export const aiEmployeePageDe: AiEmployeePageTranslations = {
         body: 'Qualifizierte Interessenten werden zu Terminen.',
         technical: [
           'Intelligente Qualifizierung vor Ihrem Team',
-          'Self-Service-Buchung in Ihren Live-Kalender',
-          'Bestätigungen und Erinnerungen gegen No-Shows',
+          'Self Service Buchung in Ihren Live Kalender',
+          'Bestätigungen und Erinnerungen gegen No Shows',
         ],
       },
       {
         title: 'Wachsen',
         body: 'Bewertungen, Empfehlungen und Nachfassen schaffen mehr Umsatz.',
         technical: [
-          'Beharrliches Nachfassen bis Buchung oder Opt-out',
+          'Beharrliches Nachfassen bis Buchung oder Opt out',
           'Bewertungsanfragen nach jedem Besuch',
-          'Empfehlungsimpulse, die denselben Lead-Stapel vervielfachen',
+          'Empfehlungsimpulse, die denselben Lead Stapel vervielfachen',
         ],
       },
     ],
@@ -922,7 +921,7 @@ export const aiEmployeePageDe: AiEmployeePageTranslations = {
     title: 'Eine regionale Klinik stoppte das Leck von',
     titleHighlight: '15k$/Monat Werbebudget.',
     subtitle:
-      'Echte Zahlen eines Gesundheitspartners—was in der Annahme brach, was sich in 18 Stunden änderte und nach Go-live hält.',
+      'Echte Zahlen eines Gesundheitspartners, was in der Annahme brach, was sich in 18 Stunden änderte und nach Go live hält.',
     company: 'Regionales medizinisches Zentrum',
     industry: 'Gesundheit',
     timeline: 'In 18 Stunden live',
@@ -934,7 +933,7 @@ export const aiEmployeePageDe: AiEmployeePageTranslations = {
     after: {
       label: 'Nachher',
       metric: '100%',
-      description: 'Jede Anfrage schnell beantwortet—mit klarem nächsten Schritt, rund um die Uhr.',
+      description: 'Jede Anfrage schnell beantwortet, mit klarem nächsten Schritt, rund um die Uhr.',
     },
     contextLabel: 'Kontext',
     challengeLabel: 'Herausforderung',
@@ -942,15 +941,15 @@ export const aiEmployeePageDe: AiEmployeePageTranslations = {
     context: '15k$/Monat Werbung, aber die Annahme kam weder mit Volumen noch Tempo nach.',
     challenge: 'Etwa 40 % der Leads ohne zeitnahe Antwort. Pipeline kühlte. Umsatz floss ab.',
     solution:
-      'Intelligentes System in 18 Stunden live—antworten, qualifizieren, buchen und nachfassen aus einer Betriebsansicht.',
+      'Intelligentes System in 18 Stunden live, antworten, qualifizieren, buchen und nachfassen aus einer Betriebsansicht.',
     testimonial:
-      'Wir gaben 15k$/Monat für Werbung aus und verloren trotzdem Leute in der ersten Meile. Jetzt wird jeder Lead sofort beantwortet—und das Team sieht endlich eine Pipeline.',
+      'Wir gaben 15k$/Monat für Werbung aus und verloren trotzdem Leute in der ersten Meile. Jetzt wird jeder Lead sofort beantwortet, und das Team sieht endlich eine Pipeline.',
     testimonialAuthor: 'Betriebsleiter',
     testimonialRole: 'Regionales medizinisches Zentrum',
     outcomesHeading: 'Gemessene Ergebnisse',
     results: [
       { metric: '100%', description: 'Jeder Lead schnell bedient, mit klarem nächsten Schritt.' },
-      { metric: 'Null', description: 'Keine „rufen wir zurück“-Lücken mehr am Anfang.' },
+      { metric: 'Null', description: 'Keine „rufen wir zurück" Lücken mehr am Anfang.' },
       { metric: '18h', description: 'Von Entscheidung zu live, Ergebnisse starten sofort.' },
       { metric: '85%', description: 'Bessere Conversion, wenn das Tempo zur Dringlichkeit passt.' },
     ],
@@ -961,62 +960,63 @@ export const aiEmployeePageDe: AiEmployeePageTranslations = {
     badge: 'Kostenlos inklusive',
     title: 'Growth Accelerator Bundle (kostenlos inklusive)',
     subtitle:
-      'Keine Add-ons. Sie sind bei jeder Premium-Partnerschaft dabei, damit Ihr Loop ab Tag 1 erfasst, konvertiert und skaliert.',
+      'Keine Add ons. Sie sind bei jeder Premium Partnerschaft dabei, damit Ihr Loop ab Tag 1 erfasst, konvertiert und skaliert.',
     includedLabel: 'Inklusive',
     totalValue: '2.997 $ Bonus',
     items: [
       {
-        name: 'No-Show-Wiederherstellung',
-        description: 'Automatische SMS- und E-Mail-Sequenzen bei verpassten Anrufen oder Terminen.',
+        name: 'No Show Wiederherstellung',
+        description: 'Automatische SMS und Email Sequenzen bei verpassten Anrufen oder Terminen.',
         value: 'Wert 1.500 $',
       },
       {
-        name: '5-Sterne-Reputation Engine',
-        description: 'Automatische Google- und Facebook-Bewertungen nach erfolgreichem Abschluss.',
+        name: '5 Sterne Reputation Engine',
+        description: 'Automatische Google und Facebook Bewertungen nach erfolgreichem Abschluss.',
         value: 'Wert 997 $',
       },
       {
-        name: 'CRM-Integrations-Vault',
-        description: '5.000+ App-Connectors ohne manuelle Dateneingabe.',
+        name: 'CRM Integrations Vault',
+        description: '5.000+ App Connectors ohne manuelle Dateneingabe.',
         value: 'Wert 500 $',
       },
     ],
   },
   guarantee: {
-    badge: 'Bedingte Service-Garantie',
-    title: 'Wir tragen das Risiko—nicht Sie.',
-    body: '15 qualifizierte Termine in 30 Tagen—sonst arbeiten wir kostenlos, bis Sie es schaffen.',
+    badge: 'Bedingte Service Garantie',
+    title: 'Wir tragen das Risiko, nicht Sie.',
+    body: '15 qualifizierte Termine in 30 Tagen, sonst arbeiten wir kostenlos, bis Sie es schaffen.',
   },
   scarcity: {
-    prefix: 'Max. 5 Premium-Partner pro Monat.',
+    prefix: 'Max. 5 Premium Partner pro Monat.',
     currentlyLabel: 'Aktuell:',
     spotsSuffix: 'Plätze frei für',
-    inlineSuffix: 'Premium-Plätze in {month} · max. 5/Monat',
+    inlineSuffix: 'Premium Plätze in {month} · max. 5/Monat',
   },
   pricing: {
-    title: 'Bereit, wenn die Zahlen passen',
+    title: 'Sehen Sie das Leck',
+    titleHighlight: 'bevor Sie einen Dollar ausgeben.',
     subtitle:
-      'Ein Loop—Einrichtung plus monatlich—erst nach dem Fit-Assessment mit Leck, Potenzial und Systemkosten.',
+      'Zweiminütiges Fit Assessment. Ein Report: Leck, Potenzial, Gesamtkosten, dann entscheiden Sie.',
     assessmentNote:
-      'Ihr Report zeigt, was langsames Follow-up kostet, was mit aktivem Loop möglich ist und die Gesamtinvestition—vor der Zahlung.',
-    assessmentCta: 'Fit-Assessment starten',
-    investmentNote: 'Beträge sehen Sie in den Ergebnissen—nicht hier.',
-    planName: 'KI-Buchungs-Loop',
+      'Ihr Report zeigt, was langsames Follow up kostet, was mit aktivem Loop möglich ist und die Gesamtinvestition, vor der Zahlung.',
+    assessmentCta: 'Fit Assessment starten',
+    investmentNote: 'Beträge sehen Sie in den Ergebnissen, nicht hier.',
+    planName: 'KI Buchungs Loop',
     limitedLabel: 'Begrenzte Partnerplätze',
     setupFee: '2.000 $',
     setupFeeWaivedDisplay: '0 $',
     setupLabel: 'Einrichtung',
-    setupFeePromo: 'Einrichtung entfällt — endet in',
+    setupFeePromo: 'Einrichtung entfällt, endet in',
     monthlyLabel: 'Monatlich',
     price: '500 $',
     period: '/Monat',
-    cta: 'Fit-Call buchen',
+    cta: 'Fit Call buchen',
   },
   finalCta: {
     title: 'Keine Leads mehr',
-    titleHighlight: 'im Stille-Modus.',
-    subtitle: 'Buchen Sie einen 30-Minuten-Fit-Call. Wir kartieren das Leck und prüfen, ob der Loop passt.',
-    primaryCta: 'Fit-Call buchen',
+    titleHighlight: 'im Stille Modus.',
+    subtitle: 'Buchen Sie einen 30 Minuten Fit Call. Wir kartieren das Leck und prüfen, ob der Loop passt.',
+    primaryCta: 'Fit Call buchen',
   },
 }
 
@@ -1040,7 +1040,7 @@ export const aiEmployeePageEs: AiEmployeePageTranslations = {
   dreamOutcome: {
     badge: 'El resultado soñado',
     title: 'Los mismos 100 leads. Otro marcador.',
-    subtitle: 'La fuga cierra ~1 de 100. El loop cierra 95—con referidos que componen.',
+    subtitle: 'La fuga cierra ~1 de 100. El loop cierra 95, con referidos que componen.',
     beforeLabel: 'La fuga',
     beforeMetric: '~1 / 100',
     beforeHint: 'Cierre tras caos manual, buzón y seguimiento lento.',
@@ -1048,16 +1048,16 @@ export const aiEmployeePageEs: AiEmployeePageTranslations = {
     afterLabel: 'El loop',
     afterMetric: '95 / 100',
     referralLine: '+23 referidos del mismo lote',
-    afterHint: 'Capturado, calificado, agendado y seguido—24/7.',
+    afterHint: 'Capturado, calificado, agendado y seguido, 24/7.',
   },
   denominator: {
     badge: 'Ecuación de valor · denominador',
     title: 'Velocidad instantánea. Esfuerzo casi cero.',
-    subtitle: 'Reducimos retraso y esfuerzo—el sistema corre mientras usted dirige el negocio.',
+    subtitle: 'Reducimos retraso y esfuerzo, el sistema corre mientras usted dirige el negocio.',
     pillarSpeed: 'Respuesta instantánea',
     pillarSpeedHint: 'Menos de 2 segundos en cada entrada. Sin lotería del buzón.',
     pillarDeploy: 'Despliegue en 48 horas',
-    pillarDeployHint: 'Implementamos y activamos—no otra herramienta que vigilar.',
+    pillarDeployHint: 'Implementamos y activamos, no otra herramienta que vigilar.',
     pillarEffort: 'Control sin fricción',
     pillarEffortHint: 'App móvil + automatizaciones. Usted aprueba; el loop ejecuta.',
   },
@@ -1077,7 +1077,7 @@ export const aiEmployeePageEs: AiEmployeePageTranslations = {
     title: 'Pagas por leads.',
     titleHighlight: 'Y casi nadie recibe respuesta a tiempo.',
     subtitle:
-      'Las consultas llegan de anuncios, chat web, SMS, DMs y llamadas—a menudo mientras tu equipo entrega el servicio. Sin un sistema que responda, califique y agende en segundos, los mensajes se acumulan en bandejas dispersas. Los seguimientos se pierden. El gasto en anuncios sigue mientras el ingreso se fuga antes de que alguien vea el lead.',
+      'Los prospectos te contactan por anuncios, web, SMS y teléfono, mientras tu equipo está en el trabajo. Nadie responde a tiempo. El lead se va con la competencia. Sigues pagando anuncios, pero la reserva se la lleva quien contestó primero.',
     stats: [
       {
         value: '40%',
@@ -1133,10 +1133,9 @@ export const aiEmployeePageEs: AiEmployeePageTranslations = {
     badge: 'Tiempo hasta el valor',
     title: 'En vivo en 48 horas',
     subtitle:
-      'No le damos otra herramienta que vigilar. Implementamos el flujo, conectamos canales y operamos el sistema con usted, para no depender de la memoria del equipo.',
+      'Hecho para usted, no DIY. Conectamos sus canales y ejecutamos captura, calificación, reserva y seguimiento en cada lead pagado.',
     statBig: '48h',
     statSmall: 'De la decisión a operativo',
-    cta: 'Reservar su auditoría Growth System',
   },
   qualification: {
     badge: 'El encaje importa',
@@ -1162,7 +1161,7 @@ export const aiEmployeePageEs: AiEmployeePageTranslations = {
     ],
   },
   clientOutcomes: {
-    badge: 'Cómo funciona',
+    badge: 'Resultados',
     title: 'Tres resultados.',
     titleHighlight: 'Un sistema.',
     subtitle:
@@ -1175,7 +1174,7 @@ export const aiEmployeePageEs: AiEmployeePageTranslations = {
         body: 'Cada consulta recibe respuesta.',
         technical: [
           'Respuesta instantánea en web, SMS, WhatsApp, Instagram y teléfono',
-          'Una bandeja—sin hilos dispersos ni lotería de buzón',
+          'Una bandeja, sin hilos dispersos ni lotería de buzón',
           'Leads registrados automáticamente con fuente e intención',
         ],
       },
@@ -1204,7 +1203,7 @@ export const aiEmployeePageEs: AiEmployeePageTranslations = {
     title: 'Una clínica regional dejó de perder',
     titleHighlight: '$15k/mes en inversión publicitaria.',
     subtitle:
-      'Cifras reales de un socio sanitario—qué falló en captación, qué cambió en 18 h y qué se mantuvo tras el lanzamiento.',
+      'Cifras reales de un socio sanitario, qué falló en captación, qué cambió en 18 h y qué se mantuvo tras el lanzamiento.',
     company: 'Centro médico regional',
     industry: 'Salud',
     timeline: 'En vivo en 18 h',
@@ -1216,7 +1215,7 @@ export const aiEmployeePageEs: AiEmployeePageTranslations = {
     after: {
       label: 'Después',
       metric: '100%',
-      description: 'Cada consulta atendida rápido—con un siguiente paso claro, las 24 horas.',
+      description: 'Cada consulta atendida rápido, con un siguiente paso claro, las 24 horas.',
     },
     contextLabel: 'Contexto',
     challengeLabel: 'Reto',
@@ -1224,9 +1223,9 @@ export const aiEmployeePageEs: AiEmployeePageTranslations = {
     context: '15k$/mes en anuncios, pero la captación no seguía volumen ni velocidad.',
     challenge: 'Cerca del 40 % de leads sin respuesta a tiempo. Embudo tibio. Ingreso fugado.',
     solution:
-      'Sistema inteligente en 18 h en vivo—responde, califica, agenda y hace seguimiento desde una sola vista.',
+      'Sistema inteligente en 18 h en vivo, responde, califica, agenda y hace seguimiento desde una sola vista.',
     testimonial:
-      'Gastábamos 15k$/mes en anuncios y aún perdíamos gente en la primera milla. Ahora cada lead recibe respuesta al instante—y el equipo ve por fin un solo embudo.',
+      'Gastábamos 15k$/mes en anuncios y aún perdíamos gente en la primera milla. Ahora cada lead recibe respuesta al instante, y el equipo ve por fin un solo embudo.',
     testimonialAuthor: 'Director de operaciones',
     testimonialRole: 'Centro médico regional',
     outcomesHeading: 'Resultados medidos',
@@ -1248,7 +1247,7 @@ export const aiEmployeePageEs: AiEmployeePageTranslations = {
     totalValue: '2.997 $ en bonos',
     items: [
       {
-        name: "Sistema de recuperación 'No-Show'",
+        name: "Sistema de recuperación 'No Show'",
         description: 'Secuencias automáticas de SMS y email cuando no contestan o faltan a citas.',
         value: 'Valor 1.500 $',
       },
@@ -1266,8 +1265,8 @@ export const aiEmployeePageEs: AiEmployeePageTranslations = {
   },
   guarantee: {
     badge: 'Garantía de servicio condicional',
-    title: 'Nosotros asumimos el riesgo—no usted.',
-    body: '15 citas calificadas en 30 días—o trabajamos gratis hasta lograrlo.',
+    title: 'Nosotros asumimos el riesgo, no usted.',
+    body: '15 citas calificadas en 30 días, o trabajamos gratis hasta lograrlo.',
   },
   scarcity: {
     prefix: 'Máximo 5 socios premium al mes.',
@@ -1276,19 +1275,20 @@ export const aiEmployeePageEs: AiEmployeePageTranslations = {
     inlineSuffix: 'plazas premium en {month} · máx. 5/mes',
   },
   pricing: {
-    title: 'Listo cuando los números cuadran',
+    title: 'Vea la fuga',
+    titleHighlight: 'antes de gastar un dólar.',
     subtitle:
-      'Un solo loop—configuración y mensual—después de que la evaluación fit muestre la fuga, el potencial y el costo del sistema.',
+      'Evaluación fit de dos minutos. Un informe: fuga, potencial, costo total, luego usted decide.',
     assessmentNote:
-      'Su informe detalla lo que cuesta el seguimiento lento, lo que recupera con el loop activo y la inversión total—antes de pagar.',
+      'Su informe detalla lo que cuesta el seguimiento lento, lo que recupera con el loop activo y la inversión total, antes de pagar.',
     assessmentCta: 'Hacer la evaluación fit',
-    investmentNote: 'Los montos aparecen en sus resultados—no en esta página.',
+    investmentNote: 'Los montos aparecen en sus resultados, no en esta página.',
     planName: 'Loop de reservas IA',
     limitedLabel: 'Cupos de socio limitados',
     setupFee: '2.000 $',
     setupFeeWaivedDisplay: '0 $',
     setupLabel: 'Configuración',
-    setupFeePromo: 'Configuración sin cargo — termina en',
+    setupFeePromo: 'Configuración sin cargo, termina en',
     monthlyLabel: 'Mensual',
     price: '500 $',
     period: '/mes',
@@ -1321,7 +1321,7 @@ export const aiEmployeePageAr: AiEmployeePageTranslations = {
   dreamOutcome: {
     badge: 'النتيجة المرجوة',
     title: 'نفس الـ100 عميلاً. لوحة نتائج مختلفة.',
-    subtitle: 'التسرب يغلق ~1 من 100. الحلقة تغلق 95—مع إحالات تتضاعف.',
+    subtitle: 'التسرب يغلق ~1 من 100. الحلقة تغلق 95, مع إحالات تتضاعف.',
     beforeLabel: 'التسرب',
     beforeMetric: '~1 / 100',
     beforeHint: 'إغلاق بعد فوضى يدوية وبريد صوتي وبطء.',
@@ -1329,16 +1329,16 @@ export const aiEmployeePageAr: AiEmployeePageTranslations = {
     afterLabel: 'الحلقة',
     afterMetric: '95 / 100',
     referralLine: '+23 إحالة من نفس الدفعة',
-    afterHint: 'مُلتقط ومؤهل ومحجوز ومتابَع—24/7.',
+    afterHint: 'مُلتقط ومؤهل ومحجوز ومتابَع, 24/7.',
   },
   denominator: {
     badge: 'معادلة القيمة · المقام',
     title: 'سرعة فورية. جهد شبه معدوم.',
-    subtitle: 'نقلّص التأخير والجهد—النظام يعمل بينما تدير العمل.',
+    subtitle: 'نقلّص التأخير والجهد, النظام يعمل بينما تدير العمل.',
     pillarSpeed: 'رد فوري',
     pillarSpeedHint: 'أقل من ثانيتين على كل اتصال. بلا يانصيب البريد الصوتي.',
     pillarDeploy: 'نشر خلال 48 ساعة',
-    pillarDeployHint: 'ننفّذ ونشغّل—ليس أداة أخرى للمراقبة.',
+    pillarDeployHint: 'ننفّذ ونشغّل, ليس أداة أخرى للمراقبة.',
     pillarEffort: 'تحكم بلا احتكاك',
     pillarEffortHint: 'تطبيق جوال + أتمتة. أنت توافق؛ الحلقة تنفّذ.',
   },
@@ -1358,7 +1358,7 @@ export const aiEmployeePageAr: AiEmployeePageTranslations = {
     title: 'أنت تدفع مقابل العملاء.',
     titleHighlight: 'ومعظمهم لا يحصلون على رد في الوقت المناسب.',
     subtitle:
-      'تصل الاستفسارات من الإعلانات والدردشة والرسائل النصية والرسائل الخاصة والمكالمات—غالباً بينما فريقك يقدّم الخدمة. بدون نظام واحد يرد ويؤهل ويحجز خلال ثوانٍ, تتراكم الرسائل في صناديق متفرقة. تتسرّب المتابعات. يستمر إنفاق الإعلانات بينما يضيع الإيراد قبل أن يرى أحد العميل المحتمل.',
+      'يتواصل العملاء المحتملون عبر إعلاناتك وموقعك ورسائلك النصية وهاتفك, بينما فريقك مشغول في العمل. لا أحد يرد بسرعة كافية. ينتقل العميل إلى منافس. تستمر في دفع ثمن النقرات، لكن الحجز يذهب لمن رد أولاً.',
     stats: [
       {
         value: '40٪',
@@ -1414,10 +1414,9 @@ export const aiEmployeePageAr: AiEmployeePageTranslations = {
     badge: 'الوقت حتى القيمة',
     title: 'جاهز خلال 48 ساعة',
     subtitle:
-      'لسنا هنا لنسلّم أداة أخرى تراقبونها. ننفّذ المسار ونوصل القنوات ونشغّل النظام معكم, لتقل الاعتماد على ذاكرة الفريق.',
+      'تنفيذ كامل, وليس DIY. نوصل قنواتكم وندير الالتقاط والتأهيل والحجز والمتابعة لكل عميل محتمل مدفوع.',
     statBig: '48س',
     statSmall: 'من القرار إلى التشغيل',
-    cta: 'احجز مراجعة Growth System',
   },
   qualification: {
     badge: 'الملاءمة مهمة',
@@ -1443,7 +1442,7 @@ export const aiEmployeePageAr: AiEmployeePageTranslations = {
     ],
   },
   clientOutcomes: {
-    badge: 'كيف يعمل',
+    badge: 'النتائج',
     title: 'ثلاث نتائج.',
     titleHighlight: 'نظام واحد.',
     subtitle:
@@ -1456,7 +1455,7 @@ export const aiEmployeePageAr: AiEmployeePageTranslations = {
         body: 'كل استفسار يحصل على رد.',
         technical: [
           'رد فوري على الويب والرسائل وواتساب وإنستغرام والهاتف',
-          'صندوق واحد—لا خيوط مبعثرة ولا يانصيب بريد صوتي',
+          'صندوق واحد, لا خيوط مبعثرة ولا يانصيب بريد صوتي',
           'تسجيل العملاء المحتملين تلقائياً بالمصدر والنية',
         ],
       },
@@ -1485,7 +1484,7 @@ export const aiEmployeePageAr: AiEmployeePageTranslations = {
     title: 'عيادة إقليمية أوقفت تسرّب',
     titleHighlight: '15 ألف دولار شهرياً من ميزانية الإعلانات.',
     subtitle:
-      'أرقام حقيقية من شريك رعاية صحية—ما تعطّل في الاستقبال, وما تغيّر خلال 18 ساعة, وما بقي ثابتاً بعد التشغيل.',
+      'أرقام حقيقية من شريك رعاية صحية, ما تعطّل في الاستقبال, وما تغيّر خلال 18 ساعة, وما بقي ثابتاً بعد التشغيل.',
     company: 'مركز طبي إقليمي',
     industry: 'رعاية صحية',
     timeline: 'تشغيل خلال 18 ساعة',
@@ -1497,7 +1496,7 @@ export const aiEmployeePageAr: AiEmployeePageTranslations = {
     after: {
       label: 'بعد',
       metric: '100٪',
-      description: 'كل استفسار يُجاب بسرعة—بخطوة تالية واضحة, على مدار الساعة.',
+      description: 'كل استفسار يُجاب بسرعة, بخطوة تالية واضحة, على مدار الساعة.',
     },
     contextLabel: 'السياق',
     challengeLabel: 'التحدي',
@@ -1505,9 +1504,9 @@ export const aiEmployeePageAr: AiEmployeePageTranslations = {
     context: '15 ألف دولار شهرياً إعلانات, لكن الاستقبال لم يواكب الحجم ولا السرعة.',
     challenge: 'نحو 40٪ من العملاء المحتملين دون رد آنٍ. مسار بارد. إيراد يتسرّب.',
     solution:
-      'نظام ذكي جاهز خلال 18 ساعة—رد وتأهيل وحجز ومتابعة من منظر تشغيلي واحد.',
+      'نظام ذكي جاهز خلال 18 ساعة, رد وتأهيل وحجز ومتابعة من منظر تشغيلي واحد.',
     testimonial:
-      'كنا ننفق 15 ألف دولار شهرياً على الإعلانات وما زلنا نخسر الناس في الميل الأول. الآن يُجاب كل عميل محتمل فوراً—والفريق يرى أخيراً مساراً واحداً.',
+      'كنا ننفق 15 ألف دولار شهرياً على الإعلانات وما زلنا نخسر الناس في الميل الأول. الآن يُجاب كل عميل محتمل فوراً, والفريق يرى أخيراً مساراً واحداً.',
     testimonialAuthor: 'مدير العمليات',
     testimonialRole: 'مركز طبي إقليمي',
     outcomesHeading: 'نتائج مُقاسة',
@@ -1547,8 +1546,8 @@ export const aiEmployeePageAr: AiEmployeePageTranslations = {
   },
   guarantee: {
     badge: 'ضمان خدمة مشروط',
-    title: 'نحن نتحمل المخاطر—ليس أنت.',
-    body: '15 موعداً مؤهلاً في 30 يوماً—أو نعمل مجاناً حتى تحقق ذلك.',
+    title: 'نحن نتحمل المخاطر, ليس أنت.',
+    body: '15 موعداً مؤهلاً في 30 يوماً, أو نعمل مجاناً حتى تحقق ذلك.',
   },
   scarcity: {
     prefix: 'حد أقصى 5 شركاء راقيين شهرياً.',
@@ -1557,19 +1556,20 @@ export const aiEmployeePageAr: AiEmployeePageTranslations = {
     inlineSuffix: 'مقاعد متبقية في {month} · حد 5/شهر',
   },
   pricing: {
-    title: 'جاهزون عندما تتضح الأرقام',
+    title: 'اكتشف التسرّب',
+    titleHighlight: 'قبل أن تنفق دولاراً.',
     subtitle:
-      'حلقة واحدة—إعداد وشهري—بعد أن يوضح تقييم الملاءمة التسرّب والفرصة وتكلفة النظام.',
+      'تقييم ملاءمة دقيقتان. تقرير واحد: التسرّب، الفرصة، التكلفة الكاملة, ثم تقرّر.',
     assessmentNote:
-      'تقريرك يوضح تكلفة البطء في المتابعة، وما يمكن استرداده مع الحلقة، والاستثمار الكامل—قبل الدفع.',
+      'تقريرك يوضح تكلفة البطء في المتابعة، وما يمكن استرداده مع الحلقة، والاستثمار الكامل, قبل الدفع.',
     assessmentCta: 'ابدأ تقييم الملاءمة',
-    investmentNote: 'المبالغ تظهر في نتائجك—وليس هنا.',
+    investmentNote: 'المبالغ تظهر في نتائجك, وليس هنا.',
     planName: 'حلقة الحجز بالذكاء',
     limitedLabel: 'مقاعد شركاء محدودة',
     setupFee: '2,000 $',
     setupFeeWaivedDisplay: '0 $',
     setupLabel: 'الإعداد',
-    setupFeePromo: 'الإعداد مجاني — ينتهي خلال',
+    setupFeePromo: 'الإعداد مجاني، ينتهي خلال',
     monthlyLabel: 'شهري',
     price: '500 $',
     period: '/شهر',
