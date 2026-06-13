@@ -17,6 +17,8 @@ type Props = {
   theme: StrategyTheme
   capturedLabel: string
   isHero?: boolean
+  /** Smaller card for page heroes — shorter image area and tighter padding */
+  compact?: boolean
   imageSize?: InboundTacticImageSize
   priority?: boolean
   layout?: 'filmstrip' | 'stack'
@@ -29,6 +31,7 @@ export default function InboundTacticCard({
   theme,
   capturedLabel,
   isHero = false,
+  compact = false,
   imageSize = 'full',
   priority = false,
   layout = 'filmstrip',
@@ -49,23 +52,35 @@ export default function InboundTacticCard({
       <div className={`absolute inset-x-0 top-0 h-24 bg-gradient-to-b ${theme.glow} to-transparent opacity-50 pointer-events-none`} />
 
       {!isFilmstrip ? (
-        <div className={`relative px-4 py-3 border-b border-white/10 bg-gradient-to-r ${theme.glow} to-transparent`}>
-          <p className={`text-[10px] font-bold uppercase tracking-wider ${theme.accent}`}>{example.chip}</p>
-          <p className="font-display font-bold text-lg text-text">{example.channel}</p>
+        <div
+          className={`relative border-b border-white/10 bg-gradient-to-r ${theme.glow} to-transparent ${
+            compact ? 'px-3 py-2' : 'px-4 py-3'
+          }`}
+        >
+          <p className={`font-bold uppercase tracking-wider ${theme.accent} ${compact ? 'text-[9px]' : 'text-[10px]'}`}>
+            {example.chip}
+          </p>
+          <p className={`font-display font-bold text-text ${compact ? 'text-sm' : 'text-lg'}`}>{example.channel}</p>
         </div>
       ) : null}
 
       <div
-        className={`relative flex items-center justify-center ${
-          isFilmstrip ? 'py-5 px-2 min-h-[340px] md:min-h-[400px]' : 'py-6 px-3 min-h-[360px]'
-        } inbound-filmstrip-visual`}
+        className={`relative flex items-center justify-center inbound-filmstrip-visual ${
+          isFilmstrip
+            ? compact
+              ? 'min-h-[260px] py-4 px-2 md:min-h-[300px]'
+              : 'min-h-[340px] py-5 px-2 md:min-h-[400px]'
+            : compact
+              ? 'min-h-[200px] py-3 px-2 sm:min-h-[220px]'
+              : 'min-h-[360px] py-6 px-3'
+        }`}
       >
         <InboundTacticImage
           sourceId={sourceId}
           index={index}
-          size={isHero ? 'hero' : imageSize}
+          size={isHero && !compact ? 'hero' : compact ? 'compact' : imageSize}
           priority={priority}
-          isHero={isHero}
+          isHero={isHero && !compact}
           themeGlowClass={theme.glow}
           overlayLine={example.overlayLine}
           chip={isFilmstrip ? example.chip : undefined}
@@ -75,13 +90,17 @@ export default function InboundTacticCard({
       </div>
 
       <div
-        className={`relative px-4 py-4 border-t border-white/10 ${
+        className={`relative border-t border-white/10 ${
           isFilmstrip ? 'bg-black/50 backdrop-blur-md' : 'bg-surface/40 backdrop-blur-sm'
-        }`}
+        } ${compact ? 'px-3 py-3' : 'px-4 py-4'}`}
       >
-        <p className="text-sm text-text/95 leading-relaxed font-medium">{example.moment}</p>
-        <p className="mt-2.5 flex items-center gap-2 text-xs font-bold text-success">
-          <span className="flex h-5 w-5 items-center justify-center rounded-full bg-success/15 border border-success/30">
+        <p className={`text-text/95 font-medium leading-relaxed ${compact ? 'text-xs' : 'text-sm'}`}>{example.moment}</p>
+        <p className={`mt-2 flex items-center gap-2 font-bold text-success ${compact ? 'text-[10px]' : 'text-xs'}`}>
+          <span
+            className={`flex items-center justify-center rounded-full bg-success/15 border border-success/30 ${
+              compact ? 'h-4 w-4' : 'h-5 w-5'
+            }`}
+          >
             <svg className="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden>
               <path d="M5 12l4 4L19 6" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
