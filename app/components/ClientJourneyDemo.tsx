@@ -620,7 +620,20 @@ function AIPoweredFlowDiagram({
 }
 
 const FUNNEL_STEP_INTERVAL_MS = 2800
+const FUNNEL_REFERRAL_HOLD_MS = FUNNEL_STEP_INTERVAL_MS * 2
 const CAROUSEL_CARD_WIDTH = 420
+const FUNNEL_STAGE_COUNT = 7
+const FUNNEL_LAST_STEP = FUNNEL_STAGE_COUNT - 1
+const PIPELINE_BAR_MIN_PX = 14
+const PIPELINE_BAR_MAX_PX = 48
+
+function pipelineBarHeight(value: number, max: number, revealed = true): number {
+  if (!revealed) return 0
+  if (max <= 0) return value > 0 ? PIPELINE_BAR_MIN_PX : 0
+  const ratio = Math.max(0, value) / max
+  if (value === 0) return PIPELINE_BAR_MIN_PX
+  return Math.max(PIPELINE_BAR_MIN_PX, Math.round(ratio * PIPELINE_BAR_MAX_PX))
+}
 
 function pipelineDropAtStep(counts: number[], index: number): number {
   if (index >= counts.length - 1) return 0
@@ -717,12 +730,14 @@ function PipelineMiniChart({
   counts,
   variant,
   activeStep,
+  revealedThroughStep,
   stageTitles,
   funnelCopy,
 }: {
   counts: number[]
   variant: 'broken' | 'ai'
   activeStep: number
+  revealedThroughStep: number
   stageTitles: string[]
   funnelCopy: FunnelCopy
 }) {
@@ -749,43 +764,52 @@ function PipelineMiniChart({
 
       <div className="grid grid-cols-7 gap-0.5 items-end h-[4.5rem] border-b border-[var(--software-border)]/60 pb-1">
         {counts.map((n, i) => {
-          const h = Math.max(10, Math.round((n / max) * 48))
-          const active = i === activeStep
-          const barTone = isBroken
-            ? active
-              ? 'bg-destructive shadow-sm shadow-destructive/35 ring-1 ring-destructive/50'
-              : 'bg-destructive/65'
-            : active
-              ? 'bg-success shadow-sm shadow-success/35 ring-1 ring-success/50'
-              : 'bg-success/60'
-          const valueTone = isBroken
-            ? active
-              ? 'text-destructive font-bold'
-              : 'text-destructive/90 font-semibold'
-            : active
-              ? 'text-success font-bold'
-              : 'text-success/90 font-semibold'
-          const stepTone = isBroken
-            ? active
-              ? 'text-destructive font-bold'
-              : 'text-destructive/75'
-            : active
-              ? 'text-success font-bold'
-              : 'text-success/75'
+          const revealed = i <= revealedThroughStep
+          const active = revealed && i === activeStep
+          const h = pipelineBarHeight(n, max, revealed)
+          const barTone = !revealed
+            ? 'bg-transparent'
+            : isBroken
+              ? active
+                ? 'bg-destructive shadow-sm shadow-destructive/35 ring-1 ring-destructive/50'
+                : 'bg-destructive'
+              : active
+                ? 'bg-success shadow-sm shadow-success/35 ring-1 ring-success/50'
+                : 'bg-success'
+          const valueTone = !revealed
+            ? 'text-transparent select-none'
+            : isBroken
+              ? active
+                ? 'text-destructive font-bold'
+                : 'text-destructive font-semibold'
+              : active
+                ? 'text-success font-bold'
+                : 'text-success font-semibold'
+          const stepTone = !revealed
+            ? 'text-[var(--software-text-muted)]/40'
+            : isBroken
+              ? active
+                ? 'text-destructive font-bold'
+                : 'text-destructive/80'
+              : active
+                ? 'text-success font-bold'
+                : 'text-success/80'
 
           return (
             <div
               key={i}
               className="flex min-w-0 flex-col items-center justify-end gap-0.5"
-              title={stageTitles[i]}
+              title={revealed ? `${stageTitles[i]}: ${n}` : stageTitles[i]}
             >
               <motion.div
-                className={`w-[88%] max-w-[1.35rem] rounded-t-sm transition-[box-shadow,ring-color] duration-300 ${barTone}`}
-                style={{ height: h }}
-                layout="position"
-                transition={{ duration: 0.35 }}
+                className={`w-[88%] max-w-[1.35rem] rounded-t-sm ${barTone}`}
+                initial={false}
+                animate={{ height: h, opacity: revealed ? 1 : 0 }}
+                transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
               />
-              <span className={`text-[9px] font-mono tabular-nums leading-none ${valueTone}`}>{n}</span>
+              <span className={`text-[9px] font-mono tabular-nums leading-none ${valueTone}`} aria-hidden={!revealed}>
+                {revealed ? n : '\u00A0'}
+              </span>
               <span className={`text-[8px] font-semibold leading-none tabular-nums ${stepTone}`}>{i + 1}</span>
             </div>
           )
@@ -832,6 +856,7 @@ type JourneyCarouselCardProps = {
   tagline: string
   counts: number[]
   activeStep: number
+  revealedThroughStep: number
   stages: { title: string }[]
   stageLine: string
   stageSection: string
@@ -847,6 +872,7 @@ function JourneyCarouselCard({
   tagline,
   counts,
   activeStep,
+  revealedThroughStep,
   stages,
   stageLine,
   stageSection,
@@ -893,6 +919,7 @@ function JourneyCarouselCard({
         counts={counts}
         variant={variant}
         activeStep={activeStep}
+        revealedThroughStep={revealedThroughStep}
         stageTitles={stageTitles}
         funnelCopy={funnelCopy}
       />
@@ -917,6 +944,9 @@ type ClientJourneyDemoProps = {
 
 const ClientJourneyDemo = ({ prominent = false }: ClientJourneyDemoProps) => {
   const [activeFunnelStep, setActiveFunnelStep] = useState(0)
+  const [revealedThroughStep, setRevealedThroughStep] = useState(0)
+  const [funnelInView, setFunnelInView] = useState(false)
+  const funnelSectionRef = useRef<HTMLElement>(null)
   const language = useLanguage()
   const t = translations[language].clientJourney
   const dream = translations[language].aiEmployeePage.dreamOutcome
@@ -944,11 +974,60 @@ const ClientJourneyDemo = ({ prominent = false }: ClientJourneyDemoProps) => {
   const aiStages: AIStageItem[] = t.aiStages.map((s, i) => ({ ...s, icon: AI_STAGE_ICONS[i] }))
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveFunnelStep((prev) => (prev + 1) % 7)
-    }, FUNNEL_STEP_INTERVAL_MS)
-    return () => clearInterval(interval)
-  }, [])
+    if (!compact) return
+    const el = funnelSectionRef.current
+    if (!el) return
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setFunnelInView(entry.isIntersecting)
+        if (entry.isIntersecting) {
+          setActiveFunnelStep(0)
+          setRevealedThroughStep(0)
+        }
+      },
+      { threshold: 0.35, rootMargin: '0px 0px -10% 0px' },
+    )
+
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [compact])
+
+  useEffect(() => {
+    if (compact && !funnelInView) return
+
+    let cancelled = false
+    let timeoutId: ReturnType<typeof setTimeout>
+    let step = 0
+
+    const scheduleNext = () => {
+      const delay = step === FUNNEL_LAST_STEP ? FUNNEL_REFERRAL_HOLD_MS : FUNNEL_STEP_INTERVAL_MS
+      timeoutId = setTimeout(() => {
+        if (cancelled) return
+        step = (step + 1) % FUNNEL_STAGE_COUNT
+        setActiveFunnelStep(step)
+        scheduleNext()
+      }, delay)
+    }
+
+    setActiveFunnelStep(0)
+    setRevealedThroughStep(0)
+    scheduleNext()
+
+    return () => {
+      cancelled = true
+      clearTimeout(timeoutId)
+    }
+  }, [compact, funnelInView])
+
+  useEffect(() => {
+    setRevealedThroughStep((peak) => {
+      if (activeFunnelStep === 0 && peak === FUNNEL_LAST_STEP) {
+        return 0
+      }
+      return Math.max(peak, activeFunnelStep)
+    })
+  }, [activeFunnelStep])
 
   const scrollToCard = useCallback((variant: 'broken' | 'ai') => {
     setActiveCard(variant)
@@ -995,6 +1074,7 @@ const ClientJourneyDemo = ({ prominent = false }: ClientJourneyDemoProps) => {
 
   return (
     <section
+      ref={funnelSectionRef}
       id="leak-vs-loop"
       className="overflow-hidden border-b border-[var(--software-border)] py-16 md:py-20"
       aria-labelledby="journey-demo-title"
@@ -1064,6 +1144,7 @@ const ClientJourneyDemo = ({ prominent = false }: ClientJourneyDemoProps) => {
             tagline={t.beforeSectionSubtext}
             counts={BROKEN_FUNNEL}
             activeStep={activeFunnelStep}
+            revealedThroughStep={revealedThroughStep}
             stages={brokenStages}
             stageLine={brokenStages[activeFunnelStep]?.leak ?? ''}
             stageSection={brokenStages[activeFunnelStep]?.title ?? ''}
@@ -1078,6 +1159,7 @@ const ClientJourneyDemo = ({ prominent = false }: ClientJourneyDemoProps) => {
             tagline={t.afterSectionSubtext}
             counts={AI_FUNNEL}
             activeStep={activeFunnelStep}
+            revealedThroughStep={revealedThroughStep}
             stages={aiStages}
             stageLine={aiStages[activeFunnelStep]?.win ?? ''}
             stageSection={aiStages[activeFunnelStep]?.title ?? ''}
