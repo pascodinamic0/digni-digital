@@ -4,26 +4,26 @@ import { futureReadyAssessmentEn } from './future-ready-graduate'
 import { agenticSoftwaresAssessmentEn } from './agentic-softwares'
 
 const configs: Record<AssessmentServiceId, ServiceAssessmentConfig> = {
-  'ai-employee': aiEmployeeAssessmentEn,
-  'future-ready': futureReadyAssessmentEn,
-  'agentic-softwares': agenticSoftwaresAssessmentEn,
+ 'ai-employee': aiEmployeeAssessmentEn,
+ 'future-ready': futureReadyAssessmentEn,
+ 'agentic-softwares': agenticSoftwaresAssessmentEn,
 }
 
 export function getServiceAssessmentConfig(
-  serviceId: AssessmentServiceId,
+ serviceId: AssessmentServiceId,
 ): ServiceAssessmentConfig {
-  return configs[serviceId]
+ return configs[serviceId]
 }
 
 export { ASSESSMENT_PATHS, getAssessmentPath } from './paths'
 export { computeMatchPercent, getResultBand, maxAssessmentPoints } from './score'
 export type {
-  AssessmentAccent,
-  AssessmentChoice,
-  AssessmentCopy,
-  AssessmentCustomResult,
-  AssessmentQuestion,
-  AssessmentResultBand,
-  AssessmentServiceId,
-  ServiceAssessmentConfig,
+ AssessmentAccent,
+ AssessmentChoice,
+ AssessmentCopy,
+ AssessmentCustomResult,
+ AssessmentQuestion,
+ AssessmentResultBand,
+ AssessmentServiceId,
+ ServiceAssessmentConfig,
 } from './types'
