@@ -1,5 +1,5 @@
 /**
- * Re-export translations from i18n. All components use this for backward compatibility.
+ * Re export translations from i18n. All components use this for backward compatibility.
  * Full translations include: nav, cta, download, footer, home, blog, about, contact
  */
 export { translations } from '@/app/i18n/translations'
