@@ -10,7 +10,6 @@ import {
   TimeToValueSection,
   ProofSection,
   QualificationSection,
-  ClientOutcomesSection,
   BonusStackSection,
   MobileAppBannerSection,
   PricingSection,
@@ -66,7 +65,6 @@ export function AIReceptionistClient({ params, searchParams, showTaskQueueDemo }
 
       {/* Process — product demos */}
       <AIReceptionistHowItWorksDemos showTaskQueueDemo={showTaskQueueDemo} />
-      <ClientOutcomesSection />
 
       {/* Contrast — leaky bucket vs loop */}
       <AIReceptionistPainDreamDemos />
