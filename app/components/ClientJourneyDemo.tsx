@@ -1,6 +1,6 @@
 'use client'
 
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion, AnimatePresence, useMotionValueEvent, useReducedMotion, useScroll, useTransform } from 'framer-motion'
 import { useState, useEffect, useRef, useCallback } from 'react'
 import { useLanguage } from '@/app/context/LocaleContext'
 import { translations } from '@/app/config/translations'
@@ -622,6 +622,7 @@ function AIPoweredFlowDiagram({
 const FUNNEL_STEP_INTERVAL_MS = 2800
 const FUNNEL_REFERRAL_HOLD_MS = FUNNEL_STEP_INTERVAL_MS * 2
 const CAROUSEL_CARD_WIDTH = 420
+const CARD_SCROLL_VH = 110
 const FUNNEL_STAGE_COUNT = 7
 const FUNNEL_LAST_STEP = FUNNEL_STAGE_COUNT - 1
 const PIPELINE_BAR_MIN_PX = 14
@@ -947,6 +948,8 @@ const ClientJourneyDemo = ({ prominent = false }: ClientJourneyDemoProps) => {
   const [revealedThroughStep, setRevealedThroughStep] = useState(0)
   const [funnelInView, setFunnelInView] = useState(false)
   const funnelSectionRef = useRef<HTMLElement>(null)
+  const scrollRunwayRef = useRef<HTMLDivElement>(null)
+  const shouldReduceMotion = useReducedMotion()
   const language = useLanguage()
   const t = translations[language].clientJourney
   const dream = translations[language].aiEmployeePage.dreamOutcome
@@ -973,6 +976,30 @@ const ClientJourneyDemo = ({ prominent = false }: ClientJourneyDemoProps) => {
   const brokenStages: BrokenStageItem[] = t.brokenStages.map((s, i) => ({ ...s, icon: BROKEN_STAGE_ICONS[i] }))
   const aiStages: AIStageItem[] = t.aiStages.map((s, i) => ({ ...s, icon: AI_STAGE_ICONS[i] }))
 
+  const { scrollYProgress } = useScroll({
+    target: scrollRunwayRef,
+    offset: ['start start', 'end end'],
+  })
+
+  const brokenCardScale = useTransform(scrollYProgress, [0, 0.5, 1], [1, 0.96, 0.92])
+  const aiCardScale = useTransform(scrollYProgress, [0, 0.5, 1], [0.92, 0.96, 1])
+  const brokenCardY = useTransform(scrollYProgress, [0, 1], [0, -20])
+  const aiCardY = useTransform(scrollYProgress, [0, 1], [28, 0])
+  const brokenCardOpacity = useTransform(scrollYProgress, [0, 0.45, 0.75], [1, 0.82, 0.62])
+  const aiCardOpacity = useTransform(scrollYProgress, [0, 0.45, 0.75], [0.62, 0.82, 1])
+
+  useMotionValueEvent(scrollYProgress, 'change', (progress) => {
+    if (shouldReduceMotion || !compact) return
+
+    const step = Math.min(
+      FUNNEL_LAST_STEP,
+      Math.max(0, Math.floor(progress * FUNNEL_STAGE_COUNT)),
+    )
+    setActiveFunnelStep(step)
+    setActiveCard(progress >= 0.5 ? 'ai' : 'broken')
+    setRevealedThroughStep((peak) => (progress < 0.05 ? 0 : Math.max(peak, step)))
+  })
+
   useEffect(() => {
     if (!compact) return
     const el = funnelSectionRef.current
@@ -995,6 +1022,7 @@ const ClientJourneyDemo = ({ prominent = false }: ClientJourneyDemoProps) => {
 
   useEffect(() => {
     if (compact && !funnelInView) return
+    if (compact && !shouldReduceMotion) return
 
     let cancelled = false
     let timeoutId: ReturnType<typeof setTimeout>
@@ -1018,25 +1046,39 @@ const ClientJourneyDemo = ({ prominent = false }: ClientJourneyDemoProps) => {
       cancelled = true
       clearTimeout(timeoutId)
     }
-  }, [compact, funnelInView])
+  }, [compact, funnelInView, shouldReduceMotion])
 
   useEffect(() => {
+    if (compact && !shouldReduceMotion) return
+
     setRevealedThroughStep((peak) => {
       if (activeFunnelStep === 0 && peak === FUNNEL_LAST_STEP) {
         return 0
       }
       return Math.max(peak, activeFunnelStep)
     })
-  }, [activeFunnelStep])
+  }, [activeFunnelStep, shouldReduceMotion, compact])
 
   const scrollToCard = useCallback((variant: 'broken' | 'ai') => {
     setActiveCard(variant)
-    const el = carouselRef.current
-    if (!el) return
-    const index = variant === 'broken' ? 0 : 1
-    const card = el.children[index] as HTMLElement | undefined
-    card?.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' })
-  }, [])
+
+    if (shouldReduceMotion) {
+      const el = carouselRef.current
+      if (!el) return
+      const index = variant === 'broken' ? 0 : 1
+      const card = el.children[index] as HTMLElement | undefined
+      card?.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' })
+      return
+    }
+
+    const runway = scrollRunwayRef.current
+    if (!runway) return
+    const rect = runway.getBoundingClientRect()
+    const sectionTop = window.scrollY + rect.top
+    const progress = variant === 'ai' ? 0.78 : 0.22
+    const target = sectionTop + runway.offsetHeight * progress - window.innerHeight * 0.35
+    window.scrollTo({ top: Math.max(0, target), behavior: 'smooth' })
+  }, [shouldReduceMotion])
 
   if (!compact) {
     return (
@@ -1119,69 +1161,146 @@ const ClientJourneyDemo = ({ prominent = false }: ClientJourneyDemoProps) => {
         </motion.div>
       </div>
 
-      <div className="relative mx-auto mt-10 max-w-6xl">
-        <div
-          className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-gradient-to-r from-[var(--software-canvas)] to-transparent sm:w-16"
-          aria-hidden
-        />
-        <div
-          className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-gradient-to-l from-[var(--software-canvas)] to-transparent sm:w-16"
-          aria-hidden
-        />
-
-        <div
-          ref={carouselRef}
-          className="flex gap-5 sm:gap-6 overflow-x-auto overscroll-x-contain scroll-smooth snap-x snap-mandatory px-4 sm:px-6 pb-3 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
-          style={{
-            paddingLeft: `max(1rem, calc(50% - ${CAROUSEL_CARD_WIDTH / 2}px))`,
-            paddingRight: `max(1rem, calc(50% - ${CAROUSEL_CARD_WIDTH / 2}px))`,
-          }}
-        >
-          <JourneyCarouselCard
-            variant="broken"
-            sectionBadge={t.beforeSectionBadge}
-            label={t.brokenLabel}
-            tagline={t.beforeSectionSubtext}
-            counts={BROKEN_FUNNEL}
-            activeStep={activeFunnelStep}
-            revealedThroughStep={revealedThroughStep}
-            stages={brokenStages}
-            stageLine={brokenStages[activeFunnelStep]?.leak ?? ''}
-            stageSection={brokenStages[activeFunnelStep]?.title ?? ''}
-            funnelCopy={funnelCopy}
-            isActive={activeCard === 'broken'}
-            onSelect={() => scrollToCard('broken')}
+      <div
+        ref={scrollRunwayRef}
+        className="relative mx-auto mt-10 max-w-6xl"
+        style={shouldReduceMotion ? undefined : { height: `${CARD_SCROLL_VH}vh` }}
+      >
+      {shouldReduceMotion ? (
+        <>
+          <div
+            className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-gradient-to-r from-[var(--software-canvas)] to-transparent sm:w-16"
+            aria-hidden
           />
-          <JourneyCarouselCard
-            variant="ai"
-            sectionBadge={t.afterSectionBadge}
-            label={t.aiFlowLabel}
-            tagline={t.afterSectionSubtext}
-            counts={AI_FUNNEL}
-            activeStep={activeFunnelStep}
-            revealedThroughStep={revealedThroughStep}
-            stages={aiStages}
-            stageLine={aiStages[activeFunnelStep]?.win ?? ''}
-            stageSection={aiStages[activeFunnelStep]?.title ?? ''}
-            funnelCopy={funnelCopy}
-            isActive={activeCard === 'ai'}
-            onSelect={() => scrollToCard('ai')}
+          <div
+            className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-gradient-to-l from-[var(--software-canvas)] to-transparent sm:w-16"
+            aria-hidden
           />
-        </div>
 
-        <div className="mt-6 flex justify-center gap-2">
-          {(['broken', 'ai'] as const).map((v) => (
-            <button
-              key={v}
-              type="button"
-              onClick={() => scrollToCard(v)}
-              className={`h-1.5 rounded-full transition-all duration-300 ${
-                activeCard === v ? `w-7 ${v === 'broken' ? 'bg-destructive' : 'bg-success'}` : 'w-2 bg-[var(--software-border)]'
-              }`}
-              aria-label={v === 'broken' ? t.brokenLabel : t.aiFlowLabel}
+          <div
+            ref={carouselRef}
+            className="flex gap-5 sm:gap-6 overflow-x-auto overscroll-x-contain scroll-smooth snap-x snap-mandatory px-4 sm:px-6 pb-3 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+            style={{
+              paddingLeft: `max(1rem, calc(50% - ${CAROUSEL_CARD_WIDTH / 2}px))`,
+              paddingRight: `max(1rem, calc(50% - ${CAROUSEL_CARD_WIDTH / 2}px))`,
+            }}
+          >
+            <JourneyCarouselCard
+              variant="broken"
+              sectionBadge={t.beforeSectionBadge}
+              label={t.brokenLabel}
+              tagline={t.beforeSectionSubtext}
+              counts={BROKEN_FUNNEL}
+              activeStep={activeFunnelStep}
+              revealedThroughStep={revealedThroughStep}
+              stages={brokenStages}
+              stageLine={brokenStages[activeFunnelStep]?.leak ?? ''}
+              stageSection={brokenStages[activeFunnelStep]?.title ?? ''}
+              funnelCopy={funnelCopy}
+              isActive={activeCard === 'broken'}
+              onSelect={() => scrollToCard('broken')}
             />
-          ))}
-        </div>
+            <JourneyCarouselCard
+              variant="ai"
+              sectionBadge={t.afterSectionBadge}
+              label={t.aiFlowLabel}
+              tagline={t.afterSectionSubtext}
+              counts={AI_FUNNEL}
+              activeStep={activeFunnelStep}
+              revealedThroughStep={revealedThroughStep}
+              stages={aiStages}
+              stageLine={aiStages[activeFunnelStep]?.win ?? ''}
+              stageSection={aiStages[activeFunnelStep]?.title ?? ''}
+              funnelCopy={funnelCopy}
+              isActive={activeCard === 'ai'}
+              onSelect={() => scrollToCard('ai')}
+            />
+          </div>
+
+          <div className="mt-6 flex justify-center gap-2">
+            {(['broken', 'ai'] as const).map((v) => (
+              <button
+                key={v}
+                type="button"
+                onClick={() => scrollToCard(v)}
+                className={`h-1.5 rounded-full transition-all duration-300 ${
+                  activeCard === v ? `w-7 ${v === 'broken' ? 'bg-destructive' : 'bg-success'}` : 'w-2 bg-[var(--software-border)]'
+                }`}
+                aria-label={v === 'broken' ? t.brokenLabel : t.aiFlowLabel}
+              />
+            ))}
+          </div>
+        </>
+      ) : (
+        <div className="sticky top-20 sm:top-24 py-4">
+            <div className="relative mx-auto px-4 sm:px-6" style={{ maxWidth: CAROUSEL_CARD_WIDTH }}>
+              <div className="relative min-h-[34rem] sm:min-h-[36rem]">
+                <motion.div
+                  className={`absolute inset-x-0 top-0 mx-auto ${activeCard === 'broken' ? 'z-30' : 'z-20'}`}
+                  style={{
+                    scale: brokenCardScale,
+                    y: brokenCardY,
+                    opacity: brokenCardOpacity,
+                  }}
+                >
+                  <JourneyCarouselCard
+                    variant="broken"
+                    sectionBadge={t.beforeSectionBadge}
+                    label={t.brokenLabel}
+                    tagline={t.beforeSectionSubtext}
+                    counts={BROKEN_FUNNEL}
+                    activeStep={activeFunnelStep}
+                    revealedThroughStep={revealedThroughStep}
+                    stages={brokenStages}
+                    stageLine={brokenStages[activeFunnelStep]?.leak ?? ''}
+                    stageSection={brokenStages[activeFunnelStep]?.title ?? ''}
+                    funnelCopy={funnelCopy}
+                    isActive={activeCard === 'broken'}
+                    onSelect={() => scrollToCard('broken')}
+                  />
+                </motion.div>
+                <motion.div
+                  className={`absolute inset-x-0 top-0 mx-auto ${activeCard === 'ai' ? 'z-30' : 'z-20'}`}
+                  style={{
+                    scale: aiCardScale,
+                    y: aiCardY,
+                    opacity: aiCardOpacity,
+                  }}
+                >
+                  <JourneyCarouselCard
+                    variant="ai"
+                    sectionBadge={t.afterSectionBadge}
+                    label={t.aiFlowLabel}
+                    tagline={t.afterSectionSubtext}
+                    counts={AI_FUNNEL}
+                    activeStep={activeFunnelStep}
+                    revealedThroughStep={revealedThroughStep}
+                    stages={aiStages}
+                    stageLine={aiStages[activeFunnelStep]?.win ?? ''}
+                    stageSection={aiStages[activeFunnelStep]?.title ?? ''}
+                    funnelCopy={funnelCopy}
+                    isActive={activeCard === 'ai'}
+                    onSelect={() => scrollToCard('ai')}
+                  />
+                </motion.div>
+              </div>
+            </div>
+
+            <div className="mt-6 flex justify-center gap-2">
+              {(['broken', 'ai'] as const).map((v) => (
+                <button
+                  key={v}
+                  type="button"
+                  onClick={() => scrollToCard(v)}
+                  className={`h-1.5 rounded-full transition-all duration-300 ${
+                    activeCard === v ? `w-7 ${v === 'broken' ? 'bg-destructive' : 'bg-success'}` : 'w-2 bg-[var(--software-border)]'
+                  }`}
+                  aria-label={v === 'broken' ? t.brokenLabel : t.aiFlowLabel}
+                />
+              ))}
+            </div>
+          </div>
+      )}
       </div>
 
       <div className="mx-auto mt-8 max-w-3xl px-4 sm:px-6 text-center">

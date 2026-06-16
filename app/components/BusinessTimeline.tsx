@@ -24,7 +24,6 @@ const BusinessTimeline = () => {
   const [activeStep, setActiveStep] = useState(0)
   const shouldReduceMotion = useReducedMotion()
   const scrollSectionRef = useRef<HTMLDivElement>(null)
-  const stepRefs = useRef<(HTMLDivElement | null)[]>([])
 
   const steps: Step[] = [
     {
@@ -121,6 +120,8 @@ const BusinessTimeline = () => {
 
   useMotionValueEvent(scrollYProgress, 'change', (progress) => {
     if (shouldReduceMotion) return
+    if (typeof window !== 'undefined' && !window.matchMedia('(min-width: 1024px)').matches) return
+
     const next = Math.min(
       steps.length - 1,
       Math.max(0, Math.floor(progress * steps.length)),
@@ -129,42 +130,8 @@ const BusinessTimeline = () => {
   })
 
   useEffect(() => {
-    if (shouldReduceMotion) return
-
-    const mq = window.matchMedia('(min-width: 1024px)')
-    if (mq.matches) return
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        let bestIndex = -1
-        let bestRatio = 0
-
-        for (const entry of entries) {
-          if (!entry.isIntersecting) continue
-          const index = Number((entry.target as HTMLElement).dataset.stepIndex)
-          if (Number.isNaN(index)) continue
-          if (entry.intersectionRatio > bestRatio) {
-            bestRatio = entry.intersectionRatio
-            bestIndex = index
-          }
-        }
-
-        if (bestIndex >= 0) {
-          setActiveStep((prev) => (prev === bestIndex ? prev : bestIndex))
-        }
-      },
-      { threshold: [0, 0.25, 0.5, 0.75, 1], rootMargin: '-35% 0px -35% 0px' },
-    )
-
-    stepRefs.current.forEach((el) => {
-      if (el) observer.observe(el)
-    })
-
-    return () => observer.disconnect()
-  }, [shouldReduceMotion, steps.length])
-
-  useEffect(() => {
-    if (!shouldReduceMotion) return
+    const isDesktop = () => window.matchMedia('(min-width: 1024px)').matches
+    if (!shouldReduceMotion && isDesktop()) return
 
     const interval = setInterval(() => {
       setActiveStep((prev) => (prev + 1) % steps.length)
@@ -176,19 +143,15 @@ const BusinessTimeline = () => {
   const scrollToStep = (index: number) => {
     setActiveStep(index)
 
-    const isDesktop = window.matchMedia('(min-width: 1024px)').matches
-    if (isDesktop) {
-      const el = scrollSectionRef.current
-      if (!el) return
-      const rect = el.getBoundingClientRect()
-      const sectionTop = window.scrollY + rect.top
-      const progress = (index + 0.5) / steps.length
-      const target = sectionTop + el.offsetHeight * progress - window.innerHeight * 0.35
-      window.scrollTo({ top: Math.max(0, target), behavior: 'smooth' })
-      return
-    }
+    if (typeof window === 'undefined' || !window.matchMedia('(min-width: 1024px)').matches) return
 
-    stepRefs.current[index]?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+    const el = scrollSectionRef.current
+    if (!el) return
+    const rect = el.getBoundingClientRect()
+    const sectionTop = window.scrollY + rect.top
+    const progress = (index + 0.5) / steps.length
+    const target = sectionTop + el.offsetHeight * progress - window.innerHeight * 0.35
+    window.scrollTo({ top: Math.max(0, target), behavior: 'smooth' })
   }
 
   const getColorClasses = (color: ColorType, isActive = false) => {
@@ -381,7 +344,7 @@ const BusinessTimeline = () => {
           </div>
         </div>
 
-        {/* Mobile Timeline — active step follows scroll position */}
+        {/* Mobile / tablet timeline — auto-advances (no scroll wheel effect) */}
         <div className="lg:hidden space-y-6">
           {steps.map((step, index) => {
             const isActive = index <= activeStep
@@ -391,8 +354,6 @@ const BusinessTimeline = () => {
             return (
               <motion.div
                 key={step.id}
-                ref={(el) => { stepRefs.current[index] = el }}
-                data-step-index={index}
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
