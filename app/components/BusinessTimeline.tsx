@@ -1,9 +1,11 @@
 'use client'
 
-import { motion } from 'framer-motion'
-import { useEffect, useState, ReactNode } from 'react'
+import { motion, useMotionValueEvent, useReducedMotion, useScroll } from 'framer-motion'
+import { useEffect, useRef, useState, ReactNode } from 'react'
 import { useLanguage } from '@/app/context/LocaleContext'
 import { translations } from '@/app/config/translations'
+
+const STEP_SCROLL_VH = 50
 
 type ColorType = 'accent' | 'success' | 'info' | 'warning'
 
@@ -20,6 +22,9 @@ const BusinessTimeline = () => {
   const language = useLanguage()
   const t = translations[language].aiEmployeeProductDemos.timeline
   const [activeStep, setActiveStep] = useState(0)
+  const shouldReduceMotion = useReducedMotion()
+  const scrollSectionRef = useRef<HTMLDivElement>(null)
+  const stepRefs = useRef<(HTMLDivElement | null)[]>([])
 
   const steps: Step[] = [
     {
@@ -109,13 +114,82 @@ const BusinessTimeline = () => {
     }
   ]
 
+  const { scrollYProgress } = useScroll({
+    target: scrollSectionRef,
+    offset: ['start start', 'end end'],
+  })
+
+  useMotionValueEvent(scrollYProgress, 'change', (progress) => {
+    if (shouldReduceMotion) return
+    const next = Math.min(
+      steps.length - 1,
+      Math.max(0, Math.floor(progress * steps.length)),
+    )
+    setActiveStep((prev) => (prev === next ? prev : next))
+  })
+
   useEffect(() => {
+    if (shouldReduceMotion) return
+
+    const mq = window.matchMedia('(min-width: 1024px)')
+    if (mq.matches) return
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        let bestIndex = -1
+        let bestRatio = 0
+
+        for (const entry of entries) {
+          if (!entry.isIntersecting) continue
+          const index = Number((entry.target as HTMLElement).dataset.stepIndex)
+          if (Number.isNaN(index)) continue
+          if (entry.intersectionRatio > bestRatio) {
+            bestRatio = entry.intersectionRatio
+            bestIndex = index
+          }
+        }
+
+        if (bestIndex >= 0) {
+          setActiveStep((prev) => (prev === bestIndex ? prev : bestIndex))
+        }
+      },
+      { threshold: [0, 0.25, 0.5, 0.75, 1], rootMargin: '-35% 0px -35% 0px' },
+    )
+
+    stepRefs.current.forEach((el) => {
+      if (el) observer.observe(el)
+    })
+
+    return () => observer.disconnect()
+  }, [shouldReduceMotion, steps.length])
+
+  useEffect(() => {
+    if (!shouldReduceMotion) return
+
     const interval = setInterval(() => {
       setActiveStep((prev) => (prev + 1) % steps.length)
     }, 3000)
 
     return () => clearInterval(interval)
-  }, [steps.length])
+  }, [shouldReduceMotion, steps.length])
+
+  const scrollToStep = (index: number) => {
+    setActiveStep(index)
+
+    const isDesktop = window.matchMedia('(min-width: 1024px)').matches
+    if (isDesktop) {
+      const el = scrollSectionRef.current
+      if (!el) return
+      const rect = el.getBoundingClientRect()
+      const sectionTop = window.scrollY + rect.top
+      const progress = (index + 0.5) / steps.length
+      const target = sectionTop + el.offsetHeight * progress - window.innerHeight * 0.35
+      window.scrollTo({ top: Math.max(0, target), behavior: 'smooth' })
+      return
+    }
+
+    stepRefs.current[index]?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+  }
 
   const getColorClasses = (color: ColorType, isActive = false) => {
     const colors = {
@@ -185,102 +259,129 @@ const BusinessTimeline = () => {
           </motion.p>
         </div>
 
-        {/* Desktop Timeline */}
-        <div className="hidden lg:block">
-          <div className="relative">
-            {/* Progress Line - Positioned with gap from cards */}
-            <div className="absolute top-10 left-[10%] right-[10%] h-1 bg-surface-light rounded-full overflow-hidden">
-              <motion.div
-                className="h-full bg-gradient-to-r from-info via-accent to-success rounded-full"
-                initial={{ width: '0%' }}
-                animate={{ width: `${((activeStep + 1) / steps.length) * 100}%` }}
-                transition={{ duration: 0.8, ease: 'easeInOut' }}
-              />
-            </div>
+        {/* Desktop Timeline — scroll runway drives active step via mouse wheel */}
+        <div
+          ref={scrollSectionRef}
+          className="hidden lg:block relative"
+          style={{ height: `${steps.length * STEP_SCROLL_VH}vh` }}
+        >
+          <div className="sticky top-24 py-8">
+            <div className="relative">
+              {/* Progress Line - Positioned with gap from cards */}
+              <div className="absolute top-10 left-[10%] right-[10%] h-1 bg-surface-light rounded-full overflow-hidden">
+                <motion.div
+                  className="h-full bg-gradient-to-r from-info via-accent to-success rounded-full"
+                  initial={{ width: '0%' }}
+                  animate={{ width: `${((activeStep + 1) / steps.length) * 100}%` }}
+                  transition={{ duration: 0.8, ease: 'easeInOut' }}
+                />
+              </div>
 
-            {/* Timeline Steps */}
-            <div className="grid grid-cols-6 gap-6">
-              {steps.map((step, index) => {
-                const isActive = index <= activeStep
-                const isCurrent = index === activeStep
-                const colorClasses = getColorClasses(step.color, isActive)
+              {/* Timeline Steps */}
+              <div className="grid grid-cols-6 gap-6">
+                {steps.map((step, index) => {
+                  const isActive = index <= activeStep
+                  const isCurrent = index === activeStep
+                  const colorClasses = getColorClasses(step.color, isActive)
 
-                return (
-                  <motion.div
-                    key={step.id}
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.15 }}
-                    className="relative pt-16"
-                  >
-                    {/* Step Circle - Positioned on the progress line */}
-                    <div className="absolute top-0 left-1/2 -translate-x-1/2 z-10">
+                  return (
+                    <motion.div
+                      key={step.id}
+                      initial={{ opacity: 0, y: 30 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: index * 0.15 }}
+                      className="relative pt-16"
+                    >
+                      {/* Step Circle - Positioned on the progress line */}
+                      <div className="absolute top-0 left-1/2 -translate-x-1/2 z-10">
+                        <motion.div
+                          className={`w-20 h-20 rounded-2xl flex items-center justify-center border-2 transition-all duration-500 backdrop-blur-sm ${
+                            isActive 
+                              ? `${colorClasses.bg} ${colorClasses.border} shadow-xl ${colorClasses.glow}` 
+                              : 'bg-surface/80 border-border-light'
+                          }`}
+                          animate={isCurrent ? { scale: [1, 1.05, 1] } : { scale: 1 }}
+                          transition={{ duration: 2, repeat: Infinity }}
+                        >
+                          <div className={isActive ? 'text-text' : 'text-muted'}>
+                            {step.icon}
+                          </div>
+                          {/* Step Number Badge */}
+                          <div className={`absolute -top-2 -right-2 w-7 h-7 rounded-full text-xs font-bold flex items-center justify-center shadow-lg ${
+                            isActive ? 'bg-foreground text-background' : 'bg-surface-light text-muted border border-border-light'
+                          }`}>
+                            {index + 1}
+                          </div>
+                        </motion.div>
+                      </div>
+
+                      {/* Step Card */}
                       <motion.div
-                        className={`w-20 h-20 rounded-2xl flex items-center justify-center border-2 transition-all duration-500 backdrop-blur-sm ${
-                          isActive 
-                            ? `${colorClasses.bg} ${colorClasses.border} shadow-xl ${colorClasses.glow}` 
-                            : 'bg-surface/80 border-border-light'
+                        className={`mt-8 h-full p-4 rounded-2xl border backdrop-blur-sm transition-all duration-500 ${
+                          isCurrent 
+                            ? `bg-gradient-to-br ${colorClasses.gradient} ${colorClasses.border} shadow-lg`
+                            : 'bg-surface/50 border-border hover:border-border-light'
                         }`}
-                        animate={isCurrent ? { scale: [1, 1.05, 1] } : { scale: 1 }}
-                        transition={{ duration: 2, repeat: Infinity }}
+                        animate={isCurrent ? { y: -4 } : { y: 0 }}
                       >
-                        <div className={isActive ? 'text-text' : 'text-muted'}>
-                          {step.icon}
-                        </div>
-                        {/* Step Number Badge */}
-                        <div className={`absolute -top-2 -right-2 w-7 h-7 rounded-full text-xs font-bold flex items-center justify-center shadow-lg ${
-                          isActive ? 'bg-foreground text-background' : 'bg-surface-light text-muted border border-border-light'
+                        <h3 className={`font-display text-base xl:text-lg font-bold mb-2 transition-colors duration-300 ${
+                          isActive ? colorClasses.text : 'text-muted-dark'
                         }`}>
-                          {index + 1}
+                          {step.title}
+                        </h3>
+                        <p className="mb-3 text-muted text-xs leading-relaxed xl:text-sm">
+                          {step.description}
+                        </p>
+
+                        <div className="flex flex-wrap gap-1.5">
+                          {step.metrics.map((metric, metricIndex) => (
+                            <motion.span
+                              key={metricIndex}
+                              initial={{ opacity: 0, scale: 0.8 }}
+                              animate={{ opacity: isCurrent ? 1 : 0.6, scale: 1 }}
+                              transition={{ delay: metricIndex * 0.1 }}
+                              className={`text-xs px-2.5 py-1 rounded-full border ${
+                                isCurrent 
+                                  ? `${colorClasses.bg} ${colorClasses.border} text-text` 
+                                  : 'bg-surface-light border-border text-muted'
+                              }`}
+                            >
+                              {metric}
+                            </motion.span>
+                          ))}
                         </div>
                       </motion.div>
-                    </div>
-
-                    {/* Step Card */}
-                    <motion.div
-                      className={`mt-8 h-full p-4 rounded-2xl border backdrop-blur-sm transition-all duration-500 ${
-                        isCurrent 
-                          ? `bg-gradient-to-br ${colorClasses.gradient} ${colorClasses.border} shadow-lg`
-                          : 'bg-surface/50 border-border hover:border-border-light'
-                      }`}
-                      animate={isCurrent ? { y: -4 } : { y: 0 }}
-                    >
-                      <h3 className={`font-display text-base xl:text-lg font-bold mb-2 transition-colors duration-300 ${
-                        isActive ? colorClasses.text : 'text-muted-dark'
-                      }`}>
-                        {step.title}
-                      </h3>
-                      <p className="mb-3 text-muted text-xs leading-relaxed xl:text-sm">
-                        {step.description}
-                      </p>
-
-                      <div className="flex flex-wrap gap-1.5">
-                        {step.metrics.map((metric, metricIndex) => (
-                          <motion.span
-                            key={metricIndex}
-                            initial={{ opacity: 0, scale: 0.8 }}
-                            animate={{ opacity: isCurrent ? 1 : 0.6, scale: 1 }}
-                            transition={{ delay: metricIndex * 0.1 }}
-                            className={`text-xs px-2.5 py-1 rounded-full border ${
-                              isCurrent 
-                                ? `${colorClasses.bg} ${colorClasses.border} text-text` 
-                                : 'bg-surface-light border-border text-muted'
-                            }`}
-                          >
-                            {metric}
-                          </motion.span>
-                        ))}
-                      </div>
                     </motion.div>
-                  </motion.div>
-                )
-              })}
+                  )
+                })}
+              </div>
+            </div>
+
+            {/* Timeline Controls */}
+            <div className="flex justify-center mt-12">
+              <div className="flex space-x-3">
+                {steps.map((step, index) => {
+                  const colorClasses = getColorClasses(step.color, activeStep === index)
+                  return (
+                    <button
+                      key={index}
+                      onClick={() => scrollToStep(index)}
+                      className={`h-2 rounded-full transition-all duration-300 ${
+                        activeStep === index 
+                          ? `w-8 ${colorClasses.bg}` 
+                          : 'w-2 bg-surface-light hover:bg-foreground/20'
+                      }`}
+                      aria-label={`${t.viewStepLabel} ${index + 1}: ${step.title}`}
+                    />
+                  )
+                })}
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Mobile Timeline */}
+        {/* Mobile Timeline — active step follows scroll position */}
         <div className="lg:hidden space-y-6">
           {steps.map((step, index) => {
             const isActive = index <= activeStep
@@ -290,6 +391,8 @@ const BusinessTimeline = () => {
             return (
               <motion.div
                 key={step.id}
+                ref={(el) => { stepRefs.current[index] = el }}
+                data-step-index={index}
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
@@ -367,15 +470,15 @@ const BusinessTimeline = () => {
           })}
         </div>
 
-        {/* Timeline Controls */}
-        <div className="flex justify-center mt-12">
+        {/* Mobile Timeline Controls */}
+        <div className="lg:hidden flex justify-center mt-12">
           <div className="flex space-x-3">
             {steps.map((step, index) => {
               const colorClasses = getColorClasses(step.color, activeStep === index)
               return (
                 <button
                   key={index}
-                  onClick={() => setActiveStep(index)}
+                  onClick={() => scrollToStep(index)}
                   className={`h-2 rounded-full transition-all duration-300 ${
                     activeStep === index 
                       ? `w-8 ${colorClasses.bg}` 
