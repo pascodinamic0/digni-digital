@@ -113,11 +113,15 @@ export default function Navigation() {
       )}
       
       <nav
-        className={`site-header-nav fixed top-0 left-0 right-0 z-[100] transition-all duration-300 bg-background/95 backdrop-blur-xl border-b border-border ${
-          showSolidNav ? 'shadow-sm' : ''
+        className={`site-header-nav transition-all duration-500 ${
+          scrolled && !mobileOpen
+            ? 'fixed top-3 left-1/2 -translate-x-1/2 w-[92%] max-w-6xl rounded-full border border-border-light bg-surface/80 backdrop-blur-md shadow-lg shadow-accent/5 z-[100]'
+            : `fixed top-0 left-0 right-0 z-[100] bg-background/95 backdrop-blur-xl border-b border-border ${
+                showSolidNav ? 'shadow-sm' : ''
+              }`
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6 py-4">
+        <div className={`max-w-7xl mx-auto px-6 transition-all duration-500 ${scrolled && !mobileOpen ? 'py-2' : 'py-4'}`}>
         <div className="flex items-center justify-between">
           <Logo href="/" label="Digni Digital LLC" />
 
