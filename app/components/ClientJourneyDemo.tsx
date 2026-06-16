@@ -983,7 +983,7 @@ const ClientJourneyDemo = ({ prominent = false }: ClientJourneyDemoProps) => {
 
   const { scrollYProgress } = useScroll({
     target: scrollRunwayRef,
-    offset: ['start 0.82', 'start 0.38'],
+    offset: ['start start', 'end start'],
   })
 
   const slideProgress = useTransform(

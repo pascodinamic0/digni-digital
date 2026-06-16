@@ -5,11 +5,10 @@ import { motion } from 'framer-motion'
 import { Check } from 'lucide-react'
 import { useLanguage } from '@/app/context/LocaleContext'
 import { translations } from '@/app/config/translations'
+import StoreBadgeLinks from '@/app/components/StoreBadgeLinks'
 
 const ASSETS = {
   mockup: '/images/Download/Mobile%20App.png',
-  apple: '/images/Download/Apple%20store.png',
-  play: '/images/Download/Google%20playstore.png',
 } as const
 
 /** Light scrim section for store badges — intentional contrast with dark product demos. */
@@ -52,38 +51,13 @@ export default function MobileAppBannerSection() {
               </li>
             </ul>
             <p className="type-h4 mt-8 font-display font-bold text-text">{t.tagline}</p>
-            <div className="mt-8 flex flex-wrap items-center gap-4">
-              <a
-                href={t.appStoreHref}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex rounded-md transition-opacity hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
-                aria-label={t.appStoreAriaLabel}
-              >
-                <Image
-                  src={ASSETS.apple}
-                  alt=""
-                  width={180}
-                  height={54}
-                  className="h-11 w-auto md:h-[52px]"
-                />
-              </a>
-              <a
-                href={t.playStoreHref}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex rounded-md transition-opacity hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
-                aria-label={t.playStoreAriaLabel}
-              >
-                <Image
-                  src={ASSETS.play}
-                  alt=""
-                  width={180}
-                  height={54}
-                  className="h-11 w-auto md:h-[52px]"
-                />
-              </a>
-            </div>
+            <StoreBadgeLinks
+              className="mt-8"
+              appStoreHref={t.appStoreHref}
+              playStoreHref={t.playStoreHref}
+              appStoreAriaLabel={t.appStoreAriaLabel}
+              playStoreAriaLabel={t.playStoreAriaLabel}
+            />
           </motion.div>
 
           <motion.div
