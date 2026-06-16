@@ -9,6 +9,7 @@ type StoreBadgeLinksProps = {
   appStoreAriaLabel: string
   playStoreAriaLabel: string
   focusOutlineClassName?: string
+  className?: string
 }
 
 /** Official vector store badges — crisp at any size, no PNG fringe artifacts. */
@@ -17,13 +18,14 @@ export default function StoreBadgeLinks({
   playStoreHref,
   appStoreAriaLabel,
   playStoreAriaLabel,
-  focusOutlineClassName = 'focus-visible:outline accent',
+  focusOutlineClassName = 'focus-visible:outline-accent',
+  className = '',
 }: StoreBadgeLinksProps) {
   const linkClassName = `inline-flex rounded-md transition-opacity hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 ${focusOutlineClassName}`
-  const badgeClassName = 'block h 11 w auto md:h-[52px]'
+  const badgeClassName = 'block h-11 w-auto md:h-[52px]'
 
   return (
-    <div className="flex flex wrap items center gap 4">
+    <div className={`flex flex-wrap items-center gap-4 ${className}`.trim()}>
       <a
         href={appStoreHref}
         target="_blank"
@@ -40,7 +42,7 @@ export default function StoreBadgeLinks({
         className={linkClassName}
         aria-label={playStoreAriaLabel}
       >
-        <img src={ASSETS.play} alt="" width={155} height={60} className={badgeClassName} />
+        <img src={ASSETS.play} alt="" width={135} height={40} className={badgeClassName} />
       </a>
     </div>
   )
