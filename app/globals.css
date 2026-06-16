@@ -329,9 +329,109 @@ html:not([data-theme="light"]) footer#contact input#footer-newsletter-email:-web
   width: 100%;
   height: 100%;
   pointer-events: none;
-  z-index: 1;
-  opacity: 0.03;
+  z-index: 50;
+  opacity: 0.045;
+  mix-blend-mode: overlay;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+/* Technical / Engineered Section Header Styles */
+.engineered-header-frame {
+  position: relative;
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  border: 1px solid rgba(var(--accent-rgb), 0.35);
+  border-radius: var(--radius-sm);
+  background: rgba(var(--accent-rgb), 0.03);
+}
+
+.engineered-header-frame::before,
+.engineered-header-frame::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: var(--accent);
+  border-radius: 1px;
+}
+
+.engineered-header-frame::before {
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+}
+
+.engineered-header-frame::after {
+  bottom: 0;
+  right: 0;
+  transform: translate(50%, 50%);
+}
+
+.engineered-corner-accent {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: var(--accent);
+  border-radius: 1px;
+}
+
+.engineered-corner-accent.top-right {
+  top: 0;
+  right: 0;
+  transform: translate(50%, -50%);
+}
+
+.engineered-corner-accent.bottom-left {
+  bottom: 0;
+  left: 0;
+  transform: translate(-50%, 50%);
+}
+
+/* Glow Card border glows (mouse hover reactive) */
+.glow-card-container {
+  position: relative;
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.glow-card-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    450px circle at var(--mouse-x, 0px) var(--mouse-y, 0px),
+    rgba(var(--accent-rgb), 0.08),
+    transparent 40%
+  );
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.glow-card-container:hover::before {
+  opacity: 1;
+}
+
+.glow-card-container:hover {
+  border-color: rgba(var(--accent-rgb), 0.45);
+  box-shadow: var(--shadow-accent);
+}
+
+.glow-card-container.glow-destructive::before {
+  background: radial-gradient(
+    450px circle at var(--mouse-x, 0px) var(--mouse-y, 0px),
+    rgba(var(--destructive-rgb), 0.08),
+    transparent 40%
+  );
+}
+
+.glow-card-container.glow-destructive:hover {
+  border-color: rgba(var(--destructive-rgb), 0.45);
+  box-shadow: 0 0 40px rgba(var(--destructive-rgb), 0.2);
 }
 
 /* Gradient text */

@@ -10,6 +10,7 @@ export default {
       fontFamily: {
         display: ['var(--font-display)', 'sans-serif'],
         body: ['var(--font-body)', 'sans-serif'],
+        serif: ['var(--font-serif)', 'serif'],
       },
       fontSize: {
         h1: ['var(--type-h1)', { lineHeight: '1.08', letterSpacing: '-0.03em' }],

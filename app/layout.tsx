@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Script from 'next/script'
-import { Space_Grotesk, Inter } from 'next/font/google'
+import { Space_Grotesk, Inter, Playfair_Display } from 'next/font/google'
 import { headers } from 'next/headers'
 import './globals.css'
 import { ThemeProvider } from './components/ThemeProvider'
@@ -18,6 +18,14 @@ const fontBody = Inter({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700'],
   variable: '--font-body',
+  display: 'swap',
+})
+
+const fontSerif = Playfair_Display({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  style: ['normal', 'italic'],
+  variable: '--font-serif',
   display: 'swap',
 })
 
@@ -78,7 +86,7 @@ export default async function RootLayout({
       suppressHydrationWarning
       data-scroll-behavior="smooth"
       data-theme="dark"
-      className={`${fontDisplay.variable} ${fontBody.variable}`}
+      className={`${fontDisplay.variable} ${fontBody.variable} ${fontSerif.variable}`}
     >
       <body suppressHydrationWarning>
         <Script id="theme-default" strategy="beforeInteractive">{`

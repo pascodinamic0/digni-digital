@@ -16,6 +16,7 @@ import { localeToHreflang, type Locale } from '@/i18n/routing'
 import { formatMissedLeadsUsdStat, MISSED_LEADS_USD } from '@/lib/formatMissedLeadsUsdStat'
 import EcosystemStrip from '@/app/components/EcosystemStrip'
 import { ecosystemFromHomeWhatWeDo } from '@/lib/positioning/map-home-ecosystem'
+import GlowCard from '@/app/components/GlowCard'
 
 const GlobalPresenceMap = dynamic(() => import('@/app/components/GlobalPresenceMap'), {
   loading: () => (
@@ -94,7 +95,7 @@ function Hero() {
         <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-4 sm:mb-6 md:mb-8 max-w-4xl px-2 text-text">
           {t.title}
           <br />
-          <span className="gradient-text hero-highlight">{t.titleHighlight}</span>
+          <span className="font-serif italic font-light gradient-text hero-highlight">{t.titleHighlight}</span>
         </h1>
 
         <motion.p
@@ -167,7 +168,9 @@ function MissionValues() {
           viewport={{ once: true }}
           className="text-center mb-20"
         >
-          <span className="text-accent font-medium text-sm uppercase tracking-wider">{m.title}</span>
+          <div className="engineered-header-frame mb-8">
+            <span className="text-accent font-medium text-sm uppercase tracking-wider">{m.title}</span>
+          </div>
           <h2 className="font-display text-4xl md:text-5xl font-bold mt-4 mb-8 max-w-4xl mx-auto">
             {m.statement}
           </h2>
@@ -198,7 +201,9 @@ function Commitment2026() {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Header: badge + headline with emphasis on numbers */}
         <div className="text-center mb-14">
-          <span className="section-label">{c.badge}</span>
+          <div className="engineered-header-frame mb-6">
+            <span className="section-label !m-0">{c.badge}</span>
+          </div>
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mt-6 mb-5 max-w-4xl mx-auto leading-tight gradient-text">
             {c.title}
           </h2>
@@ -277,7 +282,9 @@ function WhatWereFightingFor() {
     <AnimatedSection id="what-were-fighting-for" className="py-24">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
-          <span className="section-label">{f.badge}</span>
+          <div className="engineered-header-frame mb-6">
+            <span className="section-label !m-0">{f.badge}</span>
+          </div>
           <h2 className="font-display text-4xl md:text-5xl font-bold mt-4 mb-6">
             {f.title}<br />
             <span className="gradient-text">{f.subtitle}</span>
@@ -295,64 +302,66 @@ function WhatWereFightingFor() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.15 }}
-              className="card p-8 hover:border-destructive/50 group relative overflow-hidden"
+              className="flex"
             >
-              {/* Gradient background accent */}
-              <div className="absolute top-0 right-0 w-32 h-32 bg-destructive/5 rounded-full blur-3xl" />
-              
-              <div className="relative">
-                {/* Stat - Prominent and Bold */}
-                <div className="mb-6">
-                  <div className="flex items-baseline gap-2 mb-2">
-                    <span className="font-display text-5xl md:text-6xl font-bold text-destructive leading-none">
-                      {challenge.stat}
+              <GlowCard className="glow-destructive p-8 group relative overflow-hidden flex-1">
+                {/* Gradient background accent */}
+                <div className="absolute top-0 right-0 w-32 h-32 bg-destructive/5 rounded-full blur-3xl" />
+                
+                <div className="relative">
+                  {/* Stat - Prominent and Bold */}
+                  <div className="mb-6">
+                    <div className="flex items-baseline gap-2 mb-2">
+                      <span className="font-display text-5xl md:text-6xl font-bold text-destructive leading-none">
+                        {challenge.stat}
+                      </span>
+                    </div>
+                    <p className="text-destructive/80 text-sm font-medium uppercase tracking-wider">
+                      {challenge.statLabel}
+                    </p>
+                  </div>
+
+                  {/* Icon and Title */}
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="w-12 h-12 bg-destructive/10 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 group-hover:scale-110 transition-transform">
+                      {challenge.icon}
+                    </div>
+                    <h3 className="font-display text-xl font-bold text-text">
+                      {challenge.title}
+                    </h3>
+                  </div>
+
+                  {/* Problem */}
+                  <div className="mb-4 pb-4 border-b border-light">
+                    <span className="text-xs uppercase tracking-wider text-muted-dark block mb-2">
+                      {f.theProblem}
                     </span>
+                    <p className="text-destructive font-semibold text-sm leading-relaxed">
+                      {challenge.problem}
+                    </p>
                   </div>
-                  <p className="text-destructive/80 text-sm font-medium uppercase tracking-wider">
-                    {challenge.statLabel}
-                  </p>
-                </div>
 
-                {/* Icon and Title */}
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 bg-destructive/10 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 group-hover:scale-110 transition-transform">
-                    {challenge.icon}
+                  {/* Solution */}
+                  <div className="mb-4">
+                    <span className="text-xs uppercase tracking-wider text-muted-dark block mb-2">
+                      {f.theSolution}
+                    </span>
+                    <p className="text-muted text-sm leading-relaxed">
+                      {challenge.solution}
+                    </p>
                   </div>
-                  <h3 className="font-display text-xl font-bold text-text">
-                    {challenge.title}
-                  </h3>
-                </div>
 
-                {/* Problem */}
-                <div className="mb-4 pb-4 border-b border-light">
-                  <span className="text-xs uppercase tracking-wider text-muted-dark block mb-2">
-                    {f.theProblem}
-                  </span>
-                  <p className="text-destructive font-semibold text-sm leading-relaxed">
-                    {challenge.problem}
-                  </p>
+                  {/* Outcome */}
+                  <div className="pt-4 border-t border-light">
+                    <span className="text-xs uppercase tracking-wider text-accent block mb-2">
+                      {f.theOutcome}
+                    </span>
+                    <p className="text-accent font-medium text-sm leading-relaxed">
+                      {challenge.outcome}
+                    </p>
+                  </div>
                 </div>
-
-                {/* Solution */}
-                <div className="mb-4">
-                  <span className="text-xs uppercase tracking-wider text-muted-dark block mb-2">
-                    {f.theSolution}
-                  </span>
-                  <p className="text-muted text-sm leading-relaxed">
-                    {challenge.solution}
-                  </p>
-                </div>
-
-                {/* Outcome */}
-                <div className="pt-4 border-t border-light">
-                  <span className="text-xs uppercase tracking-wider text-accent block mb-2">
-                    {f.theOutcome}
-                  </span>
-                  <p className="text-accent font-medium text-sm leading-relaxed">
-                    {challenge.outcome}
-                  </p>
-                </div>
-              </div>
+              </GlowCard>
             </motion.div>
           ))}
         </div>
