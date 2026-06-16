@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import { Link, usePathname } from '@/i18n/navigation'
 import HeaderNavLink from '@/app/components/HeaderNavLink'
-import { getBookingLinkProps, ctaConfig } from '@/app/config/cta.config'
+import { ctaConfig } from '@/app/config/cta.config'
 import { useLanguage } from '@/app/context/LocaleContext'
 import { translations } from '@/app/config/translations'
 import ThemeToggle from './ThemeToggle'
@@ -210,12 +210,12 @@ export default function Navigation() {
           <div className="hidden lg:flex items-center gap-2">
             <LanguageToggler variant="compact" />
             <ThemeToggle />
-            <a
-              {...getBookingLinkProps()}
+            <Link
+              href={ctaConfig.digniPath}
               className="btn-primary text-sm"
             >
               {t.cta.getStarted}
-            </a>
+            </Link>
           </div>
 
           <button
@@ -303,12 +303,13 @@ export default function Navigation() {
               </div>
             </div>
             
-            <a
-              {...getBookingLinkProps()}
+            <Link
+              href={ctaConfig.digniPath}
               className="btn-primary mt-4 w-full text-center block"
+              onClick={() => setMobileOpen(false)}
             >
               {t.cta.getStarted}
-            </a>
+            </Link>
           </motion.div>
         )}
         </div>
