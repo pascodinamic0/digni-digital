@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import { BRAND_SHIELD_LOGO_PATH } from '@/lib/site-assets'
+import { BRAND_SHIELD_LOGO_GIF_PATH } from '@/lib/site-assets'
 
 type Size = 'sidebarCompact' | 'sidebarWide'
 
@@ -34,11 +34,12 @@ export default function SoftwareBrandMark({
       className={`software-brand-mark mx-auto flex shrink-0 items-center justify-center overflow-hidden bg-white shadow-sm ring-1 ring-black/[0.06] ${box} ${className}`}
     >
       <Image
-        src={BRAND_SHIELD_LOGO_PATH}
+        src={BRAND_SHIELD_LOGO_GIF_PATH}
         alt="Digni Digital"
         width={544}
         height={544}
         sizes={sizes}
+        unoptimized
         className={`h-full w-full object-contain object-center ${image}`}
         priority={size === 'sidebarCompact'}
       />
