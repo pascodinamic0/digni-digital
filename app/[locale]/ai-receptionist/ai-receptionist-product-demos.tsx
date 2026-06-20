@@ -2,7 +2,6 @@
 
 import ClientJourneyDemo from '@/app/components/ClientJourneyDemo'
 import ConversationMockups from '@/app/components/ConversationMockups'
-import UnifiedInbox from '@/app/components/UnifiedInbox'
 import LeadPipelineDemo from '@/app/components/LeadPipelineDemo'
 import CalendarBookingDemo from '@/app/components/CalendarBookingDemo'
 import AdsManagerDemo from '@/app/components/AdsManagerDemo'
@@ -25,7 +24,6 @@ export function AIReceptionistHowItWorksDemos({ showTaskQueueDemo }: Props) {
   return (
     <>
       <JourneyDemosIntro />
-      <UnifiedInbox />
       <ConversationMockups />
       <ContactDirectoryDemo />
       <LeadPipelineDemo />

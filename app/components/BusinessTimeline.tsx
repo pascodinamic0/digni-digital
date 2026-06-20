@@ -191,7 +191,8 @@ const BusinessTimeline = () => {
   return (
     <section className="py-24" aria-labelledby="timeline-title">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
+        {/* Mobile Header (rendered only on mobile/tablet) */}
+        <div className="text-center mb-16 lg:hidden">
           <motion.span
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -201,7 +202,7 @@ const BusinessTimeline = () => {
             {t.badge}
           </motion.span>
           <motion.h2
-            id="timeline-title"
+            id="timeline-title-mobile"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -228,7 +229,39 @@ const BusinessTimeline = () => {
           className="hidden lg:block relative"
           style={{ height: `${steps.length * STEP_SCROLL_VH}vh` }}
         >
-          <div className="sticky top-24 py-8">
+          <div className="sticky top-24 py-4">
+            {/* Desktop Header — sticky, stays visible at the top of the viewport during timeline scrolling */}
+            <div className="text-center mb-10">
+              <motion.span
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="text-accent font-medium text-sm uppercase tracking-wider"
+              >
+                {t.badge}
+              </motion.span>
+              <motion.h2
+                id="timeline-title"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 }}
+                className="font-display text-4xl md:text-5xl font-bold mt-4 mb-6"
+              >
+                {t.title}<br />
+                <span className="gradient-text">{t.titleHighlight}</span>
+              </motion.h2>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+                className="text-muted text-lg max-w-3xl mx-auto"
+              >
+                {t.subtitle}
+              </motion.p>
+            </div>
+
             <div className="relative">
               {/* Progress Line - Positioned with gap from cards */}
               <div className="absolute top-10 left-[10%] right-[10%] h-1 bg-surface-light rounded-full overflow-hidden">
@@ -322,7 +355,7 @@ const BusinessTimeline = () => {
             </div>
 
             {/* Timeline Controls */}
-            <div className="flex justify-center mt-12">
+            <div className="flex justify-center mt-8">
               <div className="flex space-x-3">
                 {steps.map((step, index) => {
                   const colorClasses = getColorClasses(step.color, activeStep === index)

@@ -50,7 +50,7 @@ export const AI_EMPLOYEE_OFFER_NAV_IDS: SoftwareNavId[] = [
 
 /** Journey section anchors for sidebar scroll (product page). */
 export const AI_EMPLOYEE_NAV_SCROLL_TARGETS: Partial<Record<SoftwareNavId, string>> = {
-  conversations: 'flow-step-1',
+  conversations: 'flow-step-2',
   contacts: 'flow-step-3',
   opportunities: 'flow-step-4',
   calendar: 'flow-step-5',
