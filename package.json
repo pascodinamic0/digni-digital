@@ -7,7 +7,10 @@
     "dev:turbo": "node scripts/disable-devtools-indicator.js; next dev",
     "build": "next build --webpack",
     "start": "next start",
-    "lint": "tsc --noEmit",
+    "typecheck": "tsc --noEmit",
+    "lint": "npm run typecheck",
+    "verify": "npm run typecheck && npm run build",
+    "smoke:routes": "node scripts/smoke-routes.mjs",
     "check-stripe": "node scripts/check-stripe-env.mjs",
     "generate-blog-locale-fills": "bun scripts/generate-blog-locale-fills.ts",
     "bootstrap-admin": "bun scripts/bootstrap-admin-user.ts"
