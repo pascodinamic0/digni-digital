@@ -177,12 +177,12 @@ type ResultLine = { metric: string; description: string }
 export const aiEmployeePageEn: AiEmployeePageTranslations = {
  hero: {
  badge: 'Service growth infrastructure',
- titleLine1: 'Install once.',
- titleHighlight: 'Never chase DMs, booking links, or follow ups again.',
+ titleLine1: 'Stop Losing High-Value Leads.',
+ titleHighlight: 'To Slow Follow-Up.',
  hook:
- 'One done for you system captures, qualifies, books, upsells, and follows up on every paid lead while you run the service.',
- primaryCta: 'Take the 2 Minute Fit Check',
- footnote: '15 qualified appointments in 30 days, or we work free until you hit it. We take the risk.',
+ 'Install an AI Employee that answers, qualifies, and books appointments 24/7 in under 2 seconds. Never let a prospect go to a competitor again.',
+ primaryCta: 'Run Free AI Fit Check',
+ footnote: 'Backed by our 15-appointments-in-30-days guarantee.',
  },
  valueBadges: {
  ariaLabel: 'Speed, deployment, and effort guarantees',
@@ -229,10 +229,10 @@ export const aiEmployeePageEn: AiEmployeePageTranslations = {
  },
  problem: {
  badge: 'The problem',
- title: 'You pay for leads.',
- titleHighlight: 'Then most never get a reply on time.',
+ title: 'You Are Bleeding Revenue.',
+ titleHighlight: 'Every Time Your Phone Rings Unanswered.',
  subtitle:
- 'People reach out through your ads, website, texts, and phone, while your team is busy on the job. Nobody answers fast enough. The lead moves on. You keep paying for clicks, but the booking goes to whoever replied first.',
+ 'You spend thousands to acquire leads. But when they reach out, your staff is busy. The phone rings out. The chat message sits on "read". Result? The lead calls your competitor.',
  stats: [
  {
  value: '40%',
@@ -317,10 +317,10 @@ export const aiEmployeePageEn: AiEmployeePageTranslations = {
  },
  clientOutcomes: {
  badge: 'Outcomes',
- title: 'Three outcomes.',
- titleHighlight: 'One system.',
+ title: 'Meet Your New Highest-Performing Employee.',
+ titleHighlight: 'A done-for-you growth infrastructure.',
  subtitle:
- 'Capture every inquiry. Convert qualified demand into appointments. Grow with reviews and follow up.',
+ 'Not another software tool. Not a DIY dashboard. We build a complete, done-for-you system that works 24/7.',
  expandTechnical: 'Tap a step to see how it works under the hood',
  collapseTechnical: 'Tap again to collapse details',
  steps: [
@@ -420,8 +420,8 @@ export const aiEmployeePageEn: AiEmployeePageTranslations = {
  },
  guarantee: {
  badge: 'Conditional service guarantee',
- title: 'We take the risk, not you.',
- body: '15 qualified appointments in 30 days, or we work free until you hit it.',
+ title: '15 Qualified Appointments in 30 Days. Guaranteed.',
+ body: 'If your new AI Employee doesn\'t deliver at least 15 qualified appointments in 30 days, we work free until you hit that target. No risk. Pure upside.',
  },
  scarcity: {
  prefix: 'Limited to 5 premium partners per month.',
@@ -430,9 +430,9 @@ export const aiEmployeePageEn: AiEmployeePageTranslations = {
  inlineSuffix: 'premium slots left in {month} · max 5/month',
  },
  pricing: {
- title: 'See the leak',
- titleHighlight: 'before you spend a dollar.',
- subtitle: 'Two minute fit check. One report with the leak, the upside, and all in cost, then you decide.',
+ title: 'Ready To Stop',
+ titleHighlight: 'Losing Leads?',
+ subtitle: 'Let\'s find out if your business qualifies for a custom AI Employee. 15 Qualified Appointments in 30 Days. Guaranteed.',
  assessmentNote:
  'Your personalized report spells out what slow follow up is costing you, what recovery looks like with the loop live, and the all in investment, before you pay.',
  assessmentCta: 'Run the fit assessment',
@@ -446,13 +446,13 @@ export const aiEmployeePageEn: AiEmployeePageTranslations = {
  monthlyLabel: 'Monthly',
  price: '$500',
  period: '/mo',
- cta: 'Book a fit call',
+ cta: 'Run Free AI Fit Check',
  },
  finalCta: {
- title: 'Stop losing leads',
- titleHighlight: 'to silence.',
- subtitle: 'Book a 30 minute fit call. We map the leak and confirm the loop is right for you.',
- primaryCta: 'Book a fit call',
+ title: 'Ready To Stop',
+ titleHighlight: 'Losing Leads?',
+ subtitle: 'Let\'s find out if your business qualifies for a custom AI Employee. 15 Qualified Appointments in 30 Days. Guaranteed.',
+ primaryCta: 'Run Free AI Fit Check',
  },
 }
 
