@@ -220,6 +220,7 @@ export default function ContactDirectoryDemo() {
                           ? 'rgba(45, 212, 191, 0.14)'
                           : 'rgba(0, 0, 0, 0)',
                     }}
+                    style={{ backgroundColor: 'rgba(0, 0, 0, 0)' }}
                     transition={{ duration: 0.45 }}
                     className="border-b border-border/70 hover:bg-success/[0.04] transition-colors"
                   >

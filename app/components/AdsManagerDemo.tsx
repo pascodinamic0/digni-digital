@@ -184,14 +184,15 @@ export default function AdsManagerDemo() {
                       isHot
                         ? {
                             backgroundColor: [
-                              'rgba(var(--accent-rgb), 0.06)',
-                              'rgba(var(--accent-rgb), 0.12)',
-                              'rgba(var(--accent-rgb), 0.06)',
+                              'rgba(13, 133, 181, 0.06)',
+                              'rgba(13, 133, 181, 0.12)',
+                              'rgba(13, 133, 181, 0.06)',
                             ],
                           }
-                        : { backgroundColor: 'transparent' }
+                        : { backgroundColor: 'rgba(0, 0, 0, 0)' }
                     }
                     transition={{ duration: 0.5 }}
+                    style={{ backgroundColor: 'rgba(0, 0, 0, 0)' }}
                     className="border-b border-[var(--software-border)]/80 hover:bg-surface/40"
                   >
                     <td className="px-4 py-3 font-semibold text-text md:px-5">
