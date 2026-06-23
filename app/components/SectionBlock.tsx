@@ -9,6 +9,7 @@ interface SectionBlockProps {
   cta?: ReactNode
   className?: string
   titleClassName?: string
+  variant?: 'editorial' | 'saas'
 }
 
 export default function SectionBlock({
@@ -18,19 +19,28 @@ export default function SectionBlock({
   cta,
   className = '',
   titleClassName = '',
+  variant = 'saas',
 }: SectionBlockProps) {
+  const isEditorial = variant === 'editorial'
+
   return (
     <section className={className}>
-      <div className="text-center mb-10 md:mb-14">
+      <div className={`mb-10 md:mb-14 ${isEditorial ? 'max-w-3xl' : 'text-center'}`}>
         {label && <span className="section-label">{label}</span>}
         <h2
-          className={`font-display text-3xl sm:text-4xl md:text-5xl font-bold text-text leading-tight ${titleClassName}`}
+          className={`font-display font-bold text-text leading-tight ${
+            isEditorial ? 'editorial-headline' : 'type-h2'
+          } ${titleClassName}`}
         >
           {title}
         </h2>
       </div>
-      <div className="text-muted leading-relaxed">{children}</div>
-      {cta && <div className="mt-8 md:mt-10 flex justify-center">{cta}</div>}
+      <div className={`text-muted leading-relaxed ${isEditorial ? '' : ''}`}>{children}</div>
+      {cta && (
+        <div className={`mt-8 md:mt-10 flex ${isEditorial ? '' : 'justify-center'}`}>
+          {cta}
+        </div>
+      )}
     </section>
   )
 }

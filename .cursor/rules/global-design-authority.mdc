@@ -135,3 +135,23 @@ If homepage prompt, service page prompt, blog prompt, component prompt, design p
 5. **Component Instructions**
 
 **Global always wins.**
+
+---
+
+## RULE 11 — Editorial Marketing Layout (BDDL + Volang hybrid)
+
+Public marketing pages use a **light editorial** shell by default. Dark surfaces are reserved for **product demo frames** (`.demo-frame`, `.demo-frame-dark`).
+
+**Allowed layout motifs** (use pattern components in `app/components/patterns/`):
+
+- Numbered section chapters (`.section-index`, `SectionChapter`)
+- Capability pillar grids (`CapabilityPillarGrid`)
+- Portfolio tiles with `VIEW >` affordance (`.view-link`)
+- Volang metric stat cards (`.stat-card`, `MetricStatGrid`)
+- Numbered process steps (`.process-step`, `ProcessSteps`)
+- Product proof frames (`.demo-frame`, `ProductDemoFrame`)
+- FAQ accordions before final CTA
+
+**Theme default:** `light` for marketing routes; user toggle persists. Brand accents unchanged: `--brand-blue`, `--success`.
+
+**Card treatment on marketing pages:** prefer flat borders and opacity hover over heavy glow shadows.

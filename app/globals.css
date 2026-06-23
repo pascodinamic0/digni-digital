@@ -450,15 +450,160 @@ html:not([data-theme="light"]) footer#contact input#footer-newsletter-email:-web
   background-clip: text;
 }
 
-/* Section label: small ALL CAPS accent label above section headlines (NP-style) */
+/* Section label: BDDL-style uppercase micro-label (caption token) */
 .section-label {
   display: inline-block;
-  font-size: 0.75rem;
+  font-size: var(--type-caption);
   font-weight: 600;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
+  color: var(--text);
+  opacity: 0.72;
+  margin-bottom: 0.75rem;
+}
+
+/* --- Editorial marketing patterns (BDDL + Volang) --- */
+.section-index {
+  font-family: var(--font-display);
+  font-size: var(--type-caption);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  line-height: 1;
+}
+
+.editorial-headline {
+  font-family: var(--font-display);
+  font-size: var(--type-h1);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  color: var(--text);
+}
+
+.editorial-subhead {
+  font-size: var(--type-body-lg);
+  line-height: 1.5;
+  color: var(--muted);
+  max-width: 42rem;
+}
+
+.marketing-chapter {
+  scroll-margin-top: 6rem;
+  padding-block: clamp(3.5rem, 8vw, 6rem);
+}
+
+.marketing-chapter-alt {
+  background: var(--surface);
+}
+
+.portfolio-tile {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  transition: opacity 0.25s ease, border-color 0.25s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .portfolio-tile:hover {
+    opacity: 0.92;
+    border-color: var(--border-medium);
+  }
+}
+
+.view-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: var(--type-caption);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text);
+}
+
+.stat-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--background);
+  padding: 1.5rem;
+}
+
+.stat-card-value {
+  font-family: var(--font-display);
+  font-size: var(--type-h2);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
+.process-step {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--background);
+  padding: 1.5rem;
+}
+
+.process-step-index {
+  font-family: var(--font-display);
+  font-size: var(--type-h4);
+  font-weight: 700;
   color: var(--accent);
   margin-bottom: 0.75rem;
+}
+
+.demo-frame {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  background: var(--surface);
+}
+
+.demo-frame-dark {
+  background: #0a0a0b;
+  border-color: rgba(255, 255, 255, 0.12);
+  color: #fafafa;
+}
+
+.capability-pillar {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  background: var(--background);
+  transition: opacity 0.25s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .capability-pillar:hover {
+    opacity: 0.9;
+  }
+}
+
+.bold-cta-band {
+  border-block: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.contact-band {
+  border-top: 1px solid var(--border);
+  background: var(--background);
+}
+
+.marketing-page .card,
+.marketing-page .glow-card-container {
+  box-shadow: none;
+}
+
+.marketing-page .glow-card-container:hover {
+  box-shadow: none;
+}
+
+.grain-overlay.marketing-light {
+  opacity: 0.02;
 }
 
 /* Client logos section: stronger headline treatment */

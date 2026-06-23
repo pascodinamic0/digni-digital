@@ -1,35 +1,39 @@
-import type { Metadata } from 'next'
-import Script from 'next/script'
-import { NextIntlClientProvider } from 'next-intl'
-import { getMessages, setRequestLocale } from 'next-intl/server'
-import { notFound } from 'next/navigation'
-import { headers } from 'next/headers'
-import { localeToHreflang, routing } from '@/i18n/routing'
-import { LocaleProvider } from '../context/LocaleContext'
-import LocaleKeyedContent from '@/app/components/LocaleKeyedContent'
-import Navigation from '@/app/components/Navigation'
-import Footer from '@/app/components/Footer'
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://digni-digital-llc.com'
+import type { Metadata } from "next";
+import Script from "next/script";
+import { NextIntlClientProvider } from "next-intl";
+import { getMessages, setRequestLocale } from "next-intl/server";
+import { notFound } from "next/navigation";
+import { headers } from "next/headers";
+import { localeToHreflang, routing } from "@/i18n/routing";
+import { LocaleProvider } from "../context/LocaleContext";
+import LocaleKeyedContent from "@/app/components/LocaleKeyedContent";
+import Navigation from "@/app/components/Navigation";
+import Footer from "@/app/components/Footer";
+import SimpleNavigation from "@/app/components/SimpleNavigation";
+import SimpleFooter from "@/app/components/SimpleFooter";
+const SITE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL || "https://digni-digital-llc.com";
 
 type Props = {
-  children: React.ReactNode
-  params: Promise<{ locale: string }>
-}
+  children: React.ReactNode;
+  params: Promise<{ locale: string }>;
+};
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { locale } = await params
-  const pathname = (await headers()).get('x-pathname') || `/${locale}`
+  const { locale } = await params;
+  const pathname = (await headers()).get("x-pathname") || `/${locale}`;
 
-  if (!routing.locales.includes(locale as typeof routing.locales[number])) {
-    return { title: 'Digni Digital' }
+  if (!routing.locales.includes(locale as (typeof routing.locales)[number])) {
+    return { title: "Digni Digital" };
   }
 
-  const localeAlternates: Record<string, string> = {}
+  const localeAlternates: Record<string, string> = {};
   for (const loc of routing.locales) {
-    const path = pathname.replace(/^\/[^/]+/, `/${loc}`)
-    localeAlternates[localeToHreflang[loc]] = `${SITE_URL}${path}`
+    const path = pathname.replace(/^\/[^/]+/, `/${loc}`);
+    localeAlternates[localeToHreflang[loc]] = `${SITE_URL}${path}`;
   }
-  localeAlternates['x-default'] = `${SITE_URL}${pathname.replace(/^\/[^/]+/, `/${routing.defaultLocale}`)}`
+  localeAlternates["x-default"] =
+    `${SITE_URL}${pathname.replace(/^\/[^/]+/, `/${routing.defaultLocale}`)}`;
 
   return {
     metadataBase: new URL(SITE_URL),
@@ -41,32 +45,45 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       index: true,
       follow: true,
     },
-  }
+  };
 }
 
 export function generateStaticParams() {
-  return routing.locales.map((locale) => ({ locale }))
+  return routing.locales.map((locale) => ({ locale }));
 }
 
 export default async function LocaleLayout({ children, params }: Props) {
-  const { locale } = await params
+  const { locale } = await params;
 
-  if (!routing.locales.includes(locale as typeof routing.locales[number])) {
-    notFound()
+  if (!routing.locales.includes(locale as (typeof routing.locales)[number])) {
+    notFound();
   }
 
-  setRequestLocale(locale)
-  const messages = await getMessages()
-  const pathname = (await headers()).get('x-pathname') || ''
-  const isDigniChat = pathname.includes('/digni')
+  setRequestLocale(locale);
+  const messages = await getMessages();
+  const pathname = (await headers()).get("x-pathname") || "";
+  const isDigniChat = pathname.includes("/digni");
+  const isAiEmployeeLandingPage =
+    pathname.includes("/ai-receptionist") || pathname.includes("/ai-employee");
+
+  // High-converting landing pages minimize navigation and options
+  const hideStandardNav = isDigniChat || isAiEmployeeLandingPage;
 
   return (
     <LocaleProvider locale={locale}>
       <NextIntlClientProvider messages={messages} locale={locale}>
-        <div className="grain-overlay" />
-        {!isDigniChat && <Navigation />}
+        <div className="grain-overlay marketing-light" />
+        {!hideStandardNav ? (
+          <Navigation />
+        ) : isAiEmployeeLandingPage ? (
+          <SimpleNavigation />
+        ) : null}
         <LocaleKeyedContent locale={locale}>{children}</LocaleKeyedContent>
-        {!isDigniChat && <Footer />}
+        {!hideStandardNav ? (
+          <Footer />
+        ) : isAiEmployeeLandingPage ? (
+          <SimpleFooter />
+        ) : null}
         {!isDigniChat && (
           <Script
             id="ghl-chat-widget-loader"
@@ -78,5 +95,5 @@ export default async function LocaleLayout({ children, params }: Props) {
         )}
       </NextIntlClientProvider>
     </LocaleProvider>
-  )
+  );
 }
