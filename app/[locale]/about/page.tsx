@@ -135,7 +135,7 @@ export default function AboutPage({ params, searchParams }: AboutPageProps) {
   ]
 
   return (
-    <main className="marketing-page">
+    <main>
       <section
         ref={heroRef}
         className="relative isolate min-h-screen flex items-center pt-16 sm:pt-20 overflow-hidden bg-gradient-mesh"

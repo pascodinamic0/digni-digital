@@ -241,7 +241,7 @@ export default function ContactPage({ params, searchParams }: ContactPageProps) 
   }
 
   return (
-    <main className="marketing-page">
+    <main>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={jsonLdScriptProps(pageJsonLd)}

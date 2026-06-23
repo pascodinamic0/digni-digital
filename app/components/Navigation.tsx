@@ -12,7 +12,6 @@ import LanguageToggler from './LanguageToggler'
 import Logo from './Logo'
 import ServiceAssessmentLink from './ServiceAssessmentLink'
 import type { AssessmentServiceId } from '@/lib/assessments/types'
-import { getHomeChapters } from '@/lib/home-chapters'
 
 export default function Navigation() {
   const pathname = usePathname()
@@ -21,8 +20,6 @@ export default function Navigation() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
   const isBlogPage = pathname?.startsWith('/blog') ?? false
-  const isHomePage = pathname === '/' || pathname === ''
-  const homeChapters = isHomePage ? getHomeChapters(language) : []
   const showSolidNav = scrolled || mobileOpen || isBlogPage
   const [solutionsOpen, setSolutionsOpen] = useState(false)
   const dropdownRef = useRef<HTMLDivElement>(null)
@@ -260,25 +257,6 @@ export default function Navigation() {
               </HeaderNavLink>
             ))}
             
-            {isHomePage && homeChapters.length > 0 && (
-              <div className="py-3 border-b border-border-light mb-2">
-                <p className="type-caption font-semibold uppercase tracking-wider text-muted mb-2">
-                  {t.sectionLabels?.ourApproach ?? 'Sections'}
-                </p>
-                {homeChapters.map((chapter) => (
-                  <a
-                    key={chapter.href}
-                    href={chapter.href}
-                    className="flex items-center gap-2 py-2 text-sm text-text hover:text-accent"
-                    onClick={() => setMobileOpen(false)}
-                  >
-                    <span className="section-index">{chapter.index}</span>
-                    <span>{chapter.label}</span>
-                  </a>
-                ))}
-              </div>
-            )}
-
             {/* Mobile Solutions Section */}
             <div className="py-3">
               <HeaderNavLink

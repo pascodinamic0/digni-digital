@@ -13,7 +13,7 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined)
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
-  const [theme, setTheme] = useState<Theme>('light')
+  const [theme, setTheme] = useState<Theme>('dark')
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
@@ -22,8 +22,8 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
       const raw = localStorage.getItem('theme')
       const savedTheme: Theme | null =
         raw === 'light' || raw === 'dark' ? raw : null
-      // Explicit user choice overrides; otherwise default to light editorial marketing theme.
-      const initialTheme: Theme = savedTheme ?? 'light'
+      // Explicit user choice overrides; otherwise default to dark (not OS preference).
+      const initialTheme: Theme = savedTheme ?? 'dark'
       setTheme(initialTheme)
       document.documentElement.setAttribute('data-theme', initialTheme)
     }
