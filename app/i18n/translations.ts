@@ -215,6 +215,32 @@ type HomeTranslations = {
  bullet2: string
  bullet3: string
  }
+ chapters?: {
+ greeting: string
+ }
+ process: {
+ badge: string
+ title: string
+ subtitle: string
+ step1Title: string
+ step1Desc: string
+ step2Title: string
+ step2Desc: string
+ step3Title: string
+ step3Desc: string
+ }
+ insights: {
+ badge: string
+ title: string
+ subtitle: string
+ viewAll: string
+ readMore: string
+ }
+ faq: {
+ badge: string
+ title: string
+ items: { question: string; answer: string }[]
+ }
 }
 
 type CommonTranslations = {
@@ -1136,6 +1162,45 @@ function buildTranslations(): Record<Language, TranslationKeys> {
  bullet2: 'No Obligation',
  bullet3: 'Actionable Insights',
  },
+ chapters: {
+ greeting: 'Technology Creates Opportunity.',
+ },
+ process: {
+ badge: 'How it works',
+ title: 'Three steps to',
+ subtitle: 'your growth system.',
+ step1Title: 'Discover',
+ step1Desc: 'Talk to DigniGuide or book a strategy call. We map your gaps and highest-ROI starting point.',
+ step2Title: 'Build',
+ step2Desc: 'We deploy AI employees, training pathways, or agentic software scoped to your outcome.',
+ step3Title: 'Grow',
+ step3Desc: 'Measure leads, jobs, and revenue. Iterate with proof, not guesswork.',
+ },
+ insights: {
+ badge: 'Insights',
+ title: 'Ideas that',
+ subtitle: 'move markets forward.',
+ viewAll: 'View all articles',
+ readMore: 'Read',
+ },
+ faq: {
+ badge: 'FAQ',
+ title: 'Questions before you commit',
+ items: [
+ {
+ question: 'Who is Digni Digital for?',
+ answer: 'Growing service businesses, schools, and operators who need leads, skills, or custom systems without enterprise budgets.',
+ },
+ {
+ question: 'What should I do first?',
+ answer: 'Start with DigniGuide for a fit check, or book a strategy call if you already know your gap.',
+ },
+ {
+ question: 'How fast can we see results?',
+ answer: 'AI Employee deployments often show measurable lead response improvements within weeks; training and custom builds vary by scope.',
+ },
+ ],
+ },
  }
 
  const homeFr: HomeTranslations = {
@@ -1334,6 +1399,34 @@ function buildTranslations(): Record<Language, TranslationKeys> {
  bullet2: 'Sans engagement',
  bullet3: 'Conseils actionnables',
  },
+ chapters: { greeting: 'La technologie crée des opportunités.' },
+ process: {
+ badge: 'Comment ça marche',
+ title: 'Trois étapes vers',
+ subtitle: 'votre système de croissance.',
+ step1Title: 'Découvrir',
+ step1Desc: 'Parlez à DigniGuide ou réservez un appel. Nous cartographions vos écarts et le meilleur point de départ.',
+ step2Title: 'Construire',
+ step2Desc: 'Nous déployons employés IA, parcours de formation ou logiciels agentiques selon votre objectif.',
+ step3Title: 'Grandir',
+ step3Desc: 'Mesurez leads, emplois et revenus. Itérez avec des preuves, pas des suppositions.',
+ },
+ insights: {
+ badge: 'Insights',
+ title: 'Des idées qui',
+ subtitle: 'font avancer les marchés.',
+ viewAll: 'Voir tous les articles',
+ readMore: 'Lire',
+ },
+ faq: {
+ badge: 'FAQ',
+ title: 'Questions avant de vous engager',
+ items: [
+ { question: 'Pour qui est Digni Digital ?', answer: 'Entreprises de services, écoles et opérateurs qui ont besoin de leads, de compétences ou de systèmes sur mesure.' },
+ { question: 'Par où commencer ?', answer: 'Commencez avec DigniGuide pour un test de compatibilité, ou réservez un appel stratégique.' },
+ { question: 'Quand voit-on des résultats ?', answer: 'Les déploiements Employé IA montrent souvent des améliorations en quelques semaines.' },
+ ],
+ },
  }
 
  const homeAr: HomeTranslations = {
@@ -1528,6 +1621,34 @@ function buildTranslations(): Record<Language, TranslationKeys> {
  bullet1: 'مكالمة استراتيجية 30 دقيقة',
  bullet2: 'بدون التزام',
  bullet3: 'رؤى قابلة للتطبيق',
+ },
+ chapters: { greeting: 'التكنولوجيا تخلق الفرص.' },
+ process: {
+ badge: 'كيف يعمل',
+ title: 'ثلاث خطوات نحو',
+ subtitle: 'نظام نموك.',
+ step1Title: 'اكتشف',
+ step1Desc: 'تحدث مع DigniGuide أو احجز مكالمة. نحدد الفجوات وأفضل نقطة بداية.',
+ step2Title: 'ابنِ',
+ step2Desc: 'ننشر موظفي ذكاء اصطناعي أو مسارات تدريب أو برمجيات حسب هدفك.',
+ step3Title: 'انمُ',
+ step3Desc: 'قِس العملاء المحتملين والوظائف والإيرادات. حسّن بالأدلة لا التخمين.',
+ },
+ insights: {
+ badge: 'مقالات',
+ title: 'أفكار تدفع',
+ subtitle: 'الأسواق إلى الأمام.',
+ viewAll: 'عرض كل المقالات',
+ readMore: 'اقرأ',
+ },
+ faq: {
+ badge: 'أسئلة شائعة',
+ title: 'أسئلة قبل الالتزام',
+ items: [
+ { question: 'لمن Digni Digital؟', answer: 'شركات الخدمات والمدارس والمشغلين الذين يحتاجون عملاء أو مهارات أو أنظمة مخصصة.' },
+ { question: 'من أين أبدأ؟', answer: 'ابدأ مع DigniGuide أو احجز مكالمة استراتيجية.' },
+ { question: 'متى نرى النتائج؟', answer: 'غالباً خلال أسابيع مع أنظمة الموظف الذكي.' },
+ ],
  },
  }
 
@@ -1727,6 +1848,34 @@ function buildTranslations(): Record<Language, TranslationKeys> {
  bullet2: 'Keine Verpflichtung',
  bullet3: 'Umsetzbare Einblicke',
  },
+ chapters: { greeting: 'Technologie schafft Chancen.' },
+ process: {
+ badge: 'So funktioniert es',
+ title: 'Drei Schritte zu',
+ subtitle: 'Ihrem Wachstumssystem.',
+ step1Title: 'Entdecken',
+ step1Desc: 'Sprechen Sie mit DigniGuide oder buchen Sie ein Strategiegespräch.',
+ step2Title: 'Aufbauen',
+ step2Desc: 'Wir setzen KI Mitarbeiter, Schulungen oder agentische Software ein.',
+ step3Title: 'Wachsen',
+ step3Desc: 'Messen Sie Leads, Jobs und Umsatz. Iterieren Sie mit Beweisen.',
+ },
+ insights: {
+ badge: 'Insights',
+ title: 'Ideen, die',
+ subtitle: 'Märkte voranbringen.',
+ viewAll: 'Alle Artikel',
+ readMore: 'Lesen',
+ },
+ faq: {
+ badge: 'FAQ',
+ title: 'Fragen vor dem Start',
+ items: [
+ { question: 'Für wen ist Digni Digital?', answer: 'Dienstleister, Schulen und Betreiber mit Bedarf an Leads, Skills oder Systemen.' },
+ { question: 'Womit anfangen?', answer: 'Starten Sie mit DigniGuide oder buchen Sie ein Strategiegespräch.' },
+ { question: 'Wann Ergebnisse?', answer: 'KI Mitarbeiter zeigen oft Verbesserungen innerhalb weniger Wochen.' },
+ ],
+ },
  }
 
  const homeEs: HomeTranslations = {
@@ -1924,6 +2073,34 @@ function buildTranslations(): Record<Language, TranslationKeys> {
  bullet1: 'Llamada estratégica de 30 min',
  bullet2: 'Sin obligación',
  bullet3: 'Información accionable',
+ },
+ chapters: { greeting: 'La tecnología crea oportunidad.' },
+ process: {
+ badge: 'Cómo funciona',
+ title: 'Tres pasos hacia',
+ subtitle: 'su sistema de crecimiento.',
+ step1Title: 'Descubrir',
+ step1Desc: 'Hable con DigniGuide o reserve una llamada. Mapeamos brechas y el mejor inicio.',
+ step2Title: 'Construir',
+ step2Desc: 'Desplegamos empleados IA, rutas de formación o software según su objetivo.',
+ step3Title: 'Crecer',
+ step3Desc: 'Mida leads, empleos e ingresos. Itere con pruebas, no suposiciones.',
+ },
+ insights: {
+ badge: 'Artículos',
+ title: 'Ideas que',
+ subtitle: 'mueven los mercados.',
+ viewAll: 'Ver todos los artículos',
+ readMore: 'Leer',
+ },
+ faq: {
+ badge: 'FAQ',
+ title: 'Preguntas antes de comprometerse',
+ items: [
+ { question: '¿Para quién es Digni Digital?', answer: 'Negocios de servicios, escuelas y operadores que necesitan leads, habilidades o sistemas.' },
+ { question: '¿Por dónde empezar?', answer: 'Empiece con DigniGuide o reserve una llamada estratégica.' },
+ { question: '¿Cuándo hay resultados?', answer: 'Los despliegues de Empleado IA suelen mostrar mejoras en semanas.' },
+ ],
  },
  }
 

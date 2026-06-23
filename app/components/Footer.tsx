@@ -149,9 +149,21 @@ export default function Footer() {
             {/* Brand: spans full width on mobile */}
             <div className="md:col-span-5 lg:col-span-4">
               <Logo href="/" label="Digni Digital LLC" className="mb-4" heightClass="h-[76px]" />
-              <p className="text-muted text-sm max-w-xs mb-5">
+              <p className="text-muted text-sm max-w-xs mb-3">
                 {t.footer.tagline}
               </p>
+              <ul className="text-sm text-muted space-y-1 mb-5">
+                <li>
+                  <a href="mailto:hq@digni-digital-llc.com" className="hover:text-accent transition-colors">
+                    hq@digni-digital-llc.com
+                  </a>
+                </li>
+                <li>
+                  <a href="https://wa.me/254702593518" className="hover:text-accent transition-colors">
+                    +254 702 593 518
+                  </a>
+                </li>
+              </ul>
               <div className="flex items-center gap-2">
                 {SOCIAL_LINKS.map(({ label, href, icon }) => (
                   <a
