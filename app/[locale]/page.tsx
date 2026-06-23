@@ -17,15 +17,6 @@ import { formatMissedLeadsUsdStat, MISSED_LEADS_USD } from '@/lib/formatMissedLe
 import EcosystemStrip from '@/app/components/EcosystemStrip'
 import { ecosystemFromHomeWhatWeDo } from '@/lib/positioning/map-home-ecosystem'
 import GlowCard from '@/app/components/GlowCard'
-import SectionIndexNav from '@/app/components/patterns/SectionIndexNav'
-import BoldCtaBand from '@/app/components/patterns/BoldCtaBand'
-import { getHomeChapters } from '@/lib/home-chapters'
-import HomeEditorialHero from '@/app/components/home/HomeEditorialHero'
-import HomeCapabilitiesSection from '@/app/components/home/HomeCapabilitiesSection'
-import HomeDemoSection from '@/app/components/home/HomeDemoSection'
-import HomeInsightsSection from '@/app/components/home/HomeInsightsSection'
-import HomeProcessSection from '@/app/components/home/HomeProcessSection'
-import HomeFaqSection from '@/app/components/home/HomeFaqSection'
 
 const GlobalPresenceMap = dynamic(() => import('@/app/components/GlobalPresenceMap'), {
   loading: () => (
@@ -713,7 +704,7 @@ function Stats() {
   ]
 
   return (
-    <AnimatedSection id="home-proof" className="py-24 relative overflow-hidden bg-surface marketing-chapter">
+    <AnimatedSection id="proven-track-record" className="py-24 relative overflow-hidden bg-surface">
       <div className="absolute inset-0 bg-gradient-mesh opacity-50" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -863,7 +854,7 @@ function CaseStudies() {
   ]
 
   return (
-    <AnimatedSection id="home-work" className="py-24 marketing-chapter">
+    <AnimatedSection id="case-studies" className="py-24">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <span className="text-accent font-medium text-sm uppercase tracking-wider">{c.badge}</span>
@@ -972,7 +963,7 @@ function CTASection() {
   const ctaT = translations[language].cta
   const shouldUseLightSection = theme === 'dark' && isCtaSectionInView
   return (
-    <AnimatedSection id="home-cta" className={`py-32 relative overflow-hidden transition-colors duration-500 marketing-chapter ${
+    <AnimatedSection className={`py-32 relative overflow-hidden transition-colors duration-500 ${
       shouldUseLightSection ? 'md:bg-white' : ''
     }`}>
       {/* Background elements */}
@@ -1104,42 +1095,18 @@ export default function Home({ params, searchParams }: HomePageProps) {
   use(searchParams ?? Promise.resolve({}))
   const language = useLanguage()
   const aboutT = translations[language].about
-  const ctaT = translations[language].cta
-  const ctaCopy = translations[language].home.ctaSection
-  const chapters = getHomeChapters(language)
-
   return (
-    <main className="marketing-page relative">
-      <SectionIndexNav chapters={chapters} />
-      <HomeEditorialHero />
-      <HomeCapabilitiesSection />
-      <div id="home-proof">
-        <ClientLogos badge={aboutT.trustedByBadge} title={aboutT.trustedByTitle} subtitle={aboutT.trustedBySubtitle} />
-        <Stats />
-      </div>
-      <HomeDemoSection />
-      <CaseStudies />
-      <HomeInsightsSection />
-      <HomeProcessSection />
+    <main>
+      <Hero />
+      <ClientLogos badge={aboutT.trustedByBadge} title={aboutT.trustedByTitle} subtitle={aboutT.trustedBySubtitle} />
       <MissionValues />
       <Commitment2026 />
       <WhatWereFightingFor />
+      <Stats />
+      <CaseStudies />
       <HomeEcosystemStrip />
+      <WhatWeDo />
       <GlobalPresence />
-      <HomeFaqSection />
-      <BoldCtaBand
-        title={
-          <>
-            {ctaCopy.title}
-            <span className="gradient-text"> {ctaCopy.titleHighlight}</span>
-          </>
-        }
-        subtitle={ctaCopy.mechanism}
-        primaryLabel={ctaT.talkToDigniGuide}
-        primaryHref={ctaConfig.digniPath}
-        secondaryLabel={ctaT.bookDemo}
-        secondaryHref="/contact"
-      />
       <CTASection />
     </main>
   )
