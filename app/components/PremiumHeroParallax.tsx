@@ -23,7 +23,7 @@ export default function PremiumHeroParallax({
   const heroContentY = useTransform(scrollYProgress, [0, 1], [0, parallaxPx])
 
   return (
-    <div ref={heroRef} className={className}>
+    <div ref={heroRef} className={`relative ${className ?? ''}`}>
       <motion.div style={shouldReduceMotion ? undefined : { y: heroContentY }}>{children}</motion.div>
     </div>
   )

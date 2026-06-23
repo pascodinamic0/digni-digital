@@ -28,7 +28,7 @@ function ParallaxSection({
   const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0.8])
 
   return (
-    <motion.section ref={ref} id={id} style={{ y, opacity }} className={className}>
+    <motion.section ref={ref} id={id} style={{ y, opacity }} className={`relative ${className}`}>
       {children}
     </motion.section>
   )
