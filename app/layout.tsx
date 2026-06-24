@@ -6,6 +6,7 @@ import './globals.css'
 import { ThemeProvider } from './components/ThemeProvider'
 import { routing } from '@/i18n/routing'
 import { getOrganizationJsonLd, getWebsiteJsonLd, jsonLdScriptProps } from '@/lib/agent-readiness'
+import { Analytics } from '@vercel/analytics/next'
 
 const fontDisplay = Space_Grotesk({
   subsets: ['latin'],
@@ -110,6 +111,7 @@ export default async function RootLayout({
         <ThemeProvider>
           {children}
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   )
