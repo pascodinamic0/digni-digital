@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
-import { Link, usePathname } from '@/i18n/navigation'
+import { Link } from '@/i18n/navigation'
 import HeaderNavLink from '@/app/components/HeaderNavLink'
 import { ctaConfig } from '@/app/config/cta.config'
 import { useLanguage } from '@/app/context/LocaleContext'
@@ -14,25 +14,11 @@ import ServiceAssessmentLink from './ServiceAssessmentLink'
 import type { AssessmentServiceId } from '@/lib/assessments/types'
 
 export default function Navigation() {
-  const pathname = usePathname()
   const language = useLanguage()
   const t = translations[language]
-  const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
-  const isBlogPage = pathname?.startsWith('/blog') ?? false
-  const showSolidNav = scrolled || mobileOpen || isBlogPage
   const [solutionsOpen, setSolutionsOpen] = useState(false)
   const dropdownRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const next = window.scrollY > 50
-      setScrolled((prev) => (prev === next ? prev : next))
-    }
-    handleScroll()
-    window.addEventListener('scroll', handleScroll, { passive: true })
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -112,16 +98,8 @@ export default function Navigation() {
         />
       )}
       
-      <nav
-        className={`site-header-nav transition-all duration-500 ${
-          scrolled && !mobileOpen
-            ? 'fixed top-3 left-1/2 -translate-x-1/2 w-[92%] max-w-6xl rounded-full border border-border-light bg-surface/80 backdrop-blur-md shadow-lg shadow-accent/5 z-[100]'
-            : `fixed top-0 left-0 right-0 z-[100] bg-background/95 backdrop-blur-xl border-b border-border ${
-                showSolidNav ? 'shadow-sm' : ''
-              }`
-        }`}
-      >
-        <div className={`max-w-7xl mx-auto px-6 transition-all duration-500 ${scrolled && !mobileOpen ? 'py-2' : 'py-4'}`}>
+      <nav className="site-header-nav fixed top-0 left-0 right-0 z-[100] bg-background/95 backdrop-blur-xl border-b border-border">
+        <div className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <Logo href="/" label="Digni Digital LLC" />
 

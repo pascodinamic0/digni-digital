@@ -76,7 +76,9 @@ export async function POST(request: Request) {
     return NextResponse.json({ url: session.url })
   } catch (e) {
     console.error('[checkout]', e)
-    const message = e instanceof Error ? e.message : 'Checkout failed'
-    return NextResponse.json({ error: message }, { status: 500 })
+    return NextResponse.json(
+      { error: 'Secure checkout is temporarily unavailable. Please book a call and we will help you complete payment.' },
+      { status: 500 },
+    )
   }
 }

@@ -40,6 +40,14 @@ Open [http://localhost:3000](http://localhost:3000) to view the site.
 
 See [`docs/APP-DEVELOPMENT-PLAN.md`](docs/APP-DEVELOPMENT-PLAN.md) for the current roadmap, QA checklist, validation commands, and recommended next build priorities.
 
+## Stripe
+
+Stripe Checkout and webhook setup is documented in [`docs/STRIPE_SETUP.md`](docs/STRIPE_SETUP.md). After adding local or Netlify environment variables, run:
+
+```bash
+npm run check-stripe
+```
+
 ## Project Structure
 
 ```
@@ -60,6 +68,4 @@ See [`docs/APP-DEVELOPMENT-PLAN.md`](docs/APP-DEVELOPMENT-PLAN.md) for the curre
 
 ## Deployment
 
-Deploy easily on Vercel (updated):
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new)
+This Next.js app can deploy on Netlify. Netlify detects Next.js automatically and turns App Router API routes, including Stripe routes, into functions during build.
