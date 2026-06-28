@@ -51,6 +51,14 @@ export const metadata: Metadata = {
   creator: 'Digni Digital',
   publisher: 'Digni Digital',
   metadataBase: new URL(SITE_URL),
+  icons: {
+    icon: [
+      { url: '/favicon.gif', type: 'image/gif' },
+      { url: '/icon.png', type: 'image/png', sizes: '1024x1024' },
+    ],
+    shortcut: [{ url: '/Favicon.png', type: 'image/png', sizes: '512x512' }],
+    apple: [{ url: '/apple-icon.png', type: 'image/png', sizes: '1024x1024' }],
+  },
   openGraph: {
     title: 'Digni Digital | Technology That Serves Humanity',
     description: 'We believe technology should serve humanity. Digital transformation agency creating real impact.',
