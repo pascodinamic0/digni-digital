@@ -18,7 +18,7 @@ export default function AiEmployeeHeroSection() {
   const booking = getBookingLinkProps()
 
   return (
-    <section className="software-hero relative isolate overflow-hidden border-b border-[var(--software-border)] bg-gradient-mesh-brand pt-24 pb-20 sm:pt-28 sm:pb-24 lg:pb-28">
+    <section className="software-hero relative isolate overflow-hidden border-b border-[var(--software-border)] bg-gradient-mesh-brand pt-32 pb-20 sm:pt-36 sm:pb-24 lg:pt-40 lg:pb-28">
       <PremiumHeroBackdrop />
       <div
         className="pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-20 bg-gradient-to-t from-[var(--software-canvas)] to-transparent"
@@ -31,7 +31,7 @@ export default function AiEmployeeHeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-            className="relative z-10 mx-auto max-w-xl text-center lg:mx-0 lg:text-left"
+            className="relative z-10 mx-auto max-w-xl pt-4 text-center sm:pt-6 lg:mx-0 lg:pt-8 lg:text-left"
           >
             <span className="type-caption relative z-10 inline-flex items-center rounded-full border border-accent/30 bg-accent/10 px-3 py-1 font-semibold uppercase tracking-[0.1em] text-accent">
               {t.hero.badge}

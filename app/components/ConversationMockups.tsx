@@ -397,29 +397,6 @@ const ConversationMockups = () => {
             </div>
           </div>
         </div>
-
-        {/* Stats Bar */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="grid grid-cols-2 gap-2 border-t border-[var(--software-border)] p-3 md:grid-cols-4 md:gap-3 md:p-4"
-        >
-          {t.stats.map((stat, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="rounded-lg border border-[var(--software-border)] bg-[var(--software-sidebar)] p-4 text-center"
-            >
-              <div className="mb-1 text-xl">{stat.icon}</div>
-              <div className="font-display text-2xl font-bold text-accent mb-0.5">{stat.value}</div>
-              <p className="text-xs text-[var(--software-text-muted)]">{stat.label}</p>
-            </motion.div>
-          ))}
-        </motion.div>
     </SoftwareDemoSection>
   )
 }
