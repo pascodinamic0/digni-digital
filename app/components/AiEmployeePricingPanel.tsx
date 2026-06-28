@@ -70,9 +70,13 @@ export default function AiEmployeePricingPanel({
               {p.assessmentCta}
               <ArrowRight className="h-4 w-4" aria-hidden />
             </Link>
-            <a {...bookingLinkProps} className="btn-secondary px-6 py-3.5 text-center">
-              {p.cta}
-            </a>
+            <StripeCheckoutButton
+              plan="ai_employee"
+              className="btn-secondary w-full px-6 py-3.5 text-center"
+              redirectingLabel={checkoutRedirectingLabel}
+            >
+              {continueToSecureCheckoutLabel}
+            </StripeCheckoutButton>
             <AiEmployeeScarcityBanner variant="inline" className="mt-1 text-center md:text-left" />
           </div>
         </div>

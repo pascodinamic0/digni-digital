@@ -158,3 +158,22 @@ export type LessonProgressRow = {
   lesson_id: string
   completed_at: string
 }
+
+export type StripeCheckoutSessionRow = {
+  stripe_session_id: string
+  stripe_event_id: string | null
+  plan: string
+  locale: string | null
+  mode: string | null
+  status: string | null
+  payment_status: string | null
+  customer_email: string | null
+  customer_id: string | null
+  subscription_id: string | null
+  amount_total: number | null
+  currency: string | null
+  raw: Record<string, unknown>
+  fulfilled_at: string | null
+  created_at: string
+  updated_at: string
+}

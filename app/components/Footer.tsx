@@ -85,58 +85,65 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6">
         {/* Newsletter signup */}
         <section className="py-10 md:py-12">
-          <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8 lg:gap-12">
-            <div className="max-w-xl shrink-0">
-              <h3 id="footer-newsletter-heading" className="font-display font-semibold text-lg text-text mb-1.5">
-                {t.footer.newsletterTitle}
-              </h3>
-              <p className="text-muted text-sm leading-relaxed">
-                {t.footer.newsletterSubtitle}
-              </p>
-            </div>
-            <form
-              onSubmit={handleNewsletterSubmit}
-              className="w-full min-w-0 lg:max-w-md xl:max-w-lg lg:pt-0.5"
-              aria-labelledby="footer-newsletter-heading"
-            >
-              <label
-                htmlFor="footer-newsletter-email"
-                className="block text-xs font-medium uppercase tracking-wide text-muted mb-2.5"
-              >
-                {t.footer.newsletterEmailLabel}
-              </label>
-              <div
-                className="flex flex-col sm:flex-row sm:items-stretch rounded-xl border border-border bg-surface-light/90 overflow-hidden shadow-sm transition-[box-shadow] focus-within:ring-2 focus-within:ring-accent/25 focus-within:border-accent/40 focus-within:shadow-md"
-              >
-                <input
-                  id="footer-newsletter-email"
-                  type="email"
-                  name="email"
-                  autoComplete="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder={t.footer.newsletterPlaceholder}
-                  required
-                  disabled={newsletterStatus === 'loading' || newsletterStatus === 'success'}
-                  className="flex-1 min-w-0 border-0 bg-transparent px-4 py-3.5 sm:py-3 text-[15px] sm:text-sm text-text placeholder:text-muted-foreground placeholder:opacity-90 caret-foreground focus:outline-none focus:ring-0 disabled:opacity-60 min-h-[48px] sm:min-h-0"
-                />
-                <button
-                  type="submit"
-                  disabled={newsletterStatus === 'loading' || newsletterStatus === 'success'}
-                  className="shrink-0 border-t sm:border-t-0 sm:border-l border-border bg-accent text-background px-5 py-3.5 sm:py-3 text-sm font-semibold hover:bg-accent-light transition-colors disabled:opacity-60 disabled:cursor-not-allowed inline-flex items-center justify-center gap-2 min-h-[48px] sm:min-h-[44px] w-full sm:w-auto sm:min-w-[7.5rem]"
-                >
-                  {newsletterStatus === 'loading' && (
-                    <span className="w-4 h-4 border-2 border-current border-t-transparent rounded-full animate-spin" aria-hidden />
-                  )}
-                  {newsletterStatus === 'success' ? t.footer.newsletterThanks : t.footer.subscribe}
-                </button>
-              </div>
-              {newsletterStatus === 'error' && (
-                <p className="text-red-500 text-sm mt-2.5" role="alert">
-                  {t.footer.newsletterError}
+          <div className="relative overflow-hidden rounded-3xl border border-accent/35 bg-gradient-to-br from-accent/15 via-surface-light to-success/10 p-6 shadow-[var(--shadow-card)] md:p-8">
+            <div className="pointer-events-none absolute -right-16 -top-20 h-48 w-48 rounded-full bg-accent/25 blur-3xl" aria-hidden />
+            <div className="pointer-events-none absolute -bottom-24 left-1/3 h-48 w-48 rounded-full bg-success/20 blur-3xl" aria-hidden />
+            <div className="relative flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between lg:gap-12">
+              <div className="max-w-2xl shrink-0">
+                <span className="mb-3 inline-flex rounded-full border border-success/30 bg-success/10 px-3 py-1 type-caption font-semibold uppercase tracking-[0.12em] text-success">
+                  {t.footer.newsletterKicker}
+                </span>
+                <h3 id="footer-newsletter-heading" className="type-h4 font-display font-bold text-text">
+                  {t.footer.newsletterTitle}
+                </h3>
+                <p className="mt-3 max-w-xl type-small leading-relaxed text-muted">
+                  {t.footer.newsletterSubtitle}
                 </p>
-              )}
-            </form>
+              </div>
+              <form
+                onSubmit={handleNewsletterSubmit}
+                className="w-full min-w-0 lg:max-w-md xl:max-w-lg"
+                aria-labelledby="footer-newsletter-heading"
+              >
+                <label
+                  htmlFor="footer-newsletter-email"
+                  className="mb-2.5 block type-caption font-semibold uppercase tracking-[0.12em] text-muted"
+                >
+                  {t.footer.newsletterEmailLabel}
+                </label>
+                <div
+                  className="flex flex-col overflow-hidden rounded-2xl border border-border-light bg-background/80 shadow-xl shadow-background/20 backdrop-blur transition-[border-color,box-shadow] focus-within:border-accent/70 focus-within:shadow-[var(--shadow-accent)] sm:flex-row sm:items-stretch"
+                >
+                  <input
+                    id="footer-newsletter-email"
+                    type="email"
+                    name="email"
+                    autoComplete="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder={t.footer.newsletterPlaceholder}
+                    required
+                    disabled={newsletterStatus === 'loading' || newsletterStatus === 'success'}
+                    className="min-h-[52px] min-w-0 flex-1 border-0 bg-transparent px-4 py-3.5 type-small text-text caret-foreground placeholder:text-muted-foreground placeholder:opacity-90 focus:outline-none focus:ring-0 disabled:opacity-60 sm:min-h-0 sm:py-3"
+                  />
+                  <button
+                    type="submit"
+                    disabled={newsletterStatus === 'loading' || newsletterStatus === 'success'}
+                    className="inline-flex min-h-[52px] w-full shrink-0 items-center justify-center gap-2 border-t border-border bg-accent px-6 py-3.5 type-small font-bold text-on-accent transition-colors hover:bg-accent-light disabled:cursor-not-allowed disabled:opacity-60 sm:min-h-[48px] sm:w-auto sm:min-w-[8rem] sm:border-l sm:border-t-0 sm:py-3"
+                  >
+                    {newsletterStatus === 'loading' && (
+                      <span className="w-4 h-4 border-2 border-current border-t-transparent rounded-full animate-spin" aria-hidden />
+                    )}
+                    {newsletterStatus === 'success' ? t.footer.newsletterThanks : t.footer.subscribe}
+                  </button>
+                </div>
+                {newsletterStatus === 'error' && (
+                  <p className="text-red-500 text-sm mt-2.5" role="alert">
+                    {t.footer.newsletterError}
+                  </p>
+                )}
+              </form>
+            </div>
           </div>
         </section>
 

@@ -20,6 +20,9 @@ config/stripe-price-ids-live.env
 # Vercel
 .vercel
 
+# Netlify
+.netlify/
+
 # TypeScript
 *.tsbuildinfo
 

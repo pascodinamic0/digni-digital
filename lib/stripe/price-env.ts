@@ -1,5 +1,7 @@
 import { readFileSync, existsSync } from 'fs'
 import { join } from 'path'
+import { stripeServerEnv } from '@/lib/stripe/env'
+import { getStripeSecretMode } from '@/lib/stripe/secret-key'
 
 /**
  * Optional bundled defaults: `config/stripe-price-ids-live.env` (committed).
@@ -31,8 +33,13 @@ function loadFileDefaults(): Record<string, string> {
 
 /** Resolve STRIPE_PRICE_* (or any key): env first, then committed live defaults file. */
 export function stripePriceEnv(key: string): string | undefined {
-  const fromProcess = process.env[key]?.trim()
-  if (fromProcess) return fromProcess
+  const fromEnv = stripeServerEnv(key)
+  if (fromEnv) return fromEnv
+
+  // The committed fallback file contains live catalog IDs. A test secret must use
+  // explicit test mode prices from .env.local / Netlify env to avoid mode mismatch.
+  if (getStripeSecretMode() === 'test') return undefined
+
   const fromFile = loadFileDefaults()[key]?.trim()
   if (fromFile) return fromFile
   return undefined
