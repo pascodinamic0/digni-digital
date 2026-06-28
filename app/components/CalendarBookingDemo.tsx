@@ -35,6 +35,14 @@ function findNextSlot(
   return null
 }
 
+function getSeedBookings(seed: CalendarBookingEventT[]) {
+  const initial: Record<string, CalendarBookingEventT> = {}
+  for (const ev of seed) {
+    initial[slotKey(ev.dayIndex, ev.slotIndex)] = ev
+  }
+  return initial
+}
+
 function AppointmentCard({
   event,
   channelLabel,
@@ -76,16 +84,12 @@ export default function CalendarBookingDemo() {
   const t = translations[language].aiEmployeeProductDemos.calendarBooking
   const isRtl = language === 'ar'
 
-  const [booked, setBooked] = useState<Record<string, CalendarBookingEventT>>(() => {
-    const initial: Record<string, CalendarBookingEventT> = {}
-    for (const ev of t.seed) {
-      initial[slotKey(ev.dayIndex, ev.slotIndex)] = ev
-    }
-    return initial
-  })
+  const [booked, setBooked] = useState<Record<string, CalendarBookingEventT>>(() => getSeedBookings(t.seed))
   const bookedRef = useRef(booked)
   bookedRef.current = booked
   const queueIndexRef = useRef(0)
+  const bookingTimerRef = useRef<number | null>(null)
+  const toastTimerRef = useRef<number | null>(null)
   const [pendingKey, setPendingKey] = useState<string | null>(null)
   const [toast, setToast] = useState<string | null>(null)
   const [started, setStarted] = useState(false)
@@ -94,6 +98,9 @@ export default function CalendarBookingDemo() {
     const occupied = new Set(Object.keys(bookedRef.current))
     const next = findNextSlot(occupied, t.queue, queueIndexRef.current)
     if (!next) {
+      setBooked(getSeedBookings(t.seed))
+      setPendingKey(null)
+      setToast(null)
       queueIndexRef.current = 0
       return
     }
@@ -102,19 +109,36 @@ export default function CalendarBookingDemo() {
     queueIndexRef.current = next.index
     setPendingKey(key)
 
-    window.setTimeout(() => {
+    if (bookingTimerRef.current) window.clearTimeout(bookingTimerRef.current)
+    bookingTimerRef.current = window.setTimeout(() => {
       setBooked((prev) => ({ ...prev, [key]: next.event }))
       setPendingKey(null)
       setToast(`${t.bookingToast} · ${next.event.contact}`)
-      window.setTimeout(() => setToast(null), 2400)
+      if (toastTimerRef.current) window.clearTimeout(toastTimerRef.current)
+      toastTimerRef.current = window.setTimeout(() => setToast(null), 2400)
     }, 1100)
-  }, [t.bookingToast, t.queue])
+  }, [t.bookingToast, t.queue, t.seed])
 
   useEffect(() => {
     if (!started) return
-    const id = window.setInterval(bookNext, 3400)
+    bookNext()
+    const id = window.setInterval(bookNext, 3200)
     return () => window.clearInterval(id)
   }, [started, bookNext])
+
+  useEffect(() => {
+    setBooked(getSeedBookings(t.seed))
+    setPendingKey(null)
+    setToast(null)
+    queueIndexRef.current = 0
+  }, [t.seed])
+
+  useEffect(() => {
+    return () => {
+      if (bookingTimerRef.current) window.clearTimeout(bookingTimerRef.current)
+      if (toastTimerRef.current) window.clearTimeout(toastTimerRef.current)
+    }
+  }, [])
 
   const sw =
     translations[language].aiEmployeeSoftware ?? translations.en.aiEmployeeSoftware

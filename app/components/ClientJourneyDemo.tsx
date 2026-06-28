@@ -625,8 +625,8 @@ const CAROUSEL_CARD_WIDTH = 420
 const CARD_SCROLL_VH_DESKTOP = 50
 const CARD_SCROLL_VH_DEFAULT = 58
 /** Scroll progress: hold Before → slide → hold After */
-const CARD_HOLD_BEFORE_UNTIL = 0.32
-const CARD_SLIDE_UNTIL = 0.72
+const CARD_HOLD_BEFORE_UNTIL = 0.16
+const CARD_SLIDE_UNTIL = 0.58
 const FUNNEL_STAGE_COUNT = 7
 const FUNNEL_LAST_STEP = FUNNEL_STAGE_COUNT - 1
 const PIPELINE_BAR_MIN_PX = 14
@@ -983,7 +983,7 @@ const ClientJourneyDemo = ({ prominent = false }: ClientJourneyDemoProps) => {
 
   const { scrollYProgress } = useScroll({
     target: scrollRunwayRef,
-    offset: ['start start', 'end start'],
+    offset: ['start 78%', 'end 18%'],
   })
 
   const slideProgress = useTransform(
