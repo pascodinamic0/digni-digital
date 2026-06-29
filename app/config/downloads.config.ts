@@ -34,8 +34,8 @@ export function hasDownload(
 }
 
 export const downloadsConfig = {
- futureReadyGraduate: {
- en: '/Digni%20Digital%20-%20Future Ready%20Graduate%20Program.pdf',
+  futureReadyGraduate: {
+    en: '/Digni%20Digital%20-%20Future-Ready%20Graduate%20Program.pdf',
  fr: null,
  ar: null,
  },
