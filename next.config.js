@@ -34,6 +34,16 @@ const nextConfig = {
     formats: ['image/avif', 'image/webp'],
   },
   async redirects() {
+    /** Keep in sync with `legacyLocaleRedirects` in i18n/routing.ts */
+    const legacyLocaleRedirects = {
+      'ca-en': 'us-en',
+      'ca-fr': 'fr-fr',
+    }
+    const legacyLocaleRedirectRules = Object.entries(legacyLocaleRedirects).flatMap(([from, to]) => [
+      { source: `/${from}`, destination: `/${to}`, permanent: true },
+      { source: `/${from}/:path*`, destination: `/${to}/:path*`, permanent: true },
+    ])
+
     /** 301s for removed blog posts → closest live article (SEO / backlinks). */
     const removedBlogPosts = [
       [
@@ -67,6 +77,7 @@ const nextConfig = {
       permanent: true,
     }))
     return [
+      ...legacyLocaleRedirectRules,
       { source: '/custom-saas', destination: '/us-en/agentic-softwares', permanent: true },
       { source: '/:locale/custom-saas', destination: '/:locale/agentic-softwares', permanent: true },
       ...blogRedirects,

@@ -1,7 +1,7 @@
 import createMiddleware from 'next-intl/middleware'
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
-import { routing } from './i18n/routing'
+import { legacyLocaleRedirects, routing } from './i18n/routing'
 import { detectLocaleFromRequest } from './i18n/locale-detection'
 import { updateSession } from './lib/supabase/middleware'
 
@@ -37,6 +37,15 @@ export default async function proxy(request: NextRequest) {
   }
 
   const pathname = request.nextUrl.pathname
+
+  const legacySegment = pathname.split('/').filter(Boolean)[0]
+  const canonicalLocale = legacySegment ? legacyLocaleRedirects[legacySegment] : undefined
+  if (canonicalLocale) {
+    const rest = pathname.slice(legacySegment.length + 1)
+    const destination = new URL(`/${canonicalLocale}${rest}${request.nextUrl.search}`, request.url)
+    return NextResponse.redirect(destination, 301)
+  }
+
   // Non-localized admin/auth/API: session refresh for protected surfaces.
   if (
     pathname.startsWith('/admin') ||
