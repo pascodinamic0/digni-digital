@@ -44,6 +44,17 @@ const nextConfig = {
       { source: `/${from}/:path*`, destination: `/${to}/:path*`, permanent: true },
     ])
 
+    const localePrefixedPdfRedirects = [
+      'The_AI_Employee_Growth_Engine.pdf',
+      'Digni Digital - Future-Ready Graduate Program.pdf',
+    ].flatMap((file) => [
+      {
+        source: `/:locale/${encodeURI(file)}`,
+        destination: `/${encodeURI(file)}`,
+        permanent: true,
+      },
+    ])
+
     /** 301s for removed blog posts → closest live article (SEO / backlinks). */
     const removedBlogPosts = [
       [
@@ -78,6 +89,7 @@ const nextConfig = {
     }))
     return [
       ...legacyLocaleRedirectRules,
+      ...localePrefixedPdfRedirects,
       { source: '/custom-saas', destination: '/us-en/agentic-softwares', permanent: true },
       { source: '/:locale/custom-saas', destination: '/:locale/agentic-softwares', permanent: true },
       ...blogRedirects,
