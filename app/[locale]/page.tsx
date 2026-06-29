@@ -2,6 +2,7 @@
 
 import { use, useState, useEffect, useRef } from 'react'
 import dynamic from 'next/dynamic'
+import Image from 'next/image'
 import { motion, useInView } from 'framer-motion'
 import { Link } from '@/i18n/navigation'
 import AnimatedSection from '@/app/components/AnimatedSection'
@@ -14,9 +15,13 @@ import { useLanguage, useLocale } from '@/app/context/LocaleContext'
 import { translations } from '@/app/config/translations'
 import { localeToHreflang, type Locale } from '@/i18n/routing'
 import { formatMissedLeadsUsdStat, MISSED_LEADS_USD } from '@/lib/formatMissedLeadsUsdStat'
-import EcosystemStrip from '@/app/components/EcosystemStrip'
-import { ecosystemFromHomeWhatWeDo } from '@/lib/positioning/map-home-ecosystem'
+import { withPartnerCount } from '@/lib/site-partners'
 import GlowCard from '@/app/components/GlowCard'
+import {
+  Briefcase,
+  GraduationCap,
+  Star,
+} from 'lucide-react'
 
 const GlobalPresenceMap = dynamic(() => import('@/app/components/GlobalPresenceMap'), {
   loading: () => (
@@ -160,24 +165,51 @@ function MissionValues() {
   const m = translations[language].home.mission
 
   return (
-    <AnimatedSection id="our-mission" className="py-24 bg-surface">
-      <div className="max-w-7xl mx-auto px-6">
+    <AnimatedSection id="our-mission" className="py-24 md:py-28 relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-surface to-background" aria-hidden />
+      <div className="absolute inset-0 bg-gradient-mesh opacity-20" aria-hidden />
+      <div
+        className="pointer-events-none absolute -top-24 left-1/2 h-72 w-[min(100%,42rem)] -translate-x-1/2 rounded-full bg-accent/10 blur-3xl"
+        aria-hidden
+      />
+
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-20"
+          className="max-w-4xl mx-auto mb-16 md:mb-20"
         >
-          <div className="engineered-header-frame mb-8">
-            <span className="text-accent font-medium text-sm uppercase tracking-wider">{m.title}</span>
+          <div className="text-center mb-8 md:mb-10">
+            <div className="engineered-header-frame mb-6">
+              <span className="section-label !m-0">{m.title}</span>
+            </div>
           </div>
-          <h2 className="font-display text-4xl md:text-5xl font-bold mt-4 mb-8 max-w-4xl mx-auto">
-            {m.statement}
-          </h2>
-          <p className="text-xl text-muted max-w-3xl mx-auto leading-relaxed">
-            {m.description}
-          </p>
+
+          <GlowCard className="relative overflow-hidden p-8 md:p-12 lg:p-14 text-center">
+            <div
+              className="pointer-events-none absolute inset-0 bg-gradient-to-br from-accent/[0.07] via-transparent to-success/[0.07]"
+              aria-hidden
+            />
+            <div className="pointer-events-none absolute top-0 right-0 h-40 w-40 translate-x-1/3 -translate-y-1/3 rounded-full bg-accent/10 blur-3xl" aria-hidden />
+            <div className="pointer-events-none absolute bottom-0 left-0 h-32 w-32 -translate-x-1/3 translate-y-1/3 rounded-full bg-success/10 blur-3xl" aria-hidden />
+
+            <div className="relative">
+              <h2 className="type-h2 font-bold mb-6 gradient-text-brand max-w-3xl mx-auto">
+                {m.statement}
+              </h2>
+              <p className="type-body-lg text-muted max-w-2xl mx-auto leading-relaxed">
+                {m.description}
+              </p>
+            </div>
+          </GlowCard>
         </motion.div>
+
+        <div className="flex items-center gap-4 mb-14 md:mb-16 max-w-2xl mx-auto" aria-hidden>
+          <div className="flex-1 h-px bg-border" />
+          <div className="h-2 w-2 rounded-full bg-accent shadow-[0_0_12px_rgba(var(--accent-rgb),0.45)]" />
+          <div className="flex-1 h-px bg-border" />
+        </div>
 
         <CompanyValuesGrid mission={m} />
       </div>
@@ -193,74 +225,109 @@ function Commitment2026() {
   const intlLocale = locale in localeToHreflang ? localeToHreflang[locale as Locale] : 'en-US'
   const formatCommitmentStat = (n: number) => new Intl.NumberFormat(intlLocale).format(n)
 
+  const pillars = [
+    {
+      value: 10,
+      title: c.pillar1Title,
+      description: c.pillar1Desc,
+      icon: Briefcase,
+      theme: 'accent' as const,
+    },
+    {
+      value: 100,
+      title: c.pillar2Title,
+      description: c.pillar2Desc,
+      icon: GraduationCap,
+      theme: 'success' as const,
+    },
+  ]
+
   return (
-    <AnimatedSection id="our-2026-commitment" className="py-24 md:py-28 relative overflow-hidden">
-      {/* Distinct background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-surface via-background to-surface opacity-90" />
-      <div className="absolute inset-0 bg-gradient-mesh opacity-30" />
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
-        {/* Header: badge + headline with emphasis on numbers */}
-        <div className="text-center mb-14">
-          <div className="engineered-header-frame mb-6">
+    <AnimatedSection id="our-2026-commitment" className="py-24 md:py-28 border-y border-border/70 bg-background">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="text-center mb-12 md:mb-14">
+          <div className="engineered-header-frame mb-6 inline-block">
             <span className="section-label !m-0">{c.badge}</span>
           </div>
-          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mt-6 mb-5 max-w-4xl mx-auto leading-tight gradient-text">
+          <h2 className="type-h2 font-bold text-text max-w-4xl mx-auto leading-tight">
             {c.title}
           </h2>
-          <p className="text-muted text-base md:text-lg max-w-2xl mx-auto">
+          <p className="type-body-lg text-muted mt-5 max-w-2xl mx-auto leading-relaxed">
             {c.subtitle}
           </p>
         </div>
 
-        {/* Two pillars as prominent stat cards */}
-        <div className="grid md:grid-cols-2 gap-6 md:gap-8 mb-14">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1, duration: 0.4 }}
-            className="relative rounded-2xl border-2 border-accent/30 bg-accent/5 p-8 md:p-10 hover:border-accent/50 hover:bg-accent/10 transition-all duration-300 group overflow-hidden"
-          >
-            <div className="absolute top-0 right-0 w-40 h-40 bg-accent/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:scale-110 transition-transform" />
-            <div className="relative flex flex-col sm:flex-row sm:items-center gap-6">
-              <div className="flex items-center justify-center w-20 h-20 rounded-2xl bg-accent/20 text-4xl flex-shrink-0">
-                💼
-              </div>
-              <div className="flex-1">
-                <div className="font-display text-5xl md:text-6xl font-bold text-accent mb-1">
-                  {formatCommitmentStat(10)}
+        <div className="grid md:grid-cols-2 gap-6 md:gap-8 max-w-5xl mx-auto">
+          {pillars.map((pillar, i) => {
+            const Icon = pillar.icon
+            const isAccent = pillar.theme === 'accent'
+
+            return (
+              <motion.div
+                key={pillar.title}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1, duration: 0.4 }}
+                className={`card group flex h-full flex-col p-7 md:p-9 ${
+                  isAccent ? 'hover:border-accent/50' : 'hover:border-success/50'
+                }`}
+              >
+                <div className="mb-6 flex items-start justify-between gap-4">
+                  <div
+                    className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border-2 ${
+                      isAccent
+                        ? 'border-accent/25 bg-accent/10 text-accent'
+                        : 'border-success/25 bg-success/10 text-success'
+                    }`}
+                  >
+                    <Icon className="h-6 w-6" strokeWidth={1.75} aria-hidden />
+                  </div>
+                  <span
+                    className={`type-h2 font-display font-bold tabular-nums leading-none ${
+                      isAccent ? 'text-accent' : 'text-success'
+                    }`}
+                  >
+                    {formatCommitmentStat(pillar.value)}
+                  </span>
                 </div>
-                <h3 className="font-display text-lg font-bold text-text mb-2">
-                  {c.pillar1Title}
+
+                <h3
+                  className={`type-h4 mb-3 font-bold text-text transition-colors duration-300 ${
+                    isAccent ? 'group-hover:text-accent' : 'group-hover:text-success'
+                  }`}
+                >
+                  {pillar.title}
                 </h3>
-                <p className="text-muted text-sm leading-relaxed">{c.pillar1Desc}</p>
-              </div>
-            </div>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2, duration: 0.4 }}
-            className="relative rounded-2xl border-2 border-success/30 bg-success/5 p-8 md:p-10 hover:border-success/50 hover:bg-success/10 transition-all duration-300 group overflow-hidden"
-          >
-            <div className="absolute top-0 right-0 w-40 h-40 bg-success/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:scale-110 transition-transform" />
-            <div className="relative flex flex-col sm:flex-row sm:items-center gap-6">
-              <div className="flex items-center justify-center w-20 h-20 rounded-2xl bg-success/20 text-4xl flex-shrink-0">
-                🎓
-              </div>
-              <div className="flex-1">
-                <div className="font-display text-5xl md:text-6xl font-bold text-success mb-1">
-                  {formatCommitmentStat(100)}
-                </div>
-                <h3 className="font-display text-lg font-bold text-text mb-2">
-                  {c.pillar2Title}
-                </h3>
-                <p className="text-muted text-sm leading-relaxed">{c.pillar2Desc}</p>
-              </div>
-            </div>
-          </motion.div>
+                <p className="type-body text-muted leading-relaxed">{pillar.description}</p>
+              </motion.div>
+            )
+          })}
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2, duration: 0.4 }}
+          className="mt-10 md:mt-12 max-w-3xl mx-auto text-center"
+        >
+          <p className="type-body text-muted leading-relaxed">{c.proofLine}</p>
+          <div className="mt-5 flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
+            <Link href="/future-ready-graduate" className="type-small font-semibold text-accent hover:underline">
+              {c.proofLink1Text}
+            </Link>
+            <span className="hidden sm:inline text-border" aria-hidden>
+              ·
+            </span>
+            <Link href="/careers" className="type-small font-semibold text-accent hover:underline">
+              {c.proofLink2Text}
+            </Link>
+          </div>
+          <a {...getBookingLinkProps()} className="btn-primary mt-8 inline-flex px-8 py-3.5">
+            {c.ctaPrimary}
+          </a>
+        </motion.div>
       </div>
     </AnimatedSection>
   )
@@ -273,10 +340,33 @@ function WhatWereFightingFor() {
   const f = translations[language].home.fighting
   const missedLeadsStat = formatMissedLeadsUsdStat(MISSED_LEADS_USD, locale)
   const challenges = [
-    { title: f.missedLeads, problem: f.missedLeadsProblem, solution: f.missedLeadsSolution, outcome: f.missedLeadsOutcome, icon: '📞', stat: missedLeadsStat, statLabel: f.missedLeadsStatLabel },
-    { title: f.skillsGap, problem: f.skillsGapProblem, solution: f.skillsGapSolution, outcome: f.skillsGapOutcome, icon: '🎓', stat: f.skillsGapStat, statLabel: f.skillsGapStatLabel },
-    { title: f.techDivide, problem: f.techDivideProblem, solution: f.techDivideSolution, outcome: f.techDivideOutcome, icon: '⚖️', stat: f.techDivideStat, statLabel: f.techDivideStatLabel },
+    { title: f.missedLeads, problem: f.missedLeadsProblem, solution: f.missedLeadsSolution, outcome: f.missedLeadsOutcome, icon: '📞', stat: missedLeadsStat, statLabel: f.missedLeadsStatLabel, theme: 'accent' as const },
+    { title: f.skillsGap, problem: f.skillsGapProblem, solution: f.skillsGapSolution, outcome: f.skillsGapOutcome, icon: '🎓', stat: f.skillsGapStat, statLabel: f.skillsGapStatLabel, theme: 'success' as const },
+    { title: f.techDivide, problem: f.techDivideProblem, solution: f.techDivideSolution, outcome: f.techDivideOutcome, icon: '⚖️', stat: f.techDivideStat, statLabel: f.techDivideStatLabel, theme: 'accent' as const },
   ]
+
+  const themeStyles = {
+    accent: {
+      card: 'border-accent/30 bg-accent/5 hover:border-accent/50 hover:bg-accent/10',
+      glow: 'bg-accent/10',
+      stat: 'text-accent',
+      statLabel: 'text-accent/80',
+      iconWrap: 'bg-accent/15',
+      problem: 'text-text',
+      outcomeLabel: 'text-accent',
+      outcome: 'text-accent',
+    },
+    success: {
+      card: 'border-success/30 bg-success/5 hover:border-success/50 hover:bg-success/10',
+      glow: 'bg-success/10',
+      stat: 'text-success',
+      statLabel: 'text-success/80',
+      iconWrap: 'bg-success/15',
+      problem: 'text-text',
+      outcomeLabel: 'text-success',
+      outcome: 'text-success',
+    },
+  }
 
   return (
     <AnimatedSection id="what-were-fighting-for" className="py-24">
@@ -295,7 +385,10 @@ function WhatWereFightingFor() {
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
-          {challenges.map((challenge, i) => (
+          {challenges.map((challenge, i) => {
+            const styles = themeStyles[challenge.theme]
+
+            return (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 30 }}
@@ -304,26 +397,25 @@ function WhatWereFightingFor() {
               transition={{ delay: i * 0.15 }}
               className="flex"
             >
-              <GlowCard className="glow-destructive p-8 group relative overflow-hidden flex-1">
-                {/* Gradient background accent */}
-                <div className="absolute top-0 right-0 w-32 h-32 bg-destructive/5 rounded-full blur-3xl" />
-                
+              <div
+                className={`group relative flex-1 overflow-hidden rounded-2xl border-2 p-8 transition-all duration-300 ${styles.card}`}
+              >
+                <div className={`absolute top-0 right-0 w-32 h-32 rounded-full blur-3xl ${styles.glow}`} aria-hidden />
+
                 <div className="relative">
-                  {/* Stat - Prominent and Bold */}
                   <div className="mb-6">
                     <div className="flex items-baseline gap-2 mb-2">
-                      <span className="font-display text-5xl md:text-6xl font-bold text-destructive leading-none">
+                      <span className={`font-display text-5xl md:text-6xl font-bold leading-none ${styles.stat}`}>
                         {challenge.stat}
                       </span>
                     </div>
-                    <p className="text-destructive/80 text-sm font-medium uppercase tracking-wider">
+                    <p className={`text-sm font-medium uppercase tracking-wider ${styles.statLabel}`}>
                       {challenge.statLabel}
                     </p>
                   </div>
 
-                  {/* Icon and Title */}
                   <div className="flex items-center gap-4 mb-4">
-                    <div className="w-12 h-12 bg-destructive/10 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 group-hover:scale-110 transition-transform">
+                    <div className={`w-12 h-12 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 transition-transform group-hover:scale-110 ${styles.iconWrap}`}>
                       {challenge.icon}
                     </div>
                     <h3 className="font-display text-xl font-bold text-text">
@@ -331,17 +423,15 @@ function WhatWereFightingFor() {
                     </h3>
                   </div>
 
-                  {/* Problem */}
                   <div className="mb-4 pb-4 border-b border-light">
                     <span className="text-xs uppercase tracking-wider text-muted-dark block mb-2">
                       {f.theProblem}
                     </span>
-                    <p className="text-destructive font-semibold text-sm leading-relaxed">
+                    <p className={`font-semibold text-sm leading-relaxed ${styles.problem}`}>
                       {challenge.problem}
                     </p>
                   </div>
 
-                  {/* Solution */}
                   <div className="mb-4">
                     <span className="text-xs uppercase tracking-wider text-muted-dark block mb-2">
                       {f.theSolution}
@@ -351,19 +441,19 @@ function WhatWereFightingFor() {
                     </p>
                   </div>
 
-                  {/* Outcome */}
                   <div className="pt-4 border-t border-light">
-                    <span className="text-xs uppercase tracking-wider text-accent block mb-2">
+                    <span className={`text-xs uppercase tracking-wider block mb-2 ${styles.outcomeLabel}`}>
                       {f.theOutcome}
                     </span>
-                    <p className="text-accent font-medium text-sm leading-relaxed">
+                    <p className={`font-medium text-sm leading-relaxed ${styles.outcome}`}>
                       {challenge.outcome}
                     </p>
                   </div>
                 </div>
-              </GlowCard>
+              </div>
             </motion.div>
-          ))}
+            )
+          })}
         </div>
       </div>
       
@@ -375,59 +465,136 @@ function WhatWereFightingFor() {
   )
 }
 
-function HomeEcosystemStrip() {
-  const language = useLanguage()
-  const w = translations[language].home.whatWeDo
+function ProofReviewStars({ color }: { color: 'accent' | 'success' | 'info' }) {
+  const starColor =
+    color === 'accent' ? 'text-accent' : color === 'success' ? 'text-success' : 'text-info'
+
   return (
-    <EcosystemStrip
-      id="grow-learn-scale"
-      className="py-20 bg-background border-y border-border/60"
-      ecosystem={ecosystemFromHomeWhatWeDo(w)}
-    />
+    <div className="flex items-center gap-0.5" aria-label="5 out of 5">
+      {Array.from({ length: 5 }).map((_, i) => (
+        <Star key={i} className={`h-3 w-3 fill-current ${starColor}`} strokeWidth={0} aria-hidden />
+      ))}
+    </div>
   )
 }
 
-// What We Do Section
+type ProofAvatarStyle = 'photo' | 'illustrated' | '3d'
+
+function ProofClientAvatar({
+  src,
+  alt,
+  style,
+  color,
+}: {
+  src: string
+  alt: string
+  style: ProofAvatarStyle
+  color: 'accent' | 'success' | 'info'
+}) {
+  const ringColor =
+    color === 'accent' ? 'ring-accent/50' : color === 'success' ? 'ring-success/50' : 'ring-info/50'
+
+  const frameClass =
+    style === 'photo'
+      ? 'rounded-full ring-2 ring-offset-2 ring-offset-background'
+      : style === 'illustrated'
+        ? 'rounded-2xl ring-2 ring-offset-2 ring-offset-background shadow-lg'
+        : 'rounded-xl ring-2 ring-offset-2 ring-offset-background shadow-[0_0_24px_-6px_var(--brand-blue)]'
+
+  return (
+    <div className={`relative h-14 w-14 shrink-0 overflow-hidden ${frameClass} ${ringColor}`}>
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        className={`object-cover ${style === 'illustrated' ? 'scale-105' : ''}`}
+        sizes="56px"
+      />
+    </div>
+  )
+}
+
 function WhatWeDo() {
   const language = useLanguage()
   const w = translations[language].home.whatWeDo
+  const c = translations[language].home.caseStudies
   const ctaT = translations[language].cta
-  const services = [
+  const services: Array<{
+    title: string
+    subtitle: string
+    description: string
+    outcomes: string[]
+    icon: string
+    link: string
+    color: 'accent' | 'success' | 'info'
+    primaryCta: string
+    secondaryCta: string
+    proofClient: string
+    proofIndustry: string
+    proofDuration: string
+    proofHeadshot: string
+    proofAvatarStyle: ProofAvatarStyle
+    proofResults: Array<{ value: string; label: string }>
+  }> = [
     {
       title: w.aiEmployeeTitle,
       subtitle: w.forBusinesses,
-      description: w.aiEmployeeDesc,
-      approach: w.aiEmployeeApproach,
-      outcomes: [w.aiEmployeeOutcome1, w.aiEmployeeOutcome2, w.aiEmployeeOutcome3, w.aiEmployeeOutcome4],
+      description: w.aiEmployeeApproach,
+      outcomes: [w.aiEmployeeOutcome1, w.aiEmployeeOutcome2, w.aiEmployeeOutcome3],
       icon: '🤖',
       link: '/ai-receptionist',
       color: 'accent' as const,
       primaryCta: w.aiEmployeePrimaryCta,
       secondaryCta: w.aiEmployeeSecondaryCta,
+      proofClient: c.study1Title,
+      proofIndustry: c.healthcare,
+      proofDuration: c.study1Duration,
+      proofHeadshot: '/case-studies/headshots/healthcare.jpg',
+      proofAvatarStyle: 'photo',
+      proofResults: [
+        { value: '100%', label: c.study1Result1 },
+        { value: '300%', label: c.study1Result2 },
+      ],
     },
     {
       title: w.futureReadyTitle,
       subtitle: w.forSchools,
-      description: w.futureReadyDesc,
-      approach: w.futureReadyApproach,
-      outcomes: [w.futureReadyOutcome1, w.futureReadyOutcome2, w.futureReadyOutcome3, w.futureReadyOutcome4],
+      description: w.futureReadyApproach,
+      outcomes: [w.futureReadyOutcome1, w.futureReadyOutcome2, w.futureReadyOutcome3],
       icon: '🎓',
       link: '/future-ready-graduate',
       color: 'success' as const,
       primaryCta: w.futureReadyPrimaryCta,
       secondaryCta: w.futureReadySecondaryCta,
+      proofClient: c.study2Title,
+      proofIndustry: c.education,
+      proofDuration: c.study2Duration,
+      proofHeadshot: '/case-studies/headshots/education.jpg',
+      proofAvatarStyle: 'illustrated',
+      proofResults: [
+        { value: '85%', label: c.study2Result1 },
+        { value: '150%', label: c.study2Result2 },
+      ],
     },
     {
       title: w.agenticSoftwaresTitle,
       subtitle: w.forUniqueNeeds,
-      description: w.agenticSoftwaresDesc,
-      approach: w.agenticSoftwaresApproach,
-      outcomes: [w.agenticSoftwaresOutcome1, w.agenticSoftwaresOutcome2, w.agenticSoftwaresOutcome3, w.agenticSoftwaresOutcome4],
+      description: w.agenticSoftwaresApproach,
+      outcomes: [w.agenticSoftwaresOutcome1, w.agenticSoftwaresOutcome2, w.agenticSoftwaresOutcome3],
       icon: '⚙️',
       link: '/agentic-softwares',
       color: 'info' as const,
       primaryCta: w.agenticSoftwaresPrimaryCta,
       secondaryCta: w.agenticSoftwaresSecondaryCta,
+      proofClient: c.study3Title,
+      proofIndustry: c.software,
+      proofDuration: c.study3Duration,
+      proofHeadshot: '/case-studies/headshots/software.jpg',
+      proofAvatarStyle: '3d',
+      proofResults: [
+        { value: '90%', label: c.study3Result1 },
+        { value: '10k+', label: c.study3Result2 },
+      ],
     },
   ]
 
@@ -435,12 +602,13 @@ function WhatWeDo() {
     <AnimatedSection id="what-we-do" className="py-24 bg-surface">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
-          <span className="text-accent font-medium text-sm uppercase tracking-wider">{w.badge}</span>
-          <h2 className="font-display text-4xl md:text-5xl font-bold mt-4 mb-6">
-            {w.title}<br />
+          <span className="section-label">{w.badge}</span>
+          <h2 className="type-h2 font-bold mt-4 mb-6">
+            {w.title}
+            <br />
             <span className="gradient-text">{w.subtitle}</span>
           </h2>
-          <p className="text-muted text-lg max-w-3xl mx-auto">
+          <p className="type-body-lg text-muted max-w-3xl mx-auto">
             {w.whatWeDoDescription}
           </p>
         </div>
@@ -448,70 +616,143 @@ function WhatWeDo() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, i) => (
             <motion.div
-              key={i}
+              key={service.title}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.15 }}
-              className="card p-8 hover:border-accent/50 group flex flex-col"
+              className={`card p-8 group flex flex-col ${
+                service.color === 'accent'
+                  ? 'hover:border-accent/50'
+                  : service.color === 'success'
+                    ? 'hover:border-success/50'
+                    : 'hover:border-info/50'
+              }`}
             >
-              {/* Header */}
               <div className="mb-6">
-                <div className={`w-14 h-14 rounded-xl flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform ${
-                  service.color === 'accent' ? 'bg-accent/10' :
-                  service.color === 'success' ? 'bg-success/10' :
-                  'bg-info/10'
-                }`}>
+                <div
+                  className={`w-14 h-14 rounded-xl flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform ${
+                    service.color === 'accent'
+                      ? 'bg-accent/10'
+                      : service.color === 'success'
+                        ? 'bg-success/10'
+                        : 'bg-info/10'
+                  }`}
+                >
                   {service.icon}
                 </div>
-                <span className={`text-xs font-semibold uppercase tracking-wider ${
-                  service.color === 'accent' ? 'text-accent' :
-                  service.color === 'success' ? 'text-success' :
-                  'text-info'
-                }`}>
+                <span
+                  className={`type-caption font-semibold uppercase tracking-wider ${
+                    service.color === 'accent'
+                      ? 'text-accent'
+                      : service.color === 'success'
+                        ? 'text-success'
+                        : 'text-info'
+                  }`}
+                >
                   {service.subtitle}
                 </span>
-                <h3 className="font-display text-2xl font-bold mt-2 mb-4 group-hover:text-accent transition-colors">
+                <h3
+                  className={`type-h4 font-bold mt-2 mb-4 transition-colors ${
+                    service.color === 'accent'
+                      ? 'group-hover:text-accent'
+                      : service.color === 'success'
+                        ? 'group-hover:text-success'
+                        : 'group-hover:text-info'
+                  }`}
+                >
                   {service.title}
                 </h3>
               </div>
 
-              {/* Description (whitespace-pre-line for multi-paragraph copy) */}
-              <div className="text-muted mb-6 leading-relaxed flex-grow whitespace-pre-line">
-                {service.description}
-              </div>
+              <p className="type-body text-muted mb-6 leading-relaxed flex-grow">{service.description}</p>
 
-              {/* Key Outcomes */}
               <div className="mb-6 space-y-2">
-                {service.outcomes.slice(0, 3).map((outcome, j) => (
+                {service.outcomes.map((outcome, j) => (
                   <div key={j} className="flex items-center gap-2">
-                    <div className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${
-                      service.color === 'accent' ? 'bg-accent' :
-                      service.color === 'success' ? 'bg-success' :
-                      'bg-info'
-                    }`} />
-                    <span className="text-sm text-muted">{outcome}</span>
+                    <div
+                      className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${
+                        service.color === 'accent'
+                          ? 'bg-accent'
+                          : service.color === 'success'
+                            ? 'bg-success'
+                            : 'bg-info'
+                      }`}
+                    />
+                    <span className="type-small text-muted">{outcome}</span>
                   </div>
                 ))}
               </div>
 
-              {/* CTA Buttons */}
+              <div className="relative mb-6 overflow-hidden rounded-xl border border-border/80 bg-background/60 p-4">
+                <div
+                  className={`pointer-events-none absolute -right-6 -top-6 h-20 w-20 rounded-full blur-2xl ${
+                    service.color === 'accent'
+                      ? 'bg-accent/20'
+                      : service.color === 'success'
+                        ? 'bg-success/20'
+                        : 'bg-info/20'
+                  }`}
+                  aria-hidden
+                />
+                <div className="relative mb-3 flex items-start justify-between gap-3">
+                  <div className="flex min-w-0 items-center gap-3">
+                    <ProofClientAvatar
+                      src={service.proofHeadshot}
+                      alt={service.proofClient}
+                      style={service.proofAvatarStyle}
+                      color={service.color}
+                    />
+                    <div className="min-w-0">
+                      <div className="flex flex-wrap items-center gap-x-1.5 gap-y-0.5">
+                        <span className="type-caption uppercase tracking-wider text-muted-dark">
+                          {c.realClients}
+                        </span>
+                      </div>
+                      <ProofReviewStars color={service.color} />
+                    </div>
+                  </div>
+                </div>
+                <p className="type-small font-semibold text-text">{service.proofClient}</p>
+                <p className="type-caption text-muted mt-0.5">
+                  {service.proofIndustry} · {service.proofDuration}
+                </p>
+                <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1">
+                  {service.proofResults.map((result) => (
+                    <span key={result.label} className="type-small">
+                      <span
+                        className={`font-display font-bold ${
+                          service.color === 'accent'
+                            ? 'text-accent'
+                            : service.color === 'success'
+                              ? 'text-success'
+                              : 'text-info'
+                        }`}
+                      >
+                        {result.value}
+                      </span>{' '}
+                      <span className="text-muted">{result.label}</span>
+                    </span>
+                  ))}
+                </div>
+              </div>
+
               <div className="flex flex-col gap-3 mt-auto">
-                <Link 
-                  href={service.link}
-                  className="btn-primary text-center text-sm py-2.5"
-                >
+                <Link href={service.link} className="btn-primary text-center text-sm py-2.5">
                   {service.primaryCta}
                 </Link>
-                <a
-                  {...getBookingLinkProps()}
-                  className="btn-secondary text-center text-sm py-2.5"
-                >
+                <a {...getBookingLinkProps()} className="btn-secondary text-center text-sm py-2.5">
                   {service.secondaryCta}
                 </a>
               </div>
             </motion.div>
           ))}
+        </div>
+
+        <div className="text-center mt-12">
+          <Link href="/case-studies" className="btn-secondary">
+            {c.viewAll}
+          </Link>
         </div>
 
         <motion.div
@@ -522,14 +763,11 @@ function WhatWeDo() {
           className="text-center mt-20"
         >
           <div className="relative overflow-hidden">
-            {/* Enhanced gradient background with glow effect */}
             <div className="absolute inset-0 bg-gradient-to-br from-accent/20 via-accent/10 to-success/20 rounded-3xl blur-2xl opacity-50" />
             <div className="absolute inset-0 bg-gradient-to-br from-accent/15 to-success/15 rounded-3xl" />
-            
+
             <div className="relative p-12 md:p-16 bg-gradient-to-br from-accent/10 via-surface to-success/10 border-2 border-transparent hover:border-border-foreground transition-all duration-300 rounded-3xl">
-              
               <div className="relative z-10">
-                {/* Dynamic animated lightbulb */}
                 <motion.div
                   initial={{ scale: 0, rotate: -180 }}
                   whileInView={{ scale: 1, rotate: 0 }}
@@ -537,7 +775,6 @@ function WhatWeDo() {
                   transition={{ delay: 0.2, type: 'spring', stiffness: 200 }}
                   className="inline-block mb-6 relative"
                 >
-                  {/* Pulsing glow behind bulb */}
                   <motion.div
                     animate={{
                       scale: [1, 1.3, 1],
@@ -550,8 +787,7 @@ function WhatWeDo() {
                     }}
                     className="absolute inset-0 bg-accent/30 rounded-2xl blur-xl"
                   />
-                  
-                  {/* Rotating glow ring */}
+
                   <motion.div
                     animate={{
                       rotate: [0, 360],
@@ -566,8 +802,7 @@ function WhatWeDo() {
                       clipPath: 'polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)',
                     }}
                   />
-                  
-                  {/* Main bulb container with flicker */}
+
                   <motion.div
                     animate={{
                       scale: [1, 1.05, 1],
@@ -580,7 +815,6 @@ function WhatWeDo() {
                     }}
                     className="relative w-20 h-20 md:w-24 md:h-24 bg-gradient-to-br from-accent/30 to-accent/10 rounded-2xl flex items-center justify-center backdrop-blur-sm border border-accent/40"
                   >
-                    {/* Lightbulb emoji with brightness animation */}
                     <motion.div
                       animate={{
                         filter: ['brightness(1)', 'brightness(1.5)', 'brightness(1)'],
@@ -595,8 +829,7 @@ function WhatWeDo() {
                     >
                       💡
                     </motion.div>
-                    
-                    {/* Sparkle particles */}
+
                     {[...Array(6)].map((_, i) => (
                       <motion.div
                         key={i}
@@ -629,18 +862,16 @@ function WhatWeDo() {
                     ))}
                   </motion.div>
                 </motion.div>
-                
-                <h3 className="font-display text-3xl md:text-4xl font-bold mb-4 text-text">
-                  {w.notSureTitle}
-                </h3>
-                <p className="text-lg md:text-xl text-muted mb-8 max-w-2xl mx-auto leading-relaxed">
+
+                <h3 className="type-h3 font-bold mb-4 text-text">{w.notSureTitle}</h3>
+                <p className="type-body-lg text-muted mb-8 max-w-2xl mx-auto leading-relaxed">
                   {w.notSureSubtitle}
                 </p>
                 <Link
                   href={ctaConfig.digniPath}
-                  className="group inline-flex items-center gap-3 bg-accent hover:bg-accent-light text-background font-semibold px-8 py-4 rounded-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl text-lg"
+                  className="group inline-flex items-center gap-3 bg-accent hover:bg-accent-light text-background font-semibold px-8 py-4 rounded-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
                 >
-                  <span>{ctaT.talkToDigniGuide ?? ctaT.getStarted}</span>
+                  <span className="type-body-lg">{ctaT.talkToDigniGuide ?? ctaT.getStarted}</span>
                   <svg
                     className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"
                     fill="none"
@@ -748,7 +979,7 @@ function Stats() {
             >
               <div className="text-3xl mb-3">🤖</div>
               <h3 className="font-display font-bold mb-2">{s.aiEmployeeCard}</h3>
-              <p className="text-muted text-sm">{s.aiEmployeeCardSub}</p>
+              <p className="text-muted text-sm">{withPartnerCount(s.aiEmployeeCardSub)}</p>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -798,156 +1029,6 @@ function GlobalPresence() {
         </div>
 
         <GlobalPresenceMap showToggle={true} initialExpanded={false} />
-      </div>
-    </AnimatedSection>
-  )
-}
-
-// Case Studies Section
-function CaseStudies() {
-  const [expanded, setExpanded] = useState<number | null>(null)
-  const language = useLanguage()
-  const c = translations[language].home.caseStudies
-  const studies = [
-    {
-      solution: 'AI Employee™',
-      industry: c.healthcare,
-      title: c.study1Title,
-      duration: c.study1Duration,
-      problem: c.study1Problem,
-      results: [
-        { value: '100%', label: c.study1Result1 },
-        { value: '300%', label: c.study1Result2 },
-        { value: '$240k', label: c.study1Result3 },
-      ],
-      icon: '🤖',
-      color: 'accent' as const
-    },
-    {
-      solution: 'Future-Ready Graduate Program',
-      industry: c.education,
-      title: c.study2Title,
-      duration: c.study2Duration,
-      problem: c.study2Problem,
-      results: [
-        { value: '85%', label: c.study2Result1 },
-        { value: '150%', label: c.study2Result2 },
-        { value: '95%', label: c.study2Result3 },
-      ],
-      icon: '🎓',
-      color: 'success' as const
-    },
-    {
-      solution: 'Agentic Softwares',
-      industry: c.software,
-      title: c.study3Title,
-      duration: c.study3Duration,
-      problem: c.study3Problem,
-      results: [
-        { value: '90%', label: c.study3Result1 },
-        { value: '10k+', label: c.study3Result2 },
-        { value: '4.8/5', label: c.study3Result3 },
-      ],
-      icon: '⚙️',
-      color: 'info' as const
-    },
-  ]
-
-  return (
-    <AnimatedSection id="case-studies" className="py-24">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <span className="text-accent font-medium text-sm uppercase tracking-wider">{c.badge}</span>
-          <h2 className="font-display text-4xl md:text-5xl font-bold mt-4 mb-4">
-            {c.title}<br />
-            <span className="gradient-text">{c.subtitle}</span>
-          </h2>
-          <p className="text-muted text-lg">{c.realClients || 'Real clients. Real numbers.'}</p>
-        </div>
-
-        <div className="grid lg:grid-cols-3 gap-8">
-          {studies.map((study, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.15 }}
-              className="card p-8 cursor-pointer group hover:border-accent/50"
-              onClick={() => setExpanded(expanded === i ? null : i)}
-              role="button"
-              tabIndex={0}
-              aria-expanded={expanded === i}
-              aria-label={expanded === i ? `Collapse case study: ${study.title}` : `Expand case study: ${study.title}`}
-              onKeyDown={(e) => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                  e.preventDefault()
-                  setExpanded(expanded === i ? null : i)
-                }
-              }}
-            >
-              <div className="flex items-center gap-3 mb-6">
-                <div className={`w-10 h-10 rounded-lg flex items-center justify-center text-xl ${
-                  study.color === 'accent' ? 'bg-accent/10' : study.color === 'info' ? 'bg-info/10' : 'bg-success/10'
-                }`}>
-                  {study.icon}
-                </div>
-                <div>
-                  <span className={`px-3 py-1 text-xs font-medium rounded-full whitespace-nowrap ${
-                    study.color === 'accent' ? 'bg-accent/10 text-accent' : study.color === 'info' ? 'bg-info/10 text-info' : 'bg-success/10 text-success'
-                  }`}>
-                    {study.solution}
-                  </span>
-                </div>
-              </div>
-
-              <span className="text-muted-dark text-xs uppercase tracking-wider">{study.industry}</span>
-              <h3 className="font-display text-xl font-bold mb-4">{study.title}</h3>
-
-              <div className="mb-6">
-                <span className="text-xs uppercase tracking-wider text-muted-dark">{c.challenge}</span>
-                <p className="text-muted text-sm mt-1">{study.problem}</p>
-              </div>
-
-              <motion.div
-                initial={false}
-                animate={{ height: expanded === i ? 'auto' : 0, opacity: expanded === i ? 1 : 0 }}
-                className="overflow-hidden"
-              >
-                <div className="space-y-4 pt-4 border-t border-border-light">
-                  <span className="text-xs uppercase tracking-wider text-muted-dark">{c.results}</span>
-                  {study.results.map((result, j) => (
-                    <div key={j} className="flex justify-between items-center gap-4">
-                      <span className="text-muted text-sm flex-1 min-w-0">{result.label}</span>
-                      <span className={`font-display text-xl font-bold whitespace-nowrap shrink-0 ${
-                        study.color === 'accent' ? 'text-accent' : study.color === 'info' ? 'text-info' : 'text-success'
-                      }`}>{result.value}</span>
-                    </div>
-                  ))}
-                </div>
-              </motion.div>
-
-              <div className={`mt-4 text-sm font-medium transition-colors ${
-                study.color === 'accent' 
-                  ? 'text-accent group-hover:text-accent-light' 
-                  : study.color === 'info'
-                    ? 'text-info group-hover:text-info-light'
-                    : 'text-success group-hover:text-success/80'
-              }`}>
-                {expanded === i ? c.clickCollapse : c.clickExpand}
-              </div>
-            </motion.div>
-          ))}
-        </div>
-
-        <div className="text-center mt-12">
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href={ctaConfig.digniPath} className="btn-primary">
-              {translations[language].cta.talkToDigniGuide ?? translations[language].cta.getStarted}
-            </Link>
-            <Link href="/case-studies" className="btn-secondary">{c.viewAll}</Link>
-          </div>
-        </div>
       </div>
     </AnimatedSection>
   )
@@ -1084,7 +1165,7 @@ function CTASection() {
 
 
 // Main Page Component
-// Growth operator: Proof (Stats, CaseStudies) before conversion CTAs (WhatWeDo, CTA)
+// Growth operator: Proof (Stats) → Offer + proof (WhatWeDo) → conversion (CTA)
 type HomePageProps = {
   params: Promise<{ locale: string }>
   searchParams?: Promise<{ [key: string]: string | string[] | undefined }>
@@ -1103,8 +1184,6 @@ export default function Home({ params, searchParams }: HomePageProps) {
       <Commitment2026 />
       <WhatWereFightingFor />
       <Stats />
-      <CaseStudies />
-      <HomeEcosystemStrip />
       <WhatWeDo />
       <GlobalPresence />
       <CTASection />

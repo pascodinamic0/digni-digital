@@ -12,6 +12,7 @@ import ClientLogos from '@/app/components/ClientLogos'
 import { getCtaButtonText, getBookingLinkProps } from '@/app/config/cta.config'
 import { translations } from '@/app/config/translations'
 import { useLanguage } from '@/app/context/LocaleContext'
+import { withPartnerCount } from '@/lib/site-partners'
 
 const aboutHeroCopy = {
   en: { badge: 'Mission-Driven, Outcome-Focused', years: 'building growth systems', satisfaction: 'client satisfaction' },
@@ -98,7 +99,7 @@ export default function AboutPage({ params, searchParams }: AboutPageProps) {
 
   const differentiators = [
     { num: '01', title: t.humanFirstTitle, desc: t.humanFirstDesc },
-    { num: '02', title: t.provenTitle, desc: t.provenDesc },
+    { num: '02', title: t.provenTitle, desc: withPartnerCount(t.provenDesc) },
     { num: '03', title: t.partnershipTitle, desc: t.partnershipDesc },
     { num: '04', title: t.roiFocusTitle, desc: t.roiFocusDesc },
   ]

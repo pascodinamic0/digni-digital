@@ -9,7 +9,10 @@
 
 export interface ClientLogo {
  name: string
+ /** Logo for light theme (dark mark on light background) */
  logo: string
+ /** Optional logo for dark theme (light mark on dark background) */
+ logoDark?: string
  w: number
  h: number
 }
@@ -20,7 +23,7 @@ export const clients: ClientLogo[] = [
  { name: 'Amahindura', logo: '/clients/amahindura.png', w: 160, h: 70 },
  { name: 'CNRD', logo: '/clients/cnrd.png', w: 100, h: 100 },
  { name: 'Chosen Arrow Foundation', logo: '/clients/chosen-arrow-foundation.jpg', w: 110, h: 110 },
- { name: 'DeineWeb', logo: '/clients/deineweb.png', w: 200, h: 36 },
+ { name: 'DeineWeb', logo: '/clients/deineweb-dark.png', logoDark: '/clients/deineweb.png', w: 200, h: 36 },
  { name: 'Fremo Medical & Birth Center', logo: '/clients/fremo-medical.jpg', w: 110, h: 110 },
  { name: 'GS Laricharde Sarl', logo: '/clients/laricharde-sarl.png', w: 110, h: 110 },
  { name: 'Pepea', logo: '/clients/pepea.jpeg', w: 110, h: 105 },

@@ -23,6 +23,12 @@ import {
 } from '@/lib/future-ready-offerings'
 import { getAiCareerFutureReadySkills } from '@/lib/ai-career-jobs'
 import { AiCareerPathsGrid } from '@/app/components/AiCareerPathsGrid'
+import { getSiteVideoWatchPath, siteVideos } from '@/lib/site-videos'
+
+function watchPathForVideoSrc(src: string): string | null {
+  const match = siteVideos.find((video) => video.contentUrl === src)
+  return match ? getSiteVideoWatchPath(match.slug) : null
+}
 
 type FutureReadyGraduatePageProps = {
   params: Promise<{ locale: string }>
@@ -1229,7 +1235,9 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {featuredVideos.map((video, i) => (
+            {featuredVideos.map((video, i) => {
+              const watchPath = watchPathForVideoSrc(video.src)
+              return (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 30 }}
@@ -1237,25 +1245,42 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
                 className="card p-0 overflow-hidden hover:border-success/50 group cursor-pointer"
-                onClick={() => setSelectedVideo(video)}
+                onClick={() => {
+                  if (watchPath) return
+                  setSelectedVideo(video)
+                }}
               >
-                <VideoThumbnail 
-                  src={video.src} 
-                  onPlay={() => {}}
-                />
+                {watchPath ? (
+                  <Link href={watchPath} className="block">
+                    <VideoThumbnail src={video.src} onPlay={() => {}} />
+                  </Link>
+                ) : (
+                  <VideoThumbnail src={video.src} onPlay={() => {}} />
+                )}
                 <div className="p-6">
                   <div className="text-xs uppercase tracking-wider text-muted-dark mb-2">
                     {video.speaker}
                   </div>
                   <h3 className="font-display text-lg font-bold mb-2 group-hover:text-success transition-colors">
-                    {video.title}
+                    {watchPath ? (
+                      <Link href={watchPath} className="hover:text-success">
+                        {video.title}
+                      </Link>
+                    ) : (
+                      video.title
+                    )}
                   </h3>
                   <p className="text-muted text-sm leading-relaxed">
                     {video.description}
                   </p>
+                  {watchPath && (
+                    <Link href={watchPath} className="type-caption mt-3 inline-block font-medium text-accent hover:underline">
+                      Watch page
+                    </Link>
+                  )}
                 </div>
               </motion.div>
-            ))}
+            )})}
           </div>
 
           {featuredVideos.length === 0 && (

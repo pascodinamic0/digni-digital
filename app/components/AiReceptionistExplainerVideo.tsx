@@ -2,11 +2,13 @@
 
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
+import { Link } from '@/i18n/navigation'
 import { useLanguage } from '@/app/context/LocaleContext'
 import {
   aiReceptionistExplainerByLanguage,
   type AiReceptionistExplainerCopy,
 } from '@/app/config/aiReceptionistExplainer'
+import { getSiteVideoWatchPath, type SiteVideoSlug } from '@/lib/site-videos'
 import AnimatedSection from '@/app/components/AnimatedSection'
 
 export default function AiReceptionistExplainerVideo() {
@@ -22,6 +24,9 @@ export default function AiReceptionistExplainerVideo() {
   if (!copy) {
     return null
   }
+
+  const watchSlug: SiteVideoSlug =
+    language === 'fr' ? 'entreprises-operations-defaillantes' : 'ai-employee-explainer'
 
   return (
     <AnimatedSection className="py-16 bg-background border-y border-border-light">
@@ -95,6 +100,14 @@ export default function AiReceptionistExplainerVideo() {
               </video>
             )}
           </div>
+          <p className="mt-4 text-center">
+            <Link
+              href={getSiteVideoWatchPath(watchSlug)}
+              className="type-small font-medium text-accent hover:underline"
+            >
+              Open dedicated video page
+            </Link>
+          </p>
         </motion.div>
       </div>
     </AnimatedSection>

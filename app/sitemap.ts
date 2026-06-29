@@ -1,6 +1,7 @@
 import { MetadataRoute } from 'next'
 import { getArticlesForLocaleWithDb } from '@/lib/blog'
 import { locales } from '@/i18n/routing'
+import { getAllSiteVideoSlugs, getSiteVideoWatchPath } from '@/lib/site-videos'
 
 const baseUrl = 'https://digni-digital-llc.com'
 
@@ -46,6 +47,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         lastModified: lastMod,
         changeFrequency: 'monthly' as const,
         priority: 0.6,
+      })
+    }
+    for (const slug of getAllSiteVideoSlugs()) {
+      entries.push({
+        url: `${baseUrl}/${locale}${getSiteVideoWatchPath(slug)}`,
+        lastModified: new Date('2026-06-29'),
+        changeFrequency: 'monthly' as const,
+        priority: 0.5,
       })
     }
   }
