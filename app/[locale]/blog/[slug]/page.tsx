@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
   const overrides = await fetchPublishedBlogOverrides(slug)
   const merged = mergeArticleBundleWithOverrides(data, overrides)
-  const lang = (locale.includes('fr') ? 'fr' : locale.includes('es') ? 'es' : locale.includes('ar') ? 'ar' : 'en') as Language
+  const lang = (locale.includes('fr') ? 'fr' : locale.includes('es') ? 'es' : locale.includes('ar') ? 'ar' : locale.includes('de') ? 'de' : 'en') as Language
   const article = merged[lang] ?? merged.en
   const canonicalUrl = `${SITE_URL}/${locale}/blog/${slug}`
   const ogImage = article.coverImageUrl
@@ -80,7 +80,7 @@ export default async function BlogPostPage({ params }: Props) {
     es: merged.es,
   }
 
-  const lang = (locale.includes('fr') ? 'fr' : locale.includes('es') ? 'es' : locale.includes('ar') ? 'ar' : 'en') as Language
+  const lang = (locale.includes('fr') ? 'fr' : locale.includes('es') ? 'es' : locale.includes('ar') ? 'ar' : locale.includes('de') ? 'de' : 'en') as Language
   const article = articleByLang[lang] ?? articleByLang.en
   const canonicalUrl = `${SITE_URL}/${locale}/blog/${slug}`
   const datePublished = parsePublishDateToISO(article.publishDate)
