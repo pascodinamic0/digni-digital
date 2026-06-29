@@ -95,6 +95,14 @@ const nextConfig = {
       ...blogRedirects,
     ]
   },
+  async headers() {
+    return [
+      {
+        source: '/hero-bg.mp4',
+        headers: [{ key: 'X-Robots-Tag', value: 'noindex, nofollow' }],
+      },
+    ]
+  },
   async rewrites() {
     return [
       // Browsers and crawlers request /favicon.ico; Next serves app/icon.png at /icon.png

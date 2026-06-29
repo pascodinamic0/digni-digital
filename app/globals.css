@@ -479,22 +479,30 @@ html:not([data-theme="light"]) footer#contact input#footer-newsletter-email:-web
   50% { background-position: 100% center; }
 }
 
-/* Client logos: edge fade via mask so logos aren’t covered by opaque gradient overlays */
-.client-logos-marquee-frame {
-  -webkit-mask-image: linear-gradient(
-    to right,
-    transparent 0%,
-    black 10%,
-    black 90%,
-    transparent 100%
-  );
-  mask-image: linear-gradient(
-    to right,
-    transparent 0%,
-    black 10%,
-    black 90%,
-    transparent 100%
-  );
+/* Client logos: unified wall grid */
+.client-logo-variant-light {
+  display: none;
+}
+.client-logo-variant-dark {
+  display: block;
+}
+[data-theme="light"] .client-logo-variant-light {
+  display: block;
+}
+[data-theme="light"] .client-logo-variant-dark {
+  display: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .client-logo-cell:hover {
+    background: rgba(var(--accent-rgb), 0.04);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .client-logos-section .client-logos-highlight {
+    animation: none;
+  }
 }
 
 /* Gradient mesh background */
@@ -1483,6 +1491,15 @@ img {
 .animate-scroll-left-triple:hover,
 .animate-scroll-right-triple:hover {
   animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-scroll-left,
+  .animate-scroll-left-triple,
+  .animate-scroll-right-triple,
+  .animate-scroll-left-slow {
+    animation: none;
+  }
 }
 
 /* Slower infinite scroll for skills carousel */
