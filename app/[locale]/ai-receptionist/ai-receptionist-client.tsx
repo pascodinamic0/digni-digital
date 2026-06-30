@@ -1,6 +1,5 @@
 'use client'
 
-import dynamic from 'next/dynamic'
 import { use } from 'react'
 import { useLanguage } from '@/app/context/LocaleContext'
 import { translations } from '@/app/config/translations'
@@ -14,26 +13,10 @@ import {
   MobileAppBannerSection,
   PricingSection,
 } from '@/app/components/ai-employee'
-
-const AIReceptionistPainDreamDemos = dynamic(
-  () => import('./ai-receptionist-product-demos').then((m) => m.AIReceptionistPainDreamDemos),
-  {
-    ssr: false,
-    loading: () => (
-      <div className="w-full min-h-[520px] bg-surface/40 animate-pulse" aria-hidden />
-    ),
-  },
-)
-
-const AIReceptionistHowItWorksDemos = dynamic(
-  () => import('./ai-receptionist-product-demos').then((m) => m.AIReceptionistHowItWorksDemos),
-  {
-    ssr: false,
-    loading: () => (
-      <div className="w-full min-h-[480px] bg-surface/40 animate-pulse" aria-hidden />
-    ),
-  },
-)
+import {
+  AIReceptionistPainDreamDemos,
+  AIReceptionistHowItWorksDemos,
+} from './ai-receptionist-product-demos'
 import { getServicePageJsonLd, jsonLdScriptProps } from '@/lib/agent-readiness'
 
 type AIReceptionistClientProps = {
