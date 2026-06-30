@@ -1019,7 +1019,7 @@ const ClientJourneyDemo = ({ prominent = false }: ClientJourneyDemoProps) => {
   })
 
   useMotionValueEvent(scrollYProgress, 'change', (progress) => {
-    if (shouldReduceMotion || !compact) return
+    if (shouldReduceMotion || !compact || pipelineExpanded) return
 
     const step = Math.min(
       FUNNEL_LAST_STEP,
@@ -1050,8 +1050,10 @@ const ClientJourneyDemo = ({ prominent = false }: ClientJourneyDemoProps) => {
   }, [compact])
 
   useEffect(() => {
-    if (compact && !funnelInView) return
-    if (compact && !shouldReduceMotion) return
+    const useAutoPlay =
+      !compact || shouldReduceMotion || pipelineExpanded
+    if (!useAutoPlay) return
+    if (compact && !funnelInView && !pipelineExpanded) return
 
     let cancelled = false
     let timeoutId: ReturnType<typeof setTimeout>
@@ -1075,10 +1077,11 @@ const ClientJourneyDemo = ({ prominent = false }: ClientJourneyDemoProps) => {
       cancelled = true
       clearTimeout(timeoutId)
     }
-  }, [compact, funnelInView, shouldReduceMotion])
+  }, [compact, funnelInView, shouldReduceMotion, pipelineExpanded])
 
   useEffect(() => {
-    if (compact && !shouldReduceMotion) return
+    const useScrollSteps = compact && !shouldReduceMotion && !pipelineExpanded
+    if (useScrollSteps) return
 
     setRevealedThroughStep((peak) => {
       if (activeFunnelStep === 0 && peak === FUNNEL_LAST_STEP) {
@@ -1086,7 +1089,7 @@ const ClientJourneyDemo = ({ prominent = false }: ClientJourneyDemoProps) => {
       }
       return Math.max(peak, activeFunnelStep)
     })
-  }, [activeFunnelStep, shouldReduceMotion, compact])
+  }, [activeFunnelStep, shouldReduceMotion, compact, pipelineExpanded])
 
   const scrollToCard = useCallback((variant: 'broken' | 'ai') => {
     setActiveCard(variant)

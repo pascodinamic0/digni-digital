@@ -437,8 +437,8 @@ const conversationDemosEn: ConversationDemoT[] = [
 ]
 
 const inboxConversationsEn: InboxConversationT[] = [
- { id: 1, contact: 'Sarah Johnson', channel: 'Website Chat', channelType: 'website', lastMessage: 'Perfect. When can we schedule the consultation?', time: '2 min ago', unread: 2, status: 'qualified', avatar: 'SJ' },
- { id: 2, contact: 'Mike Chen', channel: 'WhatsApp', channelType: 'whatsapp', lastMessage: 'Thanks for the quick response. I will check my calendar.', time: '5 min ago', unread: 0, status: 'appointment-booked', avatar: 'MC' },
+ { id: 1, contact: 'Jordan Mitchell', channel: 'Website Chat', channelType: 'website', lastMessage: 'Perfect. When can we schedule the consultation?', time: '2 min ago', unread: 2, status: 'qualified', avatar: 'JM' },
+ { id: 2, contact: 'Marcus Webb', channel: 'WhatsApp', channelType: 'whatsapp', lastMessage: 'Thanks for the quick response. I will check my calendar.', time: '5 min ago', unread: 0, status: 'appointment-booked', avatar: 'MW' },
  { id: 3, contact: 'Restaurant Owner', channel: 'SMS', channelType: 'sms', lastMessage: 'AI: I would be happy to help you with pricing information...', time: '12 min ago', unread: 1, status: 'in-progress', avatar: 'RO' },
  { id: 4, contact: 'FitTrack Startup', channel: 'Instagram DM', channelType: 'instagram', lastMessage: 'That sounds exciting. Fitness apps typically range...', time: '1 hr ago', unread: 0, status: 'follow-up', avatar: 'FT' },
  { id: 5, contact: 'Local Business', channel: 'Facebook Messenger', channelType: 'facebook', lastMessage: 'AI: Our automation solutions can definitely help...', time: '2 hr ago', unread: 3, status: 'new-lead', avatar: 'LB' },
@@ -619,7 +619,7 @@ export const aiEmployeeProductDemosEn: AiEmployeeProductDemosTranslations = {
  {
  id: 'c0',
  title: 'Strategy call',
- contact: 'Sarah J.',
+ contact: 'Jordan M.',
  channel: 'website',
  dayIndex: 0,
  slotIndex: 1,
@@ -627,7 +627,7 @@ export const aiEmployeeProductDemosEn: AiEmployeeProductDemosTranslations = {
  {
  id: 'c1',
  title: 'Demo · growth plan',
- contact: 'Mike C.',
+ contact: 'Marcus W.',
  channel: 'whatsapp',
  dayIndex: 1,
  slotIndex: 3,
@@ -838,10 +838,10 @@ export const aiEmployeeProductDemosEn: AiEmployeeProductDemosTranslations = {
  rows: [
  {
  id: 'n1',
- name: 'Grace Vance',
+ name: 'Amina Okoye',
  phone: '+1 555 010 221',
- email: 'grace@example.com',
- business: 'Vance Ortho',
+ email: 'amina@example.com',
+ business: 'Okoye Wellness',
  source: 'Facebook Lead Ad',
  created: 'Nov 27, 2025 8:38 PM',
  lastActivity: '3 days ago',
@@ -849,9 +849,9 @@ export const aiEmployeeProductDemosEn: AiEmployeeProductDemosTranslations = {
  },
  {
  id: 'n2',
- name: 'Ravi Patel',
+ name: 'James Okonkwo',
  phone: '+1 555 014 882',
- email: 'ravi@northwind.io',
+ email: 'james@northwind.io',
  business: 'Northwind Logistics',
  source: 'WhatsApp',
  created: 'Jan 4, 2026 11:02 AM',
@@ -860,9 +860,9 @@ export const aiEmployeeProductDemosEn: AiEmployeeProductDemosTranslations = {
  },
  {
  id: 'n3',
- name: 'Riley Park',
+ name: 'Keisha Porter',
  phone: '+1 555 019 003',
- email: 'riley@summitlegal.com',
+ email: 'keisha@summitlegal.com',
  business: 'Summit Legal',
  source: 'Website chat widget',
  created: 'Feb 2, 2026 4:15 PM',
@@ -1013,8 +1013,8 @@ const conversationDemosFr: ConversationDemoT[] = [
 ]
 
 const inboxConversationsFr: InboxConversationT[] = [
- { id: 1, contact: 'Sarah Johnson', channel: 'Chat site web', channelType: 'website', lastMessage: 'Parfait. Quand pouvons nous planifier la consultation ?', time: 'il y a 2 min', unread: 2, status: 'qualified', avatar: 'SJ' },
- { id: 2, contact: 'Mike Chen', channel: 'WhatsApp', channelType: 'whatsapp', lastMessage: 'Merci pour la réponse rapide. Je vérifie mon agenda.', time: 'il y a 5 min', unread: 0, status: 'appointment-booked', avatar: 'MC' },
+ { id: 1, contact: 'Jordan Mitchell', channel: 'Chat site web', channelType: 'website', lastMessage: 'Parfait. Quand pouvons nous planifier la consultation ?', time: 'il y a 2 min', unread: 2, status: 'qualified', avatar: 'JM' },
+ { id: 2, contact: 'Marcus Webb', channel: 'WhatsApp', channelType: 'whatsapp', lastMessage: 'Merci pour la réponse rapide. Je vérifie mon agenda.', time: 'il y a 5 min', unread: 0, status: 'appointment-booked', avatar: 'MW' },
  { id: 3, contact: 'Restaurateur', channel: 'SMS', channelType: 'sms', lastMessage: 'IA : je peux vous aider avec les informations tarifaires...', time: 'il y a 12 min', unread: 1, status: 'in-progress', avatar: 'RO' },
  { id: 4, contact: 'Startup FitTrack', channel: 'DM Instagram', channelType: 'instagram', lastMessage: 'Ça semble prometteur. Les apps fitness tournent souvent autour de...', time: 'il y a 1 h', unread: 0, status: 'follow-up', avatar: 'FT' },
  { id: 5, contact: 'Commerce local', channel: 'Facebook Messenger', channelType: 'facebook', lastMessage: 'IA : nos automatisations peuvent clairement aider...', time: 'il y a 2 h', unread: 3, status: 'new-lead', avatar: 'LB' },
@@ -1155,7 +1155,7 @@ export const aiEmployeeProductDemosFr: AiEmployeeProductDemosTranslations = {
  {
  id: 'c0',
  title: 'Appel stratégie',
- contact: 'Sarah J.',
+ contact: 'Jordan M.',
  channel: 'website',
  dayIndex: 0,
  slotIndex: 1,
@@ -1163,7 +1163,7 @@ export const aiEmployeeProductDemosFr: AiEmployeeProductDemosTranslations = {
  {
  id: 'c1',
  title: 'Démo · plan croissance',
- contact: 'Mike C.',
+ contact: 'Marcus W.',
  channel: 'whatsapp',
  dayIndex: 1,
  slotIndex: 3,

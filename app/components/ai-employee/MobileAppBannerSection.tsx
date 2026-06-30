@@ -49,6 +49,12 @@ export default function MobileAppBannerSection() {
                 </span>
                 <span>{t.bullet2}</span>
               </li>
+              <li className="flex gap-3">
+                <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-accent text-on-accent">
+                  <Check className="h-3.5 w-3.5" strokeWidth={3} aria-hidden />
+                </span>
+                <span>{t.bullet3}</span>
+              </li>
             </ul>
             <p className="type-h4 mt-8 font-display font-bold text-text">{t.tagline}</p>
             <StoreBadgeLinks

@@ -18,6 +18,7 @@ export type AiEmployeePageTranslations = {
  title: string
  bullet1: string
  bullet2: string
+ bullet3: string
  tagline: string
  imageAlt: string
  appStoreHref: string
@@ -145,7 +146,7 @@ export type AiEmployeePageTranslations = {
  subtitle: string
  includedLabel: string
  totalValue: string
- items: [BonusItem, BonusItem, BonusItem]
+ items: [BonusItem, BonusItem, BonusItem, BonusItem]
  }
  guarantee: {
  badge: string
@@ -217,10 +218,11 @@ export const aiEmployeePageEn: AiEmployeePageTranslations = {
  pillarEffortHint: 'Mobile app + automations. You approve; the loop executes.',
  },
  mobileApp: {
- title: 'See every lead and reply from your phone, anytime.',
- bullet1: 'Get real time notifications straight to your phone',
- bullet2: 'Chat with your clients and leads right from the app',
- tagline: 'Never miss another opportunity again.',
+ title: 'Monitor your business from one place — right from your phone.',
+ bullet1: 'Get instant alerts when a new lead comes in, someone books, or a reply is waiting.',
+ bullet2: 'See live pipeline numbers and reply to clients — no laptop needed.',
+ bullet3: 'Call or text any lead back from the same thread — full history, zero app switching.',
+ tagline: 'One system puts everything you need to track in your pocket.',
  imageAlt: 'AI Employee mobile app on a phone showing pipeline metrics and recent activity',
  appStoreHref: 'https://apps.apple.com/',
  playStoreHref: 'https://play.google.com/store',
@@ -397,24 +399,33 @@ export const aiEmployeePageEn: AiEmployeePageTranslations = {
  badge: 'Included free',
  title: 'The Growth Accelerator Bundle (Included for free)',
  subtitle:
- 'Solves the next problems you would hit after install, no show recovery, reputation, and CRM sync, at no extra cost.',
+ 'Four high-impact automations owners ask for first — wired on top of your AI Employee, not part of the core install.',
  includedLabel: 'Included',
- totalValue: '$2,997 in bonuses',
+ totalValue: '$3,994 in bonuses',
  items: [
  {
- name: "The 'No Show' Recovery System",
- description: 'Automated SMS and email reminder sequences when calls go unanswered or appointments slip.',
- value: '$1,500 Value',
- },
- {
- name: 'The 5 Star Reputation Engine',
- description: 'Automated Google and Facebook review collection after successful appointments.',
+ name: 'The Missed Call Text-Back System',
+ description:
+ 'Every unanswered call triggers an instant SMS within 60 seconds — before they dial your competitor.',
  value: '$997 Value',
  },
  {
- name: 'The CRM Integration Vault',
- description: '5,000+ app connectors for zero manual entry data sync across your stack.',
+ name: 'The Dormant Database Goldmine',
+ description:
+ 'Automated sequences reactivate past inquiries, old quotes, and contacts who never booked. Your AI handles new leads; this wakes revenue already in your CRM.',
+ value: '$1,500 Value',
+ },
+ {
+ name: 'The Recurring Revenue Reminder',
+ description:
+ 'Automated rebooking nudges for clients overdue for their next visit — tune-ups, cleanings, touch-ups — without your team chasing.',
  value: '$500 Value',
+ },
+ {
+ name: 'The Compounding Contact Engine',
+ description:
+ 'Every slight show of interest gets captured into your database — the system remembers every chat, picks up where it left off, and never stops following up until they book or opt out.',
+ value: '$997 Value',
  },
  ],
  },
@@ -501,6 +512,7 @@ export const aiEmployeePageFr: AiEmployeePageTranslations = {
  title: 'Voyez chaque lead et répondez depuis votre téléphone, à tout moment.',
  bullet1: 'Recevez des notifications en temps réel sur votre téléphone',
  bullet2: 'Échangez avec vos clients et leads directement depuis l’app',
+ bullet3: 'Rappelez ou écrivez à tout lead depuis le même fil — historique complet, sans changer d’app.',
  tagline: 'Ne laissez plus passer une opportunité.',
  imageAlt: 'Application mobile AI Employee sur téléphone avec indicateurs et activité récente',
  appStoreHref: 'https://apps.apple.com/',
@@ -678,24 +690,33 @@ export const aiEmployeePageFr: AiEmployeePageTranslations = {
  badge: 'Inclus gratuitement',
  title: 'Pack Accélérateur de Croissance (inclus gratuitement)',
  subtitle:
- 'Ce ne sont pas des options. Ils sont livrés avec chaque partenariat premium pour que votre boucle capte, convertisse et se renforce dès le jour 1.',
+ 'Quatre automatisations à fort impact que les propriétaires demandent en premier — branchées au-dessus de votre AI Employee, hors install de base.',
  includedLabel: 'Inclus',
- totalValue: '2 997 $ de bonus',
+ totalValue: '3 994 $ de bonus',
  items: [
  {
- name: 'Système anti no show',
- description: 'Séquences SMS et email automatiques quand les appels ou RDV passent à la trappe.',
- value: 'Valeur 1 500 $',
- },
- {
- name: 'Moteur de réputation 5 étoiles',
- description: 'Collecte automatisée d’avis Google et Facebook après vente réussie.',
+ name: 'SMS rappel appels manqués',
+ description:
+ 'Chaque appel sans réponse déclenche un SMS instantané en 60 secondes — avant qu’ils appellent votre concurrent.',
  value: 'Valeur 997 $',
  },
  {
- name: 'Coffre d’intégrations CRM',
- description: '5 000+ connecteurs pour une synchro sans saisie manuelle.',
+ name: 'Mine de leads dormants',
+ description:
+ 'Séquences automatiques qui réactivent anciennes demandes, devis et contacts jamais convertis. L’IA gère les nouveaux ; ceci réveille l’argent déjà dans votre CRM.',
+ value: 'Valeur 1 500 $',
+ },
+ {
+ name: 'Rappels de rebooking récurrent',
+ description:
+ 'Relances automatiques pour clients en retard de visite — entretiens, nettoyages, retouches — sans que votre équipe coure après.',
  value: 'Valeur 500 $',
+ },
+ {
+ name: 'Moteur de contacts composés',
+ description:
+ 'Chaque signe d’intérêt, même léger, est capté dans votre base — le système retient chaque échange, reprend la conversation et relance sans s’arrêter jusqu’à réservation ou désinscription.',
+ value: 'Valeur 997 $',
  },
  ],
  },
@@ -783,6 +804,7 @@ export const aiEmployeePageDe: AiEmployeePageTranslations = {
  title: 'Jeden Lead sehen und vom Smartphone antworten, jederzeit.',
  bullet1: 'Echtzeit Benachrichtigungen direkt auf Ihr Smartphone',
  bullet2: 'Chatten Sie mit Kunden und Leads direkt in der App',
+ bullet3: 'Leads zurückrufen oder anschreiben — voller Verlauf im selben Thread, ohne App Wechsel.',
  tagline: 'Verpassen Sie keine Chance mehr.',
  imageAlt: 'AI Employee App auf dem Smartphone mit Pipeline Kennzahlen und Aktivität',
  appStoreHref: 'https://apps.apple.com/',
@@ -960,24 +982,33 @@ export const aiEmployeePageDe: AiEmployeePageTranslations = {
  badge: 'Kostenlos inklusive',
  title: 'Growth Accelerator Bundle (kostenlos inklusive)',
  subtitle:
- 'Keine Add ons. Sie sind bei jeder Premium Partnerschaft dabei, damit Ihr Loop ab Tag 1 erfasst, konvertiert und skaliert.',
+ 'Vier Automatisierungen mit hoher Wirkung, die Inhaber zuerst wollen — auf Ihrem AI Employee aufgesetzt, nicht Teil der Basisinstallation.',
  includedLabel: 'Inklusive',
- totalValue: '2.997 $ Bonus',
+ totalValue: '3.994 $ Bonus',
  items: [
  {
- name: 'No Show Wiederherstellung',
- description: 'Automatische SMS und Email Sequenzen bei verpassten Anrufen oder Terminen.',
- value: 'Wert 1.500 $',
- },
- {
- name: '5 Sterne Reputation Engine',
- description: 'Automatische Google und Facebook Bewertungen nach erfolgreichem Abschluss.',
+ name: 'Verpasster Anruf SMS Rückmeldung',
+ description:
+ 'Jeder unbeantwortete Anruf löst innerhalb von 60 Sekunden eine SMS aus — bevor sie Ihren Wettbewerber anrufen.',
  value: 'Wert 997 $',
  },
  {
- name: 'CRM Integrations Vault',
- description: '5.000+ App Connectors ohne manuelle Dateneingabe.',
+ name: 'Schlafende Datenbank Goldmine',
+ description:
+ 'Automatische Sequenzen reaktivieren alte Anfragen, Angebote und nie gebuchte Kontakte. Die KI bearbeitet neue Leads; dies weckt Umsatz, der bereits in Ihrem CRM liegt.',
+ value: 'Wert 1.500 $',
+ },
+ {
+ name: 'Wiederkehrende Umsatz Erinnerung',
+ description:
+ 'Automatische Rebooking Nudges für Kunden, die überfällig sind — Wartungen, Reinigungen, Nachbehandlungen — ohne dass Ihr Team hinterherläuft.',
  value: 'Wert 500 $',
+ },
+ {
+ name: 'Wachsende Kontakt Engine',
+ description:
+ 'Jedes leichte Interesse landet in Ihrer Datenbank — das System merkt sich jeden Chat, macht nahtlos weiter und folgt nach, bis sie buchen oder abmelden.',
+ value: 'Wert 997 $',
  },
  ],
  },
@@ -1065,6 +1096,7 @@ export const aiEmployeePageEs: AiEmployeePageTranslations = {
  title: 'Vea cada lead y responda desde su teléfono, en cualquier momento.',
  bullet1: 'Notificaciones en tiempo real directamente en su teléfono',
  bullet2: 'Chatee con clientes y leads desde la app',
+ bullet3: 'Llame o escriba a cualquier lead desde el mismo hilo — historial completo, sin cambiar de app.',
  tagline: 'No vuelva a perder una oportunidad.',
  imageAlt: 'App móvil AI Employee en el teléfono con métricas del embudo y actividad reciente',
  appStoreHref: 'https://apps.apple.com/',
@@ -1242,24 +1274,33 @@ export const aiEmployeePageEs: AiEmployeePageTranslations = {
  badge: 'Incluido gratis',
  title: 'Pack Acelerador de Crecimiento (incluido gratis)',
  subtitle:
- 'No son complementos. Van con cada alianza premium para que su loop capture, convierta y componga desde el día 1.',
+ 'Cuatro automatizaciones de alto impacto que los dueños piden primero — conectadas sobre su AI Employee, fuera de la instalación base.',
  includedLabel: 'Incluido',
- totalValue: '2.997 $ en bonos',
+ totalValue: '3.994 $ en bonos',
  items: [
  {
- name: "Sistema de recuperación 'No Show'",
- description: 'Secuencias automáticas de SMS y email cuando no contestan o faltan a citas.',
- value: 'Valor 1.500 $',
- },
- {
- name: 'Motor de reputación 5 estrellas',
- description: 'Recolección automática de reseñas en Google y Facebook tras la venta.',
+ name: 'SMS por llamada perdida',
+ description:
+ 'Cada llamada sin respuesta dispara un SMS instantáneo en 60 segundos — antes de que marquen a su competidor.',
  value: 'Valor 997 $',
  },
  {
- name: 'Bóveda de integración CRM',
- description: '5.000+ conectores sin entrada manual de datos.',
+ name: 'Mina de leads dormidos',
+ description:
+ 'Secuencias automáticas reactivan consultas antiguas, presupuestos y contactos que nunca reservaron. La IA maneja leads nuevos; esto despierta ingresos ya en su CRM.',
+ value: 'Valor 1.500 $',
+ },
+ {
+ name: 'Recordatorio de ingresos recurrentes',
+ description:
+ 'Recordatorios automáticos de rebooking para clientes atrasados — mantenimientos, limpiezas, retoques — sin que su equipo persiga.',
  value: 'Valor 500 $',
+ },
+ {
+ name: 'Motor de contactos compuestos',
+ description:
+ 'Cada mínimo signo de interés entra en su base — el sistema recuerda cada chat, retoma la conversación y sigue dando seguimiento hasta que reserven o se den de baja.',
+ value: 'Valor 997 $',
  },
  ],
  },
@@ -1346,6 +1387,7 @@ export const aiEmployeePageAr: AiEmployeePageTranslations = {
  title: 'شاهد كل عميل محتمل وردّ من هاتفك, في أي وقت.',
  bullet1: 'إشعارات فورية مباشرة إلى هاتفك',
  bullet2: 'دردش مع العملاء والعملاء المحتملين من التطبيق',
+ bullet3: 'اتصل أو راسل أي عميل محتمل من نفس المحادثة — سجل كامل دون التبديل بين التطبيقات.',
  tagline: 'لا تفوّت فرصة أخرى.',
  imageAlt: 'تطبيق AI Employee على الهاتف يعرض مؤشرات المسار والنشاط الأخير',
  appStoreHref: 'https://apps.apple.com/',
@@ -1523,24 +1565,33 @@ export const aiEmployeePageAr: AiEmployeePageTranslations = {
  badge: 'مضمّن مجاناً',
  title: 'حزمة مسرّع النمو (مضمّنة مجاناً)',
  subtitle:
- 'ليست إضافات. تأتي مع كل شراكة راقية لتلتقط الحلقة وتحوّل وتتوسع من اليوم الأول.',
+ 'أربع أتمتة عالية التأثير يطلبها المالكون أولاً — مُفعّلة فوق AI Employee، خارج التثبيت الأساسي.',
  includedLabel: 'مضمّن',
- totalValue: '2,997$ مكافآت',
+ totalValue: '3,994$ مكافآت',
  items: [
  {
- name: 'نظام استعادة «عدم الحضور»',
- description: 'تسلسلات SMS وبريد تلقائية عند فوات المكالمات أو المواعيد.',
- value: 'قيمة 1,500$',
- },
- {
- name: 'محرك السمعة 5 نجوم',
- description: 'جمع تلقائي لتقييمات Google وFacebook بعد البيع.',
+ name: 'نظام SMS للمكالمات الفائتة',
+ description:
+ 'كل مكالمة بلا رد تُطلق SMS فورياً خلال 60 ثانية — قبل أن يتصلوا بمنافسكم.',
  value: 'قيمة 997$',
  },
  {
- name: 'خزنة تكامل CRM',
- description: '5,000+ موصل بلا إدخال يدوي للبيانات.',
+ name: 'منجم قاعدة البيانات الخاملة',
+ description:
+ 'تسلسلات تلقائية تعيد تنشيط الاستفسارات القديمة والعروض والجهات التي لم تحجز. الذكاء الاصطناعي يتولى الجديد؛ هذا يُيقظ إيرادات موجودة في CRM.',
+ value: 'قيمة 1,500$',
+ },
+ {
+ name: 'تذكير الإيرادات المتكررة',
+ description:
+ 'تنبيهات إعادة حجز تلقائية للعملاء المتأخرين عن زيارتهم — صيانة، تنظيف، متابعة — دون مطاردة من فريقكم.',
  value: 'قيمة 500$',
+ },
+ {
+ name: 'محرك جهات الاتصال المتنامية',
+ description:
+ 'كل اهتمام بسيط يُضاف إلى قاعدة بياناتكم — النظام يحفظ كل محادثة، يستأنف من حيث توقف، ولا يتوقف عن المتابعة حتى الحجز أو إلغاء الاشتراك.',
+ value: 'قيمة 997$',
  },
  ],
  },

@@ -233,6 +233,7 @@ export default function ContactDirectoryDemo() {
                           name={row.name}
                           src={getContactRowAvatarSrc(row.id)}
                           size="sm"
+                          active={Boolean(row.tag)}
                         />
                         <span className="font-medium text-text inline-flex items-center gap-2">
                           {row.name}
