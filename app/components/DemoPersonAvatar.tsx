@@ -36,6 +36,8 @@ type Props = {
   size?: Size
   /** `full` for contact table; `lg` matches inbox list tiles */
   shape?: 'full' | 'lg'
+  /** Green online indicator for live demo UI */
+  active?: boolean
   className?: string
 }
 
@@ -44,6 +46,7 @@ export default function DemoPersonAvatar({
   src,
   size = 'sm',
   shape = 'full',
+  active = false,
   className = '',
 }: Props) {
   const px = SIZE_PX[size]
@@ -51,15 +54,24 @@ export default function DemoPersonAvatar({
 
   if (src) {
     return (
-      <Image
-        src={src}
-        alt={name}
-        width={px}
-        height={px}
-        sizes={`${px}px`}
-        className={`shrink-0 object-cover ring-1 ring-black/[0.06] ${rounded} ${className}`}
-        style={{ width: px, height: px }}
-      />
+      <span className={`relative inline-flex shrink-0 ${className}`} style={{ width: px, height: px }}>
+        <Image
+          src={src}
+          alt={name}
+          width={px}
+          height={px}
+          sizes={`${px}px`}
+          unoptimized
+          className={`object-cover ring-1 ring-black/[0.06] ${rounded}`}
+          style={{ width: px, height: px }}
+        />
+        {active ? (
+          <span
+            className="absolute bottom-0 right-0 h-2.5 w-2.5 rounded-full border-2 border-surface bg-success"
+            aria-hidden
+          />
+        ) : null}
+      </span>
     )
   }
 

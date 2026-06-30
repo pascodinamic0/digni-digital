@@ -52,6 +52,12 @@ export default function AiEmployeeMobileAppBanner() {
                 </span>
                 <span>{t.bullet2}</span>
               </li>
+              <li className="flex gap-3">
+                <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-slate-900 text-white">
+                  <Check className="h-3.5 w-3.5" strokeWidth={3} aria-hidden />
+                </span>
+                <span>{t.bullet3}</span>
+              </li>
             </ul>
             <p className="mt-8 font-display text-xl font-bold text-slate-950 sm:text-2xl">{t.tagline}</p>
             <div className="mt-8 flex flex-wrap items-center gap-4">

@@ -235,6 +235,7 @@ const ConversationMockups = () => {
           name={visitor.name}
           src={visitor.avatarSrc}
           size="xs"
+          active
           className="ml-2 mt-1 shrink-0 ring-1 ring-border-light"
         />
       ) : null}
@@ -283,6 +284,7 @@ const ConversationMockups = () => {
                           name={visitor.name}
                           src={visitor.avatarSrc}
                           size="md"
+                          active
                           className="ring-1 ring-border-light"
                         />
                       ) : (
