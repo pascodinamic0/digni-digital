@@ -53,7 +53,7 @@ export default function ProductWorkspaceFrame({
       ) : null}
 
       <div
-        className={`flex min-h-0 flex-col ${isDemo ? 'min-h-[clamp(460px,54vh,780px)]' : 'md:min-h-[420px]'}`}
+        className={`flex min-h-0 flex-col ${isDemo ? 'h-[clamp(460px,54vh,780px)]' : 'md:min-h-[420px]'}`}
       >
         <div className="flex min-h-0 flex-1">
           <SoftwareSidebar
@@ -65,10 +65,16 @@ export default function ProductWorkspaceFrame({
           />
           <div
             className={`software-workspace-content flex min-w-0 flex-1 flex-col bg-[var(--software-content)] ${
-              isDemo ? 'min-h-0 overflow-auto' : 'overflow-hidden'
+              isDemo ? 'min-h-0 overflow-x-hidden overflow-y-auto' : 'overflow-hidden'
             }`}
           >
-            <div className={isDemo ? 'software-demo-module flex min-h-0 flex-1 flex-col' : 'min-h-0'}>
+            <div
+              className={
+                isDemo
+                  ? 'software-demo-module flex min-h-0 min-w-0 max-w-full flex-1 flex-col overflow-x-hidden'
+                  : 'min-h-0'
+              }
+            >
               {children}
             </div>
           </div>

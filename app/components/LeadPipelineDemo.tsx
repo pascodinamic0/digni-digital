@@ -85,116 +85,98 @@ export default function LeadPipelineDemo() {
       moduleTitle={sw.nav.opportunities}
       className={isRtl ? '[direction:rtl]' : ''}
     >
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.15 }}
-          className="border-b border-[var(--software-border)]"
-        >
-          <div className="flex flex-col gap-3 border-b border-[var(--software-border)] p-3 md:flex-row md:items-center md:justify-between md:p-4">
-              <div className="flex flex-wrap items-center gap-2">
-                <span className="text-[11px] px-2.5 py-1 rounded-full bg-success/10 border border-success/20 text-success font-medium">
-                  {t.pipelineName}
-                </span>
-                <span className="text-[11px] text-muted hidden sm:inline">{t.activeDeals}</span>
-                <button
-                  type="button"
-                  onClick={() => setDemoPlaying((p) => !p)}
-                  className={`text-[11px] px-3 py-1.5 rounded-lg border font-semibold transition-colors ${
-                    demoPlaying
-                      ? 'border-success bg-success/15 text-success'
-                      : 'border-border bg-surface/50 hover:bg-surface-light/80'
-                  }`}
-                >
-                  {demoPlaying ? t.stopDemoLabel : t.playDemoLabel}
-                </button>
-                <button
-                  type="button"
-                  className="text-[11px] px-3 py-1.5 rounded-lg border border-border bg-surface/50 hover:bg-surface-light/80"
-                >
-                  {t.importBtn}
-                </button>
-                <button
-                  type="button"
-                  className="text-[11px] px-3 py-2 rounded-lg bg-success text-background font-semibold hover:bg-success-light"
-                >
-                  {t.addDeal}
-                </button>
-              </div>
-            <div className="mt-3 flex flex-wrap items-center gap-1.5 text-[11px] text-muted">
-              <span className="px-2 py-0.5 rounded-md bg-surface/60 border border-border">{t.allTab}</span>
-              <span className="px-2 py-0.5 rounded-md border border-border border-dashed">{t.newViewTab}</span>
-              <span className="hidden sm:inline px-1">{t.advancedFilters}</span>
-              <div className="flex-1 min-w-[120px] max-w-[200px] ml-auto flex items-center gap-1.5 rounded-lg border border-border bg-surface/40 px-2 py-1">
-                <svg className="w-3 h-3 opacity-60 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                  <circle cx="11" cy="11" r="8" strokeWidth="2" />
-                  <path d="M21 21l-4.35-4.35" strokeWidth="2" strokeLinecap="round" />
-                </svg>
-                <span className="truncate opacity-70">{t.searchPlaceholder}</span>
-              </div>
-            </div>
+      <motion.div
+        initial={{ opacity: 0, y: 16 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.15 }}
+        className="software-pipeline-demo flex h-full min-h-0 min-w-0 w-full max-w-full flex-col overflow-hidden"
+      >
+        <div className="flex shrink-0 flex-wrap items-center justify-between gap-2 border-b border-[var(--software-border)] px-3 py-2.5 md:px-4">
+          <div className="flex min-w-0 flex-wrap items-center gap-2">
+            <span className="rounded-full border border-success/20 bg-success/10 px-2.5 py-1 text-xs font-medium text-success">
+              {t.pipelineName}
+            </span>
+            <button
+              type="button"
+              onClick={() => setDemoPlaying((p) => !p)}
+              className={`rounded-lg border px-3 py-1.5 text-xs font-semibold transition-colors ${
+                demoPlaying
+                  ? 'border-success bg-success/15 text-success'
+                  : 'border-border bg-surface/50 hover:bg-surface-light/80'
+              }`}
+            >
+              {demoPlaying ? t.stopDemoLabel : t.playDemoLabel}
+            </button>
           </div>
+          <span className="truncate text-xs text-muted">{t.activeDeals}</span>
+        </div>
 
-          <div className="relative flex min-h-[420px] flex-col p-3 md:min-h-[460px] md:p-4">
-            <p className="mb-2 shrink-0 text-center text-[10px] text-muted">{t.dragHint}</p>
-            <div className="min-h-0 flex-1 overflow-x-auto overflow-y-hidden pb-1">
-              <div className="flex h-full min-h-[360px] min-w-max gap-2 md:gap-3">
-              {t.columns.map((col, columnIndex) => (
+        <div className="flex min-h-0 flex-1 flex-col overflow-hidden p-3 md:p-4">
+          <p className="mb-3 shrink-0 text-center text-xs text-muted">{t.dragHint}</p>
+          <div className="grid min-h-0 flex-1 grid-cols-4 gap-2 overflow-hidden">
+            {t.columns.map((col, columnIndex) => (
+              <div
+                key={col.id}
+                className="flex h-full min-h-0 min-w-0 flex-col overflow-hidden"
+                onDragOver={onDragOver}
+                onDrop={(e) => onDrop(e, columnIndex)}
+              >
                 <div
-                  key={col.id}
-                  className="flex h-full w-[188px] shrink-0 flex-col sm:w-[204px] md:w-[220px]"
-                  onDragOver={onDragOver}
-                  onDrop={(e) => onDrop(e, columnIndex)}
+                  className={`shrink-0 rounded-t-lg border border-b-0 border-border bg-surface/40 ${col.borderClass} border-t-2`}
                 >
-                  <div className={`rounded-t-lg border border-b-0 border-border bg-surface/40 ${col.borderClass} border-t-2 shrink-0`}>
-                    <div className="px-2 py-1.5 border-b border-border/80">
-                      <h4 className="font-display text-xs font-bold text-text leading-tight line-clamp-2">{col.title}</h4>
-                      <p className="text-[10px] text-muted mt-0.5 truncate">{col.stat}</p>
-                    </div>
-                  </div>
-                  <div className="flex-1 min-h-0 overflow-y-auto rounded-b-lg border border-t-0 border-border bg-surface/30 p-1.5 space-y-1.5">
-                    {t.cards
-                      .filter((c) => cardColumn[c.id] === columnIndex)
-                      .map((card) => (
-                        <motion.div layout key={card.id} className="w-full">
-                          <div
-                            role="button"
-                            tabIndex={0}
-                            draggable
-                            onDragStart={(e) => onDragStart(e, card.id)}
-                            onDragEnd={onDragEnd}
-                            onClick={() => setSelectedId(card.id)}
-                            onKeyDown={(e) => {
-                              if (e.key === 'Enter' || e.key === ' ') {
-                                e.preventDefault()
-                                setSelectedId(card.id)
-                              }
-                            }}
-                            className={`w-full text-left rounded-lg border bg-surface px-2 py-2 shadow-sm transition-all hover:shadow-md hover:border-success/30 cursor-grab active:cursor-grabbing ${
-                              dragId === card.id ? 'opacity-60 ring-2 ring-success/40' : 'border-border-light'
-                            } ${card.id === FLOW_CARD_ID && demoPlaying ? 'ring-2 ring-success/40' : ''}`}
-                          >
-                            <p className="font-semibold text-[11px] text-text leading-snug line-clamp-1">{card.name}</p>
-                            <div className="mt-1 flex justify-between gap-1.5 text-[10px] text-muted">
-                              <span className="shrink-0">{t.sourceLabel}</span>
-                              <span className="text-text/90 truncate text-right">{card.source}</span>
-                            </div>
-                            <p className="text-[10px] text-muted line-clamp-2 leading-snug mt-0.5">{card.context}</p>
-                            <div className="mt-1.5 flex justify-between gap-1 text-[10px]">
-                              <span className="text-muted">{card.valueLabel}</span>
-                              <span className="font-medium text-success tabular-nums">{card.valueDisplay}</span>
-                            </div>
-                          </div>
-                        </motion.div>
-                      ))}
+                  <div className="border-b border-border/80 px-2 py-1.5">
+                    <h4 className="line-clamp-2 font-display text-xs font-bold leading-tight text-text">
+                      {col.title}
+                    </h4>
+                    <p className="mt-0.5 truncate text-[11px] text-muted">{col.stat}</p>
                   </div>
                 </div>
-              ))}
+                <div className="min-h-0 flex-1 space-y-1.5 overflow-x-hidden overflow-y-auto rounded-b-lg border border-t-0 border-border bg-surface/30 p-1.5">
+                  {t.cards
+                    .filter((c) => cardColumn[c.id] === columnIndex)
+                    .map((card) => (
+                      <div key={card.id} className="w-full min-w-0">
+                        <div
+                          role="button"
+                          tabIndex={0}
+                          draggable
+                          onDragStart={(e) => onDragStart(e, card.id)}
+                          onDragEnd={onDragEnd}
+                          onClick={() => setSelectedId(card.id)}
+                          onKeyDown={(e) => {
+                            if (e.key === 'Enter' || e.key === ' ') {
+                              e.preventDefault()
+                              setSelectedId(card.id)
+                            }
+                          }}
+                          className={`w-full min-w-0 cursor-grab rounded-lg border bg-surface px-2 py-2 text-left shadow-sm transition-all hover:border-success/30 hover:shadow-md active:cursor-grabbing ${
+                            dragId === card.id ? 'opacity-60 ring-2 ring-success/40' : 'border-border-light'
+                          } ${card.id === FLOW_CARD_ID && demoPlaying ? 'ring-2 ring-success/40' : ''}`}
+                        >
+                          <p className="line-clamp-1 text-xs font-semibold leading-snug text-text">
+                            {card.name}
+                          </p>
+                          <div className="mt-1 flex justify-between gap-1 text-[11px] text-muted">
+                            <span className="shrink-0">{t.sourceLabel}</span>
+                            <span className="truncate text-right text-text/90">{card.source}</span>
+                          </div>
+                          <p className="mt-0.5 line-clamp-2 text-[11px] leading-snug text-muted">
+                            {card.context}
+                          </p>
+                          <div className="mt-1.5 flex justify-between gap-1 text-[11px]">
+                            <span className="text-muted">{card.valueLabel}</span>
+                            <span className="font-medium tabular-nums text-success">{card.valueDisplay}</span>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                </div>
               </div>
-            </div>
+            ))}
           </div>
-        </motion.div>
+        </div>
+      </motion.div>
 
       <AnimatePresence>
         {selected && (
@@ -202,7 +184,7 @@ export default function LeadPipelineDemo() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-4 bg-[image:var(--overlay-scrim)] backdrop-blur-sm bg-cover"
+            className="fixed inset-0 z-50 flex items-end justify-center bg-[image:var(--overlay-scrim)] bg-cover p-4 backdrop-blur-sm sm:items-center"
             role="dialog"
             aria-modal="true"
             aria-labelledby="pipeline-detail-title"
@@ -213,29 +195,29 @@ export default function LeadPipelineDemo() {
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: 20, opacity: 0 }}
               onClick={(e) => e.stopPropagation()}
-              className="w-full max-w-md rounded-2xl border border-border bg-surface shadow-2xl p-6"
+              className="w-full max-w-md rounded-2xl border border-border bg-surface p-6 shadow-2xl"
             >
-              <h4 id="pipeline-detail-title" className="font-display text-lg font-bold mb-1">
+              <h4 id="pipeline-detail-title" className="mb-1 font-display text-lg font-bold">
                 {selected.name}
               </h4>
-              <p className="text-sm text-muted mb-1">
+              <p className="mb-1 text-sm text-muted">
                 <span className="font-medium text-text/80">{t.sourceLabel}:</span> {selected.source}
               </p>
-              <p className="text-sm text-text mb-3">{selected.context}</p>
-              <p className="text-sm text-muted mb-4">
+              <p className="mb-3 text-sm text-text">{selected.context}</p>
+              <p className="mb-4 text-sm text-muted">
                 {selected.valueLabel}:{' '}
-                <span className="font-semibold text-success tabular-nums">{selected.valueDisplay}</span>
+                <span className="font-semibold tabular-nums text-success">{selected.valueDisplay}</span>
               </p>
-              <div className="rounded-xl bg-success/5 border border-success/20 p-4 mb-4">
-                <p className="text-xs font-semibold text-success mb-2">{t.detailHint}</p>
-                <p className="text-sm text-text leading-relaxed">{t.detailModalBody}</p>
+              <div className="mb-4 rounded-xl border border-success/20 bg-success/5 p-4">
+                <p className="mb-2 text-xs font-semibold text-success">{t.detailHint}</p>
+                <p className="text-sm leading-relaxed text-text">{t.detailModalBody}</p>
               </div>
-              <p className="text-xs font-semibold text-muted mb-2">{t.detailNext}</p>
-              <p className="text-sm text-text mb-6">{t.detailModalNextExample}</p>
+              <p className="mb-2 text-xs font-semibold text-muted">{t.detailNext}</p>
+              <p className="mb-6 text-sm text-text">{t.detailModalNextExample}</p>
               <button
                 type="button"
                 onClick={() => setSelectedId(null)}
-                className="w-full py-3 rounded-xl bg-success text-background font-semibold hover:bg-success-light transition-colors"
+                className="w-full rounded-xl bg-success py-3 font-semibold text-background transition-colors hover:bg-success-light"
               >
                 {t.closeLabel}
               </button>
