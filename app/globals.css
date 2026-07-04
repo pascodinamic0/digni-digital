@@ -2109,7 +2109,9 @@ nextjs-portal {
 
 .software-product-page .software-demo-stage .software-demo-module {
   flex: 1 1 auto;
-  min-height: clamp(380px, 48vh, 680px);
+  min-height: 0;
+  max-height: 100%;
+  overflow: hidden;
 }
 
 .software-product-page .software-demo-stage .software-demo-module > .software-inbox-app,
@@ -2121,6 +2123,22 @@ nextjs-portal {
 .software-product-page .software-demo-module .overflow-x-auto {
   scrollbar-width: thin;
   scrollbar-color: rgba(var(--accent-rgb), 0.35) transparent;
+}
+
+.software-product-page .software-demo-stage .software-workspace-content {
+  overflow-x: hidden;
+}
+
+.software-pipeline-demo {
+  flex: 1 1 auto;
+  min-height: 0;
+  max-height: 100%;
+}
+
+/* Conversation phone mockup — keep bezel visible inside software workspace */
+.software-workspace-content .conversation-phone-mockup > div:last-child {
+  background: #0a0a0c;
+  border-color: rgba(255, 255, 255, 0.12);
 }
 
 .software-inbox-app {

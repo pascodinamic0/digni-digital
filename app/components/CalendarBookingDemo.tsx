@@ -59,21 +59,21 @@ function AppointmentCard({
       layout
       initial={pulsing ? { opacity: 0, scale: 0.92, y: 6 } : false}
       animate={{ opacity: 1, scale: 1, y: 0 }}
-      className={`flex h-full min-h-[72px] flex-col rounded-lg border px-2 py-1.5 text-left shadow-sm ${
+      className={`flex h-full min-h-[68px] flex-col rounded-lg border px-1.5 py-1.5 text-left shadow-sm ${
         pulsing
           ? 'border-success/40 bg-success/[0.08] ring-1 ring-success/20'
           : 'border-success/30 bg-success/[0.05]'
       }`}
     >
-      <p className="text-[10px] font-semibold leading-tight text-text line-clamp-2">{event.title}</p>
-      <p className="mt-0.5 text-[9px] text-muted truncate">{event.contact}</p>
+      <p className="line-clamp-2 text-[11px] font-semibold leading-tight text-text">{event.title}</p>
+      <p className="mt-0.5 truncate text-[10px] text-muted">{event.contact}</p>
       <div className="mt-auto flex items-center justify-between gap-1 pt-1">
         <span
-          className={`inline-flex max-w-full truncate rounded border px-1.5 py-0.5 text-[8px] font-semibold ${CHANNEL_STYLE[event.channel]}`}
+          className={`inline-flex max-w-[70%] truncate rounded border px-1 py-0.5 text-[9px] font-semibold ${CHANNEL_STYLE[event.channel]}`}
         >
           {channelLabel}
         </span>
-        <span className="text-[8px] font-semibold text-success shrink-0">{confirmedLabel}</span>
+        <span className="shrink-0 text-[9px] font-semibold text-success">{confirmedLabel}</span>
       </div>
     </motion.div>
   )
@@ -164,29 +164,26 @@ export default function CalendarBookingDemo() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
         onViewportEnter={() => setStarted(true)}
-        className="relative"
+        className="relative min-w-0 w-full max-w-full overflow-x-hidden"
       >
-        <div className="flex flex-col gap-2 border-b border-[var(--software-border)] px-4 py-3 md:flex-row md:items-center md:justify-between md:px-5 md:py-4">
-          <div className="flex items-center gap-2 text-xs text-[var(--software-text-muted)]">
-            <span className="relative flex h-2 w-2">
+        <div className="flex flex-wrap items-center justify-between gap-2 border-b border-[var(--software-border)] px-3 py-2.5 md:px-4">
+          <div className="flex min-w-0 items-center gap-2 text-xs text-[var(--software-text-muted)]">
+            <span className="relative flex h-2 w-2 shrink-0">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-success/60 opacity-60" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-success" />
             </span>
-            {t.dashboardSubtitle}
+            <span className="truncate">{t.dashboardSubtitle}</span>
           </div>
-          <span className="text-[11px] font-semibold text-text">{t.weekLabel}</span>
+          <span className="shrink-0 text-xs font-semibold text-text">{t.weekLabel}</span>
         </div>
 
-        <div className="overflow-x-auto p-4 md:p-5">
-          <div
-            className="grid w-full min-w-[640px] gap-1 sm:gap-1.5"
-            style={{ gridTemplateColumns: `4.5rem repeat(${COLS}, minmax(108px, 1fr))` }}
-          >
+        <div className="overflow-x-hidden p-3 md:p-4">
+          <div className="grid w-full min-w-0 grid-cols-[2.75rem_repeat(5,minmax(0,1fr))] gap-1 sm:gap-1.5">
             <div aria-hidden />
             {t.daysShort.map((day, i) => (
               <div
                 key={day}
-                className={`rounded-lg py-2 text-center text-[9px] font-semibold uppercase tracking-wide sm:text-[10px] ${
+                className={`min-w-0 rounded-lg py-1.5 text-center text-[10px] font-semibold uppercase tracking-wide sm:text-xs ${
                   i === todayHighlight
                     ? 'border border-success/25 bg-success/10 text-success'
                     : 'text-muted'
@@ -198,7 +195,7 @@ export default function CalendarBookingDemo() {
 
             {t.timeSlots.map((time, slotIndex) => (
               <div key={time} className="contents">
-                <div className="flex items-center justify-end pr-2 text-[9px] font-medium text-muted tabular-nums">
+                <div className="flex min-w-0 items-start justify-end pr-1 pt-1 text-[9px] font-medium leading-tight text-muted tabular-nums sm:text-[10px]">
                   {time}
                 </div>
                 {Array.from({ length: COLS }, (_, dayIndex) => {
@@ -209,7 +206,7 @@ export default function CalendarBookingDemo() {
                   return (
                     <div
                       key={key}
-                      className={`min-h-[88px] rounded-lg border p-1 transition-colors ${
+                      className={`min-h-[72px] min-w-0 rounded-lg border p-1 transition-colors sm:min-h-[80px] ${
                         isPending
                           ? 'border-dashed border-success/45 bg-success/[0.06]'
                           : event
@@ -218,9 +215,9 @@ export default function CalendarBookingDemo() {
                       }`}
                     >
                       {isPending && (
-                        <div className="flex h-full min-h-[72px] flex-col items-center justify-center gap-1 rounded-lg">
+                        <div className="flex h-full min-h-[64px] flex-col items-center justify-center gap-1 rounded-lg sm:min-h-[72px]">
                           <span className="inline-flex h-2 w-2 animate-pulse rounded-full bg-success" aria-hidden />
-                          <p className="text-[9px] font-semibold text-success animate-pulse">{t.bookingPulse}</p>
+                          <p className="text-[10px] font-semibold text-success animate-pulse">{t.bookingPulse}</p>
                         </div>
                       )}
                       {!isPending && event ? (
@@ -244,7 +241,7 @@ export default function CalendarBookingDemo() {
               initial={{ opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 4 }}
-              className="absolute bottom-4 left-1/2 z-10 max-w-[90vw] -translate-x-1/2 truncate whitespace-nowrap rounded-full bg-success px-4 py-2 text-xs font-semibold text-background shadow-lg shadow-success/25"
+              className="absolute bottom-4 left-1/2 z-10 max-w-[90%] -translate-x-1/2 truncate rounded-full bg-success px-4 py-2 text-xs font-semibold text-background shadow-lg shadow-success/25"
             >
               {toast}
             </motion.div>
