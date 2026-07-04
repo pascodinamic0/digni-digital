@@ -21,13 +21,13 @@ type AgenticSoftwaresPageProps = {
 const agenticSoftwaresCopy = {
   en: {
     heroBadge: 'Agentic Softwares, AI-Native Software',
-    heroTitlePrefix: 'Software That',
-    heroTitleHighlight: 'Perceives, Reasons & Acts',
+    heroTitlePrefix: 'Manual Work Steals',
+    heroTitleHighlight: 'Hours You Cannot Get Back.',
     heroDescription:
-      'AI agents that work autonomously. Built with agentic DNA: intelligent workflows, multi-agent orchestration, and systems that learn. Your vision. Our build.',
+      'Spreadsheets, copy-paste, and duct-taped tools cost you every week—in errors, delays, and headcount you should not need. We build custom agentic systems that perceive, reason, and act—so operations run without you babysitting them.',
     proofYears: 'building growth systems',
     proofSatisfaction: 'client satisfaction',
-    heroCta: 'Build Your Success Story',
+    heroCta: 'See What Manual Work Is Costing You',
     applicationsTitle: 'Our Agentic',
     applicationsHighlight: 'Applications',
     applicationsSubtitle:
@@ -60,20 +60,20 @@ const agenticSoftwaresCopy = {
       'We design for autonomy from day one. Agent architecture, intelligent workflows, and systems that learn.',
     activitiesLabel: 'Activities',
     deliverablesLabel: 'Deliverables',
-    finalTitle: 'Ready to Build Agentic Software?',
+    finalTitle: 'Another Quarter on Spreadsheets—or One Build to Fix It',
     finalDescription:
-      "Whether you need AI agents that work autonomously, intelligent workflows, or a full Agentic Softwares platform, let's discuss how we can bring your vision to life with software that perceives, reasons, and acts.",
+      'Every week without the right system is payroll, errors, and deals lost to faster operators. Tell us the workflow that is costing you—we will scope a custom agentic build with proof before you commit.',
     moreCaseStudies: 'View More Case Studies',
   },
   fr: {
     heroBadge: 'Agentic Softwares, logiciel AI-native',
-    heroTitlePrefix: 'Des logiciels qui',
-    heroTitleHighlight: 'percoivent, raisonnent et agissent',
+    heroTitlePrefix: 'Le travail manuel vole',
+    heroTitleHighlight: 'des heures irrecuperables.',
     heroDescription:
-      'Des agents IA qui travaillent de facon autonome. Une architecture agentique: workflows intelligents, orchestration multi-agents et systemes qui apprennent. Votre vision. Notre construction.',
+      'Tableurs, copier-coller et outils bricolés vous coûtent chaque semaine—en erreurs, retards et effectifs inutiles. Nous construisons des systèmes agentiques sur mesure qui perçoivent, raisonnent et agissent—pour que les opérations tournent sans vous.',
     proofYears: 'a construire des systemes de croissance',
     proofSatisfaction: 'de satisfaction client',
-    heroCta: 'Construire votre success story',
+    heroCta: 'Voir ce que le manuel vous coûte',
     applicationsTitle: 'Nos applications',
     applicationsHighlight: 'agentiques',
     applicationsSubtitle:
@@ -106,20 +106,20 @@ const agenticSoftwaresCopy = {
       'Nous concevons l autonomie des le premier jour: architecture d agents, workflows intelligents et systemes qui apprennent.',
     activitiesLabel: 'Activites',
     deliverablesLabel: 'Livrables',
-    finalTitle: 'Pret a construire un logiciel agentique ?',
+    finalTitle: 'Un trimestre de plus sur tableur—or une construction pour corriger',
     finalDescription:
-      'Que vous ayez besoin d agents IA autonomes, de workflows intelligents ou d une plateforme Agentic Softwares complete, discutons de la facon de donner vie a votre vision.',
+      'Chaque semaine sans le bon système, c\'est paie, erreurs et deals perdus face à des concurrents plus rapides. Dites-nous le flux qui vous coûte—nous cadrons un build agentique sur mesure avec preuve avant engagement.',
     moreCaseStudies: 'Voir plus de cas clients',
   },
   es: {
     heroBadge: 'Agentic Softwares, software AI-native',
-    heroTitlePrefix: 'Software que',
-    heroTitleHighlight: 'percibe, razona y actua',
+    heroTitlePrefix: 'El trabajo manual roba',
+    heroTitleHighlight: 'horas que no recupera.',
     heroDescription:
-      'Agentes de IA que trabajan de forma autonoma. Construidos con ADN agentico: workflows inteligentes, orquestacion multiagente y sistemas que aprenden. Tu vision. Nuestra construccion.',
+      'Hojas de calculo, copiar-pegar y herramientas improvisadas le cuestan cada semana—en errores, retrasos y personal que no deberia necesitar. Construimos sistemas agenticos a medida que perciben, razonan y actuan—para que las operaciones corran sin que usted las supervise.',
     proofYears: 'construyendo sistemas de crecimiento',
     proofSatisfaction: 'satisfaccion de clientes',
-    heroCta: 'Construir tu historia de exito',
+    heroCta: 'Ver que le cuesta el trabajo manual',
     applicationsTitle: 'Nuestras aplicaciones',
     applicationsHighlight: 'agenticas',
     applicationsSubtitle:
@@ -152,20 +152,20 @@ const agenticSoftwaresCopy = {
       'Disenamos para la autonomia desde el dia uno: arquitectura de agentes, workflows inteligentes y sistemas que aprenden.',
     activitiesLabel: 'Actividades',
     deliverablesLabel: 'Entregables',
-    finalTitle: 'Listo para construir software agentico?',
+    finalTitle: 'Otro trimestre en hojas de calculo—or una construccion para corregirlo',
     finalDescription:
-      'Si necesitas agentes de IA autonomos, workflows inteligentes o una plataforma Agentic Softwares completa, conversemos sobre como llevar tu vision a la vida.',
+      'Cada semana sin el sistema correcto es nomina, errores y tratos perdidos ante operadores mas rapidos. Diganos el flujo que les cuesta—delimitamos un build agentico a medida con prueba antes de comprometerse.',
     moreCaseStudies: 'Ver mas casos de estudio',
   },
   de: {
     heroBadge: 'Agentic Softwares, AI-native Software',
-    heroTitlePrefix: 'Software, die',
-    heroTitleHighlight: 'wahrnimmt, denkt und handelt',
+    heroTitlePrefix: 'Manuelle Arbeit stiehlt',
+    heroTitleHighlight: 'Stunden, die Sie nicht zurückbekommen.',
     heroDescription:
-      'KI-Agenten, die autonom arbeiten. Gebaut mit agentischer DNA: intelligente Workflows, Multi-Agent-Orchestrierung und lernende Systeme. Deine Vision. Unser Build.',
+      'Tabellen, Copy-Paste und Flickwerk-Tools kosten Sie jede Woche—in Fehlern, Verzögerungen und Personal, das Sie nicht brauchen sollten. Wir bauen maßgeschneiderte Agentic-Systeme, die wahrnehmen, denken und handeln—damit Abläufe ohne Sie laufen.',
     proofYears: 'im Aufbau von Wachstumssystemen',
     proofSatisfaction: 'Kundenzufriedenheit',
-    heroCta: 'Deine Erfolgsgeschichte bauen',
+    heroCta: 'Sehen, was manuelle Arbeit kostet',
     applicationsTitle: 'Unsere agentischen',
     applicationsHighlight: 'Anwendungen',
     applicationsSubtitle:
@@ -198,20 +198,20 @@ const agenticSoftwaresCopy = {
       'Wir entwerfen von Tag eins an fuer Autonomie: Agentenarchitektur, intelligente Workflows und lernende Systeme.',
     activitiesLabel: 'Aktivitaeten',
     deliverablesLabel: 'Liefergegenstaende',
-    finalTitle: 'Bereit fuer agentische Software?',
+    finalTitle: 'Noch ein Quartal in Tabellen—or ein Build, der es behebt',
     finalDescription:
-      'Ob autonome KI-Agenten, intelligente Workflows oder eine vollstaendige Agentic Softwares Plattform: Lass uns besprechen, wie wir deine Vision umsetzen.',
+      'Jede Woche ohne das richtige System kostet Lohn, Fehler und Deals an schnellere Wettbewerber. Sagen Sie uns, welcher Workflow Sie Geld kostet—wir skizzieren einen maßgeschneiderten Agentic-Build mit Proof vor Commitment.',
     moreCaseStudies: 'Weitere Case Studies ansehen',
   },
   ar: {
     heroBadge: 'Agentic Softwares، برمجيات AI-native',
-    heroTitlePrefix: 'برمجيات',
-    heroTitleHighlight: 'تدرك وتفكر وتتصرف',
+    heroTitlePrefix: 'العمل اليدوي يسرق',
+    heroTitleHighlight: 'ساعات لا تستعيدها.',
     heroDescription:
-      'وكلاء ذكاء اصطناعي يعملون باستقلالية. مبنية بمنطق agentic: سير عمل ذكية، تنسيق متعدد الوكلاء، وانظمة تتعلم. رؤيتك، ونحن نبنيها.',
+      'جداول البيانات والنسخ واللصق والأدوات المؤقتة تكلّفك كل أسبوع—في أخطاء وتأخير وموظفين لا تحتاجهم. نبني أنظمة وكيلية مخصصة تدرك وتفكر وتتصرف—لتعمل العمليات من دون إشرافك المستمر.',
     proofYears: 'في بناء انظمة نمو',
     proofSatisfaction: 'رضا العملاء',
-    heroCta: 'ابن قصة نجاحك',
+    heroCta: 'اطلع على تكلفة العمل اليدوي',
     applicationsTitle: 'تطبيقاتنا',
     applicationsHighlight: 'الذكية',
     applicationsSubtitle:
@@ -244,9 +244,9 @@ const agenticSoftwaresCopy = {
       'نصمم من اليوم الاول من اجل الاستقلالية: بنية وكلاء، سير عمل ذكي، وانظمة تتعلم.',
     activitiesLabel: 'الانشطة',
     deliverablesLabel: 'المخرجات',
-    finalTitle: 'جاهز لبناء برمجيات Agentic؟',
+    finalTitle: 'فصل آخر على جداول—or بناء واحد يصلح ذلك',
     finalDescription:
-      'سواء احتجت وكلاء IA يعملون باستقلالية، او سير عمل ذكية، او منصة Agentic Softwares كاملة، فلنتحدث عن تحويل رؤيتك الى واقع.',
+      'كل أسبوع بلا النظام المناسب هو رواتب وأخطاء وصفقات تضيع لصالح منافسين أسرع. أخبرنا بسير العمل الذي يكلّفك—نحدّد بناءً وكيلياً مخصصاً مع إثبات قبل الالتزام.',
     moreCaseStudies: 'عرض مزيد من دراسات الحالة',
   },
 }

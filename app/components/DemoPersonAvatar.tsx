@@ -54,7 +54,10 @@ export default function DemoPersonAvatar({
 
   if (src) {
     return (
-      <span className={`relative inline-flex shrink-0 ${className}`} style={{ width: px, height: px }}>
+      <span
+        className={`relative inline-flex shrink-0 overflow-hidden ${rounded} ring-1 ring-black/[0.06] ${className}`}
+        style={{ width: px, height: px }}
+      >
         <Image
           src={src}
           alt={name}
@@ -62,8 +65,7 @@ export default function DemoPersonAvatar({
           height={px}
           sizes={`${px}px`}
           unoptimized
-          className={`object-cover ring-1 ring-black/[0.06] ${rounded}`}
-          style={{ width: px, height: px }}
+          className="h-full w-full object-cover"
         />
         {active ? (
           <span

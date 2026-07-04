@@ -769,8 +769,9 @@ function PipelineMiniChart({
 
       <div className="grid grid-cols-7 gap-0.5 items-end h-[4.5rem] border-b border-[var(--software-border)]/60 pb-1">
         {counts.map((n, i) => {
-          const revealed = i <= revealedThroughStep
-          const active = revealed && i === activeStep
+          // Mini chart always shows the full pipeline shape; scroll/autoplay only drives active highlight.
+          const revealed = true
+          const active = i === activeStep
           const h = pipelineBarHeight(n, max, revealed)
           const barTone = !revealed
             ? 'bg-transparent'

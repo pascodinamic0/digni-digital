@@ -111,8 +111,10 @@ export default async function RootLayout({
   }
 })(); 
         `}</Script>
-        <script
+        <Script
+          id="digni-site-json-ld"
           type="application/ld+json"
+          strategy="beforeInteractive"
           dangerouslySetInnerHTML={jsonLdScriptProps(jsonLd)}
         />
         <ThemeProvider>

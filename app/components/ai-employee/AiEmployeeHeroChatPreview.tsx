@@ -167,7 +167,6 @@ export default function AiEmployeeHeroChatPreview() {
                 src={avatarSrc}
                 size="md"
                 active
-                className="ring-1 ring-border-light"
               />
               <div className="min-w-0 flex-1">
                 <p className="truncate font-display text-sm font-semibold text-text">{contactName}</p>

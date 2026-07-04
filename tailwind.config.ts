@@ -79,6 +79,18 @@ export default {
         accent: 'var(--border-accent)',
         'accent-light': 'var(--border-accent-light)',
       },
+      ringColor: {
+        DEFAULT: 'var(--ring)',
+        light: 'var(--border-light)',
+        medium: 'var(--border-medium)',
+        foreground: 'var(--border-foreground)',
+        accent: 'var(--border-accent)',
+        'accent-light': 'var(--border-accent-light)',
+        border: 'var(--border)',
+        'border-light': 'var(--border-light)',
+        'border-medium': 'var(--border-medium)',
+        'border-accent': 'var(--border-accent)',
+      },
     },
   },
   safelist: [
