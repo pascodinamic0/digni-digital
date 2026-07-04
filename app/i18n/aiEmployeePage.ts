@@ -181,8 +181,8 @@ export const aiEmployeePageEn: AiEmployeePageTranslations = {
  titleLine1: 'Stop Losing High-Value Leads.',
  titleHighlight: 'To Slow Follow-Up.',
  hook:
- 'Install an AI Employee that answers, qualifies, and books appointments 24/7 in under 2 seconds. Never let a prospect go to a competitor again.',
- primaryCta: 'Run Free AI Fit Check',
+ 'Every unanswered call is a lead your competitor books. Install an AI Employee that answers, qualifies, and books in under 2 seconds—24/7.',
+ primaryCta: 'See What Slow Follow-Up Is Costing You',
  footnote: 'Backed by our 15-appointments-in-30-days guarantee.',
  },
  valueBadges: {
@@ -470,11 +470,11 @@ export const aiEmployeePageEn: AiEmployeePageTranslations = {
 export const aiEmployeePageFr: AiEmployeePageTranslations = {
  hero: {
  badge: 'Infrastructure de croissance pour services',
- titleLine1: 'Une fois installée.',
- titleHighlight: 'Plus jamais de répondre aux DM, envoyer un lien, ni relancer à la main.',
+ titleLine1: 'Vous perdez des leads à forte valeur.',
+ titleHighlight: 'À cause d\'un suivi trop lent.',
  hook:
- 'La seule boucle clé en main qui capte, qualifie, réserve, relance et fait monter le panier sur chaque lead payant pendant que vous livrez le service.',
- primaryCta: 'Faire le test de compatibilité (2 min)',
+ 'Chaque appel sans réponse est un lead que votre concurrent remplit. Installez un employé IA qui répond, qualifie et planifie en moins de 2 secondes—24h/24.',
+ primaryCta: 'Voir ce que vous coûte le suivi lent',
  footnote:
  '15 RDV qualifiés en 30 jours, sinon on travaille gratuitement jusqu’au seuil. Le risque est pour nous.',
  },
@@ -762,11 +762,11 @@ export const aiEmployeePageFr: AiEmployeePageTranslations = {
 export const aiEmployeePageDe: AiEmployeePageTranslations = {
  hero: {
  badge: 'Wachstums Infrastruktur für Services',
- titleLine1: 'Einmal installiert.',
- titleHighlight: 'Nie wieder DMs beantworten, Buchungslinks schicken oder nachfassen.',
+ titleLine1: 'High-Value-Leads verlieren.',
+ titleHighlight: 'Wegen langsamem Follow-up.',
  hook:
- 'Der einzige Done for you Loop, der jeden bezahlten Lead erfasst, qualifiziert, bucht, nachfasst und Upsell fährt, während Sie den Service liefern.',
- primaryCta: '2 Minuten Passungstest starten',
+ 'Jeder unbeantwortete Anruf ist ein Lead, den Ihr Wettbewerber bucht. Installieren Sie einen KI-Mitarbeiter, der in unter 2 Sekunden antwortet, qualifiziert und bucht—24/7.',
+ primaryCta: 'Sehen, was langsames Follow-up kostet',
  footnote:
  '15 qualifizierte Termine in 30 Tagen, oder wir arbeiten gratis, bis Sie sie haben. Das Risiko tragen wir.',
  },
@@ -1054,11 +1054,11 @@ export const aiEmployeePageDe: AiEmployeePageTranslations = {
 export const aiEmployeePageEs: AiEmployeePageTranslations = {
  hero: {
  badge: 'Infraestructura de crecimiento para servicios',
- titleLine1: 'Instálalo una vez.',
- titleHighlight: 'Nunca más contestar DMs, mandar enlaces de reserva ni perseguir seguimientos.',
+ titleLine1: 'Está perdiendo leads de alto valor.',
+ titleHighlight: 'Por seguimiento lento.',
  hook:
- 'El único loop llave en mano que captura, califica, agenda, hace upsell y da seguimiento a cada lead pagado mientras tú entregas el servicio.',
- primaryCta: 'Hacer el test de compatibilidad (2 min)',
+ 'Cada llamada sin respuesta es un lead que reserva su competidor. Instale un empleado IA que responde, califica y agenda en menos de 2 segundos—24/7.',
+ primaryCta: 'Ver qué le cuesta el seguimiento lento',
  footnote:
  '15 citas calificadas en 30 días, o trabajamos gratis hasta lograrlas. El riesgo es nuestro.',
  },
@@ -1346,11 +1346,11 @@ export const aiEmployeePageEs: AiEmployeePageTranslations = {
 export const aiEmployeePageAr: AiEmployeePageTranslations = {
  hero: {
  badge: 'بنية نمو لأعمال الخدمات',
- titleLine1: 'ثبّتها مرة.',
- titleHighlight: 'ولن ترد على الرسائل أو ترسل روابط حجز أو تلاحق متابعة يدوياً.',
+ titleLine1: 'أنت تخسر عملاء محتملين ذوي قيمة.',
+ titleHighlight: 'بسبب متابعة بطيئة.',
  hook:
- 'الحلقة الوحيدة الجاهزة التي تلتقط وتؤهل وتحجز وترفع القيمة وتتابع كل عميل مدفوع وأنت تقدّم الخدمة.',
- primaryCta: 'ابدأ اختبار الملاءمة (دقيقتان)',
+ 'كل مكالمة بلا ردّ هي عميل يحجزه منافسك. ثبّت موظفاً ذكياً يُجيب ويؤهّل ويحجز في أقل من ثانيتين—على مدار الساعة.',
+ primaryCta: 'اطلع على تكلفة المتابعة البطيئة',
  footnote: '15 موعداً مؤهلاً خلال 30 يوماً، أو نعمل مجاناً حتى تحققها. المخاطرة علينا.',
  },
  valueBadges: {

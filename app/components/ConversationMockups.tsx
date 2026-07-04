@@ -236,7 +236,7 @@ const ConversationMockups = () => {
           src={visitor.avatarSrc}
           size="xs"
           active
-          className="ml-2 mt-1 shrink-0 ring-1 ring-border-light"
+          className="ml-2 mt-1 shrink-0"
         />
       ) : null}
     </div>
@@ -265,17 +265,23 @@ const ConversationMockups = () => {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
-            className="relative"
+            className="relative flex items-center justify-center overflow-visible py-2"
           >
-            {/* Phone Frame */}
-            <div className="relative mx-auto max-w-sm">
-              <div className="absolute inset-0 bg-gradient-to-br from-accent/20 to-success/20 rounded-[3rem] blur-2xl opacity-50" />
-              <div className="relative bg-surface border border-border-light rounded-3xl p-2 shadow-2xl">
-                {/* Phone Notch */}
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-background rounded-b-2xl" />
-                
-                {/* Screen */}
-                <div className="bg-background rounded-[2rem] overflow-hidden">
+            {/* Phone Frame — bezel uses explicit colors so it stays visible inside software-workspace-content */}
+            <div className="conversation-phone-mockup relative mx-auto w-full max-w-sm">
+              <div
+                className="pointer-events-none absolute -inset-3 rounded-[2.75rem] bg-gradient-to-br from-accent/25 to-success/20 opacity-60 blur-2xl"
+                aria-hidden
+              />
+              <div className="relative rounded-[2rem] border border-white/12 bg-[#0a0a0c] p-[5px] shadow-[0_24px_48px_-12px_rgba(0,0,0,0.65)]">
+                <div className="overflow-hidden rounded-[1.65rem] bg-background ring-1 ring-white/[0.06]">
+                  <div className="relative flex justify-center bg-background pt-3 pb-1.5">
+                    <span
+                      className="h-[22px] w-[96px] rounded-full border border-white/10 bg-black shadow-inner"
+                      aria-hidden
+                    />
+                  </div>
+
                   {/* Header */}
                   <div className="bg-surface/80 backdrop-blur-xl px-4 py-3 border-b border-border">
                     <div className="flex items-center gap-3">
@@ -285,7 +291,6 @@ const ConversationMockups = () => {
                           src={visitor.avatarSrc}
                           size="md"
                           active
-                          className="ring-1 ring-border-light"
                         />
                       ) : (
                         <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-accent/10 text-accent">
@@ -308,7 +313,7 @@ const ConversationMockups = () => {
                   </div>
                   
                   {/* Messages */}
-                  <div className="h-[420px] overflow-y-auto p-4 space-y-1 scrollbar-thin">
+                  <div className="h-[clamp(260px,38vh,400px)] overflow-y-auto p-4 space-y-1 scrollbar-thin">
                     {conversations[activeDemo].messages.slice(0, messageIndex + 1).map((message, msgIndex) => (
                       <ChatBubble
                         key={`${activeDemo}-${msgIndex}`}
