@@ -258,62 +258,62 @@ const ConversationMockups = () => {
       activeNav="conversations"
       moduleTitle={sw.nav.conversations}
     >
-        <div className="grid gap-6 p-4 lg:grid-cols-2 lg:gap-8 lg:p-5">
-          {/* Active Conversation */}
+        <div className="grid h-full min-h-0 gap-4 p-3 lg:grid-cols-2 lg:gap-6 lg:p-4">
+          {/* Active Conversation — flex phone so it fits the locked demo frame */}
           <motion.div
             key={activeDemo}
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
-            className="relative flex items-center justify-center overflow-visible py-2"
+            className="relative flex min-h-0 items-center justify-center overflow-hidden"
           >
             {/* Phone Frame — bezel uses explicit colors so it stays visible inside software-workspace-content */}
-            <div className="conversation-phone-mockup relative mx-auto w-full max-w-sm">
+            <div className="conversation-phone-mockup relative mx-auto flex h-full max-h-full w-full max-w-[min(100%,20.5rem)] flex-col">
               <div
-                className="pointer-events-none absolute -inset-3 rounded-[2.75rem] bg-gradient-to-br from-accent/25 to-success/20 opacity-60 blur-2xl"
+                className="pointer-events-none absolute inset-2 rounded-[2.5rem] bg-gradient-to-br from-accent/20 to-success/15 opacity-50 blur-xl"
                 aria-hidden
               />
-              <div className="relative rounded-[2rem] border border-white/12 bg-[#0a0a0c] p-[5px] shadow-[0_24px_48px_-12px_rgba(0,0,0,0.65)]">
-                <div className="overflow-hidden rounded-[1.65rem] bg-background ring-1 ring-white/[0.06]">
-                  <div className="relative flex justify-center bg-background pt-3 pb-1.5">
+              <div className="relative flex min-h-0 flex-1 flex-col rounded-[1.75rem] border border-white/12 bg-[#0a0a0c] p-[4px] shadow-[0_20px_40px_-12px_rgba(0,0,0,0.55)]">
+                <div className="flex min-h-0 flex-1 flex-col overflow-hidden rounded-[1.5rem] bg-background ring-1 ring-white/[0.06]">
+                  <div className="relative flex shrink-0 justify-center bg-background pb-1 pt-2.5">
                     <span
-                      className="h-[22px] w-[96px] rounded-full border border-white/10 bg-black shadow-inner"
+                      className="h-5 w-[88px] rounded-full border border-white/10 bg-black shadow-inner"
                       aria-hidden
                     />
                   </div>
 
                   {/* Header */}
-                  <div className="bg-surface/80 backdrop-blur-xl px-4 py-3 border-b border-border">
-                    <div className="flex items-center gap-3">
+                  <div className="shrink-0 border-b border-border bg-surface/80 px-3 py-2.5 backdrop-blur-xl">
+                    <div className="flex items-center gap-2.5">
                       {visitor ? (
                         <DemoPersonAvatar
                           name={visitor.name}
                           src={visitor.avatarSrc}
-                          size="md"
+                          size="sm"
                           active
                         />
                       ) : (
-                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-accent/10 text-accent">
+                        <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-accent/10 text-accent">
                           {activeConv.icon}
                         </div>
                       )}
-                      <div className="flex-1 min-w-0">
-                        <h3 className="font-display font-semibold text-sm text-text truncate">
+                      <div className="min-w-0 flex-1">
+                        <h3 className="truncate font-display text-sm font-semibold text-text">
                           {visitor?.name ?? activeConv.title}
                         </h3>
-                        <p className="text-xs text-muted truncate">
+                        <p className="truncate text-[11px] text-muted">
                           {activeConv.platform} · {activeConv.industry}
                         </p>
                       </div>
                       <div className="flex items-center gap-1.5">
-                        <div className="w-2 h-2 rounded-full bg-success animate-pulse" />
-                        <span className="text-[10px] text-success font-medium">{t.liveLabel}</span>
+                        <div className="h-2 w-2 animate-pulse rounded-full bg-success" />
+                        <span className="text-[10px] font-medium text-success">{t.liveLabel}</span>
                       </div>
                     </div>
                   </div>
-                  
-                  {/* Messages */}
-                  <div className="h-[clamp(260px,38vh,400px)] overflow-y-auto p-4 space-y-1 scrollbar-thin">
+
+                  {/* Messages — flex-1 so the phone never outgrows the workspace */}
+                  <div className="min-h-0 flex-1 space-y-1 overflow-y-auto p-3 scrollbar-thin">
                     {conversations[activeDemo].messages.slice(0, messageIndex + 1).map((message, msgIndex) => (
                       <ChatBubble
                         key={`${activeDemo}-${msgIndex}`}
@@ -321,30 +321,30 @@ const ConversationMockups = () => {
                         isAI={message.sender === 'ai'}
                       />
                     ))}
-                    
+
                     {/* Typing Indicator - only show when AI is typing */}
                     {isTyping && (
-                      <div className="flex justify-start mb-3">
+                      <div className="mb-3 flex justify-start">
                         <div className="flex items-center gap-2">
                           <ChatChannelIconBadge>{activeConv.icon}</ChatChannelIconBadge>
-                          <div className="bg-surface-light border border-border-light px-5 py-3.5 rounded-2xl rounded-tl-sm">
+                          <div className="rounded-2xl rounded-tl-sm border border-border-light bg-surface-light px-4 py-3">
                             <div className="flex items-center gap-1">
-                              <span className="w-2.5 h-2.5 bg-accent rounded-full animate-[typing_1.4s_ease-in-out_infinite]" style={{ animationDelay: '0ms' }} />
-                              <span className="w-2.5 h-2.5 bg-accent rounded-full animate-[typing_1.4s_ease-in-out_infinite]" style={{ animationDelay: '200ms' }} />
-                              <span className="w-2.5 h-2.5 bg-accent rounded-full animate-[typing_1.4s_ease-in-out_infinite]" style={{ animationDelay: '400ms' }} />
+                              <span className="h-2 w-2 animate-[typing_1.4s_ease-in-out_infinite] rounded-full bg-accent" style={{ animationDelay: '0ms' }} />
+                              <span className="h-2 w-2 animate-[typing_1.4s_ease-in-out_infinite] rounded-full bg-accent" style={{ animationDelay: '200ms' }} />
+                              <span className="h-2 w-2 animate-[typing_1.4s_ease-in-out_infinite] rounded-full bg-accent" style={{ animationDelay: '400ms' }} />
                             </div>
                           </div>
                         </div>
                       </div>
                     )}
                   </div>
-                  
+
                   {/* Input Bar */}
-                  <div className="p-3 border-t border-border bg-surface/50">
-                    <div className="flex items-center gap-2 bg-surface-light rounded-full px-4 py-2">
-                      <span className="text-muted text-sm flex-1">{t.inputPlaceholder}</span>
-                      <div className="w-8 h-8 bg-accent rounded-full flex items-center justify-center">
-                        <svg className="w-4 h-4 text-background" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <div className="shrink-0 border-t border-border bg-surface/50 p-2.5">
+                    <div className="flex items-center gap-2 rounded-full bg-surface-light px-3 py-1.5">
+                      <span className="flex-1 text-xs text-muted sm:text-sm">{t.inputPlaceholder}</span>
+                      <div className="flex h-7 w-7 items-center justify-center rounded-full bg-accent">
+                        <svg className="h-3.5 w-3.5 text-background" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                           <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
                         </svg>
                       </div>
@@ -356,11 +356,11 @@ const ConversationMockups = () => {
           </motion.div>
 
           {/* Channel Selector */}
-          <div className="flex flex-col justify-center">
-            <h3 className="font-display text-2xl font-bold mb-6 text-center lg:text-left">
+          <div className="flex min-h-0 flex-col justify-center overflow-y-auto">
+            <h3 className="mb-3 text-center font-display text-xl font-bold lg:mb-4 lg:text-left">
               {t.channelSelectorTitle}
             </h3>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+            <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 sm:gap-2.5">
               {conversations.map((conv, index) => (
                 <motion.button
                   key={conv.id}
@@ -370,25 +370,27 @@ const ConversationMockups = () => {
                   }}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className={`p-4 rounded-xl border transition-all duration-300 text-left ${
+                  className={`rounded-xl border p-3 text-left transition-all duration-300 ${
                     activeDemo === index
-                      ? 'bg-accent/10 border-accent/50 shadow-lg shadow-accent/10'
-                      : 'bg-surface border-border hover:border-border-medium'
+                      ? 'border-accent/50 bg-accent/10 shadow-lg shadow-accent/10'
+                      : 'border-border bg-surface hover:border-border-medium'
                   }`}
                 >
-                  <div className={`w-10 h-10 rounded-lg flex items-center justify-center mb-3 ${
-                    activeDemo === index ? 'bg-accent text-background' : 'bg-surface-light text-muted'
-                  }`}>
+                  <div
+                    className={`mb-2 flex h-9 w-9 items-center justify-center rounded-lg ${
+                      activeDemo === index ? 'bg-accent text-background' : 'bg-surface-light text-muted'
+                    }`}
+                  >
                     {conv.icon}
                   </div>
-                  <p className="font-medium text-sm text-text">{conv.title}</p>
-                  <p className="text-xs text-muted mt-0.5">{conv.industry}</p>
+                  <p className="text-sm font-medium text-text">{conv.title}</p>
+                  <p className="mt-0.5 text-[11px] text-muted">{conv.industry}</p>
                 </motion.button>
               ))}
             </div>
-            
+
             {/* Progress Indicator */}
-            <div className="flex gap-1.5 mt-8 justify-center lg:justify-start">
+            <div className="mt-4 flex justify-center gap-1.5 lg:justify-start">
               {conversations.map((_, index) => (
                 <button
                   key={index}

@@ -55,7 +55,7 @@ export const servicesPageEn: ServicesPageTranslations = {
  title: 'AI Employee Systems',
  subtitle: 'For Growing Businesses',
  description:
- "Most teams don't need more software, they need infrastructure that runs without them. We build intelligent systems for service businesses that want growth without chaos.",
+ 'You already paid for those leads. Most never get a reply. We sell booked jobs while you work—not another chatbot.',
  outcomes: [
  'Keep clients longer',
  'Convert more leads',
@@ -84,7 +84,7 @@ export const servicesPageEn: ServicesPageTranslations = {
  title: 'Future Ready Graduate Program',
  subtitle: 'For Schools',
  description:
- 'Real skills. 85% employed. We bring out entrepreneurial talents through personalized guided learning.',
+ 'A degree is not the destination. A hired graduate is. Employment-ready proof employers hire—85% across partner schools.',
  outcomes: [
  '85% employment rate',
  'Entrepreneurial talents unlocked',
@@ -109,8 +109,8 @@ export const servicesPageEn: ServicesPageTranslations = {
  title: 'Agentic Softwares',
  subtitle: 'For Unique Needs',
  description:
- 'We build custom software with integrated AI for niche specific problems: autonomous workflows and systems you own, not shelf ware.',
- outcomes: ['Autonomous agents', 'AI native architecture', 'You own it'],
+ 'Manual work is stealing a third of your week. We sell operations that run without you as the glue—custom systems you own.',
+ outcomes: ['Time returned', 'Fewer errors', 'You own it'],
  deliverables: [
  'Agent design & workflow automation',
  'LLM integration & tool use',
@@ -125,7 +125,7 @@ export const servicesPageEn: ServicesPageTranslations = {
  primaryCta: 'View Agentic Systems',
  secondaryCta: 'Book Project Consultation',
  },
- ],
+],
  stats: [
  {
  value: '300',
