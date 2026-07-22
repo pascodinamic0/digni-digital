@@ -177,52 +177,53 @@ type ResultLine = { metric: string; description: string }
 
 export const aiEmployeePageEn: AiEmployeePageTranslations = {
  hero: {
- badge: 'Service growth infrastructure',
- titleLine1: 'Stop Losing High-Value Leads.',
- titleHighlight: 'To Slow Follow-Up.',
+ badge: 'For busy service businesses',
+ titleLine1: 'You Already Paid for Those Leads.',
+ titleHighlight: 'Most Never Get a Reply.',
  hook:
- 'Every unanswered call is a lead your competitor books. Install an AI Employee that answers, qualifies, and books in under 2 seconds—24/7.',
+ 'You spend all day closing work. Leads call while you’re on the job. Whoever answers first wins—and it isn’t you. This isn’t a chatbot. It’s the system that turns inbound into booked jobs while you work.',
  primaryCta: 'See What Slow Follow-Up Is Costing You',
- footnote: 'Backed by our 15-appointments-in-30-days guarantee.',
+ footnote:
+ 'We can’t promise every lead will book—of course not. But we answer in under 2 seconds, qualify, and book 24/7 so silence stops choosing for you. 15 qualified appointments in 30 days, or we work free until you hit it.',
  },
  valueBadges: {
  ariaLabel: 'Speed, deployment, and effort guarantees',
- responseTime: '<2s Response Time',
- setupSpeed: '48 Hour Live Deployment',
- zeroEffort: 'Zero Manual Entry',
+ responseTime: 'Answered in under 2s',
+ setupSpeed: 'Live in 48 hours',
+ zeroEffort: 'You keep working',
  },
  dreamOutcome: {
- badge: 'The dream outcome',
+ badge: 'The dream destination',
  title: 'Same 100 leads. A different scoreboard.',
  subtitle:
- 'The leaky bucket closes ~1 in 100. The loop closes 95, with referrals compounding the batch.',
+ 'You already paid for the batch. The leaky bucket closes ~1. The loop closes 95—with referrals compounding the same spend.',
  beforeLabel: 'The leaky bucket',
  beforeMetric: '~1 / 100',
  beforeHint: 'Closed after manual chaos, voicemail, and slow follow up.',
  arrowLabel: 'With the loop',
- afterLabel: 'The loop',
+ afterLabel: 'Booked jobs',
  afterMetric: '95 / 100',
  referralLine: '+23 referrals from the same batch',
  afterHint: 'Captured, qualified, booked, and followed up, 24/7.',
  },
  denominator: {
- badge: 'Value equation · denominator',
+ badge: 'Why it feels fair',
  title: 'Instant speed. Near zero effort.',
  subtitle:
- 'We shrink time delay and effort sacrifice, so the system runs while you run the business.',
+ 'We shrink the wait and the babysitting, so paid leads get a fair shot while you run the business.',
  pillarSpeed: 'Instant response',
  pillarSpeedHint: 'Under 2 seconds on every inbound touch. No voicemail lottery.',
  pillarDeploy: '48 hour live deployment',
- pillarDeployHint: 'We implement, connect channels, and go live, not another tool to babysit.',
+ pillarDeployHint: 'We implement, connect channels, and go live—not another tool to babysit.',
  pillarEffort: 'Frictionless control',
  pillarEffortHint: 'Mobile app + automations. You approve; the loop executes.',
  },
  mobileApp: {
- title: 'Monitor your business from one place — right from your phone.',
+ title: 'See booked jobs and waiting replies—from your phone.',
  bullet1: 'Get instant alerts when a new lead comes in, someone books, or a reply is waiting.',
  bullet2: 'See live pipeline numbers and reply to clients — no laptop needed.',
  bullet3: 'Call or text any lead back from the same thread — full history, zero app switching.',
- tagline: 'One system puts everything you need to track in your pocket.',
+ tagline: 'One system puts the destination—booked work—in your pocket.',
  imageAlt: 'AI Employee mobile app on a phone showing pipeline metrics and recent activity',
  appStoreHref: 'https://apps.apple.com/',
  playStoreHref: 'https://play.google.com/store',
@@ -230,11 +231,11 @@ export const aiEmployeePageEn: AiEmployeePageTranslations = {
  playStoreAriaLabel: 'Get it on Google Play',
  },
  problem: {
- badge: 'The problem',
- title: 'You Are Bleeding Revenue.',
- titleHighlight: 'Every Time Your Phone Rings Unanswered.',
+ badge: 'The life math',
+ title: 'You Already Bought the Lead.',
+ titleHighlight: 'Silence Gave It Away.',
  subtitle:
- 'You spend thousands to acquire leads. But when they reach out, your staff is busy. The phone rings out. The chat message sits on "read". Result? The lead calls your competitor.',
+ 'You spend thousands to acquire leads. When they reach out, your staff is busy. The phone rings out. The chat sits on “read.” Result? The lead calls your competitor—and you funded their calendar.',
  stats: [
  {
  value: '40%',
@@ -254,11 +255,11 @@ export const aiEmployeePageEn: AiEmployeePageTranslations = {
  ],
  },
  capabilities: {
- badge: 'The operating layer',
- title: 'Six capabilities.',
- titleHighlight: 'One growth system.',
+ badge: 'How the destination is unlocked',
+ title: 'One loop.',
+ titleHighlight: 'Booked jobs—not more software.',
  subtitle:
- 'Tailored for service businesses seeking growth without chaos, systematizing the departments that touch revenue: capture, qualify, book, follow up, and retain.',
+ 'Built for service businesses that want growth without chaos: every paid lead gets answered, qualified, booked, and followed up—so you stop donating wins to silence.',
  items: [
  {
  title: 'Instant response',
@@ -290,14 +291,14 @@ export const aiEmployeePageEn: AiEmployeePageTranslations = {
  badge: 'Time to value',
  title: 'Live in 48 hours',
  subtitle:
- 'Done for you, not DIY. We connect your channels and run capture, qualify, book, and follow up on every paid lead.',
+ 'Done for you, not DIY. We connect your channels and run capture, qualify, book, and follow up on every paid lead—so the destination shows up fast.',
  statBig: '48h',
  statSmall: 'From decision to operational',
  },
  qualification: {
  badge: 'Fit matters',
  title: 'Built for',
- titleHighlight: 'high end service businesses',
+ titleHighlight: 'owners who hate leaking paid leads',
  forHeading: 'Who this is for',
  forItems: [
  'You sell a premium service and care about retention, not just leads',
@@ -318,11 +319,11 @@ export const aiEmployeePageEn: AiEmployeePageTranslations = {
  ],
  },
  clientOutcomes: {
- badge: 'Outcomes',
- title: 'Meet Your New Highest-Performing Employee.',
- titleHighlight: 'A done-for-you growth infrastructure.',
+ badge: 'The destination',
+ title: 'Paid Leads Become Booked Jobs.',
+ titleHighlight: 'While you keep working.',
  subtitle:
- 'Not another software tool. Not a DIY dashboard. We build a complete, done-for-you system that works 24/7.',
+ 'Not another gadget. Not a DIY dashboard. A done-for-you system that answers, qualifies, and books—so every paid lead gets a fair shot at becoming work on your calendar.',
  expandTechnical: 'Tap a step to see how it works under the hood',
  collapseTechnical: 'Tap again to collapse details',
  steps: [
@@ -430,9 +431,9 @@ export const aiEmployeePageEn: AiEmployeePageTranslations = {
  ],
  },
  guarantee: {
- badge: 'Conditional service guarantee',
- title: '15 Qualified Appointments in 30 Days. Guaranteed.',
- body: 'If your new AI Employee doesn\'t deliver at least 15 qualified appointments in 30 days, we work free until you hit that target. No risk. Pure upside.',
+ badge: 'Damaging admission',
+ title: 'We Can’t Promise Every Lead Books.',
+ body: 'Of course not. But we’ve done everything to ensure silence stops choosing for you: under-2-second answers, qualification, and booking 24/7. If you don’t get 15 qualified appointments in 30 days, we work free until you hit that target.',
  },
  scarcity: {
  prefix: 'Limited to 5 premium partners per month.',
@@ -441,9 +442,10 @@ export const aiEmployeePageEn: AiEmployeePageTranslations = {
  inlineSuffix: 'premium slots left in {month} · max 5/month',
  },
  pricing: {
- title: 'Ready To Stop',
- titleHighlight: 'Losing Leads?',
- subtitle: 'Let\'s find out if your business qualifies for a custom AI Employee. 15 Qualified Appointments in 30 Days. Guaranteed.',
+ title: 'Ready for Paid Leads',
+ titleHighlight: 'to Become Booked Jobs?',
+ subtitle:
+ 'We can’t guarantee every inquiry converts—of course not. Let’s see if your business qualifies for the loop that gives every paid lead a fair shot. 15 qualified appointments in 30 days, or we work free until you hit it.',
  assessmentNote:
  'Your personalized report spells out what slow follow up is costing you, what recovery looks like with the loop live, and the all in investment, before you pay.',
  assessmentCta: 'Run the fit assessment',
@@ -460,23 +462,24 @@ export const aiEmployeePageEn: AiEmployeePageTranslations = {
  cta: 'Run Free AI Fit Check',
  },
  finalCta: {
- title: 'Ready To Stop',
- titleHighlight: 'Losing Leads?',
- subtitle: 'Let\'s find out if your business qualifies for a custom AI Employee. 15 Qualified Appointments in 30 Days. Guaranteed.',
+ title: 'Ready for Paid Leads',
+ titleHighlight: 'to Become Booked Jobs?',
+ subtitle:
+ 'Don’t buy another gadget. Buy the destination: inbound that becomes work on your calendar while you keep working.',
  primaryCta: 'Run Free AI Fit Check',
  },
 }
 
 export const aiEmployeePageFr: AiEmployeePageTranslations = {
  hero: {
- badge: 'Infrastructure de croissance pour services',
- titleLine1: 'Vous perdez des leads à forte valeur.',
- titleHighlight: 'À cause d\'un suivi trop lent.',
+ badge: 'Pour les entreprises de services occupées',
+ titleLine1: 'Vous avez déjà payé ces leads.',
+ titleHighlight: 'La plupart n’ont jamais de réponse.',
  hook:
- 'Chaque appel sans réponse est un lead que votre concurrent remplit. Installez un employé IA qui répond, qualifie et planifie en moins de 2 secondes—24h/24.',
+ 'Vous passez la journée à livrer. Les leads appellent pendant que vous êtes en mission. Celui qui répond en premier gagne—et ce n’est pas vous. Ce n’est pas un chatbot. C’est le système qui transforme l’inbound en jobs réservés pendant que vous travaillez.',
  primaryCta: 'Voir ce que vous coûte le suivi lent',
  footnote:
- '15 RDV qualifiés en 30 jours, sinon on travaille gratuitement jusqu’au seuil. Le risque est pour nous.',
+ 'Nous ne pouvons pas promettre que chaque lead réservera—évidemment. Mais nous répondons en moins de 2 secondes, qualifions et réservons 24h/24 pour que le silence arrête de choisir à votre place. 15 RDV qualifiés en 30 jours, sinon on travaille gratuitement jusqu’au seuil.',
  },
  valueBadges: {
  ariaLabel: 'Garanties de vitesse et de déploiement',
@@ -761,14 +764,14 @@ export const aiEmployeePageFr: AiEmployeePageTranslations = {
 
 export const aiEmployeePageDe: AiEmployeePageTranslations = {
  hero: {
- badge: 'Wachstums Infrastruktur für Services',
- titleLine1: 'High-Value-Leads verlieren.',
- titleHighlight: 'Wegen langsamem Follow-up.',
+ badge: 'Für beschäftigte Service-Unternehmen',
+ titleLine1: 'Sie haben für diese Leads schon bezahlt.',
+ titleHighlight: 'Die meisten bekommen nie eine Antwort.',
  hook:
- 'Jeder unbeantwortete Anruf ist ein Lead, den Ihr Wettbewerber bucht. Installieren Sie einen KI-Mitarbeiter, der in unter 2 Sekunden antwortet, qualifiziert und bucht—24/7.',
+ 'Sie schließen den ganzen Tag Aufträge ab. Leads rufen an, während Sie im Einsatz sind. Wer zuerst antwortet, gewinnt—und das sind nicht Sie. Das ist kein Chatbot. Es ist das System, das Inbound in gebuchte Jobs verwandelt, während Sie arbeiten.',
  primaryCta: 'Sehen, was langsames Follow-up kostet',
  footnote:
- '15 qualifizierte Termine in 30 Tagen, oder wir arbeiten gratis, bis Sie sie haben. Das Risiko tragen wir.',
+ 'Wir können nicht versprechen, dass jeder Lead bucht—natürlich nicht. Aber wir antworten in unter 2 Sekunden, qualifizieren und buchen 24/7, damit Stille nicht mehr für Sie entscheidet. 15 qualifizierte Termine in 30 Tagen, oder wir arbeiten gratis bis zum Ziel.',
  },
  valueBadges: {
  ariaLabel: 'Geschwindigkeits und Setup Garantien',
@@ -1053,14 +1056,14 @@ export const aiEmployeePageDe: AiEmployeePageTranslations = {
 
 export const aiEmployeePageEs: AiEmployeePageTranslations = {
  hero: {
- badge: 'Infraestructura de crecimiento para servicios',
- titleLine1: 'Está perdiendo leads de alto valor.',
- titleHighlight: 'Por seguimiento lento.',
+ badge: 'Para negocios de servicios ocupados',
+ titleLine1: 'Ya pagó por esos leads.',
+ titleHighlight: 'La mayoría nunca recibe respuesta.',
  hook:
- 'Cada llamada sin respuesta es un lead que reserva su competidor. Instale un empleado IA que responde, califica y agenda en menos de 2 segundos—24/7.',
+ 'Pasa el día cerrando trabajo. Los leads llaman mientras usted está en el trabajo. Quien responde primero gana—y no es usted. Esto no es un chatbot. Es el sistema que convierte el inbound en trabajos reservados mientras usted trabaja.',
  primaryCta: 'Ver qué le cuesta el seguimiento lento',
  footnote:
- '15 citas calificadas en 30 días, o trabajamos gratis hasta lograrlas. El riesgo es nuestro.',
+ 'No podemos prometer que cada lead reserve—claro que no. Pero respondemos en menos de 2 segundos, calificamos y agendamos 24/7 para que el silencio deje de decidir por usted. 15 citas calificadas en 30 días, o trabajamos gratis hasta lograrlas.',
  },
  valueBadges: {
  ariaLabel: 'Garantías de velocidad y configuración',
@@ -1345,13 +1348,14 @@ export const aiEmployeePageEs: AiEmployeePageTranslations = {
 
 export const aiEmployeePageAr: AiEmployeePageTranslations = {
  hero: {
- badge: 'بنية نمو لأعمال الخدمات',
- titleLine1: 'أنت تخسر عملاء محتملين ذوي قيمة.',
- titleHighlight: 'بسبب متابعة بطيئة.',
+ badge: 'لأعمال الخدمات المشغولة',
+ titleLine1: 'لقد دفعت مسبقاً مقابل هؤلاء العملاء المحتملين.',
+ titleHighlight: 'معظمهم لا يحصل على رد أبداً.',
  hook:
- 'كل مكالمة بلا ردّ هي عميل يحجزه منافسك. ثبّت موظفاً ذكياً يُجيب ويؤهّل ويحجز في أقل من ثانيتين—على مدار الساعة.',
+ 'تقضي يومك في إنجاز العمل. يتصل العملاء المحتملون وأنت في المهمة. من يرد أولاً يفوز—وليس أنت. هذا ليس روبوت محادثة. إنه النظام الذي يحوّل الوارد إلى مواعيد محجوزة وأنت تعمل.',
  primaryCta: 'اطلع على تكلفة المتابعة البطيئة',
- footnote: '15 موعداً مؤهلاً خلال 30 يوماً، أو نعمل مجاناً حتى تحققها. المخاطرة علينا.',
+ footnote:
+ 'لا نستطيع أن نعد بأن كل عميل محتمل سيحجز—طبعاً لا. لكننا نرد في أقل من ثانيتين ونؤهّل ونحجز على مدار الساعة حتى لا يختار الصمت بدلاً منك. 15 موعداً مؤهلاً خلال 30 يوماً، أو نعمل مجاناً حتى تحققها.',
  },
  valueBadges: {
  ariaLabel: 'ضمانات السرعة والإعداد',

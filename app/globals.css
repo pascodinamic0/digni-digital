@@ -2135,10 +2135,15 @@ nextjs-portal {
   max-height: 100%;
 }
 
-/* Conversation phone mockup — keep bezel visible inside software workspace */
+/* Conversation phone mockup — keep bezel visible and height-bound inside software workspace */
+.software-workspace-content .conversation-phone-mockup {
+  max-height: 100%;
+}
+
 .software-workspace-content .conversation-phone-mockup > div:last-child {
   background: #0a0a0c;
   border-color: rgba(255, 255, 255, 0.12);
+  max-height: 100%;
 }
 
 .software-inbox-app {
