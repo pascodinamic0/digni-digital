@@ -4769,6 +4769,304 @@ const remainingArticles: BlogArticle[] = [
  <p><em>Technology Creates Opportunity. In the attention economy, the operators who teach generously and systemize delivery will own their markets.</em></p>
  `,
  },
+{
+id: 109,
+title: 'Agentic Software in 2026: Stop Paying People to Patch Broken Workflows',
+slug: 'agentic-software-workflows-build-vs-buy-2026',
+excerpt:
+'Agentic software is the shift from dashboards people babysit to governed AI workflows that execute. Learn when to build, when to buy, and how to start safely.',
+category: 'Agentic Softwares',
+readTime: '13 min read',
+publishDate: 'July 24, 2026',
+author: 'Pascal Digny',
+tags: [
+'agentic software',
+'AI agent orchestration',
+'custom software development',
+'workflow automation',
+'AI workflows',
+'business operations',
+],
+featured: true,
+coverImageUrl: '/blog/illustrations/custom-vs-off-shelf.svg',
+faqSubtitle: 'Quick answers for leaders deciding whether agentic software belongs in their next operating system.',
+faqs: [
+{
+question: 'What is agentic software?',
+answer:
+'Agentic software is software that can plan, use tools, trigger actions, and coordinate workflows within human-defined rules. It is different from a dashboard because the system does not only display work; it helps execute the work and escalates exceptions.',
+},
+{
+question: 'How is agentic software different from a chatbot or copilot?',
+answer:
+'A chatbot usually answers questions. A copilot helps a person complete a task. Agentic software is connected to workflows, data, permissions, and business systems so it can move a process forward, such as qualifying a request, preparing a record, routing it, and asking for approval when risk is high.',
+},
+{
+question: 'When should a business build agentic software instead of buying SaaS?',
+answer:
+'Build when the workflow is a source of advantage, when off-the-shelf tools force costly workarounds, when integrations are deep, or when ownership of data and process logic matters. Buy when the workflow is standard, low-risk, and not strategically different.',
+},
+{
+question: 'What is the safest first agentic software project?',
+answer:
+'Pick one narrow workflow with visible cost: lead intake, procurement requests, appointment booking, customer triage, reporting, or internal approvals. Start with human approval before autonomous action, measure the baseline, and expand only after the workflow proves safer and faster.',
+},
+{
+question: 'What risks should leaders watch for?',
+answer:
+'The main risks are agent sprawl, unclear ownership, weak data permissions, hidden model costs, poor monitoring, and automating a broken process. Treat agents like a digital workforce: define their job, access, escalation rules, review cadence, and success metric.',
+},
+{
+question: 'Does agentic software replace employees?',
+answer:
+'The strongest use case is not replacement. It is removing repetitive handoffs so people spend more time on judgment, relationships, and exceptions. Humans still set policy, supervise outcomes, and handle high-stakes decisions.',
+},
+{
+question: 'How do you measure ROI from agentic software?',
+answer:
+'Measure cycle time, response time, error rate, handoff delays, admin hours, conversion, customer satisfaction, and revenue leakage before and after the pilot. If the agentic workflow does not improve a named business metric, it is a demo, not an operating system.',
+},
+{
+question: 'How does Digni Digital approach agentic software?',
+answer:
+'Digni Digital starts with the business workflow, then designs the software, integrations, AI agents, and human approval rules around the outcome. The goal is practical: fewer leaks, faster execution, and systems your team can trust.',
+},
+],
+content: `
+<h2>The work is already being paid for. It is just being paid for in delays.</h2>
+
+<p>Most businesses do not notice the cost of broken workflows because the invoice arrives quietly. A manager spends Friday rebuilding a report. A sales lead waits overnight because the form did not reach the right person. Procurement approvals sit in email. A customer asks for an update and three people search three systems before anyone can answer.</p>
+
+<p><strong>Agentic software</strong> is the move from software that only shows work to software that helps execute work. It combines custom applications, business rules, integrations, and AI agents that can plan, route, draft, check, and escalate within clear human guardrails. The promise is not "more AI features." The promise is fewer operational leaks you already pay for every week.</p>
+
+<figure class="blog-content-figure" style="margin: 2em 0;">
+<img src="/blog/illustrations/custom-vs-off-shelf.svg" alt="Agentic software compares custom workflows with generic off the shelf tools" width="800" height="400" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
+<figcaption style="text-align: center; color: var(--muted); font-size: 0.9rem; margin-top: 0.5em;">Agentic software works when the workflow is designed around your business logic, not around a generic dashboard.</figcaption>
+</figure>
+
+<h3>Search demand and reader intent</h3>
+
+<table style="width: 100%; border-collapse: collapse; margin: 1.5em 0;">
+<tbody>
+<tr>
+<th style="text-align: left; padding: 0.75rem; border-bottom: 2px solid #e2e8f0;">Primary keyword</th>
+<td style="padding: 0.75rem; border-bottom: 2px solid #e2e8f0;">agentic software</td>
+</tr>
+<tr>
+<th style="text-align: left; padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">Secondary keywords</th>
+<td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">AI agent orchestration, custom AI software, workflow automation, agentic workflows, custom SaaS development, AI operating system</td>
+</tr>
+<tr>
+<th style="text-align: left; padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">Related questions</th>
+<td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">What is agentic software? How is it different from a chatbot? Should we build or buy AI software? What risks come with AI agents?</td>
+</tr>
+<tr>
+<th style="text-align: left; padding: 0.75rem;">Intent</th>
+<td style="padding: 0.75rem;">Mixed: leaders want a clear definition, examples, risk guidance, and a practical buying or build decision.</td>
+</tr>
+</tbody>
+</table>
+
+<h3>Key takeaways</h3>
+
+<ul>
+<li><strong>Agentic software is outcome software</strong>: it executes parts of a workflow, not only displays records.</li>
+<li><strong>The value is in redesign</strong>: adding AI to a broken process usually makes the broken process faster.</li>
+<li><strong>Custom wins when the workflow is strategic</strong>: if your process is how you compete, generic SaaS can become a tax.</li>
+<li><strong>Governance is the product</strong>: identity, permissions, audit trails, escalation, and observability matter as much as the model.</li>
+<li><strong>Start narrow</strong>: one workflow, one owner, one metric, one autonomy level, then expand.</li>
+</ul>
+
+<h3>What the research says in 2026</h3>
+
+<p>The agentic software conversation is moving from hype to operations. Three signals matter for business owners and operators:</p>
+
+<table style="width: 100%; border-collapse: collapse; margin: 1.5em 0;">
+<thead>
+<tr>
+<th style="text-align: left; padding: 0.75rem; border-bottom: 2px solid #e2e8f0;">Source</th>
+<th style="text-align: left; padding: 0.75rem; border-bottom: 2px solid #e2e8f0;">Useful signal</th>
+<th style="text-align: left; padding: 0.75rem; border-bottom: 2px solid #e2e8f0;">What it means</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;"><a href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/seizing-the-agentic-ai-advantage" target="_blank" rel="noopener noreferrer">McKinsey, 2025</a></td>
+<td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">Nearly eight in ten companies use gen AI, yet more than 80% report no material earnings impact.</td>
+<td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">Copilots alone are not enough. Value appears when workflows are redesigned around agents and measurable business processes.</td>
+</tr>
+<tr>
+<td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;"><a href="https://www.deloitte.com/us/en/insights/industry/technology/technology-media-and-telecom-predictions/2026/ai-agent-orchestration.html" target="_blank" rel="noopener noreferrer">Deloitte Insights, 2026</a></td>
+<td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">The autonomous AI agent market could reach $8.5B in 2026 and $35B by 2030, but more than 40% of projects could be canceled by 2027 because of cost, scaling complexity, or risk.</td>
+<td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">The opportunity is real, but so is the failure rate. Orchestration and governance decide which projects survive.</td>
+</tr>
+<tr>
+<td style="padding: 0.75rem;"><a href="https://www.gartner.com/en/newsroom/press-releases/2026-07-01-gartner-says-us-dollars-234-billion-in-enterprise-application-software-spend-is-at-risk-from-agentic-artificial-intelligence" target="_blank" rel="noopener noreferrer">Gartner, 2026</a></td>
+<td style="padding: 0.75rem;">Gartner says $234B in enterprise application software spend is exposed to agentic AI disruption by 2030.</td>
+<td style="padding: 0.75rem;">Buyers are shifting from paying for seats and dashboards to paying for outcomes, context, and execution.</td>
+</tr>
+</tbody>
+</table>
+
+<h3>What is agentic software?</h3>
+
+<p><strong>Agentic software is a business application where AI agents can take goal-directed action across tools, data, and workflows under human-defined policy.</strong> A normal CRM stores a lead. An agentic CRM can notice a new lead, enrich the profile, check fit, draft the first response, book a meeting, update the record, and escalate unusual cases to a human.</p>
+
+<p>The difference is not magic. It is architecture:</p>
+
+<ul>
+<li><strong>Memory</strong>: the system keeps context across customers, tasks, and previous decisions.</li>
+<li><strong>Tools</strong>: agents can call APIs, search records, send messages, create tickets, or update statuses.</li>
+<li><strong>Policy</strong>: permissions define what an agent may draft, recommend, approve, or execute.</li>
+<li><strong>Orchestration</strong>: multiple agents or workflow steps coordinate instead of acting randomly.</li>
+<li><strong>Observability</strong>: humans can review what happened, why, and where the system needs improvement.</li>
+</ul>
+
+<h3>Why traditional SaaS starts to leak money</h3>
+
+<p>Off-the-shelf software often begins as a bargain. Then the business grows and the hidden bill appears:</p>
+
+<ul>
+<li><strong>Manual bridge work</strong>: people copy data from one tool to another because systems do not share context.</li>
+<li><strong>Dashboard babysitting</strong>: managers check screens instead of receiving exceptions.</li>
+<li><strong>Approval delay</strong>: work waits because the next person did not see the task.</li>
+<li><strong>Generic process logic</strong>: the software forces your team into how everyone else works.</li>
+<li><strong>Seat-based expansion</strong>: every new person adds cost, even when the real need is execution capacity.</li>
+</ul>
+
+<blockquote>
+<p><strong>The cost of doing nothing:</strong> if five people each spend three hours a week reconciling data, that is 780 hours a year before you count missed leads, slow approvals, or customer frustration.</p>
+</blockquote>
+
+<h3>Agentic software vs automation vs SaaS</h3>
+
+<table style="width: 100%; border-collapse: collapse; margin: 1.5em 0;">
+<thead>
+<tr>
+<th style="text-align: left; padding: 0.75rem; border-bottom: 2px solid #e2e8f0;">Approach</th>
+<th style="text-align: left; padding: 0.75rem; border-bottom: 2px solid #e2e8f0;">Best for</th>
+<th style="text-align: left; padding: 0.75rem; border-bottom: 2px solid #e2e8f0;">Limit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;"><strong>Traditional SaaS</strong></td>
+<td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">Standard functions like accounting, email, simple CRM, and ticketing.</td>
+<td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">You adapt to the tool when your workflow is unique.</td>
+</tr>
+<tr>
+<td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;"><strong>Rule-based automation</strong></td>
+<td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">Predictable triggers: send an email, update a row, create a task.</td>
+<td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">Breaks when context changes or judgment is required.</td>
+</tr>
+<tr>
+<td style="padding: 0.75rem;"><strong>Agentic software</strong></td>
+<td style="padding: 0.75rem;">Multi-step work with context, exceptions, handoffs, and business rules.</td>
+<td style="padding: 0.75rem;">Requires clear ownership, data access, governance, and workflow design.</td>
+</tr>
+</tbody>
+</table>
+
+<h3>A practical example: the distributor losing margin in the gaps</h3>
+
+<p>Imagine a regional distributor where orders arrive through phone, WhatsApp, web forms, and sales reps. Inventory lives in spreadsheets. Approvals happen by email. Finance finds missing details at the end of the month.</p>
+
+<p>An agentic workflow could look like this:</p>
+
+<ol>
+<li><strong>Intake agent</strong>: captures the request, checks required fields, identifies the customer, and creates the order draft.</li>
+<li><strong>Inventory agent</strong>: checks stock, branch location, substitutions, and delivery constraints.</li>
+<li><strong>Pricing guardrail</strong>: applies approved discount rules and flags exceptions.</li>
+<li><strong>Human approval</strong>: a manager approves only high-risk orders or unusual pricing.</li>
+<li><strong>Dispatch handoff</strong>: the system creates the delivery task and keeps the customer updated.</li>
+<li><strong>Finance record</strong>: invoice data is prepared cleanly instead of reconstructed later.</li>
+</ol>
+
+<p>The measurable outcome is not "we used AI." The outcome is fewer missed orders, faster cycle time, less admin rework, and cleaner reporting.</p>
+
+<h3>Build or buy: the decision framework</h3>
+
+<p>Use this simple test before you commit budget:</p>
+
+<table style="width: 100%; border-collapse: collapse; margin: 1.5em 0;">
+<thead>
+<tr>
+<th style="text-align: left; padding: 0.75rem; border-bottom: 2px solid #e2e8f0;">Question</th>
+<th style="text-align: left; padding: 0.75rem; border-bottom: 2px solid #e2e8f0;">Buy SaaS if...</th>
+<th style="text-align: left; padding: 0.75rem; border-bottom: 2px solid #e2e8f0;">Build agentic software if...</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">Is the workflow standard?</td>
+<td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">Your process matches the market template.</td>
+<td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">Your process is part of your advantage.</td>
+</tr>
+<tr>
+<td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">How deep are integrations?</td>
+<td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">One or two simple integrations are enough.</td>
+<td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">The workflow crosses CRM, finance, inventory, messaging, and internal rules.</td>
+</tr>
+<tr>
+<td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">What is the cost of delay?</td>
+<td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">Delays are annoying but not expensive.</td>
+<td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">Slow response loses leads, margin, trust, or compliance.</td>
+</tr>
+<tr>
+<td style="padding: 0.75rem;">Who owns the logic?</td>
+<td style="padding: 0.75rem;">Vendor defaults are acceptable.</td>
+<td style="padding: 0.75rem;">You need ownership of data, rules, and workflow memory.</td>
+</tr>
+</tbody>
+</table>
+
+<h3>Implementation checklist: start with one workflow</h3>
+
+<ol>
+<li><strong>Name the leak</strong>: missed leads, delayed approvals, manual reporting, duplicate data entry, or support backlog.</li>
+<li><strong>Measure the baseline</strong>: current response time, hours spent, error rate, conversion, or cost per transaction.</li>
+<li><strong>Map the workflow</strong>: trigger, data needed, decision points, handoffs, exceptions, and final record.</li>
+<li><strong>Choose the autonomy level</strong>: draft only, recommend, act with approval, or act automatically under policy.</li>
+<li><strong>Connect the minimum systems</strong>: CRM, calendar, database, messaging, payment, or document storage.</li>
+<li><strong>Add observability</strong>: logs, status history, evaluation checks, and a review queue.</li>
+<li><strong>Pilot with humans in the loop</strong>: let people approve actions until quality is proven.</li>
+<li><strong>Expand only after proof</strong>: if the metric improves, add another workflow or more autonomy.</li>
+</ol>
+
+<h3>Common mistakes to avoid</h3>
+
+<ul>
+<li><strong>Starting with the model instead of the workflow</strong>: the model is not the operating system.</li>
+<li><strong>Automating undocumented judgment</strong>: if the team cannot explain the rule, the agent cannot safely follow it.</li>
+<li><strong>No owner</strong>: every agentic workflow needs a human accountable for quality.</li>
+<li><strong>Too much autonomy too soon</strong>: begin with drafts and recommendations before direct execution.</li>
+<li><strong>Ignoring cost controls</strong>: high-volume workflows need model routing, caching, and clear limits.</li>
+<li><strong>Skipping change management</strong>: people adopt systems they trust, not systems imposed on them.</li>
+</ul>
+
+<h3>Future-ready angle: what changes for students, professionals, and businesses</h3>
+
+<p><strong>Students</strong> should learn process mapping, data literacy, API thinking, prompt evaluation, and how to document decisions. The future-ready graduate is not only someone who can use AI; it is someone who can design useful work around AI.</p>
+
+<p><strong>Professionals</strong> should move from task execution to workflow ownership. The valuable person is the one who can say: here is the leak, here is the rule, here is the exception, and here is the metric that proves the system works.</p>
+
+<p><strong>Businesses</strong> should stop treating AI as a side feature. The opportunity is to redesign how work moves from request to decision to delivery. Technology Creates Opportunity when it removes the delays that keep good teams stuck in manual coordination.</p>
+
+<h3>Where Digni Digital fits</h3>
+
+<p>Digni Digital builds <a href="/agentic-softwares">Agentic Softwares</a> for operators who need adoption, not shelfware. Our work spans custom business platforms, AI-enabled workflows, and <a href="/ai-receptionist">AI employee systems</a> that handle volume while humans keep judgment. The first step is not a giant rebuild. It is one workflow where the cost of delay is already visible.</p>
+
+<!--BLOG_FAQ-->
+
+<h3>Next step</h3>
+
+<p><strong>Find the workflow leak before it becomes another quarter of lost time.</strong> <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Book a strategy call</a> with Digni Digital. We will map one workflow, estimate what it is costing you, and show whether off-the-shelf SaaS, automation, or agentic software is the right next move.</p>
+
+<hr>
+
+<p><em>Technology Creates Opportunity. The businesses that win the agentic era will not add AI everywhere. They will redesign the few workflows where delay, rework, and missed context cost the most.</em></p>
+`,
+},
 ]
 
 export const articlesEn: BlogArticle[] = [
