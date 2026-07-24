@@ -1302,6 +1302,206 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
  <p><em>Technology Creates Opportunity.</em></p>
  `,
  },
+'agentic-software-workflows-build-vs-buy-2026': {
+title: "Logiciel agentique en 2026 : arrêtez de payer vos équipes pour réparer des workflows cassés",
+excerpt:
+"Le logiciel agentique fait passer l'entreprise des tableaux de bord à surveiller à des workflows IA gouvernés qui exécutent. Voici quand construire, quand acheter et comment démarrer sans risque inutile.",
+category: 'Agentic Softwares',
+readTime: '13 min de lecture',
+publishDate: '24 juillet 2026',
+tags: [
+'logiciel agentique',
+'orchestration agents IA',
+'logiciel IA sur mesure',
+'automatisation workflows',
+'workflows IA',
+'opérations business',
+],
+faqSubtitle: "Réponses rapides pour les dirigeants qui évaluent si le logiciel agentique doit entrer dans leur système d'exploitation.",
+faqs: [
+{
+question: "Qu'est-ce qu'un logiciel agentique ?",
+answer:
+"Un logiciel agentique est une application capable de planifier, utiliser des outils, déclencher des actions et coordonner des workflows dans des règles définies par les humains. Il ne se contente pas d'afficher le travail : il aide à l'exécuter et escalade les exceptions.",
+},
+{
+question: "Quelle est la différence avec un chatbot ou un copilote ?",
+answer:
+"Un chatbot répond surtout à des questions. Un copilote aide une personne à finir une tâche. Un logiciel agentique est relié aux données, droits, règles et systèmes de l'entreprise pour faire avancer un processus complet.",
+},
+{
+question: "Quand faut-il construire plutôt qu'acheter une solution SaaS ?",
+answer:
+"Construisez lorsque le workflow crée votre avantage, lorsque les outils standards imposent trop de contournements, lorsque les intégrations sont profondes ou lorsque la propriété des données et des règles compte.",
+},
+{
+question: "Quel est le premier projet le plus sûr ?",
+answer:
+"Choisissez un workflow étroit et coûteux : qualification de leads, demandes d'achat, prise de rendez-vous, triage client, reporting ou approvals internes. Démarrez avec validation humaine avant toute autonomie forte.",
+},
+{
+question: "Quels risques surveiller ?",
+answer:
+"Les risques principaux sont la prolifération d'agents, l'absence de propriétaire, les permissions floues, les coûts modèles cachés, le manque de monitoring et l'automatisation d'un mauvais processus.",
+},
+{
+question: "Le logiciel agentique remplace-t-il les employés ?",
+answer:
+"Le meilleur usage n'est pas le remplacement. Il retire les handoffs répétitifs pour que les équipes consacrent plus de temps au jugement, aux relations et aux exceptions.",
+},
+{
+question: "Comment mesurer le ROI ?",
+answer:
+"Mesurez le temps de cycle, le temps de réponse, le taux d'erreur, les heures administratives, la conversion, la satisfaction client et les revenus perdus avant et après le pilote.",
+},
+{
+question: "Comment Digni Digital aborde ce sujet ?",
+answer:
+"Digni Digital part du workflow métier, puis conçoit le logiciel, les intégrations, les agents IA et les règles de validation humaine autour du résultat attendu.",
+},
+],
+content: `
+<h2>Le travail est déjà payé. Il est simplement payé en retards.</h2>
+
+<p>Beaucoup d'entreprises ne voient pas le coût de leurs workflows cassés parce que la facture arrive en silence. Un responsable reconstruit un rapport le vendredi. Un lead attend toute la nuit. Une demande d'achat dort dans un e-mail. Un client demande une mise à jour et trois personnes fouillent trois outils avant de répondre.</p>
+
+<p><strong>Le logiciel agentique</strong> fait passer l'entreprise d'un logiciel qui affiche le travail à un logiciel qui aide à l'exécuter. Il combine applications sur mesure, règles métier, intégrations et agents IA capables de planifier, router, rédiger, vérifier et escalader avec des garde-fous humains clairs.</p>
+
+<figure class="blog-content-figure" style="margin: 2em 0;">
+<img src="/blog/illustrations/custom-vs-off-shelf.svg" alt="Logiciel agentique : workflows sur mesure face aux outils génériques" width="800" height="400" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
+<figcaption style="text-align: center; color: var(--muted); font-size: 0.9rem; margin-top: 0.5em;">Le logiciel agentique fonctionne quand le workflow suit votre logique métier, pas le modèle générique d'un tableau de bord.</figcaption>
+</figure>
+
+<h3>Demande de recherche et intention lecteur</h3>
+
+<table style="width: 100%; border-collapse: collapse; margin: 1.5em 0;">
+<tbody>
+<tr><th style="text-align: left; padding: 0.75rem; border-bottom: 2px solid #e2e8f0;">Mot clé principal</th><td style="padding: 0.75rem; border-bottom: 2px solid #e2e8f0;">logiciel agentique</td></tr>
+<tr><th style="text-align: left; padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">Mots clés secondaires</th><td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">orchestration agents IA, logiciel IA sur mesure, automatisation workflow, développement SaaS sur mesure</td></tr>
+<tr><th style="text-align: left; padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">Questions associées</th><td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">Qu'est-ce qu'un logiciel agentique ? Faut-il construire ou acheter ? Quels risques avec les agents IA ?</td></tr>
+<tr><th style="text-align: left; padding: 0.75rem;">Intention</th><td style="padding: 0.75rem;">Mixte : comprendre, comparer, réduire le risque et choisir une prochaine étape.</td></tr>
+</tbody>
+</table>
+
+<h3>À retenir</h3>
+
+<ul>
+<li><strong>Le logiciel agentique est orienté résultat</strong> : il exécute une partie du workflow au lieu de seulement afficher des données.</li>
+<li><strong>La valeur vient du redesign</strong> : ajouter l'IA à un mauvais processus rend souvent le mauvais processus plus rapide.</li>
+<li><strong>Le sur mesure gagne quand le workflow est stratégique</strong> : si votre façon de travailler vous différencie, un SaaS générique devient une taxe.</li>
+<li><strong>La gouvernance fait partie du produit</strong> : identité, permissions, audit, escalade et observabilité comptent autant que le modèle.</li>
+<li><strong>Commencez petit</strong> : un workflow, un propriétaire, un indicateur, un niveau d'autonomie.</li>
+</ul>
+
+<h3>Ce que disent les recherches en 2026</h3>
+
+<table style="width: 100%; border-collapse: collapse; margin: 1.5em 0;">
+<thead>
+<tr><th style="text-align: left; padding: 0.75rem; border-bottom: 2px solid #e2e8f0;">Source</th><th style="text-align: left; padding: 0.75rem; border-bottom: 2px solid #e2e8f0;">Signal utile</th><th style="text-align: left; padding: 0.75rem; border-bottom: 2px solid #e2e8f0;">Ce que cela signifie</th></tr>
+</thead>
+<tbody>
+<tr><td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;"><a href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/seizing-the-agentic-ai-advantage" target="_blank" rel="noopener noreferrer">McKinsey, 2025</a></td><td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">Près de huit entreprises sur dix utilisent la GenAI, mais plus de 80 % ne voient pas d'impact matériel sur les résultats.</td><td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">Les copilotes seuls ne suffisent pas. La valeur vient des workflows redessinés autour des agents.</td></tr>
+<tr><td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;"><a href="https://www.deloitte.com/us/en/insights/industry/technology/technology-media-and-telecom-predictions/2026/ai-agent-orchestration.html" target="_blank" rel="noopener noreferrer">Deloitte Insights, 2026</a></td><td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">Le marché des agents autonomes pourrait atteindre 8,5 Md$ en 2026 et 35 Md$ en 2030, mais plus de 40 % des projets pourraient être annulés.</td><td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">L'opportunité est réelle, mais l'orchestration et la gouvernance décident quels projets survivent.</td></tr>
+<tr><td style="padding: 0.75rem;"><a href="https://www.gartner.com/en/newsroom/press-releases/2026-07-01-gartner-says-us-dollars-234-billion-in-enterprise-application-software-spend-is-at-risk-from-agentic-artificial-intelligence" target="_blank" rel="noopener noreferrer">Gartner, 2026</a></td><td style="padding: 0.75rem;">Gartner estime que 234 Md$ de dépenses en logiciels d'entreprise sont exposés à la disruption agentique d'ici 2030.</td><td style="padding: 0.75rem;">Les acheteurs veulent moins de sièges et plus de résultats mesurables.</td></tr>
+</tbody>
+</table>
+
+<h3>Définition simple</h3>
+
+<p><strong>Un logiciel agentique est une application métier où des agents IA peuvent agir sur des objectifs, outils et données sous une politique définie par l'humain.</strong> Un CRM normal stocke un lead. Un CRM agentique peut détecter un lead, enrichir le profil, vérifier l'adéquation, préparer la réponse, réserver un rendez-vous, mettre à jour le dossier et escalader les cas inhabituels.</p>
+
+<h3>Pourquoi le SaaS traditionnel commence à fuir</h3>
+
+<ul>
+<li><strong>Travail de pont manuel</strong> : copier des données entre outils.</li>
+<li><strong>Surveillance de tableaux de bord</strong> : les managers regardent des écrans au lieu de recevoir des exceptions.</li>
+<li><strong>Délais d'approbation</strong> : le travail attend la bonne personne.</li>
+<li><strong>Processus génériques</strong> : le logiciel impose le mode de travail de tout le monde.</li>
+<li><strong>Coût par siège</strong> : chaque utilisateur ajoute un coût, alors que le besoin réel est souvent de la capacité d'exécution.</li>
+</ul>
+
+<blockquote>
+<p><strong>Coût de l'inaction :</strong> si cinq personnes passent trois heures par semaine à réconcilier des données, cela représente 780 heures par an avant même de compter les leads perdus.</p>
+</blockquote>
+
+<h3>Logiciel agentique vs automatisation vs SaaS</h3>
+
+<table style="width: 100%; border-collapse: collapse; margin: 1.5em 0;">
+<thead><tr><th style="text-align: left; padding: 0.75rem; border-bottom: 2px solid #e2e8f0;">Approche</th><th style="text-align: left; padding: 0.75rem; border-bottom: 2px solid #e2e8f0;">Idéal pour</th><th style="text-align: left; padding: 0.75rem; border-bottom: 2px solid #e2e8f0;">Limite</th></tr></thead>
+<tbody>
+<tr><td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;"><strong>SaaS traditionnel</strong></td><td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">Comptabilité, e-mail, CRM simple, support standard.</td><td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">Vous adaptez votre workflow à l'outil.</td></tr>
+<tr><td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;"><strong>Automatisation par règles</strong></td><td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">Déclencheurs prévisibles : envoyer, créer, mettre à jour.</td><td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">Casse lorsque le contexte change.</td></tr>
+<tr><td style="padding: 0.75rem;"><strong>Logiciel agentique</strong></td><td style="padding: 0.75rem;">Travail multi-étapes avec contexte, exceptions et règles métier.</td><td style="padding: 0.75rem;">Demande ownership, données, gouvernance et design du workflow.</td></tr>
+</tbody>
+</table>
+
+<h3>Exemple : le distributeur qui perd de la marge dans les interstices</h3>
+
+<p>Les commandes arrivent par téléphone, WhatsApp, formulaires et commerciaux. Le stock vit dans des feuilles de calcul. Les approvals se font par e-mail. La finance reconstruit les données en fin de mois.</p>
+
+<ol>
+<li><strong>Agent d'entrée</strong> : capture la demande, vérifie les champs et crée le brouillon.</li>
+<li><strong>Agent stock</strong> : vérifie disponibilité, branche, substitutions et contraintes de livraison.</li>
+<li><strong>Garde-fou prix</strong> : applique les remises approuvées et signale les exceptions.</li>
+<li><strong>Validation humaine</strong> : le manager approuve uniquement les cas risqués.</li>
+<li><strong>Handoff dispatch</strong> : la livraison est créée et le client reste informé.</li>
+<li><strong>Dossier finance</strong> : la facture est préparée proprement.</li>
+</ol>
+
+<h3>Construire ou acheter : le cadre de décision</h3>
+
+<table style="width: 100%; border-collapse: collapse; margin: 1.5em 0;">
+<thead><tr><th style="text-align: left; padding: 0.75rem; border-bottom: 2px solid #e2e8f0;">Question</th><th style="text-align: left; padding: 0.75rem; border-bottom: 2px solid #e2e8f0;">Acheter si...</th><th style="text-align: left; padding: 0.75rem; border-bottom: 2px solid #e2e8f0;">Construire si...</th></tr></thead>
+<tbody>
+<tr><td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">Le workflow est-il standard ?</td><td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">Votre processus ressemble au marché.</td><td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">Votre processus est un avantage.</td></tr>
+<tr><td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">Les intégrations sont-elles profondes ?</td><td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">Deux intégrations simples suffisent.</td><td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">Le workflow traverse CRM, finance, stock, messages et règles internes.</td></tr>
+<tr><td style="padding: 0.75rem;">Quel est le coût du retard ?</td><td style="padding: 0.75rem;">Le retard est gênant mais pas coûteux.</td><td style="padding: 0.75rem;">Le retard fait perdre leads, marge, confiance ou conformité.</td></tr>
+</tbody>
+</table>
+
+<h3>Checklist de mise en œuvre</h3>
+
+<ol>
+<li><strong>Nommez la fuite</strong> : leads manqués, approvals lents, reporting manuel, doublons.</li>
+<li><strong>Mesurez la base</strong> : temps de réponse, heures passées, erreurs, conversion.</li>
+<li><strong>Cartographiez le workflow</strong> : déclencheur, données, décisions, handoffs, exceptions.</li>
+<li><strong>Choisissez l'autonomie</strong> : brouillon, recommandation, action avec approbation ou action sous politique.</li>
+<li><strong>Connectez le minimum</strong> : CRM, calendrier, base de données, messagerie, paiement ou documents.</li>
+<li><strong>Ajoutez l'observabilité</strong> : logs, historique, contrôles et file de revue.</li>
+<li><strong>Pilotez avec humains dans la boucle</strong>.</li>
+<li><strong>Étendez seulement après preuve</strong>.</li>
+</ol>
+
+<h3>Erreurs courantes</h3>
+
+<ul>
+<li>Commencer par le modèle au lieu du workflow.</li>
+<li>Automatiser un jugement non documenté.</li>
+<li>Ne pas nommer de propriétaire.</li>
+<li>Donner trop d'autonomie trop tôt.</li>
+<li>Ignorer les coûts d'usage des modèles.</li>
+<li>Oublier l'adoption humaine.</li>
+</ul>
+
+<h3>Angle future-ready</h3>
+
+<p><strong>Les étudiants</strong> doivent apprendre la cartographie de processus, la donnée, les API, l'évaluation de prompts et la documentation des décisions. <strong>Les professionnels</strong> doivent passer de l'exécution de tâches à la propriété de workflows. <strong>Les entreprises</strong> doivent arrêter de traiter l'IA comme un gadget et commencer à redessiner comment le travail circule.</p>
+
+<h3>Où Digni Digital intervient</h3>
+
+<p>Digni Digital construit des <a href="/agentic-softwares">Agentic Softwares</a> pour les opérateurs qui ont besoin d'adoption, pas d'un logiciel de plus oublié dans un onglet. Nous combinons plateformes métier, workflows IA et <a href="/ai-receptionist">systèmes d'employés IA</a> pour gérer le volume pendant que les humains gardent le jugement.</p>
+
+<!--BLOG_FAQ-->
+
+<h3>Prochaine étape</h3>
+
+<p><strong>Trouvez la fuite de workflow avant de perdre un trimestre de plus.</strong> <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Réservez un appel stratégique</a> avec Digni Digital. Nous cartographierons un workflow, estimerons ce qu'il vous coûte et verrons si SaaS, automatisation ou logiciel agentique est le bon choix.</p>
+
+<hr>
+
+<p><em>Technology Creates Opportunity. Les entreprises gagnantes n'ajouteront pas l'IA partout : elles redessineront les workflows où les retards coûtent le plus.</em></p>
+`,
+},
 }
 
 export const articlesFr: BlogArticle[] = articlesEn.map((article) => {

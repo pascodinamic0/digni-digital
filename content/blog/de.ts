@@ -2114,6 +2114,204 @@ export const contentDe: Record<string, Partial<BlogArticle>> = {
  <p><em>Technology Creates Opportunity.</em></p>
  `,
  },
+'agentic-software-workflows-build-vs-buy-2026': {
+title: 'Agentic Software 2026: Bezahlen Sie Ihr Team nicht langer fur kaputte Workflows',
+excerpt:
+'Agentic Software verschiebt Unternehmen von Dashboards, die Menschen beaufsichtigen, zu gesteuerten KI Workflows, die ausfuhren. Lernen Sie, wann Sie bauen, wann Sie kaufen und wie Sie sicher starten.',
+category: 'Agentic Softwares',
+readTime: '13 Min. Lesezeit',
+publishDate: '24. Juli 2026',
+tags: [
+'agentic software',
+'KI Agenten Orchestrierung',
+'individuelle Softwareentwicklung',
+'Workflow Automatisierung',
+'KI Workflows',
+'Business Operations',
+],
+faqSubtitle: 'Kurze Antworten fur Fuhrungskrafte, die entscheiden, ob Agentic Software in ihr Betriebssystem gehort.',
+faqs: [
+{
+question: 'Was ist Agentic Software?',
+answer:
+'Agentic Software ist Software, die planen, Werkzeuge nutzen, Aktionen auslosen und Workflows innerhalb menschlich definierter Regeln koordinieren kann. Sie zeigt Arbeit nicht nur an, sondern hilft bei der Ausfuhrung und eskaliert Ausnahmen.',
+},
+{
+question: 'Wie unterscheidet sie sich von einem Chatbot oder Copilot?',
+answer:
+'Ein Chatbot beantwortet meist Fragen. Ein Copilot hilft einer Person bei einer Aufgabe. Agentic Software ist mit Daten, Rechten, Regeln und Unternehmenssystemen verbunden, damit ein kompletter Prozess vorankommt.',
+},
+{
+question: 'Wann sollte ein Unternehmen bauen statt SaaS kaufen?',
+answer:
+'Bauen Sie, wenn der Workflow ein strategischer Vorteil ist, Standardsoftware teure Umwege erzwingt, Integrationen tief sind oder Eigentum an Daten und Prozesslogik wichtig ist.',
+},
+{
+question: 'Was ist das sicherste erste Projekt?',
+answer:
+'Wahlen Sie einen engen Workflow mit sichtbaren Kosten: Lead Intake, Beschaffung, Terminbuchung, Kundentriage, Reporting oder interne Freigaben. Starten Sie mit menschlicher Genehmigung vor hoher Autonomie.',
+},
+{
+question: 'Welche Risiken sollten Fuhrungskrafte beachten?',
+answer:
+'Die wichtigsten Risiken sind Agenten Wildwuchs, unklare Verantwortung, schwache Datenrechte, versteckte Modellkosten, fehlendes Monitoring und die Automatisierung eines kaputten Prozesses.',
+},
+{
+question: 'Ersetzt Agentic Software Mitarbeitende?',
+answer:
+'Der beste Einsatz ist nicht Ersatz. Sie entfernt wiederholte Ubergaben, damit Menschen mehr Zeit fur Urteil, Beziehungen und Ausnahmen haben.',
+},
+{
+question: 'Wie misst man ROI?',
+answer:
+'Messen Sie Zykluszeit, Antwortzeit, Fehlerrate, administrative Stunden, Conversion, Kundenzufriedenheit und Umsatzleckage vor und nach dem Pilotprojekt.',
+},
+{
+question: 'Wie arbeitet Digni Digital mit Agentic Software?',
+answer:
+'Digni Digital beginnt mit dem Geschaftsworkflow und entwirft dann Software, Integrationen, KI Agenten und menschliche Freigaberegeln rund um das gewunschte Ergebnis.',
+},
+],
+content: `
+<h2>Die Arbeit wird bereits bezahlt. Sie wird nur in Verzogerungen bezahlt.</h2>
+
+<p>Viele Unternehmen sehen die Kosten kaputter Workflows nicht, weil die Rechnung leise kommt. Eine Fuhrungskraft baut am Freitag einen Bericht neu. Ein Lead wartet uber Nacht. Eine Beschaffungsfreigabe bleibt im E Mail Postfach liegen. Ein Kunde fragt nach einem Status und drei Personen suchen in drei Systemen.</p>
+
+<p><strong>Agentic Software</strong> bringt Unternehmen von Software, die Arbeit nur anzeigt, zu Software, die Arbeit ausfuhrt. Sie kombiniert individuelle Anwendungen, Geschaftsregeln, Integrationen und KI Agenten, die planen, weiterleiten, entwerfen, prufen und eskalieren konnen - mit klaren menschlichen Leitplanken.</p>
+
+<figure class="blog-content-figure" style="margin: 2em 0;">
+<img src="/blog/illustrations/custom-vs-off-shelf.svg" alt="Agentic Software vergleicht individuelle Workflows mit generischen Standardtools" width="800" height="400" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
+<figcaption style="text-align: center; color: var(--muted); font-size: 0.9rem; margin-top: 0.5em;">Agentic Software funktioniert, wenn der Workflow Ihrer Geschaftslogik folgt, nicht der Vorlage eines generischen Dashboards.</figcaption>
+</figure>
+
+<h3>Suchbedarf und Leserintention</h3>
+
+<table style="width: 100%; border-collapse: collapse; margin: 1.5em 0;">
+<tbody>
+<tr><th style="text-align: left; padding: 0.75rem; border-bottom: 2px solid #e2e8f0;">Primarer Suchbegriff</th><td style="padding: 0.75rem; border-bottom: 2px solid #e2e8f0;">agentic software</td></tr>
+<tr><th style="text-align: left; padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">Sekundare Suchbegriffe</th><td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">KI Agenten Orchestrierung, individuelle KI Software, Workflow Automatisierung, Agentic Workflows, Custom SaaS Entwicklung</td></tr>
+<tr><th style="text-align: left; padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">Typische Fragen</th><td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">Was ist Agentic Software? Wie unterscheidet sie sich von Chatbots? Sollten wir bauen oder kaufen? Welche Risiken gibt es?</td></tr>
+<tr><th style="text-align: left; padding: 0.75rem;">Intention</th><td style="padding: 0.75rem;">Gemischt: Definition, Beispiele, Risikoreduzierung und eine praktische Build oder Buy Entscheidung.</td></tr>
+</tbody>
+</table>
+
+<h3>Kernaussagen</h3>
+
+<ul>
+<li><strong>Agentic Software ist Ergebnissoftware</strong>: Sie fuhrt Teile eines Workflows aus und zeigt nicht nur Datensatze.</li>
+<li><strong>Der Wert liegt im Redesign</strong>: KI auf einen kaputten Prozess zu legen macht den kaputten Prozess nur schneller.</li>
+<li><strong>Individuell gewinnt bei strategischen Workflows</strong>: Wenn Ihre Arbeitsweise Ihr Vorteil ist, kann generisches SaaS zur Steuer werden.</li>
+<li><strong>Governance ist Teil des Produkts</strong>: Identitat, Rechte, Audit, Eskalation und Beobachtbarkeit zahlen so viel wie das Modell.</li>
+<li><strong>Starten Sie eng</strong>: ein Workflow, ein Owner, eine Kennzahl, ein Autonomieniveau.</li>
+</ul>
+
+<h3>Was die Forschung 2026 sagt</h3>
+
+<table style="width: 100%; border-collapse: collapse; margin: 1.5em 0;">
+<thead><tr><th style="text-align: left; padding: 0.75rem; border-bottom: 2px solid #e2e8f0;">Quelle</th><th style="text-align: left; padding: 0.75rem; border-bottom: 2px solid #e2e8f0;">Signal</th><th style="text-align: left; padding: 0.75rem; border-bottom: 2px solid #e2e8f0;">Bedeutung</th></tr></thead>
+<tbody>
+<tr><td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;"><a href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/seizing-the-agentic-ai-advantage" target="_blank" rel="noopener noreferrer">McKinsey, 2025</a></td><td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">Fast acht von zehn Unternehmen nutzen GenAI, doch mehr als 80 % berichten keinen materiellen Ergebnisbeitrag.</td><td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">Copilots allein reichen nicht. Wert entsteht, wenn Workflows um Agenten herum neu gestaltet werden.</td></tr>
+<tr><td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;"><a href="https://www.deloitte.com/us/en/insights/industry/technology/technology-media-and-telecom-predictions/2026/ai-agent-orchestration.html" target="_blank" rel="noopener noreferrer">Deloitte Insights, 2026</a></td><td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">Der Markt fur autonome KI Agenten konnte 2026 8,5 Mrd. USD und 2030 35 Mrd. USD erreichen, aber mehr als 40 % der Projekte konnten scheitern.</td><td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">Die Chance ist real, aber Orchestrierung und Governance entscheiden uber das Uberleben.</td></tr>
+<tr><td style="padding: 0.75rem;"><a href="https://www.gartner.com/en/newsroom/press-releases/2026-07-01-gartner-says-us-dollars-234-billion-in-enterprise-application-software-spend-is-at-risk-from-agentic-artificial-intelligence" target="_blank" rel="noopener noreferrer">Gartner, 2026</a></td><td style="padding: 0.75rem;">Gartner sieht 234 Mrd. USD an Enterprise Software Ausgaben durch Agentic AI bis 2030 gefahrdet.</td><td style="padding: 0.75rem;">Kaufer bewegen sich von Sitzen und Dashboards zu Ergebnissen, Kontext und Ausfuhrung.</td></tr>
+</tbody>
+</table>
+
+<h3>Eine einfache Definition</h3>
+
+<p><strong>Agentic Software ist eine Business Anwendung, in der KI Agenten zielgerichtet uber Tools, Daten und Workflows handeln konnen, aber unter menschlich definierter Policy.</strong> Ein normales CRM speichert einen Lead. Ein agentisches CRM erkennt einen Lead, reichert das Profil an, pruft Fit, bereitet die Antwort vor, bucht einen Termin, aktualisiert den Datensatz und eskaliert ungewohnliche Falle.</p>
+
+<h3>Warum traditionelles SaaS Geld verliert</h3>
+
+<ul>
+<li><strong>Manuelle Bruckenarbeit</strong>: Menschen kopieren Daten zwischen Tools.</li>
+<li><strong>Dashboard Betreuung</strong>: Manager prufen Bildschirme statt Ausnahmen zu erhalten.</li>
+<li><strong>Freigabeverzug</strong>: Arbeit wartet auf die nachste Person.</li>
+<li><strong>Generische Prozesslogik</strong>: Die Software zwingt Ihr Team in Standardablaufe.</li>
+<li><strong>Sitzbasierte Kosten</strong>: Jede neue Person erhoht Kosten, obwohl oft Ausfuhrungskapazitat fehlt.</li>
+</ul>
+
+<blockquote>
+<p><strong>Kosten des Nichtstuns:</strong> Wenn funf Personen jeweils drei Stunden pro Woche Daten abgleichen, sind das 780 Stunden pro Jahr - ohne verpasste Leads, langsame Freigaben oder Kundenfrust.</p>
+</blockquote>
+
+<h3>Agentic Software vs Automatisierung vs SaaS</h3>
+
+<table style="width: 100%; border-collapse: collapse; margin: 1.5em 0;">
+<thead><tr><th style="text-align: left; padding: 0.75rem; border-bottom: 2px solid #e2e8f0;">Ansatz</th><th style="text-align: left; padding: 0.75rem; border-bottom: 2px solid #e2e8f0;">Am besten fur</th><th style="text-align: left; padding: 0.75rem; border-bottom: 2px solid #e2e8f0;">Grenze</th></tr></thead>
+<tbody>
+<tr><td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;"><strong>Traditionelles SaaS</strong></td><td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">Standardfunktionen wie Buchhaltung, E Mail, einfaches CRM und Tickets.</td><td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">Sie passen sich dem Tool an, wenn Ihr Workflow einzigartig ist.</td></tr>
+<tr><td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;"><strong>Regelbasierte Automatisierung</strong></td><td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">Vorhersehbare Trigger: E Mail senden, Zeile aktualisieren, Aufgabe erstellen.</td><td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">Bricht, wenn Kontext oder Urteil erforderlich ist.</td></tr>
+<tr><td style="padding: 0.75rem;"><strong>Agentic Software</strong></td><td style="padding: 0.75rem;">Mehrstufige Arbeit mit Kontext, Ausnahmen, Ubergaben und Geschaftsregeln.</td><td style="padding: 0.75rem;">Benotigt Ownership, Datenzugriff, Governance und Workflow Design.</td></tr>
+</tbody>
+</table>
+
+<h3>Beispiel: der Distributor, der Marge in den Lucken verliert</h3>
+
+<p>Bestellungen kommen per Telefon, WhatsApp, Webformular und Vertrieb. Lagerbestand lebt in Tabellen. Freigaben passieren per E Mail. Finance rekonstruiert fehlende Details am Monatsende.</p>
+
+<ol>
+<li><strong>Intake Agent</strong>: erfasst Anfrage, Pflichtfelder, Kunde und Bestellentwurf.</li>
+<li><strong>Inventory Agent</strong>: pruft Bestand, Standort, Ersatzartikel und Lieferbedingungen.</li>
+<li><strong>Preis Guardrail</strong>: wendet genehmigte Rabattregeln an und markiert Ausnahmen.</li>
+<li><strong>Menschliche Freigabe</strong>: Manager genehmigen nur risikoreiche Auftrage.</li>
+<li><strong>Dispatch Ubergabe</strong>: Lieferaufgabe wird erstellt und der Kunde informiert.</li>
+<li><strong>Finance Datensatz</strong>: Rechnungsdaten werden sauber vorbereitet.</li>
+</ol>
+
+<h3>Build oder Buy: Entscheidungsrahmen</h3>
+
+<table style="width: 100%; border-collapse: collapse; margin: 1.5em 0;">
+<thead><tr><th style="text-align: left; padding: 0.75rem; border-bottom: 2px solid #e2e8f0;">Frage</th><th style="text-align: left; padding: 0.75rem; border-bottom: 2px solid #e2e8f0;">SaaS kaufen, wenn...</th><th style="text-align: left; padding: 0.75rem; border-bottom: 2px solid #e2e8f0;">Agentic Software bauen, wenn...</th></tr></thead>
+<tbody>
+<tr><td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">Ist der Workflow standardisiert?</td><td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">Ihr Prozess passt zur Marktvorlage.</td><td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">Ihr Prozess ist Teil Ihres Vorteils.</td></tr>
+<tr><td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">Wie tief sind Integrationen?</td><td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">Ein oder zwei einfache Integrationen reichen.</td><td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">Der Workflow kreuzt CRM, Finance, Lager, Messaging und interne Regeln.</td></tr>
+<tr><td style="padding: 0.75rem;">Was kostet Verzogerung?</td><td style="padding: 0.75rem;">Verzogerung stort, ist aber nicht teuer.</td><td style="padding: 0.75rem;">Langsame Reaktion kostet Leads, Marge, Vertrauen oder Compliance.</td></tr>
+</tbody>
+</table>
+
+<h3>Implementierungscheckliste</h3>
+
+<ol>
+<li><strong>Benennen Sie das Leck</strong>: verpasste Leads, langsame Freigaben, manuelles Reporting, doppelte Eingabe.</li>
+<li><strong>Messen Sie den Ausgangswert</strong>: Antwortzeit, Stunden, Fehler, Conversion oder Kosten pro Vorgang.</li>
+<li><strong>Mapen Sie den Workflow</strong>: Trigger, Daten, Entscheidungen, Ubergaben, Ausnahmen, finaler Datensatz.</li>
+<li><strong>Wahlen Sie Autonomie</strong>: Entwurf, Empfehlung, Aktion mit Freigabe oder Aktion unter Policy.</li>
+<li><strong>Verbinden Sie Minimum Systeme</strong>: CRM, Kalender, Datenbank, Messaging, Zahlung oder Dokumente.</li>
+<li><strong>Fugen Sie Beobachtbarkeit hinzu</strong>: Logs, Historie, Prufungen und Review Queue.</li>
+<li><strong>Pilot mit Menschen in der Schleife</strong>.</li>
+<li><strong>Erst nach Beweis ausweiten</strong>.</li>
+</ol>
+
+<h3>Haufige Fehler</h3>
+
+<ul>
+<li>Mit dem Modell statt dem Workflow beginnen.</li>
+<li>Undokumentiertes Urteil automatisieren.</li>
+<li>Keinen Owner benennen.</li>
+<li>Zu fruh zu viel Autonomie geben.</li>
+<li>Modellkosten ignorieren.</li>
+<li>Change Management uberspringen.</li>
+</ul>
+
+<h3>Future-ready Perspektive</h3>
+
+<p><strong>Studierende</strong> sollten Prozessmapping, Datenkompetenz, API Denken, Prompt Evaluation und Entscheidungsdokumentation lernen. <strong>Fachkrafte</strong> sollten von Aufgabenbearbeitung zu Workflow Ownership wechseln. <strong>Unternehmen</strong> sollten KI nicht als Nebenfunktion behandeln, sondern neu gestalten, wie Arbeit von Anfrage zu Entscheidung und Lieferung fließt.</p>
+
+<h3>Wo Digni Digital hilft</h3>
+
+<p>Digni Digital baut <a href="/agentic-softwares">Agentic Softwares</a> fur Teams, die Adoption brauchen, nicht Shelfware. Wir kombinieren individuelle Business Plattformen, KI Workflows und <a href="/ai-receptionist">KI Mitarbeiter Systeme</a>, die Volumen bearbeiten, wahrend Menschen das Urteil behalten.</p>
+
+<!--BLOG_FAQ-->
+
+<h3>Nachster Schritt</h3>
+
+<p><strong>Finden Sie das Workflow Leck, bevor es ein weiteres Quartal kostet.</strong> <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Buchen Sie ein Strategiegesprach</a> mit Digni Digital. Wir mappen einen Workflow, schatzen die Kosten und zeigen, ob SaaS, Automatisierung oder Agentic Software der richtige nachste Schritt ist.</p>
+
+<hr>
+
+<p><em>Technology Creates Opportunity. Gewinner der agentischen Ara fugen KI nicht uberall hinzu. Sie redesignen die wenigen Workflows, in denen Verzogerung, Nacharbeit und fehlender Kontext am meisten kosten.</em></p>
+`,
+},
 }
 
 export const articlesDe: BlogArticle[] = articlesEn.map((article) => {
