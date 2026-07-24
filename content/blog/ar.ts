@@ -2754,6 +2754,204 @@ export const contentAr: Record<string, Partial<BlogArticle>> = {
  <p><em>Technology Creates Opportunity.</em></p>
  `,
  },
+'agentic-software-workflows-build-vs-buy-2026': {
+title: 'البرمجيات الوكيلة في 2026: توقف عن دفع فريقك لإصلاح سير عمل مكسور',
+excerpt:
+'البرمجيات الوكيلة تنقل الشركة من لوحات بيانات يراقبها البشر إلى سير عمل ذكاء اصطناعي محكوم ينفذ. تعرّف متى تبني، متى تشتري، وكيف تبدأ بأمان.',
+category: 'Agentic Softwares',
+readTime: '13 دقيقة قراءة',
+publishDate: '24 يوليو 2026',
+tags: [
+'برمجيات وكيلة',
+'تنسيق وكلاء الذكاء الاصطناعي',
+'برمجيات ذكاء اصطناعي مخصصة',
+'أتمتة سير العمل',
+'سير عمل ذكي',
+'عمليات الأعمال',
+],
+faqSubtitle: 'إجابات سريعة للقادة الذين يقررون إن كانت البرمجيات الوكيلة يجب أن تصبح جزءاً من نظام تشغيل الشركة.',
+faqs: [
+{
+question: 'ما هي البرمجيات الوكيلة؟',
+answer:
+'هي برمجيات تستطيع التخطيط واستخدام الأدوات وتشغيل الإجراءات وتنسيق سير العمل ضمن قواعد يحددها البشر. هي لا تعرض العمل فقط، بل تساعد على تنفيذه وتصعّد الاستثناءات.',
+},
+{
+question: 'كيف تختلف عن روبوت محادثة أو مساعد Copilot؟',
+answer:
+'روبوت المحادثة يجيب عن الأسئلة غالباً. المساعد يساعد شخصاً في مهمة. البرمجيات الوكيلة تتصل بالبيانات والصلاحيات والقواعد وأنظمة الشركة حتى تدفع عملية كاملة إلى الأمام.',
+},
+{
+question: 'متى يجب البناء بدلاً من شراء SaaS؟',
+answer:
+'ابنِ عندما يكون سير العمل ميزة استراتيجية، أو عندما تفرض الأدوات الجاهزة حلولاً ملتوية مكلفة، أو عندما تكون التكاملات عميقة، أو عندما تهم ملكية البيانات والمنطق.',
+},
+{
+question: 'ما أول مشروع آمن؟',
+answer:
+'اختر سير عمل ضيقاً بتكلفة واضحة: استقبال العملاء المحتملين، طلبات الشراء، حجز المواعيد، فرز دعم العملاء، التقارير، أو الموافقات الداخلية. ابدأ بموافقة بشرية قبل الاستقلالية العالية.',
+},
+{
+question: 'ما المخاطر التي يجب مراقبتها؟',
+answer:
+'أهم المخاطر هي انتشار الوكلاء بلا تنسيق، غياب المالك المسؤول، صلاحيات بيانات ضعيفة، تكاليف نماذج مخفية، ضعف المراقبة، وأتمتة عملية مكسورة.',
+},
+{
+question: 'هل تستبدل البرمجيات الوكيلة الموظفين؟',
+answer:
+'أفضل استخدام ليس الاستبدال. الهدف إزالة التسليمات المتكررة حتى يقضي البشر وقتاً أكبر في الحكم والعلاقات والاستثناءات.',
+},
+{
+question: 'كيف نقيس العائد على الاستثمار؟',
+answer:
+'قس زمن الدورة، زمن الاستجابة، معدل الأخطاء، ساعات الإدارة، التحويل، رضا العملاء، وتسرب الإيرادات قبل وبعد التجربة.',
+},
+{
+question: 'كيف تتعامل Digni Digital مع البرمجيات الوكيلة؟',
+answer:
+'تبدأ Digni Digital من سير العمل التجاري، ثم تصمم البرمجيات والتكاملات ووكلاء الذكاء الاصطناعي وقواعد الموافقة البشرية حول النتيجة المطلوبة.',
+},
+],
+content: `
+<h2>العمل يُدفع ثمنه بالفعل. لكنه يُدفع على شكل تأخير.</h2>
+
+<p>كثير من الشركات لا ترى تكلفة سير العمل المكسور لأن الفاتورة تصل بهدوء. مدير يعيد بناء تقرير يوم الجمعة. عميل محتمل ينتظر طوال الليل. طلب شراء يبقى في البريد الإلكتروني. عميل يطلب تحديثاً وثلاثة أشخاص يبحثون في ثلاثة أنظمة قبل أن يجيب أحد.</p>
+
+<p><strong>البرمجيات الوكيلة</strong> تنقل الشركة من برنامج يعرض العمل فقط إلى برنامج يساعد على تنفيذه. هي تجمع تطبيقات مخصصة، قواعد عمل، تكاملات، ووكلاء ذكاء اصطناعي يستطيعون التخطيط، التوجيه، الصياغة، التحقق، والتصعيد ضمن حواجز بشرية واضحة.</p>
+
+<figure class="blog-content-figure" style="margin: 2em 0;">
+<img src="/blog/illustrations/custom-vs-off-shelf.svg" alt="البرمجيات الوكيلة تقارن سير العمل المخصص بالأدوات الجاهزة" width="800" height="400" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
+<figcaption style="text-align: center; color: var(--muted); font-size: 0.9rem; margin-top: 0.5em;">تنجح البرمجيات الوكيلة عندما يتبع سير العمل منطق شركتك، لا قالب لوحة بيانات عام.</figcaption>
+</figure>
+
+<h3>طلب البحث ونية القارئ</h3>
+
+<table style="width: 100%; border-collapse: collapse; margin: 1.5em 0;">
+<tbody>
+<tr><th style="text-align: right; padding: 0.75rem; border-bottom: 2px solid #e2e8f0;">الكلمة الرئيسية</th><td style="padding: 0.75rem; border-bottom: 2px solid #e2e8f0;">البرمجيات الوكيلة</td></tr>
+<tr><th style="text-align: right; padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">كلمات ثانوية</th><td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">تنسيق وكلاء الذكاء الاصطناعي، برمجيات ذكاء اصطناعي مخصصة، أتمتة سير العمل، تطوير SaaS مخصص</td></tr>
+<tr><th style="text-align: right; padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">أسئلة مرتبطة</th><td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">ما هي؟ كيف تختلف عن روبوت المحادثة؟ هل نبني أم نشتري؟ ما المخاطر؟</td></tr>
+<tr><th style="text-align: right; padding: 0.75rem;">النية</th><td style="padding: 0.75rem;">مختلطة: فهم، مقارنة، تقليل مخاطر، واختيار الخطوة التالية.</td></tr>
+</tbody>
+</table>
+
+<h3>الخلاصات الرئيسية</h3>
+
+<ul>
+<li><strong>البرمجيات الوكيلة برمجيات نتائج</strong>: تنفذ أجزاء من سير العمل ولا تكتفي بعرض السجلات.</li>
+<li><strong>القيمة في إعادة التصميم</strong>: إضافة الذكاء الاصطناعي إلى عملية مكسورة تجعلها أسرع، لا أفضل بالضرورة.</li>
+<li><strong>التخصيص يفوز عندما يكون سير العمل استراتيجياً</strong>: إذا كانت طريقتك في العمل ميزة، فقد تصبح أدوات SaaS العامة ضريبة.</li>
+<li><strong>الحوكمة جزء من المنتج</strong>: الهوية، الصلاحيات، التدقيق، التصعيد، والمراقبة مهمة مثل النموذج.</li>
+<li><strong>ابدأ بضيق</strong>: سير عمل واحد، مالك واحد، مؤشر واحد، ومستوى استقلالية واحد.</li>
+</ul>
+
+<h3>ماذا تقول الأبحاث في 2026؟</h3>
+
+<table style="width: 100%; border-collapse: collapse; margin: 1.5em 0;">
+<thead><tr><th style="text-align: right; padding: 0.75rem; border-bottom: 2px solid #e2e8f0;">المصدر</th><th style="text-align: right; padding: 0.75rem; border-bottom: 2px solid #e2e8f0;">الإشارة</th><th style="text-align: right; padding: 0.75rem; border-bottom: 2px solid #e2e8f0;">المعنى</th></tr></thead>
+<tbody>
+<tr><td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;"><a href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/seizing-the-agentic-ai-advantage" target="_blank" rel="noopener noreferrer">McKinsey، 2025</a></td><td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">نحو ثمانية من كل عشرة شركات تستخدم الذكاء الاصطناعي التوليدي، لكن أكثر من 80% لا يرون أثراً مادياً على الأرباح.</td><td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">المساعدات وحدها لا تكفي. تظهر القيمة عندما يعاد تصميم سير العمل حول الوكلاء.</td></tr>
+<tr><td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;"><a href="https://www.deloitte.com/us/en/insights/industry/technology/technology-media-and-telecom-predictions/2026/ai-agent-orchestration.html" target="_blank" rel="noopener noreferrer">Deloitte Insights، 2026</a></td><td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">قد يصل سوق وكلاء الذكاء الاصطناعي المستقلين إلى 8.5 مليار دولار في 2026 و35 ملياراً في 2030، لكن أكثر من 40% من المشاريع قد تُلغى.</td><td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">الفرصة حقيقية، لكن التنسيق والحوكمة يحددان المشاريع التي تنجو.</td></tr>
+<tr><td style="padding: 0.75rem;"><a href="https://www.gartner.com/en/newsroom/press-releases/2026-07-01-gartner-says-us-dollars-234-billion-in-enterprise-application-software-spend-is-at-risk-from-agentic-artificial-intelligence" target="_blank" rel="noopener noreferrer">Gartner، 2026</a></td><td style="padding: 0.75rem;">تقول Gartner إن 234 مليار دولار من إنفاق برمجيات المؤسسات معرض لتأثير الذكاء الاصطناعي الوكيلي بحلول 2030.</td><td style="padding: 0.75rem;">المشترون ينتقلون من دفع ثمن المقاعد ولوحات البيانات إلى دفع ثمن النتائج والسياق والتنفيذ.</td></tr>
+</tbody>
+</table>
+
+<h3>تعريف بسيط</h3>
+
+<p><strong>البرمجيات الوكيلة هي تطبيق أعمال يستطيع فيه وكلاء الذكاء الاصطناعي العمل على الأهداف والأدوات والبيانات وسير العمل تحت سياسة يحددها الإنسان.</strong> نظام CRM عادي يخزن العميل المحتمل. CRM وكيلي يستطيع ملاحظة العميل، إثراء الملف، فحص الملاءمة، إعداد الرد، حجز موعد، تحديث السجل، وتصعيد الحالات غير المعتادة.</p>
+
+<h3>لماذا يبدأ SaaS التقليدي بتسريب المال؟</h3>
+
+<ul>
+<li><strong>جسور يدوية</strong>: أشخاص ينسخون البيانات بين الأدوات.</li>
+<li><strong>حراسة لوحات البيانات</strong>: المدراء يراقبون الشاشات بدلاً من تلقي الاستثناءات.</li>
+<li><strong>تأخير الموافقات</strong>: العمل ينتظر الشخص التالي.</li>
+<li><strong>منطق عام</strong>: البرنامج يجبر الفريق على طريقة عمل لا تخصه.</li>
+<li><strong>تكلفة المقاعد</strong>: كل مستخدم جديد يزيد التكلفة بينما الحاجة الحقيقية هي قدرة تنفيذ.</li>
+</ul>
+
+<blockquote>
+<p><strong>تكلفة عدم الفعل:</strong> إذا قضى خمسة أشخاص ثلاث ساعات أسبوعياً في مطابقة البيانات، فهذا 780 ساعة سنوياً قبل حساب العملاء الضائعين أو بطء الموافقات.</p>
+</blockquote>
+
+<h3>البرمجيات الوكيلة مقابل الأتمتة مقابل SaaS</h3>
+
+<table style="width: 100%; border-collapse: collapse; margin: 1.5em 0;">
+<thead><tr><th style="text-align: right; padding: 0.75rem; border-bottom: 2px solid #e2e8f0;">النهج</th><th style="text-align: right; padding: 0.75rem; border-bottom: 2px solid #e2e8f0;">الأفضل لـ</th><th style="text-align: right; padding: 0.75rem; border-bottom: 2px solid #e2e8f0;">الحد</th></tr></thead>
+<tbody>
+<tr><td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;"><strong>SaaS تقليدي</strong></td><td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">وظائف معيارية مثل المحاسبة والبريد وCRM بسيط والتذاكر.</td><td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">تتكيف أنت مع الأداة عندما يكون سير العمل فريداً.</td></tr>
+<tr><td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;"><strong>أتمتة بقواعد</strong></td><td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">محفزات متوقعة: إرسال بريد، تحديث صف، إنشاء مهمة.</td><td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">تتعطل عندما يتغير السياق أو يلزم حكم بشري.</td></tr>
+<tr><td style="padding: 0.75rem;"><strong>برمجيات وكيلة</strong></td><td style="padding: 0.75rem;">عمل متعدد الخطوات مع سياق واستثناءات وتسليمات وقواعد عمل.</td><td style="padding: 0.75rem;">تحتاج مالكاً، بيانات، حوكمة، وتصميم سير عمل.</td></tr>
+</tbody>
+</table>
+
+<h3>مثال: موزع يخسر الهامش بين الفجوات</h3>
+
+<p>الطلبات تصل عبر الهاتف وWhatsApp والنماذج ومندوبي المبيعات. المخزون في جداول. الموافقات بالبريد. والمالية تعيد بناء التفاصيل آخر الشهر.</p>
+
+<ol>
+<li><strong>وكيل استقبال</strong>: يلتقط الطلب، يتحقق من الحقول، ويجهز مسودة الطلب.</li>
+<li><strong>وكيل مخزون</strong>: يفحص المخزون والفرع والبدائل وقيود التسليم.</li>
+<li><strong>حارس أسعار</strong>: يطبق قواعد الخصم المعتمدة ويعلّم الاستثناءات.</li>
+<li><strong>موافقة بشرية</strong>: المدير يراجع الحالات عالية المخاطر فقط.</li>
+<li><strong>تسليم للإرسال</strong>: تُنشأ مهمة التسليم ويبقى العميل مطلعاً.</li>
+<li><strong>سجل مالي</strong>: تُجهز بيانات الفاتورة بوضوح.</li>
+</ol>
+
+<h3>ابنِ أم اشترِ؟ إطار القرار</h3>
+
+<table style="width: 100%; border-collapse: collapse; margin: 1.5em 0;">
+<thead><tr><th style="text-align: right; padding: 0.75rem; border-bottom: 2px solid #e2e8f0;">السؤال</th><th style="text-align: right; padding: 0.75rem; border-bottom: 2px solid #e2e8f0;">اشتر SaaS إذا...</th><th style="text-align: right; padding: 0.75rem; border-bottom: 2px solid #e2e8f0;">ابنِ برمجيات وكيلة إذا...</th></tr></thead>
+<tbody>
+<tr><td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">هل سير العمل معياري؟</td><td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">عمليتك تشبه قالب السوق.</td><td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">عمليتك جزء من ميزتك.</td></tr>
+<tr><td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">ما عمق التكاملات؟</td><td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">تكاملان بسيطان يكفيان.</td><td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">سير العمل يعبر CRM والمالية والمخزون والرسائل والقواعد الداخلية.</td></tr>
+<tr><td style="padding: 0.75rem;">ما تكلفة التأخير؟</td><td style="padding: 0.75rem;">التأخير مزعج لكنه ليس مكلفاً.</td><td style="padding: 0.75rem;">البطء يفقد leads أو هامشاً أو ثقة أو امتثالاً.</td></tr>
+</tbody>
+</table>
+
+<h3>قائمة تنفيذ عملية</h3>
+
+<ol>
+<li><strong>سمِّ التسريب</strong>: leads ضائعة، موافقات بطيئة، تقارير يدوية، إدخال مزدوج.</li>
+<li><strong>قس خط البداية</strong>: زمن الاستجابة، الساعات، الأخطاء، التحويل أو تكلفة المعاملة.</li>
+<li><strong>ارسم سير العمل</strong>: المحفز، البيانات، القرارات، التسليمات، الاستثناءات، والسجل النهائي.</li>
+<li><strong>اختر الاستقلالية</strong>: مسودة، توصية، فعل بموافقة، أو فعل تحت سياسة.</li>
+<li><strong>اربط الحد الأدنى من الأنظمة</strong>: CRM، تقويم، قاعدة بيانات، رسائل، دفع أو مستندات.</li>
+<li><strong>أضف المراقبة</strong>: سجلات، تاريخ حالات، فحوصات، وطابور مراجعة.</li>
+<li><strong>جرّب مع البشر في الحلقة</strong>.</li>
+<li><strong>وسع فقط بعد وجود دليل</strong>.</li>
+</ol>
+
+<h3>أخطاء شائعة</h3>
+
+<ul>
+<li>البدء بالنموذج بدلاً من سير العمل.</li>
+<li>أتمتة حكم غير موثق.</li>
+<li>عدم تعيين مالك مسؤول.</li>
+<li>منح استقلالية كبيرة مبكراً.</li>
+<li>تجاهل تكاليف النماذج.</li>
+<li>تجاوز تبني الفريق للنظام.</li>
+</ul>
+
+<h3>زاوية Future-ready</h3>
+
+<p><strong>الطلاب</strong> يجب أن يتعلموا رسم العمليات، فهم البيانات، التفكير عبر API، تقييم prompts، وتوثيق القرارات. <strong>المهنيون</strong> يجب أن ينتقلوا من تنفيذ المهام إلى ملكية سير العمل. <strong>الشركات</strong> يجب ألا تعامل الذكاء الاصطناعي كميزة جانبية، بل تعيد تصميم انتقال العمل من الطلب إلى القرار إلى التسليم.</p>
+
+<h3>أين تدخل Digni Digital؟</h3>
+
+<p>تبني Digni Digital <a href="/agentic-softwares">Agentic Softwares</a> للفرق التي تحتاج تبنياً حقيقياً لا برنامجاً يضاف إلى الرف. نجمع منصات أعمال مخصصة، سير عمل ذكي، و<a href="/ai-receptionist">أنظمة موظفين أذكياء</a> تتعامل مع الحجم بينما يحتفظ البشر بالحكم.</p>
+
+<!--BLOG_FAQ-->
+
+<h3>الخطوة التالية</h3>
+
+<p><strong>اعثر على تسريب سير العمل قبل أن يصبح ربعاً آخر من الوقت الضائع.</strong> <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">احجز مكالمة استراتيجية</a> مع Digni Digital. سنرسم سير عمل واحداً، نقدّر ما يكلفك، ونوضح هل SaaS أو الأتمتة أو البرمجيات الوكيلة هي الخطوة الصحيحة.</p>
+
+<hr>
+
+<p><em>Technology Creates Opportunity. الشركات التي تفوز في عصر الوكلاء لن تضيف الذكاء الاصطناعي في كل مكان، بل ستعيد تصميم سير العمل حيث يكلف التأخير وإعادة العمل وفقدان السياق أكثر.</em></p>
+`,
+},
 }
 
 export const articlesAr: BlogArticle[] = articlesEn.map((article) => {

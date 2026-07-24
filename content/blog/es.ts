@@ -1071,6 +1071,204 @@ const contentEs: Record<string, Partial<BlogArticle>> = {
  <p><em>Technology Creates Opportunity.</em></p>
  `,
  },
+'agentic-software-workflows-build-vs-buy-2026': {
+title: 'Software agéntico en 2026: deje de pagarle a su equipo para remendar flujos rotos',
+excerpt:
+'El software agéntico lleva a la empresa de paneles que alguien vigila a workflows de IA gobernados que ejecutan. Aprenda cuándo construir, cuándo comprar y cómo empezar con seguridad.',
+category: 'Agentic Softwares',
+readTime: '13 min de lectura',
+publishDate: '24 de julio de 2026',
+tags: [
+'software agéntico',
+'orquestación de agentes IA',
+'software IA a medida',
+'automatización de workflows',
+'workflows IA',
+'operaciones de negocio',
+],
+faqSubtitle: 'Respuestas rápidas para líderes que deciden si el software agéntico debe entrar en su sistema operativo de negocio.',
+faqs: [
+{
+question: '¿Qué es el software agéntico?',
+answer:
+'Es software que puede planificar, usar herramientas, activar acciones y coordinar workflows dentro de reglas definidas por humanos. No solo muestra el trabajo; ayuda a ejecutarlo y escala excepciones.',
+},
+{
+question: '¿En qué se diferencia de un chatbot o copiloto?',
+answer:
+'Un chatbot responde preguntas. Un copiloto ayuda a una persona con una tarea. El software agéntico se conecta con datos, permisos, reglas y sistemas empresariales para avanzar un proceso completo.',
+},
+{
+question: '¿Cuándo conviene construir en lugar de comprar SaaS?',
+answer:
+'Conviene construir cuando el workflow es una ventaja estratégica, las herramientas estándar obligan a rodeos costosos, las integraciones son profundas o la propiedad de datos y reglas importa.',
+},
+{
+question: '¿Cuál es el primer proyecto más seguro?',
+answer:
+'Elija un workflow estrecho con coste visible: captación de leads, compras, citas, triage de clientes, reporting o aprobaciones internas. Empiece con aprobación humana antes de una autonomía fuerte.',
+},
+{
+question: '¿Qué riesgos debe vigilar la dirección?',
+answer:
+'Los riesgos principales son proliferación de agentes, falta de dueño, permisos débiles, costes ocultos de modelo, poco monitoreo y automatizar un proceso roto.',
+},
+{
+question: '¿El software agéntico reemplaza empleados?',
+answer:
+'El mejor uso no es reemplazar. Es quitar traspasos repetitivos para que las personas dediquen más tiempo a juicio, relaciones y excepciones.',
+},
+{
+question: '¿Cómo se mide el ROI?',
+answer:
+'Mida tiempo de ciclo, tiempo de respuesta, errores, horas administrativas, conversión, satisfacción del cliente e ingresos perdidos antes y después del piloto.',
+},
+{
+question: '¿Cómo trabaja Digni Digital este tipo de software?',
+answer:
+'Digni Digital empieza por el workflow de negocio y después diseña software, integraciones, agentes IA y reglas de aprobación humana alrededor del resultado esperado.',
+},
+],
+content: `
+<h2>El trabajo ya se está pagando. Solo que se paga en retrasos.</h2>
+
+<p>Muchas empresas no ven el coste de sus workflows rotos porque la factura llega en silencio. Un gerente reconstruye un informe el viernes. Un lead espera toda la noche. Una aprobación de compras queda perdida en el correo. Un cliente pide estado y tres personas buscan en tres sistemas antes de responder.</p>
+
+<p><strong>El software agéntico</strong> mueve a la empresa de software que solo muestra trabajo a software que ayuda a ejecutarlo. Combina aplicaciones a medida, reglas de negocio, integraciones y agentes IA capaces de planificar, enrutar, redactar, verificar y escalar con límites humanos claros.</p>
+
+<figure class="blog-content-figure" style="margin: 2em 0;">
+<img src="/blog/illustrations/custom-vs-off-shelf.svg" alt="Software agéntico comparando workflows a medida con herramientas genéricas" width="800" height="400" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
+<figcaption style="text-align: center; color: var(--muted); font-size: 0.9rem; margin-top: 0.5em;">El software agéntico funciona cuando el workflow sigue su lógica de negocio, no una plantilla genérica.</figcaption>
+</figure>
+
+<h3>Demanda de búsqueda e intención del lector</h3>
+
+<table style="width: 100%; border-collapse: collapse; margin: 1.5em 0;">
+<tbody>
+<tr><th style="text-align: left; padding: 0.75rem; border-bottom: 2px solid #e2e8f0;">Palabra clave principal</th><td style="padding: 0.75rem; border-bottom: 2px solid #e2e8f0;">software agéntico</td></tr>
+<tr><th style="text-align: left; padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">Palabras secundarias</th><td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">orquestación de agentes IA, software IA a medida, automatización de workflows, desarrollo SaaS a medida</td></tr>
+<tr><th style="text-align: left; padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">Preguntas relacionadas</th><td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">¿Qué es? ¿En qué se diferencia de un chatbot? ¿Construir o comprar? ¿Cuáles son los riesgos?</td></tr>
+<tr><th style="text-align: left; padding: 0.75rem;">Intención</th><td style="padding: 0.75rem;">Mixta: entender, comparar, reducir riesgo y decidir un siguiente paso.</td></tr>
+</tbody>
+</table>
+
+<h3>Puntos clave</h3>
+
+<ul>
+<li><strong>El software agéntico es software de resultado</strong>: ejecuta partes del workflow, no solo muestra registros.</li>
+<li><strong>El valor está en rediseñar</strong>: agregar IA a un proceso roto suele hacerlo más rápido, no mejor.</li>
+<li><strong>Lo a medida gana cuando el workflow es estratégico</strong>: si su proceso es ventaja competitiva, el SaaS genérico puede convertirse en impuesto.</li>
+<li><strong>La gobernanza es parte del producto</strong>: identidad, permisos, auditoría, escalado y observabilidad importan tanto como el modelo.</li>
+<li><strong>Empiece estrecho</strong>: un workflow, un dueño, una métrica, un nivel de autonomía.</li>
+</ul>
+
+<h3>Qué dice la investigación en 2026</h3>
+
+<table style="width: 100%; border-collapse: collapse; margin: 1.5em 0;">
+<thead><tr><th style="text-align: left; padding: 0.75rem; border-bottom: 2px solid #e2e8f0;">Fuente</th><th style="text-align: left; padding: 0.75rem; border-bottom: 2px solid #e2e8f0;">Señal útil</th><th style="text-align: left; padding: 0.75rem; border-bottom: 2px solid #e2e8f0;">Qué significa</th></tr></thead>
+<tbody>
+<tr><td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;"><a href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/seizing-the-agentic-ai-advantage" target="_blank" rel="noopener noreferrer">McKinsey, 2025</a></td><td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">Casi ocho de cada diez empresas usan GenAI, pero más del 80 % no reporta impacto material en resultados.</td><td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">Los copilotos solos no bastan. El valor aparece cuando se rediseñan workflows alrededor de agentes.</td></tr>
+<tr><td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;"><a href="https://www.deloitte.com/us/en/insights/industry/technology/technology-media-and-telecom-predictions/2026/ai-agent-orchestration.html" target="_blank" rel="noopener noreferrer">Deloitte Insights, 2026</a></td><td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">El mercado de agentes autónomos podría llegar a 8,5 mil millones USD en 2026 y 35 mil millones en 2030, pero más del 40 % de proyectos podría cancelarse.</td><td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">La oportunidad es real, pero la orquestación y la gobernanza deciden qué proyectos sobreviven.</td></tr>
+<tr><td style="padding: 0.75rem;"><a href="https://www.gartner.com/en/newsroom/press-releases/2026-07-01-gartner-says-us-dollars-234-billion-in-enterprise-application-software-spend-is-at-risk-from-agentic-artificial-intelligence" target="_blank" rel="noopener noreferrer">Gartner, 2026</a></td><td style="padding: 0.75rem;">Gartner dice que 234 mil millones USD de gasto en software empresarial están expuestos a la disrupción agéntica para 2030.</td><td style="padding: 0.75rem;">Los compradores pasan de pagar por asientos y paneles a pagar por resultados, contexto y ejecución.</td></tr>
+</tbody>
+</table>
+
+<h3>Definición simple</h3>
+
+<p><strong>El software agéntico es una aplicación de negocio donde agentes IA pueden actuar sobre objetivos, herramientas, datos y workflows bajo una política definida por humanos.</strong> Un CRM normal almacena un lead. Un CRM agéntico puede detectar el lead, enriquecer el perfil, verificar ajuste, preparar respuesta, reservar cita, actualizar el registro y escalar casos inusuales.</p>
+
+<h3>Por qué el SaaS tradicional empieza a filtrar dinero</h3>
+
+<ul>
+<li><strong>Puentes manuales</strong>: personas copian datos de una herramienta a otra.</li>
+<li><strong>Vigilancia de paneles</strong>: gerentes revisan pantallas en vez de recibir excepciones.</li>
+<li><strong>Retrasos de aprobación</strong>: el trabajo espera a la siguiente persona.</li>
+<li><strong>Lógica genérica</strong>: el software fuerza a su equipo a trabajar como todos.</li>
+<li><strong>Coste por asiento</strong>: cada usuario suma coste aunque lo que falta es capacidad de ejecución.</li>
+</ul>
+
+<blockquote>
+<p><strong>Coste de no actuar:</strong> si cinco personas dedican tres horas por semana a reconciliar datos, son 780 horas al año antes de contar leads perdidos o clientes frustrados.</p>
+</blockquote>
+
+<h3>Software agéntico vs automatización vs SaaS</h3>
+
+<table style="width: 100%; border-collapse: collapse; margin: 1.5em 0;">
+<thead><tr><th style="text-align: left; padding: 0.75rem; border-bottom: 2px solid #e2e8f0;">Enfoque</th><th style="text-align: left; padding: 0.75rem; border-bottom: 2px solid #e2e8f0;">Mejor para</th><th style="text-align: left; padding: 0.75rem; border-bottom: 2px solid #e2e8f0;">Límite</th></tr></thead>
+<tbody>
+<tr><td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;"><strong>SaaS tradicional</strong></td><td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">Funciones estándar como contabilidad, email, CRM simple y tickets.</td><td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">Usted se adapta a la herramienta si su workflow es único.</td></tr>
+<tr><td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;"><strong>Automatización por reglas</strong></td><td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">Disparadores previsibles: enviar email, actualizar fila, crear tarea.</td><td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">Se rompe cuando cambia el contexto o hace falta juicio.</td></tr>
+<tr><td style="padding: 0.75rem;"><strong>Software agéntico</strong></td><td style="padding: 0.75rem;">Trabajo multi paso con contexto, excepciones, traspasos y reglas.</td><td style="padding: 0.75rem;">Requiere dueño, datos, gobernanza y diseño de workflow.</td></tr>
+</tbody>
+</table>
+
+<h3>Ejemplo: el distribuidor que pierde margen en las grietas</h3>
+
+<p>Los pedidos llegan por teléfono, WhatsApp, formularios y vendedores. El inventario vive en hojas de cálculo. Las aprobaciones pasan por email. Finanzas reconstruye datos a fin de mes.</p>
+
+<ol>
+<li><strong>Agente de intake</strong>: captura la solicitud, verifica campos y crea el borrador de pedido.</li>
+<li><strong>Agente de inventario</strong>: revisa stock, sucursal, sustituciones y restricciones de entrega.</li>
+<li><strong>Guardrail de precios</strong>: aplica descuentos aprobados y marca excepciones.</li>
+<li><strong>Aprobación humana</strong>: un gerente aprueba solo casos de riesgo.</li>
+<li><strong>Traspaso a despacho</strong>: se crea la tarea de entrega y el cliente queda informado.</li>
+<li><strong>Registro financiero</strong>: la factura se prepara limpia.</li>
+</ol>
+
+<h3>Construir o comprar: marco de decisión</h3>
+
+<table style="width: 100%; border-collapse: collapse; margin: 1.5em 0;">
+<thead><tr><th style="text-align: left; padding: 0.75rem; border-bottom: 2px solid #e2e8f0;">Pregunta</th><th style="text-align: left; padding: 0.75rem; border-bottom: 2px solid #e2e8f0;">Compre SaaS si...</th><th style="text-align: left; padding: 0.75rem; border-bottom: 2px solid #e2e8f0;">Construya software agéntico si...</th></tr></thead>
+<tbody>
+<tr><td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">¿El workflow es estándar?</td><td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">Su proceso encaja con la plantilla del mercado.</td><td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">Su proceso es parte de su ventaja.</td></tr>
+<tr><td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">¿Qué tan profundas son las integraciones?</td><td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">Una o dos integraciones simples bastan.</td><td style="padding: 0.75rem; border-bottom: 1px solid #e2e8f0;">El workflow cruza CRM, finanzas, inventario, mensajes y reglas internas.</td></tr>
+<tr><td style="padding: 0.75rem;">¿Cuál es el coste del retraso?</td><td style="padding: 0.75rem;">El retraso molesta pero no es caro.</td><td style="padding: 0.75rem;">La lentitud pierde leads, margen, confianza o cumplimiento.</td></tr>
+</tbody>
+</table>
+
+<h3>Checklist de implementación</h3>
+
+<ol>
+<li><strong>Nombre la fuga</strong>: leads perdidos, aprobaciones lentas, reporting manual, datos duplicados.</li>
+<li><strong>Mida la línea base</strong>: respuesta, horas, errores, conversión o coste por transacción.</li>
+<li><strong>Mapee el workflow</strong>: disparador, datos, decisiones, traspasos, excepciones y registro final.</li>
+<li><strong>Elija autonomía</strong>: borrador, recomendación, acción con aprobación o acción bajo política.</li>
+<li><strong>Conecte lo mínimo</strong>: CRM, calendario, base de datos, mensajería, pago o documentos.</li>
+<li><strong>Agregue observabilidad</strong>: logs, historial, controles y cola de revisión.</li>
+<li><strong>Pilote con humanos en el loop</strong>.</li>
+<li><strong>Expanda solo después de la prueba</strong>.</li>
+</ol>
+
+<h3>Errores comunes</h3>
+
+<ul>
+<li>Empezar con el modelo en lugar del workflow.</li>
+<li>Automatizar juicio no documentado.</li>
+<li>No nombrar un dueño.</li>
+<li>Dar demasiada autonomía demasiado pronto.</li>
+<li>Ignorar costes de uso de modelos.</li>
+<li>Olvidar la adopción humana.</li>
+</ul>
+
+<h3>Ángulo future-ready</h3>
+
+<p><strong>Los estudiantes</strong> deben aprender mapeo de procesos, datos, APIs, evaluación de prompts y documentación de decisiones. <strong>Los profesionales</strong> deben pasar de ejecutar tareas a ser dueños de workflows. <strong>Las empresas</strong> deben dejar de tratar la IA como una función lateral y rediseñar cómo el trabajo va de solicitud a decisión y entrega.</p>
+
+<h3>Dónde encaja Digni Digital</h3>
+
+<p>Digni Digital construye <a href="/agentic-softwares">Agentic Softwares</a> para operadores que necesitan adopción, no shelfware. Combinamos plataformas de negocio, workflows IA y <a href="/ai-receptionist">sistemas de empleados IA</a> que manejan volumen mientras los humanos conservan el juicio.</p>
+
+<!--BLOG_FAQ-->
+
+<h3>Siguiente paso</h3>
+
+<p><strong>Encuentre la fuga del workflow antes de perder otro trimestre.</strong> <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Reserve una llamada estratégica</a> con Digni Digital. Mapearemos un workflow, estimaremos lo que cuesta y veremos si SaaS, automatización o software agéntico es el siguiente movimiento correcto.</p>
+
+<hr>
+
+<p><em>Technology Creates Opportunity. Las empresas que ganan la era agéntica no agregan IA en todas partes; rediseñan los workflows donde el retraso, el retrabajo y la falta de contexto cuestan más.</em></p>
+`,
+},
 }
 
 export const articlesEs: BlogArticle[] = articlesEn.map((article) => {
