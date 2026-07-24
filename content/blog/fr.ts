@@ -1303,12 +1303,15 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
  `,
  },
 'agentic-software-workflows-build-vs-buy-2026': {
+id: 109,
 title: "Logiciel agentique en 2026 : arrêtez de payer vos équipes pour réparer des workflows cassés",
+slug: 'agentic-software-workflows-build-vs-buy-2026',
 excerpt:
 "Le logiciel agentique fait passer l'entreprise des tableaux de bord à surveiller à des workflows IA gouvernés qui exécutent. Voici quand construire, quand acheter et comment démarrer sans risque inutile.",
 category: 'Agentic Softwares',
 readTime: '13 min de lecture',
 publishDate: '24 juillet 2026',
+author: 'Pascal Digny',
 tags: [
 'logiciel agentique',
 'orchestration agents IA',
@@ -1317,6 +1320,8 @@ tags: [
 'workflows IA',
 'opérations business',
 ],
+featured: true,
+coverImageUrl: '/blog/illustrations/custom-vs-off-shelf.svg',
 faqSubtitle: "Réponses rapides pour les dirigeants qui évaluent si le logiciel agentique doit entrer dans leur système d'exploitation.",
 faqs: [
 {
