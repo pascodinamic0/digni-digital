@@ -1,9 +1,11 @@
 import type { BlogArticle } from './types'
 import { articlesEn } from './en'
 import { blogFrOverrides } from './generated/blog-fr-overrides'
+import { agenticWorkflowLeaksPostFr } from './agentic-workflow-leaks-post'
 
 /** Hand localized French. Other slugs merge `blogFrOverrides` (run `bun run generate blog locale fills`). */
 const frenchArticlesBySlug: Record<string, BlogArticle> = {
+ [agenticWorkflowLeaksPostFr.slug]: agenticWorkflowLeaksPostFr,
  'employes ia 2026 service client triple leads': {
  id: 16,
  title: "Employés IA 2026 : Comment automatiser le service client et multiplier vos leads par 3 sans recruter",

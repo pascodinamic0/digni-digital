@@ -1,7 +1,9 @@
 import type { BlogArticle } from './types'
 import { articlesEn } from './en'
+import { agenticWorkflowLeaksPostAr, agenticWorkflowLeaksSlug } from './agentic-workflow-leaks-post'
 
 export const contentAr: Record<string, Partial<BlogArticle>> = {
+ [agenticWorkflowLeaksSlug]: agenticWorkflowLeaksPostAr,
  'ai-employee-systems-transform-customer-service-growing-businesses': {
  title: 'كيف تُحوِّل أنظمة الموظف الذكي خدمة العملاء في الشركات النامية',
  excerpt: 'اكتشف كيف تُحدث أنظمة الموظف الذكي ثورة في عمليات خدمة العملاء، وتخفض التكاليف بنسبة 60%، وتوفر خدمة متاحة على مدار الساعة للشركات النامية.',
