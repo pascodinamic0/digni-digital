@@ -1,5 +1,6 @@
 import type { BlogArticle } from './types'
 import { aiCareerGuideArticles } from './ai-career-guides'
+import { agenticWorkflowLeaksPostEn } from './agentic-workflow-leaks-post'
 
 const blogArticles: BlogArticle[] = [
  {
@@ -4774,5 +4775,6 @@ const remainingArticles: BlogArticle[] = [
 export const articlesEn: BlogArticle[] = [
  ...blogArticles,
  ...remainingArticles,
+ agenticWorkflowLeaksPostEn,
  ...aiCareerGuideArticles,
 ]
