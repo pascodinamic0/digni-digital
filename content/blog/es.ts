@@ -1,8 +1,10 @@
 import type { BlogArticle } from './types'
 import { articlesEn } from './en'
+import { AI_EMPLOYEE_LEAD_LEAK_POST_SLUG, aiEmployeeLeadLeakPostEs } from './ai-employee-lead-leak-post'
 import { blogEsOverrides } from './generated/blog-es-overrides'
 
 const contentEs: Record<string, Partial<BlogArticle>> = {
+[AI_EMPLOYEE_LEAD_LEAK_POST_SLUG]: aiEmployeeLeadLeakPostEs,
  'ai-employee-systems-transform-customer-service-growing-businesses': {
  title: 'Cómo los Sistemas de Empleados IA Transforman el Servicio al Cliente para Empresas en Crecimiento',
  excerpt: 'Descubra cómo los sistemas de empleados IA revolucionan el servicio al cliente, reducen costos en un 60% y permiten disponibilidad 24/7 para empresas en crecimiento.',
