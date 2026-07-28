@@ -1,6 +1,7 @@
 import type { BlogArticle } from './types'
 import { articlesEn } from './en'
 import { blogEsOverrides } from './generated/blog-es-overrides'
+import { agenticWorkflowCostEs, agenticWorkflowCostSlug } from './agentic-workflow-cost-post'
 
 const contentEs: Record<string, Partial<BlogArticle>> = {
  'ai-employee-systems-transform-customer-service-growing-businesses': {
@@ -1071,6 +1072,7 @@ const contentEs: Record<string, Partial<BlogArticle>> = {
  <p><em>Technology Creates Opportunity.</em></p>
  `,
  },
+[agenticWorkflowCostSlug]: agenticWorkflowCostEs,
 }
 
 export const articlesEs: BlogArticle[] = articlesEn.map((article) => {
