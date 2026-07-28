@@ -1,6 +1,7 @@
 import type { BlogArticle } from './types'
 import { articlesEn } from './en'
 import { blogDeBodyOverrides } from './generated/blog-de-body-overrides'
+import { agenticWorkflowCostDe, agenticWorkflowCostSlug } from './agentic-workflow-cost-post'
 
 export const contentDe: Record<string, Partial<BlogArticle>> = {
  'ai-employee-systems-transform-customer-service-growing-businesses': {
@@ -2114,6 +2115,7 @@ export const contentDe: Record<string, Partial<BlogArticle>> = {
  <p><em>Technology Creates Opportunity.</em></p>
  `,
  },
+[agenticWorkflowCostSlug]: agenticWorkflowCostDe,
 }
 
 export const articlesDe: BlogArticle[] = articlesEn.map((article) => {

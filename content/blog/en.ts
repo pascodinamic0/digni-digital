@@ -1,5 +1,6 @@
 import type { BlogArticle } from './types'
 import { aiCareerGuideArticles } from './ai-career-guides'
+import { agenticWorkflowCostArticle } from './agentic-workflow-cost-post'
 
 const blogArticles: BlogArticle[] = [
  {
@@ -4769,6 +4770,7 @@ const remainingArticles: BlogArticle[] = [
  <p><em>Technology Creates Opportunity. In the attention economy, the operators who teach generously and systemize delivery will own their markets.</em></p>
  `,
  },
+agenticWorkflowCostArticle,
 ]
 
 export const articlesEn: BlogArticle[] = [
