@@ -1,5 +1,6 @@
 import type { BlogArticle } from './types'
 import { articlesEn } from './en'
+import { agenticWorkflowCostAr, agenticWorkflowCostSlug } from './agentic-workflow-cost-post'
 
 export const contentAr: Record<string, Partial<BlogArticle>> = {
  'ai-employee-systems-transform-customer-service-growing-businesses': {
@@ -2754,6 +2755,7 @@ export const contentAr: Record<string, Partial<BlogArticle>> = {
  <p><em>Technology Creates Opportunity.</em></p>
  `,
  },
+[agenticWorkflowCostSlug]: agenticWorkflowCostAr,
 }
 
 export const articlesAr: BlogArticle[] = articlesEn.map((article) => {

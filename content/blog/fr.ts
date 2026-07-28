@@ -1,6 +1,7 @@
 import type { BlogArticle } from './types'
 import { articlesEn } from './en'
 import { blogFrOverrides } from './generated/blog-fr-overrides'
+import { agenticWorkflowCostFr, agenticWorkflowCostSlug } from './agentic-workflow-cost-post'
 
 /** Hand localized French. Other slugs merge `blogFrOverrides` (run `bun run generate blog locale fills`). */
 const frenchArticlesBySlug: Record<string, BlogArticle> = {
@@ -1302,6 +1303,7 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
  <p><em>Technology Creates Opportunity.</em></p>
  `,
  },
+[agenticWorkflowCostSlug]: agenticWorkflowCostFr,
 }
 
 export const articlesFr: BlogArticle[] = articlesEn.map((article) => {
