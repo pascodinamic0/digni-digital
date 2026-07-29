@@ -20,5 +20,6 @@ Bodies: `content/blog/flagship-bodies-en.ts` + helpers in `flagship audit en.ts`
 | future ready graduate program transforming education career success | done | 93 |
 | implementing future ready programs guide private school administrators | done | 92 |
 | career clarity ai era five essays before pivot | done | 93 |
+| ai-ready-graduates-school-skills-gap | done | 94 |
 
 **Locale note:** EN bodies are audit complete. `fr.ts` has hand `career-clarity` + older flagship bodies in `de`/`ar`/`es` overrides, refresh with `bun run generate blog locale fills` or hand edit when translating new FAQ/search blocks.

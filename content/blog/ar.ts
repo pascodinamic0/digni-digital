@@ -1,7 +1,9 @@
 import type { BlogArticle } from './types'
 import { articlesEn } from './en'
+import { futureReadyAiSkillsArticleAr, futureReadyAiSkillsSlug } from './future-ready-ai-skills-post'
 
 export const contentAr: Record<string, Partial<BlogArticle>> = {
+ [futureReadyAiSkillsSlug]: futureReadyAiSkillsArticleAr,
  'ai-employee-systems-transform-customer-service-growing-businesses': {
  title: 'كيف تُحوِّل أنظمة الموظف الذكي خدمة العملاء في الشركات النامية',
  excerpt: 'اكتشف كيف تُحدث أنظمة الموظف الذكي ثورة في عمليات خدمة العملاء، وتخفض التكاليف بنسبة 60%، وتوفر خدمة متاحة على مدار الساعة للشركات النامية.',
