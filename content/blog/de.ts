@@ -1,8 +1,10 @@
 import type { BlogArticle } from './types'
 import { articlesEn } from './en'
 import { blogDeBodyOverrides } from './generated/blog-de-body-overrides'
+import { futureReadyAiSkillsArticleDe, futureReadyAiSkillsSlug } from './future-ready-ai-skills-post'
 
 export const contentDe: Record<string, Partial<BlogArticle>> = {
+ [futureReadyAiSkillsSlug]: futureReadyAiSkillsArticleDe,
  'ai-employee-systems-transform-customer-service-growing-businesses': {
  title: 'Wie KI Mitarbeiter Systeme den Kundenservice für wachsende Unternehmen transformieren',
  excerpt: 'Entdecken Sie, wie KI Mitarbeiter Systeme den Kundenservice revolutionieren, Kosten um 60 % senken und rund um die Uhr Verfügbarkeit für wachsende Unternehmen ermöglichen.',

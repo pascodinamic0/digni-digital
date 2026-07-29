@@ -1,9 +1,11 @@
 import type { BlogArticle } from './types'
 import { articlesEn } from './en'
 import { blogFrOverrides } from './generated/blog-fr-overrides'
+import { futureReadyAiSkillsArticleFr, futureReadyAiSkillsSlug } from './future-ready-ai-skills-post'
 
 /** Hand localized French. Other slugs merge `blogFrOverrides` (run `bun run generate blog locale fills`). */
 const frenchArticlesBySlug: Record<string, BlogArticle> = {
+ [futureReadyAiSkillsSlug]: futureReadyAiSkillsArticleFr,
  'employes ia 2026 service client triple leads': {
  id: 16,
  title: "Employés IA 2026 : Comment automatiser le service client et multiplier vos leads par 3 sans recruter",
