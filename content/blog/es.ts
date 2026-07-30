@@ -1,8 +1,10 @@
 import type { BlogArticle } from './types'
 import { articlesEn } from './en'
 import { blogEsOverrides } from './generated/blog-es-overrides'
+import { AGENTIC_SOFTWARE_GOVERNANCE_SLUG, agenticSoftwareGovernanceEs } from './agentic-software-governance-post'
 
 const contentEs: Record<string, Partial<BlogArticle>> = {
+ [AGENTIC_SOFTWARE_GOVERNANCE_SLUG]: agenticSoftwareGovernanceEs,
  'ai-employee-systems-transform-customer-service-growing-businesses': {
  title: 'Cómo los Sistemas de Empleados IA Transforman el Servicio al Cliente para Empresas en Crecimiento',
  excerpt: 'Descubra cómo los sistemas de empleados IA revolucionan el servicio al cliente, reducen costos en un 60% y permiten disponibilidad 24/7 para empresas en crecimiento.',
