@@ -1,7 +1,9 @@
 import type { BlogArticle } from './types'
 import { articlesEn } from './en'
+import { AGENTIC_SOFTWARE_GOVERNANCE_SLUG, agenticSoftwareGovernanceAr } from './agentic-software-governance-post'
 
 export const contentAr: Record<string, Partial<BlogArticle>> = {
+ [AGENTIC_SOFTWARE_GOVERNANCE_SLUG]: agenticSoftwareGovernanceAr,
  'ai-employee-systems-transform-customer-service-growing-businesses': {
  title: 'كيف تُحوِّل أنظمة الموظف الذكي خدمة العملاء في الشركات النامية',
  excerpt: 'اكتشف كيف تُحدث أنظمة الموظف الذكي ثورة في عمليات خدمة العملاء، وتخفض التكاليف بنسبة 60%، وتوفر خدمة متاحة على مدار الساعة للشركات النامية.',
