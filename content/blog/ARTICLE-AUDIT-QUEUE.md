@@ -10,6 +10,12 @@ Target score **≥ 90/100** per `.cursor/skills/blog-resource-audit/SKILL.md`.
 
 Shared audit blocks: `lib/ai-career-jobs/custom-articles/audit-configs.ts` + `shared sections.ts`.
 
+## Flagship thesis post (Musk + Grow/Learn/Scale)
+
+| slug | status | score |
+|------|--------|-------|
+| future-and-our-current-place-technology-creates-opportunity | done | 92 |
+
 ## Flagship Future Ready posts (in `content/blog/en.ts`), **complete**
 
 Bodies: `content/blog/flagship-bodies-en.ts` + helpers in `flagship audit en.ts`. Wired in `en.ts` via `remainingArticles` + id 104.
