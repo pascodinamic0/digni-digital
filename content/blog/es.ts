@@ -1071,6 +1071,185 @@ const contentEs: Record<string, Partial<BlogArticle>> = {
  <p><em>Technology Creates Opportunity.</em></p>
  `,
  },
+ 'future-and-our-current-place-technology-creates-opportunity': {
+ title: 'La tecnología crea oportunidad: el futuro que estamos construyendo — y dónde estamos ahora',
+ excerpt:
+  'En la era de la IA, leads sin cobertura, egresados sin preparación y operaciones manuales cuestan cada semana. Aquí va el futuro — y dónde se sitúa Digni Digital: Grow, Learn, Scale.',
+ category: 'Futuro del trabajo',
+ readTime: '14 min de lectura',
+ publishDate: '4 de agosto de 2026',
+ tags: [
+  'Futuro del trabajo',
+  'Era de la IA',
+  'Transformación digital pymes',
+  'Digni Digital',
+  'Elon Musk',
+  'Software agéntico',
+  'Future Ready',
+  'Recepcionista IA',
+ ],
+ featured: true,
+ faqSubtitle: 'Respuestas rápidas para navegar la transición de IA.',
+ faqs: [
+  {
+   question: '¿La IA me va a quitar el trabajo?',
+   answer:
+    'En comentarios recientes, Elon Musk sostiene que la IA puede superar a los humanos en muchas tareas, con abundancia a largo plazo y una transición difícil. En Digni Digital lo leemos como una llamada a instalar cobertura ahora: IA para el volumen, juicio humano para la confianza y los ingresos.',
+  },
+  {
+   question: '¿Qué es un sistema de empleado IA?',
+   answer:
+    'Una capa agéntica siempre activa —como un recepcionista IA— que captura, califica y reserva leads 24/7, y entrega conversaciones de alta intención a tu equipo con contexto.',
+  },
+  {
+   question: '¿Por qué Digni también se enfoca en África?',
+   answer:
+    'Para demostrar que el apalancamiento de IA de primer nivel no requiere un código postal de Silicon Valley. Empezamos en Kenia, operamos con fuerza en Kinshasa/RDC y servimos a más de 150 clientes en cuatro continentes.',
+  },
+  {
+   question: '¿En qué se diferencia Future Ready de un título universitario?',
+   answer:
+    'Prioriza habilidades prácticas de IA, proyectos reales y prueba de portafolio —no solo asistencia. Resultado: 85 % de empleo en seis meses tras graduarse.',
+  },
+  {
+   question: '¿Qué es el software agéntico?',
+   answer:
+    'Sistemas a medida que perciben, razonan y actúan dentro de tus flujos reales —adaptados a cómo opera tu negocio, no a un producto genérico.',
+  },
+  {
+   question: '¿Habrá una inflación masiva?',
+   answer:
+    'Musk ha argumentado que también es posible la deflación si la producción se dispara. Es su predicción macroeconómica, no un pronóstico de Digni. Nuestro trabajo: capturar demanda y operar mientras avanza la transición.',
+  },
+  {
+   question: '¿Pueden las pymes permitírselo?',
+   answer:
+    'Sí. El acceso igualitario es un valor central: las pymes deben obtener herramientas de gran empresa sin el impuesto de un stack millonario. Empezamos con un piloto estrecho para medir ROI.',
+  },
+  {
+   question: '¿Cómo empiezo?',
+   answer:
+    'Nombra tu mayor fuga —inbound, talento u operaciones—, elige una métrica y reserva una llamada estratégica para un piloto estrecho.',
+  },
+ ],
+ content: `
+ <h2>La tecnología crea oportunidad: el futuro que estamos construyendo — y dónde estamos ahora</h2>
+
+ <p>En una conversación reciente en Tesla Giga, Elon Musk predijo que hacia 2036 podríamos entrar en una <strong>era de abundancia asombrosa</strong>. Describe un camino en el que la inteligencia artificial podría superar la suma de la inteligencia humana —quizá en unos cinco años— y en el que bienes y servicios se vuelven tan abundantes que las reglas clásicas de escasez empiezan a ceder.</p>
+
+ <p>También advirtió de un <strong>camino accidentado</strong>. A medida que la IA alcanza rendimiento de élite en más tareas digitales y físicas —superando a la mayoría de humanos en campos como la ingeniería de software— crece la brecha entre quienes aprovechan estos sistemas y quienes quedan desplazados.</p>
+
+ <p>En <strong>Digni Digital LLC</strong> creemos que el futuro no es solo algo que te sucede. Es algo para lo que instalas <strong>cobertura</strong>. Mientras el debate global oscila entre euforia y terror, nuestro trabajo es práctico: dar a empresas, escuelas y profesionales los sistemas que convierten la disrupción en ventaja —sin esperar un código postal de Silicon Valley ni un presupuesto enterprise.</p>
+
+ <p><em>Technology Creates Opportunity.</em> Esa línea de marca guía nuestros tres pilares para la próxima década: <strong>Grow, Learn y Scale</strong>.</p>
+
+ <h2>Puntos clave</h2>
+ <ul>
+ <li><strong>La abundancia es el juego largo</strong> — la visión de Musk para los 2030 apunta a productividad extrema; el corto plazo es desigual y competitivo.</li>
+ <li><strong>El camino accidentado ya está aquí</strong> — inbound sin cobertura, talento sin prueba y operaciones manuales pierden valor cada semana.</li>
+ <li><strong>La cobertura gana al shopping de funciones</strong> — mide leads capturados, empleos creados y flujos propios.</li>
+ <li><strong>El juicio gana valor</strong> — la IA lleva el volumen; el humano guarda confianza y estrategia.</li>
+ <li><strong>El acceso es la lucha filosófica</strong> — pymes y mercados emergentes merecen herramientas de gran empresa.</li>
+ <li><strong>Hay prueba</strong> — 150+ negocios; 85 % de empleo Future Ready en seis meses; ~150 % de aumento salarial reportado; compromiso 2026: 10 medios de vida y 100 profesionales formados en IA.</li>
+ <li><strong>Empieza estrecho</strong> — un piloto, una métrica, luego expande.</li>
+ </ul>
+
+ <h2>Las tres fugas: el verdadero costo de la inacción</h2>
+ <ol>
+ <li><strong>Inbound sin cobertura (fuga de ingresos):</strong> cada llamada o chat sin respuesta es una factura silenciosa a tu competidor.</li>
+ <li><strong>Talento sin cobertura (brecha de habilidades):</strong> los títulos certifican asistencia más que empleabilidad. Sin prueba digital, se cierran ventanas de contratación.</li>
+ <li><strong>Operaciones sin cobertura (brecha tecnológica):</strong> las empresas gastan millones mientras muchas pymes siguen en hojas de cálculo. Ese <strong>ratio 10:1</strong> es un impuesto semanal silencioso.</li>
+ </ol>
+
+ <table>
+ <thead>
+ <tr><th>Exposición</th><th>Problema</th><th>Cobertura</th><th>Resultado protegido</th></tr>
+ </thead>
+ <tbody>
+ <tr><td>Inbound sin cobertura</td><td>Llamadas, chats y formularios sin respuesta</td><td><a href="/ai-receptionist">Sistemas de empleado IA</a> 24/7</td><td>Cada consulta recibe respuesta</td></tr>
+ <tr><td>Talento sin cobertura</td><td>Títulos sin prueba contratable</td><td><a href="/future-ready-graduate">Programa Future Ready</a></td><td>Egresados que los empleadores quieren</td></tr>
+ <tr><td>Operaciones sin cobertura</td><td>Hojas de cálculo vs stacks enterprise</td><td><a href="/agentic-softwares">Software agéntico</a></td><td>El flujo corre sin impuesto millonario</td></tr>
+ </tbody>
+ </table>
+
+ <h2>Por qué fallan los arreglos tradicionales</h2>
+ <ul>
+ <li><strong>Chatbots genéricos</strong> sin tu voz, reglas ni escalados.</li>
+ <li><strong>Solo título</strong> señala asistencia mientras se contrata capacidad visible.</li>
+ <li><strong>Software de estantería</strong> fuerza tu proceso al producto de otro.</li>
+ </ul>
+
+ <h2>La arquitectura de la oportunidad: Grow, Learn, Scale</h2>
+ <table>
+ <thead>
+ <tr><th>Pilar</th><th>Producto</th><th>Resultado</th></tr>
+ </thead>
+ <tbody>
+ <tr><td><strong>Grow</strong></td><td>Sistemas de empleado IA</td><td>Más leads capturados, calificados y reservados 24/7</td></tr>
+ <tr><td><strong>Learn</strong></td><td>Programa Future Ready</td><td>Habilidades prácticas de IA, portafolio y empleabilidad</td></tr>
+ <tr><td><strong>Scale</strong></td><td>Software agéntico</td><td>Automatización a medida según cómo opera el negocio</td></tr>
+ </tbody>
+ </table>
+
+ <h3>1. Grow: sistemas de empleado IA</h3>
+ <p>Musk señaló que la inteligencia digital avanza muy rápido —y aún necesita actuar en el mundo real de conversaciones, calendarios y seguimientos. Nuestros <a href="/ai-receptionist">sistemas de empleado IA</a> son esa capa operativa: capturar, calificar y reservar día y noche.</p>
+ <p>Es el paso del shopping de funciones al <strong>seguro de resultados</strong>.</p>
+
+ <h3>2. Learn: el programa Future Ready</h3>
+ <p>Si la IA ejecuta más tareas a nivel élite, el valor humano se concentra en el juicio con prueba. El <a href="/future-ready-graduate">programa Future Ready</a> democratiza el acceso con proyectos reales.</p>
+ <ul>
+ <li><strong>Resultado:</strong> 85 % de empleo en seis meses (vs ~45 % citado a menudo).</li>
+ <li><strong>Impacto:</strong> ~150 % de aumento salarial promedio reportado.</li>
+ <li><strong>Compromiso 2026:</strong> 10 medios de vida y 100 profesionales formados en IA.</li>
+ </ul>
+
+ <h3>3. Scale: software agéntico</h3>
+ <p>El futuro es de quienes sistematizan la entrega. Nuestra práctica <a href="/agentic-softwares">Agentic Softwares</a> construye sistemas acotados —AMS escolar, hospitalidad como <a href="https://kabinda-lodge.com/" target="_blank" rel="noopener noreferrer">Kabinda Lodge</a>, u ops como <a href="https://dispatch-flow-one.vercel.app/" target="_blank" rel="noopener noreferrer">DispatchFlow</a>.</p>
+
+ <h2>Por qué importa nuestro lugar actual</h2>
+ <p>Fundada en 2019 por Pascal Digny Djohodo —empresa registrada en EE. UU., iniciada en Kenia. Hoy: Kenia, RDC (Kinshasa), Estados Unidos, <strong>más de 150 negocios en cuatro continentes</strong>.</p>
+ <p>Rechazamos la geografía como destino. Si la productividad extrema reescribe la escasez, el acceso decide quién se beneficia. Nuestro lugar: que pymes y mercados emergentes obtengan la misma clase de herramientas.</p>
+
+ <h2>Para quién</h2>
+ <table>
+ <thead>
+ <tr><th>Persona</th><th>Lo que les cuesta ahora</th><th>Siguiente paso pequeño</th></tr>
+ </thead>
+ <tbody>
+ <tr><td>Fundador</td><td>Leads fuera de horario que se enfrían</td><td>Mapear un flujo de intake; reservar llamada</td></tr>
+ <tr><td>Admin escolar</td><td>Egresados que pierden ventanas de contratación</td><td>Evaluar alianza Future Ready</td></tr>
+ <tr><td>Ops / líder</td><td>Seguimientos repetitivos</td><td>Pilotar un flujo agéntico</td></tr>
+ <tr><td>Cambio de carrera</td><td>Sin prueba de portafolio</td><td>Entregar un proyecto prueba en 14 días</td></tr>
+ </tbody>
+ </table>
+
+ <h2>Checklist de 10 pasos</h2>
+ <ol>
+ <li><strong>Audita el intake:</strong> cuenta leads perdidos fuera de horario.</li>
+ <li><strong>Nombra el impuesto de hojas de cálculo:</strong> lista trabajo sobre el trabajo.</li>
+ <li><strong>Revisa tu prueba:</strong> ¿tienes artefactos de portafolio aumentados con IA?</li>
+ <li><strong>Mantén human-first:</strong> amplifica personas; no borres el juicio.</li>
+ <li><strong>Pilota antes de reconstruir:</strong> una audiencia, una oferta, una métrica.</li>
+ <li><strong>Mide resultados:</strong> leads, empleos, horas recuperadas.</li>
+ <li><strong>Cierra la brecha tech:</strong> elige alcance agéntico que encaje.</li>
+ <li><strong>Aprende en continuo:</strong> la IA avanza semanalmente.</li>
+ <li><strong>Posee el sistema:</strong> cobertura medible frente a cajas negras.</li>
+ <li><strong>Agenda el mapa:</strong> pasa de observar a un plan estrecho.</li>
+ </ol>
+
+ <h2>Tu guía en la transición</h2>
+ <p>Vivimos una división. Unos tratan la IA como cobertura. Otros esperan que un sitio vitrina o un certificado de asistencia baste.</p>
+ <p>Sea cual sea la abundancia a largo plazo, la próxima década premiará a quien instale sistemas ahora. Digni Digital es la guía: <a href="/ai-receptionist">empleados IA</a>, <a href="/future-ready-graduate">Future Ready</a> y <a href="/agentic-softwares">software agéntico</a>.</p>
+ <p><strong>Leads. Empleos. Ingresos. Construimos lo que funciona.</strong></p>
+
+ <!--BLOG_FAQ-->
+
+ <h3>Siguiente paso</h3>
+ <p><a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Reserve una llamada estratégica</a> con Digni Digital. Identificaremos tu fuga más cara y diseñaremos un piloto estrecho Grow, Learn o Scale.</p>
+ <hr>
+ <p><em>Technology Creates Opportunity. El futuro lo construyen los equipos que cubren inbound, talento y operaciones antes de que la fuga sea una línea del P&amp;L.</em></p>
+ `,
+ },
 }
 
 export const articlesEs: BlogArticle[] = articlesEn.map((article) => {
