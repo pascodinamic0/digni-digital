@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { notFound, redirect } from 'next/navigation'
-import { createClient } from '@/lib/supabase/server'
+import { tryCreateClient } from '@/lib/supabase/server'
 import { createAdminClient } from '@/lib/supabase/admin'
 import { getLearnerSyllabusState } from '@/lib/lms/learner-course-syllabus'
 import { CourseSyllabusSidebar } from '../course-syllabus-sidebar'
@@ -15,7 +15,8 @@ type Props = { params: Promise<{ locale: string; courseSlug: string; lessonId: s
 
 export default async function LessonPage({ params }: Props) {
   const { locale, courseSlug, lessonId } = await params
-  const supabase = await createClient()
+  const supabase = await tryCreateClient()
+  if (!supabase) redirect(`/${locale}/learn/login`)
   const {
     data: { user },
   } = await supabase.auth.getUser()

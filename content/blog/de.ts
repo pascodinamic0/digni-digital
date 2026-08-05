@@ -1192,7 +1192,7 @@ export const contentDe: Record<string, Partial<BlogArticle>> = {
  `
  },
 
- 'employes ia 2026 service client triple leads': {
+ 'employes-ia-2026-service-client-triple-leads': {
  title: 'KI Mitarbeiter 2026: Kundenservice automatisieren und Leads verdreifachen to ohne Einstellungen',
  excerpt: 'Erfahren Sie, wie KI Mitarbeiter den Kundenservice automatisieren und Leads verdreifachen to ohne Neueinstellungen. Echte Statistiken, Fallstudien und schrittweise Implementierung für KMU.',
  category: 'KI Mitarbeiter System',
@@ -1276,7 +1276,7 @@ export const contentDe: Record<string, Partial<BlogArticle>> = {
  `
  },
 
- 'automatisation processus rdc kinshasa productivite 2026': {
+ 'automatisation-processus-rdc-kinshasa-productivite-2026': {
  title: 'Geschäftsprozessautomatisierung in der DR Kongo: Wie Unternehmen in Kinshasa 2026 50 % Produktivität gewinnen',
  excerpt: 'Wie Unternehmen in Kinshasa und der DR Kongo Prozessautomatisierung nutzen, um bis zu 50 % Produktivitätsgewinne zu erzielen. Digitale Transformation und lokale Unterstützung für kongolesische KMU.',
  category: 'KI Mitarbeiter System',
@@ -1327,7 +1327,7 @@ export const contentDe: Record<string, Partial<BlogArticle>> = {
  `
  },
 
- 'business development ia leads 24 7': {
+ 'business-development-ia-leads-24-7': {
  title: 'KI gestützte Geschäftsentwicklung: Jeden Lead erfassen und rund um die Uhr mehr Abschlüsse erzielen',
  excerpt: 'Wie KI gestützte Geschäftsentwicklung jeden Lead erfasst und hilft, rund um die Uhr mehr Abschlüsse zu erzielen. Lead Generierung, Qualifizierung und Nachfass Automatisierung.',
  category: 'Unternehmenswachstum',
@@ -1364,7 +1364,7 @@ export const contentDe: Record<string, Partial<BlogArticle>> = {
  `
  },
 
- 'creation site web ia guide 2026': {
+ 'creation-site-web-ia-guide-2026': {
  title: 'Website Erstellung mit KI: Der 2026 Leitfaden für eine Website, die automatisch Termine bucht',
  excerpt: 'Der 2026 Leitfaden zur Erstellung einer Business Website mit KI, die automatisch Leads generiert und Termine bucht. Intelligente, leadgenerierende Websites für KMU.',
  category: 'Webentwicklung',
@@ -1462,7 +1462,7 @@ export const contentDe: Record<string, Partial<BlogArticle>> = {
  `
  },
 
- 'transformation digitale rdc 2026 ia': {
+ 'transformation-digitale-rdc-2026-ia': {
  title: 'Digitale Transformation in der DR Kongo 2026: Warum KI die entscheidende Wahl ist, um im Spiel zu bleiben',
  excerpt: 'Säulenartikel: Warum digitale Transformation und KI die entscheidende Wahl für die DR Kongo 2026 sind. Links zu allen Digni Digital Servicebereichen.',
  category: 'Digitale Transformation',
@@ -1583,7 +1583,7 @@ export const contentDe: Record<string, Partial<BlogArticle>> = {
  `
  },
 
- 'guide 2026 tendances ia entreprises francophones': {
+ 'guide-2026-tendances-ia-entreprises-francophones': {
  title: 'Vollständiger 2026 Leitfaden: KI Trends für frankphones Unternehmenswachstum (Frankreich + DR Kongo + Afrika)',
  excerpt: 'KI Trends 2026 für frankphones Unternehmenswachstum: Frankreich, DR Kongo und Afrika. Agentische KI, verantwortungsvolle Automatisierung und praktische nächste Schritte für KMU.',
  category: 'KI Mitarbeiter System',
@@ -2132,6 +2132,7 @@ export const contentDe: Record<string, Partial<BlogArticle>> = {
   'KI-Rezeptionist',
  ],
  featured: true,
+ coverImageUrl: '/blog/future-current-place/cover.jpg',
  faqSubtitle: 'Kurze Antworten für Teams im KI-Übergang.',
  faqs: [
   {
@@ -2178,6 +2179,11 @@ export const contentDe: Record<string, Partial<BlogArticle>> = {
  content: `
  <h2>Technologie schafft Chancen: Die Zukunft, die wir bauen — und wo wir heute stehen</h2>
 
+ <figure class="blog-content-figure" style="margin: 2em 0;">
+ <img src="/blog/future-current-place/cover.jpg" alt="Gründer bei Nacht prüft ein Telefon voller verpasster Anrufe und ungelesener Nachrichten — die Kosten ungedeckten Inbounds" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
+ <figcaption>Bevor Fülle kommt, kostet ungedecktes Inbound Sie schon jede unbeantwortete Nacht.</figcaption>
+ </figure>
+
  <p>In einer jüngsten, weitreichenden Diskussion bei Tesla Giga prognostizierte Elon Musk, dass wir bis 2036 in ein <strong>Zeitalter erstaunlicher Fülle</strong> eintreten könnten. Er beschreibt einen Pfad, auf dem künstliche Intelligenz die Summe menschlicher Intelligenz übertreffen könnte — möglicherweise innerhalb von etwa fünf Jahren — und Güter sowie Dienstleistungen so reichlich werden, dass klassische Knappheitsregeln weichen.</p>
 
  <p>Er warnte auch vor einer <strong>holprigen Straße</strong>. Wenn KI in mehr digitalen und physischen Aufgaben Elite-Niveau erreicht — und die meisten Menschen etwa in Software Engineering übertrifft — wächst die Kluft zwischen denen, die diese Systeme nutzen, und denen, die verdrängt werden.</p>
@@ -2198,6 +2204,10 @@ export const contentDe: Record<string, Partial<BlogArticle>> = {
  </ul>
 
  <h2>Die drei Lecks: die wahren Kosten der Untätigkeit</h2>
+ <figure class="blog-content-figure" style="margin: 2em 0;">
+ <img src="/blog/future-current-place/three-leaks.jpg" alt="Drei Lecks auf einem Schreibtisch: verpasste Nachrichten, Abschluss ohne Portfolio-Beweis, Tabellenchaos" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
+ <figcaption>Inbound, Talent und Operations — drei stille Lecks, die jede Woche wachsen.</figcaption>
+ </figure>
  <ol>
  <li><strong>Ungedecktes Inbound (Umsatzleck):</strong> Jeder unbeantwortete Anruf oder Chat ist eine stille Rechnung an Ihren Wettbewerber.</li>
  <li><strong>Ungedecktes Talent (Skill-Gap):</strong> Abschlüsse zertifizieren oft Anwesenheit statt Beschäftigungsfähigkeit. Ohne digitalen Beweis schließen sich Einstellungschancen.</li>
@@ -2223,6 +2233,10 @@ export const contentDe: Record<string, Partial<BlogArticle>> = {
  </ul>
 
  <h2>Die Architektur der Chance: Grow, Learn, Scale</h2>
+ <figure class="blog-content-figure" style="margin: 2em 0;">
+ <img src="/blog/future-current-place/grow-learn-scale.jpg" alt="Modernes Büro mit Lead-Erfassung (Grow), Portfolio-Aufbau (Learn) und Operations-Automation (Scale)" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
+ <figcaption>Grow erfasst Nachfrage. Learn baut anstellbaren Beweis. Scale führt Ihren echten Workflow.</figcaption>
+ </figure>
  <table>
  <thead>
  <tr><th>Säule</th><th>Angebot</th><th>Ergebnis</th></tr>
@@ -2250,6 +2264,10 @@ export const contentDe: Record<string, Partial<BlogArticle>> = {
  <p>Die Zukunft gehört Operatoren, die Delivery systematisieren. Unsere <a href="/agentic-softwares">Agentic-Softwares</a>-Praxis baut gezielte Systeme — Schul-OS (AMS), Hospitality wie <a href="https://kabinda-lodge.com/" target="_blank" rel="noopener noreferrer">Kabinda Lodge</a> oder Ops wie <a href="https://dispatch-flow-one.vercel.app/" target="_blank" rel="noopener noreferrer">DispatchFlow</a>.</p>
 
  <h2>Warum unser heutiger Platz zählt</h2>
+ <figure class="blog-content-figure" style="margin: 2em 0;">
+ <img src="/blog/future-current-place/global.jpg" alt="Diverses Tech-Team in Afrika arbeitet an globalen Chancen-Karten und digitalen Workflows" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
+ <figcaption>Erstklassige KI-Hebelwirkung braucht keine Silicon-Valley-PLZ — sie braucht Absicherung dort, wo Sie operieren.</figcaption>
+ </figure>
  <p>Gegründet 2019 von Pascal Digny Djohodo — US-registriert, Start in Kenia, Fail-forward-Ethos. Heute: Kenia, DRC (Kinshasa), USA, <strong>150+ Unternehmen auf vier Kontinenten</strong>.</p>
  <p>Wir lehnen Geografie als Schicksal ab. Wenn extreme Produktivität Knappheit neu schreibt, entscheidet Zugang, wer profitiert. Unser Platz: KMU und Emerging Markets dieselbe Tool-Klasse geben.</p>
 
@@ -2267,6 +2285,10 @@ export const contentDe: Record<string, Partial<BlogArticle>> = {
  </table>
 
  <h2>10-Schritte-Checkliste</h2>
+ <figure class="blog-content-figure" style="margin: 2em 0;">
+ <img src="/blog/future-current-place/checklist.jpg" alt="Gründer und Ops-Lead prüfen eine kurze Pilot-Checkliste neben einem Metrik-Dashboard" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
+ <figcaption>Eng starten: ein Leck, eine Kennzahl, ein Pilot — dann skalieren, was funktioniert.</figcaption>
+ </figure>
  <ol>
  <li><strong>Intake auditieren:</strong> verpasste Leads nach Feierabend zählen.</li>
  <li><strong>Tabellensteuer benennen:</strong> Work-about-Work listen.</li>

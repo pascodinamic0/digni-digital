@@ -1449,7 +1449,7 @@ export const contentAr: Record<string, Partial<BlogArticle>> = {
  <p><em>تحتاج مساعدة في الاختيار بين SaaS المخصص والحلول الجاهزة؟ <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">احجز استشارة</a> لمناقشة احتياجاتك المحددة والحصول على توجيه خبير.</em></p>
  `
  },
- 'employes ia 2026 service client triple leads': {
+ 'employes-ia-2026-service-client-triple-leads': {
  title: 'الموظفون الأذكياء 2026: كيف تُؤتمت خدمة العملاء وتُضاعف عملاءك المحتملين ثلاث مرات دون توظيف',
  excerpt: 'تعلم كيف يُؤتمت الموظفون الأذكياء خدمة العملاء ويُضاعفون العملاء المحتملين 3 مرات دون توظيف. إحصائيات حقيقية ودراسات حالة وتطبيق خطوة بخطوة للشركات الصغيرة والمتوسطة.',
  category: 'نظام الموظف الذكي',
@@ -1541,7 +1541,7 @@ export const contentAr: Record<string, Partial<BlogArticle>> = {
  <p><em><a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">احجز مكالمتك الاستراتيجية المجانية</a> لمقارنة وكلاء الذكاء الاصطناعي مع الأتمتة التقليدية لعملك.</em></p>
  `
  },
- 'automatisation processus rdc kinshasa productivite 2026': {
+ 'automatisation-processus-rdc-kinshasa-productivite-2026': {
  title: 'أتمتة العمليات التجارية في الكونغو الديمقراطية: كيف تكسب شركات كينشاسا 50% إنتاجية في 2026',
  excerpt: 'كيف تستخدم الشركات في كينشاسا والكونغو الديمقراطية أتمتة العمليات لكسب ما يصل إلى 50% إنتاجية. التحول الرقمي والدعم المحلي للشركات الكونغولية.',
  category: 'نظام الموظف الذكي',
@@ -1676,7 +1676,7 @@ export const contentAr: Record<string, Partial<BlogArticle>> = {
  <p><em><a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">احجز مكالمتك الاستراتيجية المجانية</a> لتحديد خطة نموك بالذكاء الاصطناعي.</em></p>
  `
  },
- 'business development ia leads 24 7': {
+ 'business-development-ia-leads-24-7': {
  title: 'تطوير الأعمال المعزز بالذكاء الاصطناعي: التقط كل عميل محتمل وأغلق مزيداً من الصفقات على مدار الساعة',
  excerpt: 'كيف يلتقط تطوير الأعمال المدعوم بالذكاء الاصطناعي كل عميل محتمل ويُساعد في إغلاق مزيد من الصفقات على مدار الساعة.',
  category: 'نمو الأعمال',
@@ -1738,7 +1738,7 @@ export const contentAr: Record<string, Partial<BlogArticle>> = {
  <p><em><a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">احجز مكالمة استراتيجية مجانية</a> لتعزيز تطوير أعمالك بالذكاء الاصطناعي.</em></p>
  `
  },
- 'creation site web ia guide 2026': {
+ 'creation-site-web-ia-guide-2026': {
  title: 'إنشاء موقع إلكتروني بالذكاء الاصطناعي: دليل 2026 لموقع يحجز المواعيد تلقائياً',
  excerpt: 'دليل 2026 لإنشاء موقع إلكتروني تجاري بالذكاء الاصطناعي يُولِّد ويحجز المواعيد تلقائياً. مواقع ذكية ومُولِّدة للعملاء المحتملين للشركات الصغيرة والمتوسطة.',
  category: 'تطوير الويب',
@@ -1892,7 +1892,7 @@ export const contentAr: Record<string, Partial<BlogArticle>> = {
  <p><em><a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">احجز مكالمة استراتيجية مجانية</a> لمقارنة المخصص مقابل الجاهز لحالتك.</em></p>
  `
  },
- 'transformation digitale rdc 2026 ia': {
+ 'transformation-digitale-rdc-2026-ia': {
  title: 'التحول الرقمي في الكونغو الديمقراطية 2026: لماذا الذكاء الاصطناعي هو الخيار الحاسم للبقاء في اللعبة',
  excerpt: 'مقال محوري: لماذا التحول الرقمي والذكاء الاصطناعي هما الخيار الحاسم للكونغو الديمقراطية في 2026. روابط لجميع خدمات Digni Digital.',
  category: 'التحول الرقمي',
@@ -2086,7 +2086,7 @@ export const contentAr: Record<string, Partial<BlogArticle>> = {
  <p><em><a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">احجز مكالمة استراتيجية مجانية</a> لمناقشة تبني الذكاء الاصطناعي لمؤسستك.</em></p>
  `
  },
- 'guide 2026 tendances ia entreprises francophones': {
+ 'guide-2026-tendances-ia-entreprises-francophones': {
  title: 'دليل 2026 الشامل: اتجاهات الذكاء الاصطناعي لنمو الأعمال الفرنكوفونية (فرنسا + الكونغو + أفريقيا)',
  excerpt: 'اتجاهات الذكاء الاصطناعي لعام 2026 لنمو الأعمال الفرنكوفونية: فرنسا والكونغو وأفريقيا. الذكاء الاصطناعي الوكيلي والأتمتة المسؤولة والخطوات العملية التالية للشركات.',
  category: 'نظام الموظف الذكي',
@@ -2772,6 +2772,7 @@ export const contentAr: Record<string, Partial<BlogArticle>> = {
   'موظف استقبال ذكي',
  ],
  featured: true,
+ coverImageUrl: '/blog/future-current-place/cover.jpg',
  faqSubtitle: 'إجابات سريعة للفرق التي تبحر في انتقال الذكاء الاصطناعي.',
  faqs: [
   {
@@ -2818,6 +2819,11 @@ export const contentAr: Record<string, Partial<BlogArticle>> = {
  content: `
  <h2>التقنية تخلق الفرصة: المستقبل الذي نبنيه — وأين نقف اليوم</h2>
 
+ <figure class="blog-content-figure" style="margin: 2em 0;">
+ <img src="/blog/future-current-place/cover.jpg" alt="مؤسس ليلاً يراجع هاتفاً مليئاً بالمكالمات الفائتة والرسائل غير المقروءة — تكلفة الوارد غير المغطّى" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
+ <figcaption>قبل الوفرة، الوارد غير المغطّى يكلّفك بالفعل كل ليلة بلا رد.</figcaption>
+ </figure>
+
  <p>في نقاش واسع أخير في Tesla Giga، توقّع إيلون ماسك أننا بحلول 2036 قد ندخل <strong>عصر وفرة مذهلة</strong>. يصف مساراً قد يتجاوز فيه الذكاء الاصطناعي مجموع الذكاء البشري — ربما خلال نحو خمس سنوات — وتصبح السلع والخدمات وافرة لدرجة أن قواعد الندرة التقليدية تبدأ بالانحناء.</p>
 
  <p>وحذّر أيضاً من <strong>طريق وعر</strong>. مع وصول الذكاء الاصطناعي إلى أداء نخبة في مزيد من المهام الرقمية والمادية — متفوقاً على معظم البشر في مجالات مثل هندسة البرمجيات — تتسع الفجوة بين من يستفيد من هذه الأنظمة ومن يُزاح عنها.</p>
@@ -2838,6 +2844,10 @@ export const contentAr: Record<string, Partial<BlogArticle>> = {
  </ul>
 
  <h2>التسرّبات الثلاثة: التكلفة الحقيقية للتقاعس</h2>
+ <figure class="blog-content-figure" style="margin: 2em 0;">
+ <img src="/blog/future-current-place/three-leaks.jpg" alt="ثلاثة تسرّبات على مكتب: رسائل فائتة، شهادة بلا إثبات محفظة، وفوضى جداول" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
+ <figcaption>وارد، مواهب، وعمليات — ثلاثة تسرّبات صامتة تتفاقم كل أسبوع.</figcaption>
+ </figure>
  <ol>
  <li><strong>وارد غير مغطّى (تسرّب الإيراد):</strong> كل مكالمة أو محادثة بلا رد فاتورة صامتة لمنافسك.</li>
  <li><strong>مواهب غير مغطّاة (فجوة المهارات):</strong> الشهادات غالباً تثبت الحضور لا قابلية التوظيف. بلا إثبات رقمي تُغلق نوافذ التوظيف.</li>
@@ -2863,6 +2873,10 @@ export const contentAr: Record<string, Partial<BlogArticle>> = {
  </ul>
 
  <h2>هندسة الفرصة: نمو، تعلّم، توسّع</h2>
+ <figure class="blog-content-figure" style="margin: 2em 0;">
+ <img src="/blog/future-current-place/grow-learn-scale.jpg" alt="مكتب حديث يظهر التقاط العملاء (نمو) وبناء المحفظة (تعلّم) وأتمتة العمليات (توسّع)" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
+ <figcaption>النمو يلتقط الطلب. التعلّم يبني إثباتاً قابلاً للتوظيف. التوسّع يشغّل سير عملك الحقيقي.</figcaption>
+ </figure>
  <table>
  <thead>
  <tr><th>الركيزة</th><th>العرض</th><th>النتيجة</th></tr>
@@ -2890,6 +2904,10 @@ export const contentAr: Record<string, Partial<BlogArticle>> = {
  <p>المستقبل لمن يُنظّم التسليم. ممارسة <a href="/agentic-softwares">Agentic Softwares</a> تبني أنظمة محدودة النطاق — نظام تشغيل مدرسي (AMS)، ضيافة مثل <a href="https://kabinda-lodge.com/" target="_blank" rel="noopener noreferrer">Kabinda Lodge</a>، أو عمليات مثل <a href="https://dispatch-flow-one.vercel.app/" target="_blank" rel="noopener noreferrer">DispatchFlow</a>.</p>
 
  <h2>لماذا مكاننا الحالي مهم</h2>
+ <figure class="blog-content-figure" style="margin: 2em 0;">
+ <img src="/blog/future-current-place/global.jpg" alt="فريق تقني متنوع في أفريقيا يتعاون حول خرائط فرص عالمية وتدفقات رقمية" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
+ <figcaption>رافعة ذكاء اصطناعي عالمية المستوى لا تحتاج رمز بريد وادي السيليكون — تحتاج تغطية تعمل حيث تعمل أنت.</figcaption>
+ </figure>
  <p>تأسست Digni Digital عام 2019 على يد باسكال ديغني جوهودو — شركة مسجّلة في الولايات المتحدة بدأت في كينيا بروح الفشل إلى الأمام. اليوم: كينيا، الكونغو الديمقراطية (كينشاسا)، الولايات المتحدة، و<strong>أكثر من 150 عملاً عبر أربع قارات</strong>.</p>
  <p>نرفض الجغرافيا قدراً. إذا أعادت الإنتاجية القصوى كتابة الندرة، فالوصول يحدد من يستفيد. مكاننا: أن تحصل الشركات الصغيرة والأسواق الناشئة على نفس فئة الأدوات.</p>
 
@@ -2907,6 +2925,10 @@ export const contentAr: Record<string, Partial<BlogArticle>> = {
  </table>
 
  <h2>قائمة تحقق من 10 خطوات</h2>
+ <figure class="blog-content-figure" style="margin: 2em 0;">
+ <img src="/blog/future-current-place/checklist.jpg" alt="مؤسس وقائد عمليات يراجعان قائمة تحقق قصيرة لتجربة تجريبية بجانب لوحة مقاييس" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
+ <figcaption>ابدأ ضيّقاً: تسرّب واحد، مقياس واحد، تجربة واحدة — ثم وسّع ما ينجح.</figcaption>
+ </figure>
  <ol>
  <li><strong>راجع الاستقبال:</strong> عدّ العملاء المفقودين بعد الدوام.</li>
  <li><strong>سمِّ ضريبة الجداول:</strong> ادرج العمل حول العمل القابل للأتمتة.</li>

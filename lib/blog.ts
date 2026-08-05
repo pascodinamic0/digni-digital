@@ -1,7 +1,7 @@
 import { articlesEn, articlesFr, articlesAr, articlesDe, articlesEs } from '@/content/blog'
 import type { BlogArticle } from '@/content/blog'
 import type { Locale } from '@/i18n/routing'
-import { createClient } from '@/lib/supabase/server'
+import { tryCreateClient } from '@/lib/supabase/server'
 import { fetchDbOnlyBlogArticles } from '@/lib/blog/db-listing'
 
 const DB_LOCALE_BY_LANG: Record<string, string> = {
@@ -45,7 +45,8 @@ export async function getArticlesForLocaleWithDb(
   const slugs = new Set(fileArticles.map((a) => a.slug))
 
   try {
-    const supabase = await createClient()
+    const supabase = await tryCreateClient()
+    if (!supabase) return fileArticles
     const extras = await fetchDbOnlyBlogArticles(supabase, dbLocale, slugs)
     if (!extras.length) return fileArticles
     return sortArticlesNewestFirst([...extras, ...fileArticles])

@@ -2738,7 +2738,7 @@ const remainingArticles: BlogArticle[] = [
  {
  id: 16,
  title: "AI Employees 2026: How to Automate Customer Service and Triple Your Leads Without Hiring",
- slug: "employes ia 2026 service client triple leads",
+ slug: "employes-ia-2026-service-client-triple-leads",
  excerpt: "Learn how AI employees automate customer service and multiply leads by 3 without recruiting. Real stats, case studies, and step by step implementation for SMBs in France and DRC.",
  category: "AI Employee System",
  readTime: "11 min read",
@@ -2840,7 +2840,7 @@ const remainingArticles: BlogArticle[] = [
  {
  id: 18,
  title: "Business Process Automation in the DRC: How Kinshasa Companies Gain 50% Productivity in 2026",
- slug: "automatisation processus rdc kinshasa productivite 2026",
+ slug: "automatisation-processus-rdc-kinshasa-productivite-2026",
  excerpt: "How businesses in Kinshasa and the DRC are using process automation to gain up to 50% productivity. Digital transformation and local support for Congolese SMBs.",
  category: "AI Employee System",
  readTime: "11 min read",
@@ -3001,7 +3001,7 @@ const remainingArticles: BlogArticle[] = [
  {
  id: 20,
  title: "AI Boosted Business Development: Capture Every Lead and Close More Deals 24/7",
- slug: "business development ia leads 24 7",
+ slug: "business-development-ia-leads-24-7",
  excerpt: "How AI powered business development captures every lead and helps close more deals 24/7. Lead generation, qualification, and follow up automation.",
  category: "Business Growth",
  readTime: "11 min read",
@@ -3067,7 +3067,7 @@ const remainingArticles: BlogArticle[] = [
  {
  id: 21,
  title: "Website Creation with AI: The 2026 Guide to a Site That Books Appointments Automatically",
- slug: "creation site web ia guide 2026",
+ slug: "creation-site-web-ia-guide-2026",
  excerpt: "The 2026 guide to creating a business website with AI that generates and books appointments automatically. Smart, lead generating sites for SMBs.",
  category: "Web Development",
  readTime: "12 min read",
@@ -3229,7 +3229,7 @@ const remainingArticles: BlogArticle[] = [
  {
  id: 23,
  title: "Digital Transformation in the DRC 2026: Why AI Is the Decisive Choice to Stay in the Game",
- slug: "transformation digitale rdc 2026 ia",
+ slug: "transformation-digitale-rdc-2026-ia",
  excerpt: "Pillar article: why digital transformation and AI are the decisive choice for the DRC in 2026. Links to all Digni Digital service clusters.",
  category: "Digital Transformation",
  readTime: "14 min read",
@@ -3439,7 +3439,7 @@ const remainingArticles: BlogArticle[] = [
  {
  id: 26,
  title: "Complete 2026 Guide: AI Trends for Francophone Business Growth (France + DRC + Africa)",
- slug: "guide 2026 tendances ia entreprises francophones",
+ slug: "guide-2026-tendances-ia-entreprises-francophones",
  excerpt: "2026 AI trends for francophone business growth: France, DRC, and Africa. Agentic AI, responsible automation, and practical next steps for SMBs.",
  category: "AI Employee System",
  readTime: "14 min read",
@@ -4790,6 +4790,7 @@ const remainingArticles: BlogArticle[] = [
   'AI Receptionist',
  ],
  featured: true,
+ coverImageUrl: '/blog/future-current-place/cover.jpg',
  faqSubtitle: 'Quick answers for teams navigating the AI transition.',
  faqs: [
   {
@@ -4836,6 +4837,11 @@ const remainingArticles: BlogArticle[] = [
  content: `
  <h2>Technology Creates Opportunity: The Future We’re Building — and Where We Stand Now</h2>
 
+ <figure class="blog-content-figure" style="margin: 2em 0;">
+ <img src="/blog/future-current-place/cover.jpg" alt="Founder at night reviewing a phone flooded with missed calls and unread messages — the cost of uncovered inbound" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
+ <figcaption>Before abundance arrives, uncovered inbound already costs you every unanswered night.</figcaption>
+ </figure>
+
  <p>In a recent, wide-ranging discussion at Tesla Giga, Elon Musk predicted that by 2036 we may enter an <strong>age of amazing abundance</strong>. He described a path where artificial intelligence could exceed the sum of all human intelligence—possibly within roughly five years—and where goods and services become so plentiful that traditional scarcity rules start to bend.</p>
 
  <p>He also warned of a <strong>bumpy road</strong>. As AI reaches elite performance across more digital and physical tasks—outperforming most humans in fields like software engineering—the divide between people who can leverage these systems and people displaced by them will widen.</p>
@@ -4856,6 +4862,11 @@ const remainingArticles: BlogArticle[] = [
  </ul>
 
  <h2>The three leaks: the true cost of inaction</h2>
+
+ <figure class="blog-content-figure" style="margin: 2em 0;">
+ <img src="/blog/future-current-place/three-leaks.jpg" alt="Three leaks on one desk: missed messages, a degree without portfolio proof, and spreadsheet chaos" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
+ <figcaption>Inbound, talent, and operations — three quiet leaks that compound every week they stay uncovered.</figcaption>
+ </figure>
 
  <p>Before any “nirvana” of abundance, every organization faces three exposures that compound when left uncovered:</p>
 
@@ -4885,6 +4896,11 @@ const remainingArticles: BlogArticle[] = [
  </ul>
 
  <h2>The architecture of opportunity: Grow, Learn, Scale</h2>
+
+ <figure class="blog-content-figure" style="margin: 2em 0;">
+ <img src="/blog/future-current-place/grow-learn-scale.jpg" alt="Modern office showing Grow lead capture, Learn portfolio building, and Scale operations automation working together" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
+ <figcaption>Grow captures demand. Learn builds hireable proof. Scale runs the workflow you actually use.</figcaption>
+ </figure>
 
  <p>We help growth-focused businesses, schools, and ambitious professionals capture every lead, make talent job-ready, and run operations with agentic systems—without waiting for enterprise budgets.</p>
 
@@ -4921,6 +4937,11 @@ const remainingArticles: BlogArticle[] = [
 
  <h2>Why our current place matters</h2>
 
+ <figure class="blog-content-figure" style="margin: 2em 0;">
+ <img src="/blog/future-current-place/global.jpg" alt="Diverse Africa-based tech team collaborating around global opportunity maps and digital workflows" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
+ <figcaption>World-class AI leverage does not require a Silicon Valley zip code — it requires coverage that works where you operate.</figcaption>
+ </figure>
+
  <p>Digni Digital was founded in 2019 by Pascal Digny Djohodo—an American-registered company that started in Kenya with a fail-forward ethos. Today we operate strongly from Kenya, the Democratic Republic of the Congo (Kinshasa), and the United States, serving <strong>150+ businesses across four continents</strong>.</p>
 
  <p>We refuse geography as destiny. If Musk is right that extreme productivity can rewrite scarcity, then access decides who benefits. Our place is to make sure small businesses and emerging markets get the same class of tools the giants already take for granted—French-capable where needed, mobile-first, and measured by leads, jobs, and revenue.</p>
@@ -4940,6 +4961,11 @@ const remainingArticles: BlogArticle[] = [
  </table>
 
  <h2>Your 10-step checklist for the AI era</h2>
+
+ <figure class="blog-content-figure" style="margin: 2em 0;">
+ <img src="/blog/future-current-place/checklist.jpg" alt="Founder and operations lead reviewing a short AI-era pilot checklist beside a metrics dashboard" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
+ <figcaption>Start narrow: one leak, one metric, one pilot — then expand what works.</figcaption>
+ </figure>
 
  <ol>
  <li><strong>Audit your intake:</strong> count leads missed after hours.</li>

@@ -1,5 +1,5 @@
 import { redirect } from 'next/navigation'
-import { createClient } from '@/lib/supabase/server'
+import { tryCreateClient } from '@/lib/supabase/server'
 import { youtubeEmbedSrc } from '@/lib/lms/youtube-embed'
 import { WelcomeVideoClient } from './welcome-client'
 
@@ -7,7 +7,8 @@ type Props = { params: Promise<{ locale: string }> }
 
 export default async function LearnWelcomePage({ params }: Props) {
   const { locale } = await params
-  const supabase = await createClient()
+  const supabase = await tryCreateClient()
+  if (!supabase) redirect(`/${locale}/learn/login`)
   const {
     data: { user },
   } = await supabase.auth.getUser()
