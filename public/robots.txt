@@ -16,5 +16,13 @@ Allow: /
 Disallow: /api/
 Disallow: /_next/
 Disallow: /docs/
+Disallow: /admin
+Disallow: /admin/
+Disallow: /auth
+Disallow: /auth/
+Disallow: /*/learn
+Disallow: /*/learn/
+Disallow: /*/checkout
+Disallow: /*/checkout/
 
 Sitemap: https://digni-digital-llc.com/sitemap.xml

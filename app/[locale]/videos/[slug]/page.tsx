@@ -13,6 +13,7 @@ import {
   type SiteVideoSlug,
 } from '@/lib/site-videos'
 import { jsonLdScriptProps, absoluteUrl } from '@/lib/agent-readiness'
+import { buildLocaleAlternates } from '@/lib/seo/locale-metadata'
 
 type Props = {
   params: Promise<{ locale: string; slug: string }>
@@ -35,6 +36,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${copy.title} | Digni Digital`,
     description: copy.description,
+    alternates: buildLocaleAlternates(locale, getSiteVideoWatchPath(slug as SiteVideoSlug)),
     openGraph: {
       title: copy.title,
       description: copy.description,

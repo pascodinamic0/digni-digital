@@ -1,7 +1,14 @@
+import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
+import { noIndexRobots } from '@/lib/seo/locale-metadata'
+
+export const metadata: Metadata = {
+  robots: noIndexRobots(),
+}
 
 /**
  * Learning portal shell: consistent spacing and backdrop with the rest of the marketing site.
+ * Not for Google indexing — private LMS surface.
  */
 export default function LearnLayout({ children }: { children: ReactNode }) {
   return (

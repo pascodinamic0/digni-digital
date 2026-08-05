@@ -87,18 +87,100 @@ const nextConfig = {
       destination: `/:locale/blog/${to}`,
       permanent: true,
     }))
+
+    /** Formerly space-separated slugs → hyphenated (GSC / old links). */
+    const spaceSlugFixes = [
+      [
+        'employes%20ia%202026%20service%20client%20triple%20leads',
+        'employes-ia-2026-service-client-triple-leads',
+      ],
+      [
+        'automatisation%20processus%20rdc%20kinshasa%20productivite%202026',
+        'automatisation-processus-rdc-kinshasa-productivite-2026',
+      ],
+      [
+        'business%20development%20ia%20leads%2024%207',
+        'business-development-ia-leads-24-7',
+      ],
+      ['creation%20site%20web%20ia%20guide%202026', 'creation-site-web-ia-guide-2026'],
+      [
+        'transformation%20digitale%20rdc%202026%20ia',
+        'transformation-digitale-rdc-2026-ia',
+      ],
+      [
+        'guide%202026%20tendances%20ia%20entreprises%20francophones',
+        'guide-2026-tendances-ia-entreprises-francophones',
+      ],
+    ].map(([from, to]) => ({
+      source: `/:locale/blog/${from}`,
+      destination: `/:locale/blog/${to}`,
+      permanent: true,
+    }))
+
+    /** Prefer 301 over next-intl's temporary locale redirects for known public routes. */
+    const unprefixedMarketingPaths = [
+      'about',
+      'solutions',
+      'products',
+      'services',
+      'case-studies',
+      'blog',
+      'digni',
+      'contact',
+      'affiliate',
+      'ai-receptionist',
+      'careers',
+      'agentic-softwares',
+      'future-ready-graduate',
+      'privacy',
+      'terms',
+      'cookie-policy',
+      'videos',
+      'learn',
+    ]
+    const unprefixedMarketingRedirects = unprefixedMarketingPaths.flatMap((segment) => [
+      { source: `/${segment}`, destination: `/us-en/${segment}`, permanent: true },
+      { source: `/${segment}/:path*`, destination: `/us-en/${segment}/:path*`, permanent: true },
+    ])
+
     return [
       ...legacyLocaleRedirectRules,
       ...localePrefixedPdfRedirects,
       { source: '/custom-saas', destination: '/us-en/agentic-softwares', permanent: true },
       { source: '/:locale/custom-saas', destination: '/:locale/agentic-softwares', permanent: true },
       ...blogRedirects,
+      ...spaceSlugFixes,
+      ...unprefixedMarketingRedirects,
     ]
   },
   async headers() {
     return [
       {
         source: '/hero-bg.mp4',
+        headers: [{ key: 'X-Robots-Tag', value: 'noindex, nofollow' }],
+      },
+      {
+        source: '/admin/:path*',
+        headers: [{ key: 'X-Robots-Tag', value: 'noindex, nofollow' }],
+      },
+      {
+        source: '/auth/:path*',
+        headers: [{ key: 'X-Robots-Tag', value: 'noindex, nofollow' }],
+      },
+      {
+        source: '/:locale/learn',
+        headers: [{ key: 'X-Robots-Tag', value: 'noindex, nofollow' }],
+      },
+      {
+        source: '/:locale/learn/:path*',
+        headers: [{ key: 'X-Robots-Tag', value: 'noindex, nofollow' }],
+      },
+      {
+        source: '/:locale/checkout',
+        headers: [{ key: 'X-Robots-Tag', value: 'noindex, nofollow' }],
+      },
+      {
+        source: '/:locale/checkout/:path*',
         headers: [{ key: 'X-Robots-Tag', value: 'noindex, nofollow' }],
       },
     ]

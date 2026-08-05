@@ -1,12 +1,15 @@
 import { redirect } from 'next/navigation'
-import { createClient } from '@/lib/supabase/server'
+import { tryCreateClient } from '@/lib/supabase/server'
 import { FUTURE_READY_COURSE_ID } from '@/lib/course-ids'
 
 type Props = { params: Promise<{ locale: string }> }
 
 export default async function LearnIndexPage({ params }: Props) {
   const { locale } = await params
-  const supabase = await createClient()
+  const supabase = await tryCreateClient()
+  if (!supabase) {
+    redirect(`/${locale}/learn/login`)
+  }
   const {
     data: { user },
   } = await supabase.auth.getUser()

@@ -1,5 +1,5 @@
 import { unstable_cache } from 'next/cache'
-import { createClient } from '@/lib/supabase/server'
+import { tryCreateClient } from '@/lib/supabase/server'
 import { createAdminClient, isSupabaseServiceConfigured } from '@/lib/supabase/admin'
 import { SITE_FEATURE_FLAG_KEYS } from './site-feature-flags-constants'
 
@@ -42,7 +42,8 @@ async function fetchSiteFeatureFlagEnabled(
   try {
     const supabase = isSupabaseServiceConfigured()
       ? createAdminClient()
-      : await createClient()
+      : await tryCreateClient()
+    if (!supabase) return defaultEnabled
 
     const { data, error } = await supabase
       .from('site_feature_flags')

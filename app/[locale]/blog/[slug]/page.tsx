@@ -4,11 +4,12 @@ import BlogPostContent from '@/app/blog/BlogPostContent'
 import { getArticleBySlugForLocale, allArticlesEn } from '@/lib/blog'
 import { fetchDbArticleBySlug } from '@/lib/blog/db-article-by-slug'
 import { mergeArticleBundleWithOverrides, fetchPublishedBlogOverrides } from '@/lib/blog-merge'
-import { createClient } from '@/lib/supabase/server'
+import { tryCreateClient } from '@/lib/supabase/server'
 import { routing } from '@/i18n/routing'
 import { BRAND_LOGO_PATH } from '@/lib/site-assets'
 import type { Language } from '@/app/i18n/translations'
 import { AGENT_DATA_LAST_UPDATED, jsonLdScriptProps } from '@/lib/agent-readiness'
+import { buildLocaleAlternates } from '@/lib/seo/locale-metadata'
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://digni-digital-llc.com'
 
@@ -25,10 +26,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, slug } = await params
   let data = getArticleBySlugForLocale(locale, slug)
   if (!data) {
-    const supabase = await createClient()
-    const dbArticle = await fetchDbArticleBySlug(supabase, locale, slug)
-    if (!dbArticle) return { title: 'Article Not Found | Digni Digital Blog' }
-    data = { en: dbArticle, fr: dbArticle, ar: dbArticle, de: dbArticle, es: dbArticle }
+    const supabase = await tryCreateClient()
+    if (supabase) {
+      const dbArticle = await fetchDbArticleBySlug(supabase, locale, slug)
+      if (dbArticle) {
+        data = { en: dbArticle, fr: dbArticle, ar: dbArticle, de: dbArticle, es: dbArticle }
+      }
+    }
+  }
+  if (!data) {
+    return {
+      title: 'Article Not Found | Digni Digital Blog',
+      robots: { index: false, follow: false },
+    }
   }
   const overrides = await fetchPublishedBlogOverrides(slug)
   const merged = mergeArticleBundleWithOverrides(data, overrides)
@@ -42,6 +52,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${article.title} | Digni Digital Blog`,
     description: article.excerpt,
     keywords: article.tags,
+    alternates: buildLocaleAlternates(locale, `/blog/${slug}`),
     openGraph: {
       title: article.title,
       description: article.excerpt,
@@ -63,8 +74,10 @@ export default async function BlogPostPage({ params }: Props) {
   let data = getArticleBySlugForLocale(locale, slug)
 
   if (!data) {
-    const supabase = await createClient()
-    const dbArticle = await fetchDbArticleBySlug(supabase, locale, slug)
+    const supabase = await tryCreateClient()
+    const dbArticle = supabase
+      ? await fetchDbArticleBySlug(supabase, locale, slug)
+      : null
     if (!dbArticle) notFound()
     data = { en: dbArticle, fr: dbArticle, ar: dbArticle, de: dbArticle, es: dbArticle }
   }

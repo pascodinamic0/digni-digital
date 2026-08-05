@@ -4,10 +4,10 @@ import { blogFrOverrides } from './generated/blog-fr-overrides'
 
 /** Hand localized French. Other slugs merge `blogFrOverrides` (run `bun run generate blog locale fills`). */
 const frenchArticlesBySlug: Record<string, BlogArticle> = {
- 'employes ia 2026 service client triple leads': {
+ 'employes-ia-2026-service-client-triple-leads': {
  id: 16,
  title: "Employés IA 2026 : Comment automatiser le service client et multiplier vos leads par 3 sans recruter",
- slug: "employes ia 2026 service client triple leads",
+ slug: "employes-ia-2026-service-client-triple-leads",
  excerpt: "Découvrez comment les employés IA automatisent le service client et multiplient les leads par 3 sans recruter. Statistiques réelles, études de cas et mise en œuvre pas à pas pour les PME en France et en RDC.",
  category: "Système d'employés IA",
  readTime: "11 min de lecture",
@@ -104,10 +104,10 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
  <p><em><a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Réservez votre appel stratégique gratuit</a> pour comparer agents IA et automatisation traditionnelle pour votre entreprise.</em></p>
  `,
  },
- 'automatisation processus rdc kinshasa productivite 2026': {
+ 'automatisation-processus-rdc-kinshasa-productivite-2026': {
  id: 18,
  title: "Automatisation des processus métiers en RDC : Comment les entreprises de Kinshasa gagnent 50 % de productivité en 2026",
- slug: "automatisation processus rdc kinshasa productivite 2026",
+ slug: "automatisation-processus-rdc-kinshasa-productivite-2026",
  excerpt: "Comment les entreprises de Kinshasa et de RDC utilisent l'automatisation des processus pour gagner jusqu'à 50 % de productivité. Transformation digitale et accompagnement local pour les PME congolaises.",
  category: "Système d'employés IA",
  readTime: "11 min de lecture",
@@ -137,10 +137,10 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
  <p><em><a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Réservez votre appel stratégique gratuit</a> pour parler d'automatisation pour votre entreprise à Kinshasa ou en RDC.</em></p>
  `,
  },
- 'business development ia leads 24 7': {
+ 'business-development-ia-leads-24-7': {
  id: 20,
  title: "Business development boosté par l'IA : Capturer tous les leads et fermer plus de deals 24h/24",
- slug: "business development ia leads 24 7",
+ slug: "business-development-ia-leads-24-7",
  excerpt: "Comment le business development piloté par l'IA capture chaque lead et aide à fermer plus de deals 24h/24. Génération de leads, qualification et automatisation du suivi.",
  category: "Croissance d'entreprise",
  readTime: "11 min de lecture",
@@ -166,10 +166,10 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
  <p><em><a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Réservez votre appel stratégique gratuit</a> pour booster votre business development avec l'IA.</em></p>
  `,
  },
- 'creation site web ia guide 2026': {
+ 'creation-site-web-ia-guide-2026': {
  id: 21,
  title: "Création de site web avec IA : Le guide 2026 pour un site qui génère des rendez vous automatiquement",
- slug: "creation site web ia guide 2026",
+ slug: "creation-site-web-ia-guide-2026",
  excerpt: "Le guide 2026 pour créer un site d'entreprise avec l'IA qui génère et prend des rendez vous automatiquement. Sites intelligents et générateurs de leads pour les PME.",
  category: "Développement web",
  readTime: "12 min de lecture",
@@ -248,10 +248,10 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
  <p><em><a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Réservez votre appel stratégique gratuit</a> pour comparer sur mesure et prêt à-l'emploi pour votre cas.</em></p>
  `,
  },
- 'transformation digitale rdc 2026 ia': {
+ 'transformation-digitale-rdc-2026-ia': {
  id: 23,
  title: "Transformation digitale RDC 2026 : Pourquoi l'IA est le choix décisif pour ne pas être exclu du marché",
- slug: "transformation digitale rdc 2026 ia",
+ slug: "transformation-digitale-rdc-2026-ia",
  excerpt: "Article pilier : pourquoi la transformation digitale et l'IA sont le choix décisif pour la RDC en 2026. Liens vers tous les pôles de services Digni Digital.",
  category: "Transformation digitale",
  readTime: "14 min de lecture",
@@ -358,10 +358,10 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
  `,
  },
 
- 'guide 2026 tendances ia entreprises francophones': {
+ 'guide-2026-tendances-ia-entreprises-francophones': {
  id: 26,
  title: "Guide complet 2026 : Tendances IA pour la croissance des entreprises francophones (France + RDC + Afrique)",
- slug: "guide 2026 tendances ia entreprises francophones",
+ slug: "guide-2026-tendances-ia-entreprises-francophones",
  excerpt: "Tendances IA 2026 pour la croissance des entreprises francophones : France, RDC et Afrique. IA agentique, automatisation responsable, études de cas et plan d'action concret pour les PME.",
  category: "Système d'employés IA",
  readTime: "14 min de lecture",
@@ -1323,6 +1323,7 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
   'Réceptionniste IA',
  ],
  featured: true,
+ coverImageUrl: '/blog/future-current-place/cover.jpg',
  faqSubtitle: 'Réponses rapides pour naviguer la transition IA.',
  faqs: [
   {
@@ -1369,6 +1370,11 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
  content: `
  <h2>La technologie crée des opportunités : l’avenir que nous construisons — et notre place aujourd’hui</h2>
 
+ <figure class="blog-content-figure" style="margin: 2em 0;">
+ <img src="/blog/future-current-place/cover.jpg" alt="Dirigeant la nuit face à un téléphone saturé d’appels manqués et de messages non lus — le coût de l’inbound non couvert" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
+ <figcaption>Avant l’abondance, l’inbound non couvert vous coûte déjà chaque nuit sans réponse.</figcaption>
+ </figure>
+
  <p>Dans une discussion récente à Tesla Giga, Elon Musk a prédit qu’à l’horizon 2036 nous pourrions entrer dans un <strong>âge d’abondance remarquable</strong>. Il décrit un chemin où l’intelligence artificielle pourrait dépasser la somme de l’intelligence humaine — peut-être en environ cinq ans — et où biens et services deviennent si abondants que les règles classiques de rareté commencent à fléchir.</p>
 
  <p>Il a aussi averti d’une <strong>route cahoteuse</strong>. À mesure que l’IA atteint un niveau d’élite sur davantage de tâches numériques et physiques — surpassant la plupart des humains dans des domaines comme l’ingénierie logicielle — l’écart se creuse entre ceux qui savent tirer parti de ces systèmes et ceux qu’ils déplacent.</p>
@@ -1389,6 +1395,11 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
  </ul>
 
  <h2>Les trois fuites : le vrai coût de l’inaction</h2>
+
+ <figure class="blog-content-figure" style="margin: 2em 0;">
+ <img src="/blog/future-current-place/three-leaks.jpg" alt="Trois fuites sur un bureau : messages manqués, diplôme sans preuve portfolio, chaos de tableurs" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
+ <figcaption>Inbound, talent et opérations — trois fuites silencieuses qui s’aggravent chaque semaine.</figcaption>
+ </figure>
 
  <p>Avant toute « nirvana » d’abondance, chaque organisation fait face à trois expositions qui s’aggravent si elles restent découvertes :</p>
 
@@ -1417,6 +1428,11 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
  </ul>
 
  <h2>L’architecture de l’opportunité : Grow, Learn, Scale</h2>
+
+ <figure class="blog-content-figure" style="margin: 2em 0;">
+ <img src="/blog/future-current-place/grow-learn-scale.jpg" alt="Bureau moderne montrant capture de leads (Grow), construction de portfolio (Learn) et automatisation des opérations (Scale)" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
+ <figcaption>Grow capture la demande. Learn bâtit une preuve embauchable. Scale fait tourner votre vrai workflow.</figcaption>
+ </figure>
 
  <p>Nous aidons les entreprises en croissance, les écoles et les professionnels ambitieux à capturer chaque prospect, rendre les talents prêts à l’emploi et faire tourner les opérations avec des systèmes agentiques — sans attendre les budgets entreprise.</p>
 
@@ -1447,6 +1463,10 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
  <p>L’avenir appartient aux opérateurs qui systématisent la livraison. Les outils catalogue peinent à coller à la réalité. Notre pratique <a href="/agentic-softwares">Agentic Softwares</a> construit des systèmes ciblés — OS scolaire (AMS), hospitalité comme <a href="https://kabinda-lodge.com/" target="_blank" rel="noopener noreferrer">Kabinda Lodge</a>, ou ops comme <a href="https://dispatch-flow-one.vercel.app/" target="_blank" rel="noopener noreferrer">DispatchFlow</a>.</p>
 
  <h2>Pourquoi notre place actuelle compte</h2>
+ <figure class="blog-content-figure" style="margin: 2em 0;">
+ <img src="/blog/future-current-place/global.jpg" alt="Équipe tech diversifiée en Afrique collaborant autour de cartes d’opportunité mondiale et de flux digitaux" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
+ <figcaption>Un levier IA de premier plan n’exige pas un code postal de Silicon Valley — il exige une couverture qui marche là où vous opérez.</figcaption>
+ </figure>
  <p>Fondée en 2019 par Pascal Digny Djohodo — entreprise enregistrée aux États-Unis, démarrée au Kenya, ethos « fail forward ». Aujourd’hui : Kenya, RDC (Kinshasa), États-Unis, <strong>150+ entreprises sur quatre continents</strong>.</p>
  <p>Nous refusons la géographie comme destin. Si la productivité extrême réécrit la rareté, l’accès décide qui en bénéficie. Notre place : faire en sorte que PME et marchés émergents obtiennent la même classe d’outils — capable en français si besoin, mobile first, mesurée en leads, emplois et revenus.</p>
 
@@ -1464,6 +1484,10 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
  </table>
 
  <h2>Checklist en 10 étapes</h2>
+ <figure class="blog-content-figure" style="margin: 2em 0;">
+ <img src="/blog/future-current-place/checklist.jpg" alt="Fondateur et responsable ops passant en revue une courte checklist pilote à côté d’un tableau de métriques" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
+ <figcaption>Commencez étroit : une fuite, une métrique, un pilote — puis étendez ce qui marche.</figcaption>
+ </figure>
  <ol>
  <li><strong>Auditez l’intake :</strong> comptez les leads manqués après heures.</li>
  <li><strong>Nommez la taxe tableur :</strong> listez le travail autour du travail à automatiser.</li>

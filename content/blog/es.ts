@@ -1089,6 +1089,7 @@ const contentEs: Record<string, Partial<BlogArticle>> = {
   'Recepcionista IA',
  ],
  featured: true,
+ coverImageUrl: '/blog/future-current-place/cover.jpg',
  faqSubtitle: 'Respuestas rápidas para navegar la transición de IA.',
  faqs: [
   {
@@ -1135,6 +1136,11 @@ const contentEs: Record<string, Partial<BlogArticle>> = {
  content: `
  <h2>La tecnología crea oportunidad: el futuro que estamos construyendo — y dónde estamos ahora</h2>
 
+ <figure class="blog-content-figure" style="margin: 2em 0;">
+ <img src="/blog/future-current-place/cover.jpg" alt="Fundador de noche revisando un teléfono saturado de llamadas perdidas y mensajes sin leer — el costo del inbound sin cobertura" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
+ <figcaption>Antes de la abundancia, el inbound sin cobertura ya te cuesta cada noche sin respuesta.</figcaption>
+ </figure>
+
  <p>En una conversación reciente en Tesla Giga, Elon Musk predijo que hacia 2036 podríamos entrar en una <strong>era de abundancia asombrosa</strong>. Describe un camino en el que la inteligencia artificial podría superar la suma de la inteligencia humana —quizá en unos cinco años— y en el que bienes y servicios se vuelven tan abundantes que las reglas clásicas de escasez empiezan a ceder.</p>
 
  <p>También advirtió de un <strong>camino accidentado</strong>. A medida que la IA alcanza rendimiento de élite en más tareas digitales y físicas —superando a la mayoría de humanos en campos como la ingeniería de software— crece la brecha entre quienes aprovechan estos sistemas y quienes quedan desplazados.</p>
@@ -1155,6 +1161,10 @@ const contentEs: Record<string, Partial<BlogArticle>> = {
  </ul>
 
  <h2>Las tres fugas: el verdadero costo de la inacción</h2>
+ <figure class="blog-content-figure" style="margin: 2em 0;">
+ <img src="/blog/future-current-place/three-leaks.jpg" alt="Tres fugas en un escritorio: mensajes perdidos, un título sin prueba de portafolio y caos de hojas de cálculo" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
+ <figcaption>Inbound, talento y operaciones — tres fugas silenciosas que se acumulan cada semana.</figcaption>
+ </figure>
  <ol>
  <li><strong>Inbound sin cobertura (fuga de ingresos):</strong> cada llamada o chat sin respuesta es una factura silenciosa a tu competidor.</li>
  <li><strong>Talento sin cobertura (brecha de habilidades):</strong> los títulos certifican asistencia más que empleabilidad. Sin prueba digital, se cierran ventanas de contratación.</li>
@@ -1180,6 +1190,10 @@ const contentEs: Record<string, Partial<BlogArticle>> = {
  </ul>
 
  <h2>La arquitectura de la oportunidad: Grow, Learn, Scale</h2>
+ <figure class="blog-content-figure" style="margin: 2em 0;">
+ <img src="/blog/future-current-place/grow-learn-scale.jpg" alt="Oficina moderna mostrando captura de leads (Grow), construcción de portafolio (Learn) y automatización de operaciones (Scale)" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
+ <figcaption>Grow captura demanda. Learn construye prueba contratables. Scale ejecuta el flujo que realmente usas.</figcaption>
+ </figure>
  <table>
  <thead>
  <tr><th>Pilar</th><th>Producto</th><th>Resultado</th></tr>
@@ -1207,6 +1221,10 @@ const contentEs: Record<string, Partial<BlogArticle>> = {
  <p>El futuro es de quienes sistematizan la entrega. Nuestra práctica <a href="/agentic-softwares">Agentic Softwares</a> construye sistemas acotados —AMS escolar, hospitalidad como <a href="https://kabinda-lodge.com/" target="_blank" rel="noopener noreferrer">Kabinda Lodge</a>, u ops como <a href="https://dispatch-flow-one.vercel.app/" target="_blank" rel="noopener noreferrer">DispatchFlow</a>.</p>
 
  <h2>Por qué importa nuestro lugar actual</h2>
+ <figure class="blog-content-figure" style="margin: 2em 0;">
+ <img src="/blog/future-current-place/global.jpg" alt="Equipo tech diverso en África colaborando alrededor de mapas de oportunidad global y flujos digitales" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
+ <figcaption>El apalancamiento de IA de primer nivel no requiere un código postal de Silicon Valley — requiere cobertura donde operas.</figcaption>
+ </figure>
  <p>Fundada en 2019 por Pascal Digny Djohodo —empresa registrada en EE. UU., iniciada en Kenia. Hoy: Kenia, RDC (Kinshasa), Estados Unidos, <strong>más de 150 negocios en cuatro continentes</strong>.</p>
  <p>Rechazamos la geografía como destino. Si la productividad extrema reescribe la escasez, el acceso decide quién se beneficia. Nuestro lugar: que pymes y mercados emergentes obtengan la misma clase de herramientas.</p>
 
@@ -1224,6 +1242,10 @@ const contentEs: Record<string, Partial<BlogArticle>> = {
  </table>
 
  <h2>Checklist de 10 pasos</h2>
+ <figure class="blog-content-figure" style="margin: 2em 0;">
+ <img src="/blog/future-current-place/checklist.jpg" alt="Fundador y líder de ops revisando una lista corta de piloto junto a un panel de métricas" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
+ <figcaption>Empieza estrecho: una fuga, una métrica, un piloto — luego expande lo que funciona.</figcaption>
+ </figure>
  <ol>
  <li><strong>Audita el intake:</strong> cuenta leads perdidos fuera de horario.</li>
  <li><strong>Nombra el impuesto de hojas de cálculo:</strong> lista trabajo sobre el trabajo.</li>
