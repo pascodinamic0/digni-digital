@@ -457,12 +457,18 @@ html:not([data-theme="light"]) footer#contact input#footer-newsletter-email:-web
   margin-bottom: 0.75rem;
 }
 
-/* Client logos section: stronger headline treatment */
+/* Client logos — proof band with dual marquee */
 .client-logos-section .client-logos-headline {
   letter-spacing: -0.03em;
 }
 .client-logos-section .client-logos-highlight {
-  background: linear-gradient(120deg, var(--text) 0%, var(--accent) 35%, var(--accent-light) 70%, var(--accent) 100%);
+  background: linear-gradient(
+    120deg,
+    var(--text) 0%,
+    var(--accent) 40%,
+    var(--accent-light) 72%,
+    var(--accent) 100%
+  );
   background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -475,33 +481,55 @@ html:not([data-theme="light"]) footer#contact input#footer-newsletter-email:-web
   }
 }
 @keyframes gradient-text-shift {
-  0%, 100% { background-position: 0% center; }
-  50% { background-position: 100% center; }
+  0%,
+  100% {
+    background-position: 0% center;
+  }
+  50% {
+    background-position: 100% center;
+  }
 }
 
-/* Client logos: unified wall grid */
 .client-logo-variant-light {
   display: none;
 }
 .client-logo-variant-dark {
   display: block;
 }
-[data-theme="light"] .client-logo-variant-light {
+[data-theme='light'] .client-logo-variant-light {
   display: block;
 }
-[data-theme="light"] .client-logo-variant-dark {
+[data-theme='light'] .client-logo-variant-dark {
   display: none;
 }
 
+.client-logos-marquee .client-logos-track + .client-logos-track {
+  margin-top: 0;
+}
+
 @media (hover: hover) and (pointer: fine) {
-  .client-logo-cell:hover {
-    background: rgba(var(--accent-rgb), 0.04);
+  .client-logo-item:hover {
+    opacity: 1;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .client-logos-section .client-logos-highlight {
     animation: none;
+  }
+
+  .client-logos-marquee .animate-scroll-left-triple,
+  .client-logos-marquee .animate-scroll-right-triple {
+    animation: none;
+    flex-wrap: wrap;
+    width: 100% !important;
+    max-width: 72rem;
+    margin-inline: auto;
+    justify-content: center;
+  }
+
+  .client-logos-marquee .client-logos-track {
+    overflow: visible;
   }
 }
 
@@ -539,16 +567,54 @@ html:not([data-theme="light"]) footer#contact input#footer-newsletter-email:-web
   background: var(--surface);
   border: 2px solid var(--border);
   border-radius: var(--radius-lg);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  backdrop-filter: blur(8px);
+  transition: border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Real hover only: avoids sticky :hover on touch (lifted cards stacking over content above). */
 @media (hover: hover) and (pointer: fine) {
   .card:hover {
     border-color: var(--border-accent);
-    transform: translateY(-4px);
     box-shadow: var(--shadow-card);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .motion-reveal {
+    animation: motion-reveal 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 35%;
+  }
+
+  .scroll-hint svg {
+    animation: scroll-hint-nudge 2.2s ease-in-out infinite;
+  }
+}
+
+@keyframes motion-reveal {
+  from {
+    opacity: 0.94;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes scroll-hint-nudge {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(4px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .motion-reveal,
+  .scroll-hint svg {
+    animation: none;
   }
 }
 
@@ -1491,6 +1557,15 @@ img {
 .animate-scroll-left-triple:hover,
 .animate-scroll-right-triple:hover {
   animation-play-state: paused;
+}
+
+@media (max-width: 767px) {
+  .animate-scroll-left,
+  .animate-scroll-left-triple,
+  .animate-scroll-right-triple,
+  .animate-scroll-left-slow {
+    animation: none;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

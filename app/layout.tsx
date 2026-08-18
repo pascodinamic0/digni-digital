@@ -52,11 +52,8 @@ export const metadata: Metadata = {
   publisher: 'Digni Digital',
   metadataBase: new URL(SITE_URL),
   icons: {
-    icon: [
-      { url: '/favicon.gif', type: 'image/gif' },
-      { url: '/icon.png', type: 'image/png', sizes: '1024x1024' },
-    ],
-    shortcut: [{ url: '/Favicon.png', type: 'image/png', sizes: '512x512' }],
+    icon: [{ url: '/icon.png', type: 'image/png', sizes: '1024x1024' }],
+    shortcut: [{ url: '/icon.png', type: 'image/png', sizes: '1024x1024' }],
     apple: [{ url: '/apple-icon.png', type: 'image/png', sizes: '1024x1024' }],
   },
   openGraph: {

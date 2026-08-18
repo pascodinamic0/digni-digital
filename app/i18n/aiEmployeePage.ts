@@ -177,14 +177,14 @@ type ResultLine = { metric: string; description: string }
 
 export const aiEmployeePageEn: AiEmployeePageTranslations = {
  hero: {
- badge: 'For busy service businesses',
- titleLine1: 'You Already Paid for Those Leads.',
- titleHighlight: 'Most Never Get a Reply.',
- hook:
- 'You spend all day closing work. Leads call while you’re on the job. Whoever answers first wins—and it isn’t you. This isn’t a chatbot. It’s the system that turns inbound into booked jobs while you work.',
- primaryCta: 'See What Slow Follow-Up Is Costing You',
- footnote:
- 'We can’t promise every lead will book—of course not. But we answer in under 2 seconds, qualify, and book 24/7 so silence stops choosing for you. 15 qualified appointments in 30 days, or we work free until you hit it.',
+    badge: 'For busy service teams who handle paid demand',
+    titleLine1: 'You Paid for the Lead.',
+    titleHighlight: 'Why Let It Go Cold?',
+    hook:
+      'Your next customer could be in your inbox, WhatsApp, website, or phone right now—waiting for a reply while your team is busy. Digni captures, qualifies, follows up, and books 24/7 so the demand you paid for becomes booked work while you close the deals.',
+    primaryCta: 'Find Your Revenue Leaks',
+    footnote:
+      'We can’t guarantee every lead will book—of course not. But we reply under 2 seconds, qualify, and book 24/7 until silence stops choosing for you. If we don’t hit your targets, we work free until you do.',
  },
  valueBadges: {
  ariaLabel: 'Speed, deployment, and effort guarantees',

@@ -1,15 +1,16 @@
 'use client'
 
-import { use, useState, useEffect, useRef } from 'react'
-import { motion, useInView, useReducedMotion, useScroll, useTransform } from 'framer-motion'
+import { use } from 'react'
+import { motion } from 'framer-motion'
 import { Link } from '@/i18n/navigation'
 import Image from 'next/image'
 import AnimatedSection from '@/app/components/AnimatedSection'
 import SectionBlock from '@/app/components/SectionBlock'
 import ScrollIndicator from '@/app/components/ScrollIndicator'
+import PremiumHeroBackdrop from '@/app/components/PremiumHeroBackdrop'
 import CompanyValuesGrid from '@/app/components/CompanyValuesGrid'
 import ClientLogos from '@/app/components/ClientLogos'
-import { getCtaButtonText, getBookingLinkProps } from '@/app/config/cta.config'
+import { getBookingLinkProps } from '@/app/config/cta.config'
 import { translations } from '@/app/config/translations'
 import { useLanguage } from '@/app/context/LocaleContext'
 import { withPartnerCount } from '@/lib/site-partners'
@@ -20,38 +21,6 @@ const aboutHeroCopy = {
   ar: { badge: 'رسالة واضحة ونتائج ملموسة', years: 'في بناء أنظمة النمو', satisfaction: 'رضا العملاء' },
   de: { badge: 'Missionsgetrieben, ergebnisorientiert', years: 'im Aufbau von Wachstumssystemen', satisfaction: 'Kundenzufriedenheit' },
   es: { badge: 'Impulsados por la misión, enfocados en resultados', years: 'construyendo sistemas de crecimiento', satisfaction: 'satisfacción del cliente' },
-}
-
-function Counter({ end, suffix = '' }: { end: number; suffix?: string }) {
-  const [count, setCount] = useState(0)
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true })
-
-  useEffect(() => {
-    if (isInView) {
-      let start = 0
-      const duration = 2000
-      const increment = end / (duration / 16)
-
-      const timer = setInterval(() => {
-        start += increment
-        if (start >= end) {
-          setCount(end)
-          clearInterval(timer)
-        } else {
-          setCount(Math.floor(start))
-        }
-      }, 16)
-
-      return () => clearInterval(timer)
-    }
-  }, [isInView, end])
-
-  return (
-    <span ref={ref}>
-      {count}{suffix}
-    </span>
-  )
 }
 
 type AboutPageProps = {
@@ -68,16 +37,6 @@ export default function AboutPage({ params, searchParams }: AboutPageProps) {
   const w = translations[language].home.whatWeDo
   const ctaT = translations[language].cta
   const mission = translations[language].home.mission
-  const cta = getCtaButtonText(language)
-  const shouldReduceMotion = useReducedMotion()
-  const heroRef = useRef<HTMLElement>(null)
-  const { scrollYProgress } = useScroll({
-    target: heroRef,
-    offset: ['start start', 'end start'],
-  })
-  const heroContentY = useTransform(scrollYProgress, [0, 1], [0, -36])
-  const heroGlowY = useTransform(scrollYProgress, [0, 1], [0, 56])
-  const heroGlowOpacity = useTransform(scrollYProgress, [0, 0.9], [0.85, 0.25])
 
   const stats = [
     { value: 10, suffix: '+', label: t.statYears },
@@ -137,47 +96,17 @@ export default function AboutPage({ params, searchParams }: AboutPageProps) {
 
   return (
     <main>
-      <section
-        ref={heroRef}
-        className="relative isolate min-h-screen flex items-center pt-16 sm:pt-20 overflow-hidden bg-gradient-mesh"
-      >
-        <motion.div
-          aria-hidden
-          style={shouldReduceMotion ? undefined : { y: heroGlowY, opacity: heroGlowOpacity }}
-          className="pointer-events-none absolute -left-24 top-20 h-72 w-72 rounded-full bg-accent/20 dark:bg-accent/25 blur-3xl"
-          animate={shouldReduceMotion ? { opacity: 0.6 } : { x: [0, 25, -10, 0], y: [0, -20, 15, 0], scale: [1, 1.08, 0.95, 1] }}
-          transition={shouldReduceMotion ? { duration: 0.2 } : { duration: 16, repeat: Infinity, ease: 'easeInOut' }}
-        />
-        <motion.div
-          aria-hidden
-          style={shouldReduceMotion ? undefined : { y: heroGlowY, opacity: heroGlowOpacity }}
-          className="pointer-events-none absolute -right-20 bottom-12 h-80 w-80 rounded-full bg-success/20 dark:bg-success/25 blur-3xl"
-          animate={shouldReduceMotion ? { opacity: 0.6 } : { x: [0, -30, 12, 0], y: [0, 20, -12, 0], scale: [1, 0.94, 1.06, 1] }}
-          transition={shouldReduceMotion ? { duration: 0.2 } : { duration: 18, repeat: Infinity, ease: 'easeInOut' }}
-        />
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.22),transparent_55%)] dark:bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),transparent_55%)]" />
+      <section className="relative isolate min-h-screen flex items-center pt-16 sm:pt-20 overflow-hidden bg-gradient-mesh">
+        <PremiumHeroBackdrop />
 
-        <motion.div
-          style={shouldReduceMotion ? undefined : { y: heroContentY }}
-          className="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-20 relative z-10"
-        >
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.15 }}
-            className="text-center mb-8 sm:mb-12 md:mb-16"
-          >
-            <motion.div
-              initial={{ opacity: 0, y: -14 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="mb-4 sm:mb-6"
-            >
-              <span className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 dark:bg-accent/20 px-4 py-2 text-xs font-medium text-accent sm:text-sm backdrop-blur-sm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-20 relative z-10">
+          <div className="text-center mb-8 sm:mb-12 md:mb-16">
+            <div className="mb-4 sm:mb-6">
+              <span className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 dark:bg-accent/20 px-4 py-2 text-xs font-medium text-accent sm:text-sm">
                 <span className="inline-block h-2 w-2 rounded-full bg-accent" />
                 {heroCopy.badge}
               </span>
-            </motion.div>
+            </div>
             <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-4 sm:mb-6 md:mb-8 px-2">
               <span className="gradient-text">{t.heroTitle}</span>
             </h1>
@@ -186,25 +115,15 @@ export default function AboutPage({ params, searchParams }: AboutPageProps) {
             </p>
 
             <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 px-2">
-              <motion.div
-                initial={{ opacity: 0, y: 14 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="rounded-full border border-border/80 bg-background/75 dark:bg-surface/70 px-4 py-2 text-xs sm:text-sm text-muted backdrop-blur-sm shadow-sm"
-              >
+              <div className="rounded-full border border-border/80 bg-background/75 dark:bg-surface/70 px-4 py-2 text-xs sm:text-sm text-muted shadow-sm">
                 <span className="font-semibold text">10+ years</span> {heroCopy.years}
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, y: 14 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                className="rounded-full border border-border/80 bg-background/75 dark:bg-surface/70 px-4 py-2 text-xs sm:text-sm text-muted backdrop-blur-sm shadow-sm"
-              >
+              </div>
+              <div className="rounded-full border border-border/80 bg-background/75 dark:bg-surface/70 px-4 py-2 text-xs sm:text-sm text-muted shadow-sm">
                 <span className="font-semibold text">98%</span> {heroCopy.satisfaction}
-              </motion.div>
+              </div>
             </div>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
         
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
           <ScrollIndicator direction="down" />
@@ -235,7 +154,7 @@ export default function AboutPage({ params, searchParams }: AboutPageProps) {
                 className="text-center"
               >
                 <div className="font-display text-5xl md:text-6xl font-bold text-accent mb-2">
-                  <Counter end={stat.value} suffix={stat.suffix} />
+                  {stat.value}{stat.suffix}
                 </div>
                 <p className="text-muted">{stat.label}</p>
               </motion.div>
@@ -375,7 +294,12 @@ export default function AboutPage({ params, searchParams }: AboutPageProps) {
         </div>
       </AnimatedSection>
 
-      <ClientLogos badge={t.trustedByBadge} title={t.trustedByTitle} subtitle={t.trustedBySubtitle} />
+      <ClientLogos
+        badge={t.trustedByBadge}
+        title={t.trustedByTitle}
+        titleHighlight={t.trustedByTitleHighlight}
+        subtitle={t.trustedBySubtitle}
+      />
 
       <AnimatedSection className="py-24">
         <div className="max-w-7xl mx-auto px-6">
@@ -586,139 +510,19 @@ export default function AboutPage({ params, searchParams }: AboutPageProps) {
       </AnimatedSection>
 
       <AnimatedSection className="py-24">
-        <div className="max-w-7xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 30, scale: 0.95 }}
-            whileInView={{ opacity: 1, y: 0, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center"
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <h2 className="font-display text-3xl md:text-4xl font-bold mb-4 text-text">
+            {w.notSureTitle}
+          </h2>
+          <p className="text-lg text-muted mb-8 max-w-2xl mx-auto leading-relaxed">
+            {w.notSureSubtitle}
+          </p>
+          <a
+            {...getBookingLinkProps()}
+            className="btn-primary inline-flex items-center gap-3 text-lg px-8 py-4"
           >
-            <div className="relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-accent/20 via-accent/10 to-success/20 rounded-3xl blur-2xl opacity-50" />
-              <div className="absolute inset-0 bg-gradient-to-br from-accent/15 to-success/15 rounded-3xl" />
-
-              <div className="relative p-12 md:p-16 bg-gradient-to-br from-accent/10 via-surface to-success/10 border-2 border-transparent hover:border-border-foreground transition-all duration-300 rounded-3xl">
-                <div className="relative z-10">
-                  <motion.div
-                    initial={{ scale: 0, rotate: -180 }}
-                    whileInView={{ scale: 1, rotate: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.2, type: 'spring', stiffness: 200 }}
-                    className="inline-block mb-6 relative"
-                  >
-                    <motion.div
-                      animate={{
-                        scale: [1, 1.3, 1],
-                        opacity: [0.4, 0.7, 0.4],
-                      }}
-                      transition={{
-                        duration: 2,
-                        repeat: Infinity,
-                        ease: 'easeInOut',
-                      }}
-                      className="absolute inset-0 bg-accent/30 rounded-2xl blur-xl"
-                    />
-
-                    <motion.div
-                      animate={{
-                        rotate: [0, 360],
-                      }}
-                      transition={{
-                        duration: 8,
-                        repeat: Infinity,
-                        ease: 'linear',
-                      }}
-                      className="absolute inset-0 border-2 border-accent/40 rounded-2xl"
-                      style={{
-                        clipPath: 'polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)',
-                      }}
-                    />
-
-                    <motion.div
-                      animate={{
-                        scale: [1, 1.05, 1],
-                        rotate: [0, 5, -5, 0],
-                      }}
-                      transition={{
-                        duration: 3,
-                        repeat: Infinity,
-                        ease: 'easeInOut',
-                      }}
-                      className="relative w-20 h-20 md:w-24 md:h-24 bg-gradient-to-br from-accent/30 to-accent/10 rounded-2xl flex items-center justify-center backdrop-blur-sm border border-accent/40"
-                    >
-                      <motion.div
-                        animate={{
-                          filter: ['brightness(1)', 'brightness(1.5)', 'brightness(1)'],
-                          scale: [1, 1.1, 1],
-                        }}
-                        transition={{
-                          duration: 1.5,
-                          repeat: Infinity,
-                          ease: 'easeInOut',
-                        }}
-                        className="text-4xl md:text-5xl"
-                      >
-                        💡
-                      </motion.div>
-
-                      {[...Array(6)].map((_, i) => (
-                        <motion.div
-                          key={i}
-                          className="absolute w-1 h-1 bg-accent rounded-full"
-                          animate={{
-                            x: [
-                              Math.cos((i * 60) * Math.PI / 180) * 0,
-                              Math.cos((i * 60) * Math.PI / 180) * 30,
-                              Math.cos((i * 60) * Math.PI / 180) * 0,
-                            ],
-                            y: [
-                              Math.sin((i * 60) * Math.PI / 180) * 0,
-                              Math.sin((i * 60) * Math.PI / 180) * 30,
-                              Math.sin((i * 60) * Math.PI / 180) * 0,
-                            ],
-                            opacity: [0, 1, 0],
-                            scale: [0, 1.5, 0],
-                          }}
-                          transition={{
-                            duration: 2,
-                            repeat: Infinity,
-                            delay: i * 0.2,
-                            ease: 'easeInOut',
-                          }}
-                          style={{
-                            left: '50%',
-                            top: '50%',
-                          }}
-                        />
-                      ))}
-                    </motion.div>
-                  </motion.div>
-
-                  <h3 className="font-display text-3xl md:text-4xl font-bold mb-4 text-text">
-                    {w.notSureTitle}
-                  </h3>
-                  <p className="text-lg md:text-xl text-muted mb-8 max-w-2xl mx-auto leading-relaxed">
-                    {w.notSureSubtitle}
-                  </p>
-                  <a
-                    {...getBookingLinkProps()}
-                    className="group inline-flex items-center gap-3 bg-accent hover:bg-accent-light text-background font-semibold px-8 py-4 rounded-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl text-lg"
-                  >
-                    <span>{ctaT.bookStrategy}</span>
-                    <svg
-                      className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </motion.div>
+            <span>{ctaT.bookStrategy}</span>
+          </a>
         </div>
       </AnimatedSection>
     </main>
