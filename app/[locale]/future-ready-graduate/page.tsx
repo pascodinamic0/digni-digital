@@ -9,14 +9,13 @@ import PremiumHeroParallax from '@/app/components/PremiumHeroParallax'
 import ScrollIndicator from '@/app/components/ScrollIndicator'
 import VideoModal from '@/app/components/VideoModal'
 import VideoThumbnail from '@/app/components/VideoThumbnail'
-import DemoPresentationDownload from '@/app/components/DemoPresentationDownload'
-import ServiceAssessmentLink from '@/app/components/ServiceAssessmentLink'
 import EarlyAccessFormModal from '@/app/components/EarlyAccessFormModal'
 import StripeCheckoutButton from '@/app/components/StripeCheckoutButton'
 import { getBookingLinkProps } from '@/app/config/cta.config'
 import { useLanguage } from '@/app/context/LocaleContext'
 import { translations } from '@/app/config/translations'
 import { getFutureReadyGraduateJsonLd, jsonLdScriptProps } from '@/lib/agent-readiness'
+import { getAssessmentPath } from '@/lib/assessments/paths'
 import {
   type FutureReadyOffering,
   visibleDefaultFutureReadyOfferings,
@@ -828,6 +827,8 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
   const outcomes = localCopy.outcomes
   const caseStudy = localCopy.caseStudy
   const featuredVideos = localCopy.featuredVideos
+  const assessmentLabel =
+    language === 'en' ? "Assess Your Students' Readiness" : translations[language].nav.fitCheck
   const [pricing, setPricing] = useState<FutureReadyOffering[]>(visibleDefaultFutureReadyOfferings())
   const localizedPricing = useMemo(
     () =>
@@ -851,27 +852,7 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
       }),
     [language, pricing]
   )
-  const heroTitles = useMemo(
-    () => [
-      `${pageT.heroTitleLine1} ${pageT.heroTitleHighlight}`,
-      pageT.heroAlternateTitle,
-    ],
-    [pageT.heroAlternateTitle, pageT.heroTitleHighlight, pageT.heroTitleLine1]
-  )
-  const [heroTitleIndex, setHeroTitleIndex] = useState(0)
   const pathsHeading = localizedPricing.length === 3 ? pageT.threePaths : pageT.threePaths.replace(/^(Three|Trois|Tres|Drei|ثلاثة)\s+/i, '')
-
-  useEffect(() => {
-    setHeroTitleIndex(0)
-  }, [heroTitles])
-
-  useEffect(() => {
-    const timer = window.setInterval(() => {
-      setHeroTitleIndex((current) => (current + 1) % heroTitles.length)
-    }, 4200)
-
-    return () => window.clearInterval(timer)
-  }, [heroTitles.length])
 
   useEffect(() => {
     let cancelled = false
@@ -895,29 +876,6 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
     }
   }, [])
 
-  useEffect(() => {
-    const timer = window.setInterval(() => {
-      const carousel = skillsScrollRef.current
-      const firstCard = carousel?.firstElementChild as HTMLElement | null
-
-      if (!carousel || !firstCard) {
-        return
-      }
-
-      const gap = Number.parseFloat(window.getComputedStyle(carousel).columnGap || '0')
-      const step = firstCard.getBoundingClientRect().width + gap
-      const loopWidth = carousel.scrollWidth / 2
-      const nextLeft = carousel.scrollLeft + step
-
-      carousel.scrollTo({
-        left: nextLeft >= loopWidth ? nextLeft - loopWidth : nextLeft,
-        behavior: nextLeft >= loopWidth ? 'auto' : 'smooth',
-      })
-    }, 3200)
-
-    return () => window.clearInterval(timer)
-  }, [])
-
   return (
     <main>
       <script
@@ -937,16 +895,10 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
             <span className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-success/10 border border-success/30 rounded-full text-success text-xs sm:text-sm font-medium mb-4 sm:mb-6">
               {pageT.heroBadge}
             </span>
-            <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight sm:leading-tight mb-4 sm:mb-6 md:mb-8 px-2 min-h-[3.1em] sm:min-h-[2.7em]">
-              <motion.span
-                key={heroTitles[heroTitleIndex]}
-                initial={{ opacity: 0, y: 14, filter: 'blur(4px)' }}
-                animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-                transition={{ duration: 0.55, ease: 'easeOut' }}
-                className="block gradient-text"
-              >
-                {heroTitles[heroTitleIndex]}
-              </motion.span>
+            <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight sm:leading-tight mb-4 sm:mb-6 md:mb-8 px-2">
+              <span className="block gradient-text">
+                {pageT.heroTitleLine1} {pageT.heroTitleHighlight}
+              </span>
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-muted max-w-3xl mx-auto leading-relaxed mb-6 sm:mb-8 md:mb-10 px-2">
               {pageT.heroDescription}
@@ -970,15 +922,19 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
               </motion.div>
             </div>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-2 mt-4 sm:mt-6">
+              <Link
+                href={getAssessmentPath('future-ready')}
+                className="btn-primary text-sm sm:text-base md:text-lg px-6 sm:px-8 py-3 sm:py-4 w-full sm:w-auto text-center"
+              >
+                {assessmentLabel}
+              </Link>
               <a
                 {...getBookingLinkProps()}
-                className="btn-primary text-sm sm:text-base md:text-lg px-6 sm:px-8 py-3 sm:py-4 w-full sm:w-auto text-center"
+                className="btn-secondary text-sm sm:text-base md:text-lg px-6 sm:px-8 py-3 sm:py-4 w-full sm:w-auto text-center"
               >
                 {ctaT.scheduleConsultation}
               </a>
-              <DemoPresentationDownload service="futureReadyGraduate" variant="hero" />
             </div>
-            <ServiceAssessmentLink serviceId="future-ready" />
           </motion.div>
         </PremiumHeroParallax>
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">

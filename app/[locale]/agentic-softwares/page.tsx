@@ -20,14 +20,14 @@ type AgenticSoftwaresPageProps = {
 
 const agenticSoftwaresCopy = {
   en: {
-    heroBadge: 'For operators drowning in manual work',
-    heroTitlePrefix: 'Manual Work Is Stealing',
-    heroTitleHighlight: 'a Third of Your Week.',
+    heroBadge: 'For teams still moving information by hand',
+    heroTitlePrefix: 'Stop Paying People to Move',
+    heroTitleHighlight: 'Information.',
     heroDescription:
-      'Spreadsheets, copy-paste, and duct-taped tools don’t just cost hours—they cost evenings and headcount you shouldn’t need. We don’t sell “agentic software.” We sell operations that run without you as the glue. We can’t promise your business runs itself overnight—of course not. But we scope with proof before you commit, so you only build what unlocks time and margin.',
+      'Spreadsheets, copy-paste, and duct-taped tools don’t just cost hours—they cost evenings and headcount you shouldn’t need. The real enemy isn’t your people; it’s the broken handoff between systems. Digni builds custom agentic software that senses what needs to happen next, reasons about it, and takes action—so critical workflows keep moving without constant babysitting.',
     proofYears: 'building growth systems',
     proofSatisfaction: 'client satisfaction',
-    heroCta: 'Tell Us the Workflow Costing You Most',
+    heroCta: 'Find the Workflow Worth Automating',
     applicationsTitle: 'Proof We’ve Built',
     applicationsHighlight: 'Destinations',
     applicationsSubtitle:

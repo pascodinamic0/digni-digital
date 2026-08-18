@@ -24,39 +24,49 @@ const SERVICE_CARD_META: Record<
 
 const servicesHeroCopy = {
   en: {
-    titlePrefix: 'Solutions That',
-    titleHighlight: 'Drive Real Impact',
-    subtitle: 'AI systems. Graduate programs. Agentic Softwares. Results from day one.',
-    years: 'building growth systems',
-    satisfaction: 'client satisfaction',
+    titlePrefix: 'Which Struggle',
+    titleHighlight: 'Is Costing You Most?',
+    subtitle:
+      'Unanswered leads. Unhireable graduates. Manual work that owns your week. Pick the one keeping you up—we install the fix.',
+    chip1: 'Leads die in silence',
+    chip2: 'Degrees without jobs',
+    chip3: 'You are the glue',
   },
   fr: {
-    titlePrefix: 'Des solutions qui',
-    titleHighlight: 'créent un impact réel',
-    subtitle: 'Systèmes IA. Programmes diplômants. Agentic Softwares. Des résultats dès le premier jour.',
-    years: 'à construire des systèmes de croissance',
-    satisfaction: 'de satisfaction client',
+    titlePrefix: 'Quelle lutte',
+    titleHighlight: 'vous coûte le plus ?',
+    subtitle:
+      'Leads sans réponse. Diplômés inemployables. Travail manuel qui mange votre semaine. Choisissez celle qui vous tient éveillé—nous installons la solution.',
+    chip1: 'Les leads meurent en silence',
+    chip2: 'Diplômes sans emploi',
+    chip3: 'Vous êtes la colle',
   },
   ar: {
-    titlePrefix: 'حلول',
-    titleHighlight: 'تصنع أثراً حقيقياً',
-    subtitle: 'أنظمة ذكاء اصطناعي. برامج خريجين. Agentic Softwares. نتائج من اليوم الأول.',
-    years: 'في بناء أنظمة النمو',
-    satisfaction: 'رضا العملاء',
+    titlePrefix: 'أي صراع',
+    titleHighlight: 'يكلّفك أكثر؟',
+    subtitle:
+      'عملاء محتملون بلا رد. خريجون بلا وظيفة. عمل يدوي يملك أسبوعك. اختر ما يُبقيك مستيقظاً—ونحن نثبّت الحل.',
+    chip1: 'العملاء يموتون في الصمت',
+    chip2: 'شهادات بلا وظائف',
+    chip3: 'أنت الغراء',
   },
   de: {
-    titlePrefix: 'Lösungen, die',
-    titleHighlight: 'echte Wirkung erzielen',
-    subtitle: 'KI-Systeme. Absolventenprogramme. Agentic Softwares. Ergebnisse ab Tag eins.',
-    years: 'im Aufbau von Wachstumssystemen',
-    satisfaction: 'Kundenzufriedenheit',
+    titlePrefix: 'Welcher Kampf',
+    titleHighlight: 'kostet Sie am meisten?',
+    subtitle:
+      'Unbeantwortete Leads. Nicht einstellbare Absolventen. Manuelle Arbeit, die Ihre Woche besitzt. Wählen Sie den, der Sie wach hält—wir installieren die Lösung.',
+    chip1: 'Leads sterben in Stille',
+    chip2: 'Abschlüsse ohne Jobs',
+    chip3: 'Sie sind der Klebstoff',
   },
   es: {
-    titlePrefix: 'Soluciones que',
-    titleHighlight: 'generan impacto real',
-    subtitle: 'Sistemas IA. Programas para graduados. Agentic Softwares. Resultados desde el primer día.',
-    years: 'construyendo sistemas de crecimiento',
-    satisfaction: 'satisfacción del cliente',
+    titlePrefix: '¿Qué lucha',
+    titleHighlight: 'le cuesta más?',
+    subtitle:
+      'Leads sin respuesta. Graduados sin empleo. Trabajo manual que posee su semana. Elija la que le quita el sueño—instalamos la solución.',
+    chip1: 'Los leads mueren en silencio',
+    chip2: 'Títulos sin empleo',
+    chip3: 'Usted es el pegamento',
   },
 }
 
@@ -84,12 +94,7 @@ export default function ServicesPage({ params, searchParams }: ServicesPageProps
       <section className="relative isolate min-h-screen flex items-center pt-16 sm:pt-20 overflow-hidden bg-gradient-mesh">
         <PremiumHeroBackdrop />
         <PremiumHeroParallax className="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-20 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-center mb-8 sm:mb-12 md:mb-16"
-          >
+          <div className="text-center mb-8 sm:mb-12 md:mb-16">
             <span className="section-label block mb-4 sm:mb-6">{servicesLabel}</span>
             <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-4 sm:mb-6 md:mb-8 px-2">
               {heroCopy.titlePrefix}{' '}
@@ -100,24 +105,16 @@ export default function ServicesPage({ params, searchParams }: ServicesPageProps
               {heroCopy.subtitle}
             </p>
             <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 px-2 mt-8">
-              <motion.div
-                initial={{ opacity: 0, y: 14 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="rounded-full border border-border/80 bg-background/75 dark:bg-surface/70 px-4 py-2 text-xs sm:text-sm text-muted backdrop-blur-sm shadow-sm"
-              >
-                <span className="font-semibold text">10+ years</span> {heroCopy.years}
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, y: 14 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                className="rounded-full border border-border/80 bg-background/75 dark:bg-surface/70 px-4 py-2 text-xs sm:text-sm text-muted backdrop-blur-sm shadow-sm"
-              >
-                <span className="font-semibold text">98%</span> {heroCopy.satisfaction}
-              </motion.div>
+              {[heroCopy.chip1, heroCopy.chip2, heroCopy.chip3].map((chip) => (
+                <div
+                  key={chip}
+                  className="rounded-full border border-border/80 bg-background/75 dark:bg-surface/70 px-4 py-2 text-xs sm:text-sm text-muted shadow-sm"
+                >
+                  <span className="font-semibold text-text">{chip}</span>
+                </div>
+              ))}
             </div>
-          </motion.div>
+          </div>
         </PremiumHeroParallax>
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
           <ScrollIndicator direction="down" />
