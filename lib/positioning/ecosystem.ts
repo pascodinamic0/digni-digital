@@ -27,9 +27,15 @@ export const PILLAR_SERVICE_IDS = {
 
 /** Human readable product names (not invented titles). */
 export const PILLAR_PRODUCT_NAMES = {
- grow: 'AI Employee Systems',
- learn: 'Future Ready Program',
- scale: 'Agentic Software',
+ grow: 'AI Employee',
+ learn: 'Future Ready',
+ scale: 'Agentic Systems',
+} as const
+
+export const PILLAR_EXPOSURES = {
+ grow: 'Growth Exposure',
+ learn: 'Talent Exposure',
+ scale: 'Operations Exposure',
 } as const
 
 /** i18n shape for Grow → Learn → Scale strip (home + services). */

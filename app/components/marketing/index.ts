@@ -1,0 +1,5 @@
+export { default as SectionHeading } from './SectionHeading'
+export { default as SimpleHero } from './SimpleHero'
+export { default as CapabilityBlock } from './CapabilityBlock'
+export { default as ProofQuote } from './ProofQuote'
+export { default as FinalCtaBand } from './FinalCtaBand'

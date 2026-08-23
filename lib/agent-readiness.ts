@@ -46,7 +46,7 @@ export const businessProfile = {
  url: SITE_URL,
  logo: absoluteUrl(BRAND_LOGO_PATH),
  description:
- 'Digital transformation agency building AI Employee systems, agentic software, Future Ready Graduate programs, and custom SaaS products for growth focused organizations.',
+ 'Digni Digital identifies where organizations lose opportunities, time, capability, or operational leverage—and installs AI Employee, Future Ready, and Agentic Systems that close those gaps.',
  foundingDate: '2019',
  founder: 'Pascal Digny Djohodo',
  primaryEmail: 'support@digni digital llc.com',
@@ -103,11 +103,11 @@ export type AgentService = {
 export const agentServices: AgentService[] = [
  {
  id: 'ai-employee-systems',
- name: 'AI Employee Systems',
+ name: 'AI Employee',
  alternateName: 'AI Receptionist',
  url: localizedUrl(DEFAULT_LOCALE, '/ai-receptionist'),
  shortDescription:
- 'Always on AI reception, qualification, booking, follow up, and unified inbox systems for service businesses.',
+ 'Inbound coverage that responds, qualifies, follows up, and moves qualified inquiries toward booked conversations 24/7. Not a chatbot SKU.',
  whoItIsFor: ['Clinics', 'real estate teams', 'local service businesses', 'agencies', 'growth teams'],
  outcomes: ['Instant lead response', 'more booked calls', 'fewer missed opportunities', '24/7 client intake'],
  deliverables: [
@@ -150,9 +150,9 @@ export const agentServices: AgentService[] = [
  },
  ],
  proof: [
- { metric: '24/7', description: 'Always on lead capture and client intake' },
- { metric: '48h', description: 'Typical time to value target after approval' },
- { metric: '98%', description: 'Reported client satisfaction signal used across the site' },
+ { metric: 'Named', description: 'Fremo Medical is a named healthcare operator' },
+ { metric: '24/7', description: 'Inbound can be covered after hours' },
+ { metric: 'Process', description: 'Identify, design, build, connect, deploy, optimize' },
  ],
  lastUpdated: AGENT_DATA_LAST_UPDATED,
  },
@@ -213,7 +213,7 @@ export const agentServices: AgentService[] = [
  },
  ],
  proof: [
- { metric: '85%', description: 'Target graduate employment rate used across the program page' },
+ { metric: 'In progress', description: 'GS Laricharde partnership is underway, not a completed employment rate' },
  { metric: '42 weeks', description: 'Full school year curriculum structure' },
  { metric: '50+', description: 'Target employer partnerships for flagship implementations' },
  ],
@@ -393,9 +393,8 @@ export const agentProducts = [
  { name: 'Enterprise', price: 199, priceCurrency: 'USD', billingPeriod: 'month', priceText: '$199/month' },
  ],
  proof: [
- { metric: '10x', description: 'Faster proposal creation' },
- { metric: '85%', description: 'Average time saved' },
- { metric: '40%', description: 'Higher close rates' },
+ { metric: 'Named', description: 'Proposal Agent is a live Digni product' },
+ { metric: 'Workflow', description: 'Voice notes structured into proposals' },
  ],
  lastUpdated: AGENT_DATA_LAST_UPDATED,
  },
@@ -440,7 +439,7 @@ export const agentProducts = [
 export const agentCaseStudies = [
  {
  id: 'healthcare-clinic',
- name: 'Regional Healthcare Clinic',
+ name: 'Fremo Medical & Birth Center',
  client: 'Fremo Medical & Birth Center',
  industry: 'Healthcare',
  location: 'Lagos, Nigeria',
@@ -450,10 +449,9 @@ export const agentCaseStudies = [
  solution:
  'Online booking, automated SMS and email reminders, staff dashboard, records integration, and payment processing.',
  results: [
- { metric: '85%', description: 'Reduction in no shows' },
- { metric: '$50k', description: 'Additional monthly revenue' },
- { metric: '3 hours', description: 'Daily staff time saved' },
- { metric: '95%', description: 'Patient satisfaction score' },
+ { metric: 'Named', description: 'Fremo Medical & Birth Center — inbound booking coverage' },
+ { metric: 'Staff time', description: 'Scheduling no longer eats the afternoon' },
+ { metric: 'Reminders', description: 'Automatic follow-up instead of a paper queue' },
  ],
  testimonial:
  'Digni Digital transformed our entire patient experience. The booking system alone has saved us countless hours and significantly improved our revenue.',
@@ -461,7 +459,7 @@ export const agentCaseStudies = [
  },
  {
  id: 'real-estate-agency',
- name: 'Premium Real Estate Agency',
+ name: 'Shep Engineering',
  client: 'Shep Engineering',
  industry: 'Real Estate',
  location: 'Accra, Ghana',
@@ -471,10 +469,9 @@ export const agentCaseStudies = [
  solution:
  'AI powered proposal generation, property database, client portal, mobile app, and CRM integration.',
  results: [
- { metric: '90%', description: 'Faster proposal delivery' },
- { metric: '40%', description: 'Higher close rate' },
- { metric: '25', description: 'More deals per month' },
- { metric: '$200k', description: 'Increased monthly revenue' },
+ { metric: 'Speed', description: 'Proposals in minutes instead of hours' },
+ { metric: 'Named', description: 'Shep Engineering — proposal system in use' },
+ { metric: 'Status', description: 'Revenue lift not published until verified' },
  ],
  testimonial:
  'Our agents can now create professional proposals in minutes instead of hours. This has been a game changer for our competitive advantage.',

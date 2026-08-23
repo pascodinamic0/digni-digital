@@ -1,0 +1,76 @@
+---
+description: Digni positioning system — exposure/coverage, installer process, CTAs, bilingual glossary, no invented proof
+globs: app/**/*.{tsx,ts},app/i18n/*.ts,lib/**/*.{ts,tsx},content/**/*,messages/**/*.json
+alwaysApply: true
+---
+
+# Digni Positioning System
+
+Digni Digital is **not** primarily an AI agency, chatbot company, software shop, marketing agency, or training company.
+
+**Positioning:** Digni identifies where organizations lose opportunities, time, capability, or operational leverage—and installs the systems that close those gaps.
+
+**Process (always this order):** Identify → Design → Build → Connect → Deploy → Optimize.
+
+**Architecture:** Growth exposure → AI Employee. Talent exposure → Future Ready. Operations exposure → Agentic Systems. One company, three coverage systems.
+
+---
+
+## Outcome before technology
+
+Lead with business value. Channels, models, and tools are components—not the product.
+
+Do not lead with: chatbot, AI bot, virtual assistant, AI chat widget, LLM, RAG, APIs, vector databases.
+
+The customer buys: response, booked conversations, hireable graduates with evidence, workflows that move without copy-paste.
+
+---
+
+## Page spine
+
+Hook → cost of inaction → desired outcome → mechanism → proof → process → deliverables → timeline → friction reduction → CTA → risk reduction.
+
+Every major page must answer: what is exposed, what it costs, what better looks like, what Digni installs, how, what the customer receives, how little they must do, why believe us, what next.
+
+---
+
+## CTAs
+
+Prefer diagnostic CTAs. Avoid generic Learn More / Contact Us / Get Started / Submit as the primary ask.
+
+| Surface | Primary | Secondary |
+|---|---|---|
+| Home / header | See What's Exposed → `/digni` | Explore Your Coverage → `/services` |
+| AI Employee | Find Your Revenue Leaks → assessment | Book a Growth System Audit → calendar |
+| Future Ready | Assess Your Students' Readiness → assessment | Book a School Consultation → calendar |
+| Agentic Systems | Find the Workflow Worth Automating → assessment | Book a Project Consultation → calendar |
+
+DigniGuide is the diagnostic mechanism, not the headline.
+
+Nav labels stay scannable. Body copy carries cost-of-inaction voice.
+
+---
+
+## Proof
+
+Never invent statistics, case studies, clients, guarantees, testimonials, or timelines.
+
+Public pages may use named, attributable proof only (Fremo, Shep, GS Laricharde with honest status, partner logos from `clients.config.ts`).
+
+Do not present GS Laricharde 85% / 150% as proven while the program is in progress.
+
+If a claim is missing or unverified: truthful language + entry in `docs/positioning/claims-audit.md`. Do not fabricate a replacement.
+
+Banned filler: revolutionary, cutting-edge, next-generation, unlock the power of AI, AI-powered solutions tailored to your needs, seamless digital transformation, leverage AI to transform your business.
+
+---
+
+## Bilingual
+
+English and French must be semantically equivalent and native-quality. Spanish, German, and Arabic keep the same meaning, hierarchy, CTAs, and claims.
+
+Glossary: `lib/positioning/glossary.ts`. Do not calque headlines.
+
+URLs stay: `/ai-receptionist`, `/future-ready-graduate`, `/agentic-softwares`, `/digni`.
+
+Product copy lives in i18n modules, not scattered JSX. Keep all five locale objects in the same change.

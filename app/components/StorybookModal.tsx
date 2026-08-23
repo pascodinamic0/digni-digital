@@ -218,11 +218,11 @@ const STORY_SLIDES: StorySlide[] = [
       es: 'Devolviendo',
     },
     content: {
-      en: 'The Future-Ready Graduate Program launches with GS Laricharde as our first school partner. The same gift Microsoft gave me at 16, I\'m now giving to the next generation. 150+ clients. Market leader. And the mission that started it all, everyone enabled, empowered, connected, is finally becoming real.',
-      fr: 'Le Programme Diplômé Prêt pour l\'Avenir se lance avec GS Laricharde comme première école partenaire. Le même cadeau que Microsoft m\'a fait à 16 ans, je le donne maintenant à la prochaine génération. 150+ clients. Leader du marché. Et la mission qui a tout commencé devient enfin réalité.',
-      ar: 'ينطلق برنامج ديجني ديجيتال لمحو الأمية الرقمية مع مدرسة GS Laricharde كأول شريك مدرسي. نفس الهدية التي قدمتها لي مايكروسوفت في سن 16، أقدمها الآن للجيل القادم. أكثر من 150 عميل. رائد السوق. والمهمة التي بدأت كل شيء أصبحت حقيقة.',
-      de: 'Das Future-Ready Graduate Program startet mit GS Laricharde als erster Partnerschule. Das gleiche Geschenk, das Microsoft mir mit 16 gab, gebe ich jetzt an die nächste Generation weiter. 150+ Kunden. Marktführer. Und die Mission, die alles begann, wird endlich Realität.',
-      es: 'El Programa de Alfabetización Digital de Digni Digital se lanza con GS Laricharde como primera escuela socia. El mismo regalo que Microsoft me dio a los 16, ahora se lo doy a la próxima generación. 150+ clientes. Líder del mercado. Y la misión que lo empezó todo finalmente se hace realidad.',
+      en: 'The Future Ready program launches with GS Laricharde as our first school partner. The same gift Microsoft gave me at 16, I\'m now giving to the next generation. Named operators. Honest status. And the mission that started it all, everyone enabled, empowered, connected, is finally becoming real.',
+      fr: 'Le programme Future Ready se lance avec GS Laricharde comme première école partenaire. Le même cadeau que Microsoft m\'a fait à 16 ans, je le donne maintenant à la prochaine génération. Des opérateurs nommés. Un statut honnête. Et la mission qui a tout commencé devient enfin réalité.',
+      ar: 'ينطلق برنامج Future Ready مع مدرسة GS Laricharde كأول شريك مدرسي. نفس الهدية التي قدمتها لي مايكروسوفت في سن 16، أقدمها الآن للجيل القادم. مشغّلون مسمّون. وضع صادق. والمهمة التي بدأت كل شيء أصبحت حقيقة.',
+      de: 'Das Future Ready Programm startet mit GS Laricharde als erster Partnerschule. Das gleiche Geschenk, das Microsoft mir mit 16 gab, gebe ich jetzt an die nächste Generation weiter. Benannte Betreiber. Ehrlicher Status. Und die Mission, die alles begann, wird endlich Realität.',
+      es: 'El programa Future Ready se lanza con GS Laricharde como primera escuela socia. El mismo regalo que Microsoft me dio a los 16, ahora se lo doy a la próxima generación. Operadores nombrados. Estado honesto. Y la misión que lo empezó todo finalmente se hace realidad.',
     },
     highlight: {
       en: 'The same gift I received, I now give forward',

@@ -1,12 +1,26 @@
 'use client'
 
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState, type FormEvent } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Check } from 'lucide-react'
 import { Link } from '@/i18n/navigation'
+import { useLocale } from '@/app/context/LocaleContext'
 import { getBookingLinkProps } from '@/app/config/cta.config'
 import { computeMatchPercent, getResultBand } from '@/lib/assessments/score'
 import type { AssessmentAccent, ServiceAssessmentConfig } from '@/lib/assessments/types'
+
+type CaptureStatus = 'idle' | 'sending' | 'sent' | 'error'
+
+function answersSummary(
+  questions: ServiceAssessmentConfig['questions'],
+  answers: Record<string, string>,
+) {
+  return questions.flatMap((question) => {
+    const choice = question.choices.find((item) => item.id === answers[question.id])
+    if (!choice) return []
+    return [{ question: question.prompt, answer: choice.label }]
+  })
+}
 
 type Step = 'intro' | 'question' | 'result'
 
@@ -102,14 +116,26 @@ function MatchRing({ percent, accent }: { percent: number; accent: AssessmentAcc
 }
 
 export function ServiceAssessment({ config }: { config: ServiceAssessmentConfig }) {
-  const { copy, questions, accent, servicePath, serviceName, customResult } = config
+  const { copy, questions, accent, servicePath, serviceName, customResult, serviceId } = config
   const styles = accentClasses[accent]
   const booking = getBookingLinkProps()
+  const locale = useLocale()
 
   const [step, setStep] = useState<Step>('intro')
   const [questionIndex, setQuestionIndex] = useState(0)
   const [answers, setAnswers] = useState<Record<string, string>>({})
   const [error, setError] = useState<string | null>(null)
+  const [leadName, setLeadName] = useState('')
+  const [leadEmail, setLeadEmail] = useState('')
+  const [leadWhatsapp, setLeadWhatsapp] = useState('')
+  const [captureStatus, setCaptureStatus] = useState<CaptureStatus>('idle')
+  const [captureError, setCaptureError] = useState<string | null>(null)
+  const notifiedRef = useRef(false)
+  const submissionIdRef = useRef(
+    typeof crypto !== 'undefined' && 'randomUUID' in crypto
+      ? crypto.randomUUID()
+      : `fit-${Date.now()}`,
+  )
 
   const currentQuestion = questions[questionIndex]
   const progress =
@@ -149,6 +175,7 @@ export function ServiceAssessment({ config }: { config: ServiceAssessmentConfig 
   const goBack = () => {
     setError(null)
     if (step === 'result') {
+      notifiedRef.current = false
       setStep('question')
       setQuestionIndex(questions.length - 1)
       return
@@ -165,6 +192,81 @@ export function ServiceAssessment({ config }: { config: ServiceAssessmentConfig 
     setQuestionIndex(0)
     setStep('intro')
     setError(null)
+    setLeadName('')
+    setLeadEmail('')
+    setLeadWhatsapp('')
+    setCaptureStatus('idle')
+    setCaptureError(null)
+    notifiedRef.current = false
+    submissionIdRef.current =
+      typeof crypto !== 'undefined' && 'randomUUID' in crypto
+        ? crypto.randomUUID()
+        : `fit-${Date.now()}`
+  }
+
+  const payloadBase = useMemo(
+    () => ({
+      serviceId,
+      serviceName,
+      matchPercent,
+      bandLabel: resultBand?.label ?? '',
+      answers: answersSummary(questions, answers),
+      locale,
+      submissionId: submissionIdRef.current,
+    }),
+    [serviceId, serviceName, matchPercent, resultBand?.label, questions, answers, locale],
+  )
+
+  useEffect(() => {
+    if (step !== 'result' || notifiedRef.current) return
+    if (payloadBase.answers.length < 1) return
+    notifiedRef.current = true
+    fetch('/api/assessment', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ ...payloadBase, kind: 'completed' }),
+      keepalive: true,
+    }).catch(() => {
+      notifiedRef.current = false
+    })
+  }, [step, payloadBase])
+
+  const submitLead = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+    if (captureStatus === 'sending' || captureStatus === 'sent') return
+    const name = leadName.trim()
+    const email = leadEmail.trim()
+    const whatsapp = leadWhatsapp.trim()
+    const website = String(new FormData(event.currentTarget).get('website') || '')
+    if (!name || (!email && !whatsapp)) {
+      setCaptureError(copy.captureError)
+      return
+    }
+    setCaptureStatus('sending')
+    setCaptureError(null)
+    try {
+      const res = await fetch('/api/assessment', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          ...payloadBase,
+          kind: 'lead',
+          name,
+          email,
+          whatsapp,
+          website,
+        }),
+      })
+      if (!res.ok) {
+        setCaptureStatus('error')
+        setCaptureError(copy.captureError)
+        return
+      }
+      setCaptureStatus('sent')
+    } catch {
+      setCaptureStatus('error')
+      setCaptureError(copy.captureError)
+    }
   }
 
   return (
@@ -400,6 +502,73 @@ export function ServiceAssessment({ config }: { config: ServiceAssessmentConfig 
                       </div>
                     </>
                   )
+                )}
+
+                {captureStatus === 'sent' ? (
+                  <p className="mt-8 rounded-xl border border-success/30 bg-success/10 px-4 py-3 text-sm leading-relaxed text-text">
+                    {copy.captureDone}
+                  </p>
+                ) : (
+                  <form
+                    onSubmit={submitLead}
+                    className="mt-8 rounded-xl border border-border bg-surface-light/50 p-5 sm:p-6"
+                  >
+                    <p className="text-sm font-semibold text-text">{copy.captureTitle}</p>
+                    <p className="mt-1 text-sm leading-relaxed text-text/80">{copy.captureSubtitle}</p>
+                    <div className="mt-4 space-y-3">
+                      <div className="hidden" aria-hidden>
+                        <label htmlFor={`${serviceId}-website`}>Website</label>
+                        <input id={`${serviceId}-website`} name="website" type="text" tabIndex={-1} autoComplete="off" />
+                      </div>
+                      <label className="block">
+                        <span className="mb-1 block text-sm font-medium text-text">{copy.captureName} *</span>
+                        <input
+                          type="text"
+                          name="name"
+                          autoComplete="name"
+                          value={leadName}
+                          onChange={(e) => setLeadName(e.target.value)}
+                          className="w-full rounded-lg border border-border bg-background px-3 py-2.5 text-sm text-text"
+                          required
+                        />
+                      </label>
+                      <label className="block">
+                        <span className="mb-1 block text-sm font-medium text-text">{copy.captureEmail}</span>
+                        <input
+                          type="email"
+                          name="email"
+                          autoComplete="email"
+                          value={leadEmail}
+                          onChange={(e) => setLeadEmail(e.target.value)}
+                          className="w-full rounded-lg border border-border bg-background px-3 py-2.5 text-sm text-text"
+                        />
+                      </label>
+                      <label className="block">
+                        <span className="mb-1 block text-sm font-medium text-text">{copy.captureWhatsapp}</span>
+                        <input
+                          type="tel"
+                          name="whatsapp"
+                          autoComplete="tel"
+                          value={leadWhatsapp}
+                          onChange={(e) => setLeadWhatsapp(e.target.value)}
+                          className="w-full rounded-lg border border-border bg-background px-3 py-2.5 text-sm text-text"
+                        />
+                      </label>
+                    </div>
+                    {(captureError || captureStatus === 'error') && (
+                      <p className="mt-3 rounded-lg border border-red-500/30 bg-red-500/10 px-3 py-2 text-sm text-red-400">
+                        {captureError || copy.captureError}
+                      </p>
+                    )}
+                    <button
+                      type="submit"
+                      disabled={captureStatus === 'sending'}
+                      className="btn-secondary mt-4 w-full py-2.5"
+                    >
+                      {copy.captureCta}
+                    </button>
+                    <p className="mt-3 text-xs leading-relaxed text-text/60">{copy.capturePrivacy}</p>
+                  </form>
                 )}
 
                 <div className="mt-8 flex flex-wrap gap-4 text-sm">

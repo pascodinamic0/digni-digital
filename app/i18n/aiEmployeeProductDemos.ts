@@ -1,5 +1,7 @@
 /** Copy for AI Employee product demo sections (pipeline, performance, tasks, contacts). */
 
+import type { LeadChannelId } from '@/lib/lead-channels'
+
 export type PipelineColumnT = { id: string; title: string; stat: string; borderClass: string }
 
 export type PipelineCardT = {
@@ -25,7 +27,7 @@ export type AdsCampaignRowT = {
  audience: string
 }
 
-export type CalendarBookingChannel = 'whatsapp' | 'website' | 'sms' | 'phone' | 'instagram'
+export type CalendarBookingChannel = LeadChannelId
 
 export type CalendarBookingEventT = {
  id: string
@@ -61,7 +63,7 @@ export type InboxConversationT = {
  id: number
  contact: string
  channel: string
- channelType: 'website' | 'whatsapp' | 'sms' | 'instagram' | 'facebook'
+ channelType: LeadChannelId
  lastMessage: string
  time: string
  unread: number
@@ -434,6 +436,34 @@ const conversationDemosEn: ConversationDemoT[] = [
  { sender: 'ai', text: 'Booked for 1pm. You can wait with wifi and coffee or drop off and we will text when it is ready.', time: '10:33 AM' },
  ],
  },
+ {
+ id: 'email',
+ title: 'Email',
+ platform: 'Gmail / Outlook',
+ industry: 'Consulting Firm',
+ messages: [
+ { sender: 'visitor', text: 'Hi — we saw your case study. Can you share pricing for a 3-location rollout?', time: '8:14 AM' },
+ { sender: 'ai', text: 'Happy to. For three locations, most clients start with a growth audit, then a fixed install. What is your biggest leak today — missed calls, slow follow-up, or booking?', time: '8:14 AM' },
+ { sender: 'visitor', text: 'Missed WhatsApp and phone after hours mostly.', time: '8:16 AM' },
+ { sender: 'ai', text: 'That is exactly what we close first. I can send a one-page scope and hold a 20-minute fit check. Tuesday or Thursday morning?', time: '8:16 AM' },
+ { sender: 'visitor', text: 'Thursday morning works.', time: '8:18 AM' },
+ { sender: 'ai', text: 'Done — Thursday 9:30am is on the calendar. I will email the scope and prep questions now.', time: '8:18 AM' },
+ ],
+ },
+ {
+ id: 'tiktok',
+ title: 'TikTok',
+ platform: 'TikTok DM',
+ industry: 'Beauty Studio',
+ messages: [
+ { sender: 'visitor', text: 'Saw your reel — do you do bridal packages?', time: '6:42 PM' },
+ { sender: 'ai', text: 'Yes — bridal packages start with a trial look and day-of team. How many people need hair and makeup?', time: '6:42 PM' },
+ { sender: 'visitor', text: 'Bride plus 4 bridesmaids. Wedding is in 6 weeks.', time: '6:43 PM' },
+ { sender: 'ai', text: 'Perfect timeline. I have a consult slot Saturday at 11am or Monday at 4pm. Which is easier?', time: '6:43 PM' },
+ { sender: 'visitor', text: 'Saturday 11am', time: '6:44 PM' },
+ { sender: 'ai', text: 'Booked for Saturday 11am. I will DM the prep list and deposit link — nothing goes live without your OK.', time: '6:44 PM' },
+ ],
+ },
 ]
 
 const inboxConversationsEn: InboxConversationT[] = [
@@ -442,6 +472,8 @@ const inboxConversationsEn: InboxConversationT[] = [
  { id: 3, contact: 'Restaurant Owner', channel: 'SMS', channelType: 'sms', lastMessage: 'AI: I would be happy to help you with pricing information...', time: '12 min ago', unread: 1, status: 'in-progress', avatar: 'RO' },
  { id: 4, contact: 'FitTrack Startup', channel: 'Instagram DM', channelType: 'instagram', lastMessage: 'That sounds exciting. Fitness apps typically range...', time: '1 hr ago', unread: 0, status: 'follow-up', avatar: 'FT' },
  { id: 5, contact: 'Local Business', channel: 'Facebook Messenger', channelType: 'facebook', lastMessage: 'AI: Our automation solutions can definitely help...', time: '2 hr ago', unread: 3, status: 'new-lead', avatar: 'LB' },
+ { id: 6, contact: 'Nadia El-Amin', channel: 'Email', channelType: 'email', lastMessage: 'AI: I sent the pricing breakdown you asked for — reply if you want a call.', time: '3 hr ago', unread: 0, status: 'follow-up', avatar: 'NE' },
+ { id: 7, contact: 'Kofi Mensah', channel: 'TikTok DM', channelType: 'tiktok', lastMessage: 'AI: Yes — we can walk you through setup this week. Morning or afternoon?', time: '4 hr ago', unread: 1, status: 'new-lead', avatar: 'KM' },
 ]
 
 const timelineStepsEn: TimelineStepT[] = [
@@ -451,7 +483,7 @@ const timelineStepsEn: TimelineStepT[] = [
  description: 'A new prospect reaches out on any channel.',
  outcomeTitle: 'Nothing slips through',
  outcomeLine: 'Web, social, SMS, and phone funnel into one system. Every first touch is captured.',
- metrics: ['Website', 'SMS', 'Facebook', 'Instagram', 'WhatsApp', 'Phone'],
+ metrics: ['WhatsApp', 'SMS', 'Phone', 'Paid Ads', 'Website', 'Email', 'Facebook', 'Instagram', 'Google', 'TikTok', 'LinkedIn'],
  },
  {
  id: 'response',
@@ -548,7 +580,7 @@ export const aiEmployeeProductDemosEn: AiEmployeeProductDemosTranslations = {
  { value: '47', label: 'Conversations Today', card: 'from success/10 to success/5 border success/20', valueClass: 'text-success' },
  { value: '23', label: 'Qualified Leads', card: 'from success/10 to success/5 border success/20', valueClass: 'text-success' },
  { value: '12', label: 'Appointments Booked', card: 'from info/10 to info/5 border info/20', valueClass: 'text-info' },
- { value: '98%', label: 'Response Rate', card: 'from success/10 to success/5 border success/20', valueClass: 'text-success' },
+ { value: 'Demo', label: 'Response rate (illustration)', card: 'from success/10 to success/5 border success/20', valueClass: 'text-success' },
  ],
  },
  timeline: {
@@ -610,10 +642,16 @@ export const aiEmployeeProductDemosEn: AiEmployeeProductDemosTranslations = {
  confirmedLabel: 'Confirmed',
  channels: {
  whatsapp: 'WhatsApp',
- website: 'Website chat',
  sms: 'SMS',
  phone: 'Phone',
+ ads: 'Paid Ads',
+ website: 'Website chat',
+ facebook: 'Facebook',
  instagram: 'Instagram DM',
+ email: 'Email',
+ google: 'Google Business',
+ tiktok: 'TikTok',
+ linkedin: 'LinkedIn',
  },
  seed: [
  {
@@ -1021,7 +1059,7 @@ const inboxConversationsFr: InboxConversationT[] = [
 ]
 
 const timelineStepsFr: TimelineStepT[] = [
- { id: 'lead', title: 'Le lead arrive', description: 'Un nouveau prospect écrit sur n’importe quel canal.', outcomeTitle: 'Rien ne se perd', outcomeLine: 'Web, social, SMS et téléphone arrivent dans un seul système. Chaque premier contact est capturé.', metrics: ['Site web', 'SMS', 'Facebook', 'Instagram', 'WhatsApp', 'Téléphone'] },
+ { id: 'lead', title: 'Le lead arrive', description: 'Un nouveau prospect écrit sur n’importe quel canal.', outcomeTitle: 'Rien ne se perd', outcomeLine: 'Web, social, SMS et téléphone arrivent dans un seul système. Chaque premier contact est capturé.', metrics: ['WhatsApp', 'SMS', 'Téléphone', 'Annonces', 'Site web', 'E-mail', 'Facebook', 'Instagram', 'Google', 'TikTok', 'LinkedIn'] },
  { id: 'response', title: 'Réponse IA instantanée', description: 'L’IA répond en moins de 2 secondes avec un message personnalisé.', outcomeTitle: 'La vitesse qui gagne le moment', outcomeLine: 'Des réponses personnelles en quelques secondes, 24/7, avant que la curiosité parte chez un concurrent.', metrics: ['Réponse <2s', '24/7', 'WhatsApp', 'Téléphone'] },
  { id: 'qualification', title: 'Contact enregistré', description: 'L’IA capture les coordonnées et les envoie dans votre CRM.', outcomeTitle: 'Une audience qui vous appartient', outcomeLine: 'Chaque identité arrive dans le CRM avec le contexte, prête pour nurturing et campagnes.', metrics: ['Capture auto', 'Sync CRM', 'Leads WhatsApp', 'Leads téléphone'] },
  { id: 'appointment', title: 'Rendez vous réservé', description: 'L’IA réserve le bon créneau dans votre calendrier, sans aller retour.', outcomeTitle: 'Du temps commercial sur des appels réservés', outcomeLine: 'Les bons prospects bloquent un créneau eux mêmes, avec moins d’absences et zéro ping pong planning.', metrics: ['Sync calendrier', 'Confirmation auto', 'Planning WhatsApp', 'Planning téléphone'] },
@@ -1083,7 +1121,7 @@ export const aiEmployeeProductDemosFr: AiEmployeeProductDemosTranslations = {
  { value: '47', label: 'Conversations aujourd’hui', card: 'from success/10 to success/5 border success/20', valueClass: 'text-success' },
  { value: '23', label: 'Leads qualifiés', card: 'from success/10 to success/5 border success/20', valueClass: 'text-success' },
  { value: '12', label: 'Rendez vous réservés', card: 'from info/10 to info/5 border info/20', valueClass: 'text-info' },
- { value: '98%', label: 'Taux de réponse', card: 'from success/10 to success/5 border success/20', valueClass: 'text-success' },
+ { value: 'Démo', label: 'Taux de réponse (illustration)', card: 'from success/10 to success/5 border success/20', valueClass: 'text-success' },
  ],
  },
  timeline: {
@@ -1146,10 +1184,16 @@ export const aiEmployeeProductDemosFr: AiEmployeeProductDemosTranslations = {
  confirmedLabel: 'Confirmé',
  channels: {
  whatsapp: 'WhatsApp',
- website: 'Chat site',
  sms: 'SMS',
  phone: 'Téléphone',
+ ads: 'Annonces payantes',
+ website: 'Chat site',
+ facebook: 'Facebook',
  instagram: 'DM Instagram',
+ email: 'E-mail',
+ google: 'Google Business',
+ tiktok: 'TikTok',
+ linkedin: 'LinkedIn',
  },
  seed: [
  {

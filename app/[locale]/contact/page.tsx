@@ -6,7 +6,8 @@ import AnimatedSection from '@/app/components/AnimatedSection'
 import PremiumHeroBackdrop from '@/app/components/PremiumHeroBackdrop'
 import PremiumHeroParallax from '@/app/components/PremiumHeroParallax'
 import { officeLocations, formatFullAddress, getGoogleMapsUrl } from '@/app/data/locations'
-import { getCtaButtonText, getBookingLinkProps, getBookingUrl } from '@/app/config/cta.config'
+import { Link } from '@/i18n/navigation'
+import { ctaConfig, getCtaButtonText, getBookingLinkProps, getBookingUrl } from '@/app/config/cta.config'
 import { useLanguage } from '@/app/context/LocaleContext'
 import { translations } from '@/app/config/translations'
 import { getContactPageJsonLd, jsonLdScriptProps } from '@/lib/agent-readiness'
@@ -156,6 +157,7 @@ export default function ContactPage({ params, searchParams }: ContactPageProps) 
   use(searchParams ?? Promise.resolve({}))
   const language = useLanguage()
   const t = translations[language].contact
+  const ctaT = translations[language].cta
   const pageCopy = contactPageCopy[language]
   const cta = getCtaButtonText(language)
   const pageJsonLd = getContactPageJsonLd(locale)
@@ -268,22 +270,12 @@ export default function ContactPage({ params, searchParams }: ContactPageProps) 
               {t.heroDesc}
             </p>
             <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 px-2 mt-8">
-              <motion.div
-                initial={{ opacity: 0, y: 14 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="rounded-full border border-border/80 bg-background/75 dark:bg-surface/70 px-4 py-2 text-xs sm:text-sm text-muted backdrop-blur-sm shadow-sm"
+              <Link
+                href={ctaConfig.digniPath}
+                className="btn-primary text-sm sm:text-base px-6 py-3"
               >
-                <span className="font-semibold text">10+ years</span> {pageCopy.years}
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, y: 14 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                className="rounded-full border border-border/80 bg-background/75 dark:bg-surface/70 px-4 py-2 text-xs sm:text-sm text-muted backdrop-blur-sm shadow-sm"
-              >
-                <span className="font-semibold text">98%</span> {pageCopy.satisfaction}
-              </motion.div>
+                {ctaT.talkThroughYourChallenge ?? ctaT.getStarted}
+              </Link>
             </div>
           </motion.div>
         </PremiumHeroParallax>

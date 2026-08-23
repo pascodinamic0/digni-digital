@@ -33,11 +33,11 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://digni-digital-llc.
 
 export const metadata: Metadata = {
   title: {
-    default: 'Digni Digital | Technology That Serves Humanity',
+    default: 'Digni Digital | Identify the Exposure. Install the Coverage.',
     template: '%s | Digni Digital',
   },
   description:
-    'We believe technology should serve humanity. Digital transformation agency building AI Employee systems, Future-Ready Graduate Program, and custom SaaS solutions that create real impact.',
+    'Digni identifies where organizations lose opportunities, time, capability, or leverage—and installs AI Employee, Future Ready, and Agentic Systems that close those gaps.',
   keywords: [
     'digital transformation',
     'AI Employee',
@@ -57,15 +57,16 @@ export const metadata: Metadata = {
     apple: [{ url: '/apple-icon.png', type: 'image/png', sizes: '1024x1024' }],
   },
   openGraph: {
-    title: 'Digni Digital | Technology That Serves Humanity',
-    description: 'We believe technology should serve humanity. Digital transformation agency creating real impact.',
+    title: 'Digni Digital | Identify the Exposure. Install the Coverage.',
+    description:
+      'Digni identifies where organizations lose opportunities, time, capability, or leverage—and installs the systems that close those gaps.',
     type: 'website',
     siteName: 'Digni Digital',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Digni Digital | Technology That Serves Humanity',
-    description: 'Digital transformation agency creating real impact through technology.',
+    title: 'Digni Digital | Identify the Exposure. Install the Coverage.',
+    description: 'Identify the leak. Install AI Employee, Future Ready, or Agentic Systems coverage.',
   },
 }
 

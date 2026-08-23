@@ -7,13 +7,14 @@ import { translations } from '@/app/config/translations'
 import { getJourneyPhaseTitle } from '@/lib/ai-receptionist-flow'
 import SoftwareDemoSection from '@/app/components/software/SoftwareDemoSection'
 import SoftwareModuleToolbar from '@/app/components/software/SoftwareModuleToolbar'
-import SocialPlatformIcon from './SocialPlatformIcon'
+import LeadChannelIcon from './LeadChannelIcon'
+import type { LeadChannelId } from '@/lib/lead-channels'
 import DemoPersonAvatar from '@/app/components/DemoPersonAvatar'
 import ChatChannelIconBadge from '@/app/components/ChatChannelIconBadge'
 import { getInboxConversationAvatarSrc } from '@/lib/demo-contact-avatars'
 
 type ConversationStatus = 'qualified' | 'appointment-booked' | 'in-progress' | 'follow-up' | 'new-lead'
-type ConversationChannel = 'website' | 'whatsapp' | 'sms' | 'instagram' | 'facebook'
+type ConversationChannel = LeadChannelId
 
 interface Conversation {
   id: number
@@ -64,41 +65,9 @@ const UnifiedInbox = () => {
     setShowConversationDetail(true)
   }
 
-  const getChannelIcon = (channelType: ConversationChannel) => {
-    switch (channelType) {
-      case 'website':
-        return (
-          <svg className="w-3 h-3 text-success" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="1.8" />
-            <path d="M3 12H21" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-            <path d="M12 3C14.5 5.8 16 8.8 16 12C16 15.2 14.5 18.2 12 21" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-            <path d="M12 3C9.5 5.8 8 8.8 8 12C8 15.2 9.5 18.2 12 21" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-          </svg>
-        )
-      case 'whatsapp':
-        return (
-          <SocialPlatformIcon platform="whatsapp" className="w-3 h-3 text-success" />
-        )
-      case 'sms':
-        return (
-          <svg className="w-3 h-3 text-success" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M4 6.5C4 5.7 4.7 5 5.5 5H18.5C19.3 5 20 5.7 20 6.5V14.5C20 15.3 19.3 16 18.5 16H9L5 19V16H5.5C4.7 16 4 15.3 4 14.5V6.5Z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" />
-            <path d="M8 10H16" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-            <path d="M8 13H13" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-          </svg>
-        )
-      case 'instagram':
-        return (
-          <SocialPlatformIcon platform="instagram" className="w-3 h-3 text-success" />
-        )
-      case 'facebook':
-        return (
-          <SocialPlatformIcon platform="facebook" className="w-3 h-3 text-success" />
-        )
-      default:
-        return null
-    }
-  }
+  const getChannelIcon = (channelType: ConversationChannel) => (
+    <LeadChannelIcon channelId={channelType} className="w-3 h-3 text-success" compact showBeta={false} />
+  )
 
   const sw =
     translations[language].aiEmployeeSoftware ?? translations.en.aiEmployeeSoftware

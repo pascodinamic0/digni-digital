@@ -2,61 +2,47 @@
 
 import { motion } from 'framer-motion'
 import { useState } from 'react'
-import SocialPlatformIcon from './SocialPlatformIcon'
+import LeadChannelIcon from './LeadChannelIcon'
+import { LEAD_CHANNEL_CATALOG, type LeadChannelId } from '@/lib/lead-channels'
+
+const CHANNEL_LABELS: Record<LeadChannelId, string> = {
+  whatsapp: 'WhatsApp',
+  sms: 'SMS',
+  phone: 'Phone',
+  ads: 'Paid Ads',
+  website: 'Website Chat',
+  facebook: 'Facebook Messenger',
+  instagram: 'Instagram DM',
+  email: 'Email',
+  google: 'Google Business',
+  tiktok: 'TikTok',
+  linkedin: 'LinkedIn',
+}
+
+const CHANNEL_STATS: Partial<Record<LeadChannelId, string>> = {
+  whatsapp: 'Africa-first',
+  sms: '<2s Response',
+  phone: 'Never Miss Calls',
+  website: '24/7 Available',
+  facebook: 'Auto-Reply',
+  instagram: 'Smart Responses',
+  email: 'Inbox Sync',
+  google: 'Local Leads',
+  tiktok: 'DM + Comments',
+  linkedin: 'B2B Forms',
+  ads: 'Lead Forms',
+}
 
 const ChannelsDiagram = () => {
   const [activeChannel, setActiveChannel] = useState<string | null>(null)
 
-  const channels = [
-    {
-      id: 'website',
-      name: 'Website Chat',
-      description: 'Live chat widget on your website',
-      color: 'from-info to-info',
-      icon: '🌐',
-      stats: '24/7 Available'
-    },
-    {
-      id: 'sms',
-      name: 'SMS Messages',
-      description: 'Text message conversations',
-      color: 'from-success to-success',
-      icon: '💬',
-      stats: '<2s Response'
-    },
-    {
-      id: 'facebook',
-      name: 'Facebook Messenger',
-      description: 'Facebook page messaging',
-      color: 'from-info to-info',
-      icon: <SocialPlatformIcon platform="facebook" className="w-7 h-7 text-white" />,
-      stats: 'Auto-Reply'
-    },
-    {
-      id: 'instagram',
-      name: 'Instagram DM',
-      description: 'Instagram direct messages',
-      color: 'from-accent to-success',
-      icon: <SocialPlatformIcon platform="instagram" className="w-7 h-7 text-white" />,
-      stats: 'Smart Responses'
-    },
-    {
-      id: 'whatsapp',
-      name: 'WhatsApp',
-      description: 'WhatsApp Business messaging',
-      color: 'from-success to-success',
-      icon: <SocialPlatformIcon platform="whatsapp" className="w-7 h-7 text-white" />,
-      stats: 'Global Reach'
-    },
-    {
-      id: 'voice',
-      name: 'Voice Calls',
-      description: 'Phone call handling',
-      color: 'from-warning to-destructive',
-      icon: '📞',
-      stats: 'Never Miss Calls'
-    }
-  ]
+  const channels = LEAD_CHANNEL_CATALOG.map((meta) => ({
+    id: meta.id,
+    name: CHANNEL_LABELS[meta.id],
+    description: `Unified inbox · ${CHANNEL_LABELS[meta.id]}`,
+    stats: CHANNEL_STATS[meta.id] ?? 'Unified inbox',
+    beta: meta.beta,
+  }))
 
   return (
     <section className="py-24 bg-surface relative" aria-labelledby="channels-title">
@@ -88,14 +74,11 @@ const ChannelsDiagram = () => {
             transition={{ delay: 0.2 }}
             className="text-muted text-lg max-w-3xl mx-auto"
           >
-            Your AI employee seamlessly handles conversations across all platforms, 
-            providing consistent, intelligent responses wherever your customers reach out.
+            WhatsApp, SMS, phone, paid ads, web, email, and social — one inbox, one CRM thread per contact.
           </motion.p>
         </div>
 
-        {/* Main Diagram */}
-        <div className="relative max-w-5xl mx-auto">
-          {/* Central AI Hub */}
+        <div className="relative max-w-6xl mx-auto">
           <motion.div
             initial={{ scale: 0, opacity: 0 }}
             whileInView={{ scale: 1, opacity: 1 }}
@@ -115,93 +98,46 @@ const ChannelsDiagram = () => {
             </div>
           </motion.div>
 
-          {/* Channel Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4 md:gap-5">
             {channels.map((channel, index) => (
               <motion.div
                 key={channel.id}
                 initial={{ opacity: 0, y: 30, scale: 0.8 }}
                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.8 + index * 0.1 }}
+                transition={{ duration: 0.6, delay: 0.8 + index * 0.05 }}
                 onHoverStart={() => setActiveChannel(channel.id)}
                 onHoverEnd={() => setActiveChannel(null)}
                 className="group cursor-pointer"
               >
-                <div className={`relative p-6 rounded-2xl border transition-all duration-300 ${
-                  activeChannel === channel.id 
-                    ? 'border-accent/50 bg-accent/5 scale-105' 
-                    : 'border-border-light bg-surface-light hover:border-accent/30'
-                }`}>
-                  {/* Connection Line to Center */}
-                  <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-full">
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      whileInView={{ height: '60px', opacity: 0.6 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 1, delay: 1 + index * 0.1 }}
-                      className="w-0.5 bg-gradient-to-t from-accent to-transparent"
-                    />
-                    <motion.div
-                      initial={{ scale: 0 }}
-                      whileInView={{ scale: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.3, delay: 1.5 + index * 0.1 }}
-                      className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1 w-2 h-2 bg-accent rounded-full"
-                    />
-                  </div>
-
-                  {/* Channel Icon */}
-                  <div className="text-center mb-4">
-                    <div className={`w-16 h-16 mx-auto rounded-xl bg-gradient-to-br ${channel.color} flex items-center justify-center text-2xl mb-3 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                      {channel.icon}
+                <div
+                  className={`relative p-4 rounded-2xl border transition-all duration-300 h-full ${
+                    activeChannel === channel.id
+                      ? 'border-accent/50 bg-accent/5 scale-105'
+                      : 'border-border-light bg-surface-light hover:border-accent/30'
+                  }`}
+                >
+                  <div className="text-center mb-2">
+                    <div className="w-14 h-14 mx-auto rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center text-accent mb-2 shadow-sm group-hover:scale-110 transition-transform duration-300">
+                      <LeadChannelIcon channelId={channel.id} className="w-7 h-7" />
                     </div>
-                    <h3 className="font-display text-lg font-bold text-text mb-1">
-                      {channel.name}
-                    </h3>
-                    <p className="text-muted text-sm mb-3">
-                      {channel.description}
-                    </p>
-                    <div className="inline-block px-3 py-1 bg-accent/10 text-accent text-xs font-medium rounded-full border border-accent/20">
+                    <h3 className="font-display text-sm font-bold text-text mb-1 line-clamp-2">{channel.name}</h3>
+                    <div className="inline-block px-2 py-0.5 bg-accent/10 text-accent text-[10px] font-medium rounded-full border border-accent/20">
                       {channel.stats}
                     </div>
                   </div>
 
-                  {/* Animated Pulse */}
                   <motion.div
                     animate={activeChannel === channel.id ? { scale: [1, 1.2, 1] } : {}}
                     transition={{ duration: 2, repeat: Infinity }}
-                    className="absolute top-4 right-4 w-3 h-3 bg-success rounded-full opacity-80"
+                    className="absolute top-3 right-3 w-2.5 h-2.5 bg-success rounded-full opacity-80"
                   />
                 </div>
               </motion.div>
             ))}
           </div>
-
-          {/* Connection Animation */}
-          <div className="absolute top-32 left-1/2 transform -translate-x-1/2 pointer-events-none">
-            {channels.map((_, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: [0, 1, 0] }}
-                transition={{
-                  duration: 3,
-                  delay: 2 + index * 0.5,
-                  repeat: Infinity,
-                  repeatDelay: 6
-                }}
-                className="absolute w-2 h-2 bg-accent rounded-full"
-                style={{
-                  top: `${120 + index * 20}px`,
-                  left: `${-10 + (index % 2) * 20}px`
-                }}
-              />
-            ))}
-          </div>
         </div>
 
-        {/* Key Benefits */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}

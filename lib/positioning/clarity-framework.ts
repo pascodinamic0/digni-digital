@@ -15,6 +15,12 @@ export const BANNED_HEADLINE_PATTERNS = [
  'fight back',
  'transform your',
  'revolutionary',
+ 'cutting-edge',
+ 'next-generation',
+ 'unlock the power of ai',
+ 'ai-powered solutions tailored',
+ 'seamless digital transformation',
+ 'leverage ai to transform',
  'synergy',
  'leverage',
  'disrupt',
@@ -29,14 +35,18 @@ export const CLARITY_COPY_RULES = `
 
 **Grunt test (5 seconds):** Visitor must know (1) what we offer, (2) how it helps them, (3) what to do next.
 
-**Architecture, Grow → Learn → Scale:**
-- **Grow**, AI Employee Systems: more leads captured, qualified, and booked 24/7.
-- **Learn**, Future Ready Program: practical AI skills employers pay for, via real projects.
-- **Scale**, Agentic Software: custom systems that automate operations around how the business works.
+**Positioning:** Digni identifies exposures and installs systems. Not an AI agency, chatbot company, or training catalog.
 
-**Headlines:** Plain language a 16 year old understands. Use searchable job titles (e.g. "AI Meeting Notes Specialist"), not invented titles alone (e.g. "Meeting Intelligence Synthesis Specialist").
+**Architecture, Grow → Learn → Scale:**
+- **Grow**, AI Employee: capture more of the demand you already generate—respond, qualify, follow up, book 24/7.
+- **Learn**, Future Ready: practical AI capability with portfolio evidence, not another certificate.
+- **Scale**, Agentic Systems: software that perceives, reasons, and acts so people stop moving information by hand.
+
+**Process:** Identify → Design → Build → Connect → Deploy → Optimize.
+
+**Headlines:** Plain language a 16 year old understands. Outcome before technology.
 
 **Structure per section:** WHO is this for → WHAT problem → HOW we solve it → WHAT outcome → proof before CTA.
 
-**CTAs:** Specific verbs, "Book Strategy Call", "Explore The Program", "Discuss Your Project", not "Learn More" alone.
+**CTAs:** Diagnostic verbs ("See What's Exposed", "Find Your Revenue Leaks"), not "Learn More" alone.
 `.trim()

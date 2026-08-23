@@ -16,6 +16,12 @@ const CHANNEL_STYLE: Record<CalendarBookingChannel, string> = {
   sms: 'bg-info/12 text-info border-info/25',
   phone: 'bg-warning/12 text-warning border-warning/30',
   instagram: 'bg-gradient-to-r from-pink-500/12 to-amber-400/12 text-rose-600 border-rose-400/30',
+  facebook: 'bg-info/12 text-info border-info/25',
+  email: 'bg-muted/12 text-muted-foreground border-border/30',
+  google: 'bg-warning/12 text-warning border-warning/25',
+  tiktok: 'bg-accent/12 text-accent border-accent/25',
+  linkedin: 'bg-info/12 text-info border-info/25',
+  ads: 'bg-accent/12 text-accent border-accent/25',
 }
 
 function slotKey(dayIndex: number, slotIndex: number) {

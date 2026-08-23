@@ -178,13 +178,13 @@ type ResultLine = { metric: string; description: string }
 export const aiEmployeePageEn: AiEmployeePageTranslations = {
  hero: {
     badge: 'For busy service teams who handle paid demand',
-    titleLine1: 'You Paid for the Lead.',
-    titleHighlight: 'Why Let It Go Cold?',
+    titleLine1: 'Never miss a lead',
+    titleHighlight: 'you already paid for.',
     hook:
-      'Your next customer could be in your inbox, WhatsApp, website, or phone right now—waiting for a reply while your team is busy. Digni captures, qualifies, follows up, and books 24/7 so the demand you paid for becomes booked work while you close the deals.',
+      'Your next customer may be waiting on WhatsApp, email, or phone while your team is busy. Digni responds, qualifies, follows up, and books 24/7—so paid demand gets a next step instead of silence.',
     primaryCta: 'Find Your Revenue Leaks',
     footnote:
-      'We can’t guarantee every lead will book—of course not. But we reply under 2 seconds, qualify, and book 24/7 until silence stops choosing for you. If we don’t hit your targets, we work free until you do.',
+      'We cannot promise every inquiry will book. We can install a system that responds, qualifies, and follows up 24/7 so silence is no longer the default.',
  },
  valueBadges: {
  ariaLabel: 'Speed, deployment, and effort guarantees',
@@ -196,7 +196,7 @@ export const aiEmployeePageEn: AiEmployeePageTranslations = {
  badge: 'The dream destination',
  title: 'Same 100 leads. A different scoreboard.',
  subtitle:
- 'You already paid for the batch. The leaky bucket closes ~1. The loop closes 95—with referrals compounding the same spend.',
+ 'Illustration, not a promise: when the loop breaks, most of a 100-lead batch never becomes a conversation. When response, qualification, and follow-up run 24/7, far more of the demand you already paid for gets a next step.',
  beforeLabel: 'The leaky bucket',
  beforeMetric: '~1 / 100',
  beforeHint: 'Closed after manual chaos, voicemail, and slow follow up.',
@@ -232,8 +232,8 @@ export const aiEmployeePageEn: AiEmployeePageTranslations = {
  },
  problem: {
  badge: 'The life math',
- title: 'You Already Bought the Lead.',
- titleHighlight: 'Silence Gave It Away.',
+ title: 'Silence gives leads away',
+ titleHighlight: 'after you paid for them.',
  subtitle:
  'You spend thousands to acquire leads. When they reach out, your staff is busy. The phone rings out. The chat sits on “read.” Result? The lead calls your competitor—and you funded their calendar.',
  stats: [
@@ -298,7 +298,7 @@ export const aiEmployeePageEn: AiEmployeePageTranslations = {
  qualification: {
  badge: 'Fit matters',
  title: 'Built for',
- titleHighlight: 'owners who hate leaking paid leads',
+ titleHighlight: 'people beyond playing around and ready to dominate industries',
  forHeading: 'Who this is for',
  forItems: [
  'You sell a premium service and care about retention, not just leads',
@@ -358,40 +358,40 @@ export const aiEmployeePageEn: AiEmployeePageTranslations = {
  },
  caseStudy: {
  label: 'Proof',
- title: 'A regional clinic stopped leaking',
- titleHighlight: '$15k in ad spend every month.',
+ title: 'A named clinic needed inbound',
+ titleHighlight: 'covered while the team treated patients.',
  subtitle:
- 'Real numbers from a healthcare partner, what broke in intake, what changed in 18 hours, and what stayed fixed after go live.',
- company: 'Regional Medical Center',
+ 'Fremo Medical & Birth Center is a named healthcare operator. We do not publish unverified conversion percentages here. See the case study for the engagement story.',
+ company: 'Fremo Medical & Birth Center',
  industry: 'Healthcare',
- timeline: 'Live in 18 hours',
+ timeline: 'Named operator',
  before: {
  label: 'Before',
- metric: '40%',
- description: 'Of leads got no timely response. Ad spend kept burning while the pipeline cooled.',
+ metric: 'Manual',
+ description: 'Inbound and scheduling competed with clinical work. After-hours demand waited.',
  },
  after: {
  label: 'After',
- metric: '100%',
- description: 'Every inquiry answered fast, with a clear next step, around the clock.',
+ metric: 'Covered',
+ description: 'The clinic is a named Digni operator. Growth coverage is the system we install for this exposure.',
  },
  contextLabel: 'Context',
  challengeLabel: 'Challenge',
  solutionLabel: 'Solution',
- context: '$15k/month in ads, but intake couldn’t keep up with volume or speed.',
- challenge: 'Roughly 40% of leads weren’t getting a timely response. Pipeline cooled. Revenue leaked.',
+ context: 'A busy clinic generating demand it could not answer in real time.',
+ challenge: 'Staff time went to patients. Inquiries still arrived after hours and between appointments.',
  solution:
- 'A done with you intelligent system live in 18 hours, answering, qualifying, booking, and following up from one operating view.',
+ 'Identify the inbound workflow, build the AI Employee, connect channels, deploy, and keep optimizing.',
  testimonial:
- 'We were spending $15k a month on ads and still losing people in the first mile. Now every lead gets answered immediately, and our team finally sees one pipeline.',
- testimonialAuthor: 'Operations Director',
- testimonialRole: 'Regional Medical Center',
- outcomesHeading: 'Measured outcomes',
+ 'Digni Digital transformed our entire patient experience. The booking system alone has saved us countless hours and significantly improved our revenue.',
+ testimonialAuthor: 'The Fremo Medical Team',
+ testimonialRole: 'Fremo Medical & Birth Center',
+ outcomesHeading: 'What we can say honestly',
  results: [
- { metric: '100%', description: 'Every lead answered, fast, with a consistent next step.' },
- { metric: 'Zero', description: 'No more “we’ll call them back” gaps in the first mile.' },
- { metric: '18h', description: 'From decision to live, so results start immediately.' },
- { metric: '85%', description: 'Stronger conversion when response time matches buyer urgency.' },
+ { metric: 'Named', description: 'A real healthcare operator, not an anonymized “regional center.”' },
+ { metric: 'Inbound', description: 'The exposure is unanswered demand while the team is with patients.' },
+ { metric: 'System', description: 'Respond, qualify, follow up, book, route—not a chatbot SKU.' },
+ { metric: 'Next', description: 'Run the fit assessment to see if this exposure is yours.' },
  ],
  expandStory: 'Read full case study',
  collapseStory: 'Show less',
@@ -433,7 +433,7 @@ export const aiEmployeePageEn: AiEmployeePageTranslations = {
  guarantee: {
  badge: 'Damaging admission',
  title: 'We Can’t Promise Every Lead Books.',
- body: 'Of course not. But we’ve done everything to ensure silence stops choosing for you: under-2-second answers, qualification, and booking 24/7. If you don’t get 15 qualified appointments in 30 days, we work free until you hit that target.',
+ body: 'Of course not. What we can do is install coverage: immediate response, qualification, follow-up, and a next step toward a booked conversation. Digni handles the implementation so you are not left operating another platform.',
  },
  scarcity: {
  prefix: 'Limited to 5 premium partners per month.',
@@ -445,7 +445,7 @@ export const aiEmployeePageEn: AiEmployeePageTranslations = {
  title: 'Ready for Paid Leads',
  titleHighlight: 'to Become Booked Jobs?',
  subtitle:
- 'We can’t guarantee every inquiry converts—of course not. Let’s see if your business qualifies for the loop that gives every paid lead a fair shot. 15 qualified appointments in 30 days, or we work free until you hit it.',
+ 'We cannot guarantee every inquiry converts. The next step is a diagnostic: find where inbound goes cold, then see whether an AI Employee is the right coverage.',
  assessmentNote:
  'Your personalized report spells out what slow follow up is costing you, what recovery looks like with the loop live, and the all in investment, before you pay.',
  assessmentCta: 'Run the fit assessment',
@@ -473,13 +473,13 @@ export const aiEmployeePageEn: AiEmployeePageTranslations = {
 export const aiEmployeePageFr: AiEmployeePageTranslations = {
  hero: {
  badge: 'Pour les entreprises de services occupées',
- titleLine1: 'Vous avez déjà payé ces leads.',
- titleHighlight: 'La plupart n’ont jamais de réponse.',
+ titleLine1: 'Ne laissez pas filer un prospect',
+ titleHighlight: 'que vous avez déjà payé.',
  hook:
- 'Vous passez la journée à livrer. Les leads appellent pendant que vous êtes en mission. Celui qui répond en premier gagne—et ce n’est pas vous. Ce n’est pas un chatbot. C’est le système qui transforme l’inbound en jobs réservés pendant que vous travaillez.',
- primaryCta: 'Voir ce que vous coûte le suivi lent',
+ 'Votre prochain client attend peut-être sur WhatsApp, e-mail ou téléphone pendant que votre équipe est occupée. Digni répond, qualifie, relance et réserve 24h/24—pour que la demande payée obtienne une suite au lieu du silence.',
+ primaryCta: 'Trouver vos fuites de revenus',
  footnote:
- 'Nous ne pouvons pas promettre que chaque lead réservera—évidemment. Mais nous répondons en moins de 2 secondes, qualifions et réservons 24h/24 pour que le silence arrête de choisir à votre place. 15 RDV qualifiés en 30 jours, sinon on travaille gratuitement jusqu’au seuil.',
+ 'Nous ne pouvons pas promettre que chaque demande se transforme en rendez-vous. Nous pouvons installer un système qui répond, qualifie et relance 24h/24, pour que le silence ne soit plus la règle.',
  },
  valueBadges: {
  ariaLabel: 'Garanties de vitesse et de déploiement',
@@ -591,7 +591,7 @@ export const aiEmployeePageFr: AiEmployeePageTranslations = {
  qualification: {
  badge: 'Le fit compte',
  title: 'Conçu pour les',
- titleHighlight: 'entreprises de services premium',
+ titleHighlight: 'ceux qui ne jouent plus et visent à dominer leur secteur',
  forHeading: 'Pour qui c’est fait',
  forItems: [
  'Vous vendez un service premium et la rétention compte autant que les leads',
@@ -726,7 +726,7 @@ export const aiEmployeePageFr: AiEmployeePageTranslations = {
  guarantee: {
  badge: 'Garantie de service conditionnelle',
  title: 'Nous prenons le risque, pas vous.',
- body: '15 RDV qualifiés en 30 jours, sinon nous travaillons gratuitement jusqu’à atteindre ce seuil.',
+ body: 'Évidemment. Ce que nous pouvons faire : installer une couverture qui répond, qualifie et relance 24h/24. Digni gère l’implémentation.',
  },
  scarcity: {
  prefix: 'Limité à 5 partenaires premium par mois.',
@@ -765,10 +765,10 @@ export const aiEmployeePageFr: AiEmployeePageTranslations = {
 export const aiEmployeePageDe: AiEmployeePageTranslations = {
  hero: {
  badge: 'Für beschäftigte Service-Unternehmen',
- titleLine1: 'Sie haben für diese Leads schon bezahlt.',
- titleHighlight: 'Die meisten bekommen nie eine Antwort.',
+ titleLine1: 'Keinen Lead verpassen',
+ titleHighlight: 'den Sie schon bezahlt haben.',
  hook:
- 'Sie schließen den ganzen Tag Aufträge ab. Leads rufen an, während Sie im Einsatz sind. Wer zuerst antwortet, gewinnt—und das sind nicht Sie. Das ist kein Chatbot. Es ist das System, das Inbound in gebuchte Jobs verwandelt, während Sie arbeiten.',
+ 'Ihr nächster Kunde wartet vielleicht auf WhatsApp, E-Mail oder Telefon, während Ihr Team beschäftigt ist. Digni antwortet, qualifiziert, folgt nach und bucht 24/7—damit bezahlte Nachfrage eine nächste Stufe bekommt statt Stille.',
  primaryCta: 'Sehen, was langsames Follow-up kostet',
  footnote:
  'Wir können nicht versprechen, dass jeder Lead bucht—natürlich nicht. Aber wir antworten in unter 2 Sekunden, qualifizieren und buchen 24/7, damit Stille nicht mehr für Sie entscheidet. 15 qualifizierte Termine in 30 Tagen, oder wir arbeiten gratis bis zum Ziel.',
@@ -883,7 +883,7 @@ export const aiEmployeePageDe: AiEmployeePageTranslations = {
  qualification: {
  badge: 'Fit ist wichtig',
  title: 'Gebaut für',
- titleHighlight: 'Premium Dienstleister',
+ titleHighlight: 'Menschen, die nicht experimentieren, sondern Branchen dominieren wollen',
  forHeading: 'Für wen das gedacht ist',
  forItems: [
  'Sie verkaufen ein Premium Angebot und denken an Bindung, nicht nur Leads',
@@ -1018,7 +1018,7 @@ export const aiEmployeePageDe: AiEmployeePageTranslations = {
  guarantee: {
  badge: 'Bedingte Service Garantie',
  title: 'Wir tragen das Risiko, nicht Sie.',
- body: '15 qualifizierte Termine in 30 Tagen, sonst arbeiten wir kostenlos, bis Sie es schaffen.',
+ body: 'Natürlich nicht. Was wir tun können: Abdeckung installieren, die 24/7 antwortet, qualifiziert und nachfasst. Digni übernimmt die Umsetzung.',
  },
  scarcity: {
  prefix: 'Max. 5 Premium Partner pro Monat.',
@@ -1057,10 +1057,10 @@ export const aiEmployeePageDe: AiEmployeePageTranslations = {
 export const aiEmployeePageEs: AiEmployeePageTranslations = {
  hero: {
  badge: 'Para negocios de servicios ocupados',
- titleLine1: 'Ya pagó por esos leads.',
- titleHighlight: 'La mayoría nunca recibe respuesta.',
+ titleLine1: 'No pierda un lead',
+ titleHighlight: 'que ya pagó.',
  hook:
- 'Pasa el día cerrando trabajo. Los leads llaman mientras usted está en el trabajo. Quien responde primero gana—y no es usted. Esto no es un chatbot. Es el sistema que convierte el inbound en trabajos reservados mientras usted trabaja.',
+ 'Su próximo cliente puede estar esperando en WhatsApp, correo o teléfono mientras su equipo está ocupado. Digni responde, califica, hace seguimiento y agenda 24/7—para que la demanda pagada avance en lugar del silencio.',
  primaryCta: 'Ver qué le cuesta el seguimiento lento',
  footnote:
  'No podemos prometer que cada lead reserve—claro que no. Pero respondemos en menos de 2 segundos, calificamos y agendamos 24/7 para que el silencio deje de decidir por usted. 15 citas calificadas en 30 días, o trabajamos gratis hasta lograrlas.',
@@ -1175,7 +1175,7 @@ export const aiEmployeePageEs: AiEmployeePageTranslations = {
  qualification: {
  badge: 'El encaje importa',
  title: 'Diseñado para',
- titleHighlight: 'negocios de servicios premium',
+ titleHighlight: 'quienes ya no prueban y están listos para dominar su industria',
  forHeading: 'Para quién es',
  forItems: [
  'Vende un servicio premium y la retención importa tanto como los leads',
@@ -1310,7 +1310,7 @@ export const aiEmployeePageEs: AiEmployeePageTranslations = {
  guarantee: {
  badge: 'Garantía de servicio condicional',
  title: 'Nosotros asumimos el riesgo, no usted.',
- body: '15 citas calificadas en 30 días, o trabajamos gratis hasta lograrlo.',
+ body: 'Claro que no. Lo que sí podemos: instalar cobertura que responde, califica y hace seguimiento 24/7. Digni se ocupa de la implementación.',
  },
  scarcity: {
  prefix: 'Máximo 5 socios premium al mes.',
@@ -1349,10 +1349,10 @@ export const aiEmployeePageEs: AiEmployeePageTranslations = {
 export const aiEmployeePageAr: AiEmployeePageTranslations = {
  hero: {
  badge: 'لأعمال الخدمات المشغولة',
- titleLine1: 'لقد دفعت مسبقاً مقابل هؤلاء العملاء المحتملين.',
- titleHighlight: 'معظمهم لا يحصل على رد أبداً.',
+ titleLine1: 'لا تفوّت عميلاً محتملاً',
+ titleHighlight: 'دفعت مقابله مسبقاً.',
  hook:
- 'تقضي يومك في إنجاز العمل. يتصل العملاء المحتملون وأنت في المهمة. من يرد أولاً يفوز—وليس أنت. هذا ليس روبوت محادثة. إنه النظام الذي يحوّل الوارد إلى مواعيد محجوزة وأنت تعمل.',
+ 'قد ينتظر عميلك التالي على واتساب أو البريد أو الهاتف بينما فريقك مشغول. Digni يرد ويؤهل ويتابع ويحجز على مدار الساعة—حتى تحصل الطلبات المدفوعة على خطوة تالية بدلاً من الصمت.',
  primaryCta: 'اطلع على تكلفة المتابعة البطيئة',
  footnote:
  'لا نستطيع أن نعد بأن كل عميل محتمل سيحجز—طبعاً لا. لكننا نرد في أقل من ثانيتين ونؤهّل ونحجز على مدار الساعة حتى لا يختار الصمت بدلاً منك. 15 موعداً مؤهلاً خلال 30 يوماً، أو نعمل مجاناً حتى تحققها.',
@@ -1467,7 +1467,7 @@ export const aiEmployeePageAr: AiEmployeePageTranslations = {
  qualification: {
  badge: 'الملاءمة مهمة',
  title: 'مبني لـ',
- titleHighlight: 'شركات الخدمات الراقية',
+ titleHighlight: 'من تجاوزوا التجربة ومستعدون لهيمنة قطاعاتهم',
  forHeading: 'لمن هذا',
  forItems: [
  'تبيع خدمة راقية والاحتفاظ يهمك مثل العملاء المحتملين',

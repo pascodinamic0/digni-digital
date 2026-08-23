@@ -24,19 +24,19 @@ const SERVICE_CARD_META: Record<
 
 const servicesHeroCopy = {
   en: {
-    titlePrefix: 'Which Struggle',
+    titlePrefix: 'Which Exposure',
     titleHighlight: 'Is Costing You Most?',
     subtitle:
-      'Unanswered leads. Unhireable graduates. Manual work that owns your week. Pick the one keeping you up—we install the fix.',
+      'Unanswered leads. Unprepared people. Manual work that owns your week. Pick the leak—we install the coverage.',
     chip1: 'Leads die in silence',
     chip2: 'Degrees without jobs',
     chip3: 'You are the glue',
   },
   fr: {
-    titlePrefix: 'Quelle lutte',
+    titlePrefix: 'Quelle exposition',
     titleHighlight: 'vous coûte le plus ?',
     subtitle:
-      'Leads sans réponse. Diplômés inemployables. Travail manuel qui mange votre semaine. Choisissez celle qui vous tient éveillé—nous installons la solution.',
+      'Prospects sans réponse. Personnes non préparées. Travail manuel qui mange votre semaine. Choisissez la fuite—nous installons la couverture.',
     chip1: 'Les leads meurent en silence',
     chip2: 'Diplômes sans emploi',
     chip3: 'Vous êtes la colle',

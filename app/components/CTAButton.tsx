@@ -20,7 +20,7 @@ interface CTAButtonProps {
 
 export function CTAButton({
   text = ctaConfig.buttonText.talkToDigniGuide,
-  'aria-label': ariaLabel = 'Talk to DigniGuide',
+  'aria-label': ariaLabel = "See What's Exposed",
   variant = 'primary',
   size = 'md',
   className = '',
@@ -84,7 +84,7 @@ interface CTAButtonStyledProps {
 
 export function CTAButtonStyled({
   text,
-  'aria-label': ariaLabel = 'Talk to DigniGuide',
+  'aria-label': ariaLabel = "See What's Exposed",
   className = '',
   showArrow = false,
   children,

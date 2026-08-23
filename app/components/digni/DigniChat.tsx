@@ -33,8 +33,8 @@ const copy: Record<
 > = {
   en: {
     title: 'DigniGuide',
-    subtitle: 'Intelligent guide to Digni Digital services',
-    placeholder: 'Message DigniGuide…',
+    subtitle: 'Identify the exposure. Find the coverage.',
+    placeholder: 'Tell us what’s happening…',
     send: 'Send',
     thinking: 'Thinking…',
     bookDemo: 'Book onboarding demo',
@@ -44,12 +44,12 @@ const copy: Record<
     speakReply: 'Read aloud',
     errorGeneric: 'Something went wrong. Try again or book a call.',
     welcome:
-      'Hi — I’m DigniGuide. Tell me what you’re trying to solve and I’ll help you find the right fit before you book time with our team.',
+      'Tell us what’s happening in your business. We’ll help identify whether the leak is growth, talent, or operations—then point you to the system that closes it.',
   },
   fr: {
     title: 'DigniGuide',
-    subtitle: 'Guide intelligent des services Digni Digital',
-    placeholder: 'Écrire à DigniGuide…',
+    subtitle: 'Identifier l’exposition. Trouver la couverture.',
+    placeholder: 'Dites-nous ce qui se passe…',
     send: 'Envoyer',
     thinking: 'Réflexion…',
     bookDemo: 'Réserver une démo',
@@ -59,12 +59,12 @@ const copy: Record<
     speakReply: 'Lire à voix haute',
     errorGeneric: 'Erreur — réessayez ou réservez un appel.',
     welcome:
-      'Bonjour — je suis DigniGuide. Décrivez votre défi et je vous orienterai avant de réserver un appel.',
+      'Dites-nous ce qui se passe dans votre activité. Nous aiderons à identifier si la fuite est liée à la croissance, aux talents ou aux opérations—puis à orienter vers le système qui la referme.',
   },
   es: {
     title: 'DigniGuide',
-    subtitle: 'Guía inteligente de servicios Digni Digital',
-    placeholder: 'Mensaje a DigniGuide…',
+    subtitle: 'Identifique la exposición. Encuentre la cobertura.',
+    placeholder: 'Cuéntenos qué está pasando…',
     send: 'Enviar',
     thinking: 'Pensando…',
     bookDemo: 'Reservar demo',
@@ -73,12 +73,13 @@ const copy: Record<
     voiceStop: 'Parar',
     speakReply: 'Leer en voz alta',
     errorGeneric: 'Error — intente de nuevo o reserve una llamada.',
-    welcome: 'Hola — soy DigniGuide. Cuénteme su reto y le orientaré antes de agendar con el equipo.',
+    welcome:
+      'Cuéntenos qué está pasando en su negocio. Ayudaremos a identificar si la fuga es de crecimiento, talento u operaciones—y a orientar hacia el sistema que la cierra.',
   },
   de: {
     title: 'DigniGuide',
-    subtitle: 'Intelligenter Guide zu Digni Digital',
-    placeholder: 'Nachricht an DigniGuide…',
+    subtitle: 'Die Exposition identifizieren. Die Absicherung finden.',
+    placeholder: 'Sagen Sie uns, was passiert…',
     send: 'Senden',
     thinking: 'Denke nach…',
     bookDemo: 'Demo buchen',
@@ -87,12 +88,13 @@ const copy: Record<
     voiceStop: 'Stopp',
     speakReply: 'Vorlesen',
     errorGeneric: 'Fehler — erneut versuchen oder Termin buchen.',
-    welcome: 'Hallo — ich bin DigniGuide. Beschreiben Sie Ihr Problem, bevor Sie ein Gespräch buchen.',
+    welcome:
+      'Sagen Sie uns, was in Ihrem Unternehmen passiert. Wir helfen zu erkennen, ob das Leck Wachstum, Talent oder Operations betrifft—und zeigen das System, das es schließt.',
   },
   ar: {
     title: 'DigniGuide',
-    subtitle: 'الدليل الذكي لخدمات Digni Digital',
-    placeholder: 'رسالة إلى DigniGuide…',
+    subtitle: 'حدّد التعرّض. اعثر على التغطية.',
+    placeholder: 'أخبرنا بما يحدث…',
     send: 'إرسال',
     thinking: 'جارٍ التفكير…',
     bookDemo: 'احجز عرضاً',
@@ -101,7 +103,8 @@ const copy: Record<
     voiceStop: 'إيقاف',
     speakReply: 'قراءة',
     errorGeneric: 'حدث خطأ — حاول مرة أخرى أو احجز مكالمة.',
-    welcome: 'مرحباً — أنا DigniGuide. أخبرني بما تحاول حله قبل حجز وقت مع الفريق.',
+    welcome:
+      'أخبرنا بما يحدث في عملك. سنساعد على تحديد ما إذا كان التسرب في النمو أو المواهب أو العمليات—ثم نوجّهك إلى النظام الذي يغلقه.',
   },
 }
 

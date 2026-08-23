@@ -6,27 +6,27 @@ const metadataByLanguage = {
   en: {
     title: 'Case Studies | Real Results from Real Businesses',
     description:
-      'See how Digni Digital helped businesses achieve 85% reduction in no-shows, 40% higher close rates, and $200k+ monthly revenue increases.',
+      'Named operators. Honest status. See how Digni identifies exposures and installs coverage—without invented scoreboards.',
   },
   fr: {
     title: 'Études de cas | Des résultats réels pour de vraies entreprises',
     description:
-      'Découvrez comment Digni Digital a aidé des entreprises à réduire les absences de 85 %, à augmenter les taux de conclusion de 40 % et à générer plus de 200 000 $ de revenus mensuels supplémentaires.',
+      'Opérateurs nommés. Statut honnête. Comment Digni identifie les expositions et installe la couverture—sans tableau de scores inventé.',
   },
   es: {
-    title: 'Casos de éxito | Resultados reales para empresas reales',
+    title: 'Casos de éxito | Operadores nombrados, estado honesto',
     description:
-      'Vea cómo Digni Digital ayudó a empresas a reducir las ausencias un 85 %, aumentar las tasas de cierre un 40 % y sumar más de 200.000 $ en ingresos mensuales.',
+      'Operadores nombrados. Estado honesto. Cómo Digni identifica exposiciones e instala cobertura—sin marcadores inventados.',
   },
   de: {
-    title: 'Fallstudien | Echte Ergebnisse für echte Unternehmen',
+    title: 'Fallstudien | Benannte Betreiber, ehrlicher Status',
     description:
-      'Sehen Sie, wie Digni Digital Unternehmen geholfen hat, No-Shows um 85 % zu senken, Abschlussquoten um 40 % zu steigern und mehr als 200.000 $ zusätzlichen Monatsumsatz zu erzielen.',
+      'Benannte Betreiber. Ehrlicher Status. Wie Digni Expositionen identifiziert und Absicherung installiert—ohne erfundenes Scoreboard.',
   },
   ar: {
-    title: 'دراسات الحالة | نتائج حقيقية لشركات حقيقية',
+    title: 'دراسات الحالة | مشغّلون مسمّون ووضع صادق',
     description:
-      'اطّلع على كيف ساعدت Digni Digital الشركات على خفض حالات عدم الحضور بنسبة 85%، ورفع معدلات الإغلاق بنسبة 40%، وزيادة الإيرادات الشهرية بأكثر من 200 ألف دولار.',
+      'مشغّلون مسمّون. وضع صادق. كيف تحدّد Digni التعرّض وتثبّت التغطية—بلا لوحات أرقام مخترعة.',
   },
 } satisfies Record<MetadataLanguage, Metadata>
 
