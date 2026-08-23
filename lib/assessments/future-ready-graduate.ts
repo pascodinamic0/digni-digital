@@ -1,4 +1,5 @@
 import type { ServiceAssessmentConfig } from './types'
+import { assessmentCaptureCopyEn } from './capture-copy'
 
 const bands = [
  {
@@ -168,10 +169,11 @@ export const futureReadyAssessmentEn: ServiceAssessmentConfig = {
  matchLabel: 'Program match',
  bands: [...bands],
  nextStepsTitle: 'Recommended next step',
- primaryCta: 'Book school consultation',
+ primaryCta: 'Book a School Consultation',
  secondaryCta: 'View program details',
  backToService: 'Back to program page',
  retake: 'Retake assessment',
+ ...assessmentCaptureCopyEn,
  },
  questions,
 }

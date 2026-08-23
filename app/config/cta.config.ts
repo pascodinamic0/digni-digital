@@ -27,9 +27,9 @@ export const ctaConfig = {
  /** Secondary, book demo / onboarding / sales call (after chat qualification) */
  bookingUrl: 'https://calendar.app.google/xP2APV1Zqbke8JKu6',
 
- buttonText: {
- getStarted: 'Talk to DigniGuide',
- talkToDigniGuide: 'Talk to DigniGuide',
+  buttonText: {
+ getStarted: "See What's Exposed",
+ talkToDigniGuide: "See What's Exposed",
  bookStrategy: 'Book a Strategy Call',
  bookConsultation: 'Book Your Free Consultation',
  scheduleConsultation: 'Schedule Consultation',

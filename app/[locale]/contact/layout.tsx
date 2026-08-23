@@ -4,29 +4,29 @@ type MetadataLanguage = 'en' | 'fr' | 'es' | 'de' | 'ar'
 
 const metadataByLanguage = {
   en: {
-    title: 'Contact Us | Start Your Transformation',
+    title: 'Contact | Talk Through Your Challenge',
     description:
-      'Get in touch with Digni Digital. Book a consultation, send us a message, or connect on WhatsApp. Offices in the US and Africa.',
+      'Tell us what is exposed. A no-obligation conversation to identify the leak and the coverage Digni can install.',
   },
   fr: {
-    title: 'Contactez-nous | Lancez votre transformation',
+    title: 'Contact | Parler de votre défi',
     description:
-      'Contactez Digni Digital. Réservez une consultation, envoyez-nous un message ou échangez sur WhatsApp. Bureaux aux États-Unis et en Afrique.',
+      'Dites-nous ce qui est exposé. Une conversation sans obligation pour identifier la fuite et la couverture que Digni peut installer.',
   },
   es: {
-    title: 'Contáctenos | Inicie su transformación',
+    title: 'Contacto | Hablar de su desafío',
     description:
-      'Póngase en contacto con Digni Digital. Reserve una consulta, envíenos un mensaje o conecte por WhatsApp. Oficinas en Estados Unidos y África.',
+      'Díganos qué está expuesto. Una conversación sin obligación para identificar la fuga y la cobertura que Digni puede instalar.',
   },
   de: {
-    title: 'Kontakt | Starten Sie Ihre Transformation',
+    title: 'Kontakt | Ihre Herausforderung besprechen',
     description:
-      'Nehmen Sie Kontakt mit Digni Digital auf. Buchen Sie eine Beratung, senden Sie uns eine Nachricht oder schreiben Sie über WhatsApp. Büros in den USA und Afrika.',
+      'Sagen Sie uns, was offen liegt. Ein unverbindliches Gespräch, um das Leck und die Absicherung zu identifizieren, die Digni installieren kann.',
   },
   ar: {
-    title: 'اتصل بنا | ابدأ تحولك',
+    title: 'اتصل بنا | تحدث عن تحديك',
     description:
-      'تواصل مع Digni Digital. احجز استشارة، أو أرسل لنا رسالة، أو تواصل عبر WhatsApp. لدينا مكاتب في الولايات المتحدة وأفريقيا.',
+      'أخبرنا بما هو معرّض. محادثة بلا التزام لتحديد التسرب والتغطية التي يمكن لـ Digni تثبيتها.',
   },
 } satisfies Record<MetadataLanguage, Metadata>
 

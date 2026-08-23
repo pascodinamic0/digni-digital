@@ -25,9 +25,9 @@ export default function AIReceptionistFooter() {
       { name: t.nav.articles, href: '/blog' },
       { name: t.footer.futureReadyDemo, href: getDownloadUrl(downloadsConfig.futureReadyGraduate, language) },
       { name: t.footer.aiEmployeeDemo, href: getDownloadUrl(downloadsConfig.aiEmployee, language) },
-      { name: t.footer.ourMission, href: '/#our-mission' },
+      { name: t.footer.ourMission, href: '/about#our-mission' },
       { name: t.footer.whatWeFightFor, href: '/#what-were-fighting-for' },
-      { name: t.footer.our2026Commitment, href: '/#our-2026-commitment' },
+      { name: t.footer.our2026Commitment, href: '/about#our-2026-commitment' },
     ],
     company: [
       { name: t.footer.aboutUs, href: '/about' },

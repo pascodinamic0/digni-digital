@@ -1,6 +1,6 @@
 /** AI Employee page sections — import from here for a stable page layout API. */
 
-export { default as AiEmployeeHeroSection } from './AiEmployeeHeroSection'
+export { default as AiEmployeeHeroSection, AiEmployeeChatPreviewSection } from './AiEmployeeHeroSection'
 export { default as SectionHeading } from './SectionHeading'
 export { default as ProblemStatsSection } from './ProblemStatsSection'
 export { default as TimeToValueSection } from './TimeToValueSection'

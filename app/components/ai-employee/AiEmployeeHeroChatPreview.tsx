@@ -4,12 +4,10 @@ import { useEffect, useMemo, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useLanguage } from '@/app/context/LocaleContext'
 import { translations } from '@/app/config/translations'
-import SocialPlatformIcon from '@/app/components/SocialPlatformIcon'
+import LeadChannelIcon from '@/app/components/LeadChannelIcon'
+import { isLeadChannelId, type LeadChannelId } from '@/lib/lead-channels'
 import DemoPersonAvatar from '@/app/components/DemoPersonAvatar'
 import { getConversationDemoVisitor } from '@/lib/demo-contact-avatars'
-import type { InboxConversationT } from '@/app/i18n/aiEmployeeProductDemos'
-
-type ChannelType = InboxConversationT['channelType'] | 'google'
 
 type HeroMessage = {
   sender: 'visitor' | 'ai'
@@ -17,61 +15,37 @@ type HeroMessage = {
   meta: string
 }
 
+const HERO_MESSAGE_LIMIT = 4
+const MESSAGE_STEP_MS = 1100
+const CHANNEL_HOLD_MS = 2400
+
+type ChannelType = LeadChannelId
+
 const INBOX_ID_BY_CHANNEL: Record<string, number> = {
   website: 1,
   whatsapp: 2,
   sms: 3,
   instagram: 4,
   facebook: 5,
+  email: 6,
+  tiktok: 7,
+  google: 1,
 }
 
-const HERO_MESSAGE_LIMIT = 4
-const MESSAGE_STEP_MS = 1100
-const CHANNEL_HOLD_MS = 2400
-
 function resolveChannelType(channelId: string): ChannelType {
-  if (channelId === 'google') return 'google'
-  if (
-    channelId === 'website' ||
-    channelId === 'whatsapp' ||
-    channelId === 'sms' ||
-    channelId === 'instagram' ||
-    channelId === 'facebook'
-  ) {
-    return channelId
-  }
+  if (isLeadChannelId(channelId)) return channelId
   return 'website'
 }
 
 function ChannelIcon({ channelType }: { channelType: ChannelType }) {
-  switch (channelType) {
-    case 'website':
-      return (
-        <svg className="h-3.5 w-3.5 shrink-0 text-success" viewBox="0 0 24 24" fill="none" aria-hidden>
-          <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="1.8" />
-          <path d="M3 12H21" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-        </svg>
-      )
-    case 'whatsapp':
-      return <SocialPlatformIcon platform="whatsapp" className="h-3.5 w-3.5 shrink-0 text-success" />
-    case 'sms':
-      return (
-        <svg className="h-3.5 w-3.5 shrink-0 text-success" viewBox="0 0 24 24" fill="none" aria-hidden>
-          <path
-            d="M4 6.5C4 5.7 4.7 5 5.5 5H18.5C19.3 5 20 5.7 20 6.5V14.5C20 15.3 19.3 16 18.5 16H9L5 19V16H5.5C4.7 16 4 15.3 4 14.5V6.5Z"
-            stroke="currentColor"
-            strokeWidth="1.8"
-            strokeLinejoin="round"
-          />
-        </svg>
-      )
-    case 'instagram':
-      return <SocialPlatformIcon platform="instagram" className="h-3.5 w-3.5 shrink-0 text-success" />
-    case 'facebook':
-      return <SocialPlatformIcon platform="facebook" className="h-3.5 w-3.5 shrink-0 text-success" />
-    case 'google':
-      return <SocialPlatformIcon platform="google" className="h-3.5 w-3.5 shrink-0 text-success" />
-  }
+  return (
+    <LeadChannelIcon
+      channelId={channelType}
+      className="h-3.5 w-3.5 shrink-0 text-success"
+      compact
+      showBeta={false}
+    />
+  )
 }
 
 export default function AiEmployeeHeroChatPreview() {

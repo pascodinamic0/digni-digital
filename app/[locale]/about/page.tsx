@@ -8,7 +8,7 @@ import AnimatedSection from '@/app/components/AnimatedSection'
 import SectionBlock from '@/app/components/SectionBlock'
 import ScrollIndicator from '@/app/components/ScrollIndicator'
 import PremiumHeroBackdrop from '@/app/components/PremiumHeroBackdrop'
-import CompanyValuesGrid from '@/app/components/CompanyValuesGrid'
+import { Commitment2026, MissionValues } from '@/app/components/MissionAndCommitment'
 import ClientLogos from '@/app/components/ClientLogos'
 import { getBookingLinkProps } from '@/app/config/cta.config'
 import { translations } from '@/app/config/translations'
@@ -36,13 +36,9 @@ export default function AboutPage({ params, searchParams }: AboutPageProps) {
   const heroCopy = aboutHeroCopy[language]
   const w = translations[language].home.whatWeDo
   const ctaT = translations[language].cta
-  const mission = translations[language].home.mission
 
   const stats = [
     { value: 10, suffix: '+', label: t.statYears },
-    { value: 500, suffix: '+', label: `Projected ${t.statStudents}` },
-    { value: 10, suffix: 'k+', label: `Projected ${t.statLeads}` },
-    { value: 98, suffix: '%', label: t.statSatisfaction },
   ]
 
   const timeline = [
@@ -117,9 +113,6 @@ export default function AboutPage({ params, searchParams }: AboutPageProps) {
             <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 px-2">
               <div className="rounded-full border border-border/80 bg-background/75 dark:bg-surface/70 px-4 py-2 text-xs sm:text-sm text-muted shadow-sm">
                 <span className="font-semibold text">10+ years</span> {heroCopy.years}
-              </div>
-              <div className="rounded-full border border-border/80 bg-background/75 dark:bg-surface/70 px-4 py-2 text-xs sm:text-sm text-muted shadow-sm">
-                <span className="font-semibold text">98%</span> {heroCopy.satisfaction}
               </div>
             </div>
           </div>
@@ -288,11 +281,8 @@ export default function AboutPage({ params, searchParams }: AboutPageProps) {
         </div>
       </AnimatedSection>
 
-      <AnimatedSection className="py-16 sm:py-24 bg-surface">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <CompanyValuesGrid mission={mission} />
-        </div>
-      </AnimatedSection>
+      <MissionValues />
+      <Commitment2026 />
 
       <ClientLogos
         badge={t.trustedByBadge}

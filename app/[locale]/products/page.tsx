@@ -478,22 +478,9 @@ export default function ProductsPage({ params, searchParams }: ProductsPageProps
               {copy.heroDescription}
             </p>
             <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 px-2 mt-8">
-              <motion.div
-                initial={{ opacity: 0, y: 14 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="rounded-full border border-border/80 bg-background/75 dark:bg-surface/70 px-4 py-2 text-xs sm:text-sm text-muted backdrop-blur-sm shadow-sm"
-              >
-                <span className="font-semibold text">10+ years</span> {copy.proofYears}
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, y: 14 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                className="rounded-full border border-border/80 bg-background/75 dark:bg-surface/70 px-4 py-2 text-xs sm:text-sm text-muted backdrop-blur-sm shadow-sm"
-              >
-                <span className="font-semibold text">98%</span> {copy.proofSatisfaction}
-              </motion.div>
+              <span className="rounded-full border border-border/80 bg-background/75 dark:bg-surface/70 px-4 py-2 text-xs sm:text-sm text-muted">
+                {copy.proofYears}
+              </span>
             </div>
           </motion.div>
         </PremiumHeroParallax>

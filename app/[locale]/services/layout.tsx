@@ -4,29 +4,29 @@ type MetadataLanguage = 'en' | 'fr' | 'es' | 'de' | 'ar'
 
 const metadataByLanguage = {
   en: {
-    title: 'Our Services | AI Employee, Education & Custom Software',
+    title: 'Our Services | Growth, Talent, and Operations Coverage',
     description:
-      'Explore Digni Digital services: AI Employee for 24/7 lead capture, Future-Ready Graduate Program employability program, and Agentic Softwares for custom solutions.',
+      'Which exposure is costing you most? AI Employee for inbound leaks, Future Ready for capability without evidence, Agentic Systems for people moving information.',
   },
   fr: {
-    title: 'Nos services | AI Employee, éducation et logiciels sur mesure',
+    title: 'Nos services | Couverture croissance, talents et opérations',
     description:
-      'Découvrez les services de Digni Digital : AI Employee pour capter des clients potentiels 24/7, Future-Ready Graduate Program pour l’employabilité, et Agentic Softwares pour des solutions sur mesure.',
+      'Quelle exposition vous coûte le plus ? Employé IA pour les fuites inbound, Future Ready pour la capacité sans preuve, Systèmes agentiques pour les personnes qui déplacent l’information.',
   },
   es: {
-    title: 'Nuestros servicios | AI Employee, educación y software a medida',
+    title: 'Servicios | Cobertura de crecimiento, talento y operaciones',
     description:
-      'Explore los servicios de Digni Digital: AI Employee para captar clientes potenciales 24/7, Future-Ready Graduate Program para empleabilidad y Agentic Softwares para soluciones a medida.',
+      '¿Qué exposición le cuesta más? Empleado IA para fugas inbound, Future Ready para capacidad sin evidencia, sistemas agénticos para personas que mueven información.',
   },
   de: {
-    title: 'Unsere Leistungen | AI Employee, Bildung und individuelle Software',
+    title: 'Leistungen | Absicherung für Wachstum, Talent und Operations',
     description:
-      'Entdecken Sie die Leistungen von Digni Digital: AI Employee für Interessentenerfassung rund um die Uhr, Future-Ready Graduate Program für Beschäftigungsfähigkeit und Agentic Softwares für individuelle Lösungen.',
+      'Welche Exposition kostet Sie am meisten? AI Employee für Inbound-Lecks, Future Ready für Fähigkeit ohne Nachweis, agentische Systeme für Menschen, die Informationen verschieben.',
   },
   ar: {
-    title: 'خدماتنا | AI Employee والتعليم والبرمجيات المخصصة',
+    title: 'خدماتنا | تغطية النمو والمواهب والعمليات',
     description:
-      'استكشف خدمات Digni Digital: AI Employee لالتقاط العملاء المحتملين على مدار الساعة، وFuture-Ready Graduate Program لتعزيز الجاهزية المهنية، وAgentic Softwares للحلول المخصصة.',
+      'أي تعرّض يكلّفك أكثر؟ موظف الذكاء الاصطناعي لتسرب الوارد، Future Ready للقدرة بلا دليل، والأنظمة الوكيلية للأشخاص الذين ينقلون المعلومات.',
   },
 } satisfies Record<MetadataLanguage, Metadata>
 

@@ -9,6 +9,7 @@ import SoftwareDemoSection from '@/app/components/software/SoftwareDemoSection'
 import ChatChannelIconBadge from '@/app/components/ChatChannelIconBadge'
 import DemoPersonAvatar from '@/app/components/DemoPersonAvatar'
 import { getConversationDemoVisitor } from '@/lib/demo-contact-avatars'
+import LeadChannelIcon from './LeadChannelIcon'
 import SocialPlatformIcon from './SocialPlatformIcon'
 
 interface Message {
@@ -149,6 +150,36 @@ const ConversationMockups = () => {
         { sender: 'ai', text: 'Perfect timing! We have openings at 1pm and 3:30pm today. We\'re at 1234 Main Street. Which slot works?', time: '10:32 AM' },
         { sender: 'visitor', text: '1pm works. Do I need to wait or can I drop it off?', time: '10:33 AM' },
         { sender: 'ai', text: '✅ Booked for 1pm! You can wait (we have wifi + coffee) or drop off and we\'ll text when it\'s ready. See you at 1! 🚗', time: '10:33 AM' }
+      ]
+    },
+    {
+      id: 'email',
+      title: 'Email',
+      platform: 'Gmail / Outlook',
+      industry: 'Consulting Firm',
+      icon: <LeadChannelIcon channelId="email" className="w-5 h-5" showBeta={false} />,
+      messages: [
+        { sender: 'visitor', text: 'Hi — can you share pricing for a 3-location rollout?', time: '8:14 AM' },
+        { sender: 'ai', text: 'Happy to. What is your biggest leak today — missed calls, slow follow-up, or booking?', time: '8:14 AM' },
+        { sender: 'visitor', text: 'Missed WhatsApp and phone after hours.', time: '8:16 AM' },
+        { sender: 'ai', text: 'That is what we close first. Tuesday or Thursday morning for a 20-minute fit check?', time: '8:16 AM' },
+        { sender: 'visitor', text: 'Thursday morning works.', time: '8:18 AM' },
+        { sender: 'ai', text: '✅ Thursday 9:30am is booked. Scope email is on its way.', time: '8:18 AM' }
+      ]
+    },
+    {
+      id: 'tiktok',
+      title: 'TikTok',
+      platform: 'TikTok DM',
+      industry: 'Beauty Studio',
+      icon: <LeadChannelIcon channelId="tiktok" className="w-5 h-5" />,
+      messages: [
+        { sender: 'visitor', text: 'Saw your reel — do you do bridal packages?', time: '6:42 PM' },
+        { sender: 'ai', text: 'Yes — bridal packages start with a trial look. How many need hair and makeup?', time: '6:42 PM' },
+        { sender: 'visitor', text: 'Bride plus 4 bridesmaids. Wedding in 6 weeks.', time: '6:43 PM' },
+        { sender: 'ai', text: 'Perfect timeline. Saturday 11am or Monday 4pm for a consult?', time: '6:43 PM' },
+        { sender: 'visitor', text: 'Saturday 11am', time: '6:44 PM' },
+        { sender: 'ai', text: '✅ Booked Saturday 11am. Prep list and deposit link coming in DM.', time: '6:44 PM' }
       ]
     }
   ]

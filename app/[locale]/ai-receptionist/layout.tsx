@@ -5,9 +5,9 @@ type MetadataLanguage = 'en' | 'fr' | 'es' | 'de' | 'ar'
 
 const metadataByLanguage = {
   en: {
-    title: '48-Hour AI Booking Loop | Capture, Qualify & Schedule 24/7',
+    title: 'AI Employee | Capture, Qualify & Book 24/7',
     description:
-      'The 48-Hour AI Booking Loop for premium service businesses: capture, qualify, and schedule leads 24/7. $2,000 setup + $500/mo with a 15-appointment guarantee.',
+      'You paid for the lead. Why let it go cold? Digni installs an AI Employee that responds, qualifies, follows up, and books—so inbound coverage does not depend on who is free.',
   },
   fr: {
     title: 'AI Employee | Captez, qualifiez et réservez des clients potentiels 24/7',

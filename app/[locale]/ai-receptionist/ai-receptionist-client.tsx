@@ -3,14 +3,16 @@
 import { use } from 'react'
 import { useLanguage } from '@/app/context/LocaleContext'
 import { translations } from '@/app/config/translations'
+import HowDigniWorks from '@/app/components/HowDigniWorks'
+import { howDigniWorksByLanguage } from '@/app/i18n/howDigniWorks'
 import {
   AiEmployeeHeroSection,
+  AiEmployeeChatPreviewSection,
   ProblemStatsSection,
   TimeToValueSection,
   ProofSection,
   QualificationSection,
   BonusStackSection,
-  MobileAppBannerSection,
   PricingSection,
 } from '@/app/components/ai-employee'
 import {
@@ -39,14 +41,32 @@ export function AIReceptionistClient({ params, searchParams, showTaskQueueDemo }
         dangerouslySetInnerHTML={jsonLdScriptProps(pageJsonLd)}
       />
       <AiEmployeeHeroSection />
+      <AiEmployeeChatPreviewSection />
 
       {/* Problem */}
       <ProblemStatsSection />
-
-      {/* Proof */}
       <ProofSection />
+      <HowDigniWorks
+        className="py-24 bg-surface"
+        stepOverrides={{
+          identify: {
+            title: howDigniWorksByLanguage[language].steps.identify.title,
+            description:
+              language === 'fr'
+                ? 'Nous cartographions votre flux inbound : appels, WhatsApp, formulaires, messages, et où il se casse.'
+                : 'We map your inbound workflow—calls, WhatsApp, forms, messages—and where it breaks.',
+          },
+          connect: {
+            title: howDigniWorksByLanguage[language].steps.connect.title,
+            description:
+              language === 'fr'
+                ? 'Nous le branchons à vos canaux, CRM et calendrier existants.'
+                : 'We connect it to the channels, CRM, and calendar you already use.',
+          },
+        }}
+      />
 
-      {/* Process — product demos */}
+      {/* Demonstration — product tours after mechanism */}
       <AIReceptionistHowItWorksDemos showTaskQueueDemo={showTaskQueueDemo} />
 
       {/* Contrast — leaky bucket vs loop */}
@@ -55,7 +75,6 @@ export function AIReceptionistClient({ params, searchParams, showTaskQueueDemo }
       {/* Fit + offer */}
       <QualificationSection />
       <BonusStackSection />
-      <MobileAppBannerSection />
       <TimeToValueSection />
       <PricingSection
         checkoutRedirectingLabel={ctaT.checkoutRedirecting}

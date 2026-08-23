@@ -1,28 +1,33 @@
 'use client'
 
+import { Link } from '@/i18n/navigation'
 import { useLanguage } from '@/app/context/LocaleContext'
 import { translations } from '@/app/config/translations'
-import AnimatedSection from '@/app/components/AnimatedSection'
-import AiEmployeeProofCarousel from '@/app/components/AiEmployeeProofCarousel'
-import SectionHeading from '@/app/components/ai-employee/SectionHeading'
+import { SectionHeading, ProofQuote } from '@/app/components/marketing'
 
 export default function ProofSection() {
   const language = useLanguage()
   const cs = translations[language].aiEmployeePage.caseStudy
 
   return (
-    <AnimatedSection id="proof" className="border-b border-[var(--software-border)] py-10 md:py-20">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+    <section id="proof" className="marketing-simple border-b border-border bg-surface py-20">
+      <div className="mx-auto max-w-3xl px-6">
         <SectionHeading
           label={cs.label}
           title={cs.title}
           titleHighlight={cs.titleHighlight}
           supporting={cs.subtitle}
-          align="center"
-          className="mb-6 md:mb-12"
         />
-        <AiEmployeeProofCarousel caseStudy={cs} />
+        <div className="mt-10">
+          <ProofQuote quote={cs.testimonial} name={cs.testimonialAuthor} role={cs.testimonialRole} />
+        </div>
+        <Link
+          href="/case-studies"
+          className="type-body mt-8 inline-block font-medium text-accent underline-offset-4 hover:underline"
+        >
+          {cs.expandStory} →
+        </Link>
       </div>
-    </AnimatedSection>
+    </section>
   )
 }

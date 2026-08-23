@@ -77,6 +77,15 @@ export type AssessmentCopy = {
  secondaryCta: string
  backToService: string
  retake: string
+ captureTitle: string
+ captureSubtitle: string
+ captureName: string
+ captureEmail: string
+ captureWhatsapp: string
+ captureCta: string
+ captureDone: string
+ captureError: string
+ capturePrivacy: string
 }
 
 /** Service level “why this matters” bullets keyed by fit band (matches band thresholds). */

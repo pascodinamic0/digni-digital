@@ -4,7 +4,8 @@ import { motion, AnimatePresence, useMotionValueEvent, useReducedMotion, useScro
 import { useState, useEffect, useRef, useCallback } from 'react'
 import { useLanguage } from '@/app/context/LocaleContext'
 import { translations } from '@/app/config/translations'
-import SocialPlatformIcon from './SocialPlatformIcon'
+import LeadChannelIcon from './LeadChannelIcon'
+import type { LeadChannelId } from '@/lib/lead-channels'
 
 // Animate number from 0 to value when step is active (for drop/count display)
 function AnimatedCount({ value, isActive, suffix = '', className = '' }: { value: number; isActive: boolean; suffix?: string; className?: string }) {
@@ -34,13 +35,6 @@ function AnimatedCount({ value, isActive, suffix = '', className = '' }: { value
   return <span className={className}>{display.toLocaleString()}{suffix}</span>
 }
 
-const CHANNEL_ICONS: Record<string, React.ReactNode> = {
-  ads: '📢',
-  website: '🌐',
-  instagram: <SocialPlatformIcon platform="instagram" className="w-6 h-6 text-current" />,
-  whatsapp: <SocialPlatformIcon platform="whatsapp" className="w-6 h-6 text-current" />,
-  phone: '📞',
-}
 const BROKEN_STAGE_ICONS = ['📢', '📵', '❓', '📅', '📬', '❌', '🔄']
 const AI_STAGE_ICONS = ['📥', '⚡', '✓', '📅', '🔄', '✅', '🔄']
 
@@ -49,7 +43,7 @@ const BROKEN_FUNNEL = [100, 38, 12, 5, 2, 1, 0] // 62 lost first contact, 26 qua
 // AI: bulletproof automation, zero drop, higher conversion, referrals add to loop
 const AI_FUNNEL = [100, 100, 100, 100, 100, 95, 118] // no drop → 95 close → +23 referrals
 
-type ChannelItem = { id: string; label: string; icon: React.ReactNode }
+type ChannelItem = { id: LeadChannelId; label: string; icon?: React.ReactNode }
 type BrokenStageItem = { step: number; title: string; icon: string; description: string; leak: string }
 type AIStageItem = { step: number; title: string; icon: string; description: string; win: string }
 
@@ -165,16 +159,14 @@ const ACTIVE_STEP_SHADOW = [
 
 function LeadSourceRow({
   channels,
-  channelIcons,
   compact,
 }: {
   channels: ChannelItem[]
-  channelIcons: Record<string, React.ReactNode>
   compact: boolean
 }) {
   return (
     <div
-      className={`w-full flex flex-nowrap justify-center ${compact ? 'gap-1.5' : 'gap-3'} overflow-x-auto pb-0.5 -mx-1 px-1 scroll-smooth [scrollbar-width:thin]`}
+      className={`w-full flex flex-nowrap justify-center ${compact ? 'gap-1.5' : 'gap-2'} overflow-x-auto pb-1 -mx-1 px-1 scroll-smooth [scrollbar-width:thin]`}
       role="list"
       aria-label="Lead sources"
     >
@@ -184,12 +176,12 @@ function LeadSourceRow({
           <div
             key={ch.id}
             role="listitem"
-            className={`flex flex-col items-center justify-center ${compact ? 'gap-0.5 rounded-lg px-2 py-1.5 min-w-[3.5rem]' : 'gap-1 rounded-xl px-2.5 py-2 min-w-[5rem]'} shrink-0 snap-start backdrop-blur-sm ${chip.shell}`}
+            className={`flex flex-col items-center justify-center ${compact ? 'gap-0.5 rounded-lg px-1.5 py-1.5 min-w-[3.25rem]' : 'gap-1 rounded-xl px-2 py-2 min-w-[4.5rem]'} shrink-0 snap-start backdrop-blur-sm ${chip.shell}`}
           >
-            <span className={`${compact ? 'text-base min-h-5' : 'text-[1.35rem] min-h-6'} leading-none inline-flex items-center justify-center`} aria-hidden>
-              {channelIcons[ch.id] ?? ch.icon}
+            <span className={`${compact ? 'text-base min-h-5' : 'text-[1.35rem] min-h-6'} leading-none inline-flex items-center justify-center text-current`} aria-hidden>
+              <LeadChannelIcon channelId={ch.id} compact={compact} />
             </span>
-            <span className={`text-[9px] sm:text-[10px] font-semibold text-center leading-tight line-clamp-1 ${chip.label}`}>{ch.label}</span>
+            <span className={`text-[8px] sm:text-[9px] font-semibold text-center leading-tight line-clamp-1 ${chip.label}`}>{ch.label}</span>
           </div>
         )
       })}
@@ -201,7 +193,6 @@ function VisualFunnel({
   stages,
   counts,
   channels,
-  channelIcons,
   variant,
   activeStep = 0,
   funnelCopy,
@@ -214,7 +205,6 @@ function VisualFunnel({
   stages: FunnelStage[]
   counts: number[]
   channels: ChannelItem[]
-  channelIcons: Record<string, React.ReactNode>
   variant: 'broken' | 'ai'
   activeStep?: number
   funnelCopy: FunnelCopy
@@ -237,7 +227,7 @@ function VisualFunnel({
     <div className="w-full flex flex-col items-center relative">
       {!hideChannels ? (
         <>
-          <LeadSourceRow channels={channels} channelIcons={channelIcons} compact={compact} />
+          <LeadSourceRow channels={channels} compact={compact} />
           {!hideLegend ? (
             <p
               className={`${compact ? 'text-[10px] mt-1' : 'text-[11px] sm:text-xs mt-3'} text-center text-muted-foreground leading-snug max-w-md mx-auto mb-px px-1`}
@@ -546,7 +536,6 @@ function BrokenFlowDiagram({
         stages={funnelStages}
         counts={BROKEN_FUNNEL}
         channels={channels}
-        channelIcons={CHANNEL_ICONS}
         variant="broken"
         activeStep={activeStep}
         funnelCopy={funnelCopy}
@@ -605,7 +594,6 @@ function AIPoweredFlowDiagram({
         stages={funnelStages}
         counts={AI_FUNNEL}
         channels={channels}
-        channelIcons={CHANNEL_ICONS}
         variant="ai"
         activeStep={activeStep}
         funnelCopy={funnelCopy}
@@ -978,7 +966,7 @@ const ClientJourneyDemo = ({ prominent = false }: ClientJourneyDemoProps) => {
     closed: t.funnelClosed,
     noDropThisStep: t.funnelNoDropThisStep,
   }
-  const channels: ChannelItem[] = t.channels.map((c) => ({ ...c, icon: CHANNEL_ICONS[c.id] ?? '📩' }))
+  const channels: ChannelItem[] = t.channels.map((c) => ({ ...c }))
   const brokenStages: BrokenStageItem[] = t.brokenStages.map((s, i) => ({ ...s, icon: BROKEN_STAGE_ICONS[i] }))
   const aiStages: AIStageItem[] = t.aiStages.map((s, i) => ({ ...s, icon: AI_STAGE_ICONS[i] }))
 
@@ -1306,7 +1294,7 @@ const ClientJourneyDemo = ({ prominent = false }: ClientJourneyDemoProps) => {
             className="overflow-hidden"
           >
             <div className="mx-auto mt-8 max-w-4xl px-4 sm:px-6 pb-4">
-              <LeadSourceRow channels={channels} channelIcons={CHANNEL_ICONS} compact />
+              <LeadSourceRow channels={channels} compact />
               <p className="mt-2 mb-6 text-center text-[10px] text-[var(--software-text-muted)]">{t.funnelLegend}</p>
               <div className="grid gap-5 lg:grid-cols-2">
                 <BrokenFlowDiagram

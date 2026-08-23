@@ -4,29 +4,29 @@ type MetadataLanguage = 'en' | 'fr' | 'es' | 'de' | 'ar'
 
 const metadataByLanguage = {
   en: {
-    title: 'Future-Ready Graduate Program | Employability Program for Students',
+    title: 'Future Ready | Capability and Evidence Employers Can Hire From',
     description:
-      'Transform students into job-ready professionals with real income-generating skills. AI, freelancing, digital marketing, and more, built for universities and schools.',
+      'A degree can get them to the door. Skills get them through it. Future Ready builds practical AI capability, real projects, and portfolio evidence for schools, institutes, and employers.',
   },
   fr: {
-    title: 'Future-Ready Graduate Program | Programme d’employabilité pour étudiants',
+    title: 'Future Ready | Capacité et preuves que les employeurs peuvent embaucher',
     description:
-      'Transformez les étudiants en professionnels prêts à l’emploi avec de vraies compétences génératrices de revenus. IA, travail indépendant, marketing numérique et plus, conçus pour les universités et les écoles.',
+      'Un diplôme peut les mener à la porte. Les compétences les font entrer. Future Ready construit une capacité IA pratique, de vrais projets et des preuves de portfolio pour les écoles, instituts et employeurs.',
   },
   es: {
-    title: 'Future-Ready Graduate Program | Programa de empleabilidad para estudiantes',
+    title: 'Future Ready | Capacidad y evidencia que los empleadores pueden contratar',
     description:
-      'Convierta a estudiantes en profesionales listos para trabajar con habilidades reales que generan ingresos. IA, trabajo independiente, marketing digital y más, creado para universidades y escuelas.',
+      'Un título puede llevarlos a la puerta. Las habilidades los hacen entrar. Future Ready construye capacidad práctica de IA, proyectos reales y evidencia de portafolio para escuelas, institutos y empleadores.',
   },
   de: {
-    title: 'Future-Ready Graduate Program | Programm für studentische Beschäftigungsfähigkeit',
+    title: 'Future Ready | Fähigkeit und Nachweis, den Arbeitgeber einstellen',
     description:
-      'Verwandeln Sie Studierende in berufsfähige Fachkräfte mit echten einkommensschaffenden Fähigkeiten. KI, selbstständige Arbeit, digitales Marketing und mehr, entwickelt für Universitäten und Schulen.',
+      'Ein Abschluss bringt sie zur Tür. Skills bringen sie hindurch. Future Ready baut praktische KI-Fähigkeit, echte Projekte und Portfolio-Nachweis für Schulen, Institute und Arbeitgeber.',
   },
   ar: {
-    title: 'Future-Ready Graduate Program | برنامج جاهزية مهنية للطلاب',
+    title: 'Future Ready | قدرة ودليل يوظّف لأجلهما أصحاب العمل',
     description:
-      'حوّل الطلاب إلى محترفين جاهزين للعمل بمهارات حقيقية تولّد الدخل. الذكاء الاصطناعي، والعمل الحر، والتسويق الرقمي، والمزيد، مصممة للجامعات والمدارس.',
+      'الشهادة قد توصلهم إلى الباب. المهارات تدخلهم منه. يبني Future Ready قدرة عملية بالذكاء الاصطناعي ومشاريع حقيقية وإثبات ملف أعمال للمدارس والمعاهد وأصحاب العمل.',
   },
 } satisfies Record<MetadataLanguage, Metadata>
 

@@ -4,29 +4,29 @@ type MetadataLanguage = 'en' | 'fr' | 'es' | 'de' | 'ar'
 
 const metadataByLanguage = {
   en: {
-    title: 'Agentic Softwares | Custom AI-Native Software Solutions',
+    title: 'Agentic Systems | Stop Paying People to Move Information',
     description:
-      'AI-native software that perceives, reasons, and acts autonomously. Custom-built solutions for businesses with unique challenges, from MVP to enterprise scale.',
+      'Digni identifies the repetitive workflow, builds an agentic system around how you actually work, and puts it into operation. Perceive, reason, act—humans supervise.',
   },
   fr: {
-    title: 'Agentic Softwares | Solutions logicielles sur mesure natives IA',
+    title: 'Systèmes agentiques | Arrêtez de payer des personnes pour déplacer des informations',
     description:
-      'Des logiciels natifs IA qui perçoivent, raisonnent et agissent de façon autonome. Des solutions sur mesure pour les entreprises aux défis uniques, du produit minimum viable à l’échelle entreprise.',
+      'Digni identifie le flux répétitif, construit un système agentique autour de votre façon de travailler, et le met en opération. Percevoir, raisonner, agir—les humains supervisent.',
   },
   es: {
-    title: 'Agentic Softwares | Soluciones de software a medida nativas de IA',
+    title: 'Sistemas agénticos | Deje de pagar a personas para mover información',
     description:
-      'Software nativo de IA que percibe, razona y actúa de forma autónoma. Soluciones a medida para empresas con desafíos únicos, desde producto mínimo viable hasta escala empresarial.',
+      'Digni identifica el flujo repetitivo, construye un sistema agéntico alrededor de cómo trabaja realmente, y lo pone en operación. Percibir, razonar, actuar—las personas supervisan.',
   },
   de: {
-    title: 'Agentic Softwares | Individuelle KI-native Softwarelösungen',
+    title: 'Agentische Systeme | Hören Sie auf, Menschen für das Verschieben von Informationen zu bezahlen',
     description:
-      'KI-native Software, die wahrnimmt, schlussfolgert und autonom handelt. Maßgeschneiderte Lösungen für Unternehmen mit besonderen Herausforderungen, vom minimal funktionsfähigen Produkt bis zur Unternehmensskalierung.',
+      'Digni identifiziert den repetitiven Workflow, baut ein agentisches System um Ihre reale Arbeit und setzt es in Betrieb. Wahrnehmen, schlussfolgern, handeln—Menschen beaufsichtigen.',
   },
   ar: {
-    title: 'Agentic Softwares | حلول برمجية مخصصة مبنية على الذكاء الاصطناعي',
+    title: 'أنظمة وكيلية | توقف عن دفع أجور لأشخاص لنقل المعلومات',
     description:
-      'برمجيات مبنية على الذكاء الاصطناعي تدرك وتستنتج وتتصرف بشكل مستقل. حلول مخصصة للشركات ذات التحديات الفريدة، من المنتج الأولي إلى مستوى المؤسسات.',
+      'تحدّد Digni سير العمل المتكرر، وتبني نظاماً وكيلياً حول طريقة عملك الفعلية، وتضعه قيد التشغيل. إدراك، استدلال، فعل—والبشر يشرفون.',
   },
 } satisfies Record<MetadataLanguage, Metadata>
 

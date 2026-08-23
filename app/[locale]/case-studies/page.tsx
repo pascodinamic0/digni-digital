@@ -15,7 +15,7 @@ const caseStudiesCopy = {
     heroPrefix: 'Proof that transformation',
     heroHighlight: 'works.',
     heroDescription:
-      "Real businesses, real results, real growth. See how we've helped companies across Africa and beyond scale without the chaos.",
+      'Named operators. Honest status. See how Digni identifies exposures and installs coverage—without invented scoreboards.',
     proofYears: 'building growth systems',
     proofSatisfaction: 'client satisfaction',
     challengeLabel: 'Challenge:',
@@ -42,7 +42,7 @@ const caseStudiesCopy = {
         id: 'healthcare-clinic',
         industryId: 'healthcare',
         industry: 'Healthcare',
-        title: 'Regional Healthcare Clinic',
+        title: 'Fremo Medical & Birth Center',
         client: 'Fremo Medical & Birth Center',
         duration: '6 weeks',
         location: 'Lagos, Nigeria',
@@ -56,10 +56,10 @@ const caseStudiesCopy = {
           'Payment processing for consultations',
         ],
         results: [
-          { metric: '85%', description: 'Reduction in no-shows', type: 'improvement' },
-          { metric: '$50k', description: 'Additional monthly revenue', type: 'revenue' },
-          { metric: '3 hours', description: 'Daily time savings for staff', type: 'efficiency' },
-          { metric: '95%', description: 'Patient satisfaction score', type: 'satisfaction' },
+          { metric: 'Named', description: 'Fremo Medical & Birth Center — inbound booking coverage', type: 'improvement' },
+          { metric: 'Staff time', description: 'Scheduling no longer eats the afternoon', type: 'efficiency' },
+          { metric: 'Reminders', description: 'Patients get automatic follow-up instead of a paper queue', type: 'improvement' },
+          { metric: 'Status', description: 'Named operator. No invented conversion scoreboard.', type: 'satisfaction' },
         ],
         technologies: ['Next.js', 'Node.js', 'PostgreSQL', 'Twilio', 'Stripe'],
         testimonial: {
@@ -73,7 +73,7 @@ const caseStudiesCopy = {
         id: 'real-estate-agency',
         industryId: 'real-estate',
         industry: 'Real Estate',
-        title: 'Premium Real Estate Agency',
+        title: 'Shep Engineering',
         client: 'Shep Engineering',
         duration: '4 weeks',
         location: 'Accra, Ghana',
@@ -87,10 +87,10 @@ const caseStudiesCopy = {
           'CRM integration for lead tracking',
         ],
         results: [
-          { metric: '90%', description: 'Faster proposal delivery', type: 'efficiency' },
-          { metric: '40%', description: 'Higher close rate', type: 'improvement' },
-          { metric: '25', description: 'More deals per month', type: 'volume' },
-          { metric: '$200k', description: 'Increased monthly revenue', type: 'revenue' },
+          { metric: 'Speed', description: 'Proposals in minutes instead of hours', type: 'efficiency' },
+          { metric: 'Named', description: 'Shep Engineering — proposal system in use', type: 'improvement' },
+          { metric: 'Quality', description: 'Consistent proposal quality without overnight drafting', type: 'volume' },
+          { metric: 'Status', description: 'Named operator. Revenue lift not published until verified.', type: 'revenue' },
         ],
         technologies: ['React Native', 'Express.js', 'MongoDB', 'AWS S3', 'OpenAI API'],
         testimonial: {
@@ -104,7 +104,7 @@ const caseStudiesCopy = {
         id: 'digital-agency',
         industryId: 'marketing',
         industry: 'Marketing',
-        title: 'Digital Marketing Agency',
+        title: 'GlamSquad Kenya',
         client: 'GlamSquad Kenya',
         duration: '3 weeks',
         location: 'Nairobi, Kenya',
@@ -118,10 +118,10 @@ const caseStudiesCopy = {
           'Client communication portal',
         ],
         results: [
-          { metric: '75%', description: 'Increase in acceptance rate', type: 'improvement' },
-          { metric: '60%', description: 'Time saved on proposals', type: 'efficiency' },
-          { metric: '$100k', description: 'Annual revenue increase', type: 'revenue' },
-          { metric: '20 hours', description: 'Weekly time savings', type: 'efficiency' },
+          { metric: 'Named', description: 'GlamSquad Kenya — proposal and reporting coverage', type: 'improvement' },
+          { metric: 'Process', description: 'Standardized proposals instead of ad-hoc drafts', type: 'efficiency' },
+          { metric: 'Reporting', description: 'Client reporting no longer eats the week', type: 'efficiency' },
+          { metric: 'Status', description: 'Named operator. Percentage lifts not published until verified.', type: 'revenue' },
         ],
         technologies: ['Vue.js', 'Laravel', 'MySQL', 'Chart.js', 'SendGrid'],
         testimonial: {
@@ -165,7 +165,7 @@ const caseStudiesCopy = {
         id: 'healthcare-clinic',
         industryId: 'healthcare',
         industry: 'Santé',
-        title: 'Clinique régionale de santé',
+        title: 'Fremo Medical & Birth Center',
         client: 'Fremo Medical & Birth Center',
         duration: '6 semaines',
         location: 'Lagos, Nigeria',
@@ -179,10 +179,10 @@ const caseStudiesCopy = {
           'Paiement des consultations',
         ],
         results: [
-          { metric: '85%', description: 'de no-shows en moins', type: 'improvement' },
-          { metric: '$50k', description: 'de revenus mensuels supplémentaires', type: 'revenue' },
-          { metric: '3 heures', description: 'économisées chaque jour par l’équipe', type: 'efficiency' },
-          { metric: '95%', description: 'de satisfaction patient', type: 'satisfaction' },
+          { metric: 'Nommé', description: 'Fremo Medical & Birth Center — couverture de réservation inbound', type: 'improvement' },
+          { metric: 'Équipe', description: 'Le planning n’engloutit plus l’après-midi', type: 'efficiency' },
+          { metric: 'Relances', description: 'Les patients reçoivent un suivi automatique au lieu d’une file papier', type: 'improvement' },
+          { metric: 'Statut', description: 'Opérateur nommé. Pas de tableau de conversion inventé.', type: 'satisfaction' },
         ],
         technologies: ['Next.js', 'Node.js', 'PostgreSQL', 'Twilio', 'Stripe'],
         testimonial: {
@@ -196,7 +196,7 @@ const caseStudiesCopy = {
         id: 'real-estate-agency',
         industryId: 'real-estate',
         industry: 'Immobilier',
-        title: 'Agence immobilière premium',
+        title: 'Shep Engineering',
         client: 'Shep Engineering',
         duration: '4 semaines',
         location: 'Accra, Ghana',
@@ -210,10 +210,10 @@ const caseStudiesCopy = {
           'Intégration CRM pour le suivi des leads',
         ],
         results: [
-          { metric: '90%', description: 'de livraison de propositions plus rapide', type: 'efficiency' },
-          { metric: '40%', description: 'de taux de closing en plus', type: 'improvement' },
-          { metric: '25', description: 'deals supplémentaires par mois', type: 'volume' },
-          { metric: '$200k', description: 'de revenus mensuels en plus', type: 'revenue' },
+          { metric: 'Vitesse', description: 'Des propositions en minutes, plus en heures', type: 'efficiency' },
+          { metric: 'Nommé', description: 'Shep Engineering — système de propositions en usage', type: 'improvement' },
+          { metric: 'Qualité', description: 'Qualité de proposition constante, sans rédaction de nuit', type: 'volume' },
+          { metric: 'Statut', description: 'Opérateur nommé. Hausse de revenu non publiée tant qu’elle n’est pas vérifiée.', type: 'revenue' },
         ],
         technologies: ['React Native', 'Express.js', 'MongoDB', 'AWS S3', 'OpenAI API'],
         testimonial: {
@@ -227,7 +227,7 @@ const caseStudiesCopy = {
         id: 'digital-agency',
         industryId: 'marketing',
         industry: 'Marketing',
-        title: 'Agence de marketing digital',
+        title: 'GlamSquad Kenya',
         client: 'GlamSquad Kenya',
         duration: '3 semaines',
         location: 'Nairobi, Kenya',
@@ -241,10 +241,10 @@ const caseStudiesCopy = {
           'Portail de communication client',
         ],
         results: [
-          { metric: '75%', description: 'd’augmentation du taux d’acceptation', type: 'improvement' },
-          { metric: '60%', description: 'de temps gagné sur les propositions', type: 'efficiency' },
-          { metric: '$100k', description: 'de revenus annuels supplémentaires', type: 'revenue' },
-          { metric: '20 heures', description: 'économisées chaque semaine', type: 'efficiency' },
+          { metric: 'Nommé', description: 'GlamSquad Kenya — couverture propositions et reporting', type: 'improvement' },
+          { metric: 'Processus', description: 'Propositions standardisées au lieu de brouillons ad hoc', type: 'efficiency' },
+          { metric: 'Reporting', description: 'Le reporting client n’engloutit plus la semaine', type: 'efficiency' },
+          { metric: 'Statut', description: 'Opérateur nommé. Hausses en % non publiées tant qu’elles ne sont pas vérifiées.', type: 'revenue' },
         ],
         technologies: ['Vue.js', 'Laravel', 'MySQL', 'Chart.js', 'SendGrid'],
         testimonial: {
@@ -302,10 +302,10 @@ const caseStudiesCopy = {
           'Procesamiento de pagos para consultas',
         ],
         results: [
-          { metric: '85%', description: 'reducción de ausencias', type: 'improvement' },
-          { metric: '$50k', description: 'ingresos mensuales adicionales', type: 'revenue' },
-          { metric: '3 horas', description: 'ahorradas cada día por el equipo', type: 'efficiency' },
-          { metric: '95%', description: 'satisfacción de pacientes', type: 'satisfaction' },
+          { metric: 'Nombrado', description: 'Fremo Medical & Birth Center — cobertura de reservas inbound', type: 'improvement' },
+          { metric: 'Equipo', description: 'La agenda ya no se come la tarde', type: 'efficiency' },
+          { metric: 'Recordatorios', description: 'Los pacientes reciben seguimiento automático en lugar de una cola en papel', type: 'improvement' },
+          { metric: 'Estado', description: 'Operador nombrado. Sin marcador de conversión inventado.', type: 'satisfaction' },
         ],
         technologies: ['Next.js', 'Node.js', 'PostgreSQL', 'Twilio', 'Stripe'],
         testimonial: {
@@ -333,10 +333,10 @@ const caseStudiesCopy = {
           'Integración CRM para seguimiento de leads',
         ],
         results: [
-          { metric: '90%', description: 'entrega de propuestas más rápida', type: 'efficiency' },
-          { metric: '40%', description: 'mayor tasa de cierre', type: 'improvement' },
-          { metric: '25', description: 'más deals por mes', type: 'volume' },
-          { metric: '$200k', description: 'más ingresos mensuales', type: 'revenue' },
+          { metric: 'Velocidad', description: 'Propuestas en minutos, no en horas', type: 'efficiency' },
+          { metric: 'Nombrado', description: 'Shep Engineering — sistema de propuestas en uso', type: 'improvement' },
+          { metric: 'Calidad', description: 'Calidad de propuesta constante, sin redactar de madrugada', type: 'volume' },
+          { metric: 'Estado', description: 'Operador nombrado. El aumento de ingresos no se publica hasta verificarlo.', type: 'revenue' },
         ],
         technologies: ['React Native', 'Express.js', 'MongoDB', 'AWS S3', 'OpenAI API'],
         testimonial: {
@@ -364,10 +364,10 @@ const caseStudiesCopy = {
           'Portal de comunicación con clientes',
         ],
         results: [
-          { metric: '75%', description: 'aumento en tasa de aceptación', type: 'improvement' },
-          { metric: '60%', description: 'tiempo ahorrado en propuestas', type: 'efficiency' },
-          { metric: '$100k', description: 'más ingresos anuales', type: 'revenue' },
-          { metric: '20 horas', description: 'ahorradas por semana', type: 'efficiency' },
+          { metric: 'Nombrado', description: 'GlamSquad Kenya — cobertura de propuestas e informes', type: 'improvement' },
+          { metric: 'Proceso', description: 'Propuestas estandarizadas en lugar de borradores ad hoc', type: 'efficiency' },
+          { metric: 'Informes', description: 'Los informes al cliente ya no se comen la semana', type: 'efficiency' },
+          { metric: 'Estado', description: 'Operador nombrado. Subidas porcentuales no publicadas hasta verificarlas.', type: 'revenue' },
         ],
         technologies: ['Vue.js', 'Laravel', 'MySQL', 'Chart.js', 'SendGrid'],
         testimonial: {
@@ -425,10 +425,10 @@ const caseStudiesCopy = {
           'Zahlungsabwicklung für Beratungen',
         ],
         results: [
-          { metric: '85%', description: 'weniger No-Shows', type: 'improvement' },
-          { metric: '$50k', description: 'zusätzlicher Monatsumsatz', type: 'revenue' },
-          { metric: '3 Stunden', description: 'tägliche Zeitersparnis fürs Team', type: 'efficiency' },
-          { metric: '95%', description: 'Patientenzufriedenheit', type: 'satisfaction' },
+          { metric: 'Benannt', description: 'Fremo Medical & Birth Center — Inbound-Buchungsabsicherung', type: 'improvement' },
+          { metric: 'Team', description: 'Terminplanung frisst nicht mehr den Nachmittag', type: 'efficiency' },
+          { metric: 'Erinnerungen', description: 'Patienten erhalten automatisches Follow-up statt Papierwarteschlange', type: 'improvement' },
+          { metric: 'Status', description: 'Benannter Betreiber. Kein erfundenes Conversion-Scoreboard.', type: 'satisfaction' },
         ],
         technologies: ['Next.js', 'Node.js', 'PostgreSQL', 'Twilio', 'Stripe'],
         testimonial: {
@@ -456,10 +456,10 @@ const caseStudiesCopy = {
           'CRM-Integration für Lead-Tracking',
         ],
         results: [
-          { metric: '90%', description: 'schnellere Angebotserstellung', type: 'efficiency' },
-          { metric: '40%', description: 'höhere Abschlussrate', type: 'improvement' },
-          { metric: '25', description: 'mehr Deals pro Monat', type: 'volume' },
-          { metric: '$200k', description: 'mehr Monatsumsatz', type: 'revenue' },
+          { metric: 'Tempo', description: 'Angebote in Minuten statt Stunden', type: 'efficiency' },
+          { metric: 'Benannt', description: 'Shep Engineering — Angebotssystem im Einsatz', type: 'improvement' },
+          { metric: 'Qualität', description: 'Konstante Angebotsqualität ohne Nachtschicht', type: 'volume' },
+          { metric: 'Status', description: 'Benannter Betreiber. Umsatzplus erst nach Prüfung öffentlich.', type: 'revenue' },
         ],
         technologies: ['React Native', 'Express.js', 'MongoDB', 'AWS S3', 'OpenAI API'],
         testimonial: {
@@ -487,10 +487,10 @@ const caseStudiesCopy = {
           'Kundenkommunikationsportal',
         ],
         results: [
-          { metric: '75%', description: 'höhere Annahmerate', type: 'improvement' },
-          { metric: '60%', description: 'Zeitersparnis bei Angeboten', type: 'efficiency' },
-          { metric: '$100k', description: 'zusätzlicher Jahresumsatz', type: 'revenue' },
-          { metric: '20 Stunden', description: 'wöchentliche Zeitersparnis', type: 'efficiency' },
+          { metric: 'Benannt', description: 'GlamSquad Kenya — Angebots- und Reporting-Absicherung', type: 'improvement' },
+          { metric: 'Prozess', description: 'Standardisierte Angebote statt Ad-hoc-Entwürfe', type: 'efficiency' },
+          { metric: 'Reporting', description: 'Kundenreporting frisst nicht mehr die Woche', type: 'efficiency' },
+          { metric: 'Status', description: 'Benannter Betreiber. Prozentuale Hebel erst nach Prüfung öffentlich.', type: 'revenue' },
         ],
         technologies: ['Vue.js', 'Laravel', 'MySQL', 'Chart.js', 'SendGrid'],
         testimonial: {
@@ -548,10 +548,10 @@ const caseStudiesCopy = {
           'معالجة مدفوعات الاستشارات',
         ],
         results: [
-          { metric: '85%', description: 'انخفاض في عدم الحضور', type: 'improvement' },
-          { metric: '$50k', description: 'إيرادات شهرية إضافية', type: 'revenue' },
-          { metric: '3 ساعات', description: 'توفير يومي لوقت الموظفين', type: 'efficiency' },
-          { metric: '95%', description: 'درجة رضا المرضى', type: 'satisfaction' },
+          { metric: 'مسمّى', description: 'Fremo Medical & Birth Center — تغطية حجز وارد', type: 'improvement' },
+          { metric: 'الفريق', description: 'الجدولة لم تعد تلتهم فترة بعد الظهر', type: 'efficiency' },
+          { metric: 'تذكيرات', description: 'المرضى يحصلون على متابعة تلقائية بدل طابور ورقي', type: 'improvement' },
+          { metric: 'الوضع', description: 'مشغّل مسمّى. بلا لوحة تحويل مخترعة.', type: 'satisfaction' },
         ],
         technologies: ['Next.js', 'Node.js', 'PostgreSQL', 'Twilio', 'Stripe'],
         testimonial: {
@@ -579,10 +579,10 @@ const caseStudiesCopy = {
           'تكامل CRM لتتبع العملاء المحتملين',
         ],
         results: [
-          { metric: '90%', description: 'تسليم عروض أسرع', type: 'efficiency' },
-          { metric: '40%', description: 'معدل إغلاق أعلى', type: 'improvement' },
-          { metric: '25', description: 'صفقات أكثر شهرياً', type: 'volume' },
-          { metric: '$200k', description: 'زيادة في الإيرادات الشهرية', type: 'revenue' },
+          { metric: 'السرعة', description: 'عروض في دقائق بدل ساعات', type: 'efficiency' },
+          { metric: 'مسمّى', description: 'Shep Engineering — نظام العروض قيد الاستخدام', type: 'improvement' },
+          { metric: 'الجودة', description: 'جودة عروض ثابتة دون صياغة ليلية', type: 'volume' },
+          { metric: 'الوضع', description: 'مشغّل مسمّى. زيادة الإيرادات لا تُنشر حتى تُتحقق.', type: 'revenue' },
         ],
         technologies: ['React Native', 'Express.js', 'MongoDB', 'AWS S3', 'OpenAI API'],
         testimonial: {
@@ -610,10 +610,10 @@ const caseStudiesCopy = {
           'بوابة تواصل مع العملاء',
         ],
         results: [
-          { metric: '75%', description: 'زيادة في معدل القبول', type: 'improvement' },
-          { metric: '60%', description: 'وقت موفر في إعداد العروض', type: 'efficiency' },
-          { metric: '$100k', description: 'زيادة سنوية في الإيرادات', type: 'revenue' },
-          { metric: '20 ساعة', description: 'توفير أسبوعي في الوقت', type: 'efficiency' },
+          { metric: 'مسمّى', description: 'GlamSquad Kenya — تغطية العروض والتقارير', type: 'improvement' },
+          { metric: 'العملية', description: 'عروض موحّدة بدل مسودات مرتجلة', type: 'efficiency' },
+          { metric: 'التقارير', description: 'تقارير العملاء لم تعد تلتهم الأسبوع', type: 'efficiency' },
+          { metric: 'الوضع', description: 'مشغّل مسمّى. الزيادات بالنسب لا تُنشر حتى تُتحقق.', type: 'revenue' },
         ],
         technologies: ['Vue.js', 'Laravel', 'MySQL', 'Chart.js', 'SendGrid'],
         testimonial: {
@@ -694,14 +694,6 @@ export default function CaseStudiesPage({ params, searchParams }: CaseStudiesPag
                 className="rounded-full border border-border/80 bg-background/75 dark:bg-surface/70 px-4 py-2 text-xs sm:text-sm text-muted backdrop-blur-sm shadow-sm"
               >
                 <span className="font-semibold text">10+ years</span> {copy.proofYears}
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, y: 14 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                className="rounded-full border border-border/80 bg-background/75 dark:bg-surface/70 px-4 py-2 text-xs sm:text-sm text-muted backdrop-blur-sm shadow-sm"
-              >
-                <span className="font-semibold text">98%</span> {copy.proofSatisfaction}
               </motion.div>
             </div>
           </motion.div>

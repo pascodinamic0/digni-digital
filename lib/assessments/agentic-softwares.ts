@@ -1,4 +1,5 @@
 import type { ServiceAssessmentConfig } from './types'
+import { assessmentCaptureCopyEn } from './capture-copy'
 
 const bands = [
  {
@@ -11,7 +12,7 @@ const bands = [
  minPercent: 70,
  label: 'Strong fit',
  description:
- 'Agentic Softwares likely beat off the shelf for your case. A project consultation can define scope, timeline, and AI workflow design.',
+ 'Agentic Systems likely beat off the shelf for your case. A project consultation can define scope, timeline, and AI workflow design.',
  },
  {
  minPercent: 50,
@@ -141,15 +142,15 @@ const questions = [
 
 export const agenticSoftwaresAssessmentEn: ServiceAssessmentConfig = {
  serviceId: 'agentic-softwares',
- serviceName: 'Agentic Softwares',
+ serviceName: 'Agentic Systems',
  servicePath: '/agentic-softwares',
  accent: 'info',
  copy: {
- metaTitle: 'Agentic Softwares Fit Assessment | Digni Digital',
+ metaTitle: 'Agentic Systems Fit Assessment | Digni Digital',
  metaDescription:
- 'Ten questions to see if custom agentic software fits your workflow, success criteria, integrations, and investment readiness.',
+ 'Ten questions to see if a custom agentic system fits your workflow, success criteria, integrations, and investment readiness.',
  eyebrow: '2 minute fit check',
- introTitle: 'Is Agentic Softwares the right build for you?',
+ introTitle: 'Is Agentic Systems the right build for you?',
  introSubtitle:
  'For teams that need software that runs their process, not the other way around. Get a match score before scoping a project.',
  introBullets: [
@@ -164,14 +165,15 @@ export const agenticSoftwaresAssessmentEn: ServiceAssessmentConfig = {
  finish: 'See my match score',
  answerAll: 'Select an answer to continue.',
  resultEyebrow: 'Your result',
- resultTitle: 'match for Agentic Softwares',
+ resultTitle: 'match for Agentic Systems',
  matchLabel: 'Project match',
  bands: [...bands],
  nextStepsTitle: 'Recommended next step',
- primaryCta: 'Book project consultation',
- secondaryCta: 'View Agentic Softwares',
+ primaryCta: 'Book a Project Consultation',
+ secondaryCta: 'View Agentic Systems',
  backToService: 'Back to service page',
  retake: 'Retake assessment',
+ ...assessmentCaptureCopyEn,
  },
  questions,
 }

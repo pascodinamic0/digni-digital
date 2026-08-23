@@ -1,11 +1,12 @@
 import type { ServiceAssessmentConfig } from './types'
+import { assessmentCaptureCopyEn } from './capture-copy'
 
 const bands = [
  {
  minPercent: 85,
- label: 'Critical AGE fit',
+ label: 'Critical inbound fit',
  description:
- 'Your answers show serious revenue risk from slow response, poor visibility, manual admin, and inconsistent follow up. AGE is built to close those gaps before ready buyers drift away.',
+ 'Your answers show serious revenue risk from slow response, poor visibility, manual admin, and inconsistent follow up. AI Employee is built to close those gaps before ready buyers drift away.',
  },
  {
  minPercent: 68,
@@ -23,7 +24,7 @@ const bands = [
  minPercent: 0,
  label: 'Lower immediate fit',
  description:
- 'Your answers suggest your current systems already cover many AGE use cases. If you still want more leverage, we can point you toward a lighter automation step or another Digni offer.',
+ 'Your answers suggest your current systems already cover many AI Employee use cases. If you still want more leverage, we can point you toward a lighter automation step or another Digni offer.',
  },
 ] as const
 
@@ -175,7 +176,7 @@ const questions = [
  points: 8,
  insight: {
  title: 'Warm leads are living in too many places',
- why: 'When interested prospects are scattered across inboxes, sheets, and notes, follow up becomes luck. AGE centralizes the trail so every warm lead can be recovered quickly.',
+ why: 'When interested prospects are scattered across inboxes, sheets, and notes, follow up becomes luck. AI Employee centralizes the trail so every warm lead can be recovered quickly.',
  },
  },
  {
@@ -184,7 +185,7 @@ const questions = [
  points: 10,
  insight: {
  title: 'Unknown pipeline means unknown revenue loss',
- why: 'If you cannot list last month’s non buyers, you cannot follow up with them. AGE turns invisible interest into a tracked pipeline with names, numbers, and next steps.',
+ why: 'If you cannot list last month’s non buyers, you cannot follow up with them. AI Employee turns invisible interest into a tracked pipeline with names, numbers, and next steps.',
  },
  },
  ],
@@ -201,7 +202,7 @@ const questions = [
  points: 8,
  insight: {
  title: 'Good intentions are not a sales system',
- why: 'Trust matters, but it does not prove the right words, timing, and next steps happened. AGE gives every inquiry a consistent follow up sequence instead of relying on memory.',
+ why: 'Trust matters, but it does not prove the right words, timing, and next steps happened. AI Employee gives every inquiry a consistent follow up sequence instead of relying on memory.',
  },
  },
  {
@@ -210,7 +211,7 @@ const questions = [
  points: 10,
  insight: {
  title: 'Unmonitored interactions create silent leakage',
- why: 'When you cannot see every call, DM, and text, you cannot know where bookings are lost. AGE creates visibility and consistency across the front line.',
+ why: 'When you cannot see every call, DM, and text, you cannot know where bookings are lost. AI Employee creates visibility and consistency across the front line.',
  },
  },
  ],
@@ -227,7 +228,7 @@ const questions = [
  points: 7,
  insight: {
  title: 'Admin work is quietly taxing growth',
- why: 'A few hours every week becomes a recurring operational drag. AGE can take over reminders, review asks, FAQs, and other repetitive touches so staff stay focused on revenue work.',
+ why: 'A few hours every week becomes a recurring operational drag. AI Employee can take over reminders, review asks, FAQs, and other repetitive touches so staff stay focused on revenue work.',
  },
  },
  {
@@ -236,7 +237,7 @@ const questions = [
  points: 10,
  insight: {
  title: 'Manual admin has become its own job',
- why: 'When repetitive tasks consume double digit hours, your team is paying a hidden salary in attention. AGE is designed to automate the routine work that keeps pulling people away.',
+ why: 'When repetitive tasks consume double digit hours, your team is paying a hidden salary in attention. AI Employee is designed to automate the routine work that keeps pulling people away.',
  },
  },
  ],
@@ -253,7 +254,7 @@ const questions = [
  points: 7,
  insight: {
  title: 'Marketing attention is not being fully converted',
- why: 'If only some commenters get a booking path, organic effort leaks at the exact moment interest appears. AGE can trigger direct follow up while attention is still warm.',
+ why: 'If only some commenters get a booking path, organic effort leaks at the exact moment interest appears. AI Employee can trigger direct follow up while attention is still warm.',
  },
  },
  {
@@ -279,7 +280,7 @@ const questions = [
  points: 10,
  insight: {
  title: 'Speed to lead is handing bookings away',
- why: 'Ready buyers often choose the first helpful response. If competitors answer faster, AGE can protect the booking window with instant, useful replies.',
+ why: 'Ready buyers often choose the first helpful response. If competitors answer faster, AI Employee can protect the booking window with instant, useful replies.',
  },
  },
  {
@@ -288,7 +289,7 @@ const questions = [
  points: 8,
  insight: {
  title: 'Response speed should not depend on the day',
- why: 'If winning the lead depends on whether someone is free, revenue is exposed. AGE gives hot prospects a consistent response even when the team is busy.',
+ why: 'If winning the lead depends on whether someone is free, revenue is exposed. AI Employee gives hot prospects a consistent response even when the team is busy.',
  },
  },
  ],
@@ -297,20 +298,20 @@ const questions = [
 
 export const aiEmployeeAssessmentEn: ServiceAssessmentConfig = {
  serviceId: 'ai-employee',
- serviceName: 'AGE Systems',
+ serviceName: 'AI Employee',
  servicePath: '/ai-receptionist',
  accent: 'accent',
  copy: {
- metaTitle: 'AGE Fit Assessment | Digni Digital',
+ metaTitle: 'AI Employee Fit Assessment | Digni Digital',
  metaDescription:
- 'Ten honest questions on pipeline visibility, response speed, staff accountability, manual tasks, and lead leakage, see your AGE fit score.',
+ 'Ten honest questions on pipeline visibility, response speed, staff accountability, manual tasks, and lead leakage. See where inbound revenue is exposed.',
  eyebrow: '2 minute fit check',
  introTitle: 'How exposed is your revenue when you are not in the room?',
  introSubtitle:
  'No signup required. Ten direct questions show where leads, bookings, reviews, and follow up leak when the team is busy or you are offline.',
  introBullets: [
  'Pipeline visibility, staff accountability, response speed, and manual task load',
- 'Instant match score for AGE Systems',
+ 'Instant score for AI Employee coverage',
  'Clear next step only when the gaps are real',
  ],
  startCta: 'Start assessment',
@@ -320,22 +321,23 @@ export const aiEmployeeAssessmentEn: ServiceAssessmentConfig = {
  finish: 'See my results',
  answerAll: 'Select an answer to continue.',
  resultEyebrow: 'Assessment Complete',
- resultTitle: 'match for AGE Systems',
- matchLabel: 'Service match',
+ resultTitle: 'match for AI Employee',
+ matchLabel: 'Coverage match',
  bands: [...bands],
  nextStepsTitle: 'Recommended next step',
- primaryCta: 'Book 15 minute System Blueprint session',
- secondaryCta: 'View AGE Systems',
+ primaryCta: 'Book a Growth System Audit',
+ secondaryCta: 'View AI Employee',
  backToService: 'Back to service page',
  retake: 'Retake assessment',
+ ...assessmentCaptureCopyEn,
  },
  questions,
  customResult: {
- headline: 'Your AGE leak score is ready.',
+ headline: 'Your inbound leak score is ready.',
  body: 'Your score weighs pipeline visibility, staff accountability, manual task load, speed to lead, and the cost of missed follow up across all 10 answers.',
  ctaIntro:
- 'Book a live 15 minute System Blueprint session below. We will visually map out your automated infrastructure.',
- primaryCta: 'Book 15 minute System Blueprint session',
+ 'Book a Growth System Audit below. We will map where AI Employee coverage can close the leak.',
+ primaryCta: 'Book a Growth System Audit',
  warning:
  'Do not book if you are comfortable losing leads to faster competitors.',
  },
