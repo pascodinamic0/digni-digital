@@ -1,19 +1,22 @@
 'use client'
 
-import { Phone, GraduationCap, Workflow } from 'lucide-react'
 import { Link } from '@/i18n/navigation'
 import ClientLogos from '@/app/components/ClientLogos'
 import HowDigniWorks from '@/app/components/HowDigniWorks'
 import {
   SimpleHero,
   SectionHeading,
-  CapabilityBlock,
   ProofQuote,
   FinalCtaBand,
+  SplitProofSection,
+  ProofVisual,
 } from '@/app/components/marketing'
+import PageProofBlock from '@/app/components/marketing/PageProofBlock'
 import { ctaConfig, getBookingLinkProps } from '@/app/config/cta.config'
 import { useLanguage } from '@/app/context/LocaleContext'
 import { translations, type Language } from '@/app/config/translations'
+import { getProofVisual } from '@/lib/proof-visuals/registry'
+import { howDigniWorksByLanguage } from '@/app/i18n/howDigniWorks'
 
 type HomeHeroCopy = (typeof translations)['en']['home']['hero']
 
@@ -35,16 +38,24 @@ function ExposureSection() {
   const f = translations[language].home.fighting
 
   return (
-    <section className="marketing-simple border-b border-border bg-background py-20">
-      <div className="mx-auto max-w-3xl px-6">
-        <SectionHeading
-          label={f.badge}
-          title={f.title}
-          titleHighlight={f.subtitle}
-          supporting={f.realProblems}
-        />
-      </div>
-    </section>
+    <PageProofBlock
+      page="home"
+      sectionId="exposure"
+      id="exposure"
+      surface="background"
+      priority
+      heading={{
+        label: f.badge,
+        title: f.title,
+        titleHighlight: f.subtitle,
+        supporting: f.realProblems,
+      }}
+      stats={[
+        { value: f.missedLeadsStat, label: f.missedLeadsStatLabel, hint: f.missedLeadsProblem },
+        { value: f.skillsGapStat, label: f.skillsGapStatLabel, hint: f.skillsGapProblem },
+        { value: f.techDivideStat, label: f.techDivideStatLabel, hint: f.techDivideProblem },
+      ]}
+    />
   )
 }
 
@@ -55,45 +66,68 @@ function CoverageSection() {
 
   const pillars = [
     {
+      sectionId: 'coverage-growth' as const,
       label: w.forBusinesses,
       title: f.missedLeads,
       supporting: `${f.missedLeadsProblem} ${f.missedLeadsSolution}`,
       outcome: f.missedLeadsOutcome,
       cta: { href: '/ai-receptionist/assessment', label: w.aiEmployeePrimaryCta },
-      icon: <Phone className="h-6 w-6" aria-hidden />,
     },
     {
+      sectionId: 'coverage-talent' as const,
       label: w.forSchools,
       title: f.skillsGap,
       supporting: `${f.skillsGapProblem} ${f.skillsGapSolution}`,
       outcome: f.skillsGapOutcome,
       cta: { href: '/future-ready-graduate/assessment', label: w.futureReadyPrimaryCta },
-      icon: <GraduationCap className="h-6 w-6" aria-hidden />,
     },
     {
+      sectionId: 'coverage-operations' as const,
       label: w.forUniqueNeeds,
       title: f.techDivide,
       supporting: `${f.techDivideProblem} ${f.techDivideSolution}`,
       outcome: f.techDivideOutcome,
       cta: { href: '/agentic-softwares/assessment', label: w.agenticSoftwaresPrimaryCta },
-      icon: <Workflow className="h-6 w-6" aria-hidden />,
     },
   ]
 
   return (
-    <section id="coverage" className="marketing-simple bg-surface py-20">
-      <div className="mx-auto max-w-3xl px-6">
+    <section id="coverage" className="border-b border-border bg-surface">
+      <div className="marketing-simple mx-auto max-w-3xl px-6 py-16 md:py-20">
         <SectionHeading
           label={w.badge}
           title={w.title}
           titleHighlight={w.subtitle}
           supporting={w.whatWeDoDescription}
-          className="mb-4"
         />
-        {pillars.map((pillar) => (
-          <CapabilityBlock key={pillar.title} {...pillar} />
-        ))}
-        <p className="type-body mt-8 text-muted">
+      </div>
+      {pillars.map((pillar, index) => (
+        <PageProofBlock
+          key={pillar.sectionId}
+          page="home"
+          sectionId={pillar.sectionId}
+          reverse={index % 2 === 1}
+          surface={index % 2 === 0 ? 'background' : 'surface'}
+          heading={{
+            label: pillar.label,
+            title: pillar.title,
+            supporting: pillar.supporting,
+          }}
+          footer={
+            <>
+              <p className="type-body font-medium text-text/90">{pillar.outcome}</p>
+              <Link
+                href={pillar.cta.href}
+                className="type-body mt-4 inline-block font-medium text-accent underline-offset-4 hover:underline"
+              >
+                {pillar.cta.label} →
+              </Link>
+            </>
+          }
+        />
+      ))}
+      <div className="marketing-simple mx-auto max-w-3xl px-6 pb-16">
+        <p className="type-body text-muted">
           {w.notSureSubtitle}{' '}
           <Link href={ctaConfig.digniPath} className="font-medium text-accent underline-offset-4 hover:underline">
             {w.notSureTitle} →
@@ -108,21 +142,53 @@ function ProofSection() {
   const language = useLanguage()
   const p = translations[language].home.proofBand
   const c = translations[language].home.caseStudies
+  const config = getProofVisual('home', 'proof')
 
   return (
-    <section id="proven-track-record" className="marketing-simple border-y border-border bg-background py-20">
-      <div className="mx-auto max-w-3xl space-y-12 px-6">
-        <SectionHeading label={p.badge} title={p.title} titleHighlight={p.subtitle} supporting={p.supporting} />
-        <ProofQuote quote={p.quote1} name={p.quote1Name} role={p.quote1Role} />
-        <ProofQuote quote={p.quote2} name={p.quote2Name} role={p.quote2Role} note={p.quote2Note} />
-        <Link
-          href="/case-studies"
-          className="type-body inline-block font-medium text-accent underline-offset-4 hover:underline"
-        >
-          {c.viewAll} →
-        </Link>
-      </div>
-    </section>
+    <SplitProofSection
+      id="proven-track-record"
+      reverse
+      surface="background"
+      heading={{
+        label: p.badge,
+        title: p.title,
+        titleHighlight: p.subtitle,
+        supporting: p.supporting,
+      }}
+      footer={
+        <>
+          <ProofQuote quote={p.quote1} name={p.quote1Name} role={p.quote1Role} />
+          <ProofQuote quote={p.quote2} name={p.quote2Name} role={p.quote2Role} note={p.quote2Note} />
+          <Link
+            href="/case-studies"
+            className="type-body mt-6 inline-block font-medium text-accent underline-offset-4 hover:underline"
+          >
+            {c.viewAll} →
+          </Link>
+        </>
+      }
+      visual={config ? <ProofVisual config={config} language={language} /> : null}
+    />
+  )
+}
+
+function ProcessProofSection() {
+  const language = useLanguage()
+  const t = howDigniWorksByLanguage[language]
+  const config = getProofVisual('home', 'process')
+
+  return (
+    <SplitProofSection
+      id="how-we-install"
+      surface="surface"
+      heading={{
+        label: t.badge,
+        title: t.title,
+        titleHighlight: t.titleHighlight,
+        supporting: t.subtitle,
+      }}
+      visual={config ? <ProofVisual config={config} language={language} /> : null}
+    />
   )
 }
 
@@ -150,8 +216,6 @@ function HomeFinalCta() {
 }
 
 export default function HomePageClient({ language, hero, trustedBy }: HomePageClientProps) {
-  const ctaT = translations[language].cta
-
   return (
     <main className="marketing-simple">
       <SimpleHero
@@ -171,7 +235,8 @@ export default function HomePageClient({ language, hero, trustedBy }: HomePageCl
       <ExposureSection />
       <CoverageSection />
       <ProofSection />
-      <HowDigniWorks className="marketing-simple border-b border-border bg-surface py-20" />
+      <ProcessProofSection />
+      <HowDigniWorks className="marketing-simple border-b border-border bg-background py-20" />
       <HomeFinalCta />
     </main>
   )

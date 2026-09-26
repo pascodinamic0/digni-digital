@@ -1,7 +1,7 @@
 'use client'
 
-import DigniChat from '@/app/components/digni/DigniChat'
+import DigniPageWrapper from '@/app/components/digni/DigniPageWrapper'
 
 export default function DigniPage() {
-  return <DigniChat />
+  return <DigniPageWrapper />
 }

@@ -14,6 +14,7 @@ import { getBookingLinkProps } from '@/app/config/cta.config'
 import { translations } from '@/app/config/translations'
 import { useLanguage } from '@/app/context/LocaleContext'
 import { withPartnerCount } from '@/lib/site-partners'
+import PageProofBlock from '@/app/components/marketing/PageProofBlock'
 
 const aboutHeroCopy = {
   en: { badge: 'Mission-Driven, Outcome-Focused', years: 'building growth systems', satisfaction: 'client satisfaction' },
@@ -211,16 +212,20 @@ export default function AboutPage({ params, searchParams }: AboutPageProps) {
         </div>
       </AnimatedSection>
 
+      <PageProofBlock
+        page="about"
+        sectionId="story"
+        surface="background"
+        heading={{
+          label: t.storyBadge,
+          title: t.ourStoryTitle,
+          supporting: t.storyP1,
+        }}
+      />
+
       <AnimatedSection className="py-16 sm:py-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-surface via-background to-surface opacity-80" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 min-w-0">
-          <div className="text-center mb-10 sm:mb-14">
-            <span className="section-label">{t.storyBadge}</span>
-            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mt-3 text-text px-1">
-              {t.ourStoryTitle}
-            </h2>
-          </div>
-
           <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-16 items-start min-w-0">
             {/* Story card: top accent on mobile, left accent on lg+ */}
             <motion.div
@@ -291,90 +296,49 @@ export default function AboutPage({ params, searchParams }: AboutPageProps) {
         subtitle={t.trustedBySubtitle}
       />
 
-      <AnimatedSection className="py-24">
-        <div className="max-w-7xl mx-auto px-6">
-          <SectionBlock
-            label={translations[language].sectionLabels?.ourApproach}
-            title={t.approachTitle}
-            titleClassName="mb-6"
-            className="mb-16"
-          >
-            <p className="text-center text-lg mb-12">{t.approachSubtitle}</p>
-            <div className="grid lg:grid-cols-3 gap-12 text-left">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="card p-8"
-            >
-              <div className="w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center text-3xl mb-6">
-                🔍
-              </div>
-              <h3 className="font-display text-2xl font-bold mb-4">{t.discoveryTitle}</h3>
-              <p className="text-muted leading-relaxed mb-4">{t.discoveryDesc}</p>
-              <ul className="text-sm text-muted space-y-2">
-                <li>• {t.discoveryBullet1}</li>
-                <li>• {t.discoveryBullet2}</li>
-                <li>• {t.discoveryBullet3}</li>
-                <li>• {t.discoveryBullet4}</li>
-              </ul>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="card p-8"
-            >
-              <div className="w-16 h-16 bg-success/10 rounded-2xl flex items-center justify-center text-3xl mb-6">
-                🛠️
-              </div>
-              <h3 className="font-display text-2xl font-bold mb-4">{t.buildTitle}</h3>
-              <p className="text-muted leading-relaxed mb-4">{t.buildDesc}</p>
-              <ul className="text-sm text-muted space-y-2">
-                <li>• {t.buildBullet1}</li>
-                <li>• {t.buildBullet2}</li>
-                <li>• {t.buildBullet3}</li>
-                <li>• {t.buildBullet4}</li>
-              </ul>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="card p-8"
-            >
-              <div className="w-16 h-16 bg-info/10 rounded-2xl flex items-center justify-center text-3xl mb-6">
-                📈
-              </div>
-              <h3 className="font-display text-2xl font-bold mb-4">{t.optimizeTitle}</h3>
-              <p className="text-muted leading-relaxed mb-4">{t.optimizeDesc}</p>
-              <ul className="text-sm text-muted space-y-2">
-                <li>• {t.optimizeBullet1}</li>
-                <li>• {t.optimizeBullet2}</li>
-                <li>• {t.optimizeBullet3}</li>
-                <li>• {t.optimizeBullet4}</li>
-              </ul>
-            </motion.div>
+      <PageProofBlock
+        page="about"
+        sectionId="approach"
+        reverse
+        surface="surface"
+        heading={{
+          label: translations[language].sectionLabels?.ourApproach,
+          title: t.approachTitle,
+          supporting: t.approachSubtitle,
+        }}
+        footer={
+          <div className="grid lg:grid-cols-3 gap-8 text-left">
+            <div className="card p-8">
+              <div className="w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center text-3xl mb-6">🔍</div>
+              <h3 className="type-h4 font-display font-bold mb-4">{t.discoveryTitle}</h3>
+              <p className="type-small text-muted leading-relaxed mb-4">{t.discoveryDesc}</p>
             </div>
-          </SectionBlock>
-        </div>
-      </AnimatedSection>
+            <div className="card p-8">
+              <div className="w-16 h-16 bg-success/10 rounded-2xl flex items-center justify-center text-3xl mb-6">🛠️</div>
+              <h3 className="type-h4 font-display font-bold mb-4">{t.buildTitle}</h3>
+              <p className="type-small text-muted leading-relaxed mb-4">{t.buildDesc}</p>
+            </div>
+            <div className="card p-8">
+              <div className="w-16 h-16 bg-info/10 rounded-2xl flex items-center justify-center text-3xl mb-6">📈</div>
+              <h3 className="type-h4 font-display font-bold mb-4">{t.optimizeTitle}</h3>
+              <p className="type-small text-muted leading-relaxed mb-4">{t.optimizeDesc}</p>
+            </div>
+          </div>
+        }
+      />
+
+      <PageProofBlock
+        page="about"
+        sectionId="differentiator"
+        surface="background"
+        heading={{
+          title: t.differentTitle,
+          supporting: t.differentSubtitle,
+        }}
+      />
 
       <AnimatedSection className="py-24 bg-surface">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-14">
-            <h2 className="font-display text-4xl md:text-5xl font-bold mb-4">
-              {t.differentTitle}
-            </h2>
-            <p className="text-muted text-lg max-w-2xl mx-auto">
-              {t.differentSubtitle}
-            </p>
-          </div>
-
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mb-16">
             {differentiators.map((item, i) => (
               <motion.div

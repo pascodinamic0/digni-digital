@@ -10,6 +10,7 @@ import {
 } from '@/lib/ai-receptionist-flow'
 import ProductWorkspaceFrame from './ProductWorkspaceFrame'
 import type { SoftwareNavId } from './software-nav'
+import { useDemoReverse } from './DemoReverseContext'
 
 type HeaderProps = {
   step: 1 | 2 | 3 | 4 | 5 | 6
@@ -28,6 +29,7 @@ type Props = HeaderProps & {
   moduleTitle?: string
   children: ReactNode
   className?: string
+  reverse?: boolean
 }
 
 export default function SoftwareDemoSection({
@@ -35,9 +37,12 @@ export default function SoftwareDemoSection({
   moduleTitle,
   children,
   className = '',
+  reverse = false,
   ...header
 }: Props) {
   const language = useLanguage()
+  const reverseFromContext = useDemoReverse()
+  const isReversed = reverse ?? reverseFromContext
   const nextCta = getFlowNextCta(language, header.step, header.anchorId)
   const scrollAnchor = resolveFlowScrollAnchor(header.step, header.anchorId)
 
@@ -48,7 +53,11 @@ export default function SoftwareDemoSection({
       aria-labelledby={header.titleId}
     >
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6">
-        <div className="software-demo-layout flex flex-col gap-8 xl:grid xl:grid-cols-[minmax(0,280px)_minmax(0,1fr)] xl:items-start xl:gap-10">
+        <div
+          className={`software-demo-layout flex flex-col gap-8 xl:grid xl:grid-cols-[minmax(0,280px)_minmax(0,1fr)] xl:items-start xl:gap-10 ${
+            isReversed ? 'xl:[direction:rtl] xl:*:[direction:ltr]' : ''
+          }`}
+        >
           <JourneyDemoHeader
             {...header}
             variant="software"

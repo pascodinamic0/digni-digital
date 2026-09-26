@@ -7,6 +7,7 @@ import HowDigniWorks from '@/app/components/HowDigniWorks'
 import AnimatedSection from '@/app/components/AnimatedSection'
 import { getAssessmentPath } from '@/lib/assessments/paths'
 import { SimpleHero, SectionHeading, CapabilityBlock } from '@/app/components/marketing'
+import PageProofBlock from '@/app/components/marketing/PageProofBlock'
 import { Boxes } from 'lucide-react'
 import ServiceAssessmentLink from '@/app/components/ServiceAssessmentLink'
 import StripeCheckoutButton from '@/app/components/StripeCheckoutButton'
@@ -256,7 +257,32 @@ export default function AgenticSoftwaresPage({ params, searchParams }: AgenticSo
         </div>
       </div>
 
+      <PageProofBlock
+        page="agentic-systems"
+        sectionId="problem"
+        id="problem"
+        surface="background"
+        heading={{
+          label: copy.heroBadge,
+          title: copy.heroTitlePrefix,
+          titleHighlight: copy.heroTitleHighlight,
+          supporting: copy.heroDescription,
+        }}
+      />
+
       <HowDigniWorks className="border-b border-border py-20 bg-background" />
+
+      <PageProofBlock
+        page="agentic-systems"
+        sectionId="apps"
+        reverse
+        surface="surface"
+        heading={{
+          title: copy.applicationsTitle,
+          titleHighlight: copy.applicationsHighlight,
+          supporting: copy.applicationsSubtitle,
+        }}
+      />
 
       <section className="bg-surface py-20">
         <div className="mx-auto max-w-3xl px-6">
@@ -358,6 +384,24 @@ export default function AgenticSoftwaresPage({ params, searchParams }: AgenticSo
           </div>
         </div>
       </AnimatedSection>
+
+      <PageProofBlock
+        page="agentic-systems"
+        sectionId="case-study"
+        surface="background"
+        heading={{
+          title: copy.storiesTitle,
+          titleHighlight: copy.storiesHighlight,
+          supporting: copy.storiesSubtitle,
+        }}
+        stats={caseStudies
+          .filter((study) => study.title !== 'HealthTrack Pro')
+          .slice(0, 1)
+          .flatMap((study) => study.results.slice(0, 3).map((r) => ({
+            value: r.metric,
+            label: r.description,
+          })))}
+      />
 
       {/* Case Studies */}
       <AnimatedSection className="py-24">
@@ -471,6 +515,18 @@ export default function AgenticSoftwaresPage({ params, searchParams }: AgenticSo
           </div>
         </div>
       </AnimatedSection>
+
+      <PageProofBlock
+        page="agentic-systems"
+        sectionId="process"
+        reverse
+        surface="surface"
+        heading={{
+          title: copy.processTitle,
+          titleHighlight: copy.processHighlight,
+          supporting: copy.processSubtitle,
+        }}
+      />
 
       {/* Process */}
       <AnimatedSection className="py-24 bg-surface">

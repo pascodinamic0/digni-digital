@@ -6,6 +6,7 @@ import { Link } from '@/i18n/navigation'
 import HowDigniWorks from '@/app/components/HowDigniWorks'
 import AnimatedSection from '@/app/components/AnimatedSection'
 import { SimpleHero, SectionHeading, CapabilityBlock, FinalCtaBand } from '@/app/components/marketing'
+import PageProofBlock from '@/app/components/marketing/PageProofBlock'
 import { GraduationCap } from 'lucide-react'
 import VideoModal from '@/app/components/VideoModal'
 import VideoThumbnail from '@/app/components/VideoThumbnail'
@@ -20,6 +21,7 @@ import { visibleDefaultFutureReadyOfferings, type FutureReadyOffering } from '@/
 import { getAiCareerFutureReadySkills } from '@/lib/ai-career-jobs'
 import { AiCareerPathsGrid } from '@/app/components/AiCareerPathsGrid'
 import { getSiteVideoWatchPath, siteVideos } from '@/lib/site-videos'
+import { FUTURE_READY_FEATURED_VIDEO_MEDIA } from '@/lib/future-ready-videos'
 import {
   futureReadyGraduateLocalCopy,
   futureReadyOfferingDisplayCopy,
@@ -50,7 +52,10 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
   const digitalSkillsReasons = localCopy.digitalSkillsReasons
   const outcomes = localCopy.outcomes
   const caseStudy = localCopy.caseStudy
-  const featuredVideos = localCopy.featuredVideos
+  const featuredVideos = localCopy.featuredVideos.map((video, i) => {
+    const media = FUTURE_READY_FEATURED_VIDEO_MEDIA[i]
+    return media ? { ...video, src: media.youtubeUrl, thumbnail: media.thumbnail } : video
+  })
   const assessmentLabel =
     language === 'en' ? "Assess Your Students' Readiness" : translations[language].nav.fitCheck
   const [pricing, setPricing] = useState<FutureReadyOffering[]>(visibleDefaultFutureReadyOfferings())
@@ -119,40 +124,50 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
         }}
       />
 
-      <section className="border-b border-border bg-surface py-20">
-        <div className="mx-auto max-w-3xl px-6">
-          <SectionHeading
-            label={localCopy.labels.problemOpportunity}
-            title={pageT.educationPrefix}
-            titleHighlight={`${pageT.educationFails} ${pageT.digitalEconomyPrefix}${pageT.digitalThrives}`}
-            supporting={pageT.educationFailsSubtitle}
-            highlightClassName="text-destructive"
-          />
-          {outcomes.map((outcome) => (
-            <CapabilityBlock
-              key={outcome.metric}
-              label={outcome.metric}
-              title={outcome.description}
-              supporting={outcome.detail}
-              icon={<GraduationCap className="h-6 w-6" aria-hidden />}
-            />
-          ))}
-        </div>
-      </section>
+      <PageProofBlock
+        page="future-ready"
+        sectionId="problem"
+        id="problem"
+        surface="surface"
+        heading={{
+          label: localCopy.labels.problemOpportunity,
+          title: pageT.educationPrefix,
+          titleHighlight: `${pageT.educationFails} ${pageT.digitalEconomyPrefix}${pageT.digitalThrives}`,
+          supporting: pageT.educationFailsSubtitle,
+          highlightClassName: 'text-destructive',
+        }}
+      />
 
-      <section className="border-b border-border bg-background py-20">
-        <div className="mx-auto max-w-3xl px-6">
-          <SectionHeading
-            label={localCopy.labels.programInProgress}
-            title={pageT.provenResults}
-            titleHighlight={pageT.provenResultsHighlight}
-            supporting={`${caseStudy.school} — ${caseStudy.location}. ${caseStudy.challenge}`}
-          />
-          <blockquote className="type-body mt-8 leading-relaxed text-text/90 italic">
+      <PageProofBlock
+        page="future-ready"
+        sectionId="outcomes"
+        reverse
+        surface="background"
+        heading={{
+          label: localCopy.labels.futureReadyAdvantage,
+          title: pageT.highDemandSkills,
+          titleHighlight: pageT.highDemandSkillsHighlight,
+          supporting: pageT.highDemandSkillsSubtitle,
+        }}
+        stats={outcomes.map((o) => ({ value: o.metric, label: o.description, hint: o.detail }))}
+      />
+
+      <PageProofBlock
+        page="future-ready"
+        sectionId="case-study"
+        surface="surface"
+        heading={{
+          label: localCopy.labels.programInProgress,
+          title: pageT.provenResults,
+          titleHighlight: pageT.provenResultsHighlight,
+          supporting: `${caseStudy.school} — ${caseStudy.location}. ${caseStudy.challenge}`,
+        }}
+        footer={
+          <blockquote className="type-body mt-2 leading-relaxed text-text/90 italic">
             {caseStudy.testimonial}
           </blockquote>
-        </div>
-      </section>
+        }
+      />
 
       <HowDigniWorks className="border-b border-border py-20 bg-surface" />
 
@@ -187,10 +202,20 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
               >
                 {watchPath ? (
                   <Link href={watchPath} className="block">
-                    <VideoThumbnail src={video.src} onPlay={() => {}} />
+                    <VideoThumbnail
+                      src={video.src}
+                      poster={video.thumbnail}
+                      alt={video.title}
+                      onPlay={() => {}}
+                    />
                   </Link>
                 ) : (
-                  <VideoThumbnail src={video.src} onPlay={() => {}} />
+                  <VideoThumbnail
+                    src={video.src}
+                    poster={video.thumbnail}
+                    alt={video.title}
+                    onPlay={() => {}}
+                  />
                 )}
                 <div className="p-6">
                   <div className="text-xs uppercase tracking-wider text-muted-dark mb-2">
@@ -225,6 +250,18 @@ export default function FutureReadyGraduatePage({ params, searchParams }: Future
           )}
         </div>
       </AnimatedSection>
+
+      <PageProofBlock
+        page="future-ready"
+        sectionId="skills"
+        reverse
+        surface="background"
+        heading={{
+          title: pageT.highDemandSkills,
+          titleHighlight: pageT.highDemandSkillsHighlight,
+          supporting: pageT.highDemandSkillsSubtitle,
+        }}
+      />
 
       {/* Digital Economy Skills */}
       <section id="curriculum" className="py-16 sm:py-20 lg:py-24">

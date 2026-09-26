@@ -7,6 +7,10 @@ import PremiumHeroBackdrop from '@/app/components/PremiumHeroBackdrop'
 import PremiumHeroParallax from '@/app/components/PremiumHeroParallax'
 import { getCtaButtonText, getBookingLinkProps } from '@/app/config/cta.config'
 import { useLanguage } from '@/app/context/LocaleContext'
+import PageProofBlock from '@/app/components/marketing/PageProofBlock'
+import { ProofVisual } from '@/app/components/marketing'
+import { getProofVisual } from '@/lib/proof-visuals/registry'
+import { getSolutionProofSectionId } from '@/lib/proof-visuals/solution-map'
 
 const solutionsCopy = {
   en: {
@@ -976,6 +980,15 @@ export default function SolutionsPage({ params, searchParams }: SolutionsPagePro
                   </div>
                   
                   <div className="space-y-8">
+                    {(() => {
+                      const proofSectionId = getSolutionProofSectionId(solution.id)
+                      const proofConfig = proofSectionId
+                        ? getProofVisual('solutions', proofSectionId)
+                        : undefined
+                      return proofConfig ? (
+                        <ProofVisual config={proofConfig} language={language} />
+                      ) : null
+                    })()}
                     <div className="card p-6 bg-surface-light">
                       <div className="grid md:grid-cols-2 gap-6 mb-6">
                         <div>
@@ -1061,87 +1074,53 @@ export default function SolutionsPage({ params, searchParams }: SolutionsPagePro
         </div>
       </AnimatedSection>
 
-      {/* Client Results, Proof Section */}
-      <AnimatedSection className="py-16">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-12">
-            <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">
-              {copy.resultsTitle}
-            </h2>
-            <p className="text-muted text-lg max-w-2xl mx-auto">
-              {copy.resultsSubtitle}
-            </p>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            {copy.stats.map((stat, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-              >
-                <div className="font-display text-3xl md:text-4xl font-bold text-accent mb-2">{stat.metric}</div>
-                <p className="text-muted text-sm">{stat.label}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </AnimatedSection>
+      <PageProofBlock
+        page="solutions"
+        sectionId="results"
+        surface="background"
+        heading={{
+          title: copy.resultsTitle,
+          supporting: copy.resultsSubtitle,
+        }}
+        stats={copy.stats.map((s) => ({ value: s.metric, label: s.label }))}
+      />
 
-      {/* Comparison Section */}
-      <AnimatedSection className="py-24">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">
-              {copy.comparisonTitle}
-            </h2>
-            <p className="text-muted text-lg">
-              {copy.comparisonSubtitle}
-            </p>
-          </div>
-          
-          <div className="grid lg:grid-cols-2 gap-12">
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="card p-8 border-destructive/20"
-            >
-              <h3 className="font-display text-2xl font-bold mb-6 text-destructive">
-                {copy.beforeTitle}
-              </h3>
-              <ul className="space-y-4">
+      <PageProofBlock
+        page="solutions"
+        sectionId="before-after"
+        reverse
+        surface="surface"
+        heading={{
+          title: copy.comparisonTitle,
+          supporting: copy.comparisonSubtitle,
+        }}
+        footer={
+          <div className="grid gap-6 sm:grid-cols-2">
+            <div className="card p-6 border-destructive/20">
+              <h3 className="type-h4 font-display font-bold mb-4 text-destructive">{copy.beforeTitle}</h3>
+              <ul className="space-y-3">
                 {copy.before.map((item, i) => (
-                  <li key={i} className="flex items-start gap-3 text-muted">
-                    <span className="text-destructive mt-1">✗</span>
+                  <li key={i} className="type-small flex items-start gap-2 text-muted">
+                    <span className="text-destructive">✗</span>
                     {item}
                   </li>
                 ))}
               </ul>
-            </motion.div>
-            
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="card p-8 border-success/20"
-            >
-              <h3 className="font-display text-2xl font-bold mb-6 text-success">
-                {copy.afterTitle}
-              </h3>
-              <ul className="space-y-4">
+            </div>
+            <div className="card p-6 border-success/20">
+              <h3 className="type-h4 font-display font-bold mb-4 text-success">{copy.afterTitle}</h3>
+              <ul className="space-y-3">
                 {copy.after.map((item, i) => (
-                  <li key={i} className="flex items-start gap-3 text-muted">
-                    <span className="text-success mt-1">✓</span>
+                  <li key={i} className="type-small flex items-start gap-2 text-muted">
+                    <span className="text-success">✓</span>
                     {item}
                   </li>
                 ))}
               </ul>
-            </motion.div>
+            </div>
           </div>
-        </div>
-      </AnimatedSection>
+        }
+      />
 
       {/* CTA Section */}
       <AnimatedSection className="py-24 bg-surface">
