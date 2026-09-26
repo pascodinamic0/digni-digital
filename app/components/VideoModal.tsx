@@ -2,6 +2,7 @@
 
 import { motion, AnimatePresence } from 'framer-motion'
 import { useEffect, useState } from 'react'
+import { youtubeEmbedSrc } from '@/lib/lms/youtube-embed'
 
 interface VideoModalProps {
   isOpen: boolean
@@ -9,6 +10,12 @@ interface VideoModalProps {
   videoSrc: string
   title?: string
   description?: string
+}
+
+function youtubeEmbedWithAutoplay(url: string): string | null {
+  const embed = youtubeEmbedSrc(url)
+  if (!embed) return null
+  return embed.includes('autoplay=') ? embed : `${embed}&autoplay=1`
 }
 
 export default function VideoModal({ isOpen, onClose, videoSrc, title, description }: VideoModalProps) {
@@ -44,6 +51,8 @@ export default function VideoModal({ isOpen, onClose, videoSrc, title, descripti
   if (!isOpen || !videoSrc) {
     return null
   }
+
+  const youtubeSrc = youtubeEmbedWithAutoplay(videoSrc)
 
   return (
     <AnimatePresence mode="wait">
@@ -103,16 +112,26 @@ export default function VideoModal({ isOpen, onClose, videoSrc, title, descripti
 
               {/* Video */}
               <div className="relative aspect-video bg-black">
-                <video
-                  src={videoSrc}
-                  controls
-                  autoPlay
-                  playsInline
-                  className="w-full h-full"
-                  onEnded={onClose}
-                >
-                  Your browser does not support the video tag.
-                </video>
+                {youtubeSrc ? (
+                  <iframe
+                    src={youtubeSrc}
+                    title={title || 'Video'}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                    className="h-full w-full"
+                  />
+                ) : (
+                  <video
+                    src={videoSrc}
+                    controls
+                    autoPlay
+                    playsInline
+                    className="w-full h-full"
+                    onEnded={onClose}
+                  >
+                    Your browser does not support the video tag.
+                  </video>
+                )}
               </div>
             </motion.div>
           </motion.div>

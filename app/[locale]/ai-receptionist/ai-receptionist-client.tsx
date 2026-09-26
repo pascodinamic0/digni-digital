@@ -14,7 +14,9 @@ import {
   QualificationSection,
   BonusStackSection,
   PricingSection,
+  MobileAppBannerSection,
 } from '@/app/components/ai-employee'
+import InboundLeadFlowSection from '@/app/components/InboundLeadFlowSection'
 import {
   AIReceptionistPainDreamDemos,
   AIReceptionistHowItWorksDemos,
@@ -46,6 +48,8 @@ export function AIReceptionistClient({ params, searchParams, showTaskQueueDemo }
       {/* Problem */}
       <ProblemStatsSection />
       <ProofSection />
+      <InboundLeadFlowSection />
+      <MobileAppBannerSection />
       <HowDigniWorks
         className="py-24 bg-surface"
         stepOverrides={{

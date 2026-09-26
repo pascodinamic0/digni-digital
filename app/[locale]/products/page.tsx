@@ -8,6 +8,9 @@ import PremiumHeroParallax from '@/app/components/PremiumHeroParallax'
 import { getCtaButtonText, getBookingLinkProps } from '@/app/config/cta.config'
 import { useLanguage } from '@/app/context/LocaleContext'
 import { getProductsPageJsonLd, jsonLdScriptProps } from '@/lib/agent-readiness'
+import PageProofBlock from '@/app/components/marketing/PageProofBlock'
+import { ProofVisual } from '@/app/components/marketing'
+import { getProofVisual } from '@/lib/proof-visuals/registry'
 
 const productsCopy = {
   en: {
@@ -544,14 +547,21 @@ export default function ProductsPage({ params, searchParams }: ProductsPageProps
                 </div>
               </div>
               
-              <div className="w-full h-96 bg-gradient-to-br from-accent/20 to-transparent rounded-2xl flex items-center justify-center">
-                <div className="text-center">
-                  <div className="w-24 h-24 bg-accent/20 rounded-2xl mx-auto mb-6 flex items-center justify-center">
-                    <span className="font-display text-5xl font-bold text-accent">P</span>
+              {(() => {
+                const proofConfig = getProofVisual('products', 'proposal-agent')
+                return proofConfig ? (
+                  <ProofVisual config={proofConfig} language={language} />
+                ) : (
+                  <div className="w-full h-96 bg-gradient-to-br from-accent/20 to-transparent rounded-2xl flex items-center justify-center">
+                    <div className="text-center">
+                      <div className="w-24 h-24 bg-accent/20 rounded-2xl mx-auto mb-6 flex items-center justify-center">
+                        <span className="font-display text-5xl font-bold text-accent">P</span>
+                      </div>
+                      <span className="text-muted text-lg">{copy.interfaceLabel}</span>
+                    </div>
                   </div>
-                  <span className="text-muted text-lg">{copy.interfaceLabel}</span>
-                </div>
-              </div>
+                )
+              })()}
             </div>
           </motion.div>
 
@@ -613,36 +623,30 @@ export default function ProductsPage({ params, searchParams }: ProductsPageProps
         </div>
       </AnimatedSection>
 
-      {/* Social Proof */}
-      <AnimatedSection className="py-16 bg-surface/50">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            {copy.stats.map((stat, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-              >
-                <div className="font-display text-3xl md:text-4xl font-bold text-accent mb-2">{stat.metric}</div>
-                <p className="text-muted text-sm">{stat.label}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </AnimatedSection>
+      <PageProofBlock
+        page="products"
+        sectionId="social-proof"
+        surface="surface"
+        heading={{
+          title: copy.pricingTitle,
+          supporting: copy.pricingSubtitle,
+        }}
+        stats={copy.stats.slice(0, 3).map((s) => ({ value: s.metric, label: s.label }))}
+      />
 
-      {/* Coming Soon Products */}
+      <PageProofBlock
+        page="products"
+        sectionId="coming-soon"
+        reverse
+        surface="background"
+        heading={{
+          title: copy.comingSoonTitle,
+          supporting: copy.comingSoonSubtitle,
+        }}
+      />
+
       <AnimatedSection className="py-24 bg-surface">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">
-              {copy.comingSoonTitle}
-            </h2>
-            <p className="text-muted text-lg">{copy.comingSoonSubtitle}</p>
-          </div>
-          
           <div className="grid md:grid-cols-3 gap-8">
             {copy.comingSoonProducts.map((product, i) => (
               <motion.div

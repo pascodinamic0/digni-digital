@@ -138,10 +138,17 @@ const nextConfig = {
       'videos',
       'learn',
     ]
-    const unprefixedMarketingRedirects = unprefixedMarketingPaths.flatMap((segment) => [
-      { source: `/${segment}`, destination: `/us-en/${segment}`, permanent: true },
-      { source: `/${segment}/:path*`, destination: `/us-en/${segment}/:path*`, permanent: true },
-    ])
+    const unprefixedMarketingRedirects = unprefixedMarketingPaths.flatMap((segment) =>
+      segment === 'videos'
+        ? [
+            { source: `/${segment}`, destination: `/us-en/${segment}`, permanent: true },
+            { source: `/${segment}/:slug`, destination: `/us-en/${segment}/:slug`, permanent: true },
+          ]
+        : [
+            { source: `/${segment}`, destination: `/us-en/${segment}`, permanent: true },
+            { source: `/${segment}/:path*`, destination: `/us-en/${segment}/:path*`, permanent: true },
+          ]
+    )
 
     return [
       ...legacyLocaleRedirectRules,
