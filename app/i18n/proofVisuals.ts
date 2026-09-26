@@ -24,7 +24,7 @@ const en: ProofVisualTree = {
     },
     coverageTalent: {
       alt: 'Student with certificate beside empty portfolio folder',
-      overlayLine: 'Proof employers actually hire',
+      overlayLine: 'A legitimate way to earn',
       chip: 'Talent',
       channel: 'Future Ready',
     },
@@ -66,11 +66,11 @@ const en: ProofVisualTree = {
   futureReady: {
     problem: {
       alt: 'Graduate holding certificate with empty portfolio on desk',
-      overlayLine: 'Certificate at the door. Proof gets you through.',
+      overlayLine: 'A certificate does not pay. A way to earn does.',
       chip: 'Talent gap',
     },
     outcomes: {
-      alt: 'Portfolio evidence and employment-readiness outcomes',
+      alt: 'Proof a client can pay for',
     },
     caseStudy: {
       alt: 'GS Laricharde school partnership in progress',
@@ -79,7 +79,7 @@ const en: ProofVisualTree = {
     },
     skills: {
       alt: 'AI career paths and skills grid for employability',
-      overlayLine: 'Capability employers can evaluate',
+      overlayLine: 'Work a client will pay for',
       chip: 'Skills',
     },
   },
@@ -194,7 +194,7 @@ const fr: ProofVisualTree = {
     },
     coverageTalent: {
       alt: 'Étudiant avec diplôme à côté d\'un portfolio vide',
-      overlayLine: 'La preuve que les employeurs embauchent vraiment',
+      overlayLine: 'Un moyen légitime de gagner',
       chip: 'Talents',
       channel: 'Future Ready',
     },
@@ -232,7 +232,7 @@ const fr: ProofVisualTree = {
   futureReady: {
     problem: {
       alt: 'Diplômé avec certificat et portfolio vide sur le bureau',
-      overlayLine: 'Le diplôme ouvre la porte. La preuve vous fait entrer.',
+      overlayLine: 'Un certificat ne paie pas. Un moyen de gagner, si.',
       chip: 'Écart de talents',
     },
     outcomes: { alt: 'Preuves de portfolio et résultats de préparation à l\'emploi' },
@@ -243,7 +243,7 @@ const fr: ProofVisualTree = {
     },
     skills: {
       alt: 'Parcours de carrière IA et grille de compétences',
-      overlayLine: 'Des compétences que les employeurs peuvent évaluer',
+      overlayLine: 'Un travail qu’un client paiera',
       chip: 'Compétences',
     },
   },
@@ -352,7 +352,7 @@ const es: ProofVisualTree = {
     },
     coverageTalent: {
       alt: 'Graduado con certificado junto a portfolio vacío',
-      overlayLine: 'La prueba que los empleadores contratan',
+      overlayLine: 'Una forma legítima de ganar',
       chip: 'Talento',
       channel: 'Future Ready',
     },
@@ -390,7 +390,7 @@ const es: ProofVisualTree = {
   futureReady: {
     problem: {
       alt: 'Graduado con certificado y portfolio vacío en el escritorio',
-      overlayLine: 'El certificado abre la puerta. La prueba te hace entrar.',
+      overlayLine: 'Un certificado no paga. Una forma de ganar, sí.',
       chip: 'Brecha de talento',
     },
     outcomes: { alt: 'Evidencia de portfolio y resultados de empleabilidad' },
@@ -401,7 +401,7 @@ const es: ProofVisualTree = {
     },
     skills: {
       alt: 'Rutas de carrera IA y cuadrícula de habilidades',
-      overlayLine: 'Capacidad que los empleadores pueden evaluar',
+      overlayLine: 'Un trabajo que un cliente pagará',
       chip: 'Habilidades',
     },
   },
@@ -510,7 +510,7 @@ const de: ProofVisualTree = {
     },
     coverageTalent: {
       alt: 'Absolvent mit Zertifikat neben leerem Portfolio',
-      overlayLine: 'Der Nachweis, den Arbeitgeber wirklich einstellen',
+      overlayLine: 'Ein legitimer Weg zu verdienen',
       chip: 'Talente',
       channel: 'Future Ready',
     },
@@ -548,7 +548,7 @@ const de: ProofVisualTree = {
   futureReady: {
     problem: {
       alt: 'Absolvent mit Zertifikat und leerem Portfolio auf dem Schreibtisch',
-      overlayLine: 'Das Zertifikat öffnet die Tür. Der Nachweis bringt Sie durch.',
+      overlayLine: 'Ein Zertifikat zahlt nicht. Ein Weg zu verdienen schon.',
       chip: 'Talentlücke',
     },
     outcomes: { alt: 'Portfolio-Nachweise und Beschäftigungsfähigkeit' },
@@ -559,7 +559,7 @@ const de: ProofVisualTree = {
     },
     skills: {
       alt: 'KI-Karrierewege und Kompetenzraster',
-      overlayLine: 'Fähigkeit, die Arbeitgeber bewerten können',
+      overlayLine: 'Arbeit, die ein Kunde bezahlt',
       chip: 'Skills',
     },
   },
@@ -668,7 +668,7 @@ const ar: ProofVisualTree = {
     },
     coverageTalent: {
       alt: 'خريج بشهادة بجانب ملف أعمال فارغ',
-      overlayLine: 'الإثبات الذي يوظّف عليه أصحاب العمل',
+      overlayLine: 'وسيلة مشروعة للكسب',
       chip: 'المواهب',
       channel: 'Future Ready',
     },
@@ -706,7 +706,7 @@ const ar: ProofVisualTree = {
   futureReady: {
     problem: {
       alt: 'خريج بشهادة وملف أعمال فارغ على المكتب',
-      overlayLine: 'الشهادة تفتح الباب. الإثبات يُدخلك.',
+      overlayLine: 'الشهادة لا تدفع. وسيلة للكسب، نعم.',
       chip: 'فجوة المواهب',
     },
     outcomes: { alt: 'أدلة ملف الأعمال ونتائج الجاهزية للعمل' },
@@ -717,7 +717,7 @@ const ar: ProofVisualTree = {
     },
     skills: {
       alt: 'مسارات مهنية في الذكاء الاصطناعي وشبكة مهارات',
-      overlayLine: 'قدرة يمكن لأصحاب العمل تقييمها',
+      overlayLine: 'عمل سيدفع العميل ثمنه',
       chip: 'مهارات',
     },
   },
