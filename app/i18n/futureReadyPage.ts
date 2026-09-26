@@ -50,7 +50,7 @@ export const futureReadyGraduateLocalCopy = {
     outcomes: [
       { metric: 'Knowledge', description: 'What students know', detail: 'Concepts without application still leave them exposed' },
       { metric: 'Capability', description: 'What students can do', detail: 'Practical AI work on real projects' },
-      { metric: 'Evidence', description: 'What they can prove', detail: 'Portfolio artifacts employers can evaluate' },
+      { metric: 'Evidence', description: 'What they can prove', detail: 'Proof a client can pay for' },
       { metric: 'In progress', description: 'GS Laricharde partnership', detail: 'Named school. Not a completed 85% employment result.' },
     ],
     caseStudy: {
@@ -184,7 +184,7 @@ export const futureReadyGraduateLocalCopy = {
     outcomes: [
       { metric: 'Savoir', description: 'Ce que les étudiants connaissent', detail: 'Les concepts sans application les laissent exposés' },
       { metric: 'Capacité', description: 'Ce que les étudiants savent faire', detail: 'Travail IA concret sur de vrais projets' },
-      { metric: 'Preuve', description: 'Ce qu’ils peuvent démontrer', detail: 'Artefacts de portfolio que les employeurs peuvent évaluer' },
+      { metric: 'Preuve', description: 'Ce qu’ils peuvent démontrer', detail: 'Une preuve qu’un client peut payer' },
       { metric: 'En cours', description: 'Partenariat GS Laricharde', detail: 'École nommée. Pas un taux d’emploi de 85 % présenté comme acquis.' },
     ],
     caseStudy: {
@@ -282,7 +282,7 @@ export const futureReadyGraduateLocalCopy = {
     outcomes: [
       { metric: 'Conocimiento', description: 'Lo que saben los estudiantes', detail: 'Los conceptos sin aplicación los dejan expuestos' },
       { metric: 'Capacidad', description: 'Lo que pueden hacer', detail: 'Trabajo práctico de IA en proyectos reales' },
-      { metric: 'Evidencia', description: 'Lo que pueden demostrar', detail: 'Artefactos de portafolio que los empleadores pueden evaluar' },
+      { metric: 'Evidencia', description: 'Lo que pueden demostrar', detail: 'Una prueba que un cliente puede pagar' },
       { metric: 'En curso', description: 'Alianza GS Laricharde', detail: 'Escuela nombrada. No un 85% de empleo presentado como resultado.' },
     ],
     caseStudy: {
@@ -380,7 +380,7 @@ export const futureReadyGraduateLocalCopy = {
     outcomes: [
       { metric: 'Wissen', description: 'Was Studierende wissen', detail: 'Konzepte ohne Anwendung lassen sie ungeschützt' },
       { metric: 'Fähigkeit', description: 'Was Studierende tun können', detail: 'Praktische KI-Arbeit an echten Projekten' },
-      { metric: 'Nachweis', description: 'Was sie beweisen können', detail: 'Portfolio-Artefakte, die Arbeitgeber bewerten können' },
+      { metric: 'Nachweis', description: 'Was sie beweisen können', detail: 'Ein Nachweis, den ein Kunde bezahlen kann' },
       { metric: 'In Umsetzung', description: 'Partnerschaft GS Laricharde', detail: 'Benannte Schule. Kein abgeschlossenes 85%-Beschäftigungsergebnis.' },
     ],
     caseStudy: {
@@ -478,7 +478,7 @@ export const futureReadyGraduateLocalCopy = {
     outcomes: [
       { metric: 'معرفة', description: 'ما يعرفه الطلاب', detail: 'المفاهيم بلا تطبيق تتركهم معرّضين' },
       { metric: 'قدرة', description: 'ما يستطيع الطلاب فعله', detail: 'عمل عملي بالذكاء الاصطناعي على مشاريع حقيقية' },
-      { metric: 'دليل', description: 'ما يمكنهم إثباته', detail: 'قطع ملف أعمال يمكن لأصحاب العمل تقييمها' },
+      { metric: 'دليل', description: 'ما يمكنهم إثباته', detail: 'إثبات يستطيع العميل دفع ثمنه' },
       { metric: 'قيد التنفيذ', description: 'شراكة GS Laricharde', detail: 'مدرسة مسمّاة. ليس نتيجة توظيف 85% مكتملة.' },
     ],
     caseStudy: {

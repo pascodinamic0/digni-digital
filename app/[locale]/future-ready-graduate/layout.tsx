@@ -4,29 +4,29 @@ type MetadataLanguage = 'en' | 'fr' | 'es' | 'de' | 'ar'
 
 const metadataByLanguage = {
   en: {
-    title: 'Future Ready | Capability and Evidence Employers Can Hire From',
+    title: 'Future Ready | A Legitimate Way to Earn, Not Another Certificate',
     description:
-      'A degree can get them to the door. Skills get them through it. Future Ready builds practical AI capability, real projects, and portfolio evidence for schools, institutes, and employers.',
+      'Getting hired is someone else’s decision. Making money is the skill. Future Ready teaches legitimate ways to earn: paid work, service offers, and proof a client can pay for.',
   },
   fr: {
-    title: 'Future Ready | Capacité et preuves que les employeurs peuvent embaucher',
+    title: 'Future Ready | Un moyen légitime de gagner, pas un certificat de plus',
     description:
-      'Un diplôme peut les mener à la porte. Les compétences les font entrer. Future Ready construit une capacité IA pratique, de vrais projets et des preuves de portfolio pour les écoles, instituts et employeurs.',
+      'Être embauché dépend de quelqu’un d’autre. Gagner de l’argent est une compétence. Future Ready enseigne des moyens légitimes de gagner : travail payé, offres de service, et une preuve qu’un client peut payer.',
   },
   es: {
-    title: 'Future Ready | Capacidad y evidencia que los empleadores pueden contratar',
+    title: 'Future Ready | Una forma legítima de ganar, no otro certificado',
     description:
-      'Un título puede llevarlos a la puerta. Las habilidades los hacen entrar. Future Ready construye capacidad práctica de IA, proyectos reales y evidencia de portafolio para escuelas, institutos y empleadores.',
+      'Que te contraten lo decide otra persona. Ganar dinero es una habilidad. Future Ready enseña formas legítimas de ganar: trabajo pagado, ofertas de servicio y una prueba que un cliente puede pagar.',
   },
   de: {
-    title: 'Future Ready | Fähigkeit und Nachweis, den Arbeitgeber einstellen',
+    title: 'Future Ready | Ein legitimer Weg zu verdienen, kein weiteres Zertifikat',
     description:
-      'Ein Abschluss bringt sie zur Tür. Skills bringen sie hindurch. Future Ready baut praktische KI-Fähigkeit, echte Projekte und Portfolio-Nachweis für Schulen, Institute und Arbeitgeber.',
+      'Eingestellt zu werden entscheidet jemand anderes. Geld verdienen ist eine Fähigkeit. Future Ready lehrt legitime Wege zu verdienen: bezahlte Arbeit, Serviceangebote und einen Nachweis, den ein Kunde bezahlen kann.',
   },
   ar: {
-    title: 'Future Ready | قدرة ودليل يوظّف لأجلهما أصحاب العمل',
+    title: 'Future Ready | وسيلة مشروعة للكسب، لا شهادة أخرى',
     description:
-      'الشهادة قد توصلهم إلى الباب. المهارات تدخلهم منه. يبني Future Ready قدرة عملية بالذكاء الاصطناعي ومشاريع حقيقية وإثبات ملف أعمال للمدارس والمعاهد وأصحاب العمل.',
+      'التوظيف قرار شخص آخر. كسب المال مهارة. يعلّم Future Ready وسائل مشروعة للكسب: عملاً مدفوعاً، وعروض خدمات، وإثباتاً يستطيع العميل دفع ثمنه.',
   },
 } satisfies Record<MetadataLanguage, Metadata>
 

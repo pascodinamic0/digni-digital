@@ -152,7 +152,7 @@ export const futureReadyAssessmentEn: ServiceAssessmentConfig = {
  eyebrow: '2 minute fit check',
  introTitle: 'Is the Future Ready Graduate Program right for your school?',
  introSubtitle:
- 'Built for institutions that care about employability, not just certificates. Get a clear match score before booking a consultation.',
+ 'Built for institutions that want graduates who can earn, not just collect certificates. Get a clear match score before booking a consultation.',
  introBullets: [
  '10 questions on institution fit, stakeholders, employer ties, and budget',
  'Match score for the full 9 month program model',

@@ -254,7 +254,7 @@ const futureReadyFr: AssessmentOverlay = {
     eyebrow: 'Contrôle de 2 minutes',
     introTitle: 'Future Ready est-il le bon programme pour votre établissement ?',
     introSubtitle:
-      'Pour les institutions qui visent l’employabilité, pas seulement des certificats. Un score clair avant de réserver une consultation.',
+      'Pour les établissements qui veulent des diplômés capables de gagner, pas seulement un certificat. Un score clair avant de réserver une consultation.',
     introBullets: [
       '10 questions sur l’établissement, les parties prenantes, les employeurs et le budget',
       'Score pour le modèle de programme de 9 mois',
@@ -612,7 +612,7 @@ function alignedCopy(
           'Diez preguntas para escuelas y universidades: ¿Future Ready encaja con sus resultados, involucrados, financiación y calendario?',
         introTitle: '¿Es Future Ready el programa adecuado para su institución?',
         introSubtitle:
-          'Para instituciones que cuidan la empleabilidad, no solo certificados. Una puntuación clara antes de reservar consulta.',
+          'Para instituciones que quieren graduados capaces de ganar, no solo un certificado. Una puntuación clara antes de reservar consulta.',
         resultTitle: 'de coincidencia para Future Ready',
         matchLabel: 'Coincidencia de programa',
         primaryCta: 'Reservar una consulta escolar',
@@ -653,7 +653,7 @@ function alignedCopy(
           'Zehn Fragen für Schulen und Universitäten: Passt Future Ready zu Ergebnissen, Stakeholdern, Finanzierung und Zeitplan?',
         introTitle: 'Ist Future Ready das richtige Programm für Ihre Einrichtung?',
         introSubtitle:
-          'Für Institutionen, denen Beschäftigungsfähigkeit wichtiger ist als Zertifikate. Klare Punktzahl vor der Beratung.',
+          'Für Einrichtungen, die Absolventen wollen, die verdienen können, nicht nur ein Zertifikat. Klare Punktzahl vor der Beratung.',
         resultTitle: 'Treffer für Future Ready',
         matchLabel: 'Programm-Fit',
         primaryCta: 'Schulberatung buchen',
@@ -694,7 +694,7 @@ function alignedCopy(
           'عشرة أسئلة للمدارس والجامعات: هل Future Ready يناسب نتائجكم وأصحاب المصلحة والتمويل والجدول؟',
         introTitle: 'هل Future Ready هو البرنامج المناسب لمؤسستك؟',
         introSubtitle:
-          'للمؤسسات التي تهتم بالجاهزية المهنية لا بالشهادات وحدها. نتيجة واضحة قبل حجز الاستشارة.',
+          'للمؤسسات التي تريد خرّيجين يستطيعون الكسب، لا شهادة فحسب. نتيجة واضحة قبل حجز الاستشارة.',
         resultTitle: 'من التطابق لـ Future Ready',
         matchLabel: 'تطابق البرنامج',
         primaryCta: 'احجز استشارة للمدرسة',

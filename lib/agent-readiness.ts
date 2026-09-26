@@ -161,9 +161,9 @@ export const agentServices: AgentService[] = [
  name: 'Future Ready Graduate Program',
  url: localizedUrl(DEFAULT_LOCALE, '/future-ready-graduate'),
  shortDescription:
- 'Digital skills and employability program for schools, institutes, and learners who need practical AI era career readiness.',
+ 'A school program that teaches legitimate ways to earn: practical AI work, service offers, and proof a client can pay for.',
  whoItIsFor: ['Private schools', 'professional institutes', 'vocational centers', 'students', 'adult learners'],
- outcomes: ['Job ready portfolios', 'digital skills', 'entrepreneurial capability', 'career placement readiness'],
+ outcomes: ['Legitimate ways to earn', 'paid project skills', 'service offers', 'proof a client can pay for'],
  deliverables: [
  'Digital foundation training',
  'Web development basics',
@@ -200,7 +200,7 @@ export const agentServices: AgentService[] = [
  {
  question: 'Who is the Future Ready Graduate Program for?',
  answer:
- 'It is for schools, vocational centers, institutes, and learners who need practical digital skills, portfolios, and job readiness.',
+ 'It is for schools, vocational centers, institutes, and learners who need a legitimate way to make money, not another certificate.',
  },
  {
  question: 'How long is the school program?',
@@ -209,7 +209,7 @@ export const agentServices: AgentService[] = [
  {
  question: 'What does the program teach?',
  answer:
- 'It teaches digital foundations, web development, digital marketing, portfolio building, job readiness, and AI assisted work skills.',
+ 'It teaches digital foundations, web development, digital marketing, portfolio building, and legitimate ways to turn that work into paid offers.',
  },
  ],
  proof: [
