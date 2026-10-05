@@ -721,7 +721,7 @@ export default function ProductsPage({ params, searchParams }: ProductsPageProps
             <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">{copy.liveDemosTitle}</h2>
             <p className="text-muted text-lg">{copy.liveDemosSubtitle}</p>
           </div>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="flex flex-wrap justify-center gap-8">
             {copy.liveDemoProducts.map((product, i) => (
               <motion.div
                 key={product.id}
@@ -730,10 +730,10 @@ export default function ProductsPage({ params, searchParams }: ProductsPageProps
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="card p-8 flex flex-col"
+                className="card p-8 flex flex-col w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.34rem)]"
               >
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="w-16 h-16 bg-accent/10 rounded-xl flex items-center justify-center shrink-0">
+                  <div className="w-16 h-16 bg-surface-light rounded-xl flex items-center justify-center shrink-0">
                     <span className="font-display text-2xl font-bold text-accent">{product.initial}</span>
                   </div>
                   <div>
