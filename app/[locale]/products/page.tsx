@@ -71,6 +71,22 @@ const productsCopy = {
       { metric: '40%', label: 'Higher close rates' },
       { metric: '95+', label: 'Proposals generated' },
     ],
+    liveDemosTitle: 'Live sample products',
+    liveDemosSubtitle: 'Open a working demo. Sample data, no sign-up.',
+    liveDemoBadge: 'LIVE DEMO',
+    openLiveDemo: 'Open live demo',
+    liveDemoProducts: [
+      {
+        id: 'digni-results',
+        initial: 'R',
+        name: 'Digni Results',
+        category: 'Monitoring & Evaluation · Donor reporting',
+        description:
+          'M&E and donor reporting for development programmes. Results framework, field data entry, review and validation, dashboards and maps by region, and Word report export. Public demo on sample data.',
+        features: ['Results framework & indicators', 'Submit, review, validate, lock', 'Dashboards and maps', 'Donor report export'],
+        link: 'https://digni-results-demo.netlify.app/',
+      },
+    ],
     comingSoonProducts: [
       {
         id: 'crm-lite',
@@ -155,6 +171,22 @@ const productsCopy = {
       { metric: '85%', label: 'de temps économisé en moyenne' },
       { metric: '40%', label: 'de taux de closing en plus' },
       { metric: '95+', label: 'propositions générées' },
+    ],
+    liveDemosTitle: 'Produits démo en ligne',
+    liveDemosSubtitle: 'Ouvrez une démo fonctionnelle. Données fictives, sans inscription.',
+    liveDemoBadge: 'DÉMO EN LIGNE',
+    openLiveDemo: 'Ouvrir la démo',
+    liveDemoProducts: [
+      {
+        id: 'digni-results',
+        initial: 'R',
+        name: 'Digni Results',
+        category: 'Suivi-évaluation · Rapports bailleurs',
+        description:
+          'Suivi-évaluation et rapports bailleurs pour les programmes de développement. Cadre de résultats, saisie terrain, revue et validation, tableaux de bord et cartes par région, export Word. Démo publique sur données fictives.',
+        features: ['Cadre de résultats et indicateurs', 'Soumission, revue, validation, verrouillage', 'Tableaux de bord et cartes', 'Export du rapport bailleur'],
+        link: 'https://digni-results-demo.netlify.app/',
+      },
     ],
     comingSoonProducts: [
       {
@@ -241,6 +273,22 @@ const productsCopy = {
       { metric: '40%', label: 'más tasa de cierre' },
       { metric: '95+', label: 'propuestas generadas' },
     ],
+    liveDemosTitle: 'Productos demo en vivo',
+    liveDemosSubtitle: 'Abre una demo funcional. Datos de ejemplo, sin registro.',
+    liveDemoBadge: 'DEMO EN VIVO',
+    openLiveDemo: 'Abrir demo en vivo',
+    liveDemoProducts: [
+      {
+        id: 'digni-results',
+        initial: 'R',
+        name: 'Digni Results',
+        category: 'Monitoreo y evaluación · Informes para donantes',
+        description:
+          'Monitoreo, evaluación e informes para donantes en programas de desarrollo. Marco de resultados, captura de datos en campo, revisión y validación, paneles y mapas por región, y exportación a Word. Demo pública con datos de ejemplo.',
+        features: ['Marco de resultados e indicadores', 'Enviar, revisar, validar, bloquear', 'Paneles y mapas', 'Exportación del informe para donantes'],
+        link: 'https://digni-results-demo.netlify.app/',
+      },
+    ],
     comingSoonProducts: [
       {
         id: 'crm-lite',
@@ -326,6 +374,22 @@ const productsCopy = {
       { metric: '40%', label: 'höhere Abschlussraten' },
       { metric: '95+', label: 'generierte Angebote' },
     ],
+    liveDemosTitle: 'Live-Demos',
+    liveDemosSubtitle: 'Öffnen Sie eine funktionierende Demo. Beispieldaten, ohne Registrierung.',
+    liveDemoBadge: 'LIVE-DEMO',
+    openLiveDemo: 'Live-Demo öffnen',
+    liveDemoProducts: [
+      {
+        id: 'digni-results',
+        initial: 'R',
+        name: 'Digni Results',
+        category: 'Monitoring & Evaluation · Geberberichte',
+        description:
+          'M&E und Geberberichte für Entwicklungsprogramme. Ergebnisrahmen, Datenerfassung im Feld, Prüfung und Validierung, Dashboards und Karten nach Region sowie Word-Export. Öffentliche Demo mit Beispieldaten.',
+        features: ['Ergebnisrahmen & Indikatoren', 'Einreichen, prüfen, validieren, sperren', 'Dashboards und Karten', 'Export des Geberberichts'],
+        link: 'https://digni-results-demo.netlify.app/',
+      },
+    ],
     comingSoonProducts: [
       {
         id: 'crm-lite',
@@ -410,6 +474,22 @@ const productsCopy = {
       { metric: '85%', label: 'متوسط الوقت الموفر' },
       { metric: '40%', label: 'معدلات إغلاق أعلى' },
       { metric: '95+', label: 'عرض تم إنشاؤه' },
+    ],
+    liveDemosTitle: 'منتجات تجريبية مباشرة',
+    liveDemosSubtitle: 'افتح نسخة تجريبية تعمل. بيانات نموذجية، دون تسجيل.',
+    liveDemoBadge: 'تجربة مباشرة',
+    openLiveDemo: 'افتح النسخة التجريبية',
+    liveDemoProducts: [
+      {
+        id: 'digni-results',
+        initial: 'R',
+        name: 'Digni Results',
+        category: 'الرصد والتقييم · تقارير المانحين',
+        description:
+          'الرصد والتقييم وتقارير المانحين لبرامج التنمية. إطار النتائج، وإدخال البيانات الميدانية، والمراجعة والاعتماد، ولوحات معلومات وخرائط حسب المنطقة، وتصدير التقارير إلى Word. نسخة تجريبية عامة ببيانات نموذجية.',
+        features: ['إطار النتائج والمؤشرات', 'إرسال ومراجعة واعتماد وقفل', 'لوحات معلومات وخرائط', 'تصدير تقرير المانحين'],
+        link: 'https://digni-results-demo.netlify.app/',
+      },
     ],
     comingSoonProducts: [
       {
@@ -633,6 +713,66 @@ export default function ProductsPage({ params, searchParams }: ProductsPageProps
         }}
         stats={copy.stats.slice(0, 3).map((s) => ({ value: s.metric, label: s.label }))}
       />
+
+      {/* Live sample products */}
+      <AnimatedSection id="live-demos" className="py-24">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">{copy.liveDemosTitle}</h2>
+            <p className="text-muted text-lg">{copy.liveDemosSubtitle}</p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            {copy.liveDemoProducts.map((product, i) => (
+              <motion.div
+                key={product.id}
+                id={product.id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="card p-8 flex flex-col"
+              >
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-16 h-16 bg-accent/10 rounded-xl flex items-center justify-center shrink-0">
+                    <span className="font-display text-2xl font-bold text-accent">{product.initial}</span>
+                  </div>
+                  <div>
+                    <div className="flex flex-wrap items-center gap-2">
+                      <h3 className="font-display text-xl font-bold">{product.name}</h3>
+                      <span className="px-2.5 py-0.5 bg-success/20 text-success text-[10px] font-bold rounded-full">{copy.liveDemoBadge}</span>
+                    </div>
+                    <span className="text-xs text-accent uppercase font-medium">{product.category}</span>
+                  </div>
+                </div>
+
+                <p className="text-muted mb-6 leading-relaxed">{product.description}</p>
+
+                <div className="mb-6">
+                  <h4 className="font-semibold mb-3">{copy.keyFeatures}</h4>
+                  <ul className="space-y-2">
+                    {product.features.map((feature, j) => (
+                      <li key={j} className="flex items-center gap-2 text-muted text-sm">
+                        <div className="w-1 h-1 bg-accent rounded-full" />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <a
+                  href={product.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-primary w-full text-center mt-auto"
+                  aria-label={`${copy.openLiveDemo}: ${product.name}`}
+                >
+                  {copy.openLiveDemo}
+                </a>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </AnimatedSection>
 
       <PageProofBlock
         page="products"
