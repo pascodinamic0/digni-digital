@@ -104,6 +104,17 @@ export default function AgenticSoftwaresPage({ params, searchParams }: AgenticSo
       tech: ['Next.js 15', 'Supabase', 'Postgres RLS', 'Recharts'],
     },
     {
+      title: 'Digni Results',
+      description: localizeAgentic(
+        language,
+        'M&E and donor reporting for development programmes. Results framework, field data entry, review and validation, dashboards and maps by region, and Word report export. Public demo on sample data.',
+      ),
+      category: localizeAgentic(language, 'Monitoring & Evaluation'),
+      status: localizeAgentic(language, 'Live'),
+      link: 'https://digni-results-demo.netlify.app/',
+      tech: ['React', 'Vite', 'Netlify', 'Word export'],
+    },
+    {
       title: 'ContentCraft AI',
       description: localizeAgentic(language, 'AI writes your marketing. Fast.'),
       category: localizeAgentic(language, 'Marketing'),

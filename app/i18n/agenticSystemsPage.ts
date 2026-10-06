@@ -456,6 +456,12 @@ export const agenticSoftwaresCollections = {
         status: 'Live',
       },
       { description: 'AI writes your marketing. Fast.', category: 'Marketing', status: 'Beta' },
+      {
+        description:
+          'M&E and donor reporting for development programmes. Results framework, field data entry, review and validation, dashboards and maps by region, and Word report export. Public demo on sample data.',
+        category: 'Monitoring & Evaluation',
+        status: 'Live',
+      },
     ],
     services: [
       {
@@ -556,6 +562,12 @@ export const agenticSoftwaresCollections = {
         status: 'En ligne',
       },
       { description: 'L’IA rédige votre marketing. Vite.', category: 'Marketing', status: 'Beta' },
+      {
+        description:
+          'Suivi-évaluation et rapports bailleurs pour les programmes de développement. Cadre de résultats, saisie terrain, revue et validation, tableaux de bord et cartes par région, export Word. Démo publique sur données fictives.',
+        category: 'Suivi-évaluation',
+        status: 'En ligne',
+      },
     ],
     services: [
       {
@@ -656,6 +668,12 @@ export const agenticSoftwaresCollections = {
         status: 'En vivo',
       },
       { description: 'La IA escribe tu marketing. Rápido.', category: 'Marketing', status: 'Beta' },
+      {
+        description:
+          'Monitoreo y evaluación (M&E) e informes para donantes de programas de desarrollo. Marco de resultados, captura de datos de campo, revisión y validación, paneles y mapas por región, y exportación de informes a Word. Demo pública con datos de ejemplo.',
+        category: 'Monitoreo y evaluación',
+        status: 'En vivo',
+      },
     ],
     services: [
       {
@@ -756,6 +774,12 @@ export const agenticSoftwaresCollections = {
         status: 'Live',
       },
       { description: 'KI schreibt Ihr Marketing. Schnell.', category: 'Marketing', status: 'Beta' },
+      {
+        description:
+          'Monitoring & Evaluation (M&E) und Geberberichterstattung für Entwicklungsprogramme. Ergebnisrahmen, Datenerfassung vor Ort, Prüfung und Validierung, Dashboards und Karten nach Region sowie Berichtsexport nach Word. Öffentliche Demo mit Beispieldaten.',
+        category: 'Monitoring & Evaluation',
+        status: 'Live',
+      },
     ],
     services: [
       {
@@ -856,6 +880,12 @@ export const agenticSoftwaresCollections = {
         status: 'مباشر',
       },
       { description: 'الذكاء الاصطناعي يكتب تسويقك. بسرعة.', category: 'التسويق', status: 'Beta' },
+      {
+        description:
+          'الرصد والتقييم وإعداد التقارير للمانحين في برامج التنمية. إطار النتائج، وإدخال البيانات الميدانية، والمراجعة والتحقق، ولوحات المعلومات والخرائط حسب المنطقة، وتصدير التقارير بصيغة Word. نسخة تجريبية عامة ببيانات نموذجية.',
+        category: 'الرصد والتقييم',
+        status: 'مباشر',
+      },
     ],
     services: [
       {
