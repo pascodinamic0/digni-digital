@@ -372,6 +372,29 @@ export const agentProducts = [
  lastUpdated: AGENT_DATA_LAST_UPDATED,
  },
  {
+ id: 'digni-results',
+ name: 'Digni Results',
+ alternateName: 'M&E and Donor Reporting Platform',
+ url: 'https://digni-results-demo.netlify.app/',
+ applicationCategory: 'BusinessApplication',
+ operatingSystem: 'Web',
+ status: 'Live',
+ description:
+ 'M&E and donor reporting for development programmes, results framework, field data entry, review and validation, dashboards and maps by region, and Word report export. Public demo on sample data.',
+ features: [
+ 'Results framework and indicators',
+ 'Submit, review, validate, and lock data',
+ 'Dashboards and maps by region',
+ 'Donor report export to Word',
+ ],
+ offers: [],
+ proof: [
+ { metric: 'Live', description: 'Public demo on sample data, no sign up' },
+ { metric: 'Word', description: 'Donor report export' },
+ ],
+ lastUpdated: AGENT_DATA_LAST_UPDATED,
+ },
+ {
  id: 'proposal-agent',
  name: 'ProposalAgent',
  url: localizedUrl(DEFAULT_LOCALE, '/products#proposal agent'),
