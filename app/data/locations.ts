@@ -53,7 +53,6 @@ export const officeLocations: OfficeLocation[] = [
       y: 35
     },
     email: 'hq@digni-digital-llc.com',
-    phone: '+1 (307) 555-0100',
     timezone: 'MST (UTC-7)',
     isPrimary: true,
     googleBusinessUrl: 'https://share.google/esoeHJdqRK5C5hbTF'
