@@ -462,6 +462,12 @@ export const agenticSoftwaresCollections = {
         category: 'Monitoring & Evaluation',
         status: 'Live',
       },
+      {
+        description:
+          'Business register demo for national statistics institutes and public administration: register, survey data collection, quality control and dashboards. Fictional data, this is not an official INS system.',
+        category: 'Official Statistics',
+        status: 'Live',
+      },
     ],
     services: [
       {
@@ -566,6 +572,12 @@ export const agenticSoftwaresCollections = {
         description:
           'Suivi-évaluation et rapports bailleurs pour les programmes de développement. Cadre de résultats, saisie terrain, revue et validation, tableaux de bord et cartes par région, export Word. Démo publique sur données fictives.',
         category: 'Suivi-évaluation',
+        status: 'En ligne',
+      },
+      {
+        description:
+          'Démonstration d’un registre des entreprises pour les instituts nationaux de la statistique et l’administration publique : registre, collecte d’enquête, contrôle qualité et tableaux de bord. Données fictives, ce n’est pas un système officiel de l’INS.',
+        category: 'Statistique publique',
         status: 'En ligne',
       },
     ],
@@ -674,6 +686,12 @@ export const agenticSoftwaresCollections = {
         category: 'Monitoreo y evaluación',
         status: 'En vivo',
       },
+      {
+        description:
+          'Demostración de un registro de empresas para institutos nacionales de estadística y la administración pública: registro, recogida de encuestas, control de calidad y paneles. Datos ficticios; no es un sistema oficial del INS.',
+        category: 'Estadística oficial',
+        status: 'En vivo',
+      },
     ],
     services: [
       {
@@ -780,6 +798,12 @@ export const agenticSoftwaresCollections = {
         category: 'Monitoring & Evaluation',
         status: 'Live',
       },
+      {
+        description:
+          'Demo eines Unternehmensregisters für nationale Statistikämter und die öffentliche Verwaltung: Register, Erhebung, Qualitätskontrolle und Dashboards. Fiktive Daten, kein offizielles System des INS.',
+        category: 'Amtliche Statistik',
+        status: 'Live',
+      },
     ],
     services: [
       {
@@ -884,6 +908,12 @@ export const agenticSoftwaresCollections = {
         description:
           'الرصد والتقييم وإعداد التقارير للمانحين في برامج التنمية. إطار النتائج، وإدخال البيانات الميدانية، والمراجعة والتحقق، ولوحات المعلومات والخرائط حسب المنطقة، وتصدير التقارير بصيغة Word. نسخة تجريبية عامة ببيانات نموذجية.',
         category: 'الرصد والتقييم',
+        status: 'مباشر',
+      },
+      {
+        description:
+          'نسخة تجريبية لسجل المؤسسات موجّهة إلى معاهد الإحصاء الوطنية والإدارات العامة: السجل، وجمع بيانات المسوح، ومراقبة الجودة، ولوحات المعلومات. البيانات وهمية، وهذا ليس نظامًا رسميًا للمعهد الوطني للإحصاء (INS).',
+        category: 'الإحصاء الرسمي',
         status: 'مباشر',
       },
     ],
