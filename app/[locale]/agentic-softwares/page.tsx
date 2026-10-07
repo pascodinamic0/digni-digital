@@ -115,6 +115,17 @@ export default function AgenticSoftwaresPage({ params, searchParams }: AgenticSo
       tech: ['React', 'Vite', 'Netlify', 'Word export'],
     },
     {
+      title: 'CADRAN',
+      description: localizeAgentic(
+        language,
+        'Business register demo for national statistics institutes and public administration: register, survey data collection, quality control and dashboards. Fictional data, this is not an official INS system.',
+      ),
+      category: localizeAgentic(language, 'Official Statistics'),
+      status: localizeAgentic(language, 'Live'),
+      link: 'https://ins-statistiques-demo.netlify.app/',
+      tech: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Netlify'],
+    },
+    {
       title: 'ContentCraft AI',
       description: localizeAgentic(language, 'AI writes your marketing. Fast.'),
       category: localizeAgentic(language, 'Marketing'),

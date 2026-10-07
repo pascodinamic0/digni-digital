@@ -86,6 +86,16 @@ const productsCopy = {
         features: ['Results framework & indicators', 'Submit, review, validate, lock', 'Dashboards and maps', 'Donor report export'],
         link: 'https://digni-results-demo.netlify.app/',
       },
+      {
+        id: 'cadran',
+        initial: 'C',
+        name: 'CADRAN, business register (demo)',
+        category: 'Official statistics · Business register',
+        description:
+          'Demonstration of a statistical business register, built for national statistics institutes and public administration: business register, survey data collection, quality control and dashboards. Fictional data, this is not an official INS system.',
+        features: ['Business register: search, add, update status', 'Survey data collection per enterprise', 'Quality control: flagged records and review', 'Dashboard by commune and by sector'],
+        link: 'https://ins-statistiques-demo.netlify.app/',
+      },
     ],
     comingSoonProducts: [
       {
@@ -186,6 +196,16 @@ const productsCopy = {
           'Suivi-évaluation et rapports bailleurs pour les programmes de développement. Cadre de résultats, saisie terrain, revue et validation, tableaux de bord et cartes par région, export Word. Démo publique sur données fictives.',
         features: ['Cadre de résultats et indicateurs', 'Soumission, revue, validation, verrouillage', 'Tableaux de bord et cartes', 'Export du rapport bailleur'],
         link: 'https://digni-results-demo.netlify.app/',
+      },
+      {
+        id: 'cadran',
+        initial: 'C',
+        name: 'CADRAN, registre des entreprises (démo)',
+        category: 'Statistique publique · Registre des entreprises',
+        description:
+          'Démonstration d’un registre statistique des entreprises pour un institut national de la statistique et l’administration publique : registre, collecte d’enquête, contrôle qualité et tableaux de bord. Données fictives, ce n’est pas un système officiel de l’INS.',
+        features: ['Registre : recherche, ajout, mise à jour du statut', 'Collecte d’enquête par entreprise', 'Contrôle qualité : dossiers signalés et revue', 'Tableau de bord par commune et par secteur'],
+        link: 'https://ins-statistiques-demo.netlify.app/',
       },
     ],
     comingSoonProducts: [
@@ -288,6 +308,16 @@ const productsCopy = {
         features: ['Marco de resultados e indicadores', 'Envío, revisión, validación y bloqueo', 'Paneles y mapas', 'Exportación del informe para donantes'],
         link: 'https://digni-results-demo.netlify.app/',
       },
+      {
+        id: 'cadran',
+        initial: 'C',
+        name: 'CADRAN, registro de empresas (demo)',
+        category: 'Estadística oficial · Registro de empresas',
+        description:
+          'Demostración de un registro estadístico de empresas para un instituto nacional de estadística y la administración pública: registro, recogida de datos de encuestas, control de calidad y paneles. Datos ficticios; no es un sistema oficial del INS.',
+        features: ['Registro: búsqueda, alta y actualización de estado', 'Recogida de encuestas por empresa', 'Control de calidad: registros señalados y revisión', 'Panel por comuna y por sector'],
+        link: 'https://ins-statistiques-demo.netlify.app/',
+      },
     ],
     comingSoonProducts: [
       {
@@ -389,6 +419,16 @@ const productsCopy = {
         features: ['Ergebnisrahmen & Indikatoren', 'Einreichung, Prüfung, Validierung, Sperrung', 'Dashboards und Karten', 'Export des Geberberichts'],
         link: 'https://digni-results-demo.netlify.app/',
       },
+      {
+        id: 'cadran',
+        initial: 'C',
+        name: 'CADRAN, Unternehmensregister (Demo)',
+        category: 'Amtliche Statistik · Unternehmensregister',
+        description:
+          'Demo eines statistischen Unternehmensregisters für ein nationales Statistikamt und die öffentliche Verwaltung: Register, Erhebung, Qualitätskontrolle und Dashboards. Fiktive Daten, kein offizielles System des INS.',
+        features: ['Register: Suche, Neuanlage, Statusänderung', 'Erhebung von Fragebögen je Unternehmen', 'Qualitätskontrolle: markierte Datensätze prüfen', 'Dashboard nach Gemeinde und Branche'],
+        link: 'https://ins-statistiques-demo.netlify.app/',
+      },
     ],
     comingSoonProducts: [
       {
@@ -489,6 +529,16 @@ const productsCopy = {
           'الرصد والتقييم وإعداد التقارير للمانحين في برامج التنمية. إطار النتائج، وإدخال البيانات الميدانية، والمراجعة والتحقق، ولوحات المعلومات والخرائط حسب المنطقة، وتصدير التقارير بصيغة Word. نسخة تجريبية عامة ببيانات نموذجية.',
         features: ['إطار النتائج والمؤشرات', 'الإرسال والمراجعة والتحقق والقفل', 'لوحات المعلومات والخرائط', 'تصدير تقرير المانحين'],
         link: 'https://digni-results-demo.netlify.app/',
+      },
+      {
+        id: 'cadran',
+        initial: 'C',
+        name: 'CADRAN، سجل المؤسسات (نسخة تجريبية)',
+        category: 'الإحصاء الرسمي · سجل المؤسسات',
+        description:
+          'نسخة تجريبية لسجل إحصائي للمؤسسات موجّهة إلى معاهد الإحصاء الوطنية والإدارات العامة: السجل، وجمع بيانات المسوح، ومراقبة الجودة، ولوحات المعلومات. البيانات وهمية، وهذا ليس نظامًا رسميًا للمعهد الوطني للإحصاء (INS).',
+        features: ['السجل: البحث والإضافة وتحديث الحالة', 'جمع بيانات المسوح لكل مؤسسة', 'مراقبة الجودة: السجلات المُعلَّمة ومراجعتها', 'لوحة معلومات حسب البلدية والقطاع'],
+        link: 'https://ins-statistiques-demo.netlify.app/',
       },
     ],
     comingSoonProducts: [

@@ -395,6 +395,29 @@ export const agentProducts = [
  lastUpdated: AGENT_DATA_LAST_UPDATED,
  },
  {
+ id: 'cadran',
+ name: 'CADRAN, business register (demo)',
+ alternateName: 'Statistical Business Register Demo',
+ url: 'https://ins-statistiques-demo.netlify.app/',
+ applicationCategory: 'BusinessApplication',
+ operatingSystem: 'Web',
+ status: 'Live',
+ description:
+ 'Demonstration of a statistical business register for national statistics institutes and public administration, business register, survey data collection, quality control, and dashboards by commune and sector. Fictional data, this is not an official INS system.',
+ features: [
+ 'Business register: search, add, and update enterprise status',
+ 'Survey data collection per enterprise',
+ 'Quality control: flagged records and review',
+ 'Dashboard by commune and by sector',
+ ],
+ offers: [],
+ proof: [
+ { metric: 'Live', description: 'Public demo on fictional data, demo login, no real account' },
+ { metric: '4', description: 'Modules: register, collection, quality, dashboard' },
+ ],
+ lastUpdated: AGENT_DATA_LAST_UPDATED,
+ },
+ {
  id: 'proposal-agent',
  name: 'ProposalAgent',
  url: localizedUrl(DEFAULT_LOCALE, '/products#proposal agent'),
