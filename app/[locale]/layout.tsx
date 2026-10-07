@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { NextIntlClientProvider } from 'next-intl'
 import { setRequestLocale } from 'next-intl/server'
 import { notFound } from 'next/navigation'
+import { preload } from 'react-dom'
 import { routing } from '@/i18n/routing'
 import { LocaleProvider } from '../context/LocaleContext'
 import { fontVars } from '../fonts'
@@ -15,6 +16,16 @@ import { isLocale, localeMeta, type Locale } from '@/content/v2/locales'
 import { getOrganizationJsonLd, getWebsiteJsonLd } from '@/lib/agent-readiness'
 import '../globals.css'
 import '../v2.css'
+import '../fonts-arabic.css'
+
+/**
+ * Arabic + Latin subsets of IBM Plex Sans Arabic (400/600) that every sa-ar page renders with.
+ * Preloading them (sa-ar only) lets the first layout use Plex directly instead of laying the page out
+ * with a system Arabic fallback and then again when the font arrives (slow LCP/TBT and a CLS of ~0.25).
+ */
+const ARABIC_FONT_PRELOADS = ['400-arabic', '600-arabic', '400-latin', '600-latin'].map(
+  (f) => `/fonts/ibm-plex-sans-arabic/plex-arabic-${f}.woff2`,
+)
 
 type Props = { children: React.ReactNode; params: Promise<{ locale: string }> }
 
@@ -40,6 +51,9 @@ export default async function LocaleLayout({ children, params }: Props) {
   const t = getDict(locale)
   const m = localeMeta[locale as Locale]
   const headerT = { ...t.nav, whatsapp: t.common.whatsapp }
+  if (m.dir === 'rtl') {
+    for (const href of ARABIC_FONT_PRELOADS) preload(href, { as: 'font', type: 'font/woff2', crossOrigin: '' })
+  }
 
   return (
     <html lang={m.hreflang} dir={m.dir} data-theme="light" className={fontVars} suppressHydrationWarning>
