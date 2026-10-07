@@ -187,6 +187,9 @@ const nextConfig = {
       ...blogRedirects,
       ...spaceSlugFixes,
       ...unprefixedMarketingRedirects,
+      // The About page lives at /{locale}/about; /about-us was a 404.
+      { source: '/:locale(us-en|fr-fr|es-es|de-de|sa-ar)/about-us', destination: '/:locale/about', statusCode: 301 },
+      { source: '/about-us', destination: '/us-en/about', statusCode: 301 },
       // Shep Engineering case study withdrawn (Oct 2026): send it to the work index.
       { source: '/:locale(us-en|fr-fr|es-es|de-de|sa-ar)/work/shep-engineering', destination: '/:locale/work', statusCode: 301 },
       { source: '/work/shep-engineering', destination: '/us-en/work', statusCode: 301 },
@@ -202,6 +205,11 @@ const nextConfig = {
     const staging = process.env.NEXT_PUBLIC_NOINDEX === '1'
     return [
       ...(staging ? [{ source: '/:path*', headers: [{ key: 'X-Robots-Tag', value: 'noindex, nofollow' }] }] : []),
+      {
+        // Self-hosted IBM Plex Sans Arabic (app/fonts-arabic.css). Rename the files if they ever change.
+        source: '/fonts/:path*',
+        headers: [{ key: 'Cache-Control', value: 'public, max-age=31536000, immutable' }],
+      },
       {
         source: '/hero-bg.mp4',
         headers: [{ key: 'X-Robots-Tag', value: 'noindex, nofollow' }],

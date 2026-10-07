@@ -1,4 +1,4 @@
-import { IBM_Plex_Sans, IBM_Plex_Sans_Arabic, IBM_Plex_Serif } from 'next/font/google'
+import { IBM_Plex_Sans, IBM_Plex_Serif } from 'next/font/google'
 
 export const plex = IBM_Plex_Sans({
   subsets: ['latin'],
@@ -7,14 +7,10 @@ export const plex = IBM_Plex_Sans({
   display: 'swap',
 })
 
-export const plexArabic = IBM_Plex_Sans_Arabic({
-  subsets: ['arabic'],
-  // 500 falls back to 400 and 700 to 600: halves the Arabic font payload on sa-ar.
-  weight: ['400', '600'],
-  variable: '--font-plex-ar',
-  display: 'swap',
-  preload: false,
-})
+/**
+ * IBM Plex Sans Arabic (--font-plex-ar) is self-hosted in app/fonts-arabic.css so it can be preloaded on
+ * /sa-ar only (see ARABIC_FONT_PRELOADS in app/[locale]/layout.tsx).
+ */
 
 export const plexSerif = IBM_Plex_Serif({
   subsets: ['latin'],
@@ -24,4 +20,4 @@ export const plexSerif = IBM_Plex_Serif({
   display: 'swap',
 })
 
-export const fontVars = `${plex.variable} ${plexArabic.variable} ${plexSerif.variable}`
+export const fontVars = `${plex.variable} ${plexSerif.variable}`
