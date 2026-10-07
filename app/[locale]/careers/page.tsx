@@ -17,7 +17,7 @@ const careersCopy = {
     heroHighlight: 'With Us',
     heroDescription:
       "Join a remote-first team that's transforming businesses across Africa and beyond. Work on meaningful projects, grow your skills, and make a real impact.",
-    proofYears: 'building growth systems',
+    proofYears: 'Growth systems since 2018',
     proofSatisfaction: 'client satisfaction',
     stats: [
       { metric: '100%', label: 'Remote team' },
@@ -131,7 +131,7 @@ const careersCopy = {
     heroHighlight: 'avec nous',
     heroDescription:
       'Rejoignez une équipe remote-first qui transforme des entreprises en Afrique et au-delà. Travaillez sur des projets utiles, développez vos compétences et créez un vrai impact.',
-    proofYears: 'à construire des systèmes de croissance',
+    proofYears: 'Systèmes de croissance depuis 2018',
     proofSatisfaction: 'de satisfaction client',
     stats: [
       { metric: '100%', label: 'équipe à distance' },
@@ -245,7 +245,7 @@ const careersCopy = {
     heroHighlight: 'con nosotros',
     heroDescription:
       'Únete a un equipo remote-first que transforma negocios en África y más allá. Trabaja en proyectos con sentido, desarrolla tus habilidades y genera impacto real.',
-    proofYears: 'creando sistemas de crecimiento',
+    proofYears: 'Sistemas de crecimiento desde 2018',
     proofSatisfaction: 'de satisfacción del cliente',
     stats: [
       { metric: '100%', label: 'equipo remoto' },
@@ -359,7 +359,7 @@ const careersCopy = {
     heroHighlight: 'mit uns',
     heroDescription:
       'Werden Sie Teil eines Remote-first-Teams, das Unternehmen in Afrika und darüber hinaus transformiert. Arbeiten Sie an sinnvollen Projekten, wachsen Sie fachlich und schaffen Sie echte Wirkung.',
-    proofYears: 'im Aufbau von Wachstumssystemen',
+    proofYears: 'Wachstumssysteme seit 2018',
     proofSatisfaction: 'Kundenzufriedenheit',
     stats: [
       { metric: '100%', label: 'Remote-Team' },
@@ -473,7 +473,7 @@ const careersCopy = {
     heroHighlight: 'معنا',
     heroDescription:
       'انضم إلى فريق يعمل عن بعد أولاً ويحوّل الشركات في أفريقيا وخارجها. اعمل على مشاريع ذات معنى، طوّر مهاراتك، واصنع أثراً حقيقياً.',
-    proofYears: 'في بناء أنظمة النمو',
+    proofYears: 'أنظمة النمو منذ 2018',
     proofSatisfaction: 'رضا العملاء',
     stats: [
       { metric: '100%', label: 'فريق يعمل عن بعد' },
@@ -637,7 +637,7 @@ export default function CareersPage({ params, searchParams }: CareersPageProps) 
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="rounded-full border border-border/80 bg-background/75 dark:bg-surface/70 px-4 py-2 text-xs sm:text-sm text-muted backdrop-blur-sm shadow-sm"
               >
-                <span className="font-semibold text">10+ years</span> {copy.proofYears}
+                <span className="font-semibold text">{copy.proofYears}</span>
               </motion.div>
             </div>
           </motion.div>

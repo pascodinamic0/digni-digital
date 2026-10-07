@@ -23,7 +23,7 @@ const affiliatePageCopy = {
     heroDescription:
       'Join our affiliate program and earn commissions by creating authentic content that helps businesses capture more leads, students get job-ready, and organizations access enterprise-level technology.',
     trustBadges: {
-      experience: 'building growth systems',
+      experience: 'Growth systems since 2018',
       satisfaction: 'client satisfaction',
     },
     applyNow: 'Apply Now',
@@ -256,7 +256,7 @@ const affiliatePageCopy = {
     heroDescription:
       'Rejoignez notre programme d affiliation et touchez des commissions en creant du contenu authentique qui aide les entreprises a capter plus de prospects, les etudiants a devenir employables et les organisations a acceder a une technologie de niveau entreprise.',
     trustBadges: {
-      experience: 'a construire des systemes de croissance',
+      experience: 'Systèmes de croissance depuis 2018',
       satisfaction: 'de satisfaction client',
     },
     applyNow: 'Postuler maintenant',
@@ -489,7 +489,7 @@ const affiliatePageCopy = {
     heroDescription:
       'Unete a nuestro programa de afiliados y gana comisiones creando contenido autentico que ayuda a las empresas a captar mas leads, a los estudiantes a estar listos para trabajar y a las organizaciones a acceder a tecnologia de nivel empresarial.',
     trustBadges: {
-      experience: 'construyendo sistemas de crecimiento',
+      experience: 'Sistemas de crecimiento desde 2018',
       satisfaction: 'satisfaccion de clientes',
     },
     applyNow: 'Postular ahora',
@@ -722,7 +722,7 @@ const affiliatePageCopy = {
     heroDescription:
       'Werde Teil unseres Affiliate-Programms und verdiene Provisionen mit authentischem Content, der Unternehmen zu mehr Leads, Studierenden zu Job-Reife und Organisationen zu Enterprise-Technologie verhilft.',
     trustBadges: {
-      experience: 'im Aufbau von Wachstumssystemen',
+      experience: 'Wachstumssysteme seit 2018',
       satisfaction: 'Kundenzufriedenheit',
     },
     applyNow: 'Jetzt bewerben',
@@ -955,7 +955,7 @@ const affiliatePageCopy = {
     heroDescription:
       'انضم الى برنامج الشركاء واربح عمولات من خلال محتوى اصيل يساعد الشركات على التقاط مزيد من العملاء المحتملين، والطلاب على الجاهزية للعمل، والمؤسسات على الوصول الى تقنية بمستوى الشركات الكبرى.',
     trustBadges: {
-      experience: 'في بناء انظمة نمو',
+      experience: 'أنظمة النمو منذ 2018',
       satisfaction: 'رضا العملاء',
     },
     applyNow: 'قدّم الآن',
@@ -1433,7 +1433,7 @@ export default function AffiliatePage({ params, searchParams }: AffiliatePagePro
               transition={{ duration: 0.6, delay: 0.2 }}
               className="rounded-full border border-border/80 bg-background/75 dark:bg-surface/70 px-4 py-2 text-xs sm:text-sm text-muted backdrop-blur-sm shadow-sm"
             >
-              <span className="font-semibold text">10+ years</span> {copy.trustBadges.experience}
+              <span className="font-semibold text">{copy.trustBadges.experience}</span>
             </motion.div>
           </div>
 
