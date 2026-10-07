@@ -577,8 +577,8 @@ const futureReady: Record<Lang, ServiceCopy> = {
 }
 
 export const services: Service[] = [
-  { slug: 'agentic-systems', assessment: 'agentic-softwares', checkoutPlan: 'agentic_deposit', img: 'team-table', heroImg: 'tower-bw', related: ['shuleos', 'kabinda-lodge', 'epic-drc', 'digni-results', 'cadran'], copy: agentic },
-  { slug: 'ai-employee', assessment: 'ai-employee', checkoutPlan: 'ai_employee', img: 'phone-desk', heroImg: 'boulevard', related: ['fremo-medical', 'shep-engineering', 'glamsquad-kenya'], copy: aiEmployee },
+  { slug: 'agentic-systems', assessment: 'agentic-softwares', checkoutPlan: 'agentic_deposit', img: 'team-table', heroImg: 'tower-bw', related: ['shuleos', 'cadran', 'kabinda-lodge', 'epic-drc', 'digni-results'], copy: agentic },
+  { slug: 'ai-employee', assessment: 'ai-employee', checkoutPlan: 'ai_employee', img: 'phone-desk', heroImg: 'boulevard', related: ['fremo-medical', 'glamsquad-kenya'], copy: aiEmployee },
   { slug: 'future-ready', assessment: 'future-ready', img: 'students-steps', heroImg: 'classroom-laptop', related: [], copy: futureReady },
 ]
 

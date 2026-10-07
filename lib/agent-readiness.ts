@@ -118,8 +118,11 @@ const servicePricing: Record<string, { timeline: string; pricingSummary: string;
   },
   'ai-employee': {
     timeline: 'Often live within days of project approval, once access, scripts and calendar details are ready.',
-    pricingSummary: '$500 setup plus $500 per month.',
-    offers: [{ name: 'AI Employee', price: 500, priceCurrency: 'USD', billingPeriod: 'month', priceText: '$500 setup plus $500/month', availability: 'InStock', checkoutPlan: 'ai_employee' }],
+    pricingSummary: '$2,000 one-time setup plus $500 per month.',
+    offers: [
+      { name: 'AI Employee setup', price: 2000, priceCurrency: 'USD', priceText: '$2,000 one-time setup', availability: 'InStock', checkoutPlan: 'ai_employee' },
+      { name: 'AI Employee monthly', price: 500, priceCurrency: 'USD', billingPeriod: 'month', priceText: '$500/month after the $2,000 setup', availability: 'InStock', checkoutPlan: 'ai_employee' },
+    ],
   },
   'future-ready': {
     timeline: 'School programme over the academic year; professional and guided tracks available.',

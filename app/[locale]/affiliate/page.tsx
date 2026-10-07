@@ -90,7 +90,7 @@ const affiliatePageCopy = {
     products: [
       {
         tagline: 'Never miss a lead again',
-        price: '$449/month',
+        price: '$500/month + $2,000 setup',
         commission: '50% of $2,000 setup fee',
         target: 'Service businesses running paid ads',
         description: 'AI-powered system that handles calls, qualifies leads, and books appointments 24/7.',
@@ -323,7 +323,7 @@ const affiliatePageCopy = {
     products: [
       {
         tagline: 'Ne manquez plus jamais un prospect',
-        price: '449 $/mois',
+        price: '500 $/mois + 2 000 $ de setup',
         commission: '50% des 2 000 $ de frais de setup',
         target: 'Entreprises de services avec publicites payantes',
         description: 'Systeme propulse par l IA qui gere les appels, qualifie les prospects et prend des rendez-vous 24/7.',
@@ -556,7 +556,7 @@ const affiliatePageCopy = {
     products: [
       {
         tagline: 'No vuelvas a perder un lead',
-        price: '449 $/mes',
+        price: '500 $/mes + 2.000 $ de setup',
         commission: '50% del setup fee de 2.000 $',
         target: 'Empresas de servicios con anuncios pagados',
         description: 'Sistema con IA que atiende llamadas, califica leads y agenda citas 24/7.',
@@ -789,7 +789,7 @@ const affiliatePageCopy = {
     products: [
       {
         tagline: 'Nie wieder einen Lead verpassen',
-        price: '449 $/Monat',
+        price: '500 $/Monat + 2.000 $ Setup',
         commission: '50% der 2.000 $ Setup-Gebuehr',
         target: 'Service-Unternehmen mit Paid Ads',
         description: 'KI-gestuetztes System, das Anrufe annimmt, Leads qualifiziert und Termine 24/7 bucht.',
@@ -1022,7 +1022,7 @@ const affiliatePageCopy = {
     products: [
       {
         tagline: 'لا تفقد عميلا محتملا مرة اخرى',
-        price: '449 دولار/شهر',
+        price: '500 دولار/شهر + 2,000 دولار رسوم إعداد',
         commission: '50% من رسوم الاعداد البالغة 2,000 دولار',
         target: 'شركات الخدمات التي تستخدم اعلانات مدفوعة',
         description: 'نظام مدعوم بالذكاء الاصطناعي يتولى المكالمات، يؤهل العملاء المحتملين، ويحجز المواعيد 24/7.',

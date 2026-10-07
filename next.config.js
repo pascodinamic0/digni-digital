@@ -187,6 +187,9 @@ const nextConfig = {
       ...blogRedirects,
       ...spaceSlugFixes,
       ...unprefixedMarketingRedirects,
+      // Shep Engineering case study withdrawn (Oct 2026): send it to the work index.
+      { source: '/:locale(us-en|fr-fr|es-es|de-de|sa-ar)/work/shep-engineering', destination: '/:locale/work', statusCode: 301 },
+      { source: '/work/shep-engineering', destination: '/us-en/work', statusCode: 301 },
       // Video pages whose MP4 never shipped; send them to the related service page.
       ...['ai-employee-explainer', 'entreprises-operations-defaillantes'].map((slug) => ({
         source: `/:locale(us-en|fr-fr|es-es|de-de|sa-ar)/videos/${slug}`,
