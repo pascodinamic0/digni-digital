@@ -409,14 +409,13 @@ html[dir='rtl'] { --font-display: var(--font-plex-ar), var(--font-plex); --font-
 ::selection { background: rgba(134,217,95,.45); color: var(--v-ink); }
 .muted { color: var(--v-muted); }
 .mt-s { margin-top: 22px; }
-.hp { position: absolute !important; left: -9999px !important; width: 1px; height: 1px; opacity: 0; }
+.hp { position: absolute !important; inset-inline-start: 0 !important; width: 1px !important; height: 1px !important; padding: 0 !important; border: 0 !important; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); opacity: 0; pointer-events: none; }
 .subhead { margin-top: 64px; }
 .sechead--center { grid-template-columns: 1fr; text-align: center; justify-items: center; }
 .sechead--center .lead { margin-inline: auto; }
 .sechead__end { justify-self: end; }
 html[dir='rtl'] .sechead__end { justify-self: start; }
 .brand img { width: 32px; height: 30px; }
-.hdr { color: #fff; }
 .hdr--solid:not(.hdr--open) .lang__btn { border-color: var(--v-line); }
 .lang__menu a[aria-current] { background: var(--v-paper-2); font-weight: 600; }
 
