@@ -1,10 +1,9 @@
 import type { Language } from '@/app/i18n/translations'
 import { absoluteUrl, localizedUrl } from '@/lib/agent-readiness'
 
-export type SiteVideoSlug =
-  | 'ai-employee-explainer'
-  | 'entreprises-operations-defaillantes'
-  | 'digital-opportunity'
+// 'ai-employee-explainer' and 'entreprises-operations-defaillantes' were removed: their MP4 files were
+// never in the repo (the pages 404'd on the video). Their URLs 301 to /services/ai-employee (next.config.js).
+export type SiteVideoSlug = 'digital-opportunity'
 
 type LocalizedCopy = Record<
   Language,
@@ -25,75 +24,6 @@ export type SiteVideo = {
 }
 
 export const siteVideos: SiteVideo[] = [
-  {
-    slug: 'ai-employee-explainer',
-    contentUrl: '/ai-employee-explainer.mp4',
-    thumbnailUrl: '/videos/posters/ai-employee-explainer.jpg',
-    uploadDate: '2026-01-15',
-    relatedPath: '/services/ai-employee',
-    copy: {
-      en: {
-        title: 'Broken businesses and operations',
-        description:
-          'A quick walkthrough: what drives leads away, overloads your team, and blocks growth, and why the right infrastructure matters more than working harder.',
-      },
-      fr: {
-        title: 'Entreprises et opérations défaillantes',
-        description:
-          'Vue d’ensemble : ce qui fait fuir les leads, alourdit l’équipe et empêche la croissance, et pourquoi l’infrastructure compte plus que l’effort.',
-      },
-      es: {
-        title: 'Empresas y operaciones rotas',
-        description:
-          'Recorrido rápido: qué aleja leads, sobrecarga al equipo y frena el crecimiento, y por qué la infraestructura correcta importa más que esforzarse más.',
-      },
-      de: {
-        title: 'Defekte Unternehmen und Abläufe',
-        description:
-          'Ein kurzer Überblick: was Leads vertreibt, Teams überlastet und Wachstum blockiert — und warum die richtige Infrastruktur wichtiger ist als härter arbeiten.',
-      },
-      ar: {
-        title: 'أعمال وعمليات معطّلة',
-        description:
-          'جولة سريعة: ما الذي يبعد العملاء المحتملين، ويُرهق الفريق، ويعيق النمو — ولماذا البنية التحتية الصحيحة أهم من العمل بجهد أكبر.',
-      },
-    },
-  },
-  {
-    slug: 'entreprises-operations-defaillantes',
-    contentUrl: '/Entreprises___Opérations_Défaillantes.mp4',
-    thumbnailUrl: '/videos/posters/entreprises-operations-defaillantes.jpg',
-    uploadDate: '2026-01-15',
-    relatedPath: '/services/ai-employee',
-    copy: {
-      en: {
-        title: 'Entreprises et opérations défaillantes',
-        description:
-          'French explainer: what drives leads away, overloads your team, and blocks growth.',
-        speaker: 'Digni Digital',
-      },
-      fr: {
-        title: 'Entreprises et opérations défaillantes',
-        description:
-          'Vue d’ensemble : ce qui fait fuir les leads, alourdit l’équipe et empêche la croissance, et pourquoi l’infrastructure compte plus que l’effort.',
-      },
-      es: {
-        title: 'Entreprises et opérations défaillantes',
-        description:
-          'Explicación en francés: qué aleja leads, sobrecarga equipos y frena el crecimiento.',
-      },
-      de: {
-        title: 'Entreprises et opérations défaillantes',
-        description:
-          'Französischer Erklärfilm: was Leads vertreibt, Teams überlastet und Wachstum blockiert.',
-      },
-      ar: {
-        title: 'Entreprises et opérations défaillantes',
-        description:
-          'فيديو توضيحي بالفرنسية: ما الذي يبعد العملاء المحتملين ويُرهق الفريق ويعيق النمو.',
-      },
-    },
-  },
   {
     slug: 'digital-opportunity',
     contentUrl: '/get.mp4',
@@ -189,11 +119,4 @@ export function getSiteVideoJsonLd(video: SiteVideo, locale: string) {
       },
     },
   }
-}
-
-/** Slug for the locale-specific AI receptionist explainer watch page. */
-export function getAiReceptionistExplainerWatchSlug(locale: string): SiteVideoSlug {
-  return languageFromLocale(locale) === 'fr'
-    ? 'entreprises-operations-defaillantes'
-    : 'ai-employee-explainer'
 }

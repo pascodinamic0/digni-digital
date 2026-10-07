@@ -1,12 +1,12 @@
-/** Admin is always per-request (auth + Supabase); never prerender. */
-export const dynamic = 'force-dynamic'
-
 import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
 import Script from 'next/script'
 import { ThemeProvider } from '@/app/components/ThemeProvider'
 import { fontVars } from '../fonts'
 import '../globals.css'
+
+/** Admin is always per-request (auth + Supabase); never prerender. */
+export const dynamic = 'force-dynamic'
 
 export const metadata: Metadata = {
   title: 'Admin',

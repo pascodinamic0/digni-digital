@@ -173,7 +173,6 @@ export const AI_CAREER_JOBS: AiCareerJob[] = [
  references: [
  { label: 'Google, AI Overviews', href: 'https://developers.google.com/search/docs/appearance/ai-overviews' },
  { label: 'Perplexity for publishers', href: 'https://www.perplexity.ai/hub' },
- { label: 'Search Qualify, AI jobs 2026', href: 'https://searchqualify.com/blog/new-types-of-jobs-created-by-ai-2026' },
  ],
  learningSteps: [
  'Run 20 brand queries in ChatGPT + Perplexity; screenshot who gets cited.',
@@ -446,7 +445,7 @@ export const AI_CAREER_JOBS: AiCareerJob[] = [
  hireReason:
  'Consistency beats virality; clients pay for calendars that ship daily without burning out.',
  references: [
- { label: 'Meta Business, Reels', href: 'https://www.facebook.com/business/reels' },
+ { label: 'Instagram, Reels', href: 'https://about.instagram.com/features/reels' },
  { label: 'Canva, Content planner', href: 'https://www.canva.com/content-planner/' },
  ],
  learningSteps: [
@@ -634,7 +633,7 @@ export const AI_CAREER_JOBS: AiCareerJob[] = [
  'Experts have knowledge but not course structure; architects turn IP into sellable programs.',
  references: [
  { label: 'Articulate, AI', href: 'https://www.articulate.com/' },
- { label: 'Digni Digital, Future Ready Graduate', href: 'https://www.dignidigital.com/us-en/future-ready-graduate' },
+ { label: 'Digni Digital, Future Ready Graduate', href: 'https://digni-digital-llc.com/us-en/services/future-ready' },
  ],
  learningSteps: [
  'Outline a 4 week cohort course with outcomes, lessons, and assessments.',
@@ -695,7 +694,7 @@ export const AI_CAREER_JOBS: AiCareerJob[] = [
  hireReason:
  'Job seekers panic apply; strategists turn messy careers into clear market stories.',
  references: [
- { label: 'LinkedIn, job seeking', href: 'https://www.linkedin.com/help/linkedin/answer/a133935' },
+ { label: 'LinkedIn Help', href: 'https://www.linkedin.com/help/linkedin' },
  { label: 'Jobscan', href: 'https://www.jobscan.co/' },
  ],
  learningSteps: [

@@ -1820,7 +1820,7 @@ const remainingArticles: BlogArticle[] = [
 
  <h3>Case Study: Kobo360's AI Logistics Platform</h3>
  
- <p><a href="https://www.kobo360.com/" target="_blank" rel="noopener noreferrer">Kobo360</a> uses AI to connect shippers with truckers across Africa:</p>
+ <p>Kobo360 uses AI to connect shippers with truckers across Africa:</p>
 
  <ul>
  <li><strong>Route Optimization</strong>: 30% faster deliveries</li>
@@ -2054,7 +2054,7 @@ const remainingArticles: BlogArticle[] = [
 
  <h3>Case Study: Farmcrowdy's Climate Smart Agriculture</h3>
  
- <p><a href="https://www.farmcrowdy.com/" target="_blank" rel="noopener noreferrer">Farmcrowdy</a> uses AI to help farmers adapt to climate change:</p>
+ <p>Farmcrowdy uses AI to help farmers adapt to climate change:</p>
 
  <ul>
  <li><strong>Weather Forecasting</strong>: 90% accurate predictions for planting decisions</li>

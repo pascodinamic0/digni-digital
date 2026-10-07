@@ -187,6 +187,12 @@ const nextConfig = {
       ...blogRedirects,
       ...spaceSlugFixes,
       ...unprefixedMarketingRedirects,
+      // Video pages whose MP4 never shipped; send them to the related service page.
+      ...['ai-employee-explainer', 'entreprises-operations-defaillantes'].map((slug) => ({
+        source: `/:locale(us-en|fr-fr|es-es|de-de|sa-ar)/videos/${slug}`,
+        destination: '/:locale/services/ai-employee',
+        statusCode: 301,
+      })),
     ]
   },
   async headers() {

@@ -35,5 +35,5 @@
   <text x="96" y="420" font-family="Inter, system-ui, sans-serif" font-size="20" fill="#94a3b8">Copy-paste prompts · Client value · 30-day start path</text>
   <circle cx="1020" cy="400" r="72" fill="#0f172a" stroke="url(#accent)" stroke-width="2" filter="url(#shadow)"/>
   <text x="1020" y="412" font-family="Inter, system-ui, sans-serif" font-size="44" text-anchor="middle">🚀</text>
-  <text x="96" y="548" font-family="Inter, system-ui, sans-serif" font-size="15" fill="#64748b">Digni Digital · dignidigital.com</text>
+  <text x="96" y="548" font-family="Inter, system-ui, sans-serif" font-size="15" fill="#64748b">Digni Digital · digni-digital-llc.com</text>
 </svg>
