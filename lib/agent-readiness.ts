@@ -312,7 +312,13 @@ export function getServicesFeed() {
 }
 
 export function getProductsFeed() {
-  return { schemaVersion: '2.0', lastUpdated: AGENT_DATA_LAST_UPDATED, products: agentProducts }
+  return {
+    schemaVersion: '2.0',
+    lastUpdated: AGENT_DATA_LAST_UPDATED,
+    products: agentProducts,
+    /** Service pricing (full detail in /services.json), so agents reading only this feed see current prices. */
+    servicePricing: agentServices.map((s) => ({ id: s.id, name: s.name, pricingSummary: s.pricingSummary, offers: s.offers })),
+  }
 }
 
 export function getCaseStudiesFeed() {
