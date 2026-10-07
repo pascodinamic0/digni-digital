@@ -72,7 +72,7 @@ export default function Header({ locale, t }: { locale: Locale; t: HeaderLabels 
                 <ul className="lang__menu">
                   {locales.map((l) => (
                     <li key={l}>
-                      <Link href={swap(l)} hrefLang={localeMeta[l].hreflang} lang={localeMeta[l].hreflang} className={l === locale ? 'on' : ''} aria-current={l === locale ? 'true' : undefined}>
+                      <Link prefetch={false} href={swap(l)} hrefLang={localeMeta[l].hreflang} lang={localeMeta[l].hreflang} className={l === locale ? 'on' : ''} aria-current={l === locale ? 'true' : undefined}>
                         <span>{localeMeta[l].label}</span>
                         <em>{localeMeta[l].short}</em>
                       </Link>
@@ -100,7 +100,7 @@ export default function Header({ locale, t }: { locale: Locale; t: HeaderLabels 
           <a className="btn btn--ghost-light btn--block" href={LINKS.whatsapp} target="_blank" rel="noopener noreferrer"><span>{t.whatsapp}</span> <span dir="ltr">{LINKS.whatsappLabel}</span></a>
           <div className="mnav__langs">
             {locales.map((l) => (
-              <Link key={l} href={swap(l)} hrefLang={localeMeta[l].hreflang} className={l === locale ? 'on' : ''}>{localeMeta[l].short}</Link>
+              <Link key={l} prefetch={false} href={swap(l)} hrefLang={localeMeta[l].hreflang} className={l === locale ? 'on' : ''}>{localeMeta[l].short}</Link>
             ))}
           </div>
         </div>

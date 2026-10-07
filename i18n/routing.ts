@@ -42,6 +42,9 @@ export const routing = defineRouting({
   defaultLocale,
   localePrefix: 'always',
   localeDetection: true,
+  // hreflang alternates are emitted per page via metadata (en-US, fr-FR, …);
+  // next-intl's Link header would use the URL codes (us-en), which are invalid hreflang values.
+  alternateLinks: false,
 })
 
 /** Extract country code from locale (e.g. us-en -> us) */

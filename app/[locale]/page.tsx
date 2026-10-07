@@ -30,7 +30,7 @@ export default async function Home({ params }: Props) {
     <>
       <section className="hero">
         <div className="hero__bg" aria-hidden>
-          <div data-parallax className="hero__img"><Img name="kinshasa-duo" alt="" priority sizes="100vw" /></div>
+          <div data-parallax className="hero__img"><Img name="kinshasa-duo" alt="" priority mobile sizes="100vw" /></div>
         </div>
         <div className="wrap hero__in">
           <div className="hero__copy">
