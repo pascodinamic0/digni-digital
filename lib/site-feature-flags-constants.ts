@@ -12,6 +12,6 @@ export const SITE_FEATURE_FLAG_META: Record<
   [SITE_FEATURE_FLAG_KEYS.AI_EMPLOYEE_TASK_QUEUE_DEMO]: {
     label: 'Social planner demo (AI Employee page)',
     description:
-      'The “Plan once. Post everywhere” TaskQueueDemo block on the AI Employee (/ai-receptionist) marketing page.',
+      'The “Plan once. Post everywhere” TaskQueueDemo block on the AI Employee (/services/ai-employee) marketing page.',
   },
 }

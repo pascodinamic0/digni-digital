@@ -1,298 +1,100 @@
-'use client'
+import type { Metadata } from 'next'
+import Link from 'next/link'
+import PageHead from '@/app/components/v2/PageHead'
+import Img from '@/app/components/v2/Img'
+import CtaBand from '@/app/components/v2/CtaBand'
+import JsonLd from '@/app/components/v2/JsonLd'
+import { services, svcUi } from '@/content/v2/services'
+import { LINKS, SITE_URL } from '@/content/v2/locales'
+import { getDict, resolvePage } from '@/content/v2/get'
+import { pageMetadata } from '@/content/v2/seo'
 
-import { use } from 'react'
-import { motion } from 'framer-motion'
-import { Link } from '@/i18n/navigation'
-import AnimatedSection from '@/app/components/AnimatedSection'
-import PremiumHeroBackdrop from '@/app/components/PremiumHeroBackdrop'
-import PremiumHeroParallax from '@/app/components/PremiumHeroParallax'
-import ScrollIndicator from '@/app/components/ScrollIndicator'
-import { getBookingLinkProps } from '@/app/config/cta.config'
-import { useLanguage } from '@/app/context/LocaleContext'
-import { translations } from '@/app/config/translations'
-import type { ServicesPageCardId } from '@/app/i18n/servicesPage'
-import { getServicesPageJsonLd, jsonLdScriptProps } from '@/lib/agent-readiness'
+type Props = { params: Promise<{ locale: string }> }
 
-const SERVICE_CARD_META: Record<
-  ServicesPageCardId,
-  { icon: string; color: 'accent' | 'success' | 'info' }
-> = {
-  'ai-receptionist': { icon: '🤖', color: 'accent' },
-  'future-ready-graduate': { icon: '🎓', color: 'success' },
-  'agentic-softwares': { icon: '⚙️', color: 'info' },
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params
+  const t = getDict(locale)
+  return pageMetadata({ locale, path: '/services', title: t.meta.services.title, description: t.meta.services.desc })
 }
 
-const servicesHeroCopy = {
-  en: {
-    titlePrefix: 'Which Exposure',
-    titleHighlight: 'Is Costing You Most?',
-    subtitle:
-      'Unanswered leads. Unprepared people. Manual work that owns your week. Pick the leak—we install the coverage.',
-    chip1: 'Leads die in silence',
-    chip2: 'Degrees without jobs',
-    chip3: 'You are the glue',
-  },
-  fr: {
-    titlePrefix: 'Quelle exposition',
-    titleHighlight: 'vous coûte le plus ?',
-    subtitle:
-      'Prospects sans réponse. Personnes non préparées. Travail manuel qui mange votre semaine. Choisissez la fuite—nous installons la couverture.',
-    chip1: 'Les leads meurent en silence',
-    chip2: 'Diplômes sans emploi',
-    chip3: 'Vous êtes la colle',
-  },
-  ar: {
-    titlePrefix: 'أي صراع',
-    titleHighlight: 'يكلّفك أكثر؟',
-    subtitle:
-      'عملاء محتملون بلا رد. خريجون بلا وظيفة. عمل يدوي يملك أسبوعك. اختر ما يُبقيك مستيقظاً—ونحن نثبّت الحل.',
-    chip1: 'العملاء يموتون في الصمت',
-    chip2: 'شهادات بلا وظائف',
-    chip3: 'أنت الغراء',
-  },
-  de: {
-    titlePrefix: 'Welcher Kampf',
-    titleHighlight: 'kostet Sie am meisten?',
-    subtitle:
-      'Unbeantwortete Leads. Nicht einstellbare Absolventen. Manuelle Arbeit, die Ihre Woche besitzt. Wählen Sie den, der Sie wach hält—wir installieren die Lösung.',
-    chip1: 'Leads sterben in Stille',
-    chip2: 'Abschlüsse ohne Jobs',
-    chip3: 'Sie sind der Klebstoff',
-  },
-  es: {
-    titlePrefix: '¿Qué lucha',
-    titleHighlight: 'le cuesta más?',
-    subtitle:
-      'Leads sin respuesta. Graduados sin empleo. Trabajo manual que posee su semana. Elija la que le quita el sueño—instalamos la solución.',
-    chip1: 'Los leads mueren en silencio',
-    chip2: 'Títulos sin empleo',
-    chip3: 'Usted es el pegamento',
-  },
-}
-
-type ServicesPageProps = {
-  params: Promise<{ locale: string }>
-  searchParams?: Promise<{ [key: string]: string | string[] | undefined }>
-}
-
-export default function ServicesPage({ params, searchParams }: ServicesPageProps) {
-  const { locale } = use(params)
-  use(searchParams ?? Promise.resolve({}))
-  const language = useLanguage()
-  const t = translations[language]
-  const sp = t.servicesPage
-  const heroCopy = servicesHeroCopy[language]
-  const servicesLabel = t.sectionLabels?.services ?? 'Our Services'
-  const pageJsonLd = getServicesPageJsonLd(locale)
+export default async function ServicesPage({ params }: Props) {
+  const { locale, lang, t } = await resolvePage(params)
+  const ui = svcUi[lang]
+  const ld = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    itemListElement: services.map((s, i) => ({
+      '@type': 'ListItem', position: i + 1,
+      item: { '@type': 'Service', name: s.copy[lang].name, description: s.copy[lang].body, url: `${SITE_URL}/${locale}/services/${s.slug}`, provider: { '@id': `${SITE_URL}/#organization` } },
+    })),
+  }
   return (
-    <main>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={jsonLdScriptProps(pageJsonLd)}
-      />
-      {/* Hero Section */}
-      <section className="relative isolate min-h-screen flex items-center pt-16 sm:pt-20 overflow-hidden bg-gradient-mesh">
-        <PremiumHeroBackdrop />
-        <PremiumHeroParallax className="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-20 relative z-10">
-          <div className="text-center mb-8 sm:mb-12 md:mb-16">
-            <span className="section-label block mb-4 sm:mb-6">{servicesLabel}</span>
-            <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-4 sm:mb-6 md:mb-8 px-2">
-              {heroCopy.titlePrefix}{' '}
-              <br className="hidden sm:block" />
-              <span className="gradient-text">{heroCopy.titleHighlight}</span>
-            </h1>
-            <p className="text-base sm:text-lg md:text-xl text-muted max-w-3xl mx-auto leading-relaxed px-2">
-              {heroCopy.subtitle}
-            </p>
-            <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 px-2 mt-8">
-              {[heroCopy.chip1, heroCopy.chip2, heroCopy.chip3].map((chip) => (
-                <div
-                  key={chip}
-                  className="rounded-full border border-border/80 bg-background/75 dark:bg-surface/70 px-4 py-2 text-xs sm:text-sm text-muted shadow-sm"
-                >
-                  <span className="font-semibold text-text">{chip}</span>
+    <>
+      <JsonLd data={ld} />
+      <PageHead eyebrow={t.services.eyebrow} title={t.services.title} sub={t.services.sub} img="boulevard" />
+      <section className="sec">
+        <div className="wrap svcrows">
+          {services.map((s, i) => {
+            const c = s.copy[lang]
+            return (
+              <article key={s.slug} className="svcrow" data-reveal>
+                <div className="svcrow__img"><Img name={s.img} alt="" sizes="(max-width: 900px) 92vw, 560px" /></div>
+                <div className="svcrow__body">
+                  <p className="pillar__k"><span>0{i + 1}</span>{c.k}</p>
+                  <h2 className="h2">{c.name}</h2>
+                  <p className="pillar__gap">{c.gap}</p>
+                  <p className="lead">{c.body}</p>
+                  <ul className="ticks">{c.points.map((x) => <li key={x}>{x}</li>)}</ul>
+                  <div className="case__ctas">
+                    <Link className="btn btn--dark" href={`/${locale}/services/${s.slug}`}>{ui.seeService}<span className="arr" aria-hidden>→</span></Link>
+                    <Link className="btn btn--line" href={`/${locale}/services/${s.slug}/assessment`}>{ui.fitCheck}</Link>
+                  </div>
                 </div>
-              ))}
-            </div>
-          </div>
-        </PremiumHeroParallax>
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
-          <ScrollIndicator direction="down" />
+              </article>
+            )
+          })}
         </div>
       </section>
-
-      {/* Services Grid - Clean Card Design */}
-      <AnimatedSection className="py-24">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {sp.cards.map((service, i) => {
-              const meta = SERVICE_CARD_META[service.id]
-              const color = meta.color
-              return (
-                <motion.div
-                  key={service.id}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.15 }}
-                  className="card p-8 hover:border-accent/50 group flex flex-col h-full"
-                >
-                  <div className="mb-6">
-                    <div
-                      className={`w-14 h-14 rounded-xl flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform ${
-                        color === 'accent'
-                          ? 'bg-accent/10'
-                          : color === 'success'
-                            ? 'bg-success/10'
-                            : 'bg-info/10'
-                      }`}
-                    >
-                      {meta.icon}
-                    </div>
-                    <span
-                      className={`text-xs font-semibold uppercase tracking-wider ${
-                        color === 'accent'
-                          ? 'text-accent'
-                          : color === 'success'
-                            ? 'text-success'
-                            : 'text-info'
-                      }`}
-                    >
-                      {service.subtitle}
-                    </span>
-                    <Link href={service.link}>
-                      <h3 className="font-display text-2xl font-bold mt-2 mb-4 group-hover:text-accent transition-colors">
-                        {service.title}
-                      </h3>
-                    </Link>
-                  </div>
-
-                  <p className="text-muted mb-6 leading-relaxed flex-grow">{service.description}</p>
-
-                  <div className="mb-6 space-y-2">
-                    {service.outcomes.map((outcome, j) => (
-                      <div key={j} className="flex items-center gap-2">
-                        <div
-                          className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${
-                            color === 'accent'
-                              ? 'bg-accent'
-                              : color === 'success'
-                                ? 'bg-success'
-                                : 'bg-info'
-                          }`}
-                        />
-                        <span className="text-sm text-muted">{outcome}</span>
-                      </div>
-                    ))}
-                  </div>
-
-                  <div className="mb-6 pt-6 border-t border-light">
-                    <h4 className="font-semibold text-sm mb-3 uppercase tracking-wider text-muted-dark">
-                      {sp.labels.keyFeatures}
-                    </h4>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                      {service.deliverables.map((item, j) => (
-                        <div key={j} className="flex items-start gap-2">
-                          <div
-                            className={`w-1 h-1 rounded-full mt-2 flex-shrink-0 ${
-                              color === 'accent'
-                                ? 'bg-accent'
-                                : color === 'success'
-                                  ? 'bg-success'
-                                  : 'bg-info'
-                            }`}
-                          />
-                          <span className="text-xs text-muted leading-relaxed">{item}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div className="mb-6">
-                    <h4 className="font-semibold text-sm mb-3 uppercase tracking-wider text-muted-dark">
-                      {sp.labels.technologies}
-                    </h4>
-                    <div className="flex flex-wrap gap-2">
-                      {service.technologies.map((tech, j) => (
-                        <span
-                          key={j}
-                          className="px-2 py-1 bg-surface-light rounded text-xs text-muted-dark"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div className="mb-6 pt-6 border-t border-border-light">
-                    <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
-                      <span className="text-xs uppercase tracking-wider text-muted-dark">
-                        {sp.labels.timeline}
-                      </span>
-                      <span className="font-semibold text-sm text-left sm:text-right">{service.timeline}</span>
-                    </div>
-                  </div>
-
-                  <div className="flex flex-col gap-3 mt-auto">
-                    <Link
-                      href={service.link}
-                      className={`btn-primary text-center ${
-                        color === 'accent'
-                          ? ''
-                          : color === 'success'
-                            ? 'bg-success hover:bg-success/90'
-                            : 'bg-info hover:bg-info/90'
-                      }`}
-                    >
-                      {service.primaryCta}
-                    </Link>
-                    <a {...getBookingLinkProps()} className="btn-secondary text-center">
-                      {service.secondaryCta}
-                    </a>
-                  </div>
-                </motion.div>
-              )
-            })}
+      <section className="sec sec--tint">
+        <div className="wrap">
+          <div className="sechead">
+            <h2 className="h2" data-reveal>{t.services.pricingTitle}</h2>
+            <p className="lead" data-reveal>{t.services.order}</p>
           </div>
-        </div>
-      </AnimatedSection>
-
-      {/* Stats Section, aligned with home.stats */}
-      <AnimatedSection className="py-24 bg-surface">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid md:grid-cols-3 gap-8">
-            {sp.stats.map((stat, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="text-center"
-              >
-                <div className="text-4xl mb-4">{stat.icon}</div>
-                <div className="font-display text-4xl md:text-5xl font-bold text-accent mb-2">
-                  {stat.value}
-                  {stat.suffix}
-                </div>
-                <p className="text-text font-semibold mb-1">{stat.label}</p>
-                <p className="text-muted text-sm">{stat.sublabel}</p>
-              </motion.div>
+          <div className="feat feat--3">
+            {t.services.pricing.map(([k, v], i) => (
+              <div key={k} className="feat__card" data-reveal style={{ ['--d' as string]: `${i * 70}ms` }}><span>0{i + 1}</span><b>{k}</b><p>{v}</p></div>
             ))}
           </div>
         </div>
-      </AnimatedSection>
-
-      {/* CTA Section */}
-      <AnimatedSection className="py-24">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">{sp.bottomCta.title}</h2>
-          <p className="text-muted text-lg mb-8">{sp.bottomCta.subtitle}</p>
-          <a {...getBookingLinkProps()} className="btn-primary text-lg px-8 py-4">
-            {t.cta.bookConsultation}
-          </a>
+      </section>
+      <section className="sec">
+        <div className="wrap assess">
+          <div>
+            <h2 className="h2" data-reveal>{t.services.assessTitle}</h2>
+            <p className="lead" data-reveal>{t.services.assessSub}</p>
+          </div>
+          <ul className="ways">
+            {services.map((s) => (
+              <li key={s.slug}>
+                <Link href={`/${locale}/services/${s.slug}/assessment`}>
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden><path d="M9 11l3 3 8-8" /><path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9" /></svg>
+                  <div><b>{s.copy[lang].name}</b><span>{ui.fitCheck}</span></div>
+                  <i aria-hidden>→</i>
+                </Link>
+              </li>
+            ))}
+            <li>
+              <a href={LINKS.booking} target="_blank" rel="noopener noreferrer">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden><rect x="3" y="5" width="18" height="16" rx="2" /><path d="M16 3v4M8 3v4M3 11h18" /></svg>
+                <div><b>{t.nav.book}</b><span>{t.contact.bookSub}</span></div>
+                <i aria-hidden>↗</i>
+              </a>
+            </li>
+          </ul>
         </div>
-      </AnimatedSection>
-    </main>
+      </section>
+      <CtaBand title={t.home.ctaTitle} sub={t.home.ctaSub} book={t.home.cta1} whatsapp={t.home.ctaWhatsApp} />
+    </>
   )
 }

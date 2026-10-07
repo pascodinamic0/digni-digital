@@ -143,7 +143,7 @@ const questions = [
 export const agenticSoftwaresAssessmentEn: ServiceAssessmentConfig = {
  serviceId: 'agentic-softwares',
  serviceName: 'Agentic Systems',
- servicePath: '/agentic-softwares',
+ servicePath: '/services/agentic-systems',
  accent: 'info',
  copy: {
  metaTitle: 'Agentic Systems Fit Assessment | Digni Digital',

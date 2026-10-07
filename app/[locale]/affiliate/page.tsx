@@ -23,7 +23,7 @@ const affiliatePageCopy = {
     heroDescription:
       'Join our affiliate program and earn commissions by creating authentic content that helps businesses capture more leads, students get job-ready, and organizations access enterprise-level technology.',
     trustBadges: {
-      experience: 'building growth systems',
+      experience: 'Growth systems since 2018',
       satisfaction: 'client satisfaction',
     },
     applyNow: 'Apply Now',
@@ -90,7 +90,7 @@ const affiliatePageCopy = {
     products: [
       {
         tagline: 'Never miss a lead again',
-        price: '$449/month',
+        price: '$500/month + $2,000 setup',
         commission: '50% of $2,000 setup fee',
         target: 'Service businesses running paid ads',
         description: 'AI-powered system that handles calls, qualifies leads, and books appointments 24/7.',
@@ -256,7 +256,7 @@ const affiliatePageCopy = {
     heroDescription:
       'Rejoignez notre programme d affiliation et touchez des commissions en creant du contenu authentique qui aide les entreprises a capter plus de prospects, les etudiants a devenir employables et les organisations a acceder a une technologie de niveau entreprise.',
     trustBadges: {
-      experience: 'a construire des systemes de croissance',
+      experience: 'Systèmes de croissance depuis 2018',
       satisfaction: 'de satisfaction client',
     },
     applyNow: 'Postuler maintenant',
@@ -323,7 +323,7 @@ const affiliatePageCopy = {
     products: [
       {
         tagline: 'Ne manquez plus jamais un prospect',
-        price: '449 $/mois',
+        price: '500 $/mois + 2 000 $ de setup',
         commission: '50% des 2 000 $ de frais de setup',
         target: 'Entreprises de services avec publicites payantes',
         description: 'Systeme propulse par l IA qui gere les appels, qualifie les prospects et prend des rendez-vous 24/7.',
@@ -489,7 +489,7 @@ const affiliatePageCopy = {
     heroDescription:
       'Unete a nuestro programa de afiliados y gana comisiones creando contenido autentico que ayuda a las empresas a captar mas leads, a los estudiantes a estar listos para trabajar y a las organizaciones a acceder a tecnologia de nivel empresarial.',
     trustBadges: {
-      experience: 'construyendo sistemas de crecimiento',
+      experience: 'Sistemas de crecimiento desde 2018',
       satisfaction: 'satisfaccion de clientes',
     },
     applyNow: 'Postular ahora',
@@ -556,7 +556,7 @@ const affiliatePageCopy = {
     products: [
       {
         tagline: 'No vuelvas a perder un lead',
-        price: '449 $/mes',
+        price: '500 $/mes + 2.000 $ de setup',
         commission: '50% del setup fee de 2.000 $',
         target: 'Empresas de servicios con anuncios pagados',
         description: 'Sistema con IA que atiende llamadas, califica leads y agenda citas 24/7.',
@@ -722,7 +722,7 @@ const affiliatePageCopy = {
     heroDescription:
       'Werde Teil unseres Affiliate-Programms und verdiene Provisionen mit authentischem Content, der Unternehmen zu mehr Leads, Studierenden zu Job-Reife und Organisationen zu Enterprise-Technologie verhilft.',
     trustBadges: {
-      experience: 'im Aufbau von Wachstumssystemen',
+      experience: 'Wachstumssysteme seit 2018',
       satisfaction: 'Kundenzufriedenheit',
     },
     applyNow: 'Jetzt bewerben',
@@ -789,7 +789,7 @@ const affiliatePageCopy = {
     products: [
       {
         tagline: 'Nie wieder einen Lead verpassen',
-        price: '449 $/Monat',
+        price: '500 $/Monat + 2.000 $ Setup',
         commission: '50% der 2.000 $ Setup-Gebuehr',
         target: 'Service-Unternehmen mit Paid Ads',
         description: 'KI-gestuetztes System, das Anrufe annimmt, Leads qualifiziert und Termine 24/7 bucht.',
@@ -955,7 +955,7 @@ const affiliatePageCopy = {
     heroDescription:
       'انضم الى برنامج الشركاء واربح عمولات من خلال محتوى اصيل يساعد الشركات على التقاط مزيد من العملاء المحتملين، والطلاب على الجاهزية للعمل، والمؤسسات على الوصول الى تقنية بمستوى الشركات الكبرى.',
     trustBadges: {
-      experience: 'في بناء انظمة نمو',
+      experience: 'أنظمة النمو منذ 2018',
       satisfaction: 'رضا العملاء',
     },
     applyNow: 'قدّم الآن',
@@ -1022,7 +1022,7 @@ const affiliatePageCopy = {
     products: [
       {
         tagline: 'لا تفقد عميلا محتملا مرة اخرى',
-        price: '449 دولار/شهر',
+        price: '500 دولار/شهر + 2,000 دولار رسوم إعداد',
         commission: '50% من رسوم الاعداد البالغة 2,000 دولار',
         target: 'شركات الخدمات التي تستخدم اعلانات مدفوعة',
         description: 'نظام مدعوم بالذكاء الاصطناعي يتولى المكالمات، يؤهل العملاء المحتملين، ويحجز المواعيد 24/7.',
@@ -1290,7 +1290,7 @@ export default function AffiliatePage({ params, searchParams }: AffiliatePagePro
       description: copy.products[0].description,
       icon: '🤖',
       color: 'accent',
-      link: '/ai-receptionist'
+      link: '/services/ai-employee'
     },
     {
       name: 'Future-Ready Graduate Program',
@@ -1301,7 +1301,7 @@ export default function AffiliatePage({ params, searchParams }: AffiliatePagePro
       description: copy.products[1].description,
       icon: '🎓',
       color: 'success',
-      link: '/future-ready-graduate'
+      link: '/services/future-ready'
     },
     {
       name: 'Agentic Softwares',
@@ -1312,7 +1312,7 @@ export default function AffiliatePage({ params, searchParams }: AffiliatePagePro
       description: copy.products[2].description,
       icon: '⚙️',
       color: 'info',
-      link: '/agentic-softwares'
+      link: '/services/agentic-systems'
     }
   ]
 
@@ -1390,7 +1390,7 @@ export default function AffiliatePage({ params, searchParams }: AffiliatePagePro
   const [openFaq, setOpenFaq] = useState<number | null>(null)
 
   return (
-    <main>
+    <div>
 
       {/* Hero Section */}
       <section className="relative isolate min-h-screen flex items-center pt-16 sm:pt-20 overflow-hidden bg-gradient-mesh">
@@ -1433,7 +1433,7 @@ export default function AffiliatePage({ params, searchParams }: AffiliatePagePro
               transition={{ duration: 0.6, delay: 0.2 }}
               className="rounded-full border border-border/80 bg-background/75 dark:bg-surface/70 px-4 py-2 text-xs sm:text-sm text-muted backdrop-blur-sm shadow-sm"
             >
-              <span className="font-semibold text">10+ years</span> {copy.trustBadges.experience}
+              <span className="font-semibold text">{copy.trustBadges.experience}</span>
             </motion.div>
           </div>
 
@@ -2015,6 +2015,6 @@ export default function AffiliatePage({ params, searchParams }: AffiliatePagePro
         </div>
       </AnimatedSection>
 
-    </main>
+    </div>
   )
 }

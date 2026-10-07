@@ -44,7 +44,7 @@ export const DEFAULT_FUTURE_READY_OFFERINGS: FutureReadyOffering[] = [
       'Ongoing program support',
       'Job readiness training, and skills to create your own jobs',
       "Guided learning personalized to each student's talents and gifts",
-      'Partnership success guarantee',
+      'Dedicated partnership support',
     ],
     popular: true,
     comingSoon: false,
@@ -97,7 +97,7 @@ export const DEFAULT_FUTURE_READY_OFFERINGS: FutureReadyOffering[] = [
       'Job placement and industry partnerships',
       'Customizable program length',
       'On-site or hybrid delivery options',
-      'Partnership success guarantee',
+      'Dedicated partnership support',
     ],
     popular: false,
     comingSoon: false,
@@ -159,4 +159,21 @@ export function normalizeOffering(row: OfferingRow): FutureReadyOffering {
 
 export function visibleDefaultFutureReadyOfferings() {
   return DEFAULT_FUTURE_READY_OFFERINGS.filter((offering) => offering.isVisible)
+}
+
+/** Server-side: visible offerings from Supabase when configured, otherwise the defaults. */
+export async function loadFutureReadyOfferings(): Promise<FutureReadyOffering[]> {
+  try {
+    const { createAdminClient, isSupabaseServiceConfigured } = await import('@/lib/supabase/admin')
+    if (!isSupabaseServiceConfigured()) return visibleDefaultFutureReadyOfferings()
+    const { data, error } = await createAdminClient()
+      .from('program_offerings')
+      .select('*')
+      .eq('is_visible', true)
+      .order('sort_order', { ascending: true })
+    if (error || !data?.length) return visibleDefaultFutureReadyOfferings()
+    return data.map(normalizeOffering)
+  } catch {
+    return visibleDefaultFutureReadyOfferings()
+  }
 }

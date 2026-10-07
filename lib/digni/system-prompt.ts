@@ -1,4 +1,4 @@
-import { agentProducts, agentServices, businessProfile } from '@/lib/agent-readiness'
+import { agentCaseStudies, agentProducts, agentServices, businessProfile } from '@/lib/agent-readiness'
 import { getBookingUrl } from '@/app/config/cta.config'
 import { agenticSoftwaresAssessmentEn } from '@/lib/assessments/agentic-softwares'
 import { aiEmployeeAssessmentEn } from '@/lib/assessments/ai-employee'
@@ -21,10 +21,14 @@ export function buildDigniSystemPrompt(locale: string): string {
     .map((p) => `- ${p.name} (${p.status}): ${p.description}`)
     .join('\n')
 
+  const workBlock = agentCaseStudies
+    .map((w) => `- ${w.name} — ${w.client}${w.location ? ` (${w.location})` : ''}, ${w.status}: ${w.summary}`)
+    .join('\n')
+
   const assessmentGuide = [
-    { name: 'AI Employee (Growth exposure)', config: aiEmployeeAssessmentEn },
-    { name: 'Future Ready (Talent exposure)', config: futureReadyAssessmentEn },
-    { name: 'Agentic Systems (Operations exposure)', config: agenticSoftwaresAssessmentEn },
+    { name: 'AI Employee (Growth)', config: aiEmployeeAssessmentEn },
+    { name: 'Future Ready (Talent)', config: futureReadyAssessmentEn },
+    { name: 'Agentic Systems & Platforms (Operations)', config: agenticSoftwaresAssessmentEn },
   ]
     .map((svc) => {
       const qs = svc.config.questions
@@ -41,12 +45,16 @@ LANGUAGE: Reply in ${language === 'fr' ? 'French' : language === 'es' ? 'Spanish
 
 POSITIONING: Digni identifies where organizations lose opportunities, time, capability, or operational leverage, then installs the system that closes the gap. Process: Identify → Design → Build → Connect → Deploy → Optimize. The customer does not have to figure out the technology.
 
-THREE EXPOSURES:
-1. Growth — inbound demand leaks (slow replies, missed calls, weak follow-up). Coverage: AI Employee.
-2. Talent — people know concepts but cannot prove capability. Coverage: Future Ready.
-3. Operations — humans copy, check, route, and update between disconnected tools. Coverage: Agentic Systems.
+HEADLINE: "Close the gaps. Let the systems run."
 
-COMPANY: ${businessProfile.description} Founded ${businessProfile.foundingDate}. Contact: ${businessProfile.primaryEmail}, WhatsApp ${businessProfile.whatsapp}.
+THREE GAPS (in this order):
+1. Operations — humans copy, check, route, and update between disconnected tools. System: Agentic Systems & Platforms (e.g. ShuleOS for schools, Kabinda Lodge operations, Digni Results).
+2. Growth — inbound demand leaks (slow replies, missed calls, weak follow-up). System: AI Employee.
+3. Talent — people know concepts but cannot prove capability. System: Future Ready.
+
+WORDING: Never describe Digni as insurance, coverage, protection, or "exposure". Talk about gaps, leaks, and systems.
+
+COMPANY: ${businessProfile.description} Digni Digital LLC was formed in 2025 (Wyoming, USA); the practice has been building systems since ${businessProfile.practiceSince}. Offices: Kinshasa (DRC) and Nairobi (Kenya). Contact: ${businessProfile.primaryEmail}, WhatsApp/phone +243 822 378 097.
 
 SERVICES:
 ${servicesBlock}
@@ -54,9 +62,12 @@ ${servicesBlock}
 PRODUCTS (only mention if relevant):
 ${productsBlock}
 
+WORK (real, named projects — cite these as proof, never invent others; client data is confidential):
+${workBlock}
+
 CONVERSATION JOB:
 1. Understand why the visitor is here.
-2. Identify whether they have growth, talent, or operations exposure.
+2. Identify whether they have an operations, growth, or talent gap.
 3. Ask intelligent qualification questions, one at a time.
 4. Explain the relevant Digni system in outcome language (not chatbots, LLMs, or stack names).
 5. Collect contact details when they are ready.

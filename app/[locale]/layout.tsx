@@ -1,88 +1,65 @@
 import type { Metadata } from 'next'
-import Script from 'next/script'
 import { NextIntlClientProvider } from 'next-intl'
-import { getMessages, setRequestLocale } from 'next-intl/server'
+import { setRequestLocale } from 'next-intl/server'
 import { notFound } from 'next/navigation'
-import { headers } from 'next/headers'
 import { routing } from '@/i18n/routing'
 import { LocaleProvider } from '../context/LocaleContext'
-import LocaleKeyedContent from '@/app/components/LocaleKeyedContent'
-import Navigation from '@/app/components/Navigation'
-import Footer from '@/app/components/Footer'
-import { buildLocaleAlternates } from '@/lib/seo/locale-metadata'
+import { fontVars } from '../fonts'
+import Header from '@/app/components/v2/Header'
+import Footer from '@/app/components/v2/Footer'
+import Guide from '@/app/components/v2/Guide'
+import Reveal from '@/app/components/v2/Reveal'
+import JsonLd from '@/app/components/v2/JsonLd'
+import { getDict } from '@/content/v2/get'
+import { isLocale, localeMeta, type Locale } from '@/content/v2/locales'
+import { getOrganizationJsonLd, getWebsiteJsonLd } from '@/lib/agent-readiness'
+import '../globals.css'
+import '../v2.css'
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://digni-digital-llc.com'
-
-type Props = {
-  children: React.ReactNode
-  params: Promise<{ locale: string }>
-}
-
-function pathAfterLocale(pathname: string, locale: string): string {
-  const prefix = `/${locale}`
-  if (pathname === prefix) return ''
-  if (pathname.startsWith(`${prefix}/`)) return pathname.slice(prefix.length)
-  // Avoid collapsing unknown paths to the locale homepage canonical.
-  if (pathname.startsWith('/') && !pathname.startsWith('//')) {
-    const segments = pathname.split('/').filter(Boolean)
-    if (segments.length > 1) return `/${segments.slice(1).join('/')}`
-  }
-  return ''
-}
-
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { locale } = await params
-
-  if (!routing.locales.includes(locale as typeof routing.locales[number])) {
-    return { title: 'Digni Digital' }
-  }
-
-  const pathname = (await headers()).get('x-pathname') || `/${locale}`
-  const suffix = pathAfterLocale(pathname, locale)
-
-  return {
-    metadataBase: new URL(SITE_URL),
-    alternates: buildLocaleAlternates(locale, suffix),
-    robots: {
-      index: true,
-      follow: true,
-    },
-  }
-}
+type Props = { children: React.ReactNode; params: Promise<{ locale: string }> }
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }))
 }
 
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params
+  if (!isLocale(locale)) return {}
+  const t = getDict(locale)
+  return {
+    title: { default: t.meta.home.title, template: `%s | ${t.meta.siteName}` },
+    description: t.meta.home.desc,
+    openGraph: { siteName: t.meta.siteName, locale: localeMeta[locale].og, type: 'website' },
+  }
+}
+
 export default async function LocaleLayout({ children, params }: Props) {
   const { locale } = await params
-
-  if (!routing.locales.includes(locale as typeof routing.locales[number])) {
-    notFound()
-  }
-
+  if (!isLocale(locale)) notFound()
   setRequestLocale(locale)
-  const messages = await getMessages()
-  const pathname = (await headers()).get('x-pathname') || ''
-  const isDigniChat = pathname.includes('/digni')
+  const t = getDict(locale)
+  const m = localeMeta[locale as Locale]
+  const headerT = { ...t.nav, whatsapp: t.common.whatsapp }
 
   return (
-    <LocaleProvider locale={locale}>
-      <NextIntlClientProvider messages={messages} locale={locale}>
-        <div className="grain-overlay" />
-        {!isDigniChat && <Navigation />}
-        <LocaleKeyedContent locale={locale}>{children}</LocaleKeyedContent>
-        {!isDigniChat && <Footer />}
-        {!isDigniChat && (
-          <Script
-            id="ghl-chat-widget-loader"
-            src="https://widgets.leadconnectorhq.com/loader.js"
-            strategy="lazyOnload"
-            data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
-            data-widget-id="691c374633e992e56f750115"
-          />
-        )}
-      </NextIntlClientProvider>
-    </LocaleProvider>
+    <html lang={m.hreflang} dir={m.dir} data-theme="light" className={fontVars} suppressHydrationWarning>
+      <head>
+        {/* Enables scroll-reveal styles only when JS runs (content stays visible without JS). */}
+        <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />
+      </head>
+      <body>
+        <a href="#main" className="skip">{t.nav.skip}</a>
+        <JsonLd data={[getOrganizationJsonLd(), getWebsiteJsonLd(locale)]} />
+        <LocaleProvider locale={locale}>
+          <NextIntlClientProvider locale={locale} messages={{}}>
+            <Header locale={locale} t={headerT} />
+            <main id="main">{children}</main>
+            <Footer locale={locale} t={t} />
+            <Guide locale={locale} t={t.guide} />
+            <Reveal />
+          </NextIntlClientProvider>
+        </LocaleProvider>
+      </body>
+    </html>
   )
 }

@@ -80,7 +80,6 @@ export const officeLocations: OfficeLocation[] = [
     email: 'growth@digni-digital-llc.com',
     phone: '+254702593518',
     timezone: 'EAT (UTC+3)',
-    isPrimaryInRegion: true
   },
   {
     id: 'congo-drc',
@@ -103,8 +102,9 @@ export const officeLocations: OfficeLocation[] = [
       y: 55
     },
     email: 'growth@digni-digital-llc.com',
-    phone: '+243 822 378 097',
+    phone: '+243822378097',
     timezone: 'WAT (UTC+1)',
+    isPrimaryInRegion: true,
     googleBusinessUrl: 'https://share.google/TduwbXrcnQSjCaENN'
   }
 ]

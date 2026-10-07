@@ -23,7 +23,12 @@ const nextConfig = {
     // Tree-shake barrel imports so unused framer-motion / next-intl exports stay out of the client bundle
     optimizePackageImports: ['framer-motion', 'next-intl'],
     // Inline global CSS in HTML in production so the main CSS chunk is not render-blocking (LCP/FCP)
-    inlineCss: true,
+    // inlineCss disabled in V2: it inlined CSS in <style> AND twice in the RSC payload (~430 KB per page). Linked CSS is cached across pages.
+    inlineCss: false,
+  },
+  // OG image fonts/background are read from disk by lib/og.tsx
+  outputFileTracingIncludes: {
+    '/[locale]/**': ['./assets/og/**', './public/brand/v2/shield-192.png'],
   },
   reactStrictMode: true,
   // Reduces dev overlay instrumentation that can enumerate params when clicking
@@ -117,51 +122,86 @@ const nextConfig = {
       permanent: true,
     }))
 
+    /**
+     * V2 (Oct 2026): renamed routes. Every old URL 301s straight to its final
+     * destination (no chains), both locale-prefixed and unprefixed.
+     */
+    const L = ':locale(us-en|fr-fr|es-es|de-de|sa-ar)'
+    const renamed = [
+      ['case-studies', 'work'],
+      ['solutions', 'services'],
+      ['custom-saas', 'services/agentic-systems'],
+      ['ai-receptionist/assessment', 'services/ai-employee/assessment'],
+      ['ai-receptionist', 'services/ai-employee'],
+      ['agentic-softwares/assessment', 'services/agentic-systems/assessment'],
+      ['agentic-softwares', 'services/agentic-systems'],
+      ['future-ready-graduate/assessment', 'services/future-ready/assessment'],
+      ['future-ready-graduate', 'services/future-ready'],
+    ]
+    const renamedRedirects = renamed.flatMap(([from, to]) => [
+      { source: `/${L}/${from}`, destination: `/:locale/${to}`, statusCode: 301 },
+      { source: `/${from}`, destination: `/us-en/${to}`, statusCode: 301 },
+    ])
+    // Any deeper legacy sub-path (e.g. /case-studies/anything) lands on the section root.
+    const renamedDeep = [
+      ['case-studies', 'work'],
+      ['solutions', 'services'],
+      ['ai-receptionist', 'services/ai-employee'],
+      ['agentic-softwares', 'services/agentic-systems'],
+      ['future-ready-graduate', 'services/future-ready'],
+    ].flatMap(([from, to]) => [
+      { source: `/${L}/${from}/:rest((?!assessment$).+)`, destination: `/:locale/${to}`, statusCode: 301 },
+      { source: `/${from}/:rest((?!assessment$).+)`, destination: `/us-en/${to}`, statusCode: 301 },
+    ])
+
     /** Prefer 301 over next-intl's temporary locale redirects for known public routes. */
     const unprefixedMarketingPaths = [
       'about',
-      'solutions',
       'products',
       'services',
-      'case-studies',
+      'work',
       'blog',
       'digni',
       'contact',
       'affiliate',
-      'ai-receptionist',
       'careers',
-      'agentic-softwares',
-      'future-ready-graduate',
       'privacy',
       'terms',
       'cookie-policy',
       'videos',
       'learn',
     ]
-    const unprefixedMarketingRedirects = unprefixedMarketingPaths.flatMap((segment) =>
-      segment === 'videos'
-        ? [
-            { source: `/${segment}`, destination: `/us-en/${segment}`, permanent: true },
-            { source: `/${segment}/:slug`, destination: `/us-en/${segment}/:slug`, permanent: true },
-          ]
-        : [
-            { source: `/${segment}`, destination: `/us-en/${segment}`, permanent: true },
-            { source: `/${segment}/:path*`, destination: `/us-en/${segment}/:path*`, permanent: true },
-          ]
-    )
+    // Sub-paths only match segments without a dot, so static files in public/ (e.g. /blog/ai-careers/x.png)
+    // are never redirected. The old `/:path*` form sent every /blog/* image to /us-en/blog/* (404) — the
+    // cause of the 55 broken blog images and of next/image failures on the blog.
+    const unprefixedMarketingRedirects = unprefixedMarketingPaths.flatMap((segment) => [
+      { source: `/${segment}`, destination: `/us-en/${segment}`, permanent: true },
+      { source: `/${segment}/:path((?:[^./]+/)*[^./]+)`, destination: `/us-en/${segment}/:path`, permanent: true },
+    ])
 
     return [
       ...legacyLocaleRedirectRules,
       ...localePrefixedPdfRedirects,
-      { source: '/custom-saas', destination: '/us-en/agentic-softwares', permanent: true },
-      { source: '/:locale/custom-saas', destination: '/:locale/agentic-softwares', permanent: true },
+      ...renamedRedirects,
+      ...renamedDeep,
       ...blogRedirects,
       ...spaceSlugFixes,
       ...unprefixedMarketingRedirects,
+      // Shep Engineering case study withdrawn (Oct 2026): send it to the work index.
+      { source: '/:locale(us-en|fr-fr|es-es|de-de|sa-ar)/work/shep-engineering', destination: '/:locale/work', statusCode: 301 },
+      { source: '/work/shep-engineering', destination: '/us-en/work', statusCode: 301 },
+      // Video pages whose MP4 never shipped; send them to the related service page.
+      ...['ai-employee-explainer', 'entreprises-operations-defaillantes'].map((slug) => ({
+        source: `/:locale(us-en|fr-fr|es-es|de-de|sa-ar)/videos/${slug}`,
+        destination: '/:locale/services/ai-employee',
+        statusCode: 301,
+      })),
     ]
   },
   async headers() {
+    const staging = process.env.NEXT_PUBLIC_NOINDEX === '1'
     return [
+      ...(staging ? [{ source: '/:path*', headers: [{ key: 'X-Robots-Tag', value: 'noindex, nofollow' }] }] : []),
       {
         source: '/hero-bg.mp4',
         headers: [{ key: 'X-Robots-Tag', value: 'noindex, nofollow' }],
@@ -190,12 +230,6 @@ const nextConfig = {
         source: '/:locale/checkout/:path*',
         headers: [{ key: 'X-Robots-Tag', value: 'noindex, nofollow' }],
       },
-    ]
-  },
-  async rewrites() {
-    return [
-      // Browsers and crawlers request /favicon.ico; Next serves app/icon.png at /icon.png
-      { source: '/favicon.ico', destination: '/icon.png' },
     ]
   },
 }

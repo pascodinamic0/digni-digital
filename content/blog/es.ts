@@ -690,7 +690,7 @@ const contentEs: Record<string, Partial<BlogArticle>> = {
 
  <h2>Rol de Digni Digital: socio, no herramienta puntual</h2>
 
- <p>Combinamos <strong>apoyo estratégico a operaciones</strong> con <strong>implementación de sistemas de IA</strong>, por ejemplo cobertura inteligente de primera línea alineada con cómo vende y sirve. Puede incluir un <a href="/ai-receptionist">recepcionista IA</a> que califica clientes potenciales y enruta llamadas, integrado en su forma real de trabajar, no una demo aislada.</p>
+ <p>Combinamos <strong>apoyo estratégico a operaciones</strong> con <strong>implementación de sistemas de IA</strong>, por ejemplo cobertura inteligente de primera línea alineada con cómo vende y sirve. Puede incluir un <a href="/services/ai-employee">recepcionista IA</a> que califica clientes potenciales y enruta llamadas, integrado en su forma real de trabajar, no una demo aislada.</p>
 
  <p>Si evalúa un COO fraccional o una iniciativa de empcliente potencialo IA, la pregunta honesta es la misma: <strong>¿esto hace más simple y medible cómo dirigimos el negocio?</strong> Si sí, está en la conversación correcta.</p>
 
@@ -709,7 +709,7 @@ const contentEs: Record<string, Partial<BlogArticle>> = {
 
  <hr>
 
- <p><em>¿Preguntas sobre escalar sin más contrataciones a tiempo completo? <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Agende con Digni Digital</a> o explore nuestras capacidades de <a href="/ai-receptionist">recepcionista IA</a> para cobertura continua.</em></p>
+ <p><em>¿Preguntas sobre escalar sin más contrataciones a tiempo completo? <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Agende con Digni Digital</a> o explore nuestras capacidades de <a href="/services/ai-employee">recepcionista IA</a> para cobertura continua.</em></p>
  `,
  },
  'dispatchflow-unified-logistics-procurement-platform': {
@@ -762,7 +762,7 @@ const contentEs: Record<string, Partial<BlogArticle>> = {
  </figure>
 
  <h3>En vivo hoy, gratis para escuelas</h3>
- <p>AMS está <strong>en producción</strong> en <a href="https://ams-xi-two.vercel.app/" target="_blank" rel="noopener noreferrer">ams xi two.vercel.app</a>. Parte de nuestra práctica <a href="/agentic-softwares">Agentic Softwares</a>.</p>
+ <p>AMS está <strong>en producción</strong> en <a href="https://ams-xi-two.vercel.app/" target="_blank" rel="noopener noreferrer">ams xi two.vercel.app</a>. Parte de nuestra práctica <a href="/services/agentic-systems">Agentic Softwares</a>.</p>
 
  <p><strong>Empezar gratis:</strong> <a href="https://ams-xi-two.vercel.app/get-access" target="_blank" rel="noopener noreferrer">Crear cuenta escolar</a>, <a href="https://ams-xi-two.vercel.app/login" target="_blank" rel="noopener noreferrer">Iniciar sesión</a>.</p>
  <p><strong>¿Plataforma personalizada?</strong> <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Reservar llamada estratégica</a>.</p>
@@ -831,7 +831,7 @@ const contentEs: Record<string, Partial<BlogArticle>> = {
 
  <p>Una empresa de servicios llegó con un problema común: el fundador convertía prospectos muy bien, pero solo cuando participaba personalmente. Las llamadas fuera de horario se perdían, las consultas no se calificaban de manera consistente y el equipo no siempre sabía qué leads requerían atención inmediata.</p>
 
- <p>Mapeamos sus mejores preguntas, estándares de calificación y ritmo de seguimiento en un <a href="/ai-receptionist">recepcionista IA con sistema de calificación de leads</a>. No fue un chatbot genérico, sino una capa de front office entrenada alrededor de señales reales de compra.</p>
+ <p>Mapeamos sus mejores preguntas, estándares de calificación y ritmo de seguimiento en un <a href="/services/ai-employee">recepcionista IA con sistema de calificación de leads</a>. No fue un chatbot genérico, sino una capa de front office entrenada alrededor de señales reales de compra.</p>
 
  <ul>
  <li><strong>Cobertura</strong>: consultas fuera de horario capturadas en lugar de esperar hasta la mañana.</li>
@@ -932,7 +932,7 @@ const contentEs: Record<string, Partial<BlogArticle>> = {
 
  <p>La IA no reemplaza el juicio. Aumenta el valor del juicio. Un profesional que combina pensamiento claro con herramientas de IA investiga más rápido, prototipa más rápido, automatiza trabajo repetitivo y muestra prueba antes.</p>
 
- <p>Digni Digital ha servido a más de 150 clientes en cuatro continentes. La misma lógica guía nuestro programa <a href="/future-ready-graduate">Digni Digital Literacy</a>: las habilidades deben convertirse en prueba visible y empleabilidad, incluyendo una tasa de empleo del 85% dentro de los 6 meses posteriores a la graduación.</p>
+ <p>Digni Digital ha servido a más de 150 clientes en cuatro continentes. La misma lógica guía nuestro programa <a href="/services/future-ready">Digni Digital Literacy</a>: las habilidades deben convertirse en prueba visible y empleabilidad, incluyendo una tasa de empleo del 85% dentro de los 6 meses posteriores a la graduación.</p>
 
  <h3>Ejercicio de 30 minutos</h3>
  <ol>
@@ -1074,7 +1074,7 @@ const contentEs: Record<string, Partial<BlogArticle>> = {
  'future-and-our-current-place-technology-creates-opportunity': {
  title: 'La tecnología crea oportunidad: el futuro que estamos construyendo — y dónde estamos ahora',
  excerpt:
-  'En la era de la IA, leads sin cobertura, egresados sin preparación y operaciones manuales cuestan cada semana. Aquí va el futuro — y dónde se sitúa Digni Digital: Grow, Learn, Scale.',
+  'En la era de la IA, operaciones manuales, consultas perdidas y egresados sin preparación cuestan cada semana. Aquí va el futuro — y dónde se sitúa Digni Digital: Operaciones, Crecimiento, Talento.',
  category: 'Futuro del trabajo',
  readTime: '14 min de lectura',
  publishDate: '4 de agosto de 2026',
@@ -1095,7 +1095,7 @@ const contentEs: Record<string, Partial<BlogArticle>> = {
   {
    question: '¿La IA me va a quitar el trabajo?',
    answer:
-    'En comentarios recientes, Elon Musk sostiene que la IA puede superar a los humanos en muchas tareas, con abundancia a largo plazo y una transición difícil. En Digni Digital lo leemos como una llamada a instalar cobertura ahora: IA para el volumen, juicio humano para la confianza y los ingresos.',
+    'En comentarios recientes, Elon Musk sostiene que la IA puede superar a los humanos en muchas tareas, con abundancia a largo plazo y una transición difícil. En Digni Digital lo leemos como una llamada a cerrar las brechas ahora: IA para el volumen, juicio humano para la confianza y los ingresos.',
   },
   {
    question: '¿Qué es un sistema de empleado IA?',
@@ -1130,55 +1130,55 @@ const contentEs: Record<string, Partial<BlogArticle>> = {
   {
    question: '¿Cómo empiezo?',
    answer:
-    'Nombra tu mayor fuga —inbound, talento u operaciones—, elige una métrica y reserva una llamada estratégica para un piloto estrecho.',
+    'Nombra tu mayor brecha —operaciones, inbound o talento—, elige una métrica y reserva una llamada estratégica para un piloto estrecho.',
   },
  ],
  content: `
  <h2>La tecnología crea oportunidad: el futuro que estamos construyendo — y dónde estamos ahora</h2>
 
  <figure class="blog-content-figure" style="margin: 2em 0;">
- <img src="/blog/future-current-place/cover.jpg" alt="Fundador de noche revisando un teléfono saturado de llamadas perdidas y mensajes sin leer — el costo del inbound sin cobertura" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
- <figcaption>Antes de la abundancia, el inbound sin cobertura ya te cuesta cada noche sin respuesta.</figcaption>
+ <img src="/blog/future-current-place/cover.jpg" alt="Fundador de noche revisando un teléfono saturado de llamadas perdidas y mensajes sin leer — el costo de las consultas sin respuesta" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
+ <figcaption>Antes de la abundancia, las consultas sin respuesta ya te cuestan cada noche.</figcaption>
  </figure>
 
  <p>En una conversación reciente en Tesla Giga, Elon Musk predijo que hacia 2036 podríamos entrar en una <strong>era de abundancia asombrosa</strong>. Describe un camino en el que la inteligencia artificial podría superar la suma de la inteligencia humana —quizá en unos cinco años— y en el que bienes y servicios se vuelven tan abundantes que las reglas clásicas de escasez empiezan a ceder.</p>
 
  <p>También advirtió de un <strong>camino accidentado</strong>. A medida que la IA alcanza rendimiento de élite en más tareas digitales y físicas —superando a la mayoría de humanos en campos como la ingeniería de software— crece la brecha entre quienes aprovechan estos sistemas y quienes quedan desplazados.</p>
 
- <p>En <strong>Digni Digital LLC</strong> creemos que el futuro no es solo algo que te sucede. Es algo para lo que instalas <strong>cobertura</strong>. Mientras el debate global oscila entre euforia y terror, nuestro trabajo es práctico: dar a empresas, escuelas y profesionales los sistemas que convierten la disrupción en ventaja —sin esperar un código postal de Silicon Valley ni un presupuesto enterprise.</p>
+ <p>En <strong>Digni Digital LLC</strong> creemos que el futuro no es solo algo que te sucede. Es algo para lo que construyes <strong>sistemas</strong>. Mientras el debate global oscila entre euforia y terror, nuestro trabajo es práctico: dar a empresas, escuelas y profesionales los sistemas que convierten la disrupción en ventaja —sin esperar un código postal de Silicon Valley ni un presupuesto enterprise.</p>
 
- <p><em>Technology Creates Opportunity.</em> Esa línea de marca guía nuestros tres pilares para la próxima década: <strong>Grow, Learn y Scale</strong>.</p>
+ <p><em>Technology Creates Opportunity.</em> Esa línea de marca guía nuestras tres prácticas para la próxima década: <strong>Operaciones, Crecimiento y Talento</strong>. En corto: <em>cerrar las brechas y dejar que los sistemas trabajen.</em></p>
 
  <h2>Puntos clave</h2>
  <ul>
  <li><strong>La abundancia es el juego largo</strong> — la visión de Musk para los 2030 apunta a productividad extrema; el corto plazo es desigual y competitivo.</li>
- <li><strong>El camino accidentado ya está aquí</strong> — inbound sin cobertura, talento sin prueba y operaciones manuales pierden valor cada semana.</li>
- <li><strong>La cobertura gana al shopping de funciones</strong> — mide leads capturados, empleos creados y flujos propios.</li>
+ <li><strong>El camino accidentado ya está aquí</strong> — operaciones manuales, consultas sin respuesta y talento sin prueba pierden valor cada semana.</li>
+ <li><strong>Los sistemas en marcha ganan al shopping de funciones</strong> — mide flujos propios, leads capturados y empleos creados.</li>
  <li><strong>El juicio gana valor</strong> — la IA lleva el volumen; el humano guarda confianza y estrategia.</li>
  <li><strong>El acceso es la lucha filosófica</strong> — pymes y mercados emergentes merecen herramientas de gran empresa.</li>
  <li><strong>Hay prueba</strong> — 150+ negocios; 85 % de empleo Future Ready en seis meses; ~150 % de aumento salarial reportado; compromiso 2026: 10 medios de vida y 100 profesionales formados en IA.</li>
  <li><strong>Empieza estrecho</strong> — un piloto, una métrica, luego expande.</li>
  </ul>
 
- <h2>Las tres fugas: el verdadero costo de la inacción</h2>
+ <h2>Las tres brechas: el verdadero costo de la inacción</h2>
  <figure class="blog-content-figure" style="margin: 2em 0;">
- <img src="/blog/future-current-place/three-leaks.jpg" alt="Tres fugas en un escritorio: mensajes perdidos, un título sin prueba de portafolio y caos de hojas de cálculo" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
- <figcaption>Inbound, talento y operaciones — tres fugas silenciosas que se acumulan cada semana.</figcaption>
+ <img src="/blog/future-current-place/three-leaks.jpg" alt="Tres brechas en un escritorio: mensajes perdidos, un título sin prueba de portafolio y caos de hojas de cálculo" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
+ <figcaption>Operaciones, inbound y talento — tres brechas silenciosas que se acumulan cada semana.</figcaption>
  </figure>
  <ol>
- <li><strong>Inbound sin cobertura (fuga de ingresos):</strong> cada llamada o chat sin respuesta es una factura silenciosa a tu competidor.</li>
- <li><strong>Talento sin cobertura (brecha de habilidades):</strong> los títulos certifican asistencia más que empleabilidad. Sin prueba digital, se cierran ventanas de contratación.</li>
- <li><strong>Operaciones sin cobertura (brecha tecnológica):</strong> las empresas gastan millones mientras muchas pymes siguen en hojas de cálculo. Ese <strong>ratio 10:1</strong> es un impuesto semanal silencioso.</li>
+ <li><strong>La brecha de crecimiento (consultas perdidas):</strong> cada llamada o chat sin respuesta es una factura silenciosa a tu competidor.</li>
+ <li><strong>La brecha de talento (habilidades):</strong> los títulos certifican asistencia más que empleabilidad. Sin prueba digital, se cierran ventanas de contratación.</li>
+ <li><strong>La brecha operativa (tecnológica):</strong> las empresas gastan millones mientras muchas pymes siguen en hojas de cálculo. Ese <strong>ratio 10:1</strong> es un impuesto semanal silencioso.</li>
  </ol>
 
  <table>
  <thead>
- <tr><th>Exposición</th><th>Problema</th><th>Cobertura</th><th>Resultado protegido</th></tr>
+ <tr><th>Brecha</th><th>Problema</th><th>Sistema</th><th>Resultado</th></tr>
  </thead>
  <tbody>
- <tr><td>Inbound sin cobertura</td><td>Llamadas, chats y formularios sin respuesta</td><td><a href="/ai-receptionist">Sistemas de empleado IA</a> 24/7</td><td>Cada consulta recibe respuesta</td></tr>
- <tr><td>Talento sin cobertura</td><td>Títulos sin prueba contratable</td><td><a href="/future-ready-graduate">Programa Future Ready</a></td><td>Egresados que los empleadores quieren</td></tr>
- <tr><td>Operaciones sin cobertura</td><td>Hojas de cálculo vs stacks enterprise</td><td><a href="/agentic-softwares">Software agéntico</a></td><td>El flujo corre sin impuesto millonario</td></tr>
+ <tr><td>Crecimiento</td><td>Llamadas, chats y formularios sin respuesta</td><td><a href="/services/ai-employee">Sistemas de empleado IA</a> 24/7</td><td>Cada consulta recibe respuesta</td></tr>
+ <tr><td>Talento</td><td>Títulos sin prueba contratable</td><td><a href="/services/future-ready">Programa Future Ready</a></td><td>Egresados que los empleadores quieren</td></tr>
+ <tr><td>Operaciones</td><td>Hojas de cálculo vs stacks enterprise</td><td><a href="/services/agentic-systems">Software agéntico</a></td><td>El flujo corre sin impuesto millonario</td></tr>
  </tbody>
  </table>
 
@@ -1189,41 +1189,41 @@ const contentEs: Record<string, Partial<BlogArticle>> = {
  <li><strong>Software de estantería</strong> fuerza tu proceso al producto de otro.</li>
  </ul>
 
- <h2>La arquitectura de la oportunidad: Grow, Learn, Scale</h2>
+ <h2>La arquitectura de la oportunidad: Operaciones, Crecimiento, Talento</h2>
  <figure class="blog-content-figure" style="margin: 2em 0;">
- <img src="/blog/future-current-place/grow-learn-scale.jpg" alt="Oficina moderna mostrando captura de leads (Grow), construcción de portafolio (Learn) y automatización de operaciones (Scale)" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
- <figcaption>Grow captura demanda. Learn construye prueba contratables. Scale ejecuta el flujo que realmente usas.</figcaption>
+ <img src="/blog/future-current-place/grow-learn-scale.jpg" alt="Oficina moderna mostrando automatización de operaciones, captura de leads y construcción de portafolio" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
+ <figcaption>Operaciones ejecuta el flujo que realmente usas. Crecimiento captura demanda. Talento construye prueba contratable.</figcaption>
  </figure>
  <table>
  <thead>
- <tr><th>Pilar</th><th>Producto</th><th>Resultado</th></tr>
+ <tr><th>Práctica</th><th>Servicio</th><th>Resultado</th></tr>
  </thead>
  <tbody>
- <tr><td><strong>Grow</strong></td><td>Sistemas de empleado IA</td><td>Más leads capturados, calificados y reservados 24/7</td></tr>
- <tr><td><strong>Learn</strong></td><td>Programa Future Ready</td><td>Habilidades prácticas de IA, portafolio y empleabilidad</td></tr>
- <tr><td><strong>Scale</strong></td><td>Software agéntico</td><td>Automatización a medida según cómo opera el negocio</td></tr>
+ <tr><td><strong>Crecimiento</strong></td><td>Sistemas de empleado IA</td><td>Más leads capturados, calificados y reservados 24/7</td></tr>
+ <tr><td><strong>Talento</strong></td><td>Programa Future Ready</td><td>Habilidades prácticas de IA, portafolio y empleabilidad</td></tr>
+ <tr><td><strong>Operaciones</strong></td><td>Sistemas agénticos y plataformas</td><td>Automatización a medida según cómo opera el negocio</td></tr>
  </tbody>
  </table>
 
- <h3>1. Grow: sistemas de empleado IA</h3>
- <p>Musk señaló que la inteligencia digital avanza muy rápido —y aún necesita actuar en el mundo real de conversaciones, calendarios y seguimientos. Nuestros <a href="/ai-receptionist">sistemas de empleado IA</a> son esa capa operativa: capturar, calificar y reservar día y noche.</p>
- <p>Es el paso del shopping de funciones al <strong>seguro de resultados</strong>.</p>
+ <h3>1. Operaciones: sistemas agénticos y plataformas</h3>
+ <p>El futuro es de quienes sistematizan la entrega. Nuestra práctica <a href="/services/agentic-systems">Agentic Softwares</a> construye sistemas acotados —AMS escolar, hospitalidad como <a href="https://kabinda-lodge.com/" target="_blank" rel="noopener noreferrer">Kabinda Lodge</a>, u ops como <a href="https://dispatch-flow-one.vercel.app/" target="_blank" rel="noopener noreferrer">DispatchFlow</a>.</p>
 
- <h3>2. Learn: el programa Future Ready</h3>
- <p>Si la IA ejecuta más tareas a nivel élite, el valor humano se concentra en el juicio con prueba. El <a href="/future-ready-graduate">programa Future Ready</a> democratiza el acceso con proyectos reales.</p>
+ <h3>2. Crecimiento: empleado IA</h3>
+ <p>Musk señaló que la inteligencia digital avanza muy rápido —y aún necesita actuar en el mundo real de conversaciones, calendarios y seguimientos. Nuestros <a href="/services/ai-employee">sistemas de empleado IA</a> son esa capa operativa: capturar, calificar y reservar día y noche.</p>
+ <p>Es el paso del shopping de funciones a <strong>resultados medibles</strong>.</p>
+
+ <h3>3. Talento: el programa Future Ready</h3>
+ <p>Si la IA ejecuta más tareas a nivel élite, el valor humano se concentra en el juicio con prueba. El <a href="/services/future-ready">programa Future Ready</a> democratiza el acceso con proyectos reales.</p>
  <ul>
  <li><strong>Resultado:</strong> 85 % de empleo en seis meses (vs ~45 % citado a menudo).</li>
  <li><strong>Impacto:</strong> ~150 % de aumento salarial promedio reportado.</li>
  <li><strong>Compromiso 2026:</strong> 10 medios de vida y 100 profesionales formados en IA.</li>
  </ul>
 
- <h3>3. Scale: software agéntico</h3>
- <p>El futuro es de quienes sistematizan la entrega. Nuestra práctica <a href="/agentic-softwares">Agentic Softwares</a> construye sistemas acotados —AMS escolar, hospitalidad como <a href="https://kabinda-lodge.com/" target="_blank" rel="noopener noreferrer">Kabinda Lodge</a>, u ops como <a href="https://dispatch-flow-one.vercel.app/" target="_blank" rel="noopener noreferrer">DispatchFlow</a>.</p>
-
  <h2>Por qué importa nuestro lugar actual</h2>
  <figure class="blog-content-figure" style="margin: 2em 0;">
  <img src="/blog/future-current-place/global.jpg" alt="Equipo tech diverso en África colaborando alrededor de mapas de oportunidad global y flujos digitales" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
- <figcaption>El apalancamiento de IA de primer nivel no requiere un código postal de Silicon Valley — requiere cobertura donde operas.</figcaption>
+ <figcaption>El apalancamiento de IA de primer nivel no requiere un código postal de Silicon Valley — requiere sistemas que funcionen donde operas.</figcaption>
  </figure>
  <p>Fundada en 2019 por Pascal Digny Djohodo —empresa registrada en EE. UU., iniciada en Kenia. Hoy: Kenia, RDC (Kinshasa), Estados Unidos, <strong>más de 150 negocios en cuatro continentes</strong>.</p>
  <p>Rechazamos la geografía como destino. Si la productividad extrema reescribe la escasez, el acceso decide quién se beneficia. Nuestro lugar: que pymes y mercados emergentes obtengan la misma clase de herramientas.</p>
@@ -1244,7 +1244,7 @@ const contentEs: Record<string, Partial<BlogArticle>> = {
  <h2>Checklist de 10 pasos</h2>
  <figure class="blog-content-figure" style="margin: 2em 0;">
  <img src="/blog/future-current-place/checklist.jpg" alt="Fundador y líder de ops revisando una lista corta de piloto junto a un panel de métricas" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
- <figcaption>Empieza estrecho: una fuga, una métrica, un piloto — luego expande lo que funciona.</figcaption>
+ <figcaption>Empieza estrecho: una brecha, una métrica, un piloto — luego expande lo que funciona.</figcaption>
  </figure>
  <ol>
  <li><strong>Audita el intake:</strong> cuenta leads perdidos fuera de horario.</li>
@@ -1255,21 +1255,21 @@ const contentEs: Record<string, Partial<BlogArticle>> = {
  <li><strong>Mide resultados:</strong> leads, empleos, horas recuperadas.</li>
  <li><strong>Cierra la brecha tech:</strong> elige alcance agéntico que encaje.</li>
  <li><strong>Aprende en continuo:</strong> la IA avanza semanalmente.</li>
- <li><strong>Posee el sistema:</strong> cobertura medible frente a cajas negras.</li>
+ <li><strong>Posee el sistema:</strong> sistemas medibles que controlas frente a cajas negras.</li>
  <li><strong>Agenda el mapa:</strong> pasa de observar a un plan estrecho.</li>
  </ol>
 
  <h2>Tu guía en la transición</h2>
- <p>Vivimos una división. Unos tratan la IA como cobertura. Otros esperan que un sitio vitrina o un certificado de asistencia baste.</p>
- <p>Sea cual sea la abundancia a largo plazo, la próxima década premiará a quien instale sistemas ahora. Digni Digital es la guía: <a href="/ai-receptionist">empleados IA</a>, <a href="/future-ready-graduate">Future Ready</a> y <a href="/agentic-softwares">software agéntico</a>.</p>
+ <p>Vivimos una división. Unos usan la IA para cerrar las brechas y dejan que los sistemas trabajen. Otros esperan que un sitio vitrina o un certificado de asistencia baste.</p>
+ <p>Sea cual sea la abundancia a largo plazo, la próxima década premiará a quien instale sistemas ahora. Digni Digital es la guía: <a href="/services/ai-employee">empleados IA</a>, <a href="/services/future-ready">Future Ready</a> y <a href="/services/agentic-systems">software agéntico</a>.</p>
  <p><strong>Leads. Empleos. Ingresos. Construimos lo que funciona.</strong></p>
 
  <!--BLOG_FAQ-->
 
  <h3>Siguiente paso</h3>
- <p><a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Reserve una llamada estratégica</a> con Digni Digital. Identificaremos tu fuga más cara y diseñaremos un piloto estrecho Grow, Learn o Scale.</p>
+ <p><a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Reserve una llamada estratégica</a> con Digni Digital. Identificaremos tu brecha más cara y diseñaremos un piloto estrecho en Operaciones, Crecimiento o Talento.</p>
  <hr>
- <p><em>Technology Creates Opportunity. El futuro lo construyen los equipos que cubren inbound, talento y operaciones antes de que la fuga sea una línea del P&amp;L.</em></p>
+ <p><em>Technology Creates Opportunity. Cierra las brechas en operaciones, inbound y talento — y deja que los sistemas trabajen.</em></p>
  `,
  },
 }

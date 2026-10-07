@@ -1,6 +1,6 @@
 import type { BlogArticle } from '@/content/blog'
 import type { SupabaseClient } from '@supabase/supabase-js'
-import { tryCreateClient } from '@/lib/supabase/server'
+import { getPublicSupabase } from '@/lib/supabase/public'
 
 export type BlogPostOverrideRow = {
   id: string
@@ -85,7 +85,7 @@ export async function fetchPublishedOverrides(
  */
 export async function fetchPublishedBlogOverrides(slug: string): Promise<BlogPostOverrideRow[]> {
   try {
-    const supabase = await tryCreateClient()
+    const supabase = getPublicSupabase()
     if (!supabase) return []
     return await fetchPublishedOverrides(supabase, slug)
   } catch {

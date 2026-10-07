@@ -289,7 +289,7 @@ const questions = [
  points: 8,
  insight: {
  title: 'Response speed should not depend on the day',
- why: 'If winning the lead depends on whether someone is free, revenue is exposed. AI Employee gives hot prospects a consistent response even when the team is busy.',
+ why: 'If winning the lead depends on whether someone is free, revenue leaks. AI Employee gives hot prospects a consistent response even when the team is busy.',
  },
  },
  ],
@@ -299,19 +299,19 @@ const questions = [
 export const aiEmployeeAssessmentEn: ServiceAssessmentConfig = {
  serviceId: 'ai-employee',
  serviceName: 'AI Employee',
- servicePath: '/ai-receptionist',
+ servicePath: '/services/ai-employee',
  accent: 'accent',
  copy: {
  metaTitle: 'AI Employee Fit Assessment | Digni Digital',
  metaDescription:
- 'Ten honest questions on pipeline visibility, response speed, staff accountability, manual tasks, and lead leakage. See where inbound revenue is exposed.',
+ 'Ten honest questions on pipeline visibility, response speed, staff accountability, manual tasks, and lead leakage. See where inbound revenue leaks.',
  eyebrow: '2 minute fit check',
- introTitle: 'How exposed is your revenue when you are not in the room?',
+ introTitle: 'How much revenue leaks when you are not in the room?',
  introSubtitle:
  'No signup required. Ten direct questions show where leads, bookings, reviews, and follow up leak when the team is busy or you are offline.',
  introBullets: [
  'Pipeline visibility, staff accountability, response speed, and manual task load',
- 'Instant score for AI Employee coverage',
+ 'Instant AI Employee fit score',
  'Clear next step only when the gaps are real',
  ],
  startCta: 'Start assessment',
@@ -322,7 +322,7 @@ export const aiEmployeeAssessmentEn: ServiceAssessmentConfig = {
  answerAll: 'Select an answer to continue.',
  resultEyebrow: 'Assessment Complete',
  resultTitle: 'match for AI Employee',
- matchLabel: 'Coverage match',
+ matchLabel: 'Fit score',
  bands: [...bands],
  nextStepsTitle: 'Recommended next step',
  primaryCta: 'Book a Growth System Audit',
@@ -336,7 +336,7 @@ export const aiEmployeeAssessmentEn: ServiceAssessmentConfig = {
  headline: 'Your inbound leak score is ready.',
  body: 'Your score weighs pipeline visibility, staff accountability, manual task load, speed to lead, and the cost of missed follow up across all 10 answers.',
  ctaIntro:
- 'Book a Growth System Audit below. We will map where AI Employee coverage can close the leak.',
+ 'Book a Growth System Audit below. We will map where an AI Employee can close the leak.',
  primaryCta: 'Book a Growth System Audit',
  warning:
  'Do not book if you are comfortable losing leads to faster competitors.',

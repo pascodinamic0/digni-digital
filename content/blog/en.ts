@@ -1820,7 +1820,7 @@ const remainingArticles: BlogArticle[] = [
 
  <h3>Case Study: Kobo360's AI Logistics Platform</h3>
  
- <p><a href="https://www.kobo360.com/" target="_blank" rel="noopener noreferrer">Kobo360</a> uses AI to connect shippers with truckers across Africa:</p>
+ <p>Kobo360 uses AI to connect shippers with truckers across Africa:</p>
 
  <ul>
  <li><strong>Route Optimization</strong>: 30% faster deliveries</li>
@@ -2054,7 +2054,7 @@ const remainingArticles: BlogArticle[] = [
 
  <h3>Case Study: Farmcrowdy's Climate Smart Agriculture</h3>
  
- <p><a href="https://www.farmcrowdy.com/" target="_blank" rel="noopener noreferrer">Farmcrowdy</a> uses AI to help farmers adapt to climate change:</p>
+ <p>Farmcrowdy uses AI to help farmers adapt to climate change:</p>
 
  <ul>
  <li><strong>Weather Forecasting</strong>: 90% accurate predictions for planting decisions</li>
@@ -2754,7 +2754,7 @@ const remainingArticles: BlogArticle[] = [
 
  <h3>The Scaling Problem: Support Demand Outpaces Hiring</h3>
  
- <p>Traditional customer service models break as you grow. More leads mean more calls, more emails, more missed opportunities after hours. Hiring more staff increases fixed costs, training time, and management overhead. <strong>AI employees</strong> handle first line interactions around the clock, capture and qualify leads, and free your team for high value conversations. Businesses using our <a href="/ai-receptionist">AI receptionist</a> solutions report up to <strong>300% more leads</strong>, zero missed calls, and multi channel coverage without adding full time staff.</p>
+ <p>Traditional customer service models break as you grow. More leads mean more calls, more emails, more missed opportunities after hours. Hiring more staff increases fixed costs, training time, and management overhead. <strong>AI employees</strong> handle first line interactions around the clock, capture and qualify leads, and free your team for high value conversations. Businesses using our <a href="/services/ai-employee">AI receptionist</a> solutions report up to <strong>300% more leads</strong>, zero missed calls, and multi channel coverage without adding full time staff.</p>
 
  <blockquote>
  <p>"AI employees don't replace human connection, they amplify it. Our AI handles routine inquiries instantly so our team can focus on complex problems that require real expertise.", <em>Client, SaaS scale up</em></p>
@@ -2831,7 +2831,7 @@ const remainingArticles: BlogArticle[] = [
  <li>Your team spends most of its time on repetitive questions (hours, pricing, booking).</li>
  <li>You need consistency across languages (e.g. French in France and DRC).</li>
  </ul>
- <p>Explore our <a href="/ai-receptionist">AI receptionist</a> and agent solutions to see how we design for handoff and measurable ROI.</p>
+ <p>Explore our <a href="/services/ai-employee">AI receptionist</a> and agent solutions to see how we design for handoff and measurable ROI.</p>
 
  <hr>
  <p><em><a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Réservez votre stratégie call gratuite</a> to compare AI agents vs traditional automation for your business.</em></p>
@@ -2912,7 +2912,7 @@ const remainingArticles: BlogArticle[] = [
 
  <h3>Digni Digital: Founded in Kinshasa, Built for the DRC</h3>
 
- <p>We've been in Kinshasa since 2019. We serve 150+ clients across four continents with a strong DRC base. Our <a href="/ai-receptionist">AI receptionist</a> and automation solutions work in French and are built for African SMBs, with local support, mobile first design, and measurable ROI.</p>
+ <p>We've been in Kinshasa since 2019. We serve 150+ clients across four continents with a strong DRC base. Our <a href="/services/ai-employee">AI receptionist</a> and automation solutions work in French and are built for African SMBs, with local support, mobile first design, and measurable ROI.</p>
 
  <h3>Next Steps</h3>
 
@@ -2952,7 +2952,7 @@ const remainingArticles: BlogArticle[] = [
 
  <h4>1. Lead Generation and Qualification</h4>
 
- <p>AI employees and <a href="/ai-receptionist">AI receptionists</a> capture and qualify leads 24/7. Result: more opportunities, faster response. No missed calls. No "we'll get back to you tomorrow." First response in minutes. Our clients report up to <strong>300% more qualified leads</strong>.</p>
+ <p>AI employees and <a href="/services/ai-employee">AI receptionists</a> capture and qualify leads 24/7. Result: more opportunities, faster response. No missed calls. No "we'll get back to you tomorrow." First response in minutes. Our clients report up to <strong>300% more qualified leads</strong>.</p>
 
  <h4>2. Process Automation</h4>
 
@@ -2960,7 +2960,7 @@ const remainingArticles: BlogArticle[] = [
 
  <h4>3. Web and SaaS</h4>
 
- <p>A professional <a href="/agentic-softwares">custom web or SaaS</a> presence builds trust and converts visitors into leads. Combine with AI capture for maximum impact. Sites we've built have seen <strong>10x lead conversion</strong> improvements.</p>
+ <p>A professional <a href="/services/agentic-systems">custom web or SaaS</a> presence builds trust and converts visitors into leads. Combine with AI capture for maximum impact. Sites we've built have seen <strong>10x lead conversion</strong> improvements.</p>
 
  <blockquote>
  <p>"We used to lose leads because we couldn't respond fast enough. Now the AI captures everything, qualifies in French, and our team only talks to people ready to buy. Revenue up 40% in six months.", <em>Director, B2B services, Lyon</em></p>
@@ -3038,7 +3038,7 @@ const remainingArticles: BlogArticle[] = [
 
  <h3>Multi Channel Coverage</h3>
 
- <p>Leads come from everywhere: phone, email, website forms, chat, WhatsApp. Our <a href="/ai-receptionist">AI receptionist and lead qualification</a> solutions handle all of them in one system, in French, 24/7. Combine with a strong web presence (<a href="/agentic-softwares">custom sites and SaaS</a>) for maximum impact.</p>
+ <p>Leads come from everywhere: phone, email, website forms, chat, WhatsApp. Our <a href="/services/ai-employee">AI receptionist and lead qualification</a> solutions handle all of them in one system, in French, 24/7. Combine with a strong web presence (<a href="/services/agentic-systems">custom sites and SaaS</a>) for maximum impact.</p>
 
  <h3>Case Study: Real Estate Agency</h3>
 
@@ -3101,7 +3101,7 @@ const remainingArticles: BlogArticle[] = [
  <ul>
  <li><strong>Clear value proposition</strong>: Within 5 seconds, visitors know what you do and why they should care.</li>
  <li><strong>Trust signals</strong>: Testimonials, case studies, metrics. Proof builds belief.</li>
- <li><strong>Multiple capture points</strong>: Contact forms, chat, click to call, all connected to an <a href="/ai-receptionist">AI receptionist</a> that qualifies and books.</li>
+ <li><strong>Multiple capture points</strong>: Contact forms, chat, click to call, all connected to an <a href="/services/ai-employee">AI receptionist</a> that qualifies and books.</li>
  <li><strong>Mobile first design</strong>: Essential in the DRC and for local SEO. Fast, responsive, thumb friendly.</li>
  <li><strong>Simple navigation</strong>: Visitors convert instead of bouncing. Fewer clicks to action.</li>
  </ul>
@@ -3112,7 +3112,7 @@ const remainingArticles: BlogArticle[] = [
 
  <h3>The AI Integration Advantage</h3>
 
- <p>We build <a href="/agentic-softwares">custom websites and web apps</a> that integrate with our <a href="/ai-receptionist">AI receptionist</a> so every visit can turn into a qualified lead or booked call. The AI answers questions, qualifies interest, and schedules meetings, 24/7, in French.</p>
+ <p>We build <a href="/services/agentic-systems">custom websites and web apps</a> that integrate with our <a href="/services/ai-employee">AI receptionist</a> so every visit can turn into a qualified lead or booked call. The AI answers questions, qualifies interest, and schedules meetings, 24/7, in French.</p>
 
  <h3>Case Study: Service Business 10x Lead Conversion</h3>
 
@@ -3220,7 +3220,7 @@ const remainingArticles: BlogArticle[] = [
 
  <h3>Next Steps</h3>
 
- <p>Not sure which path fits your business? <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Book a free strategy call</a>, we'll audit your processes, compare your options, and give you a clear recommendation. When custom wins, we deliver <a href="/agentic-softwares">scalable solutions you fully own</a>. No obligation, no hard sell.</p>
+ <p>Not sure which path fits your business? <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Book a free strategy call</a>, we'll audit your processes, compare your options, and give you a clear recommendation. When custom wins, we deliver <a href="/services/agentic-systems">scalable solutions you fully own</a>. No obligation, no hard sell.</p>
 
  <hr>
  <p><em><a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Réservez votre stratégie call gratuite</a> to compare custom vs off the shelf for your case.</em></p>
@@ -3262,11 +3262,11 @@ const remainingArticles: BlogArticle[] = [
 
  <h4>1. AI Employees and Automation</h4>
 
- <p><a href="/ai-receptionist">AI receptionists</a> and agents that capture and qualify leads 24/7, in French, for Kinshasa and the region. No missed calls. No slow response. Teams report up to 300% more qualified leads and 40 to 50% productivity gains in affected areas.</p>
+ <p><a href="/services/ai-employee">AI receptionists</a> and agents that capture and qualify leads 24/7, in French, for Kinshasa and the region. No missed calls. No slow response. Teams report up to 300% more qualified leads and 40 to 50% productivity gains in affected areas.</p>
 
  <h4>2. Web and SaaS</h4>
 
- <p><a href="/agentic-softwares">Custom web and SaaS development</a> so you own your tools and scale on your terms. Client portals, internal tools, industry specific apps, built for your workflows, in French, with local payment integration.</p>
+ <p><a href="/services/agentic-systems">Custom web and SaaS development</a> so you own your tools and scale on your terms. Client portals, internal tools, industry specific apps, built for your workflows, in French, with local payment integration.</p>
 
  <h4>3. Growth and Strategy</h4>
 
@@ -3329,7 +3329,7 @@ const remainingArticles: BlogArticle[] = [
 
  <h3>What You Get: Affordable AI That Actually Works</h3>
 
- <p>Our <a href="/ai-receptionist">AI receptionist</a> and agent solutions are built for SMBs, human first, measurable, and deployable without a big IT team:</p>
+ <p>Our <a href="/services/ai-employee">AI receptionist</a> and agent solutions are built for SMBs, human first, measurable, and deployable without a big IT team:</p>
 
  <ul>
  <li><strong>24/7 lead capture and qualification</strong>: Every call, email, and chat is captured, qualified, and routed to your team with full context. No missed opportunities after hours.</li>
@@ -3405,8 +3405,8 @@ const remainingArticles: BlogArticle[] = [
  <p>Not enterprise projects. Not English only tools. Accessible means:</p>
 
  <ul>
- <li><strong><a href="/ai-receptionist">AI receptionists</a></strong>: Capture and qualify leads 24/7, in French, on phone, chat, and WhatsApp. Cost: less than a part time employee.</li>
- <li><strong><a href="/agentic-softwares">Custom web and SaaS</a></strong>: Solutions built for your workflows, in your language, with local payment integration (M Pesa, Orange Money).</li>
+ <li><strong><a href="/services/ai-employee">AI receptionists</a></strong>: Capture and qualify leads 24/7, in French, on phone, chat, and WhatsApp. Cost: less than a part time employee.</li>
+ <li><strong><a href="/services/agentic-systems">Custom web and SaaS</a></strong>: Solutions built for your workflows, in your language, with local payment integration (M Pesa, Orange Money).</li>
  <li><strong>Growth services</strong>: Lead generation, digital strategy, measurable ROI. Not theory, implementation.</li>
  <li><strong>Mobile first</strong>: Works on 2G/3G, low end smartphones. No bloated web apps that fail in Kinshasa.</li>
  </ul>
@@ -3426,7 +3426,7 @@ const remainingArticles: BlogArticle[] = [
 
  <h3>For Institutions: Future Ready Programs</h3>
 
- <p>Schools and training centers can prepare students for the AI era. Our <a href="/future-ready-graduate">Digni Digital Literacy</a> program equips youth with digital skills that lead to employment. 85% employment rate within 6 months of graduation.</p>
+ <p>Schools and training centers can prepare students for the AI era. Our <a href="/services/future-ready">Digni Digital Literacy</a> program equips youth with digital skills that lead to employment. 85% employment rate within 6 months of graduation.</p>
 
  <h3>Next Steps</h3>
 
@@ -3521,7 +3521,7 @@ const remainingArticles: BlogArticle[] = [
 
  <ul>
  <li><strong>Custom built SaaS</strong>: Purpose built applications that match your exact workflow, in your language, at a fraction of enterprise cost. Think CRM, booking systems, or inventory management designed for your specific business model.</li>
- <li><strong>No code/low-code platforms</strong>: Tools like <a href="/agentic-softwares">agentic software builders</a> that let SMBs create their own automations without hiring developers.</li>
+ <li><strong>No code/low-code platforms</strong>: Tools like <a href="/services/agentic-systems">agentic software builders</a> that let SMBs create their own automations without hiring developers.</li>
  </ul>
 
  <p>The sweet spot for francophone SMBs is a hybrid: custom built core systems supplemented by no code automations that your team can modify independently.</p>
@@ -3555,7 +3555,7 @@ const remainingArticles: BlogArticle[] = [
  <p><strong>What we implemented:</strong></p>
 
  <ul>
- <li>An <a href="/ai-receptionist">AI receptionist</a> on WhatsApp that answered property questions in French 24/7</li>
+ <li>An <a href="/services/ai-employee">AI receptionist</a> on WhatsApp that answered property questions in French 24/7</li>
  <li>Automatic lead qualification based on budget, location preference, and timeline</li>
  <li>Instant appointment booking with the right sales agent</li>
  <li>Daily summary reports sent to the team manager</li>
@@ -3583,7 +3583,7 @@ const remainingArticles: BlogArticle[] = [
 
  <ul>
  <li>An AI powered onboarding flow that sent welcome sequences, collected intake documents, and scheduled the kickoff meeting, all within 24 hours of contract signature</li>
- <li>A <a href="/agentic-softwares">custom SaaS dashboard</a> for the team to track every client's onboarding stage</li>
+ <li>A <a href="/services/agentic-systems">custom SaaS dashboard</a> for the team to track every client's onboarding stage</li>
  <li>Automated follow ups for missing documents, reducing manual chasing by 90%</li>
  </ul>
 
@@ -3604,7 +3604,7 @@ const remainingArticles: BlogArticle[] = [
  <li><strong>Bilingual by design</strong>: Every solution works natively in French and English. No Google Translate patches. No "coming soon" language support.</li>
  <li><strong>Founded in Kinshasa, serving globally</strong>: We've worked with 150+ clients across four continents since 2019. We understand both Parisian business culture and Congolese market realities.</li>
  <li><strong>End to end ownership</strong>: We don't just sell software. We configure, train your team, optimize, and measure ROI, with ongoing support included.</li>
- <li><strong>Affordable for SMBs</strong>: Our <a href="/ai-receptionist">AI employee systems</a> start at a fraction of what a single part time hire costs, with measurable results in 30 days.</li>
+ <li><strong>Affordable for SMBs</strong>: Our <a href="/services/ai-employee">AI employee systems</a> start at a fraction of what a single part time hire costs, with measurable results in 30 days.</li>
  <li><strong>No lock in</strong>: You own your data. If we're not delivering, you leave with everything. That's how confident we are.</li>
  </ul>
 
@@ -3727,7 +3727,7 @@ const remainingArticles: BlogArticle[] = [
 
  <h2>How Digni Digital fits: partner, not a one off tool</h2>
 
- <p>We combine <strong>strategic operating support</strong> with <strong>implementation of AI systems</strong>, for example, intelligent front office coverage aligned to how you sell and serve. That might include an <a href="/ai-receptionist">AI receptionist</a> that qualifies leads and routes calls, integrated with the way you already work, rather than a disconnected demo.</p>
+ <p>We combine <strong>strategic operating support</strong> with <strong>implementation of AI systems</strong>, for example, intelligent front office coverage aligned to how you sell and serve. That might include an <a href="/services/ai-employee">AI receptionist</a> that qualifies leads and routes calls, integrated with the way you already work, rather than a disconnected demo.</p>
 
  <p>If you are evaluating a fractional COO or an AI employee initiative, the honest question is the same: <strong>will this make how we run the business simpler and more measurable?</strong> If the answer is yes, you are in the right conversation.</p>
 
@@ -3746,7 +3746,7 @@ const remainingArticles: BlogArticle[] = [
 
  <hr>
 
- <p><em>Questions about scaling operations without adding headcount? <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Schedule time with Digni Digital</a> or explore our <a href="/ai-receptionist">AI receptionist</a> capabilities for always on front office coverage.</em></p>
+ <p><em>Questions about scaling operations without adding headcount? <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Schedule time with Digni Digital</a> or explore our <a href="/services/ai-employee">AI receptionist</a> capabilities for always on front office coverage.</em></p>
  `
  },
  {
@@ -3837,7 +3837,7 @@ const remainingArticles: BlogArticle[] = [
 
  <p>DispatchFlow is <strong>production ready</strong> on <a href="https://dispatch-flow-one.vercel.app/" target="_blank" rel="noopener noreferrer">dispatch flow one.vercel.app</a>. Create a workspace, invite your team, configure branches, and replace scattered spreadsheets with a platform built for how African enterprise operations actually run.</p>
 
- <p>We ship it as part of our <a href="/agentic-softwares">Agentic Softwares</a> practice, the same team behind <a href="https://kabinda-lodge.com/" target="_blank" rel="noopener noreferrer">Kabinda Lodge</a> (hospitality OS) and <a href="https://ams-xi-two.vercel.app/" target="_blank" rel="noopener noreferrer">AMS</a> (school management). When off the shelf tools fail adoption, we build systems operators trust.</p>
+ <p>We ship it as part of our <a href="/services/agentic-systems">Agentic Softwares</a> practice, the same team behind <a href="https://kabinda-lodge.com/" target="_blank" rel="noopener noreferrer">Kabinda Lodge</a> (hospitality OS) and <a href="https://ams-xi-two.vercel.app/" target="_blank" rel="noopener noreferrer">AMS</a> (school management). When off the shelf tools fail adoption, we build systems operators trust.</p>
 
  <h3>Next step</h3>
 
@@ -3847,7 +3847,7 @@ const remainingArticles: BlogArticle[] = [
 
  <hr>
 
- <p><em>See DispatchFlow on our <a href="/agentic-softwares">Agentic Softwares</a> page alongside Kabinda Lodge, AMS, and other live products we build for growth focused teams.</em></p>
+ <p><em>See DispatchFlow on our <a href="/services/agentic-systems">Agentic Softwares</a> page alongside Kabinda Lodge, AMS, and other live products we build for growth focused teams.</em></p>
  `,
  },
  {
@@ -3929,7 +3929,7 @@ const remainingArticles: BlogArticle[] = [
 
  <p>Kabinda Lodge is <strong>in production</strong> at <a href="https://kabinda-lodge.com/" target="_blank" rel="noopener noreferrer">kabinda lodge.com</a>. Browse rooms, test the guest journey, and see how a lodge can feel like a modern product, not a folder of PDFs.</p>
 
- <p>We ship it as part of our <a href="/agentic-softwares">Agentic Softwares</a> practice, alongside <a href="https://dispatch-flow-one.vercel.app/" target="_blank" rel="noopener noreferrer">DispatchFlow</a> (operations) and <a href="https://swift-drop-chi.vercel.app/" target="_blank" rel="noopener noreferrer">SwiftDrop</a> (delivery).</p>
+ <p>We ship it as part of our <a href="/services/agentic-systems">Agentic Softwares</a> practice, alongside <a href="https://dispatch-flow-one.vercel.app/" target="_blank" rel="noopener noreferrer">DispatchFlow</a> (operations) and <a href="https://swift-drop-chi.vercel.app/" target="_blank" rel="noopener noreferrer">SwiftDrop</a> (delivery).</p>
 
  <h3>Next step</h3>
 
@@ -3939,7 +3939,7 @@ const remainingArticles: BlogArticle[] = [
 
  <hr>
 
- <p><em>See Kabinda Lodge on our <a href="/agentic-softwares">Agentic Softwares</a> page with DispatchFlow, SwiftDrop, DigniGuide, and other products we build for operators who need adoption, not shelfware.</em></p>
+ <p><em>See Kabinda Lodge on our <a href="/services/agentic-systems">Agentic Softwares</a> page with DispatchFlow, SwiftDrop, DigniGuide, and other products we build for operators who need adoption, not shelfware.</em></p>
  `,
  },
  {
@@ -4021,7 +4021,7 @@ const remainingArticles: BlogArticle[] = [
 
  <p>SwiftDrop is <strong>in production</strong> at <a href="https://swift-drop-chi.vercel.app/" target="_blank" rel="noopener noreferrer">swift drop chi.vercel.app</a>. Browse boutiques, test the customer journey, or explore rider and merchant paths.</p>
 
- <p>Part of our <a href="/agentic-softwares">Agentic Softwares</a> portfolio, built by the same team as <a href="https://kabinda-lodge.com/" target="_blank" rel="noopener noreferrer">Kabinda Lodge</a> and <a href="https://dispatch-flow-one.vercel.app/" target="_blank" rel="noopener noreferrer">DispatchFlow</a>.</p>
+ <p>Part of our <a href="/services/agentic-systems">Agentic Softwares</a> portfolio, built by the same team as <a href="https://kabinda-lodge.com/" target="_blank" rel="noopener noreferrer">Kabinda Lodge</a> and <a href="https://dispatch-flow-one.vercel.app/" target="_blank" rel="noopener noreferrer">DispatchFlow</a>.</p>
 
  <h3>Next step</h3>
 
@@ -4031,7 +4031,7 @@ const remainingArticles: BlogArticle[] = [
 
  <hr>
 
- <p><em>See SwiftDrop on our <a href="/agentic-softwares">Agentic Softwares</a> page.</em></p>
+ <p><em>See SwiftDrop on our <a href="/services/agentic-systems">Agentic Softwares</a> page.</em></p>
  `,
  },
  {
@@ -4100,7 +4100,7 @@ const remainingArticles: BlogArticle[] = [
 
  <h3>Live on Digni Digital</h3>
 
- <p>Open <strong><a href="/digni">DigniGuide</a></strong> from any page footer or our <a href="/agentic-softwares">Agentic Softwares</a> showcase. It is the same guide we use to explain live products like <a href="https://dispatch-flow-one.vercel.app/" target="_blank" rel="noopener noreferrer">DispatchFlow</a>, <a href="https://kabinda-lodge.com/" target="_blank" rel="noopener noreferrer">Kabinda Lodge</a>, and <a href="https://swift-drop-chi.vercel.app/" target="_blank" rel="noopener noreferrer">SwiftDrop</a>.</p>
+ <p>Open <strong><a href="/digni">DigniGuide</a></strong> from any page footer or our <a href="/services/agentic-systems">Agentic Softwares</a> showcase. It is the same guide we use to explain live products like <a href="https://dispatch-flow-one.vercel.app/" target="_blank" rel="noopener noreferrer">DispatchFlow</a>, <a href="https://kabinda-lodge.com/" target="_blank" rel="noopener noreferrer">Kabinda Lodge</a>, and <a href="https://swift-drop-chi.vercel.app/" target="_blank" rel="noopener noreferrer">SwiftDrop</a>.</p>
 
  <h3>Next step</h3>
 
@@ -4110,7 +4110,7 @@ const remainingArticles: BlogArticle[] = [
 
  <hr>
 
- <p><em>DigniGuide is listed on our <a href="/agentic-softwares">Agentic Softwares</a> page as a live product, proof that we ship agentic experiences, not only slides.</em></p>
+ <p><em>DigniGuide is listed on our <a href="/services/agentic-systems">Agentic Softwares</a> page as a live product, proof that we ship agentic experiences, not only slides.</em></p>
  `,
  },
  {
@@ -4204,7 +4204,7 @@ const remainingArticles: BlogArticle[] = [
 
  <p>AMS is <strong>in production</strong> at <a href="https://ams-xi-two.vercel.app/" target="_blank" rel="noopener noreferrer">ams xi two.vercel.app</a>. Schools can sign up for free, create an account, complete onboarding, invite teachers and finance staff, and start managing operations today. We keep shipping features, your feedback shapes what comes next.</p>
 
- <p>We built AMS as part of our <a href="/agentic-softwares">Agentic Softwares</a> practice, alongside <a href="https://dispatch-flow-one.vercel.app/" target="_blank" rel="noopener noreferrer">DispatchFlow</a> (operations), <a href="https://kabinda-lodge.com/" target="_blank" rel="noopener noreferrer">Kabinda Lodge</a> (hospitality), and our <a href="/future-ready-graduate">Future Ready Graduate Program</a> for schools that also want employability outcomes for students.</p>
+ <p>We built AMS as part of our <a href="/services/agentic-systems">Agentic Softwares</a> practice, alongside <a href="https://dispatch-flow-one.vercel.app/" target="_blank" rel="noopener noreferrer">DispatchFlow</a> (operations), <a href="https://kabinda-lodge.com/" target="_blank" rel="noopener noreferrer">Kabinda Lodge</a> (hospitality), and our <a href="/services/future-ready">Future Ready Graduate Program</a> for schools that also want employability outcomes for students.</p>
 
  <h3>Next step</h3>
 
@@ -4216,7 +4216,7 @@ const remainingArticles: BlogArticle[] = [
 
  <hr>
 
- <p><em>See AMS on our <a href="/agentic-softwares">Agentic Softwares</a> page with DispatchFlow, Kabinda Lodge, SwiftDrop, DigniGuide, and other live products we build for operators who need adoption, not shelfware.</em></p>
+ <p><em>See AMS on our <a href="/services/agentic-systems">Agentic Softwares</a> page with DispatchFlow, Kabinda Lodge, SwiftDrop, DigniGuide, and other live products we build for operators who need adoption, not shelfware.</em></p>
  `,
  },
  {
@@ -4297,7 +4297,7 @@ const remainingArticles: BlogArticle[] = [
 
  <p>One service business came to us with a familiar problem: the founder converted prospects well, but only when personally involved. Calls after hours were missed, inquiries were not qualified consistently, and the team did not always know which leads deserved immediate attention.</p>
 
- <p>We mapped the founder's best questions, qualification standards, and follow up rhythm into an <a href="/ai-receptionist">AI receptionist and lead qualification system</a>. The result was not a generic chatbot. It was a front office layer trained around the business's real buying signals.</p>
+ <p>We mapped the founder's best questions, qualification standards, and follow up rhythm into an <a href="/services/ai-employee">AI receptionist and lead qualification system</a>. The result was not a generic chatbot. It was a front office layer trained around the business's real buying signals.</p>
 
  <ul>
  <li><strong>Coverage</strong>: inquiries captured after hours instead of waiting until morning.</li>
@@ -4439,7 +4439,7 @@ const remainingArticles: BlogArticle[] = [
 
  <h3>Proof: clarity becomes employability when it turns into visible work</h3>
 
- <p>Digni Digital has served 150+ clients across four continents and built practical digital systems for businesses that need measurable outcomes, not theory. The same principle shapes our <a href="/future-ready-graduate">Digni Digital Literacy</a> work: students and professionals need skills that turn into visible capability. Our future ready graduate approach is built around practical digital confidence, portfolio proof, and employment outcomes, including an 85% employment rate within 6 months of graduation.</p>
+ <p>Digni Digital has served 150+ clients across four continents and built practical digital systems for businesses that need measurable outcomes, not theory. The same principle shapes our <a href="/services/future-ready">Digni Digital Literacy</a> work: students and professionals need skills that turn into visible capability. Our future ready graduate approach is built around practical digital confidence, portfolio proof, and employment outcomes, including an 85% employment rate within 6 months of graduation.</p>
 
  <p>The lesson is simple: career clarity is not found only by thinking harder. It is earned by building, testing, reflecting, and showing evidence.</p>
 
@@ -4774,7 +4774,7 @@ const remainingArticles: BlogArticle[] = [
  title: 'Technology Creates Opportunity: The Future We’re Building — and Where We Stand Now',
  slug: 'future-and-our-current-place-technology-creates-opportunity',
  excerpt:
-  'In the AI era, uncovered leads, unready graduates, and manual operations compound every week. Here is where the future is heading — and where Digni Digital sits today across Grow, Learn, and Scale.',
+  'In the AI era, manual operations, missed enquiries and unready graduates compound every week. Here is where the future is heading — and where Digni Digital sits today across Operations, Growth and Talent.',
  category: 'Future of Work',
  readTime: '14 min read',
  publishDate: 'August 4, 2026',
@@ -4796,7 +4796,7 @@ const remainingArticles: BlogArticle[] = [
   {
    question: 'Is AI going to take my job?',
    answer:
-    'In recent remarks, Elon Musk argued AI may eventually outperform humans at many tasks and that the long-term path looks like abundance with a bumpy transition. At Digni Digital, we treat that as a call to build coverage now: use AI for volume, keep human judgment for decisions that protect trust and revenue.',
+    'In recent remarks, Elon Musk argued AI may eventually outperform humans at many tasks and that the long-term path looks like abundance with a bumpy transition. At Digni Digital, we treat that as a call to close the gaps now: use AI for volume, keep human judgment for the decisions that build trust and revenue.',
   },
   {
    question: 'What is an AI Employee System?',
@@ -4831,99 +4831,105 @@ const remainingArticles: BlogArticle[] = [
   {
    question: 'How do I start?',
    answer:
-    'Name your biggest leak—inbound, talent, or operations—pick one measurable outcome, and book a strategy call. We map a narrow pilot before any full rebuild.',
+    'Name your biggest gap—operations, inbound, or talent—pick one measurable outcome, and book a strategy call. We map a narrow pilot before any full rebuild.',
   },
  ],
  content: `
  <h2>Technology Creates Opportunity: The Future We’re Building — and Where We Stand Now</h2>
 
  <figure class="blog-content-figure" style="margin: 2em 0;">
- <img src="/blog/future-current-place/cover.jpg" alt="Founder at night reviewing a phone flooded with missed calls and unread messages — the cost of uncovered inbound" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
- <figcaption>Before abundance arrives, uncovered inbound already costs you every unanswered night.</figcaption>
+ <img src="/blog/future-current-place/cover.jpg" alt="Founder at night reviewing a phone flooded with missed calls and unread messages — the cost of unanswered inbound" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
+ <figcaption>Before abundance arrives, unanswered inbound already costs you every night it goes quiet.</figcaption>
  </figure>
 
  <p>In a recent, wide-ranging discussion at Tesla Giga, Elon Musk predicted that by 2036 we may enter an <strong>age of amazing abundance</strong>. He described a path where artificial intelligence could exceed the sum of all human intelligence—possibly within roughly five years—and where goods and services become so plentiful that traditional scarcity rules start to bend.</p>
 
  <p>He also warned of a <strong>bumpy road</strong>. As AI reaches elite performance across more digital and physical tasks—outperforming most humans in fields like software engineering—the divide between people who can leverage these systems and people displaced by them will widen.</p>
 
- <p>At <strong>Digni Digital LLC</strong>, we believe the future is not something that only happens to you. It is something you install coverage for. While the global conversation oscillates between exhilaration and terror, our job is practical: give businesses, schools, and professionals the systems that turn disruption into advantage—without waiting for a Silicon Valley zip code or an enterprise budget.</p>
+ <p>At <strong>Digni Digital LLC</strong>, we believe the future is not something that only happens to you. It is something you build systems for. While the global conversation oscillates between exhilaration and terror, our job is practical: give businesses, schools, and professionals the systems that turn disruption into advantage—without waiting for a Silicon Valley zip code or an enterprise budget.</p>
 
- <p><em>Technology Creates Opportunity.</em> That brand line is the compass for how we help clients navigate the coming decade through three pillars: <strong>Grow, Learn, and Scale</strong>.</p>
+ <p><em>Technology Creates Opportunity.</em> That brand line is the compass for how we help clients navigate the coming decade through three practices: <strong>Operations, Growth, and Talent</strong>. Our short version: <em>close the gaps, then let the systems run.</em></p>
 
  <h2>Key takeaways</h2>
  <ul>
  <li><strong>Abundance is the long game</strong> — Musk’s 2030s vision points to extreme productivity; the near term is uneven and competitive.</li>
- <li><strong>The bumpy road is already here</strong> — uncovered inbound, unready talent, and manual operations leak value every week.</li>
- <li><strong>Coverage beats feature shopping</strong> — measure leads captured, jobs created, and workflows owned—not chatbots installed.</li>
+ <li><strong>The bumpy road is already here</strong> — manual operations, unanswered inbound, and unready talent cost value every week.</li>
+ <li><strong>Running systems beat feature shopping</strong> — measure workflows owned, leads captured, and jobs created—not chatbots installed.</li>
  <li><strong>Judgment rises in value</strong> — AI handles volume; humans keep trust, escalation, and strategy.</li>
  <li><strong>Access is the philosophical fight</strong> — SMBs and emerging markets deserve big-business tools.</li>
  <li><strong>Proof exists</strong> — 150+ businesses served; Future Ready graduates at 85% employment within six months; ~150% average salary increase reported for alumni; 2026 commitment of 10 livelihoods and 100 AI-ready professionals.</li>
  <li><strong>Start narrow</strong> — one pilot, one metric, then expand.</li>
  </ul>
 
- <h2>The three leaks: the true cost of inaction</h2>
+ <h2>The three gaps: the true cost of inaction</h2>
 
  <figure class="blog-content-figure" style="margin: 2em 0;">
- <img src="/blog/future-current-place/three-leaks.jpg" alt="Three leaks on one desk: missed messages, a degree without portfolio proof, and spreadsheet chaos" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
- <figcaption>Inbound, talent, and operations — three quiet leaks that compound every week they stay uncovered.</figcaption>
+ <img src="/blog/future-current-place/three-leaks.jpg" alt="Three gaps on one desk: spreadsheet chaos, missed messages, and a degree without portfolio proof" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
+ <figcaption>Operations, inbound, and talent — three quiet gaps that compound every week they stay open.</figcaption>
  </figure>
 
- <p>Before any “nirvana” of abundance, every organization faces three exposures that compound when left uncovered:</p>
+ <p>Before any “nirvana” of abundance, every organization faces three gaps that compound when left open:</p>
 
  <ol>
- <li><strong>Uncovered inbound (the revenue leak):</strong> Every unanswered call or chat is a silent invoice to your competitor. In an age of scarce attention, slow response is the fastest way to lose money.</li>
- <li><strong>Uncovered talent (the skills gap):</strong> Traditional degrees increasingly certify attendance rather than employability. Careers without digital proof lose hiring windows.</li>
- <li><strong>Uncovered operations (the tech divide):</strong> Enterprises spend millions on automation while many SMBs stay on spreadsheets. That <strong>10:1 tech spend ratio</strong> becomes a quiet weekly tax on work machines should carry.</li>
+ <li><strong>The operations gap (the tech divide):</strong> Enterprises spend millions on automation while many SMBs stay on spreadsheets. That <strong>10:1 tech spend ratio</strong> becomes a quiet weekly tax on work machines should carry.</li>
+ <li><strong>The growth gap (missed enquiries):</strong> Every unanswered call or chat is a silent invoice to your competitor. In an age of scarce attention, slow response is the fastest way to lose money.</li>
+ <li><strong>The talent gap (the skills gap):</strong> Traditional degrees increasingly certify attendance rather than employability. Careers without digital proof lose hiring windows.</li>
  </ol>
 
  <table>
  <thead>
- <tr><th>Exposure</th><th>Problem</th><th>Coverage</th><th>Protected outcome</th></tr>
+ <tr><th>Gap</th><th>Problem</th><th>System</th><th>Outcome</th></tr>
  </thead>
  <tbody>
- <tr><td>Uncovered inbound</td><td>Unanswered calls, chats, forms</td><td><a href="/ai-receptionist">AI Employee Systems</a> answer, qualify, book 24/7</td><td>Every inquiry gets a response</td></tr>
- <tr><td>Uncovered talent</td><td>Degrees without hireable proof</td><td><a href="/future-ready-graduate">Future Ready Program</a> with projects + portfolio</td><td>Graduates employers want—or founders who earn</td></tr>
- <tr><td>Uncovered operations</td><td>Spreadsheet ops vs enterprise stacks</td><td><a href="/agentic-softwares">Agentic Software</a> scoped to your workflow</td><td>The workflow runs without million-dollar stack tax</td></tr>
+ <tr><td>Operations</td><td>Spreadsheet ops vs enterprise stacks</td><td><a href="/services/agentic-systems">Agentic Systems &amp; Platforms</a> scoped to your workflow</td><td>The workflow runs without million-dollar stack tax</td></tr>
+ <tr><td>Growth</td><td>Unanswered calls, chats, forms</td><td><a href="/services/ai-employee">AI Employee</a> answers, qualifies, books 24/7</td><td>Every inquiry gets a response</td></tr>
+ <tr><td>Talent</td><td>Degrees without hireable proof</td><td><a href="/services/future-ready">Future Ready</a> with projects + portfolio</td><td>Graduates employers want—or founders who earn</td></tr>
  </tbody>
  </table>
 
  <h2>Why traditional fixes fail</h2>
 
  <ul>
- <li><strong>Generic chatbots</strong> answer without your voice, qualification rules, or escalation judgment—so trust leaks as fast as tickets close.</li>
+ <li><strong>Generic chatbots</strong> answer without your voice, qualification rules, or escalation judgment—so trust drains as fast as tickets close.</li>
  <li><strong>Degree-only pathways</strong> signal attendance while employers hire for visible capability.</li>
  <li><strong>Shelf software</strong> forces your process into someone else’s product instead of encoding how you actually win customers.</li>
  </ul>
 
- <h2>The architecture of opportunity: Grow, Learn, Scale</h2>
+ <h2>The architecture of opportunity: Operations, Growth, Talent</h2>
 
  <figure class="blog-content-figure" style="margin: 2em 0;">
- <img src="/blog/future-current-place/grow-learn-scale.jpg" alt="Modern office showing Grow lead capture, Learn portfolio building, and Scale operations automation working together" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
- <figcaption>Grow captures demand. Learn builds hireable proof. Scale runs the workflow you actually use.</figcaption>
+ <img src="/blog/future-current-place/grow-learn-scale.jpg" alt="Modern office showing operations automation, lead capture, and portfolio building working together" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
+ <figcaption>Operations runs the workflow you actually use. Growth captures demand. Talent builds hireable proof.</figcaption>
  </figure>
 
- <p>We help growth-focused businesses, schools, and ambitious professionals capture every lead, make talent job-ready, and run operations with agentic systems—without waiting for enterprise budgets.</p>
+ <p>We help growth-focused businesses, schools, and ambitious professionals run operations with agentic systems, capture every lead, and make talent job-ready—without waiting for enterprise budgets.</p>
 
  <table>
  <thead>
- <tr><th>Pillar</th><th>Product</th><th>Outcome</th></tr>
+ <tr><th>Practice</th><th>Service</th><th>Outcome</th></tr>
  </thead>
  <tbody>
- <tr><td><strong>Grow</strong></td><td>AI Employee Systems</td><td>More leads captured, qualified, and booked 24/7</td></tr>
- <tr><td><strong>Learn</strong></td><td>Future Ready Program</td><td>Practical AI skills, portfolio proof, employability outcomes</td></tr>
- <tr><td><strong>Scale</strong></td><td>Agentic Software</td><td>Custom automation around how the business actually works</td></tr>
+ <tr><td><strong>Operations</strong></td><td>Agentic Systems &amp; Platforms</td><td>Custom automation around how the business actually works</td></tr>
+ <tr><td><strong>Growth</strong></td><td>AI Employee</td><td>More leads captured, qualified, and booked 24/7</td></tr>
+ <tr><td><strong>Talent</strong></td><td>Future Ready</td><td>Practical AI skills, portfolio proof, employability outcomes</td></tr>
  </tbody>
  </table>
 
- <h3>1. Grow: AI Employee Systems</h3>
+ <h3>1. Operations: Agentic Systems &amp; Platforms</h3>
 
- <p>Musk noted that digital intelligence is advancing very rapidly—and that intelligence still needs ways to act in the real world of customer conversations, calendars, and follow-ups. Our <a href="/ai-receptionist">AI Employee Systems</a> are that operational layer for service businesses: capture, qualify, and book around the clock so inbound opportunity does not go cold overnight.</p>
+ <p>The future belongs to operators who systemize delivery. Off-the-shelf tools often fail to match how a business actually works. Our <a href="/services/agentic-systems">Agentic Systems &amp; Platforms</a> practice builds scoped systems that automate real workflows—whether a school operating system through Academic Management System (AMS), hospitality operations such as <a href="https://kabinda-lodge.com/" target="_blank" rel="noopener noreferrer">Kabinda Lodge</a>, or ops platforms like <a href="https://dispatch-flow-one.vercel.app/" target="_blank" rel="noopener noreferrer">DispatchFlow</a>.</p>
 
- <p>This is the move from feature shopping to <strong>outcome insurance</strong>: response time, booked conversations, and fewer missed leads—not another unused chatbot seat.</p>
+ 
 
- <h3>2. Learn: The Future Ready Program</h3>
+<h3>2. Growth: AI Employee</h3>
 
- <p>If AI can perform more professional tasks at elite levels, human value concentrates in judgment paired with proof. The <a href="/future-ready-graduate">Future Ready Program</a> (Digni Digital Literacy) democratizes access to AI-ready skills through real projects—not theory alone.</p>
+ <p>Musk noted that digital intelligence is advancing very rapidly—and that intelligence still needs ways to act in the real world of customer conversations, calendars, and follow-ups. Our <a href="/services/ai-employee">AI Employee Systems</a> are that operational layer for service businesses: capture, qualify, and book around the clock so inbound opportunity does not go cold overnight.</p>
+
+ <p>This is the move from feature shopping to <strong>outcomes you can measure</strong>: response time, booked conversations, and fewer missed leads—not another unused chatbot seat.</p>
+
+ <h3>3. Talent: The Future Ready Program</h3>
+
+ <p>If AI can perform more professional tasks at elite levels, human value concentrates in judgment paired with proof. The <a href="/services/future-ready">Future Ready Program</a> (Digni Digital Literacy) democratizes access to AI-ready skills through real projects—not theory alone.</p>
 
  <ul>
  <li><strong>Result:</strong> 85% of graduates find employment within six months, compared with an industry average often cited near 45%.</li>
@@ -4931,15 +4937,11 @@ const remainingArticles: BlogArticle[] = [
  <li><strong>2026 commitment:</strong> create 10 livelihoods and train 100 professionals to use AI in their fields by year end.</li>
  </ul>
 
- <h3>3. Scale: Agentic Software</h3>
-
- <p>The future belongs to operators who systemize delivery. Off-the-shelf tools often fail to match how a business actually works. Our <a href="/agentic-softwares">Agentic Software</a> practice builds scoped systems that automate real workflows—whether a school operating system through Academic Management System (AMS), hospitality operations such as <a href="https://kabinda-lodge.com/" target="_blank" rel="noopener noreferrer">Kabinda Lodge</a>, or ops platforms like <a href="https://dispatch-flow-one.vercel.app/" target="_blank" rel="noopener noreferrer">DispatchFlow</a>.</p>
-
  <h2>Why our current place matters</h2>
 
  <figure class="blog-content-figure" style="margin: 2em 0;">
  <img src="/blog/future-current-place/global.jpg" alt="Diverse Africa-based tech team collaborating around global opportunity maps and digital workflows" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
- <figcaption>World-class AI leverage does not require a Silicon Valley zip code — it requires coverage that works where you operate.</figcaption>
+ <figcaption>World-class AI leverage does not require a Silicon Valley zip code — it requires systems that work where you operate.</figcaption>
  </figure>
 
  <p>Digni Digital was founded in 2019 by Pascal Digny Djohodo—an American-registered company that started in Kenya with a fail-forward ethos. Today we operate strongly from Kenya, the Democratic Republic of the Congo (Kinshasa), and the United States, serving <strong>150+ businesses across four continents</strong>.</p>
@@ -4964,7 +4966,7 @@ const remainingArticles: BlogArticle[] = [
 
  <figure class="blog-content-figure" style="margin: 2em 0;">
  <img src="/blog/future-current-place/checklist.jpg" alt="Founder and operations lead reviewing a short AI-era pilot checklist beside a metrics dashboard" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
- <figcaption>Start narrow: one leak, one metric, one pilot — then expand what works.</figcaption>
+ <figcaption>Start narrow: one gap, one metric, one pilot — then expand what works.</figcaption>
  </figure>
 
  <ol>
@@ -4976,25 +4978,25 @@ const remainingArticles: BlogArticle[] = [
  <li><strong>Switch to outcome metrics:</strong> leads captured, jobs created, hours returned—not feature checklists.</li>
  <li><strong>Bridge the tech divide:</strong> choose agentic scope that fits your workflow.</li>
  <li><strong>Train continuously:</strong> AI breakthroughs move weekly; skills must too.</li>
- <li><strong>Own the system:</strong> prefer coverage you control over rented black boxes you cannot measure.</li>
+ <li><strong>Own the system:</strong> prefer systems you control over rented black boxes you cannot measure.</li>
  <li><strong>Book the map:</strong> move from observation to a narrow implementation plan.</li>
  </ol>
 
  <h2>Your guide through the transition</h2>
 
- <p>We are living through a split. On one side: teams that treat AI as coverage—insurance against lost leads, missed hiring windows, and operational leak. On the other: teams still hoping a brochure website or an attendance certificate will be enough.</p>
+ <p>We are living through a split. On one side: teams that use AI to close the gaps—lost leads, missed hiring windows, and manual operations—and then let the systems run. On the other: teams still hoping a brochure website or an attendance certificate will be enough.</p>
 
- <p>Whatever long-run abundance looks like, the next decade will reward operators who install systems now. Digni Digital is the guide for that work: <a href="/ai-receptionist">AI Employee Systems</a>, <a href="/future-ready-graduate">Future Ready training</a>, and <a href="/agentic-softwares">Agentic Software</a> so technology creates opportunity for you—not only for the already-resourced.</p>
+ <p>Whatever long-run abundance looks like, the next decade will reward operators who install systems now. Digni Digital is the guide for that work: <a href="/services/agentic-systems">Agentic Systems &amp; Platforms</a>, <a href="/services/ai-employee">AI Employee</a>, and <a href="/services/future-ready">Future Ready training</a> so technology creates opportunity for you—not only for the already-resourced.</p>
 
  <p><strong>Leads. Jobs. Revenue. We build what works.</strong></p>
 
  <!--BLOG_FAQ-->
 
  <h3>Next step</h3>
- <p><a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Book a strategy call</a> with Digni Digital. We will identify your highest-cost leak, design a narrow pilot, and show where Grow, Learn, or Scale coverage fits first.</p>
+ <p><a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Book a strategy call</a> with Digni Digital. We will identify your highest-cost gap, design a narrow pilot, and show where Operations, Growth, or Talent fits first.</p>
 
  <hr>
- <p><em>Technology Creates Opportunity. The future is built by teams who cover inbound, talent, and operations before the leak becomes a line item.</em></p>
+ <p><em>Technology Creates Opportunity. Close the gaps in operations, inbound, and talent—then let the systems run.</em></p>
  `,
  },
 ]

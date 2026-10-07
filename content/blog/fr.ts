@@ -22,7 +22,7 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
 
  <h3>Le problème de la montée en charge : la demande dépasse le recrutement</h3>
  
- <p>Les modèles traditionnels de service client atteignent leurs limites à mesure que vous grandissez. Plus de leads signifient plus d'appels, plus d'e mails, plus d'opportunités manquées après les heures de bureau. Recruter plus augmente les coûts fixes, le temps de formation et la charge de management. Les <strong>employés IA</strong> gèrent les premiers contacts 24h/24, capturent et qualifient les leads, et libèrent vos équipes pour les conversations à forte valeur. Les entreprises qui utilisent nos solutions d'<a href="/ai-receptionist">réceptionniste IA</a> constatent jusqu'à <strong>300 % de leads en plus</strong>, zéro appel manqué et une couverture multicanal sans embaucher.</p>
+ <p>Les modèles traditionnels de service client atteignent leurs limites à mesure que vous grandissez. Plus de leads signifient plus d'appels, plus d'e mails, plus d'opportunités manquées après les heures de bureau. Recruter plus augmente les coûts fixes, le temps de formation et la charge de management. Les <strong>employés IA</strong> gèrent les premiers contacts 24h/24, capturent et qualifient les leads, et libèrent vos équipes pour les conversations à forte valeur. Les entreprises qui utilisent nos solutions d'<a href="/services/ai-employee">réceptionniste IA</a> constatent jusqu'à <strong>300 % de leads en plus</strong>, zéro appel manqué et une couverture multicanal sans embaucher.</p>
 
  <blockquote>
  <p>« Les employés IA ne remplacent pas le contact humain, ils le renforcent. Notre IA gère les demandes courantes instantanément pour que l'équipe se concentre sur les cas complexes. », <em>Client, scale up SaaS</em></p>
@@ -98,7 +98,7 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
  <li>Votre équipe passe l'essentiel de son temps sur des questions répétitives (horaires, tarifs, RDV).</li>
  <li>Vous avez besoin de cohérence multilingue (ex. français en France et en RDC).</li>
  </ul>
- <p>Découvrez nos solutions de <a href="/ai-receptionist">réceptionniste IA</a> et d'agents pour voir comment nous concevons le handoff et un ROI mesurable.</p>
+ <p>Découvrez nos solutions de <a href="/services/ai-employee">réceptionniste IA</a> et d'agents pour voir comment nous concevons le handoff et un ROI mesurable.</p>
 
  <hr>
  <p><em><a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Réservez votre appel stratégique gratuit</a> pour comparer agents IA et automatisation traditionnelle pour votre entreprise.</em></p>
@@ -160,7 +160,7 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
 
  <h3>Ce qui change en pratique</h3>
 
- <p>Première réponse en minutes. Qualification automatique (budget, délai, besoin). Prise de rendez vous intégrée. Suivi automatisé. Nos solutions de <a href="/ai-receptionist">réceptionniste IA et qualification de leads</a> gèrent tout. Étude de cas : agence immobilière à Kinshasa, +3,2x leads qualifiés, +40 % de chiffre d'affaires en 90 jours. Combinez avec une présence web solide (<a href="/agentic-softwares">sites et SaaS sur mesure</a>) pour un impact maximum. Implémentation : 2 to 4 semaines.</p>
+ <p>Première réponse en minutes. Qualification automatique (budget, délai, besoin). Prise de rendez vous intégrée. Suivi automatisé. Nos solutions de <a href="/services/ai-employee">réceptionniste IA et qualification de leads</a> gèrent tout. Étude de cas : agence immobilière à Kinshasa, +3,2x leads qualifiés, +40 % de chiffre d'affaires en 90 jours. Combinez avec une présence web solide (<a href="/services/agentic-systems">sites et SaaS sur mesure</a>) pour un impact maximum. Implémentation : 2 to 4 semaines.</p>
 
  <hr>
  <p><em><a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Réservez votre appel stratégique gratuit</a> pour booster votre business development avec l'IA.</em></p>
@@ -189,11 +189,11 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
 
  <h3>Pourquoi les « sites brochure » échouent en 2026</h3>
 
- <p>Sans mécanisme de capture, sans mobile first, avec des temps de chargement lents et des signaux de confiance faibles, les visiteurs partent. Ce qui fait un site « générateur de leads » : proposition de valeur claire, signaux de confiance, multiples points de capture reliés au <a href="/ai-receptionist">réceptionniste IA</a>, design mobile first, navigation simple. Étude de cas : entreprise de services à Lyon, x10 conversion de leads, +50 % de nouveaux clients en 60 jours.</p>
+ <p>Sans mécanisme de capture, sans mobile first, avec des temps de chargement lents et des signaux de confiance faibles, les visiteurs partent. Ce qui fait un site « générateur de leads » : proposition de valeur claire, signaux de confiance, multiples points de capture reliés au <a href="/services/ai-employee">réceptionniste IA</a>, design mobile first, navigation simple. Étude de cas : entreprise de services à Lyon, x10 conversion de leads, +50 % de nouveaux clients en 60 jours.</p>
 
  <h3>L'avantage de l'intégration IA</h3>
 
- <p>Nous construisons des <a href="/agentic-softwares">sites et applications web sur mesure</a> qui s'intègrent à notre <a href="/ai-receptionist">réceptionniste IA</a>. Chaque visite peut devenir un lead qualifié ou un rendez vous réservé, 24h/24, en français. <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Réservez un appel stratégique gratuit</a> pour concevoir votre site générateur de leads.</p>
+ <p>Nous construisons des <a href="/services/agentic-systems">sites et applications web sur mesure</a> qui s'intègrent à notre <a href="/services/ai-employee">réceptionniste IA</a>. Chaque visite peut devenir un lead qualifié ou un rendez vous réservé, 24h/24, en français. <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Réservez un appel stratégique gratuit</a> pour concevoir votre site générateur de leads.</p>
 
  <hr>
  <p><em><a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Réservez votre appel stratégique gratuit</a> pour concevoir votre site générateur de leads.</em></p>
@@ -242,7 +242,7 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
 
  <h3>Cadre de décision : 5 questions</h3>
 
- <p>Adéquation processus, avantage concurrentiel, profondeur d'intégration, budget et délai, horizon de croissance. <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Réservez un appel stratégique gratuit</a>, nous auditons vos processus et vous donnons une recommandation claire. Quand le sur mesure l'emporte, nous livrons des <a href="/agentic-softwares">solutions évolutives dont vous êtes pleinement propriétaire</a>.</p>
+ <p>Adéquation processus, avantage concurrentiel, profondeur d'intégration, budget et délai, horizon de croissance. <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Réservez un appel stratégique gratuit</a>, nous auditons vos processus et vous donnons une recommandation claire. Quand le sur mesure l'emporte, nous livrons des <a href="/services/agentic-systems">solutions évolutives dont vous êtes pleinement propriétaire</a>.</p>
 
  <hr>
  <p><em><a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Réservez votre appel stratégique gratuit</a> pour comparer sur mesure et prêt à-l'emploi pour votre cas.</em></p>
@@ -275,7 +275,7 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
 
  <h3>Trois piliers de la transformation</h3>
 
- <p><strong>1. Employés IA et automatisation</strong> : <a href="/ai-receptionist">réceptionnistes IA</a> 24h/24 en français. Jusqu'à 300 % de leads en plus, 40 to 50 % de productivité. <strong>2. Web et SaaS</strong> : <a href="/agentic-softwares">développement web et SaaS sur mesure</a>. Propriété, scalabilité. <strong>3. Croissance et stratégie</strong> : leads, revenus, ROI mesurable.</p>
+ <p><strong>1. Employés IA et automatisation</strong> : <a href="/services/ai-employee">réceptionnistes IA</a> 24h/24 en français. Jusqu'à 300 % de leads en plus, 40 to 50 % de productivité. <strong>2. Web et SaaS</strong> : <a href="/services/agentic-systems">développement web et SaaS sur mesure</a>. Propriété, scalabilité. <strong>3. Croissance et stratégie</strong> : leads, revenus, ROI mesurable.</p>
 
  <h3>Notre bilan</h3>
 
@@ -311,7 +311,7 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
 
  <h3>Ce que vous obtenez : une IA abordable qui fonctionne</h3>
 
- <p>Nos solutions de <a href="/ai-receptionist">réceptionniste IA</a> et d'agents sont conçues pour les PME : capture et qualification 24h/24, multicanal, handoff clair, ROI mesurable. La plupart des clients voient un ROI positif en 30 à 60 jours.</p>
+ <p>Nos solutions de <a href="/services/ai-employee">réceptionniste IA</a> et d'agents sont conçues pour les PME : capture et qualification 24h/24, multicanal, handoff clair, ROI mesurable. La plupart des clients voient un ROI positif en 30 à 60 jours.</p>
 
  <blockquote>
  <p>« Nous sommes une agence de 12 personnes. On ne pouvait pas s'offrir un projet IA Silicon Valley, mais on ne pouvait pas continuer à manquer des appels. Le réceptionniste IA s'est rentabilisé en six semaines. », <em>Fondateur, agence marketing, Paris</em></p>
@@ -351,7 +351,7 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
 
  <h3>À quoi ressemble une IA accessible pour l'Afrique francophone</h3>
 
- <p><a href="/ai-receptionist">Réceptionnistes IA</a> 24h/24 en français. <a href="/agentic-softwares">Web et SaaS sur mesure</a> pour vos workflows. Services de croissance. Mobile first. Digni Digital, fondée à Kinshasa en 2019, apporte : IA human first, accompagnement local, ROI mesurable, français par défaut. Pour les institutions : programme <a href="/future-ready-graduate">Digni Digital Literacy</a>, 85 % en emploi dans les 6 mois.</p>
+ <p><a href="/services/ai-employee">Réceptionnistes IA</a> 24h/24 en français. <a href="/services/agentic-systems">Web et SaaS sur mesure</a> pour vos workflows. Services de croissance. Mobile first. Digni Digital, fondée à Kinshasa en 2019, apporte : IA human first, accompagnement local, ROI mesurable, français par défaut. Pour les institutions : programme <a href="/services/future-ready">Digni Digital Literacy</a>, 85 % en emploi dans les 6 mois.</p>
 
  <hr>
  <p><em><a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Réservez votre appel stratégique gratuit</a> pour parler de l'adoption de l'IA pour votre organisation.</em></p>
@@ -443,7 +443,7 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
 
  <ul>
  <li><strong>SaaS sur mesure</strong> : des applications construites sur mesure qui correspondent exactement à votre flux de travail, dans votre langue, à une fraction du coût entreprise. Pensez CRM, systèmes de réservation ou gestion des stocks conçus pour votre modèle d'affaires spécifique.</li>
- <li><strong>Plateformes no code/low-code</strong> : des outils comme les <a href="/agentic-softwares">constructeurs de logiciels agentiques</a> qui permettent aux PME de créer leurs propres automatisations sans recruter de développeurs.</li>
+ <li><strong>Plateformes no code/low-code</strong> : des outils comme les <a href="/services/agentic-systems">constructeurs de logiciels agentiques</a> qui permettent aux PME de créer leurs propres automatisations sans recruter de développeurs.</li>
  </ul>
 
  <p>Le point idéal pour les PME francophones est un hybride : des systèmes centraux sur mesure complétés par des automatisations no code que votre équipe peut modifier de façon autonome.</p>
@@ -477,7 +477,7 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
  <p><strong>Ce que nous avons mis en place :</strong></p>
 
  <ul>
- <li>Un <a href="/ai-receptionist">réceptionniste IA</a> sur WhatsApp qui répondait aux questions immobilières en français 24h/24</li>
+ <li>Un <a href="/services/ai-employee">réceptionniste IA</a> sur WhatsApp qui répondait aux questions immobilières en français 24h/24</li>
  <li>La qualification automatique des leads selon le budget, la préférence de localisation et le calendrier</li>
  <li>La prise de rendez vous instantanée avec le bon agent commercial</li>
  <li>Des rapports de synthèse quotidiens envoyés au responsable d'équipe</li>
@@ -505,7 +505,7 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
 
  <ul>
  <li>Un flux d'onboarding propulsé par l'IA qui envoyait les séquences de bienvenue, collectait les documents d'entrée et planifiait la réunion de lancement, le tout en moins de 24 heures après la signature du contrat</li>
- <li>Un <a href="/agentic-softwares">tableau de bord SaaS sur mesure</a> pour que l'équipe suive l'étape d'onboarding de chaque client</li>
+ <li>Un <a href="/services/agentic-systems">tableau de bord SaaS sur mesure</a> pour que l'équipe suive l'étape d'onboarding de chaque client</li>
  <li>Des relances automatisées pour les documents manquants, réduisant les relances manuelles de 90 %</li>
  </ul>
 
@@ -526,7 +526,7 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
  <li><strong>Bilingue par conception</strong> : chaque solution fonctionne nativement en français et en anglais. Pas de patches Google Translate. Pas de support linguistique « bientôt disponible ».</li>
  <li><strong>Fondée à Kinshasa, au service du monde entier</strong> : nous avons accompagné plus de 150 clients sur quatre continents depuis 2019. Nous comprenons aussi bien la culture d'affaires parisienne que les réalités du marché congolais.</li>
  <li><strong>Prise en charge de bout en bout</strong> : nous ne vendons pas juste du logiciel. Nous configurons, formons votre équipe, optimisons et mesurons le ROI, avec un support continu inclus.</li>
- <li><strong>Accessible aux PME</strong> : nos <a href="/ai-receptionist">systèmes d'employés IA</a> commencent à une fraction de ce que coûte un seul employé à temps partiel, avec des résultats mesurables en 30 jours.</li>
+ <li><strong>Accessible aux PME</strong> : nos <a href="/services/ai-employee">systèmes d'employés IA</a> commencent à une fraction de ce que coûte un seul employé à temps partiel, avec des résultats mesurables en 30 jours.</li>
  <li><strong>Aucun verrouillage</strong> : vos données vous appartiennent. Si nous ne livrons pas, vous partez avec tout. C'est à ce point que nous sommes confiants.</li>
  </ul>
 
@@ -652,7 +652,7 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
 
  <h2>Rôle de Digni Digital : partenaire, pas outil ponctuel</h2>
 
- <p>Nous combinons <strong>accompagnement stratégique des opérations</strong> et <strong>mise en œuvre de systèmes IA</strong>, par exemple une couverture intelligente de l’accueil alignée sur votre façon de vendre et de servir. Cela peut inclure un <a href="/ai-receptionist">réceptionniste IA</a> qui qualifie les leads et route les appels, intégré à votre fonctionnement réel, plutôt qu’une démo isolée.</p>
+ <p>Nous combinons <strong>accompagnement stratégique des opérations</strong> et <strong>mise en œuvre de systèmes IA</strong>, par exemple une couverture intelligente de l’accueil alignée sur votre façon de vendre et de servir. Cela peut inclure un <a href="/services/ai-employee">réceptionniste IA</a> qui qualifie les leads et route les appels, intégré à votre fonctionnement réel, plutôt qu’une démo isolée.</p>
 
  <p>Si vous comparez un COO fractionnel et une initiative « employé IA », la question honnête est la même : <strong>est ce que cela simplifie et rend plus mesurable la façon dont nous faisons tourner l’entreprise ?</strong> Si oui, vous êtes au bon endroit.</p>
 
@@ -671,7 +671,7 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
 
  <hr>
 
- <p><em>Questions sur la montée en charge sans embaucher à tout va ? <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Prenez rendez vous avec Digni Digital</a> ou découvrez notre <a href="/ai-receptionist">réceptionniste IA</a> pour un accueil disponible en continu.</em></p>
+ <p><em>Questions sur la montée en charge sans embaucher à tout va ? <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Prenez rendez vous avec Digni Digital</a> ou découvrez notre <a href="/services/ai-employee">réceptionniste IA</a> pour un accueil disponible en continu.</em></p>
  `,
  },
  'dispatchflow-unified-logistics-procurement-platform': {
@@ -755,7 +755,7 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
 
  <p>DispatchFlow est <strong>en production</strong> sur <a href="https://dispatch-flow-one.vercel.app/" target="_blank" rel="noopener noreferrer">dispatch flow one.vercel.app</a>. Créez un espace, invitez l'équipe, configurez les sites.</p>
 
- <p>Nous le livrons dans notre pratique <a href="/agentic-softwares">Agentic Softwares</a>, comme <a href="https://kabinda-lodge.com/" target="_blank" rel="noopener noreferrer">Kabinda Lodge</a> et <a href="https://ams-xi-two.vercel.app/" target="_blank" rel="noopener noreferrer">AMS</a>.</p>
+ <p>Nous le livrons dans notre pratique <a href="/services/agentic-systems">Agentic Softwares</a>, comme <a href="https://kabinda-lodge.com/" target="_blank" rel="noopener noreferrer">Kabinda Lodge</a> et <a href="https://ams-xi-two.vercel.app/" target="_blank" rel="noopener noreferrer">AMS</a>.</p>
 
  <p><strong>Essayer :</strong> <a href="https://dispatch-flow-one.vercel.app/signup" target="_blank" rel="noopener noreferrer">Créer un espace gratuit</a>.</p>
 
@@ -763,7 +763,7 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
 
  <hr>
 
- <p><em>Voir DispatchFlow sur notre page <a href="/agentic-softwares">Agentic Softwares</a>.</em></p>
+ <p><em>Voir DispatchFlow sur notre page <a href="/services/agentic-systems">Agentic Softwares</a>.</em></p>
  `,
  },
 
@@ -806,7 +806,7 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
  </figure>
 
  <h3>En ligne aujourd'hui</h3>
- <p><strong><a href="https://kabinda-lodge.com/" target="_blank" rel="noopener noreferrer">kabinda lodge.com</a></strong>, voir notre page <a href="/agentic-softwares">Agentic Softwares</a>.</p>
+ <p><strong><a href="https://kabinda-lodge.com/" target="_blank" rel="noopener noreferrer">kabinda lodge.com</a></strong>, voir notre page <a href="/services/agentic-systems">Agentic Softwares</a>.</p>
  <p><strong>Projet hôtelier ?</strong> <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Réserver un appel</a> avec Digni Digital.</p>
  `,
  },
@@ -848,7 +848,7 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
  <figcaption style="margin-top:0.75rem;font-size:0.875rem;color:#64748b;text-align:center;">Tarifs clairs et suivi étape par étape.</figcaption>
  </figure>
 
- <p><strong>Essayer :</strong> <a href="https://swift-drop-chi.vercel.app/" target="_blank" rel="noopener noreferrer">Ouvrir SwiftDrop</a>, <a href="/agentic-softwares">Agentic Softwares</a>.</p>
+ <p><strong>Essayer :</strong> <a href="https://swift-drop-chi.vercel.app/" target="_blank" rel="noopener noreferrer">Ouvrir SwiftDrop</a>, <a href="/services/agentic-systems">Agentic Softwares</a>.</p>
  `,
  },
 
@@ -883,7 +883,7 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
  <li>Délai pour un réceptionniste IA ?</li>
  </ul>
 
- <p><strong>Ouvrir le guide :</strong> <a href="/digni">DigniGuide</a>, <a href="/agentic-softwares">Agentic Softwares</a>.</p>
+ <p><strong>Ouvrir le guide :</strong> <a href="/digni">DigniGuide</a>, <a href="/services/agentic-systems">Agentic Softwares</a>.</p>
  <p><strong>Prêt pour un appel ?</strong> <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Réserver une démo</a>.</p>
  `,
  },
@@ -971,7 +971,7 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
 
  <p>AMS est <strong>en production</strong> sur <a href="https://ams-xi-two.vercel.app/" target="_blank" rel="noopener noreferrer">ams xi two.vercel.app</a>. Inscrivez vous gratuitement, complétez l'onboarding, invitez votre équipe et gérez votre école dès aujourd'hui.</p>
 
- <p>Nous le livrons dans notre pratique <a href="/agentic-softwares">Agentic Softwares</a>, avec <a href="https://dispatch-flow-one.vercel.app/" target="_blank" rel="noopener noreferrer">DispatchFlow</a>, <a href="https://kabinda-lodge.com/" target="_blank" rel="noopener noreferrer">Kabinda Lodge</a> et notre <a href="/future-ready-graduate">programme Future Ready Graduate</a>.</p>
+ <p>Nous le livrons dans notre pratique <a href="/services/agentic-systems">Agentic Softwares</a>, avec <a href="https://dispatch-flow-one.vercel.app/" target="_blank" rel="noopener noreferrer">DispatchFlow</a>, <a href="https://kabinda-lodge.com/" target="_blank" rel="noopener noreferrer">Kabinda Lodge</a> et notre <a href="/services/future-ready">programme Future Ready Graduate</a>.</p>
 
  <h3>Prochaine étape</h3>
 
@@ -983,7 +983,7 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
 
  <hr>
 
- <p><em>Voir AMS sur notre page <a href="/agentic-softwares">Agentic Softwares</a> avec DispatchFlow, Kabinda Lodge, SwiftDrop et DigniGuide.</em></p>
+ <p><em>Voir AMS sur notre page <a href="/services/agentic-systems">Agentic Softwares</a> avec DispatchFlow, Kabinda Lodge, SwiftDrop et DigniGuide.</em></p>
  `,
  },
 
@@ -1053,7 +1053,7 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
 
  <p>Une entreprise de services nous a contactés avec un problème classique : le fondateur convertissait très bien les prospects, mais seulement lorsqu'il était impliqué. Les appels hors horaires étaient manqués, les demandes mal qualifiées et les meilleurs leads n'étaient pas toujours priorisés.</p>
 
- <p>Nous avons transformé ses meilleures questions, critères de qualification et routines de suivi en <a href="/ai-receptionist">réceptionniste IA et système de qualification de leads</a>. Ce n'était pas un chatbot générique, mais une couche front office alignée sur les vrais signaux d'achat.</p>
+ <p>Nous avons transformé ses meilleures questions, critères de qualification et routines de suivi en <a href="/services/ai-employee">réceptionniste IA et système de qualification de leads</a>. Ce n'était pas un chatbot générique, mais une couche front office alignée sur les vrais signaux d'achat.</p>
 
  <ul>
  <li><strong>Couverture</strong> : les demandes hors horaires sont capturées au lieu d'attendre le matin.</li>
@@ -1158,7 +1158,7 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
 
  <p>L'IA ne remplace pas le jugement. Elle augmente la valeur du jugement. Un professionnel capable de penser clairement avec les outils IA recherche plus vite, prototype plus vite, automatise les tâches répétitives et montre une preuve plus tôt.</p>
 
- <p>Digni Digital a servi plus de 150 clients sur quatre continents. La même logique guide notre programme <a href="/future-ready-graduate">Digni Digital Literacy</a> : les compétences doivent produire une preuve visible et des résultats d'employabilité, dont un taux d'emploi de 85 % dans les 6 mois après la graduation.</p>
+ <p>Digni Digital a servi plus de 150 clients sur quatre continents. La même logique guide notre programme <a href="/services/future-ready">Digni Digital Literacy</a> : les compétences doivent produire une preuve visible et des résultats d'employabilité, dont un taux d'emploi de 85 % dans les 6 mois après la graduation.</p>
 
  <h3>Exercice de 30 minutes</h3>
  <ol>
@@ -1307,7 +1307,7 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
  title: 'La technologie crée des opportunités : l’avenir que nous construisons — et notre place aujourd’hui',
  slug: 'future-and-our-current-place-technology-creates-opportunity',
  excerpt:
-  'À l’ère de l’IA, leads non couverts, diplômés non prêts et opérations manuelles coûtent chaque semaine. Voici où va l’avenir — et où se situe Digni Digital : Grow, Learn, Scale.',
+  'À l’ère de l’IA, opérations manuelles, demandes manquées et diplômés non prêts coûtent chaque semaine. Voici où va l’avenir — et où se situe Digni Digital : Opérations, Croissance, Talents.',
  category: 'Avenir du travail',
  readTime: '14 min de lecture',
  publishDate: '4 août 2026',
@@ -1329,7 +1329,7 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
   {
    question: 'L’IA va-t-elle prendre mon emploi ?',
    answer:
-    'Dans des propos récents, Elon Musk estime que l’IA pourra surpasser les humains sur de nombreuses tâches, avec une abondance à long terme et une transition difficile. Chez Digni Digital, nous y voyons un appel à installer une couverture dès maintenant : l’IA pour le volume, le jugement humain pour la confiance et le revenu.',
+    'Dans des propos récents, Elon Musk estime que l’IA pourra surpasser les humains sur de nombreuses tâches, avec une abondance à long terme et une transition difficile. Chez Digni Digital, nous y voyons un appel à combler les écarts dès maintenant : l’IA pour le volume, le jugement humain pour la confiance et le revenu.',
   },
   {
    question: 'Qu’est-ce qu’un système d’employé IA ?',
@@ -1364,59 +1364,59 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
   {
    question: 'Par où commencer ?',
    answer:
-    'Nommez votre plus grosse fuite — inbound, talent ou opérations — choisissez un indicateur, puis réservez un appel stratégique pour un pilote étroit.',
+    'Nommez votre plus grand écart — opérations, inbound ou talent — choisissez un indicateur, puis réservez un appel stratégique pour un pilote étroit.',
   },
  ],
  content: `
  <h2>La technologie crée des opportunités : l’avenir que nous construisons — et notre place aujourd’hui</h2>
 
  <figure class="blog-content-figure" style="margin: 2em 0;">
- <img src="/blog/future-current-place/cover.jpg" alt="Dirigeant la nuit face à un téléphone saturé d’appels manqués et de messages non lus — le coût de l’inbound non couvert" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
- <figcaption>Avant l’abondance, l’inbound non couvert vous coûte déjà chaque nuit sans réponse.</figcaption>
+ <img src="/blog/future-current-place/cover.jpg" alt="Dirigeant la nuit face à un téléphone saturé d’appels manqués et de messages non lus — le coût des demandes sans réponse" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
+ <figcaption>Avant l’abondance, les demandes sans réponse vous coûtent déjà chaque nuit.</figcaption>
  </figure>
 
  <p>Dans une discussion récente à Tesla Giga, Elon Musk a prédit qu’à l’horizon 2036 nous pourrions entrer dans un <strong>âge d’abondance remarquable</strong>. Il décrit un chemin où l’intelligence artificielle pourrait dépasser la somme de l’intelligence humaine — peut-être en environ cinq ans — et où biens et services deviennent si abondants que les règles classiques de rareté commencent à fléchir.</p>
 
  <p>Il a aussi averti d’une <strong>route cahoteuse</strong>. À mesure que l’IA atteint un niveau d’élite sur davantage de tâches numériques et physiques — surpassant la plupart des humains dans des domaines comme l’ingénierie logicielle — l’écart se creuse entre ceux qui savent tirer parti de ces systèmes et ceux qu’ils déplacent.</p>
 
- <p>Chez <strong>Digni Digital LLC</strong>, nous croyons que l’avenir n’est pas seulement quelque chose qui vous arrive. C’est quelque chose pour lequel vous installez une <strong>couverture</strong>. Pendant que le débat mondial oscille entre exaltation et terreur, notre mission est pratique : donner aux entreprises, écoles et professionnels les systèmes qui transforment la disruption en avantage — sans attendre un code postal de Silicon Valley ni un budget entreprise.</p>
+ <p>Chez <strong>Digni Digital LLC</strong>, nous croyons que l’avenir n’est pas seulement quelque chose qui vous arrive. C’est quelque chose pour lequel vous construisez des <strong>systèmes</strong>. Pendant que le débat mondial oscille entre exaltation et terreur, notre mission est pratique : donner aux entreprises, écoles et professionnels les systèmes qui transforment la disruption en avantage — sans attendre un code postal de Silicon Valley ni un budget entreprise.</p>
 
- <p><em>Technology Creates Opportunity.</em> Cette ligne de marque guide nos trois piliers pour la décennie à venir : <strong>Grow, Learn et Scale</strong>.</p>
+ <p><em>Technology Creates Opportunity.</em> Cette ligne de marque guide nos trois pratiques pour la décennie à venir : <strong>Opérations, Croissance et Talents</strong>. En bref : <em>combler les écarts, puis laisser tourner les systèmes.</em></p>
 
  <h2>Points clés à retenir</h2>
  <ul>
  <li><strong>L’abondance est le long jeu</strong> — la vision Musk des années 2030 pointe une productivité extrême ; le court terme est inégal et compétitif.</li>
- <li><strong>La route cahoteuse est déjà là</strong> — inbound non couvert, talents non prêts, opérations manuelles fuient de la valeur chaque semaine.</li>
- <li><strong>La couverture bat le shopping de fonctionnalités</strong> — mesurer leads capturés, emplois créés, workflows maîtrisés.</li>
+ <li><strong>La route cahoteuse est déjà là</strong> — opérations manuelles, demandes sans réponse et talents non prêts coûtent de la valeur chaque semaine.</li>
+ <li><strong>Des systèmes qui tournent battent le shopping de fonctionnalités</strong> — mesurer workflows maîtrisés, leads capturés, emplois créés.</li>
  <li><strong>Le jugement gagne en valeur</strong> — l’IA porte le volume ; l’humain garde la confiance et la stratégie.</li>
  <li><strong>L’accès est le combat philosophique</strong> — PME et marchés émergents méritent les outils des géants.</li>
  <li><strong>La preuve existe</strong> — 150+ entreprises ; 85 % d’emploi Future Ready sous 6 mois ; ~150 % d’augmentation salariale rapportée ; engagement 2026 : 10 moyens de subsistance et 100 professionnels formés à l’IA.</li>
  <li><strong>Commencez étroit</strong> — un pilote, une métrique, puis étendez.</li>
  </ul>
 
- <h2>Les trois fuites : le vrai coût de l’inaction</h2>
+ <h2>Les trois écarts : le vrai coût de l’inaction</h2>
 
  <figure class="blog-content-figure" style="margin: 2em 0;">
- <img src="/blog/future-current-place/three-leaks.jpg" alt="Trois fuites sur un bureau : messages manqués, diplôme sans preuve portfolio, chaos de tableurs" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
- <figcaption>Inbound, talent et opérations — trois fuites silencieuses qui s’aggravent chaque semaine.</figcaption>
+ <img src="/blog/future-current-place/three-leaks.jpg" alt="Trois écarts sur un bureau : chaos de tableurs, messages manqués, diplôme sans preuve portfolio" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
+ <figcaption>Opérations, inbound et talent — trois écarts silencieux qui s’aggravent chaque semaine.</figcaption>
  </figure>
 
- <p>Avant toute « nirvana » d’abondance, chaque organisation fait face à trois expositions qui s’aggravent si elles restent découvertes :</p>
+ <p>Avant toute « nirvana » d’abondance, chaque organisation fait face à trois écarts qui s’aggravent s’ils restent ouverts :</p>
 
  <ol>
- <li><strong>Inbound non couvert (fuite de revenu) :</strong> chaque appel ou chat sans réponse est une facture silencieuse pour votre concurrent. À l’ère de l’attention rare, répondre lentement est le moyen le plus rapide de perdre de l’argent.</li>
- <li><strong>Talent non couvert (fossé des compétences) :</strong> les diplômes certifient souvent la présence plutôt que l’employabilité. Sans preuve digitale, les fenêtres d’embauche se ferment.</li>
- <li><strong>Opérations non couvertes (fracture tech) :</strong> les entreprises dépensent des millions en automatisation pendant que beaucoup de PME restent sur tableurs. Ce <strong>ratio 10:1</strong> devient une taxe hebdomadaire silencieuse.</li>
+ <li><strong>L’écart de croissance (demandes manquées) :</strong> chaque appel ou chat sans réponse est une facture silencieuse pour votre concurrent. À l’ère de l’attention rare, répondre lentement est le moyen le plus rapide de perdre de l’argent.</li>
+ <li><strong>L’écart de talents (fossé des compétences) :</strong> les diplômes certifient souvent la présence plutôt que l’employabilité. Sans preuve digitale, les fenêtres d’embauche se ferment.</li>
+ <li><strong>L’écart opérationnel (fracture tech) :</strong> les entreprises dépensent des millions en automatisation pendant que beaucoup de PME restent sur tableurs. Ce <strong>ratio 10:1</strong> devient une taxe hebdomadaire silencieuse.</li>
  </ol>
 
  <table>
  <thead>
- <tr><th>Exposition</th><th>Problème</th><th>Couverture</th><th>Résultat protégé</th></tr>
+ <tr><th>Écart</th><th>Problème</th><th>Système</th><th>Résultat</th></tr>
  </thead>
  <tbody>
- <tr><td>Inbound non couvert</td><td>Appels, chats, formulaires sans réponse</td><td><a href="/ai-receptionist">Systèmes d’employé IA</a> 24h/24</td><td>Chaque demande obtient une réponse</td></tr>
- <tr><td>Talent non couvert</td><td>Diplômes sans preuve embauchable</td><td><a href="/future-ready-graduate">Programme Future Ready</a></td><td>Diplômés que les employeurs veulent</td></tr>
- <tr><td>Opérations non couvertes</td><td>Tableurs vs stacks enterprise</td><td><a href="/agentic-softwares">Logiciels agentiques</a></td><td>Le workflow tourne sans taxe millionnaire</td></tr>
+ <tr><td>Croissance</td><td>Appels, chats, formulaires sans réponse</td><td><a href="/services/ai-employee">Systèmes d’employé IA</a> 24h/24</td><td>Chaque demande obtient une réponse</td></tr>
+ <tr><td>Talents</td><td>Diplômes sans preuve embauchable</td><td><a href="/services/future-ready">Programme Future Ready</a></td><td>Diplômés que les employeurs veulent</td></tr>
+ <tr><td>Opérations</td><td>Tableurs vs stacks enterprise</td><td><a href="/services/agentic-systems">Logiciels agentiques</a></td><td>Le workflow tourne sans taxe millionnaire</td></tr>
  </tbody>
  </table>
 
@@ -1427,45 +1427,45 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
  <li><strong>Logiciels catalogue</strong> forcent votre process dans le produit d’un autre au lieu d’encoder comment vous gagnez réellement.</li>
  </ul>
 
- <h2>L’architecture de l’opportunité : Grow, Learn, Scale</h2>
+ <h2>L’architecture de l’opportunité : Opérations, Croissance, Talents</h2>
 
  <figure class="blog-content-figure" style="margin: 2em 0;">
- <img src="/blog/future-current-place/grow-learn-scale.jpg" alt="Bureau moderne montrant capture de leads (Grow), construction de portfolio (Learn) et automatisation des opérations (Scale)" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
- <figcaption>Grow capture la demande. Learn bâtit une preuve embauchable. Scale fait tourner votre vrai workflow.</figcaption>
+ <img src="/blog/future-current-place/grow-learn-scale.jpg" alt="Bureau moderne montrant automatisation des opérations, capture de leads et construction de portfolio" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
+ <figcaption>Opérations fait tourner votre vrai workflow. Croissance capte la demande. Talents bâtit une preuve embauchable.</figcaption>
  </figure>
 
  <p>Nous aidons les entreprises en croissance, les écoles et les professionnels ambitieux à capturer chaque prospect, rendre les talents prêts à l’emploi et faire tourner les opérations avec des systèmes agentiques — sans attendre les budgets entreprise.</p>
 
  <table>
  <thead>
- <tr><th>Pilier</th><th>Offre</th><th>Résultat</th></tr>
+ <tr><th>Pratique</th><th>Offre</th><th>Résultat</th></tr>
  </thead>
  <tbody>
- <tr><td><strong>Grow</strong></td><td>Systèmes d’employé IA</td><td>Plus de leads capturés, qualifiés et réservés 24h/24</td></tr>
- <tr><td><strong>Learn</strong></td><td>Programme Future Ready</td><td>Compétences IA pratiques, preuve portfolio, employabilité</td></tr>
- <tr><td><strong>Scale</strong></td><td>Logiciels agentiques</td><td>Automatisation sur mesure autour de votre façon de travailler</td></tr>
+ <tr><td><strong>Croissance</strong></td><td>Systèmes d’employé IA</td><td>Plus de leads capturés, qualifiés et réservés 24h/24</td></tr>
+ <tr><td><strong>Talents</strong></td><td>Programme Future Ready</td><td>Compétences IA pratiques, preuve portfolio, employabilité</td></tr>
+ <tr><td><strong>Opérations</strong></td><td>Systèmes agentiques et plateformes</td><td>Automatisation sur mesure autour de votre façon de travailler</td></tr>
  </tbody>
  </table>
 
- <h3>1. Grow : systèmes d’employé IA</h3>
- <p>Musk souligne que l’intelligence numérique avance très vite — et qu’elle a encore besoin d’agir dans le monde réel des conversations clients, calendriers et suivis. Nos <a href="/ai-receptionist">systèmes d’employé IA</a> sont cette couche opérationnelle : capturer, qualifier et réserver jour et nuit pour que l’opportunité inbound ne refroidisse pas.</p>
- <p>C’est le passage du shopping de fonctionnalités à l’<strong>assurance de résultats</strong> : temps de réponse, rendez-vous réservés, moins de leads manqués.</p>
+ <h3>1. Opérations : systèmes agentiques et plateformes</h3>
+ <p>L’avenir appartient aux opérateurs qui systématisent la livraison. Les outils catalogue peinent à coller à la réalité. Notre pratique <a href="/services/agentic-systems">Agentic Softwares</a> construit des systèmes ciblés — OS scolaire (AMS), hospitalité comme <a href="https://kabinda-lodge.com/" target="_blank" rel="noopener noreferrer">Kabinda Lodge</a>, ou ops comme <a href="https://dispatch-flow-one.vercel.app/" target="_blank" rel="noopener noreferrer">DispatchFlow</a>.</p>
 
- <h3>2. Learn : le programme Future Ready</h3>
- <p>Si l’IA exécute davantage de tâches professionnelles à un niveau d’élite, la valeur humaine se concentre dans le jugement couplé à la preuve. Le <a href="/future-ready-graduate">programme Future Ready</a> démocratise l’accès aux compétences IA via des projets réels.</p>
+ <h3>2. Croissance : employé IA</h3>
+ <p>Musk souligne que l’intelligence numérique avance très vite — et qu’elle a encore besoin d’agir dans le monde réel des conversations clients, calendriers et suivis. Nos <a href="/services/ai-employee">systèmes d’employé IA</a> sont cette couche opérationnelle : capturer, qualifier et réserver jour et nuit pour que l’opportunité inbound ne refroidisse pas.</p>
+ <p>C’est le passage du shopping de fonctionnalités à des <strong>résultats mesurables</strong> : temps de réponse, rendez-vous réservés, moins de leads manqués.</p>
+
+ <h3>3. Talents : le programme Future Ready</h3>
+ <p>Si l’IA exécute davantage de tâches professionnelles à un niveau d’élite, la valeur humaine se concentre dans le jugement couplé à la preuve. Le <a href="/services/future-ready">programme Future Ready</a> démocratise l’accès aux compétences IA via des projets réels.</p>
  <ul>
  <li><strong>Résultat :</strong> 85 % des diplômés trouvent un emploi sous six mois (vs ~45 % souvent cités).</li>
  <li><strong>Impact :</strong> ~150 % d’augmentation salariale moyenne rapportée après des compétences IA pratiques.</li>
  <li><strong>Engagement 2026 :</strong> 10 moyens de subsistance créés et 100 professionnels formés à l’IA dans leur métier.</li>
  </ul>
 
- <h3>3. Scale : logiciels agentiques</h3>
- <p>L’avenir appartient aux opérateurs qui systématisent la livraison. Les outils catalogue peinent à coller à la réalité. Notre pratique <a href="/agentic-softwares">Agentic Softwares</a> construit des systèmes ciblés — OS scolaire (AMS), hospitalité comme <a href="https://kabinda-lodge.com/" target="_blank" rel="noopener noreferrer">Kabinda Lodge</a>, ou ops comme <a href="https://dispatch-flow-one.vercel.app/" target="_blank" rel="noopener noreferrer">DispatchFlow</a>.</p>
-
  <h2>Pourquoi notre place actuelle compte</h2>
  <figure class="blog-content-figure" style="margin: 2em 0;">
  <img src="/blog/future-current-place/global.jpg" alt="Équipe tech diversifiée en Afrique collaborant autour de cartes d’opportunité mondiale et de flux digitaux" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
- <figcaption>Un levier IA de premier plan n’exige pas un code postal de Silicon Valley — il exige une couverture qui marche là où vous opérez.</figcaption>
+ <figcaption>Un levier IA de premier plan n’exige pas un code postal de Silicon Valley — il exige des systèmes qui marchent là où vous opérez.</figcaption>
  </figure>
  <p>Fondée en 2019 par Pascal Digny Djohodo — entreprise enregistrée aux États-Unis, démarrée au Kenya, ethos « fail forward ». Aujourd’hui : Kenya, RDC (Kinshasa), États-Unis, <strong>150+ entreprises sur quatre continents</strong>.</p>
  <p>Nous refusons la géographie comme destin. Si la productivité extrême réécrit la rareté, l’accès décide qui en bénéficie. Notre place : faire en sorte que PME et marchés émergents obtiennent la même classe d’outils — capable en français si besoin, mobile first, mesurée en leads, emplois et revenus.</p>
@@ -1486,7 +1486,7 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
  <h2>Checklist en 10 étapes</h2>
  <figure class="blog-content-figure" style="margin: 2em 0;">
  <img src="/blog/future-current-place/checklist.jpg" alt="Fondateur et responsable ops passant en revue une courte checklist pilote à côté d’un tableau de métriques" width="1200" height="630" style="max-width: 100%; height: auto; border-radius: 12px;" loading="lazy" />
- <figcaption>Commencez étroit : une fuite, une métrique, un pilote — puis étendez ce qui marche.</figcaption>
+ <figcaption>Commencez étroit : un écart, une métrique, un pilote — puis étendez ce qui marche.</figcaption>
  </figure>
  <ol>
  <li><strong>Auditez l’intake :</strong> comptez les leads manqués après heures.</li>
@@ -1497,21 +1497,21 @@ const frenchArticlesBySlug: Record<string, BlogArticle> = {
  <li><strong>Passez aux métriques de résultat :</strong> leads, emplois, heures récupérées.</li>
  <li><strong>Comblez la fracture tech :</strong> choisissez un périmètre agentique adapté.</li>
  <li><strong>Formez-vous en continu :</strong> l’IA avance chaque semaine ; les compétences aussi.</li>
- <li><strong>Possédez le système :</strong> préférez une couverture mesurable aux boîtes noires louées.</li>
+ <li><strong>Possédez le système :</strong> préférez des systèmes mesurables que vous maîtrisez aux boîtes noires louées.</li>
  <li><strong>Réservez la carte :</strong> passez de l’observation à un plan de mise en œuvre étroit.</li>
  </ol>
 
  <h2>Votre guide dans la transition</h2>
- <p>Nous vivons une fracture. D’un côté : des équipes qui traitent l’IA comme une couverture. De l’autre : celles qui espèrent qu’un site vitrine ou un certificat de présence suffira.</p>
- <p>Quelle que soit l’abondance à long terme, la prochaine décennie récompensera ceux qui installent des systèmes maintenant. Digni Digital est le guide de ce travail : <a href="/ai-receptionist">employés IA</a>, <a href="/future-ready-graduate">Future Ready</a> et <a href="/agentic-softwares">logiciels agentiques</a> pour que la technologie crée des opportunités pour vous.</p>
+ <p>Nous vivons une fracture. D’un côté : des équipes qui utilisent l’IA pour combler les écarts, puis laissent tourner les systèmes. De l’autre : celles qui espèrent qu’un site vitrine ou un certificat de présence suffira.</p>
+ <p>Quelle que soit l’abondance à long terme, la prochaine décennie récompensera ceux qui installent des systèmes maintenant. Digni Digital est le guide de ce travail : <a href="/services/ai-employee">employés IA</a>, <a href="/services/future-ready">Future Ready</a> et <a href="/services/agentic-systems">logiciels agentiques</a> pour que la technologie crée des opportunités pour vous.</p>
  <p><strong>Prospects. Emplois. Revenus. Nous construisons ce qui marche.</strong></p>
 
  <!--BLOG_FAQ-->
 
  <h3>Prochaine étape</h3>
- <p><a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Réservez un appel stratégique</a> avec Digni Digital. Nous identifierons votre fuite la plus coûteuse et concevrons un pilote étroit Grow, Learn ou Scale.</p>
+ <p><a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Réservez un appel stratégique</a> avec Digni Digital. Nous identifierons votre écart le plus coûteux et concevrons un pilote étroit en Opérations, Croissance ou Talents.</p>
  <hr>
- <p><em>Technology Creates Opportunity. L’avenir appartient aux équipes qui couvrent inbound, talent et opérations avant que la fuite ne devienne une ligne du P&amp;L.</em></p>
+ <p><em>Technology Creates Opportunity. Comblez les écarts en opérations, inbound et talents — puis laissez tourner les systèmes.</em></p>
  `,
  },
 }

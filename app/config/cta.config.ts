@@ -28,8 +28,8 @@ export const ctaConfig = {
  bookingUrl: 'https://calendar.app.google/xP2APV1Zqbke8JKu6',
 
   buttonText: {
- getStarted: "See What's Exposed",
- talkToDigniGuide: "See What's Exposed",
+ getStarted: 'Find your biggest gap',
+ talkToDigniGuide: 'Ask DigniGuide',
  bookStrategy: 'Book a Strategy Call',
  bookConsultation: 'Book Your Free Consultation',
  scheduleConsultation: 'Schedule Consultation',

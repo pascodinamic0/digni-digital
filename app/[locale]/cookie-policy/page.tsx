@@ -19,7 +19,7 @@ export default async function CookiePolicyPage({ params }: CookiePolicyPageProps
 
   return (
     <>
-      <main className="min-h-screen pt-24 pb-16">
+      <div className="min-h-screen pt-24 pb-16">
         <div className="max-w-3xl mx-auto px-6">
           <h1 className="font-display text-3xl md:text-4xl font-bold text-text mb-2">
             {t('title')}
@@ -55,7 +55,7 @@ export default async function CookiePolicyPage({ params }: CookiePolicyPageProps
             </p>
           </div>
         </div>
-      </main>
+      </div>
     </>
   )
 }

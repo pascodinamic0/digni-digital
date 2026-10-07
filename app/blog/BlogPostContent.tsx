@@ -3,7 +3,6 @@
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { Link } from '@/i18n/navigation'
-import { useLanguage } from '@/app/context/LocaleContext'
 import { translations } from '@/app/config/translations'
 import { getBookingLinkProps } from '@/app/config/cta.config'
 import { AUTHOR_HEADSHOT_PATH } from '@/lib/site-assets'
@@ -24,12 +23,12 @@ const FAQ_SECTION_TITLE: Record<Language, string> = {
 }
 
 interface BlogPostContentProps {
-  articleByLang: Record<Language, BlogArticle>
+  article: BlogArticle
+  language: Language
 }
 
-export default function BlogPostContent({ articleByLang }: BlogPostContentProps) {
-  const language = useLanguage()
-  const article = articleByLang[language] ?? articleByLang.en
+/** Receives only the current-locale article (keeps the RSC payload to one language). */
+export default function BlogPostContent({ article, language }: BlogPostContentProps) {
   const bodyHtml = article.content ?? ''
   const faqs = article.faqs ?? []
   const hasFaqMarker = bodyHtml.includes(BLOG_FAQ_MARKER)
@@ -158,7 +157,7 @@ export default function BlogPostContent({ articleByLang }: BlogPostContentProps)
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
-                href="/future-ready-graduate"
+                href="/services/future-ready"
                 className="btn-primary"
               >
                 {t.exploreFutureReady}

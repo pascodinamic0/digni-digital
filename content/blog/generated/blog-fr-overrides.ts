@@ -1522,13 +1522,13 @@ export const blogFrOverrides = {
       <h3>Trois leviers de croissance</h3>
 
       <h4>1. Génération et qualification de leads</h4>
-      <p>Les employés IA et <a href="/ai-receptionist">réceptionnistes IA</a> captent et qualifient les leads 24h/24. Résultat : plus d'opportunités, une réponse plus rapide, aucun appel manqué. Nos clients constatent jusqu'à <strong>300 % de leads qualifiés en plus</strong>.</p>
+      <p>Les employés IA et <a href="/services/ai-employee">réceptionnistes IA</a> captent et qualifient les leads 24h/24. Résultat : plus d'opportunités, une réponse plus rapide, aucun appel manqué. Nos clients constatent jusqu'à <strong>300 % de leads qualifiés en plus</strong>.</p>
 
       <h4>2. Automatisation des processus</h4>
       <p>Automatisez devis, rendez-vous, relances et FAQ client. Votre équipe se concentre sur la conclusion des deals, pas sur la paperasse. Gain de productivité typique : <strong>40 à 50 %</strong> dans les zones concernées.</p>
 
       <h4>3. Web et SaaS</h4>
-      <p>Une présence <a href="/agentic-softwares">web ou SaaS sur mesure</a> construit la confiance et convertit les visiteurs en leads. Combinée à la capture IA, elle maximise l'impact. Certains sites que nous avons construits ont multiplié la conversion de leads par <strong>10</strong>.</p>
+      <p>Une présence <a href="/services/agentic-systems">web ou SaaS sur mesure</a> construit la confiance et convertit les visiteurs en leads. Combinée à la capture IA, elle maximise l'impact. Certains sites que nous avons construits ont multiplié la conversion de leads par <strong>10</strong>.</p>
 
       <blockquote>
         <p>« Nous perdions des leads faute de répondre assez vite. Maintenant, l'IA capte tout, qualifie en français et notre équipe parle seulement aux personnes prêtes à acheter. Le chiffre d'affaires a augmenté de 40 % en six mois. », <em>Directeur, services B2B, Lyon</em></p>

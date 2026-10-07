@@ -27,11 +27,11 @@ export const blogDeBodyOverrides = {
 
       <h3>Drei Wachstumshebel</h3>
       <h4>1. Interessentengewinnung und Qualifizierung</h4>
-      <p>KI-Mitarbeiter und <a href="/ai-receptionist">KI-Rezeptionisten</a> erfassen und qualifizieren Leads rund um die Uhr. Ergebnis: mehr Chancen, schnellere Reaktion, keine verpassten Anrufe. Unsere Kunden berichten von bis zu <strong>300 % mehr qualifizierten Leads</strong>.</p>
+      <p>KI-Mitarbeiter und <a href="/services/ai-employee">KI-Rezeptionisten</a> erfassen und qualifizieren Leads rund um die Uhr. Ergebnis: mehr Chancen, schnellere Reaktion, keine verpassten Anrufe. Unsere Kunden berichten von bis zu <strong>300 % mehr qualifizierten Leads</strong>.</p>
       <h4>2. Prozessautomatisierung</h4>
       <p>Automatisieren Sie Angebote, Terminplanung, Follow-ups und Kunden-FAQs. Ihr Team konzentriert sich auf Abschlüsse, nicht auf Papierarbeit. Typischer Produktivitätsgewinn: <strong>40-50 %</strong> in betroffenen Bereichen.</p>
       <h4>3. Web und SaaS</h4>
-      <p>Eine professionelle <a href="/agentic-softwares">maßgeschneiderte Web- oder SaaS-Präsenz</a> baut Vertrauen auf und konvertiert Besucher in Interessenten. Kombiniert mit KI-Erfassung entsteht maximale Wirkung. Webseiten, die wir gebaut haben, erzielten bis zu <strong>10x bessere Interessenten-Konversion</strong>.</p>
+      <p>Eine professionelle <a href="/services/agentic-systems">maßgeschneiderte Web- oder SaaS-Präsenz</a> baut Vertrauen auf und konvertiert Besucher in Interessenten. Kombiniert mit KI-Erfassung entsteht maximale Wirkung. Webseiten, die wir gebaut haben, erzielten bis zu <strong>10x bessere Interessenten-Konversion</strong>.</p>
 
       <blockquote>
         <p>„Wir haben Leads verloren, weil wir nicht schnell genug reagieren konnten. Jetzt erfasst die KI alles, qualifiziert auf Französisch, und unser Team spricht nur mit Menschen, die kaufbereit sind. Der Umsatz stieg in sechs Monaten um 40 %.", <em>Direktor, B2B-Dienstleistungen, Lyon</em></p>
