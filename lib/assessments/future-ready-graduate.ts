@@ -143,7 +143,7 @@ const questions = [
 export const futureReadyAssessmentEn: ServiceAssessmentConfig = {
  serviceId: 'future-ready',
  serviceName: 'Future Ready Graduate Program',
- servicePath: '/future-ready-graduate',
+ servicePath: '/services/future-ready',
  accent: 'success',
  copy: {
  metaTitle: 'Future Ready Graduate Fit Assessment | Digni Digital',

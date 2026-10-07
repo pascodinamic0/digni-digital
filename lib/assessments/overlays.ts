@@ -102,22 +102,22 @@ const aiEmployeeFr: AssessmentOverlay = {
     metaDescription:
       'Dix questions honnêtes sur la visibilité du pipeline, la vitesse de réponse, la responsabilité de l’équipe et les fuites de prospects.',
     eyebrow: 'Contrôle de 2 minutes',
-    introTitle: 'À quel point votre revenu est-il exposé quand vous n’êtes pas dans la pièce ?',
+    introTitle: 'Combien de revenu vous échappe quand vous n’êtes pas dans la pièce ?',
     introSubtitle:
       'Sans inscription. Dix questions montrent où les prospects, les réservations, les avis et les relances fuient quand l’équipe est occupée ou que vous êtes hors ligne.',
     introBullets: [
       'Visibilité du pipeline, responsabilité, vitesse de réponse et charge administrative',
-      'Score immédiat pour la couverture Employé IA',
+      'Score d’adéquation Employé IA immédiat',
       'Une suite claire seulement si les écarts sont réels',
     ],
     resultTitle: 'de correspondance pour l’Employé IA',
-    matchLabel: 'Correspondance de couverture',
+    matchLabel: 'Score d’adéquation',
     primaryCta: 'Réserver un audit du système de croissance',
     secondaryCta: 'Voir l’Employé IA',
     bands: [
       {
         minPercent: 85,
-        label: 'Exposition inbound critique',
+        label: 'Fuite inbound critique',
         description:
           'Vos réponses montrent un risque de revenu sérieux : réponse lente, visibilité faible, admin manuel et relances irrégulières. L’Employé IA referme ces écarts avant que les acheteurs prêts ne partent.',
       },
@@ -145,7 +145,7 @@ const aiEmployeeFr: AssessmentOverlay = {
     headline: 'Votre score de fuite inbound est prêt.',
     body: 'Le score pèse la visibilité du pipeline, la responsabilité, la charge manuelle, la vitesse de réponse et le coût des relances manquées.',
     ctaIntro:
-      'Réservez un audit du système de croissance. Nous cartographierons où la couverture Employé IA peut refermer la fuite.',
+      'Réservez un audit du système de croissance. Nous cartographierons où un Employé IA peut refermer la fuite.',
     primaryCta: 'Réserver un audit du système de croissance',
     warning: 'Ne réservez pas si vous acceptez de perdre des prospects au profit d’un concurrent plus rapide.',
   },
@@ -535,7 +535,7 @@ const introBulletsByLang: Record<
   es: {
     ai: [
       'Visibilidad del pipeline, responsabilidad, velocidad y carga manual',
-      'Puntuación inmediata de cobertura',
+      'Puntuación de encaje inmediata',
       'Siguiente paso solo si las brechas son reales',
     ],
     frg: [
@@ -552,7 +552,7 @@ const introBulletsByLang: Record<
   de: {
     ai: [
       'Pipeline-Sichtbarkeit, Verantwortung, Tempo und manuelle Last',
-      'Sofortige Absicherungs-Punktzahl',
+      'Sofortiger Passungs-Score',
       'Nächster Schritt nur bei echten Lücken',
     ],
     frg: [
@@ -569,7 +569,7 @@ const introBulletsByLang: Record<
   ar: {
     ai: [
       'وضوح المسار والمساءلة وسرعة الرد والحمل اليدوي',
-      'نتيجة فورية للتغطية',
+      'نتيجة ملاءمة فورية',
       'خطوة تالية فقط إذا كانت الفجوات حقيقية',
     ],
     frg: [
@@ -597,11 +597,11 @@ function alignedCopy(
         metaTitle: 'Evaluación Empleado IA | Digni Digital',
         metaDescription:
           'Diez preguntas honestas sobre visibilidad del pipeline, velocidad de respuesta, responsabilidad del equipo y fugas de leads.',
-        introTitle: '¿Cuánto está expuesto su ingreso cuando usted no está en la sala?',
+        introTitle: '¿Cuántos ingresos se le escapan cuando usted no está en la sala?',
         introSubtitle:
           'Sin registro. Diez preguntas muestran dónde se filtran leads, reservas, reseñas y seguimientos cuando el equipo está ocupado o usted está desconectado.',
         resultTitle: 'de coincidencia para Empleado IA',
-        matchLabel: 'Coincidencia de cobertura',
+        matchLabel: 'Nivel de encaje',
         primaryCta: 'Reservar una auditoría del sistema de crecimiento',
         secondaryCta: 'Ver Empleado IA',
       },
@@ -638,11 +638,11 @@ function alignedCopy(
         metaTitle: 'AI Employee Bewertung | Digni Digital',
         metaDescription:
           'Zehn ehrliche Fragen zu Pipeline-Sichtbarkeit, Antwortgeschwindigkeit, Teamverantwortung und Lead-Lecks.',
-        introTitle: 'Wie exponiert ist Ihr Umsatz, wenn Sie nicht im Raum sind?',
+        introTitle: 'Wie viel Umsatz geht verloren, wenn Sie nicht im Raum sind?',
         introSubtitle:
           'Keine Anmeldung. Zehn Fragen zeigen, wo Leads, Buchungen, Bewertungen und Follow-ups lecken, wenn das Team beschäftigt oder Sie offline sind.',
         resultTitle: 'Treffer für AI Employee',
-        matchLabel: 'Absicherungs-Fit',
+        matchLabel: 'Passungs-Score',
         primaryCta: 'Growth-System-Audit buchen',
         secondaryCta: 'AI Employee ansehen',
       },
@@ -679,11 +679,11 @@ function alignedCopy(
         metaTitle: 'تقييم موظف الذكاء الاصطناعي | Digni Digital',
         metaDescription:
           'عشرة أسئلة صادقة عن وضوح المسار وسرعة الرد ومساءلة الفريق وتسرب العملاء المحتملين.',
-        introTitle: 'إلى أي حد إيرادك معرّض عندما لا تكون في الغرفة؟',
+        introTitle: 'كم من إيراداتك يضيع عندما لا تكون في الغرفة؟',
         introSubtitle:
           'بدون تسجيل. عشرة أسئلة تُظهر أين تتسرب الاستفسارات والحجوزات والمراجعات والمتابعات عندما يكون الفريق مشغولاً أو تكون غير متصل.',
         resultTitle: 'من التطابق لموظف الذكاء الاصطناعي',
-        matchLabel: 'تطابق التغطية',
+        matchLabel: 'درجة الملاءمة',
         primaryCta: 'احجز مراجعة نظام النمو',
         secondaryCta: 'اطلع على موظف الذكاء الاصطناعي',
       },

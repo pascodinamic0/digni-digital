@@ -37,13 +37,13 @@ export default async function CheckoutSuccessPage({ params, searchParams }: Page
   }
 
   return (
-    <main className="min-h-[60vh] flex flex-col items-center justify-center px-6 py-24">
+    <div className="min-h-[60vh] flex flex-col items-center justify-center px-6 py-24">
       <h1 className="font-display text-3xl md:text-4xl font-bold text-center mb-4">{t('successTitle')}</h1>
       <p className="text-muted text-center max-w-md mb-4">{t('successBody')}</p>
       {amountLabel ? <p className="text-text font-medium text-center max-w-md mb-2">{amountLabel}</p> : null}
       <Link href="/" className="btn-primary mt-6">
         {t('backHome')}
       </Link>
-    </main>
+    </div>
   )
 }

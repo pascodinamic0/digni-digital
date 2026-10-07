@@ -1206,7 +1206,7 @@ export const contentDe: Record<string, Partial<BlogArticle>> = {
 
  <h3>Das Skalierungsproblem: Betreuungsnachfrage übersteigt die Einstellungskapazität</h3>
  
- <p>Traditionelle Kundenservice Modelle versagen bei Wachstum. Mehr Leads bedeuten mehr Anrufe, mehr E Mails, mehr verpasste Chancen nach Feierabend. <strong>KI Mitarbeiter</strong> bearbeiten Erstinteraktionen rund um die Uhr, erfassen und qualifizieren Leads und geben Ihrem Team Raum für wertschöpfende Gespräche. Unternehmen, die unsere <a href="/ai-receptionist">KI Rezeptionisten</a>-Lösungen nutzen, berichten von bis zu <strong>300 % mehr Leads</strong>, null verpassten Anrufen und Multikanal Abdeckung ohne zusätzliche Vollzeitstellen.</p>
+ <p>Traditionelle Kundenservice Modelle versagen bei Wachstum. Mehr Leads bedeuten mehr Anrufe, mehr E Mails, mehr verpasste Chancen nach Feierabend. <strong>KI Mitarbeiter</strong> bearbeiten Erstinteraktionen rund um die Uhr, erfassen und qualifizieren Leads und geben Ihrem Team Raum für wertschöpfende Gespräche. Unternehmen, die unsere <a href="/services/ai-employee">KI Rezeptionisten</a>-Lösungen nutzen, berichten von bis zu <strong>300 % mehr Leads</strong>, null verpassten Anrufen und Multikanal Abdeckung ohne zusätzliche Vollzeitstellen.</p>
 
  <blockquote>
  <p>„KI Mitarbeiter ersetzen nicht die menschliche Verbindung to sie verstärken sie. Unsere KI bearbeitet Routineanfragen sofort, damit sich unser Team auf komplexe Probleme konzentrieren kann, die echte Expertise erfordern.", <em>Kunde, SaaS Scale up</em></p>
@@ -1393,7 +1393,7 @@ export const contentDe: Record<string, Partial<BlogArticle>> = {
  <ul>
  <li><strong>Klares Wertversprechen</strong>: Innerhalb von 5 Sekunden wissen Besucher, was Sie tun und warum es sie interessieren sollte.</li>
  <li><strong>Vertrauenssignale</strong>: Kundenstimmen, Fallstudien, Kennzahlen.</li>
- <li><strong>Mehrere Erfassungspunkte</strong>: Kontaktformulare, Chat, Click to Call to alles mit einem <a href="/ai-receptionist">KI Rezeptionisten</a> verbunden.</li>
+ <li><strong>Mehrere Erfassungspunkte</strong>: Kontaktformulare, Chat, Click to Call to alles mit einem <a href="/services/ai-employee">KI Rezeptionisten</a> verbunden.</li>
  <li><strong>Mobiloptimiertes Design</strong>: Unverzichtbar für die DR Kongo und lokales SEO.</li>
  </ul>
 
@@ -1485,10 +1485,10 @@ export const contentDe: Record<string, Partial<BlogArticle>> = {
  <h3>Drei Säulen der Transformation</h3>
 
  <h4>1. KI Mitarbeiter und Automatisierung</h4>
- <p><a href="/ai-receptionist">KI Rezeptionisten</a> und Agenten, die Leads rund um die Uhr auf Französisch erfassen und qualifizieren. Keine verpassten Anrufe. Teams berichten von bis zu 300 % mehr qualifizierten Leads.</p>
+ <p><a href="/services/ai-employee">KI Rezeptionisten</a> und Agenten, die Leads rund um die Uhr auf Französisch erfassen und qualifizieren. Keine verpassten Anrufe. Teams berichten von bis zu 300 % mehr qualifizierten Leads.</p>
 
  <h4>2. Web und SaaS</h4>
- <p><a href="/agentic-softwares">Maßgeschneiderte Web- und SaaS Entwicklung</a>, damit Sie Ihre Tools besitzen und zu Ihren Bedingungen skalieren.</p>
+ <p><a href="/services/agentic-systems">Maßgeschneiderte Web- und SaaS Entwicklung</a>, damit Sie Ihre Tools besitzen und zu Ihren Bedingungen skalieren.</p>
 
  <h4>3. Wachstum und Strategie</h4>
  <p>Lead Generierung, digitale Strategie und messbarer ROI, damit Transformation sich in Umsatz übersetzt.</p>
@@ -1576,7 +1576,7 @@ export const contentDe: Record<string, Partial<BlogArticle>> = {
  </ul>
 
  <h3>Für Institutionen: Zukunftsfähige Programme</h3>
- <p>Schulen und Ausbildungszentren können Schüler auf das KI Zeitalter vorbereiten. Unser <a href="/future-ready-graduate">Digni Digital Literacy</a>-Programm stattet Jugendliche mit digitalen Kompetenzen aus, die zur Beschäftigung führen. 85 % Beschäftigungsquote innerhalb von 6 Monaten nach Abschluss.</p>
+ <p>Schulen und Ausbildungszentren können Schüler auf das KI Zeitalter vorbereiten. Unser <a href="/services/future-ready">Digni Digital Literacy</a>-Programm stattet Jugendliche mit digitalen Kompetenzen aus, die zur Beschäftigung führen. 85 % Beschäftigungsquote innerhalb von 6 Monaten nach Abschluss.</p>
 
  <hr>
  <p><em><a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Buchen Sie Ihr kostenloses Strategiegespräch</a>, um die KI Einführung für Ihre Organisation zu besprechen.</em></p>
@@ -1733,7 +1733,7 @@ export const contentDe: Record<string, Partial<BlogArticle>> = {
 
  <h2>Rolle von Digni Digital: Partner, kein Einmal Tool</h2>
 
- <p>Wir kombinieren <strong>strategische Betriebsunterstützung</strong> mit der <strong>Umsetzung von KI Systemen</strong>, z. B. intelligente Frontoffice Abdeckung, passend zu Ihrer Art zu verkaufen und zu bedienen. Das kann einen <a href="/ai-receptionist">KI Rezeptionisten</a> umfassen, der Leads qualifiziert und Anrufe weiterleitet, eingebettet in Ihre echte Arbeitsweise statt einer isolierten Demo.</p>
+ <p>Wir kombinieren <strong>strategische Betriebsunterstützung</strong> mit der <strong>Umsetzung von KI Systemen</strong>, z. B. intelligente Frontoffice Abdeckung, passend zu Ihrer Art zu verkaufen und zu bedienen. Das kann einen <a href="/services/ai-employee">KI Rezeptionisten</a> umfassen, der Leads qualifiziert und Anrufe weiterleitet, eingebettet in Ihre echte Arbeitsweise statt einer isolierten Demo.</p>
 
  <p>Wenn Sie Fractional COO oder ein KI Mitarbeiter Projekt prüfen, ist die ehrliche Frage dieselbe: <strong>Wird das, wie wir das Unternehmen führen, einfacher und messbarer?</strong> Wenn ja, sind Sie im richtigen Gespräch.</p>
 
@@ -1752,7 +1752,7 @@ export const contentDe: Record<string, Partial<BlogArticle>> = {
 
  <hr>
 
- <p><em>Fragen zu Skalierung ohne zusätzliche Vollzeitstellen? <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Termin mit Digni Digital</a> oder unsere <a href="/ai-receptionist">KI Rezeptionist</a>-Lösungen für durchgehende Erreichbarkeit.</em></p>
+ <p><em>Fragen zu Skalierung ohne zusätzliche Vollzeitstellen? <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Termin mit Digni Digital</a> oder unsere <a href="/services/ai-employee">KI Rezeptionist</a>-Lösungen für durchgehende Erreichbarkeit.</em></p>
  `,
  },
  'dispatchflow-unified-logistics-procurement-platform': {
@@ -1805,7 +1805,7 @@ export const contentDe: Record<string, Partial<BlogArticle>> = {
  </figure>
 
  <h3>Heute live, kostenlos für Schulen</h3>
- <p>AMS ist <strong>in Produktion</strong> unter <a href="https://ams-xi-two.vercel.app/" target="_blank" rel="noopener noreferrer">ams xi two.vercel.app</a>. Teil unserer <a href="/agentic-softwares">Agentic Softwares</a>-Praxis.</p>
+ <p>AMS ist <strong>in Produktion</strong> unter <a href="https://ams-xi-two.vercel.app/" target="_blank" rel="noopener noreferrer">ams xi two.vercel.app</a>. Teil unserer <a href="/services/agentic-systems">Agentic Softwares</a>-Praxis.</p>
 
  <p><strong>Kostenlos starten:</strong> <a href="https://ams-xi-two.vercel.app/get-access" target="_blank" rel="noopener noreferrer">Schulkonto erstellen</a>, <a href="https://ams-xi-two.vercel.app/login" target="_blank" rel="noopener noreferrer">Anmelden</a>.</p>
  <p><strong>Individuelle Schulplattform?</strong> <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Strategiegespräch buchen</a>.</p>
@@ -1874,7 +1874,7 @@ export const contentDe: Record<string, Partial<BlogArticle>> = {
 
  <p>Ein Dienstleistungsunternehmen kam mit einem bekannten Problem zu uns: Der Gründer konvertierte Interessenten stark, aber nur bei persönlicher Beteiligung. Anfragen nach Feierabend gingen verloren, Leads wurden uneinheitlich qualifiziert, und das Team wusste nicht immer, welche Chancen sofort Aufmerksamkeit brauchten.</p>
 
- <p>Wir übersetzten die besten Fragen, Qualifizierungsstandards und Follow up Rhythmen des Gründers in einen <a href="/ai-receptionist">KI Rezeptionisten mit Lead Qualifizierung</a>. Das Ergebnis war kein generischer Chatbot, sondern eine Front Office Schicht rund um echte Kaufsignale.</p>
+ <p>Wir übersetzten die besten Fragen, Qualifizierungsstandards und Follow up Rhythmen des Gründers in einen <a href="/services/ai-employee">KI Rezeptionisten mit Lead Qualifizierung</a>. Das Ergebnis war kein generischer Chatbot, sondern eine Front Office Schicht rund um echte Kaufsignale.</p>
 
  <ul>
  <li><strong>Abdeckung</strong>: Anfragen nach Feierabend wurden erfasst statt bis zum Morgen zu warten.</li>
@@ -1975,7 +1975,7 @@ export const contentDe: Record<string, Partial<BlogArticle>> = {
 
  <p>KI ersetzt Urteilsvermögen nicht. Sie erhöht den Wert von Urteilsvermögen. Wer klar denken und KI Werkzeuge nutzen kann, recherchiert schneller, prototypisiert schneller, automatisiert Routinearbeit und zeigt früher belastbare Ergebnisse.</p>
 
- <p>Digni Digital hat über 150 Kunden auf vier Kontinenten betreut. Dieselbe Logik prägt unser Programm <a href="/future-ready-graduate">Digni Digital Literacy</a>: Kompetenzen müssen sichtbare Beweise und Beschäftigungsfähigkeit erzeugen, inklusive einer Beschäftigungsquote von 85 % innerhalb von 6 Monaten nach Abschluss.</p>
+ <p>Digni Digital hat über 150 Kunden auf vier Kontinenten betreut. Dieselbe Logik prägt unser Programm <a href="/services/future-ready">Digni Digital Literacy</a>: Kompetenzen müssen sichtbare Beweise und Beschäftigungsfähigkeit erzeugen, inklusive einer Beschäftigungsquote von 85 % innerhalb von 6 Monaten nach Abschluss.</p>
 
  <h3>Eine 30 Minuten Übung</h3>
  <ol>
@@ -2219,9 +2219,9 @@ export const contentDe: Record<string, Partial<BlogArticle>> = {
  <tr><th>Exposition</th><th>Problem</th><th>Absicherung</th><th>Geschütztes Ergebnis</th></tr>
  </thead>
  <tbody>
- <tr><td>Ungedecktes Inbound</td><td>Unbeantwortete Anrufe, Chats, Formulare</td><td><a href="/ai-receptionist">KI-Mitarbeiter-Systeme</a> 24/7</td><td>Jede Anfrage bekommt Antwort</td></tr>
- <tr><td>Ungedecktes Talent</td><td>Abschlüsse ohne anstellbaren Beweis</td><td><a href="/future-ready-graduate">Future-Ready-Programm</a></td><td>Absolventen, die Arbeitgeber wollen</td></tr>
- <tr><td>Ungedeckte Operations</td><td>Tabellen vs. Enterprise-Stacks</td><td><a href="/agentic-softwares">Agentische Software</a></td><td>Workflow läuft ohne Millionen-Stack-Steuer</td></tr>
+ <tr><td>Ungedecktes Inbound</td><td>Unbeantwortete Anrufe, Chats, Formulare</td><td><a href="/services/ai-employee">KI-Mitarbeiter-Systeme</a> 24/7</td><td>Jede Anfrage bekommt Antwort</td></tr>
+ <tr><td>Ungedecktes Talent</td><td>Abschlüsse ohne anstellbaren Beweis</td><td><a href="/services/future-ready">Future-Ready-Programm</a></td><td>Absolventen, die Arbeitgeber wollen</td></tr>
+ <tr><td>Ungedeckte Operations</td><td>Tabellen vs. Enterprise-Stacks</td><td><a href="/services/agentic-systems">Agentische Software</a></td><td>Workflow läuft ohne Millionen-Stack-Steuer</td></tr>
  </tbody>
  </table>
 
@@ -2249,11 +2249,11 @@ export const contentDe: Record<string, Partial<BlogArticle>> = {
  </table>
 
  <h3>1. Grow: KI-Mitarbeiter-Systeme</h3>
- <p>Musk betonte, dass digitale Intelligenz sehr schnell voranschreitet — und dennoch in der realen Welt von Kundengesprächen, Kalendern und Follow-ups handeln muss. Unsere <a href="/ai-receptionist">KI-Mitarbeiter-Systeme</a> sind diese operative Schicht: erfassen, qualifizieren, buchen rund um die Uhr.</p>
+ <p>Musk betonte, dass digitale Intelligenz sehr schnell voranschreitet — und dennoch in der realen Welt von Kundengesprächen, Kalendern und Follow-ups handeln muss. Unsere <a href="/services/ai-employee">KI-Mitarbeiter-Systeme</a> sind diese operative Schicht: erfassen, qualifizieren, buchen rund um die Uhr.</p>
  <p>Das ist der Wechsel vom Feature-Shopping zur <strong>Ergebnis-Versicherung</strong>.</p>
 
  <h3>2. Learn: Future-Ready-Programm</h3>
- <p>Wenn KI mehr Profi-Aufgaben auf Elite-Niveau erledigt, konzentriert sich menschlicher Wert auf Urteil plus Beweis. Das <a href="/future-ready-graduate">Future-Ready-Programm</a> demokratisiert Zugang über echte Projekte.</p>
+ <p>Wenn KI mehr Profi-Aufgaben auf Elite-Niveau erledigt, konzentriert sich menschlicher Wert auf Urteil plus Beweis. Das <a href="/services/future-ready">Future-Ready-Programm</a> demokratisiert Zugang über echte Projekte.</p>
  <ul>
  <li><strong>Ergebnis:</strong> 85 % Beschäftigung innerhalb von sechs Monaten (vs. oft ~45 %).</li>
  <li><strong>Impact:</strong> ~150 % durchschnittlicher Gehaltsanstieg berichtet.</li>
@@ -2261,7 +2261,7 @@ export const contentDe: Record<string, Partial<BlogArticle>> = {
  </ul>
 
  <h3>3. Scale: agentische Software</h3>
- <p>Die Zukunft gehört Operatoren, die Delivery systematisieren. Unsere <a href="/agentic-softwares">Agentic-Softwares</a>-Praxis baut gezielte Systeme — Schul-OS (AMS), Hospitality wie <a href="https://kabinda-lodge.com/" target="_blank" rel="noopener noreferrer">Kabinda Lodge</a> oder Ops wie <a href="https://dispatch-flow-one.vercel.app/" target="_blank" rel="noopener noreferrer">DispatchFlow</a>.</p>
+ <p>Die Zukunft gehört Operatoren, die Delivery systematisieren. Unsere <a href="/services/agentic-systems">Agentic-Softwares</a>-Praxis baut gezielte Systeme — Schul-OS (AMS), Hospitality wie <a href="https://kabinda-lodge.com/" target="_blank" rel="noopener noreferrer">Kabinda Lodge</a> oder Ops wie <a href="https://dispatch-flow-one.vercel.app/" target="_blank" rel="noopener noreferrer">DispatchFlow</a>.</p>
 
  <h2>Warum unser heutiger Platz zählt</h2>
  <figure class="blog-content-figure" style="margin: 2em 0;">
@@ -2304,7 +2304,7 @@ export const contentDe: Record<string, Partial<BlogArticle>> = {
 
  <h2>Ihr Guide durch den Übergang</h2>
  <p>Wir erleben eine Spaltung. Auf der einen Seite Teams, die KI als Absicherung behandeln. Auf der anderen jene, die hoffen, eine Broschüren-Website oder ein Anwesenheitszertifikat reiche.</p>
- <p>Wie auch immer langfristige Fülle aussieht: Das nächste Jahrzehnt belohnt, wer jetzt Systeme installiert. Digni Digital ist der Guide: <a href="/ai-receptionist">KI-Mitarbeiter</a>, <a href="/future-ready-graduate">Future Ready</a> und <a href="/agentic-softwares">agentische Software</a>.</p>
+ <p>Wie auch immer langfristige Fülle aussieht: Das nächste Jahrzehnt belohnt, wer jetzt Systeme installiert. Digni Digital ist der Guide: <a href="/services/ai-employee">KI-Mitarbeiter</a>, <a href="/services/future-ready">Future Ready</a> und <a href="/services/agentic-systems">agentische Software</a>.</p>
  <p><strong>Leads. Jobs. Umsatz. Wir bauen, was funktioniert.</strong></p>
 
  <!--BLOG_FAQ-->

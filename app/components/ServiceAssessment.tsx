@@ -270,7 +270,7 @@ export function ServiceAssessment({ config }: { config: ServiceAssessmentConfig 
   }
 
   return (
-    <main className="relative isolate flex min-h-[100dvh] items-center justify-center bg-gradient-mesh px-4 py-24 sm:px-6 sm:py-28">
+    <div className="relative isolate flex min-h-[100dvh] items-center justify-center bg-gradient-mesh px-4 py-24 sm:px-6 sm:py-28">
       <div
         className="pointer-events-none fixed left-0 top-0 z-50 h-1 w-full bg-border/50"
         aria-hidden
@@ -591,6 +591,6 @@ export function ServiceAssessment({ config }: { config: ServiceAssessmentConfig 
           </AnimatePresence>
         </div>
       </motion.div>
-    </main>
+    </div>
   )
 }

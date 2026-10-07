@@ -4,7 +4,7 @@ import BlogPostContent from '@/app/blog/BlogPostContent'
 import { getArticleBySlugForLocale, allArticlesEn } from '@/lib/blog'
 import { fetchDbArticleBySlug } from '@/lib/blog/db-article-by-slug'
 import { mergeArticleBundleWithOverrides, fetchPublishedBlogOverrides } from '@/lib/blog-merge'
-import { tryCreateClient } from '@/lib/supabase/server'
+import { getPublicSupabase } from '@/lib/supabase/public'
 import { routing } from '@/i18n/routing'
 import { BRAND_LOGO_PATH } from '@/lib/site-assets'
 import type { Language } from '@/app/i18n/translations'
@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, slug } = await params
   let data = getArticleBySlugForLocale(locale, slug)
   if (!data) {
-    const supabase = await tryCreateClient()
+    const supabase = getPublicSupabase()
     if (supabase) {
       const dbArticle = await fetchDbArticleBySlug(supabase, locale, slug)
       if (dbArticle) {
@@ -36,7 +36,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
   if (!data) {
     return {
-      title: 'Article Not Found | Digni Digital Blog',
+      title: "Article not found",
       robots: { index: false, follow: false },
     }
   }
@@ -49,7 +49,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     ? [{ url: article.coverImageUrl, width: 1200, height: 630, alt: article.title }]
     : undefined
   return {
-    title: `${article.title} | Digni Digital Blog`,
+    title: article.title,
     description: article.excerpt,
     keywords: article.tags,
     alternates: buildLocaleAlternates(locale, `/blog/${slug}`),
@@ -63,6 +63,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
+export const revalidate = 3600
+
 export async function generateStaticParams() {
   return routing.locales.flatMap((locale) =>
     allArticlesEn.map((article) => ({ locale, slug: article.slug }))
@@ -74,7 +76,7 @@ export default async function BlogPostPage({ params }: Props) {
   let data = getArticleBySlugForLocale(locale, slug)
 
   if (!data) {
-    const supabase = await tryCreateClient()
+    const supabase = getPublicSupabase()
     const dbArticle = supabase
       ? await fetchDbArticleBySlug(supabase, locale, slug)
       : null
@@ -135,7 +137,7 @@ export default async function BlogPostPage({ params }: Props) {
       : null
 
   return (
-    <main className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={jsonLdScriptProps(blogPostingJsonLd)}
@@ -148,9 +150,9 @@ export default async function BlogPostPage({ params }: Props) {
       ) : null}
       <article className="pt-24 pb-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 pt-12 sm:pt-16 md:pt-20">
-          <BlogPostContent articleByLang={articleByLang} />
+          <BlogPostContent article={article} language={lang} />
         </div>
       </article>
-    </main>
+    </div>
   )
 }

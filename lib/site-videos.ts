@@ -30,7 +30,7 @@ export const siteVideos: SiteVideo[] = [
     contentUrl: '/ai-employee-explainer.mp4',
     thumbnailUrl: '/videos/posters/ai-employee-explainer.jpg',
     uploadDate: '2026-01-15',
-    relatedPath: '/ai-receptionist',
+    relatedPath: '/services/ai-employee',
     copy: {
       en: {
         title: 'Broken businesses and operations',
@@ -64,7 +64,7 @@ export const siteVideos: SiteVideo[] = [
     contentUrl: '/Entreprises___Opérations_Défaillantes.mp4',
     thumbnailUrl: '/videos/posters/entreprises-operations-defaillantes.jpg',
     uploadDate: '2026-01-15',
-    relatedPath: '/ai-receptionist',
+    relatedPath: '/services/ai-employee',
     copy: {
       en: {
         title: 'Entreprises et opérations défaillantes',
@@ -99,7 +99,7 @@ export const siteVideos: SiteVideo[] = [
     contentUrl: '/get.mp4',
     thumbnailUrl: '/blog/future-ready-graduate-program-transforming-education-career-success.png',
     uploadDate: '2026-02-01',
-    relatedPath: '/future-ready-graduate',
+    relatedPath: '/services/future-ready',
     copy: {
       en: {
         title: 'Digital Opportunity',

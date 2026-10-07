@@ -1,30 +1,27 @@
 import Link from 'next/link'
+import { fontVars } from './fonts'
+import './globals.css'
+import './v2.css'
 
+/** Global 404 for paths outside a locale (root layout is a passthrough, so render <html>). */
 export default function NotFound() {
   return (
-    <main className="min-h-screen flex items-center justify-center bg-background px-6">
-      <div className="text-center max-w-lg">
-        <div className="flex items-center justify-center mb-8">
-          <div className="w-14 h-14 relative flex items-center justify-center">
-            <div className="absolute w-7 h-10 bg-accent transform -skew-x-12 -translate-x-0.5 rounded-sm" style={{ opacity: 0.9 }} />
-            <div className="absolute w-7 h-10 bg-accent transform skew-x-12 translate-x-0.5 rounded-sm" style={{ opacity: 0.4 }} />
+    <html lang="en" data-theme="light" className={fontVars}>
+      <body>
+        <main className="nf">
+          <div className="wrap nf__in">
+            <p className="eyebrow">404</p>
+            <h1 className="h1">This page moved or never existed.</h1>
+            <p className="lead">The site was rebuilt recently. Try one of these instead.</p>
+            <div className="hero__ctas">
+              <Link className="btn btn--dark" href="/us-en">Home</Link>
+              <Link className="btn btn--line" href="/us-en/work">Work</Link>
+              <Link className="btn btn--line" href="/us-en/services">Services</Link>
+              <Link className="btn btn--line" href="/us-en/contact">Contact</Link>
+            </div>
           </div>
-        </div>
-        <h1 className="font-display text-6xl font-bold text-text mb-4">404</h1>
-        <h2 className="font-display text-2xl font-semibold text-text mb-4">Page Not Found</h2>
-        <p className="text-muted mb-8 leading-relaxed">
-          The page you&apos;re looking for doesn&apos;t exist or has been moved.
-          Let&apos;s get you back on track.
-        </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Link href="/us-en" className="btn-primary px-6 py-3 text-center">
-            Back to Home
-          </Link>
-          <Link href="/us-en/contact" className="btn-secondary px-6 py-3 text-center">
-            Contact Us
-          </Link>
-        </div>
-      </div>
-    </main>
+        </main>
+      </body>
+    </html>
   )
 }

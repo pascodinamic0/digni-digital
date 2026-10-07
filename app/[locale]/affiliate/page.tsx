@@ -1290,7 +1290,7 @@ export default function AffiliatePage({ params, searchParams }: AffiliatePagePro
       description: copy.products[0].description,
       icon: '🤖',
       color: 'accent',
-      link: '/ai-receptionist'
+      link: '/services/ai-employee'
     },
     {
       name: 'Future-Ready Graduate Program',
@@ -1301,7 +1301,7 @@ export default function AffiliatePage({ params, searchParams }: AffiliatePagePro
       description: copy.products[1].description,
       icon: '🎓',
       color: 'success',
-      link: '/future-ready-graduate'
+      link: '/services/future-ready'
     },
     {
       name: 'Agentic Softwares',
@@ -1312,7 +1312,7 @@ export default function AffiliatePage({ params, searchParams }: AffiliatePagePro
       description: copy.products[2].description,
       icon: '⚙️',
       color: 'info',
-      link: '/agentic-softwares'
+      link: '/services/agentic-systems'
     }
   ]
 
@@ -1390,7 +1390,7 @@ export default function AffiliatePage({ params, searchParams }: AffiliatePagePro
   const [openFaq, setOpenFaq] = useState<number | null>(null)
 
   return (
-    <main>
+    <div>
 
       {/* Hero Section */}
       <section className="relative isolate min-h-screen flex items-center pt-16 sm:pt-20 overflow-hidden bg-gradient-mesh">
@@ -2015,6 +2015,6 @@ export default function AffiliatePage({ params, searchParams }: AffiliatePagePro
         </div>
       </AnimatedSection>
 
-    </main>
+    </div>
   )
 }

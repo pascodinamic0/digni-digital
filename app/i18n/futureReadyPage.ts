@@ -37,7 +37,7 @@ export const futureReadyGraduateLocalCopy = {
     opportunityStats: [
       'Employers hire for demonstrated capability, not attendance.',
       'A portfolio is the evidence a degree cannot replace.',
-      'Schools that skip proof leave graduates exposed at the door.',
+      'Schools that skip proof send graduates to the door unprepared.',
     ],
     digitalSkillsReasons: [
       { icon: '💰', label: 'Freedom trifecta', title: 'Income Freedom', description: 'Build skills that can turn into paid projects, better jobs, and multiple income streams.' },
@@ -48,7 +48,7 @@ export const futureReadyGraduateLocalCopy = {
       { icon: '🚀', label: 'Pathway', title: 'From Learning to Earning', description: 'Turn lessons into a portfolio, service offers, job readiness, and entrepreneurial action.' },
     ],
     outcomes: [
-      { metric: 'Knowledge', description: 'What students know', detail: 'Concepts without application still leave them exposed' },
+      { metric: 'Knowledge', description: 'What students know', detail: 'Concepts without application still leave them unprepared' },
       { metric: 'Capability', description: 'What students can do', detail: 'Practical AI work on real projects' },
       { metric: 'Evidence', description: 'What they can prove', detail: 'Proof a client can pay for' },
       { metric: 'In progress', description: 'GS Laricharde partnership', detail: 'Named school. Not a completed 85% employment result.' },
@@ -86,7 +86,7 @@ export const futureReadyGraduateLocalCopy = {
         src: '',
         title: 'Education Must Evolve',
         speaker: 'Priya Lakhani',
-        description: 'The world moved. Classrooms that hand out easy answers leave students exposed. Education has to catch up to AI without skipping the struggle that makes knowledge stick.',
+        description: 'The world moved. Classrooms that hand out easy answers leave students unprepared. Education has to catch up to AI without skipping the struggle that makes knowledge stick.',
         thumbnail: null,
       },
       {
@@ -171,7 +171,7 @@ export const futureReadyGraduateLocalCopy = {
     opportunityStats: [
       'Les employeurs embauchent pour une capacité démontrée, pas pour la présence.',
       'Un portfolio est la preuve qu’un diplôme ne remplace pas.',
-      'Les écoles qui sautent la preuve laissent les diplômés exposés à la porte.',
+      'Les écoles qui sautent la preuve envoient des diplômés mal préparés.',
     ],
     digitalSkillsReasons: [
       { icon: '💰', label: 'Triple liberté', title: 'Liberté de revenu', description: 'Développez des compétences qui peuvent devenir des missions payées, de meilleurs emplois et plusieurs sources de revenus.' },
@@ -182,7 +182,7 @@ export const futureReadyGraduateLocalCopy = {
       { icon: '🚀', label: 'Parcours', title: 'De l’apprentissage au revenu', description: 'Transformez les leçons en portfolio, offres de service, préparation à l’emploi et action entrepreneuriale.' },
     ],
     outcomes: [
-      { metric: 'Savoir', description: 'Ce que les étudiants connaissent', detail: 'Les concepts sans application les laissent exposés' },
+      { metric: 'Savoir', description: 'Ce que les étudiants connaissent', detail: 'Les concepts sans application les laissent mal préparés' },
       { metric: 'Capacité', description: 'Ce que les étudiants savent faire', detail: 'Travail IA concret sur de vrais projets' },
       { metric: 'Preuve', description: 'Ce qu’ils peuvent démontrer', detail: 'Une preuve qu’un client peut payer' },
       { metric: 'En cours', description: 'Partenariat GS Laricharde', detail: 'École nommée. Pas un taux d’emploi de 85 % présenté comme acquis.' },
@@ -204,7 +204,7 @@ export const futureReadyGraduateLocalCopy = {
     featuredVideos: [
       { src: '', title: 'L’entrepreneuriat comme résolution de problèmes', speaker: 'Strive Masiyiwa', description: 'Le défi fondamental : l’entrepreneuriat ne consiste pas à créer des produits, mais à adopter un état d’esprit orienté vers la résolution de vrais problèmes.', thumbnail: null },
       { src: '', title: 'Ce que signifie vraiment l’intelligence', speaker: 'Robert Dijkgraaf', description: 'Einstein cadrait mal avec une école qui récompense la conformité. L’intelligence réelle, c’est l’imagination : penser au-delà de ce que le manuel sait déjà.', thumbnail: null },
-      { src: '', title: 'L’éducation doit évoluer', speaker: 'Priya Lakhani', description: 'Le monde a bougé. Les salles de classe qui donnent les réponses toutes faites laissent les élèves exposés. L’éducation doit rattraper l’IA sans sauter l’effort qui fait tenir le savoir.', thumbnail: null },
+      { src: '', title: 'L’éducation doit évoluer', speaker: 'Priya Lakhani', description: 'Le monde a bougé. Les salles de classe qui donnent les réponses toutes faites laissent les élèves mal préparés. L’éducation doit rattraper l’IA sans sauter l’effort qui fait tenir le savoir.', thumbnail: null },
       { src: '', title: 'Système scolaire vs pensée créative', speaker: 'Kim Kiyosaki', description: 'Le système scolaire forme les élèves à suivre des instructions au lieu de penser de manière créative : un enseignement clé pour l’éducation moderne.', thumbnail: null },
       { src: '', title: 'L’ère des milliardaires solo', speaker: 'Sam Altman', description: 'Sam Altman, CEO d’OpenAI, pense que l’ère des milliardaires solo est peut-être plus proche qu’on ne le croit, portée par l’IA et la capacité individuelle.', thumbnail: null },
       { src: '', title: 'Opportunité numérique', speaker: 'BBC News Africa', description: 'Si les diplômés ratent ce cycle de travail avec l’IA, le coût est une génération de plus hors des emplois qui paient. La question est de savoir si les écoles et les employeurs suivent.', thumbnail: null },
@@ -269,7 +269,7 @@ export const futureReadyGraduateLocalCopy = {
     opportunityStats: [
       'Los empleadores contratan por capacidad demostrada, no por asistencia.',
       'Un portafolio es la evidencia que un título no puede reemplazar.',
-      'Las escuelas que omiten la prueba dejan a los graduados expuestos en la puerta.',
+      'Las escuelas que omiten la prueba envían graduados sin preparación.',
     ],
     digitalSkillsReasons: [
       { icon: '💰', label: 'Triple libertad', title: 'Libertad de ingresos', description: 'Desarrolla habilidades que pueden convertirse en proyectos pagados, mejores empleos y varias fuentes de ingresos.' },
@@ -280,7 +280,7 @@ export const futureReadyGraduateLocalCopy = {
       { icon: '🚀', label: 'Ruta', title: 'De aprender a ganar', description: 'Convierte las lecciones en portafolio, ofertas de servicio, preparación laboral y acción emprendedora.' },
     ],
     outcomes: [
-      { metric: 'Conocimiento', description: 'Lo que saben los estudiantes', detail: 'Los conceptos sin aplicación los dejan expuestos' },
+      { metric: 'Conocimiento', description: 'Lo que saben los estudiantes', detail: 'Los conceptos sin aplicación los dejan sin preparación' },
       { metric: 'Capacidad', description: 'Lo que pueden hacer', detail: 'Trabajo práctico de IA en proyectos reales' },
       { metric: 'Evidencia', description: 'Lo que pueden demostrar', detail: 'Una prueba que un cliente puede pagar' },
       { metric: 'En curso', description: 'Alianza GS Laricharde', detail: 'Escuela nombrada. No un 85% de empleo presentado como resultado.' },
@@ -302,7 +302,7 @@ export const futureReadyGraduateLocalCopy = {
     featuredVideos: [
       { src: '', title: 'Emprendimiento como resolución de problemas', speaker: 'Strive Masiyiwa', description: 'El reto fundamental: emprender no consiste en crear productos, sino en adoptar una mentalidad enfocada en resolver problemas reales.', thumbnail: null },
       { src: '', title: 'Qué significa realmente la inteligencia', speaker: 'Robert Dijkgraaf', description: 'Einstein encajaba mal en aulas que premian la conformidad. La inteligencia real es imaginación: pensar más allá de lo que el libro ya sabe.', thumbnail: null },
-      { src: '', title: 'La educación debe evolucionar', speaker: 'Priya Lakhani', description: 'El mundo se movió. Las aulas que entregan respuestas fáciles dejan a los estudiantes expuestos. La educación debe alcanzar a la IA sin saltarse el esfuerzo que hace que el conocimiento se quede.', thumbnail: null },
+      { src: '', title: 'La educación debe evolucionar', speaker: 'Priya Lakhani', description: 'El mundo se movió. Las aulas que entregan respuestas fáciles dejan a los estudiantes sin preparación. La educación debe alcanzar a la IA sin saltarse el esfuerzo que hace que el conocimiento se quede.', thumbnail: null },
       { src: '', title: 'Sistema escolar vs pensamiento creativo', speaker: 'Kim Kiyosaki', description: 'El sistema escolar entrena a los estudiantes para seguir instrucciones en lugar de pensar de forma creativa, una idea crítica para la educación moderna.', thumbnail: null },
       { src: '', title: 'La era de los multimillonarios en solitario', speaker: 'Sam Altman', description: 'Sam Altman, CEO de OpenAI, cree que la era de los multimillonarios en solitario puede estar más cerca de lo que pensamos, impulsada por la IA y la capacidad individual.', thumbnail: null },
       { src: '', title: 'Oportunidad digital', speaker: 'BBC News Africa', description: 'Si los graduados pierden este ciclo laboral de IA, el costo es otra generación fuera de los empleos que pagan. La pregunta es si escuelas y empleadores siguen el ritmo.', thumbnail: null },
@@ -465,7 +465,7 @@ export const futureReadyGraduateLocalCopy = {
     opportunityStats: [
       'أصحاب العمل يوظّفون لقدرة مثبتة، لا للحضور.',
       'ملف الأعمال هو الدليل الذي لا تستبدله الشهادة.',
-      'المدارس التي تتخطى الإثبات تترك الخريجين معرّضين عند الباب.',
+      'المدارس التي تتخطى الإثبات تُخرّج طلاباً غير مستعدين.',
     ],
     digitalSkillsReasons: [
       { icon: '💰', label: 'حرية ثلاثية', title: 'حرية الدخل', description: 'ابنِ مهارات يمكن أن تتحول إلى مشاريع مدفوعة، وظائف أفضل، ومصادر دخل متعددة.' },
@@ -476,7 +476,7 @@ export const futureReadyGraduateLocalCopy = {
       { icon: '🚀', label: 'مسار', title: 'من التعلّم إلى الكسب', description: 'حوّل الدروس إلى ملف أعمال، عروض خدمات، جاهزية وظيفية، وخطوات ريادية.' },
     ],
     outcomes: [
-      { metric: 'معرفة', description: 'ما يعرفه الطلاب', detail: 'المفاهيم بلا تطبيق تتركهم معرّضين' },
+      { metric: 'معرفة', description: 'ما يعرفه الطلاب', detail: 'المفاهيم بلا تطبيق تتركهم غير مستعدين' },
       { metric: 'قدرة', description: 'ما يستطيع الطلاب فعله', detail: 'عمل عملي بالذكاء الاصطناعي على مشاريع حقيقية' },
       { metric: 'دليل', description: 'ما يمكنهم إثباته', detail: 'إثبات يستطيع العميل دفع ثمنه' },
       { metric: 'قيد التنفيذ', description: 'شراكة GS Laricharde', detail: 'مدرسة مسمّاة. ليس نتيجة توظيف 85% مكتملة.' },
@@ -564,7 +564,7 @@ export const futureReadyOfferingDisplayCopy: Record<keyof typeof translations, F
         'Soutien continu du programme',
         'Préparation à l’emploi et compétences pour créer ses propres emplois',
         'Apprentissage guidé personnalisé selon les talents et dons de chaque élève',
-        'Garantie de réussite du partenariat',
+        'Accompagnement dédié du partenariat',
       ],
     },
     'guided-learning': {
@@ -600,7 +600,7 @@ export const futureReadyOfferingDisplayCopy: Record<keyof typeof translations, F
         'Placement professionnel et partenariats sectoriels',
         'Durée de programme personnalisable',
         'Options de livraison sur site ou hybride',
-        'Garantie de réussite du partenariat',
+        'Accompagnement dédié du partenariat',
       ],
     },
   },
@@ -621,7 +621,7 @@ export const futureReadyOfferingDisplayCopy: Record<keyof typeof translations, F
         'Soporte continuo del programa',
         'Preparación laboral y habilidades para crear tus propios empleos',
         'Aprendizaje guiado personalizado según talentos y dones de cada estudiante',
-        'Garantía de éxito de la alianza',
+        'Acompañamiento dedicado a la alianza',
       ],
     },
     'guided-learning': {
@@ -657,7 +657,7 @@ export const futureReadyOfferingDisplayCopy: Record<keyof typeof translations, F
         'Inserción laboral y alianzas con la industria',
         'Duración del programa personalizable',
         'Opciones de entrega presencial o híbrida',
-        'Garantía de éxito de la alianza',
+        'Acompañamiento dedicado a la alianza',
       ],
     },
   },
@@ -678,7 +678,7 @@ export const futureReadyOfferingDisplayCopy: Record<keyof typeof translations, F
         'Laufender Programmsupport',
         'Jobreife-Training und Fähigkeiten, um eigene Jobs zu schaffen',
         'Geführtes Lernen, personalisiert nach Talenten und Begabungen jedes Schülers',
-        'Erfolgsgarantie für die Partnerschaft',
+        'Persönliche Partnerschaftsbetreuung',
       ],
     },
     'guided-learning': {
@@ -714,7 +714,7 @@ export const futureReadyOfferingDisplayCopy: Record<keyof typeof translations, F
         'Jobvermittlung und Branchenpartnerschaften',
         'Anpassbare Programmdauer',
         'Optionen für Vor-Ort- oder Hybrid-Durchführung',
-        'Erfolgsgarantie für die Partnerschaft',
+        'Persönliche Partnerschaftsbetreuung',
       ],
     },
   },
@@ -735,7 +735,7 @@ export const futureReadyOfferingDisplayCopy: Record<keyof typeof translations, F
         'دعم مستمر للبرنامج',
         'تدريب على الجاهزية للعمل ومهارات لإنشاء وظائفك الخاصة',
         'تعلم موجه مخصص لمواهب كل طالب وقدراته',
-        'ضمان نجاح الشراكة',
+        'متابعة مخصصة للشراكة',
       ],
     },
     'guided-learning': {
@@ -771,7 +771,7 @@ export const futureReadyOfferingDisplayCopy: Record<keyof typeof translations, F
         'توظيف وشراكات مع القطاع',
         'مدة برنامج قابلة للتخصيص',
         'خيارات تنفيذ في الموقع أو هجينة',
-        'ضمان نجاح الشراكة',
+        'متابعة مخصصة للشراكة',
       ],
     },
   },

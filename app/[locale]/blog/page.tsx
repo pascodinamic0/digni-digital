@@ -1,120 +1,113 @@
-import { Suspense } from 'react'
-import { Metadata } from 'next'
-import BlogContent from '@/app/blog/BlogContent'
+import type { Metadata } from 'next'
+import Image from 'next/image'
+import Link from 'next/link'
+import PageHead from '@/app/components/v2/PageHead'
+import CtaBand from '@/app/components/v2/CtaBand'
+import JsonLd from '@/app/components/v2/JsonLd'
 import { getArticlesForLocaleWithDb } from '@/lib/blog'
-import { AGENT_DATA_LAST_UPDATED, jsonLdScriptProps } from '@/lib/agent-readiness'
+import { getDict, resolvePage } from '@/content/v2/get'
+import { localeMeta, SITE_URL, type Lang } from '@/content/v2/locales'
+import { pageMetadata } from '@/content/v2/seo'
 
-const blogMetaByLang: Record<string, { title: string; description: string; keywords: string[]; jsonLdName: string; jsonLdDescription: string }> = {
-  en: {
-    title: 'AI Employee Systems, Future-Ready Graduate Program & Agentic Softwares | Digni Digital Blog',
-    description: 'Expert insights on AI employee systems for growing businesses, Future-Ready Graduate Program for private high schools, and custom SaaS development solutions.',
-    keywords: ['AI employee system', 'AI receptionist', 'business automation', 'Future-Ready Graduate Program', 'private high school education', 'custom SaaS development', 'SaaS solutions', 'business growth', 'student career readiness'],
-    jsonLdName: 'Digni Digital Blog',
-    jsonLdDescription: 'Expert insights on AI employee systems, Future-Ready Graduate Program, and custom SaaS development.',
-  },
-  fr: {
-    title: 'Transformation Digitale - Insights | Blog Digni Digital',
-    description: 'Analyses d’experts sur les systèmes d’employés IA, le Programme Diplômé Prêt pour l\'Avenir et le développement SaaS sur mesure.',
-    keywords: ['système d’employé IA', 'réceptionniste IA', 'automatisation d’entreprise', 'Programme Diplômé Prêt pour l’Avenir', 'enseignement secondaire privé', 'développement SaaS sur mesure', 'solutions SaaS', 'croissance d’entreprise', 'préparation des étudiants à la carrière'],
-    jsonLdName: 'Blog Digni Digital',
-    jsonLdDescription: 'Analyses d’experts sur les systèmes d’employés IA, le Programme Diplômé Prêt pour l’Avenir et le développement SaaS sur mesure.',
-  },
-  de: {
-    title: 'KI-Mitarbeiter, Future-Ready Graduate Program & SaaS | Digni Digital Blog',
-    description: 'Expertenwissen zu KI-Mitarbeiter-Systemen, dem Future-Ready Graduate Programm und individueller SaaS-Entwicklung.',
-    keywords: ['KI-Mitarbeiter-System', 'KI-Rezeptionist', 'Geschäftsautomatisierung', 'Future-Ready Graduate Program', 'private weiterführende Schulen', 'individuelle SaaS-Entwicklung', 'SaaS-Lösungen', 'Unternehmenswachstum', 'Karrierebereitschaft von Schülern'],
-    jsonLdName: 'Digni Digital Blog',
-    jsonLdDescription: 'Expertenwissen zu KI-Mitarbeiter-Systemen, dem Future-Ready Graduate Program und individueller SaaS-Entwicklung.',
-  },
-  es: {
-    title: 'Empleado IA, Future-Ready Graduate Program & SaaS | Blog Digni Digital',
-    description: 'Información experta sobre empleados IA, el programa Future-Ready Graduate y desarrollo SaaS a medida.',
-    keywords: ['sistema de empleado IA', 'recepcionista IA', 'automatización empresarial', 'Future-Ready Graduate Program', 'educación secundaria privada', 'desarrollo SaaS a medida', 'soluciones SaaS', 'crecimiento empresarial', 'preparación profesional estudiantil'],
-    jsonLdName: 'Blog de Digni Digital',
-    jsonLdDescription: 'Información experta sobre sistemas de empleados IA, el programa Future-Ready Graduate y desarrollo SaaS a medida.',
-  },
-  ar: {
-    title: 'التحول الرقمي - رؤى | مدونة Digni Digital',
-    description: 'رؤى خبراء حول أنظمة الموظفين بالذكاء الاصطناعي وبرنامج Future-Ready Graduate وحلول تطوير SaaS.',
-    keywords: ['نظام موظف بالذكاء الاصطناعي', 'موظف استقبال بالذكاء الاصطناعي', 'أتمتة الأعمال', 'برنامج Future-Ready Graduate', 'تعليم المدارس الثانوية الخاصة', 'تطوير SaaS مخصص', 'حلول SaaS', 'نمو الأعمال', 'جاهزية الطلاب للمسار المهني'],
-    jsonLdName: 'مدونة Digni Digital',
-    jsonLdDescription: 'رؤى خبراء حول أنظمة الموظفين بالذكاء الاصطناعي وبرنامج Future-Ready Graduate وتطوير SaaS المخصص.',
-  },
-}
-
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://digni-digital-llc.com'
+/** ISR: file articles are static; agent-published DB posts appear within the hour. */
+export const revalidate = 3600
 
 type Props = { params: Promise<{ locale: string }> }
 
+type Summary = { slug: string; title: string; excerpt: string; category: string; readTime: string; date: string; iso?: string; cover?: string | null }
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params
-  const lang = locale.includes('fr') ? 'fr' : locale.includes('es') ? 'es' : locale.includes('ar') ? 'ar' : locale.includes('de') ? 'de' : 'en'
-  const meta = blogMetaByLang[lang] ?? blogMetaByLang.en
+  const t = getDict(locale)
+  return pageMetadata({ locale, path: '/blog', title: t.meta.blog.title, description: t.meta.blog.desc })
+}
+
+function toSummary(a: { slug: string; title: string; excerpt: string; category: string; readTime: string; publishDate: string; coverImageUrl?: string | null }, lang: Lang, locale: string): Summary {
+  const d = new Date(a.publishDate)
+  const ok = !Number.isNaN(d.getTime())
   return {
-    title: meta.title,
-    description: meta.description,
-    keywords: meta.keywords,
-    openGraph: {
-      title: meta.title,
-      description: meta.description,
-      type: 'website',
-    },
+    slug: a.slug,
+    title: a.title,
+    excerpt: a.excerpt,
+    category: a.category,
+    readTime: a.readTime,
+    date: ok ? new Intl.DateTimeFormat(localeMeta[locale as keyof typeof localeMeta]?.lang ?? lang, { day: 'numeric', month: 'short', year: 'numeric' }).format(d) : a.publishDate,
+    iso: ok ? d.toISOString().slice(0, 10) : undefined,
+    cover: a.coverImageUrl && (a.coverImageUrl.startsWith('/') || a.coverImageUrl.startsWith('http')) ? a.coverImageUrl : null,
   }
 }
 
-export default async function BlogPage({ params }: Props) {
-  const { locale } = await params
-  const lang = locale.includes('fr') ? 'fr' : locale.includes('es') ? 'es' : locale.includes('ar') ? 'ar' : locale.includes('de') ? 'de' : 'en'
-  const meta = blogMetaByLang[lang] ?? blogMetaByLang.en
-  const articles = await getArticlesForLocaleWithDb(locale)
-  const articlesByLang = {
-    en: await getArticlesForLocaleWithDb('us-en'),
-    fr: await getArticlesForLocaleWithDb('fr-fr'),
-    ar: await getArticlesForLocaleWithDb('sa-ar'),
-    es: await getArticlesForLocaleWithDb('es-es'),
-    de: await getArticlesForLocaleWithDb('de-de'),
+function Cover({ a, sizes, priority }: { a: Summary; sizes: string; priority?: boolean }) {
+  if (a.cover) {
+    return <Image src={a.cover} alt="" fill sizes={sizes} priority={priority} className="post__img" />
   }
+  return (
+    <span className="post__ph" aria-hidden>
+      <span>{a.category}</span>
+    </span>
+  )
+}
 
-  const blogListJsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'Blog',
-    name: meta.jsonLdName,
-    description: meta.jsonLdDescription,
-    url: `${baseUrl}/${locale}/blog`,
-    numberOfPosts: articles.length,
-    blogPost: articles.map((article) => ({
-      '@type': 'BlogPosting',
-      headline: article.title,
-      url: `${baseUrl}/${locale}/blog/${article.slug}`,
-      datePublished: article.publishDate,
-      author: { '@type': 'Person', name: article.author },
-      description: article.excerpt,
-      dateModified: AGENT_DATA_LAST_UPDATED,
-    })),
-  }
+export default async function BlogPage({ params }: Props) {
+  const { locale, lang, t } = await resolvePage(params)
+  // Only the current locale, and only the fields a card needs (the old index shipped every body in every language).
+  const all = (await getArticlesForLocaleWithDb(locale)).map((a) => toSummary(a, lang, locale))
+  const [first, ...rest] = all
+  const base = `/${locale}/blog`
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={jsonLdScriptProps(blogListJsonLd)}
+      <JsonLd
+        data={{
+          '@context': 'https://schema.org',
+          '@type': 'Blog',
+          name: 'Digni Digital — ' + t.blog.eyebrow,
+          url: `${SITE_URL}${base}`,
+          inLanguage: localeMeta[locale as keyof typeof localeMeta]?.hreflang,
+          blogPost: all.slice(0, 30).map((a) => ({ '@type': 'BlogPosting', headline: a.title, url: `${SITE_URL}${base}/${a.slug}`, datePublished: a.iso, description: a.excerpt })),
+        }}
       />
-      <Suspense
-        fallback={
-          <section className="py-16">
-            <div className="max-w-7xl mx-auto px-6">
-              <div className="h-10 w-48 bg-muted/30 rounded animate-pulse mb-8" />
-              <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-                {[1, 2, 3].map((i) => (
-                  <div key={i} className="h-64 bg-muted/20 rounded-xl animate-pulse" />
+      <PageHead eyebrow={t.blog.eyebrow} title={t.blog.title} sub={t.blog.sub} />
+      <section className="sec sec--tight">
+        <div className="wrap">
+          {!first ? (
+            <p className="lead">{t.blog.empty}</p>
+          ) : (
+            <>
+              <article className="post post--lead" data-reveal>
+                <Link href={`${base}/${first.slug}`} className="post__media" tabIndex={-1} aria-hidden>
+                  <Cover a={first} sizes="(max-width: 900px) 92vw, 680px" priority />
+                </Link>
+                <div className="post__body">
+                  <p className="post__meta"><span className="post__cat">{t.blog.featured}</span><span>{first.category}</span></p>
+                  <h2 className="h2"><Link href={`${base}/${first.slug}`}>{first.title}</Link></h2>
+                  <p className="post__ex">{first.excerpt}</p>
+                  <p className="post__meta post__meta--foot"><time dateTime={first.iso}>{first.date}</time><span>{first.readTime}</span></p>
+                  <Link href={`${base}/${first.slug}`} className="pillar__more">{t.blog.read}<span className="arr" aria-hidden>→</span></Link>
+                </div>
+              </article>
+
+              <h2 className="h3 posts__h">{t.blog.all} <span>{all.length}</span></h2>
+              <div className="posts">
+                {rest.map((a, i) => (
+                  <article key={a.slug} className="post" data-reveal style={{ ['--d' as string]: `${(i % 3) * 60}ms` }}>
+                    <Link href={`${base}/${a.slug}`} className="post__media" tabIndex={-1} aria-hidden>
+                      <Cover a={a} sizes="(max-width: 640px) 92vw, (max-width: 1100px) 46vw, 380px" />
+                    </Link>
+                    <div className="post__body">
+                      <p className="post__meta"><span className="post__cat">{a.category}</span><span>{a.readTime}</span></p>
+                      <h3><Link href={`${base}/${a.slug}`}>{a.title}</Link></h3>
+                      <p className="post__ex">{a.excerpt}</p>
+                      <p className="post__meta post__meta--foot"><time dateTime={a.iso}>{a.date}</time></p>
+                    </div>
+                  </article>
                 ))}
               </div>
-            </div>
-          </section>
-        }
-      >
-        <BlogContent articlesByLang={articlesByLang} />
-      </Suspense>
+            </>
+          )}
+        </div>
+      </section>
+      <CtaBand title={t.home.ctaTitle} sub={t.home.ctaSub} book={t.home.cta1} whatsapp={t.home.ctaWhatsApp} img="kinshasa-dusk" />
     </>
   )
 }

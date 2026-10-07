@@ -602,7 +602,7 @@ export default function CareersPage({ params, searchParams }: CareersPageProps) 
   }
 
   return (
-    <main>
+    <div>
       <CareersApplicationModal
         isOpen={applyOpen}
         onClose={() => setApplyOpen(false)}
@@ -847,6 +847,6 @@ export default function CareersPage({ params, searchParams }: CareersPageProps) 
           </div>
         </div>
       </AnimatedSection>
-    </main>
+    </div>
   )
 }

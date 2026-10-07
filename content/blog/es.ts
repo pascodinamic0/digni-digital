@@ -690,7 +690,7 @@ const contentEs: Record<string, Partial<BlogArticle>> = {
 
  <h2>Rol de Digni Digital: socio, no herramienta puntual</h2>
 
- <p>Combinamos <strong>apoyo estratégico a operaciones</strong> con <strong>implementación de sistemas de IA</strong>, por ejemplo cobertura inteligente de primera línea alineada con cómo vende y sirve. Puede incluir un <a href="/ai-receptionist">recepcionista IA</a> que califica clientes potenciales y enruta llamadas, integrado en su forma real de trabajar, no una demo aislada.</p>
+ <p>Combinamos <strong>apoyo estratégico a operaciones</strong> con <strong>implementación de sistemas de IA</strong>, por ejemplo cobertura inteligente de primera línea alineada con cómo vende y sirve. Puede incluir un <a href="/services/ai-employee">recepcionista IA</a> que califica clientes potenciales y enruta llamadas, integrado en su forma real de trabajar, no una demo aislada.</p>
 
  <p>Si evalúa un COO fraccional o una iniciativa de empcliente potencialo IA, la pregunta honesta es la misma: <strong>¿esto hace más simple y medible cómo dirigimos el negocio?</strong> Si sí, está en la conversación correcta.</p>
 
@@ -709,7 +709,7 @@ const contentEs: Record<string, Partial<BlogArticle>> = {
 
  <hr>
 
- <p><em>¿Preguntas sobre escalar sin más contrataciones a tiempo completo? <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Agende con Digni Digital</a> o explore nuestras capacidades de <a href="/ai-receptionist">recepcionista IA</a> para cobertura continua.</em></p>
+ <p><em>¿Preguntas sobre escalar sin más contrataciones a tiempo completo? <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Agende con Digni Digital</a> o explore nuestras capacidades de <a href="/services/ai-employee">recepcionista IA</a> para cobertura continua.</em></p>
  `,
  },
  'dispatchflow-unified-logistics-procurement-platform': {
@@ -762,7 +762,7 @@ const contentEs: Record<string, Partial<BlogArticle>> = {
  </figure>
 
  <h3>En vivo hoy, gratis para escuelas</h3>
- <p>AMS está <strong>en producción</strong> en <a href="https://ams-xi-two.vercel.app/" target="_blank" rel="noopener noreferrer">ams xi two.vercel.app</a>. Parte de nuestra práctica <a href="/agentic-softwares">Agentic Softwares</a>.</p>
+ <p>AMS está <strong>en producción</strong> en <a href="https://ams-xi-two.vercel.app/" target="_blank" rel="noopener noreferrer">ams xi two.vercel.app</a>. Parte de nuestra práctica <a href="/services/agentic-systems">Agentic Softwares</a>.</p>
 
  <p><strong>Empezar gratis:</strong> <a href="https://ams-xi-two.vercel.app/get-access" target="_blank" rel="noopener noreferrer">Crear cuenta escolar</a>, <a href="https://ams-xi-two.vercel.app/login" target="_blank" rel="noopener noreferrer">Iniciar sesión</a>.</p>
  <p><strong>¿Plataforma personalizada?</strong> <a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Reservar llamada estratégica</a>.</p>
@@ -831,7 +831,7 @@ const contentEs: Record<string, Partial<BlogArticle>> = {
 
  <p>Una empresa de servicios llegó con un problema común: el fundador convertía prospectos muy bien, pero solo cuando participaba personalmente. Las llamadas fuera de horario se perdían, las consultas no se calificaban de manera consistente y el equipo no siempre sabía qué leads requerían atención inmediata.</p>
 
- <p>Mapeamos sus mejores preguntas, estándares de calificación y ritmo de seguimiento en un <a href="/ai-receptionist">recepcionista IA con sistema de calificación de leads</a>. No fue un chatbot genérico, sino una capa de front office entrenada alrededor de señales reales de compra.</p>
+ <p>Mapeamos sus mejores preguntas, estándares de calificación y ritmo de seguimiento en un <a href="/services/ai-employee">recepcionista IA con sistema de calificación de leads</a>. No fue un chatbot genérico, sino una capa de front office entrenada alrededor de señales reales de compra.</p>
 
  <ul>
  <li><strong>Cobertura</strong>: consultas fuera de horario capturadas en lugar de esperar hasta la mañana.</li>
@@ -932,7 +932,7 @@ const contentEs: Record<string, Partial<BlogArticle>> = {
 
  <p>La IA no reemplaza el juicio. Aumenta el valor del juicio. Un profesional que combina pensamiento claro con herramientas de IA investiga más rápido, prototipa más rápido, automatiza trabajo repetitivo y muestra prueba antes.</p>
 
- <p>Digni Digital ha servido a más de 150 clientes en cuatro continentes. La misma lógica guía nuestro programa <a href="/future-ready-graduate">Digni Digital Literacy</a>: las habilidades deben convertirse en prueba visible y empleabilidad, incluyendo una tasa de empleo del 85% dentro de los 6 meses posteriores a la graduación.</p>
+ <p>Digni Digital ha servido a más de 150 clientes en cuatro continentes. La misma lógica guía nuestro programa <a href="/services/future-ready">Digni Digital Literacy</a>: las habilidades deben convertirse en prueba visible y empleabilidad, incluyendo una tasa de empleo del 85% dentro de los 6 meses posteriores a la graduación.</p>
 
  <h3>Ejercicio de 30 minutos</h3>
  <ol>
@@ -1176,9 +1176,9 @@ const contentEs: Record<string, Partial<BlogArticle>> = {
  <tr><th>Exposición</th><th>Problema</th><th>Cobertura</th><th>Resultado protegido</th></tr>
  </thead>
  <tbody>
- <tr><td>Inbound sin cobertura</td><td>Llamadas, chats y formularios sin respuesta</td><td><a href="/ai-receptionist">Sistemas de empleado IA</a> 24/7</td><td>Cada consulta recibe respuesta</td></tr>
- <tr><td>Talento sin cobertura</td><td>Títulos sin prueba contratable</td><td><a href="/future-ready-graduate">Programa Future Ready</a></td><td>Egresados que los empleadores quieren</td></tr>
- <tr><td>Operaciones sin cobertura</td><td>Hojas de cálculo vs stacks enterprise</td><td><a href="/agentic-softwares">Software agéntico</a></td><td>El flujo corre sin impuesto millonario</td></tr>
+ <tr><td>Inbound sin cobertura</td><td>Llamadas, chats y formularios sin respuesta</td><td><a href="/services/ai-employee">Sistemas de empleado IA</a> 24/7</td><td>Cada consulta recibe respuesta</td></tr>
+ <tr><td>Talento sin cobertura</td><td>Títulos sin prueba contratable</td><td><a href="/services/future-ready">Programa Future Ready</a></td><td>Egresados que los empleadores quieren</td></tr>
+ <tr><td>Operaciones sin cobertura</td><td>Hojas de cálculo vs stacks enterprise</td><td><a href="/services/agentic-systems">Software agéntico</a></td><td>El flujo corre sin impuesto millonario</td></tr>
  </tbody>
  </table>
 
@@ -1206,11 +1206,11 @@ const contentEs: Record<string, Partial<BlogArticle>> = {
  </table>
 
  <h3>1. Grow: sistemas de empleado IA</h3>
- <p>Musk señaló que la inteligencia digital avanza muy rápido —y aún necesita actuar en el mundo real de conversaciones, calendarios y seguimientos. Nuestros <a href="/ai-receptionist">sistemas de empleado IA</a> son esa capa operativa: capturar, calificar y reservar día y noche.</p>
+ <p>Musk señaló que la inteligencia digital avanza muy rápido —y aún necesita actuar en el mundo real de conversaciones, calendarios y seguimientos. Nuestros <a href="/services/ai-employee">sistemas de empleado IA</a> son esa capa operativa: capturar, calificar y reservar día y noche.</p>
  <p>Es el paso del shopping de funciones al <strong>seguro de resultados</strong>.</p>
 
  <h3>2. Learn: el programa Future Ready</h3>
- <p>Si la IA ejecuta más tareas a nivel élite, el valor humano se concentra en el juicio con prueba. El <a href="/future-ready-graduate">programa Future Ready</a> democratiza el acceso con proyectos reales.</p>
+ <p>Si la IA ejecuta más tareas a nivel élite, el valor humano se concentra en el juicio con prueba. El <a href="/services/future-ready">programa Future Ready</a> democratiza el acceso con proyectos reales.</p>
  <ul>
  <li><strong>Resultado:</strong> 85 % de empleo en seis meses (vs ~45 % citado a menudo).</li>
  <li><strong>Impacto:</strong> ~150 % de aumento salarial promedio reportado.</li>
@@ -1218,7 +1218,7 @@ const contentEs: Record<string, Partial<BlogArticle>> = {
  </ul>
 
  <h3>3. Scale: software agéntico</h3>
- <p>El futuro es de quienes sistematizan la entrega. Nuestra práctica <a href="/agentic-softwares">Agentic Softwares</a> construye sistemas acotados —AMS escolar, hospitalidad como <a href="https://kabinda-lodge.com/" target="_blank" rel="noopener noreferrer">Kabinda Lodge</a>, u ops como <a href="https://dispatch-flow-one.vercel.app/" target="_blank" rel="noopener noreferrer">DispatchFlow</a>.</p>
+ <p>El futuro es de quienes sistematizan la entrega. Nuestra práctica <a href="/services/agentic-systems">Agentic Softwares</a> construye sistemas acotados —AMS escolar, hospitalidad como <a href="https://kabinda-lodge.com/" target="_blank" rel="noopener noreferrer">Kabinda Lodge</a>, u ops como <a href="https://dispatch-flow-one.vercel.app/" target="_blank" rel="noopener noreferrer">DispatchFlow</a>.</p>
 
  <h2>Por qué importa nuestro lugar actual</h2>
  <figure class="blog-content-figure" style="margin: 2em 0;">
@@ -1261,7 +1261,7 @@ const contentEs: Record<string, Partial<BlogArticle>> = {
 
  <h2>Tu guía en la transición</h2>
  <p>Vivimos una división. Unos tratan la IA como cobertura. Otros esperan que un sitio vitrina o un certificado de asistencia baste.</p>
- <p>Sea cual sea la abundancia a largo plazo, la próxima década premiará a quien instale sistemas ahora. Digni Digital es la guía: <a href="/ai-receptionist">empleados IA</a>, <a href="/future-ready-graduate">Future Ready</a> y <a href="/agentic-softwares">software agéntico</a>.</p>
+ <p>Sea cual sea la abundancia a largo plazo, la próxima década premiará a quien instale sistemas ahora. Digni Digital es la guía: <a href="/services/ai-employee">empleados IA</a>, <a href="/services/future-ready">Future Ready</a> y <a href="/services/agentic-systems">software agéntico</a>.</p>
  <p><strong>Leads. Empleos. Ingresos. Construimos lo que funciona.</strong></p>
 
  <!--BLOG_FAQ-->

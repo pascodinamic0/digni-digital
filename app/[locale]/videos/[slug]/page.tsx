@@ -1,8 +1,6 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { Link } from '@/i18n/navigation'
-import Navigation from '@/app/components/Navigation'
-import Footer from '@/app/components/Footer'
 import { routing } from '@/i18n/routing'
 import {
   getAllSiteVideoSlugs,
@@ -64,8 +62,7 @@ export default async function VideoWatchPage({ params }: Props) {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={jsonLdScriptProps(jsonLd)} />
-      <Navigation />
-      <main className="min-h-screen bg-background pt-28 pb-20">
+      <div className="min-h-screen bg-background pt-28 pb-20">
         <div className="max-w-4xl mx-auto px-6">
           <p className="section-label mb-4">Watch</p>
           <h1 className="type-h2 font-display font-bold text-text mb-3">{copy.title}</h1>
@@ -97,8 +94,7 @@ export default async function VideoWatchPage({ params }: Props) {
             </a>
           </div>
         </div>
-      </main>
-      <Footer />
+      </div>
     </>
   )
 }

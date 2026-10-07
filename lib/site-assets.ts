@@ -1,5 +1,5 @@
 /** Public URL path for the Digni brand mark (nav logo, schema.org logo). */
-export const BRAND_LOGO_PATH = '/Icon%20Logo%20DD.png'
+export const BRAND_LOGO_PATH = '/brand/v2/shield-512.png'
 
 /** Shield handshake mark for software demo workspace chrome (static). */
 export const BRAND_SHIELD_LOGO_PATH = '/brand/digni-shield-logo.png'

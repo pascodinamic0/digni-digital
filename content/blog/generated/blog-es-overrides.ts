@@ -485,7 +485,7 @@ export const blogEsOverrides = {
         <li>Necesita consistencia en varios idiomas, por ejemplo francés en Francia y RDC.</li>
         <li>Quiere que el sistema entienda intención, no solo palabras exactas.</li>
       </ul>
-      <p>Explore nuestro <a href="/ai-receptionist">recepcionista IA</a> y soluciones de agentes para ver cómo diseñamos traspasos humanos y ROI medible.</p>
+      <p>Explore nuestro <a href="/services/ai-employee">recepcionista IA</a> y soluciones de agentes para ver cómo diseñamos traspasos humanos y ROI medible.</p>
       <h3>Cómo decidir sin sobreautomatizar</h3>
       <ol>
         <li><strong>Liste flujos repetitivos</strong>: llamadas, formularios, chat, WhatsApp y correos.</li>
@@ -532,7 +532,7 @@ export const blogEsOverrides = {
         <li><strong>WhatsApp y SMS</strong>: canales donde ya están sus clientes.</li>
       </ul>
       <h3>Digni Digital: fundada en Kinshasa</h3>
-      <p>Estamos en Kinshasa desde 2019. Servimos a más de 150 clientes en cuatro continentes con una base fuerte en la RDC. Nuestro <a href="/ai-receptionist">recepcionista IA</a> y soluciones de automatización funcionan en francés e incluyen soporte local, diseño móvil primero y ROI medible.</p>
+      <p>Estamos en Kinshasa desde 2019. Servimos a más de 150 clientes en cuatro continentes con una base fuerte en la RDC. Nuestro <a href="/services/ai-employee">recepcionista IA</a> y soluciones de automatización funcionan en francés e incluyen soporte local, diseño móvil primero y ROI medible.</p>
       <hr>
       <p><em><a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Reserve su llamada estratégica gratuita</a> para hablar de automatización para su empresa en Kinshasa o la RDC.</em></p>
     `,
@@ -559,11 +559,11 @@ export const blogEsOverrides = {
 
       <h3>Tres palancas de crecimiento</h3>
       <h4>1. Generación y calificación de clientes potenciales</h4>
-      <p>Los empleados IA y <a href="/ai-receptionist">recepcionistas IA</a> capturan y califican clientes potenciales 24/7. Resultado: más oportunidades, respuesta más rápida, cero llamadas perdidas. Nuestros clientes reportan hasta <strong>300 % más clientes potenciales calificados</strong>.</p>
+      <p>Los empleados IA y <a href="/services/ai-employee">recepcionistas IA</a> capturan y califican clientes potenciales 24/7. Resultado: más oportunidades, respuesta más rápida, cero llamadas perdidas. Nuestros clientes reportan hasta <strong>300 % más clientes potenciales calificados</strong>.</p>
       <h4>2. Automatización de procesos</h4>
       <p>Automatice cotizaciones, agenda, seguimientos y preguntas frecuentes. Su equipo se enfoca en cerrar ventas, no en perseguir papeles. Ganancia típica de productividad: <strong>40-50 %</strong> en las áreas afectadas.</p>
       <h4>3. Web y SaaS</h4>
-      <p>Una presencia <a href="/agentic-softwares">web o SaaS a medida</a> genera confianza y convierte visitantes en clientes potenciales. Combinada con captura IA, maximiza el impacto. Sitios que hemos construido han visto mejoras de <strong>10x en conversión de clientes potenciales</strong>.</p>
+      <p>Una presencia <a href="/services/agentic-systems">web o SaaS a medida</a> genera confianza y convierte visitantes en clientes potenciales. Combinada con captura IA, maximiza el impacto. Sitios que hemos construido han visto mejoras de <strong>10x en conversión de clientes potenciales</strong>.</p>
 
       <blockquote>
         <p>"Perdíamos clientes potenciales porque no podíamos responder lo bastante rápido. Ahora la IA captura todo, califica en francés y nuestro equipo solo habla con personas listas para comprar. Los ingresos subieron 40 % en seis meses.", <em>Director, servicios B2B, Lyon</em></p>
@@ -619,7 +619,7 @@ export const blogEsOverrides = {
         <p>"Perdíamos 30 % de nuestros clientes potenciales porque no respondíamos lo bastante rápido. Con el recepcionista IA capturamos todo y nuestra tasa de cierre subió 40 %." <em>Director comercial, servicios B2B, París</em></p>
       </blockquote>
       <h3>Cobertura multicanal</h3>
-      <p>Nuestras soluciones de <a href="/ai-receptionist">recepcionista IA y calificación de clientes potenciales</a> gestionan teléfono, correo, formularios web, chat y WhatsApp en un solo sistema, en francés, 24/7. Combinadas con <a href="/agentic-softwares">sitios y SaaS a medida</a>, maximizan el impacto.</p>
+      <p>Nuestras soluciones de <a href="/services/ai-employee">recepcionista IA y calificación de clientes potenciales</a> gestionan teléfono, correo, formularios web, chat y WhatsApp en un solo sistema, en francés, 24/7. Combinadas con <a href="/services/agentic-systems">sitios y SaaS a medida</a>, maximizan el impacto.</p>
       <h3>Implementación: 2-4 semanas</h3>
       <p>El despliegue típico: auditar fuentes de clientes potenciales, conectar canales, configurar criterios de calificación, pilotar y lanzar. La mayoría de clientes ve mejoras medibles en 30 días.</p>
       <hr>
@@ -651,14 +651,14 @@ export const blogEsOverrides = {
       <ul>
         <li><strong>Propuesta de valor clara</strong>: en 5 segundos el visitante entiende qué hace y por qué importa.</li>
         <li><strong>Prueba</strong>: testimonios, casos, métricas y señales de confianza.</li>
-        <li><strong>Captura múltiple</strong>: formularios, chat y clic para llamar conectados a un <a href="/ai-receptionist">recepcionista IA</a>.</li>
+        <li><strong>Captura múltiple</strong>: formularios, chat y clic para llamar conectados a un <a href="/services/ai-employee">recepcionista IA</a>.</li>
         <li><strong>Diseño móvil primero</strong>: rápido, responsive y cómodo.</li>
       </ul>
       <blockquote>
         <p>"Nuestro sitio anterior se veía bien, pero generaba quizá 2 clientes potenciales al mes. El nuevo con captura IA consigue 15-20. Mismo tráfico, 10x los resultados." <em>Propietario, firma de consultoría, Kinshasa</em></p>
       </blockquote>
       <h3>La ventaja de integrar IA</h3>
-      <p>Construimos <a href="/agentic-softwares">sitios web y aplicaciones a medida</a> integrados con nuestro <a href="/ai-receptionist">recepcionista IA</a> para que cada visita pueda convertirse en cliente potencial calificado o llamada reservada.</p>
+      <p>Construimos <a href="/services/agentic-systems">sitios web y aplicaciones a medida</a> integrados con nuestro <a href="/services/ai-employee">recepcionista IA</a> para que cada visita pueda convertirse en cliente potencial calificado o llamada reservada.</p>
       <hr>
       <p><em><a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Reserve su llamada estratégica gratuita</a> para diseñar su sitio generador de clientes potenciales.</em></p>
     `,
@@ -706,7 +706,7 @@ export const blogEsOverrides = {
         <li><strong>Presupuesto y plazo</strong>: ¿puede invertir y esperar 2-4 meses?</li>
         <li><strong>Horizonte de crecimiento</strong>: ¿dónde estará en 3 años?</li>
       </ol>
-      <p>Cuando gana lo a medida, entregamos <a href="/agentic-softwares">soluciones escalables que usted posee</a>.</p>
+      <p>Cuando gana lo a medida, entregamos <a href="/services/agentic-systems">soluciones escalables que usted posee</a>.</p>
       <hr>
       <p><em><a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Reserve su llamada estratégica gratuita</a> para comparar SaaS a medida y listo para usar en su caso.</em></p>
     `,
@@ -734,9 +734,9 @@ export const blogEsOverrides = {
       </ul>
       <h3>Tres pilares de transformación</h3>
       <h4>1. Empleados IA y automatización</h4>
-      <p><a href="/ai-receptionist">Recepcionistas IA</a> y agentes que capturan y califican clientes potenciales 24/7, en francés, para Kinshasa y la región. Cero llamadas perdidas, respuesta rápida y hasta 300 % más clientes potenciales calificados.</p>
+      <p><a href="/services/ai-employee">Recepcionistas IA</a> y agentes que capturan y califican clientes potenciales 24/7, en francés, para Kinshasa y la región. Cero llamadas perdidas, respuesta rápida y hasta 300 % más clientes potenciales calificados.</p>
       <h4>2. Web y SaaS</h4>
-      <p><a href="/agentic-softwares">Desarrollo web y SaaS a medida</a> para poseer sus herramientas y escalar en sus términos: portales cliente, herramientas internas y aplicaciones sectoriales.</p>
+      <p><a href="/services/agentic-systems">Desarrollo web y SaaS a medida</a> para poseer sus herramientas y escalar en sus términos: portales cliente, herramientas internas y aplicaciones sectoriales.</p>
       <h4>3. Crecimiento y estrategia</h4>
       <p>Generación de clientes potenciales, estrategia digital y ROI medible para que la transformación se convierta en ingresos.</p>
       <blockquote>
@@ -770,7 +770,7 @@ export const blogEsOverrides = {
         <li><strong>Madurez de mercado</strong>: ya existen casos, benchmarks y buenas prácticas.</li>
       </ul>
       <h3>Qué obtiene</h3>
-      <p>Nuestro <a href="/ai-receptionist">recepcionista IA</a> y soluciones de agentes están diseñados para pymes: medibles, centrada en personas y desplegables sin gran equipo IT.</p>
+      <p>Nuestro <a href="/services/ai-employee">recepcionista IA</a> y soluciones de agentes están diseñados para pymes: medibles, centrada en personas y desplegables sin gran equipo IT.</p>
       <ul>
         <li><strong>Captura y calificación 24/7</strong>: cada llamada, correo y chat se registra y enruta con contexto.</li>
         <li><strong>Multicanal</strong>: teléfono, correo, chat y mensajería en un solo sistema.</li>
@@ -820,8 +820,8 @@ export const blogEsOverrides = {
       </blockquote>
       <h3>Cómo se ve una IA accesible</h3>
       <ul>
-        <li><strong><a href="/ai-receptionist">Recepcionistas IA</a></strong>: capturan y califican clientes potenciales 24/7, en francés, por teléfono, chat y WhatsApp.</li>
-        <li><strong><a href="/agentic-softwares">Web y SaaS a medida</a></strong>: soluciones para sus flujos, idioma y pagos locales como M-Pesa u Orange Money.</li>
+        <li><strong><a href="/services/ai-employee">Recepcionistas IA</a></strong>: capturan y califican clientes potenciales 24/7, en francés, por teléfono, chat y WhatsApp.</li>
+        <li><strong><a href="/services/agentic-systems">Web y SaaS a medida</a></strong>: soluciones para sus flujos, idioma y pagos locales como M-Pesa u Orange Money.</li>
         <li><strong>Servicios de crecimiento</strong>: generación de clientes potenciales, estrategia digital y ROI medible.</li>
         <li><strong>Móvil primero</strong>: funciona en 2G/3G y smartphones de gama baja.</li>
       </ul>
@@ -834,7 +834,7 @@ export const blogEsOverrides = {
         <li><strong>Francés por defecto</strong>: sin parches de traducción ni soporte prometido para después.</li>
       </ul>
       <h3>Para instituciones</h3>
-      <p>Nuestro programa <a href="/future-ready-graduate">Digni Digital Literacy</a> equipa a jóvenes con habilidades digitales que conducen al empleo, con 85 % de empleabilidad dentro de 6 meses de graduación.</p>
+      <p>Nuestro programa <a href="/services/future-ready">Digni Digital Literacy</a> equipa a jóvenes con habilidades digitales que conducen al empleo, con 85 % de empleabilidad dentro de 6 meses de graduación.</p>
       <hr>
       <p><em><a href="https://calendar.app.google/xP2APV1Zqbke8JKu6" target="_blank" rel="noopener noreferrer">Reserve su llamada estratégica gratuita</a> para hablar de adopción de IA en su organización.</em></p>
     `,
@@ -868,14 +868,14 @@ export const blogEsOverrides = {
         <li><strong>SEO y contenido IA</strong>: búsquedas en francés de "agents IA", "automatisation PME" y "transformation numérique" creciendo 3x desde 2024.</li>
       </ol>
       <h3>Casos de estudio</h3>
-      <p>Una agencia inmobiliaria de Kinshasa implementó un <a href="/ai-receptionist">recepcionista IA</a> en WhatsApp y logró respuesta en menos de 2 minutos, 3.2x más clientes potenciales calificados y 40 % más cierres mensuales.</p>
-      <p>Una consultora de Lyon automatizó onboarding con IA y un <a href="/agentic-softwares">dashboard SaaS a medida</a>, reduciendo abandono de 15 % a 3 %, bajando el tiempo hasta la primera reunión a menos de 48 horas y ahorrando 25 horas administrativas por semana.</p>
+      <p>Una agencia inmobiliaria de Kinshasa implementó un <a href="/services/ai-employee">recepcionista IA</a> en WhatsApp y logró respuesta en menos de 2 minutos, 3.2x más clientes potenciales calificados y 40 % más cierres mensuales.</p>
+      <p>Una consultora de Lyon automatizó onboarding con IA y un <a href="/services/agentic-systems">dashboard SaaS a medida</a>, reduciendo abandono de 15 % a 3 %, bajando el tiempo hasta la primera reunión a menos de 48 horas y ahorrando 25 horas administrativas por semana.</p>
       <h3>Por qué Digni Digital</h3>
       <ul>
         <li><strong>Bilingüe por diseño</strong>: cada solución funciona en francés e inglés.</li>
         <li><strong>Fundada en Kinshasa</strong>: más de 150 clientes en cuatro continentes desde 2019.</li>
         <li><strong>Propiedad de extremo a extremo</strong>: configuramos, formamos, optimizamos y medimos ROI.</li>
-        <li><strong>Asequible para pymes</strong>: sistemas de <a href="/ai-receptionist">empleados IA</a> desde una fracción de un salario a tiempo parcial.</li>
+        <li><strong>Asequible para pymes</strong>: sistemas de <a href="/services/ai-employee">empleados IA</a> desde una fracción de un salario a tiempo parcial.</li>
         <li><strong>Sin dependencia del proveedor</strong>: usted conserva sus datos.</li>
       </ul>
       <h3>Playbook de adopción IA 2026</h3>

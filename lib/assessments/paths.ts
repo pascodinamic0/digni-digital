@@ -1,11 +1,12 @@
 import type { AssessmentServiceId } from './types'
 
+/** Assessment pages live under each service page (V2 URL structure). */
 export const ASSESSMENT_PATHS: Record<AssessmentServiceId, `/${string}`> = {
- 'ai-employee': '/ai-receptionist/assessment',
- 'future-ready': '/future-ready-graduate/assessment',
- 'agentic-softwares': '/agentic-softwares/assessment',
+  'ai-employee': '/services/ai-employee/assessment',
+  'future-ready': '/services/future-ready/assessment',
+  'agentic-softwares': '/services/agentic-systems/assessment',
 }
 
 export function getAssessmentPath(serviceId: AssessmentServiceId): `/${string}` {
- return ASSESSMENT_PATHS[serviceId]
+  return ASSESSMENT_PATHS[serviceId]
 }

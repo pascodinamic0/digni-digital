@@ -1,7 +1,7 @@
 import type { AiCareerJob } from '../types'
 
 export const CALENDAR = 'https://calendar.app.google/xP2APV1Zqbke8JKu6'
-export const FUTURE_READY_PATH = '/future-ready-graduate'
+export const FUTURE_READY_PATH = '/services/future-ready'
 
 export function ext(label: string, href: string): string {
  return `<a href="${href}" target="_blank" rel="noopener noreferrer">${label}</a>`

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { pageMetadata } from '@/content/v2/seo'
 
 type MetadataLanguage = 'en' | 'fr' | 'es' | 'de' | 'ar'
 
@@ -40,7 +41,8 @@ function getLanguage(locale: string): MetadataLanguage {
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params
-  return metadataByLanguage[getLanguage(locale)]
+  const m = metadataByLanguage[getLanguage(locale)]
+  return pageMetadata({ locale, path: '/affiliate', title: String(m.title), description: String(m.description), absoluteTitle: String(m.title).includes('Digni') })
 }
 
 export default function Layout({ children }: { children: React.ReactNode }) {
