@@ -1,4 +1,5 @@
 'use client'
+import { LINKS } from '@/content/v2/locales'
 import { useState } from 'react'
 
 export type ContactLabels = {
@@ -52,7 +53,14 @@ export default function ContactForm({ t, defaultService = '' }: { t: ContactLabe
       <button className="btn btn--accent" type="submit" disabled={state === 'sending'}>
         {state === 'sending' ? t.sending : t.send}<span className="arr" aria-hidden>→</span>
       </button>
-      {state === 'error' && <p className="form__err" role="alert">{t.error}</p>}
+      {state === 'error' && (
+        <p className="form__err" role="alert">
+          {t.error}{' '}
+          <a href={LINKS.whatsapp} target="_blank" rel="noopener noreferrer" dir="ltr">WhatsApp {LINKS.whatsappLabel}</a>
+          {' · '}
+          <a href={`mailto:${LINKS.email}`} dir="ltr">{LINKS.email}</a>
+        </p>
+      )}
       <p className="form__note">{t.privacy}</p>
     </form>
   )

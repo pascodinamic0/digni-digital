@@ -409,6 +409,7 @@ html[dir='rtl'] { --font-display: var(--font-plex-ar), var(--font-plex); --font-
 ::selection { background: rgba(134,217,95,.45); color: var(--v-ink); }
 .muted { color: var(--v-muted); }
 .mt-s { margin-top: 22px; }
+[id] { scroll-margin-top: calc(var(--v-hdr-h) + 20px); }
 .hp { position: absolute !important; inset-inline-start: 0 !important; width: 1px !important; height: 1px !important; padding: 0 !important; border: 0 !important; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); opacity: 0; pointer-events: none; }
 .subhead { margin-top: 64px; }
 .sechead--center { grid-template-columns: 1fr; text-align: center; justify-items: center; }
