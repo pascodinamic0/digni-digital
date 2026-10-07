@@ -25,8 +25,8 @@ h1, h2, h3 { margin: 0; font-weight: 600; letter-spacing: -0.02em; line-height: 
 p { margin: 0; }
 ul, ol { margin: 0; padding: 0; list-style: none; }
 :focus-visible { outline: 2px solid var(--v-teal-2); outline-offset: 3px; border-radius: 6px; }
-.skip { position: absolute; inset-inline-start: -999px; top: 8px; background: var(--v-ink); color: #fff; padding: 8px 14px; border-radius: 8px; z-index: 100; }
-.skip:focus { inset-inline-start: 8px; }
+.skip { position: absolute; inset-inline-start: 8px; top: 8px; transform: translateY(-160%); transition: transform .15s; background: var(--v-ink); color: #fff; padding: 8px 14px; border-radius: 8px; z-index: 100; }
+.skip:focus { transform: none; }
 .wrap { width: 100%; max-width: var(--v-wrap); margin-inline: auto; padding-inline: var(--v-gutter); }
 .center { text-align: center; }
 .mt { margin-top: 44px; }
